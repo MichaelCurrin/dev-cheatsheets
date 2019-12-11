@@ -1,5 +1,5 @@
 # Cheatsheets
-> Snippets across languages as an easy reference
+> Collection of minimal code snippets across languages for easy reference
 
 I add code here if I find I use it more than once, from other cheatsheets, StackOverflow or my own creation. There may be links, but the idea is to be explict here to avoid clicking through and also the risk of external content moving/disappearing.
 
