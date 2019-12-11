@@ -7,4 +7,6 @@ The code here might not actually run and just be a template.
 
 There might also be links to cheat sheets I've found.
 
-The idea is to keep this project as a lean as possible. Wider details on learning or using a language are covered in my other projects. There may be missing context or explanations, as the cheatsheet is intended for myself mainly.
+The idea is to keep this project as a lean as possible. Wider details on learning or using a language are covered in my other projects. 
+
+There may be missing context or explanations and obvious things are excluded. As the cheatsheet is intended for myself mainly.
