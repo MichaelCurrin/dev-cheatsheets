@@ -1,4 +1,4 @@
-# Jekyll
+# Jekyll Templating
 
 ## Comment
 
