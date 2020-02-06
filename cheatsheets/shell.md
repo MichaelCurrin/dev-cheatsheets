@@ -40,6 +40,12 @@ Or completely replace the current shell. If you exit, the terminal tab will exit
 exec -l bash
 ```
 
+Create an function in your `~/.bashrc` if you easily run it.
+
+```sh
+reload_shell() { exec -l $SHELL; }
+```
+
 ### Change shell
 
 #### Start new shell session
