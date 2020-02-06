@@ -8,6 +8,7 @@ gem list
 bundle list
 
 pip list
+pip freeze
 
 npm list
 npm -g list
