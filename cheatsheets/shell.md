@@ -125,3 +125,18 @@ Print a trace of simple commands
 ```sh
 set -x
 ```
+
+## Commands
+
+### Link
+
+Create symbolic link to file. 
+
+```sh
+ln -s SOURCE TARGET
+
+# e.g.
+ln -s ~/foo/bar.txt bar
+```
+
+Source is is directory or file to point to. Target is the new link file to create or replace. Add `-f` to override an existing file.
