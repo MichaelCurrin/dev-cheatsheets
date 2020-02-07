@@ -16,10 +16,9 @@ If you enter `exit` or press `CTRL`+`D`, then you will return to the outer shell
 
 Note that you should **not** use this to switch between shells as the config file will not be executed appropriately. Use the [Start new shell session](start-new-shell-session) section below.
 
-
 ### Reload shell
 
-If you have edited your bash configs and want to reload them, you can do this:
+If you have edited your Bash configs and want to reload them, you can do this:
 
 ```sh
 source ~/.bashrc
@@ -45,6 +44,17 @@ Create an function in your `~/.bashrc` if you easily run it.
 ```sh
 reload_shell() { exec -l $SHELL; }
 ```
+
+### Get current shell
+
+```sh
+echo $0
+
+echo $SHELL
+```
+
+[source](https://stackoverflow.com/questions/3327013/how-to-determine-the-current-shell-im-working-on)
+
 
 ### Change shell
 
@@ -156,3 +166,13 @@ From [Stack Overflow](https://stackoverflow.com/questions/59895/how-to-get-the-s
 ```sh
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 ```
+
+### String manipulations
+
+Replace using `sed`.
+
+```sh
+echo 'my-input' | sed 's/-/_/'
+```
+```
+
