@@ -32,7 +32,6 @@ Example of `code` in a sentence.
 
 Example of `code` in a sentence.
 
-
 #### Code blocks
 
 ```
@@ -126,6 +125,22 @@ Press <kbd>Esc</kbd>
 ```
 
 :sparkles:
+
+## Escaping
+
+Prevent markdown from rendering certaim styling, you can escape them. In the examples below the italics are part of a filename and italics styling is unwanted.
+
+### Code ticks
+
+    Update the `_config.yml` file.
+
+Update the `_config.yml` file.
+
+### Backslash
+
+    Update the \_config.yml file.
+    
+Update the \_config.yml file.
 
 
 ## Links
