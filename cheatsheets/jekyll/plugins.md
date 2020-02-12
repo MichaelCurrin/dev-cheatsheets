@@ -18,7 +18,7 @@ Install a Jekyll plugin:
 gem 'foo', group: :jekyll_plugins
 ```
 
-Example of `Gemfile` for a Jekyll project:
+Example of `Gemfile` for a Jekyll project below.
 
 <!-- TODO add links to these plugins, using my other quick start repos -->
 
@@ -33,12 +33,20 @@ group :jekyll_plugins do
 end
 ```
 
-Additional plugins:
+Notes on the above:
+- The source line is needed to prevent an error.
+- Jekyll restriction will prevent getting Jekyll `4.0.0`.
+- The group helps plugins to be loaded at the correct point when building the site.
+
+
+Some additional plugins to try:
 
 ```
   gem 'github-pages'
   gem 'jekyll-github-metadata'
 ```
+
+Note that the _github-pages_ plugins includes the metadata one plus a lot of others, so you only need one of the above lines if you want to fetch Github metadata in your build.
 
 ### Resources
 
