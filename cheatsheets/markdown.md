@@ -207,31 +207,68 @@ Or leave it empty and use the [link text itself].
 
 ## Images
 
-### Inline-style
+Images in mardown:
+- Similar to a link except it starts with an exclamation mark. 
+- The link can point to a local file in the repo or a remote URL.
+- The text in the first part is alternative text shown while the image is loading (or if fails to load.
+- Optional text can be included at the end to show on hover over.
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-
-```
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-```
-
-### Reference-style
-
-![alt text][logo]
-
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+### General format
 
 ```
-![alt text][logo]
+![Alt text](link)
 
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+![Alt text](link "Hover text")
+```
+
+Examples:
+
+```
+![My image](img/foo.jpg)
+
+![My image](https://example.comg/foo.jpg)
+```
+
+### Example of inline vs reference style
+
+#### Inline-style
+
+![Alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover")
+
+```
+![Alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover")
+```
+
+#### Reference-style
+
+![Alt text][logo]
+
+Some more text. Then the link at the bottom of the page.
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover"
+
+```
+![Alt text][logo]
+
+Some more text. Then the link at the bottom of the page.
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover"
 ```
 
 ### Plain HTML
 
+For more control, you can use HTML for your images.
 
 ```html
-<img src="image.png">
+<img src="foo.jpg">
+```
+
+Here we make the image clickable, to emulate what a markdown image does.
+
+```html
+<a href="https://example.com/foo/">
+    <img src="https://example.com/bar.png">
+</a>
 ```
 
 ### Styled HTML
@@ -240,7 +277,7 @@ Resize and center an image.
 
 ```html
 <p align="center">
-    <img width="250" src="image.png">
+    <img width="250" src="foo.png">
 </p>
 ```
 
