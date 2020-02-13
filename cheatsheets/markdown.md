@@ -6,7 +6,7 @@ Some content comes from [Markdown Cheatsheet](https://github.com/adam-p/markdown
 
 ## Basics
 
-```
+```markdown
 # Header 1
 ## Header 2
 ### Header 3
@@ -34,7 +34,7 @@ Example of `code` in a sentence.
 
 #### Code blocks
 
-```
+```markdown
     # Indententing this line in markdown turned it into preformatted mono-spaced text, without any particular code syntax.
     print('Hello world'!)
 ```
@@ -70,7 +70,7 @@ print('Hello world'!)
 
 Hard brackets. With either space or lowercase `x`.
 
-```
+```markdown
 - [ ] not done.
 - [x] done
 ```
@@ -100,7 +100,7 @@ HTML will render in markdown. But you will lose any markdown formatting such as 
 
 HTML comments will not be visible when viewed as HTML. So they are good for notes to yourself.
 
-```
+```html
 <!-- TODO: Something to do. -->
 ```
 
@@ -112,7 +112,7 @@ Especially good for a static website where you don't want your TODO items to sho
 
 The `kbd` HML tag can be used for keyboard commands. For example:
 
-```
+```html
 Press <kbd>Esc</kbd>
 ```
 
@@ -120,7 +120,9 @@ Press <kbd>Esc</kbd>
 
 ## Emojis
 
-```
+Note, this works in Github-flavored Markdown, but might not work in certain markdown viewers unless you use a plugin.
+
+```markdown
 :sparkles:
 ```
 
@@ -147,7 +149,7 @@ Update the \_config.yml file.
 
 ### File
 
-```
+```markdown
 [link text](file.txt)
 [link text](/app/file.txt)
 [link text](../file.txt)
@@ -155,7 +157,7 @@ Update the \_config.yml file.
 
 ### URL
 
-```
+```markdown
 [link text](https://example.com)
 ```
 
@@ -163,7 +165,7 @@ Update the \_config.yml file.
 
 Add alt text. Hover over the link to see the alt text.
 
-```
+```markdown
 [link text](files/path/to/file "alt text")
 ```
 
@@ -175,7 +177,7 @@ Add alt text. Hover over the link to see the alt text.
 
 [arbitrary case-insensitive reference text]: https://www.mozilla.org
 
-```
+```markdown
 [I'm a reference-style link][Arbitrary case-insensitive reference text]
 
 [arbitrary case-insensitive reference text]: https://www.mozilla.org
@@ -187,7 +189,7 @@ Add alt text. Hover over the link to see the alt text.
 
 [1]: http://slashdot.org
 
-```
+```markdown
 [You can use numbers for reference-style link definitions][1]
 
 [1]: http://slashdot.org
@@ -199,7 +201,7 @@ Or leave it empty and use the [link text itself].
 
 [link text itself]: http://www.reddit.com
 
-```
+```markdown
 Or leave it empty and use the [link text itself].
 
 [link text itself]: http://www.reddit.com
@@ -215,7 +217,7 @@ Images in mardown:
 
 ### General format
 
-```
+```markdown
 ![Alt text](link)
 
 ![Alt text](link "Hover text")
@@ -223,7 +225,7 @@ Images in mardown:
 
 Examples:
 
-```
+```markdown
 ![My image](img/foo.jpg)
 
 ![My image](https://example.comg/foo.jpg)
@@ -243,16 +245,20 @@ Examples:
 
 ![Alt text][logo]
 
-Some more text. Then the link at the bottom of the page.
+Some more text.
 
 [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover"
+
+There is a logo above but this elemement but it is not visible in the rendered HTML.
 
 ```
 ![Alt text][logo]
 
-Some more text. Then the link at the bottom of the page.
+Some more text.
 
 [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover"
+
+There is a logo above but this elemement but it is not visible in the rendered HTML.
 ```
 
 ### Plain HTML
