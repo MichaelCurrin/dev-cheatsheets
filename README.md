@@ -24,3 +24,8 @@ There may be missing context or explanations and obvious things are excluded. As
 Any links to tutorials and more detail will probably be added to my [Learn to Code](https://github.com/MichaelCurrin/learn-to-code) project instead.
 
 Any pieces for creating the doc and chore files of new projects will be added to [Repo Boiler Plates](https://github.com/MichaelCurrin/repo-boilerplates) project.
+
+## Other cheatsheets 
+
+- https://devhints.io
+
