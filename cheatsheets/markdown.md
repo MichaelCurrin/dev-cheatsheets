@@ -8,8 +8,16 @@ Some content comes from [Markdown Cheatsheet](https://github.com/adam-p/markdown
 
 ```markdown
 # Header 1
+
 ## Header 2
+
 ### Header 3
+
+Header 1
+===
+
+Header 2
+---
 
 - Bulleted
 - List
@@ -20,7 +28,72 @@ Some content comes from [Markdown Cheatsheet](https://github.com/adam-p/markdown
 **Bold** and _Italic_
 
 [Link](url) and ![Image](src)
+
+Horizontal rule:
+
+---
 ```
+
+## Lists
+
+    - Nested
+        * Bullet
+            + List
+
+    - Nested
+        - Bullet
+            - List
+
+- Nested
+    * Bullet
+        + List
+
+- Nested
+    - Bullet
+        - List
+
+### Quotes in lists
+
+    - Top-level
+        - > Point A, which is also a quote.
+        - Point B
+            > Indented, so shows **within** the point neatly.
+
+- Top-level
+    - > Point A, which is also a quote.
+    - Point B
+        > Indented, so shows **within** the point neatly.
+
+Don't do this:
+
+    - Top-level
+        - Point A
+        > There is no indent here, probably not what you want.
+        - Point B
+
+- Top-level
+    - Point A
+    > There is no indent here, probably not what you want.
+    - Point B
+
+### Code snippet in lists
+
+    - Top-level
+        - Foo
+        - Here is some code, indented so it shows under the point.
+            ```python
+            print("Hello, world!")
+            ```
+        - Bar
+
+- Top-level
+    - Foo
+    - Here is some code, indented so it shows under the point.
+        ```python
+        print("Hello, world!")
+        ```
+    - Bar
+
 
 ### Code
 
