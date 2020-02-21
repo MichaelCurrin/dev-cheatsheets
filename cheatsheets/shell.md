@@ -142,7 +142,9 @@ Print a trace of simple commands
 set -x
 ```
 
-## Commands
+## Commands and scripting
+
+Use these on the command-line or in shell scripts.
 
 ### Link
 
@@ -175,11 +177,31 @@ Replace using `sed`.
 echo 'my-input' | sed 's/-/_/'
 ```
 
-## Exit codes
+## Control flow
 
-### Control flow based on exit code
+### Check file
 
-### One liner
+If a file exists:
+
+```sh
+if [[ -f .env ]]; then
+  cat .env
+fi
+```
+
+If it does not exist:
+
+```sh
+if [[ ! -f .env ]]; then
+  echo 'File is missing: .env'
+fi
+```
+
+See [Bash cheatsheet](https://devhints.io/bash) for more info.
+
+### One liner status check
+
+Check if the status of the previous command was a pass or fail.
 
 ```sh
 [[ $? -eq 0 ]] && echo 'Passed!' || echo 'Failed!'
@@ -187,16 +209,18 @@ echo 'my-input' | sed 's/-/_/'
 
 Example use:
 
-```sh
-$ true
-$ [[ $? -eq 0 ]] && echo 'Passed!' || echo 'Failed!'
-Passed!
-```
-```sh
-$ false
-$ [[ $? -eq 0 ]] && echo 'Passed!' || echo 'Failed!'
-Failed!
-```
+- Use the `true` commands to give a zero (pass) exit status.
+  ```sh
+  $ true
+  $ [[ $? -eq 0 ]] && echo 'Passed!' || echo 'Failed!'
+  Passed!
+  ```
+- Use the `false` commands to give a non-zero (fail) exit status.
+    ```sh
+    $ false
+    $ [[ $? -eq 0 ]] && echo 'Passed!' || echo 'Failed!'
+    Failed!
+    ```
 
 Note the `exit` command is added here, but this is good for a script and not for direct terminal use otherwise you will close the terminal tab. Note the brackets to get the correct behavior.
 
@@ -206,7 +230,7 @@ Note the `exit` command is added here, but this is good for a script and not for
 
 ### If statement
 
-This is a multi-line `if` statement.
+This is a multi-line `if` statement, which is useful for more complex statements or if readability is important.
 
 ```sh
 if [[ $? -eq 0 ]]; then
@@ -217,7 +241,7 @@ else
 fi
 ```
 
-Show no output on success:
+Show message on failure only:
 
 ```sh
 if [[ $? -ne 0 ]]; then
@@ -225,3 +249,47 @@ if [[ $? -ne 0 ]]; then
   exit 1
 fi
 ```
+
+## Work with files
+
+### Iterate over a file
+
+```sh
+for ROW in $(cat requirements.txt)
+do
+  echo "pip install $ROW"
+done
+```
+
+From `xargs` manpage:
+
+> The xargs utility reads space, tab, newline and end-of-file delimited strings from the standard input and executes utility with the strings as arguments.
+
+
+```sh
+cat requirements.txt | xargs pip install
+```
+
+### Dotenv
+
+Export the vars in `.env` file into your shell:
+
+```sh
+export $(< .env) | xargs)
+```
+
+Check if it exists first:
+
+```sh
+if [ -f .env ]; then
+  export $(cat .env | xargs)
+fi
+```
+
+Ignore comments:
+
+```sh
+export $(egrep -v '^#' .env | xargs)
+```
+
+[source](https://gist.github.com/judy2k/7656bfe3b322d669ef75364a46327836)
