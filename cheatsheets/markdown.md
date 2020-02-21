@@ -2,7 +2,7 @@
 
 Cheatsheet for content of `.md` or `.markdown` files. This is not meant to be complete but rather useful as a quick reference for the things I need look up occasionally, so it excludes some basics such as headers.
 
-Some content comes from [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+Some content comes from [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). See also the the Wordpress [Markdown Quick Reference](https://en.support.wordpress.com/markdown-quick-reference/).
 
 ## Basics
 
@@ -19,12 +19,6 @@ Header 1
 Header 2
 ---
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
 **Bold** and _Italic_
 
 [Link](url) and ![Image](src)
@@ -35,6 +29,14 @@ Horizontal rule:
 ```
 
 ## Lists
+
+### Bulleted list
+
+    - Bulleted
+    - List
+
+- Bulleted
+- List
 
     - Nested
         * Bullet
@@ -51,6 +53,48 @@ Horizontal rule:
 - Nested
     - Bullet
         - List
+
+### Numbered list
+
+    1. Numbered
+    2. List
+
+1. Numbered
+2. List
+
+Note that numbering can be left as all `1.`.
+
+    1. Foo
+    1. Bar
+    1. Baz
+
+1. Foo
+1. Bar
+1. Baz
+
+Note the number formatting style will change by itself at each indentation level.
+
+    1. Nested
+        1. Bullet
+            1. List
+        
+1. Nested
+    1. Bullet
+        1. List
+
+### Mixed list
+
+    1. Number
+    2. Number
+       * Bullet
+       * Bullet  
+    3. Number
+    
+1. Number
+2. Number
+   * Bullet
+   * Bullet  
+3. Number
 
 ### Quotes in lists
 
@@ -76,7 +120,7 @@ Don't do this:
     > There is no indent here, probably not what you want.
     - Point B
 
-### Code snippet in lists
+### Code snippets in lists
 
     - Top-level
         - Foo
@@ -127,17 +171,7 @@ Example of `code` in a sentence.
 print('Hello world'!)
 ```
 
-#### Code blocks in bullet points
-
-    - They also work nicely under bullet points like this.
-        ```
-        print('Code goes here')
-        ```
-
-- They also work nicely under bullet points like this.
-    ```
-    print('Code goes here')
-    ```
+They also work nicely under bullet points. See [#code-snippets-in-lists] above.
 
 ## Todo list
 
