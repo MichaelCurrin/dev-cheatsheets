@@ -64,3 +64,17 @@ collections:
     {% endif %}
 {% endfor %}
 ```
+
+## SVGs
+
+Clickable social media SVG icon.
+
+[source](https://github.com/jekyll/minima/blob/master/_includes/social.html)
+
+```
+<a href="https://instagram.com/{{ site.instagram_username| cgi_escape | escape }}">
+    <svg class="svg-icon">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#instagram' | relative_url }}"></use>
+    </svg>
+</a>
+```
