@@ -1,6 +1,12 @@
 # Markdown Cheatsheet
 
-Cheatsheet for content of `.md` or `.markdown` files. This is not meant to be complete but rather useful as a quick reference for the things I need look up occasionally, so it excludes some basics such as headers.
+Cheatsheet for content of `.md` or `.markdown` files. 
+
+## Notes
+
+This is not meant to be complete but rather useful as a quick reference for the things I need look up occasionally, so it excludes some basics such as headers.
+
+Most of the content here is intended for Github Flavored Markdown (GFM) to be viewed on Github or an IDE which supports Markdown. Some the content is HTML which will render well in a markdown file on Github.
 
 Some content comes from [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). See also the the Wordpress [Markdown Quick Reference](https://en.support.wordpress.com/markdown-quick-reference/).
 
@@ -333,7 +339,7 @@ Images in mardown:
 Examples:
 
 ```markdown
-![My image](img/foo.jpg)
+![My image](foo.jpg)
 
 ![My image](https://example.comg/foo.jpg)
 ```
@@ -393,6 +399,61 @@ Resize and center an image.
     <img width="250" src="foo.png">
 </p>
 ```
+
+### SVGs
+
+Format:
+
+    ![Alt text](foo.svg)
+    
+    ![Alt text](https://example.com/foo.svg)
+
+Example:
+
+    ![Alt text](https://placeholder.pics/svg/200x60/DEDEDE/555555/Sample%20SVG)
+
+![Alt text](https://placeholder.pics/svg/200x60/DEDEDE/555555/Sample%20SVG)
+
+#### Github links
+
+##### raw.githubusercontent.com
+
+If you reference an image on Github through the Raw button, you get a link on `raw.githubusercontent.com`. You might add this to the URL to avoid getting an error: `?sanitize=true`.
+
+ Example of the above. This could be markdown but is HTML to set the width.
+
+```html
+<img width="100px" 
+     src="https://raw.githubusercontent.com/graphql/graphql-spec/master/resources/GraphQL%20Logo.svg?sanitize=true">
+```
+
+<img width="100px" 
+     src="https://raw.githubusercontent.com/graphql/graphql-spec/master/resources/GraphQL%20Logo.svg?sanitize=true">
+
+Image link from Wikipedia icon [here](https://en.wikipedia.org/wiki/GraphQL).
+
+If you use a different domains below, though you do **not** need the sanitize parameter.
+
+#### github.io
+
+No sanitize parameter needed.
+
+i.e. A Github Pages site's asset.
+
+    ![Alt text](https://potherca-blog.github.io/StackOverflow/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
+
+![Alt text](https://potherca-blog.github.io/StackOverflow/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
+
+#### rawgithub.com
+
+No sanitize parameter needed.
+
+    ```
+    ![Alt text](https://rawgithub.com/potherca-blog/StackOverflow/master/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
+    ```
+
+![Alt text](https://rawgithub.com/potherca-blog/StackOverflow/master/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
+
 
 ## Wiki
 
