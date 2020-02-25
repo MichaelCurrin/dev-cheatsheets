@@ -1,5 +1,7 @@
 # Jekyll Templating
 
+Cheat sheet for using Jekyll Liquid and plain HTML in Jekyll projects.
+
 ## Comment
 
 ```
@@ -67,6 +69,8 @@ collections:
 
 ## SVGs
 
+See also the [SVG section of the markdown cheatsheet](/cheatsheets/markdown.md#svgs).
+
 ### Image tag
 
 An SVG can be referenced as an image.
@@ -75,7 +79,7 @@ An SVG can be referenced as an image.
 ![alt text](/assets/images/foo.svg)
 ```
 
-The SVG file should have structure like this
+The SVG file should have structure like this:
 
 ```xml
 <svg id="svg" version="1.1" width="..." height="..." viewBox="..."
