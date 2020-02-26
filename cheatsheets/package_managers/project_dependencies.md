@@ -1,17 +1,27 @@
-# Package managers
+# Project dependencies
 
 ## List installed packages
 
+### Ruby
+
 ```sh
-gem list
+$ gem list
 
-bundle list
+$ bundle list
+```
 
-pip list
-pip freeze
+### Python
 
-npm list
-npm -g list
+```sh
+$ pip list
+$ pip freeze
+```
+
+### Node
+
+```sh
+$ npm list
+$ npm -g list
 ```
 
 ## Install package version
@@ -48,7 +58,6 @@ For compatible release clause, the documentation says that the following groups 
     >= 1.4.5, == 1.4.*
     ```
 
-
 From the `pip` docs on [requirements file format](https://pip.readthedocs.io/en/stable/reference/pip_install/#requirements-file-format):
 
 ```
@@ -78,7 +87,6 @@ Or install the version directly. Note the quotes help to escape characters.
 ```sh
 $ pip install 'foo>=0.2'
 ```
-
 
 You omit a version, though this can be dangerous for upgrading or setting up environments for import projects. If you omit a version, you'll get the latest.
 
