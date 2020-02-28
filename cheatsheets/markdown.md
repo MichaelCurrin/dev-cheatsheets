@@ -76,7 +76,7 @@ continuation of line 3.
 
 The line break rule applies to quotes two as below.
 
-```
+```markdown
 > Quote
 
 > Multi-line quote.
