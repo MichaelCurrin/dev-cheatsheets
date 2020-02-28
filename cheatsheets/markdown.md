@@ -10,7 +10,9 @@ Most of the content here is intended for Github Flavored Markdown (GFM) to be vi
 
 Some content comes from [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). See also the the Wordpress [Markdown Quick Reference](https://en.support.wordpress.com/markdown-quick-reference/).
 
-## Basics
+## Common formatting
+
+### Headings
 
 ```markdown
 # Header 1
@@ -19,19 +21,73 @@ Some content comes from [Markdown Cheatsheet](https://github.com/adam-p/markdown
 
 ### Header 3
 
+Alternative below - note there is no whitespace and no `#`.
+
 Header 1
 ===
 
 Header 2
 ---
+```
 
-**Bold** and _Italic_
+### Horizontal rule
 
-[Link](url) and ![Image](src)
-
-Horizontal rule:
+```markdown
+See the triple dash with white space before it.
 
 ---
+
+More content here.
+```
+
+
+```markdown
+**Bold**
+__Bold alt__
+
+_Italics_
+*Italtics alt*
+
+_**Nested styling**_
+```
+
+### Links
+
+```markdown
+[Link](url)
+
+![Image](src)
+```
+
+### Paragraphd
+
+If there are two paragraph lines with no break between, Markdown will show them on online. Therefore you can either add white space between, use a `<br>` tag, or use a double white space at the end of the line (not pratical if your IDE trims whitespace).
+
+```markdown
+Line 1
+
+Line 2
+
+Line 3 and
+continuation of line 3.
+```
+
+### Quotes
+
+The line break rule applies to quotes two as below.
+
+```
+> Quote
+
+> Multi-line quote.
+>
+> Note the empty line above.
+
+> This quote
+> actually appears on one line.
+
+> How to nest a quote.
+> > Repeat the quote symbol.
 ```
 
 ## Lists
