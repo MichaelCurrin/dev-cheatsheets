@@ -6,26 +6,7 @@ Makefile templates topic on Github - [makefile-template](https://github.com/topi
 
 Targets (commands) will differ per project and environment but these can be applied where relevant.
 
-## Help
 
-```make
-help:
-	@egrep '^\S|^$$' Makefile
-```
-
-## Jekyll
-
-```make
-install:
-	bundle install --path vendor/bundle
-
-upgrade:
-	bundle update
-```
-
-## Python
-
-See [Makefile in MichaelCurrin/py-project-template](https://github.com/MichaelCurrin/py-project-template/blob/master/Makefile) on Github.
 
 
 ## Export
@@ -63,3 +44,36 @@ The following will not work either, with or without `export` set at the top.
 test:
   export $(<.env) && ./script_that_echoes_foo.sh
 ```
+
+## Help
+
+```make
+help:
+	@echo Print lines that are not indented (targets and comments) or empty.
+	@egrep '^\S|^$$' Makefile
+```
+
+If you use `@echo` within your targets:
+
+```make
+help:
+	@echo Print lines that are not indented (targets and comments) or empty, plus any indented echo lines.
+	@egrep '(^\S)|(^$$)|\s+@echo' Makefile
+```
+
+## Jekyll
+
+```make
+install:
+	bundle install --path vendor/bundle
+
+upgrade:
+	bundle update
+	
+s serve:
+	bundle exec jekyll serve
+```
+
+## Python
+
+See [Makefile in MichaelCurrin/py-project-template](https://github.com/MichaelCurrin/py-project-template/blob/master/Makefile) on Github.
