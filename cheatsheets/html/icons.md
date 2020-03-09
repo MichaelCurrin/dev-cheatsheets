@@ -1,12 +1,23 @@
 # Icons
 
+This guide covers inserting HTML icons in webpages, focussing on _Fontawesome_.
+
+## Example
 
 ```html
 Solid: <i class="fas fa-clock"></i>
 Regular: <i class="far fa-clock"></i>
 ```
 
+## Setup
+
+Follow install instructions below so your icons will render. If you use a website theme, these may be included already such as with [https://github.com/jekyll-octopod/jekyll-bulma](https://github.com/jekyll-octopod/jekyll-bulma) which uses Fontawesome4.
+
 - [How to add icons](https://www.w3schools.com/icons/default.asp) on W3 Schools.
+
+
+## Resources
+
 - [Icons reference](https://www.w3schools.com/icons/icons_reference.asp) on W3 Schools. Lets you search FA5, FA4, Bootstrap and Google.
 - [Fontawesome](https://fontawesome.com/) home.
     - Use the _Search icons_ bar at the top.
