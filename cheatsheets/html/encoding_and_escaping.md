@@ -13,7 +13,7 @@ e.g. `<` becomes `%lt;`.
 
 Convert characters in a URL to be percent encoded, or reverse them.
 
-e.g. ` ` becomes `%20` and `#` becomes `%23`.
+e.g. `#` becomes `%23`.
 
 - [w3schools.com/tags/ref_urlencode.ASP](https://www.w3schools.com/tags/ref_urlencode.ASP) - Reference and conversion tool 
 - [url-encode-decode.com](https://www.url-encode-decode.com/) - Conversion tool 
