@@ -23,6 +23,7 @@ Follow install instructions below so your icons will render. If you use a websit
     - Use the _Search icons_ bar at the top.
     - [All free icons](https://fontawesome.com/icons?d=gallery&m=free).
     - [Sample results page](https://fontawesome.com/icons?d=gallery&q=star) for `star` search.
-    - [Sample result](https://fontawesome.com/icons/star?style=solid).
+    - [Sample result](https://fontawesome.com/icons/star?style=solid) of a star.
+    - [Science fiction](https://fontawesome.com/icons?d=gallery&c=science-fiction) gallery.
 - [Fontawesome 5 intro](https://www.w3schools.com/icons/fontawesome5_intro.asp) on W3 Schools.
 - [Fontawesome 4 intro](https://www.w3schools.com/icons/fontawesome_icons_intro.asp) on W3 Schools.
