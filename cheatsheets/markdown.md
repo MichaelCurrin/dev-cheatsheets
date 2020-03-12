@@ -91,18 +91,27 @@ Multi-line. Note that the line break rule from the previous section applies to q
 > actually appears on one line.
 ```
 
-Nesting.
+Nesting quotes.
 
 ```markdown
 > How to nest a quote.
 > > Repeat the quote symbol.
 ```
 
-Bullet points inside quotes.
+Quote a list of bullet points (from one source).
 
 ```markdown
 > - Point A
 > - Point B
+> - Point C
+```
+
+Add quotes from multiple sources to separate bullet points.
+
+```markdown
+- > Point A
+- > Point B
+- > Point C
 ```
 
 
