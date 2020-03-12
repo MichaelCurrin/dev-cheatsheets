@@ -74,21 +74,37 @@ continuation of line 3.
 
 ### Quotes
 
-The line break rule applies to quotes two as below.
+Single line.
 
 ```markdown
 > Quote
+```
 
+Multi-line. Note that the line break rule from the previous section applies to quotes as below.
+
+```markdown
 > Multi-line quote.
 >
 > Note the empty line above.
 
 > This quote
 > actually appears on one line.
+```
 
+Nesting.
+
+```markdown
 > How to nest a quote.
 > > Repeat the quote symbol.
 ```
+
+Bullet points inside quotes.
+
+```markdown
+> - Point A
+> - Point B
+```
+
 
 ## Lists
 
