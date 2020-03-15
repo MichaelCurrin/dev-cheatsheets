@@ -1,5 +1,7 @@
 # Python cheatsheet
 
+Boilerplate from my existing projects.
+
 ## Flask
 
 ### Make a CSV downloadable
@@ -38,8 +40,9 @@ def request_csv():
 
 This includes getting row data and field names (on the `.description` attribute.
 
-```python
+Note use of `with` block to automatically close the connection after the query is done, or even if it fails.
 
+```python
 def get_connection():
     """
     Create and return a connection to the configured SQLite database.`
@@ -65,5 +68,5 @@ def fetch_data(query):
     return rows, fields
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ2NzM3MTgyOSw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbOTI2OTQzMTc2LDczMDk5ODExNl19
 -->
