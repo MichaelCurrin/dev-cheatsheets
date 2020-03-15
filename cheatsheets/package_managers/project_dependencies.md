@@ -45,16 +45,19 @@ Example:
 - `<`, `>`: Exclusive ordered comparison clause
 - `===`: Arbitrary equality clause.
 
-For compatible release clause, the documentation says that the following groups of version clauses are equivalent:
+For compatible release clause, the documentation says that the following pairs of version clauses are equivalent:
 
 - Two levels (X.Y)
     ```
+    
     ~= 2.2
+    # OR
     >= 2.2, == 2.*
     ```
 - Three levels (X.Y.Z)
     ```
     ~= 1.4.5
+    # OR
     >= 1.4.5, == 1.4.*
     ```
 
@@ -107,3 +110,6 @@ To uninstall:
 ```sh
 $ pip uninstall foo
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNzM3MTQ4NDkxXX0=
+-->
