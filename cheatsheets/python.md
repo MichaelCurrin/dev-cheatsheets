@@ -111,19 +111,22 @@ def fetch_data(query):
 
 ### Pylint
 
-- [](
+- [docs.pylint.org](https://docs.pylint.org/en/latest/index.html)
 
-#### Disable
+#### Disable linting
 
 - [Pylint messages](http://pylint-messages.wikidot.com/all-codes)
 
-Add to the top of your file.
+
+You can disable or enable (globally disabled) messages at the module level by adding the corresponding option in a comment at the top of the file:
 
 ```
-# pylint: disable=C0321
+# pylint: disable=wildcard-import, method-hidden
+# pylint: enable=too-many-lines
 ```
 
 Using [symbolic names](https://docs.pylint.org/en/latest/faq.html#do-i-have-to-remember-all-these-numbers):
+
 ```
 # pylint: disable=locally-disabled, multiple-statements, fixme, line-too-long
 ```
@@ -137,6 +140,6 @@ disable= wildcard-import,
  ```
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDUwMjA2MTMwLC0yMTAwMTA4MzUxLDE3MD
-k5NjQyNzMsNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbLTExMDYyNzQ0ODQsLTIxMDAxMDgzNTEsMT
+cwOTk2NDI3Myw3MzA5OTgxMTZdfQ==
 -->
