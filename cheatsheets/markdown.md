@@ -51,6 +51,13 @@ _Italics_
 _**Nested styling**_
 ```
 
+The following are equivalent, though Github's markdown editor only shows a preview in the edit window for the later.
+
+```markdown
+~Strikethrough~
+~~Strikethrough~~
+```
+
 ### Links
 
 ```markdown
@@ -59,7 +66,7 @@ _**Nested styling**_
 ![Image](src)
 ```
 
-### Paragraphd
+### Paragraph
 
 If there are two paragraph lines with no break between, Markdown will show them on online. Therefore you can either add white space between, use a `<br>` tag, or use a double white space at the end of the line (not pratical if your IDE trims whitespace).
 
@@ -341,6 +348,8 @@ Update the \_config.yml file.
 
 ## Links
 
+Note that both file paths and full URLs work for targets of hyperlinks and images.
+
 ### File
 
 ```markdown
@@ -404,7 +413,8 @@ Or leave it empty and use the [link text itself].
 ## Images
 
 Images in mardown:
-- Similar to a link except it starts with an exclamation mark. 
+
+- Similar to a hyperlink, except it starts with an exclamation mark. 
 - The link can point to a local file in the repo or a remote URL.
 - The text in the first part is alternative text shown while the image is loading (or if fails to load.
 - Optional text can be included at the end to show on hover over.
@@ -421,8 +431,6 @@ Examples:
 
 ```markdown
 ![My image](foo.jpg)
-
-![My image](https://example.comg/foo.jpg)
 ```
 
 ### Example of inline vs reference style
@@ -480,6 +488,8 @@ Resize and center an image.
     <img width="250" src="foo.png">
 </p>
 ```
+
+Note that the resizing works for HTML above, but resizing **cannot** be resized using markdown. At least in Github-flavored implementation of markdown. Some other systems support resizing - e.g. `![Alt](img.jpg =60x50)`.
 
 ### SVGs
 
