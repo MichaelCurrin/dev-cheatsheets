@@ -47,6 +47,8 @@ Example:
 
 Be careful when setting a range - make sure you understand what is does.
 
+- `>= 1.0` - Version 1.0 or higher. This can automatically upgrade to version 2 so this is dangerious.
+- `>= 1.0, < 2.0` - This i
 
 
 For compatible release clause, the documentation says that the following pairs of version clauses are equivalent:
@@ -117,5 +119,5 @@ To uninstall:
 $ pip uninstall foo
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxNjAxODQxMF19
+eyJoaXN0b3J5IjpbODkwOTUxODFdfQ==
 -->
