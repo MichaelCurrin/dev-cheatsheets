@@ -1,6 +1,10 @@
 # Markdown Cheatsheet
 
-Cheatsheet for content of `.md` or `.markdown` files. 
+Applies to `.md` or `.markdown` files as both are equivalent.
+
+In some cases this guide contents HTML tags as these give more flexibility than markdown, though are usually more verbose. These HTML tags will render in both markdown documents and `.html` files. 
+
+You can mix HTML and markdown together together in a markdown document, however, they cannot overlap. If you put markdown content between HTML tags (such as between opening and closing `p` tag, the markdown will just render as plain text.
 
 ## Notes
 
