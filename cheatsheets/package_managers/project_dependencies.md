@@ -45,10 +45,15 @@ Example:
 - `<`, `>`: Exclusive ordered comparison clause
 - `===`: Arbitrary equality clause.
 
+Be careful when setting a range - make sure you understand what is does.
+
+
+
 For compatible release clause, the documentation says that the following pairs of version clauses are equivalent:
 
 - Two levels (X.Y)
     ```
+    # Here we set a minimum minor vsn of 2.2 but the major version is locked.
     # Shorthand
     ~= 2.2
     # Longer
@@ -112,5 +117,5 @@ To uninstall:
 $ pip uninstall foo
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwMzc0MjQ1XX0=
+eyJoaXN0b3J5IjpbLTcxNjAxODQxMF19
 -->
