@@ -106,7 +106,20 @@ def fetch_data(query):
 
     return rows, fields
 ```
+
+## Linting
+
+### Pylint
+
+#### Disable
+
+- [Pylint messages](http://pylint-messages.wikidot.com/all-codes)
+
+Add to the top of your file.
+```
+# pylint: disable=C0321
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMDAxMDgzNTEsMTcwOTk2NDI3Myw3Mz
-A5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbLTc4NTc0NTI0MCwtMjEwMDEwODM1MSwxNz
+A5OTY0MjczLDczMDk5ODExNl19
 -->
