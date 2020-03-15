@@ -352,28 +352,98 @@ Update the \_config.yml file.
 
 ## Links
 
-Note that both file paths and full URLs work for targets of hyperlinks and images.
+### Format
+
+A markdown link's format is:
+
+
+```markdown
+[link text](target)
+
+[](target)
+```
+
+The link text is what will be shown on error or while the image is loading. It can also help with SEO. It can be left blank.
+
+The target should be either a **local** file path in the repo, or a **remote** URL. The target should **not** be blank, otherwise it will just link to the current page.
+
 
 ### File
 
+The path is by default **relative** to the current path.
+
 ```markdown
-[link text](file.txt)
+[link text](bar.txt) - File name.
+
+[link text](./bar.txt) - Equivalent to the above, but more verbose, so not common.
+
+[link text](foo/bar.txt) - Path to file.
+```
+
+You can ascend using the double dots.
+
+```markdown
+[link text](../fizz/buzz.txt)
+```
+
+Use a forwardslash to indicate a path relative to the **root**, ignoring the current path.
+
+```markdown
 [link text](/app/file.txt)
-[link text](../file.txt)
+```
+
+Use **backslash** to escape a space.
+
+```markdown
+[link text](/Foo\ Bar/baz.txt)
+```
+
+That may not be needed in Github itself but may be needed for some tools like IDEs to recognize the link. For example, StackEdit tool needs the backlish to see the target as one path.
+
+Additionally, you can use IDs in your target to you can jump to an element with that ID, typically a heading.
+
+```markdown
+## My first heading
+
+Contnet
+
+## My second heading
+
+More content.
+
+Click to go to [My first heading](#my-first-heading).
+```
+
+The target could go to another page.
+
+```markdown
+[Foo bar](foo#bar)
+
+[Foo bar](https://example.com#bar)
 ```
 
 ### URL
 
+Set the target as a full URL, requiring protocol, domain and optional path.
+
 ```markdown
-[link text](https://example.com)
+[link text](https://example.com/foo/bar)
+```
+
+Regarding protocol - the URL **must** start with `http` or `https`, otherwise the link will in invalid. 
+
+For example, this will link add `/example.com` to the current path.
+
+```markdown
+[Bad example](example.com)
 ```
 
 ### Alt text
 
-Add alt text. Hover over the link to see the alt text.
+Add optional alternative text. You can hover over the link to see the alt text.
 
 ```markdown
-[link text](files/path/to/file "alt text")
+[link text](https://example.com "alt text")
 ```
 
 ### Reference-style links
@@ -416,19 +486,20 @@ Or leave it empty and use the [link text itself].
 
 ## Images
 
-Images in mardown:
+Images in mardown as similar to a hyperlink, except it starts with an **exclamation mark**.
 
-- Similar to a hyperlink, except it starts with an exclamation mark. 
-- The link can point to a local file in the repo or a remote URL.
-- The text in the first part is alternative text shown while the image is loading (or if fails to load.
-- Optional text can be included at the end to show on hover over.
+The following apply, as with standard links:
+
+- The target can point to a **local** file in the repo or a **remote** URL, as with standard links.
+- The text in the first part is alternative text shown while the image is loading (or if fails to load).
+- Optional text can be included at the end, to show on hover over.
 
 ### General format
 
 ```markdown
-![Alt text](link)
+![Alt text](target)
 
-![Alt text](link "Hover text")
+![Alt text](target "Hover text")
 ```
 
 Examples:
