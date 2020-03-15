@@ -36,7 +36,25 @@ def request_csv():
     return to_csv(results, fields)
 ```
 
-### Query a database
+### Cache
+
+- [Flask-Cache](https://flask-caching.readthedocs.io/en/latest/) docs.
+
+```sh
+$ pip install Flask-Cache
+```
+
+```
+import datetime
+
+
+@app.route("/cache-test")
+@cache.cached()
+def test():
+    return str(datetime.datetime.now())
+```
+
+## Query a database
 
 Here we get row data and field names (on the `.description` attribute) from a SQLite database, using the SQLAlchemy library.
 
@@ -71,5 +89,6 @@ def fetch_data(query):
     return rows, fields
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcwOTk2NDI3Myw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbLTE2NzYxODk1MzcsMTcwOTk2NDI3Myw3Mz
+A5OTgxMTZdfQ==
 -->
