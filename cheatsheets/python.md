@@ -139,7 +139,18 @@ disable= wildcard-import,
  too-many-lines
  ```
  
+ 
+ ### Flake8
+
+#### Disable
+
+Disable for file:
+`# flake8: noqa`
+
+Disable inline:
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDYyNzQ0ODQsLTIxMDAxMDgzNTEsMT
-cwOTk2NDI3Myw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbMTU0OTA3NjU3MywtMTEwNjI3NDQ4NCwtMj
+EwMDEwODM1MSwxNzA5OTY0MjczLDczMDk5ODExNl19
 -->
