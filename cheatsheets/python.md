@@ -44,7 +44,9 @@ def request_csv():
 $ pip install Flask-Cache
 ```
 
-Example usage of Python in-memory cache. Only suitable for development environments.
+Example usage
+
+Using Python in-memory cache. Only suitable for development environments.
 
 ```python
 import datetime
@@ -64,7 +66,10 @@ cache.init_app(app)
 @cache.cached()
 def test():
     return str(datetime.datetime.now())
-    
+
+
+if  __name__ == "__main__":
+    app.run()
 ```
 
 ## Query a database
@@ -102,6 +107,6 @@ def fetch_data(query):
     return rows, fields
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1ODQxMjg5LDE3MDk5NjQyNzMsNzMwOT
-k4MTE2XX0=
+eyJoaXN0b3J5IjpbLTQ3MTg5ODA2MiwxNzA5OTY0MjczLDczMD
+k5ODExNl19
 -->
