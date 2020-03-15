@@ -140,17 +140,25 @@ disable= wildcard-import,
  ```
  
  
- ### Flake8
+### Flake8
 
 #### Disable
 
 Disable for file:
 `# flake8: noqa`
 
-Disable inline:
+Disable inline - all.
 
+```
+... #noqa
+```
 
+Disable inline - comma-separated codes.
+
+```
+... # noqa: E234
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0OTA3NjU3MywtMTEwNjI3NDQ4NCwtMj
-EwMDEwODM1MSwxNzA5OTY0MjczLDczMDk5ODExNl19
+eyJoaXN0b3J5IjpbODkxMDM3MTkyLC0xMTA2Mjc0NDg0LC0yMT
+AwMTA4MzUxLDE3MDk5NjQyNzMsNzMwOTk4MTE2XX0=
 -->
