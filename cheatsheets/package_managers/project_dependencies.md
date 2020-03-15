@@ -28,6 +28,13 @@ $ npm -g list
 
 ### Python
 
+#### Sample versions
+
+Compatible release - Y can be higher but X is locked.
+```
+~= X.Y
+```
+
 #### Version format
 
 [Version specifiers](https://www.python.org/dev/peps/pep-0440/#version-specifiers) in a Python PEP.
@@ -66,10 +73,10 @@ For compatible release clause, the documentation says that the following pairs o
     ```
 - Three levels (X.Y.Z)
     ```
-    # Shorthand
-    ~= 1.4.5
     # Longer
     >= 1.4.5, == 1.4.*
+    # Shorthand
+    ~= 1.4.5
     ```
 
 From the `pip` docs on [requirements file format](https://pip.readthedocs.io/en/stable/reference/pip_install/#requirements-file-format):
@@ -122,5 +129,5 @@ To uninstall:
 $ pip uninstall foo
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjk0OTUyMTk5XX0=
+eyJoaXN0b3J5IjpbLTE4MzMyODUxOF19
 -->
