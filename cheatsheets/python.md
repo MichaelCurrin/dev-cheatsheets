@@ -46,7 +46,7 @@ $ pip install Flask-Cache
 
 Example usage
 
-Using Python in-memory cache. Only suitable for development environments.
+Using Python in-memory cache. Only suitable for development environments. Visit localhost:5000/cache-test and you'll see the current time. Because of `@cache.cached` line, the result will be cached on refreshes. Comment out the line and restart - then you'll see a new value on each page refresh.
 
 ```python
 import datetime
@@ -107,6 +107,6 @@ def fetch_data(query):
     return rows, fields
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3MTg5ODA2MiwxNzA5OTY0MjczLDczMD
-k5ODExNl19
+eyJoaXN0b3J5IjpbLTIxMDAxMDgzNTEsMTcwOTk2NDI3Myw3Mz
+A5OTgxMTZdfQ==
 -->
