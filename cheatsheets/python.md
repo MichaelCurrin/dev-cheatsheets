@@ -119,7 +119,22 @@ Add to the top of your file.
 ```
 # pylint: disable=C0321
 ```
+
+```
+# pylint: disable=locally-disabled, multiple-statements, fixme, line-too-long
+```
+
+Using config file:
+
+```
+# disable wildcard-import, method-hidden and too-many-lines because I do
+# not want it
+disable= wildcard-import,
+ method-hidden,
+ too-many-lines
+ ```
+ 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4NTc0NTI0MCwtMjEwMDEwODM1MSwxNz
+eyJoaXN0b3J5IjpbMTMwNDg1OTUyNSwtMjEwMDEwODM1MSwxNz
 A5OTY0MjczLDczMDk5ODExNl19
 -->
