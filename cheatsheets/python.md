@@ -118,13 +118,36 @@ def fetch_data(query):
 - [Pylint messages](http://pylint-messages.wikidot.com/all-codes)
 - [Pylint message-control](https://pylint.readthedocs.io/en/latest/user_guide/message-control.html)
 
-Disable inline.
+From message-control doc:
+
+> For all of these controls, `pylint` accepts the following values:
+> -   a symbolic message: `no-member`, `undefined-variable` etc.
+> -   a numerical ID: `E1101`, `E1102` etc.
+> -   The name of the group of checks. You can grab those with `pylint --list-groups`. For example, you can disable / enable all the checks related to type checking, with `typecheck` or all the checks related
+> to variables with `variables`
+> -   Corresponding category of the checks
+>     -   `C` convention related checks
+>     -   `R` refactoring related checks
+>     -   `W` various warnings
+>     -   `E` errors, for probable bugs in the code
+>     -   `F` fatal, if an error occurred which prevented `pylint` from doing further processing.
+> -   All the checks with `all`
+
+Disable for scope. Either at the top of a file or scope like a function.
+
+```
+def test():
+    # pylint: disable=no-member
+    ...
+```
+
+Disable for line.
 
 ```
 a, b = ... # pylint: disable=unbalanced-tuple-unpacking
 ```
 
-Using [symbolic names](https://docs.pylint.org/en/latest/faq.html#do-i-have-to-remember-all-these-numbers):
+Using [symbolic names](https://docs.pylint.org/en/latest/faq.html#do-i-have-to-remember-all-these-numbers)
 
 ```
 # pylint: disable=locally-disabled, multiple-statements, fixme, line-too-long
@@ -158,6 +181,6 @@ Disable inline - comma-separated codes.
 ... # noqa: E234
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ1NTczNTkwLC0xMTA2Mjc0NDg0LC0yMT
+eyJoaXN0b3J5IjpbODY3NjIyOTUxLC0xMTA2Mjc0NDg0LC0yMT
 AwMTA4MzUxLDE3MDk5NjQyNzMsNzMwOTk4MTE2XX0=
 -->
