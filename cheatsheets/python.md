@@ -5,6 +5,9 @@
 ### Make a CSV downloadable
 
 ```python
+from flask import make_response
+
+
 def to_csv(rows, fields):
     """
     Convert data to downloadable CSV file.
@@ -30,6 +33,37 @@ def request_csv():
 
     return to_csv(results, fields)
 ```
+
+### Query SQLite database
+
+This includes getting row data and field names (on the `.description` attribute.
+
+```python
+
+def get_connection():
+    """
+    Create and return a connection to the configured SQLite database.`
+    """
+    assert os.access(config.DB_PATH, os.R_OK), (
+        "Create the database or symlink then restart the application."
+        " Expected path: {}".format(config.DB_PATH)
+    )
+    sql_engine = create_engine("sqlite:///{}".format(config.DB_PATH))
+
+    return sql_engine.connect()
+
+
+def fetch_data(query):
+    """
+    Expect a SQL query, execute it and return rows and field names.
+    """
+    with get_connection() as conn:
+        query = conn.execute(query)
+        rows = query.cursor.fetchall()
+        fields = [col[0] for col in query.cursor.description]
+
+    return rows, fields
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODYyNzA1OTY0LDczMDk5ODExNl19
+eyJoaXN0b3J5IjpbMTQ2NzM3MTgyOSw3MzA5OTgxMTZdfQ==
 -->
