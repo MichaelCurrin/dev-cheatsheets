@@ -112,13 +112,12 @@ def fetch_data(query):
 ### Pylint
 
 - [docs.pylint.org](https://docs.pylint.org/en/latest/index.html)
-
-#### Disable linting
-
 - [Pylint messages](http://pylint-messages.wikidot.com/all-codes)
 - [Pylint message-control](https://pylint.readthedocs.io/en/latest/user_guide/message-control.html)
 
-From message-control doc:
+#### Rules
+
+Pytling acc  message-control doc:
 
 > For all of these controls, `pylint` accepts the following values:
 > -   a symbolic message: `no-member`, `undefined-variable` etc.
@@ -132,6 +131,10 @@ From message-control doc:
 >     -   `E` errors, for probable bugs in the code
 >     -   `F` fatal, if an error occurred which prevented `pylint` from doing further processing.
 > -   All the checks with `all`
+
+#### How to disable
+
+Approaches to disabling a *pylint* rule.
 
 Disable for scope. Either at the top of a file or scope like a function.
 
@@ -181,6 +184,6 @@ Disable inline - comma-separated codes.
 ... # noqa: E234
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODY3NjIyOTUxLC0xMTA2Mjc0NDg0LC0yMT
+eyJoaXN0b3J5IjpbOTQ2NTYzMzA3LC0xMTA2Mjc0NDg0LC0yMT
 AwMTA4MzUxLDE3MDk5NjQyNzMsNzMwOTk4MTE2XX0=
 -->
