@@ -47,22 +47,22 @@ Example:
 
 Be careful when setting a range - make sure you understand what is does.
 
-- `>= 2.2` - Version `2.2` or higher. This can automatically upgrade to version 3 so this is dangerous.
+- `== 2.2` - Version `2.2` only.
+- `>= 2.2` - Version `2.2` or higher. This can automatically upgrade to version `3` so this is dangerous.
 - `>= 2.2, < 2.8` - This sets an upper bound.
 - `>= 2.2, < 3.0` - This sets an upper bound too.
-- `>= 2.2, == 2.*` - This is preferred notation for .
+- `>= 2.2, == 2.*` - This is preferred notation for a major range.
 - `~= 2.2` - This is equivalent to the above but shorter.
-
 
 For compatible release clause, the documentation says that the following pairs of version clauses are equivalent:
 
 - Two levels (X.Y)
     ```
     # Here we set a minimum minor vsn of 2.2 but the major version is locked.
-    # Shorthand
-    ~= 2.2
     # Longer
     >= 2.2, == 2.*
+    # Shorthand
+    ~= 2.2
     ```
 - Three levels (X.Y.Z)
     ```
@@ -122,5 +122,5 @@ To uninstall:
 $ pip uninstall foo
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2NTExODE1NF19
+eyJoaXN0b3J5IjpbMjk0OTUyMTk5XX0=
 -->
