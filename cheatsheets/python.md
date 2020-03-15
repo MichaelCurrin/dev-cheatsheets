@@ -111,15 +111,19 @@ def fetch_data(query):
 
 ### Pylint
 
+- [](
+
 #### Disable
 
 - [Pylint messages](http://pylint-messages.wikidot.com/all-codes)
 
 Add to the top of your file.
+
 ```
 # pylint: disable=C0321
 ```
 
+Using [symbolic names](https://docs.pylint.org/en/latest/faq.html#do-i-have-to-remember-all-these-numbers):
 ```
 # pylint: disable=locally-disabled, multiple-statements, fixme, line-too-long
 ```
@@ -127,14 +131,12 @@ Add to the top of your file.
 Using config file:
 
 ```
-# disable wildcard-import, method-hidden and too-many-lines because I do
-# not want it
 disable= wildcard-import,
  method-hidden,
  too-many-lines
  ```
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMwNDg1OTUyNSwtMjEwMDEwODM1MSwxNz
-A5OTY0MjczLDczMDk5ODExNl19
+eyJoaXN0b3J5IjpbNDUwMjA2MTMwLC0yMTAwMTA4MzUxLDE3MD
+k5NjQyNzMsNzMwOTk4MTE2XX0=
 -->
