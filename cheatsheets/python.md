@@ -117,7 +117,7 @@ def fetch_data(query):
 
 #### Rules
 
-Pytling acc  message-control doc:
+Formats that Pytlint accepts - copied from message-control doc.
 
 > For all of these controls, `pylint` accepts the following values:
 > -   a symbolic message: `no-member`, `undefined-variable` etc.
@@ -183,7 +183,8 @@ Disable inline - comma-separated codes.
 ```
 ... # noqa: E234
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQ2NTYzMzA3LC0xMTA2Mjc0NDg0LC0yMT
-AwMTA4MzUxLDE3MDk5NjQyNzMsNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbMjEzMTgyNjQ2MiwtMTEwNjI3NDQ4NCwtMj
+EwMDEwODM1MSwxNzA5OTY0MjczLDczMDk5ODExNl19
 -->
