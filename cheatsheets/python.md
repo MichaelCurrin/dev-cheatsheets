@@ -36,13 +36,16 @@ def request_csv():
     return to_csv(results, fields)
 ```
 
-### Query SQLite database
+### Query a database
 
-This includes getting row data and field names (on the `.description` attribute.
+Here we get row data and field names (on the `.description` attribute) from a SQLite database, using the SQLAlchemy library.
 
 Note use of `with` block to automatically close the connection after the query is done, or even if it fails.
 
 ```python
+from sqlalchemy import create_engine
+
+
 def get_connection():
     """
     Create and return a connection to the configured SQLite database.`
@@ -68,5 +71,5 @@ def fetch_data(query):
     return rows, fields
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTI2OTQzMTc2LDczMDk5ODExNl19
+eyJoaXN0b3J5IjpbMTcwOTk2NDI3Myw3MzA5OTgxMTZdfQ==
 -->
