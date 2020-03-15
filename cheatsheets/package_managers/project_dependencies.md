@@ -49,15 +49,16 @@ For compatible release clause, the documentation says that the following pairs o
 
 - Two levels (X.Y)
     ```
-    
+    # Shorthand
     ~= 2.2
-    # OR
+    # Longer
     >= 2.2, == 2.*
     ```
 - Three levels (X.Y.Z)
     ```
+    # Shorthand
     ~= 1.4.5
-    # OR
+    # Longer
     >= 1.4.5, == 1.4.*
     ```
 
@@ -111,5 +112,5 @@ To uninstall:
 $ pip uninstall foo
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzM3MTQ4NDkxXX0=
+eyJoaXN0b3J5IjpbMTEwMzc0MjQ1XX0=
 -->
