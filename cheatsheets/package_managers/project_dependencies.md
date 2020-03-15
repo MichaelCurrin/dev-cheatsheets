@@ -28,7 +28,13 @@ $ npm -g list
 
 ### Python
 
-#### Sample versions
+#### Quick reference
+
+Exact version lock
+
+```
+== X.Y.Z
+```
 
 Compatible release - Y can be higher but X is locked.
 ```
@@ -52,15 +58,6 @@ Example:
 - `<`, `>`: Exclusive ordered comparison clause
 - `===`: Arbitrary equality clause.
 
-Be careful when setting a range - make sure you understand what is does.
-
-- `== 2.2` - Version `2.2` only.
-- `>= 2.2` - Version `2.2` or higher. This can automatically upgrade to version `3` so this is dangerous.
-- `>= 2.2, < 2.8` - This sets an upper bound.
-- `>= 2.2, < 3.0` - This sets an upper bound too.
-- `>= 2.2, == 2.*` - This is preferred notation for a major range.
-- `~= 2.2` - This is equivalent to the above but shorter.
-
 For compatible release clause, the documentation says that the following pairs of version clauses are equivalent:
 
 - Two levels (X.Y)
@@ -78,6 +75,17 @@ For compatible release clause, the documentation says that the following pairs o
     # Shorthand
     ~= 1.4.5
     ```
+
+### Exam
+
+Be careful when setting a range - make sure you understand what is does. See below:
+
+- `== 2.2` - Version `2.2` only.
+- `>= 2.2` - Version `2.2` or higher. This can automatically upgrade to version `3` so this is dangerous.
+- `>= 2.2, < 2.8` - This sets an upper bound.
+- `>= 2.2, < 3.0` - This sets an upper bound too.
+- `>= 2.2, == 2.*` - This is preferred notation for a major range.
+- `~= 2.2` - This is equivalent to the above but shorter.
 
 From the `pip` docs on [requirements file format](https://pip.readthedocs.io/en/stable/reference/pip_install/#requirements-file-format):
 
@@ -129,5 +137,5 @@ To uninstall:
 $ pip uninstall foo
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzMyODUxOF19
+eyJoaXN0b3J5IjpbNzI4Mzk4NDM2XX0=
 -->
