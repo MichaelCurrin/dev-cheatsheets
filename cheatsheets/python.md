@@ -47,6 +47,13 @@ $ pip install Flask-Cache
 ```
 import datetime
 
+from flask import Flask
+from flask_caching import Cache
+
+
+cache = Cache(config=config.CACHE_OPTIONS)
+app = Flask(__name__, static_url_path="/static")
+cache.init_app(app)
 
 @app.route("/cache-test")
 @cache.cached()
@@ -89,6 +96,6 @@ def fetch_data(query):
     return rows, fields
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzYxODk1MzcsMTcwOTk2NDI3Myw3Mz
+eyJoaXN0b3J5IjpbLTEyOTQ1MjkyOTMsMTcwOTk2NDI3Myw3Mz
 A5OTgxMTZdfQ==
 -->
