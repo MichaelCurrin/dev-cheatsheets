@@ -1,11 +1,25 @@
+# Python cheatsheet
+
+## Flask
+
+### Make a CSV downloadable
 
 
-
-> Written with [StackEdit](https://stackedit.io/).# Python cheatsheet
-
-## Web apps
-
+    def to_csv(rows, fields):
+        """
+        Convert data to downloadable CSV file.
+        """
+        str_buffer = StringIO()
+        writer = csv.writer(str_buffer)
+        writer.writerows([fields])
+        writer.writerows(rows)
+    
+        output = make_response(str_buffer.getvalue())
+        output.headers["Content-Disposition"] = "attachment; filename=export.csv"
+        output.headers["Content-type"] = "text/csv"
+    
+        return output
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzU3MDQ1MzcsNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbLTUxMjk1Nzk4NCw3MzA5OTgxMTZdfQ==
 -->
