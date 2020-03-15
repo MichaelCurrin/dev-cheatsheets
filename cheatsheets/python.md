@@ -116,13 +116,12 @@ def fetch_data(query):
 #### Disable linting
 
 - [Pylint messages](http://pylint-messages.wikidot.com/all-codes)
+- [Pylint message-control](https://pylint.readthedocs.io/en/latest/user_guide/message-control.html)
 
-
-You can disable or enable (globally disabled) messages at the module level by adding the corresponding option in a comment at the top of the file:
+Disable inline.
 
 ```
-# pylint: disable=wildcard-import, method-hidden
-# pylint: enable=too-many-lines
+a, b = ... # pylint: disable=unbalanced-tuple-unpacking
 ```
 
 Using [symbolic names](https://docs.pylint.org/en/latest/faq.html#do-i-have-to-remember-all-these-numbers):
@@ -159,6 +158,6 @@ Disable inline - comma-separated codes.
 ... # noqa: E234
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODkxMDM3MTkyLC0xMTA2Mjc0NDg0LC0yMT
+eyJoaXN0b3J5IjpbNzQ1NTczNTkwLC0xMTA2Mjc0NDg0LC0yMT
 AwMTA4MzUxLDE3MDk5NjQyNzMsNzMwOTk4MTE2XX0=
 -->
