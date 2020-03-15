@@ -392,13 +392,11 @@ Use a forwardslash to indicate a path relative to the **root**, ignoring the cur
 [link text](/app/file.txt)
 ```
 
-Use **backslash** to escape a space.
+Use an encoded space as **%20** to escape a space in a path, to avoid an error in rendering markdown. Using a backspace in front of a space does **not** work.
 
 ```markdown
-[link text](/Foo\ Bar/baz.txt)
+[link text](/Foo%20Bar/baz.txt)
 ```
-
-That may not be needed in Github itself but may be needed for some tools like IDEs to recognize the link. For example, StackEdit tool needs the backlish to see the target as one path.
 
 Additionally, you can use IDs in your target to you can jump to an element with that ID, typically a heading.
 
