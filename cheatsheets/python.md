@@ -2,6 +2,54 @@
 
 Some boilerplate from my existing projects or things to use in new development.
 
+## Pip
+
+### Commands
+
+- `install LIBRARY`
+- `install LIBRARY==VERSION`
+- `install LIBRARY --user|-U`
+- `install LIBRARY -u|--upgrade`
+- `install -r REQUIREMENTS_PATH`
+- `install pip --upgrade`
+- `uninstall LIBRARY`
+
+### Ways to access pip
+
+#### Outside virtual environment
+
+Run global pip - probably uses Python 2.
+
+```sh
+$ pip
+```
+
+Run global pip for Python 3.
+
+```sh
+$ pip3
+```
+
+```sh
+$ python3 -m pip
+```
+
+#### Within a virtual environment
+
+Run the pip which is in the scope of the environment.
+
+This requires the environment to be activated.
+
+```sh
+$ source venv/bin/activate
+$ pip
+```
+
+This does **not** require the activate step.
+
+```sh
+$ venv/bin/pip
+```
 
 ## Flask
 
