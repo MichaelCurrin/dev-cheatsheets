@@ -7,11 +7,14 @@ Some boilerplate from my existing projects or things to use in new development.
 
 ### Make a CSV downloadable
 
+Setup your application.
+
+
 ```python
 from flask import make_response
 
 
-def to_csv(rows, fields):
+def to_csv(rows, fields, filename="export.csv"):
     """
     Convert data to downloadable CSV file.
     """
@@ -21,7 +24,7 @@ def to_csv(rows, fields):
     writer.writerows(rows)
 
     output = make_response(str_buffer.getvalue())
-    output.headers["Content-Disposition"] = "attachment; filename=export.csv"
+    output.headers["Content-Disposition"] = f"attachment; filename={filename}"
     output.headers["Content-type"] = "text/csv"
 
     return output
@@ -37,17 +40,32 @@ def request_csv():
     return to_csv(results, fields)
 ```
 
+Start the server.
+
+Visit the download endpoint or add a button which points to it. You will get prompted to download a file. In this case, this is the endpoint:
+
+- http://localhost:5000/download.csv
+
+
 ### Cache
 
-- [Flask-Cache](https://flask-caching.readthedocs.io/en/latest/) docs.
+Add caching to your Flask application to reduce load on your server. For example, if your server does any heavy computing, reading from a database or external API calls, you can choose to cache the result of a function call or the cache the view (HTML response).
+
+- [Flask-Caching](https://flask-caching.readthedocs.io/en/latest/) docs.
+
+Install in your virtual environment.
 
 ```sh
-$ pip install Flask-Cache
+$ pip install Flask-Caching
 ```
 
-Example usage
+Some config options:
 
-Using Python in-memory cache. Only suitable for development environments. Visit localhost:5000/cache-test and you'll see the current time. Because of `@cache.cached` line, the result will be cached on refreshes. Comment out the line and restart - then you'll see a new value on each page refresh.
+- `CACHE_TYPE` Specifies which **type** of caching object to use. See the docs for all the choices such as Reddis. Here we use the `simple` in-memory Python cache which exists only inside the main Python process and is not thread safe and therefore not suitable for production environments.
+- `CACHE_DEFAULT_TIMEOUT`. The default **timeout** (expiry time) that is used if no timeout is specified. Unit of time is **seconds**. You can set timeout on individual functions to override this.
+- `CACHE_THRESHOLD` - The **maximum number of items** the cache will store before it starts deleting some. Used only for SimpleCache and FileSystemCache.
+
+Setup your application.
 
 ```python
 import datetime
@@ -55,8 +73,12 @@ import datetime
 from flask import Flask
 from flask_caching import Cache
 
-# Time is in seconds.
-CACHE_OPTIONS = dict(CACHE_TYPE="simple", CACHE_DEFAULT_TIMEOUT=60 * 60)
+
+CACHE_OPTIONS = dict(
+    CACHE_TYPE="simple", 
+    CACHE_DEFAULT_TIMEOUT=60 * 60
+)
+
 
 cache = Cache(config=CACHE_OPTIONS)
 app = Flask(__name__, static_url_path="/static")
@@ -72,6 +94,15 @@ def test():
 if  __name__ == "__main__":
     app.run()
 ```
+
+Start the application.
+
+Visit 
+
+- http://localhost:5000/cache-test
+
+You'll see the current time. Because of `@cache.cached` line, the result will be cached on page refreshes. Comment out the line and restart - then you'll caching is disabled and you will get a new value on each page refresh.
+
 
 ## Query a database
 
