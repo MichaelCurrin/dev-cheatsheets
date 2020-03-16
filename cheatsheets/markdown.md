@@ -337,6 +337,16 @@ Note, this works in Github-flavored Markdown, but might not work in certain mark
 
 Prevent markdown from rendering certaim styling, you can escape them. In the examples below the italics are part of a filename and italics styling is unwanted.
 
+### Links
+
+Escape the link text. The target does not need escaping.
+
+    Update the [_config.yml](_config.yml) file.
+    
+
+Update the [\_config.yml](_config.yml) file.
+
+
 ### Code ticks
 
     Update the `_config.yml` file.
