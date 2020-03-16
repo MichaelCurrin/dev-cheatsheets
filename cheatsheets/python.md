@@ -47,9 +47,12 @@ Visit the download endpoint or add a button which points to it. You will get pro
 - http://localhost:5000/download.csv
 
 
-### Cache
+### Caching
 
-Add caching to your Flask application to reduce load on your server. For example, if your server does any heavy computing, reading from a database or external API calls, you can choose to cache the result of a function call or the cache the view (HTML response).
+Add caching to your Flask application to reduce load on your server. 
+
+For example, if your server does any heavy computing, reading from a database or external API calls, you can improve performance (and therefore reduce request time) by using cache.
+
 
 - [Flask-Caching](https://flask-caching.readthedocs.io/en/latest/) docs.
 
@@ -94,6 +97,14 @@ def test():
 if  __name__ == "__main__":
     app.run()
 ```
+
+On the decorator:
+
+- Syntax is `@@cache.cached()`. The brackets are required or you will get an error.
+- Optionally specify a timeout in seconds.
+- Apply the decorator on a view (to cache the HTML or JSON API response) or on any function.
+- Note that the decorator must be used just before the decorated function name, so it will cache the function. If you use it before `@app.route`, you will incorrectly cache the result of that decorator.
+
 
 Start the application.
 
