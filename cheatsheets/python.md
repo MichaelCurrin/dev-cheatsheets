@@ -1,6 +1,16 @@
 # Python cheatsheet
 
-Some boilerplate from my existing projects or things to use in new development.
+Some useful commands, boilerplate code from my existing projects or things to use in new development.
+
+## Python
+
+- [Command line and environment¶](https://docs.python.org/3/using/cmdline.html) on Python 3 docs.
+
+Run in unbuffered mode (printing is printed immediately rather than when the buffer reaches a certain size).
+
+```sh
+$ python -U
+```
 
 ## Pip
 
@@ -50,6 +60,16 @@ This does **not** require the activate step.
 ```sh
 $ venv/bin/pip
 ```
+
+## Libaries
+
+Links are all for Python 3.
+
+- [Python standard library](https://docs.python.org/3/library/index.html)
+- [argparse](https://docs.python.org/3/library/argparse.html)
+- [os](https://docs.python.org/3/library/os.html)
+- [logging](https://docs.python.org/3/library/logging.html)
+- [File and directory access](https://docs.python.org/3/library/filesys.html)
 
 ## Flask
 
