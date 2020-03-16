@@ -5,6 +5,8 @@ Some boilerplate from my existing projects or things to use in new development.
 
 ## Flask
 
+This section assumes familiarity with the [Flask](https://flask.palletsprojects.com/en/1.1.x/) library.
+
 ### Make a CSV downloadable
 
 Setup your application.
@@ -79,12 +81,12 @@ from flask_caching import Cache
 
 CACHE_OPTIONS = dict(
     CACHE_TYPE="simple", 
-    CACHE_DEFAULT_TIMEOUT=60 * 60
+    CACHE_DEFAULT_TIMEOUT=60*60,
 )
 
 
 cache = Cache(config=CACHE_OPTIONS)
-app = Flask(__name__, static_url_path="/static")
+app = Flask(__name__)
 cache.init_app(app)
 
 
@@ -98,17 +100,18 @@ if  __name__ == "__main__":
     app.run()
 ```
 
-On the decorator:
+Regarding use of the decorator:
 
-- Syntax is `@@cache.cached()`. The brackets are required or you will get an error.
-- Optionally specify a timeout in seconds.
-- Apply the decorator on a view (to cache the HTML or JSON API response) or on any function.
-- Note that the decorator must be used just before the decorated function name, so it will cache the function. If you use it before `@app.route`, you will incorrectly cache the result of that decorator.
+- The syntax is `@cache.cached()`.
+    - The brackets are required or you will get an error.
+    - Optionally specify a timeout in seconds. e.g. `@cache.cached(timeout=50)`
+- Apply the decorator on a view (to cache the HTML or JSON API response) or on any non-view function.
+- Based on the docs, note that the decorator must be used between the route decorator and the function name, so that the function is cache and not the result of the route..
 
 
 Start the application.
 
-Visit 
+Open the browser:
 
 - http://localhost:5000/cache-test
 
