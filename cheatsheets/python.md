@@ -4,7 +4,7 @@ Some useful commands, boilerplate code from my existing projects or things to us
 
 ## Python
 
-- [Command line and environment¶](https://docs.python.org/3/using/cmdline.html) on Python 3 docs.
+- [Command line and environment](https://docs.python.org/3/using/cmdline.html) on Python 3 docs.
 
 Run in unbuffered mode (printing is printed immediately rather than when the buffer reaches a certain size).
 
