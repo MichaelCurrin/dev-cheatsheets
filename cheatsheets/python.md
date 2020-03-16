@@ -11,12 +11,11 @@ This section assumes familiarity with the [Flask](https://flask.palletsprojects.
 
 Setup your application.
 
-
 ```python
 from flask import make_response
 
 
-def to_csv(rows, fields, filename="export.csv"):
+def to_csv(rows, fields, filename):
     """
     Convert data to downloadable CSV file.
     """
@@ -32,21 +31,21 @@ def to_csv(rows, fields, filename="export.csv"):
     return output
 
 
-@app.route("/download.csv")
+@app.route("/export.csv")
 def request_csv():
     """
     Endpoint to allow a user to download a CSV.
     """
-    results, fields = lib.fetch_data(SQL_SOURCE)
+    rows, fields = lib.fetch_data(SQL_SOURCE)
 
-    return to_csv(results, fields)
+    return to_csv(rows, fields, 'export.csv')
 ```
 
 Start the server.
 
-Visit the download endpoint or add a button which points to it. You will get prompted to download a file. In this case, this is the endpoint:
+Visit the endpoint or add a button which points to it. You will get prompted to download a file.
 
-- http://localhost:5000/download.csv
+- http://localhost:5000/export.csv
 
 
 ### Caching
