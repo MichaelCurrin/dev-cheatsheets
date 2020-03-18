@@ -19,15 +19,14 @@ The empty are usually omitted but added here for readibility and grouping of rel
 ```json
 {
     "name": "package-name",
-    "description": "",
+    "description": "Foos all the bars",
+    
+    "version": "1.0.0",
     "keywords": [
         "foo",
         "bar"
     ],
-    
     "author": "FIRSTNAME SURNAME <FIRSTNAME.SURNAME@gmail.com> (https://github.com/USERNAME)",
-
-    "version": "1.0.0",
     "license": "MIT",
     
     "main": "index.js",
