@@ -672,3 +672,36 @@ Use optional colons for alignment. You can also add a border to the markdown, wh
 Note there are VS Code extension which help with table formatting such as making cells in a column all the same width.
 
 There are also online tools such as [Markdown tables generator](https://www.tablesgenerator.com/markdown_tables).
+
+## Collapsible items
+
+Use the `details` and `summary` HTML tags on Github, without any additional CSS.
+
+
+    <details>
+    <summary><b>Preview message</b></summary>
+
+    Expanded message.
+    
+    Some code.
+    
+    ```json
+    {
+        "foo": "bar"
+    }
+    ```
+    </details>
+
+<details>
+<summary><b>Preview message</b></summary>
+
+Expanded message
+
+Some code.
+
+```json
+{
+    "foo": "bar"
+}
+```
+</details>
