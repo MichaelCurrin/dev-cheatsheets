@@ -6,6 +6,45 @@
 'text'.toUpperCase();
 ```
 
+### Slicing
+
+```javascript
+'text'.substr(first, length)
+
+'text'.substring(start, end)
+```
+
+
+## Random
+
+### Number
+
+Between 1 and 999.
+
+```javascript
+> Math.round(Math.random() * 1000)
+// 123
+```
+
+### Binary
+
+Use `.substring(start, end)` to drop `0.` at the start.
+
+```javascript
+> Math.random().toString(2).substring(2)
+// "00011111010001100100011010011111010011001101110001"
+
+```
+
+### Text
+
+32-bit text.
+
+```javascript
+> Math.random().toString(32).substr(2, 4)
+"392l"
+```
+
 ## Browser
 
 ### Selection
