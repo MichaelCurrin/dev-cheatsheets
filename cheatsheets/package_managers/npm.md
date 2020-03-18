@@ -14,27 +14,52 @@ A `package.json` based on the default you get fron `npm init`.
 
 **Sample**
 
+The empty are usually omitted but added here for readibility and grouping of related areas.
+
 ```json
 {
     "name": "package-name",
     "description": "",
+    "keywords": [
+        "foo",
+        "bar"
+    ],
+    
+    "author": "FIRSTNAME SURNAME <FIRSTNAME.SURNAME@gmail.com> (https://github.com/USERNAME)",
+
     "version": "1.0.0",
+    "license": "MIT",
+    
     "main": "index.js",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1"
     },
+    
+    "homepage": "https://github.com/USERNAME/REPO_NAME.git",
     "repository": {
       "type": "git",
       "url": "https://github.com/USERNAME/REPO_NAME.git"
     },
-    "keywords": [],
-    "author": "",
-    "license": "MIT",
     "bugs": {
       "url": "https://github.com/USERNAME/REPO_NAME/issues"
-    },
-    "homepage": "https://github.com/USERNAME/REPO_NAME.git"
+    }
  }
+```
+
+### Files
+
+**Sample**
+
+```json
+{
+  "main": "lib/index.js",
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "src"
+  ],
+}
 ```
 
 ### Dependencies
@@ -74,7 +99,6 @@ $ npm run build
 $ npm run eject
 ```
 
-
 ```json
 {
   "name": "example-basic",
@@ -107,3 +131,20 @@ available via `npm run-script`:
 ```
 
 It seems that `npm run` and `npm run-script` are equivalenet, from basic testing.
+
+
+**Sample**
+
+```sh
+$ npm run lint
+$ npm run lin_examples
+```
+
+```json
+{
+  "scripts": {
+    "lint": "npm run lint:src && npm run lint:examples",
+    "lint:src": "eslint src test build",
+   }
+}
+```
