@@ -17,7 +17,11 @@ See Netlify's documentation on [File-based configuration](https://docs.netlify.c
   JEKYLL_ENV = "production"
 ```
 
-Where `<CMD>` might be `jekyll build` for a simple project or a `make` command.
+Replace `<CMD>` with an appropriate command. 
+
+It is a good idea to use a `make` command here, so that what you run locally to test a prod build and what you run on Netlify are the same. e.g. `make build-prod`.
+
+For a simple Jekyll project, it could be `jekyll build`.
 
 ## Headers
 
