@@ -1,6 +1,6 @@
 # NPM cheatsheet
 
-- [npmjs.com/](https://www.npmjs.com/)
+- [npmjs.com/](https://www.npmjs.com)
 
 ## Package
 
@@ -9,6 +9,10 @@ About `package.json` for NPM.
 - [Create a package.json file](https://docs.npmjs.com/creating-a-package-json-file) tutorial on NPM docs.
 
 ### Base
+
+A `package.json` based on the default you get fron `npm init`.
+
+**Sample**
 
 ```json
 {
@@ -25,7 +29,7 @@ About `package.json` for NPM.
     },
     "keywords": [],
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "bugs": {
       "url": "https://github.com/USERNAME/REPO_NAME/issues"
     },
@@ -35,7 +39,7 @@ About `package.json` for NPM.
 
 ### Dependencies
 
-Sample
+**Sample**
 
 ```json
 {
@@ -56,15 +60,21 @@ Sample
 ### Commands
 
 
-Sample
+**Sample**
+
+These are special and don't need `npm run`.
 
 ```sh
 $ npm start
 $ npm test
+```
 
+```sh
 $ npm run build
 $ npm run eject
 ```
+
+
 
 
 ```json
@@ -96,3 +106,5 @@ available via `npm run-script`:
   eject
     react-scripts eject
 ```
+
+It seems that `npm run` and `npm run-script` are equivalenet, from basic testing.
