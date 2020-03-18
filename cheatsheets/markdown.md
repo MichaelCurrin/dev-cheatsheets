@@ -390,7 +390,7 @@ The path is by default **relative** to the current path.
 [link text](foo/bar.txt) - Path to file.
 ```
 
-You can ascend using the double dots.
+You can ascend in the directory, using the double dots.
 
 ```markdown
 [link text](../fizz/buzz.txt)
@@ -413,7 +413,7 @@ Additionally, you can use IDs in your target to you can jump to an element with 
 ```markdown
 ## My first heading
 
-Contnet
+Content
 
 ## My second heading
 
@@ -458,9 +458,14 @@ Add optional alternative text. You can hover over the link to see the alt text.
 
 ### Text
 
+Example:
+
 [I'm a reference-style link][Arbitrary case-insensitive reference text]
 
 [arbitrary case-insensitive reference text]: https://www.mozilla.org
+
+
+Code:
 
 ```markdown
 [I'm a reference-style link][Arbitrary case-insensitive reference text]
@@ -470,9 +475,14 @@ Add optional alternative text. You can hover over the link to see the alt text.
 
 ### Number
 
+Example:
+
 [You can use numbers for reference-style link definitions][1]
 
 [1]: http://slashdot.org
+
+
+Code:
 
 ```markdown
 [You can use numbers for reference-style link definitions][1]
@@ -482,9 +492,13 @@ Add optional alternative text. You can hover over the link to see the alt text.
 
 ### Link text
 
+Example:
+
 Or leave it empty and use the [link text itself].
 
 [link text itself]: http://www.reddit.com
+
+Code:
 
 ```markdown
 Or leave it empty and use the [link text itself].
@@ -510,7 +524,7 @@ The following apply, as with standard links:
 ![Alt text](target "Hover text")
 ```
 
-Examples:
+Code sample:
 
 ```markdown
 ![My image](foo.jpg)
@@ -520,13 +534,20 @@ Examples:
 
 #### Inline-style
 
+Example:
+
 ![Alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover")
+
+
+Code:
 
 ```
 ![Alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover")
 ```
 
 #### Reference-style
+
+Example:
 
 ![Alt text][logo]
 
@@ -536,7 +557,9 @@ Some more text.
 
 There is a logo above but this elemement but it is not visible in the rendered HTML.
 
-```
+Code:
+
+```markdown
 ![Alt text][logo]
 
 Some more text.
@@ -578,13 +601,17 @@ Note that the resizing works for HTML above, but resizing **cannot** be resized 
 
 Format:
 
-    ![Alt text](foo.svg)
-    
-    ![Alt text](https://example.com/foo.svg)
+```markdown
+![Alt text](foo.svg)
+
+![Alt text](https://example.com/foo.svg)
+```
 
 Example:
 
-    ![Alt text](https://placeholder.pics/svg/200x60/DEDEDE/555555/Sample%20SVG)
+```markdown
+![Alt text](https://placeholder.pics/svg/200x60/DEDEDE/555555/Sample%20SVG)
+```
 
 ![Alt text](https://placeholder.pics/svg/200x60/DEDEDE/555555/Sample%20SVG)
 
@@ -614,7 +641,9 @@ No sanitize parameter needed.
 
 i.e. A Github Pages site's asset.
 
-    ![Alt text](https://potherca-blog.github.io/StackOverflow/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
+```markdown
+![Alt text](https://potherca-blog.github.io/StackOverflow/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
+```
 
 ![Alt text](https://potherca-blog.github.io/StackOverflow/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
 
@@ -622,9 +651,9 @@ i.e. A Github Pages site's asset.
 
 No sanitize parameter needed.
 
-    ```
-    ![Alt text](https://rawgithub.com/potherca-blog/StackOverflow/master/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
-    ```
+```markdown
+![Alt text](https://rawgithub.com/potherca-blog/StackOverflow/master/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
+```
 
 ![Alt text](https://rawgithub.com/potherca-blog/StackOverflow/master/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
 
@@ -638,11 +667,15 @@ Note that if you editing markdown content in a Github, the rules are different f
 
 The first row is the header and always followed by a row of dashes.
 
+Code:
+
     A   | B   | C
     --- | --- | ---
     Foo | 1   |
     Bar | 2   |
     Baz | 3   |
+
+Example:
 
 A   | B   | C
 --- | --- | ---
@@ -650,11 +683,15 @@ Foo | 1   |
 Bar | 2   |
 Baz | 3   |
 
+
 You can use styling (bold, italics, code, links). Cells with long sentences will wrap automatically.
 
 The output table will set optimal width for each column. So it is optional to keep a cells in a column the same width in markdown. It helps for readability.
 
 Use optional colons for alignment. You can also add a border to the markdown, which does not affect the output. See the following example. [source](https://www.tablesgenerator.com/markdown_tables)
+
+
+Code:
 
     | Tables   |      Are      |  Cool |
     |----------|:-------------:|------:|
@@ -662,12 +699,14 @@ Use optional colons for alignment. You can also add a border to the markdown, wh
     | col 2 is |    centered   |   $12 |
     | col 3 is | right-aligned |    $1 |
 
+Example:
 
 | Tables   |      Are      |  Cool |
 |----------|:-------------:|------:|
 | col 1 is |  left-aligned | $1600 |
 | col 2 is |    centered   |   $12 |
 | col 3 is | right-aligned |    $1 |
+
 
 Note there are VS Code extension which help with table formatting such as making cells in a column all the same width.
 
@@ -677,6 +716,8 @@ There are also online tools such as [Markdown tables generator](https://www.tabl
 
 Use the `details` and `summary` HTML tags on Github, without any additional CSS.
 
+
+Code:
 
     <details>
     <summary><b>Preview message</b></summary>
@@ -691,6 +732,8 @@ Use the `details` and `summary` HTML tags on Github, without any additional CSS.
     }
     ```
     </details>
+
+Example:
 
 <details>
 <summary><b>Preview message</b></summary>
