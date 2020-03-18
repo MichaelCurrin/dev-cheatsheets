@@ -31,5 +31,5 @@ Where `<CMD>` might be `jekyll build` for a simple project or a `make` command.
 Allow one or more specific domains:
 
 ```toml
-    Access-Control-Allow-Origin = "www.example.com", "test.com"
+    Access-Control-Allow-Origin = ["www.example.com", "test.com"]
 ```
