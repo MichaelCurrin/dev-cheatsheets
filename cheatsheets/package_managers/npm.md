@@ -1,6 +1,6 @@
 # NPM cheatsheet
 
-- [npmjs.com/](https://www.npmjs.com)
+- [npmjs.com](https://www.npmjs.com)
 
 ## Package
 
@@ -75,8 +75,6 @@ $ npm run eject
 ```
 
 
-
-
 ```json
 {
   "name": "example-basic",
@@ -93,6 +91,7 @@ $ npm run eject
 ```sh
 $ npm run
 ```
+
 ```
 Lifecycle scripts included in example-basic:
   start
