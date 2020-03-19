@@ -21,6 +21,27 @@ See also [JavaScript](https://github.com/MichaelCurrin/learn-to-code/blob/master
 
 - [Array cheatsheet](https://www.shortcutfoo.com/app/dojos/javascript-arrays/cheatsheet)
 
+Get length.
+
+```javascript
+> myArray.length
+```
+
+
+Get element.
+
+```javascript
+> myArray[index]
+```
+
+Mutate element.
+
+```javascript
+> myArray[index] = value
+```
+
+Slice.
+
 ```javascript
 > myArray.slice(start, end) 
 ```
@@ -31,10 +52,28 @@ Remove last element.
 > myArray.pop();
 ```
 
-Append element.
+Append element to the end.
 
 ```javascript
 > myArray.push(obj)
+```
+
+Append to start of array. Returns new length.
+
+```javascript
+> myArray.unshift(obj)
+```
+
+Reverse.
+
+```javascript
+> myArray.reverse()
+```
+
+Sort.
+
+```javascript
+> myArray.sort()
 ```
 
 Concatenate arrays.
@@ -43,7 +82,7 @@ Concatenate arrays.
 > myArrayA.concat(myArrayB)
 ```
 
-Join elements using a separator.
+Join elements using a separator e.g. `', '`.
 
 ```javascript
 > myArray.join(sep)
