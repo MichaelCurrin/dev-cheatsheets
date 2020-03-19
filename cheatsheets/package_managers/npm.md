@@ -6,7 +6,9 @@
 
 About `package.json` for NPM.
 
-- [Create a package.json file](https://docs.npmjs.com/creating-a-package-json-file) tutorial on NPM docs.
+- NPM docs
+    - [Package.json](https://docs.npmjs.com/files/package.json) doc - includes definitions and examples of fields.
+    - [Create a package.json file](https://docs.npmjs.com/creating-a-package-json-file) tutorial.
 
 ### Base
 
@@ -19,7 +21,7 @@ The empty are usually omitted but added here for readibility and grouping of rel
 ```json
 {
     "name": "package-name",
-    "description": "Foos all the bars",
+    "description": "Foo all the bars",
     
     "version": "1.0.0",
     "keywords": [
@@ -43,6 +45,22 @@ The empty are usually omitted but added here for readibility and grouping of rel
       "url": "https://github.com/USERNAME/REPO_NAME/issues"
     }
  }
+```
+
+### Author
+
+Either of these are fine as `"author"` values, according to the docs.
+
+```json
+{
+    "name" : "Barney Rubble", 
+    "email" : "b@rubble.com", 
+    "url" : "http://barnyrubble.tumblr.com/"
+}
+```
+
+```json
+"Barney Rubble <b@rubble.com> (http://barnyrubble.tumblr.com/)"
 ```
 
 ### Files
