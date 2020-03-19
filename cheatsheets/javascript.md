@@ -1,19 +1,71 @@
 # JavaScript
 
+See also [JavaScript](https://github.com/MichaelCurrin/learn-to-code/blob/master/Scripting%20languages/JavaScript/README.md) guide on my [MichaelCurrin/learn-to-code](https://github.com/MichaelCurrin/learn-to-code/) repo.
+
+
 ## Text
 
 ```javascript
-'text'.toUpperCase();
+> myText.toUpperCase()
 ```
 
 ### Slicing
 
 ```javascript
-'text'.substr(first, length)
+> myText.substr(first, length)
 
-'text'.substring(start, end)
+> myText.substring(start, end)
 ```
 
+## Arrays
+
+- [Array cheatsheet](https://www.shortcutfoo.com/app/dojos/javascript-arrays/cheatsheet)
+
+```javascript
+> myArray.slice(start, end) 
+```
+
+Remove last element.
+
+```javascript
+> myArray.pop();
+```
+
+Append element.
+
+```javascript
+> myArray.push(obj)
+```
+
+Concatenate arrays.
+
+```javascript
+> myArrayA.concat(myArrayB)
+```
+
+Join elements using a separator.
+
+```javascript
+> myArray.join(sep)
+```
+
+### Map, reduce, filter
+
+Return a new object after applying transformation. The old object is no affected, unless you reassign over the same name.
+
+Examples:
+
+```javascript
+myArray.map((x) => x*2)
+```
+
+```javascript
+myArray.reduce((x, y) => x + y)
+```
+
+```javascript
+myArray.filter((x) => x > 2)
+```
 
 ## Random
 
@@ -44,6 +96,38 @@ Use `.substring(start, end)` to drop `0.` at the start.
 > Math.random().toString(32).substr(2, 4)
 "392l"
 ```
+
+### Get random element in an array
+
+[source](https://stackoverflow.com/questions/5915096/get-random-item-from-javascript-array)
+
+```javascript
+var item = myArray[Math.floor(Math.random()*myArray.length)];
+```
+
+### Get random integer in range
+
+[source](https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript)
+
+```javascript
+// min -> max (inclusive of both)
+function randomIntFromInterval(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+// 0 -> 10
+Math.floor(Math.random() * 11);
+
+// 1 -> 10
+Math.floor(Math.random() * 10) + 1;
+
+// 5 -> 20
+Math.floor(Math.random() * 16) + 5;
+
+// -10 -> (-2)
+Math.floor(Math.random() * 9) - 10;
+```
+
 
 ## Browser
 
@@ -79,6 +163,7 @@ if (el.classList.contains('my-class')) {
 <select id='my-id'>
 </select>
 ```
+
 ```javascript
 var selectInput = document.getElementById('my-id');
 for (var value of ['a', 'b', 'c']) {
@@ -114,6 +199,7 @@ Note: styling on the object element does not affect the value inside. An iframe 
 ```html
 <object id="my-svg" data="image.svg" type="image/svg+xml"></object>
 ```
+
 ```javascript
 let object = document.getElementById('my-svg');
 svg = object.getSVGDocument();
@@ -176,37 +262,4 @@ for (const [ key, value ] of Object.entries(KEY_VALUE_PAIRS)) {
         output[value] = key;
     }
 }
-```
-
-## Random
-
-### Choice
-
-[source](https://stackoverflow.com/questions/5915096/get-random-item-from-javascript-array)
-
-```javascript
-var item = items[Math.floor(Math.random()*items.length)];
-```
-
-### From range
-
-[source](https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript)
-
-```javascript
-// min -> max (inclusive of both)
-function randomIntFromInterval(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-// 0 -> 10
-Math.floor(Math.random() * 11);
-
-// 1 -> 10
-Math.floor(Math.random() * 10) + 1;
-
-// 5 -> 20
-Math.floor(Math.random() * 16) + 5;
-
-// -10 -> (-2)
-Math.floor(Math.random() * 9) - 10;
 ```
