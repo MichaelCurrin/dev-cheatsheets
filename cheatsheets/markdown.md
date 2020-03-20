@@ -587,15 +587,29 @@ Here we make the image clickable, to emulate what a markdown image does.
 
 ### Styled HTML
 
-Resize and center an image.
+Resize and center an image using HTML attributes.
+
+This will control the width of the image:
 
 ```html
 <p align="center">
-    <img width="250" src="foo.png">
+    <img width="250px" src="foo.png">
 </p>
 ```
 
-Note that the resizing works for HTML above, but resizing **cannot** be resized using markdown. At least in Github-flavored implementation of markdown. Some other systems support resizing - e.g. `![Alt](img.jpg =60x50)`.
+Or use a relative value:
+
+- `width="80%"`.
+
+Or set height instread, if your care more about how much vertical space the image takes up.
+
+- `height="100px"`
+
+The `px` part seems optional.
+
+Note that the above cannot be achieved with CSS (inline or in a style tag) on Github as far as I can tell. While you might prefer to use `max-width`, remember that is an CSS style value and not an attribute for the `img` tag.
+
+The resizing above works for HTML tags in markdown, but resizing **cannot** be resized using a markdown image - at least in Github-flavored implementation of markdown. Some other systems support resizing - e.g. `![Alt](img.jpg =60x50)`.
 
 ### SVGs
 
