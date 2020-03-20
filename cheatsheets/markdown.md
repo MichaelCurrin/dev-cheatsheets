@@ -530,6 +530,9 @@ Code sample:
 ![My image](foo.jpg)
 ```
 
+Note that for local paths, the target is **case sensitive**. Github will show an error otherwise. Some IDE extensions are case-insensitive and so hide errors that will appear on Github.
+
+
 ### Example of inline vs reference style
 
 #### Inline-style
