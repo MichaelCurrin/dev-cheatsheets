@@ -36,7 +36,6 @@ The empty are usually omitted but added here for readibility and grouping of rel
       "test": "echo \"Error: no test specified\" && exit 1"
     },
     
-    "homepage": "https://github.com/USERNAME/REPO_NAME.git",
     "repository": {
       "type": "git",
       "url": "https://github.com/USERNAME/REPO_NAME.git"
@@ -46,6 +45,8 @@ The empty are usually omitted but added here for readibility and grouping of rel
     }
  }
 ```
+
+Optionally include "homepage" with a URL such as Github Pages to Netlify URL for the service or docs site.
 
 ### Author
 
