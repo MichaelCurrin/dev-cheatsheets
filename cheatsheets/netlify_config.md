@@ -1,7 +1,15 @@
 # Netlify config
 
+Netlify's config file is `netlify.toml`. It should be at the root of the repo. Indentation should be two spaces.
 
-Netlify's config is `netlify.toml` and should be at the root of the repo. Indentation should be two spaces.
+## Resources
+
+See Netlify's docs:
+
+- Configure builds
+    - [Get started](https://docs.netlify.com/configure-builds/get-started/)
+    - [File-based configuration](https://docs.netlify.com/configure-builds/file-based-configuration/)
+    - [YAML and JSON file support](https://docs.netlify.com/configure-builds/file-based-configuration/#json-and-yaml-configuration-files)
 
 ## Basic format
 
