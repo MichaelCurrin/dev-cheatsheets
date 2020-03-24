@@ -1,12 +1,9 @@
 # Netlify config
 
-Netlify's config is `netlify.toml` and should be at the root of the repo. Indentation is two spaces.
 
-## Resources
+Netlify's config is `netlify.toml` and should be at the root of the repo. Indentation should be two spaces.
 
-See Netlify's documentation on [File-based configuration](https://docs.netlify.com/configure-builds/file-based-configuration/).
-
-## Basic
+## Basic format
 
 ```toml
 [build]
@@ -17,17 +14,25 @@ See Netlify's documentation on [File-based configuration](https://docs.netlify.c
   JEKYLL_ENV = "production"
 ```
 
-Replace `<CMD>` with an appropriate command. 
+### Build command
 
-It is a good idea to use a `make` command here, so that what you run locally to test a prod build and what you run on Netlify are the same. e.g. `make build-prod`.
+Replace `<CMD>` with an appropriate command above.
 
-For a simple Jekyll project, it could this, using the trace flag for verbose errors.
+It is a good idea to use a `make` command here, so that what you run locally to test a prod build and what you run on Netlify are the same. 
+
+e.g. 
+
+```sh
+make build-prod
+```
+
+For a simple Jekyll project, it could be this, using the trace flag for verbose errors.
 
 ```sh
 jekyll build --trace
 ```
 
-## Headers
+## Headers format
 
 ```toml
 [[headers]]
