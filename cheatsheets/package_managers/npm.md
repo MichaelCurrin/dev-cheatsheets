@@ -16,8 +16,6 @@ A `package.json` based on the default you get fron `npm init`.
 
 **Sample**
 
-The empty are usually omitted but added here for readibility and grouping of related areas.
-
 ```json
 {
     "name": "package-name",
@@ -46,7 +44,11 @@ The empty are usually omitted but added here for readibility and grouping of rel
  }
 ```
 
-Optionally include "homepage" with a URL such as Github Pages to Netlify URL for the service or docs site.
+Notes:
+
+- The empty are added here for readibility and grouping of related areas - when you do an `npm` command which updates your `package.json` file, all the empty lines will be removed.
+- From the docs: "If you don’t plan to publish your package, the name and version fields are optional."
+- Optionally include "homepage" with a URL such as Github Pages to Netlify URL for the service or docs site.
 
 ### Author
 
