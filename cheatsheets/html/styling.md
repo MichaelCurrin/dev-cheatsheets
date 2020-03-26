@@ -12,6 +12,8 @@ nav.navbar {
 }
 ```
 
+See also [Bulma navbar](https://bulma.io/documentation/components/navbar/) documentation.
+
 ## Footer
 
 ```css
