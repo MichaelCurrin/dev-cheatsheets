@@ -16,6 +16,10 @@ See also [Bulma navbar](https://bulma.io/documentation/components/navbar/) docum
 
 ## Footer
 
+Sticky footer. Note that if your footer is not a navbar, you cannot use the styling above.
+
+Note if your footer is tall, it may not look good fixed to the bottom of the screen especially on mobile.
+
 ```css
 footer {
   position: fixed;
@@ -24,4 +28,4 @@ footer {
 }
 ```
 
-Some padding may be useful too.
+See more approaches [here](https://github.com/jgthms/bulma/issues/47).
