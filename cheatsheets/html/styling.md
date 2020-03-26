@@ -1,11 +1,21 @@
 # Styling
 
-## Header
+## Navbar
 
-A full-width header that sticks to the top of the page when you scroll. 
+A full-width navbar that sticks to the top of the page when you scroll. 
 
 ```css
-header {
+nav.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+```
+
+## Footer
+
+```css
+footer {
   position: fixed;
   bottom: 0;
   width: 100%;
