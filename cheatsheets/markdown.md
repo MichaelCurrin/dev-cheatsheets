@@ -883,10 +883,9 @@ Some code:
 
 Example using Jekyll templating. In particular, putting a code block inside the expandable section.
 
-
 **Sample Jekyll/Liquid code**
 
-Here is the code for the result below.
+Here is the code:
 
 ```
 <details>
@@ -901,9 +900,9 @@ puts 'Expanded message'
 </details>
 ```
 
-**Sample rendered output**
+**Sample result**
 
-Using code in a Jekyll site, this was the output in the HTML (the only change is wrapping for readability).
+Using the code above in a Jekyll site, here is the rendered result.
 
 <details>
 <summary>
@@ -921,6 +920,27 @@ Preview
 </details>
 
 <br>
+
+**Sample HTML output**
+
+Here is the rendered result above shown in a code block below, for clarity. The only change was wrapping, for readability.
+
+
+```html
+<details>
+<summary>
+Preview
+</summary>
+
+<figure class="highlight">
+    <pre>
+        <code class="language-ruby" data-lang="ruby">
+        <span class="nb">puts</span> <span class="s1">'Expanded message'</span>
+        </code>
+    </pre>
+</figure>
+```
+
 
 **Note**
 
