@@ -46,8 +46,10 @@ You can iterate over data in a data file or in the current page's frontmatter or
 ```
 - foo: A
   bar: 10
+  baz: 1000
 - foo: B
   bar: 20
+  baz: 999
 ```
 
 `index.md`
@@ -55,7 +57,7 @@ You can iterate over data in a data file or in the current page's frontmatter or
 ---
 ---
 {% for item in site.data.items %}
-- {{ item.foo }} {{ item.bar }}
+- {{ item.foo }} - {{ item.bar }} - {{ item.baz }}
 {% endfor %}
 ```
 
