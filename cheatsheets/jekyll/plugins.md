@@ -1,12 +1,32 @@
-# Jekyll Plugins
+# Jekyll plugins
+
+Note that Jekyll plugins are just Ruby gems setup to work in a Jekyll project.
 
 ## Gemfile
 
+How to setup a _Gemfile_, as a file managing dependencies.
+
+### Install gems
+
+If you using `Bundler`, you then run this at the top level of your project. This will read from the _Gemfile_.
+
+```sh
+bundle install --path vendor/bundle
+```
+
+On later runs you can just run:
+
+```sh
+bundle install
+```
+
 ### Samples
+
+Sample contents for a _Gemfile_.
 
 Install a gem:
 
-```
+```ruby
 gem 'foo'
 gem 'foo', '~> x.y.z'
 gem install foo -v x.y.z
@@ -41,7 +61,7 @@ Notes on the above:
 
 Some additional plugins to try:
 
-```
+```ruby
   gem 'github-pages'
   gem 'jekyll-github-metadata'
 ```
@@ -64,7 +84,7 @@ Note that the _github-pages_ plugins includes the metadata one plus a lot of oth
         - This is loaded by the Github Pages plugin. Sample output [here](https://github.com/jekyll/github-metadata/blob/master/docs/site.github.md) for `site.github` namespace.
 - See a fuller Gemfile with comments in one of my repos [here](https://github.com/MichaelCurrin/jekyll-blog-demo/blob/master/Gemfile).
 
-Why the jekyll_plugins group in the samples above? The docs say:
+Why the `jekyll_plugins` group in the samples above? The docs say:
 
 > Jekyll gives this particular group of gems in your Gemfile a different treatment. Any gem included in this group is loaded before Jekyll starts processing the rest of your source directory.
 
