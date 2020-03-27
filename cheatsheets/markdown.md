@@ -835,8 +835,19 @@ How to create sections which can expand and collapse again.
 
 Use the `details` and `summary` HTML tags in markdown on Github, without any additional CSS.
 
+Format:
 
-Code:
+    <details>
+    <summary>Preview</summary>
+
+    Expanded message.
+
+    </details>
+
+
+See example below:
+
+HTML code:
 
     <details>
     <summary><b>Preview message</b></summary>
@@ -852,7 +863,7 @@ Code:
     ```
     </details>
 
-Example:
+Output:
 
 <details>
 <summary><b>Preview message</b></summary>
@@ -867,3 +878,38 @@ Some code:
 }
 ```
 </details>
+
+### Expanded code block in Jekyll
+
+**Sample output**
+
+<details>
+<summary>
+Preview
+</summary>
+
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="s1">'Expanded message'</span></code></pre></figure>
+
+</details>
+
+
+**Sample Liquid markdown**
+
+```
+<details>
+<summary>
+Preview
+</summary>
+
+{% highlight ruby %}
+puts 'Expanded message'
+{% endhighlight %}
+
+</details>
+```
+
+
+To explain the code above - if you want to use Jekyll templating, markdown does not get picked up here. So if you want a code block in your expanded block, you need to use HTML or the `highlight` Liquid tag.
+
+Note that whether using triple backticks or indentation for a code block inside the details tag, those end up being used literally.
