@@ -439,28 +439,29 @@ Note, this works in Github-flavored Markdown, but might not work in certain mark
 
 Prevent markdown from rendering certaim styling, you can escape them. In the examples below the italics are part of a filename and italics styling is unwanted.
 
-### Links
 
-Escape the link text. The target does not need escaping.
+### Escape with code ticks
 
-    Update the [_config.yml](_config.yml) file.
+Code ticks escapes any styling characters inside them.
 
+    Update the `_config.yml` file then run [`__init__.py`](__init__.py).
+
+Update the `_config.yml` file then run [`__init__.py`](__init__.py).
+
+
+### Escape text with backslash
+
+    Update the \_config.yml file then run \_\_init\_\_.py.
+
+Update the \_config.yml file then run \_\_init\_\_.py.
+
+### Escaping links
+
+Escape the link text using backslash or backticks. The target does not need escaping.
+
+    Update the [\_config.yml](_config.yml) file.
 
 Update the [\_config.yml](_config.yml) file.
-
-
-### Code ticks
-
-    Update the `_config.yml` file.
-
-Update the `_config.yml` file.
-
-### Backslash
-
-    Update the \_config.yml file.
-
-Update the \_config.yml file.
-
 
 ## Links
 
@@ -694,27 +695,24 @@ Here we make the image clickable, to emulate what a markdown image does.
 
 Resize and center an image using HTML attributes.
 
-This will control the width of the image:
+Github also sets max-width to `100%` on the CSS when rendering the page, so that means your image can take up a lot of space.
+
+A good way to do this is set the exact height - letting the pixel width change based on desktop or mobile. Fine-the value per image.
 
 ```html
 <p align="center">
-    <img width="250px" src="foo.png">
+    <img height="300px" src="foo.png">
 </p>
 ```
 
-Or use a relative value:
+Or use a relative width value:
 
-- `width="80%"`.
+- `width="80%"`
 
-Or set height instread, if your care more about how much vertical space the image takes up.
+Notes:
 
-- `height="100px"`
-
-The `px` part seems optional.
-
-Note that the above cannot be achieved with CSS (inline or in a style tag) on Github as far as I can tell. While you might prefer to use `max-width`, remember that is an CSS style value and not an attribute for the `img` tag.
-
-The resizing above works for HTML tags in markdown, but resizing **cannot** be resized using a markdown image - at least in Github-flavored implementation of markdown. Some other systems support resizing - e.g. `![Alt](img.jpg =60x50)`.
+- Centering and resizing as above **cannot** be achieved by setting CSS (inline or in a style tag) on Github, so you must update attributes of the tags.
+- The resizing above works for _HTML_ tags in markdown, but resizing cannot be done for _markdown_ image. At least in Github-flavored implementation of markdown - some other systems support resizing e.g. `![Alt](img.jpg =60x50)`.
 
 ### SVGs
 
