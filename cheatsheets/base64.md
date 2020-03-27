@@ -16,8 +16,36 @@ Then the last two values can change but typically `+` and `/`.
 
 Padding character: `=`.
 
+## Usage
 
-## Shell command
+### JavaScript
+
+Use the builtin functions `btoa` and `atob`.
+
+From [Mozilla docs](https://developer.mozilla.org/en-US/docs/Glossary/Base64):
+
+> In JavaScript there are two functions respectively for decoding and encoding base64 strings:
+>
+> - btoa(): creates a base-64 encoded ASCII string from a "string" of binary data ("btoa" should be read as "binary to ASCII").
+>  - atob(): decodes a base64 encoded string("atob" should be read as "ASCII to binary").
+
+
+Encode:
+
+```javascript
+> btoa("Hello, world!")
+"SGVsbG8sIHdvcmxk"
+```
+
+Decode:
+
+```javascript
+> atob("SGVsbG8sIHdvcmxk")
+"Hello, world!"
+```
+
+
+### Shell
 
 - [base64](https://linux.die.net/man/1/base64) Linux man page.
 
