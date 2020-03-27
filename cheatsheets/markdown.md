@@ -2,7 +2,7 @@
 
 Applies to `.md` or `.markdown` files as both are equivalent.
 
-In some cases this guide contents HTML tags as these give more flexibility than markdown, though are usually more verbose. These HTML tags will render in both markdown documents and `.html` files. 
+In some cases this guide contents HTML tags as these give more flexibility than markdown, though are usually more verbose. These HTML tags will render in both markdown documents and `.html` files.
 
 You can mix HTML and markdown together together in a markdown document, however, they cannot overlap. If you put markdown content between HTML tags (such as between opening and closing `p` tag, the markdown will just render as plain text.
 
@@ -175,7 +175,7 @@ Note the number formatting style will change by itself at each indentation level
     1. Nested
         1. Bullet
             1. List
-        
+
 1. Nested
     1. Bullet
         1. List
@@ -185,13 +185,13 @@ Note the number formatting style will change by itself at each indentation level
     1. Number
     2. Number
        * Bullet
-       * Bullet  
+       * Bullet
     3. Number
-    
+
 1. Number
 2. Number
    * Bullet
-   * Bullet  
+   * Bullet
 3. Number
 
 ### Quotes in lists
@@ -253,7 +253,7 @@ Example of `code` in a sentence.
     # Indententing this line in markdown turned it into preformatted mono-spaced text, without any particular code syntax.
     print('Hello world'!)
 ```
-    
+
     # Indententing this line in markdown turned it into preformatted mono-spaced text, without any particular code syntax.
     print('Hello world'!)
 
@@ -286,7 +286,7 @@ Hard brackets. With either space or lowercase `x`.
 
 ## HTML
 
-HTML will render in markdown. But you will lose any markdown formatting such as headers or line breaks.
+HTML will render in markdown, so you can do things not possible in markdown.
 
 
 ```html
@@ -323,6 +323,108 @@ Press <kbd>Esc</kbd>
 
 Press <kbd>Esc</kbd>
 
+### Warning notes
+
+Be careful when putting markdown instead HTML tags.
+
+This will work as are open lines between HTML and markdown.
+
+```html
+<div>
+
+- A
+- B
+- C
+
+</div>
+```
+
+<div>
+
+- A
+- B
+- C
+
+</div>
+
+This will not work as expected - the markdown will be treated as plain text and without line breaks.
+
+```html
+<div>
+- A
+- B
+- C
+</div>
+```
+
+<div>
+- A
+- B
+- C
+</div>
+
+
+Indenting 4 spaces causes a code block rather than text. That might be unexpected here:
+
+```html
+<div>
+
+    A
+    B
+    C
+    D
+
+</div>
+```
+
+<div>
+
+    A
+    B
+    C
+    D
+
+</div>
+
+Solve it with spaces removed. And break tags if neeeded.
+
+```html
+<div>
+    A<br>
+    B<br>
+    C<br>
+    D
+</div>
+```
+
+<div>
+    A<br>
+    B<br>
+    C<br>
+    D
+</div>
+
+Or use ensure every line starts with an opening tag.
+
+```html
+<div>
+
+    <p>A</p>
+    <p>B</p>
+    <p>C</p>
+    <p>D</p>
+
+</div>
+```
+
+<div>
+    <p>A</p>
+    <p>B</p>
+    <p>C</p>
+    <p>D</p>
+</div>
+
+
 ## Emojis
 
 Note, this works in Github-flavored Markdown, but might not work in certain markdown viewers unless you use a plugin.
@@ -342,7 +444,7 @@ Prevent markdown from rendering certaim styling, you can escape them. In the exa
 Escape the link text. The target does not need escaping.
 
     Update the [_config.yml](_config.yml) file.
-    
+
 
 Update the [\_config.yml](_config.yml) file.
 
@@ -356,7 +458,7 @@ Update the `_config.yml` file.
 ### Backslash
 
     Update the \_config.yml file.
-    
+
 Update the \_config.yml file.
 
 
@@ -438,7 +540,7 @@ Set the target as a full URL, requiring protocol, domain and optional path.
 [link text](https://example.com/foo/bar)
 ```
 
-Regarding protocol - the URL **must** start with `http` or `https`, otherwise the link will in invalid. 
+Regarding protocol - the URL **must** start with `http` or `https`, otherwise the link will in invalid.
 
 For example, this will link add `/example.com` to the current path.
 
@@ -641,11 +743,11 @@ If you reference an image on Github through the Raw button, you get a link on `r
  Example of the above. This could be markdown but is HTML to set the width.
 
 ```html
-<img width="100px" 
+<img width="100px"
      src="https://raw.githubusercontent.com/graphql/graphql-spec/master/resources/GraphQL%20Logo.svg?sanitize=true">
 ```
 
-<img width="100px" 
+<img width="100px"
      src="https://raw.githubusercontent.com/graphql/graphql-spec/master/resources/GraphQL%20Logo.svg?sanitize=true">
 
 Image link from Wikipedia icon [here](https://en.wikipedia.org/wiki/GraphQL).
@@ -686,19 +788,19 @@ The first row is the header and always followed by a row of dashes.
 
 Code:
 
-    A   | B   | C
-    --- | --- | ---
-    Foo | 1   |
-    Bar | 2   |
-    Baz | 3   |
+    | A   | B   | C   |
+    | --- | --- | --- |
+    | Foo | 1   |
+    | Bar | 2   |
+    | Baz | 3   |
 
 Example:
 
-A   | B   | C
---- | --- | ---
-Foo | 1   |
-Bar | 2   |
-Baz | 3   |
+| A   | B   | C   |
+| --- | --- | --- |
+| Foo | 1   |
+| Bar | 2   |
+| Baz | 3   |
 
 
 You can use styling (bold, italics, code, links). Cells with long sentences will wrap automatically.
@@ -711,17 +813,17 @@ Use optional colons for alignment. You can also add a border to the markdown, wh
 Code:
 
     | Tables   |      Are      |  Cool |
-    |----------|:-------------:|------:|
-    | col 1 is |  left-aligned | $1600 |
-    | col 2 is |    centered   |   $12 |
+    | -------- | :-----------: | ----: |
+    | col 1 is | left-aligned  | $1600 |
+    | col 2 is |   centered    |   $12 |
     | col 3 is | right-aligned |    $1 |
 
 Example:
 
 | Tables   |      Are      |  Cool |
-|----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
+| -------- | :-----------: | ----: |
+| col 1 is | left-aligned  | $1600 |
+| col 2 is |   centered    |   $12 |
 | col 3 is | right-aligned |    $1 |
 
 
@@ -740,9 +842,9 @@ Code:
     <summary><b>Preview message</b></summary>
 
     Expanded message.
-    
+
     Some code.
-    
+
     ```json
     {
         "foo": "bar"
