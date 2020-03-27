@@ -38,6 +38,7 @@ collections:
 
 [source](https://stackoverflow.com/questions/17677094/jekyll-for-loop-over-all-images-in-a-folder)
 
+
 `_data/items.yaml`
 ```
 - foo: A
@@ -51,7 +52,7 @@ collections:
 ---
 ---
 {% for item in site.data.items %}
-    {{ item.food }} {{ item.bar }}
+- {{ item.foo }} {{ item.bar }}
 {% endfor %}
 ```
 
@@ -62,7 +63,7 @@ collections:
 ```
 {% for asset in site.static_files %}
     {% if asset.path contains '<NEEDLE>' %}
-        {{ asset.path | relative_url }}
+        <a href="{{ asset.path | relative_url }}">{{ asset.path }}</a>
     {% endif %}
 {% endfor %}
 ```
