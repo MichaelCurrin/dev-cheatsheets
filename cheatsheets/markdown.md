@@ -831,7 +831,9 @@ There are also online tools such as [Markdown tables generator](https://www.tabl
 
 ## Collapsible items
 
-Use the `details` and `summary` HTML tags on Github, without any additional CSS.
+How to create sections which can expand and collapse again.
+
+Use the `details` and `summary` HTML tags in markdown on Github, without any additional CSS.
 
 
 Code:
@@ -841,7 +843,7 @@ Code:
 
     Expanded message.
 
-    Some code.
+    Some code:
 
     ```json
     {
@@ -857,7 +859,7 @@ Example:
 
 Expanded message
 
-Some code.
+Some code:
 
 ```json
 {
