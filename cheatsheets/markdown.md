@@ -881,7 +881,9 @@ Some code:
 
 ### Expanded code block in Jekyll
 
-**Sample output**
+**Sample rendered output**
+
+Using covered next in a Jekyll site, this was the output:
 
 <details>
 <summary>
@@ -894,7 +896,7 @@ Preview
 </details>
 
 
-**Sample Liquid markdown**
+**Sample Jekyll/Liquid code**
 
 ```
 <details>
@@ -908,7 +910,6 @@ puts 'Expanded message'
 
 </details>
 ```
-
 
 To explain the code above - if you want to use Jekyll templating, markdown does not get picked up here. So if you want a code block in your expanded block, you need to use HTML or the `highlight` Liquid tag.
 
