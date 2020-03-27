@@ -879,24 +879,14 @@ Some code:
 ```
 </details>
 
-### Expanded code block in Jekyll
+### Jekyll
 
-**Sample rendered output**
-
-Using covered next in a Jekyll site, this was the output:
-
-<details>
-<summary>
-Preview
-</summary>
-
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="s1">'Expanded message'</span></code></pre></figure>
-
-</details>
+Example using Jekyll templating. In particular, putting a code block inside the expandable section.
 
 
 **Sample Jekyll/Liquid code**
+
+Here is the code for the result below.
 
 ```
 <details>
@@ -911,6 +901,27 @@ puts 'Expanded message'
 </details>
 ```
 
-To explain the code above - if you want to use Jekyll templating, markdown does not get picked up here. So if you want a code block in your expanded block, you need to use HTML or the `highlight` Liquid tag.
+**Sample rendered output**
 
-Note that whether using triple backticks or indentation for a code block inside the details tag, those end up being used literally.
+Using code in a Jekyll site, this was the output in the HTML (the only change is wrapping for readability).
+
+<details>
+<summary>
+Preview
+</summary>
+
+<figure class="highlight">
+    <pre>
+        <code class="language-ruby" data-lang="ruby">
+        <span class="nb">puts</span> <span class="s1">'Expanded message'</span>
+        </code>
+    </pre>
+</figure>
+
+</details>
+
+<br>
+
+**Note**
+
+To explain the approach here - if you want to use Jekyll templating, markdown does **not** get picked up here correctly. So if you want a code block in your expanded block, you need to use HTML or the `highlight` Liquid tag. Whether using triple backticks or indentation for a code block inside the details tag, those just end up being used literally.
