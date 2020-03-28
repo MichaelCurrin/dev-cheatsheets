@@ -7,7 +7,7 @@ Where `[RULES]` below could be empty, or one more or more rules such as `no-aler
 ### Ignore all warnings in a file.
 
 ```javascript
-/* eslint-disable */
+/* eslint-disable [RULE, ] */
 COMMAND
 COMMAND
 ```
@@ -15,14 +15,14 @@ COMMAND
 ### Ignore the next line
 
 ```
-// eslint-disable-next-line [RULES]
+// eslint-disable-next-line [RULE, ]
 COMMAND
 ```
 
 ### Ignore a rule in the current line
 
 ```javascript
-COMMAND // eslint-disable-line [RULE]
+COMMAND // eslint-disable-line [RULE, ]
 ```
 
 ## Config
