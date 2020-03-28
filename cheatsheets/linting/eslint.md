@@ -1,6 +1,6 @@
 # ESLint cheatsheet
 
-Where `[RULES]` below could be empty, or one more or more rules such as `no-alert, quotes, semi`.
+Where `[RULE, ]` below could be empty, or one more or more rules such as `no-alert, quotes, semi`.
 
 ## Script settings
 
