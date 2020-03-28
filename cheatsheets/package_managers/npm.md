@@ -1,6 +1,6 @@
 # NPM cheatsheet
 
-- [npmjs.com](https://www.npmjs.com)
+- NPM homepage: [npmjs.com](https://www.npmjs.com)
 
 ## Package
 
@@ -150,14 +150,15 @@ available via `npm run-script`:
     react-scripts eject
 ```
 
-It seems that `npm run` and `npm run-script` are equivalenet, from basic testing.
+It seems that `npm run` and `npm run-script` are equivalent, from basic testing.
 
 
 **Sample**
 
+Call a script command using the same target in the command-line as in the `package.json` file.
 ```sh
 $ npm run lint
-$ npm run lin_examples
+$ npm run lint:src
 ```
 
 ```json
