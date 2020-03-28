@@ -29,3 +29,33 @@ footer {
 ```
 
 See more approaches [here](https://github.com/jgthms/bulma/issues/47).
+
+## Background images
+
+### Cover image
+
+Set a full-width image at the top of your page, possibly behind. The no-repeat part is useful to stop the image from repeating - the default behavior.
+
+```css
+el {
+    background-image: url(...);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+```
+
+Setting `background-size: cover` could also work. The repeat might not be needed.
+
+Optionally add:
+
+```css
+    background-position: center top;
+    background-attachment: fixed;
+```
+
+### Resources
+
+Tutorials:
+
+- [background](https://www.w3schools.com/cssref/css3_pr_background.asp)
+- [background-size](https://www.w3schools.com/cssref/css3_pr_background-size.asp) including possible values.
