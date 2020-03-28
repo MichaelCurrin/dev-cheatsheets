@@ -1,3 +1,10 @@
 # Git cheatsheet 
 
-- Downloadable cheatsheet provided by Gitub https://github.github.com/training-kit/
+
+## Resources
+
+
+Provided on the git website:
+
+- Downloadable cheatsheet provided by Github https://github.github.com/training-kit/
+- Visual cheatsheet https://ndpsoftware.com/git-cheatsheet.html
