@@ -1,14 +1,36 @@
 # ESLint cheatsheet
 
-Where `[RULE, ]` below could be empty, or one more or more rules such as `no-alert, quotes, semi`.
+- [Configuring](https://eslint.org/docs/user-guide/configuring) doc.
+- [Rules](https://eslint.org/docs/rules/)
+
 
 ## Script settings
 
-### Ignore all warnings in a file.
+Approaches to ignore within a script, where `[RULE, ]` below could be empty, or one more or more rules such as `no-alert, quotes, semi`.
+
+For more detail than below, you can set level as 0, 1 or 2 - [Configuring rules](https://eslint.org/docs/user-guide/configuring.html#configuring-rules).
+
+
+### Ignore all warnings in a file
+
+Place at the top of the file:
 
 ```javascript
 /* eslint-disable [RULE, ] */
 COMMAND
+COMMAND
+```
+
+## Ignore in a section of a file
+
+```javascript
+COMMAND
+
+/* eslint-disable [RULE, ] */
+COMMAND
+COMMAND
+/* eslint-enable [RULE, ] */
+
 COMMAND
 ```
 
