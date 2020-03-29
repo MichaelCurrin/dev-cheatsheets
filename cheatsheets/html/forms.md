@@ -68,6 +68,8 @@ Text area with max length
 </textarea>
 ```
 
+- [Text area](https://www.w3schools.com/tags/tag_textarea.asp) tutorial.
+
 ## Radio buttons
 
 - [Tutorial](https://www.w3schools.com/tags/att_input_type_radio.asp)
