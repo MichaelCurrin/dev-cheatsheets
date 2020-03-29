@@ -6,6 +6,7 @@ Note that these do not render on Github, but could be viewed as a static site or
 
 Examples mostly from [W3Schools](https://www.w3schools.com).
 
+
 ## Form
 
 ```html
@@ -15,6 +16,27 @@ Examples mostly from [W3Schools](https://www.w3schools.com).
     <!-- etc. -->
 </form>
 ```
+
+
+## Bulma note
+
+If using [Bulma](https://bulma.io) for styling, you will find the inputs fill the width of their container.
+
+```
+input {
+    width: 100%;
+    max-width: 100%;
+}
+```
+
+This can be overridden. In the example below, the `search` class is targeted.
+
+```css
+.search.input {
+    width: inherit;
+}
+```
+
 
 ## Text input
 
@@ -37,13 +59,14 @@ See also:
 
 ## Text area
 
+```html
 <label for="my-text">Label</label>
 <textarea id="my-text" rows="4" cols="50">Textarea input</textarea>
 
 <textarea maxlength="50">
 Text area with max length
 </textarea>
-
+```
 
 ## Radio buttons
 
