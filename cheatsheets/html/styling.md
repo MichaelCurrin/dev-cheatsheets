@@ -46,12 +46,20 @@ el {
 
 Setting `background-size: cover` could also work. The repeat might not be needed.
 
-Optionally add:
+Or use:
 
 ```css
-    background-position: center top;
+/* #root {
+    background-image: linear-gradient(to bottom right, #222, #eee);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
+} */ 
 ```
+
+Position could be `center top`.
 
 ### Resources
 
