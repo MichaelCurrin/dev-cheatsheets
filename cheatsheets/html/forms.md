@@ -1,6 +1,8 @@
 # Forms
 
-Input elements for forms.
+Input elements for forms. 
+
+Note that these do not render on Github, but could be viewed as a static site or an IDE's Markdown preview.
 
 Examples mostly from [W3Schools](https://www.w3schools.com).
 
@@ -26,16 +28,8 @@ Examples mostly from [W3Schools](https://www.w3schools.com).
 <input type="submit" value="Submit">
 ```
 
-<label for="fname">First name:</label>
-<input type="text" id="fname" name="fname" size="50"><br><br>
-
-<label for="pin">PIN:</label>
-<input type="text" id="pin" name="pin" maxlength="4" size="4"><br><br>
-
-<input type="submit" value="Submit">
-
-
 - Size attribute - Specifies the width of an `<input>` element, in characters. Default value is 20.
+- Max length attribute - How many characters that can be entered. This could exceed `size` - all the text just won't be visible at once.
 
 See also:
 
@@ -69,16 +63,6 @@ Note how `for` must match `id`. The `name` is optional.
 ```
 
 
-<input type="radio" id="radioApple" name="name" value="apple" checked>
-<label for="radioApple">Apple</label>
-
-<input type="radio" id="radioBanana" name="radioFruit" value="banana">
-<label for="radioBanana">Banana</label>
-
-<input type="radio" id="radioOrange" name="radioFruit" value="orange">
-<label for="radioOrange">Orange</label>
-
-
 ## Checkbox input
 
 - [Tutorial](https://www.w3schools.com/tags/att_input_type_checkbox.asp)
@@ -95,13 +79,3 @@ Note how `for` must match `id`. The `name` is optional.
 <label for="vehicle3"> I have a boat</label><br><br>
 <input type="submit" value="Submit">
 ```
-
-<input type="checkbox" name="vehicle1" value="Bike">
-<label for="vehicle1"> I have a bike</label><br>
-
-<input type="checkbox" name="vehicle2" value="Car">
-<label for="vehicle2"> I have a car</label><br>
-
-<input type="checkbox" name="vehicle3" value="Boat" checked>
-<label for="vehicle3"> I have a boat</label><br><br>
-<input type="submit" value="Submit">
