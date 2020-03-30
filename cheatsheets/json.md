@@ -118,5 +118,5 @@ A Python library for websites and APIs. It supports templating using HTML files 
 Depending how you want certain characters to appear, you might use the `safe` filter.
 
 ```
-{{ string | tojson | safe}}
+{{ string | tojson | safe }}
 ```
