@@ -7,14 +7,16 @@ How to write CLIs for applications such as in Bash or Python.
 
 ### Python
 
-There are other Python libraries but these are the popular modern versions.
+There are other Python libraries ([comparison article](https://realpython.com/comparing-python-command-line-parsing-libraries-argparse-docopt-click/), but these are the popular modern versions.
 
 - **argparse**
     - [Argparse](https://docs.python.org/3/library/argparse.html) in PY3 docs.
+    - Python builtin.
 - **click**
     - [Click](https://readthedocs.org/projects/pallets-click/) versions on _Read The Docs_ with a choice of versions.
     - [Click](https://click.palletsprojects.com/en/master/) docs for _master_.
     - [Why Click?](https://click.palletsprojects.com/en/master/why/)
+    - Install using `pip install click`.
     
 ### Bash
 
@@ -23,9 +25,9 @@ There are other Python libraries but these are the popular modern versions.
     - [Bash builtins](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html) in the Bash manual. Includes a section on _getopsts_.
    
 
-## Setup usage instructions
+## Examples
 
-### Examples
+### Argparse
 
 What the usage and help sections can appear - here using [Python](#python) `argparse`.
 
@@ -93,9 +95,33 @@ subcommands:
   {foo,bar}   additional help
 ```
 
+### Click
+
+### Positional arguments
+
+```
+Usage: hello.py [OPTIONS] FOO
+```
+
+#### Optional arguments
+
+```
+Usage: hello.py [OPTIONS]
+
+  Simple program that greets NAME for a total of COUNT times.
+
+Options:
+  --count INTEGER  Number of greetings.
+  --name TEXT      The person to greet.
+  --help           Show this message and exit.
+```
+
+## Usage guidelines
+
+Help on writing usage instructions, especially when writing by hand.
+
 
 ### List of items
-
 
 Zero or more items:
 
