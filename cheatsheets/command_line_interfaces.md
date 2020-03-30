@@ -3,7 +3,9 @@
 How to write CLIs for applications such as in Bash or Python.
 
 
-## By language
+## Tools
+
+Listed here by programming language.
 
 ### Python
 
