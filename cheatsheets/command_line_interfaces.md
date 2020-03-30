@@ -7,7 +7,7 @@ How to write CLIs for applications such as in Bash or Python.
 
 ### Python
 
-There are other Python libraries ([comparison article](https://realpython.com/comparing-python-command-line-parsing-libraries-argparse-docopt-click/), but these are the popular modern versions.
+There are other Python libraries ([comparison article](https://realpython.com/comparing-python-command-line-parsing-libraries-argparse-docopt-click/)), but these are the popular modern versions.
 
 - **argparse**
     - [Argparse](https://docs.python.org/3/library/argparse.html) in PY3 docs.
