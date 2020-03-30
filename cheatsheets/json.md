@@ -25,6 +25,14 @@ JSON.parse(myString);
 JSON.stringify(myObject);
 ```
 
+In NodeJS on the command-line:
+
+```javascript
+> var package = require('./package.json')
+> package.version
+"1.0.0"
+```
+
 ### Ruby
 
 - [Ruby JSON module](https://ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html)
@@ -101,6 +109,39 @@ with open('file.json') as f_in:
 ```python
 with open('file.json', 'w') as f_out:
     json.dumps(my_object, f_out)
+```
+
+### Pretty print
+
+Be sure to specify wrapping indentation level at 4 spaces to make the output appear more vertical than horizontal.
+
+```python
+print(json.dumps(my_obj, indent=4)
+```
+
+Alternatively, use the `pprint` built which will also wrap data stuctures for easy reading but does not impose JSON on everything. For example, JSON does not handle datetime object so you'd have to stringify those with `str(value)` _before_ you convert to JSON.
+
+```python
+import pprint
+```
+
+Using a function:
+
+```python
+pprint.pprint(my_object)
+
+# Width is in number of characters.
+pprint.pprint(my_object, depth=1, width=60)
+```
+
+Using a class:
+
+```python
+pp = pprint.PrettyPrinter(width=60, compact=True)
+pp.pprint(my_object)
+
+pp = pprint.PrettyPrinter(indent=4)
+pp.pprint(my_object)
 ```
 
 
