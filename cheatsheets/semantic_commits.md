@@ -33,3 +33,4 @@ See links for more details:
 See also
 
 - http://udacity.github.io/git-styleguide/
+- https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
