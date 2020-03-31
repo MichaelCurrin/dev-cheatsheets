@@ -18,7 +18,7 @@ See links for more details:
 
 ## Conventional commits
 
-See https://www.conventionalcommits.org/en/
+- https://www.conventionalcommits.org/en/
 
 > A specification for adding human and machine readable meaning to commit messages
 
@@ -29,3 +29,7 @@ See https://www.conventionalcommits.org/en/
 
 [optional footer]
 ```
+
+See also
+
+- http://udacity.github.io/git-styleguide/
