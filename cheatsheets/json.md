@@ -1,13 +1,6 @@
 # JSON cheatsheet
 
-
-## Resources
-
-- [json.org](https://www.json.org)
-- [JSON](https://www.w3schools.com/js/js_json_intro.asp) on W3 Schools.
-- [Jsonnet](https://jsonnet.org/)
-- [JSONP](https://www.w3schools.com/js/js_json_jsonp.asp)
-
+See also [JSON](https://github.com/MichaelCurrin/learn-to-code/blob/master/data_formats.md#json) section of my data formats guide.
 
 ## Conversion
 
