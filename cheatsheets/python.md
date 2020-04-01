@@ -220,7 +220,22 @@ def fetch_data(query):
     return rows, fields
 ```
 
+## Formatting
+
+Some VS Code choices - this is a free text field for provider, plug configurations for each.
+
+- autopep8
+- black (PY 3 only)
+- yapf
+
 ## Linting
+
+Some VS Code choices - there are flags for each (so multiple can be used), plus a linting enabled switch.
+
+- [pylint](#pylint)
+- [flake8](#flake8)
+- [mypy](#mypy)
+
 
 ### Pylint
 
@@ -297,6 +312,14 @@ Disable inline - comma-separated codes.
 ```
 ... # noqa: E234
 ```
+
+## MyPy
+
+Optional static typing for Python.
+
+- [mypy-lang.org](https://mypy-lang.org/) homepage.
+- [Read the docs](https://mypy.readthedocs.io/en/stable/) page.
+
 
 ## Dotenv files
 
