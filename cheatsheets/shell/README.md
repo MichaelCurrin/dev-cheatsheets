@@ -1,4 +1,4 @@
-# Shell Cheatsheet
+# Shell cheatsheet
 
 Unix shell cheatsheet for Mac/Linux Bash/ZSH.
 
