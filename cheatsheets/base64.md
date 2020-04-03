@@ -59,11 +59,20 @@ Use the builtin library.
 
 ### Encode
 
-Always convert to bytes, for Python 2 and 3. This means any special characters like accents or emojis will be ASCII.
-
 ```python
 >>> base64.b64encode("Hello, world!".encode())
 b'SGVsbG8sIHdvcmxkIQ=='
+```
+
+Always convert to `bytes` first using `str.encode`. Otherwise you get an error (in both PY 2 and 3).
+
+As `bytes` means any special characters like accents or emojis will be ASCII.
+
+For ordinary ASCII characters, the `bytes` will look the same:
+
+```python
+>>> "Hello, world!".encode()
+b'Hello, world!'
 ```
 
 ### Decode
