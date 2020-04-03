@@ -1,10 +1,20 @@
 # Shell requests cheatsheet
 
+How to download or upload content at a URL using terminal tools.
+
+**Table of contents**
+
+- [curl](#curl)
+- [httpie](#httpie)
+- [wget](#wget)
+
 
 ## Curl
 
 ### Resources
 
+- [Curl homepage](https://curl.haxx.se/)
+    >  command line tool and library for transferring data with URLs
 - [Curl cheatsheet](https://devhints.io/curl) on DevHints.
 - [Curl POST examples](https://gist.github.com/subfuzion/08c5d85437d5d4f00e58) gist.
 - [Curl manual](https://curl.haxx.se/docs/manual.html) on [curl.haxx.se](https://curl.haxx.se).
@@ -89,7 +99,7 @@ Simpler to use than curl and it prettifies JSON and HTML output with colors and 
 ```
 
 Note you install using `httpie` but the command you use is `http`.
- 
+
 ### GET
 
 ```sh
