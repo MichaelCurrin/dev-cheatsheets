@@ -1,11 +1,10 @@
 # Jekyll cheatsheets
 
 
-## Explore cheatsheets
+## External cheatsheets
 
-External links to cheatsheets.
-
-- [Jekyll cheatsheet](https://learn.cloudcannon.com/jekyll-cheat-sheet/) on CloudCannon
+- [Jekyll cheatsheet](https://learn.cloudcannon.com/jekyll-cheat-sheet/) on CloudCannon.
+- [Jekyll cheatsheet](https://devhints.io/jekyll) on DevHints.
  
 
 ## Learn Jekyll
