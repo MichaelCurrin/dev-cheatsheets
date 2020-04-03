@@ -38,6 +38,7 @@ curl http://example.com -d 'foo=bar,fizz=buzz'
 
 Use `-G` to send data via get.
 
+
 ### Send JSON data
 
 ```sh
@@ -51,10 +52,10 @@ curl http://example.com -d '{"foo": "bar", "fizz": "buzz"}' -H "Content-Type: ap
 ```
 
 
-### Send a file
+### Upload a file
 
 ```
--d @<path>
+-d @<path-to-file>
 ```
 
 Example
