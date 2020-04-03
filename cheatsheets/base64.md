@@ -6,11 +6,11 @@
 
 ## Index table
 
-Values 0 to 61 are:
+Values 0 to 61 are the following, in order:
 
-- A–Z
-- a–z
-- 0–9
+- `A` – `Z`
+- `a` – `z`
+- `0` – `9`
 
 Then the last two values can change but typically `+` and `/`.
 
@@ -29,19 +29,57 @@ From [Mozilla docs](https://developer.mozilla.org/en-US/docs/Glossary/Base64):
 > - btoa(): creates a base-64 encoded ASCII string from a "string" of binary data ("btoa" should be read as "binary to ASCII").
 >  - atob(): decodes a base64 encoded string("atob" should be read as "ASCII to binary").
 
+No imports are needed.
 
-Encode:
+### Encode
 
 ```javascript
 > btoa("Hello, world!")
 "SGVsbG8sIHdvcmxk"
 ```
 
-Decode:
+### Decode
 
 ```javascript
 > atob("SGVsbG8sIHdvcmxk")
 "Hello, world!"
+```
+
+## Python
+
+Guide for Python 3.
+
+Use the builtin library.
+
+### Import
+
+```python
+>>> import base64
+```
+
+### Encode
+
+Always convert to bytes, for Python 2 and 3. This means any special characters like accents or emojis will be ASCII.
+
+```python
+>>> base64.b64encode("Hello, world!".encode())
+b'SGVsbG8sIHdvcmxkIQ=='
+```
+
+### Decode
+
+Bytes input.
+
+```python
+>>> base64.b64decode(b'SGVsbG8sIHdvcmxkIQ==')
+b'Hello, world!'
+```
+
+Or (unicode) string input.
+
+```python
+>>> base64.b64decode('SGVsbG8sIHdvcmxkIQ==')
+b'Hello, world!'
 ```
 
 
