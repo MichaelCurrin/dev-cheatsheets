@@ -41,8 +41,8 @@ Use `-G` to send data via get.
 
 ### Send JSON data
 
-```sh
-`-d <json-data>
+```
+-d <json-string>
 ```
 
 Example:
