@@ -73,8 +73,13 @@ curl -d @file.txt http:example.com
 
 Simpler to use than curl and it prettifies JSON and HTML output with colors and wrapping.
 
+## Resources
+
 - [httpie.org](https://httpie.org/) - homepage, with good examples there.
-- [httpie docs](https://httpie.org/doc)
+- [HTTPie docs](https://httpie.org/doc).
+- [jakubroztocil/httpie](https://github.com/jakubroztocil/httpie/) repo on Github.
+- [HTTpie cheatsheet](https://devhints.io/httpie) on DevHints.
+
 
 ### Install
 
@@ -86,12 +91,38 @@ Note you install using `httpie` but the command you use is `http`.
  
 ### GET
 
-```
+```sh
 http httpbin.org/get
 ```
 
 ### POST
 
-```
+```sh
 http -f POST httpbin.org/post hello=World
+```
+
+## Wget
+
+- [GNU Wget homepage](https://www.gnu.org/software/wget/)
+- [Tutorial](https://www.computerhope.com/unix/wget.htm)
+- [Cheatsheet](https://gist.github.com/Dammmien/4af98e05f9c51c2da007cc70d62bf562) gist.
+
+### Install
+
+Debian/Ubuntu:
+
+```sh
+sudo apt-get install wget
+```
+
+macOS:
+
+```sh
+brew install wget
+```
+
+### Download a file
+
+```sh
+wget http://website.com/files/file.zip
 ```
