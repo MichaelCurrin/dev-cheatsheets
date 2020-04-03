@@ -15,9 +15,9 @@
 Flag | Description
 ---  | ---
 `-L` | Follow redirect.
-`-o <file>` | Or `--output`. Write to file.
+`-o --output <file>` | Write to file.
 `-u user:pass` | User authentication.
-`-v` | Verbose
+`-v --verbose` | Verbose
 `-vv` | More verbose.
 `-s` | Silent
 
