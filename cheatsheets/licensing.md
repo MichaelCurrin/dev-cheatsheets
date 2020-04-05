@@ -47,11 +47,13 @@ Full license text:
 - [MIT](https://choosealicense.com/licenses/mit/) - this is short and fits on the page.
 
 
-### GPLv3
+### GNU General Public License v3.0
+
+Also known as _GPLv3_.
 
 Description:
 
-- > Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent righ
+- > Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
 
 Similar to MIT but adds conditions:
 
