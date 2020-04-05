@@ -7,8 +7,10 @@ How to choose a license for your project.
 By Github:
 
 - [License a repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository) from Github docs.
-- [Choose a license](https://choosealicense.com/) homepage.
-- [Licenses](https://choosealicense.com/licenses/) - listed with short description on Choose a License.
+- Choose a License
+    - [choosealicense.com](https://choosealicense.com/) homepage.
+    - [Licenses](https://choosealicense.com/licenses/) page - listed with short description on Choose a License. However over a colored dot for more info.
+    - [Appendix](https://choosealicense.com/appendix/) page - table of all licenses, plus legend/definitions below.
 
 Tutorials:
 
@@ -18,13 +20,15 @@ Tutorials:
 
 ## Licenses
 
-[source](https://choosealicense.com/licenses/)
+- [choosealicense.com/licenses/](https://choosealicense.com/licenses/)
+
+That page lists GNU GPLv3 and MIT as the most popular. The former is more restrictive These are covered below.
 
 ### MIT
 
 Description:
 
-> A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
+- > A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 
 Permissions:
 
@@ -38,7 +42,27 @@ Conditions:
 - License and copyright notice
     - > A copy of the license and copyright notice must be included with the software.
   
-Full license text
+Full license text:
 
-- [MIT](https://choosealicense.com/licenses/#mit) on Choose a License
+- [MIT](https://choosealicense.com/licenses/mit/) - this is short and fits on the page.
 
+
+### GPLv3
+
+Description:
+
+- > Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent righ
+
+Similar to MIT but adds conditions:
+
+- Disclose source
+- Same license
+- State changes 
+
+And adds a permission:
+
+- patent use
+
+Full license text:
+
+- [GPL-3.0](https://choosealicense.com/licenses/gpl-3.0/) - note this is very long and takes several pages.
