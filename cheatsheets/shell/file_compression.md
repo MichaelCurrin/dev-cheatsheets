@@ -1,4 +1,5 @@
-# Zipping
+# File compression
+> How to zip and unzip with a few utilities
 
 Command-line tools available for Unix-like systems (Linux and macOS):
 
@@ -7,7 +8,10 @@ Command-line tools available for Unix-like systems (Linux and macOS):
 - `gzip`
 - `bzip2`
 
+The last two are not covered as commands in this guide.
+
 [source](https://www.cyberciti.biz/howto/question/general/compress-file-unix-linux-cheat-sheet.php) guide.
+
 
 ## zip and unzip
 
