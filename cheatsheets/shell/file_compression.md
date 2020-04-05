@@ -1,6 +1,8 @@
 # File compression
 > How to zip and unzip with a few utilities
 
+<!-- Move to Learn to Code and then link to a shorter version here, maybe with tables -->
+
 Command-line tools available for Unix-like systems (Linux and macOS):
 
 - [zip and unzip](#zip-and-unzip)
