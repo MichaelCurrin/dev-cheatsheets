@@ -12,8 +12,10 @@ Command-line tools available for Unix-like systems (Linux and macOS):
 
 The last two are not covered as commands in this guide.
 
-[source](https://www.cyberciti.biz/howto/question/general/compress-file-unix-linux-cheat-sheet.php) guide.
+## Resources
 
+- [Compress file cheatsheet](https://www.cyberciti.biz/howto/question/general/compress-file-unix-linux-cheat-sheet.php).
+- [Tar examples in Linux](https://www.tecmint.com/18-tar-command-examples-in-linux/)
 
 ## zip and unzip
 
@@ -52,7 +54,7 @@ The tar utility is creating an archive - a single file which is _not_ compressed
 
 - Archive: `.tar`
 - Compressed: `.gzip` (or `.bz2`)
-- Compressed archive: `.tar.gzip` or `.tgz`
+- Compressed archive: `.tar.gzip` `.tar.gz` or `.tgz`
 
 ### Flags
 
