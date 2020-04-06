@@ -1,4 +1,7 @@
-# Request bins cheatsheet
+# Requests
+
+See also [shell/requests.md](shell/requests.md).
+
 
 ## Request bins
 
