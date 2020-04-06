@@ -11,6 +11,16 @@ How to download or upload content at a URL using terminal tools.
 
 ## Curl
 
+When formatting a URL to request, ensure you escape it. For example `#` would turn the rest of the line into a comment.
+
+Example below with braces expansion supported by curl - more succinct than writing a `for` loop.
+
+```sh
+curl 'http:example.com/{foo,bar}#baz
+
+curl http:example.com/\{foo,bar\}\#baz
+```
+
 ### Resources
 
 - [Curl homepage](https://curl.haxx.se/)
@@ -25,18 +35,42 @@ How to download or upload content at a URL using terminal tools.
 Flag | Description
 ---  | ---
 `-L` | Follow redirect.
-`-o --output <file>` | Write to file.
+`-o --output FILEPATH` | Write to named filepath. [manpage](https://curl.haxx.se/docs/manpage.html#-o)
+`-O, --remote-name` | Write to a file in the current directory using the remote's filename. This will use '%20' for spaces. [manpage](https://curl.haxx.se/docs/manpage.html#-O)
 `-u user:pass` | User authentication.
 `-v --verbose` | Verbose
 `-vv` | More verbose.
 `-s` | Silent
 
 
-## POST
+### Saving output
+
+```sh
+curl http > dir/file.txt
+```
+
+```sh
+curl URL -o dir/file.txt
+
+# Use the variable input in the output.
+curl "http://{one,two}.example.com" -o "file_#1.txt" 
+```
+
+Use the remote's name. 
+
+```sh
+curl URL -O
+
+# Download multiple files.
+curl 'http://example.com/{foo.html,bar.html}'
+```
+
+
+### POST reuqest
 
 The `-X POST` flag is implied.
 
-### Send form data
+#### Send form data
 
 ```
 -d <key>=<value>[<key>=<value>...]
@@ -49,7 +83,7 @@ curl http://example.com -d 'foo=bar,fizz=buzz'
 Use `-G` to send data via get.
 
 
-### Send JSON data
+#### Send JSON data
 
 ```
 -d <json-string>
@@ -62,7 +96,7 @@ curl http://example.com -d '{"foo": "bar", "fizz": "buzz"}' -H "Content-Type: ap
 ```
 
 
-### Upload a file
+#### Upload a file
 
 ```
 -d @<path-to-file>
@@ -74,7 +108,7 @@ Example
 curl -d @file.txt http:example.com
 ```
 
-### Headers
+#### Headers
 
 - `-H "Content-Type: application/x-www-form-urlencoded"`
 - `-H "Content-Type: application/json"`
