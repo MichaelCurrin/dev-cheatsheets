@@ -97,13 +97,13 @@ fi
 
 ## Diff
 
-Show file names and line changes. 
+Show file names and line changes. Ignores staged files.
 
 ```sh
 git diff [COMMIT_REF] [COMMIT_REF]
 ```
 
-Compares current files to version files, but ignores staged files.
+Compares possibly modified files to the files at the current commit.
 
 ```sh
 git diff
@@ -124,10 +124,16 @@ git diff HEAD~
 Show names of modified files and not lines changed. This is like a very short `git status` with no color and indentation. Note this is does **not** include untracked files.
 
 ```sh
-git diff --names-only [COMMIT_REF]
+git diff --names-only
 ```
 
-Compare against remote.
+e.g.
+
+```
+foo/bar.txt
+```
+
+Compare current commit against remote.
 
 ```sh
 git diff origin/master
