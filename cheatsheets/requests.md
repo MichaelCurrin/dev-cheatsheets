@@ -24,7 +24,7 @@ curl -X GET "https://httpbin.org/get" -H  "accept: application/json"
 
 ### Get requests
 
-See [RosettaCode](https://www.rosettacode.org/wiki/HTTP).
+See [HTTP](https://www.rosettacode.org/wiki/HTTP) page on RosettaCode.
 
 ### Post requests
 
@@ -33,7 +33,7 @@ See [RosettaCode](https://www.rosettacode.org/wiki/HTTP).
 Bash:
 
 ```sh
-curl -X POST -d "fizz=buzz" 'https://httpbin.org/post'
+curl -X POST -d "foo=bar" 'https://httpbin.org/post'
 ```
 
 Python:
