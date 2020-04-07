@@ -42,8 +42,17 @@ kubectl exec -it NAME COMMAND
 
 ## Deployment
 
-kubectl get deployment NAME -o yaml
+List deployments.
 
+```sh
+kubectl get deployments
+```
+
+Get a deployment. Optionally get as YAML as below. Optionally write to a local YAML fil.e
+
+```sh
+kubectl get deployment NAME -o yaml
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY5Njk5NjQxNF19
+eyJoaXN0b3J5IjpbLTIxMDU0NzQ4ODldfQ==
 -->
