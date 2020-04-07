@@ -16,11 +16,19 @@ open $(which myscript)
 
 Use `code` in place of `open`, to use VS Code IDE.
 
-## Execute
+## Piping and redirection
+
+
+Pass output as a list, where using pipe is not possible.
 
 ```sh
-source 
+COMMAND <(COMMAND)
+
+# e.g.
+source <(kubectl completion bash)
+diff <(ls dirA) <(ls dirB)
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTMzMTEwNjhdfQ==
+eyJoaXN0b3J5IjpbLTY3NTI5NTE4XX0=
 -->
