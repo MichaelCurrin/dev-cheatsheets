@@ -8,10 +8,15 @@ Also known as "K8s".
 ## Services
 
 ```sh
-``
-```sh
-kubectl get svc NAME
+kubectl get services
 ```
+```sh
+kubectl get service NAME
+```
+
+Or `svc` for service.
+
+
 Create service
 
 ```sh
@@ -56,5 +61,5 @@ Get a deployment. Optionally get as YAML as below. Optionally write to a local Y
 kubectl get deployment NAME -o yaml
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE0MzE2NDUwNl19
+eyJoaXN0b3J5IjpbLTE2MjQzODAzNThdfQ==
 -->
