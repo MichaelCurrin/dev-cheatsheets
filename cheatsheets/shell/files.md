@@ -29,12 +29,6 @@ Links:
 COMMAND 2>&1
 ```
 
-Useful in a cronjob. Note this assumes global mail is disabled with `MAILTO=''`.
-
-```sh
-RESULT="$(cd ~/repos/unicron/unicron && ./unicron.py 2>&1)"; [[ $? -ne 0 ]] || echo "$RESULT" | mail -s 'Unicron task!' $USER
-```
-
 ### List
 
 Pass output as a list, where using pipe is not possible.
@@ -51,5 +45,5 @@ diff <(ls dirA) <(ls dirB)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2NDE2NjM5XX0=
+eyJoaXN0b3J5IjpbLTcxNTI3MTMwNl19
 -->
