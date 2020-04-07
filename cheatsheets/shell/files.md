@@ -16,3 +16,11 @@ open $(which myscript)
 
 Use `code` in place of `open`, to use VS Code IDE.
 
+## Execute
+
+```sh
+source 
+```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNTMzMTEwNjhdfQ==
+-->
