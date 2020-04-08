@@ -44,6 +44,19 @@ source <(kubectl completion bash)
 diff <(ls dirA) <(ls dirB)
 ```
 
+## Download and run
+
+Use curl and execute the result.
+
+e.g.
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+
+e.g.
+```
+curl -O -L https://github.com/actions/runner/releases/download/v2.168.0/actions-runner-linux-x64-2.168.0.tar.gz
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxNTI3MTMwNl19
+eyJoaXN0b3J5IjpbLTgyNTUzMDkzXX0=
 -->
