@@ -305,3 +305,13 @@ for (const [ key, value ] of Object.entries(KEY_VALUE_PAIRS)) {
     }
 }
 ```
+
+## React / JSX
+
+### Comments
+
+[source](https://wesbos.com/react-jsx-comments/)
+
+```
+{/* A JSX comment */}
+```
