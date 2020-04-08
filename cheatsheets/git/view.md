@@ -1,4 +1,8 @@
-# View git cheatsheet
+# Git viewing cheatsheet
+
+## Links
+
+- [Pretty formats](https://git-scm.com/docs/pretty-formats)
 
 ## Tags
 
@@ -37,3 +41,6 @@ This flag is used to show tags only.
 --simplify-by-decoration
            Commits that are referred by some branch or tag are selected.
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNzMwNDE1MzJdfQ==
+-->
