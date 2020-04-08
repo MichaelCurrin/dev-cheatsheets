@@ -1,20 +1,22 @@
 # Kubernetes cheatsheet
 
-Also known as "K8s".
+Also known as "K8s" for short.
 
-- [kubernetes.io](https://kubernetes.io)
-- [Cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+- [kubernetes.io](https://kubernetes.io) homepage.
+- [Cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) on Kubernetes homepage.
+
 
 ## Services
 
 ```sh
 kubectl get services
 ```
+
 ```sh
 kubectl get service NAME
 ```
 
-Or `svc` for service.
+Or use `svc` for `service` above.
 
 
 Create service
