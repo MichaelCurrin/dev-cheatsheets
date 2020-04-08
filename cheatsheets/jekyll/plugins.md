@@ -42,10 +42,13 @@ Example of `Gemfile` for a Jekyll project below.
 
 <!-- TODO add links to these plugins, using my other quick start repos -->
 
+Note the Jekyll and a theme are alone and any Jekyll plugins go inside a group - this ensures they load at the correct order at build time.
+
 ```ruby
 source 'https://rubygems.org'
 
 gem 'jekyll', '~> 3.8.5'
+gem 'minima'
 
 group :jekyll_plugins do
   gem 'jekyll-feed'
@@ -137,3 +140,6 @@ plugins:
 
 remote_theme: benbalter/retlab
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbODA1NzUzMzA0XX0=
+-->
