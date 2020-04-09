@@ -27,10 +27,14 @@ git checkout my-feature
 
 # Restore files to remote state.
 git checkout origin/my-feature .
+```
 
-# Your local files are changed but not commited, so you might want to add and commit them now.
+Your local files are changed but not committed, so you might want to add and commit them now. I found when restoring to a branch name or remote branch, changes were changed. So I had to do this to unstage changes (does not change the files).
+
+```sh
+git reset
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk4NTc2NDg3XX0=
+eyJoaXN0b3J5IjpbLTYzNzA4NjM2Nl19
 -->
