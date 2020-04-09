@@ -1,5 +1,6 @@
 # Git cheatsheet 
 
+See also [Git](https://github.com/MichaelCurrin/learn-to-code/tree/master/Version%20control/Git) section of Learn to Code repo.
 
 ## Resources
 
@@ -168,3 +169,6 @@ else
     git push
 fi
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTI0MDk4MDgzNV19
+-->
