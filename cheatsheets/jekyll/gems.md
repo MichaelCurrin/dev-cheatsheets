@@ -1,5 +1,11 @@
 # Jekyll gems cheatsheet
 
+## Check gem environment
+
+```sh
+$ gem env
+```
+
 ## List installed gems
 
 ```sh
@@ -39,3 +45,6 @@ Open VS Code in that directory. Use `open` to use your file browser.
 ```sh
 code $(bundle show minima)
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTc2MzcyMzE4MV19
+-->
