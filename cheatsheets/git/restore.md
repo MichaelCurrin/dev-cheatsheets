@@ -13,20 +13,24 @@ Restore directory using a single dot. This is recursive - current directory and 
 git checkout .
 ```
 
-Restore to earlier commit, such as a tag number, a branch name or a commit hash.
+Restore to a commit reference. Such as a tag number, a commit hash, or a branch name (e.g. `master`, `my-feature`) .
 
 ```sh
 git checkout COMMIT_REF PATH
-
-# e.g.
-git checkout master file.txt
-
-# 
-git checkout my-feature
-git checkout master file.txt
 ```
 
-Restore file to 
+If the remote branch is that state you want and you have since done local commits, you can restore to the remote state.
+
+```sh
+# Now on feature branch.
+git checkout my-feature
+
+# Restore files to remote state.
+git checkout origin/my-feature .
+
+# Your local files are changed but not commited, so you might want to add and commit them now.
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjkzNDUwODFdfQ==
+eyJoaXN0b3J5IjpbMzk4NTc2NDg3XX0=
 -->
