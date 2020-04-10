@@ -7,7 +7,7 @@ Get path to the current script.
 ### Option A
 
 ```sh
-SCRIPTPATH="$(
+SCRIPT_PATH="$(
   cd "$(dirname "$0")" >/dev/null 2>&1
   pwd -P
 )"
@@ -23,12 +23,16 @@ From top answer on [SO](https://stackoverflow.com/questions/4774054/reliable-way
 
 ### Option B
 
-Alternative, using `realpath`. Works on macOS or Debian.
+Alternatively, using `realpath`. Works on macOS or Debian - requires coreutils.
 
 ```sh
 SCRIPT=$(realpath $0)
-SCRIPTPATH=$(dirname $SCRIPT)
+SCRIPT_PATH=$(dirname $SCRIPT)
+
+# Oneline:
+SCRIPT_PATH=$(dirname $(realpath $0))
 ```
+
 
 For script `~/foo/bar.sh`, printing those variables:
 
@@ -46,5 +50,6 @@ realpath -s $0`
 
 ## Current directory
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTQ2NjM3MzVdfQ==
+eyJoaXN0b3J5IjpbLTEwNTE5NjA2NTksLTE2OTQ2NjM3MzVdfQ
+==
 -->
