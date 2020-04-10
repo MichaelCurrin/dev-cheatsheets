@@ -2,7 +2,7 @@
 
 ## Clipboard
 
-Copy to and paste from clipboard.
+Copy to and paste from clipboard. Especially useful for very large files or when you use SSH with no GUI.
 
 Options are:
 
@@ -11,11 +11,13 @@ Options are:
 
 See [SO](https://stackoverflow.com/questions/749544/pipe-to-from-the-clipboard-in-bash-script) for usage and shortcuts.
 
-Examples:
+### Examples
 
+Copy file
 ```sh
 $ pbcopy < PATH
 ```
+
 Print
 ```sh
 $ pbpaste
@@ -23,7 +25,7 @@ $ pbpaste
 Pipe
 
 ```sh
-pb
+pbpaste | head
 ```
 
 ## Open
@@ -117,5 +119,5 @@ export $(egrep -v '^#' .env | xargs)
 
 [source](https://gist.github.com/judy2k/7656bfe3b322d669ef75364a46327836)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk3MjY2MzcxXX0=
+eyJoaXN0b3J5IjpbMTU5NzkzMDMyM119
 -->
