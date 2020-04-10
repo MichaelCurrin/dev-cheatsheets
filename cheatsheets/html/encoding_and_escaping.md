@@ -16,7 +16,7 @@ e.g. `#` becomes `%23`.
 
 ### HTML
 
-- [w3schools.com/tags/ref_urlencode.ASP](https://www.w3schools.com/tags/ref_urlencode.ASP) - Reference and conversion tool 
+- [w3schools.com/tags/ref_urlencode.ASP](https://www.w3schools.com/tags/ref_urlencode.ASP) - Reference table and conversion tool. Note the form tool will 
 - [url-encode-decode.com](https://www.url-encode-decode.com/) - Conversion tool 
 - [urlencoder.org](https://www.urlencoder.org/) - Conversion tool
 
@@ -74,3 +74,6 @@ e.g. `<` becomes `%lt;`.
 
 - [w3schools.com/html/html_entities.asp](https://www.w3schools.com/html/html_entities.asp) - Reference and conversion tool
 - [https://www.freeformatter.com/html-entities.html](https://www.freeformatter.com/html-entities.html) - Conversion tool.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE5MDI4Mzc5NTNdfQ==
+-->
