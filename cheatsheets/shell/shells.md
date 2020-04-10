@@ -1,16 +1,19 @@
-# Shells cheatsheet
+# Working with shells cheatsheet
 
 ## Start subshell
 
-In a bash shell, you can invoke a bash subshell in interactive mode.
+In a Bash shell, you can invoke another Bash *subshell* in interactive mode.
 
 ```sh
 bash
 ```
 
+You might not see anything different in the prompt. Though  some variables from the outer shell won't be available. Any variables you set in the inner shell won't be available in the outer shell. Also your Python environment could no longer be active.
+
 If you enter `exit` or press `CTRL`+`D`, then you will return to the outer shell session.
 
 Note that you should **not** use this to switch between shells as the config file will not be executed appropriately. Use the [Start new shell session](start-new-shell-session) section below.
+
 
 ## Reload shell
 
@@ -74,5 +77,5 @@ chsh -s /bin/zsh
 chsh -s $(which zsh)
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3OTc4MDA0XX0=
+eyJoaXN0b3J5IjpbMTU5NjM1NTA4OF19
 -->
