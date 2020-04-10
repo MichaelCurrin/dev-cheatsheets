@@ -2,8 +2,8 @@
 
 Unix shell cheatsheet for macOS/Linux
 
-Using Bash or ZSH shells. Some commands b
+Using Bash or ZSH shells. Some commands may be not valid on both shells.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTg2OTA2NzM5XX0=
+eyJoaXN0b3J5IjpbNzc5NzQyNzUzXX0=
 -->
