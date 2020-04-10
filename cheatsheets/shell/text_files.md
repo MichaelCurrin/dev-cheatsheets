@@ -1,5 +1,30 @@
 # Working with text files cheatsheet
 
+## Clipboard
+
+Copy to and paste from clipboard.
+
+Options are:
+
+- `xclip` for Linux
+- `pbcopy` and `pbpaste` for macOS
+
+See [SO](https://stackoverflow.com/questions/749544/pipe-to-from-the-clipboard-in-bash-script) for usage and shortcuts.
+
+Examples:
+
+```sh
+$ pbcopy < PATH
+```
+Print
+```sh
+$ pbpaste
+```
+Pipe
+
+```sh
+pb
+```
 
 ## Open
 
@@ -92,5 +117,5 @@ export $(egrep -v '^#' .env | xargs)
 
 [source](https://gist.github.com/judy2k/7656bfe3b322d669ef75364a46327836)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzgxMzI0NzNdfQ==
+eyJoaXN0b3J5IjpbODk3MjY2MzcxXX0=
 -->
