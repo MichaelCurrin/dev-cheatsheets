@@ -91,6 +91,29 @@ Also filter by condition.
 ```python
 df.loc[df['a'] > 10, ['a','c']]
 ```
+
+### Summarize
+
+Row count.
+
+```python
+len(df)
+```
+
+Get pairs of values and frequency, sorted by frequency descending.
+
+```python
+df['foo'].value_counts()
+```
+e.g.
+```python
+> df = pd.Series([2, 2, 5, 3, 4, np.nan])
+> df.value_counts()
+2.0    2
+4.0    1
+3.0    1
+5.0    1
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzNTk4MTQ0XX0=
+eyJoaXN0b3J5IjpbODIzOTYwMzM5XX0=
 -->
