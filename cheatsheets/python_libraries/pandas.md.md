@@ -20,13 +20,26 @@
 
 Commands in Pandas which I have used or would like to use. This is not meant to be complete, but cover some common usage situations or some tricky or obscure syntax.
 
+```python
+import pandas as pd
+```
+
 ### Create dataframe
 
+#### Column-input
+
+With `data` as a `dict` where key is column name and value is a list of values. 
+
 ```python
-df = 
+df = pd.DataFrame(data, indexes=[1, 2, 3])
 ```
+
+#### Row input
+
+With `data` as a 2-D list - a list of rows where each row is a list 
+
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzcwMTI1NDddfQ==
+eyJoaXN0b3J5IjpbLTk1OTU4OTMxNF19
 -->
