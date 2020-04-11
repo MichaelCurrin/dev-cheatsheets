@@ -67,16 +67,23 @@ Get columns.
 df[['foo', 'bar']]
 ```
 
-Select range of named columns.
+Get columns of name matching pattern.
+
+```python
+df.filter(regex='foo')
+```
+
+
+Select _range_ of named columns, inclusive.
 
 ```python
 df.loc[:,'foo':'bar']
 ```
 
-Select columns by index.
+Select individual columns by index.
 
 ```python
-df.iloc[:,[0,2,5]]
+df.iloc[:,[0, 2 ,5]]
 ```
 
 Also filter by condition.
@@ -85,5 +92,5 @@ Also filter by condition.
 df.loc[df['a'] > 10, ['a','c']]
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU1NDk3OTY5Ml19
+eyJoaXN0b3J5IjpbMTkzNTk4MTQ0XX0=
 -->
