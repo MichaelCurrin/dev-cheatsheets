@@ -9,7 +9,7 @@ Note that getting the current directory with `pwd` will give the working directo
 Get path to the current script.
 
 ```sh
-SCRIPT_PATH="$(
+SCRIPT_FILEPATH="$(
   cd "$(dirname "$0")" >/dev/null 2>&1
   pwd -P
 )"
@@ -30,8 +30,11 @@ Get path to the current script and directory using `realpath`. Works on macOS or
 ```sh
 SCRIPT_FILEPATH=$(realpath $0)
 SCRIPT_DIR=$(dirname $SCRIPT)
+```
 
-# Or, in oneline:
+Or get directory in one line:
+
+```sh
 SCRIPT_DIR=$(dirname $(realpath $0))
 ```
 
@@ -50,6 +53,6 @@ realpath -s $0`
 
 ## Current directory
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTUwMTQxMDcsLTEwNTE5NjA2NTksLT
-E2OTQ2NjM3MzVdfQ==
+eyJoaXN0b3J5IjpbODA0ODA0MjQ2LC0xMDUxOTYwNjU5LC0xNj
+k0NjYzNzM1XX0=
 -->
