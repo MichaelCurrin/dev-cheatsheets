@@ -172,11 +172,17 @@ fi
 
 ## Clone
 
-Shallow clone
+Shallow clone, to make downloading quicker.
 
 ```sh
-git clone URL --depth 1
+$ git clone URL --depth 1
+```
+
+Example to show only one commit 
+```sh
+$ git log
+* b385b6c (grafted, HEAD -> master, origin/master, origin/HEAD) The commit message
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3MDIxOTM3MF19
+eyJoaXN0b3J5IjpbLTk3ODYwOTUzOF19
 -->
