@@ -1,10 +1,12 @@
 # Path cheatsheet
 
-## Current script
+## Script path and directory
 
-Get path to the current script.
+Note that getting the current directory with `pwd` will give the working directory of the user. If a script is not the the working directory, then you need something more precise. If you want to get the directory where a script is in, from inside the script, use this.  
 
 ### Option A
+
+Get path to the current script.
 
 ```sh
 SCRIPT_PATH="$(
@@ -23,24 +25,22 @@ From top answer on [SO](https://stackoverflow.com/questions/4774054/reliable-way
 
 ### Option B
 
-Alternatively, using `realpath`. Works on macOS or Debian - requires coreutils.
+Get path to the current script and directory using `realpath`. Works on macOS or Debian - requires *coreutils*.
 
 ```sh
-SCRIPT=$(realpath $0)
-SCRIPT_PATH=$(dirname $SCRIPT)
+SCRIPT_FILEPATH=$(realpath $0)
+SCRIPT_DIR=$(dirname $SCRIPT)
 
-# Oneline:
-SCRIPT_PATH=$(dirname $(realpath $0))
+# Or, in oneline:
+SCRIPT_DIR=$(dirname $(realpath $0))
 ```
 
-
-For script `~/foo/bar.sh`, printing those variables:
+For a script `~/foo/bar.sh`, printing those variables gives:
 
 ```
 /Users/my-user/foo/bar.sh
 /Users/my-user/foo
 ```
-
 
 To leave symlinks unresolved: 
 
@@ -50,6 +50,6 @@ realpath -s $0`
 
 ## Current directory
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTE5NjA2NTksLTE2OTQ2NjM3MzVdfQ
-==
+eyJoaXN0b3J5IjpbLTE2OTUwMTQxMDcsLTEwNTE5NjA2NTksLT
+E2OTQ2NjM3MzVdfQ==
 -->
