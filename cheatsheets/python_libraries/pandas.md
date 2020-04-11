@@ -4,8 +4,8 @@ Commands in Pandas which I have used or would like to use. This is not meant to 
 
 See also:
 
-- [Pandas Cheat Sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) PDF on main site.
-
+- [Pandas Cheat Sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) PDF on Pandas main site.
+- [Pands](https://github.com/MichaelCurrin/learn-to-code/blob/master/Scripting%20languages/Python/libraries/pandas.md) on Learn to Code
 
 ## Imports
 
@@ -180,5 +180,5 @@ Scatter chart using pairs of points.
 df.plot.scatter(x='foo', y='bar')
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzY5NDc4NSwtNDE3MzI5MzA4XX0=
+eyJoaXN0b3J5IjpbMTQ4NDgxODUzMSwtNDE3MzI5MzA4XX0=
 -->
