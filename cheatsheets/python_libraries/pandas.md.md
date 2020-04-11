@@ -10,8 +10,12 @@
 - [pandas-dev/pandas](https://github.com/pandas-dev/pandas) on Github.
 - [Pandas 0.25](https://devdocs.io/pandas~0.25/) on DevDocs
 - Tutorials
+	- [10 minutes to Pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html) on official site.
 	- [Pandas basics](https://www.learnpython.org/en/Pandas_Basics)
 	- [Pandas](https://www.w3resource.com/pandas/index.php) on W3 Resource. 
+	- [An Introduction to Pandas in Python](https://towardsdatascience.com/an-introduction-to-pandas-in-python-b06d2dd51aba)
+	- [Pandas](https://www.codecademy.com/learn/data-processing-pandas/modules/dspath-intro-pandas) pro course on Codecademy.
+	- [Python Pandas Tutorial: A Complete Introduction for Beginners](https://www.learndatasci.com/tutorials/python-pandas-tutorial-complete-introduction-for-beginners/)
 
 ## Cheatsheets
 
@@ -21,7 +25,10 @@
 
 Commands in Pandas which I have used or would like to use. This is not meant to be complete, but cover some common usage situations or some tricky or obscure syntax.
 
+### Imports
+
 ```python
+import numpy as np
 import pandas as pd
 ```
 
@@ -191,5 +198,5 @@ Scatter chart using pairs of points.
 df.plot.scatter(x='foo', y='bar')
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczMzY2MDM3OF19
+eyJoaXN0b3J5IjpbLTQxNzMyOTMwOF19
 -->
