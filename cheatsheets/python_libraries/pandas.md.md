@@ -51,15 +51,39 @@ df = pd.DataFrame(
 )
 ```
 
-### Reshaping data
+### Select and filter
 
-#### Gather columns into rows
+Get column.
 
 ```python
-pd.melt(df)
+df['foo']
+
+df.foo
 ```
 
+Get columns.
 
+```python
+df[['foo', 'bar']]
+```
+
+Select range of named columns.
+
+```python
+df.loc[:,'foo':'bar']
+```
+
+Select columns by index.
+
+```python
+df.iloc[:,[0,2,5]]
+```
+
+Also filter by condition.
+
+```python
+df.loc[df['a'] > 10, ['a','c']]
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDE0MzU5MDZdfQ==
+eyJoaXN0b3J5IjpbMTU1NDk3OTY5Ml19
 -->
