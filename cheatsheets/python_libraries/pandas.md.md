@@ -11,6 +11,7 @@
 - [Pandas 0.25](https://devdocs.io/pandas~0.25/) on DevDocs
 - Tutorials
 	- [Pandas basics](https://www.learnpython.org/en/Pandas_Basics)
+	- [Pandas](https://www.w3resource.com/pandas/index.php) on W3 Resource. 
 
 ## Cheatsheets
 
@@ -107,13 +108,45 @@ df['foo'].value_counts()
 ```
 e.g.
 ```python
-> df = pd.Series([2, 2, 5, 3, 4, np.nan])
-> df.value_counts()
-2.0    2
-4.0    1
-3.0    1
-5.0    1
+df = pd.Series([2, 2, 5, 3, 4, np.nan])
+df.value_counts()
+# 2.0    2
+# 4.0    1
+# 3.0    1
+# 5.0    1
 ```
+
+Distinct values. Does not sort.
+
+```python
+df['foo'].nunique()
+```
+e.g.
+
+```python
+> pd.Series([2, 4, 3, 3], name='P').unique()
+# => array([2, 4, 3], dtype=int64)
+```
+
+Basic descriptive statistics for each column
+
+```python
+df.describe()
+```
+
+### Functions
+
+- `count`
+- `sum`
+- `min`
+- `max`
+- `mean`
+- `median`
+- `var`
+- `std`
+- `quantile([0.25,0.75]`
+- `apply(function)`
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIzOTYwMzM5XX0=
+eyJoaXN0b3J5IjpbMTU2MDYzOTQxN119
 -->
