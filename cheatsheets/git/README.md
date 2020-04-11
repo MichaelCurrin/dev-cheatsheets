@@ -169,6 +169,14 @@ else
     git push
 fi
 ```
+
+## Clone
+
+Shallow clone
+
+```sh
+git clone URL --depth 1
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0MDk4MDgzNV19
+eyJoaXN0b3J5IjpbMTY3MDIxOTM3MF19
 -->
