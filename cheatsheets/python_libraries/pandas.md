@@ -1,46 +1,28 @@
 # Pandas cheatsheet
 
+Commands in Pandas which I have used or would like to use. This is not meant to be complete, but cover some common usage situations or some tricky or obscure syntax.
 
-## Resources
-
-- [pandas.pydata.org](https://pandas.pydata.org/) official site. 
-	- Getting Started
-	- Docs
-	- Community
-- [pandas-dev/pandas](https://github.com/pandas-dev/pandas) on Github.
-- [Pandas 0.25](https://devdocs.io/pandas~0.25/) on DevDocs
-- Tutorials
-	- [10 minutes to Pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html) on official site.
-	- [Pandas basics](https://www.learnpython.org/en/Pandas_Basics)
-	- [Pandas](https://www.w3resource.com/pandas/index.php) on W3 Resource. 
-	- [An Introduction to Pandas in Python](https://towardsdatascience.com/an-introduction-to-pandas-in-python-b06d2dd51aba)
-	- [Pandas](https://www.codecademy.com/learn/data-processing-pandas/modules/dspath-intro-pandas) pro course on Codecademy.
-	- [Python Pandas Tutorial: A Complete Introduction for Beginners](https://www.learndatasci.com/tutorials/python-pandas-tutorial-complete-introduction-for-beginners/)
-
-## Cheatsheets
+See also:
 
 - [Pandas Cheat Sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) PDF on main site.
 
-## Usage
 
-Commands in Pandas which I have used or would like to use. This is not meant to be complete, but cover some common usage situations or some tricky or obscure syntax.
-
-### Imports
+## Imports
 
 ```python
 import numpy as np
 import pandas as pd
 ```
 
-### Types
+## Types
 
 - `pd.Series`
 - `pd.GroupBy`
 -  `pd.DataFrame`
 
-### Create dataframe
+## Create dataframe
 
-#### Column-input
+### Column-input
 
 With `data` as a `dict` where key is column name and value is a list of values. 
 
@@ -52,7 +34,7 @@ df = pd.DataFrame(
 )
 ```
 
-#### Row input
+### Row input
 
 With `data` as a 2-D list - a list of rows where each row is a list. Columns must be named.
 
@@ -65,7 +47,7 @@ df = pd.DataFrame(
 )
 ```
 
-### Select and filter
+## Select and filter
 
 Get column.
 
@@ -106,7 +88,7 @@ Also filter by condition.
 df.loc[df['a'] > 10, ['a','c']]
 ```
 
-### Summarize
+## Summarize
 
 Row count.
 
@@ -198,5 +180,5 @@ Scatter chart using pairs of points.
 df.plot.scatter(x='foo', y='bar')
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQxNzMyOTMwOF19
+eyJoaXN0b3J5IjpbLTE4MzY5NDc4NSwtNDE3MzI5MzA4XX0=
 -->
