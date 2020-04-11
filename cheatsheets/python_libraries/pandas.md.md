@@ -31,15 +31,35 @@ import pandas as pd
 With `data` as a `dict` where key is column name and value is a list of values. 
 
 ```python
-df = pd.DataFrame(data, indexes=[1, 2, 3])
+data = {"a" : [4 ,5, 6], "b" : [7, 8, 9], "c" : [10, 11, 12]}
+df = pd.DataFrame(
+    data,
+    indexes=[1, 2, 3],
+)
 ```
 
 #### Row input
 
-With `data` as a 2-D list - a list of rows where each row is a list 
+With `data` as a 2-D list - a list of rows where each row is a list. Columns must be named.
 
+```python
+data = [[4, 7, 10],[5, 8, 11],[6, 9, 12]]
+df = pd.DataFrame(
+    data, 
+    indexes=[1, 2, 3],
+    columns=['a', 'b', 'c'],
+)
+```
+
+### Reshaping data
+
+#### Gather columns into rows
+
+```python
+pd.melt(df)
+```
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1OTU4OTMxNF19
+eyJoaXN0b3J5IjpbLTEyMDE0MzU5MDZdfQ==
 -->
