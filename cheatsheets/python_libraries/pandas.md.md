@@ -25,6 +25,12 @@ Commands in Pandas which I have used or would like to use. This is not meant to 
 import pandas as pd
 ```
 
+### Types
+
+- `pd.Series`
+- `pd.GroupBy`
+-  `pd.DataFrame`
+
 ### Create dataframe
 
 #### Column-input
@@ -136,17 +142,54 @@ df.describe()
 
 ### Functions
 
-- `count`
-- `sum`
-- `min`
-- `max`
-- `mean`
-- `median`
-- `var`
-- `std`
-- `quantile([0.25,0.75]`
-- `apply(function)`
+Calculations on a column or possibly dataframe.
 
+- `.count()`
+- `.sum()`
+- `.min()`
+- `.max()`
+- `.mean()`
+- `.median()`
+- `.var()`
+- `.std()`
+- `.quantile([0.25,0.75]`
+- `.apply(function)`
+
+
+### Group by
+
+Get `GroupBy` object.
+
+Column.
+
+```python
+df.groupby(by="foo")
+```
+
+Index.
+```python
+df.groupby(level="foo")
+```
+
+Size of group.
+
+```python
+.size()
+```
+
+### Plot
+
+Histogram for each column.
+
+```python
+df.plot.hist()
+```
+
+Scatter chart using pairs of points.
+
+```python
+df.plot.scatter(x='foo', y='bar')
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2MDYzOTQxN119
+eyJoaXN0b3J5IjpbLTczMzY2MDM3OF19
 -->
