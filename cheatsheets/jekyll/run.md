@@ -2,18 +2,20 @@
 
 ## Serve subdirectory
 
-If Jekyll is installed with Bundler at the top-level of the project, you can run Jekyll from anywhere.
+If Jekyll is installed with *Bundler* at the top-level of the project, you can run Jekyll from anywhere.
 
 ```sh
 cd sample_site
 bundle exec jekyll serve
 ```
 
-Or simply from the root:
+Specify source content in a subdirectory using `--source` flag  and value (which defaults to `./`). 
 
 ```sh
-bundle exec jekyll serve
+bundle exec jekyll serve -s sample_site -d sample_site/_site
 ```
+
+Still builds to top-level `_site`, so destination is set here too. Note that when running a local server, it doesn't actually matter where `_site` is as long it is not versioned.
 
 
 ## Testing
@@ -36,5 +38,5 @@ bundle exec jekyll serve
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2NjE5MDI0XX0=
+eyJoaXN0b3J5IjpbLTU1OTA2NzkzN119
 -->
