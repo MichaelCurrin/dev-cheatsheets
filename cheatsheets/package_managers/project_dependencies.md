@@ -26,45 +26,7 @@ $ npm -g list
 
 ## Install package version
 
-### Ruby
-
-#### Gem command
-
-```ruby
-gem install GEM_NAME
-gem install --user GEM_NAME
-gem upgrade GEM_NAME
-
-# e.g.
-gem 'minima'
-gem 'jekyll', '>=3.5', '<5'
-gem 'minima', '~> 2.5', '>= 2.5.1'
-```
-
-#### Bundler command
-
-Gemfile should like this:
-
-```ruby
-gem 'foo'
-gem 'bar', '~> 2.5'
-```
-
-Then Bundler will use that.
-
-```sh
-bundle install
-```
-
-Or install directly.
-
-Note this will not update Gemfile - do that manually.
-
-```sh
-bundle install GEM_NAME
-bundle install minima 2.5
-```
-
+<!-- TODO add gem version style, without commands -->
 
 ### Python
 
@@ -179,5 +141,5 @@ To uninstall:
 $ pip uninstall foo
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzg0OTQ1NDg1LDEwNjAyNzQyXX0=
+eyJoaXN0b3J5IjpbMTU3ODEzOTA4NiwxMDYwMjc0Ml19
 -->
