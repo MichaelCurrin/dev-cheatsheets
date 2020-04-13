@@ -32,10 +32,21 @@ gem 'foo', '~> x.y.z'
 gem install foo -v x.y.z
 ```
 
-Install a Jekyll plugin:
+Install a Jekyll plugin.
+
+Single-line approach.
 
 ```ruby
 gem 'foo', group: :jekyll_plugins
+```
+
+Or multi-line approach, good for multiple plugins.
+
+```ruby
+group: :jekyll_plugins do
+  gem 'foo'
+  # Add more plugins here. Do NOT separate each line with comma.
+end
 ```
 
 Example of `Gemfile` for a Jekyll project below.
@@ -141,5 +152,5 @@ plugins:
 remote_theme: benbalter/retlab
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODA1NzUzMzA0XX0=
+eyJoaXN0b3J5IjpbNjkyNTI5ODYsODA1NzUzMzA0XX0=
 -->
