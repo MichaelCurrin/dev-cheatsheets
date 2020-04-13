@@ -3,7 +3,7 @@
 - [Configuring and managing workflows](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow) from actions docs
 - [Syntax](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions)
 - [Github Actions Documentation](https://help.github.com/en/actions)
-
+- 
 ## Examples
 
 ### Python
@@ -73,5 +73,5 @@ on:
       - master
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2NzY2NzY1N119
+eyJoaXN0b3J5IjpbODgyOTUyMDEwLC04Njc2Njc2NTddfQ==
 -->
