@@ -37,7 +37,9 @@ jobs:
         run: make lint
 ```
 
-## Pushing
+## Run conditions
+
+### On push vs Pull Request
 
 Applies to pushes on master and branches, even if no PR.
 
@@ -59,6 +61,17 @@ on: pull_request
 This is useful if you enforce checks passing in repo branch rules, which also means that PRs are needed and commits cannot be made to master directly.
 
 This could be useful to avoid doing a check when pushing to a feature branch without a Pull Request. Assuming that is will rerun checks on pushes to the PR - to be confirmed.
+
+### Branches
+
+You may want to restrict your action to only build on  pushes `master` and not feature branches. For example if the Action writes over content in `gh-pages` branch.
+
+```yaml
+on:
+  push:
+    branches:    
+      - master
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0OTcxODMzOF19
+eyJoaXN0b3J5IjpbLTg2NzY2NzY1N119
 -->
