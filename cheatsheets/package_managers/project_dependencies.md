@@ -30,13 +30,14 @@ $ npm -g list
 
 #### Gem command
 
-```sh
+```ruby
 gem install GEM_NAME
 gem install --user GEM_NAME
 gem upgrade GEM_NAME
 
 # e.g.
-gem 'mi
+gem 'minima'
+gem 'jekyll', '>=3.5', '<5'
 gem 'minima', '~> 2.5', '>= 2.5.1'
 ```
 
@@ -44,7 +45,7 @@ gem 'minima', '~> 2.5', '>= 2.5.1'
 
 Gemfile should like this:
 
-```
+```ruby
 gem 'foo'
 gem 'bar', '~> 2.5'
 ```
@@ -178,5 +179,5 @@ To uninstall:
 $ pip uninstall foo
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjQwODUxNTgsMTA2MDI3NDJdfQ==
+eyJoaXN0b3J5IjpbMzg0OTQ1NDg1LDEwNjAyNzQyXX0=
 -->
