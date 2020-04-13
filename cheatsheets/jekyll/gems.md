@@ -45,6 +45,36 @@ Open VS Code in that directory. Use `open` to use your file browser.
 ```sh
 code $(bundle show minima)
 ```
+
+
+#### Gem command
+
+```ruby
+gem install GEM_NAME
+gem install --user GEM_NAME
+gem upgrade GEM_NAME
+
+# e.g.
+gem 'minima'
+gem 'jekyll', '>=3.5', '<5'
+gem 'minima', '~> 2.5', '>= 2.5.1'
+```
+
+#### Bundler command
+
+Gemfile should like this:
+
+```ruby
+gem 'foo'
+gem 'bar', '~> 2.5'
+```
+
+Then Bundler will use that.
+
+```sh
+bundle install
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2MzcyMzE4MV19
+eyJoaXN0b3J5IjpbLTExMDgwNTM2ODZdfQ==
 -->
