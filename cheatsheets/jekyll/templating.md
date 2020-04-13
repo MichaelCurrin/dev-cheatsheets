@@ -2,6 +2,26 @@
 
 Cheat sheet for using Jekyll Liquid and plain HTML in Jekyll projects.
 
+## Links
+
+### Local paths
+
+Use the `link` tag. The smart way to do links for local pages. 
+
+This will figure out the appropriate URL. And it will give build error if the page path is not valid.  Note - do NOT use quotes around the URL otherwise they will be rendered as escaped quote tags and possibly break the HTML.
+
+e.g.
+
+```
+-  [Link description]({% link about.md %})
+```
+
+Result:
+
+```html
+<a href="/my-base-url/about.html">Link description</a>
+```
+
 ## Comment
 
 ```
@@ -156,3 +176,6 @@ How use the `svg` and `use` tags to reference a `.svg` file which contains multi
 
 <svg>
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTgxMzM0Njk1OV19
+-->
