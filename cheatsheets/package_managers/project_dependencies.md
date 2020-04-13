@@ -26,6 +26,45 @@ $ npm -g list
 
 ## Install package version
 
+### Ruby
+
+#### Gem command
+
+```sh
+gem install GEM_NAME
+gem install --user GEM_NAME
+gem upgrade GEM_NAME
+
+# e.g.
+gem 'mi
+gem 'minima', '~> 2.5', '>= 2.5.1'
+```
+
+#### Bundler command
+
+Gemfile should like this:
+
+```
+gem 'foo'
+gem 'bar', '~> 2.5'
+```
+
+Then Bundler will use that.
+
+```sh
+bundle install
+```
+
+Or install directly.
+
+Note this will not update Gemfile - do that manually.
+
+```sh
+bundle install GEM_NAME
+bundle install minima 2.5
+```
+
+
 ### Python
 
 ##### Version quick reference
@@ -88,6 +127,7 @@ Mopidy-Dirble ~= 1.1        # Compatible release. Same as >= 1.1, == 1.*
 ```
 
 ##### More examples
+
 Be careful when setting a range - make sure you understand what is does. See below:
 
 - `== 2.2` - Version `2.2` only.
@@ -138,5 +178,5 @@ To uninstall:
 $ pip uninstall foo
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2MDI3NDJdfQ==
+eyJoaXN0b3J5IjpbLTE0NjQwODUxNTgsMTA2MDI3NDJdfQ==
 -->
