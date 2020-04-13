@@ -22,6 +22,18 @@ Result:
 <a href="/my-base-url/about.html">Link description</a>
 ```
 
+### Footer links
+
+More Markdown then Jekyll, but still useful to keep text readable. Also this link be just below the paragraph rather than the end of the page.
+
+```
+This paragraph covers [CircleCI][0], [GitHub][1] and also [Bitbucket][2].
+
+[0]: https://circleci.com/
+[1]: https://github.com/
+[2]: https://bitbucket.org/
+```
+
 ## Comment
 
 ```
@@ -177,5 +189,5 @@ How use the `svg` and `use` tags to reference a `.svg` file which contains multi
 <svg>
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgxMzM0Njk1OV19
+eyJoaXN0b3J5IjpbLTE2ODY4ODk4MTAsLTgxMzM0Njk1OV19
 -->
