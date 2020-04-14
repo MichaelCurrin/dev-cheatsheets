@@ -188,6 +188,20 @@ How use the `svg` and `use` tags to reference a `.svg` file which contains multi
 
 <svg>
 ```
+
+## Improve this page
+
+Add a button for visitors to go to GitHub and edit the page.
+
+e.g.
+
+```html
+<a href="https://github.com/MichaelCurrin/cheatsheets/edit/master/{{ page.path }}">
+<i class="fa fa-pencil"></i>Improve this page
+</a>
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODY4ODk4MTAsLTgxMzM0Njk1OV19
+eyJoaXN0b3J5IjpbNDc4NjY1NTQzLC0xNjg2ODg5ODEwLC04MT
+MzNDY5NTldfQ==
 -->
