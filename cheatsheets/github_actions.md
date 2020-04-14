@@ -6,7 +6,7 @@
 - [Syntax](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions)
 - [Github Actions Documentation](https://help.github.com/en/actions)
 - [Github Actions](https://github.com/actions) org on Github
-
+- [Github Actions](https://github.community/t5/GitHub-Actions/bd-p/actions) community forums
 
 ## Examples
 
@@ -77,5 +77,5 @@ on:
       - master
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjE0MzM3MzEsLTg2NzY2NzY1N119
+eyJoaXN0b3J5IjpbMTI2NjcyNzM0MSwtODY3NjY3NjU3XX0=
 -->
