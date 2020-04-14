@@ -32,11 +32,12 @@ Use Liquid highlighting (HTML tags are plain)
 	```
 	{% endraw %}
 
+
 ## Highlight tag
 
 This renders output the same as the in the above section.
 
-Note the `raw` tag goes _inside_ the `highlight `tag.
+Note the `raw` tag goes _inside_ the `highlight `tag, otherwise the `highlight` will not be evaluated.
 
 Use Liquid highlighting.
 
@@ -51,5 +52,5 @@ Use Liquid highlighting.
 	{% endhighlight %}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDM0MjQ2MzAsMTEyNDYxNDY2NF19
+eyJoaXN0b3J5IjpbLTE3MzYzODc1NTYsMTEyNDYxNDY2NF19
 -->
