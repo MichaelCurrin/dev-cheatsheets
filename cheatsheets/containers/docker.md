@@ -33,3 +33,12 @@ With no options, you will get a confirmation prompt and told that these will be 
 - all build cache
 
 [source](https://docs.docker.com/engine/reference/commandline/system_prune/)
+
+Remove images.
+
+```sh
+docker image prune
+```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNTgxNTYxMzg0XX0=
+-->
