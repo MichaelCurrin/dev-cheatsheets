@@ -1,11 +1,11 @@
 # Jekyll codeblocks cheatsheet
 
-Here we have Liquid code which needs to be shown as code and not rendered (it may cause errors), so use the `raw` tag.
+Here we have Liquid code which needs to be shown as code and not rendered (it may cause errors), so use the `raw` tag. This will not show up literally but will ensure any Liquid content inside it is no evaluated.
 
 ## Codeblock
 
 
-Note that the codeblock goes _inside_ the `raw` tag.
+Note that the codeblock goes _inside_ the `raw` tag to avoid unnecessary empty lines showing up.
 
 Use HTML highlighting (Liquid parts are plain). 
 
@@ -51,5 +51,5 @@ Use Liquid highlighting.
 	{% endhighlight %}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyNDYxNDY2NF19
+eyJoaXN0b3J5IjpbLTEwNDM0MjQ2MzAsMTEyNDYxNDY2NF19
 -->
