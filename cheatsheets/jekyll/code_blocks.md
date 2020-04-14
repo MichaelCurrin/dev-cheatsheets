@@ -4,7 +4,10 @@ Here we have Liquid code which needs to be shown as code and not rendered (it ma
 
 ## Codeblock
 
-Use HTML highlighting (HTML tags are colored but Liquid is plain). 
+
+Note that the codeblock goes _inside_ the `raw` tag.
+
+Use HTML highlighting (Liquid parts are plain). 
 
 	{% raw %}
 	```html
@@ -17,7 +20,7 @@ Use HTML highlighting (HTML tags are colored but Liquid is plain).
 	{% endraw %}
 
 
-Use Liquid highlighting (HTML tag plain)
+Use Liquid highlighting (HTML tags are plain)
 
 	{% raw %}
 	```liquid
@@ -29,7 +32,13 @@ Use Liquid highlighting (HTML tag plain)
 	```
 	{% endraw %}
 
-## Highlight
+## Highlight tag
+
+This renders output the same as the in the above section.
+
+Note the `raw` tag goes _inside_ the `highlight `tag.
+
+Use Liquid highlighting.
 
 	{% highlight liquid %}
 	{% raw %}
@@ -42,5 +51,5 @@ Use Liquid highlighting (HTML tag plain)
 	{% endhighlight %}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkyODk1MjM1Nl19
+eyJoaXN0b3J5IjpbMTEyNDYxNDY2NF19
 -->
