@@ -13,15 +13,21 @@ s/foo/bar/g
 
 Use `g` for global. Add `I` after `g` for case insensitive flag.
 
-## Replace word in file
-
-Replace `foo` with `bar` in _hello.txt_.
+## Replace word in text
 
 ```sh
-sed 's/foo/bar/g' hello.txt
-# OR
 echo 'football' | sed 's/foo/bar/g'
 ```
+
+## Replace word in file
+
+Replace `foo` with `bar` in _hello.txt_ and print to the console.
+
+```sh
+sed -i 's/foo/bar/g' hello.txt
+```
+
+Add `-i` flag to edit file in place or remove it to just preview.
 
 From [tutorial](https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace-text-in-files-in-linux-unix-shell/)
 
@@ -31,13 +37,13 @@ From [tutorial](https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace
 You can run multiple replaces at once.
 
 ```sh
-sed 's/foo/bar/g;s/fizz/buzz/g'
+sed -i 's/foo/bar/g;s/fizz/buzz/g'
 ```
 
 For more control, you can use you can use an intermediate term. Like arbitary `~~`.
 
 ```sh
-sed 's/foo/~~/g; s/bar/foo/g; s/~~/foo/g'
+sed -i 's/foo/~~/g; s/bar/foo/g; s/~~/foo/g'
 ```
 
 [source](https://stackoverflow.com/questions/26568952/how-to-replace-multiple-patterns-at-once-with-sed)
@@ -66,5 +72,5 @@ find ./ -type f -exec sed -i 's/foo/bar/g' {} \;
 
 From [StackOverflow](https://stackoverflow.com/questions/11392478/how-to-replace-a-string-in-multiple-files-in-linux-command-line)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDcyODQyNzVdfQ==
+eyJoaXN0b3J5IjpbLTQ0MzAwNzU5Ml19
 -->
