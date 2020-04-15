@@ -68,6 +68,7 @@ end
 ```
 
 Notes on the above:
+
 - The source line is needed to prevent an error.
 - Jekyll restriction will prevent getting Jekyll `4.0.0`.
 - The group helps plugins to be loaded at the correct point when building the site.
@@ -152,5 +153,6 @@ plugins:
 remote_theme: benbalter/retlab
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjkyNTI5ODYsODA1NzUzMzA0XX0=
+eyJoaXN0b3J5IjpbLTE0MTU2OTE1NDQsNjkyNTI5ODYsODA1Nz
+UzMzA0XX0=
 -->
