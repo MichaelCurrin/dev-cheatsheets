@@ -17,20 +17,33 @@ Note that you should **not** use this to switch between shells as the config fil
 
 ## Get current shell
 
-```sh
-$ echo $0
--bash
+This will print the program name, which in the case of the shell is the actual shell. [source](https://stackoverflow.com/questions/3327013/how-to-determine-the-current-shell-im-working-on)
 
-$ echo 0
--zsh
-```
+- Bash
+	```sh
+	$ echo $0
+	-bash
+	```
+- ZSH
+	```sh
+	$ echo $0
+	-zsh
+	```
 
-This gives '/bin/zsh' when using Bash 
-```sh
-$ echo $BASH
-```
+
+
+- Bash (This is only set when using Bash. Though, this gave '/bin/zsh' when using Bash and ZSH is the default shell, so need to investigate this further).
+	```sh
+	$ echo $BASH
+	```
+- ZSH
+	```sh
+	$ echo $ZSH_NAME
+	zsh
+	```
 
 This shows the _default_ shell, not your current shell.
+
 
 ```sh
 echo $SHELL
@@ -92,5 +105,5 @@ Create an function in your `~/.bashrc` if you easily run it. This reloads the _d
 reload_shell() { exec -l $SHELL; }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjkzMTgyMzMxXX0=
+eyJoaXN0b3J5IjpbLTk3NzM1NjAxMV19
 -->
