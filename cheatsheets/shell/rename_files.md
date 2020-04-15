@@ -12,12 +12,14 @@ Rename `*.foo` files to `*.bar`.
 find . -name "*.foo" -exec bash -c 'mv "$1" "${1%.foo}".bar' - '{}' \;
 ```
 
-Using `rename`.
+Using `git`.
+
+
+Using `find` and `rename`.
 
 ```sh
 find . -name "*.foo" -exec rename 's/\.foo$/.bar/' '{}' \;
 ```
-
 
 ### Recursively
 
@@ -25,7 +27,7 @@ find . -name "*.foo" -exec rename 's/\.foo$/.bar/' '{}' \;
 Recursively
 
 ```sh
-find PATH -depth -name "*.foo" -exec sh -c 'mv "$1" "${1%.foo}.bar"' _ {} \;
+find . -depth -name "*.foo" -exec sh -c 'mv "$1" "${1%.foo}.bar"' _ {} \;
 ```
 
 In Bash 4, you can use globstar to get recursive globs (`**`).
@@ -42,8 +44,9 @@ done
 [source](https://www.howtogeek.com/423214/how-to-use-the-rename-command-on-linux/)
 
 ```sh
-for f in *.prog; do mv -- "$f" "${f%.prog}.prg"
+for f in *.foo; do mv -- "$f" "${f%.foo}.bar"
 ```
+
 ### Rename tool
 
 Rename file extension of a batch of files.
@@ -51,9 +54,10 @@ Rename file extension of a batch of files.
 ```sh
 sudo apt install rename
 ```
+
 ```sh
-rename 's/.prog/.prg/' *.prog
+rename 's/.foo/.bar/' *.foo
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MTc4MDc3NDBdfQ==
+eyJoaXN0b3J5IjpbNjExOTc3OTk5XX0=
 -->
