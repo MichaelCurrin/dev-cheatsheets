@@ -76,6 +76,20 @@ on:
     branches:    
       - master
 ```
+
+## Scheduling
+
+Schedule a nightly build such as of a Github Page site.
+
+Note that `*` is a special character in YAML so you have to quote this string.
+
+```yaml
+on:
+  schedule:
+    - cron:  '*/15 * * * *'
+```
+
+[On schedule](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#onschedule)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2NjcyNzM0MSwtODY3NjY3NjU3XX0=
+eyJoaXN0b3J5IjpbLTExNTQ4NjU5ODYsLTg2NzY2NzY1N119
 -->
