@@ -105,7 +105,7 @@ Why the `jekyll_plugins` group in the samples above? The docs say:
 
 A gem included here will be activated even if its not explicitly listed under the plugins: key in your site’s config file.
 
-## Jekyll Plugins
+## Plugins
 
 ### Local
 
@@ -132,6 +132,21 @@ Additional:
   - jekyll-github-metadata
 ```
 
+### Submodule
+
+Add.
+
+```sh
+$ git submodule add git://github.com/foo/bar.git _plugins/foo
+```
+
+Update.
+
+```sh
+$ cd _plugins/bar
+$ git pull origin master
+```
+
 ## Remote themes
 
 For themes not supported by Github Pages plugin, you can set a remote theme using a plugin.
@@ -152,7 +167,9 @@ plugins:
 
 remote_theme: benbalter/retlab
 ```
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTU2OTE1NDQsNjkyNTI5ODYsODA1Nz
+eyJoaXN0b3J5IjpbLTEzMjM2NTE5NjMsNjkyNTI5ODYsODA1Nz
 UzMzA0XX0=
 -->
