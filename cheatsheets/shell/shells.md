@@ -15,40 +15,24 @@ If you enter `exit` or press `CTRL`+`D`, then you will return to the outer shell
 Note that you should **not** use this to switch between shells as the config file will not be executed appropriately. Use the [Start new shell session](start-new-shell-session) section below.
 
 
-## Reload shell
-
-If you have edited your Bash configs and want to reload them, you can do this:
-
-```sh
-source ~/.bashrc
-source ~/.bash_profile
-```
-
-Alternatives below, if you are happy to lose shell history. [source](https://stackoverflow.com/questions/4608187/how-to-reload-bash-profile-from-the-command-line)
-
-Run this. This runs the login option to ensure bash profile is loaded.
-
-```sh
-bash -l
-```
-
-Or completely replace the current shell. If you exit, the terminal tab will exit and you will no go to the outer shell.
-
-```sh
-exec -l bash
-```
-
-Create an function in your `~/.bashrc` if you easily run it.
-
-```sh
-reload_shell() { exec -l $SHELL; }
-```
-
 ## Get current shell
 
 ```sh
-echo $0
+$ echo $0
+-bash
 
+$ echo 0
+-zsh
+```
+
+This gives '/bin/zsh' when using Bash 
+```sh
+$ echo $BASH
+```
+
+This shows the _default_ shell, not your current shell.
+
+```sh
 echo $SHELL
 ```
 
@@ -76,6 +60,37 @@ chsh -s /bin/zsh
 
 chsh -s $(which zsh)
 ```
+
+
+
+## Reload shell
+
+If you have edited your Bash configs and want to reload them, you can do this:
+
+```sh
+source ~/.bashrc
+source ~/.bash_profile
+```
+
+Alternatives below, if you are happy to lose shell history. [source](https://stackoverflow.com/questions/4608187/how-to-reload-bash-profile-from-the-command-line)
+
+Run this. This runs the login option to ensure bash profile is loaded.
+
+```sh
+bash -l
+```
+
+Or completely replace the current shell. If you exit, the terminal tab will exit and you will no go to the outer shell.
+
+```sh
+exec -l bash
+```
+
+Create an function in your `~/.bashrc` if you easily run it. This reloads the _default_ shell, not your current shell.
+
+```sh
+reload_shell() { exec -l $SHELL; }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5NjM1NTA4OF19
+eyJoaXN0b3J5IjpbNjkzMTgyMzMxXX0=
 -->
