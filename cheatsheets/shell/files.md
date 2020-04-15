@@ -1,5 +1,35 @@
 # Files cheatsheet
 
+## List files
+
+```sh
+ls
+```
+
+```sh
+ls *
+```
+
+Recursive.
+
+```sh
+ls -R
+```
+
+List directories, rather than searching recursively.
+
+```sh
+ls -d DIR_NAME
+```
+
+Using `find`.
+
+```sh
+find .
+
+find DIR_NAME
+```
+
 ## Find executable
 
 Show location of an executable that is in a `bin` directory.
@@ -15,6 +45,7 @@ open $(which myscript)
 ```
 
 Use `code` in place of `open`, to use VS Code IDE.
+
 
 ## Piping and redirection
 
@@ -59,5 +90,5 @@ curl -O -L https://github.com/actions/runner/releases/download/v2.168.0/actions-
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQ3NDY2NV19
+eyJoaXN0b3J5IjpbLTI3OTQzMzQ0MSw5NDc0NjY1XX0=
 -->
