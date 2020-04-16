@@ -12,8 +12,11 @@ Rename `*.foo` files to `*.bar`.
 find . -name "*.foo" -exec bash -c 'mv "$1" "${1%.foo}".bar' - '{}' \;
 ```
 
-Using `git`.
+Using `git mv`.
 
+```sh
+find . -name "*-it.md" -exec bash -c 'mv "$1" "${1%-it.md}".md' - '{}' \;
+```
 
 Using `find` and `rename`.
 
@@ -59,5 +62,5 @@ sudo apt install rename
 rename 's/.foo/.bar/' *.foo
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjExOTc3OTk5XX0=
+eyJoaXN0b3J5IjpbLTEwMjExNTA3MzVdfQ==
 -->
