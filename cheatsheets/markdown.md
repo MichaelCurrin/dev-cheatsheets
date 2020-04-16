@@ -269,7 +269,7 @@ Example of `code` in a sentence.
 print('Hello world'!)
 ```
 
-They also work nicely under bullet points. See [#code-snippets-in-lists] above.
+They also work nicely under bullet points. See [Code snippets in lists](#code-snippets-in-lists) above.
 
 ## Todo list
 
