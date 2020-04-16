@@ -20,6 +20,20 @@ See [casks](https://formulae.brew.sh/cask/).
 $ brew cask install CASK_NAME
 ```
 
+#### Install taps
+
+```sh
+$ brew tap <TAP_NAME>/taps
+$ brew install <TAP_NAME>
+```
+
+e.g. 
+
+```sh
+$ brew tap isacikgoz/taps
+$ brew install gitbatch
+```
+
 ## Linux
 
 ### APT
