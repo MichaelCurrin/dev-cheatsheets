@@ -553,6 +553,13 @@ For example, this will link add `/example.com` to the current path.
 
 Add optional alternative text. You can hover over the link to see the alt text.
 
+**Code:**
+```markdown
+[link text](https://example.com "alt text")
+```
+
+**Result:**
+
 ```markdown
 [link text](https://example.com "alt text")
 ```
@@ -563,51 +570,62 @@ Add optional alternative text. You can hover over the link to see the alt text.
 
 Example:
 
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
-
-
-Code:
+**Code:**
 
 ```markdown
 [I'm a reference-style link][Arbitrary case-insensitive reference text]
 
 [arbitrary case-insensitive reference text]: https://www.mozilla.org
 ```
+
+
+**Result:**
+
+[I'm a reference-style link][Arbitrary case-insensitive reference text]
+
+[arbitrary case-insensitive reference text]: https://www.mozilla.org
+
+
 
 ### Number
 
-Example:
-
-[You can use numbers for reference-style link definitions][1]
-
-[1]: http://slashdot.org
+Example
 
 
-Code:
+**Code:**
 
 ```markdown
 [You can use numbers for reference-style link definitions][1]
 
 [1]: http://slashdot.org
 ```
+
+**Result:**
+
+[You can use numbers for reference-style link definitions][1]
+
+[1]: http://slashdot.org
+
 
 ### Link text
 
-Example:
+Example
 
-Or leave it empty and use the [link text itself].
-
-[link text itself]: http://www.reddit.com
-
-Code:
+**Code:**
 
 ```markdown
 Or leave it empty and use the [link text itself].
 
 [link text itself]: http://www.reddit.com
 ```
+
+**Result:**
+
+Or leave it empty and use the [link text itself].
+
+[link text itself]: http://www.reddit.com
+
+
 
 ## Images
 
@@ -627,7 +645,7 @@ The following apply, as with standard links:
 ![Alt text](target "Hover text")
 ```
 
-Code sample:
+Example code:
 
 ```markdown
 ![My image](foo.jpg)
@@ -640,30 +658,24 @@ Note that for local paths, the target is **case sensitive**. Github will show an
 
 #### Inline-style
 
-Example:
+Example
 
-![Alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover")
-
-
-Code:
+**Code**:
 
 ```
 ![Alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover")
 ```
+
+**Result:**
+
+![Alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover")
+
+
 
 #### Reference-style
 
-Example:
 
-![Alt text][logo]
-
-Some more text.
-
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover"
-
-There is a logo above but this elemement but it is not visible in the rendered HTML.
-
-Code:
+**Code**:
 
 ```markdown
 ![Alt text][logo]
@@ -674,6 +686,17 @@ Some more text.
 
 There is a logo above but this elemement but it is not visible in the rendered HTML.
 ```
+
+**Result**:
+
+![Alt text][logo]
+
+Some more text.
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover"
+
+There is a logo above but this elemement but it is not visible in the rendered HTML.
+
 
 ### Plain HTML
 
@@ -724,13 +747,18 @@ Format:
 ![Alt text](https://example.com/foo.svg)
 ```
 
-Example:
+Example
+
+**Code:**
 
 ```markdown
 ![Alt text](https://placeholder.pics/svg/200x60/DEDEDE/555555/Sample%20SVG)
 ```
 
+**Result**
+
 ![Alt text](https://placeholder.pics/svg/200x60/DEDEDE/555555/Sample%20SVG)
+
 
 #### Github links
 
@@ -784,7 +812,7 @@ Note that if you editing markdown content in a Github, the rules are different f
 
 The first row is the header and always followed by a row of dashes.
 
-Code:
+**Code:**
 
     | A   | B   | C   |
     | --- | --- | --- |
@@ -792,7 +820,7 @@ Code:
     | Bar | 2   |
     | Baz | 3   |
 
-Result:
+**Result:**
 
 | A   | B   | C   |
 | --- | --- | --- |
@@ -808,7 +836,7 @@ The output table will set optimal width for each column. So it is optional to ke
 Use optional colons for alignment. You can also add a border to the markdown, which does not affect the output. See the following example. [source](https://www.tablesgenerator.com/markdown_tables)
 
 
-Code:
+**Code:**
 
     | Tables   |      Are      |  Cool |
     | -------- | :-----------: | ----: |
@@ -816,7 +844,7 @@ Code:
     | col 2 is |   centered    |   $12 |
     | col 3 is | right-aligned |    $1 |
 
-Result:
+**Result:**
 
 | Tables   |      Are      |  Cool |
 | -------- | :-----------: | ----: |
@@ -848,7 +876,7 @@ Format:
 
 See example below:
 
-HTML code:
+**HTML code:**
 
     <details>
     <summary><b>Preview message</b></summary>
@@ -864,7 +892,7 @@ HTML code:
     ```
     </details>
 
-Output:
+**Result:**
 
 <details>
 <summary><b>Preview message</b></summary>
@@ -880,13 +908,12 @@ Some code:
 ```
 </details>
 
+
 ### Jekyll
 
 Example using Jekyll templating. In particular, putting a code block inside the expandable section.
 
 **Sample Jekyll/Liquid code**
-
-Here is the code:
 
 ```
 <details>
@@ -901,9 +928,9 @@ puts 'Expanded message'
 </details>
 ```
 
-**Sample result**
+**Sample rendered HTML as code**
 
-Using the code above in a Jekyll site, here is the rendered result.
+_Using the code above in a Jekyll site, here is the result after building to plain HTML._
 
 <details>
 <summary>
@@ -922,9 +949,9 @@ Preview
 
 <br>
 
-**Sample HTML output**
+**Sample HTML for displaying**
 
-Here is the rendered result above shown in a code block below, for clarity. The only change was wrapping, for readability.
+_Here is the rendered result above shown in a code block below, for clarity. The only change was wrapping, for readability._
 
 
 ```html
