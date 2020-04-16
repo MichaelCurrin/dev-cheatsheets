@@ -792,7 +792,7 @@ Code:
     | Bar | 2   |
     | Baz | 3   |
 
-Example:
+Result:
 
 | A   | B   | C   |
 | --- | --- | --- |
@@ -816,7 +816,7 @@ Code:
     | col 2 is |   centered    |   $12 |
     | col 3 is | right-aligned |    $1 |
 
-Example:
+Result:
 
 | Tables   |      Are      |  Cool |
 | -------- | :-----------: | ----: |
@@ -828,6 +828,7 @@ Example:
 Note there are VS Code extension which help with table formatting such as making cells in a column all the same width.
 
 There are also online tools such as [Markdown tables generator](https://www.tablesgenerator.com/markdown_tables).
+
 
 ## Collapsible items
 
