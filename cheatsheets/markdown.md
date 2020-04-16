@@ -269,7 +269,7 @@ Example of `code` in a sentence.
 print('Hello world'!)
 ```
 
-They also work nicely under bullet points. See [Code snippets in lists](#code-snippets-in-lists) above.
+They also work nicely under bullet points. See [Code snippets in lists](#code-snippets-in-lists)] above.
 
 ## Todo list
 
@@ -581,15 +581,19 @@ Example:
 
 **Result:**
 
+
+Code:
+
+```markdown
 [I'm a reference-style link][Arbitrary case-insensitive reference text]
 
 [arbitrary case-insensitive reference text]: https://www.mozilla.org
 
-
+```
 
 ### Number
 
-Example
+Example:
 
 
 **Code:**
@@ -602,14 +606,18 @@ Example
 
 **Result:**
 
+
+Code:
+
+```markdown
 [You can use numbers for reference-style link definitions][1]
 
 [1]: http://slashdot.org
-
+```
 
 ### Link text
 
-Example
+Example:
 
 **Code:**
 
@@ -621,11 +629,14 @@ Or leave it empty and use the [link text itself].
 
 **Result:**
 
+Code:
+
+```markdown
 Or leave it empty and use the [link text itself].
 
 [link text itself]: http://www.reddit.com
 
-
+```
 
 ## Images
 
@@ -645,7 +656,7 @@ The following apply, as with standard links:
 ![Alt text](target "Hover text")
 ```
 
-Example code:
+Example codCode sample:
 
 ```markdown
 ![My image](foo.jpg)
@@ -658,7 +669,7 @@ Note that for local paths, the target is **case sensitive**. Github will show an
 
 #### Inline-style
 
-Example
+Example:
 
 **Code**:
 
@@ -668,16 +679,21 @@ Example
 
 **Result:**
 
+
+Code:
+
+```
 ![Alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover")
 
-
+```
 
 #### Reference-style
 
 
 **Code**:
 
-```markdown
+```markdownExample:
+
 ![Alt text][logo]
 
 Some more text.
@@ -689,6 +705,9 @@ There is a logo above but this elemement but it is not visible in the rendered H
 
 **Result**:
 
+Code:
+
+```markdown
 ![Alt text][logo]
 
 Some more text.
@@ -696,7 +715,7 @@ Some more text.
 [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover"
 
 There is a logo above but this elemement but it is not visible in the rendered HTML.
-
+```
 
 ### Plain HTML
 
@@ -749,7 +768,7 @@ Format:
 
 Example
 
-**Code:**
+**Code:**:
 
 ```markdown
 ![Alt text](https://placeholder.pics/svg/200x60/DEDEDE/555555/Sample%20SVG)
@@ -820,7 +839,7 @@ The first row is the header and always followed by a row of dashes.
     | Bar | 2   |
     | Baz | 3   |
 
-**Result:**
+**Result:**Example:
 
 | A   | B   | C   |
 | --- | --- | --- |
@@ -844,7 +863,7 @@ Use optional colons for alignment. You can also add a border to the markdown, wh
     | col 2 is |   centered    |   $12 |
     | col 3 is | right-aligned |    $1 |
 
-**Result:**
+**Result:**Example:
 
 | Tables   |      Are      |  Cool |
 | -------- | :-----------: | ----: |
@@ -892,7 +911,7 @@ See example below:
     ```
     </details>
 
-**Result:**
+**Result:**Output:
 
 <details>
 <summary><b>Preview message</b></summary>
@@ -915,6 +934,8 @@ Example using Jekyll templating. In particular, putting a code block inside the 
 
 **Sample Jekyll/Liquid code**
 
+Here is the code:
+
 ```
 <details>
 <summary>
@@ -928,9 +949,9 @@ puts 'Expanded message'
 </details>
 ```
 
-**Sample rendered HTML as code**
+**Sample rendered HTML as codesult**
 
-_Using the code above in a Jekyll site, here is the result after building to plain HTML._
+_Using the code above in a Jekyll site, here is the result after building to plain HTML._ndered result.
 
 <details>
 <summary>
@@ -949,7 +970,7 @@ Preview
 
 <br>
 
-**Sample HTML for displaying**
+**Sample HTML for displayingoutput**
 
 _Here is the rendered result above shown in a code block below, for clarity. The only change was wrapping, for readability._
 
@@ -973,3 +994,6 @@ Preview
 **Note**
 
 To explain the approach here - if you want to use Jekyll templating, markdown does **not** get picked up here correctly. So if you want a code block in your expanded block, you need to use HTML or the `highlight` Liquid tag. Whether using triple backticks or indentation for a code block inside the details tag, those just end up being used literally.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE1MzQ4NjA1OF19
+-->
