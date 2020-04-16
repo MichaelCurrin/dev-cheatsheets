@@ -14,6 +14,15 @@ e.g.
 
 Or
 
+
+```html
+<noscript>
+    You need to enable JavaScript to run this app.
+</noscript>
+```
+
+Or my own
+
 ```html
 <noscript>
     This site is unsupported on your browser. Please enable JavaScript, turn off adblocker for this domain or switch to a different browser.
