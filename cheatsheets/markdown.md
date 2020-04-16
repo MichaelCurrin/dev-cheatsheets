@@ -994,6 +994,39 @@ Preview
 **Note**
 
 To explain the approach here - if you want to use Jekyll templating, markdown does **not** get picked up here correctly. So if you want a code block in your expanded block, you need to use HTML or the `highlight` Liquid tag. Whether using triple backticks or indentation for a code block inside the details tag, those just end up being used literally.
+
+## Contact
+
+### Email
+
+- Markdown
+	```markdown
+	<foo@bar.com>
+	```
+- HTML
+	```html
+	<a href="mailto:foo@bar.com">foo@bar.com</a>
+	```
+- Result
+	- <foo@bar.com>
+
+
+### Phone number
+
+- Markdown
+	```markdown
+	[+44 20 7123 4567](tel:+442071234567)`
+
+#### Rendered HTML
+
+```html
+<a href="tel:+442071234567">+44 20 7123 4567</a>
+```
+
+Result
+
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzQ4NjA1OF19
+eyJoaXN0b3J5IjpbLTYyNzM3NTAyNl19
 -->
