@@ -14,10 +14,11 @@ X.Y.Z
 ```
 
 
-## Safest version pinning 
+## Recommended pinning for safety
 
 
 ### Exact version lock
+
 
 ```
 == X.Y.Z
@@ -26,14 +27,18 @@ X.Y.Z
 
 ### Compatible release
 
+
 ```
 ~= X.Y
 ```
 
-Minor version can float to be same or higher than specified, to get new backwards-compatible features, plus bug fixes.
+Minor version can float to be same or higher than specified, to get new backwards-compatible features, plus bug fixes. But the major version does is fixed - to avoid features or refactors which cause breaking changes 
 
-But the major version does is fixed - to avoid features or refactors which cause breaking changes 
+Perhaps the same as this:
 
+```
+== X.Y
+``` 
 
 ## Version format
 
