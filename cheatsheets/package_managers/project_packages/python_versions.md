@@ -1,20 +1,38 @@
 # Python versions cheatsheet
 > Understanding versioning of Python packages
 
+## Semantic versioning
+
+```
+MAJOR.MINOR.BUGFIX
+```
+
+Shorthand in this doc:
+
+```
+X.Y.Z
+```
+
 
 ## Safest version pinning 
 
-Exact version lock
+
+### Exact version lock
 
 ```
 == X.Y.Z
 ```
 
-Compatible release - Y can be higher but X is locked.
+
+### Compatible release
 
 ```
 ~= X.Y
 ```
+
+Minor version can float to be same or higher than specified, to get new backwards-compatible features, plus bug fixes.
+
+But the major version does is fixed - to avoid features or refactors which cause breaking changes 
 
 
 ## Version format
