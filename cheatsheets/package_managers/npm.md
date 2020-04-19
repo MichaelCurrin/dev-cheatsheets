@@ -2,6 +2,13 @@
 
 - NPM homepage: [npmjs.com](https://www.npmjs.com)
 
+
+## Update
+
+```sh
+$ npm i --update npm
+```
+
 ## Package
 
 About `package.json` for NPM.
