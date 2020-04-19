@@ -6,7 +6,7 @@
 ## Update
 
 ```sh
-$ npm i --update npm
+$ npm i -g --update npm
 ```
 
 ## Package
