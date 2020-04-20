@@ -5,6 +5,11 @@ Also known as "K8s" for short.
 - [kubernetes.io](https://kubernetes.io) homepage.
 - [Cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) on Kubernetes homepage.
 
+Example values:
+
+- SERVICE_NAME: foo
+- PODNAME: foo-0f4988689-l5hfa
+
 
 ## Services
 
@@ -12,8 +17,14 @@ Also known as "K8s" for short.
 kubectl get services
 ```
 
+Get external IP for a service.
+
 ```sh
-kubectl get service NAME
+kubectl get service SERVICE_NAME
+```
+Fields:
+```
+NAME               TYPE           CLUSTER-IP     EXTERNAL-IP                                                               PORT(S)         AGE
 ```
 
 Or use `svc` for `service` above.
@@ -22,7 +33,7 @@ Or use `svc` for `service` above.
 Create service
 
 ```sh
-kubectl apply -f FILE.yaml
+kubectl apply -f SERVICE_YAML_FILE
 ```
 
 ## Pods
@@ -35,10 +46,10 @@ kubectl get pods
 kubectl get pods --all-namespaces
 ```
 
-Describe.
+Describe config.
 
 ```sh
-kubectl describe pods NAME
+kubectl describe pod POD_NAME
 ```
 
 
@@ -57,11 +68,11 @@ List deployments.
 kubectl get deployments
 ```
 
-Get a deployment. Optionally get as YAML as below. Optionally write to a local YAML fil.e
+Get a deployment. Optionally get as YAML as below. Optionally write to a local YAML file.
 
 ```sh
 kubectl get deployment NAME -o yaml
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjQzODAzNThdfQ==
+eyJoaXN0b3J5IjpbMTUzODE3MDQ3OSwtMTYyNDM4MDM1OF19
 -->
