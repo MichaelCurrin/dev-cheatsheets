@@ -1,5 +1,11 @@
 # Postgres SQL cheatsheet
 
+## Docs and tutorials
+
+- [postgresql.org/docs/](https://www.postgresql.org/docs/)
+- [postgresqltutorial.com](https://www.postgresqltutorial.com/)
+
+
 ## Show database
 
 ```
@@ -30,6 +36,13 @@ postgres=# CREATEUSER postgres
 
 https://www.postgresql.org/docs/current/app-createuser.html
 
+## Change password
+
+```
+ALTER USER postgres WITH PASSWORD 'newpass';
+```
+
+https://www.postgresql.org/docs/current/sql-alteruser.html
 
 
 ## List users
@@ -50,5 +63,5 @@ More detail:
 
 https://www.postgresqltutorial.com/postgresql-list-users/
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjI2MjgxNTUxXX0=
+eyJoaXN0b3J5IjpbLTE2MDcyMzkyNTEsMjI2MjgxNTUxXX0=
 -->
