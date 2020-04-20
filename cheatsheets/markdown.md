@@ -1015,18 +1015,15 @@ To explain the approach here - if you want to use Jekyll templating, markdown do
 
 - Markdown
 	```markdown
-	[+44 20 7123 4567](tel:+442071234567)`
-
-#### Rendered HTML
-
-```html
-<a href="tel:+442071234567">+44 20 7123 4567</a>
-```
-
-Result
-
-
+	[+44 20 7123 4567](tel:+442071234567)
+	```
+- Rendered HTML
+	```html
+	<a href="tel:+442071234567">+44 20 7123 4567</a>
+	```
+- Result
+	- [+44 20 7123 4567](tel:+442071234567)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyNzM3NTAyNl19
+eyJoaXN0b3J5IjpbMTQ5MjE2NzI1XX0=
 -->
