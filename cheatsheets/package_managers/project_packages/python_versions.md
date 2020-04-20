@@ -1,7 +1,8 @@
 # Python versions cheatsheet
 > Understanding versioning of Python packages
 
-## Semantic versioning
+
+## Semanticafest versioning
 
 ```
 MAJOR.MINOR.BUGFIX
@@ -17,7 +18,9 @@ X.Y.Z
 ## Recommended pinning for safety
 
 
-### Exact version lock
+###  pinning 
+
+Exact version lock
 
 
 ```
@@ -34,11 +37,12 @@ X.Y.Z
 
 Minor version can float to be same or higher than specified, to get new backwards-compatible features, plus bug fixes. But the major version does is fixed - to avoid features or refactors which cause breaking changes 
 
-Perhaps the same as this:
+Perhaps the same as this: - Y can be higher but X is locked.
 
 ```
-== X.Y
+=~= X.Y
 ``` 
+
 
 ## Version format
 
@@ -96,3 +100,6 @@ Be careful when setting a range - make sure you understand what is does. See bel
 - `>= 2.2, < 3.0` - This sets an upper bound too.
 - `>= 2.2, == 2.*` - This is preferred notation for a major range.
 - `~= 2.2` - This is equivalent to the above but shorter.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE1OTMzODkwMV19
+-->
