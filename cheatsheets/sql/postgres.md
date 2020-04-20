@@ -39,11 +39,18 @@ https://www.postgresql.org/docs/current/app-createuser.html
 ## Change password
 
 ```
-ALTER USER postgres WITH PASSWORD 'newpass';
+postgres=# ALTER USER postgres WITH PASSWORD 'newpass';
 ```
 
 https://www.postgresql.org/docs/current/sql-alteruser.html
 
+Set it interactively.
+
+```
+postgres=# \password
+```
+
+https://serverfault.com/questions/110154/whats-the-default-superuser-username-password-for-postgres-after-a-new-install/325596
 
 ## List users
 
@@ -63,5 +70,5 @@ More detail:
 
 https://www.postgresqltutorial.com/postgresql-list-users/
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDcyMzkyNTEsMjI2MjgxNTUxXX0=
+eyJoaXN0b3J5IjpbLTEzMjE1OTY4NjksMjI2MjgxNTUxXX0=
 -->
