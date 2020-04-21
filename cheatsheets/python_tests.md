@@ -7,10 +7,10 @@
 - [PyTest](#pytest) 
 	- Python package. 
 	- Great for getting into testing. Uses functions.
-	- Uses its own form of tests
+	- Uses its own form of tests.
 - [Nose](#nose)
 	- Python package.
-	- Uses unittest tests.
+	- Uses unittest-style tests.
 	- More advanced than PyTest and it recommends PyTest for starting out.
 
 
@@ -18,12 +18,19 @@
 
 - [unittest docs](https://docs.python.org/3/library/unittest.html)
 
-Create a classes which inherits from `unittest.TestCase`. Add methods that start with `test_*`.
+
+
+### Syntax 
+
+- Create a class which inherits from `unittest.TestCase`. 
+- Add methods that start with `test_*`.
+- Add a call in the `__main__` check which runs `unittest.main()`.
+ 
  
 ### Sample tests
 
-
 ```python
+# test_string_methods.py
 import unittest
 
 
@@ -49,6 +56,7 @@ if __name__ == '__main__':
 ```
 
 ```python
+# test_sum.py
 import unittest
 
 
@@ -60,9 +68,9 @@ class TestSum(unittest.TestCase):
     def test_sum_tuple(self):
         self.assertEqual(sum((1, 2, 2)), 6, "Should be 6")
 
+
 if __name__ == '__main__':
     unittest.main()
-
 ```
 
 ### Run
@@ -102,11 +110,11 @@ $ pip install pytest
 
 ### Sample test
 
+Define a function starting with `test_*`. 
+
 
 ```python
 # test_sample.py
-
-
 def inc(x):
     return x + 1
 
@@ -136,5 +144,5 @@ $ pip install nose
 $ nosetests
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjAyOTQxMzJdfQ==
+eyJoaXN0b3J5IjpbMTQyMDUzNTUxOV19
 -->
