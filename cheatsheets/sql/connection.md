@@ -8,6 +8,12 @@
 
 ### Connection strings
 
+```
+postgresql://USERNAME:PASSWORD@HOST:5432/DB_NAME
+```
+
+More detailed:
+
 https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING
 
 ```
@@ -24,6 +30,8 @@ postgresql://user:secret@localhost
 postgresql://other@localhost/otherdb?connect_timeout=10&application_name=myapp
 postgresql://localhost/mydb?user=other&password=secret
 ```
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1MDg2Nzk2NV19
+eyJoaXN0b3J5IjpbLTExNTA0MDIxNDhdfQ==
 -->
