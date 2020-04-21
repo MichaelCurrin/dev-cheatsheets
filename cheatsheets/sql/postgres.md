@@ -28,34 +28,54 @@ The console will now look like this:
 postgres=#
 ```
 
+This is implied for the rest of this guide.
+
 ## Create user
 
+```sql
+CREATE USER postgres
 ```
-postgres=# CREATEUSER postgres
+
+```sql
+CREATE USER foo WITH PASSWORD 'bar';
 ```
 
 https://www.postgresql.org/docs/current/app-createuser.html
 
+
+## Create role
+
+
+```sql
+CREATE ROLE foo LOGIN;
+```
+```sql
+CREATE ROLE admin WITH CREATEDB CREATEROLE;
+```
+
+https://www.postgresql.org/docs/current/sql-createrole.html
+
+
 ## Change password
 
-```
-postgres=# ALTER USER postgres WITH PASSWORD 'newpass';
+```sql
+ALTER USER postgres WITH PASSWORD 'newpass';
 ```
 
 https://www.postgresql.org/docs/current/sql-alteruser.html
 
 Set it interactively.
 
-```
-postgres=# \password
+```sql
+\password
 ```
 
 https://serverfault.com/questions/110154/whats-the-default-superuser-username-password-for-postgres-after-a-new-install/325596
 
 ## List users
 
-```
-# \du
+```sql
+\du
                                    List of roles
  Role name |                         Attributes                         | Member of
 -----------+------------------------------------------------------------+-----------
@@ -70,5 +90,6 @@ More detail:
 
 https://www.postgresqltutorial.com/postgresql-list-users/
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjE1OTY4NjksMjI2MjgxNTUxXX0=
+eyJoaXN0b3J5IjpbMTM3NTY2MzIyOSwtMTMyMTU5Njg2OSwyMj
+YyODE1NTFdfQ==
 -->
