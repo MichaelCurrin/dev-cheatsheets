@@ -2,9 +2,16 @@
 
 [Getting started with testing in Python](https://realpython.com/python-testing/)
 
-- Unittest - Python builtin.
-- PyTest - Python package. Great for getting into testing. Uses functions.
-- Nose
+- [Unittest](#unittest) 
+	- Python builtin.
+- [PyTest](#pytest) 
+	- Python package. 
+	- Great for getting into testing. Uses functions.
+	- Uses its own form of tests
+- [Nose](#nose)
+	- Python package.
+	- Uses unittest tests.
+	- More advanced than PyTest and it recommends PyTest for starting out.
 
 
 ## Unittest
@@ -87,6 +94,12 @@ python -m unittest discover -s tests -t src
 
 - [pytest docs](https://docs.pytest.org/en/latest/)
 
+### Install
+
+```sh
+$ pip install pytest
+```
+
 ### Sample test
 
 
@@ -111,11 +124,17 @@ $ pytest
 
 - [nose docs](https://nose.readthedocs.io/en/latest/)
 
+### Install
+
+```sh
+$ pip install nose
+```
+
 ### Run tests
 
 ```sh
 $ nosetests
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NzI3NzY1Ml19
+eyJoaXN0b3J5IjpbLTEyMjAyOTQxMzJdfQ==
 -->
