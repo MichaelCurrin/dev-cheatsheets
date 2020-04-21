@@ -2,6 +2,7 @@
 
 - [Docker compose reference docs](https://docs.docker.com/compose/reference/overview/)
 
+
 ## Build
 
 ### Initial build
@@ -12,13 +13,13 @@ Build images.
 docker-compose build
 ```
 
-Start containers. If the above step was skipped, the build will happen down
+Start containers. If the above step was skipped, the build will happen now.
 
 ```sh
 docker-compose up
 ```
 
-Stop it with <kbd>ctrl+C</kbd>
+Stop it with <kbd>CTRL+C</kbd>
 
 Start containers again. This will **not** rebuild the image.
 
@@ -51,7 +52,8 @@ docker-compose up --build
 docker-compose up
 ```
 
-Stop it with <kbd>ctrl+C</kbd>
+Stop it with <kbd>CTRL+C</kbd>
+
 
 ### As background process
 
@@ -61,14 +63,14 @@ Start using `-d` for daemon.
 docker-compose up -d
 ```
 
-Stop the containers. This can be done from another terminal tab if needed.
+Stop the containers - this can be done from another terminal tab if needed.
 
 ```sh
 docker-compose stop
 ```
 
 
-## Delte
+## Delete
 
 Stop and delete containers. Warning - you will lose any data in the container.
 
@@ -77,5 +79,5 @@ docker-compose down
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjUyOTkyNiwtMTk4OTI3MDU1OV19
+eyJoaXN0b3J5IjpbLTcwMjc2MzI0OCwtMTk4OTI3MDU1OV19
 -->
