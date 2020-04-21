@@ -22,7 +22,6 @@ X.Y.Z
 
 Exact version lock
 
-
 ```
 == X.Y.Z
 ```
@@ -35,24 +34,23 @@ Exact version lock
 ~= X.Y
 ```
 
-Minor version can float to be same or higher than specified, to get new backwards-compatible features, plus bug fixes. But the major version does is fixed - to avoid features or refactors which cause breaking changes 
+Explanation:
 
-Perhaps the same as this: - Y can be higher but X is locked.
+- Minor version can float to be same or higher than specified, to get new backwards-compatible features, plus bug fixes. But the major version is fixed - to avoid features or refactors which cause breaking changes.
 
-```
-=~= X.Y
-``` 
 
 
 ## Version format
 
 [Version specifiers](https://www.python.org/dev/peps/pep-0440/#version-specifiers) in a Python PEP.
 
-Example:
+Example combining multiple rules in one line.
 
 ```
 ~= 0.9, >= 1.0, != 1.3.4.*, < 2.0
 ```
+
+Symbols:
 
 - `~=`: Compatible release clause.
 - `==`: Version matching clause
@@ -65,16 +63,19 @@ For compatible release clause, the documentation says that the following pairs o
 
 - Two levels (X.Y)
     ```
-    # Here we set a minimum minor vsn of 2.2 but the major version is locked.
-    # Longer
+    # Here we set a minimum minor version of 2.2 but the major version is locked.
+    
+    # Longer format
     >= 2.2, == 2.*
+    
     # Shorthand
     ~= 2.2
     ```
 - Three levels (X.Y.Z)
     ```
-    # Longer
+    # Longer format
     >= 1.4.5, == 1.4.*
+    
     # Shorthand
     ~= 1.4.5
     ```
@@ -100,6 +101,3 @@ Be careful when setting a range - make sure you understand what is does. See bel
 - `>= 2.2, < 3.0` - This sets an upper bound too.
 - `>= 2.2, == 2.*` - This is preferred notation for a major range.
 - `~= 2.2` - This is equivalent to the above but shorter.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTMzODkwMV19
--->
