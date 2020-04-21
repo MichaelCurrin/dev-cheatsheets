@@ -893,22 +893,24 @@ Format:
     </details>
 
 
-See example below, which uses the bold tag.
+See example below, which uses the bold tag in the title.
 
 **HTML code:**
 
     <details>
-    <summary><b>Preview message</b></summary>
-
-    Expanded message.
-
-    Some code:
+    <summary><b>Preview title</b></summary>
+	
+    _Note that markdown is valid but you need empty lines to separate from the HTML tags._
+    
+    - Bullet
+    - Points.
 
     ```json
     {
-        "foo": "bar"
+        "codeblock": "demo"
     }
     ```
+    
     </details>
 
 **Result:**
@@ -916,15 +918,17 @@ See example below, which uses the bold tag.
 <details>
 <summary><b>Preview message</b></summary>
 
-Expanded message
+_Note that markdown is valid but you need empty lines to separate from the HTML tags._
 
-Some code:
+- Bullet
+- Points.
 
 ```json
 {
-    "foo": "bar"
+"codeblock": "demo"
 }
 ```
+
 </details>
 
 
