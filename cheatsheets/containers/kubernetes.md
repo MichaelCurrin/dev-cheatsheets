@@ -73,6 +73,17 @@ Get a deployment. Optionally get as YAML as below. Optionally write to a local Y
 ```sh
 kubectl get deployment NAME -o yaml
 ```
+
+## Secrets
+
+```sh
+kubectl get secrets
+```
+
+```sh
+kubectl get secret SECRET_NAME -o yaml
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzODE3MDQ3OSwtMTYyNDM4MDM1OF19
+eyJoaXN0b3J5IjpbLTE0MTYxNDk1OTgsMTUzODE3MDQ3OSwtMT
+YyNDM4MDM1OF19
 -->
