@@ -1,5 +1,11 @@
-# Python install cheatsheet
+# Python package install cheatsheet
 > How to install packages with `pip`
+
+## Resources
+
+- [pip docs](https://pip.readthedocs.io/)
+- [pip on PyPI](https://pypi.org/project/pip/)
+
 
 ## Install
 
@@ -56,3 +62,15 @@ $ pip install foo --upgrade
 ```sh
 $ pip uninstall foo
 ```
+<!--stackedit_data:
+eyJkaXNjdXNzaW9ucyI6eyJKcnVCYUZQbUJJelBzbUpjIjp7In
+RleHQiOiJodHRwczovL3B5cGkub3JnL3Byb2plY3QvcGlwLyIs
+ImVuZCI6MjU3LCJzdGFydCI6MjU3fX0sImNvbW1lbnRzIjp7Im
+g4M2tWeFVtUXRYbmxUbXciOnsiZGlzY3Vzc2lvbklkIjoiSnJ1
+QmFGUG1CSXpQc21KYyIsInN1YiI6ImdoOjE4NzUwNzQ1IiwidG
+V4dCI6IkFkZCBsaW5rIiwiY3JlYXRlZCI6MTU4NzQ2Nzc0Mjg2
+Nn0sIjRkMjJWWkxKWm5weGFjbHUiOnsiZGlzY3Vzc2lvbklkIj
+oiSnJ1QmFGUG1CSXpQc21KYyIsInN1YiI6ImdoOjE4NzUwNzQ1
+IiwidGV4dCI6ImRvbmUiLCJjcmVhdGVkIjoxNTg3NDY3Nzc0ND
+E0fX0sImhpc3RvcnkiOls5MzczMDc5NjVdfQ==
+-->
