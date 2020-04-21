@@ -62,6 +62,29 @@ $ pip install foo --upgrade
 ```sh
 $ pip uninstall foo
 ```
+
+## List installed versions
+
+Verbose description of packages.
+```sh
+$ pip list
+```
+
+Minimal description of packages. Packa
+
+```sh
+$ pip freeze
+```
+
+ The content is suitable for a `requirements.txt` file, so you could copy a line there. Or write the entire file.
+ 
+```sh
+$ pip freeze > requirements.txt
+```
+
+Note that the this approach is likely to produce a list of packages that are dependencies of your dependencies. So you might want to reduce the lines in the file.
+
+There is no lockfile standard for `pip`. If you use alternative approaches like `pipenv` or `poetry` then you'll get a lockfile separate from the main requirements file.
 <!--stackedit_data:
 eyJkaXNjdXNzaW9ucyI6eyJKcnVCYUZQbUJJelBzbUpjIjp7In
 RleHQiOiJodHRwczovL3B5cGkub3JnL3Byb2plY3QvcGlwLyIs
@@ -72,5 +95,5 @@ V4dCI6IkFkZCBsaW5rIiwiY3JlYXRlZCI6MTU4NzQ2Nzc0Mjg2
 Nn0sIjRkMjJWWkxKWm5weGFjbHUiOnsiZGlzY3Vzc2lvbklkIj
 oiSnJ1QmFGUG1CSXpQc21KYyIsInN1YiI6ImdoOjE4NzUwNzQ1
 IiwidGV4dCI6ImRvbmUiLCJjcmVhdGVkIjoxNTg3NDY3Nzc0ND
-E0fX0sImhpc3RvcnkiOls5MzczMDc5NjVdfQ==
+E0fX0sImhpc3RvcnkiOlsyNzg4MjIzOF19
 -->
