@@ -6,21 +6,31 @@ Makefile templates topic on Github - [makefile-template](https://github.com/topi
 
 Targets (commands) will differ per project and environment but these can be applied where relevant.
 
+## Phony
+
+```make
+.PHONY docs
+
+docs:
+	echo 'Test'
+```
 
 ## Help
 
+```make
+# Show summary of make targets.
+help:
+	@echo Print lines that are not indented (targets and comments) or empty.
+	@egrep '^\S|^$$' Makefile
 ```
-# Show summary of make commands.
+
+If you use `@echo` within your targets:
+
+```make
+# Show summary of make targets.
 help:
 	@echo Print lines that are not indented (targets and comments) or empty, plus any indented echo lines.
 	@egrep '(^\S)|(^$$)|\s+@echo' Makefile
-```
-
-Simplified, where there are no `@echo` lines.
-
-```
-help:
-	@egrep '(^\S)|^$$' Makefile
 ```
 
 ## Export
@@ -59,21 +69,6 @@ test:
   export $(<.env) && ./script_that_echoes_foo.sh
 ```
 
-## Help
-
-```make
-help:
-	@echo Print lines that are not indented (targets and comments) or empty.
-	@egrep '^\S|^$$' Makefile
-```
-
-If you use `@echo` within your targets:
-
-```make
-help:
-	@echo Print lines that are not indented (targets and comments) or empty, plus any indented echo lines.
-	@egrep '(^\S)|(^$$)|\s+@echo' Makefile
-```
 
 ## Jekyll
 
