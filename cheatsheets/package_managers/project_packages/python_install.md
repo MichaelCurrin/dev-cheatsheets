@@ -65,12 +65,15 @@ $ pip uninstall foo
 
 ## List installed versions
 
+Note that packages are shown alphabetically - if you try and _install_ in the same order as the output you may get errors or conflicting versions.
+ 
 Verbose description of packages.
+
 ```sh
 $ pip list
 ```
 
-Minimal description of packages. Packa
+Minimal description of packages.
 
 ```sh
 $ pip freeze
@@ -95,5 +98,5 @@ V4dCI6IkFkZCBsaW5rIiwiY3JlYXRlZCI6MTU4NzQ2Nzc0Mjg2
 Nn0sIjRkMjJWWkxKWm5weGFjbHUiOnsiZGlzY3Vzc2lvbklkIj
 oiSnJ1QmFGUG1CSXpQc21KYyIsInN1YiI6ImdoOjE4NzUwNzQ1
 IiwidGV4dCI6ImRvbmUiLCJjcmVhdGVkIjoxNTg3NDY3Nzc0ND
-E0fX0sImhpc3RvcnkiOlsyNzg4MjIzOF19
+E0fX0sImhpc3RvcnkiOlstMTM1OTIxNDgzMV19
 -->
