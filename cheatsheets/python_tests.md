@@ -13,7 +13,7 @@
 
 Create a classes which inherits from `unittest.TestCase`. Add methods that start with `test_*`.
  
-### Sample
+### Sample tests
 
 
 ```python
@@ -58,6 +58,64 @@ if __name__ == '__main__':
 
 ```
 
+### Run
+
+Run against a directory (module) with verbose flag.
+
+```sh
+python -m unittest -v test
+```
+
+Scan for `test*.py` files.
+
+```sh
+python -m unittest discover
+```
+
+Use `-s`and the name of a directory.
+```sh
+python -m unittest discover -s tests
+```
+
+Change to the `src/` directory, scan for all `test*.py` files inside the the `tests` directory, and execute them.
+
+```sh
+python -m unittest discover -s tests -t src
+```
+
+## PyTest
+
+- [pytest docs](https://docs.pytest.org/en/latest/)
+
+### Sample test
+
+
+```python
+# test_sample.py
+
+
+def inc(x):
+    return x + 1
+
+def test_answer():
+    assert inc(3) == 5
+```
+
+### Run tests
+
+```sh
+$ pytest
+```
+
+## Nose
+
+- [nose docs](https://nose.readthedocs.io/en/latest/)
+
+### Run tests
+
+```sh
+$ nosetests
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzUxNzY2MjldfQ==
+eyJoaXN0b3J5IjpbLTE1NzI3NzY1Ml19
 -->
