@@ -886,14 +886,14 @@ Use the `details` and `summary` HTML tags in markdown on Github, without any add
 Format:
 
     <details>
-    <summary>Preview</summary>
+    <summary>TITLE</summary>
 
-    Expanded message.
+    BODY CONTENT
 
     </details>
 
 
-See example below:
+See example below, which uses the bold tag.
 
 **HTML code:**
 
@@ -911,7 +911,7 @@ See example below:
     ```
     </details>
 
-**Result:**Output:
+**Result:**
 
 <details>
 <summary><b>Preview message</b></summary>
