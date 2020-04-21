@@ -65,6 +65,8 @@ $ pip uninstall foo
 
 ## List installed versions
 
+<!-- TODO move this content to Learn to Code and keep commands lean. See if there are other commands or flags to use here too -->
+
 Note that packages are shown alphabetically - if you try and _install_ in the same order as the output you may get errors or conflicting versions.
  
 Verbose description of packages.
@@ -98,5 +100,5 @@ V4dCI6IkFkZCBsaW5rIiwiY3JlYXRlZCI6MTU4NzQ2Nzc0Mjg2
 Nn0sIjRkMjJWWkxKWm5weGFjbHUiOnsiZGlzY3Vzc2lvbklkIj
 oiSnJ1QmFGUG1CSXpQc21KYyIsInN1YiI6ImdoOjE4NzUwNzQ1
 IiwidGV4dCI6ImRvbmUiLCJjcmVhdGVkIjoxNTg3NDY3Nzc0ND
-E0fX0sImhpc3RvcnkiOlstMTM1OTIxNDgzMV19
+E0fX0sImhpc3RvcnkiOlsxNjA0ODc5MzA5XX0=
 -->
