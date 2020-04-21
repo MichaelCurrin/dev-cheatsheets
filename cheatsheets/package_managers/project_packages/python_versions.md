@@ -1,8 +1,8 @@
-# Python versions cheatsheet
+# Python package versions cheatsheet
 > Understanding versioning of Python packages
 
 
-## Semanticafest versioning
+## Semantic versioning
 
 ```
 MAJOR.MINOR.BUGFIX
@@ -22,7 +22,6 @@ X.Y.Z
 
 Exact version lock
 
-
 ```
 == X.Y.Z
 ```
@@ -40,18 +39,11 @@ Explanation:
 - Minor version can float to be same or higher than specified, to get new backwards-compatible features, plus bug fixes. But the major version does is fixed - to avoid features or refactors which cause breaking changes.
  
 
-Perhaps the same as this: - Y can be higher but X is locked.
-
-```
-=~= X.Y
-``` 
-
-
 ## Version format
 
 [Version specifiers](https://www.python.org/dev/peps/pep-0440/#version-specifiers) in a Python PEP.
 
-Example combining multiple rules in one line.:
+Example combining multiple rules in one line:
 
 ```
 ~= 0.9, >= 1.0, != 1.3.4.*, < 2.0
@@ -109,5 +101,5 @@ Be careful when setting a range - make sure you understand what is does. See bel
 - `>= 2.2, == 2.*` - This is preferred notation for a major range.
 - `~= 2.2` - This is equivalent to the above but shorter.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4OTE3NzM3Nl19
+eyJoaXN0b3J5IjpbNjY1OTAwODI1LDE4ODkxNzczNzZdfQ==
 -->
