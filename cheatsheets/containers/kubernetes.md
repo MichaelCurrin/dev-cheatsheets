@@ -78,6 +78,8 @@ kubectl get deployment NAME -o yaml
 
 - [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/) docs
 
+### Get secret
+
 ```sh
 kubectl get secrets
 ```
@@ -86,7 +88,7 @@ kubectl get secrets
 kubectl get secret SECRET_NAME -o yaml
 ```
 
-Create secret.
+### Create secret
 
 ```sh
 kubectl create secret generic SECRET_NAME --from-file=username.txt --from-file=password.txt
@@ -95,7 +97,15 @@ kubectl create secret generic SECRET_NAME --from-file=username.txt --from-file=p
 ```sh
 kubectl create secret generic SECRET_NAME --from-literal=username=foo --from-literal=password='S!B\*d$zDsb'
 ```
+
+### Edit
+
+```sh
+kubectl edit secrets SECRET_NAME
+```
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2OTU5NzE4MywxNTM4MTcwNDc5LC0xNj
-I0MzgwMzU4XX0=
+eyJoaXN0b3J5IjpbLTE4NTc5MTM5MzIsMTUzODE3MDQ3OSwtMT
+YyNDM4MDM1OF19
 -->
