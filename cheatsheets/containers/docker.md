@@ -8,9 +8,7 @@
     - [wsargent/docker-cheat-sheet](https://github.com/wsargent/docker-cheat-sheet) on _Github_.
     - [Ultimate Docker Cheatsheet](https://hackernoon.com/docker-commands-the-ultimate-cheat-sheet-994ac78e2888) as _Hackernoon_ blog post.
     - [Docker cheatsheet](http://dockerlabs.collabnix.com/docker/cheatsheet/) on Dockerlabs.
-- Docker CLI reference
-	- [run](https://docs.docker.com/engine/reference/run/)
-	- [exec](https://docs.docker.com/engine/reference/commandline/exec/)
+
 
 ## Clean
 
@@ -43,19 +41,33 @@ docker image prune
 
 ## Run
 
-Run a command in a new container.
+Links:
+
+- Docker CLI reference:
+	- [run](https://docs.docker.com/engine/reference/run/)
+	- [exec](https://docs.docker.com/engine/reference/commandline/exec/)
+		> The `docker exec` command runs a new command in a running container.
+- [What is the different between “run” and “exec”](https://chankongching.wordpress.com/2017/03/17/docker-what-is-the-different-between-run-and-exec/)
+
+Run a command in a **new** container. The container will then stop.
 
 ```sh
 docker run CONTAINER COMMAND
 ```
 
-Run a command in an existing container. Useful if you want to tunnel in.
+Run a command in an **existing** container. 
 
 ```sh
+docker start
 docker exec CONTAINER
+```
 
+Useful if you want to tunnel in and use an interactive session with Bash, Python, etc.
+
+```sh
 docker exec -it CONTAINER bash
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5ODczNjg1Miw1ODE1NjEzODRdfQ==
+eyJoaXN0b3J5IjpbLTY0NDM1MTA2OCw1ODE1NjEzODRdfQ==
 -->
