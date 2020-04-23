@@ -8,8 +8,9 @@
     - [wsargent/docker-cheat-sheet](https://github.com/wsargent/docker-cheat-sheet) on _Github_.
     - [Ultimate Docker Cheatsheet](https://hackernoon.com/docker-commands-the-ultimate-cheat-sheet-994ac78e2888) as _Hackernoon_ blog post.
     - [Docker cheatsheet](http://dockerlabs.collabnix.com/docker/cheatsheet/) on Dockerlabs.
-- [Docker run Reference](https://docs.docker.com/engine/reference/run/)
-
+- Docker CLI reference
+	- [run](https://docs.docker.com/engine/reference/run/)
+	- [exec](https://docs.docker.com/engine/reference/commandline/exec/)
 
 ## Clean
 
@@ -42,9 +43,19 @@ docker image prune
 
 ## Run
 
+Run a command in a new container.
+
 ```sh
-docker 
+docker run CONTAINER COMMAND
+```
+
+Run a command in an existing container. Useful if you want to tunnel in.
+
+```sh
+docker exec CONTAINER
+
+docker exec -it CONTAINER bash
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNDg1MDU2ODYsNTgxNTYxMzg0XX0=
+eyJoaXN0b3J5IjpbLTM5ODczNjg1Miw1ODE1NjEzODRdfQ==
 -->
