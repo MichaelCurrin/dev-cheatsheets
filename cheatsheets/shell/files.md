@@ -54,11 +54,29 @@ Links:
 - [Redirection](https://github.com/MichaelCurrin/learn-to-code/blob/master/Shell/Bash/tutorials/redirection.md) guide.
 - [Pipes and Redirection](https://github.com/MichaelCurrin/learn-to-code/blob/master/Shell/Bash/beginning_linux_programming/pipes_and_redirection.md) guide.
 
-### Send errors to stdout
+### Redirect stderr to stdout
 
 ```sh
 COMMAND 2>&1
 ```
+
+This is not so useful in itself when just running in the console. But more useful when using crontab, `tee` or writing to a file.
+
+
+### Redirect stderr and stdout to different files
+
+```sh
+COMMAND > stdout.txt 2> stderr.txt
+```
+
+### Redirect stderr and stdout to a file
+
+```sh
+COMMAND > stdout.txt 2>&1
+```
+
+The `&1` is a point to where stdout is currently pointing.
+
 
 ### List
 
@@ -90,5 +108,5 @@ curl -O -L https://github.com/actions/runner/releases/download/v2.168.0/actions-
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3OTQzMzQ0MSw5NDc0NjY1XX0=
+eyJoaXN0b3J5IjpbLTE5MDM3MjI2MzUsOTQ3NDY2NV19
 -->
