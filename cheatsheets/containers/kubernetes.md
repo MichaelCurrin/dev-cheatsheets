@@ -7,8 +7,8 @@ Also known as "K8s" for short.
 
 Example values:
 
-- SERVICE_NAME: foo
-- PODNAME: foo-0f4988689-l5hfa
+- SERVICE_NAME: `foo`
+- PODNAME: `foo-0f4988689-l5hfa`
 
 
 ## Services
@@ -52,11 +52,10 @@ Describe config.
 kubectl describe pod POD_NAME
 ```
 
-
 Start tunnel in a pod using a command use `/bin/sh`, `/bin/bash`, `postgresql` or `python3`.
 
 ```sh
-kubectl exec -it NAME COMMAND
+kubectl exec -it POD COMMAND
 ```
 
 
@@ -106,6 +105,6 @@ kubectl edit secrets SECRET_NAME
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTc5MTM5MzIsMTUzODE3MDQ3OSwtMT
-YyNDM4MDM1OF19
+eyJoaXN0b3J5IjpbLTc1Njk1MzkxMiwtMTg1NzkxMzkzMiwxNT
+M4MTcwNDc5LC0xNjI0MzgwMzU4XX0=
 -->
