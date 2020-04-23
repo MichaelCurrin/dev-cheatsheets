@@ -71,11 +71,29 @@ COMMAND > stdout.txt 2> stderr.txt
 
 ### Redirect stderr and stdout to a file
 
+The `&1` is a point to where stdout is currently pointing.
+
 ```sh
-COMMAND > stdout.txt 2>&1
+COMMAND > stdout_and_sterr.txt 2>&1
 ```
 
-The `&1` is a point to where stdout is currently pointing.
+Similar, supported in all shells. Works for Bash.
+
+```sh
+COMMAND &> stdout_and_sterr.txt`
+```
+
+[askubuntu.com question](https://askubuntu.com/questions/625224/how-to-redirect-stderr-to-a-file)
+
+### Append stderr and stdout to  a file
+
+Similar to above, but _append_ rather than overwrite.
+
+```sh
+COMMAND >> stdout_and_sterr.txt 2>&1
+```
+
+[SO question](https://stackoverflow.com/questions/876239/how-can-i-redirect-and-append-both-stdout-and-stderr-to-a-file-with-bash)
 
 
 ### List
@@ -108,5 +126,5 @@ curl -O -L https://github.com/actions/runner/releases/download/v2.168.0/actions-
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDM3MjI2MzUsOTQ3NDY2NV19
+eyJoaXN0b3J5IjpbMjMyODgyOTgyLDk0NzQ2NjVdfQ==
 -->
