@@ -39,6 +39,12 @@ Remove images.
 ```sh
 docker image prune
 ```
+
+## Run
+
+```sh
+docker 
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTgxNTYxMzg0XX0=
+eyJoaXN0b3J5IjpbLTIwNDg1MDU2ODYsNTgxNTYxMzg0XX0=
 -->
