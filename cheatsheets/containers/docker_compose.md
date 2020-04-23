@@ -2,7 +2,7 @@
 
 - [Docker compose reference docs](https://docs.docker.com/compose/reference/overview/)
 
-Docker compose allows orchestration of multiple containers and it allows you to store and run parameters against those. T
+Docker compose allows orchestration of multiple containers and it allows you to store and run parameters against those. Such as normally when you run a `docker` command with a port number.
 
 ## Build
 
@@ -80,6 +80,6 @@ docker-compose down
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3NDk2OTQxLC03MDI3NjMyNDgsLTE5OD
+eyJoaXN0b3J5IjpbODc2NDI5MDM5LC03MDI3NjMyNDgsLTE5OD
 kyNzA1NTldfQ==
 -->
