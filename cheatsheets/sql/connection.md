@@ -31,7 +31,27 @@ postgresql://other@localhost/otherdb?connect_timeout=10&application_name=myapp
 postgresql://localhost/mydb?user=other&password=secret
 ```
 
+### Connect using Node
 
+```javascript
+let DBConnectionURI = `postgresql://postgres:${POSTGRES_PASSWORD || ''}@postgres:5432/postgres`;
+
+let DBOpts = {
+  dialect: 'postgres',
+  pool: {
+    max: 10,
+    min: 0,
+    idle: 10000,
+   },
+  logging: false,
+};
+
+const instance = new Sequelize(DBConnectionURI, DBOpts);
+
+instance.query('SELECT 1 AS foo')
+  .then(result => console.log(result));
+// => [ [ anonymous { foo: 1 } ]
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNTA0MDIxNDhdfQ==
+eyJoaXN0b3J5IjpbNjU3MjYyNjA5LC0xMTUwNDAyMTQ4XX0=
 -->
