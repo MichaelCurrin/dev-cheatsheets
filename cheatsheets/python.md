@@ -397,6 +397,38 @@ foo()
 foo()
 # => ['test']
 ```
+
+## Copy
+
+### Shallow copies
+
+> Shallow copies of dictionaries can be made using dict.copy(), and of lists by assigning a slice of the entire list, for example, copied_list = original_list[:].
+
+```python
+copied_list = original_list[:]
+
+copied_dict = original_dict.copy()
+```
+
+On a 
+```python
+import copy
+copied_obj = copy.copy(original_obj)
+```
+
+
+### Deep copies
+
+- [lib.copy](https://docs.python.org/3/library/copy.html)
+	> Shallow and deep copy operations
+
+```python
+copy.deepcopy(copied_obj)
+```
+
+
+
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4MDc1MjkyOV19
+eyJoaXN0b3J5IjpbLTE1NTkzNjQ2MzcsMTQ4MDc1MjkyOV19
 -->
