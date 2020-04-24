@@ -400,6 +400,10 @@ foo()
 
 ## Copy
 
+- [lib.copy](https://docs.python.org/3/library/copy.html) builtin docs
+	> Shallow and deep copy operations
+- [copy in Python (Deep Copy and Shallow Copy)](https://www.geeksforgeeks.org/copy-python-deep-copy-shallow-copy/) tutorial
+
 ### Shallow copies
 
 > Shallow copies of dictionaries can be made using dict.copy(), and of lists by assigning a slice of the entire list, for example, copied_list = original_list[:].
@@ -410,7 +414,8 @@ copied_list = original_list[:]
 copied_dict = original_dict.copy()
 ```
 
-On a 
+Where `original_obj` is a `dict` or `list`:
+
 ```python
 import copy
 copied_obj = copy.copy(original_obj)
@@ -419,16 +424,15 @@ copied_obj = copy.copy(original_obj)
 
 ### Deep copies
 
-- [lib.copy](https://docs.python.org/3/library/copy.html)
-	> Shallow and deep copy operations
+Where `original_obj` is a `dict` or `list`:
 
 ```python
-copy.deepcopy(copied_obj)
+copied_obj = copy.deepcopy(original_obj)
 ```
 
 
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTkzNjQ2MzcsMTQ4MDc1MjkyOV19
+eyJoaXN0b3J5IjpbLTI4Njc4NTE4NCwxNDgwNzUyOTI5XX0=
 -->
