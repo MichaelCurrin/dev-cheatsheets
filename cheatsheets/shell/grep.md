@@ -4,6 +4,10 @@
 
 Linux: https://ss64.com/bash/grep.html
 
+## Tutorials
+
+https://www.computerhope.com/unix/ugrep.htm
+
 
 ## Get version from file
 
