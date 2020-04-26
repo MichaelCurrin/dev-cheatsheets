@@ -34,7 +34,7 @@ There may be missing context or explanations and obvious things are excluded. As
 
 Any links to tutorials and more detail will probably be added to my [Learn to Code](https://github.com/MichaelCurrin/learn-to-code) project instead.
 
-For creating doc badges see [Badges Generator](https://michaelcurrin.github.io/badges-generator).
+For creating doc badges see [Badge Generator](https://michaelcurrin.github.io/badge-generator).
 
 ## Other cheatsheets 
 
