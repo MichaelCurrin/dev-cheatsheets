@@ -241,11 +241,14 @@ Don't do this:
 
 #### Code styling
 
+You get monospaced text with no syntax highlighting if you do not specify a language.
+
 ```
 Example of `code` in a sentence.
 ```
 
 Example of `code` in a sentence.
+
 
 #### Code blocks
 
@@ -256,6 +259,7 @@ Example of `code` in a sentence.
 
     # Indententing this line in markdown turned it into preformatted mono-spaced text, without any particular code syntax.
     print('Hello world'!)
+
 
 #### Code blocks with language syyntax
 
@@ -270,6 +274,30 @@ print('Hello world'!)
 ```
 
 They also work nicely under bullet points. See [Code snippets in lists](#code-snippets-in-lists)] above.
+
+#### Language choices for syntax highlighting
+
+Some valid references for language-specific styling:
+
+- `markdown` or `md`
+- `json` or `json5` (the latter is built on top of JSON and supports comments)
+- `python`
+- `ruby`
+- `html`
+- `javascript` or `js`
+- `sh`
+- `bash`
+
+
+**Links:**
+
+- The full list that Github supports, on the Linguist repo:
+	- https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
+- This is separate by similar and easier to read:
+	- https://github.com/HappenApps/Quiver/wiki/Syntax-Highlighting-Supported-Languages
+- Rogue highlighter used for Github Pages
+	- https://github.com/rouge-ruby/rouge
+
 
 ## Todo list
 
