@@ -1,6 +1,16 @@
 # Cheatsheets
 > Collection of minimal code snippets across languages for easy reference
 
+## Purpose
+
+A reference for code snippets and shell commands across programming languages. It contains a way doing things based on previous or expected use-cases which highly relevant for me. It serves as a cache of sorts - I look in my cheatsheets for syntax or approach to a use-case first and then add Google, StackOverflow, documentation, etc. And when I find the answer I add it here so next time my search will be quicker and I'll find the same answer each time.
+
+This guide is not aimed at teaching fundamentals of a language or explaining things to beginners - it assumes context. It aims to be lean and easy to navigate with a focus on code over explanations for compactness, but sometimes it still explains how or why to use a snippet.
+
+<!--
+
+## Ramblings
+
 I add code here if I find I use it more than once, from other cheatsheets, StackOverflow or my own creation. There may be links, but the idea is to be explicit here to avoid clicking through and also the risk of external content moving/disappearing.
 
 The idea is to have boilerplate and templates which I already I understand and can use as a reference. This is not aimed at learning the language or concept for the first time.
@@ -18,6 +28,7 @@ There might also be links to cheatsheets I've found. I might take an existing ch
 The idea is to keep this project as a lean as possible. Wider details on learning or using a language are covered in my other projects.
 
 There may be missing context or explanations and obvious things are excluded. As the cheatsheet is intended for myself mainly.
+-->
 
 ## Resources
 
