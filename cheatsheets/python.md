@@ -418,6 +418,7 @@ Where `original_obj` is a `dict` or `list`:
 
 ```python
 import copy
+
 copied_obj = copy.copy(original_obj)
 ```
 
@@ -427,12 +428,55 @@ copied_obj = copy.copy(original_obj)
 Where `original_obj` is a `dict` or `list`:
 
 ```python
+import copy
+
 copied_obj = copy.deepcopy(original_obj)
 ```
 
+## Working with strings
 
+### Repeating
 
+```python
+>>> '---'*10
+'------------------------------'
+
+>>> ['---']*10
+['---', '---', '---', '---', '---', '---', '---', '---', '---', '---']
+
+>>> print(" | ".join(['---']*10))
+--- | --- | --- | --- | --- | --- | --- | --- | --- | ---
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI4Njc4NTE4NCwxNDgwNzUyOTI5XX0=
--->
+
+### Convert strings to markdown table
+
+```python
+header = "a,b,c".split(',')
+row = "1,2,3".split(",")
+
+print(" | ".join(header))
+print(" | ".join(['---']*len(header)))
+print(" | ".join(row))
+```
+
+```markdown
+a | b | c
+--- | --- | ---
+1 | 2 | 3
+```
+
+a | b | c
+--- | --- | ---
+1 | 2 | 3
+
+### Convert strings to dict
+
+```python
+header = "a,b,c".split(',')
+row = "1,2,3".split(",")
+
+row_dict = {k: v for k, v in zip(header, row)}
+
+print(row_dict)
+# {'a': '1', 'b': '2', 'c': '3'}
+```
