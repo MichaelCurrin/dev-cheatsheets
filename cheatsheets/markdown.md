@@ -921,7 +921,7 @@ Format:
     </details>
 
 
-See example below, which uses the bold tag in the title.
+See example below, which uses the bold tag in the titl
 
 **HTML code:**
 
@@ -935,7 +935,7 @@ See example below, which uses the bold tag in the title.
 
     ```json
     {
-        "codeblock": "demo"
+        "odeblock": "emo"
     }
     ```
     
@@ -944,7 +944,7 @@ See example below, which uses the bold tag in the title.
 **Result:**
 
 <details>
-<summary><b>Preview message</b></summary>
+<summary><b>Preview e</b></summary>
 
 _Note that markdown is valid but you need empty lines to separate from the HTML tags._
 
@@ -971,11 +971,10 @@ Here is the code:
 ```
 <details>
 <summary>
-Preview
 </summary>
 
 {% highlight ruby %}
-puts 'Expanded message'
+puts 'E
 {% endhighlight %}
 
 </details>
@@ -1057,5 +1056,5 @@ To explain the approach here - if you want to use Jekyll templating, markdown do
 	- [+44 20 7123 4567](tel:+442071234567)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ5MjE2NzI1XX0=
+eyJoaXN0b3J5IjpbOTQyODI4MzIwLDE0OTIxNjcyNV19
 -->
