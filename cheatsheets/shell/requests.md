@@ -13,10 +13,18 @@ How to download or upload content at a URL using terminal tools.
 
 When formatting a URL to request, ensure you escape it. For example `#` would turn the rest of the line into a comment.
 
-Example below with braces expansion supported by curl - more succinct than writing a `for` loop.
+### Ignore invalid cert
 
 ```sh
-curl 'http:example.com/{foo,bar}#baz
+curl -k URL
+```
+
+### Request multiple files
+
+Example below with braces expansion supported by curl - more succinct than writing a `for` loop. Note characters are escaped (some shells like ZSH will do this for you).
+
+```sh
+curl 'http:example.com/{foo,bar}#baz'
 
 curl http:example.com/\{foo,bar\}\#baz
 ```
@@ -173,3 +181,6 @@ brew install wget
 ```sh
 wget http://website.com/files/file.zip
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTkyMTMzOTY1XX0=
+-->
