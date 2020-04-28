@@ -1,6 +1,6 @@
 # Requests
 
-See also [shell/requests.md](shell/requests.md).
+See also [shell/requests.md](shell/requests.md) for doing requests from the command-line.
 
 
 ## Request bins
@@ -110,3 +110,6 @@ public class RequestBinTutorial {
     }
 }
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNjUwMzAxODk4XX0=
+-->
