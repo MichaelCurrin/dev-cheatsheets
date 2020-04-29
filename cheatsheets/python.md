@@ -73,6 +73,14 @@ Or target a more specific version which is not your system default.
 $ python3.8 -m pip
 ```
 
+Upgrade pip. If you get permissions errors, as `--user` flag.
+
+```sh
+$ PIP_REQUIRE_VIRTUALENV pip install --upgrade pip
+# OR
+$ PIP_REQUIRE_VIRTUALENV python3 -m pip install --upgrade pip
+```
+
 #### Within a virtual environment
 
 Run the pip which is in the scope of the environment - this requires the environment to be activated.
