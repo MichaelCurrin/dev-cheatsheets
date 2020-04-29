@@ -2,6 +2,7 @@
 
 Some useful commands, boilerplate code from my existing projects or things to use in new development.
 
+
 ## Python
 
 - [Command line and environment](https://docs.python.org/3/using/cmdline.html) on Python 3 docs - how to use the `python` command.
@@ -16,15 +17,33 @@ $ python -U
 
 See also [project packages](cheatsheets/package_managers/project_packages) section of this project and look for pip or Python pages.
 
-### Commands
+### Protect global environment
 
-- `install LIBRARY`
-- `install LIBRARY==VERSION`
-- `install LIBRARY --user|-U`
-- `install LIBRARY -u|--upgrade`
-- `install -r REQUIREMENTS_PATH`
+Prevent accidentally installing or upgrading in your user's global Python environment.
+
+In Linux/macOS, set this value in your `~/.bashrc` or `~/.zshrc` file.
+
+```sh
+PIP_REQUIRE_VIRTUALENV=true
+```
+
+Now, any time you run `pip install` **outside** a virtual environment you'll get an error.
+
+How to force global install:
+
+```sh
+$ PIP_REQUIRE_VIRTUALENV=false pip install PACKAGE
+```
+
+### Pip commands
+
+- `install PACKAGE`
+- `install PACKAGE==VERSION`
+- `install PACKAGE --user`
+- `install PACKAGE -U|--upgrade`
+- `install -r REQUIREMENTS_TXT_PATH`
 - `install pip --upgrade`
-- `uninstall LIBRARY`
+- `uninstall PACKAGE`
 
 ### Ways to access pip
 
@@ -80,6 +99,7 @@ Links are all for Python 3.
 - [os](https://docs.python.org/3/library/os.html)
 - [logging](https://docs.python.org/3/library/logging.html)
 - [File and directory access](https://docs.python.org/3/library/filesys.html)
+
 
 ## Flask
 
