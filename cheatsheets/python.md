@@ -28,7 +28,7 @@ $ python -U
 
 #### Outside virtual environment
 
-Run global pip - probably uses Python 2.
+Run global pip (probably uses Python 2).
 
 ```sh
 $ pip
@@ -40,22 +40,30 @@ Run global pip for Python 3.
 $ pip3
 ```
 
+Or
+
 ```sh
 $ python3 -m pip
 ```
 
+Or target a more specific version which is not your system default.
+
+```sh
+$ python3.8 -m pip
+```
+
 #### Within a virtual environment
 
-Run the pip which is in the scope of the environment.
-
-This requires the environment to be activated.
+Run the pip which is in the scope of the environment - this requires the environment to be activated.
 
 ```sh
 $ source venv/bin/activate
 $ pip
 ```
 
-This does **not** require the activate step.
+Even if using Python 3, you won't need to use `pip3` - using `pip` in a virtual environment is fine.
+
+This approach does **not** require the activate step.
 
 ```sh
 $ venv/bin/pip
