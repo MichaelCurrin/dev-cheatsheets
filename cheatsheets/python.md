@@ -14,6 +14,8 @@ $ python -U
 
 ## Pip
 
+See also [project packages](cheatsheets/package_managers/project_packages) section of this project and look for pip or Python pages.
+
 ### Commands
 
 - `install LIBRARY`
