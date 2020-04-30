@@ -783,6 +783,7 @@ Notes:
 
 - Centering and resizing as above **cannot** be achieved by setting CSS (inline or in a style tag) on Github, so you must update attributes of the tags.
 - The resizing above works for _HTML_ tags in markdown, but resizing cannot be done for _markdown_ image. At least in Github-flavored implementation of markdown - some other systems support resizing e.g. `![Alt](img.jpg =60x50)`.
+- You can other elements in the outer tag. In the of a badge as a second element, that will only be centered if the outer element is a `div` and not a `p`.
 
 ### SVGs
 
