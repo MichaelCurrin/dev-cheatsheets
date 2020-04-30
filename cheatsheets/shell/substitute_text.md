@@ -35,10 +35,17 @@ From [tutorial](https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace
 
 ## Replace multiple words in a file
 
-You can run multiple replaces at once.
+Use multiple replacements in one command, separated with `;` or newlines.
 
 ```sh
 sed -i 's/foo/bar/g; s/fizz/buzz/g' file.txt
+```
+
+Or
+
+```sh
+sed -i 's/foo/bar/g
+s/fizz/buzz/g' file.txt
 ```
 
 ### Advanced
