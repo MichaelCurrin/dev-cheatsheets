@@ -783,7 +783,42 @@ Notes:
 
 - Centering and resizing as above **cannot** be achieved by setting CSS (inline or in a style tag) on Github, so you must update attributes of the tags.
 - The resizing above works for _HTML_ tags in markdown, but resizing cannot be done for _markdown_ image. At least in Github-flavored implementation of markdown - some other systems support resizing e.g. `![Alt](img.jpg =60x50)`.
-- You can other elements in the outer tag. In the of a badge as a second element, that will only be centered if the outer element is a `div` and not a `p`.
+- The image will be hyperlinked to the full size version of the image, unless you add an anchor tag.
+
+
+#### Add elements
+
+You can other elements in the outer tag. 
+
+In the of a badge as a second element, that will only be centered if the outer element is a `div` and not a `p`.
+
+Example:
+
+
+```html
+<div align="center">
+    <a href="https://michaelcurrin.github.io/unicron/">
+        <img width="250" src="docs/_media/logo.png" alt="Unicron logo" />
+        
+![Github Pages site](https://img.shields.io/badge/docs-Github_Pages-f967f9?style=for-the-badge)
+    </a>
+
+</div>
+```
+
+Note the lack of a space before the closing `a` tag otherwise that is just indented text. Or it has to have no indentation.
+
+The badge could also be converted to an `img` tag for consistency. Then a line break is needed to keep the images on separate lines.
+
+```html
+<div align="center">
+    <a href="https://michaelcurrin.github.io/unicron/">
+        <img width="250" src="docs/_media/logo.png" alt="Unicron logo">
+        <br>
+        <img src="https://img.shields.io/badge/docs-Github_Pages-f967f9?style=for-the-badge" alt="Github Pages site"/>
+    </a>
+</div>
+```
 
 ### SVGs
 
