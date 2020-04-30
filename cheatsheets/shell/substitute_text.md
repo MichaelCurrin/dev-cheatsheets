@@ -7,7 +7,8 @@ Find and replace text in files.
 Regex substitution is used in this guide. Test your pattern at [regex101.com](https://regex101.com/).
 
 Example
-```
+
+```sh
 s/foo/bar/g
 ```
 
@@ -27,7 +28,7 @@ Replace `foo` with `bar` in _hello.txt_ and print to the console.
 sed -i 's/foo/bar/g' hello.txt
 ```
 
-Add `-i` flag to edit file in place or remove it to just preview.
+Note: Use `-i` flag to update the file _in place_. Or remove it to just preview in the console.
 
 From [tutorial](https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace-text-in-files-in-linux-unix-shell/)
 
@@ -55,7 +56,7 @@ Replace `foo` with `bar` in all files in the directory
 
 ```sh
 sed -i 's/foo/bar/g' *
-``
+```
 
 On macOS you may need to provide a backup extension for -i - '.bak' or '' for no backup.
 
@@ -71,6 +72,3 @@ find ./ -type f -exec sed -i 's/foo/bar/g' {} \;
 
 
 From [StackOverflow](https://stackoverflow.com/questions/11392478/how-to-replace-a-string-in-multiple-files-in-linux-command-line)
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0MzAwNzU5Ml19
--->
