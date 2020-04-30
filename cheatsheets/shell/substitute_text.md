@@ -14,6 +14,8 @@ s/foo/bar/g
 
 Use `g` for global. Add `I` after `g` for case insensitive flag.
 
+Some characters must be escaped such as with backslash.
+
 ## Replace word in text
 
 ```sh
