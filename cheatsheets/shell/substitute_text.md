@@ -22,10 +22,10 @@ echo 'football' | sed 's/foo/bar/g'
 
 ## Replace word in file
 
-Replace `foo` with `bar` in _hello.txt_ and print to the console.
+Replace `foo` with `bar` in _file.txt_ and print to the console.
 
 ```sh
-sed -i 's/foo/bar/g' hello.txt
+sed -i 's/foo/bar/g' file.txt
 ```
 
 Note: Use `-i` flag to update the file _in place_. Or remove it to just preview in the console.
@@ -38,7 +38,7 @@ From [tutorial](https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace
 You can run multiple replaces at once.
 
 ```sh
-sed -i 's/foo/bar/g; s/fizz/buzz/g'
+sed -i 's/foo/bar/g; s/fizz/buzz/g' file.txt
 ```
 
 ### Advanced
@@ -48,7 +48,7 @@ For more control, you can use you can use an intermediate term. Like the arbitar
 Here we rename `foo` to `bar` but preserve instances of `food`.
 
 ```sh
-sed -i 's/food/~~/g; s/foo/bar/g; s/~~/food/g'
+sed -i 's/food/~~/g; s/foo/bar/g; s/~~/food/g' file.txt
 ```
 
 [source](https://stackoverflow.com/questions/26568952/how-to-replace-multiple-patterns-at-once-with-sed)
