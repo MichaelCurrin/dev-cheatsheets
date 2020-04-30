@@ -38,17 +38,22 @@ From [tutorial](https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace
 You can run multiple replaces at once.
 
 ```sh
-sed -i 's/foo/bar/g;s/fizz/buzz/g'
+sed -i 's/foo/bar/g; s/fizz/buzz/g'
 ```
 
-For more control, you can use you can use an intermediate term. Like arbitary `~~`.
+### Advanced
+
+For more control, you can use you can use an intermediate term. Like the arbitary `~~` below.
+
+Here we rename `foo` to `bar` but preserve instances of `food`.
 
 ```sh
-sed -i 's/foo/~~/g; s/bar/foo/g; s/~~/foo/g'
+sed -i 's/food/~~/g; s/foo/bar/g; s/~~/food/g'
 ```
 
 [source](https://stackoverflow.com/questions/26568952/how-to-replace-multiple-patterns-at-once-with-sed)
 
+Note there may be a cleaner way to do this, such a with regex in the console or your IDE. Maybe with grep or find.
 
 ## Replace word in multiple files
 
