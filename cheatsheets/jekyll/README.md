@@ -8,7 +8,10 @@
 
 - [Jekyll cheatsheet](https://learn.cloudcannon.com/jekyll-cheat-sheet/) on CloudCannon.
 - [Jekyll cheatsheet](https://devhints.io/jekyll) on DevHints.
- 
+
+### Make
+
+See [Jekyll](https://github.com/MichaelCurrin/cheatsheets/blob/master/cheatsheets/shell/make.md#jekyll) section in Make cheatsheet.
 
 ### Learn Jekyll
 
