@@ -1,4 +1,4 @@
-# Markdown Cheatsheet
+# Markdown cheatsheet
 
 Applies to `.md` or `.markdown` files as both are equivalent.
 
@@ -6,9 +6,10 @@ In some cases this guide contents HTML tags as these give more flexibility than 
 
 You can mix HTML and markdown together together in a markdown document, however, they cannot overlap. If you put markdown content between HTML tags (such as between opening and closing `p` tag, the markdown will just render as plain text.
 
+
 ## Notes
 
-This is not meant to be complete but rather useful as a quick reference for the things I need look up occasionally, so it excludes some basics such as headers.
+This section is not meant to be complete but rather useful as a quick reference for the things I need look up occasionally, so it might exclude some basics or cover them briefly.
 
 Most of the content here is intended for Github Flavored Markdown (GFM) to be viewed on Github or an IDE which supports Markdown. Some the content is HTML which will render well in a markdown file on Github.
 
