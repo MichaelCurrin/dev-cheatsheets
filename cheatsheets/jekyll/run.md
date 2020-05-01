@@ -37,6 +37,12 @@ cd test_site
 bundle exec jekyll serve
 ```
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1OTA2NzkzN119
--->
+## Flags
+
+Useful for build or serve. Gem errors can be too silent so for remote and local builds you can keek debug on.
+
+```sh
+--verbose
+
+--debug
+```
