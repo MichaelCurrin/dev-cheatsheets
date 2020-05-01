@@ -10,19 +10,66 @@
 
 ## Analytics
 
-[jekyll-analytics](https://github.com/hendrikschneider/jekyll-analytics)
+### Plugin
 
-Add to config:
+- Title: `jekyll-analytics`
+- Github: [hendrikschneider/jekyll-analytics](https://github.com/hendrikschneider/jekyll-analytics)
+- Additional setup:
+    - Add to config:
+        ```yaml
+        jekyll_analytics:
+          GoogleAnalytics:
+            id: UA-123-456
+        ```
 
-```yaml
-jekyll_analytics:
-  GoogleAnalytics:
-    id: UA-123-456
-```
+### HTML
 
-Note this is **not** whitelisted on Github Pages, so you need an Actions deploy or use the HTML approach. See [_includes/google-analytics.html](https://github.com/jekyll/minima/blob/master/_includes/google-analytics.html) on Minima. which expects `google_analytics` value in config. Though you could copy a snippet out of Google Analytics admin in case that is no up to date.
+Note the plugin above is **not** whitelisted on Github Pages, so you need an Actions deploy or use the HTML approach - reference [hendrikschneider/jekyll-analytics issue#5](https://github.com/hendrikschneider/jekyll-analytics/issues/5).
 
-Reference [hendrikschneider/jekyll-analytics issue#5](https://github.com/hendrikschneider/jekyll-analytics/issues/5).
+See [_includes/google-analytics.html](https://github.com/jekyll/minima/blob/master/_includes/google-analytics.html) on Minima. which expects `google_analytics` value in config. 
+
+
+1. Create `_includes/google-analytics.html`
+    - From `minima`: 
+        ```liquid
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+        <script>
+            window['ga-disable-{{ site.google_analytics }}'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" ||
+                navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', '{{ site.google_analytics }}');
+
+        </script>
+        ```
+    - From Google Analytics (parametized for Jekyll):
+        ```liquid
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '{{ site.google_analytics }}');
+        </script>
+        ```
+2. Use the file in to your `head` tag. 
+    - Copied here from `minima`.
+        ```liquid
+        {%- if jekyll.environment == 'production' and site.google_analytics -%}
+          {%- include google-analytics.html -%}
+        {%- endif -%}
+        ```
+3. Update config with your value:
+    ```yaml
+    google_analytics: UA-123-456
+    ```
 
 
 ## Production environment
