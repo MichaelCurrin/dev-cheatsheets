@@ -11,7 +11,7 @@ my_hash:
     c: 3
 deeper_nesting:
     foo: [100, 200, 300]
-    bar: 
+    bar:
         - 400
         - 500
         - 600
@@ -47,9 +47,11 @@ Code:
         c: 3
     deeper_nesting:
         foo: [100, 200, 300]
-        bar: 
+        bar:
             - 400
             - 500
             - 600
     ---
     ```
+
+For comparison, in a YAML file rather than a markdown file, content would not include the closing `---` and might not have the opening `---`.
