@@ -52,11 +52,14 @@ See [_includes/google-analytics.html](https://github.com/jekyll/minima/blob/mast
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
         <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-          gtag('config', '{{ site.google_analytics }}');
+            gtag('config', '{{ site.google_analytics }}');
+
         </script>
         ```
 2. Use the file in to your `head` tag. 
