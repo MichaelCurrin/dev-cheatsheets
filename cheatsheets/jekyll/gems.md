@@ -1,10 +1,15 @@
 # Jekyll gems cheatsheet
 
-## Check gem environment
+## Check environment
 
 ```sh
 $ gem env
 ```
+
+```sh
+$ bundle env
+```
+
 
 ## List installed gems
 
