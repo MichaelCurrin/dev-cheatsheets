@@ -20,7 +20,7 @@ jekyll_analytics:
     id: UA-123-456
 ```
 
-Note this is **not** whitelisted on Github Pages, so you need an Actions deploy or use the HTML approach as in `minima` theme.
+Note this is **not** whitelisted on Github Pages, so you need an Actions deploy or use the HTML approach. See [_includes/google-analytics.html](https://github.com/jekyll/minima/blob/master/_includes/google-analytics.html) on Minima. which expects `google_analytics` value in config. Though you could copy a snippet out of Google Analytics admin in case that is no up to date.
 
 Reference [hendrikschneider/jekyll-analytics issue#5](https://github.com/hendrikschneider/jekyll-analytics/issues/5).
 
