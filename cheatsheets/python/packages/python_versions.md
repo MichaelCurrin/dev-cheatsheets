@@ -18,7 +18,7 @@ X.Y.Z
 ## Recommended pinning for safety
 
 
-###  pinning 
+### Pinning
 
 Exact version lock
 
@@ -37,7 +37,7 @@ Exact version lock
 Explanation:
 
 - Minor version can float to be same or higher than specified, to get new backwards-compatible features, plus bug fixes. But the major version does is fixed - to avoid features or refactors which cause breaking changes.
- 
+
 
 ## Version format
 
@@ -63,10 +63,10 @@ For compatible release clause, the documentation says that the following pairs o
 - Two levels (X.Y)
     ```
     # Here we set a minimum minor versiosn of 2.2 but the major version is locked.
-    
+
     # Longer format
     >= 2.2, == 2.*
-    
+
     # Shorthand
     ~= 2.2
     ```
@@ -74,7 +74,7 @@ For compatible release clause, the documentation says that the following pairs o
     ```
     # Longer format
     >= 1.4.5, == 1.4.*
-    
+
     # Shorthand
     ~= 1.4.5
     ```
