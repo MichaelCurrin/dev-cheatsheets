@@ -20,7 +20,7 @@ docs:
 ```make
 # Show summary of make targets.
 help:
-	@echo Print lines that are not indented (targets and comments) or empty.
+	@echo 'Print lines that are not indented (targets and comments) or empty.'
 	@egrep '^\S|^$$' Makefile
 ```
 
@@ -29,7 +29,7 @@ If you use `@echo` within your targets:
 ```make
 # Show summary of make targets.
 help:
-	@echo Print lines that are not indented (targets and comments) or empty, plus any indented echo lines.
+	@echo 'Print lines that are not indented (targets and comments) or empty, plus any indented echo lines.'
 	@egrep '(^\S)|(^$$)|\s+@echo' Makefile
 ```
 
@@ -74,7 +74,8 @@ test:
 
 ```make
 install:
-	bundle install --path vendor/bundle
+	bundle config --local path vendor/bundle
+	bundle install
 
 upgrade:
 	bundle update
@@ -82,6 +83,7 @@ upgrade:
 s serve:
 	bundle exec jekyll serve
 ```
+
 
 ## Python
 
