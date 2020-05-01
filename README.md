@@ -7,6 +7,8 @@ A reference for code snippets and shell commands across programming languages. I
 
 This guide is not aimed at teaching fundamentals of a language or explaining things to beginners - it assumes context. It aims to be lean and easy to navigate with a focus on code over explanations for compactness, but sometimes it still explains how or why to use a snippet.
 
+There are plenty of tutorials and cheatsheets out there. This one is unique (for my at least) as it only contains topic and code that I have actually used before or plan to use, so it's a reference of what I know (or once knew). A cheatsheet made by someone is not personal to me and might have things I don't need or in a layout I don't like.
+
 <!--
 
 ## Ramblings
@@ -36,7 +38,6 @@ Any links to tutorials and more detail will probably be added to my [Learn to Co
 
 For creating doc badges see [Badge Generator](https://michaelcurrin.github.io/badge-generator).
 
-## Other cheatsheets 
+## Other cheatsheets
 
 - https://devhints.io
-
