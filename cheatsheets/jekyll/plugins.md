@@ -43,7 +43,7 @@ gem 'foo', group: :jekyll_plugins
 Or multi-line approach, good for multiple plugins.
 
 ```ruby
-group: :jekyll_plugins do
+group :jekyll_plugins do
   gem 'foo'
   # Add more plugins here. Do NOT separate each line with comma.
 end
