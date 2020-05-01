@@ -1,4 +1,4 @@
-## Collapsible items
+# Collapsible items
 
 How to create sections which can expand and collapse again.
 
@@ -53,7 +53,7 @@ _Note that markdown is valid but you need empty lines to separate from the HTML 
 </details>
 
 
-### Jekyll
+## Jekyll
 
 Example using Jekyll templating. In particular, putting a code block inside the expandable section.
 

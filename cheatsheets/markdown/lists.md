@@ -1,6 +1,6 @@
-## Lists
+# Lists
 
-### Bulleted list
+## Bulleted list
 
     - Bulleted
     - List
@@ -24,7 +24,7 @@
     - Bullet
         - List
 
-### Numbered list
+## Numbered list
 
     1. Numbered
     2. List
@@ -52,7 +52,7 @@ Note the number formatting style will change by itself at each indentation level
     1. Bullet
         1. List
 
-### Mixed list
+## Mixed list
 
     1. Number
     2. Number
@@ -66,7 +66,7 @@ Note the number formatting style will change by itself at each indentation level
    * Bullet
 3. Number
 
-### Quotes in lists
+## Quotes in lists
 
     - Top-level
         - > Point A, which is also a quote.
@@ -90,7 +90,7 @@ Don't do this:
     > There is no indent here, probably not what you want.
     - Point B
 
-### Code snippets in lists
+## Code snippets in lists
 
     - Top-level
         - Foo
@@ -109,9 +109,9 @@ Don't do this:
     - Bar
 
 
-### Code
+## Code
 
-#### Code styling
+### Code styling
 
 You get monospaced text with no syntax highlighting if you do not specify a language.
 
@@ -122,7 +122,7 @@ Example of `code` in a sentence.
 Example of `code` in a sentence.
 
 
-#### Code blocks
+### Code blocks
 
 ```markdown
     # Indententing this line in markdown turned it into preformatted mono-spaced text, without any particular code syntax.
@@ -133,7 +133,7 @@ Example of `code` in a sentence.
     print('Hello world'!)
 
 
-#### Code blocks with language syyntax
+### Code blocks with language syntax
 
     ```python
     # Triple quotes are for code blocks and give more control over the language.

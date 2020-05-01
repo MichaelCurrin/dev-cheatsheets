@@ -1,6 +1,7 @@
-## Links
+# Links
 
-### Format
+
+## Format
 
 A markdown link's format is:
 
@@ -16,7 +17,7 @@ The link text is what will be shown on error or while the image is loading. It c
 The target should be either a **local** file path in the repo, or a **remote** URL. The target should **not** be blank, otherwise it will just link to the current page.
 
 
-### File
+## File
 
 The path is by default **relative** to the current path.
 
@@ -68,7 +69,11 @@ The target could go to another page.
 [Foo bar](https://example.com#bar)
 ```
 
-### URL
+
+## URL
+
+
+### Inline links
 
 Set the target as a full URL, requiring protocol, domain and optional path.
 
@@ -84,7 +89,6 @@ For example, this will link add `/example.com` to the current path.
 [Bad example](example.com)
 ```
 
-### Alt text
 
 Add optional alternative text. You can hover over the link to see the alt text.
 
@@ -99,7 +103,9 @@ Add optional alternative text. You can hover over the link to see the alt text.
 [link text](https://example.com "alt text")
 ```
 
-### Reference-style links
+
+## Reference-style links
+
 
 ### Text
 
@@ -116,9 +122,6 @@ Example:
 
 **Result:**
 
-
-Code:
-
 ```markdown
 [I'm a reference-style link][Arbitrary case-insensitive reference text]
 
@@ -130,7 +133,6 @@ Code:
 
 Example:
 
-
 **Code:**
 
 ```markdown
@@ -140,9 +142,6 @@ Example:
 ```
 
 **Result:**
-
-
-Code:
 
 ```markdown
 [You can use numbers for reference-style link definitions][1]

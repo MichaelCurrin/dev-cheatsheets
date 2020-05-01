@@ -1,6 +1,7 @@
-## Common formatting
+# Common formatting
 
-### Headings
+
+## Headings
 
 ```markdown
 # Header 1
@@ -18,7 +19,8 @@ Header 2
 ---
 ```
 
-### Horizontal rule
+
+## Horizontal rule
 
 ```markdown
 See the triple dash with white space before it.
@@ -46,7 +48,8 @@ The following are equivalent, though Github's markdown editor only shows a previ
 ~~Strikethrough~~
 ```
 
-### Links
+
+## Links
 
 ```markdown
 [Link](url)
@@ -54,7 +57,8 @@ The following are equivalent, though Github's markdown editor only shows a previ
 ![Image](src)
 ```
 
-### Paragraph
+
+## Paragraph
 
 If there are two paragraph lines with no break between, Markdown will show them on online. Therefore you can either add white space between, use a `<br>` tag, or use a double white space at the end of the line (not pratical if your IDE trims whitespace).
 
@@ -67,7 +71,8 @@ Line 3 and
 continuation of line 3.
 ```
 
-### Quotes
+
+## Quotes
 
 Single line.
 

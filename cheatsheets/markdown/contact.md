@@ -1,6 +1,7 @@
-## Contact
+# Contact
 
-### Email
+
+## Email
 
 - Markdown
 	```markdown
@@ -14,7 +15,7 @@
 	- <foo@bar.com>
 
 
-### Phone number
+## Phone number
 
 - Markdown
 	```markdown

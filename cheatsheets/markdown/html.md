@@ -1,4 +1,4 @@
-## HTML
+# HTML
 
 HTML will render in markdown, so you can do things not possible in markdown.
 
@@ -15,7 +15,8 @@ HTML will render in markdown, so you can do things not possible in markdown.
     This is the next line but there was no break tag so it is on the same line.
 </p>
 
-### Comments
+
+## Comments
 
 HTML comments will not be visible when viewed as HTML. So they are good for notes to yourself.
 
@@ -27,7 +28,8 @@ HTML comments will not be visible when viewed as HTML. So they are good for note
 
 Especially good for a static website where you don't want your TODO items to show up on the site. Though you might want to use the Jekyll `{% comment %}` filter if you want to avoid your comment from being rendered as HTML source.
 
-### Formatting
+
+## Formatting
 
 The `kbd` HML tag can be used for keyboard commands. For example:
 
@@ -37,7 +39,8 @@ Press <kbd>Esc</kbd>
 
 Press <kbd>Esc</kbd>
 
-### Warning notes
+
+## Warning notes
 
 Be careful when putting markdown instead HTML tags.
 

@@ -1,4 +1,4 @@
-## Images
+# Images
 
 Images in mardown as similar to a hyperlink, except it starts with an **exclamation mark**.
 
@@ -8,7 +8,8 @@ The following apply, as with standard links:
 - The text in the first part is alternative text shown while the image is loading (or if fails to load).
 - Optional text can be included at the end, to show on hover over.
 
-### General format
+
+## General format
 
 ```markdown
 ![Alt text](target)
@@ -25,9 +26,10 @@ Example codCode sample:
 Note that for local paths, the target is **case sensitive**. Github will show an error otherwise. Some IDE extensions are case-insensitive and so hide errors that will appear on Github.
 
 
-### Example of inline vs reference style
+## Example of inline vs reference style
 
-#### Inline-style
+
+### Inline-style
 
 Example:
 
@@ -47,7 +49,8 @@ Code:
 
 ```
 
-#### Reference-style
+
+### Reference-style
 
 
 **Code**:
@@ -77,7 +80,8 @@ Some more text.
 There is a logo above but this elemement but it is not visible in the rendered HTML.
 ```
 
-### Plain HTML
+
+## Plain HTML
 
 For more control, you can use HTML for your images.
 
@@ -93,7 +97,8 @@ Here we make the image clickable, to emulate what a markdown image does.
 </a>
 ```
 
-### Styled HTML
+
+## Styled HTML
 
 Resize and center an image using HTML attributes.
 
@@ -118,7 +123,7 @@ Notes:
 - The image will be hyperlinked to the full size version of the image, unless you add an anchor tag.
 
 
-#### Add elements
+### Add elements
 
 You can other elements in the outer tag.
 
@@ -152,7 +157,8 @@ The badge could also be converted to an `img` tag for consistency. Then a line b
 </div>
 ```
 
-### SVGs
+
+## SVGs
 
 Format:
 
@@ -175,9 +181,9 @@ Example
 ![Alt text](https://placeholder.pics/svg/200x60/DEDEDE/555555/Sample%20SVG)
 
 
-#### Github links
+### Github links
 
-##### raw.githubusercontent.com
+#### raw.githubusercontent.com
 
 If you reference an image on Github through the Raw button, you get a link on `raw.githubusercontent.com`. You might add this to the URL to avoid getting an error: `?sanitize=true`.
 
@@ -195,7 +201,7 @@ Image link from Wikipedia icon [here](https://en.wikipedia.org/wiki/GraphQL).
 
 If you use a different domains below, though you do **not** need the sanitize parameter.
 
-#### github.io
+### github.io
 
 No sanitize parameter needed.
 
@@ -207,7 +213,7 @@ i.e. A Github Pages site's asset.
 
 ![Alt text](https://potherca-blog.github.io/StackOverflow/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
 
-#### rawgithub.com
+### rawgithub.com
 
 No sanitize parameter needed.
 
