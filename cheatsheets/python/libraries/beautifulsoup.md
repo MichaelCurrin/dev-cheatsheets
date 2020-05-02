@@ -115,9 +115,9 @@ else:
     print(resp.status_code)
 ```
 
-## Get elements
+## Find elements
 
-### By attribute
+### Get by attribute
 
 Get the _first_ element or `None`.
 
@@ -127,13 +127,77 @@ soup.html
 soup.head
 ```
 
-
 ```python
 soup.h2.name
 # h2
 soup.h2.text
 # My header
 ```
+
+### Use find
+
+Get the first element matching search and any attribute filters.
+
+```python
+soup.find("ul", attrs={ "id" : "mylist" } ))
+# OR
+soup.find("ul", id="mylist")) 
+```
+
+To narrow down a search, you can use an element in place of soup.
+
+```python
+el.find(...)
+```
+
+Or use a nested CSS selector.
+
+
+### Use find_all
+
+Get all elements.
+
+```python
+tags = soup.find_all("li"):
+```
+
+Use a list.
+
+
+```python
+tags = soup.find_all(["h2", "p"]):
+```
+
+Use a function.
+
+```python
+def is_empty(tag):
+    return tag.is_empty_element
+    
+tags = soup.find_all(is_empty):
+```
+
+
+### Use select_one
+
+CSS selector.
+
+```python
+tag = soup.select_one("#mylist")
+```
+
+### Use selector
+
+CSS selector.
+
+Get third element.
+
+```python
+tags = soup.select("li:nth-of-type(3)")
+```
+
+
+## Traversing
 
 ### Children
 
