@@ -5,18 +5,36 @@
 
 ### Working directory
 
-Where you are executing from.
+Absolute path to directory where you are executing from.
 
 ```python
 os.getcwd()
 ```
 
+This seems like a longer equivalent:
+
+```python
+os.path.realpath(os.curdir)
+```
+
+Where `os.durdir` is `'.'`.
+
+
 ### Path to script
 
-Path of the current file. NB. `__file__`  is not defined in the interactive console.
+Path of the current file. 
 
 ```python
 __file__
+```
+
+NB. `__file__`  is not defined in the interactive console.
+
+Absolute path to the current file. Note the realpath is safer than abspath.
+
+```python
+os.path.realpath(__file__)
+```
 
 
 ## Check access to path
@@ -101,5 +119,5 @@ os.path.join(foo, bar)
 os.path.pardir(path)
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2OTEyODY0NF19
+eyJoaXN0b3J5IjpbMjEyNzc5MDg4XX0=
 -->
