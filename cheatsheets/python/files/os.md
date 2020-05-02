@@ -1,6 +1,23 @@
 
 # OS library
 
+## Get current path
+
+### Working directory
+
+Where you are executing from.
+
+```python
+os.getcwd()
+```
+
+### Path to script
+
+Path of the current file. NB. `__file__`  is not defined in the interactive console.
+
+```python
+__file__
+
 
 ## Check access to path
 
@@ -16,8 +33,13 @@ os.path.exists(path)
 # Exists
 os.check(path, os.F_OK)
 
+# Read
 os.check(path, os.R_OK)
+
+# Write
 os.check(path, os.W_OK)
+
+# Execte
 os.check(path, os.X_OK)
 ```
 
@@ -67,7 +89,8 @@ os.path.expanduser("~/file.txt")
 ## Join
 
 ```python
-os
+os.path.join(foo, bar)
+```
 
 ## Traverse
 
@@ -78,5 +101,5 @@ os
 os.path.pardir(path)
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExODI3NzY3Ml19
+eyJoaXN0b3J5IjpbLTI2OTEyODY0NF19
 -->
