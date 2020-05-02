@@ -27,6 +27,32 @@ p = Path('.')
 ```python
 list(p.glob('**/*.py'))
 ```
+
+## Navigating
+
+```python
+p = Path('/etc')
+q = p / 'init.d' / 'reboot'
+# => PosixPath('/etc/init.d/reboot')
+q.resolve()
+# => PosixPath('/etc/rc.d/init.d/halt')
+```
+
+## Querying path properties:
+
+```python
+q.exists()
+
+q.is_dir()
+```
+
+## Opening a file
+
+```python
+with q.open() as f_in:
+    f_in.readline()
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzNDQ3OTc0MCwxMTkwOTc4MjQ2XX0=
+eyJoaXN0b3J5IjpbMjExNjU3MDMwMywxMTkwOTc4MjQ2XX0=
 -->
