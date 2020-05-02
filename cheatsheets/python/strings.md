@@ -42,6 +42,7 @@ Align center.
 '{:^10}'
 ```
 
+Format integer. 
 
 ### Old style
 
@@ -58,14 +59,28 @@ Align center.
 ## Truncate long string
 
 ```python
-'{:.5}'.format('xylophone')
+import textwrap
+
+
+textwrap.shorten("Hello  world!", width=12)
+# => 'Hello world!'
+textwrap.shorten("Hello  world!", width=11)
+# > 'Hello [...]'
+textwrap.shorten("Hello world", width=10, placeholder="...")
+# => 'Hello...'
 ```
 
+[source](https://stackoverflow.com/questions/2872512/python-truncate-a-long-string)
+
+```python
+'{:.5}'.format('xylophone')
+# => 'xylop'
+```
 
 
 ## Working with strings
 
-### Repeating
+### Repeating strings
 
 ```python
 >>> '---'*10
@@ -111,5 +126,5 @@ print(row_dict)
 # {'a': '1', 'b': '2', 'c': '3'}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyMzcxMjE0MV19
+eyJoaXN0b3J5IjpbMTI5MTI1MTM4NV19
 -->
