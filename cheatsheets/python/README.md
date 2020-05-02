@@ -25,12 +25,7 @@ Links are all for Python 3.
 - [logging](https://docs.python.org/3/library/logging.html)
 - [File and directory access](https://docs.python.org/3/library/filesys.html)
 
-## MyPy
 
-Optional static typing for Python.
-
-- [mypy-lang.org](https://mypy-lang.org/) homepage.
-- [Read the docs](https://mypy.readthedocs.io/en/stable/) page.
 
 
 ## Dotenv files
@@ -145,53 +140,8 @@ import copy
 copied_obj = copy.deepcopy(original_obj)
 ```
 
-## Working with strings
 
-### Repeating
 
-```python
->>> '---'*10
-'------------------------------'
-
->>> ['---']*10
-['---', '---', '---', '---', '---', '---', '---', '---', '---', '---']
-
->>> print(" | ".join(['---']*10))
---- | --- | --- | --- | --- | --- | --- | --- | --- | ---
-```
-
-### Convert strings to markdown table
-
-```python
-header = "a,b,c".split(',')
-row = "1,2,3".split(",")
-
-print(" | ".join(header))
-print(" | ".join(['---']*len(header)))
-print(" | ".join(row))
-```
-
-```markdown
-a | b | c
---- | --- | ---
-1 | 2 | 3
-```
-
-a | b | c
---- | --- | ---
-1 | 2 | 3
-
-### Convert strings to dict
-
-```python
-header = "a,b,c".split(',')
-row = "1,2,3".split(",")
-
-row_dict = {k: v for k, v in zip(header, row)}
-
-print(row_dict)
-# {'a': '1', 'b': '2', 'c': '3'}
-```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk0ODM1MjI3Nl19
+eyJoaXN0b3J5IjpbLTE4Mjc4OTY5NzRdfQ==
 -->
