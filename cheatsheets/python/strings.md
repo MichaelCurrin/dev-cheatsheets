@@ -14,6 +14,34 @@ Use f-strings in Python 3.6+.
 f'{foo} {bar}'
 ```
 
+#### Modifiers
+
+- `repr`
+	- `'{0!r}'.format(foo)`
+- ASCII
+	- `'{0!a}'.format(foo)`
+
+#### Alignment
+
+Align left.
+
+```python
+'{:10}'
+'{:<10}'
+```
+
+Align right with padding.
+
+```python
+'{:>10}'
+```
+
+Align center.
+
+```python
+'{:^10}'
+```
+
 
 ### Old style
 
@@ -25,6 +53,15 @@ f'{foo} {bar}'
 
 - https://pyformat.info/
 - https://www.w3schools.com/python/ref_string_format.asp
+
+
+## Truncate long string
+
+```python
+'{:.5}'.format('xylophone')
+```
+
+
 
 ## Working with strings
 
@@ -74,5 +111,5 @@ print(row_dict)
 # {'a': '1', 'b': '2', 'c': '3'}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyMTA3NjcwOV19
+eyJoaXN0b3J5IjpbLTMyMzcxMjE0MV19
 -->
