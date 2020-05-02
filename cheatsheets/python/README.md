@@ -15,19 +15,6 @@ $ python -U
 ```
 
 
-## Libraries
-
-Links are all for Python 3.
-
-- [Python standard library](https://docs.python.org/3/library/index.html)
-- [argparse](https://docs.python.org/3/library/argparse.html)
-- [os](https://docs.python.org/3/library/os.html)
-- [logging](https://docs.python.org/3/library/logging.html)
-- [File and directory access](https://docs.python.org/3/library/filesys.html)
-
-
-
-
 ## Dotenv files
 
 How to load a dotenv file, then use the values in your application.
@@ -143,5 +130,5 @@ copied_obj = copy.deepcopy(original_obj)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4Mjc4OTY5NzRdfQ==
+eyJoaXN0b3J5IjpbMTQyMjk1NjA5Nl19
 -->
