@@ -1,5 +1,17 @@
 # Python glob cheatsheet
 
+How to matchs paths using "glob" patterns, which are similar to regex patterns.
+
+
+## Glob rule basics
+
+[Source](https://github.com/begin/globbing/blob/master/cheatsheet.md)
+
+- `*` - Match any character zero or more times.
+- `**` - Match any character zero or more times, including `/` unlike the others.
+- `?` - Match any character one time.
+- `[abc]` - Match any of the characters.
+
 
 ## Get files in a directory
 
@@ -24,5 +36,5 @@ Use the `glob1(dirname, pattern)` method to get the filenames.
 ....
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk0OTg3OTc2NV19
+eyJoaXN0b3J5IjpbLTE2MzA4NzUxMDldfQ==
 -->
