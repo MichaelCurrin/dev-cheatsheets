@@ -6,7 +6,42 @@ See [glob](/cheatsheets/shell/glob.md) in the Shell section.
 
 - [glob](https://docs.python.org/3/library/glob.html) in the Python 3 docs.
 
+
+## How to get a list files in a directory
+
+From this [StackOverflow](https://stackoverflow.com/questions/29847426/python-glob-without-absolute-path/50065317#50065317) page, where my answer was the highest voted.
+
+### File paths
+
+```python
+# => glob.glob("some_dir/*.png")
+# => ['/home/michael/foo/bar/some_dir/a.png', '/home/michael/foo/baz/some_dir/b.png', ]
+```
+
+### Filenames
+
+Use the `glob1(dirname, pattern)` method to get the filenames.
+
+```python
+glob.glob1("some_dir", "*.png")
+# => ['a.png', 'a.png', ...]
+```
+
+
+### Dotfiles
+
+Dot files are not picked up using a star (as in the shell), but you can specify a leading dot.
+
+```python
+glob.glob('*.gif')
+# => ['card.gif']
+glob.glob('.c*')
+# => ['.card.gif']
+```
+
+
 ## Functions
+
 
 ### glob function
 
@@ -62,49 +97,6 @@ from glob import glob0
 glob0(...)
 ```
 
-Use:
-
-```python
-glob0(dirname, pattern)
-
-glob1(dirname, pattern)
-```
-
-
-## How to get a list files in a directory
-
-From this [StackOverflow](https://stackoverflow.com/questions/29847426/python-glob-without-absolute-path/50065317#50065317) page, where my answer was the highest voted.
-
-### File paths
-
-```python
-# => glob.glob("some_dir/*.png")
-# >['/home/michael/foo/bar/some_dir/a.png',
-'/home/michael/foo/baz/some_dir/b.png',
-....
-```
-
-### Filenames
-
-Use the `glob1(dirname, pattern)` method to get the filenames.
-
-```python
-glob.glob1("some_dir", "*.png")
-# => ['a.png', 'a.png', ...]
-```
-
-
-
-### Dotfiles
-
-Dot files are not picked up using a star (as in the shell), but you can specify a leading dot.
-
-```python
-glob.glob('*.gif')
-# => ['card.gif']
-glob.glob('.c*')
-# => ['.card.gif']
-```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0NjIwNzMxOCwtNTQ2NDUyNDkwXX0=
+eyJoaXN0b3J5IjpbNzQyNzU4MTU4LC01NDY0NTI0OTBdfQ==
 -->
