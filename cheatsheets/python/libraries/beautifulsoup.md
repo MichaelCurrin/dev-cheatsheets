@@ -1,19 +1,91 @@
 # BeautifulSoup
 
 
-Reference: [tutorial](http://zetcode.com/python/beautifulsoup/)
+## Resources
+
+- [Read the docs](https://beautiful-soup-4.readthedocs.io/en/latest/) docs
+- [Read the docs](https://readthedocs.org/projects/beautiful-soup-4/) project page
+- [PyPI](https://pypi.org/project/beautifulsoup4/)
+- Tutorials
+    - [Python for beginners](https://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python)
+    - [Zetcode](http://zetcode.com/python/beautifulsoup/)
 
 
 ## Install
 
+### Install BeautifulSoup
+
 Use `pip` to install:
 
-```sh
+```
 beautifulsoup4
-lxml
 ```
 
 Note: Don't use `beautifulsoup`. You can use `bs4` but that's just a wrapper fixed at `0.0.1` so don't use that.
+
+
+### Install a parser
+
+See [Installing a parse](https://beautiful-soup-4.readthedocs.io/en/latest/index.html?highlight=get#installing-a-parser) in the docs.
+
+Choose a parser. The guide linked also compares them.
+
+#### Python's parser
+
+Not as fast as LXML and not as leniant as HTML5Lib.
+
+No installation needed.
+
+```
+html.parser
+```
+
+Use like this:
+
+```python
+BeautifulSoup(markup, "html.parser")
+```
+
+#### LXML
+
+Link: [lxml.de/](https://lxml.de/)
+
+
+Use `pip` to install:
+
+```
+lxml
+```
+
+Or:
+
+```sh
+apt-get install python-lxml
+```
+
+Use like this:
+
+- HTML parsing
+    ```python
+    BeautifulSoup(markup, "lxml")
+    ```
+- XML parsing
+    ```python
+    BeautifulSoup(markup, "lxml-xml")
+    # OR
+    BeautifulSoup(markup, "xml")
+    ```
+
+
+### HTML5Lib
+
+Described in the docs as "very slow", so only covered briefly here:
+
+Use like this:
+
+```python
+BeautifulSoup(markup, "html5lib")
+```
 
 
 ## Import
@@ -139,6 +211,10 @@ soup.h2.text
 Get the first element matching search and any attribute filters.
 
 ```python
+tag = soup.find_all(attrs={"name" : "stainfo"})
+```
+
+```python
 soup.find("ul", attrs={ "id" : "mylist" } ))
 # OR
 soup.find("ul", id="mylist")) 
@@ -196,6 +272,43 @@ Get third element.
 tags = soup.select("li:nth-of-type(3)")
 ```
 
+## Attributes
+
+For string: `'<div id="foo" class="question" name="python" x="something">Hello World</div>'`
+
+### Get
+
+```python
+el.get('id')
+# > 'foo
+```
+
+### Attrs
+
+```python
+el.attrs
+# => {'id': 'foo', 'x': 'something', 'class': ['question'], 'name': 'python'}
+
+el.attrs['id']
+# => 'foo'
+
+# Safer dict lookup which can return None for no key found.
+el.attrs.get('id')
+# => 'foo'
+```
+
+### Get all URLs
+
+```python
+for link in soup.find_all('a'):
+    print(link.get('href'))
+```
+
+### Get all text on the page
+
+```python
+soup.get_text())
+```
 
 ## Traversing
 
