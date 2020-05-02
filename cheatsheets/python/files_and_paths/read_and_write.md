@@ -2,9 +2,17 @@
 
 ## Read text file
 
+Get a single `str`.
 ```python
 with open(path) as f_in:
     text = f_in.read()
+```
+
+Get a `list` of `str` objects.
+
+```python
+with open(path) as f_in:
+    lines = f_in.read().splitlines()
 ```
 
 Use `f.seek(0)` to reset if you need to read the entire file multiple times.
@@ -71,5 +79,5 @@ with open(path, 'w') as f_out:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODY3MDkyMF19
+eyJoaXN0b3J5IjpbMTYzNTI4NDU3OF19
 -->
