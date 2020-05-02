@@ -33,7 +33,45 @@ glob.iglob(pathname, *, recursive=False)
 
 > Return an iterator which yields the same values as glob() without actually storing them all simultaneously.
 
+### Escape
 
+```python
+escape(pathname)
+```
+
+> Escape all special characters.
+
+### Helper functions
+
+From: https://github.com/python/cpython/blob/3.8/Lib/glob.py
+
+The `glob` module defines these public functions:
+
+```
+__all__ = ["glob", "iglob", "escape"]
+```
+
+But `glob0` and `glob1` are also available.
+
+e.g.
+
+```
+import glob
+glob.glob0(...)
+from glob import glob0
+glob0(...)
+```
+
+Use:
+
+```python
+
+def glob0(dirname, pattern):
+    return _glob0(dirname, pattern, False)
+
+def glob1(dirname, pattern):
+    return _glob1(dirname, pattern, False)
+```
 
 
 ## Get files in a directory
@@ -70,5 +108,5 @@ glob.glob('.c*')
 # => ['.card.gif']
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk2OTA5MzY1N119
+eyJoaXN0b3J5IjpbLTU0NjQ1MjQ5MF19
 -->
