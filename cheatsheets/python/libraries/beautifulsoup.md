@@ -234,6 +234,46 @@ with open("index.html", "r") as f_in:
             print(child.name)
 ```
 
+## Modify
+
+### Create
+
+```python
+new_tag = soup.new_tag('li')
+new_tag.string='Foo'
+
+ul_tag = soup.ul
+```
+
+### Append
+
+
+```python
+ul_tag.append(new_tag)
+```
+
+### Insert
+
+Insert at 3rd position:
+
+```python
+ul_tag.append(2, new_tag)
+```
+
+
+### Replace
+
+```python
+tag = soup.find(text="Windows")
+tag.replace_with("OpenBSD")
+```
+
+### Remove
+
+```python
+tag.decompose()
+```
+
 ## Prettify
 
 
