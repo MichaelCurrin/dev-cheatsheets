@@ -57,7 +57,7 @@ glob("foo/*.txt")
 
 #### glob0
 
-Note `dirname` cannot be `*`.
+For convenience to split directory and pattern. Note `dirname` cannot be `*` and neither can pattern.
 
 ```python
 glob0(dirname, pattern)
@@ -68,14 +68,16 @@ glob0("foo", "a.txt")
 # => [ 'a.txt', 'b.txt' ]
 ```
 
-####
+#### glob1
+
+For convenience to split directory and pattern. Note `dirname` cannot be `*`.
+
 ```python
 glob1(dirname, pattern)
 # e.g.
 glob1("foo", "*.txt")
 # => [ 'a.txt', 'b.txt' ]
 ```
-
 
 ### glob function
 
@@ -132,5 +134,5 @@ glob0(...)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODE0NzAzNDMsLTU0NjQ1MjQ5MF19
+eyJoaXN0b3J5IjpbLTEwODI3OTUzNjAsLTU0NjQ1MjQ5MF19
 -->
