@@ -42,6 +42,21 @@ glob.glob('.c*')
 
 ## Functions
 
+### Summary
+
+> Return a list of paths matching a pathname pattern.
+
+```python
+glob
+```
+
+```
+glob0(dirname, pattern)
+
+glob1(dirname, pattern)
+```
+
+
 
 ### glob function
 
@@ -98,5 +113,5 @@ glob0(...)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQyNzU4MTU4LC01NDY0NTI0OTBdfQ==
+eyJoaXN0b3J5IjpbODkxODQzOTYwLC01NDY0NTI0OTBdfQ==
 -->
