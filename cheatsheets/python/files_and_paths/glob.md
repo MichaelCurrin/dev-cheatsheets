@@ -50,7 +50,7 @@ glob.glob('.c*')
 glob(path)
 # e.g.
 glob("foo/*.txt")
-# => [ "foo/a.txt", ]
+# => [ "foo/a.txt", "foo/b.txt" ]
 ```
 
 Note `dirname` cannot be `*`.
@@ -59,12 +59,14 @@ Note `dirname` cannot be `*`.
 glob0(dirname, pattern)
 # e.g.
 glob1("foo", "*.txt")
-# => [ 'a.txt', ]
+# => [ ]
+glob1("foo", "a.txt")
+# => [ 'a.txt', 'b.txt' ]
 
 glob1(dirname, pattern)
 # e.g.
 glob1("foo", "*.txt")
-# => [ 'a.txt', ]
+# => [ 'a.txt', 'b.txt' ] ]
 ```
 
 
@@ -124,5 +126,5 @@ glob0(...)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEyMjc4OTg2MSwtNTQ2NDUyNDkwXX0=
+eyJoaXN0b3J5IjpbMTU4NjMxOTEyMCwtNTQ2NDUyNDkwXX0=
 -->
