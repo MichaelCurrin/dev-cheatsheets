@@ -28,7 +28,9 @@ Note: Don't use `beautifulsoup`. You can use `bs4` but that's just a wrapper fix
 
 See [Installing a parse](https://beautiful-soup-4.readthedocs.io/en/latest/index.html?highlight=get#installing-a-parser) in the docs.
 
-Choose a parser. The guide linked also compares them.
+Choose a parser. The guide linked also compares them and those are covered here.
+
+If you get an invalid document error, you can try changing your parser as they parse differently.
 
 #### Python's parser
 
