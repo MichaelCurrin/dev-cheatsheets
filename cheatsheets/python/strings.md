@@ -42,13 +42,42 @@ Align center.
 '{:^10}'
 ```
 
-Format integer. 
+Format integer. Aligns right.
+
+```python
+'{:4d}'.format(42)
+# => '  42'
+```
+
+Round a float.
+
+```python
+# Default to 7.6 values (7 total length and 6 after point).
+'{:f}'.format(3.141592653589793)
+# => '3.141593'
+
+# Custom
+'{:3.2f}'.format(3.141592653589793)
+# => '3.14'
+
+# Add padding.
+'{:06.2f}'.format(3.141592653589793)
+# => '003.14'
+```
+
 
 ### Old style
 
 ```python
 '%s  %s' % (foo, bar)
 ```
+
+### Debugging
+
+```python
+logging.debug("User name: %s", name)
+```
+
 
 ### Resources
 
@@ -126,5 +155,5 @@ print(row_dict)
 # {'a': '1', 'b': '2', 'c': '3'}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5MTI1MTM4NV19
+eyJoaXN0b3J5IjpbMTM3OTg0MTUwOF19
 -->
