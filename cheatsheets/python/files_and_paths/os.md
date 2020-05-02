@@ -114,23 +114,65 @@ os.path.join(foo, bar)
 
 ## Split
 
-Get the last part of a path - the filename or directory.
+### Get girectory
+
+Of a file.
+```python
+os.path.dirname('foo/bar/baz.txt')
+# => 'foo/bar'
+```
+
+Of a directory.
+
+```python
+os.path.dirname('foo/bar')
+# => 'foo'
+```
+
+Note if it ends in forwardslash it will just remove that.
+
+```python
+os.path.dirname('foo/bar/')
+# => 'foo/bar'
+```
+
+### Base
+
+Get the last part of a path - whether a directory or filename.
+
+
+```python
+os.path.basename('foo/bar/baz.txt')
+# => 'baz.txt'
+```
 
 ```python
 os.path.basename('foo/bar')
 # => 'bar'
-os.path.basename('foo/bar/baz')
-# => 'baz'
 ```
+
+If ending in forwardslash is empty.
+
+```python
+os.path.basename('foo/bar/')
+# => ''
+```
+
+
 ## Traverse
 
 
 ### Parent directory
 
 ```python
+os.path.pardir
+# => '..'
+```
+
+```python
 os.path.dirname(path)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg0MTcyMDk2MV19
+eyJoaXN0b3J5IjpbLTE2ODg4OTQ0ODhdfQ==
 -->
