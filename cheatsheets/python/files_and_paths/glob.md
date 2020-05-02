@@ -2,6 +2,16 @@
 
 See [glob](/cheatsheets/shell/glob.md) in the Shell section.
 
+## Resources
+
+- [glob](https://docs.python.org/3/library/glob.html) in the Python 3 docs.
+
+## glob function
+
+> If _recursive_ is true, the pattern “`**`” will match any files and zero or more directories, subdirectories and symbolic links to directories.
+>
+> Note: Using the “**” pattern in large directory trees may consume an inordinate amount of time. 
+
 
 ## Get files in a directory
 
@@ -26,5 +36,5 @@ Use the `glob1(dirname, pattern)` method to get the filenames.
 ....
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxODU3MjkwOV19
+eyJoaXN0b3J5IjpbLTM3NDE0MDAwOV19
 -->
