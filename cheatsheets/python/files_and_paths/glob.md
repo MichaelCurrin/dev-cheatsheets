@@ -66,7 +66,7 @@ glob1("foo", "a.txt")
 glob1(dirname, pattern)
 # e.g.
 glob1("foo", "*.txt")
-# => [ 'a.txt', 'b.txt' ] ]
+# => [ 'a.txt', 'b.txt' ]
 ```
 
 
@@ -126,5 +126,5 @@ glob0(...)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4NjMxOTEyMCwtNTQ2NDUyNDkwXX0=
+eyJoaXN0b3J5IjpbMjUwNDM2MDEzLC01NDY0NTI0OTBdfQ==
 -->
