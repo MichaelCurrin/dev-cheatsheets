@@ -14,8 +14,19 @@
 from pathlib import Path
 ```
 
+## List subdirectories
+
+```python
+p = Path('.')
+[x for x in p.iterdir() if x.is_dir()]
+```
 
 ## Glob
+
+
+```python
+list(p.glob('**/*.py'))
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxNDk4NTU4NiwxMTkwOTc4MjQ2XX0=
+eyJoaXN0b3J5IjpbMjAzNDQ3OTc0MCwxMTkwOTc4MjQ2XX0=
 -->
