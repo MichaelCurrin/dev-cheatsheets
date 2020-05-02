@@ -42,7 +42,9 @@ glob.glob('.c*')
 
 ## Functions
 
-### Summary
+### Summary of use
+
+#### glob
 
 > Return a list of paths matching a pathname pattern.
 
@@ -53,22 +55,26 @@ glob("foo/*.txt")
 # => [ "foo/a.txt", "foo/b.txt" ]
 ```
 
+#### glob0
+
 Note `dirname` cannot be `*`.
 
 ```python
 glob0(dirname, pattern)
 # e.g.
-glob1("foo", "*.txt")
+glob0("foo", "*.txt")
 # => [ ]
-glob1("foo", "a.txt")
+glob0("foo", "a.txt")
 # => [ 'a.txt', 'b.txt' ]
+```
 
+####
+```python
 glob1(dirname, pattern)
 # e.g.
 glob1("foo", "*.txt")
 # => [ 'a.txt', 'b.txt' ]
 ```
-
 
 
 ### glob function
@@ -126,5 +132,5 @@ glob0(...)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjUwNDM2MDEzLC01NDY0NTI0OTBdfQ==
+eyJoaXN0b3J5IjpbODE0NzAzNDMsLTU0NjQ1MjQ5MF19
 -->
