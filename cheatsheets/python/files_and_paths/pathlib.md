@@ -50,9 +50,9 @@ q.is_dir()
 
 ```python
 with q.open() as f_in:
-    f_in.readline()
+    text = f_in.readline()
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExNjU3MDMwMywxMTkwOTc4MjQ2XX0=
+eyJoaXN0b3J5IjpbLTk5NjcxMzA3LDExOTA5NzgyNDZdfQ==
 -->
