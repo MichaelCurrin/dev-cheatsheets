@@ -112,15 +112,25 @@ os.path.expanduser("~/file.txt")
 os.path.join(foo, bar)
 ```
 
+## Split
+
+Get the last part of a path - the filename or directory.
+
+```python
+os.path.basename('foo/bar')
+# => 'bar'
+os.path.basename('foo/bar/baz')
+# => 'baz'
+```
 ## Traverse
 
 
 ### Parent directory
 
 ```python
-os.path.pardir(path)
+os.path.dirname(path)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY4NjIzMjddfQ==
+eyJoaXN0b3J5IjpbMTg0MTcyMDk2MV19
 -->
