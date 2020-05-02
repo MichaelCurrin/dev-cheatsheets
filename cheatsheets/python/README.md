@@ -4,7 +4,8 @@ Some useful commands, boilerplate code from my existing projects or things to us
 
 See [pythoncheatsheet.org/](https://www.pythoncheatsheet.org/)
 
-## Python
+
+## Python command
 
 - [Command line and environment](https://docs.python.org/3/using/cmdline.html) on Python 3 docs - how to use the `python` command.
 
@@ -13,6 +14,10 @@ Run in unbuffered mode (printing is printed immediately rather than when the buf
 ```sh
 $ python -U
 ```
+
+## Find example usage
+
+See [programcreek.com/python/index/module/list](https://www.programcreek.com/python/index/module/list). When you go into functions of a module, you can see where other code uses that.
 
 
 ## Dotenv files
@@ -130,5 +135,5 @@ copied_obj = copy.deepcopy(original_obj)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyMjk1NjA5Nl19
+eyJoaXN0b3J5IjpbLTYxNTEwMDAwLDE0MjI5NTYwOTZdfQ==
 -->
