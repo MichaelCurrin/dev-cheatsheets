@@ -1,4 +1,3 @@
-
 # OS library
 
 ## Get current path
@@ -83,11 +82,14 @@ os.path.abspath(path)
 
 ### Real
 
-Canonical path. Resolves symlinks.
+The "canonical" path.
 
 ```python
 os.path.realpath(path)
 ```
+
+- Resolves symlinks.
+- Does **not** resolve `~`.
 
 ### Relative
 
@@ -118,6 +120,7 @@ os.path.join(foo, bar)
 ```python
 os.path.pardir(path)
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEyNzc5MDg4XX0=
+eyJoaXN0b3J5IjpbNjY4NjIzMjddfQ==
 -->
