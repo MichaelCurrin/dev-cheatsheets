@@ -65,12 +65,9 @@ glob0(...)
 Use:
 
 ```python
+glob0(dirname, pattern)
 
-def glob0(dirname, pattern):
-    return _glob0(dirname, pattern, False)
-
-def glob1(dirname, pattern):
-    return _glob1(dirname, pattern, False)
+glob1(dirname, pattern)
 ```
 
 
@@ -108,5 +105,5 @@ glob.glob('.c*')
 # => ['.card.gif']
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0NjQ1MjQ5MF19
+eyJoaXN0b3J5IjpbMTI1MDQwMDgwMSwtNTQ2NDUyNDkwXX0=
 -->
