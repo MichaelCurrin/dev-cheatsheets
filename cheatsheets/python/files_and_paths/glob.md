@@ -71,28 +71,29 @@ glob1(dirname, pattern)
 ```
 
 
-## Get files in a directory
+## How to get a list files in a directory
 
 From this [StackOverflow](https://stackoverflow.com/questions/29847426/python-glob-without-absolute-path/50065317#50065317) page, where my answer was the highest voted.
+
+### File paths
+
+```python
+# => glob.glob("some_dir/*.png")
+# >['/home/michael/foo/bar/some_dir/a.png',
+'/home/michael/foo/baz/some_dir/b.png',
+....
+```
 
 ### Filenames
 
 Use the `glob1(dirname, pattern)` method to get the filenames.
 
 ```python
->>> glob.glob1("some_dir", "*.png")
-['foo.png', 'bar.png', ...]
+glob.glob1("some_dir", "*.png")
+# => ['a.png', 'a.png', ...]
 ```
 
-## File paths
 
-```python
-
->>> glob.glob("some_dir/*.png")
-['/home/michael/A_dir/B_dir/some_dir/foo.png',
-'/home/michael/A_dir/B_dir/some_dir/bar.png',
-....
-```
 
 ### Dotfiles
 
@@ -105,5 +106,5 @@ glob.glob('.c*')
 # => ['.card.gif']
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1MDQwMDgwMSwtNTQ2NDUyNDkwXX0=
+eyJoaXN0b3J5IjpbLTI0NjIwNzMxOCwtNTQ2NDUyNDkwXX0=
 -->
