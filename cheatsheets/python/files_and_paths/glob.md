@@ -1,16 +1,38 @@
 # Python glob cheatsheet
 
-How to matchs paths using "glob" patterns, which are similar to regex patterns.
+How to match paths using "glob" patterns. 
+
+These are similar to regex patterns, but simpler and limited in scope.
 
 
 ## Glob rule basics
 
 [Source](https://github.com/begin/globbing/blob/master/cheatsheet.md)
 
+Wildcard matches are used alongside literals.
+
+Basic wildcards:
+
 - `*` - Match any character zero or more times.
 - `**` - Match any character zero or more times, including `/` unlike the others.
 - `?` - Match any character one time.
 - `[abc]` - Match any of the characters.
+
+Example:
+- `*/*` - will match `foo/bar`.
+- `*` will match all files and directories in the current directory.
+	```sh
+	echo *
+	ls *
+	for P in *; do 
+	``` 
+
+In Bash, wildcard expansion can be done:
+
+```
+ls foo/{bar,baz}
+# => ls foo/
+```
 
 
 ## Get files in a directory
@@ -36,5 +58,5 @@ Use the `glob1(dirname, pattern)` method to get the filenames.
 ....
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzA4NzUxMDldfQ==
+eyJoaXN0b3J5IjpbMTY1NjA5NjUyXX0=
 -->
