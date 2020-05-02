@@ -53,15 +53,18 @@ glob("foo/*.txt")
 # => [ "foo/a.txt", ]
 ```
 
+Note `dirname` cannot be `*`.
+
 ```python
 glob0(dirname, pattern)
 # e.g.
 glob1("foo", "*.txt")
-# => 
+# => [ 'a.txt', ]
 
 glob1(dirname, pattern)
 # e.g.
 glob1("foo", "*.txt")
+# => [ 'a.txt', ]
 ```
 
 
@@ -121,5 +124,5 @@ glob0(...)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1MjU4NjE1LC01NDY0NTI0OTBdfQ==
+eyJoaXN0b3J5IjpbMjEyMjc4OTg2MSwtNTQ2NDUyNDkwXX0=
 -->
