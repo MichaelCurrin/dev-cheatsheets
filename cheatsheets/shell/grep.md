@@ -22,10 +22,21 @@ BUNDLED WITH:
   1.17.2
 ```
 
+Use `-A 1` as an offeset so we get the line after it. And then tail to keep it one line - don't know what happens if there's more content after it.
+
+```sh
+VSN="$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
+```
+
+Usecase:
+
+
 ```sh
 gem install bundler \
 -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
 ```
+
+
 
 Copied from [source](https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html).
 
