@@ -129,6 +129,10 @@ curl -O -L https://github.com/actions/runner/releases/download/v2.168.0/actions-
 
 ## Conditions
 
+
+See [guide](https://linuxize.com/post/bash-check-if-file-exists/)
+
+
 ### How to check
 
 ```sh
@@ -138,8 +142,14 @@ fi
 ```
 
 ```sh
+[[ -f "$FILE" ]] && echo 'yes' || echo 'no'
+
 x=$([[ -f "$FILE" ]] && 'yes' || 'no')
+
+# Use curly braces. Maybe round brackets?
+[ -f "$FILE" ] && { echo "$FILE exist"; cp "$FILE" /tmp/; }
 ```
+
 
 ### Check options
 
