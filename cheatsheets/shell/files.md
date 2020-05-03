@@ -1,4 +1,5 @@
-# Files cheatsheet
+# Files and paths cheatsheet
+
 
 ## List files
 
@@ -125,6 +126,36 @@ e.g.
 curl -O -L https://github.com/actions/runner/releases/download/v2.168.0/actions-runner-linux-x64-2.168.0.tar.gz
 ```
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjMyODgyOTgyLDk0NzQ2NjVdfQ==
--->
+
+## Conditions
+
+### Check file exists
+
+```sh
+if [[ -f "$FILE" ]]; then
+    echo "$FILE exist"
+fi
+```
+
+```sh
+if [[ -f "$FILE" ]]; then
+    echo "$FILE exist"
+fi
+
+```
+[[ -e FILE ]] 	Exists
+[[ -h FILE ]] 	Symlink
+[[ -d FILE ]] 	Directory
+
+[[ -s FILE ]] 	Size is > 0 bytes
+
+[[ -f FILE ]] 	File
+
+[[ -r FILE ]] 	Readable
+[[ -w FILE ]] 	Writable
+[[ -x FILE ]] 	Executable
+
+[[ FILE1 -nt FILE2 ]] 	1 is more recent than 2
+[[ FILE1 -ot FILE2 ]] 	2 is more recent than 1
+[[ FILE1 -ef FILE2 ]] 	Same files
+```
