@@ -56,6 +56,32 @@ datetime.datetime.fromtimestamp(1403602426.0)
 ```
 Must be an integer or float - a string will give an error.
 
+### With hours offset
+
+```python
+def MyTime(unix_time, hours_diff=0):
+    """
+    Change unix timestamp in seconds into datetime format, with optional
+    time difference hours specified.
+    
+    Usecase: receive timestamp from API and return as datetime object
+        which has properties 
+            year, month, day, hour, minute, second
+    Args
+        unix_time: unix timestamp in seconds
+        hours_diff: <type 'int'> e.g. -2, or 6
+            numbers of hours to add or subtract.
+    Returns
+        out_time: datetime object.
+            Shows in format '2016-12-11 15:40:00' if printed
+    """
+    unix_time_diff = hours_diff * 60 * 60  # hours * min * seconds
+    in_time = unix_time + unix_time_diff
+    out_time = datetime.datetime.fromtimestamp(in_time)
+    
+    return out_time
+```
+
 ## Convert from ISO 8061
 
 The Twitter API often provides a datetime value in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format and Tweepy returns this to you as a string still.
