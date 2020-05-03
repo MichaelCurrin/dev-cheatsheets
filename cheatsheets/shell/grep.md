@@ -36,7 +36,7 @@ Notes:
 Usecase:
 
 ```sh
-$ BUNDLE_VSN="$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
+$ BUNDLE_VSN="$(grep -A 1 'BUNDLED WITH' Gemfile.lock | tail -n 1)"
 $ gem install bundler -v "${BUNDLE_VSN:-2.1.4}"
 ```
 
