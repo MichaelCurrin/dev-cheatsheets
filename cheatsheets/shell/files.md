@@ -129,7 +129,7 @@ curl -O -L https://github.com/actions/runner/releases/download/v2.168.0/actions-
 
 ## Conditions
 
-### Check file exists
+### How to check
 
 ```sh
 if [[ -f "$FILE" ]]; then
@@ -138,9 +138,10 @@ fi
 ```
 
 ```sh
-if [[ -f "$FILE" ]]; then
-    echo "$FILE exist"
-fi
+x=$([[ -f "$FILE" ]] && 'yes' || 'no')
+```
+
+### Check options
 
 ```
 [[ -e FILE ]] 	Exists
