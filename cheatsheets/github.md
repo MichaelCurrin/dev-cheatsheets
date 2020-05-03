@@ -4,7 +4,11 @@
 
 Add changes from upstream original repo into your fork.
 
-The compare and Pull Request view in Github is not so nice for this. You can do it by URL:
+If you see your `master` is out of date with the fork, click Pull Request on the repo view.
+
+That will merge your fork into the original, so click "switch base" to flip then.
+
+Or do by URL
 
 e.g. Merging from repo owned by `helaili` into my own.
 
