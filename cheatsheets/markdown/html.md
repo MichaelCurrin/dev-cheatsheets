@@ -1,6 +1,7 @@
 # HTML
+> How to add HTML tags to your markdown files
 
-HTML will render in markdown, so you can do things not possible in markdown.
+HTML will render in markdown, so you can do things not possible with plain markdown syntax.
 
 
 ```html
@@ -14,6 +15,31 @@ HTML will render in markdown, so you can do things not possible in markdown.
     This is a paragraph with **markdown bold** which will be ignored.
     This is the next line but there was no break tag so it is on the same line.
 </p>
+
+
+## Button
+
+Add a strong call to action with a button. Useful for an external link.
+
+Example with a link.
+
+
+**Code:**
+```
+<a href="https://example.com">
+    <button>Click me</button>
+</a>
+```
+
+**Result:**
+
+```
+<a href="https://example.com">
+    <button>Click me</button>
+</a>
+```
+
+Add styling on the button or on your site with CSS.
 
 
 ## Comments
@@ -31,13 +57,31 @@ Especially good for a static website where you don't want your TODO items to sho
 
 ## Formatting
 
-The `kbd` HML tag can be used for keyboard commands. For example:
+The `kbd` HML tag can be used for keyboard commands. 
+
+
+**Code:**
 
 ```html
 Press <kbd>Esc</kbd>
 ```
 
+**Result:**
+
 Press <kbd>Esc</kbd>
+
+
+**Code:**
+
+```html
+Press <kbd>CTRL</kbd>+<kbd>C</kbd>
+```
+
+**Result:**
+
+Press <kbd>CTRL</kbd>+<kbd>C</kbd>
+
+
 
 
 ## Warning notes
