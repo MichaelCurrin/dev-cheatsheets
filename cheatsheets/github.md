@@ -18,6 +18,9 @@ e.g. Merging from repo owned by `helaili` into my own.
 https://github.com/MichaelCurrin/jekyll-action/compare/master...helaili:master
 ```
 
+Then merge with a rebase merge, to avoid creating a merge commit in your fork.
+
+
 ### Command-line
 
 ```sh
