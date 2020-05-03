@@ -32,7 +32,6 @@ Notes:
 - If the file does not exist, `grep` will show a warning on stderr. If you are existing on errors you can continue.
 - If file does not contain the line, `grep` will exit on a success code still and the value will be an empty string.
 - Use `-A 1` as an offeset so we get the line after it. And then tail to keep it one line - don't know what happens if there's more content after it.
-- If you want
 
 Usecase:
 
