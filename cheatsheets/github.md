@@ -2,6 +2,8 @@
 
 ## Update fork
 
+### Browser
+
 Add changes from upstream original repo into your fork.
 
 If you see your `master` is out of date with the fork, click Pull Request on the repo view.
@@ -14,4 +16,11 @@ e.g. Merging from repo owned by `helaili` into my own.
 
 ```
 https://github.com/MichaelCurrin/jekyll-action/compare/master...helaili:master
+```
+
+### Command-line
+
+```sh
+$ git checkout master
+$ git pull upstream master
 ```
