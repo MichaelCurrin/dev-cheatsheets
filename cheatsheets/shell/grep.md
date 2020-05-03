@@ -25,15 +25,15 @@ BUNDLED WITH:
 Use `-A 1` as an offeset so we get the line after it. And then tail to keep it one line - don't know what happens if there's more content after it.
 
 ```sh
-VSN="$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
+$ VSN="$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
 ```
 
 Usecase:
 
 
 ```sh
-gem install bundler \
--v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
+$ gem install bundler \
+  -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
 ```
 
 
