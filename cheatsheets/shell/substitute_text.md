@@ -2,6 +2,7 @@
 
 Find and replace text in files.
 
+
 ## Regex
 
 Regex substitution is used in this guide. Test your pattern at [regex101.com](https://regex101.com/).
@@ -16,11 +17,25 @@ Use `g` for global. Add `I` after `g` for case insensitive flag.
 
 Some characters must be escaped such as with backslash.
 
+
 ## Replace word in text
 
 ```sh
-echo 'football' | sed 's/foo/bar/g'
+$ echo 'football' | sed 's/foo/bar/g'
 ```
+
+### Replace newline character
+
+```sh
+# echo 'Hello\nworld' | sed 's/\\n/ /' 
+Hello world
+```
+
+```sh
+$ echo 'Hello\nworld' | tr '\\n' ' '
+Hello  world
+```
+
 
 ## Replace word in file
 
@@ -86,3 +101,13 @@ find ./ -type f -exec sed -i 's/foo/bar/g' {} \;
 
 
 From [StackOverflow](https://stackoverflow.com/questions/11392478/how-to-replace-a-string-in-multiple-files-in-linux-command-line)
+
+
+## Delete lines
+
+
+Delete lines matching pattern. Or use `--delete`.
+
+```
+tr -d 'foo' < file.txt
+``
