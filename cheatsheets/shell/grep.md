@@ -36,10 +36,14 @@ Notes:
 Usecase:
 
 ```sh
-$ BUNDLE_VSN="$(grep -A 1 'BUNDLED WITH' Gemfile.lock | tail -n 1)"
+$ BUNDLE_VSN=gem install bundler \
+-v "$(grep -A 1 '"BUNDLED WITH'" Gemfile.lock | tail -n 1)"
 $ gem install bundler -v "${BUNDLE_VSN:-2.1.4}"
 ```
 
 Copied from [source](https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html).
 
 Whitespace does not matter here but in other cases could be trimmed.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTEyOTY1ODkwNzldfQ==
+-->
