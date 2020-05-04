@@ -1,5 +1,6 @@
 # Working with text files cheatsheet
 
+
 ## Clipboard
 
 Copy to and paste from clipboard. Especially useful for very large files or when you use SSH with no GUI.
@@ -118,5 +119,5 @@ export $(egrep -v '^#' .env | xargs)
 
 [source](https://gist.github.com/judy2k/7656bfe3b322d669ef75364a46327836)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjQ3NDQ5NTA5XX0=
+eyJoaXN0b3J5IjpbLTE1NjQ3MzY1NTddfQ==
 -->
