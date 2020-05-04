@@ -36,6 +36,19 @@ $ echo 'Hello\nworld' | tr '\\n' ' '
 Hello  world
 ```
 
+### Replace character with newline character
+
+Note that `\\n` is not sufficient and the newline needs to be escaped with `\`.
+
+```sh
+$ echo 'Hello,World | sed -e 's/,/\
+/g'
+```
+```
+Hello
+World
+```
+
 
 ## Replace word in file
 
@@ -111,3 +124,6 @@ Delete lines matching pattern. Or use `--delete`.
 ```
 tr -d 'foo' < file.txt
 ``
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE5MzM0NDAwMjZdfQ==
+-->
