@@ -11,8 +11,11 @@
 
 ### Make
 
-See [Jekyll](https://github.com/MichaelCurrin/cheatsheets/blob/master/cheatsheets/shell/make.md#jekyll) section in Make cheatsheet.
+See [Jekyll](https://github.com/MichaelCurrin/cheatsheets/blob/master/cheatsheets/shell/make.md#jekyll) section in Make cheatsheet. 
 
 ### Learn Jekyll
 
 For a guide on getting start with or using Jekyll, see [Jekyll](https://github.com/MichaelCurrin/static-sites-generator-resources/blob/master/Jekyll/) guide in _MichaelCurrin/static-sites-generator-resources_ repo.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE3MzA5ODI0ODRdfQ==
+-->
