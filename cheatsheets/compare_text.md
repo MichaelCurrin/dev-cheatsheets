@@ -35,8 +35,11 @@ For a richer UI comparions.
 
 ## Online
 
-Do
-https://www.diffchecker.com/
+Don't put any private or sensitive data here.
+
+- https://www.diffchecker.com/
+- https://text-compare.com/
+- https://www.diffnow.com - Let's you specify two files. Their example has two JS files.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzMDA5NDg3N119
+eyJoaXN0b3J5IjpbMTU4MDE5OTYxNV19
 -->
