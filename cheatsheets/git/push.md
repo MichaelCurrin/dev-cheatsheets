@@ -1,5 +1,7 @@
 # Git push cheatsheet
 
+Docs: https://git-scm.com/docs/git-push
+
 ## Push branch
 
 ```sh
@@ -25,5 +27,5 @@ NB. Does not push the branch itself.
 git push --tags
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ4MDk4MDk2XX0=
+eyJoaXN0b3J5IjpbOTExMzg5MTI3LDY0ODA5ODA5Nl19
 -->
