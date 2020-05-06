@@ -1,4 +1,4 @@
-# Reset or restore cheatsheet
+# Reset or restore git branches cheatsheet
 
 
 ## Restore local master to remote master
@@ -25,5 +25,5 @@ git checkout feature-branch
 git reset --hard origin/master
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1MjQ3MTc5N119
+eyJoaXN0b3J5IjpbLTEyMjU5MTAyNDddfQ==
 -->
