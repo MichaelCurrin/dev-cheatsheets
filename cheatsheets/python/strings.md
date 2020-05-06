@@ -24,9 +24,9 @@ abc
 Printing using `.format` and `!r`.
 
 ```python
->>> print ('{}'.format('abc'))
+>>> print('{}'.format('abc'))
 abc
->>> print ('{!r}'.format('abc'))
+>>> print('{!r}'.format('abc'))
 'abc'
 ```
 
@@ -38,6 +38,21 @@ Without using print, the value is quoted.
 >>> '{!r}'.format('abc')
 "'abc'"
 ```
+
+The `repr` function gives out which can be used to create a new object. So a string must be quoted.
+
+```python
+>>> print(repr('abc'))
+'abc'
+>>> print(repr(123))
+123
+>>> print(repr(True))
+True
+```
+
+For classes, the `__repr__` might be set to exactly match the contents so a new instance be created, or it might be a summary.
+
+
 
 ## Formatting styles
 
@@ -220,5 +235,5 @@ print(row_dict)
 # {'a': '1', 'b': '2', 'c': '3'}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTM5ODkzMjk5LC0xMjczNTk1NzQ0XX0=
+eyJoaXN0b3J5IjpbMTc2MTU1NTUzMSwtMTI3MzU5NTc0NF19
 -->
