@@ -1,11 +1,27 @@
 # Python strings cheatsheet
 
-## Formatting
+## Make a long time readable
+
+
+```python
+>>> "{:,}".format(12345678910)
+```
+```
+12,345,678,910
+```
+
+
+## Formatting styles
 
 ### New style
 
-```
+```python
 '{} {}'.format(foo, bar)
+
+'{0} {1}'.format(foo, bar)
+
+
+'{foo} {bar}'.format(foo=foo, bar=bar)
 ```
 
 Use f-strings in Python 3.6+.
@@ -16,10 +32,16 @@ f'{foo} {bar}'
 
 #### Modifiers
 
-- `repr`
-	- `'{0!r}'.format(foo)`
-- ASCII
-	- `'{0!a}'.format(foo)`
+Using `repr`.
+
+```python
+'{0!r}'.format(foo)
+```
+
+Using ASCII
+```python
+'{0!a}'.format(foo)
+```
 
 #### Alignment
 
@@ -171,5 +193,6 @@ print(row_dict)
 # {'a': '1', 'b': '2', 'c': '3'}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzM1OTU3NDRdfQ==
+eyJoaXN0b3J5IjpbLTE5NTk2MDg2MDUsLTEyNzM1OTU3NDRdfQ
+==
 -->
