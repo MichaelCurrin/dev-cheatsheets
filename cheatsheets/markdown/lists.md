@@ -1,5 +1,6 @@
 # Lists
 
+
 ## Bulleted list
 
     - Bulleted
@@ -23,6 +24,7 @@
 - Nested
     - Bullet
         - List
+
 
 ## Numbered list
 
@@ -52,19 +54,21 @@ Note the number formatting style will change by itself at each indentation level
     1. Bullet
         1. List
 
+
 ## Mixed list
 
     1. Number
     2. Number
-       * Bullet
-       * Bullet
+        * Bullet
+        * Bullet
     3. Number
 
 1. Number
 2. Number
-   * Bullet
-   * Bullet
+    * Bullet
+    * Bullet
 3. Number
+
 
 ## Quotes in lists
 
@@ -89,6 +93,7 @@ Don't do this:
     - Point A
     > There is no indent here, probably not what you want.
     - Point B
+
 
 ## Code snippets in lists
 
@@ -182,3 +187,6 @@ Hard brackets. With either space or lowercase `x`.
 
 - [ ] not done
 - [x] done
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTA0OTc0NDM5N119
+-->
