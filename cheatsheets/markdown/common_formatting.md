@@ -6,17 +6,30 @@
 ```markdown
 # Header 1
 
+Content
+
 ## Header 2
+
+Content
 
 ### Header 3
 
+Content
+```
+
+
 Alternative below - note there is no whitespace and no `#`.
 
+```markdown
 Header 1
 ===
 
+Content
+
 Header 2
 ---
+
+Content
 ```
 
 
@@ -113,3 +126,6 @@ Add quotes from multiple sources to separate bullet points.
 - > Point B
 - > Point C
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE0NTkwNzIwNDldfQ==
+-->
