@@ -1,6 +1,6 @@
 # Python strings cheatsheet
 
-## Make a long time readable
+## Make a long number readable
 
 
 ```python
@@ -10,6 +10,34 @@
 12,345,678,910
 ```
 
+## Representing objects
+
+Printing a string and using `repr`.
+
+```python
+>>> print('abc')
+abc
+>>> print(repr('abc'))
+'abc'
+```
+
+Printing using `.format` and `!r`.
+
+```python
+>>> print ('{}'.format('abc'))
+abc
+>>> print ('{!r}'.format('abc'))
+'abc'
+```
+
+Without using print, the value is quoted.
+
+```python
+>>> '{}'.format('abc')
+'abc'
+>>> '{!r}'.format('abc')
+"'abc'"
+```
 
 ## Formatting styles
 
@@ -19,7 +47,6 @@
 '{} {}'.format(foo, bar)
 
 '{0} {1}'.format(foo, bar)
-
 
 '{foo} {bar}'.format(foo=foo, bar=bar)
 ```
@@ -193,6 +220,5 @@ print(row_dict)
 # {'a': '1', 'b': '2', 'c': '3'}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTk2MDg2MDUsLTEyNzM1OTU3NDRdfQ
-==
+eyJoaXN0b3J5IjpbOTM5ODkzMjk5LC0xMjczNTk1NzQ0XX0=
 -->
