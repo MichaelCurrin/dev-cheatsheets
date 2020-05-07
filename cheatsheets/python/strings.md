@@ -50,7 +50,24 @@ The `repr` function gives out which can be used to create a new object. So a str
 True
 ```
 
-For classes, the `__repr__` might be set to exactly match the contents so a new instance be created, or it might be a summary.
+
+For classes, the `__repr__` might be set to exactly match the contents so a new instance be created, or it might be a summary. But it won't be set by default.
+
+From [# Python String Conversion 101: Why Every Class Needs a “repr”](https://dbader.org/blog/python-repr-vs-str)
+
+```python
+class Foo:
+    def __init__(self, color, mileage):
+        self.color = color
+        self.mileage = mileage
+
+    def __repr__(self):
+       return (f'{self.__class__.__name__}('
+               f'{self.color!r}, {self.mileage!r})')
+
+    def __str__(self):
+        return f'a {self.color} foo'
+```
 
 
 
@@ -235,5 +252,6 @@ print(row_dict)
 # {'a': '1', 'b': '2', 'c': '3'}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2MTU1NTUzMSwtMTI3MzU5NTc0NF19
+eyJoaXN0b3J5IjpbLTE2MDUxNzE5ODcsLTEyNzM1OTU3NDRdfQ
+==
 -->
