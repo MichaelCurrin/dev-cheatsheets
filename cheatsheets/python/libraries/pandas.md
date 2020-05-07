@@ -5,7 +5,8 @@ Commands in Pandas which I have used or would like to use. This is not meant to 
 See also:
 
 - [Pandas Cheat Sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) PDF on Pandas main site.
-- [Pands](https://github.com/MichaelCurrin/learn-to-code/blob/master/Scripting%20languages/Python/libraries/pandas.md) on Learn to Code
+- [Pands](https://github.com/MichaelCurrin/learn-to-code/blob/master/en/topics/scripting_languages/Python/libraries/pandas.md) on Learn to Code.
+
 
 ## Imports
 
@@ -14,11 +15,13 @@ import numpy as np
 import pandas as pd
 ```
 
+
 ## Types
 
 - `pd.Series`
 - `pd.GroupBy`
 -  `pd.DataFrame`
+
 
 ## Create dataframe
 
