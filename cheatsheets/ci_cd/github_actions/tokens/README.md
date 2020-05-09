@@ -10,17 +10,22 @@ There are a few approachs:
 
 Or simply authentication token.
 
-- Create this at the user level and use for one or more repos, not just for actions.
+- Create manually this at the Github **account** level, then and use for one or more repos. 
+- Can be used in actions for for other casessuch as for REST requests, if you put it in your URL or enter as your password.
+- Permissions are granted per token based on your choices.
 - Read it in anction with this, or whatever name action uses:
      ```yaml
      ${{ secrets.ACCESS_TOKEN }}
      ```
 - Docs - [Creating a Personal Access Token for the Command-line](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
 
+See [Access Token](access_token.md) cheatsheet for more info.
+
 
 ## Github Token
 
-- Github creates this for you on a workflow run and you can use it in actions.
+- Generated **automatically** - Github creates this for you on an action run.
+- You can use it in actions only.
 - Read it in an action:
      ```yaml
      ${{ secrets.GITHUB_TOKEN }}
@@ -34,7 +39,11 @@ Or simply authentication token.
 
 ## Deploy key
 
+- Generated manually.
+- It is tied to a machine.
 - A deploy key is an SSH public key.
+- It takes more effort to setup than the other steps.
+- To be researched if it is a good fit for actions (if the remote machine is note known).
 - Read it in an action with:
     ```yaml
     ${{ secrets.DEPLOY_KEY }}
