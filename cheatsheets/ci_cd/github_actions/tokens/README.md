@@ -8,10 +8,12 @@ There are a few approachs:
 
 ## Personal Access Token
 
-Or simply authentication token.
+aka "PAT" or "authentication token".
 
 - Create manually this at the Github **account** level, then and use for one or more repos. 
-- Can be used in actions for for other casessuch as for REST requests, if you put it in your URL or enter as your password.
+- Uses
+     - Can be used in actions
+     - For other cases such as manual or automated REST requests, if you put it in your URL or enter as your password. The PAT is actually _necessary_ if you use two-factor authenticator or single sign-on (otherwise you have to enter those a number on the command-line).
 - Permissions are granted per token based on your choices.
 - Read it in anction with this, or whatever name action uses:
      ```yaml
