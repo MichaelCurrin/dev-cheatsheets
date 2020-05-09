@@ -6,9 +6,13 @@ This skips the standard GH Pages build so you don't have to use Jekyll.
 Here we build an NPM project. Such as React or Vue or Gatsby.
 
 
+Using [Github Pages Deploy Action](https://github.com/marketplace/actions/deploy-to-github-pages).
+
 ```
 name: Build and Deploy
+
 on: [push]
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -18,15 +22,17 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      - name: Install 🔧 
         run: |
           npm install
+
+      - name: Build
+        run: |
           npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build # The folder the action should deploy.
+          BRANCH: gh-pages
 ```
