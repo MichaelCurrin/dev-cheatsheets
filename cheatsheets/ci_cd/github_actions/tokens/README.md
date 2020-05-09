@@ -23,6 +23,10 @@ aka "PAT" or "authentication token".
 
 See [Access Token](access_token.md) cheatsheet for more info.
 
+_**Warning:** Treat your tokens like passwords and keep them secret. When working with the API, use tokens as environment variables instead of hardcoding them into your programs._
+
+Github will also scan to find accidentally committed secrets - [doc](https://help.github.com/en/github/administering-a-repository/about-secret-scanning).
+
 
 ## Github Token
 
