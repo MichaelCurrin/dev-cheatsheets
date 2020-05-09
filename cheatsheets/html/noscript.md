@@ -21,6 +21,12 @@ Or
 </noscript>
 ```
 
+```html
+<noscript>
+    JavaScript must be enabled to use this feature.
+</noscript>
+```
+
 Or my own
 
 ```html
