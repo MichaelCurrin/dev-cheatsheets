@@ -6,7 +6,8 @@ This skips the standard GH Pages build so you don't have to use Jekyll.
 Here we build an NPM project. Such as React or Vue or Gatsby.
 
 
-Using [Github Pages Deploy Action](https://github.com/marketplace/actions/deploy-to-github-pages).
+Using [Github Pages Deploy Action](https://github.com/marketplace/actions/deploy-to-github-pages) and based on the template there.
+
 
 ```yaml
 name: Build and Deploy
@@ -26,7 +27,7 @@ jobs:
         run: |
           npm install
 
-      - name: Build
+      - name: Build 🏗️
         run: |
           npm run build
 
@@ -39,5 +40,8 @@ jobs:
 
 Notes:
 
+- More emojis: ⚙️🧱
 - If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
 - See [Access token](access_token.md) guide.
+- The branch is required.
+
