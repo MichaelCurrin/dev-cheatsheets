@@ -54,6 +54,9 @@ See [Access Token](access_token.md) cheatsheet for more info.
 
 ### How to generate and SSH key
 
+- If the machine doesn't have an SSH key set, you'll have to generate one. 
+- Even if it has one, you might choose to create a new one that is used specifically for Github, so you could delete if you want and leave behind one that you use for other SSH purposes.
+
 Generate:
 
 ```sh
@@ -66,7 +69,6 @@ Or, according to [gist](https://gist.github.com/zhujunsan/a0becf82ade50ed06115) 
 ```sh
 $ ssh-keygen -t rsa -b 4096 -C "{email}"
 ```
-
 
 View:
 
