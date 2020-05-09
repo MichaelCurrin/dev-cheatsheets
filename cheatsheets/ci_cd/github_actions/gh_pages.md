@@ -44,7 +44,7 @@ Notes:
 
 - More emojis: ⚙️🧱
 - If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
-- See [Tokens](tokens/) guide on access Tokens.
+- See [Tokens](tokens/) guide on Access Tokens.
 - The branch is required.
 
 
