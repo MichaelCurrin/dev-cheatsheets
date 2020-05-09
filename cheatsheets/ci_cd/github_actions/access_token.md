@@ -16,6 +16,7 @@ build using _Secrets_.
 Depending on the workflow, the token should be named something like one of these:
 
 - `ACCESS_TOKEN`
+- `GITHUB_TOKEN`
 - `JEKYLL_PAT` - "Jekyll Personal Access Token".
 
 
@@ -27,7 +28,7 @@ Depending on the workflow, the token should be named something like one of these
     - Shortcut URL: [https://github.com/settings/tokens](https://github.com/settings/tokens)
     - Navigation:
         1. Go to your Github profile.
-        1, Go to **Developer Settings**
+        1. Go to **Developer Settings**
         1. Go to the **Personal Access Tokens** section.
 1. **Create** a token - or use one you generated before.
     - Give it a name like "GitHub Actions"
@@ -36,7 +37,7 @@ Depending on the workflow, the token should be named something like one of these
 1. **Copy** the token value.
 
 
-### 2. Set the token for your project.
+### 2. Set the token in secrets
 
 1. Go to your repository's **Settings*
 1. Go to **Secrets** tab.
@@ -44,9 +45,30 @@ Depending on the workflow, the token should be named something like one of these
     - Use an appropriate name - see [Token names](#token-names)
     - Past the value copied in the section above.
 
-### 3. Run build
+### 3. Use the token in a workflow
 
-- Push to the repo.
+Format:
+
+```
+${{ secrets.TOKEN_NAME }}
+```
+
+e.g.
+
+
+```yaml
+with:
+  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+```
+
+```yaml
+env:
+  JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+```
+
+### 4. Run build
+
+- Push to the repo, or
 - Go to your action and click rerun.
 
 
