@@ -8,17 +8,17 @@ Here we build an NPM project. Such as React or Vue or Gatsby.
 
 Using [Github Pages Deploy Action](https://github.com/marketplace/actions/deploy-to-github-pages).
 
-```
+```yaml
 name: Build and Deploy
 
-on: [push]
+on: push
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        uses: actions/checkout@v2
         with:
           persist-credentials: false
 
@@ -36,3 +36,8 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
 ```
+
+Notes:
+
+- If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+- See [Access token](access_token.md) guide.
