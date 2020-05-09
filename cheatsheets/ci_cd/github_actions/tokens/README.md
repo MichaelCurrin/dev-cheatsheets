@@ -25,6 +25,8 @@ Or simply authentication token.
 
 ## Deploy key
 
-Under repo Settings.
+1. Go to repo Settings.
+1. Go to Deploy Keys.
+1. Create key.
+1. Set title for convenience and key as an SSH public key (so only that a certain machine can deploy).
 
-Deploy Keys.
