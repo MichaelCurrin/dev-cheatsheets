@@ -9,7 +9,31 @@ Linux: https://ss64.com/bash/grep.html
 https://www.computerhope.com/unix/ugrep.htm
 
 
-## Get version from file
+## Inputs
+
+```sh
+grep PATTERN PATH
+
+cat PATH | grep PATTERN
+
+echo TEXT | grep PATTERN
+```
+
+## Basic
+
+Find word.
+
+```sh
+grep foo PATTERN
+```
+
+Use regex.
+
+```
+
+
+
+## Get line from file
 
 Get bundler version from lockfile, which has a title on one line and version on the next (and in this case always the last line of the file).
 
@@ -45,5 +69,5 @@ Copied from [source](https://bundler.io/blog/2019/05/14/solutions-for-cant-find-
 
 Whitespace does not matter here but in other cases could be trimmed.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTY1ODkwNzldfQ==
+eyJoaXN0b3J5IjpbLTczOTk0OTQ3MV19
 -->
