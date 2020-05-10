@@ -92,11 +92,12 @@ list(Color)
 
 - [Data class](https://docs.python.org/3/library/dataclasses.html) in PY3 docs.
 - New in PY `3.7`.
-- A container of attributes, when you want to store data and not add methods, but methods are allowed.
+- A container of attributes, when you want to store data and not add methods, but methods are allowed. Similar to a named tuple or dict.
 - Lighter than a plain class - not `__init__` method needed. 
 - Raises an error if an item omitted.
 - Allows defaults.
-- Enforces types and keeps the structure, unlike a `dict`.
+- Enforces types and keeps the structure, unlike a `dict` - **Note that does not validate types**. You have to use 
+- Not frozen but it can be frozen.
 - Lookup - allows attribute lookup and you can also lookup as a dict or tuple.
 
 ### Definition
@@ -138,11 +139,22 @@ item
 
 ### Parameters
 
+Signature:
 
+```python
+@dataclasses.dataclass(*, init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False)
+```
+
+See [definitions](https://docs.python.org/3/library/dataclasses.html#module-level-decorators-classes-and-functions).
+
+Example:
 
 ```python
 @dataclass(frozen=True)
+
+
+@dataclass(init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False)
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEyMTY3NTQzNiwxOTg2MjIyMjIwXX0=
+eyJoaXN0b3J5IjpbMTA4NjIxMDczMCwxOTg2MjIyMjIwXX0=
 -->
