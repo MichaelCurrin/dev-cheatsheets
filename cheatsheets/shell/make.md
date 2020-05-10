@@ -8,7 +8,7 @@ Targets (commands) will differ per project and environment but these can be appl
 
 ## Phony
 
-```make
+```makefile
 .PHONY docs
 
 docs:
@@ -33,6 +33,19 @@ help:
 	@egrep '(^\S)|(^$$)|\s+@echo' Makefile
 ```
 
+Copied from Poetry. This is complex - I don't know why.
+
+```makefile
+# lists all available targets
+list:
+	@sh -c "$(MAKE) -p no_targets__ | \
+		awk -F':' '/^[a-zA-Z0-9][^\$$#\/\\t=]*:([^=]|$$)/ {\
+			split(\$$1,A,/ /);for(i in A)print A[i]\
+		}' | grep -v '__\$$' | grep -v 'make\[1\]' | grep -v 'Makefile' | sort"
+# required for list
+no_targets__:
+```
+
 ## Export
 
 Use variables in commands.
@@ -43,7 +56,7 @@ Given file `.env` with variable set as `FOO=bar` and `script_that_echoes_foo.sh`
 
 The combination of `export` and `source` works well.
 
-```make
+```makefile
 export FOO=''
 
 test:
@@ -64,7 +77,7 @@ test:
 
 The following will not work either, with or without `export` set at the top.
 
-```make
+```makefile
 test:
   export $(<.env) && ./script_that_echoes_foo.sh
 ```
@@ -72,7 +85,7 @@ test:
 
 ## Jekyll
 
-```make
+```makefile
 install:
 	bundle config --local path vendor/bundle
 	bundle install
@@ -88,3 +101,6 @@ s serve:
 ## Python
 
 See [Makefile in MichaelCurrin/py-project-template](https://github.com/MichaelCurrin/py-project-template/blob/master/Makefile) on Github.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbODgzNTk1NjRdfQ==
+-->
