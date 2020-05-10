@@ -44,3 +44,27 @@ docs/pull_request_template.md
 > -A reference to a related issue in your repository.
 > - A description of the changes proposed in the pull request.
 > - @mentions of the person or team responsible for reviewing proposed changes.
+
+
+## Repo links
+
+Without loading just the README, you can focus on it.
+
+
+```markdown
+The NPM package.json actually uses this.
+[link](https://github.com/MichaelCurrin/cheatsheets#readme)
+
+Or the heading even.
+
+[link](https://github.com/MichaelCurrin/cheatsheets#cheatsheets)
+```
+
+Contrast with:
+
+```markdown
+[link](https://github.com/MichaelCurrin/cheatsheets/blob/master/README.md)
+```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE5NTI3OTg3NjddfQ==
+-->
