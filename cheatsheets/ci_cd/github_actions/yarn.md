@@ -4,9 +4,9 @@
 
 From Github Actions samples.
 
-[Github Action for Yarn](https://github.com/marketplace/actions/github-action-for-yarn) action.
+[Github Action for Yaraction](https://github.com/marketplace/actions/github-action-for-yarn) action.
 
-```yaml
+````yaml
 name: CI
 on: [push]
 jobs:
@@ -24,7 +24,7 @@ jobs:
       - uses: borales/actions-yarn@v2.0.0
         with:
           cmd: test # will run `yarn test` command
-```
+  ```
 
 ## Example 2
 
@@ -100,3 +100,6 @@ jobs:
         env:
           CI: true
 ```   
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTYwMzQ4NzA4XX0=
+-->
