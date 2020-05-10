@@ -36,7 +36,7 @@ python -c 'print(list(range(1, 10, 2)))'
 ## Enum
 
 
-[Enum](https://docs.python.org/3/library/enum.html) in PY 3 docs.
+- [Enum](https://docs.python.org/3/library/enum.html) in PY 3 docs.
 
 > An enumeration is a set of symbolic names (members) bound to unique, constant values. Within an enumeration, the members can be compared by identity, and the enumeration itself can be iterated over.
 
@@ -85,11 +85,13 @@ class Color(Enum):
 
 ```python
 list(Color)
-# [<Color.RED: 1>, <Color.BLUE: 2>, <Color.GREEN: 3>]
+# => [<Color.RED: 1>, <Color.BLUE: 2>, <Color.GREEN: 3>]
 ```
 
 ## Data Class
 
+- [Data class](https://docs.python.org/3/library/dataclasses.html) in PY3 docs.
+- New in PY `3.7`.
 - A container of attributes, when you want to store data and not add methods, but methods are allowed.
 - Lighter than a plain class - not `__init__` method needed. 
 - Raises an error if an item omitted.
@@ -97,7 +99,7 @@ list(Color)
 - Enforces types and keeps the structure, unlike a `dict`.
 - Lookup - allows attribute lookup and you can also lookup as a dict or tuple.
 
-[Data class](https://docs.python.org/3/library/dataclasses.html) in PY3 docs.
+### Definition
 
 ```python
 from dataclasses import dataclass
@@ -122,6 +124,25 @@ def __init__(self, name: str, unit_price: float, quantity_on_hand: int=0):
     self.unit_price = unit_price
     self.quantity_on_hand = quantity_on_hand
 ```
+
+Note that for `float` type, an input `int` will be converted to `float`.
+
+### Usage
+
+```python
+item = InventoryItem("Foo", 123.4)
+
+item
+# => InventoryItem(name='Foo', unit_price=123.4, quantity_on_hand=0)
+```
+
+### Parameters
+
+
+
+```python
+@dataclass(frozen=True)
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg5Njc3MzA5MSwxOTg2MjIyMjIwXX0=
+eyJoaXN0b3J5IjpbMjEyMTY3NTQzNiwxOTg2MjIyMjIwXX0=
 -->
