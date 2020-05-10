@@ -96,9 +96,10 @@ list(Color)
 - Lighter than a plain class - not `__init__` method needed. 
 - Raises an error if an item omitted.
 - Allows defaults.
-- Enforces types and keeps the structure, unlike a `dict` - **Note that does not validate types**. You have to use 
+- Has types and keeps the structure, unlike a `dict` - **Note that does not validate**. See [Validation](#validation).
 - Not frozen but it can be frozen.
 - Lookup - allows attribute lookup and you can also lookup as a dict or tuple.
+
 
 ### Definition
 
@@ -155,6 +156,26 @@ Example:
 
 @dataclass(init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False)
 ```
+
+### Validation
+
+You do not an error for using the wrong type.
+
+You can use [MyPY's additional features](https://mypy.readthedocs.io/en/stable/additional_features.html):
+
+```python
+from dataclasses import dataclass, field
+
+@dataclass
+class Application:
+    name: str
+    plugins: List[str] = field(default_factory=list)
+
+test = Application("Testing...")  # OK
+bad = Application("Testing...", "with plugin")  # Error: List[str] expected
+```
+
+ You have to use something like this [dataclass-type-validator](https://pypi.org/project/dataclass-type-validator/). Or perhaps MyP
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4NjIxMDczMCwxOTg2MjIyMjIwXX0=
+eyJoaXN0b3J5IjpbLTEwMzU0NzI4NDQsMTk4NjIyMjIyMF19
 -->
