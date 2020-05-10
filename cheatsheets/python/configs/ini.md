@@ -40,9 +40,31 @@ config.get('DATABASE', 'HOST')
 config['DATABASE']['HOST']
 ```
 
-You can also add validation at retrieval time - to get boolean or numeric for example.
+### Validation
 
-Multiple config files can be read such as prod and dev settings or a repo or user-level file. Each overwrites the other. The advantage is that you only need to overwrite certain values in a l
+You can also add validation at retrieval time.
+
+[getboolean](https://docs.python.org/3/library/configparser.html#configparser.ConfigParser.getboolean)
+
+> This method is case-insensitive and recognizes Boolean values from `'yes'`/`'no'`, `'on'`/`'off'`, `'true'`/`'false'` and `'1'`/`'0'` [1](https://docs.python.org/3/library/configparser.html#id14).
+
+```python
+config.getboolean('my-key')
+# => False
+```
+
+### Input files
+
+Multiple config files can be read such as prod and dev settings or a repo or user-level file. Each overwrites the other. The advantage is that you only need to overwrite certain values in a later file - if the defaults are define in the first file.
+
+From the [read](https://docs.python.org/3/library/configparser.html#configparser.ConfigParser.read) method in docs.
+
+```python
+config.read(
+	['site.cfg', os.path.expanduser('~/.myapp.cfg')],
+        encoding='cp1250'
+)
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxMjg3MjQyNl19
+eyJoaXN0b3J5IjpbLTEzMjAyMzcwOTVdfQ==
 -->
