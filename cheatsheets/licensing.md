@@ -1,10 +1,12 @@
 # Licensing cheatsheet
+> How to choose and apply a license for your project.
 
-How to choose a license for your project.
+This is based on the notice in one license and can also be 
 
 ## Resources
 
-By Github:
+
+### By Github
 
 - [License a repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository) from Github docs.
 - Choose a License
@@ -12,13 +14,13 @@ By Github:
     - [Licenses](https://choosealicense.com/licenses/) page - listed with short description on Choose a License. However over a colored dot for more info.
     - [Appendix](https://choosealicense.com/appendix/) page - table of all licenses, plus legend/definitions below.
 
-Tutorials:
+### Tutorials
 
 - [How open source licenses work and how to add them to your projects](https://www.freecodecamp.org/news/how-open-source-licenses-work-and-how-to-add-them-to-your-projects-34310c3cf94/)
 - [What Coders Should Know About Copyright Licensing](https://www.fastcompany.com/3014553/what-coders-should-know-about-copyright-licensing)
 
 
-## Licenses
+## License choices
 
 - [choosealicense.com/licenses/](https://choosealicense.com/licenses/)
 
@@ -68,3 +70,6 @@ And adds a permission:
 Full license text:
 
 - [GPL-3.0](https://choosealicense.com/licenses/gpl-3.0/) - note this is very long and takes several pages.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTc3MDIzOTcxN119
+-->
