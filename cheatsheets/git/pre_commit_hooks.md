@@ -45,6 +45,24 @@ repos:
         exclude: ^tests/.*/fixtures/.*
       - id: debug-statements
  ```
+## Actions
+
+```yaml
+jobs:
+  Linting:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Linting
+        run: |
+          pip install pre-commit
+          pre-commit run --all-files
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjMxMTI1ODNdfQ==
+eyJoaXN0b3J5IjpbMTY3NzMyNDc2NF19
 -->
