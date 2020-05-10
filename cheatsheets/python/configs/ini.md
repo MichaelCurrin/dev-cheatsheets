@@ -2,6 +2,10 @@
 
 ## Example
 
+See [configparser](https://docs.python.org/3/library/configparser.html) in the PY3 docs.
+
+### Storage
+
 `config.ini`
 
 ```ini
@@ -22,8 +26,10 @@ INFO: data/info.log
 
 [FILES]
 STATIC_FOLDER: static
-TEMPLATES_FOLDER: templates```
+TEMPLATES_FOLDER: templates
+```
 
+### Use
 
 ```python
 import configparser
@@ -33,6 +39,10 @@ config = configparser.ConfigParser()                                config.read(
 config.get('DATABASE', 'HOST')
 config['DATABASE']['HOST']
 ```
+
+You can also add validation at retrieval time - to get boolean or numeric for example.
+
+Multiple config files can be read such as prod and dev settings or a repo or user-level file. Each overwrites the other. The advantage is that you only need to overwrite certain values in a l
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4NjEwMDg0XX0=
+eyJoaXN0b3J5IjpbLTcxMjg3MjQyNl19
 -->
