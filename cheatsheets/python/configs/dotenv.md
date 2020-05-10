@@ -5,38 +5,35 @@
 
 ### Storage
 
-`.env`
-```python
-FOO=bar
-BUZZ=123
-```
-
-
-```sh
-export $(< .env | xargs)
-```
+Set ad-hoc values.
 
 ```sh
 export MY_VARIABLE=abc
 ```
 
+Or store in a file.
+
+`.env`
+```python
+FOO=bar
+BUZZ=123
+```
+Then load it:
+```sh
+export $(< .env | xargs)
+```
 
 ### Use
 
-
 ```python
-"""App configuration."""
 from os import environ
 
 
 class Config:
-    """Set configuration vars from .env file."""
 
-    # General Config
-    SECRET_KEY = environ.get('SECRET_KEY')
-    FLASK_APP = environ.get('FLASK_APP')
-    FLASK_ENV = environ.get('FLASK_ENV')
+    FOO = environ.get('FOO')
+    BUZZ = environ.get('BUZZ')
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk5MzY1MjIxOV19
+eyJoaXN0b3J5IjpbMTc1MjM4NTg3N119
 -->
