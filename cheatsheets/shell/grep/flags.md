@@ -24,10 +24,8 @@ Short | Long | Description
 ### Recursive
 
 ```sh
-grep -r foo
+grep -r foo *
 ```
-
-Compared with running against directory, file, `.` or  `*`.
 
 
 ### Exact match
@@ -38,5 +36,5 @@ grep -w "foo" bar.txt
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyODIwMTY5NDldfQ==
+eyJoaXN0b3J5IjpbLTY5NjIwNjE4Nl19
 -->
