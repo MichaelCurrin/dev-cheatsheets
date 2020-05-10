@@ -6,7 +6,10 @@ Linux: https://ss64.com/bash/grep.html
 
 ## Tutorials
 
-https://www.computerhope.com/unix/ugrep.htm
+- [Linux grep command](https://www.computerhope.com/unix/ugrep.htm)
+- [Linux egrep command](https://www.computerhope.com/unix/ugrep.htm)
+- [Grep command in Linux Unix](https://www.journaldev.com/24271/grep-command-in-linux-unix)
+
 
 
 ## Inputs
@@ -24,13 +27,69 @@ echo TEXT | grep PATTERN
 Find word.
 
 ```sh
-grep foo PATTERN
+grep foo PATH
 ```
 
-Use regex.
+## Regex
 
+Three types of regex:
+
+1.  basic (BRE)
+2.  extended (ERE)
+3.  perl (PCRE)
+
+e.g.
+
+```sh
+grep '\sfoo' PATH
 ```
 
+Blank line
+```sh
+grep '^$' filename
+```
+
+
+## Extended
+
+```sh
+egrep PATTERN PATH
+```
+
+Examples:
+
+```sh
+egrep "support|help|windows" myfile.txt
+```
+
+
+```sh
+egrep '^[a-zA-Z]+$' myfile.txt
+```
+
+```sh
+egrep -c '^begin|end$' myfile.txt
+```
+
+## Flags
+
+### Invert match
+
+```
+-v
+```
+
+### Add line number
+
+```
+-n
+```
+
+### Exact match
+
+```
+grep -w "opensource" welcome.txt
+```
 
 
 ## Get line from file
@@ -69,5 +128,5 @@ Copied from [source](https://bundler.io/blog/2019/05/14/solutions-for-cant-find-
 
 Whitespace does not matter here but in other cases could be trimmed.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczOTk0OTQ3MV19
+eyJoaXN0b3J5IjpbMTcxNDY2ODg2OF19
 -->
