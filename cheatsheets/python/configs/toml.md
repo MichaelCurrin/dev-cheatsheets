@@ -8,8 +8,8 @@
 
 ```toml
 [project]
-name: "Foo"
-description: "Bar"
+foo: "Bar"
+buzz: 123
 version: "1.0.0"
 updated: 1979-05-27T07:32:00Z
 
@@ -21,5 +21,5 @@ config = toml.load('config.toml')
 print(config)
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTUyMTU4OTI1XX0=
+eyJoaXN0b3J5IjpbLTcxNjgyODEwN119
 -->
