@@ -88,9 +88,16 @@ list(Color)
 # [<Color.RED: 1>, <Color.BLUE: 2>, <Color.GREEN: 3>]
 ```
 
-## Data class
+## Data Class
 
-A container of info that is lighter than plain class and 
+- A container of attributes, when you want to store data and not add methods, but methods are allowed.
+- Lighter than a plain class - not `__init__` method needed. 
+- Raises an error if an item omitted.
+- Allows defaults.
+- Enforces types and keeps the structure, unlike a `dict`.
+- Lookup - allows attribute lookup and you can also lookup as a dict or tuple.
+
+[Data class](https://docs.python.org/3/library/dataclasses.html) in PY3 docs.
 
 ```python
 from dataclasses import dataclass
@@ -106,6 +113,15 @@ class InventoryItem:
     def total_cost(self) -> float:
         return self.unit_price * self.quantity_on_hand
 ```
+
+Equivalent definition without using data class:
+
+```python
+def __init__(self, name: str, unit_price: float, quantity_on_hand: int=0):
+    self.name = name
+    self.unit_price = unit_price
+    self.quantity_on_hand = quantity_on_hand
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzNzYxOTMwNSwxOTg2MjIyMjIwXX0=
+eyJoaXN0b3J5IjpbLTg5Njc3MzA5MSwxOTg2MjIyMjIwXX0=
 -->
