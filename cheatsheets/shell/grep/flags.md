@@ -1,41 +1,42 @@
 # Grep flags cheatsheet
 
+## Summary
+
 Short | Long | Description
---- | --- | ---
-A num   | | Print num lines of training context
+---| --- | ---
+-r, -R 	| –recursive | Recursive
+-v 	| –invert-match | Invert match
+-i 	| –ignore-case | Case insensitive
+-A NUM  | 		| Print num lines of training context
 -G 	| –basic-regexp | Basic regex (default).
--E 	| –extended-regexp | Extended regex.
--P 	| –perl-regexp | Perl reg
--f file | –file (Get patterns for file)
--F 	| –fixed-strings
--h 	| –no-filename
--H 	| –with-filename
--l | 	–files-with-matches (just print filenames)
--L 	 |–files-without-match
--r, -R 	–recursive | Recursive
--v 	–invert-match | Invert match
--i 	–ignore-case | Case insensitive
+-E 	| –extended-regexp | Extended regex. Same as `egrep`.
+-P 	| –perl-regexp | Perl regular expression.
+-F 	| –fixed-strings | Same as `fgrep`.
+-f PATH | –file PATH | Get patterns for file.
+-h 	| –no-filename |
+-H 	| –with-filename |
+-l 	| –files-with-matches | Just print filenames.
+-L 	| –files-without-match |
 
 
-## Invert match
+## Examples
 
-```
--v
-```
+### Recursive
 
-## Add line number
-
-```
--n
+```sh
+grep -r foo
 ```
 
-## Exact match
+Compared with running against directory, file, `.` or  `*`.
+
+
+### Exact match
 
 ```
-grep -w "opensource" welcome.txt
+grep -w "foo" bar.txt
 ```
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4MjkwMjMwNl19
+eyJoaXN0b3J5IjpbLTEyODIwMTY5NDldfQ==
 -->
