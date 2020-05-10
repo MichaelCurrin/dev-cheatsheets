@@ -73,7 +73,7 @@ Using config file:
 disable= wildcard-import,
  method-hidden,
  too-many-lines
- ```
+```
  
  
 ### Flake8
@@ -97,5 +97,5 @@ Disable inline - comma-separated codes.
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3OTE1MTA3Ml19
+eyJoaXN0b3J5IjpbMTQ0NjA3MzQ0LC03NzkxNTEwNzJdfQ==
 -->
