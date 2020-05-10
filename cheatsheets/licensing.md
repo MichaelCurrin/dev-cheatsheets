@@ -1,7 +1,14 @@
 # Licensing cheatsheet
 > How to choose and apply a license for your project.
 
-This is based on the notice in one license and can also be 
+## Notes
+
+This is based on the notice in one license and can also be included in README under LICENSE. The license doesn't need to be used unless for _substantial_ portions.
+
+> The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+Some projects have `LICENSE-source` next to `LICENSE` - add that to doc instructions.
+
 
 ## Resources
 
@@ -71,5 +78,5 @@ Full license text:
 
 - [GPL-3.0](https://choosealicense.com/licenses/gpl-3.0/) - note this is very long and takes several pages.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3MDIzOTcxN119
+eyJoaXN0b3J5IjpbOTk2Mjg2NjQyXX0=
 -->
