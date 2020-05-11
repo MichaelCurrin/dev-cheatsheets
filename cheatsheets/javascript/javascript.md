@@ -24,6 +24,8 @@ See also:
 
 - [Array cheatsheet](https://www.shortcutfoo.com/app/dojos/javascript-arrays/cheatsheet)
 
+### Read
+
 Get length.
 
 ```javascript
@@ -37,34 +39,50 @@ Get element.
 > myArray[index]
 ```
 
-Mutate element.
-
-```javascript
-> myArray[index] = value
-```
-
 Slice.
 
 ```javascript
 > myArray.slice(start, end) 
 ```
 
-Remove last element.
+### Update
+
+Mutate element.
+
+```javascript
+> myArray[index] = value
+```
+
+
+See also [Pop, Push, Shift and Unshift Array Methods in JavaScript](https://alligator.io/js/push-pop-shift-unshift-array-methods/)
+
+
+#### Modify end
+
+**Remove** last element.
 
 ```javascript
 > myArray.pop();
 ```
 
-Append element to the end.
+**Insert** element at the end. i.e. append.
 
 ```javascript
 > myArray.push(obj)
 ```
 
-Append to start of array. Returns new length.
+#### Modify at the start
+
+**Remove** from the beginning. Returns new length.
 
 ```javascript
-> myArray.unshift(obj)
+> myArray.shift()
+```
+
+**Insert** at the start. Like Python's `.inse Returns new length.
+
+```javascript
+> myArray.shift(obj)
 ```
 
 Reverse.
@@ -316,5 +334,5 @@ for (const [ key, value ] of Object.entries(KEY_VALUE_PAIRS)) {
 {/* A JSX comment */}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYxMTQ2MDAxOV19
+eyJoaXN0b3J5IjpbLTEzMDEzOTc5NDRdfQ==
 -->
