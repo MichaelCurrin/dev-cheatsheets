@@ -298,7 +298,14 @@ Hex to integer.
 >>> type(x)
 <type 'int'>
 ```
+
+Max for 6-digit hex code.
+
+```python
+>> 0xffffff
+16777215
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1MjMxMDMyNCw0MTc3NDU4NTMsLTE2MD
-UxNzE5ODcsLTEyNzM1OTU3NDRdfQ==
+eyJoaXN0b3J5IjpbMzU0MjU0ODYxLDQxNzc0NTg1MywtMTYwNT
+E3MTk4NywtMTI3MzU5NTc0NF19
 -->
