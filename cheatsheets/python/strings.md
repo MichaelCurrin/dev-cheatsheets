@@ -252,38 +252,38 @@ print(row_dict)
 # {'a': '1', 'b': '2', 'c': '3'}
 ```
 
-## Make a 6-digit hex code
+## Hex color code
 
 
-Convert integer to hex string.
+### Convert integer to hex string
 
 ```python
 >>> hex(12525)
 '0x30ed'
 ```
 
-Remove prefix.
+### Remove prefix
 
 ```python
 >>> "{:x}".format(12525)
 '30ed'
 ```
 
-Left-pad with spaces.
+### Left-pad with spaces
 
 ```python
 >>> "{:6x}".format(12525)
 '  30ed'
 ```
 
-Left-pad with spaces.
+### Left-pad with zeroes
 
 ```python
 "{:06x}".format(12525)
 '0030ed'
 ```
 
-With f-strings.
+### Use f-strings
 
 ```python
 >>> color_number = 12525
@@ -291,7 +291,7 @@ With f-strings.
 '0030ed'
 ```
 
-Hex to integer.
+### Hex to integer
 
 ```python
 >>> x = 0x30ed
@@ -306,6 +306,6 @@ Max for 6-digit hex code.
 16777215
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzU0MjU0ODYxLDQxNzc0NTg1MywtMTYwNT
-E3MTk4NywtMTI3MzU5NTc0NF19
+eyJoaXN0b3J5IjpbMjA1NzUzMzY3NSwzNTQyNTQ4NjEsNDE3Nz
+Q1ODUzLC0xNjA1MTcxOTg3LC0xMjczNTk1NzQ0XX0=
 -->
