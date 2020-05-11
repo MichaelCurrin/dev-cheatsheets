@@ -251,7 +251,46 @@ row_dict = {k: v for k, v in zip(header, row)}
 print(row_dict)
 # {'a': '1', 'b': '2', 'c': '3'}
 ```
+
+## Make a 6-digit hex code
+
+
+Convert integer to hex string.
+
+```python
+>>> hex(12525)
+'0x30ed'
+```
+
+Remove prefix.
+
+```python
+>>> "{:x}".format(12525)
+'30ed'
+```
+
+Left-pad with spaces.
+
+```python
+>>> "{:6x}".format(12525)
+'  30ed'
+```
+
+Left-pad with spaces.
+
+```python
+"{:06x}".format(12525)
+'0030ed'
+```
+
+Hex to integer.
+
+```python
+>>> x = 0x30ed
+>>> type(x)
+<type 'int'>
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDUxNzE5ODcsLTEyNzM1OTU3NDRdfQ
-==
+eyJoaXN0b3J5IjpbNDE3NzQ1ODUzLC0xNjA1MTcxOTg3LC0xMj
+czNTk1NzQ0XX0=
 -->
