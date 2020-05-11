@@ -1,6 +1,7 @@
 # Cheatsheets
 > Collection of minimal code snippets across languages for easy reference
 
+
 ## Purpose
 
 A reference for code snippets and shell commands across programming languages. It contains a way doing things based on previous or expected use-cases which highly relevant for me. It serves as a cache of sorts - I look in my cheatsheets for syntax or approach to a use-case first and then add Google, StackOverflow, documentation, etc. And when I find the answer I add it here so next time my search will be quicker and I'll find the same answer each time.
@@ -9,7 +10,9 @@ This guide is not aimed at teaching fundamentals of a language or explaining thi
 
 There are plenty of tutorials and cheatsheets out there. This one is unique (for my at least) as it only contains topic and code that I have actually used before or plan to use, so it's a reference of what I know (or once knew). A cheatsheet made by someone is not personal to me and might have things I don't need or in a layout I don't like.
 
-<!--
+I do link to other cheatsheets in some cases here, but when I have time I like to bring in a few items to my own guide, since external sites will not always be around as pages or domains.
+
+<!-- NOTES
 
 ## Ramblings
 
@@ -41,3 +44,8 @@ For creating doc badges see [Badge Generator](https://michaelcurrin.github.io/ba
 ## Other cheatsheets
 
 - https://devhints.io
+- http://cheatsheetfactory.geekyhacker.com/
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTY1NDgxMTkzNF19
+-->
