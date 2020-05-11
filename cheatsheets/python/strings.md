@@ -1,5 +1,12 @@
 # Python strings cheatsheet
 
+
+## Resources
+
+- [Python f-strings](https://realpython.com/python-f-strings/) on RealPython site.
+- [Using % and .format() for great good!](https://pyformat.info/)
+
+
 ## Make a long number readable
 
 
@@ -306,6 +313,6 @@ Max for 6-digit hex code.
 16777215
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1NzUzMzY3NSwzNTQyNTQ4NjEsNDE3Nz
-Q1ODUzLC0xNjA1MTcxOTg3LC0xMjczNTk1NzQ0XX0=
+eyJoaXN0b3J5IjpbLTExMzEzNzQ0MDUsMzU0MjU0ODYxLDQxNz
+c0NTg1MywtMTYwNTE3MTk4NywtMTI3MzU5NTc0NF19
 -->
