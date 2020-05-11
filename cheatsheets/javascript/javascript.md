@@ -167,6 +167,19 @@ function getRandomArbitrary(min, max) {
 }
 ```
 
+```js
+// 0 -> 10
+Math.floor(Math.random() * 11);
+
+// 1 -> 10
+Math.floor(Math.random() * 10) + 1;
+
+// 5 -> 20
+Math.floor(Math.random() * 16) + 5;
+
+// -10 -> (-2)
+Math.floor(Math.random() * 9) - 10;
+```
 
 ### Get random integer between two values
 
@@ -197,26 +210,14 @@ function getRandomIntInclusive(min, max) {
 }
 ```
 
+From [source](https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript).  This is simper than above as it lacks the rounding of min and max.
 
-And from [source](https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript)
+Inclusive for both.
 
-Min -> max (inclusive of both)
 ```javascript
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-// 0 -> 10
-Math.floor(Math.random() * 11);
-
-// 1 -> 10
-Math.floor(Math.random() * 10) + 1;
-
-// 5 -> 20
-Math.floor(Math.random() * 16) + 5;
-
-// -10 -> (-2)
-Math.floor(Math.random() * 9) - 10;
 ```
 
 
@@ -393,5 +394,5 @@ for (const [ key, value ] of Object.entries(KEY_VALUE_PAIRS)) {
 {/* A JSX comment */}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2MTg3NjM3MV19
+eyJoaXN0b3J5IjpbMTcxNjY5MTExNV19
 -->
