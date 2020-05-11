@@ -73,18 +73,19 @@ See also [Pop, Push, Shift and Unshift Array Methods in JavaScript](https://alli
 
 #### Modify at the start
 
-**Remove** from the beginning. Returns new length.
+**Remove** from the beginning. Like Python's `list.pop(0)`. Returns new length.
 
 ```javascript
 > myArray.shift()
 ```
 
-**Insert** at the start. Like Python's `.inse Returns new length.
+**Insert** at the start. Like Python's `list.insert(0, obj)`. Returns new length.
 
 ```javascript
 > myArray.shift(obj)
 ```
 
+#### Change order
 Reverse.
 
 ```javascript
@@ -97,13 +98,15 @@ Sort.
 > myArray.sort()
 ```
 
+#### Join arrays
+
 Concatenate arrays.
 
 ```javascript
 > myArrayA.concat(myArrayB)
 ```
 
-Join elements using a separator e.g. `', '`.
+Join elements using a separator e.g. `', '`. This will return a single string.
 
 ```javascript
 > myArray.join(sep)
@@ -131,41 +134,26 @@ myArray.filter((x) => x > 2)
 
 ### Number
 
-Between 1 and 999.
+[Math.random](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) reference.
+
+### Generate float
+
+Between 0 (inclusive) and 1 (exclusive).
+
+```javascript
+> Math.random()
+```
+
+### Ge
+Generate between 1 and 999. 
 
 ```javascript
 > Math.round(Math.random() * 1000)
 // 123
 ```
 
-### Binary
 
-Use `.substring(start, end)` to drop `0.` at the start.
-
-```javascript
-> Math.random().toString(2).substring(2)
-// "00011111010001100100011010011111010011001101110001"
-
-```
-
-### Text
-
-32-bit text.
-
-```javascript
-> Math.random().toString(32).substr(2, 4)
-"392l"
-```
-
-### Get random element in an array
-
-[source](https://stackoverflow.com/questions/5915096/get-random-item-from-javascript-array)
-
-```javascript
-var item = myArray[Math.floor(Math.random()*myArray.length)];
-```
-
-### Get random integer in range
+### Get random integer in a range
 
 [source](https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript)
 
@@ -186,6 +174,34 @@ Math.floor(Math.random() * 16) + 5;
 
 // -10 -> (-2)
 Math.floor(Math.random() * 9) - 10;
+```
+
+
+### Binary
+
+Use `.substring(start, end)` to drop `0.` at the start.
+
+```javascript
+> Math.random().toString(2).substring(2)
+// "00011111010001100100011010011111010011001101110001"
+
+```
+
+### Random text
+
+32-bit text.
+
+```javascript
+> Math.random().toString(32).substr(2, 4)
+"392l"
+```
+
+### Get random element in an array
+
+[source](https://stackoverflow.com/questions/5915096/get-random-item-from-javascript-array)
+
+```javascript
+var item = myArray[Math.floor(Math.random()*myArray.length)];
 ```
 
 
@@ -334,5 +350,5 @@ for (const [ key, value ] of Object.entries(KEY_VALUE_PAIRS)) {
 {/* A JSX comment */}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDEzOTc5NDRdfQ==
+eyJoaXN0b3J5IjpbMzU1NjcwMDMwXX0=
 -->
