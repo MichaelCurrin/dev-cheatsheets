@@ -283,6 +283,14 @@ Left-pad with spaces.
 '0030ed'
 ```
 
+With f-strings.
+
+```python
+>>> color_number = 12525
+>>> f"{color_number:06x}"
+'0030ed'
+```
+
 Hex to integer.
 
 ```python
@@ -291,6 +299,6 @@ Hex to integer.
 <type 'int'>
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDE3NzQ1ODUzLC0xNjA1MTcxOTg3LC0xMj
-czNTk1NzQ0XX0=
+eyJoaXN0b3J5IjpbLTg1MjMxMDMyNCw0MTc3NDU4NTMsLTE2MD
+UxNzE5ODcsLTEyNzM1OTU3NDRdfQ==
 -->
