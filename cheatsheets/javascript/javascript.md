@@ -144,22 +144,65 @@ Between 0 (inclusive) and 1 (exclusive).
 > Math.random()
 ```
 
-### Ge
-Generate between 1 and 999. 
+### Generate integer up to max
+
+Generate between 0 and a max.
 
 ```javascript
 > Math.round(Math.random() * 1000)
 // 123
 ```
 
-
-### Get random integer in a range
-
-[source](https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript)
+### Generate random float in range
 
 ```javascript
-// min -> max (inclusive of both)
-function randomIntFromInterval(min, max) {
+> Math.random() * (max - min) + min;
+```
+
+As a function:
+
+```js
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+```
+
+
+### Get random integer between two values
+
+From the Mozilla docs.
+
+Min inclusive and max exclusive.
+
+
+```js
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; 
+}
+```
+
+For above:
+
+> It might be tempting to use  `Math.round()`  to accomplish that, but doing so would cause your random numbers to follow a non-uniform distribution, which may not be acceptable for your needs.
+
+Inclusive for both.
+
+```js
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min; 
+}
+```
+
+
+And from [source](https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript)
+
+Min -> max (inclusive of both)
+```javascript
+function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -350,5 +393,5 @@ for (const [ key, value ] of Object.entries(KEY_VALUE_PAIRS)) {
 {/* A JSX comment */}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzU1NjcwMDMwXX0=
+eyJoaXN0b3J5IjpbMTk2MTg3NjM3MV19
 -->
