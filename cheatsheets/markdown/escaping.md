@@ -26,3 +26,19 @@ Escape the link text using backslash or backticks. The target does not need esca
     Update the [\_config.yml](_config.yml) file.
 
 Update the [\_config.yml](_config.yml) file.
+
+
+## Dash not bullet point
+
+```markdown
+> "Art is never finished, only abandoned."
+> 
+> \- Leonardo da Vinci
+```
+
+> "Art is never finished, only abandoned."
+> 
+> \- Leonardo da Vinci
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE5NTAyMDk1MDZdfQ==
+-->
