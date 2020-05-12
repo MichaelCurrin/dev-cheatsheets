@@ -1,7 +1,8 @@
 
 # Github Token
 
-## 
+## About
+
 - Generated **automatically** - Github creates this for you on an action run.
 - You can use it in actions only.
 - Read it in an action:
@@ -18,5 +19,5 @@
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzMxNzUwMjkzXX0=
+eyJoaXN0b3J5IjpbMTQ1Mjk2MjUyXX0=
 -->
