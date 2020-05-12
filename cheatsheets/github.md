@@ -65,6 +65,13 @@ Contrast with:
 ```markdown
 [link](https://github.com/MichaelCurrin/cheatsheets/blob/master/README.md)
 ```
+
+## Workflows and secrets
+
+> Secrets
+> Secrets are environment variables that are **encrypted** and only exposed to selected actions. Anyone with **collaborator** access to this repository can use these secrets in a workflow.
+> 
+> Secrets are not passed to workflows that are triggered by a pull request from a fork
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTI3OTg3NjddfQ==
+eyJoaXN0b3J5IjpbOTM1NTc4MjE5LC0xOTUyNzk4NzY3XX0=
 -->
