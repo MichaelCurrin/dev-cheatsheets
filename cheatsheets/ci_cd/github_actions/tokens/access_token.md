@@ -1,4 +1,4 @@
-# Acess token cheatsheet
+# Access token cheatsheet
 
 ## Access token naming
 
@@ -30,8 +30,8 @@ _**Warning:** Treat your tokens like passwords and keep them secret. When workin
 Github will also scan to find accidentally committed secrets - [doc](https://help.github.com/en/github/administering-a-repository/about-secret-scanning).
 
 
-
 ## How to use an access token in a workflow
+
 
 ### 1. Create token
 
@@ -119,5 +119,5 @@ From [blog post](https://github.blog/2012-09-21-easier-builds-and-deployments-us
 
 > Tokens should be treated as passwords. Putting the token in the clone URL will result in Git writing it to the .git/config file in plain text. Unfortunately, this happens for HTTP passwords, too. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4MDc3NTkwNV19
+eyJoaXN0b3J5IjpbLTc1NTcwMzU2XX0=
 -->
