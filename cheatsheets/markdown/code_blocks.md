@@ -1,4 +1,5 @@
 # Code blocks cheatsheet
+<!-- TODO I've written about this somewhere before - combine -->
 
 - Github's source of highlighting:[languages.yml](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml) in the Linguist repo.
 
@@ -23,7 +24,10 @@ The short name works - I don't know if it has the same coverage though.
 print("Hello, world!")
 ```
 
-## Specific lan
+## Specific languages
+
+- `shell` or `sh` or `bash`
+
 ### Diff
 
 	```diff
@@ -35,6 +39,38 @@ print("Hello, world!")
 - a
 + b
 ```
+
+### JSON
+
+	```json
+	{
+	    "foo": "bar"
+	}
+	```
+
+```json
+{
+    "foo": "bar"
+}
+```
+
+With comments, use `json5` to avoid getting errors for invalid content on Github. Note some platforms like StackEdit don't recognized `json5` but is okay.
+
+	```json5
+	{
+	    // This is a comment.
+	    "foo": "bar"
+	}
+	```
+ 
+
+```json5
+{
+    // This is a comment.
+    "foo": "bar"
+}
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQ1MjU5OTI5XX0=
+eyJoaXN0b3J5IjpbLTE4NTM5MTIxNjFdfQ==
 -->
