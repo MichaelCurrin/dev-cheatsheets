@@ -46,6 +46,12 @@ Flag | Description
 `-o --output FILEPATH` | Write to named filepath. [manpage](https://curl.haxx.se/docs/manpage.html#-o)
 `-O, --remote-name` | Write to a file in the current directory using the remote's filename. This will use '%20' for spaces. [manpage](https://curl.haxx.se/docs/manpage.html#-O)
 `-u user:pass` | User authentication.
+
+
+### Verbosity
+
+Flag | Description
+---  | ---
 `-v --verbose` | Verbose
 `-vv` | More verbose.
 `-s` | Silent
@@ -123,7 +129,7 @@ curl -d @file.txt http:example.com
 
 #### Show just header
 
-- `-I` -``h
+- `-I` `--head`
 
 
 ## HTTPie
@@ -186,5 +192,5 @@ brew install wget
 wget http://website.com/files/file.zip
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTQ4NDg0OTksLTkyMTMzOTY1XX0=
+eyJoaXN0b3J5IjpbNzM2NzAyODQ2LC05MjEzMzk2NV19
 -->
