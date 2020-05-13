@@ -121,6 +121,10 @@ curl -d @file.txt http:example.com
 - `-H "Content-Type: application/x-www-form-urlencoded"`
 - `-H "Content-Type: application/json"`
 
+#### Show just header
+
+- `-I` -``h
+
 
 ## HTTPie
 
@@ -182,5 +186,5 @@ brew install wget
 wget http://website.com/files/file.zip
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkyMTMzOTY1XX0=
+eyJoaXN0b3J5IjpbLTEyOTQ4NDg0OTksLTkyMTMzOTY1XX0=
 -->
