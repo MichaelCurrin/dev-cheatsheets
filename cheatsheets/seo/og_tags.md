@@ -1,5 +1,16 @@
 # OG tags
 
+## Resources
+
+- [Open Graph Protocol](https://ogp.me/) homepage
+- [A Guide to Sharing for Webmasters](https://developers.facebook.com/docs/sharing/webmasters) on FB's dev docs. See tag type and examples
+- [Sharing Debugger](https://developers.facebook.com/tools/debug/( - requires signing into Facebook
+- [Twitter card validator](https://cards-dev.twitter.com/validator)
+
+## Tags
+
+Tag | d
+og:type
 
 ## Sample
 
@@ -28,5 +39,5 @@ og:site_name 	| The Buckfever Underground
 <meta property="og:site_name" content="The Buckfever Underground" />
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjk4NDQ4MF19
+eyJoaXN0b3J5IjpbLTE3MTU0Mjg2MTBdfQ==
 -->
