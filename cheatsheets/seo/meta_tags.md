@@ -1,6 +1,9 @@
 # Meta tags
 
-[W3 Schools - Meta tags](https://www.w3schools.com/tags/tag_meta.asp)
+## Resources
+
+- [W3 Schools - Meta tags](https://www.w3schools.com/tags/tag_meta.asp)
+- [Special tags that Google understands](https://support.google.com/webmasters/answer/79812?hl=en) on Google support docs.
 
 
 ## Title
@@ -35,6 +38,13 @@ From Woorank:
 >
 > Check your Google Search Console (Search Appearance > HTML Improvements) for any warning messages to identify meta descriptions that are too long/short or duplicated across more than one page.
 
+## Keywords
+
+Example:
+
+```html
+<meta name="keywords" content="HTML, CSS, JavaScript">
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTYxNjM3ODI1XX0=
+eyJoaXN0b3J5IjpbMTk3ODAwMjU3MV19
 -->
