@@ -39,12 +39,17 @@ This paragraph covers [CircleCI][0], [GitHub][1] and also [Bitbucket][2].
 
 Link to an internal page using the path to the file in the project, not on the URL. This means you will get an error if a link is invalid.
 
+*Since Jekyll 4.0 , you don’t need to prepend `link` and `post_url` tags with `site.baseurl`.*
+
+
+Examples from [docs](https://jekyllrb.com/docs/liquid/tags/).
+
 
 #### Link to page
 
 Extension must be included.
 
-```
+```liquid
 {% link _collection/name-of-document.md %}
 {% link _posts/2016-07-26-name-of-post.md %}
 {% link news/index.html %}
@@ -54,7 +59,6 @@ Extension must be included.
 
 #### Link to post
 
-From [docs](https://jekyllrb.com/docs/liquid/tags/).
 
 ```
 {% post_url 2010-07-21-name-of-post %}
@@ -235,6 +239,6 @@ e.g.
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0MDAwMDcxMCw0Nzg2NjU1NDMsLTE2OD
+eyJoaXN0b3J5IjpbLTM5MjMyNjY2OSw0Nzg2NjU1NDMsLTE2OD
 Y4ODk4MTAsLTgxMzM0Njk1OV19
 -->
