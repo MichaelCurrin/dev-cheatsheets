@@ -2,7 +2,21 @@
 
 ## Title
 
-From w
+
+Length: 20 to 70 characters
+
+From Woorank:
+
+> Since they are one of the most important on-page SEO elements you should make your title tags between 20 and 70 characters including spaces (200 - 569 pixels). Make sure each page has a unique title and use your most important keywords. For internal pages start your title tags with your most important keyword(s).
+
+
+### Style guide
+
+
+[15 Title Tag Optimization Guidelines For Usability And SEO](https://www.woorank.com/en/blog/15-title-tag-optimization-guidelines-for-usability-and-seo)
+
+- `[Keyword Phrase] | [Company]`
+
 
 ## Description
 
@@ -19,5 +33,5 @@ From Woorank:
 > Check your Google Search Console (Search Appearance > HTML Improvements) for any warning messages to identify meta descriptions that are too long/short or duplicated across more than one page.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0MDEyOTI0N119
+eyJoaXN0b3J5IjpbOTEyNjI1MV19
 -->
