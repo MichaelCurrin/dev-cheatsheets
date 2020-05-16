@@ -41,18 +41,39 @@ Jekyll uses `permalink: pretty` by default`.
 | `none` | `/:categories/:title:output_ext`
 
 
-## Custom
+### Custom
+
+Add extension.
 
 ```
 permalink: /:categories/:year/:month/:day/:title:output_ext
 ```
 
+Add trailing forward-slash. This will change `about.html` to `about/index.html`. 
+
+```
+permalink: /:categories/:title/
+```
+When you link to a page, you'll want to make sure you link to the short form and not the explicot `index.html` version.
+
 ## Collection-level
 
+```
 collections:
   my_collection:
     output: true
     permalink: /:collection/:name
+```
+
+## Page attributes
+
+Variable | Value
+--- | ---
+`:path` | Path to the page relative to the site's source directory, excluding base filename of the page.
+`:basename` | The page's base filename
+` :output_ext`  | Extension of the output file. (Included by default and usually unnecessary.)
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzc1NDM2NjY4XX0=
+eyJoaXN0b3J5IjpbLTE2MTMxNTgyN119
 -->
