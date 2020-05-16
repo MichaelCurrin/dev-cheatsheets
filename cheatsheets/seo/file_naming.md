@@ -1,5 +1,13 @@
 # File naming
 
+## Recommendation
+
+Use hyphens not underscores in your page names, so Google can separate the words in the filename.
+
+Do this for new sites - the impact is too small to make worth doing on existing sites.
+
+## Sources
+
 From Woorank:
 
 > Using underscores in your URL makes it hard for search engines to determine your site's relevance to a search. Google sees hyphens as word separators while underscores are ignored. So the search engine sees https://thebuckfeverunderground.co.za/music/last_days_of_beautiful/ as all one word. Use hyphens in your URLs instead: https://thebuckfeverunderground.co.za/music/last-days-of-beautiful/.
@@ -15,5 +23,5 @@ From [SEO Basics: Hyphen or Underscore for SEO URLs?](https://www.ecreativeim.co
 
 > Matt Cutts stressed that the ranking difference between using dashes or underscores is minor — but then, that means there is a ranking difference.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDQ2NTMyMTddfQ==
+eyJoaXN0b3J5IjpbLTU0NDY5MzMwOV19
 -->
