@@ -50,6 +50,8 @@ Example:
 ```html
 <meta name="keywords" content="HTML, CSS, JavaScript">
 ```
+
+Note that Google **ignores** this tag and only uses content. [source](https://webmasters.googleblog.com/2009/09/google-does-not-use-keywords-meta-tag.html). Google does also give more weighting to bold and italics words.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4NDEwOTY4NV19
+eyJoaXN0b3J5IjpbLTEzMjczMDk1MTddfQ==
 -->
