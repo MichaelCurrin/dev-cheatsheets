@@ -4,6 +4,8 @@ Here we have Liquid code which needs to be shown as code and not rendered (it ma
 
 ## Code blocks
 
+This works in plain markdown too.
+
 ```ruby
 def foo
   puts 'foo'
@@ -12,6 +14,8 @@ end
 
 
 ## Highlight tag
+
+This works in Jekyll only.
 
 ```liquid
 {% highlight ruby linenos %}
@@ -82,6 +86,6 @@ Use Liquid highlighting.
 	{% endhighlight %}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MTM5MDE0OTcsLTE3MzYzODc1NTYsMT
-EyNDYxNDY2NF19
+eyJoaXN0b3J5IjpbMTI3NDY1NDk1NywtMTczNjM4NzU1NiwxMT
+I0NjE0NjY0XX0=
 -->
