@@ -1,5 +1,8 @@
 # Meta tags
 
+[W3 Schools - Meta tags](https://www.w3schools.com/tags/tag_meta.asp)
+
+
 ## Title
 
 
@@ -33,5 +36,5 @@ From Woorank:
 > Check your Google Search Console (Search Appearance > HTML Improvements) for any warning messages to identify meta descriptions that are too long/short or duplicated across more than one page.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTEyNjI1MV19
+eyJoaXN0b3J5IjpbOTYxNjM3ODI1XX0=
 -->
