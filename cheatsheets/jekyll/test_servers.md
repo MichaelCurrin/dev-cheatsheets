@@ -22,8 +22,10 @@ sudo ufw allow http
 `-a` is recursive and `v` is verbose.
 
 ```sh
-sudo rsync -av _site/ /var/www/html/
+cd _site
+sudo rsync -av * /var/www/html/
 ```
+Note this might exclude dotfiles.
 
 Now open the browser at:
 
@@ -52,5 +54,5 @@ Now open the browser at:
 - [http:localhost/](http:localhost/)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjE4OTcyMTRdfQ==
+eyJoaXN0b3J5IjpbLTE5NzEzMjYyNV19
 -->
