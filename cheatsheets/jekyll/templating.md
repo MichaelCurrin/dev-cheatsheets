@@ -2,6 +2,7 @@
 
 Cheat sheet for using Jekyll Liquid and plain HTML in Jekyll projects.
 
+
 ## Links
 
 ### Local paths
@@ -32,6 +33,38 @@ This paragraph covers [CircleCI][0], [GitHub][1] and also [Bitbucket][2].
 [0]: https://circleci.com/
 [1]: https://github.com/
 [2]: https://bitbucket.org/
+```
+
+### Liquid links
+
+Link to an internal page using the path to the file in the project, not on the URL. This means you will get an error if a link is invalid.
+
+
+#### Link to page
+
+Extension must be included.
+
+```
+{% link _collection/name-of-document.md %}
+{% link _posts/2016-07-26-name-of-post.md %}
+{% link news/index.html %}
+{% link /assets/files/doc.pdf %}
+```
+
+
+#### Link to post
+
+From [docs](https://jekyllrb.com/docs/liquid/tags/).
+
+```
+{% post_url 2010-07-21-name-of-post %}
+{% post_url /subdir/2010-07-21-name-of-post %}
+```
+
+Markdown:
+
+```liquid
+[Link Text]({% post_url 2010-09-08-welcome-to-jekyll %})
 ```
 
 ## Comment
@@ -202,6 +235,6 @@ e.g.
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc4NjY1NTQzLC0xNjg2ODg5ODEwLC04MT
-MzNDY5NTldfQ==
+eyJoaXN0b3J5IjpbMTU0MDAwMDcxMCw0Nzg2NjU1NDMsLTE2OD
+Y4ODk4MTAsLTgxMzM0Njk1OV19
 -->
