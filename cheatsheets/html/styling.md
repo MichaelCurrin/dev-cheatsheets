@@ -1,5 +1,12 @@
 # Styling
 
+## View port
+
+Reset the view port to make the 
+```
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
 ## Navbar
 
 A full-width navbar that sticks to the top of the page when you scroll. 
@@ -96,3 +103,6 @@ Some useful styling - in particular for a DocsifyJS site.
     top: 2px;
 }
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbOTAwMzc0MzM2XX0=
+-->
