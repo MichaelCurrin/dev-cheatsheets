@@ -9,8 +9,22 @@
 
 ## Tags
 
-Tag | d
-og:type
+### Type
+
+`og:type`
+
+- Defaults to `website` if not set, though this could be set explicitly to avoid SEO tool errors.
+- There can only be one.
+- See [Types](https://ogp.me/#types) reference. This covers articles, music, videos, etc.
+
+### Image
+
+
+`og:image`
+
+- URL for the image. 
+- > To update an image after it's been published, use a new URL for the new image. Images are cached based on the URL and won't be updated unless the URL changes.
+
 
 ## Sample
 
@@ -39,5 +53,5 @@ og:site_name 	| The Buckfever Underground
 <meta property="og:site_name" content="The Buckfever Underground" />
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTU0Mjg2MTBdfQ==
+eyJoaXN0b3J5IjpbLTExNDk4NzE3ODhdfQ==
 -->
