@@ -43,6 +43,7 @@ From Woorank:
 >
 > Check your Google Search Console (Search Appearance > HTML Improvements) for any warning messages to identify meta descriptions that are too long/short or duplicated across more than one page.
 
+
 ## Keywords
 
 Example:
@@ -51,7 +52,11 @@ Example:
 <meta name="keywords" content="HTML, CSS, JavaScript">
 ```
 
-Note that Google **ignores** this tag and only uses content. [source](https://webmasters.googleblog.com/2009/09/google-does-not-use-keywords-meta-tag.html). Google does also give more weighting to bold and italics words.
+Note that Google **ignores** this tag and only uses content.
+
+Source: [Google does not use the keywords meta tag in web ranking](https://webmasters.googleblog.com/2009/09/google-does-not-use-keywords-meta-tag.html) post on Googleblog site. 
+
+Google does also give more weighting to bold and italics words.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjczMDk1MTddfQ==
+eyJoaXN0b3J5IjpbLTQ3NzE5NTUxMV19
 -->
