@@ -63,6 +63,8 @@ e.g.
 
 ## Conditional logic - check for unstaged modified files
 
+### git status porcelain
+
 Check if there are unstaged changes.
 
 ```sh
@@ -70,6 +72,9 @@ if [ -z "$(git status --porcelain)" ]; then
     echo 'No changes to commit'
 fi
 ```
+
+
+### git status grep
 
 The ZSH way of doing it - [article](https://coderwall.com/p/e-tsng/ziraga-oh-my-zsh-theme).
 
@@ -84,6 +89,13 @@ if $(echo "$INDEX" | grep -E -e 'Changes not staged' &> /dev/null); then
   echo 'Unstaged changes'
 fi
 ```
+
+This is then used conditionally to determine when these should be used.
+
+```
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzMjQ4NTI1Ml19
+eyJoaXN0b3J5IjpbMzgxODczNDQ5XX0=
 -->
