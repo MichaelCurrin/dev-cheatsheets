@@ -2,27 +2,37 @@
 
 Cross-language guide for writing a command-line interface.
 
+## Arguments
 
-### One argument
+### Commands
+
+```
+
+```
+
+
+## Options
+
+#### One argument
 
 ```
 -f, --foo FOO
 ```
 
-### Optional argument
+#### Optional argument
 
 ```
 -f, --foo [FOO]   Your foo value.  (defaults to bar)
 ```
 
 
-### One or more arguments
+#### One or more arguments
 
 ```
 --foo FOO[,FOO2,...]
 ```
 
-### Short and long flag
+#### Short and long flag
 
 ```
 -f, --FOO FOO
@@ -30,5 +40,5 @@ Cross-language guide for writing a command-line interface.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyMDEwMzQzNF19
+eyJoaXN0b3J5IjpbLTEzNDE1OTg1MTNdfQ==
 -->
