@@ -35,7 +35,23 @@ You can also use lowercase - from a git command's help:
 git pull <remote> <branch>
 ```
 
+
+## Menu
+
+At the top of a file, you can give a summary horizontally of important links.
+
+Use an `emdash` rather than a pipe for increasing spacing. I've seen this in use before.
+
+```
+[text](target) &mdash; [text](target)
+```
+
+
+Read more here:
+
+https://www.html.am/html-codes/character-codes/html-em-dash-code.cfm
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzOTE0MDM5NiwxNjQ0NDg4NTc0LC04MT
+eyJoaXN0b3J5IjpbLTUxODk0NjU5NCwxNjQ0NDg4NTc0LC04MT
 k1MzM4NTJdfQ==
 -->
