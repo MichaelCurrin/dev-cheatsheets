@@ -12,7 +12,7 @@ Cross-language guide for writing a command-line interface.
 ### Optional argument
 
 ```
--f, --foo [FOO]
+-f, --foo [FOO]   Your foo value.  (defaults to bar)
 ```
 
 
@@ -30,5 +30,5 @@ Cross-language guide for writing a command-line interface.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzAzNDc3OTEzXX0=
+eyJoaXN0b3J5IjpbLTIyMDEwMzQzNF19
 -->
