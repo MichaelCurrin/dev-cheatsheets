@@ -42,16 +42,24 @@ bundle exec jekyll serve
 
 For `jekyll serve [options]`
 
-Debug flags:
+
+### Debug flags
 
 Flag | Description
 --- | ---
 `--verbose` | Increase message logged in the console.
 `--debug` | Show details about an error if there is one. Errors are very quiet so it is useful to always run this especially for remote builds.
+--trace` | Show the full backtrace when an error occurs.
+
+### Loading flags
+
+Flag | Description
+--- | ---
 `--show-dir-listing` | Show contents of the directory. Ignores an existing `index.html`.
 `-l, --livereload` | Use LiveReload to automatically refresh browsers
+--no-watch | Disabling the default option toWatch for changes and rebuild
 
-Show and hide content
+### Show and hide content
 
 Flag | Description
 --- | ---
@@ -60,7 +68,7 @@ Flag | Description
 `--future`  |  Publishes posts with a future date
 `--limit_posts MAX_POSTS` | Limits the number of posts to parse and publish
 
-Configuration
+### Configuration
 
 Flag | Description
 --- | ---
@@ -69,7 +77,9 @@ Flag | Description
 `-s, --source SOURCE` |  Custom source directory
 `-b, --baseurl URL` |  Serve the website from the given base URL
 `--layouts DIR` |  Layouts directory (defaults to ./_layouts)
-        
+      
+### Full
+  
 Copied from the command-line for Jekyll 3:
 
 Yes source is repeated.
@@ -114,5 +124,5 @@ Yes source is repeated.
         -t, --trace        Show the full backtrace when an error occurs
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Njg2ODkxNjVdfQ==
+eyJoaXN0b3J5IjpbMTU1MzY3MTMzOV19
 -->
