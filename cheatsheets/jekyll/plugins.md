@@ -2,6 +2,7 @@
 
 Note that Jekyll plugins are just Ruby gems setup to work in a Jekyll project.
 
+
 ## Gemfile
 
 How to setup a _Gemfile_, as a file managing dependencies.
@@ -10,15 +11,19 @@ How to setup a _Gemfile_, as a file managing dependencies.
 
 If you using `Bundler`, you then run this at the top level of your project. This will read from the _Gemfile_.
 
+
+```sh
+bundle config --local path vendor/bundle
+bundle install
+
+Old style for reference - to be deprecated.
+
 ```sh
 bundle install --path vendor/bundle
-```
-
-On later runs you can just run:
-
-```sh
+# On later runs you can just run:
 bundle install
 ```
+
 
 ### Samples
 
@@ -29,6 +34,7 @@ Install a gem:
 ```ruby
 gem 'foo'
 gem 'foo', '~> x.y.z'
+# Alternative
 gem install foo -v x.y.z
 ```
 
@@ -170,6 +176,6 @@ remote_theme: benbalter/retlab
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjM2NTE5NjMsNjkyNTI5ODYsODA1Nz
-UzMzA0XX0=
+eyJoaXN0b3J5IjpbNDgyNjM5NzAsLTEzMjM2NTE5NjMsNjkyNT
+I5ODYsODA1NzUzMzA0XX0=
 -->
