@@ -42,18 +42,30 @@ bundle exec jekyll serve
 
 For `jekyll serve [options]`
 
-Common flags:
+Debug flags:
 
 Flag | Description
 --- | ---
---verbose | Increase message logged in the console.
---debug | Show details about an error if there is one. Errors are very quiet so it is useful to always run this especially for remote builds.
---show-dir-listing | Show contents of the directory. Ignores an existing `index.html`.
+`--verbose` | Increase message logged in the console.
+`--debug` | Show details about an error if there is one. Errors are very quiet so it is useful to always run this especially for remote builds.
+`--show-dir-listing` | Show contents of the directory. Ignores an existing `index.html`.
 
+Configuration
 
+Flag | Description
+--- | ---
+`--config CONFIG_FILE,[CONFIG_FILE,...]` | Read configs.
+`-d, --destination DESTINATION`  The current folder will be generated into DESTINATION
+`-s, --source SOURCE` |  Custom source directory
+`-b, --baseurl URL` |  Serve the website from the given base URL
+`--layouts DIR` |  Layouts directory (defaults to ./_layouts)
+        
 Copied from the command-line for Jekyll 3:
 
-```
+Yes source is repeated.
+
+
+]\'```
             --config CONFIG_FILE[,CONFIG_FILE2,...]  Custom configuration file
         -d, --destination DESTINATION  The current folder will be generated into DESTINATION
         -s, --source SOURCE  Custom source directory
@@ -93,5 +105,5 @@ Copied from the command-line for Jekyll 3:
         -t, --trace        Show the full backtrace when an error occurs
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4NjcwNTk0M119
+eyJoaXN0b3J5IjpbLTE5OTc5NzM4MDhdfQ==
 -->
