@@ -22,7 +22,8 @@ git stash --include-untracked
 
 Then try again.
 
-## Restore local to match rem
+
+## Restore local to match remote
 
 This will get rid of any unpushed commits.
 
@@ -30,6 +31,5 @@ This will get rid of any unpushed commits.
 git checkout origin/master .
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MzA5NjA4MzUsLTE2Nzk2NzkyODFdfQ
-==
+eyJoaXN0b3J5IjpbNDY5NjgyNjY1LC0xNjc5Njc5MjgxXX0=
 -->
