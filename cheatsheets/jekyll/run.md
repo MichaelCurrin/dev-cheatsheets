@@ -96,42 +96,7 @@ Flag | Description
   
 Copied from the command-line for Jekyll 4:
 
-Yes some are repeated.
-
 ```
-ll-plugins
-drwxr-xr-x  23 mcurrin  151928526   736B  2 Jan 16:38 knitting-against-nuclear
-drwxr-xr-x   2 mcurrin  151928526    64B  3 Dec 19:15 measure-sa
-drwxrwxr-x@  9 mcurrin  151928526   288B 10 May 21:19 mkdocs-poetry
-drwxr-xr-x  31 mcurrin  151928526   992B 11 Apr 20:22 my-github-projects
-drwxr-xr-x   6 mcurrin  151928526   192B 15 May 21:01 nested-jekyll-menus
-drwxr-xr-x  11 mcurrin  151928526   352B  3 Feb 09:48 netflix-assistant
-drwxr-xr-x  20 mcurrin  151928526   640B  3 Dec 16:12 open-air
-drwxr-xr-x   9 mcurrin  151928526   288B 14 Apr 22:49 python-twitter-guide
-drwxr-xr-x   9 mcurrin  151928526   288B 30 Jan 19:38 repo-boilerplates
-drwxr-xr-x  24 mcurrin  151928526   768B  6 Apr 22:37 second-liners-improv
-drwxr-xr-x   7 mcurrin  151928526   224B 19 Feb 09:54 social-maths-calculator
-drwxr-xr-x  27 mcurrin  151928526   864B  3 Feb 09:57 static-pages-demo
-drwxr-xr-x  17 mcurrin  151928526   544B 26 Jan 09:34 static-site-api-request-demo
-drwxr-xr-x   7 mcurrin  151928526   224B 27 Mar 09:47 static-sites-generator-resources
-drwxr-xr-x  32 mcurrin  151928526   1.0K 16 May 22:42 the-buckfever-underground
-drwxr-xr-x  24 mcurrin  151928526   768B  3 Feb 10:17 the-second-liners-hugo-site
-drwxr-xr-x  22 mcurrin  151928526   704B 11 Feb 14:24 trends
-➜  static-sites
-➜  static-sites
-➜  static-sites cd jekyll-actions-quickstart
-➜  jekyll-actions-quickstart git:(master) j -v
-jekyll 4.0.0
-➜  jekyll-actions-quickstart git:(master) j serve --version
-serve
-➜  jekyll-actions-quickstart git:(master) j serve -h
-jekyll serve -- Serve your site locally
-
-Usage:
-
-  jekyll serve [options]
-
-Options:
             --config CONFIG_FILE[,CONFIG_FILE2,...]  Custom configuration file
         -d, --destination DESTINATION  The current folder will be generated into DESTINATION
         -s, --source SOURCE  Custom source directory
@@ -163,6 +128,11 @@ Options:
         -h, --help         Show this message
         -v, --version      Print the name and version
         -t, --trace        Show the full backtrace when an error occurs
+```
+
+These also appear in the output and are repeated for every command - they can be seen alone with `jekyll help`.
+
+```
         -s, --source [DIR]  Source directory (defaults to ./)
         -d, --destination [DIR]  Destination directory (defaults to ./_site)
             --safe         Safe mode (defaults to false)
@@ -174,5 +144,5 @@ Options:
         -t, --trace        Show the full backtrace when an error occurs
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2MjkzMjYzM119
+eyJoaXN0b3J5IjpbMTc1NDk2ODEwM119
 -->
