@@ -4,10 +4,13 @@ Cross-language guide for writing a command-line interface.
 
 ## Arguments
 
-### Commands
+### Subcommands
 
 ```
-
+Subcommands:
+  foo
+  bar
+  baz, b       Baz all the bugs.
 ```
 
 
@@ -40,5 +43,5 @@ Cross-language guide for writing a command-line interface.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDE1OTg1MTNdfQ==
+eyJoaXN0b3J5IjpbLTE4NzQwNDcwNDldfQ==
 -->
