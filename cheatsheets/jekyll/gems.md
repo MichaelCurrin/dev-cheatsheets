@@ -1,5 +1,6 @@
 # Jekyll gems cheatsheet
 
+
 ## Check environment
 
 ```sh
@@ -34,7 +35,7 @@ addressable-2.7.0           i18n-0.9.5      ...
 
 ## Find gem locally
 
-Fr a gem installed locally such as `minima` theme.
+For a gem installed locally such as `minima` theme.
 
 Show path:
 
@@ -54,12 +55,17 @@ code $(bundle show minima)
 
 #### Gem command
 
-```ruby
-gem install GEM_NAME
-gem install --user GEM_NAME
-gem upgrade GEM_NAME
+Shell commands
 
-# e.g.
+```sh
+$ gem install GEM_NAME
+$ gem install --user-level GEM_NAME
+$ gem upgrade GEM_NAME
+```
+
+Ruby command examples.
+
+```ruby
 gem 'minima'
 gem 'jekyll', '>=3.5', '<5'
 gem 'minima', '~> 2.5', '>= 2.5.1'
@@ -81,5 +87,5 @@ bundle install
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDgwNTM2ODZdfQ==
+eyJoaXN0b3J5IjpbMjA3MDg5MjEyOSwtMTEwODA1MzY4Nl19
 -->
