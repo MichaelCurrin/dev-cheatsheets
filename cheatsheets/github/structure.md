@@ -12,11 +12,42 @@ https://github.com/benbalter/jekyll-remote-theme/tree/master/.github/ISSUE_TEMPL
 
 ### Bug report
 
-bug_report.md
+`bug_report.md`
+
+```markdown
+---
+name: Bug report
+about: Create a report to help us improve
+
+---
+
+### Describe the bug
+
+A clear and concise description of what the bug is.
+
+### Steps to reproduce the behavior
+
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. See error
+
+### Expected behavior
+
+A clear and concise description of what you expected to happen.
+
+### Screenshots
+
+If applicable, add screenshots to help explain your problem.
+
+### Additional context
+
+Add any other context about the problem here.
+```
 	
 ### Feature request
 
-feature_request.md
+`feature_request.md`
 
 ```markdown
 ---
@@ -87,5 +118,5 @@ docs/CONTRIBUTING.md
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODQxNjk1MF19
+eyJoaXN0b3J5IjpbNjA3MzkxNTEyXX0=
 -->
