@@ -55,6 +55,8 @@ code $(bundle show minima)
 
 #### Gem command
 
+See also [plugins](plugins.md) page.
+
 Shell commands
 
 ```sh
@@ -87,5 +89,6 @@ bundle install
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3MDg5MjEyOSwtMTEwODA1MzY4Nl19
+eyJoaXN0b3J5IjpbLTE5MjYwNTE5NzgsLTExMDgwNTM2ODZdfQ
+==
 -->
