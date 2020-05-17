@@ -29,6 +29,11 @@ command PATH
 command <PATH_TO_DIR>/foo
 ```
 
+You can also use lowercase - from a git command's help:
+
+```sh
+git pull <remote> <branch>
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgxOTUzMzg1Ml19
+eyJoaXN0b3J5IjpbMTY0NDQ4ODU3NCwtODE5NTMzODUyXX0=
 -->
