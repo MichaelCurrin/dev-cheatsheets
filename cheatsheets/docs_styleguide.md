@@ -42,9 +42,15 @@ At the top of a file, you can give a summary horizontally of important links.
 
 Use an `emdash` rather than a pipe for increasing spacing. I've seen this in use before.
 
+Code:
+
+```markdown
+[foo](target) &mdash; [bar](target)
 ```
-[text](target) &mdash; [text](target)
-```
+
+Result:
+
+[foo](target) &mdash; [bar](target)
 
 
 Read more here:
@@ -52,6 +58,6 @@ Read more here:
 https://www.html.am/html-codes/character-codes/html-em-dash-code.cfm
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUxODk0NjU5NCwxNjQ0NDg4NTc0LC04MT
-k1MzM4NTJdfQ==
+eyJoaXN0b3J5IjpbLTY4MzE5MzgzLDE2NDQ0ODg1NzQsLTgxOT
+UzMzg1Ml19
 -->
