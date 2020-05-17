@@ -69,7 +69,7 @@ Flag | Description
 
 Flag | Description
 --- | ---
-`--show-dir-listing` | Show contents of the directory. Ignores an existing `index.html`.
+`--show-dir-listing` | Show contents of the directory. Ignores an existing `index.html`. This flag is not needed if there is no `index.html` file.
 `-l, --livereload` | Use LiveReload to automatically refresh browsers
 --no-watch | Disabling the default option to watch for changes and rebuild.
 
@@ -144,5 +144,5 @@ These also appear in the output and are repeated for every command - they can be
         -t, --trace        Show the full backtrace when an error occurs
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1NDk2ODEwM119
+eyJoaXN0b3J5IjpbLTE0MDE5OTE3NjJdfQ==
 -->
