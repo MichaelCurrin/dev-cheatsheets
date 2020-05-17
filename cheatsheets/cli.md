@@ -2,26 +2,33 @@
 
 Cross-language guide for writing a command-line interface.
 
-One argument
+
+### One argument
 
 ```
--d, --destination DESTINATION
+-f, --foo FOO
+```
+
+### Optional argument
+
+```
+-f, --foo [FOO]
 ```
 
 
-One or more arguments.
+### One or more arguments
 
 ```
---config CONFIG_FILE[,CONFIG_FILE2,...]
+--foo FOO[,FOO2,...]
 ```
 
-Short and long flags.
+### Short and long flag
 
 ```
--d, --destination DESTINATION
+-f, --FOO FOO
 ```
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODQ4ODE5NDhdfQ==
+eyJoaXN0b3J5IjpbMzAzNDc3OTEzXX0=
 -->
