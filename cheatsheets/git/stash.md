@@ -9,11 +9,22 @@ If the reference is omitted, then index `0` is implied.
 
 ## Create
 
+Note you cannot stash on a repo with no commits.
+
 Create stash.
 
 ```sh
 git stash
 ```
+
+
+Stash everything, track and not, without using `add`.
+
+```sh
+git stash --include-untracked
+```
+
+Or use `add` if you need to include untracked files then stash.
 
 ```sh
 git add .
@@ -23,6 +34,7 @@ git stash
 ```sh
 git stash save 'Name of stash'
 ```
+
 
 ## Show
 
@@ -71,5 +83,5 @@ git stash drop [STASH_REF]
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTkxOTU1MTNdfQ==
+eyJoaXN0b3J5IjpbMTgwOTYwMTA3MSwtMTcxOTE5NTUxM119
 -->
