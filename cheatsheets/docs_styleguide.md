@@ -34,6 +34,36 @@ You can also use lowercase - from a git command's help:
 ```sh
 git pull <remote> <branch>
 ```
+
+## Github project
+
+### I
+
+### Contributors
+
+```
+MAINTAINERS.txt
+```
+
+```
+.github/CODEOWNERS
+```
+
+e.g. https://github.com/benbalter/jekyll-remote-theme/blob/master/.github/CODEOWNERS
+
+### Contributing doc
+
+```
+CONTRIBUTING.md
+```
+
+Or
+
+```
+docs/CONTRIBUTING.md
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0NDQ4ODU3NCwtODE5NTMzODUyXX0=
+eyJoaXN0b3J5IjpbLTEzMDE1MzY5MDYsMTY0NDQ4ODU3NCwtOD
+E5NTMzODUyXX0=
 -->
