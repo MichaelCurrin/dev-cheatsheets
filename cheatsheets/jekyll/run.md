@@ -49,6 +49,16 @@ Flag | Description
 `--verbose` | Increase message logged in the console.
 `--debug` | Show details about an error if there is one. Errors are very quiet so it is useful to always run this especially for remote builds.
 `--show-dir-listing` | Show contents of the directory. Ignores an existing `index.html`.
+`-l, --livereload` | Use LiveReload to automatically refresh browsers
+
+Show and hide content
+
+Flag | Description
+--- | ---
+`-D, --drafts` | Render posts in the _drafts folder
+`--unpublished ` | Render posts that were marked as unpublished
+`--future`  |  Publishes posts with a future date
+`--limit_posts MAX_POSTS` | Limits the number of posts to parse and publish
 
 Configuration
 
@@ -64,8 +74,7 @@ Copied from the command-line for Jekyll 3:
 
 Yes source is repeated.
 
-
-]\'```
+```
             --config CONFIG_FILE[,CONFIG_FILE2,...]  Custom configuration file
         -d, --destination DESTINATION  The current folder will be generated into DESTINATION
         -s, --source SOURCE  Custom source directory
@@ -105,5 +114,5 @@ Yes source is repeated.
         -t, --trace        Show the full backtrace when an error occurs
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTc5NzM4MDhdfQ==
+eyJoaXN0b3J5IjpbLTE0Njg2ODkxNjVdfQ==
 -->
