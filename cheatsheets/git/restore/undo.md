@@ -1,5 +1,6 @@
 # Undo
 
+## Undo commit
 
 Undo latest commit and drop all changes. Warning - any other changes files will also be reset.
 
@@ -7,11 +8,28 @@ Undo latest commit and drop all changes. Warning - any other changes files will 
 git reset --hard HEAD~
 ```
 
+Safer:
+
+```sh
+[[ -z $(git status --porcelain) ]] && git reset --hard HEAD~ || echo 'Unstaged changes!'
+```
+
+Then run
+
+```sh
+git stash --include-untracked
+```
+
+Then try again.
+
+## Restore local to match rem
+
 This will get rid of any unpushed commits.
 
 ```sh
 git checkout origin/master .
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY0MzYxOTAyLC0xNjc5Njc5MjgxXX0=
+eyJoaXN0b3J5IjpbLTE3MzA5NjA4MzUsLTE2Nzk2NzkyODFdfQ
+==
 -->
