@@ -25,6 +25,17 @@ This can be useful if you have a feature branch you want to throw away but you w
 git checkout feature-branch
 git reset --hard origin/master
 ```
+
+
+## Clean directory
+
+If you have some changes staged, you need to unstage them otherwise `checkout` won't affect them.
+
+```sh
+git reset && git co .
+```
+
+Note `reset HEAD` is implied.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4MDg0OTcyMl19
+eyJoaXN0b3J5IjpbMTQyNTgzODEyOV19
 -->
