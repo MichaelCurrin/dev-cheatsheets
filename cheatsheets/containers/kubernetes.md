@@ -73,6 +73,7 @@ Get a deployment. Optionally get as YAML as below. Optionally write to a local Y
 kubectl get deployment NAME -o yaml
 ```
 
+
 ## Secrets
 
 - [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/) docs
@@ -102,6 +103,7 @@ kubectl create secret generic SECRET_NAME --from-literal=username=foo --from-lit
 ```sh
 kubectl edit secrets SECRET_NAME
 ```
+
 
 ##  Man page
 
@@ -177,6 +179,6 @@ Use "kubectl <command> --help" for more information about a given command.
 Use "kubectl options" for a list of global command-line options (applies to all commands).
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTg3MzE1MTA0LC0xODU3OTEzOTMyLDE1Mz
-gxNzA0NzksLTE2MjQzODAzNThdfQ==
+eyJoaXN0b3J5IjpbNjE4MDk1NTQ4LDU4NzMxNTEwNCwtMTg1Nz
+kxMzkzMiwxNTM4MTcwNDc5LC0xNjI0MzgwMzU4XX0=
 -->
