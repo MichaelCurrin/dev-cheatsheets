@@ -36,6 +36,35 @@ Your local files are changed but not committed, so you might want to add and com
 git reset
 ```
 
+### Restore a deleted file
+
+Bring back a file which was previously deleted.
+
+```sh
+git reset COMMIT_REF file.txt
+```
+
+If you are on a feature branch and the file is still on master, you can reset to the master (note targeting just the file path).
+
+If you are already on master, you will have to find the commit _before_ that file was deleted.
+
+Find the last commit that affected the given path. As the file isn't in the HEAD commit, this commit must have deleted it.
+sh
+
+```sh
+git rev-list -n 1 HEAD -- PATH
+```
+
+Checkout the version at the commit before, using the caret (^) symbol:
+```sh
+git checkout <deleting_commit>^ -- <file_path>
+```
+
+Or in one command, if `$file` is the file in question.
+
+```sh
+git checkout $(git rev-list -n 1 HEAD -- "$file")^ -- "$file"
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyNzg1MDE2OF19
+eyJoaXN0b3J5IjpbMTY3MDMwOTY4OF19
 -->
