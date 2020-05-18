@@ -17,15 +17,6 @@ less file.txt
 more file.txt
 ```
 
-Add paging to piped output.
-
-```sh
-echo "Text" | less
-
-git log | less
-```
-
-
 
 ## Clipboard
 
@@ -145,5 +136,5 @@ export $(egrep -v '^#' .env | xargs)
 
 [source](https://gist.github.com/judy2k/7656bfe3b322d669ef75364a46327836)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk2MDQyMTU4Nl19
+eyJoaXN0b3J5IjpbLTc2MDI3Mjk0NF19
 -->
