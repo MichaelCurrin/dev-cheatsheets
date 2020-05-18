@@ -2,11 +2,13 @@
 
 Docs: https://git-scm.com/docs/git-push
 
+
 ## Push branch
 
 ```sh
 git push
 ```
+
 ```sh
 git push origin master
 ```
@@ -26,6 +28,21 @@ NB. Does not push the branch itself.
 ```sh
 git push --tags
 ```
+
+## Push new branch
+
+When `git push` gives you an error that that the branch does not exist on the remote, use one of these.
+
+```sh
+git push origin HEAD
+```
+
+Use the `-u` flag for `--set-upstream`. This is not needed on future pushes.
+
+```sh
+git push -u origin my-feature
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTExMzg5MTI3LDY0ODA5ODA5Nl19
+eyJoaXN0b3J5IjpbMjc1NzM2MjYwLDkxMTM4OTEyNyw2NDgwOT
+gwOTZdfQ==
 -->
