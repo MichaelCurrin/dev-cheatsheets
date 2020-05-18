@@ -1,6 +1,6 @@
 # More
 
-> Also, less does not have to read the entire input file before starting, so with large input files it starts up faster than text editors like vi
+`man less` and `man more` both go to less. But there is `more (1)` mentioned.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5NjU5MzYyMl19
+eyJoaXN0b3J5IjpbNjYyNTQwODU5XX0=
 -->
