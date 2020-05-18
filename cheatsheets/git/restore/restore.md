@@ -41,8 +41,23 @@ git reset
 Bring back a file which was previously deleted.
 
 ```sh
-git reset COMMIT_REF file.txt
+git reset COMMIT_REF PATH
+
+# e.g. 
+git reset master foo.txt
 ```
+The file then appears as both deleted and created (staged0.
+
+Or
+
+```sh
+git checkout COMMIT_REF PATH
+
+# e.g.
+git checkout master foo.txt
+```
+
+This creates the file and stages it. This might be better than the process above for keeping the history as the same file.
 
 If you are on a feature branch and the file is still on master, you can reset to the master (note targeting just the file path).
 
@@ -60,7 +75,7 @@ git rev-list -n 1 HEAD -- MY_PATH
 Checkout the version at the commit before, using the caret (^) symbol:
 
 ```sh
-git checkout <deleting_commit>^ -- MY_PATH
+git checkout DELETING_COMMIT^ -- MY_PATH
 ```
 
 Or in one command.
@@ -69,5 +84,5 @@ Or in one command.
 git checkout $(git rev-list -n 1 HEAD -- "MY_PATH")^ -- "MY_PATH"
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE1NDE5MzA0XX0=
+eyJoaXN0b3J5IjpbLTEwNDQwNTIwNjQsMjE1NDE5MzA0XX0=
 -->
