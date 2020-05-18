@@ -36,6 +36,7 @@ Create service
 kubectl apply -f SERVICE_YAML_FILE
 ```
 
+
 ## Pods
 
 List.
@@ -179,6 +180,6 @@ Use "kubectl <command> --help" for more information about a given command.
 Use "kubectl options" for a list of global command-line options (applies to all commands).
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjE4MDk1NTQ4LDU4NzMxNTEwNCwtMTg1Nz
-kxMzkzMiwxNTM4MTcwNDc5LC0xNjI0MzgwMzU4XX0=
+eyJoaXN0b3J5IjpbMTIyMjI3NzkwMiw1ODczMTUxMDQsLTE4NT
+c5MTM5MzIsMTUzODE3MDQ3OSwtMTYyNDM4MDM1OF19
 -->
