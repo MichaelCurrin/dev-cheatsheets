@@ -86,6 +86,19 @@ MAINTAINERS.txt
 
 e.g. https://github.com/benbalter/jekyll-remote-theme/blob/master/.github/CODEOWNERS
 
+You can also link to the Github contributors page.
+
+e.g.
+
+
+```markdown
+presite © egoist, Released under the MIT License.
+Authored and maintained by egoist with help from contributors (list).
+```
+Where  list links to:
+
+- [github.com/egoist/presite/graphs/contributors](https://github.com/egoist/presite/graphs/contributors)
+
 
 ## Pull request templates
 
@@ -118,5 +131,5 @@ docs/CONTRIBUTING.md
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjA3MzkxNTEyXX0=
+eyJoaXN0b3J5IjpbLTExMDEwMDY3MzldfQ==
 -->
