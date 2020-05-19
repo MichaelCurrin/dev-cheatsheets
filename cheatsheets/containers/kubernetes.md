@@ -105,6 +105,16 @@ kubectl create secret generic SECRET_NAME --from-literal=username=foo --from-lit
 kubectl edit secrets SECRET_NAME
 ```
 
+### Dump secrets
+
+Create a YAML file for each secret available.
+
+```sh
+kubectl get --no-headers secret | \
+    awk '{print $1}' | \
+    xargs -I{} sh -c 'kubectl get secret -o yaml "$1" > "$1.yaml"' - {}
+```
+
 
 ##  Man page
 
@@ -180,6 +190,7 @@ Use "kubectl <command> --help" for more information about a given command.
 Use "kubectl options" for a list of global command-line options (applies to all commands).
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIyMjI3NzkwMiw1ODczMTUxMDQsLTE4NT
-c5MTM5MzIsMTUzODE3MDQ3OSwtMTYyNDM4MDM1OF19
+eyJoaXN0b3J5IjpbMTA4MTcyNTUzMCwxMjIyMjc3OTAyLDU4Nz
+MxNTEwNCwtMTg1NzkxMzkzMiwxNTM4MTcwNDc5LC0xNjI0Mzgw
+MzU4XX0=
 -->
