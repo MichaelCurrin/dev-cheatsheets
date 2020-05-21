@@ -33,7 +33,15 @@ Log can be very long so limit it.
 git --no-pager log --oneline -40
 ```
 
+Or with `lol`.
+
+```sh
+git --no-pager lol -40
+```
+
 This could be aliased.
+
+Also 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNzkwMjAxM119
+eyJoaXN0b3J5IjpbLTExNjk0NTIxNTJdfQ==
 -->
