@@ -393,6 +393,49 @@ for (const [ key, value ] of Object.entries(KEY_VALUE_PAIRS)) {
 ```
 {/* A JSX comment */}
 ```
+
+## Objects
+
+
+What? The `[]` value is an object which can be used as an array and also a dictionary/map of attributes and methods.
+
+```javascript
+> x = []
+[]
+> typeof x
+'object'
+```
+
+Add to array.
+
+```javascript
+> x.push('foo')
+1
+> x
+[ 'foo' ]
+```
+
+Add data.
+
+```javascript
+> x.bar = 'baz'
+'baz'
+> x
+[ 'foo', bar: 'baz' ]
+```
+
+Add function.
+
+```javascript
+> x.greet = () => console.log("Hi!")
+[Function (anonymous)]
+> x
+[ 'foo', bar: 'baz', greet: [Function (anonymous)] ]
+> x.greet
+[Function (anonymous)]
+> x.greet()
+Hi!
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcxNjY5MTExNV19
+eyJoaXN0b3J5IjpbMTk4NDg5Mzk2Nl19
 -->
