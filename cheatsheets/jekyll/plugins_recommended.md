@@ -97,3 +97,20 @@ repository: username/repo-name
 ```
 
 See [Configuration](https://jekyll.github.io/github-metadata/configuration/) help page for Jekyll.
+
+
+## Standard
+
+These can go on most sites.
+
+- [jekyll-feed](https://github.com/jekyll/jekyll-feed)
+	- Produce RSS feed. _"A Jekyll plugin to generate an Atom (RSS-like) feed of your Jekyll posts."_
+- [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag)
+	- Use as `{% set %}` in your `head` tag. The result will be a HTML tag which starts with "SEO plugin"  comment.
+	- See advanced usage for authors and image OG data.
+- [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap) 
+	- Adds a `sitemap.xml` and `robots.txt` file to the site.
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNzM5OTQ5NTA5XX0=
+-->
