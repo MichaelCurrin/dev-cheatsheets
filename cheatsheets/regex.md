@@ -1,5 +1,9 @@
 # Regex cheatsheet
 
+## Resources
+
+https://regex101.com/
+
 ## Repeat
 
 ```
@@ -8,7 +12,10 @@
 \w{2,4}
 ```
 
-## Modifier
+## Modifiers
+
+https://www.w3schools.com/jsref/jsref_regexp_m.asp
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE4NTQ3OV19
+eyJoaXN0b3J5IjpbLTE4NDA0MjM2NTVdfQ==
 -->
