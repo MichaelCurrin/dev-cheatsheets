@@ -26,6 +26,19 @@ See also:
 > myText.replace(/^\n/gm, '');
 ```
 
+The `m` modified is recommended for multi-line search
+
+https://www.w3schools.com/jsref/jsref_regexp_m.asp
+
+### Remove empty line from start and end
+
+[source](https://stackoverflow.com/questions/14572413/remove-line-breaks-from-start-and-end-of-string/48080903)
+
+```javascript
+> myText.replace(/^\s+|\s+$/g, '');
+```
+
+Note this removes all whitespace and not just `\n`.
 
 
 ## Arrays
@@ -445,5 +458,5 @@ Add function.
 Hi!
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQxNDMyNTYxMywxOTg0ODkzOTY2XX0=
+eyJoaXN0b3J5IjpbMTk5MDM2MDY0NiwxOTg0ODkzOTY2XX0=
 -->
