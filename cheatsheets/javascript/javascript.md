@@ -20,6 +20,14 @@ See also:
 > myText.substring(start, end)
 ```
 
+### Remove empty lines
+
+```javascript
+> myText.replace(/^\n/gm, '');
+```
+
+
+
 ## Arrays
 
 - [Array cheatsheet](https://www.shortcutfoo.com/app/dojos/javascript-arrays/cheatsheet)
@@ -437,5 +445,5 @@ Add function.
 Hi!
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4NDg5Mzk2Nl19
+eyJoaXN0b3J5IjpbLTQxNDMyNTYxMywxOTg0ODkzOTY2XX0=
 -->
