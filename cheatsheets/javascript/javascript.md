@@ -8,6 +8,8 @@ See also:
 
 ## Text
 
+### Case
+
 ```javascript
 > myText.toUpperCase()
 ```
@@ -40,6 +42,9 @@ https://www.w3schools.com/jsref/jsref_regexp_m.asp
 
 Note this removes all whitespace and not just `\n`.
 
+### String literals
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
 ## Arrays
 
@@ -458,5 +463,5 @@ Add function.
 Hi!
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk5MDM2MDY0NiwxOTg0ODkzOTY2XX0=
+eyJoaXN0b3J5IjpbLTQ4ODAxOTk0LDE5ODQ4OTM5NjZdfQ==
 -->
