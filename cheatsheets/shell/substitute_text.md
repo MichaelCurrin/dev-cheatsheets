@@ -106,6 +106,8 @@ sed -i 's/foo/bar/g' *
 sed -i 's/foo/bar/g' foo/*
 ```
 
+I don't think it goes into a directory though and it gives errors on processing directory. So that is why using `find` and setting type as file as later in this guide is useful.
+
 On macOS you will get an error unless need to provide a backup extension.
 
 ```sh
@@ -164,5 +166,6 @@ brew install gnu-sed
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5NDY0NTMyMywtMTkzMzQ0MDAyNl19
+eyJoaXN0b3J5IjpbLTEyNDg2NTA1MDIsLTE5MzM0NDAwMjZdfQ
+==
 -->
