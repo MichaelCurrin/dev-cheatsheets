@@ -105,7 +105,7 @@ Create file if it doesn't exist.
 fs.openSync(p, 'a'); 
 ```
 
-Write content to file.
+Write content to a file.
 
 ```javascript
 var data = "New File Contents";
@@ -118,6 +118,6 @@ fs.writeFile("temp.txt", data, (err) => {
 });
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTYzODYwNTMsLTIyMDg4NzYxMywtMj
+eyJoaXN0b3J5IjpbLTE2NzQyNjI1NjYsLTIyMDg4NzYxMywtMj
 A4ODI3MDg1OF19
 -->
