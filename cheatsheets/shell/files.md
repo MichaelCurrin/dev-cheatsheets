@@ -17,6 +17,24 @@ Recursive.
 ls -R
 ```
 
+Show files with and without leading dot.
+
+```sh
+ls (.)*
+```
+
+Same as this, but this only works with this command while the pattern above is more universal.
+
+```sh
+ls -A
+```
+
+```
+     -A      List all entries except for . and ...  Always set for the super-user.
+
+     -a      Include directory entries whose names begin with a dot (.).
+```
+
 List directories, rather than searching recursively.
 
 ```sh
@@ -170,3 +188,6 @@ x=$([[ -f "$FILE" ]] && 'yes' || 'no')
 [[ FILE1 -ot FILE2 ]] 	2 is more recent than 1
 [[ FILE1 -ef FILE2 ]] 	Same files
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNjQ1ODkyOTE0XX0=
+-->
