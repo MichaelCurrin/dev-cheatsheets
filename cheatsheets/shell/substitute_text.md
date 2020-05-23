@@ -141,6 +141,8 @@ Use and use find and pipe the output to sed.
 
 ```sh
 find . -type f  -name '*' -exec 'sed -i .bak -e "PATTERN" {} +'
+
+find . -exec sed -i '' -e 'PATTERN' {} \;
 ```
 
 Or revere the order.
@@ -162,5 +164,5 @@ brew install gnu-sed
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA2NTE2OTEzLC0xOTMzNDQwMDI2XX0=
+eyJoaXN0b3J5IjpbMTM5NDY0NTMyMywtMTkzMzQ0MDAyNl19
 -->
