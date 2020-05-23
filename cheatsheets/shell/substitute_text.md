@@ -152,13 +152,18 @@ find . -type f  -name '*' -exec 'sed -i .bak -e "PATTERN" {} +'
 find . -exec sed -i '' -e 'PATTERN' {} \;
 ```
 
-Or revere the order.
+Or reverse the order.
 
 ```sh
 sed -i 's/foo/bar/g' $(find . -type f)
 ```
 
-## Install
+```
+ -e command
+             Append the editing commands specified by the command argument to the list of commands.
+```
+
+### Install
 
 Install Linux sed on macOS.
 
@@ -171,5 +176,6 @@ brew install gnu-sed
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc0MzY1ODU4OSwtMTkzMzQ0MDAyNl19
+eyJoaXN0b3J5IjpbMTUzOTg4MDc2NiwtNzQzNjU4NTg5LC0xOT
+MzNDQwMDI2XX0=
 -->
