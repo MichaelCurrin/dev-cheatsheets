@@ -118,15 +118,6 @@ sed -i '.bak' 's/foo/bar/g' *
 sed -i '' 's/foo/bar/g' *
 ```
 
-Using `find`:
-
-```sh
-find ./ -type f -exec sed -i 's/foo/bar/g' {} \;
-```
-
-
-From [StackOverflow](https://stackoverflow.com/questions/11392478/how-to-replace-a-string-in-multiple-files-in-linux-command-line)
-
 
 ## Delete lines
 
@@ -141,9 +132,23 @@ tr -d 'foo' < file.txt
 
 Use and use find and pipe the output to sed.
 
+
+
+Using `find`:
+
+```sh
+find ./ -type f -exec sed -i 's/foo/bar/g' {} \;
+```
+
+
+From [StackOverflow](https://stackoverflow.com/questions/11392478/how-to-replace-a-string-in-multiple-files-in-linux-command-line)
+
+
 ```sh
 find . -type f  -name '*' -exec 'sed -i .bak -e "PATTERN" {} +'
+```
 
+```sh
 find . -exec sed -i '' -e 'PATTERN' {} \;
 ```
 
@@ -166,6 +171,5 @@ brew install gnu-sed
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDg2NTA1MDIsLTE5MzM0NDAwMjZdfQ
-==
+eyJoaXN0b3J5IjpbLTc0MzY1ODU4OSwtMTkzMzQ0MDAyNl19
 -->
