@@ -114,10 +114,12 @@ fs.writeFile("temp.txt", data, (err) => {
   if (err) {
     console.log(err);
   }
-  console.log("Done.");
+  else {
+    console.log("Done.");
+  }
 });
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzQyNjI1NjYsLTIyMDg4NzYxMywtMj
-A4ODI3MDg1OF19
+eyJoaXN0b3J5IjpbLTk2MDgzMzU5MywtMjIwODg3NjEzLC0yMD
+g4MjcwODU4XX0=
 -->
