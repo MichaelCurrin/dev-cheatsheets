@@ -2,6 +2,7 @@
 
 See also [JSON](https://github.com/MichaelCurrin/learn-to-code/blob/master/data_formats.md#json) section of my data formats guide.
 
+
 ## Conversion
 
 From JSON-formatted string to object and then from object back to JSON-formatted string.
@@ -16,6 +17,12 @@ JSON.parse(myString);
 
 ```javascript
 JSON.stringify(myObject);
+```
+
+Prettify with indentation.
+
+```javascript
+JSON.stringify(results, null, 4)
 ```
 
 In NodeJS on the command-line:
@@ -154,3 +161,6 @@ Depending how you want certain characters to appear, you might use the `safe` fi
 ```
 {{ string | tojson | safe }}
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE4MTgzODk0MTVdfQ==
+-->
