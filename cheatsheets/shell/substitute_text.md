@@ -106,10 +106,14 @@ sed -i 's/foo/bar/g' *
 sed -i 's/foo/bar/g' foo/*
 ```
 
-On macOS you may need to provide a backup extension for -i - '.bak' or '' for no backup.
+On macOS you will get an error unless need to provide a backup extension.
 
 ```sh
+# Create .bak files.
 sed -i '.bak' 's/foo/bar/g' *
+
+# No backup.
+sed -i '' 's/foo/bar/g' *
 ```
 
 Using `find`:
@@ -131,6 +135,5 @@ Delete lines matching pattern. Or use `--delete`.
 tr -d 'foo' < file.txt
 ``
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzU4Nzg2MTAsLTE5MzM0NDAwMjZdfQ
-==
+eyJoaXN0b3J5IjpbMjEzNjk3Njc2MSwtMTkzMzQ0MDAyNl19
 -->
