@@ -131,9 +131,36 @@ From [StackOverflow](https://stackoverflow.com/questions/11392478/how-to-replace
 
 Delete lines matching pattern. Or use `--delete`.
 
-```
+```sh
 tr -d 'foo' < file.txt
-``
+```
+
+## Sed and find
+
+Use and use find and pipe the output to sed.
+
+```sh
+find . -type f  -name '*' -exec 'sed -i .bak -e "PATTERN" {} +'
+```
+
+Or revere the order.
+
+```sh
+sed -i 's/foo/bar/g' $(find . -type f)
+```
+
+## Install
+
+Install Linux sed on macOS.
+
+https://stackoverflow.com/questions/2320564/sed-i-command-for-in-place-editing-to-work-with-both-gnu-sed-and-bsd-osx/27595785#27595785
+
+```sh
+brew install gnu-sed
+
+# Add to .bashrc / .zshrc
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzNjk3Njc2MSwtMTkzMzQ0MDAyNl19
+eyJoaXN0b3J5IjpbNTA2NTE2OTEzLC0xOTMzNDQwMDI2XX0=
 -->
