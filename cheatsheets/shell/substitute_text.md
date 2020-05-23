@@ -130,8 +130,7 @@ tr -d 'foo' < file.txt
 
 ## Sed and find
 
-Use and use find and pipe the output to sed.
-
+Use `sed` and `find` together. This is useful to apply to files only since `sed` will give an error on in-place replacements against directories.
 
 
 Using `find`:
@@ -143,16 +142,17 @@ find ./ -type f -exec sed -i 's/foo/bar/g' {} \;
 
 From [StackOverflow](https://stackoverflow.com/questions/11392478/how-to-replace-a-string-in-multiple-files-in-linux-command-line)
 
+Make sure to use a star that is quoted. Also the star glob will not match hidden directories - so you don't accidentally update and break `.git`.
 
 ```sh
-find . -type f  -name '*' -exec 'sed -i .bak -e "PATTERN" {} +'
+find . -type f -name '*' -exec 'sed -i .bak -e "PATTERN" {} +'
 ```
 
 ```sh
 find . -exec sed -i '' -e 'PATTERN' {} \;
 ```
 
-Or reverse the order.
+Or reverse the order. I found this easier than the syntax above which I copied but kept getting errors on.
 
 ```sh
 sed -i 's/foo/bar/g' $(find . -type f)
