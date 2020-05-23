@@ -6,6 +6,12 @@
 const request = require('request');
 ```
 
+## Regex
+
+```javascript
+var text = 'Rain and Spain'
+text.match(/ai/gi)
+```
 
 ## Web servers
 
@@ -76,6 +82,10 @@ const fs = require('fs');
 const path = require('path');
 
 const p = path.join(__dirname, '/foo');
+
+fs.readFile(p, 'utf-8', (err, data) => {
+    console.log(data);
+});
 ```
 
 
@@ -107,5 +117,6 @@ fs.writeFile("temp.txt", data, (err) => {
 });
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyMDg4NzYxMywtMjA4ODI3MDg1OF19
+eyJoaXN0b3J5IjpbLTIwOTE2OTQwMTIsLTIyMDg4NzYxMywtMj
+A4ODI3MDg1OF19
 -->
