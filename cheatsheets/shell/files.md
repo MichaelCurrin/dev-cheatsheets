@@ -55,6 +55,11 @@ Filter.
 find . -name '*.py'
 ```
 
+```sh
+find . -type f
+```
+
+
 ### List files recursively
 
 Use `globstar` option in Bash 4.
@@ -229,5 +234,5 @@ x=$([[ -f "$FILE" ]] && 'yes' || 'no')
 [[ FILE1 -ef FILE2 ]] 	Same files
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDIxNzk2MzZdfQ==
+eyJoaXN0b3J5IjpbNTUzMjAwMzVdfQ==
 -->
