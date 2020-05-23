@@ -73,9 +73,12 @@ fs.readFile('file.txt', 'utf-8', (err, data) => {
 ```
 
 
-See `path` lib.
+See `path` lib. https://nodejs.org/api/path.html
 
-https://nodejs.org/api/path.html
+```javascript
+path.join(__dirname, '/foo');
+```
+
 
 
 ```javascript
@@ -120,6 +123,6 @@ fs.writeFile("temp.txt", data, (err) => {
 });
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk2MDgzMzU5MywtMjIwODg3NjEzLC0yMD
-g4MjcwODU4XX0=
+eyJoaXN0b3J5IjpbLTEzNzUyNjY2NzYsLTk2MDgzMzU5MywtMj
+IwODg3NjEzLC0yMDg4MjcwODU4XX0=
 -->
