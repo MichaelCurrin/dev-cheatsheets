@@ -2,6 +2,7 @@
 
 Netlify's config file is `netlify.toml`. It should be at the root of the repo. Indentation should be two spaces.
 
+
 ## Resources
 
 See Netlify's docs:
@@ -11,11 +12,13 @@ See Netlify's docs:
     - [File-based configuration](https://docs.netlify.com/configure-builds/file-based-configuration/)
     - [YAML and JSON file support](https://docs.netlify.com/configure-builds/file-based-configuration/#json-and-yaml-configuration-files)
 
-## Basic format
+
+## Basic Jekyll build
+
 
 ```toml
 [build]
-  command = "<CMD>"
+  command = "jeklly build"
   publish = "_site"
 
 [build.environment]
@@ -40,6 +43,7 @@ For a simple Jekyll project, it could be this, using the trace flag for verbose 
 jekyll build --trace
 ```
 
+
 ## Headers format
 
 ```toml
@@ -54,3 +58,6 @@ Allow one or more specific domains:
 ```toml
     Access-Control-Allow-Origin = ["www.example.com", "test.com"]
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbODYyMTIxMDMwXX0=
+-->
