@@ -26,8 +26,9 @@ Basic wildcards:
 
 - `*` - Match any character zero or more times.
 - `**` - Match any character zero or more times, including `/` unlike the others.
-- `?` - Match any character one time.
-- `[abc]` - Match any of the characters.
+- `?` - Match any single character one time.
+- `[...]` - Match any of the characters. e.g. `[abc]`, `[123]`
+- `[X-Y]` - Match a range. e.g. `[0-9a-z]`, `[\w]`
 
 Example:
 - `*/*` - will match `foo/bar`.
@@ -40,18 +41,11 @@ Example:
 	for P in *; do echo $P; done
 	``` 
 
-Some standard wildcards that are often used include:
-
-    the asterisk (*) character for zero or more characters
-    the question mark (?) character for any single character
-    the [123] specifier, which indicates any of the characters 1, 2, or 3
-    the [0-9] specifier, which indicates any number between 0 and 9 (or [a-z] for any letters between a and z).
-
 
 ## Advanced
 
 
-Wildcard expansion can be done. This can be previewedd with `echo` but might be used with `ls`.
+Wildcard expansion can be done. This can be previewed with `echo` but might be used with `ls`.
 
 ```sh
 echo foo/{bar,baz}
@@ -62,9 +56,9 @@ echo foo/{bar,baz}
 
 You can also use named ranges, such as:
 
-    [::alpha::] for any letter
-    [::alnum::] for any letter or number
-    [::lower::] for any lowercase character
+- `[::alpha::]` for any letter.
+- `[::alnum::]` for any letter or number.
+- `[::lower::]` for any lowercase character.
 
 e.g.  
 
@@ -72,5 +66,5 @@ Match `a1` but not `aa` with:
 
 `[[:alpha:][:digit:]]`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk4MjM5MTY0XX0=
+eyJoaXN0b3J5IjpbLTE1MjczOTgwNTZdfQ==
 -->
