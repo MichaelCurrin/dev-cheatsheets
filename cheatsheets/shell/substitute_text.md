@@ -128,6 +128,14 @@ Delete lines matching pattern. Or use `--delete`.
 tr -d 'foo' < file.txt
 ```
 
+## Replace and output a new file
+
+
+```sh
+sed -e s/spam/eggs/ foo.html > bar.html
+```
+
+
 ## Sed and find
 
 Use `sed` and `find` together. This is useful to apply to files only since `sed` will give an error on in-place replacements against directories.
