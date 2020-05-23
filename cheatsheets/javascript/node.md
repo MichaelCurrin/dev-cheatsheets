@@ -11,6 +11,7 @@ const request = require('request');
 ```javascript
 var text = 'Rain and Spain'
 text.match(/ai/gi)
+// => [ 'ai', 'ai' ]
 ```
 
 ## Web servers
@@ -117,6 +118,6 @@ fs.writeFile("temp.txt", data, (err) => {
 });
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwOTE2OTQwMTIsLTIyMDg4NzYxMywtMj
+eyJoaXN0b3J5IjpbLTE5NTYzODYwNTMsLTIyMDg4NzYxMywtMj
 A4ODI3MDg1OF19
 -->
