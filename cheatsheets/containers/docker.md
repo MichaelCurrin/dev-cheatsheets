@@ -85,7 +85,7 @@ docker exec -it CONTAINER bash
 Ad hoc entry point to start an container even if normally exists immediately and then start interactive terminal.
 
 ```sh
-docker run -it IMAGE  --entrypoint bash 
+docker run  --entrypoint bash -it IMAGE 
 ```
 
 You'll start a new container each time though.
@@ -179,6 +179,6 @@ Commands:
 Run 'docker COMMAND --help' for more information on a command.
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyMDY4NzM2NSwtODEyNjk2OTY4LC02ND
+eyJoaXN0b3J5IjpbLTI0NDAyNDgyMSwtODEyNjk2OTY4LC02ND
 QzNTEwNjgsNTgxNTYxMzg0XX0=
 -->
