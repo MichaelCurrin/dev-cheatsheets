@@ -65,22 +65,25 @@ From [tutorial](https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace
 
 ## Replace multiple words in a file
 
-Use multiple replacements in one command, separated with `;` or newlines.
+Use multiple replacements in one command
+
+### Separate with semicolon
 
 ```sh
 sed -i 's/foo/bar/g; s/fizz/buzz/g' file.txt
 ```
 
-Or
+### Separate with newline
 
 ```sh
 sed -i 's/foo/bar/g
-s/fizz/buzz/g' file.txt
+s/fizz/buzz/g
+' file.txt
 ```
 
 ### Advanced
 
-For more control, you can use you can use an intermediate term. Like the arbitary `~~` below.
+For more control, you can use you can use an intermediate term. Like the arbitrary `~~` below.
 
 Here we rename `foo` to `bar` but preserve instances of `food`.
 
@@ -92,12 +95,15 @@ sed -i 's/food/~~/g; s/foo/bar/g; s/~~/food/g' file.txt
 
 Note there may be a cleaner way to do this, such a with regex in the console or your IDE. Maybe with grep or find.
 
-## Replace word in multiple files
 
-Replace `foo` with `bar` in all files in the directory
+## Replace a word in multiple files
+
+Replace `foo` with `bar` in all files in a directory.
 
 ```sh
 sed -i 's/foo/bar/g' *
+
+sed -i 's/foo/bar/g' foo/*
 ```
 
 On macOS you may need to provide a backup extension for -i - '.bak' or '' for no backup.
@@ -125,5 +131,6 @@ Delete lines matching pattern. Or use `--delete`.
 tr -d 'foo' < file.txt
 ``
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MzM0NDAwMjZdfQ==
+eyJoaXN0b3J5IjpbLTE1MzU4Nzg2MTAsLTE5MzM0NDAwMjZdfQ
+==
 -->
