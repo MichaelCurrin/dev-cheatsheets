@@ -18,7 +18,7 @@ See Netlify's docs:
 
 ```toml
 [build]
-  command = "jeklly build"
+  command = "jekyll build"
   publish = "_site"
 
 [build.environment]
@@ -59,5 +59,5 @@ Allow one or more specific domains:
     Access-Control-Allow-Origin = ["www.example.com", "test.com"]
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODYyMTIxMDMwXX0=
+eyJoaXN0b3J5IjpbMTM1NzYwNjE1MF19
 -->
