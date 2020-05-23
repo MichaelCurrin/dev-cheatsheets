@@ -49,6 +49,46 @@ find .
 find DIR_NAME
 ```
 
+Filter.
+
+```
+find . -name '*.py'
+```
+
+### List files recursively
+
+Use `globstar` option in Bash 4.
+
+```
+globstar
+    If set, the pattern ** used in a pathname expansion context will
+    match all files and zero or more directories and subdirectories.
+    If the pattern is followed by a /, only directories and
+    subdirectories match.
+```    
+
+### Set option
+```sh
+shopt -s globstar
+```
+
+In ZSH, set this:
+
+```sh
+setopt extended_glob
+```
+
+### Use it
+
+
+Use it.
+
+```sh
+ls **/*.py
+ls -1 **/*.(sh|py)
+```
+
+
 ## Find executable
 
 Show location of an executable that is in a `bin` directory.
@@ -189,5 +229,5 @@ x=$([[ -f "$FILE" ]] && 'yes' || 'no')
 [[ FILE1 -ef FILE2 ]] 	Same files
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ1ODkyOTE0XX0=
+eyJoaXN0b3J5IjpbLTE5NDIxNzk2MzZdfQ==
 -->
