@@ -17,6 +17,8 @@ https://regex101.com/
 
 Note use of `$1` to keep the original text. Brackets seem to be needed for this to work.
 
+Applied VS Code regex replace.
+
 ### Add character
 
 Add header symbol before a number.
@@ -26,7 +28,7 @@ Add header symbol before a number.
 
 ### Add break tag
 
-Using VS Code regex replace.
+Insert `br` tag at the end of lines which are not headings or empty lines.
 
 - Find: `(^[^#].+)`
 - Replace with: `$1<br>`
@@ -36,5 +38,5 @@ Using VS Code regex replace.
 https://www.w3schools.com/jsref/jsref_regexp_m.asp
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzNzA0NjAxOV19
+eyJoaXN0b3J5IjpbLTc5MTMwMjc4Nl19
 -->
