@@ -32,7 +32,7 @@ Note that all values are always added in a single permalink pattern - they just 
 
 [source](https://jekyllrb.com/docs/permalinks/#built-in-formats)
 
-Jekyll uses `permalink: pretty` by default. .
+Choose one of the builtin values.
 
 | Shortcut | Result |
 |--|--|
@@ -83,5 +83,5 @@ Variable | Value
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyMjkxOTM2OF19
+eyJoaXN0b3J5IjpbLTE0MDI0MjE5NTBdfQ==
 -->
