@@ -28,9 +28,11 @@ Jekyll allows you to redefine the entire default pattern in the `_config.yml` Th
 
 ### Built-in
 
+Note that all values are always added in a single permalink pattern - they just might not be set. e.g. date and categories are only on posts (note categories can be nested in output path).
+
 [source](https://jekyllrb.com/docs/permalinks/#built-in-formats)
 
-Jekyll uses `permalink: pretty` by default`.
+Jekyll uses `permalink: pretty` by default. .
 
 | Shortcut | Result |
 |--|--|
@@ -43,18 +45,24 @@ Jekyll uses `permalink: pretty` by default`.
 
 ### Custom
 
-Add extension.
+Make sure not to remove categories and year/month/day otherwise your posts will not work. Unless you don't have posts.
 
-```
-permalink: /:categories/:year/:month/:day/:title:output_ext
+### Remove extension
+
+This will remove the default `.html` from pages.
+```yaml
+permalink: /:categories/:year/:month/:day/:title
 ```
 
-Add trailing forward-slash. This will change `about.html` to `about/index.html`. 
+### Add trailing forward-slash
 
+This will change output files `about.html` to `about/index.html`. 
+
+```yaml
+permalink: /:categories/:year/:month/:day/:title/
 ```
-permalink: /:categories/:title/
-```
-When you link to a page, you'll want to make sure you link to the short form and not the explicot `index.html` version.
+
+When you link to a page in your content, you'll want to make sure you link to the short form and not the explict `index.html` version.
 
 ## Collection-level
 
@@ -75,5 +83,5 @@ Variable | Value
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MTMxNTgyN119
+eyJoaXN0b3J5IjpbMjAyMjkxOTM2OF19
 -->
