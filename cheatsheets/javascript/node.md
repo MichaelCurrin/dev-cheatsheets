@@ -136,7 +136,21 @@ fs.writeFile("temp.txt", data, (err) => {
   }
 });
 ```
+
+Or. Note `SomeStream` is not defined here.
+
+```javascript
+const { createWriteStream } = require('fs');
+
+const myStream = new SomeStream();
+
+const writeStream = createWriteStream('file.txt');
+myStream.pipe(writeStream);
+
+myStream.write('line');
+myStream.end();
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NzUyMjcyNzQsLTk2MDgzMzU5MywtMj
-IwODg3NjEzLC0yMDg4MjcwODU4XX0=
+eyJoaXN0b3J5IjpbLTY2Nzg0Mzc5NCwtOTYwODMzNTkzLC0yMj
+A4ODc2MTMsLTIwODgyNzA4NThdfQ==
 -->
