@@ -11,7 +11,7 @@ How to setup a _Gemfile_, as a file managing dependencies.
 
 If you using `Bundler`, you then run this at the top level of your project. This will read from the _Gemfile_.
 
-My gist: https://gist.github.com/MichaelCurrin/5c8c45a86bcf53d7b49a7763c02943b1
+My [gist](https://gist.github.com/MichaelCurrin/5c8c45a86bcf53d7b49a7763c02943b1) of install instructions.
 
 ```sh
 bundle config --local path vendor/bundle
@@ -178,6 +178,6 @@ remote_theme: benbalter/retlab
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyOTU5NTQwMSwtMTMyMzY1MTk2Myw2OT
-I1Mjk4Niw4MDU3NTMzMDRdfQ==
+eyJoaXN0b3J5IjpbLTEwMjE4Mjc1OTEsMTEyOTU5NTQwMSwtMT
+MyMzY1MTk2Myw2OTI1Mjk4Niw4MDU3NTMzMDRdfQ==
 -->
