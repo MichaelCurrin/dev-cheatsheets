@@ -15,6 +15,7 @@ If you using `Bundler`, you then run this at the top level of your project. This
 ```sh
 bundle config --local path vendor/bundle
 bundle install
+```
 
 Old style for reference - to be deprecated.
 
@@ -176,6 +177,6 @@ remote_theme: benbalter/retlab
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDgyNjM5NzAsLTEzMjM2NTE5NjMsNjkyNT
-I5ODYsODA1NzUzMzA0XX0=
+eyJoaXN0b3J5IjpbLTE1MzU0MDQwMjQsLTEzMjM2NTE5NjMsNj
+kyNTI5ODYsODA1NzUzMzA0XX0=
 -->
