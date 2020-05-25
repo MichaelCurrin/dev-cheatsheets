@@ -88,7 +88,14 @@ Then Bundler will use that.
 bundle install
 ```
 
+
+## Install from Github
+
+
+```ruby
+gem 'bar', git: 'https://github.com/foo/bar'
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MjYwNTE5NzgsLTExMDgwNTM2ODZdfQ
-==
+eyJoaXN0b3J5IjpbMjc5NDY5MDg4LC0xOTI2MDUxOTc4LC0xMT
+A4MDUzNjg2XX0=
 -->
