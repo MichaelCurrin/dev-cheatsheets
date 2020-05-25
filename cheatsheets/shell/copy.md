@@ -1,25 +1,31 @@
 # Copy cheatsheet
 
+## Directory
+
+```sh
+cp -R SOURCE DEST
+```
+
 ## Interactive
 
 ```sh
-cp -i
+cp -i SOURCE DEST
 ```
 
 ## Force
 
 ```sh
-cp -f
+cp -f SOURCE DEST
 ```
 
 Note that will not work if you have interactive aliased. So you'll to reference the non-aliased form. Or do this.
 
 ```sh
-yes | c
+yes | cp SOURCE DEST
 ```
 
 https://stackoverflow.com/questions/8488253/how-to-force-cp-to-overwrite-without-confirmation
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA5ODE4MzU2Nl19
+eyJoaXN0b3J5IjpbMTQ2ODkwNjM5Ml19
 -->
