@@ -16,7 +16,9 @@ in:promotions is:read -is:starred
 ```
 in:inbox is:read -is:starred before:2020-01-01
 ```
-`
+```
+-label:starred -label:To-Read -in:chats
+```
 
 
 ## Searches
@@ -77,5 +79,5 @@ However, the search bar is always realtime when searched.
 
 Though you have to redo as research to stay current, for example starring a message.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3Nzc4NDk1Ml19
+eyJoaXN0b3J5IjpbLTcxNDQ1NDkxNl19
 -->
