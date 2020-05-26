@@ -11,10 +11,10 @@ Clearing inbox is a good way to feel lighter.
 e.g.
 
 ```
-in:promotions is:read -starred
+in:promotions is:read -is:starred
 ```
 ```
-in:inbox  is:read -starred 
+in:inbox is:read -is:starred before:2020-01-01
 ```
 
 
@@ -22,11 +22,13 @@ in:inbox  is:read -starred
 
 ```
 is:read
+
+is:unread
 ```
 
 ```
-starred
--starred
+is:starred
+-is:starred
 ```
 
 Not archived. Ignores categories.
@@ -74,5 +76,5 @@ However, the search bar is always realtime when searched.
 
 Though you have to redo as research to stay current, for example starring a message.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjc0NjU0NjddfQ==
+eyJoaXN0b3J5IjpbMTI1Mzg4NzMwNV19
 -->
