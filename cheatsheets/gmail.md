@@ -16,6 +16,7 @@ in:promotions is:read -is:starred
 ```
 in:inbox is:read -is:starred before:2020-01-01
 ```
+`
 
 
 ## Searches
@@ -31,7 +32,7 @@ is:starred
 -is:starred
 ```
 
-Not archived. Ignores categories.
+Not archived. Ignores categories. This includes starred messages even if adding not starred, if your preferences are to include starred in inbox.
 
 ```
 in:inbox
@@ -76,5 +77,5 @@ However, the search bar is always realtime when searched.
 
 Though you have to redo as research to stay current, for example starring a message.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1Mzg4NzMwNV19
+eyJoaXN0b3J5IjpbMTY3Nzc4NDk1Ml19
 -->
