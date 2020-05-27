@@ -1,5 +1,11 @@
 # Sitemap cheatsheet
 
+## Basic
+
+What is a sitemap and do you need one?
+
+[Learn about sitemaps](https://support.google.com/webmasters/answer/156184?hl=en)
+
 
 ## Sitemap formats
 
@@ -11,7 +17,35 @@ https://support.google.com/webmasters/answer/183668?hl=en
 - Google sites
 
 
-See General sitemap guidelines secti
+## How to
+
+### Build
+
+https://support.google.com/webmasters/answer/183668?hl=en
+
+Build and submit a sitemap:
+
+1. Decide which pages on your site should be crawled by Google, and determine the canonical version of each page. 
+1. Decide which sitemap format you want to use. You can create your sitemap manually or choose from a number of third-party tools to generate your sitemap for you.
+1. Make your sitemap available to Google by adding it to your robots.txt file or directly submitting it to Search Console.
+
+See sitemap generator tools
+
+- https://www.xml-sitemaps.com/
+
+
+### General guidelines
+
+See *General sitemap guidelines* section.
+
+https://support.google.com/webmasters/answer/183668?hl=en
+
+
+
+### Languages
+
+See [Tell Google about localized versions of your page](https://support.google.com/webmasters/answer/189077#sitemap)
+
 
 ## Sitemaps protocol
 
@@ -27,80 +61,6 @@ Priority is dropped from the examples.
 
 > Google does not currently consume the `<priority>` attribute in sitemaps. [source](https://support.google.com/webmasters/answer/183668?hl=en)
 
-### Samples
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <url>
-      <loc>http://www.example.com/</loc>
-
-      <lastmod>2005-01-01</lastmod>
-
-      <changefreq>monthly</changefreq>
-
-      <priority>0.8</priority>
-   </url>
-</urlset> 
-```
-
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-   <url>
-
-      <loc>http://www.example.com/</loc>
-
-      <lastmod>2005-01-01</lastmod>
-
-      <changefreq>monthly</changefreq>
-
-      <priority>0.8</priority>
-
-   </url>
-
-   <url>
-
-      <loc>http://www.example.com/catalog?item=12&amp;desc=vacation_hawaii</loc>
-
-      <changefreq>weekly</changefreq>
-
-   </url>
-
-   <url>
-
-      <loc>http://www.example.com/catalog?item=73&amp;desc=vacation_new_zealand</loc>
-
-      <lastmod>2004-12-23</lastmod>
-
-      <changefreq>weekly</changefreq>
-
-   </url>
-
-   <url>
-
-      <loc>http://www.example.com/catalog?item=74&amp;desc=vacation_newfoundland</loc>
-
-      <lastmod>2004-12-23T18:00:15+00:00</lastmod>
-
-      <priority>0.3</priority>
-
-   </url>
-
-   <url>
-
-      <loc>http://www.example.com/catalog?item=83&amp;desc=vacation_usa</loc>
-
-      <lastmod>2004-11-23</lastmod>
-
-   </url>
-
-</urlset>
-```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjYwNjM1ODldfQ==
+eyJoaXN0b3J5IjpbLTE4NjgzMTc3NzJdfQ==
 -->
