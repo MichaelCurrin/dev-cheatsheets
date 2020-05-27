@@ -312,7 +312,26 @@ Max for 6-digit hex code.
 >> 0xffffff
 16777215
 ```
+
+## Textwrap
+
+### Dedent
+
+Remove common whitespace
+```python
+text = textwrap.dedent("""\
+    a
+      b
+    c
+""")
+print(text)
+```
+```
+a
+  b
+c
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMzEzNzQ0MDUsMzU0MjU0ODYxLDQxNz
+eyJoaXN0b3J5IjpbLTE2OTE4Mjc5NTQsMzU0MjU0ODYxLDQxNz
 c0NTg1MywtMTYwNTE3MTk4NywtMTI3MzU5NTc0NF19
 -->
