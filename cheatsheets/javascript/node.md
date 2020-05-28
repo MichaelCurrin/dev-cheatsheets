@@ -150,7 +150,35 @@ myStream.pipe(writeStream);
 myStream.write('line');
 myStream.end();
 ```
+
+## Modern JS
+
+### Destructure key-value pairs
+
+Setup associative array.
+
+```javascript
+const myHash = {
+  foo: 1,
+  bar: 2,
+  baz: 3,
+  fizzer: 4
+}
+```
+Destructure
+```javascript
+const {foo, bar, baz, fuzz} = myHash;
+```
+```javascript
+> foo
+1
+> fuzz
+undefined
+```
+And `fizzer` was not used.
+
+### Destructure array
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2Nzg0Mzc5NCwtOTYwODMzNTkzLC0yMj
-A4ODc2MTMsLTIwODgyNzA4NThdfQ==
+eyJoaXN0b3J5IjpbMTYwNjcwNjY0MSwtNjY3ODQzNzk0LC05Nj
+A4MzM1OTMsLTIyMDg4NzYxMywtMjA4ODI3MDg1OF19
 -->
