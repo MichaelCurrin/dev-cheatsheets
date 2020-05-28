@@ -10,6 +10,8 @@ Approaches to ignore within a script, where `[RULE, ]` below could be empty, or 
 
 Minimal setting would be to use double quotes and semi-colons, or flip it to single quotes and no semi-colons.
 
+You can also use an IDE formatter or CLI (`eslint --fix`) to change files based on your config or default settings.
+
 For more detail than below, you can set level as 0, 1 or 2 - [Configuring rules](https://eslint.org/docs/user-guide/configuring.html#configuring-rules).
 
 
@@ -59,13 +61,24 @@ https://eslint.org/docs/2.0.0/user-guide/configuring#configuration-file-formats
 5.  `.eslintrc` - DEPRECATED, can be JSON or YAML
 6.  `package.json` - `eslintConfig` field.
 
+
 ## Ignore file
 
 > When you pass directories to ESLint, files and directories are silently ignored. If you pass a specific file to ESLint, then you will see a warning indicating that the file was skipped. For example, suppose you have an `.eslintignore` file that looks like this:
 >
+
+Example `.eslintignore` file:
+
 ```
-.eslintignore
+foo.js
 ```
+
+Run
+
+```sh
+eslint foo.js
+```
+And the output message will tell your `foo.js` was ignored and that you can use the `--no-ignore` flag.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5NTA2NjY0N119
+eyJoaXN0b3J5IjpbLTY0NTc3NDkwNV19
 -->
