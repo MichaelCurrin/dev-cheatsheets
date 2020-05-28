@@ -177,8 +177,42 @@ undefined
 ```
 And `fizzer` was not used.
 
-### Destructure array
+### Destructure an array
+
+```javascript
+const myArray = [1, 2, 3, 4]
+```
+
+Unpack with spread operator and variable.
+
+```javascript
+> [f, b, ...c] = myArray
+[ 1, 2, 3, 4 ]
+> c
+[ 3, 4 ]
+```
+Unpack with spread operator and underscore (for REPL).
+
+```javascript
+> [f, b, ..._] = myArray
+[ 1, 2, 3, 4 ]
+> _
+[ 3, 4 ]
+```
+
+Unpack with underscore for REPL use - gives warning.
+```javascript
+> [f, b, _] = myArray
+Expression assignment to _ now disabled.
+[ 1, 2, 3, 4 ]
+> f
+1
+> b
+2
+> _
+3
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwNjcwNjY0MSwtNjY3ODQzNzk0LC05Nj
-A4MzM1OTMsLTIyMDg4NzYxMywtMjA4ODI3MDg1OF19
+eyJoaXN0b3J5IjpbMjcxMTM5ODM5LC02Njc4NDM3OTQsLTk2MD
+gzMzU5MywtMjIwODg3NjEzLC0yMDg4MjcwODU4XX0=
 -->
