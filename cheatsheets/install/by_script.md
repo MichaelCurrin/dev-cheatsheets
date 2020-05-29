@@ -11,6 +11,14 @@ Examples
 curl -o- -L https://yarnpkg.com/install.sh | bash
 ```
 
+```
+       -s        If  the  -s  option is present, or if no arguments remain after option processing, then commands are read from the standard input.  This option
+                 allows the positional parameters to be set when invoking an interactive shell.
+```
+```sh
+curl ... | bash -s
+```
+
 [Homebrew](https://brew.sh/)
 
 ```sh
