@@ -32,9 +32,11 @@ User-agent: *
 Sitemap: {{ site.url }}/sitemap.xml
 ```
 
+You might also need `sitemap: false`.
+
 ## Sitemap
 
 Using Jekyll Sitemap plugin, the `sitemap.xml` file is created on prod and dev builds, but the `url` in the config will only be used on a prod build. Otherwise it will just be localhost in the sitemap.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzIyNTUxMjM3XX0=
+eyJoaXN0b3J5IjpbLTMwMzY2MTIzMF19
 -->
