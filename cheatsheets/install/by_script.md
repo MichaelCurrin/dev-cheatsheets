@@ -3,7 +3,10 @@
 
 Examples
 
+
 ## Bash
+
+### Yarn
 
 [Yarn](https://classic.yarnpkg.com/en/docs/install#mac-stable)
 
@@ -11,6 +14,7 @@ Examples
 curl -o- -L https://yarnpkg.com/install.sh | bash
 ```
 
+I've also seen this.
 ```
        -s        If  the  -s  option is present, or if no arguments remain after option processing, then commands are read from the standard input.  This option
                  allows the positional parameters to be set when invoking an interactive shell.
@@ -18,6 +22,10 @@ curl -o- -L https://yarnpkg.com/install.sh | bash
 ```sh
 curl ... | bash -s
 ```
+
+
+
+### Homebrew
 
 [Homebrew](https://brew.sh/)
 
@@ -28,11 +36,13 @@ curl ... | bash -s
 
 ## Python
 
-[Poetry](https://github.com/python-poetry/poetry)
+### Poetry
+
+From [Poetry](https://github.com/python-poetry/poetry) repo
 
 ```sh
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4MDU1MTQ5NV19
+eyJoaXN0b3J5IjpbMTUzMzI0NTIzMiwtNjgwNTUxNDk1XX0=
 -->
