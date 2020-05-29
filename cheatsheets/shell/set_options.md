@@ -56,11 +56,12 @@ echo 'Hello!'
 
 ## Verbose
 
-Print a trace of simple commands
+Print a trace of commands before running.
 
 ```sh
 set -x
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQzNDk3Mjg3XX0=
+eyJoaXN0b3J5IjpbMTEyNTcwNTg5N119
 -->
