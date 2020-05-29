@@ -37,6 +37,24 @@ You might also need `sitemap: false`.
 ## Sitemap
 
 Using Jekyll Sitemap plugin, the `sitemap.xml` file is created on prod and dev builds, but the `url` in the config will only be used on a prod build. Otherwise it will just be localhost in the sitemap.
+
+
+## Layouts
+
+Set default layout for all pages. Is this needed - isn't default the default? See artists-portfolio repo.
+
+```
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      text_width: true
+  - scope:
+      path: "index.html"
+    values:
+      text_width: false
+ ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwMzY2MTIzMF19
+eyJoaXN0b3J5IjpbMTU1MjU5OTg1MF19
 -->
