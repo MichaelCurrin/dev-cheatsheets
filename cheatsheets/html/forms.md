@@ -41,10 +41,11 @@ See also:
 
 - [Searchbar](https://www.w3schools.com/howto/howto_css_searchbar.asp) tutorial.
 
+
 ## Text area
 
 <label for="my-text">Label</label>
-<textarea id="my-text" rows="4" cols="50">Textarea input</textarea>
+<textarea id="my-text" rows="4" cols="50">Text area input</textarea>
 
 <textarea maxlength="50">
 Text area with max length
