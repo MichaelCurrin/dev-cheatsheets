@@ -1,9 +1,4 @@
-# JavaScript
-
-See also:
-
-- [JavaScript](https://github.com/MichaelCurrin/learn-to-code/blob/master/en/topics/sScripting_%20languages/JavaScript/README.md) guide on my [MichaelCurrin/learn-to-code](https://github.com/MichaelCurrin/learn-to-code/) repo.
-- [NPM cheatsheet](package_managers/npm.md) in this repo.
+# JavaScript general
 
 
 ## Text
@@ -68,7 +63,7 @@ Get element.
 Slice.
 
 ```javascript
-> myArray.slice(start, end) 
+> myArray.slice(start, end)
 ```
 
 ### Update
@@ -218,7 +213,7 @@ Min inclusive and max exclusive.
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; 
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 ```
 
@@ -232,7 +227,7 @@ Inclusive for both.
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min; 
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 ```
 
