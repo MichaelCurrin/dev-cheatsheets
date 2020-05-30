@@ -1,6 +1,6 @@
 # Forms
 
-Input elements for forms.
+Input elements for forms. 
 
 Note that these do not render on Github, but could be viewed as a static site or an IDE's Markdown preview.
 
@@ -87,6 +87,9 @@ This can be overridden. In the example below, the `search` class is targeted.
 - Size attribute - Specifies the width of an `<input>` element, in characters. Default value is 20.
 - Max length attribute - How many characters that can be entered. This could exceed `size` - all the text just won't be visible at once.
 
+See also:
+
+- [Searchbar](https://www.w3schools.com/howto/howto_css_searchbar.asp) tutorial.
 
 ## Text area
 
@@ -146,3 +149,6 @@ Note how `for` must match `id`. The `name` is optional.
 <input type="checkbox" name="vehicle3" value="Boat" checked>
 <label for="vehicle3"> I have a boat</label><br><br>
 <input type="submit" value="Submit">
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTM0MjIzMTkyM119
+-->
