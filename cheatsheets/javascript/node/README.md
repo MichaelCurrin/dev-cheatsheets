@@ -5,14 +5,14 @@
 
 <!-- TODO: check these -->
 
-```node
+```javascript
 const request = require('request');
 
 const foo = require('./foo');
 const bar = require('./foo').bar;
 ```
 
-```node
+```javascript
 import { foo } from 'foo';
 ```
 
