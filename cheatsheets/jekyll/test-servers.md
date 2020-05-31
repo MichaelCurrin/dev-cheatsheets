@@ -1,6 +1,6 @@
 # Test servers
 
-The Jekyll server has some enhancements so if you want to test your built site close to production, run these locally or on a staging server.
+The Jekyll server has some enhancements which are not like a production server. So to replicate a production environment, run the Jekyll `build` command and then serve that directory using one of the approaches below. Either locally or on a staging server.
 
 
 ## Nginx
@@ -52,7 +52,3 @@ python3 -m http.server 80
 Now open the browser at:
 
 - [http:localhost/](http:localhost/)
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzEzMjYyNV19
--->
