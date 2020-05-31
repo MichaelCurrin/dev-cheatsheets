@@ -72,7 +72,7 @@ for P in **/*_*; do
 done
 ```
 
-That will give an error on directory paths which have an underscore in multiple levels. So you have to run the command a second time to catch those.
+That will give an error on directory paths which have an underscore in multiple levels. So you have to run the command a second time to catch those. If you have two directory levels and a file inside all with underscores, you'll have to run the command 3 times.
 
 Use `-n|--dry-run` flag to preview. The `-v|--verbose` flag is implied with that.
 
