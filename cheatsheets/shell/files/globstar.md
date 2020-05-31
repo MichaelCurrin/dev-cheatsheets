@@ -64,7 +64,7 @@ In scripting, check with `shopt -q globstar`. Copied solution below - untested.
 
 ```sh
 if shopt -q globstar; then
-    ...
+  ...
 if
 ```
 
