@@ -1,5 +1,33 @@
 # Globstar cheatsheet
 
+## Standard star
+
+
+The standard star gives files and directory at the current level.
+
+```sh
+for f in *; do
+    echo $f
+done
+```
+
+Using `ls`, you can see files in each top-level directory.
+
+```sh
+ls *
+```
+
+You use this go show output recursively.
+
+```sh
+ls -R
+```
+
+But this is not recommended for rename, deleting, etc. And you should not be parsing the output of `ls`.
+
+
+## What is globstar
+
 To find files recursively, use the globstar symbol - `**`. This must be enabled.
 
 From Bash 4 docs:
@@ -11,6 +39,7 @@ globstar
     If the pattern is followed by a /, only directories and
     subdirectories match.
 ```
+
 
 ## Set option
 
@@ -31,10 +60,8 @@ setopt extended_glob
 
 ## Example use
 
-On ZSH at least, the option seems enough to turn single star into recursive.
-
 ```sh
-ls *
+ls **
 ```
 
 ```sh
