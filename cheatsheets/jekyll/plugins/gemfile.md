@@ -1,13 +1,8 @@
-# Jekyll plugins
-
-Note that Jekyll plugins are just Ruby gems setup to work in a Jekyll project.
-
-
-## Gemfile
+# Gemfile
 
 How to setup a _Gemfile_, as a file managing dependencies.
 
-### Install gems
+## Install gems
 
 If you using `Bundler`, you then run this at the top level of your project. This will read from the _Gemfile_.
 
@@ -27,7 +22,7 @@ bundle install
 ```
 
 
-### Samples
+## Samples
 
 Sample contents for a _Gemfile_.
 
@@ -91,7 +86,7 @@ Some additional plugins to try:
 
 Note that the _github-pages_ plugins includes the metadata one plus a lot of others, so you only need one of the above lines if you want to fetch Github metadata in your build.
 
-### Resources
+## Resources
 
 - Bundler
     - [Gemfile](https://bundler.io/v1.5/gemfile.html).
@@ -112,72 +107,3 @@ Why the `jekyll_plugins` group in the samples above? The docs say:
 > Jekyll gives this particular group of gems in your Gemfile a different treatment. Any gem included in this group is loaded before Jekyll starts processing the rest of your source directory.
 
 A gem included here will be activated even if its not explicitly listed under the plugins: key in your site’s config file.
-
-## Plugins
-
-### Local
-
-Put plugins as `.rb` files in your `_plugins` directory.
-
-Guides:
-- [Your first plugin](https://jekyllrb.com/docs/plugins/your-first-plugin/)
-- [Generators](https://jekyllrb.com/docs/plugins/generators/)
-
-### External
-
-If you are building on Github Pages, then in addition to a _Gemfile_ you must add plugins to your `_config.yml` file as such:
-
-```yml
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-```
-
-Additional:
-
-```yml
-  - github-pages
-  - jekyll-github-metadata
-```
-
-### Submodule
-
-Add.
-
-```sh
-$ git submodule add git://github.com/foo/bar.git _plugins/foo
-```
-
-Update.
-
-```sh
-$ cd _plugins/bar
-$ git pull origin master
-```
-
-## Remote themes
-
-For themes not supported by Github Pages plugin, you can set a remote theme using a plugin.
-
-- [benbalter/jekyll-remote-theme](https://github.com/benbalter/jekyll-remote-theme)
-
-Add to `Gemfile`:
-
-```ruby
-gem "jekyll-remote-theme"
-```
-
-Add to `_config.yml`:
-
-```yml
-plugins:
-  - jekyll-remote-theme
-
-remote_theme: benbalter/retlab
-```
-
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMjE4Mjc1OTEsMTEyOTU5NTQwMSwtMT
-MyMzY1MTk2Myw2OTI1Mjk4Niw4MDU3NTMzMDRdfQ==
--->
