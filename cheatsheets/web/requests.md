@@ -45,7 +45,7 @@ import requests
 
 
 r = requests.post(
-    'https://httpbin.org/post', 
+    'https://httpbin.org/post',
     data={"ts":time.time()}
 )
 print(r.status_code)
@@ -96,7 +96,7 @@ public class RequestBinTutorial {
     public static void main(String[] args) {
         HttpClient client = new HttpClient();
         GetMethod method = new GetMethod("https://httpbin.org/post");
-        
+
         try {
             int statusCode = client.executeMethod(method);
             byte[] responseBody = method.getResponseBody();
@@ -110,6 +110,3 @@ public class RequestBinTutorial {
     }
 }
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNjUwMzAxODk4XX0=
--->
