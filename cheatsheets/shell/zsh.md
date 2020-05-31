@@ -1,5 +1,8 @@
 # ZSH cheatsheet
 
+See ZSH [options](https://zsh.sourceforge.net/Doc/Release/Options.html).
+
+
 ```sh
 DIRNAME
 
@@ -7,12 +10,9 @@ DIRNAME
 cd DIRNAME
 ```
 
-```
+```sh
 ..
 
 # Same as:
 cd ..
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4MDYzOTU1XX0=
--->

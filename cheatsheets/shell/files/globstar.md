@@ -47,11 +47,38 @@ Do this once off or in your shell config file.
 
 ### Bash
 
+Check if it is enabled.
+
+```sh
+shopt globstar
+```
+
+Enable.
+
 ```sh
 shopt -s globstar
 ```
 
+In scripting, check with `shopt -q globstar`. Copied solution below - untested.
+
+
+```sh
+if shopt -q globstar; then
+    ...
+if
+```
+
 ### ZSH
+
+
+Globstar is enabled already - recommended to use this. Note `**` is not sufficient.
+
+```sh
+**/*
+```
+
+
+One piece of advice said to do this, but this works with `#`, `^` and `~` according to docs.
 
 ```sh
 setopt extended_glob

@@ -68,6 +68,21 @@ Match `a1` but not `aa` with:
 `[[:alpha:][:digit:]]`
 
 
+### Match hidden characters
+
+#### Bash 4
+
+```sh
+shopt -s dotglob
+```
+
+### ZSH
+
+```sh
+setopt dotglob
+```
+
+
 ## Globstar
 
 See [globstar](globstar.md) page.
