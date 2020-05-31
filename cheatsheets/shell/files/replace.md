@@ -1,4 +1,4 @@
-# Substitute text
+# Replace
 
 Find and replace text in files.
 
@@ -27,7 +27,7 @@ $ echo 'football' | sed 's/foo/bar/g'
 ### Replace newline character
 
 ```sh
-# echo 'Hello\nworld' | sed 's/\\n/ /' 
+# echo 'Hello\nworld' | sed 's/\\n/ /'
 Hello world
 ```
 
@@ -183,7 +183,3 @@ brew install gnu-sed
 # Add to .bashrc / .zshrc
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzOTg4MDc2NiwtNzQzNjU4NTg5LC0xOT
-MzNDQwMDI2XX0=
--->
