@@ -5,7 +5,7 @@
 
 ### diff
 
-- [diff](https://ss64.com/bash/diff.html) manpage for Linux 
+- [diff](https://ss64.com/bash/diff.html) manpage for Linux
 - [Tutorial](https://www.computerhope.com/unix/udiff.htm)
 
 ```sh
@@ -24,7 +24,7 @@ vimdiff foo/*
 
 ## IDE
 
-For a richer UI comparions.
+For a richer UI comparisons.
 
 ### VS Code
 
@@ -40,6 +40,3 @@ Don't put any private or sensitive data here.
 - https://www.diffchecker.com/
 - https://text-compare.com/
 - https://www.diffnow.com - Let's you specify two files. Their example has two JS files.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4MDE5OTYxNV19
--->
