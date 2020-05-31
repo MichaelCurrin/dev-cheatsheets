@@ -65,6 +65,11 @@ e.g.
 Match `a1` but not `aa` with:
 
 `[[:alpha:][:digit:]]`
+
+## Globstar
+
+See the Set Options page.
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjczOTgwNTZdfQ==
+eyJoaXN0b3J5IjpbMjA3NDgzOTQwNSwtMTUyNzM5ODA1Nl19
 -->
