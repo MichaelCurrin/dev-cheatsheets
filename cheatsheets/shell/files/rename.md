@@ -69,9 +69,12 @@ Replace underscore with dash in files and directories - using ZSH builtin [globs
 ```sh
 for P in **/*_*; do
   echo "$P" "${P//_/-}"
-  git mv "$P" "${P//_/-}"
+  git mv --verbose "$P" "${P//_/-}"
 done
 ```
+
+Use `-n|--dry-run` flag to preview. The `-v|--verbose` flag is implied with that.
+
 
 ### Rename tool
 
