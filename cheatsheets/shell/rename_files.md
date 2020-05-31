@@ -33,10 +33,9 @@ Recursively
 find . -depth -name "*.foo" -exec sh -c 'mv "$1" "${1%.foo}.bar"' _ {} \;
 ```
 
-In Bash 4, you can use globstar to get recursive globs (`**`).
+Use [globstar](globstar.md) to get recursive globs (`**`).
 
 ```sh
-shopt -s globstar
 for file in PATH/**/*.foo; do
   mv "$file" "${file%.foo}.bar"
 done

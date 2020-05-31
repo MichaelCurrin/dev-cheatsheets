@@ -62,36 +62,7 @@ find . -type f
 
 ### List files recursively
 
-Use `globstar` option in Bash 4.
-
-```
-globstar
-    If set, the pattern ** used in a pathname expansion context will
-    match all files and zero or more directories and subdirectories.
-    If the pattern is followed by a /, only directories and
-    subdirectories match.
-```    
-
-### Set option
-```sh
-shopt -s globstar
-```
-
-In ZSH, set this:
-
-```sh
-setopt extended_glob
-```
-
-### Use it
-
-
-Use it.
-
-```sh
-ls **/*.py
-ls -1 **/*.(sh|py)
-```
+See [globstar](globstar.md) page.
 
 
 ## Find executable

@@ -1,5 +1,5 @@
 # Globbing shell cheatsheet
-> How to match paths using "glob" patterns.  
+> How to match paths using "glob" patterns.
 
 Globbing is a programming concept that involves the use of wildcards and special characters to match and filter. Glob patterns are similar to regex patterns, but simpler and limited in scope.
 
@@ -35,11 +35,11 @@ Example:
 - `*` will match all files and directories in the current directory.
 	```sh
 	echo *
-	
+
 	ls *
-	
+
 	for P in *; do echo $P; done
-	``` 
+	```
 
 
 ## Advanced
@@ -60,16 +60,13 @@ You can also use named ranges, such as:
 - `[::alnum::]` for any letter or number.
 - `[::lower::]` for any lowercase character.
 
-e.g.  
+e.g.
 
 Match `a1` but not `aa` with:
 
 `[[:alpha:][:digit:]]`
 
+
 ## Globstar
 
-See the Set Options page.
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3NDgzOTQwNSwtMTUyNzM5ODA1Nl19
--->
+See [globstar](globstar.md) page.

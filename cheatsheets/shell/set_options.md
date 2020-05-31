@@ -61,17 +61,3 @@ Print a trace of commands before running.
 ```sh
 set -x
 ```
-
-
-## Globstar
-
-You may need to enable globstar to get `**` to work in Bash or ZSH. Then you can iterate recursively.
-
-### Bash
-
-```sh
-shopt -s globstar
-```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4Mzg2MjQ0MzJdfQ==
--->
