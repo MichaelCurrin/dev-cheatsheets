@@ -18,7 +18,7 @@ Using `git mv`.
 find . -name "*-it.md" -exec bash -c 'mv "$1" "${1%-it.md}".md' - '{}' \;
 ```
 
-Using `find` and `rename`.
+Using `find` and [rename](#rename-tool)
 
 ```sh
 find . -name "*.foo" -exec rename 's/\.foo$/.bar/' '{}' \;
@@ -51,15 +51,15 @@ for f in *.foo; do mv -- "$f" "${f%.foo}.bar"
 
 ### Rename tool
 
-Rename file extension of a batch of files.
+Install the `rename` utility.
 
 ```sh
 sudo apt install rename
 ```
 
+Rename file extension of a batch of files.
+
+
 ```sh
 rename 's/.foo/.bar/' *.foo
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMjExNTA3MzVdfQ==
--->

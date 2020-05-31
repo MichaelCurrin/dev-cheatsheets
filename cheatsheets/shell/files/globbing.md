@@ -12,8 +12,9 @@ This guide is based on Bash and ZSH.
 - [Bash: globbing](http://tldp.org/LDP/abs/html/globbingref.html)
 - [Wikipedia: glob (programming)](https://en.wikipedia.org/wiki/Glob_(programming))
 - [Linux Programmer's Manual: GLOB(7)](http://man7.org/linux/man-pages/man7/glob.7.html)
+- [Globs](http://mywiki.wooledge.org/glob) Bash guide.
 
-[Source](https://github.com/begin/globbing/blob/master/README.md)
+Some links copied from [begin/globbing](https://github.com/begin/globbing/blob/master/README.md)
 
 
 ## Basics

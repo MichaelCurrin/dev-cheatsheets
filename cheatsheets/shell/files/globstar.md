@@ -1,8 +1,8 @@
 # Globstar cheatsheet
 
-You may need to enable _globstar_ to get `**` to work in Bash or ZSH. Then you can iterate recursively.
+To find files recursively, use the globstar symbol - `**`. This must be enabled.
 
-The `globstar` option in Bash 4.
+From Bash 4 docs:
 
 ```
 globstar
@@ -12,21 +12,30 @@ globstar
     subdirectories match.
 ```
 
-### Set option
+## Set option
 
-Bash:
+Do this once off or in your shell config file.
+
+### Bash
 
 ```sh
 shopt -s globstar
 ```
 
-ZSH:
+### ZSH
 
 ```sh
 setopt extended_glob
 ```
 
-### Example use
+
+## Example use
+
+On ZSH at least, the option seems enough to turn single star into recursive.
+
+```sh
+ls *
+```
 
 ```sh
 ls **/*.py
