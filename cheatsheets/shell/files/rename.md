@@ -75,6 +75,8 @@ done
 
 Use `-n|--dry-run` flag to preview. The `-v|--verbose` flag is implied with that.
 
+The above can be followed by a search in the IDE with regex pattern. Note that cases should be checked before replacing. Pattern: `\w+_\w+\.md`
+
 
 ### Rename tool
 
