@@ -1,10 +1,22 @@
 # Disk usage
 
+```
+du - estimate file space usage
+
+SYNOPSIS
+du [OPTION]... [FILE]...
+```
+
+See `man du`.
+
 
 ## Flags
 
-- `-h` - human readable.
-- `-s` - summary.
+- `-h --human-readable` - Show human readable format.
+- `--si` - Like `-h`, but use powers of 1000 not 1024.
+- `-s, --summarize` - Show just a total. Same as setting depth to zero.
+- `-d, --max-depth=N`- set number of levels.
+- `-a, --all` - write counts for all files, not just directories.
 
 
 ## Path
@@ -55,6 +67,9 @@ $ sudo du -h /*
 ```
 
 
+## Clean
 
-
+```sh
+$ rm -rf /tmp/*
+```
 
