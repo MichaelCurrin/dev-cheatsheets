@@ -1,4 +1,4 @@
-# Disk usage
+# Disk usage command
 
 ```
 du - estimate file space usage
@@ -14,9 +14,12 @@ See `man du`.
 
 - `-h --human-readable` - Show human readable format.
 - `--si` - Like `-h`, but use powers of 1000 not 1024.
-- `-s, --summarize` - Show just a total. Same as setting depth to zero.
+- `-c` - Add a summary total to the bottom of the output.
+- `-s, --summarize` - Show only a total. Same as setting depth to zero.
 - `-d, --max-depth=N`- set number of levels.
 - `-a, --all` - write counts for all files, not just directories.
+- `--time` - Add last modified time.
+- `--exclude=PATTERN` - Exclude files that match pattern. e.g. `--exclude="*.txt"`
 
 
 ## Path
