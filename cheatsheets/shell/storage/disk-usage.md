@@ -68,11 +68,3 @@ $ sudo du -h /*
 13M     /etc
 ...
 ```
-
-
-## Clean
-
-```sh
-$ rm -rf /tmp/*
-```
-
