@@ -111,6 +111,20 @@ Summarized to the most interesting fields - commenting out or deleting the less 
 }
 ```
 
+### URL notes
+
+
+Note that homepage will use whatever is in the repo's URL section, not necessarily Github Pages.
+
+e.g. 
+
+```
+homepage": "https://artists-portfolio.netlify.app/",
+```
+
+Use `has_pages` to determine if Github Pages is active (then you can figure out the URL programmatically).
+
+
 ## Multiple repos sample output
 
 ```json
