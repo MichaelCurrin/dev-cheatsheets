@@ -35,6 +35,13 @@ Or my own
 </noscript>
 ```
 
+An idea for another note which also displays when JS is disabled but the site still partially works.
+
+```
+Notice: While Javascript is not essential for this website, your interaction with the content will be limited. Please turn Javascript on for the full experience
+```
+
+
 ## Resources 
 
 - https://webdesign.tutsplus.com/tutorials/quick-tip-dont-forget-the-noscript-element--cms-25498
