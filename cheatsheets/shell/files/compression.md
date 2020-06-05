@@ -5,8 +5,8 @@
 
 Command-line tools available for Unix-like systems (Linux and macOS):
 
-- [zip and unzip](#zip-and-unzip)
-- [tar](#tar)
+- [zip utility](#zip-utility)
+- [tar utility](#tar-utility)
 - `gzip`
 - `bzip2`
 
@@ -38,9 +38,11 @@ Online
 
 ### Compress
 
-The zip command will replace any existing `.zip` file, but it will _add_ target infiles to it and keep the existing files in the zip file.
+The zip command will replace any existing `.zip` file, but it will _add_ target infiles to it and keep the existing files in the zip file. Check the flags to change how this works.
 
-```
+The target can be one or more files or directories.
+
+```sh
 zip -r ZIPPED_FILE INFILES
 ```
 
@@ -67,6 +69,12 @@ e.g.
 ```sh
 unzip foo.zip
 unzip foo.zip baz.doc
+```
+
+### Compress with encryption
+
+```sh
+zip -r -e data.zip data/
 ```
 
 
