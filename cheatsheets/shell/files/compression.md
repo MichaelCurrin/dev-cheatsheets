@@ -17,28 +17,49 @@ The last two are not covered as commands in this guide.
 - [Compress file cheatsheet](https://www.cyberciti.biz/howto/question/general/compress-file-unix-linux-cheat-sheet.php).
 - [Tar examples in Linux](https://www.tecmint.com/18-tar-command-examples-in-linux/)
 
-## zip and unzip
+## zip utility
 
 Compress and decompress - use the `zip` utility to handle `.zip` files.
 
+
+### manpage
+
+```sh
+man zip
+```
+
+> The program is useful for packaging a set of files for distribution; for archiving files; and for saving disk space by temporarily compressing unused files or directories.
+
+Online
+
+- https://linux.die.net/man/1/zip
+- http://www.linuxguide.it/command_line/linux-manpage/do.php?file=zip
+
+
 ### Compress
 
+The zip command will replace any existing `.zip` file, but it will _add_ target infiles to it and keep the existing files in the zip file.
+
 ```
-zip ZIPPED_OUTPUT INPUT
+zip -r ZIPPED_FILE INFILES
 ```
 
 e.g.
 
 ```sh
-zip foo.zip foo.doc
+zip -r foo.zip foo
+# Equivalent
+zip -r foo foo
 
-zip bar.zip *.doc
+zip -r foo.zip a.txt b.py
+
+zip -r bar.zip *.doc
 ```
 
 ### Decompress
 
 ```sh
-zip ZIPPED_INPUT [OUTPUT]
+zip ZIPPED_FILE [OUTPUT]
 ```
 
 e.g.
@@ -48,9 +69,10 @@ unzip foo.zip
 unzip foo.zip baz.doc
 ```
 
-## tar
 
-The tar utility is creating an archive - a single file which is _not_ compressed. It also handles compression, using either gzip or bzip2 algorithms. Archiving and compression are typically used together. It is recommended that if there are two or more files to compress, then use `tar` rather than `gzip` or `bzip2` utilities. 
+## tar utility
+
+The `tar` utility is creating an archive - a single file which is _not_ compressed. It also handles compression, using either gzip or bzip2 algorithms. Archiving and compression are typically used together. It is recommended that if there are two or more files to compress, then use `tar` rather than `gzip` or `bzip2` utilities. 
 
 - Archive: `.tar`
 - Compressed: `.gzip` (or `.bz2`)
@@ -111,6 +133,7 @@ This unzips a compressed archive.
 ```
 tar zxvf ZIPPED_INPUT_FILE
 ```
+
 
 ## List
 
