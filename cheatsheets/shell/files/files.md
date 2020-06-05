@@ -1,69 +1,11 @@
 # Files and paths cheatsheet
 
 
-## List files
+## Search
 
 ```sh
-ls
+$ locate FILENAME
 ```
-
-```sh
-ls *
-```
-
-Recursive.
-
-```sh
-ls -R
-```
-
-Show files with and without leading dot.
-
-```sh
-ls (.)*
-```
-
-Same as this, but this only works with this command while the pattern above is more universal.
-
-```sh
-ls -A
-```
-
-```
-     -A      List all entries except for . and ...  Always set for the super-user.
-
-     -a      Include directory entries whose names begin with a dot (.).
-```
-
-List directories, rather than searching recursively.
-
-```sh
-ls -d DIR_NAME
-```
-
-Using `find`.
-
-```sh
-find .
-
-find DIR_NAME
-```
-
-Filter.
-
-```
-find . -name '*.py'
-```
-
-```sh
-find . -type f
-```
-
-
-### List files recursively
-
-See [globstar](globstar.md) page.
-
 
 ## Find executable
 
