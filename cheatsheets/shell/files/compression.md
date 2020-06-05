@@ -68,6 +68,10 @@ e.g.
 
 ```sh
 unzip foo.zip
+# => foo/
+```
+
+```sh
 unzip foo.zip baz.doc
 ```
 
