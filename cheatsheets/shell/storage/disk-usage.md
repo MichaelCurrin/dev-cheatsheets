@@ -15,7 +15,7 @@ See `man du`.
 - `-h --human-readable` - Show human readable format.
 - `--si` - Like `-h`, but use powers of 1000 not 1024.
 - `-c` - Add a summary total to the bottom of the output.
-- `-s, --summarize` - Show only a total. Same as setting depth to zero. Using `-c` and `-s` together is not worthwhile.
+- `-s, --summarize` - Show only a total. Same as setting depth to zero. So using `-c` and `-s` together is not worthwhile.
 - `-d, --max-depth=N`- set number of levels.
 - `-a, --all` - write counts for all files, not just directories.
 - `--time` - Add last modified time.
@@ -36,24 +36,43 @@ Use a star to cover all the directories at a level.
 ## General-purpose
 
 
-### One-line total for current level
+### Summary of current directory
 
 ```sh
-df -sh
+df -hs
 ```
 
-### Breakdown of folders at a current level with summary total
+### Breakdown of folders
 
-Depth of zero.
+This lists all the folders at the current level and not deeper. And adds a summary total.
 
 ```sh
-df -shc *
+$ df -hs *
 ```
+
+### Breakdown and summary
+
+```sh
+$ df -hsc *
+```
+
+### Sort breakdown
+
+Show human readable sizes and do human readable sort.
+
+```sh
+$ du -hs * | sort -h
+```
+
+If you are trying to find the biggest directory/file that is nested, navigate a level down and then run the command again.
+
+[source](https://serverfault.com/questions/62411/how-can-i-sort-du-h-output-by-size)
+
 
 ### Specify depth
 
 ```sh
-df -h -d 1
+$ df -h -d 1
 ```
 
 
