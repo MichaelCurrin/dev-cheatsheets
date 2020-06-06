@@ -33,13 +33,14 @@ Or user directory or root.
 Use a star to cover all the directories at a level.
 
 
-## General-purpose
+## General
 
+How to check sizes at any level.
 
 ### Summary of current directory
 
 ```sh
-df -hs
+$ df -hs
 ```
 
 ### Breakdown of folders
@@ -63,6 +64,19 @@ Show human readable sizes and do human readable sort.
 ```sh
 $ du -hs * | sort -h
 ```
+
+Reverse using `tac` (opposite of `cat`).
+
+```sh
+$ du -hs * | sort -h | tac
+```
+
+If you want to limit:
+
+```sh
+$ du -hs * | sort -h | tac | head
+```
+
 
 If you are trying to find the biggest directory/file that is nested, navigate a level down and then run the command again.
 
