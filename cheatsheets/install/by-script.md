@@ -14,6 +14,12 @@ Setting up a Debian source.
 $ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 ```
 
+Or as root.
+
+```sh
+$ curl -sL https://deb.nodesource.com/setup_14.x | bash -
+```
+
 ### Yarn
 
 [Yarn](https://classic.yarnpkg.com/en/docs/install#mac-stable)
