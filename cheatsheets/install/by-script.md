@@ -6,6 +6,14 @@ Examples
 
 ## Bash
 
+### Node.js
+
+Setting up a Debian source.
+
+```sh
+$ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+```
+
 ### Yarn
 
 [Yarn](https://classic.yarnpkg.com/en/docs/install#mac-stable)
