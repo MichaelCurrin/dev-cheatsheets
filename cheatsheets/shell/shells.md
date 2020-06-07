@@ -1,28 +1,36 @@
 # Working with shells cheatsheet
 
+
 ## Start subshell
 
 In a Bash shell, you can invoke another Bash *subshell* in interactive mode.
 
 ```sh
-bash
+$ bash
 ```
 
 You might not see anything different in the prompt. Though  some variables from the outer shell won't be available. Any variables you set in the inner shell won't be available in the outer shell. Also your Python environment could no longer be active.
 
-If you enter `exit` or press `CTRL`+`D`, then you will return to the outer shell session.
+If you enter `exit` or press <kbd>CTRL</kbd>+<kbd>D</kbd>, then you will return to the outer shell session.
 
-Note that you should **not** use this to switch between shells as the config file will not be executed appropriately. Use the [Start new shell session](start-new-shell-session) section below.
+Note that you should **not** use this to switch between shells, as the config file will not be executed appropriately. Use the [Start new shell session](start-new-shell-session) section below.
 
 
 ## Get current shell
 
 This will print the program name, which in the case of the shell is the actual shell. [source](https://stackoverflow.com/questions/3327013/how-to-determine-the-current-shell-im-working-on)
 
+
+### Using $0
+
+Tested on macOS:
+
 - Bash
 	```sh
 	$ echo $0
 	-bash
+	# Or
+	
 	```
 - ZSH
 	```sh
@@ -30,12 +38,29 @@ This will print the program name, which in the case of the shell is the actual s
 	-zsh
 	```
 
+Tested on Linux:
 
+```sh
+$ # In terminal.
+$ echo $0
+/bin/bash
+```
 
-- Bash (This is only set when using Bash. Though, this gave '/bin/zsh' when using Bash and ZSH is the default shell, so need to investigate this further).
+```sh
+$ # In subshell.
+$ bash -c 'echo $0'
+bash
+```
+
+ZSH - to be checked.
+
+### Using BASH or ZSH_NAME variables
+
+- Bash
 	```sh
 	$ echo $BASH
 	```
+	- This is only set when using Bash. However, this weirdly gave response as `/bin/zsh` when using Bash when ZSH was the default shell, so need to investigate this further.
 - ZSH
 	```sh
 	$ echo $ZSH_NAME
@@ -44,9 +69,8 @@ This will print the program name, which in the case of the shell is the actual s
 
 This shows the _default_ shell, not your current shell.
 
-
 ```sh
-echo $SHELL
+$ echo $SHELL
 ```
 
 [source](https://stackoverflow.com/questions/3327013/how-to-determine-the-current-shell-im-working-on)
@@ -59,9 +83,9 @@ echo $SHELL
 Replace the current terminal session with a new one. Use the exec command with the --login flag so the shell acts as if invoked by login. [source](https://www.gnu.org/software/bash/manual/html_node/Invoking-Bash.html)
 
 ```sh
-exec -l zsh
+$ exec -l zsh
 
-exec -l bash
+$ exec -l bash
 ```
 
 ### Change default shell
@@ -69,9 +93,9 @@ exec -l bash
 To change to ZSH, run one of:
 
 ```sh
-chsh -s /bin/zsh
+$ chsh -s /bin/zsh
 
-chsh -s $(which zsh)
+$ chsh -s $(which zsh)
 ```
 
 
