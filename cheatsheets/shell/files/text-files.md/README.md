@@ -67,9 +67,13 @@ Or according to the manpage:
 
 #### Output
 
+Print.
+
 ```sh
 $ xclip
 ```
+
+Pipe.
 
 > -o, -out 
 >
@@ -83,21 +87,26 @@ $ xclip -o > PATH
 
 Use `pbcopy` and `pbpaste`.
 
+#### Read
+
 Copy file.
 
 ```sh
 $ pbcopy < PATH
 ```
 
-Print
+#### Output
+
+Print.
+
 ```sh
 $ pbpaste
 ```
 
-Pipe
+Pipe.
 
 ```sh
-pbpaste | head
+$ pbpaste | head
 ```
 
 ## Open
