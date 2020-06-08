@@ -20,10 +20,33 @@ Note that you should **not** use this to switch between shells, as the config fi
 
 This will print the program name, which in the case of the shell is the actual shell. [source](https://stackoverflow.com/questions/3327013/how-to-determine-the-current-shell-im-working-on)
 
+### Conditional
+
+In short, the most reliable way in conditonal flow is this. To be tested. Perhaps it can work with `case`.
+
+```sh
+IS_BASH=false
+IS_ZSH=false
+
+if [[ "$0" == *"bash"* ]]; then
+  IS_BASH=true
+else if [[ "$0" == *"zsh"* ]];
+  IS_ZSH=true
+fi
+```
+
+Note:
+
+If using a single boolean:
+
+```sh
+$ IS_ZSH=$([[ "$ZSH_NAME" ]] && echo 'true' || echo 'false')
+```
+
 
 ### Using $0
 
-Tested on macOS:
+#### Tested on macOS
 
 - Bash
 	```sh
@@ -38,7 +61,7 @@ Tested on macOS:
 	-zsh
 	```
 
-Tested on Linux:
+#### Tested on Linux
 
 ```sh
 $ # In terminal.
@@ -59,6 +82,7 @@ ZSH - to be checked.
 - Bash
 	```sh
 	$ echo $BASH
+	# ?
 	```
 	- This is only set when using Bash. However, this weirdly gave response as `/bin/zsh` when using Bash when ZSH was the default shell, so need to investigate this further.
 - ZSH
@@ -66,6 +90,8 @@ ZSH - to be checked.
 	$ echo $ZSH_NAME
 	zsh
 	```
+
+### Using SHELL
 
 This shows the _default_ shell, not your current shell.
 
@@ -99,7 +125,6 @@ $ chsh -s $(which zsh)
 ```
 
 
-
 ## Reload shell
 
 If you have edited your Bash configs and want to reload them, you can do this:
@@ -128,6 +153,4 @@ Create an function in your `~/.bashrc` if you easily run it. This reloads the _d
 ```sh
 reload_shell() { exec -l $SHELL; }
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk3NzM1NjAxMV19
--->
+
