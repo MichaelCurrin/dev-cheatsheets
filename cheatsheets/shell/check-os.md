@@ -64,14 +64,18 @@ fi
 Perform a check inline to produce a string. Note this could be improved by first storing a value.
 
 ```sh
-$ echo "Hello $([[ "$OSTYPE" == "darwin"* ]] && echo 'Mac')"
+$ echo "Hello $([[ "$OSTYPE" == darwin* ]] && echo 'Mac')"
 ```
-Result if Mac: `Hello Mac`
 
-Result if not Mac: `Hello`
+- Result if Mac: `Hello Mac`
+- Result if not Mac: `Hello`
 
 
 ## Check OS flavor
+
+### Is Linux Lite
+
+- https://linuxliteos.com/
 
 Linux Lite uses a text file which includes the version.
 
