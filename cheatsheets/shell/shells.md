@@ -28,11 +28,22 @@ In short, the most reliable way in conditonal flow is this. To be tested. Perhap
 IS_BASH=false
 IS_ZSH=false
 
-if [[ "$0" == *"bash"* ]]; then
+if [[ "$0" == *bash* ]]; then
   IS_BASH=true
-else if [[ "$0" == *"zsh"* ]];
+else if [[ "$0" == *zsh* ]];
   IS_ZSH=true
 fi
+
+# OR - more lines but DRY.
+
+case "$0)" in
+  *bash* )
+    IS_BASH=true
+    ;;
+  *zsh* )
+    IS_LINUX=true
+    ;;
+esac
 ```
 
 Note:
