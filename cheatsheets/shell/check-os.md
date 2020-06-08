@@ -50,8 +50,6 @@ case "$(uname)" in
 esac
 ```
 
-Note that is more elegant and using an `if` statement and setting _all_ values in each block.
-
 Example use:
 
 ```sh
