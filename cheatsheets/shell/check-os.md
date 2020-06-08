@@ -1,5 +1,7 @@
 # Check OS
 
+Find what the current OS is using shell commands.
+
 
 ## Display
 
@@ -9,28 +11,30 @@
 echo $OSTYPE
 ```
 
-e.g.
-
-OS    | Value
+OS    | Example value
 ---   | ---
-macOS | `darwin19.0`
 Linux | `linux-gnu`
+macOS | `darwin19.0`
 
 ### uname command
+
+See `uname` [manpage](https://ss64.com/osx/uname.html).
 
 ```sh
 $ uname
 ```
+
 e.g.
 
-Linux | Value
+OS    | Example value
 ---   | ---
 Linux | `Linux`
+macOS | `Darwin`
 
 
 ## Set boolean
 
-Based on Grails quickstart which uses `case` and `uname`.
+This was based on Grails quickstart which uses `case` and `uname`.
 
 ```sh
 IS_MAC=false
@@ -45,6 +49,8 @@ case "$(uname)" in
     ;;
 esac
 ```
+
+Note that is more elegant and using an `if` statement and setting _all_ values in each block.
 
 Example use:
 
