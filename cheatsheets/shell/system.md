@@ -39,6 +39,10 @@ PID TTY           TIME CMD
 ...
 ```
 
+```sh
+$ ps aux
+```
+
 ### Process status tree
 
 [man page](https://linux.die.net/man/1/pstree)
@@ -54,9 +58,6 @@ pstree [options] [pid or username]
 $ pstree
 ```
 
-```sh
-$ psaux
-```
 
 
 Note your OS may have GUI for this. Like macOS Activity Manager.
