@@ -9,8 +9,6 @@ This NPM command allows easy incrementing in both package files and git tags, wi
     >
     > If run in a git repo, it will also create a version commit and tag.
 
-Note: You should probably run `git fetch --tags` first to make sure you don't increment to tag which already exists on the remote.
-
 See also [semvar](https://docs.npmjs.com/misc/semver) NPM package.
 
 
@@ -40,3 +38,6 @@ For example:
   "postversion": "git push && git push --tags && rm -rf build/temp"
 }
 ```
+
+Note: You should probably run `git fetch --tags` first to make sure you don't increment to a tag which already exists on the remote. So adding that logic into `preversion` would make that automated.
+
