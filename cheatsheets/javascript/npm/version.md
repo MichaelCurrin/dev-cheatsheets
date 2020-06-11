@@ -1,13 +1,15 @@
-# NPM version command
+# Version command
 
-There is functionality built into NPM around versioning. This allows easy incrementing in both package files and git tags, with a given tag or increment level.
+This NPM command allows easy incrementing in both package files and git tags, with a given tag or increment level.
 
-- [npm-version](https://docs.npmjs.com/cli/version)
+- [npm-version](https://docs.npmjs.com/cli/version) docs
     > Run this in a package directory to bump the version and write the new data back to package.json, package-lock.json, and, if present, npm-shrinkwrap.json.
     >
     > ...
     >
     > If run in a git repo, it will also create a version commit and tag.
+
+Note: You should probably run `git fetch --tags` first to make sure you don't increment to tag which already exists on the remote.
 
 See also [semvar](https://docs.npmjs.com/misc/semver) NPM package.
 
