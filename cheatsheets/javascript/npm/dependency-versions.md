@@ -1,6 +1,10 @@
 # NPM dependency versions
 
+
+## Resources
+
 - [About semantic versioning](https://docs.npmjs.com/about-semantic-versioning) in NPM docs.
+- [semvar](https://docs.npmjs.com/misc/semver) package docs.
 
 
 ## Tilde ranges
