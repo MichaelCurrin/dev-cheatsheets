@@ -110,17 +110,19 @@ Text area with max length
 
 - [Tutorial](https://www.w3schools.com/tags/att_input_type_radio.asp)
 
-Note how `for` must match `id`. The `name` is optional.
+Note `for` must match `id`, but `name` is optional.
 
 ```html
-<input type="radio" id="radioApple" name="radioApple" value="apple" checked>
-<label for="radioApple">Apple</label>
+Package type:
 
-<input type="radio" id="radioBanana" name="radioFruit" value="banana">
-<label for="radioBanana">Banana</label>
+<input type="radio" id="py" name="package-type" value="python" checked>
+<label for="py">Python</label>
 
-<input type="radio" id="radioOrange" name="radioFruit" value="orange">
-<label for="radioOrange">Orange</label>
+<input type="radio" id="npm" name="package-type" value="npm">
+<label for="npm">NPM</label>
+
+<input type="radio" id="ruby" name="package-type" value="ruby">
+<label for="ruby">Ruby</label>
 ```
 
 
@@ -152,7 +154,7 @@ Note how `for` must match `id`. The `name` is optional.
 <input type="submit" value="Submit">
 
 
-## Sections
+## Form sections
 
 Based on [guide](https://html.com/forms/).
 
