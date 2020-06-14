@@ -44,13 +44,14 @@ See also:
 
 ## Text area
 
+```html
 <label for="my-text">Label</label>
 <textarea id="my-text" rows="4" cols="50">Text area input</textarea>
 
 <textarea maxlength="50">
 Text area with max length
 </textarea>
-
+```
 
 ## Bulma note
 
@@ -149,6 +150,20 @@ Note how `for` must match `id`. The `name` is optional.
 <input type="checkbox" name="vehicle3" value="Boat" checked>
 <label for="vehicle3"> I have a boat</label><br><br>
 <input type="submit" value="Submit">
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0MjIzMTkyM119
--->
+
+
+## Sections
+
+Based on [guide](https://html.com/forms/).
+
+```html
+<form>
+    <fieldset name='my-set'>
+        <legend>Name of section</legend>
+        
+        <input type="checkbox" name='foo'>
+    </fieldset>
+    
+    <!-- repeat -->
+</form>
+```
