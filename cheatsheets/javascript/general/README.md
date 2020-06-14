@@ -1,5 +1,29 @@
 # JavaScript general
 
+Cheatsheet for the browser and Node.js.
+
+
+## Switch statement
+
+[source](https://www.w3schools.com/js/js_switch.asp)
+
+```javascript
+var x = 2;
+
+switch(x) {
+  case 1:
+    console.log('Hello');
+    break;
+  case 2:
+    console.log('Hi');
+    break;
+  default:
+    console.log('Howdy');
+} 
+```
+
+See also switch in C.
+
 
 ## Text
 
@@ -52,7 +76,6 @@ Get length.
 ```javascript
 > myArray.length
 ```
-
 
 Get element.
 
