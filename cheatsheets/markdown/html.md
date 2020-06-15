@@ -1,7 +1,7 @@
 # HTML
 > How to add HTML tags to your markdown files
 
-HTML will render in markdown, so you can do things not possible with plain markdown syntax.
+HTML will render in markdown, so you can do things not possible with plain markdown syntax. Such as add an ID or class or resize and align images. HTML doesn't care about whitespace so much so it is also easier to build a bullet list or table using a if statements and for loops when using HTML rather than markdown.
 
 
 ```html
@@ -25,7 +25,8 @@ Example with a link.
 
 
 **Code:**
-```
+
+```html
 <a href="https://example.com">
     <button>Click me</button>
 </a>
@@ -33,11 +34,11 @@ Example with a link.
 
 **Result:**
 
-```
+
 <a href="https://example.com">
     <button>Click me</button>
 </a>
-```
+
 
 Add styling on the button or on your site with CSS.
 
@@ -80,8 +81,6 @@ Press <kbd>CTRL</kbd>+<kbd>C</kbd>
 **Result:**
 
 Press <kbd>CTRL</kbd>+<kbd>C</kbd>
-
-
 
 
 ## Warning notes
