@@ -26,6 +26,7 @@ Example below with braces expansion supported by curl - more succinct than writi
 ```sh
 curl 'http:example.com/{foo,bar}#baz'
 
+# OR
 curl http:example.com/\{foo,bar\}\#baz
 ```
 
@@ -66,17 +67,18 @@ curl http > dir/file.txt
 ```sh
 curl URL -o dir/file.txt
 
-# Use the variable input in the output.
+# Multiple files and use the variable input in the output.
 curl "http://{one,two}.example.com" -o "file_#1.txt" 
 ```
 
-Use the remote's name. 
+Use the remote resource's name. 
 
 ```sh
-curl URL -O
+curl http://example.com/foo.html -O
+# foo.html
 
 # Download multiple files.
-curl 'http://example.com/{foo.html,bar.html}'
+curl 'http://example.com/{foo.html,bar.html}' -O
 ```
 
 
