@@ -32,12 +32,6 @@ SCRIPT_FILEPATH=$(realpath $0)
 SCRIPT_DIR=$(dirname $SCRIPT)
 ```
 
-Or get directory in one line:
-
-```sh
-SCRIPT_DIR=$(dirname $(realpath $0))
-```
-
 For a script `~/foo/bar.sh`, printing those variables gives:
 
 ```
@@ -52,7 +46,22 @@ realpath -s $0`
 ```
 
 ## Current directory
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbODA0ODA0MjQ2LC0xMDUxOTYwNjU5LC0xNj
-k0NjYzNzM1XX0=
--->
+
+Get path to the current script's directory.
+
+```sh
+SCRIPT_DIR=$(dirname $(realpath $0))
+```
+
+To get the current _working directory_:
+
+```sh
+pwd
+```
+
+Or in string.
+
+```sh
+echo "You are here: $PWD"
+echo "You are here: $(pwd)"
+```
