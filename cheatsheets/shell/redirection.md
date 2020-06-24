@@ -1,6 +1,6 @@
 # Redirection cheatsheet
 
-- [Bash redirections cheatsheet]([https://catonmat.net/ftp/bash-redirections-cheat-sheet.pdf](https://catonmat.net/ftp/bash-redirections-cheat-sheet.pdf))
+- [Bash redirections cheatsheet](https://catonmat.net/ftp/bash-redirections-cheat-sheet.pdf) on catonmat.net
 - [Bash one-liners tutorial](https://catonmat.net/bash-one-liners-explained-part-three)
 
 
@@ -11,8 +11,10 @@ Use a dash.
 ```sh
 cat script.sh | bash -
 ```
-Or.
-```
+
+Or
+
+```sh
 bash < my_script.sh
 ```
 
