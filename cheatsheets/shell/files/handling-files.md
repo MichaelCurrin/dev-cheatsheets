@@ -1,4 +1,4 @@
-# Files and paths cheatsheet
+# Hanlding files and paths cheatsheet
 
 
 ## Search
@@ -73,7 +73,7 @@ COMMAND >> stdout_and_sterr.txt 2>&1
 [SO question](https://stackoverflow.com/questions/876239/how-can-i-redirect-and-append-both-stdout-and-stderr-to-a-file-with-bash)
 
 
-### List
+## List
 
 Pass output as a list, where using pipe is not possible.
 
