@@ -175,29 +175,26 @@ From `xargs` manpage:
 cat requirements.txt | xargs pip install
 ```
 
-## Dotenv
+## Load dotenv file
 
-Export the vars in `.env` file into your shell:
+Export the vars in `.env` file into your shell.
+
+Simple
 
 ```sh
 export $(< .env) | xargs)
 ```
 
-Check if it exists first:
+Check if it exists first and ignore comments.
 
 ```sh
 if [ -f .env ]; then
-  export $(cat .env | xargs)
+  export $(egrep -v '^#' .env | xargs)
 fi
 ```
 
-Ignore comments:
+[Gist sourcr](https://gist.github.com/judy2k/7656bfe3b322d669ef75364a46327836)
 
-```sh
-export $(egrep -v '^#' .env | xargs)
-```
+See also my cookbook
 
-[source](https://gist.github.com/judy2k/7656bfe3b322d669ef75364a46327836)
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2MDI3Mjk0NF19
--->
+- https://github.com/MichaelCurrin/code-cookbook/blob/master/recipes/shell/dotenv.md
