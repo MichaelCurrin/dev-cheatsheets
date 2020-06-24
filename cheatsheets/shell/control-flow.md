@@ -1,5 +1,32 @@
 # Control flow
 
+Note the older format of `test CONDITION` is replaced by `[ CONDITION ]` and in some shell flavors extra functionality with `[[ CONDITION ]]`.
+
+## Ignore file
+
+```sh
+CMD || true
+```
+
+Optionally hide output.
+
+```sh
+CMD > /dev/null || true
+```
+
+Or just
+
+```sh
+set -e
+
+# ...
+
+set +e
+CMD
+set -e
+```
+
+
 ## Check file
 
 If a file exists:
@@ -19,6 +46,7 @@ fi
 ```
 
 See [Bash cheatsheet](https://devhints.io/bash) for more info.
+
 
 ## One liner status check
 
@@ -48,6 +76,7 @@ Note the `exit` command is added here, but this is good for a script and not for
 ```sh
 [[ $? -eq 0 ]] && echo 'Passed!' || (echo 'Failed!'; exit 1)
 ```
+
 
 ## If statement
 
