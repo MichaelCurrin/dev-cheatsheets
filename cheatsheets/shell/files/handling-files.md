@@ -46,7 +46,7 @@ This is not so useful in itself when just running in the console. But more usefu
 COMMAND > stdout.txt 2> stderr.txt
 ```
 
-### Redirect stderr and stdout to a file
+### Redirect stderr and stdout to the same file
 
 The `&1` is a point to where stdout is currently pointing.
 
@@ -62,7 +62,7 @@ COMMAND &> stdout_and_sterr.txt`
 
 [askubuntu.com question](https://askubuntu.com/questions/625224/how-to-redirect-stderr-to-a-file)
 
-### Append stderr and stdout to  a file
+### Append stderr and stdout to the same file
 
 Similar to above, but _append_ rather than overwrite.
 
@@ -70,7 +70,12 @@ Similar to above, but _append_ rather than overwrite.
 COMMAND >> stdout_and_sterr.txt 2>&1
 ```
 
-[SO question](https://stackoverflow.com/questions/876239/how-can-i-redirect-and-append-both-stdout-and-stderr-to-a-file-with-bash)
+From [SO question](https://stackoverflow.com/questions/876239/how-can-i-redirect-and-append-both-stdout-and-stderr-to-a-file-with-bash)
+
+> Bash executes the redirects from left to right as follows:
+>
+> - >>file.txt: Open file.txt in append mode and redirect stdout there.
+> - 2>&1: Redirect stderr to "where stdout is currently going". In this case, that is a file opened in append mode. In other words, the `&1` reuses the file descriptor which stdout currently uses.
 
 
 ## List
