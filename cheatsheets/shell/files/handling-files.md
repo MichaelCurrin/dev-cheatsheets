@@ -1,4 +1,4 @@
-# Hanlding files and paths cheatsheet
+# Handing files and paths cheatsheet
 
 
 ## Search
