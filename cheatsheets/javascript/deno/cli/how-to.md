@@ -3,11 +3,12 @@
 Based on [post](https://medium.com/deno-tutorial/deno-testing-bundling-formatting-and-debugging-9c8aad798fc2).
 
 
-## Install
+## Install module
 
 ```sh
 $ deno install https://deno.land/std/examples/welcome.ts
 ```
+
 The script will be saved and can be run like this:
 
 ```sh
@@ -15,7 +16,42 @@ $ ~/.deno/bin/welcome
 ```
 
 
-## Bundle
+## Upgrade deno
+
+```sh
+$ deno upgrade
+```
+
+## Run
+
+### Run script
+
+Run script in project. Use `-A` to allow all permissions.
+
+```sh
+$ deno run index.ts
+```
+
+### Run module
+
+Run downloaded module which was installed using `deno install` or after running a script which has an external import.
+
+```sh
+$ ~/.deno/bin/welcome
+```
+
+### REPL
+
+Start Deno in interactive mode.
+
+```sh
+$ deno repl
+```
+
+
+## Development
+
+### Bundle
 
 Bundle a script.
 
@@ -37,8 +73,23 @@ $ deno run --allow-net server.bundle.js
 Listening on 0.0.0.0:8080
 ```
 
+### Format
 
-## Test
+```sh
+$ deno fmt index.ts
+```
+
+```sh
+$ deno fmt --check PATH
+```
+
+### Lint
+
+```sh
+$ deno lint PATH
+```
+
+### Test
 
 - `test.ts`
     ```javascript
@@ -70,16 +121,6 @@ Assertions
 - `unimplemented`
 - `unreachable`
 
-
-## Format
-
-```sh
-$ deno fmt PATH
-```
-
-```sh
-$ deno fmt --check PATH
-```
 
 ## Debugging
 
