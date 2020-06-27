@@ -24,9 +24,9 @@ Example page:
 - [https://deno.land/x/](https://deno.land/x/denosaur)
 
 
-## Oak
+## Web server
 
-From the [deno.land/x/oak/](https://deno.land/x/oak/#oak) module.
+Demo of using the [deno.land/x/oak/](https://deno.land/x/oak/#oak) module.
 
 The `Application` class wraps the `serve()` function from the `http` package.
 
@@ -35,7 +35,7 @@ Middleware is added with the `.use()` method.
 A Hello World server:
 
 - `index.ts`
-    ```javascript
+    ```typesript
     import { Application } from "https://deno.land/x/oak/mod.ts";
 
     const app = new Application();
@@ -56,3 +56,29 @@ $ deno run --allow-net index.ts
 View in the browswer:
 
 - http://localhost:8000
+
+
+## Colors
+
+Demo of using the [deno.land/x/color](https://deno.land/x/color#color) module.
+
+- `index.ts` - using TypeScript
+    ```typescript
+    import clc from 'https://deno.land/x/color/index.ts'
+
+    console.log(clc.red.text("I am red"))
+
+    console.log(clc.bgYellow.text("I am bgYellow"))
+
+    console.log(clc.reset.text("I am reset"))
+    console.log(clc.bright.text("I am bright"))
+    ```
+- `index.js` - JavaScript alternative.
+    ```javascript
+    import clc from 'https://deno.land/x/color/index.js
+    
+    console.log(clc.red.text("I am red"))
+    
+    // ...
+    ```
+    
