@@ -1,7 +1,7 @@
-# CLI
+# CLI help
 
 
-CLI help for version `1.1.1`.
+Deno CLI help.
 
 ## Command
 
