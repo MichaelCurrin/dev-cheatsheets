@@ -1,5 +1,12 @@
 # Standard lib
 
+>  Deno also provides a list of audited standard modules that are reviewed by the core Deno team and are guaranteed to work with a specific Deno version. [source](https://deno.land/)
+
+See [denoland/deno](https://github.com/denoland/deno) repository for source code of Deno and standard lib.
+
+These are hosted at [deno.land/std](https://deno.land/std).
+
+
 ## Welcome 
 
 ```sh
