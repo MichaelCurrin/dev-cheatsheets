@@ -93,19 +93,17 @@ For example, this will link add `/example.com` to the current path.
 Add optional alternative text. You can hover over the link to see the alt text.
 
 **Code:**
+
 ```markdown
 [link text](https://example.com "alt text")
 ```
 
 **Result:**
 
-```markdown
 [link text](https://example.com "alt text")
-```
 
 
 ## Reference-style links
-
 
 ### Text
 
@@ -119,17 +117,13 @@ Example:
 [arbitrary case-insensitive reference text]: https://www.mozilla.org
 ```
 
-
 **Result:**
 
-```markdown
 [I'm a reference-style link][Arbitrary case-insensitive reference text]
 
 [arbitrary case-insensitive reference text]: https://www.mozilla.org
 
-```
-
-### Number
+### Numbered refrence links
 
 Example:
 
@@ -143,11 +137,33 @@ Example:
 
 **Result:**
 
-```markdown
 [You can use numbers for reference-style link definitions][1]
 
 [1]: http://slashdot.org
+
+Another example - note the links might be in a `## Footnotes` section.
+
+
+**Code**
+
+```markdown
+- `AssertionError`   : raised in case of failure of an assertion[1].
+
+...
+
+[1:AssertionError]
+An AssertionError is an error generated for something that was thought to be impossible to happen. Usually, it is thrown because of a programming error.
 ```
+
+**Result**
+
+- `AssertionError`   : raised in case of failure of an assertion[1].
+
+...
+
+[1:AssertionError]
+An AssertionError is an error generated for something that was thought to be impossible to happen. Usually, it is thrown because of a programming error.
+
 
 ### Link text
 
@@ -165,13 +181,6 @@ Or leave it empty and use the [link text itself].
 
 Code:
 
-```markdown
 Or leave it empty and use the [link text itself].
 
 [link text itself]: http://www.reddit.com
-
-```
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ5NjY4NzU0XX0=
--->
