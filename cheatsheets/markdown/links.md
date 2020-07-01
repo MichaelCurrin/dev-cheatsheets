@@ -160,7 +160,7 @@ Another example - note the links might be in a `## Footnotes` section.
 
 ...
 
-[1:AssertionError]: An AssertionError is an error generated for something that was thought to be impossible to happen. Usually, it is thrown because of a programming error.
+[1]: An AssertionError is an error generated for something that was thought to be impossible to happen. Usually, it is thrown because of a programming error.
 
 
 ### Link text
