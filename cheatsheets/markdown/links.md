@@ -147,20 +147,20 @@ Another example - note the links might be in a `## Footnotes` section.
 **Code**
 
 ```markdown
-- `AssertionError`   : raised in case of failure of an assertion [1].
+- `AssertionError`: raised in case of failure of an assertion [2].
 
 ...
 
-[1]: An AssertionError is an error generated for something that was thought to be impossible to happen. Usually, it is thrown because of a programming error.
+[2]: An AssertionError is an error generated for something that was thought to be impossible to happen. Usually, it is thrown because of a programming error.
 ```
 
 **Result**
 
-- `AssertionError`   : raised in case of failure of an assertion [1].
+- `AssertionError`: raised in case of failure of an assertion [2].
 
 ...
 
-[1]: An AssertionError is an error generated for something that was thought to be impossible to happen. Usually, it is thrown because of a programming error.
+[2]: An AssertionError is an error generated for something that was thought to be impossible to happen. Usually, it is thrown because of a programming error.
 
 
 ### Link text
