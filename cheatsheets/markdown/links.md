@@ -105,23 +105,27 @@ Add optional alternative text. You can hover over the link to see the alt text.
 
 ## Reference-style links
 
+Use text or a number or reference a link in the next paragraph or at the end of the page. The full link will not be visible.
+
 ### Text
+
+Arbitrary case-insensitive reference text in target. Here we have `Foo bar` but you could use `foo-bar` instead. It is not user-facing.
 
 Example:
 
 **Code:**
 
 ```markdown
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
+[I'm a reference-style link][Foo bar]
 
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
+[Foo bar]: https://www.mozilla.org
 ```
 
 **Result:**
 
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
+[I'm a reference-style link][Foo bar]
 
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
+[Foo bar]: https://www.mozilla.org
 
 ### Numbered refrence links
 
@@ -140,28 +144,6 @@ Example:
 [You can use numbers for reference-style link definitions][1]
 
 [1]: http://slashdot.org
-
-Another example - note the links might be in a `## Footnotes` section.
-
-
-**Code**
-
-```markdown
-- `AssertionError`: raised in case of failure of an assertion [2].
-
-...
-
-[2]: An AssertionError is an error generated for something that was thought to be impossible to happen. Usually, it is thrown because of a programming error.
-```
-
-**Result**
-
-- `AssertionError`: raised in case of failure of an assertion [2].
-
-...
-
-[2]: An AssertionError is an error generated for something that was thought to be impossible to happen. Usually, it is thrown because of a programming error.
-
 
 ### Link text
 
