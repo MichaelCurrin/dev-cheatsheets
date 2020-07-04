@@ -23,3 +23,15 @@ exclude:
   - LICENSE
   - Makefile
   - README.md
+
+defaults:
+  - scope:
+      # Warning memory issues (20 seconds+) here for double star.
+      # But it is fine (< 1 second) if starting with a directory name.
+      path: "cheatsheets/**/index.md"
+    values:
+      layout: "listing"
+  - scope:
+      path: ""
+    values:
+      layout: "page"
