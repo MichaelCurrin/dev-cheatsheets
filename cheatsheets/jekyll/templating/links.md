@@ -2,21 +2,67 @@
 
 ## Local paths
 
-Use the `link` tag. The smart way to do links for local pages. 
+There are multiple ways to do this, depending on you situation.
+
+### Relative URL
+
+Use the `relative_url` filter to ensure you get a Github Pages project prefix added. 
+
+The downside to this approach as uis that it used a literal string - is does not validate if the page actually exists and also does not obey and permalink settings set on the metadata or config. 
+
+```markdown
+- [Link text]({{ '/' | relative_url }})
+
+- [Link text]({{ 'foo/' | relative_url }})
+```
+
+If you reference a page object, then it is safer to expect the URL to be valid - use of config settings might affect this though such as permalink or collections.
+
+Use `site.page` object for the current page.
+
+```markdown
+- [Link text]({{ site.page.url | relative_url }})
+```
+
+Use a `for` loop on pages or a collection.
+
+```markdown
+{% for item in site.pages %}
+- [Link text]({{ item.url | relative_url }})
+{% endfor %}
+```
+
+### Link tag
+
+Use the `link` tag. The smart way to do links for local pages.
 
 This will figure out the appropriate URL. And it will give build error if the page path is not valid.  Note - do NOT use quotes around the URL otherwise they will be rendered as escaped quote tags and possibly break the HTML.
 
 e.g.
 
-```
--  [Link description]({% link about.md %})
+```markdown
+-  [Link text]({% link about.md %})
 ```
 
 Result:
 
 ```html
-<a href="/my-base-url/about.html">Link description</a>
+<a href="/my-base-url/about.html">Link text</a>
 ```
+
+You can pass a variable too:
+
+```markdown
+-  [Link text]({% link {{ item }} %})
+```
+
+
+This works well for Jekyll 4 - which adds base URL for you. Otherwise you must do:
+
+```markdown
+{{ site.baseurl }}{% link about.md %}
+```
+
 
 ## Footer links
 
