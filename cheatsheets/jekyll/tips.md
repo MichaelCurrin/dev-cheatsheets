@@ -1,4 +1,6 @@
-# Tips
+---
+title: Tips
+---
 
 
 ## Page not found
@@ -81,4 +83,3 @@ In a `.html` layout file, you can use `markdownify` to turn markdown into HTML.
 
 </footer>
 ```
-

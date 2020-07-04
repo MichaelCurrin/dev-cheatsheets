@@ -1,4 +1,6 @@
-# Remote
+---
+title: Remote
+---
 
 ## New repo
 
@@ -17,9 +19,5 @@ If there are no commits yet, you won't be able to do  a pull, so you can just co
 If there are commits, you can pull but you need to include the remote name and branch.
 
 ```sh
-git pull origin master 
+git pull origin master
 ```
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDcwODk3MTFdfQ==
--->

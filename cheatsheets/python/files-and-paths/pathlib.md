@@ -1,4 +1,6 @@
-# Pathlib cheatsheet
+---
+title: Pathlib
+---
 
 
 ## Resources
@@ -52,7 +54,3 @@ q.is_dir()
 with q.open() as f_in:
     text = f_in.readline()
 ```
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk5NjcxMzA3LDExOTA5NzgyNDZdfQ==
--->

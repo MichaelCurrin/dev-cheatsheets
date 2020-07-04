@@ -1,10 +1,14 @@
-# Common formatting
+---
+title: Common formatting
+---
 
 
 ## Headings
 
 ```markdown
-# Header 1
+---
+title: Header 1
+---
 
 Content
 
@@ -126,6 +130,3 @@ Add quotes from multiple sources to separate bullet points.
 - > Point B
 - > Point C
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTkwNzIwNDldfQ==
--->

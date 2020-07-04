@@ -1,4 +1,6 @@
-# Repos
+---
+title: Repos
+---
 
 - repos
     - e.g. https://api.github.com/users/MichaelCurrin/repos
@@ -48,12 +50,12 @@ Summarized to the most interesting fields - commenting out or deleting the less 
   "languages_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/languages",
   "stargazers_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/stargazers",
   "contributors_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/contributors",
-  
+
   //"subscribers_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/subscribers",
   //"subscription_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/subscription",
   "commits_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/commits{/sha}",
   "git_commits_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/git/commits{/sha}",
-  
+
   //"comments_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/comments{/number}",
   //"issue_comment_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/issues/comments{/number}",
   "contents_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/contents/{+path}",
@@ -63,17 +65,17 @@ Summarized to the most interesting fields - commenting out or deleting the less 
   "downloads_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/downloads",
   "issues_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/issues{/number}",
   "pulls_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/pulls{/number}",
-  
+
   //"milestones_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/milestones{/number}",
   //"notifications_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/notifications{?since,all,participating}",
   //"labels_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/labels{/name}",
   "releases_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/releases{/id}",
   "deployments_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/deployments",
-  
+
   "created_at": "2020-01-26T11:27:02Z",
   "updated_at": "2020-06-01T09:21:51Z",
   "pushed_at": "2020-06-01T09:21:48Z",
-  
+
   "git_url": "git://github.com/MichaelCurrin/badge-generator.git",
   "ssh_url": "git@github.com:MichaelCurrin/badge-generator.git",
   "clone_url": "https://github.com/MichaelCurrin/badge-generator.git",
@@ -88,7 +90,7 @@ Summarized to the most interesting fields - commenting out or deleting the less 
   "has_downloads": true,
   "has_wiki": false,
   "has_pages": true,
-  
+
   "forks_count": 0,
   //"mirror_url": null,
   "archived": false,
@@ -116,7 +118,7 @@ Summarized to the most interesting fields - commenting out or deleting the less 
 
 Note that homepage will use whatever is in the repo's URL section, not necessarily Github Pages.
 
-e.g. 
+e.g.
 
 ```
 homepage": "https://artists-portfolio.netlify.app/",

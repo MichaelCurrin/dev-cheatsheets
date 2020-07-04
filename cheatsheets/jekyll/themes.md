@@ -1,4 +1,6 @@
-# Themes
+---
+title: Themes
+---
 
 
 ## Remote theme plugin
@@ -49,7 +51,3 @@ Based on [How to install gems from git repositories](https://bundler.io/guides/g
 >  Specify that a gem should come from a git repository with a .gemspec at its root
 >
 > `gem 'rack', git: 'https://github.com/rack/rack'`
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0Nzk2MDhdfQ==
--->

@@ -1,4 +1,6 @@
-# Gemfile
+---
+title: Gemfile
+---
 
 How to setup a _Gemfile_, as a file managing dependencies.
 

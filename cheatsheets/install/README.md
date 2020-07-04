@@ -1,4 +1,6 @@
-# Install cheatsheet
+---
+title: Install
+---
 
 
 See my gists.

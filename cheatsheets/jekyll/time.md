@@ -1,4 +1,6 @@
-# Jekyll time cheatsheet
+---
+title: Jekyll time
+---
 
 - [Date formatting](https://learn.cloudcannon.com/jekyll/date-formatting/) tutorial.
 
@@ -23,9 +25,3 @@ date: 2016-03-23T10:20:00Z
 ```
 23 March 2016
 ```
-
-
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNDE3ODEzNDU3XX0=
--->

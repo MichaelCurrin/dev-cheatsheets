@@ -1,4 +1,6 @@
-# Repo links
+---
+title: Repo links
+---
 
 Without loading just the README, you can focus on it.
 
@@ -17,8 +19,3 @@ Contrast with:
 ```markdown
 [link](https://github.com/MichaelCurrin/cheatsheets/blob/master/README.md)
 ```
-
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMzY3MjM3MjA0XX0=
--->

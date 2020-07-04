@@ -1,4 +1,6 @@
-# NPM cheatsheet
+---
+title: NPM
+---
 
 - NPM homepage: [npmjs.com](https://www.npmjs.com)
 
@@ -27,7 +29,7 @@ A `package.json` based on the default you get fron `npm init`.
 {
     "name": "package-name",
     "description": "Foo all the bars",
-    
+
     "version": "1.0.0",
     "keywords": [
         "foo",
@@ -35,12 +37,12 @@ A `package.json` based on the default you get fron `npm init`.
     ],
     "author": "FIRSTNAME SURNAME <FIRSTNAME.SURNAME@gmail.com> (https://github.com/USERNAME)",
     "license": "MIT",
-    
+
     "main": "index.js",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1"
     },
-    
+
     "repository": {
       "type": "git",
       "url": "https://github.com/USERNAME/REPO_NAME.git"
@@ -63,8 +65,8 @@ Either of these are fine as `"author"` values, according to the docs.
 
 ```json
 {
-    "name" : "Barney Rubble", 
-    "email" : "b@rubble.com", 
+    "name" : "Barney Rubble",
+    "email" : "b@rubble.com",
     "url" : "http://barnyrubble.tumblr.com/"
 }
 ```
@@ -129,7 +131,7 @@ $ npm run eject
 ```json
 {
   "name": "example-basic",
-  
+
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

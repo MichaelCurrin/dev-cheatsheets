@@ -1,4 +1,6 @@
-# Empty cheatsheet
+---
+title: Empty
+---
 
 
 ## Commit with short message
@@ -28,6 +30,3 @@ git config --global alias.nccommit 'commit -a --allow-empty-message -m ""'
 ```sh
 git commit --allow-empty
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3NDExMTY3Nl19
--->

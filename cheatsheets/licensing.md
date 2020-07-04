@@ -1,4 +1,6 @@
-# Licensing cheatsheet
+---
+title: Licensing
+---
 > How to choose and apply a license for your project.
 
 ## Notes
@@ -50,7 +52,7 @@ Conditions:
 
 - License and copyright notice
     - > A copy of the license and copyright notice must be included with the software.
-  
+
 Full license text:
 
 - [MIT](https://choosealicense.com/licenses/mit/) - this is short and fits on the page.
@@ -68,7 +70,7 @@ Similar to MIT but adds conditions:
 
 - Disclose source
 - Same license
-- State changes 
+- State changes
 
 And adds a permission:
 
@@ -77,6 +79,3 @@ And adds a permission:
 Full license text:
 
 - [GPL-3.0](https://choosealicense.com/licenses/gpl-3.0/) - note this is very long and takes several pages.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbOTk2Mjg2NjQyXX0=
--->

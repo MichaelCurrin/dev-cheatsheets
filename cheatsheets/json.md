@@ -1,4 +1,6 @@
-# JSON cheatsheet
+---
+title: JSON cheatsheet
+---
 
 See also [JSON](https://github.com/MichaelCurrin/learn-to-code/blob/master/data_formats.md#json) section of my data formats guide.
 
@@ -62,7 +64,7 @@ Or on an object. Also needs the import as above to add this method.
 ```ruby
 my_string.to_json
 
-{:hello => "world"}.to_json 
+{:hello => "world"}.to_json
 # => "{\"hello\":\"world\"}"
 ```
 
@@ -151,7 +153,7 @@ A Python library for websites and APIs. It supports templating using HTML files 
 
 - [Flask docs](https://flask.palletsprojects.com/en/master/)
 - [Tutorial](https://www.pythonanywhere.com/forums/topic/1627/)
- 
+
 ```
 {{ my_object | tojson }}
 ```
@@ -161,6 +163,3 @@ Depending how you want certain characters to appear, you might use the `safe` fi
 ```
 {{ string | tojson | safe }}
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MTgzODk0MTVdfQ==
--->

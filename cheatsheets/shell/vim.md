@@ -1,4 +1,6 @@
-# Vim
+---
+title: Vim
+---
 
 _Vim_ is a text editor program for Unix, cloned from _Vi_.
 

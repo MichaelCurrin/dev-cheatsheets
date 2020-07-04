@@ -1,4 +1,6 @@
-# Rename files shell cheatsheet
+---
+title: Rename files shell
+---
 
 Be careful not use reserved variables like `PATH` otherwise things can break. Use `file`, `FILE`, `p` or `PATH`.
 

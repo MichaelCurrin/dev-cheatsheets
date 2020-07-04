@@ -1,4 +1,6 @@
-# Set options cheatsheet
+---
+title: Set options
+---
 
 Set these in a script or at a global level.
 

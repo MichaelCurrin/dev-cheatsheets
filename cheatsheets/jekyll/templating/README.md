@@ -1,4 +1,6 @@
-# Jekyll Templating
+---
+title: Jekyll Templating
+---
 
 Cheat sheet for using Jekyll Liquid and plain HTML in Jekyll projects.
 
@@ -120,6 +122,3 @@ e.g.
 For Docsify.js, use a plugin:
 
 - [njleonzhang/docsify-edit-on-github](https://github.com/njleonzhang/docsify-edit-on-github)
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNDA5ODQ2ODY1XX0=
--->

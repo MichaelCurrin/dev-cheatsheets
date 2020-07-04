@@ -1,6 +1,8 @@
-# Forms
+---
+title: Forms
+---
 
-Input elements for forms. 
+Input elements for forms.
 
 Note that these do not render on Github, but could be viewed as a static site or an IDE's Markdown preview.
 
@@ -162,10 +164,10 @@ Based on [guide](https://html.com/forms/).
 <form>
     <fieldset name='my-set'>
         <legend>Name of section</legend>
-        
+
         <input type="checkbox" name='foo'>
     </fieldset>
-    
+
     <!-- repeat -->
 </form>
 ```

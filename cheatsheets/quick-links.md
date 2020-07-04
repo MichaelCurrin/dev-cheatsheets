@@ -1,4 +1,7 @@
-# Quick links
+---
+title: Quick links
+---
+
 > My favorite docs and tutorials for programming topics, all in one place.
 
 

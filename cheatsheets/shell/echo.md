@@ -1,4 +1,6 @@
-# Echo cheatsheet
+---
+title: Echo
+---
 
 ## Echo
 
@@ -103,6 +105,3 @@ DESCRIPTION
            \\      Write a backslash character.
            \num    Write a byte whose value is the 1-, 2-, or 3-digit octal number num.  Multibyte characters can be constructed using multiple \num sequences.
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk3NzM3NDA4NV19
--->

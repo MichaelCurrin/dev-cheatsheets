@@ -1,4 +1,6 @@
-# View port
+---
+title: View port
+---
 
 Reset the view port to make the site look good on all devices.
 
@@ -17,12 +19,6 @@ A more advanced form:
 - The `width=device-width` part sets the width of the page to follow the screen-width of the device.
 - The `initial-scale=1.0`  part sets the initial zoom level when the page is first loaded by the browser.
 
-See example with and without the tag on this [page](https://www.w3schools.com/tags/tag_meta.asp). 
+See example with and without the tag on this [page](https://www.w3schools.com/tags/tag_meta.asp).
 
 Without the tag, your text and images will look small on a mobile device, like when you select Desktop mode on your phone's browser.
-
-
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2OTg3NzAyNl19
--->

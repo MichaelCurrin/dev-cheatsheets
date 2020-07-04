@@ -1,4 +1,7 @@
-# HTML
+---
+title: HTML
+---
+
 > How to add HTML tags to your markdown files
 
 This page is aimed at both markdown docs files on Github as well as markdown pages of a Jekyll site.
@@ -60,7 +63,7 @@ Especially good for a static website where you don't want your TODO items to sho
 
 ## Formatting
 
-The `kbd` HML tag can be used for keyboard commands. 
+The `kbd` HML tag can be used for keyboard commands.
 
 
 **Code:**

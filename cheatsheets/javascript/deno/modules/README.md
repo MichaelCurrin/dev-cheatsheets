@@ -1,4 +1,6 @@
-# Deno modules
+---
+title: Deno modules
+---
 
 See also online docs:
 

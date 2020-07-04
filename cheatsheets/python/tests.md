@@ -1,11 +1,13 @@
-# Python tests cheatsheet
+---
+title: Python tests
+---
 
 [Getting started with testing in Python](https://realpython.com/python-testing/)
 
-- [Unittest](#unittest) 
+- [Unittest](#unittest)
 	- Python builtin.
-- [PyTest](#pytest) 
-	- Python package. 
+- [PyTest](#pytest)
+	- Python package.
 	- Great for getting into testing. Uses functions.
 	- Uses its own form of tests.
 - [Nose](#nose)
@@ -20,13 +22,13 @@
 
 
 
-### Syntax 
+### Syntax
 
-- Create a class which inherits from `unittest.TestCase`. 
+- Create a class which inherits from `unittest.TestCase`.
 - Add methods that start with `test_*`.
 - Add a call in the `__main__` check which runs `unittest.main()`.
- 
- 
+
+
 ### Sample tests
 
 ```python
@@ -110,7 +112,7 @@ $ pip install pytest
 
 ### Sample test
 
-Define a function starting with `test_*`. 
+Define a function starting with `test_*`.
 
 
 ```python
@@ -143,6 +145,3 @@ $ pip install nose
 ```sh
 $ nosetests
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyMDUzNTUxOV19
--->

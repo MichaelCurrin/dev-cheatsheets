@@ -1,4 +1,6 @@
-# Indentation
+---
+title: Indentation
+---
 
 ## Spaces
 
@@ -30,7 +32,7 @@ Numbered and codeblocks mixed.
 	    $ echo 'Code block'
 	    ```
 	3. C
-	
+
 5. A
 6. B
     ```sh
@@ -47,7 +49,7 @@ Here using 2 spaces only and mix numbered and bullet points. The inner list is *
 	  - Bullet
 	  - Bullet
 	3. C
-	
+
 1. A
 2. B
   - Bullet
@@ -62,7 +64,7 @@ Nesting code in a numbered list also does not work.
 	  $ echo 'Code block'
 	  ```
 	3. C
-	
+
 1. A
 2. B
   ```sh
@@ -83,6 +85,3 @@ Using tabs also works fine.
 2. B.
 	- Bullet
 	- Bullet
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NTY0NTkzMzddfQ==
--->

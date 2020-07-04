@@ -1,4 +1,6 @@
-# Git ignore
+---
+title: Git ignore
+---
 
 ## JavaScript
 
@@ -32,6 +34,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkzMDY2ODIzMV19
--->

@@ -1,4 +1,6 @@
-# Compare text cheatsheet
+---
+title: Compare text
+---
 > Using command-line tools and applications to compare files
 
 ## Shell

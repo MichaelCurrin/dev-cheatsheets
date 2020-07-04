@@ -1,4 +1,6 @@
-# Code blocks cheatsheet
+---
+title: Code blocks
+---
 <!-- TODO I've written about this somewhere before - combine -->
 
 - Github's source of highlighting:[languages.yml](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml) in the Linguist repo.
@@ -62,7 +64,7 @@ With comments, use `json5` to avoid getting errors for invalid content on Github
 	    "foo": "bar"
 	}
 	```
- 
+
 
 ```json5
 {
@@ -70,7 +72,3 @@ With comments, use `json5` to avoid getting errors for invalid content on Github
     "foo": "bar"
 }
 ```
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTM5MTIxNjFdfQ==
--->

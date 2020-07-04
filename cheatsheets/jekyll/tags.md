@@ -1,8 +1,10 @@
-# Tags
+---
+title: Tags
+---
 
 ## Link tag
 
-Link to a page by path. 
+Link to a page by path.
 
 This will raise an error if the file is missing. In Jekyll 4, this is also relative URL so you don't need to prepend base URL.
 
@@ -23,6 +25,3 @@ Use a variable instead:
 ```liquid
 <img src="{% link {{ img_src }} %}" />
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1NTc4ODA0NF19
--->

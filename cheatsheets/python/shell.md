@@ -1,4 +1,6 @@
-# Python shell cheatsheet
+---
+title: Python shell
+---
 > Running shell commands through Python
 
 

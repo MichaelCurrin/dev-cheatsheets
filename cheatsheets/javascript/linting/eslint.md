@@ -1,4 +1,6 @@
-# ESLint cheatsheet
+---
+title: ESLint
+---
 
 - [Configuring](https://eslint.org/docs/user-guide/configuring) doc.
 - [Rules](https://eslint.org/docs/rules/)
@@ -79,6 +81,3 @@ Run
 eslint foo.js
 ```
 And the output message will tell your `foo.js` was ignored and that you can use the `--no-ignore` flag.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0NTc3NDkwNV19
--->

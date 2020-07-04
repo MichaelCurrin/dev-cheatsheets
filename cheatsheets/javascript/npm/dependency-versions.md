@@ -1,4 +1,6 @@
-# NPM dependency versions
+---
+title: NPM dependency versions
+---
 
 
 ## Resources
@@ -33,7 +35,7 @@ Used broadly, this does not lock minor version:
 
 ## Caret ranges
 
-Compatible with version. 
+Compatible with version.
 
 This is _less_ restrictive as only locks the major version when used for version `1` and above.
 

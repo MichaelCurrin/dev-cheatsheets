@@ -1,4 +1,6 @@
-# Python package versions cheatsheet
+---
+title: Python package versions
+---
 > Understanding versioning of Python packages
 
 
@@ -100,6 +102,3 @@ Be careful when setting a range - make sure you understand what is does. See bel
 - `>= 2.2, < 3.0` - This sets an upper bound too.
 - `>= 2.2, == 2.*` - This is preferred notation for a major range.
 - `~= 2.2` - This is equivalent to the above but shorter.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY1OTAwODI1LDE4ODkxNzczNzZdfQ==
--->

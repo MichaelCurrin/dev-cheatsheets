@@ -1,4 +1,6 @@
-# Git log cheatsheet
+---
+title: Git log
+---
 
 Docs
 
@@ -9,6 +11,3 @@ Flags
 ```
 --decorate[=short|full|auto|no]
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgwMDk3ODUzNV19
--->

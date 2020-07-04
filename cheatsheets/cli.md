@@ -1,4 +1,6 @@
-# CLI cheatsheet
+---
+title: CLI
+---
 
 Cross-language guide for writing a command-line interface.
 
@@ -41,9 +43,3 @@ Subcommands:
 ```
 -f, --FOO FOO
 ```
-
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMzAyNzgxMDcsLTE4NzQwNDcwNDldfQ
-==
--->

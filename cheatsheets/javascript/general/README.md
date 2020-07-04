@@ -1,4 +1,6 @@
-# JavaScript general
+---
+title: JavaScript general
+---
 
 Cheatsheet for the browser and Node.js.
 
@@ -19,7 +21,7 @@ switch(x) {
     break;
   default:
     console.log('Howdy');
-} 
+}
 ```
 
 See also switch in C.
@@ -401,7 +403,7 @@ points.sort(function(a, b){return 0.5 - Math.random()});
 
 Get key-value pairs.
 
-The order is not guaranteed. 
+The order is not guaranteed.
 
 ```javascript
 var pairs = {

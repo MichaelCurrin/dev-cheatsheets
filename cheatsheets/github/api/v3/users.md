@@ -1,4 +1,6 @@
-# Users
+---
+title: Users
+---
 
 e.g. https://api.github.com/users/michaelcurrin
 
@@ -37,6 +39,3 @@ e.g. https://api.github.com/users/michaelcurrin
   "updated_at": "2020-05-25T06:55:26Z"
 }
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNjUyNjA4OTA1XX0=
--->

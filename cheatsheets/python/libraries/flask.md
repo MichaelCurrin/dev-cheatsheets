@@ -1,4 +1,6 @@
-# Flask
+---
+title: Flask
+---
 
 This section assumes familiarity with the [Flask](https://flask.palletsprojects.com/en/1.1.x/) library.
 
@@ -45,7 +47,7 @@ Visit the endpoint or add a button which points to it. You will get prompted to 
 
 ## Caching
 
-Add caching to your Flask application to reduce load on your server. 
+Add caching to your Flask application to reduce load on your server.
 
 For example, if your server does any heavy computing, reading from a database or external API calls, you can improve performance (and therefore reduce request time) by using cache.
 
@@ -74,7 +76,7 @@ from flask_caching import Cache
 
 
 CACHE_OPTIONS = dict(
-    CACHE_TYPE="simple", 
+    CACHE_TYPE="simple",
     CACHE_DEFAULT_TIMEOUT=60*60,
 )
 

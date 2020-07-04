@@ -1,4 +1,6 @@
-# Read and write cheatsheet
+---
+title: Read and write
+---
 
 ## Read text file
 
@@ -8,7 +10,7 @@ with open(path) as f_in:
     text = f_in.read()
 ```
 
-Get a `list` of `str` objects. 
+Get a `list` of `str` objects.
 
 ```python
 with open(path) as f_in:
@@ -79,8 +81,3 @@ with open(path, 'w') as f_out:
     write.writeheader()
     write.writerows(rows)
 ```
-
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4ODA0OTY2OF19
--->

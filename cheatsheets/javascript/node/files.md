@@ -1,4 +1,7 @@
-# Files
+---
+title: Files
+---
+
 > Working with paths, files and directories
 
 ## Paths

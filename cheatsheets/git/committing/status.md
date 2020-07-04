@@ -1,4 +1,6 @@
-# Status
+---
+title: Status
+---
 
 ## Flags
 
@@ -96,6 +98,3 @@ This is then used conditionally to determine when these should be used.
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMzgxODczNDQ5XX0=
--->

@@ -1,4 +1,6 @@
-# Install packages
+---
+title: Install packages
+---
 
 
 ## Main install

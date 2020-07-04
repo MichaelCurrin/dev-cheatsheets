@@ -1,4 +1,6 @@
-# CSS
+---
+title: CSS
+---
 
 ## Github Pages CSS
 
@@ -12,7 +14,7 @@ Note the URL here is relative to the current page.
 
 If you are adding styling to a subpage, you can use a prefix:
 
-- `/repo-name/` - make it absolute using 
+- `/repo-name/` - make it absolute using
 - `../` - make it relative
 
 ## Font

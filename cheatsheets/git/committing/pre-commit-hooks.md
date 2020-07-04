@@ -1,4 +1,6 @@
-# Git hooks cheatsheet
+---
+title: Git hooks
+---
 
 
 ## Resources
@@ -63,6 +65,3 @@ jobs:
           pip install pre-commit
           pre-commit run --all-files
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3NzMyNDc2NF19
--->

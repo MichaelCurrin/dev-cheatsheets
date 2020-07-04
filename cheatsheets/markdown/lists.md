@@ -1,4 +1,6 @@
-# Lists
+---
+title: Lists
+---
 
 
 ## Bulleted list
@@ -187,6 +189,3 @@ Hard brackets. With either space or lowercase `x`.
 
 - [ ] not done
 - [x] done
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0OTc0NDM5N119
--->

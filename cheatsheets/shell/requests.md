@@ -1,4 +1,6 @@
-# Shell requests cheatsheet
+---
+title: Shell requests
+---
 
 How to download or upload content at a URL using terminal tools.
 
@@ -41,21 +43,21 @@ curl http:example.com/\{foo,bar\}\#baz
 - [Curl manpage](https://linux.die.net/man/1/curl) on [Linux.die.net](https://Linux.die.net).
 
 
-Flag | Description
----  | ---
-`-L` | Follow redirect.
-`-o --output FILEPATH` | Write to named filepath. [manpage](https://curl.haxx.se/docs/manpage.html#-o)
-`-O, --remote-name` | Write to a file in the current directory using the remote's filename. This will use '%20' for spaces. [manpage](https://curl.haxx.se/docs/manpage.html#-O)
-`-u user:pass` | User authentication.
+| Flag                   | Description                                                                                                                                                |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-L`                   | Follow redirect.                                                                                                                                           |
+| `-o --output FILEPATH` | Write to named filepath. [manpage](https://curl.haxx.se/docs/manpage.html#-o)                                                                              |
+| `-O, --remote-name`    | Write to a file in the current directory using the remote's filename. This will use '%20' for spaces. [manpage](https://curl.haxx.se/docs/manpage.html#-O) |
+| `-u user:pass`         | User authentication.                                                                                                                                       |
 
 
 ### Verbosity
 
-Flag | Description
----  | ---
-`-v --verbose` | Verbose
-`-vv` | More verbose.
-`-s` | Silent
+| Flag           | Description   |
+| -------------- | ------------- |
+| `-v --verbose` | Verbose       |
+| `-vv`          | More verbose. |
+| `-s`           | Silent        |
 
 
 ### Saving output
@@ -68,10 +70,10 @@ curl http > dir/file.txt
 curl URL -o dir/file.txt
 
 # Multiple files and use the variable input in the output.
-curl "http://{one,two}.example.com" -o "file_#1.txt" 
+curl "http://{one,two}.example.com" -o "file_#1.txt"
 ```
 
-Use the remote resource's name. 
+Use the remote resource's name.
 
 ```sh
 curl http://example.com/foo.html -O
@@ -193,6 +195,3 @@ brew install wget
 ```sh
 wget http://website.com/files/file.zip
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNzM2NzAyODQ2LC05MjEzMzk2NV19
--->

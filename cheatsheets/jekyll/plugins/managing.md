@@ -1,4 +1,6 @@
-# Managing plugins
+---
+title: Managing plugins
+---
 
 
 ## Local

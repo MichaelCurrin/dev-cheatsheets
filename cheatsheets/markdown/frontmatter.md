@@ -17,7 +17,9 @@ deeper_nesting:
         - 600
 ---
 
-# Markdown frontmatter
+---
+title: Markdown frontmatter
+---
 
 There is a way to show markdown tables where you YAML. You will notice this if you see frontmatter in YAML format at the top of a Jekyll mardown page and view it in GitHub. Adding more fields at the outer level grows the table horizontally.
 

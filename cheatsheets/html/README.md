@@ -1,4 +1,6 @@
-# HTML
+---
+title: HTML
+---
 
 ## Favicon
 

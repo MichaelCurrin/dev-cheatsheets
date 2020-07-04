@@ -1,4 +1,6 @@
-# Working with text files cheatsheet
+---
+title: Working with text files
+---
 
 
 ## View file
@@ -33,7 +35,7 @@ Use `xclip` - see [man page](https://linux.die.net/man/1/xclip).
 >
 > Description
 >
-> Reads from standard in, or from one or more files, and makes the data available as an X selection for pasting into X applications. Prints current X selection to standard out. 
+> Reads from standard in, or from one or more files, and makes the data available as an X selection for pasting into X applications. Prints current X selection to standard out.
 
 #### Read
 
@@ -61,9 +63,9 @@ $ xclip -sel clip PATH
 
 Or according to the manpage:
 
-> -selection 
+> -selection
 >
->   specify which X selection to use, options are "primary" to use XA_PRIMARY (default), "secondary" for XA_SECONDARY or "clipboard" for XA_CLIPBOARD 
+>   specify which X selection to use, options are "primary" to use XA_PRIMARY (default), "secondary" for XA_SECONDARY or "clipboard" for XA_CLIPBOARD
 
 #### Output
 
@@ -75,10 +77,10 @@ $ xclip
 
 Pipe.
 
-> -o, -out 
+> -o, -out
 >
->   prints the selection to standard out (generally for piping to a file or program) 
-    
+>   prints the selection to standard out (generally for piping to a file or program)
+
 ```sh
 $ xclip -o > PATH
 ```

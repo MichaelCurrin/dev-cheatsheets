@@ -1,8 +1,10 @@
-# Path cheatsheet
+---
+title: Path
+---
 
 ## Script path and directory
 
-Note that getting the current directory with `pwd` will give the working directory of the user. If a script is not the the working directory, then you need something more precise. If you want to get the directory where a script is in, from inside the script, use this.  
+Note that getting the current directory with `pwd` will give the working directory of the user. If a script is not the the working directory, then you need something more precise. If you want to get the directory where a script is in, from inside the script, use this.
 
 ### Option A
 
@@ -39,7 +41,7 @@ For a script `~/foo/bar.sh`, printing those variables gives:
 /Users/my-user/foo
 ```
 
-To leave symlinks unresolved: 
+To leave symlinks unresolved:
 
 ```sh
 realpath -s $0`

@@ -1,4 +1,5 @@
+---
+title: YAML
+---
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODg3NDY2MTJdfQ==
--->
+Homepage: [yaml.org](https://yaml.org/)

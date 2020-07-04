@@ -1,5 +1,7 @@
 
-# Pip cheatsheet
+---
+title: Pip
+---
 
 See also [project packages](cheatsheets/package_managers/project_packages) section of this project and look for pip or Python pages.
 
@@ -83,6 +85,3 @@ This approach does **not** require the activate step.
 ```sh
 $ venv/bin/pip
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4MTQwNjQ1Ml19
--->

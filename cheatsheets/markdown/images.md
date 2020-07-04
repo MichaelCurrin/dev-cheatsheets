@@ -1,4 +1,6 @@
-# Images
+---
+title: Images
+---
 
 Images in mardown as similar to a hyperlink, except it starts with an **exclamation mark**.
 

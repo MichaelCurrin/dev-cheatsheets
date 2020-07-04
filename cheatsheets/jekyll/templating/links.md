@@ -1,4 +1,6 @@
-# Links
+---
+title: Links
+---
 
 ## Local paths
 
@@ -6,9 +8,9 @@ There are multiple ways to do this, depending on you situation.
 
 ### Relative URL
 
-Use the `relative_url` filter to ensure you get a Github Pages project prefix added. 
+Use the `relative_url` filter to ensure you get a Github Pages project prefix added.
 
-The downside to this approach as uis that it used a literal string - is does not validate if the page actually exists and also does not obey and permalink settings set on the metadata or config. 
+The downside to this approach as uis that it used a literal string - is does not validate if the page actually exists and also does not obey and permalink settings set on the metadata or config.
 
 ```markdown
 - [Link text]({{ '/' | relative_url }})
@@ -111,6 +113,3 @@ Markdown:
 ```liquid
 [Link Text]({% post_url 2010-09-08-welcome-to-jekyll %})
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMzA0NzcwNTFdfQ==
--->

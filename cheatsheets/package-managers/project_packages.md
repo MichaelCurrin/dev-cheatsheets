@@ -1,4 +1,6 @@
-# Project packages
+---
+title: Project packages
+---
 
 <!-- TODO reduce this section and split it out for each language -->
 

@@ -1,4 +1,6 @@
-# Handing files and paths cheatsheet
+---
+title: Handing files and paths
+---
 
 
 ## Search
@@ -137,6 +139,3 @@ x=$([[ -f "$FILE" ]] && 'yes' || 'no')
 [[ FILE1 -ot FILE2 ]] 	2 is more recent than 1
 [[ FILE1 -ef FILE2 ]] 	Same files
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNTUzMjAwMzVdfQ==
--->

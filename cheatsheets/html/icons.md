@@ -1,4 +1,6 @@
-# Icons
+---
+title: Icons
+---
 
 This guide covers inserting HTML icons in webpages, focussing on _Fontawesome_.
 

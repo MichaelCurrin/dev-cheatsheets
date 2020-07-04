@@ -1,4 +1,6 @@
-# Cross language shell cheatsheet
+---
+title: Cross language shell
+---
 > How to run a shell command from another language
 
 
@@ -37,6 +39,3 @@ Open3.popen3(cmd) do |stdin, stdout, stderr, wait_thr|
   puts "stderr is:" + stderr.read
 end
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5NTEwNTA4M119
--->

@@ -1,4 +1,6 @@
-# Jekyll gems cheatsheet
+---
+title: Jekyll gems
+---
 
 
 ## Check environment
@@ -95,7 +97,3 @@ bundle install
 ```ruby
 gem 'bar', git: 'https://github.com/foo/bar'
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjc5NDY5MDg4LC0xOTI2MDUxOTc4LC0xMT
-A4MDUzNjg2XX0=
--->

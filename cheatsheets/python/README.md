@@ -1,4 +1,6 @@
-# Python cheatsheet
+---
+title: Python
+---
 
 Some useful commands, boilerplate code from my existing projects or things to use in new development.
 
@@ -30,7 +32,7 @@ Install [python-dotenv](https://pypi.org/project/python-dotenv/). Use the `-U` f
 $ pip install python-dotenv
 ```
 
-Create a `.env` file which follows Bash Shell syntax, with content such as: 
+Create a `.env` file which follows Bash Shell syntax, with content such as:
 
 ```sh
 # a comment that will be ignored.
@@ -131,9 +133,3 @@ import copy
 
 copied_obj = copy.deepcopy(original_obj)
 ```
-
-
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYxNTEwMDAwLDE0MjI5NTYwOTZdfQ==
--->

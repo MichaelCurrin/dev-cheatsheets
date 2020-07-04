@@ -1,4 +1,7 @@
-# Selection
+---
+title: Selection
+---
+
 > Using CSS selectors
 
 Style an element based on state.

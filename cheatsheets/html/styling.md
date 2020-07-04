@@ -1,9 +1,11 @@
-# Styling
+---
+title: Styling
+---
 
 
 ## Navigation bar
 
-A full-width navbar that sticks to the top of the page when you scroll. 
+A full-width navbar that sticks to the top of the page when you scroll.
 
 ```css
 nav.navbar {
@@ -57,7 +59,7 @@ Or use:
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-} */ 
+} */
 ```
 
 Position could be `center top`.
@@ -97,6 +99,3 @@ Some useful styling - in particular for a DocsifyJS site.
     top: 2px;
 }
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk0NjA3Njc5MV19
--->

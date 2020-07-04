@@ -1,4 +1,6 @@
-# Github API V3
+---
+title: Github API V3
+---
 
 https://developer.github.com/v3/guides/getting-started/
 

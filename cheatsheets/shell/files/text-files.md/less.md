@@ -1,5 +1,5 @@
 # Less
-	
+
 	DESCRIPTION
 	       Less  is a program similar to more (1), but which allows backward movement in the file as well as forward movement.  Also, less does not have to read the
 	       entire input file before starting, so with large input files it starts up faster than text editors like vi (1).  Less uses termcap (or terminfo  on  some
@@ -21,6 +21,3 @@ git log | cat
 ```
 
 This prevents paging but loses color details.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0OTExOTcwNl19
--->

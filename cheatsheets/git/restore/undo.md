@@ -1,4 +1,6 @@
-# Undo
+---
+title: Undo
+---
 
 ## Undo commit
 
@@ -30,6 +32,3 @@ This will get rid of any unpushed commits.
 ```sh
 git checkout origin/master .
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNDY5NjgyNjY1LC0xNjc5Njc5MjgxXX0=
--->

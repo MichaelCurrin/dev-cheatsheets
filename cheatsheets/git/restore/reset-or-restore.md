@@ -1,9 +1,11 @@
-# Reset or restore git branches cheatsheet
+---
+title: Reset or restore git branches
+---
 
 
 ## Restore local master to remote master
 
-Restore your master branch to the state on the remote. 
+Restore your master branch to the state on the remote.
 
 ```sh
 git checkout master
@@ -36,6 +38,3 @@ git reset && git co .
 ```
 
 Note `reset HEAD` is implied.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyNTgzODEyOV19
--->

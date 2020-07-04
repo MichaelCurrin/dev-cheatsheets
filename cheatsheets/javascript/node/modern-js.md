@@ -1,4 +1,6 @@
-# Modern JS
+---
+title: Modern JS
+---
 
 ## Destructure key-value pairs
 

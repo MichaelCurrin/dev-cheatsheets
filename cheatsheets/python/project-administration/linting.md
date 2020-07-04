@@ -1,4 +1,6 @@
-# Linting cheatsheet
+---
+title: Linting
+---
 
 Some VS Code choices - there are flags for each (so multiple can be used), plus a linting enabled switch.
 
@@ -61,8 +63,8 @@ disable= wildcard-import,
  method-hidden,
  too-many-lines
 ```
- 
- 
+
+
 ## Flake8
 
 ### Disable
@@ -105,6 +107,3 @@ exclude =
     tests/repositories/fixtures/
     tests/utils/fixtures/
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTU2MDYzNDJdfQ==
--->

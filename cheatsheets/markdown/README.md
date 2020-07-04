@@ -1,4 +1,6 @@
-# Markdown cheatsheet
+---
+title: Markdown
+---
 
 Applies to `.md` or `.markdown` files as both are equivalent.
 

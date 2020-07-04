@@ -1,4 +1,6 @@
-# Grep cheatsheet
+---
+title: Grep
+---
 
 ## Man page
 
@@ -127,6 +129,3 @@ $ gem install bundler -v "${BUNDLE_VSN:-2.1.4}"
 Copied from [source](https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html).
 
 Whitespace does not matter here but in other cases could be trimmed.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNzg4NjkzXX0=
--->

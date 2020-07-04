@@ -1,4 +1,6 @@
-# OG tags
+---
+title: OG tags
+---
 
 ## Resources
 
@@ -23,16 +25,16 @@
 
 `og:image`
 
-- URL for the image. 
+- URL for the image.
 - > To update an image after it's been published, use a new URL for the new image. Images are cached based on the URL and won't be updated unless the URL changes.
 
 ## Sample from docs
 
 ```html
 <meta  property="og:url"  content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html"  />
-<meta  property="og:type"  content="article"  />  
+<meta  property="og:type"  content="article"  />
 <meta  property="og:title"  content="When Great Minds Don’t Think Alike"  />
-<meta  property="og:description"  content="How much does culture influence creative thinking?"  /> 
+<meta  property="og:description"  content="How much does culture influence creative thinking?"  />
 <meta  property="og:image"  content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"  />
 ```
 
@@ -42,13 +44,13 @@
 
 ### Result
 
-Tag | Value
---- | ---
-og:url 	| https://thebuckfeverunderground.co.za/
-og:title 	| The Buckfever Underground
-og:description 	| Spoken-word experimental rock band in Cape Town, South Africa.
-og:locale 	| en_US
-og:site_name 	| The Buckfever Underground
+| Tag            | Value                                                          |
+| -------------- | -------------------------------------------------------------- |
+| og:url         | https://thebuckfeverunderground.co.za/                         |
+| og:title       | The Buckfever Underground                                      |
+| og:description | Spoken-word experimental rock band in Cape Town, South Africa. |
+| og:locale      | en_US                                                          |
+| og:site_name   | The Buckfever Underground                                      |
 
 ### Input
 
@@ -64,6 +66,3 @@ og:site_name 	| The Buckfever Underground
 <meta property="og:url" content="https://thebuckfeverunderground.co.za/" />
 <meta property="og:site_name" content="The Buckfever Underground" />
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzNTA1MDk0XX0=
--->

@@ -1,4 +1,6 @@
-# TOML
+---
+title: TOML
+---
 
 ## Example
 
@@ -20,6 +22,3 @@ import toml
 config = toml.load('config.toml')
 print(config)
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxNjgyODEwN119
--->

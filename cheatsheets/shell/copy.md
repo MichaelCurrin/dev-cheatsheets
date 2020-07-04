@@ -1,4 +1,6 @@
-# Copy cheatsheet
+---
+title: Copy
+---
 
 ## Directory
 
@@ -25,7 +27,3 @@ yes | cp SOURCE DEST
 ```
 
 https://stackoverflow.com/questions/8488253/how-to-force-cp-to-overwrite-without-confirmation
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ2ODkwNjM5Ml19
--->

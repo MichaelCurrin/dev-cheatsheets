@@ -1,4 +1,7 @@
-# File compression
+---
+title: File compression
+---
+
 > How to zip and unzip with a few utilities
 
 <!-- Move to Learn to Code and then link to a shorter version here, maybe with tables -->
@@ -84,7 +87,7 @@ zip -r -e data.zip data/
 
 ## tar utility
 
-The `tar` utility is creating an archive - a single file which is _not_ compressed. It also handles compression, using either gzip or bzip2 algorithms. Archiving and compression are typically used together. It is recommended that if there are two or more files to compress, then use `tar` rather than `gzip` or `bzip2` utilities. 
+The `tar` utility is creating an archive - a single file which is _not_ compressed. It also handles compression, using either gzip or bzip2 algorithms. Archiving and compression are typically used together. It is recommended that if there are two or more files to compress, then use `tar` rather than `gzip` or `bzip2` utilities.
 
 - Archive: `.tar`
 - Compressed: `.gzip` (or `.bz2`)
@@ -151,7 +154,7 @@ tar zxvf ZIPPED_INPUT_FILE
 
 Look at the contents of a file without creating new files.
 
-Use the commands below. 
+Use the commands below.
 
 
 ```sh

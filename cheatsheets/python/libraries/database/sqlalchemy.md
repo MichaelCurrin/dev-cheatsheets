@@ -1,4 +1,6 @@
-# SQLAlchemy
+---
+title: SQLAlchemy
+---
 
 Here we get row data and field names (on the `.description` attribute) from a SQLite database, using the SQLAlchemy library.
 

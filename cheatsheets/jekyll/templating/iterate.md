@@ -1,4 +1,6 @@
-# Iterate over data
+---
+title: Iterate over data
+---
 
 You can iterate over data in a data file or in the current page's frontmatter or any global variables from Jekyll or a plugin.
 
@@ -55,6 +57,3 @@ Another example
   {% endfor %}
 {% endfor %}
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjUzNzY5NTJdfQ==
--->

@@ -1,4 +1,6 @@
-# Commit references
+---
+title: Commit references
+---
 
 > `HEAD` is a symbolic ref, and it can be seen with `git symbolic-ref HEAD`
 
@@ -11,6 +13,3 @@ git push origin HEAD
 
 git push origin CURRENT_BRANCH_NAME
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNzUxNjExNjQ1XX0=
--->

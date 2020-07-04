@@ -1,4 +1,6 @@
-# Command-line interfaces
+---
+title: Command-line interfaces
+---
 
 How to write CLIs for applications such as in Bash or Python.
 
@@ -19,13 +21,13 @@ There are other Python libraries ([comparison article](https://realpython.com/co
     - [Click](https://click.palletsprojects.com/en/master/) docs for _master_.
     - [Why Click?](https://click.palletsprojects.com/en/master/why/)
     - Install using `pip install click`.
-    
+
 ### Bash
 
 - **getops**
     - [Getopts tutorial](https://www.computerhope.com/unix/bash/getopts.htm)
     - [Bash builtins](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html) in the Bash manual. Includes a section on _getopsts_.
-   
+
 
 ## Examples
 

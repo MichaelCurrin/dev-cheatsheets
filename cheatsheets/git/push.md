@@ -1,4 +1,6 @@
-# Git push cheatsheet
+---
+title: Git push
+---
 
 Docs: https://git-scm.com/docs/git-push
 
@@ -42,7 +44,3 @@ Use the `-u` flag for `--set-upstream`. This is not needed on future pushes.
 ```sh
 git push -u origin my-feature
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjc1NzM2MjYwLDkxMTM4OTEyNyw2NDgwOT
-gwOTZdfQ==
--->

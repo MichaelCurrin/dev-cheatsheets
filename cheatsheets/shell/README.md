@@ -1,4 +1,6 @@
-# Shell cheatsheet
+---
+title: Shell
+---
 
 Unix shell cheatsheet for macOS/Linux
 

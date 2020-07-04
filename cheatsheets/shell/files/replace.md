@@ -1,4 +1,6 @@
-# Replace
+---
+title: Replace
+---
 
 Find and replace text in files.
 

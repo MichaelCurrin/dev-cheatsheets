@@ -1,4 +1,6 @@
-# Requests
+---
+title: Requests
+---
 
 See also [shell/requests.md](shell/requests.md) for doing requests from the command-line.
 
