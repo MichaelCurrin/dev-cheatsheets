@@ -5,7 +5,7 @@ title: Pathlib
 
 ## Resources
 
-- [pathlib](https://docs.python.org/3/library/pathlib.html) in Python 3 ocs.
+- [pathlib](https://docs.python.org/3/library/pathlib.html) in Python 3 docs.
 - https://pbpython.com/pathlib-intro.html
 - https://realpython.com/python-pathlib/
 

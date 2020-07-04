@@ -56,6 +56,6 @@ Example:
 
 Note that Google **ignores** this tag and only uses content.
 
-Source: [Google does not use the keywords meta tag in web ranking](https://webmasters.googleblog.com/2009/09/google-does-not-use-keywords-meta-tag.html) post on Googleblog site.
+Source: [Google does not use the keywords meta tag in web ranking](https://webmasters.googleblog.com/2009/09/google-does-not-use-keywords-meta-tag.html) post on Google Blog site.
 
 Google does also give more weighting to bold and italics words.

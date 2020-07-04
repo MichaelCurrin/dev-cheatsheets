@@ -24,7 +24,7 @@ Numbered and bullets mixed.
     - Bullet
 3. C
 
-Numbered and codeblocks mixed.
+Numbered and code-blocks mixed.
 
 	1. A
 	2. B

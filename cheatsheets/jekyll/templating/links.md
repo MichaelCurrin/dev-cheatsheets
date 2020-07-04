@@ -4,13 +4,13 @@ title: Links
 
 ## Local paths
 
-There are multiple ways to do this, depending on you situation.
+There are multiple ways to do this, depending on your situation.
 
 ### Relative URL
 
 Use the `relative_url` filter to ensure you get a Github Pages project prefix added.
 
-The downside to this approach as uis that it used a literal string - is does not validate if the page actually exists and also does not obey and permalink settings set on the metadata or config.
+The downside to this approach that it uses a literal string - is does not validate if the page actually exists and also does not obey and permalink settings set on the metadata or config.
 
 ```markdown
 - [Link text]({{ '/' | relative_url }})

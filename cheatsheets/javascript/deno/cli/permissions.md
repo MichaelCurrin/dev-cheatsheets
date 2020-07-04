@@ -6,7 +6,7 @@ CLI flags for security.
 
 | Flag                          | Allows                           |
 | ----------------------------- | -------------------------------- |
-| `-A, --allow-all`             | Aall permissions                 |
+| `-A, --allow-all`             | All permissions                  |
 | `--allow-env`                 | Environment access               |
 | `--allow-hrtime`              | High-resolution time measurement |
 | `--allow-net=<allow-net>`     | Network access                   |

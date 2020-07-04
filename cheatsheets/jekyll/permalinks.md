@@ -64,7 +64,7 @@ This will change output files `about.html` to `about/index.html`.
 permalink: /:categories/:year/:month/:day/:title/
 ```
 
-When you link to a page in your content, you'll want to make sure you link to the short form and not the explict `index.html` version.
+When you link to a page in your content, you'll want to make sure you link to the short form and not the explicit `index.html` version.
 
 ## Collection-level
 

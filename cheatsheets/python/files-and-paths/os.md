@@ -116,7 +116,7 @@ os.path.join(foo, bar)
 
 ## Split
 
-### Get girectory
+### Get directory
 
 Of a file.
 ```python

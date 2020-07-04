@@ -26,7 +26,7 @@ There are other Python libraries ([comparison article](https://realpython.com/co
 
 - **getops**
     - [Getopts tutorial](https://www.computerhope.com/unix/bash/getopts.htm)
-    - [Bash builtins](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html) in the Bash manual. Includes a section on _getopsts_.
+    - [Bash builtins](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html) in the Bash manual. Includes a section on _getopts_.
 
 
 ## Examples

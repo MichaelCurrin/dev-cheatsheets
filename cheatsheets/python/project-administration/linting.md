@@ -4,9 +4,11 @@ title: Linting
 
 Some VS Code choices - there are flags for each (so multiple can be used), plus a linting enabled switch.
 
-- [pylint](#pylint)
-- [flake8](#flake8)
-- [mypy](#mypy)
+- [Pylint](#pylint)
+    - [Rules](#rules)
+    - [How to disable](#how-to-disable)
+- [Flake8](#flake8)
+    - [Disable](#disable)
 
 
 ## Pylint

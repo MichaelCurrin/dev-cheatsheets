@@ -77,7 +77,7 @@ The following are equivalent, though Github's markdown editor only shows a previ
 
 ## Paragraph
 
-If there are two paragraph lines with no break between, Markdown will show them on online. Therefore you can either add white space between, use a `<br>` tag, or use a double white space at the end of the line (not pratical if your IDE trims whitespace).
+If there are two paragraph lines with no break between, Markdown will show them on online. Therefore you can either add white space between, use a `<br>` tag, or use a double white space at the end of the line (not practical if your IDE trims whitespace).
 
 ```markdown
 Line 1
