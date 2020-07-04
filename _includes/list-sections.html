@@ -9,7 +9,8 @@
 {% endif %}
 
 <ul>
-    {% for item in site.pages %}
+    {% assign pages = site.pages | sort: 'title' %}
+    {% for item in pages %}
         {% assign item_crumbs = item.url | remove_first: page.dir | split: '/' %}
 
         {% if item_crumbs.size == depth and item.name == 'index.md' %}

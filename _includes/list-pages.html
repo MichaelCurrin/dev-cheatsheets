@@ -3,6 +3,7 @@
 {% endcomment %}
 
 <ul>
+    {% assign pages = site.pages | sort: 'title' %}
     {% for item in site.pages %}
         {% if item.dir == page.dir and item.path != page.path %}
         <li>
