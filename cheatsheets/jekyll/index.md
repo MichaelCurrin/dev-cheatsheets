@@ -1,6 +1,7 @@
 ---
 title: Jekyll
----s
+layout: listing
+---
 
 
 ## Resources

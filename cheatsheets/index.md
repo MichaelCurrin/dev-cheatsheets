@@ -1,3 +1,4 @@
 ---
 title: Cheatsheets
+layout: listing
 ---

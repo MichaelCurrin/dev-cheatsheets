@@ -1,51 +1,56 @@
 ---
 title: Jekyll Templating
+render_with_liquid: false
 ---
 
 Cheat sheet for using Jekyll Liquid and plain HTML in Jekyll projects.
 
 
+## Disable Liquid
+
+Set in frontmatter:
+
+```yaml
+render_with_liquid: false
+```
+
 
 ## Comment
 
-```
+```liquid
 {% comment %}
 Comment message
 {% endcomment %}
 ```
-
 
 ## Collections
 
 
 ### Iterate over collection
 
-`_config.yml`
-
-```yaml
-collections:
-  foo:
-    output: true
-```
-
-`_foo/bars/*.md`
-
-`index.md`
-```
----
----
-{% for item in site.foo.bars %}
-{{ item.title }}
-{% endfor %}
-```
-
+- `_config.yml`
+    ```yaml
+    collections:
+    foo:
+        output: true
+    ```
+- `_foo/bars/*.md`
+- `index.md`
+    ```liquid
+    ---
+    ---
+    {% for item in site.foo.bars %}
+    {{ item.title }}
+    {% endfor %}
+    ```
 
 
 ## Filter assets
 
 [source](https://stackoverflow.com/questions/17677094/jekyll-for-loop-over-all-images-in-a-folder)
 
-```
+
+```liquid
 {% for asset in site.static_files %}
     {% if asset.path contains '<NEEDLE>' %}
         <a href="{{ asset.path | relative_url }}">{{ asset.path }}</a>
@@ -56,7 +61,7 @@ collections:
 
 ## SVGs
 
-See also the [SVG section of the markdown cheatsheet](/cheatsheets/markdown.md#svgs).
+See also the [SVG section of the markdown cheatsheet](/cheatsheets/markdown/index.md#svgs).
 
 ### Image tag
 
@@ -85,8 +90,9 @@ Clickable social media SVG icon.
 
 How use the `svg` and `use` tags to reference a `.svg` file which contains multiple images (referenced by ID).
 
-```jekyll
-<a href="https://instagram.com/{{ site.instagram_username| cgi_escape | escape }}">
+
+```liquid
+<a href="https://instagram.com/{{ site.instagram_username | default: '' | cgi_escape | escape }}">
     <svg class="svg-icon">
         <use xlink:href="{{ '/assets/minima-social-icons.svg#instagram' | relative_url }}"></use>
     </svg>

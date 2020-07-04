@@ -1,3 +1,4 @@
 ---
 title: Go
+layout: listing
 ---

@@ -1,5 +1,6 @@
 ---
 title: Grep
+layout: listing
 ---
 
 ## Man page

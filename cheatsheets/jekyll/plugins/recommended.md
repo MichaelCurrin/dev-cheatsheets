@@ -1,5 +1,6 @@
 ---
 title: Recommended plugins
+render_with_liquid: false
 ---
 
 
@@ -108,7 +109,7 @@ These can go on most sites.
 - [jekyll-feed](https://github.com/jekyll/jekyll-feed)
 	- Produce RSS feed. _"A Jekyll plugin to generate an Atom (RSS-like) feed of your Jekyll posts."_
 - [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag)
-	- Use as `{% set %}` in your `head` tag. The result will be a HTML tag which starts with "SEO plugin"  comment.
+	- Use as `{% seo %}` in your `head` tag. The result will be a HTML tag which starts with "SEO plugin"  comment.
 	- See advanced usage for authors and image OG data.
 - [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)
 	- Adds a `sitemap.xml` and `robots.txt` file to the site.

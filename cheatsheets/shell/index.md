@@ -1,5 +1,6 @@
 ---
 title: Shell
+layout: listing
 ---
 
 Unix shell cheatsheet for macOS/Linux

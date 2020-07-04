@@ -1,5 +1,6 @@
 ---
 title: HTML
+render_with_liquid: false
 ---
 
 > How to add HTML tags to your markdown files
@@ -58,7 +59,11 @@ HTML comments will not be visible when viewed as HTML. So they are good for note
 
 <!-- TODO: Something to do. -->
 
-Especially good for a static website where you don't want your TODO items to show up on the site. Though you might want to use the Jekyll `{% comment %}` filter if you want to avoid your comment from being rendered as HTML source.
+Especially good for a static website where you don't want your TODO items to show up on the site. Though you might want to use the Jekyll `comment` filter if you want to avoid your comment from being rendered as HTML source.
+
+{% comment %}
+Message here
+{% endcomment %}
 
 
 ## Formatting

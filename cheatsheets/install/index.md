@@ -1,5 +1,6 @@
 ---
 title: Install
+layout: listing
 ---
 
 

@@ -1,10 +1,10 @@
 ---
-title: Jekyll codeblocks
+title: Jekyll code-blocks
 ---
 
 Here we have Liquid code which needs to be shown as code and not rendered (it may cause errors), so use the `raw` tag. This will not show up literally but will ensure any Liquid content inside it is no evaluated.
 
-## Markdown codeblocks
+## Markdown code-blocks
 
 This works in plain markdown too.
 
@@ -19,18 +19,21 @@ This works in plain markdown too.
 
 This works in Jekyll only.
 
-
-	{% highlight ruby linenos %}
+{% raw %}
+	{% highlight ruby %}
 	def foo
 	  puts 'foo'
 	end
 	{% endhighlight %}
-
+{% endraw}
 
 Optionally add line numbers.
 
+{% raw %}
 
 	{% highlight ruby linenos %}
+
+{% endraw %}
 
 
 ## Showing Liquid snippets
@@ -38,9 +41,9 @@ Optionally add line numbers.
 Prevent Liquid snippets from rendering and give them syntax highlighting.
 
 
-### Codeblock approach
+### Code-block approach
 
-Note that the codeblock goes _inside_ the `raw` tag to avoid unnecessary empty lines showing up.
+Note that the code-block goes _inside_ the `raw` tag to avoid unnecessary empty lines showing up.
 
 To use HTML highlighting (Liquid parts are plain).
 

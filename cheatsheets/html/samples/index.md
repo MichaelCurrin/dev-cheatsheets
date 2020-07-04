@@ -1,3 +1,4 @@
 ---
 title: Samples
+layout: listing
 ---

@@ -1,7 +1,9 @@
 ---
 title: Links
+# link tag must still be made raw so setting render_with_liquid does not work here
 ---
 
+{% raw %}
 ## Local paths
 
 There are multiple ways to do this, depending on your situation.
@@ -42,9 +44,11 @@ This will figure out the appropriate URL. And it will give build error if the pa
 
 e.g.
 
+
 ```markdown
 -  [Link text]({% link about.md %})
 ```
+
 
 Result:
 
@@ -54,16 +58,20 @@ Result:
 
 You can pass a variable too:
 
+
 ```markdown
 -  [Link text]({% link {{ item }} %})
 ```
 
 
+
 This works well for Jekyll 4 - which adds base URL for you. Otherwise you must do:
+
 
 ```markdown
 {{ site.baseurl }}{% link about.md %}
 ```
+
 
 
 ## Footer links
@@ -84,13 +92,13 @@ Link to an internal page using the path to the file in the project, not on the U
 
 *Since Jekyll 4.0 , you don’t need to prepend `link` and `post_url` tags with `site.baseurl`.*
 
-
 Examples from [docs](https://jekyllrb.com/docs/liquid/tags/).
 
 
 ### Link to page
 
 Extension must be included.
+
 
 ```liquid
 {% link _collection/name-of-document.md %}
@@ -113,3 +121,5 @@ Markdown:
 ```liquid
 [Link Text]({% post_url 2010-09-08-welcome-to-jekyll %})
 ```
+
+{% endraw %}

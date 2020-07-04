@@ -1,4 +1,4 @@
 ---
 title: Ruby
+layout: listing
 ---
-

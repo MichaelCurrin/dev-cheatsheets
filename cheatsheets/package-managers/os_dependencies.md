@@ -1,4 +1,6 @@
-## macOS
+---
+title: macOS
+---
 
 ### Homebrew
 
@@ -27,7 +29,7 @@ $ brew tap <TAP_NAME>/taps
 $ brew install <TAP_NAME>
 ```
 
-e.g. 
+e.g.
 
 ```sh
 $ brew tap isacikgoz/taps

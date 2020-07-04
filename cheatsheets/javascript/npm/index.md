@@ -1,5 +1,6 @@
 ---
 title: NPM
+layout: listing
 ---
 
 - NPM homepage: [npmjs.com](https://www.npmjs.com)

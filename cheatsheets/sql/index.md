@@ -1,3 +1,4 @@
 ---
 title: SQL
----s
+layout: listing
+---

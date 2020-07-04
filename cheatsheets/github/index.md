@@ -1,3 +1,4 @@
 ---
 title: Github
+layout: listing
 ---

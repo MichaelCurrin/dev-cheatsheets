@@ -1,5 +1,6 @@
 ---
 title: Git
+layout: listing
 ---
 
 See also [Git](https://github.com/MichaelCurrin/learn-to-code/tree/master/Version%20control/Git) section of Learn to Code repo.

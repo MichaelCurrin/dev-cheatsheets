@@ -2,6 +2,8 @@
 title: Tags
 ---
 
+{% raw %}
+
 ## Link tag
 
 Link to a page by path.
@@ -25,3 +27,5 @@ Use a variable instead:
 ```liquid
 <img src="{% link {{ img_src }} %}" />
 ```
+
+{% endraw %}
