@@ -67,6 +67,16 @@ for P in *.doc *.mp3 *.wav *.txt; do
 done
 ```
 
+Note the replacement syntax is different to that of `sed`.
+
+Here we rename `README.md` to `index.md`:
+
+```sh
+for P in **/README.md; do git mv -v "$P" "${P//README.md/index.md}"; done
+```
+
+Use `-n|--dry-run` flag to preview first. The `-v|--verbose` flag is implied with that.
+
 Replace underscore with dash in files and directories - using ZSH builtin [globstar](globstar.md).
 
 ```sh
@@ -77,9 +87,9 @@ done
 
 That will give an error on directory paths which have an underscore in multiple levels. So you have to run the command a second time to catch those. If you have two directory levels and a file inside all with underscores, you'll have to run the command 3 times.
 
-Use `-n|--dry-run` flag to preview. The `-v|--verbose` flag is implied with that.
-
 The above can be followed by a search in the IDE with regex pattern. Note that cases should be checked before replacing. Pattern: `\w+_\w+\.md`
+
+Note that the replacement is done on the _entire_ path and not just the filename. But you could target just the filename by using `dirname` and `(cd ...)`.
 
 
 ### Rename tool
