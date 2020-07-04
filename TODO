@@ -1,6 +1,20 @@
 Rename repo to dev-cheatsheets
 Consider cheatsheets folder to be cs or sheets
 
+Unsorted / uncategorized?
+
+Homepage vs cheatsheets page? About page? Welcome home?
+Should homepage just be a splash / cover and CTA to get to cheatsheets?
+Preview? Latest updated?
+
+Or get rid of layer and move folders to root. All the .md files will be moved to subfolder so that will be clean.
+
+Replace _ with -
+
+Add Edit this page
+
+===
+
 should some of these just be moved to cheatsheets folder in Learn to Code?
 Are these aimed at me and that at others?
 
