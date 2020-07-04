@@ -43,7 +43,7 @@ Using Jekyll Sitemap plugin, the `sitemap.xml` file is created on prod and dev b
 
 Set default layout for all pages. Is this needed - isn't default the default? See artists-portfolio repo.
 
-```
+```yaml
 defaults:
   - scope:
       path: ""
@@ -55,6 +55,30 @@ defaults:
     values:
       text_width: false
  ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU1MjU5OTg1MF19
--->
+
+Here, the `index.md` pages at all levels get certain layout. And everything else defaults to `page` layout. Anything else is set on a page itself.
+
+```yaml
+defaults:
+  - scope:
+      path: "**/index.md"
+    values:
+      layout: "listing"
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+```
+
+## Markdown in HTML
+
+In a `.html` layout file, you can use `markdownify` to turn markdown into HTML.
+
+```markdown
+<footer>
+
+    {{ 'Github repo: [MichaelCurrin/cheatsheets ![Repo stars](https://img.shields.io/github/stars/MichaelCurrin/cheatsheets?style=social)](https://github.com/MichaelCurrin/cheatsheets)' | markdownify }}
+
+</footer>
+```
+
