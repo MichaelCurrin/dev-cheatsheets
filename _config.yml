@@ -1,6 +1,6 @@
 ### Site metadata ###
 
-title: Cheatsheets
+title: Dev Cheatsheets
 description: A collection of code snippets and CLI notes for easy reference
 
 github_username: MichaelCurrin
@@ -11,6 +11,9 @@ url: "https://michaelcurrin.github.io"
 baseurl: "/cheatsheets"
 
 theme: "minima"
+
+header_pages:
+  - cheatsheets/index.md
 
 plugins:
   - jekyll-feed
@@ -24,13 +27,10 @@ exclude:
   - Makefile
   - README.md
 
+# Warning - there are memory issues when using a pattern to define listing
+# layout for `cheatsheets/**/index.md` or even `cheatsheets/*/index.md`,
+# therefore it is best to be explicit in each index file.
 defaults:
-  - scope:
-      # Warning memory issues (20 seconds+) here for double star.
-      # But it is fine (< 1 second) if starting with a directory name.
-      path: "cheatsheets/**/index.md"
-    values:
-      layout: "listing"
   - scope:
       path: ""
     values:
