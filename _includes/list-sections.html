@@ -1,0 +1,21 @@
+{% comment %}
+    After removing the common part of the item's path, use an item if it goes exactly one level down.
+{% endcomment %}
+
+{% if page.layout == 'home' %}
+    {% assign depth = 2 %}
+{% else %}
+    {% assign depth = 1 %}
+{% endif %}
+
+<ul>
+    {% for item in site.pages %}
+        {% assign item_crumbs = item.url | remove_first: page.dir | split: '/' %}
+
+        {% if item_crumbs.size == depth and item.name == 'index.md' %}
+        <li>
+            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        </li>
+        {% endif %}
+    {% endfor %}
+</ul>
