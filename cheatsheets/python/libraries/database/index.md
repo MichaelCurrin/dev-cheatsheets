@@ -1,3 +1,4 @@
 ---
 title: Database
+layout: listing
 ---
