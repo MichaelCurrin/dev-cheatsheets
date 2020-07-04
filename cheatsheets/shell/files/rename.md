@@ -34,7 +34,8 @@ find . -name "*.foo" -exec rename 's/\.foo$/.bar/' '{}' \;
 ### Recursively
 
 [source](https://askubuntu.com/questions/35922/how-do-i-change-extension-of-multiple-files-recursively-from-the-command-line)
-Recursively
+
+Use `find` to change extension from `.foo` to `.bar`.
 
 ```sh
 find . -depth -name "*.foo" -exec sh -c 'mv "$1" "${1%.foo}.bar"' _ {} \;
@@ -52,7 +53,7 @@ done
 
 [source](https://www.howtogeek.com/423214/how-to-use-the-rename-command-on-linux/)
 
-Replace `.foo` with `.bar`.
+Replace extension `.foo` with `.bar`:
 
 ```sh
 for file in *.foo; do mv -- "$file" "${file%.foo}.bar"
