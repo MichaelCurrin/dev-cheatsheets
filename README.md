@@ -1,6 +1,7 @@
 # Cheatsheets
-> Collection of minimal code snippets across languages for easy reference
+> A collection of code snippets and CLI notes for easy reference
 
+There are a lot of tools and languages in here - I hope you find what you are looking for or discovering something useful.
 
 ## Purpose
 
@@ -45,7 +46,3 @@ For creating doc badges see [Badge Generator](https://michaelcurrin.github.io/ba
 
 - https://devhints.io
 - http://cheatsheetfactory.geekyhacker.com/
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1NDgxMTkzNF19
--->
