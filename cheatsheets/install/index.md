@@ -6,8 +6,8 @@ layout: listing
 
 See my gists.
 
-- https://gist.github.com/MichaelCurrin
+- [gist.github.com/MichaelCurrin](https://gist.github.com/MichaelCurrin)
 
-See file in cookbook:
+See page in cookbook:
 
-- https://github.com/MichaelCurrin/code-cookbook/blob/master/recipes/shell/install-package.md
+- [Install Package - MichaelCurrin/code-cookbook](https://github.com/MichaelCurrin/code-cookbook/blob/master/recipes/shell/install-package.md)
