@@ -1,6 +1,15 @@
 # Development
+> Notes for developers on this project
+
 
 Follow the install and usage docs to get this project setup locally.
+
+
+## Editing
+
+Recommended tool for markdown editing:
+
+- https://stackedit.io/
 
 
 ## Structure
