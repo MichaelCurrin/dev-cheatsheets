@@ -1,5 +1,13 @@
 Dev notes to self
 
+Set background color of header
+and of flex boxes to cornflowerblue and white text
+Use SCSS instead maybe change background color var
+
+Reuse flex sections aside from homepage
+
+Keep CSS separate and with the HTML. Reuse items like edit or SVG in recipes.
+
 Consider cheatsheets folder to be cs or sheets
 
 Unsorted / uncategorized?
