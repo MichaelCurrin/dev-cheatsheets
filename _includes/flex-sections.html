@@ -1,0 +1,48 @@
+
+{%- comment -%}
+    {% for p in site.pages %}
+    <div>{{ p.name }}</div>
+    {% endfor %} {%- endcomment -%}
+
+{% if page.layout == 'home' %}
+    {% assign depth = 2 %}
+{% else %}
+    {% assign depth = 1 %}
+{% endif %}
+
+<div class="flex-container">
+    {% assign pages = site.pages | sort: 'title' %}
+    {% for item in pages %}
+        {% assign item_crumbs = item.url | remove_first: page.dir | split: '/' %}
+
+        {% if item_crumbs.size == depth and item.name == 'index.md' %}
+            <a href="{{ item.url | relative_url }}">
+                <div>
+                    {{ item.title }}
+                </div>
+            </a>
+        {% endif %}
+    {% endfor %}
+</div>
+
+
+<style>
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    .flex-container>a>div {
+        margin: 10px;
+        padding: 20px;
+        font-size: 20px;
+
+        box-shadow: 1px 2px 4px gray;
+    }
+
+    .flex-container>a>div:hover {
+        filter: brightness(80%);
+    }
+
+</style>
