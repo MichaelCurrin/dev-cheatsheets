@@ -19,7 +19,7 @@ Optionally use the `-depth` command and in some examples below. Note from the do
 -depth Process each directory's contents before the directory itself.  The -delete action also implies -depth.
 ```
 
-Here is the general form to search and perform an action. The part at the end is hard to remember but is needed.
+Here is the general form to search and perform an action. The part at the end is hard to remember but is needed. Additionally add `-type f` for just files.
 
 ```sh
 find PATH -name SEARCH -exec bash -c 'COMMAND' - '{}' \;
@@ -97,13 +97,9 @@ for P in **/*_*; do
 done
 ```
 
-Note that will give an **error** on directory paths which have an underscore in multiple levels, as it will try to name the same item multiple times in one run. So you have to run the command a second time to catch those. If you have two directory levels and a file inside all with underscores, you'll have to run the command 3 times.
+Note that will give an **error** on directory paths which have an underscore in multiple levels, as it will try to name the same item multiple times in one run. So you have to run the command a second time to catch those. If you have two directory levels and a file inside all with underscores, you'll have to run the command 3 times, which is okay.
 
 The above can be followed by a search in the IDE with regex pattern. Note that cases should be checked before replacing. Pattern: `\w+_\w+\.md`
-
-Note that the replacement is done on the _entire_ path and not just the filename. But you could target just the filename by using `dirname` and `(cd ...)`.
-
-Or, use the `find` command with `type -f` to rename files and not directories. There can still be conflicts if two levels of directories have to be renamed.
 
 
 ### Rename tool
