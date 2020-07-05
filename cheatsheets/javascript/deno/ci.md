@@ -1,6 +1,6 @@
 # CI
 
-Reference for deploying a Deon project with Github Actions:
+Reference for deploying a Deno project with Github Actions:
 
 ```yaml
 name: CI
