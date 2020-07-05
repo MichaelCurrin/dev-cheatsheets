@@ -89,7 +89,7 @@ for P in **/README.md; do git mv -v "$P" "${P//README.md/index.md}"; done
 
 Use `-n|--dry-run` flag to preview first. The `-v|--verbose` flag is implied with that.
 
-Replace an _underscore_ with a _dash_ in file and directory names - using ZSH builtin [globstar](globstar.md).
+Replace an _underscore_ with a _dash_ in file and directory names - using [globstar](globstar.md).
 
 ```sh
 for P in **/*_*; do
@@ -97,9 +97,12 @@ for P in **/*_*; do
 done
 ```
 
-Note that will give an **error** on directory paths which have an underscore in multiple levels, as it will try to name the same item multiple times in one run. So you have to run the command a second time to catch those. If you have two directory levels and a file inside all with underscores, you'll have to run the command 3 times, which is okay.
+Notes:
 
-The above can be followed by a search in the IDE with regex pattern. Note that cases should be checked before replacing. Pattern: `\w+_\w+\.md`
+- This ignores hidden files. Important - ignore `.git`. Also note that files in `.github` like templates might only work using dashes.
+- That will **ignore** the top-level, so be sure to run also for just `*_*`.
+- That will give an **error** on directory paths which have an underscore in multiple levels, as it will try to name the same item multiple times in one run. So you have to run the command a second time to catch those. If you have two directory levels and a file inside all with underscores, you'll have to run the command 3 times, which is okay.
+- The above can be followed by a search in the IDE with regex pattern. Note that cases should be checked before replacing. Pattern: `\w+_\w+\.md`
 
 
 ### Rename tool
