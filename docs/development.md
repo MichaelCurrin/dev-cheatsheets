@@ -1,5 +1,10 @@
 # Development
 
+Follow the install and usage docs to get this project setup locally.
+
+
+## Structure
+
 The menus are auto-generated at each level to make it easy to nest content several layers down and not change a menu manually each time. The approach is in this project comes from this prototype project:
 
 - https://github.com/MichaelCurrin/nested-jekyll-menus
