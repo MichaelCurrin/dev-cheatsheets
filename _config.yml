@@ -10,7 +10,7 @@ github_username: MichaelCurrin
 url: "https://michaelcurrin.github.io"
 baseurl: "/dev-cheatsheets"
 
-theme: "minima"
+theme: minima
 
 header_pages:
   - cheatsheets/index.md
@@ -23,6 +23,7 @@ plugins:
 exclude:
   - docs/
   - vendor/
+  - CONTRIBUTING.md
   - Gemfile
   - Gemfile.lock
   - LICENSE
