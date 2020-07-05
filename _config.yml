@@ -8,18 +8,20 @@ github_username: MichaelCurrin
 ### Build settings ###
 
 url: "https://michaelcurrin.github.io"
-baseurl: "/cheatsheets"
+baseurl: "/dev-cheatsheets"
 
 theme: "minima"
 
 header_pages:
   - cheatsheets/index.md
+  - about.md
 
 plugins:
   - jekyll-feed
   - jekyll-sitemap
 
 exclude:
+  - docs/
   - vendor/
   - Gemfile
   - Gemfile.lock
