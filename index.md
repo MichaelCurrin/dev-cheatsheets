@@ -2,6 +2,4 @@
 layout: home
 ---
 
-## Choose a cheatsheet topic
-
-{% include list-sections.html %}
+There are a lot of tools and languages in here - I hope you find what you are looking for or discovering something useful.
