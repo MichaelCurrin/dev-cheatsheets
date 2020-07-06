@@ -4,7 +4,7 @@ title: macOS
 
 ### Homebrew
 
-[Cheatsheet](https://devhints.io/homebrew) on _Devhints_.
+[Cheatsheet](https://devhints.io/homebrew) on _DevHints_.
 
 #### Setup
 
@@ -56,4 +56,4 @@ $ apt upgrade PACKAGE
 $ apt remove PACKAGE
 ```
 
-[Man page](http://manpages.ubuntu.com/manpages/trusty/man8/apt.8.html) for Apt on Ubuntu.
+[Man page](http://manpages.ubuntu.com/manpages/trusty/man8/apt.8.html) for APT on Ubuntu.

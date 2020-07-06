@@ -6,7 +6,7 @@ title: Project packages
 
 ## Versions of package managers
 
-- [Bundler versions](https://rubygems.org/gems/bundler/versions) on rubygems.org
+- [Bundler versions](https://rubygems.org/gems/bundler/versions) on [rubygems.org](https://rubygems.org)
 - [pip](https://pypi.org/project/pip/) project on PyPI. See Release History.
 
 
