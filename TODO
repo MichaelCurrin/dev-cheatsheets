@@ -1,5 +1,7 @@
 Dev notes to self
 
+Convert all links to Jekyll style
+
 Set background color of header
 and of flex boxes to cornflowerblue and white text
 Use SCSS instead maybe change background color var
