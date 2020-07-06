@@ -1,15 +1,14 @@
-
 ---
 title: Pip
 ---
 
-See also [project packages](cheatsheets/package_managers/project_packages) section of this project and look for pip or Python pages.
+See also [project packages](/cheatsheets/package_managers/project-packages.md) section of this project and look for pip or Python pages.
 
 ## Protect global environment
 
 Prevent accidentally installing or upgrading in your user's global Python environment.
 
-In Linux/macOS, set this value in your `~/.bashrc` or `~/.zshrc` file.
+In Linux or macOS, set this value in your `~/.bashrc` or `~/.zshrc` file.
 
 ```sh
 PIP_REQUIRE_VIRTUALENV=true
@@ -32,6 +31,7 @@ $ PIP_REQUIRE_VIRTUALENV=false pip install PACKAGE
 - `install -r REQUIREMENTS_TXT_PATH`
 - `install pip --upgrade`
 - `uninstall PACKAGE`
+
 
 ## Ways to access pip
 
