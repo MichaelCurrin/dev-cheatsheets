@@ -1,5 +1,5 @@
 ---
-title: CLI
+title: Writing a CLI
 ---
 
 Cross-language guide for writing a command-line interface.
