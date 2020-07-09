@@ -2,6 +2,8 @@ Dev notes to self
 
 Convert all links to Jekyll style
 
+Add hover for flex - currently doesn't work nice on div and darkness is too big
+
 Set background color of header
 and of flex boxes to cornflowerblue and white text
 Use SCSS instead maybe change background color var
