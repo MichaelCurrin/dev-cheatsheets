@@ -1,7 +1,6 @@
 # Cheatsheets
 > A collection of code snippets and CLI notes for easy reference
 
-
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/dev-cheatsheets)](https://github.com/MichaelCurrin/dev-cheatsheets/tags/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
 
