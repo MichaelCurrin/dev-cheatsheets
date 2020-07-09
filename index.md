@@ -3,21 +3,27 @@ title: Home
 layout: home
 ---
 
-There are a lot of tools and languages in here - I hope you find what you are looking for or discovering something
-useful.
+> A collection of code snippets and CLI notes for easy reference
+
+There are a lot of tools and languages on this site here for my own reference and I hope you find something useful here too, by looking for something specific or just discovering what is here.
+
+
+## All cheatsheets
+
+[Cheatsheets]({{ site.baseurl }}{% link cheatsheets/index.md %}) page
+
 
 ## Featured topics
 
 ### Scripting
 
 <div class="flex-container">
-    <a href="{% link cheatsheets/python/index.md %}">
+    <a href="{{ site.baseurl }}{% link cheatsheets/python/index.md %}">
         <div>
            Python
         </div>
     </a>
-
-    <a href="{% link cheatsheets/javascript/index.md %}">
+    <a href="{{ site.baseurl }}{% link cheatsheets/javascript/index.md %}">
         <div>
            JavaScript
         </div>
@@ -27,30 +33,28 @@ useful.
 ### Static sites and docs
 
 <div class="flex-container">
-
-    <a href="{% link cheatsheets/markdown/index.md %}">
+    <a href="{{ site.baseurl }}{% link cheatsheets/markdown/index.md %}">
         <div>
            Markdown
         </div>
     </a>
-
-    <a href="{% link cheatsheets/jekyll/index.md %}">
+    <a href="{{ site.baseurl }}{% link cheatsheets/jekyll/index.md %}">
         <div>
            Jekyll
         </div>
     </a>
+
 </div>
 
 ### Command-line
 
 <div class="flex-container">
-    <a href="{% link cheatsheets/git/index.md %}">
+    <a href="{{ site.baseurl }}{% link cheatsheets/git/index.md %}">
         <div>
            Git
         </div>
     </a>
-
-    <a href="{% link cheatsheets/shell/index.md %}">
+    <a href="{{ site.baseurl }}{% link cheatsheets/shell/index.md %}">
         <div>
            Shell
         </div>
