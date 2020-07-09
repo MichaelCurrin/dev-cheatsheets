@@ -2,6 +2,9 @@ Dev notes to self
 
 Convert all links to Jekyll style
 
+Add simple GitHub CI flow for newer Jekyll.
+Maybe custom theme based on minima but with CSS-related additions. Don't do too soon though - let this and cookbooks grow so its faster
+
 Add hover for flex - currently doesn't work nice on div and darkness is too big
 
 Set background color of header
