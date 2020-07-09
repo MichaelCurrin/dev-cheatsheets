@@ -13,6 +13,7 @@ baseurl: "/dev-cheatsheets"
 theme: minima
 
 header_pages:
+  - index.md
   - cheatsheets/index.md
   - about.md
 
