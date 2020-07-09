@@ -1,4 +1,6 @@
-# Control flow
+---
+title: Control flow
+---
 
 Note the older format of `test CONDITION` is replaced by `[ CONDITION ]` and in some shell flavors extra functionality with `[[ CONDITION ]]`.
 

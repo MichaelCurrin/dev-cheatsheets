@@ -1,4 +1,6 @@
-# Gmail cheatsheet
+---
+title: Gmail
+---
 
 ## Cleaning up
 
@@ -43,7 +45,7 @@ in:inbox
 Categories.
 ```
 in:updates
-in:promotions 
+in:promotions
 ```
 
 Combined.
@@ -78,6 +80,3 @@ A filter label like unstarred won't know that a message then got starred.
 However, the search bar is always realtime when searched.
 
 Though you have to redo as research to stay current, for example starring a message.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxNDQ1NDkxNl19
--->

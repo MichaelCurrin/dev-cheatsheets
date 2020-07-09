@@ -1,7 +1,8 @@
-# Builtin
+---
+title: Python builtins
+---
 
 ## Range
-
 
 ```python
 range(10)
@@ -93,7 +94,7 @@ list(Color)
 - [Data class](https://docs.python.org/3/library/dataclasses.html) in PY3 docs.
 - New in PY `3.7`.
 - A container of attributes, when you want to store data and not add methods, but methods are allowed. Similar to a named tuple or dict.
-- Lighter than a plain class - not `__init__` method needed. 
+- Lighter than a plain class - not `__init__` method needed.
 - Raises an error if an item omitted.
 - Allows defaults.
 - Has types and keeps the structure, unlike a `dict` - **Note that does not validate**. See [Validation](#validation).
@@ -176,6 +177,3 @@ bad = Application("Testing...", "with plugin")  # Error: List[str] expected
 ```
 
  You have to use something like this [dataclass-type-validator](https://pypi.org/project/dataclass-type-validator/). Or perhaps MyP
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMzU0NzI4NDQsMTk4NjIyMjIyMF19
--->

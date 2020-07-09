@@ -1,0 +1,41 @@
+### Site metadata ###
+
+title: Dev Cheatsheets
+description: A collection of code snippets and CLI notes for easy reference
+
+github_username: MichaelCurrin
+
+### Build settings ###
+
+url: "https://michaelcurrin.github.io"
+baseurl: "/dev-cheatsheets"
+
+theme: minima
+
+header_pages:
+  - index.md
+  - cheatsheets/index.md
+  - about.md
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+exclude:
+  - docs/
+  - vendor/
+  - CONTRIBUTING.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - Makefile
+  - README.md
+
+# Warning - there are memory issues when using a pattern to define listing
+# layout for `cheatsheets/**/index.md` or even `cheatsheets/*/index.md`,
+# therefore it is best to be explicit in each index file.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "page"

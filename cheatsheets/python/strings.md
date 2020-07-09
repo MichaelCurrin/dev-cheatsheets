@@ -1,4 +1,6 @@
-# Python strings cheatsheet
+---
+title: Python strings
+---
 
 
 ## Resources
@@ -222,8 +224,8 @@ textwrap.shorten("Hello world", width=10, placeholder="...")
 >>> ['---']*10
 ['---', '---', '---', '---', '---', '---', '---', '---', '---', '---']
 
->>> print(" | ".join(['---']*10))
---- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+| >>> print(" | ".join(['---']*10)) |
+| ----------- | ------------------- ||  |  |  |  |  |  |  |
 ```
 
 ### Convert strings to markdown table
@@ -238,14 +240,14 @@ print(" | ".join(row))
 ```
 
 ```markdown
-a | b | c
---- | --- | ---
-1 | 2 | 3
+| a   | b   | c   |
+| --- | --- | --- |
+| 1   | 2   | 3   |
 ```
 
-a | b | c
---- | --- | ---
-1 | 2 | 3
+| a   | b   | c   |
+| --- | --- | --- |
+| 1   | 2   | 3   |
 
 ### Convert strings to dict
 
@@ -331,7 +333,3 @@ a
   b
 c
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTE4Mjc5NTQsMzU0MjU0ODYxLDQxNz
-c0NTg1MywtMTYwNTE3MTk4NywtMTI3MzU5NTc0NF19
--->

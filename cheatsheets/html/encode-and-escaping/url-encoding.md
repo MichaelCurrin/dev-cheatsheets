@@ -1,19 +1,21 @@
-## URL encoding
+---
+title: URL encoding
+---
 
 Convert characters in a URL to be "percent encoded", or reverse them.
 
 e.g. `#` becomes `%23`.
 
-### HTML
+## HTML
 
 - [w3schools.com/tags/ref_urlencode.ASP](https://www.w3schools.com/tags/ref_urlencode.ASP) - Reference table and conversion tool. Note the form tool will not convert certain characters like `-` or `.`, nor will JS `EncodeURIComponent`.
-- [url-encode-decode.com](https://www.url-encode-decode.com/) - Conversion tool 
+- [url-encode-decode.com](https://www.url-encode-decode.com/) - Conversion tool
 - [urlencoder.org](https://www.urlencoder.org/) - Conversion tool
 
-### Javascript
+## Javascript
 
 - `encodeURI` - encode an entire URL. Preserves the domain and characters like `?` and `=`. See [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) or [W3 schools](https://www.w3schools.com/jsref/jsref_encodeuri.asp)
-- `encodeURIComponent` - encode piece of a URL. See [source](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) 
+- `encodeURIComponent` - encode piece of a URL. See [source](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
 - `decodeURI` - reverse an encoded URL.
 - `decodeURIComponent` - reverse an encoded piece of a URL.
 
@@ -36,7 +38,7 @@ decodeURI("https://example.com?q=Hello,%20world!")
 ```
 
 
-### Python
+## Python
 
 This is all for Python 3.
 
@@ -54,7 +56,3 @@ $ alias urlencode='python3 -c "import sys, urllib.parse; print(urllib.parse.quot
 $ urlencode 'Hello, world!'
 Hello%2C+world%21
 ```
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMzc1NjA3MTAxXX0=
--->

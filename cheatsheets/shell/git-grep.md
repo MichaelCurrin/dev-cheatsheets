@@ -1,4 +1,7 @@
-# Git-grep cheatsheet
+---
+title: Git-grep cheatsheet
+---
+
 > How to use git's search tool
 
 

@@ -1,4 +1,6 @@
-# Docker cheatsheet
+---
+title: Docker
+---
 
 ## Resources
 
@@ -69,7 +71,7 @@ Run a command in a **new** container. The container will then stop.
 docker run CONTAINER COMMAND
 ```
 
-Run a command in an **existing** container. 
+Run a command in an **existing** container.
 
 ```sh
 docker start
@@ -85,7 +87,7 @@ docker exec -it CONTAINER bash
 Ad hoc entry point to start an container even if normally exists immediately and then start interactive terminal.
 
 ```sh
-docker run  --entrypoint bash -it IMAGE 
+docker run  --entrypoint bash -it IMAGE
 ```
 
 You'll start a new container each time though.
@@ -178,7 +180,3 @@ Commands:
 
 Run 'docker COMMAND --help' for more information on a command.
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0NDAyNDgyMSwtODEyNjk2OTY4LC02ND
-QzNTEwNjgsNTgxNTYxMzg0XX0=
--->

@@ -1,6 +1,8 @@
-# Escaping
+---
+title: Escaping
+---
 
-Prevent markdown from rendering certaim styling, you can escape them. In the examples below the italics are part of a filename and italics styling is unwanted.
+Prevent markdown from rendering certain styling, you can escape them. In the examples below the italics are part of a filename and italics styling is unwanted.
 
 
 ## Escape with code ticks
@@ -32,13 +34,10 @@ Update the [\_config.yml](_config.yml) file.
 
 ```markdown
 > "Art is never finished, only abandoned."
-> 
+>
 > \- Leonardo da Vinci
 ```
 
 > "Art is never finished, only abandoned."
-> 
+>
 > \- Leonardo da Vinci
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTAyMDk1MDZdfQ==
--->

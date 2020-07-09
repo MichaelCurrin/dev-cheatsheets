@@ -1,4 +1,6 @@
-# Errors
+---
+title: Errors
+---
 
 
 ## Catch and re-raise
@@ -11,6 +13,3 @@
             print(f"Foo: {foo}")
             raise
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTQzNjI3MDBdfQ==
--->

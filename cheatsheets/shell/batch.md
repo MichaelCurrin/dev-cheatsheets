@@ -1,4 +1,6 @@
-# Batch shell
+---
+title: Batch shell
+---
 
 How to perform multiple actions easily.
 
@@ -9,6 +11,3 @@ FOO | \
     awk '{print $1}' | \
     xargs -I{} sh -c 'BAR "$1"' - {}
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4NzA1ODc1Nl19
--->

@@ -1,4 +1,6 @@
-# BeautifulSoup
+---
+title: BeautifulSoup
+---
 
 
 ## Resources
@@ -103,10 +105,10 @@ from bs4 import BeautifulSoup
 ### Syntax
 
 ```python
-soup = BeautifulSoup(markup, features) 
+soup = BeautifulSoup(markup, features)
 ```
 
-Mark up as a string of file object. 
+Mark up as a string of file object.
 
 Feature is usually `lxml`. This could be made a global constant if used repeatedly.
 
@@ -154,7 +156,7 @@ From docstring:
          Beautiful Soup 3. None of these arguments do anything in
          Beautiful Soup 4; they will result in a warning and then be
          ignored.
-         
+
          Apart from this, any keyword arguments passed into the
          BeautifulSoup constructor are propagated to the TreeBuilder
          constructor. This makes it possible to configure a
@@ -219,7 +221,7 @@ tag = soup.find_all(attrs={"name" : "stainfo"})
 ```python
 soup.find("ul", attrs={ "id" : "mylist" } ))
 # OR
-soup.find("ul", id="mylist")) 
+soup.find("ul", id="mylist"))
 ```
 
 To narrow down a search, you can use an element in place of soup.
@@ -251,7 +253,7 @@ Use a function.
 ```python
 def is_empty(tag):
     return tag.is_empty_element
-    
+
 tags = soup.find_all(is_empty):
 ```
 
@@ -343,7 +345,7 @@ el.parent
 with open("index.html", "r") as f_in:
     contents = f_in.read()
     soup = BeautifulSoup(contents, 'lxml')
-            
+
     for child in soup.recursiveChildGenerator():
         if child.name:
             print(child.name)

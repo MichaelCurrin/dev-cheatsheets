@@ -1,4 +1,6 @@
-# Git viewing cheatsheet
+---
+title: Git viewing
+---
 
 ## Links
 
@@ -41,6 +43,3 @@ This flag is used to show tags only.
 --simplify-by-decoration
            Commits that are referred by some branch or tag are selected.
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNzMwNDE1MzJdfQ==
--->

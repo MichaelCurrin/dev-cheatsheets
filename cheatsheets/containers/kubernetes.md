@@ -1,4 +1,6 @@
-# Kubernetes cheatsheet
+---
+title: Kubernetes
+---
 
 Also known as "K8s" for short.
 

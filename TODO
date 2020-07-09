@@ -1,3 +1,39 @@
+Dev notes to self
+
+Convert all links to Jekyll style
+
+Add hover for flex - currently doesn't work nice on div and darkness is too big
+
+Set background color of header
+and of flex boxes to cornflowerblue and white text
+Use SCSS instead maybe change background color var
+
+Reuse flex sections aside from homepage
+
+Keep CSS separate and with the HTML. Reuse items like edit or SVG in recipes.
+
+Consider cheatsheets folder to be cs or sheets
+
+Unsorted / uncategorized?
+
+Homepage vs cheatsheets page? About page? Welcome home?
+Should homepage just be a splash / cover and CTA to get to cheatsheets?
+Preview? Latest updated? Not possible
+
+Or get rid of layer and move folders to root. All the .md files will be moved to subfolder so that will be clean.
+
+
+Add search
+
+
+Replace _ with -
+
+Add Edit this page
+
+Add sidebar
+
+===
+
 should some of these just be moved to cheatsheets folder in Learn to Code?
 Are these aimed at me and that at others?
 

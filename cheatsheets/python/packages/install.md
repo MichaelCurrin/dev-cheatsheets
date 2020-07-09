@@ -1,5 +1,7 @@
-# Python package install cheatsheet
-> How to install packages with `pip`
+---
+title: Python package install
+description: How to install packages with `pip`
+---
 
 ## Resources
 
@@ -68,7 +70,7 @@ $ pip uninstall foo
 <!-- TODO move this content to Learn to Code and keep commands lean. See if there are other commands or flags to use here too -->
 
 Note that packages are shown alphabetically - if you try and _install_ in the same order as the output you may get errors or conflicting versions.
- 
+
 Verbose description of packages.
 
 ```sh
@@ -82,7 +84,7 @@ $ pip freeze
 ```
 
  The content is suitable for a `requirements.txt` file, so you could copy a line there. Or write the entire file.
- 
+
 ```sh
 $ pip freeze > requirements.txt
 ```

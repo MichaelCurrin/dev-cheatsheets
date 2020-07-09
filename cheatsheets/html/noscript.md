@@ -1,4 +1,6 @@
-# Noscript
+---
+title: Noscript
+---
 
 When JavaScript is disabled by the user, or by an adblocker or if the JS is not compatible in a browser, it is a good idea to have a fallback. The noscript HTML tag can be used to show a message. Especially if the site looks like a blank page without JS.
 
@@ -42,7 +44,7 @@ Notice: While Javascript is not essential for this website, your interaction wit
 ```
 
 
-## Resources 
+## Resources
 
 - https://webdesign.tutsplus.com/tutorials/quick-tip-dont-forget-the-noscript-element--cms-25498
 - https://www.w3schools.com/TAGs/tag_noscript.asp

@@ -1,10 +1,14 @@
-# Common formatting
+---
+title: Common formatting
+---
 
 
 ## Headings
 
 ```markdown
-# Header 1
+---
+title: Header 1
+---
 
 Content
 
@@ -73,7 +77,7 @@ The following are equivalent, though Github's markdown editor only shows a previ
 
 ## Paragraph
 
-If there are two paragraph lines with no break between, Markdown will show them on online. Therefore you can either add white space between, use a `<br>` tag, or use a double white space at the end of the line (not pratical if your IDE trims whitespace).
+If there are two paragraph lines with no break between, Markdown will show them on online. Therefore you can either add white space between, use a `<br>` tag, or use a double white space at the end of the line (not practical if your IDE trims whitespace).
 
 ```markdown
 Line 1
@@ -126,6 +130,3 @@ Add quotes from multiple sources to separate bullet points.
 - > Point B
 - > Point C
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTkwNzIwNDldfQ==
--->

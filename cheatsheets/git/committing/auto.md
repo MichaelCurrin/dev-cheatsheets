@@ -1,6 +1,8 @@
-## Auto commit
+---
+title: Git auto commit
+---
 
-Shell flow to apply remote changes, run a script to update a versioned file then commit and push changes. 
+Shell flow to apply remote changes, run a script to update a versioned file then commit and push changes.
 
 A pre-configured commit message is used.
 
@@ -19,6 +21,3 @@ else
     git push
 fi
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MjA2NTYyNTVdfQ==
--->

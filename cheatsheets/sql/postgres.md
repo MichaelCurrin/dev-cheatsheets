@@ -1,4 +1,6 @@
-# Postgres SQL cheatsheet
+---
+title: Postgres SQL
+---
 
 ## Docs and tutorials
 
@@ -16,7 +18,7 @@
 
 ## Login
 
-Here we use a user named `postgres`. 
+Here we use a user named `postgres`.
 
 ```sh
 $ psql -U postgres
@@ -119,7 +121,3 @@ instance.query('SELECT 1 AS foo')
   .then(result => console.log(result));
 // => [ [ anonymous { foo: 1 } ]
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIxMDk3MTg0MiwxMzc1NjYzMjI5LC0xMz
-IxNTk2ODY5LDIyNjI4MTU1MV19
--->

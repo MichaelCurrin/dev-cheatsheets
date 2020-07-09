@@ -1,4 +1,6 @@
-# Permalinks cheatsheet
+---
+title: Permalinks
+---
 
 ## Resources
 
@@ -23,7 +25,7 @@ Pages and collections (excluding posts and drafts) don’t have time and categor
 
 For pages, the `:title` is equivalent to `:basename`.
 
-**Permalink Patterns**  
+**Permalink Patterns**
 Jekyll allows you to redefine the entire default pattern in the `_config.yml` This will affect both pages and posts with one important distinction: posts have access to categories and date and time elements from the Front Matter, while pages do not. Page URLs will follow the pattern, gracefully omitting any post-specific elements.
 
 ### Built-in
@@ -34,13 +36,13 @@ Note that all values are always added in a single permalink pattern - they just 
 
 Choose one of the builtin values.
 
-| Shortcut | Result |
-|--|--|
-| `date` | `/:categories/:year/:month/:day/:title:output_ext` |
-| `pretty` | `/:categories/:year/:month/:day/:title/` |
-| `ordinal` | `/:categories/:year/:y_day/:title:output_ext` |
+| Shortcut   | Result                                                   |
+| ---------- | -------------------------------------------------------- |
+| `date`     | `/:categories/:year/:month/:day/:title:output_ext`       |
+| `pretty`   | `/:categories/:year/:month/:day/:title/`                 |
+| `ordinal`  | `/:categories/:year/:y_day/:title:output_ext`            |
 | `weekdate` | `/:categories/:year/W:week/:short_day/:title:output_ext` |
-| `none` | `/:categories/:title:output_ext`
+| `none`     | `/:categories/:title:output_ext`                         |
 
 
 ### Custom
@@ -56,13 +58,13 @@ permalink: /:categories/:year/:month/:day/:title
 
 ### Add trailing forward-slash
 
-This will change output files `about.html` to `about/index.html`. 
+This will change output files `about.html` to `about/index.html`.
 
 ```yaml
 permalink: /:categories/:year/:month/:day/:title/
 ```
 
-When you link to a page in your content, you'll want to make sure you link to the short form and not the explict `index.html` version.
+When you link to a page in your content, you'll want to make sure you link to the short form and not the explicit `index.html` version.
 
 ## Collection-level
 
@@ -75,13 +77,8 @@ collections:
 
 ## Page attributes
 
-Variable | Value
---- | ---
-`:path` | Path to the page relative to the site's source directory, excluding base filename of the page.
-`:basename` | The page's base filename
-` :output_ext`  | Extension of the output file. (Included by default and usually unnecessary.)
-
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDI0MjE5NTBdfQ==
--->
+| Variable       | Value                                                                                          |
+| -------------- | ---------------------------------------------------------------------------------------------- |
+| `:path`        | Path to the page relative to the site's source directory, excluding base filename of the page. |
+| `:basename`    | The page's base filename                                                                       |
+| ` :output_ext` | Extension of the output file. (Included by default and usually unnecessary.)                   |

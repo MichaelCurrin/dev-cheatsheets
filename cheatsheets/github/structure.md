@@ -1,8 +1,10 @@
-# Github project structure
+---
+title: Github project structure
+---
 
 ## Issue templates
 
-Example: 
+Example:
 
 https://github.com/benbalter/jekyll-remote-theme/tree/master/.github/ISSUE_TEMPLATE
 
@@ -44,7 +46,7 @@ If applicable, add screenshots to help explain your problem.
 
 Add any other context about the problem here.
 ```
-	
+
 ### Feature request
 
 `feature_request.md`
@@ -129,7 +131,3 @@ Or
 ```
 docs/CONTRIBUTING.md
 ```
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDEwMDY3MzldfQ==
--->

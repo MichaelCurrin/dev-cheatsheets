@@ -1,4 +1,6 @@
-# Python glob cheatsheet
+---
+title: Python glob
+---
 
 See [glob](/cheatsheets/shell/glob.md) in the Shell section.
 
@@ -87,13 +89,13 @@ glob.glob(pathname, *, recursive=False)
 
 > Return a possibly-empty list of path names that match pathname, which must be a string containing a path specification. pathname
 >
-> can be either absolute (like /usr/src/Python-1.5/Makefile) or relative (like ../../Tools/*/*.gif), 
-> 
-> and can contain shell-style wildcards. 
+> can be either absolute (like /usr/src/Python-1.5/Makefile) or relative (like ../../Tools/*/*.gif),
+>
+> and can contain shell-style wildcards.
 
 > If _recursive_ is true, the pattern “`**`” will match any files and zero or more directories, subdirectories and symbolic links to directories.
 >
-> Note: Using the “**” pattern in large directory trees may consume an inordinate amount of time. 
+> Note: Using the “**” pattern in large directory trees may consume an inordinate amount of time.
 
 
 ### iglob function
@@ -132,7 +134,3 @@ glob.glob0(...)
 from glob import glob0
 glob0(...)
 ```
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODI3OTUzNjAsLTU0NjQ1MjQ5MF19
--->

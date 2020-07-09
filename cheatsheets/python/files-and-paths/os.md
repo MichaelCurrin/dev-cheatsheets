@@ -1,4 +1,6 @@
-# OS library
+---
+title: OS library
+---
 
 ## Get current path
 
@@ -21,7 +23,7 @@ Where `os.durdir` is `'.'`.
 
 ### Path to script
 
-Path of the current file. 
+Path of the current file.
 
 ```python
 __file__
@@ -114,7 +116,7 @@ os.path.join(foo, bar)
 
 ## Split
 
-### Get girectory
+### Get directory
 
 Of a file.
 ```python
@@ -172,7 +174,3 @@ os.path.pardir
 ```python
 os.path.dirname(path)
 ```
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODg4OTQ0ODhdfQ==
--->

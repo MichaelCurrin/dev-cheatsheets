@@ -1,4 +1,6 @@
-# Make
+---
+title: Make
+---
 
 Use of `make` command in Unix environments.
 
@@ -92,7 +94,7 @@ install:
 
 upgrade:
 	bundle update
-	
+
 s serve:
 	bundle exec jekyll serve
 ```
@@ -101,6 +103,3 @@ s serve:
 ## Python
 
 See [Makefile in MichaelCurrin/py-project-template](https://github.com/MichaelCurrin/py-project-template/blob/master/Makefile) on Github.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbODgzNTk1NjRdfQ==
--->

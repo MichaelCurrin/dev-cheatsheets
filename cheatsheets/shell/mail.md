@@ -1,4 +1,6 @@
-# Mail
+---
+title: Mail
+---
 
 Using the mail command-line utility on Unix systems.
 
@@ -32,9 +34,9 @@ Delete all.
 
 #### Recipients
 
-You can send to yourself or another user by setting as target `my-user`, which is the same as `my-user@localhost`. 
+You can send to yourself or another user by setting as target `my-user`, which is the same as `my-user@localhost`.
 
-Alternatively, send to external address (e.g. example@example.com), however, you will have to configure an SMTP server with credentials, such using your Gmail account. Be careful when storing your email password in plain text on your machine. 
+Alternatively, send to external address (e.g. example@example.com), however, you will have to configure an SMTP server with credentials, such using your Gmail account. Be careful when storing your email password in plain text on your machine.
 
 How to setup SMTP server access to send mail over the network.
 - http://hints.macworld.com/article.php?story=20081217161612647

@@ -1,4 +1,6 @@
-# Jekyll config cheatsheet
+---
+title: Jekyll config
+---
 
 ## Null values
 
@@ -26,6 +28,3 @@ plugins:
   - foo
   - bar
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODg0OTM1MTldfQ==
--->

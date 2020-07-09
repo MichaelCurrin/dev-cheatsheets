@@ -1,4 +1,6 @@
-# YAML
+---
+title: YAML
+---
 
 ## Example
 
@@ -28,6 +30,3 @@ config['AWS']['Lambda']['Runtime'].get()
 ```
 
 Otherwise use `PyYAML`.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk5ODA1MjkyNF19
--->

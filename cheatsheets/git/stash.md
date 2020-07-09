@@ -1,4 +1,6 @@
-# Git stash cheatsheet
+---
+title: Git stash
+---
 
 Stashes are numbered where index `0` is the most recent. New stashes are added to the front of the list to become the new index `0`.
 
@@ -59,7 +61,7 @@ git stash show [STASH_REF]
 Show stashed diff.
 
 ```sh
-git stash show [STASH_REF] -p 
+git stash show [STASH_REF] -p
 ```
 
 ## Unstash
@@ -81,7 +83,3 @@ Remove without applying.
 ```sh
 git stash drop [STASH_REF]
 ```
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwOTYwMTA3MSwtMTcxOTE5NTUxM119
--->

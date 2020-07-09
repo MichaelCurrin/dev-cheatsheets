@@ -1,4 +1,6 @@
-# Check OS
+---
+title: Check OS
+---
 
 Find what the current OS is using shell commands.
 
@@ -11,10 +13,10 @@ Find what the current OS is using shell commands.
 echo $OSTYPE
 ```
 
-OS    | Example value
----   | ---
-Linux | `linux-gnu`
-macOS | `darwin19.0`
+| OS    | Example value |
+| ----- | ------------- |
+| Linux | `linux-gnu`   |
+| macOS | `darwin19.0`  |
 
 ### uname command
 
@@ -26,10 +28,10 @@ $ uname
 
 e.g.
 
-OS    | Example value
----   | ---
-Linux | `Linux`
-macOS | `Darwin`
+| OS    | Example value |
+| ----- | ------------- |
+| Linux | `Linux`       |
+| macOS | `Darwin`      |
 
 
 ## Set boolean
@@ -121,4 +123,3 @@ Example for Linux Lite 5, which uses Debian and Ubuntu.
     VERSION_CODENAME=focal
     UBUNTU_CODENAME=focal
     ```
-    

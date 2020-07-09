@@ -1,10 +1,12 @@
-# Commands and scripting cheatsheet
+---
+title: Commands and scripting
+---
 
 Use these on the command-line or in shell scripts.
 
 ## Link
 
-Create symbolic link to file. 
+Create symbolic link to file.
 
 ```sh
 ln -s SOURCE TARGET
@@ -32,9 +34,3 @@ Replace using `sed`.
 ```sh
 echo 'my-input' | sed 's/-/_/'
 ```
-
-
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDE3MDM4NV19
--->

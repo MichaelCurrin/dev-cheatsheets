@@ -1,4 +1,6 @@
-# Regex cheatsheet
+---
+title: Regex
+---
 
 ## Resources
 
@@ -36,7 +38,3 @@ Insert `br` tag at the end of lines which are not headings or empty lines.
 ## Modifiers
 
 https://www.w3schools.com/jsref/jsref_regexp_m.asp
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5MTMwMjc4Nl19
--->

@@ -1,6 +1,7 @@
-# Cross language shell cheatsheet
-> How to run a shell command from another language
-
+---
+title: Cross language shell
+description: How to run a shell command from another language
+---
 
 
 ## Ruby
@@ -37,6 +38,3 @@ Open3.popen3(cmd) do |stdin, stdout, stderr, wait_thr|
   puts "stderr is:" + stderr.read
 end
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5NTEwNTA4M119
--->

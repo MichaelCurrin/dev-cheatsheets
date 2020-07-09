@@ -1,4 +1,6 @@
-# Git pager cheatsheet
+---
+title: Git pager
+---
 
 
 Pager can be off or on depending on global config (switching from Bash to ZSH also changed this for me but it can be changed back).
@@ -41,7 +43,4 @@ git --no-pager lol -40
 
 This could be aliased.
 
-Also 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjk0NTIxNTJdfQ==
--->
+Also

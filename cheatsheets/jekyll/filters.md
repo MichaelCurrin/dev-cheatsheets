@@ -1,4 +1,6 @@
-# Jekyll filters
+---
+title: Jekyll filters
+---
 
 ## Reference docs
 

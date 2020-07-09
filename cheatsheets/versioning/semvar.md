@@ -1,4 +1,6 @@
-# Semantic versioning
+---
+title: Semantic versioning
+---
 
 https://semver.org/
 

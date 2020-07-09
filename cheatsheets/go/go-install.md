@@ -1,5 +1,6 @@
-# Go install cheatsheet
-
+---
+title: Go install cheatsheet
+---
 
 ```sh
 $ go get -u GITHUB_INSTALL_REF

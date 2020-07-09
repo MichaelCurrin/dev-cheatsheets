@@ -1,10 +1,12 @@
-# Redirection cheatsheet
+---
+title: Redirection
+---
 
 - [Bash redirections cheatsheet](https://catonmat.net/ftp/bash-redirections-cheat-sheet.pdf) on catonmat.net
 - [Bash one-liners tutorial](https://catonmat.net/bash-one-liners-explained-part-three)
 
 
-### Running
+## Running
 
 Use a dash.
 
@@ -29,6 +31,3 @@ Or to persist changes like directory change, env variables and virtual env.
 ```sh
 source my_script.sh
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMzc3MjczMDUsLTE2MDk1MDM2NjZdfQ==
--->

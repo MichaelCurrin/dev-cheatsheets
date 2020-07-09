@@ -1,5 +1,7 @@
-# Undo cheatsheet
-> Restore a file to a versioned state.
+---
+title: Undo
+description: Restore a file to a versioned state
+---
 
 
 Restore a target. Path is required, otherwise nothing will change.
@@ -43,7 +45,7 @@ Bring back a file which was previously deleted.
 ```sh
 git reset COMMIT_REF PATH
 
-# e.g. 
+# e.g.
 git reset master foo.txt
 ```
 The file then appears as both deleted and created (staged0.
@@ -83,6 +85,3 @@ Or in one command.
 ```sh
 git checkout $(git rev-list -n 1 HEAD -- "MY_PATH")^ -- "MY_PATH"
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDQwNTIwNjQsMjE1NDE5MzA0XX0=
--->

@@ -1,4 +1,6 @@
-# Ini
+---
+title: Ini file
+---
 
 ## Example
 
@@ -65,6 +67,3 @@ config.read(
         encoding='cp1250'
 )
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjAyMzcwOTVdfQ==
--->

@@ -1,4 +1,6 @@
-# Jekyll run cheatsheet
+---
+title: Jekyll run
+---
 
 
 ## Help
@@ -24,7 +26,7 @@ cd sample_site
 bundle exec jekyll serve
 ```
 
-Specify source content in a subdirectory using `--source` flag  and value (which defaults to `./`). 
+Specify source content in a subdirectory using `--source` flag  and value (which defaults to `./`).
 
 ```sh
 bundle exec jekyll serve -s sample_site -d sample_site/_site
@@ -59,41 +61,41 @@ For `jekyll serve [options]`
 
 ### Debug flags
 
-Flag | Description
---- | ---
-`--verbose` | Increase message logged in the console.
-`--debug` | Show details about an error if there is one. Errors are very quiet so it is useful to always run this especially for remote builds.
---trace` | Show the full backtrace when an error occurs.
+| Flag        | Description                                                                                                                         |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `--verbose` | Increase message logged in the console.                                                                                             |
+| `--debug`   | Show details about an error if there is one. Errors are very quiet so it is useful to always run this especially for remote builds. |
+| --trace`    | Show the full backtrace when an error occurs.                                                                                       |
 
 ### Loading flags
 
-Flag | Description
---- | ---
-`--show-dir-listing` | Show contents of the directory. Ignores an existing `index.html`. This flag is not needed if there is no `index.html` file.
-`-l, --livereload` | Use LiveReload to automatically refresh browsers
---no-watch | Disabling the default option to watch for changes and rebuild.
+| Flag                 | Description                                                                                                                 |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `--show-dir-listing` | Show contents of the directory. Ignores an existing `index.html`. This flag is not needed if there is no `index.html` file. |
+| `-l, --livereload`   | Use LiveReload to automatically refresh browsers                                                                            |
+| --no-watch           | Disabling the default option to watch for changes and rebuild.                                                              |
 
 ### Show and hide content
 
-Flag | Description
---- | ---
-`-D, --drafts` | Render posts in the _drafts folder
-`--unpublished ` | Render posts that were marked as unpublished
-`--future`  |  Publishes posts with a future date
-`--limit_posts MAX_POSTS` | Limits the number of posts to parse and publish
+| Flag                      | Description                                     |
+| ------------------------- | ----------------------------------------------- |
+| `-D, --drafts`            | Render posts in the _drafts folder              |
+| `--unpublished `          | Render posts that were marked as unpublished    |
+| `--future`                | Publishes posts with a future date              |
+| `--limit_posts MAX_POSTS` | Limits the number of posts to parse and publish |
 
 ### Configuration
 
-Flag | Description
---- | ---
-`--config CONFIG_FILE,[CONFIG_FILE,...]` | Read configs.
+| Flag                                     | Description   |
+| ---------------------------------------- | ------------- |
+| `--config CONFIG_FILE,[CONFIG_FILE,...]` | Read configs. |
 `-d, --destination DESTINATION`  The current folder will be generated into DESTINATION
 `-s, --source SOURCE` |  Custom source directory
 `-b, --baseurl URL` |  Serve the website from the given base URL
 `--layouts DIR` |  Layouts directory (defaults to ./_layouts)
-      
+
 ### Full
-  
+
 Copied from the command-line for Jekyll 4:
 
 ```
@@ -143,6 +145,3 @@ These also appear in the output and are repeated for every command - they can be
         -v, --version      Print the name and version
         -t, --trace        Show the full backtrace when an error occurs
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDE5OTE3NjJdfQ==
--->

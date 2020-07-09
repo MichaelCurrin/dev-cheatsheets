@@ -1,4 +1,6 @@
-# SQL connection cheatsheet
+---
+title: SQL connection
+---
 
 ## Postgres
 
@@ -30,7 +32,3 @@ postgresql://user:secret@localhost
 postgresql://other@localhost/otherdb?connect_timeout=10&application_name=myapp
 postgresql://localhost/mydb?user=other&password=secret
 ```
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwNzQ0NDU5OCwtMTE1MDQwMjE0OF19
--->

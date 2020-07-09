@@ -1,4 +1,6 @@
-# CLI help
+---
+title: CLI help
+---
 
 
 Deno CLI help.
@@ -42,17 +44,17 @@ USAGE:
 
 ```
 OPTIONS:
-    -h, --help                     
+    -h, --help
             Prints help information
 
-    -L, --log-level <log-level>    
+    -L, --log-level <log-level>
             Set log level [possible values: debug, info]
 
-    -q, --quiet                    
+    -q, --quiet
             Suppress diagnostic output
             By default, subcommands print human-readable diagnostic messages to stderr.
             If the flag is set, restrict these messages to errors.
-    -V, --version                  
+    -V, --version
             Prints version information
 ```
 

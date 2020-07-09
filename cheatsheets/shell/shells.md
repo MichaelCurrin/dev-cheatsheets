@@ -1,4 +1,6 @@
-# Working with shells cheatsheet
+---
+title: Working with shells
+---
 
 
 ## Start subshell
@@ -64,7 +66,7 @@ $ IS_ZSH=$([[ "$ZSH_NAME" ]] && echo 'true' || echo 'false')
 	$ echo $0
 	-bash
 	# Or
-	
+
 	```
 - ZSH
 	```sh
@@ -164,4 +166,3 @@ Create an function in your `~/.bashrc` if you easily run it. This reloads the _d
 ```sh
 reload_shell() { exec -l $SHELL; }
 ```
-

@@ -1,4 +1,6 @@
-# Docs styleguide
+---
+title: Docs styleguide
+---
 
 ## Variables
 
@@ -56,8 +58,3 @@ Result:
 Read more here:
 
 https://www.html.am/html-codes/character-codes/html-em-dash-code.cfm
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4MzE5MzgzLDE2NDQ0ODg1NzQsLTgxOT
-UzMzg1Ml19
--->

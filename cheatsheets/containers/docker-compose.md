@@ -1,4 +1,6 @@
-# Docker compose cheatsheet
+---
+title: Docker compose
+---
 
 - [Docker compose reference docs](https://docs.docker.com/compose/reference/overview/)
 
@@ -142,7 +144,3 @@ Commands:
   up                 Create and start containers
   version            Show the Docker-Compose version information
   ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNDkyNzEzNDE4LC03MDI3NjMyNDgsLTE5OD
-kyNzA1NTldfQ==
--->

@@ -1,4 +1,6 @@
-# Python regex cheatsheet
+---
+title: Python regex
+---
 
 ## Resources
 
@@ -105,7 +107,3 @@ For more robust solution including handling special characters, see
 [source](https://www.regextester.com/104056)
 
 `r'^[a-z0-9]+(?:-[a-z0-9]+)*$'`
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjI5MTI5MjRdfQ==
--->

@@ -1,3 +1,5 @@
-# Github Pages cheatsheet
+---
+title: Github Pages
+---
 
 - [Dependency versions](https://pages.github.com/versions/)

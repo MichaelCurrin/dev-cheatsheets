@@ -1,4 +1,6 @@
-# Ruby gems
+---
+title: Ruby gems
+---
 
 ```sh
 gem install GEM

@@ -1,4 +1,6 @@
-# Links
+---
+title: Links
+---
 
 
 ## Format
@@ -35,7 +37,7 @@ You can ascend in the directory, using the double dots.
 [link text](../fizz/buzz.txt)
 ```
 
-Use a forwardslash to indicate a path relative to the **root**, ignoring the current path.
+Use a forward slash to indicate a path relative to the **root**, ignoring the current path.
 
 ```markdown
 [link text](/app/file.txt)
@@ -127,7 +129,7 @@ Example:
 
 [Foo bar]: https://www.mozilla.org
 
-### Numbered refrence links
+### Numbered reference links
 
 Example:
 

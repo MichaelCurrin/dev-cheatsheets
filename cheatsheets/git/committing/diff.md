@@ -1,4 +1,6 @@
-# Diff
+---
+title: Git diff
+---
 
 Show file names and line changes. Ignores staged files.
 
@@ -49,8 +51,5 @@ git diff HEAD~3..HEAD~5
 
 git diff HEAD~3 HEAD~5
 
-git diff feature-a feature-b 
+git diff feature-a feature-b
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExNzA5MzExM119
--->

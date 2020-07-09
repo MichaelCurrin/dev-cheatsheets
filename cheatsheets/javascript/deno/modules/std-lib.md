@@ -1,4 +1,6 @@
-# Standard lib
+---
+title: Standard lib
+---
 
 Examples of how to run modules in the Deno standard library.
 
@@ -9,7 +11,7 @@ See [denoland/deno](https://github.com/denoland/deno) repository for source code
 These are hosted at [deno.land/std](https://deno.land/std).
 
 
-## Welcome 
+## Welcome
 
 ```sh
 $ deno run https://deno.land/std/examples/welcome.ts
@@ -29,16 +31,16 @@ Or write a more complex one using `http/server.ts`:
 - `index.ts`
     ```javascript
     import { serve } from "https://deno.land/std@0.59.0/http/server.ts";
-    
+
     const s = serve({ port: 8000 });
-    
+
     console.log("http://localhost:8000/");
-    
+
     for await (const req of s) {
       req.respond({ body: "Hello World\n" });
     }
     ```
-   
+
 Start the server.
 
 ```sh

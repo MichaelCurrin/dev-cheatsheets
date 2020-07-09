@@ -1,4 +1,6 @@
-# Time handling cheatsheet
+---
+title: Time handling
+---
 
 
 ## Resources
@@ -67,9 +69,9 @@ def my_time(unix_time, hours_diff=0):
     """
     Change unix timestamp in seconds into datetime format, with optional
     time difference hours specified.
-    
+
     Usecase: receive timestamp from API and return as datetime object
-        which has properties 
+        which has properties
             year, month, day, hour, minute, second
     Args
         unix_time: unix timestamp in seconds
@@ -81,7 +83,7 @@ def my_time(unix_time, hours_diff=0):
     """
     unix_time_diff = hours_diff * 60 * 60  # hours * min * seconds
     in_time = unix_time + unix_time_diff
-    
+
     return datetime.datetime.fromtimestamp(in_time)
 ```
 
@@ -126,12 +128,12 @@ def get_duration(duration, initial_time=None):
     """
     Usecase:
         a timestamp is provided as when an access token expires,
-         then add it to the current time, then showing it as a human-readable 
+         then add it to the current time, then showing it as a human-readable
          future time.
          Alternatively specify a *initial_time* as manual now value.
-    
+
     Args
-        duration: <type 'int'> OR <type 'str'> Duration in seconds. 
+        duration: <type 'int'> OR <type 'str'> Duration in seconds.
             If given as a string, convert to int.
         initial_time: <type 'int'> OR <type 'str'> Time to start differenc
             calculation from. If given as a string, convert to int.
@@ -147,9 +149,9 @@ def get_duration(duration, initial_time=None):
         initial_time = int(initial_time)
     else:
         initial_time = time.time()
-        
-    in_time = initial_time + duration 
-    
+
+    in_time = initial_time + duration
+
     return datetime.datetime.fromtimestamp(in_time)
 ```
 
@@ -159,10 +161,10 @@ There might be a cleaner way to do this in the `datetime` library.
 ```python
 def unix_to_datetime(duration):
     """
-    Convert duration (in unix_timestamp seconds) to days, hours, minutes and 
+    Convert duration (in unix_timestamp seconds) to days, hours, minutes and
         seconds.
     Args
-        duration: <type 'int'> OR <type 'str'> Duration in seconds. 
+        duration: <type 'int'> OR <type 'str'> Duration in seconds.
             If given as a string, convert to integer.
     Returns
         d: days [0+]
@@ -171,11 +173,11 @@ def unix_to_datetime(duration):
         s: seconds [0-59]
     """
     duration = int(duration)
-    
+
     d = duration / (24 * 60 * 60)
     h = duration / (60 * 60) % 24
     m = duration / 60 % 60
     s = duration % 60
-    
+
     return d, h, m, s
 ```

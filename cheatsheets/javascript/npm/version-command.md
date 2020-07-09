@@ -1,4 +1,6 @@
-# NPM Version command
+---
+title: NPM Version command
+---
 
 This NPM command allows easy incrementing in both package files and git tags, with a given tag or increment level.
 

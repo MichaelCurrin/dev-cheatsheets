@@ -1,4 +1,6 @@
-# Update fork
+---
+title: Update fork
+---
 
 ## Browser
 
@@ -27,6 +29,3 @@ Then merge with a rebase merge, to avoid creating a merge commit in your fork.
 $ git checkout master
 $ git pull upstream master
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNTA5ODYyNDZdfQ==
--->

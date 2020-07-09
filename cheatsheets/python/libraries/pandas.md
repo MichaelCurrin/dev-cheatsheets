@@ -1,4 +1,6 @@
-# Pandas cheatsheet
+---
+title: Pandas
+---
 
 Commands in Pandas which I have used or would like to use. This is not meant to be complete, but cover some common usage situations or some tricky or obscure syntax.
 
@@ -27,7 +29,7 @@ import pandas as pd
 
 ### Column-input
 
-With `data` as a `dict` where key is column name and value is a list of values. 
+With `data` as a `dict` where key is column name and value is a list of values.
 
 ```python
 data = {"a" : [4 ,5, 6], "b" : [7, 8, 9], "c" : [10, 11, 12]}
@@ -44,7 +46,7 @@ With `data` as a 2-D list - a list of rows where each row is a list. Columns mus
 ```python
 data = [[4, 7, 10],[5, 8, 11],[6, 9, 12]]
 df = pd.DataFrame(
-    data, 
+    data,
     indexes=[1, 2, 3],
     columns=['a', 'b', 'c'],
 )
@@ -182,6 +184,3 @@ Scatter chart using pairs of points.
 ```python
 df.plot.scatter(x='foo', y='bar')
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4NDgxODUzMSwtNDE3MzI5MzA4XX0=
--->

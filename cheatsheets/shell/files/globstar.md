@@ -1,4 +1,6 @@
-# Globstar cheatsheet
+---
+title: Globstar
+---
 
 ## Standard star
 

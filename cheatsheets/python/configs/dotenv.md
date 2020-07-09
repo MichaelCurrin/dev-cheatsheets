@@ -1,4 +1,6 @@
-# Dotenv
+---
+title: Dotenv
+---
 
 ## Example
 
@@ -34,6 +36,3 @@ class Config:
     FOO = environ.get('FOO')
     BUZZ = environ.get('BUZZ')
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1MjM4NTg3N119
--->

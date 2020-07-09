@@ -1,4 +1,6 @@
-# List files
+---
+title: List files
+---
 
 ## List command
 
@@ -79,7 +81,7 @@ find . -type f
 ### List files recursively
 
 ```
-# --all Include files not just directories. 
+# --all Include files not just directories.
 # --human-readable Show human-readable sizes.
 du -ah
 ```
