@@ -1,8 +1,8 @@
+{% comment %}
+    Flexbox menu.
 
-{%- comment -%}
-    {% for p in site.pages %}
-    <div>{{ p.name }}</div>
-    {% endfor %} {%- endcomment -%}
+    After removing the common part of the item's path, use an item if it goes exactly one level down.
+{% endcomment %}
 
 {% if page.layout == 'home' %}
     {% assign depth = 2 %}
@@ -29,8 +29,8 @@
     .flex-container {
         display: flex;
         flex-wrap: wrap;
+        padding-bottom: 1em;
     }
-
 
     .flex-container>a>div {
         margin: 10px;
@@ -38,10 +38,6 @@
         font-size: 20px;
 
         box-shadow: 1px 2px 4px gray;
-    }
-
-    .flex-container>a>div:hover {
-        filter: brightness(80%);
     }
 
 </style>
