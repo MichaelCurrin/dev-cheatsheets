@@ -1,6 +1,7 @@
 ---
 title: Jekyll Templating
 render_with_liquid: false
+layout: listing
 ---
 
 Cheat sheet for using Jekyll Liquid and plain HTML in Jekyll projects.

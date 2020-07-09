@@ -1,9 +1,8 @@
 ---
-title: Builtin
+title: Python builtins
 ---
 
 ## Range
-
 
 ```python
 range(10)

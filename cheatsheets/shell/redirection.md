@@ -6,7 +6,7 @@ title: Redirection
 - [Bash one-liners tutorial](https://catonmat.net/bash-one-liners-explained-part-three)
 
 
-### Running
+## Running
 
 Use a dash.
 

@@ -1,4 +1,6 @@
-# Static typing for Python.
+---
+title: Static typing for Python
+---
 
 ## MyPy
 

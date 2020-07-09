@@ -1,8 +1,7 @@
 ---
 title: Cross language shell
+description: How to run a shell command from another language
 ---
-> How to run a shell command from another language
-
 
 
 ## Ruby

@@ -1,7 +1,7 @@
 ---
 title: Copy
+description: Copying objects in Python
 ---
-> Copying objects in Python
 
 - [lib.copy](https://docs.python.org/3/library/copy.html) builtin docs
 	> Shallow and deep copy operations

@@ -1,7 +1,7 @@
 ---
 title: Globbing shell
+description: How to match paths using "glob" patterns
 ---
-> How to match paths using "glob" patterns.
 
 Globbing is a programming concept that involves the use of wildcards and special characters to match and filter. Glob patterns are similar to regex patterns, but simpler and limited in scope.
 

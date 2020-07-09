@@ -1,7 +1,7 @@
 ---
 title: Compare text
+description: Using command-line tools and applications to compare files
 ---
-> Using command-line tools and applications to compare files
 
 ## Shell
 

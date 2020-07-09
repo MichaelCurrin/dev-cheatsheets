@@ -1,4 +1,6 @@
-## HTML entity escaping
+---
+title: HTML entity escaping
+---
 
 In the content of HTML pages, escape certain characters.
 

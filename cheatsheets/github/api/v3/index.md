@@ -1,5 +1,6 @@
 ---
 title: Github API V3
+layout: listing
 ---
 
 https://developer.github.com/v3/guides/getting-started/

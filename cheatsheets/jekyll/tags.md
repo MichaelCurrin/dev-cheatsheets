@@ -1,5 +1,5 @@
 ---
-title: Tags
+title: Jekyll tags
 ---
 
 {% raw %}

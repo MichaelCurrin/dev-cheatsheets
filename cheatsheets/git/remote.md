@@ -1,5 +1,5 @@
 ---
-title: Remote
+title: Git remote
 ---
 
 ## New repo

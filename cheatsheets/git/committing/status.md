@@ -1,5 +1,5 @@
 ---
-title: Status
+title: Git status
 ---
 
 ## Flags

@@ -3,7 +3,6 @@ title: Install
 layout: listing
 ---
 
-
 See my gists.
 
 - [gist.github.com/MichaelCurrin](https://gist.github.com/MichaelCurrin)

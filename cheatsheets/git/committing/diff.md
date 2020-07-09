@@ -1,5 +1,5 @@
 ---
-title: Diff
+title: Git diff
 ---
 
 Show file names and line changes. Ignores staged files.

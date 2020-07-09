@@ -1,8 +1,7 @@
 ---
 title: Python shell
+description: Running shell commands through Python
 ---
-> Running shell commands through Python
-
 
 Read more in [Python shell](https://github.com/MichaelCurrin/learn-to-code/tree/master/en/topics/scripting_languages/Python/shell) guide.
 

@@ -2,7 +2,7 @@
 title: Escaping
 ---
 
-Prevent markdown from rendering certaim styling, you can escape them. In the examples below the italics are part of a filename and italics styling is unwanted.
+Prevent markdown from rendering certain styling, you can escape them. In the examples below the italics are part of a filename and italics styling is unwanted.
 
 
 ## Escape with code ticks

@@ -1,5 +1,5 @@
 ---
-title: Ini
+title: Ini file
 ---
 
 ## Example

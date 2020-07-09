@@ -1,5 +1,5 @@
 ---
-title: Empty
+title: Empty commit
 ---
 
 
