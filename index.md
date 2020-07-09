@@ -3,7 +3,11 @@ title: Home
 layout: home
 ---
 
-> A collection of code snippets and CLI notes for easy reference
+> {{ site.description }}
+
+You know that command or argument or function you used before but you can't remember exactly what it does how to use it. This is what Dev Cheatsheets is for!
+
+This is not comprehensive but it covers definitions and usage examples which cover the basics and some common flows (leaving out the obscure things I'll probably never need and can always lookup if I need to).
 
 There are a lot of tools and languages on this site here for my own reference and I hope you find something useful here too, by looking for something specific or just discovering what is here.
 
