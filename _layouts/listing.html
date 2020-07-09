@@ -7,15 +7,19 @@ layout: default
     <header class="post-header">
         <h1 class="post-title">{{ page.title | escape }}</h1>
         {% if page.description %}
-            <h2>{{ page.description | escape }}<h2>
+            <blockquote>{{ page.description | escape }}</blockquote>
         {% endif %}
     </header>
 
     {% include breadcrumbs.html %}
 
+    <br>
+
     <h2>Topics</h2>
 
-    {% include list-sections.html %}
+    {% include flex-sections.html %}
+
+    <br>
 
     <h2>Pages</h2>
 
