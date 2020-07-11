@@ -7,7 +7,7 @@ See also [JSON](https://github.com/MichaelCurrin/learn-to-code/blob/master/data_
 
 ## Conversion
 
-From JSON-formatted string to object and then from object back to JSON-formatted string.
+Within a programming language, convert a JSON-formatted string to data structure and then back to a string.
 
 ### JavaScript
 
@@ -145,7 +145,6 @@ pp.pprint(my_object)
 pp = pprint.PrettyPrinter(indent=4)
 pp.pprint(my_object)
 ```
-
 
 ### Flask
 
