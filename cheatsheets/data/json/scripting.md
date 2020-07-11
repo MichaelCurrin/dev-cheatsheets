@@ -1,15 +1,14 @@
 ---
-title: JSON
+title: Scripting
+description: How to handle JSON data in a scripting language
 ---
+
+Within a programming language, convert a JSON-formatted string to data structure and then back to a string.
 
 See also [JSON](https://github.com/MichaelCurrin/learn-to-code/blob/master/data_formats.md#json) section of my data formats guide.
 
 
-## Conversion
-
-Within a programming language, convert a JSON-formatted string to data structure and then back to a string.
-
-### JavaScript
+## JavaScript
 
 No imports needed.
 
@@ -35,7 +34,8 @@ In NodeJS on the command-line:
 "1.0.0"
 ```
 
-### Ruby
+
+## Ruby
 
 - [Ruby JSON module](https://ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html)
 
@@ -68,7 +68,8 @@ my_string.to_json
 # => "{\"hello\":\"world\"}"
 ```
 
-### Jekyll
+
+## Jekyll
 
 - [Jekyll Liquid filters](https://jekyllrb.com/docs/liquid/filters/)
 
@@ -76,7 +77,8 @@ my_string.to_json
 {{ my_object | jsonify }}
 ```
 
-### Python
+
+## Python
 
 - [Reading and writing JSON to a file in Python](https://stackabuse.com/reading-and-writing-json-to-a-file-in-python/) on StackAbuse.
 - [Reading and writing JSON to a file in Python](https://www.geeksforgeeks.org/reading-and-writing-json-to-a-file-in-python/) on Geeks for Geeks.
@@ -87,7 +89,7 @@ Import the builtin.
 import json
 ```
 
-#### Object handling
+### Object handling
 
 Read from and write to object - note the `s` in the method name.
 
@@ -99,7 +101,7 @@ my_obj = json.loads(my_string)
 my_string = json.dumps(my_obj)
 ```
 
-#### File handling
+### File handling
 
 Read from and write to file - note **no* `s` in the method names.
 
@@ -113,7 +115,7 @@ with open('file.json', 'w') as f_out:
     json.dumps(my_object, f_out)
 ```
 
-### Pretty print
+## Pretty print
 
 Be sure to specify wrapping indentation level at 4 spaces to make the output appear more vertical than horizontal.
 
@@ -146,7 +148,7 @@ pp = pprint.PrettyPrinter(indent=4)
 pp.pprint(my_object)
 ```
 
-### Flask
+## Flask
 
 A Python library for websites and APIs. It supports templating using HTML files with Liquid syntax, similar to Jekyll.
 
