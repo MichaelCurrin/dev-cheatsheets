@@ -51,7 +51,9 @@ ls -d ~
 
 ## Globbing
 
-See [globstar](globstar.md) page.
+See [globstar] page.
+
+[globstar]: {{ site.baseurl }}{% link cheatsheets/shell/files/globstar.md %}
 
 
 ## Find command

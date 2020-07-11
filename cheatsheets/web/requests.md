@@ -2,7 +2,9 @@
 title: Requests
 ---
 
-See also [shell/requests.md](shell/requests.md) for doing requests from the command-line.
+See also [Shell requests] for doing requests from the command-line.
+
+[Shell requests]: {{ site.baseurl }}{% link cheatsheets/shell/requests.md %}
 
 
 ## Request bins
@@ -18,8 +20,8 @@ Run requests in the browser and generate equivalent `curl` command. You can conv
 
 #### GET
 
-```
-curl -X GET "https://httpbin.org/get" -H  "accept: application/json"
+```sh
+$ curl -X GET "https://httpbin.org/get" -H  "accept: application/json"
 ```
 
 ## Language samples

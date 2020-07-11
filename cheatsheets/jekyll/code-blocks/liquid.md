@@ -7,7 +7,9 @@ Here we ensure that Liquid code is not evaluated but treated as literal text, bu
 
 Note that Liquid here uses a combination of HTML/Markdown and Jekyll templating and depending which approach you use a certain part of the same code block will be highlighted.
 
-Make sure you understand [Basics]({{ site.baseurl}}{% link cheatsheets/jekyll/code-blocks/basics.md %}) first.
+Make sure you understand [Basics] first.
+
+[Basics]: {{ site.baseurl }}{% link cheatsheets/jekyll/code-blocks/basics.md %}
 
 ## Code block approach
 
@@ -98,4 +100,4 @@ This is just a different approach:
 
 - It only works in Jekyll sites not plain markdown.
 - It is more verbose but allows customization such as adding line numbers.
-- You can combine approaches to nest a markdown backtick code block inside a `highlight` block, when two layers of backticks or `highlight` would not work (though indenting a backtick code block would work). See [Basics]({{ site.baseurl }}{% link cheatsheets/jekyll/code-blocks/basics.md %})
+- You can combine approaches to nest a markdown backtick code block inside a `highlight` block, when two layers of backticks or `highlight` would not work (though indenting a backtick code block would work).

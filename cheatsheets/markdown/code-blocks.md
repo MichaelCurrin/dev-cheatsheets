@@ -2,8 +2,9 @@
 title: Code blocks
 ---
 
-See also [Jekyll Supported Languages]({{ site.baseurl }}{% link cheatsheets/jekyll/code-blocks/supported-languages.md %}) page.
+See also the [Jekyll Supported Languages] page.
 
+[Jekyll Supported Languages]: {{ site.baseurl }}{% link cheatsheets/jekyll/code-blocks/supported-languages.md %}
 
 ## Language highlighting
 

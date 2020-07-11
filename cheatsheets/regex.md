@@ -53,7 +53,7 @@ Use `^` inside `[]` to exclude. Note `a-z` will work and a `-` must be at the st
 
 ### Exclude words
 
-Source [regextester](https://www.regextester.com/15)
+Source: [regextester](https://www.regextester.com/15)
 
 ```re
 ^((?!badword).)*$
@@ -67,6 +67,13 @@ abadwords
 three     # match
 ```
 
+Multiple exclusions:
+
+```re
+?!(foo|bar)
+
+?!(http|[{#])
+```
 
 ## URLs
 
@@ -92,5 +99,9 @@ three     # match
     ```re
     \[.+\]\(http[^s].+\)
     ```
+- Internal path which is not a `#` ID reference or Jekyll link.
+    ```re
+    \[.+\]\((?!(http|[{#])).+\)
+    ```
 
-Note `www` without protocol is also external but not considered here as I don't use that style.
+Note `www` without a protocol is also external but not considered here as I don't use that style.

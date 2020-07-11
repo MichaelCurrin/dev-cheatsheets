@@ -15,8 +15,9 @@ You might not see anything different in the prompt. Though  some variables from 
 
 If you enter `exit` or press <kbd>CTRL</kbd>+<kbd>D</kbd>, then you will return to the outer shell session.
 
-Note that you should **not** use this to switch between shells, as the config file will not be executed appropriately. Use the [Start new shell session](start-new-shell-session) section below.
+Note that you should **not** use this to switch between shells, as the config file will not be executed appropriately. Use the [Start new shell session] section below.
 
+[Start new shell session]: {{ site.baseurl }}{% link cheatsheets/shell/start-new-shell-session.md }}
 
 ## Get current shell
 
@@ -24,7 +25,7 @@ This will print the program name, which in the case of the shell is the actual s
 
 ### Conditional
 
-In short, the most reliable way in conditonal flow is this. To be tested. Perhaps it can work with `case`.
+In short, the most reliable way in conditional flow is this. To be tested. Perhaps it can work with `case`.
 
 ```sh
 IS_BASH=false

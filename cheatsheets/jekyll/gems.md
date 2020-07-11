@@ -2,7 +2,6 @@
 title: Jekyll gems
 ---
 
-
 ## Check environment
 
 ```sh
@@ -28,7 +27,7 @@ Gems included by the bundle:
 Names of directories:
 
 ```sh
-ls vendor/bundle/ruby/2.6.0/gems
+$ ls vendor/bundle/ruby/2.6.0/gems
 ```
 ```
 addressable-2.7.0           i18n-0.9.5      ...
@@ -51,21 +50,61 @@ $ bundle show minima
 Open VS Code in that directory. Use `open` to use your file browser.
 
 ```sh
-code $(bundle show minima)
+$ code $(bundle show minima)
 ```
 
 
-#### Gem command
+#### Gem CLI
 
-See also [plugins](plugins.md) page.
+Calling `gem` from the shell.
 
-Shell commands
+See also [plugins] page.
+
+[plugins]: {{ site.baseurl }}{% link cheatsheets/jekyll/gems.md %}
+
+#### Help
 
 ```sh
-$ gem install GEM_NAME
-$ gem install --user-level GEM_NAME
-$ gem upgrade GEM_NAME
+$ gem COMMAND --help
+$ gem help COMMAND
 ```
+##### Install
+
+```sh
+$ gem install GEMNAME
+$ gem install GEMNAME --user-level
+```
+
+##### Update
+
+Upgrade target gem.
+
+```sh
+$ gem update GEMNAME
+```
+
+```
+Usage: gem update GEMNAME [GEMNAME ...] [options]
+```
+
+Upgrade many gems.
+
+```sh
+$ gem update
+$ gem update --system
+```
+
+```
+gem help update
+Usage: gem update GEMNAME [GEMNAME ...] [options]
+
+  Options:
+      --system                     Update the RubyGems system software
+```
+
+#### Ruby gem command
+
+Calling `gem` from inside Ruby code including a `Gemfile`.
 
 Ruby command examples.
 
@@ -87,12 +126,11 @@ gem 'bar', '~> 2.5'
 Then Bundler will use that.
 
 ```sh
-bundle install
+$ bundle install
 ```
 
 
 ## Install from Github
-
 
 ```ruby
 gem 'bar', git: 'https://github.com/foo/bar'

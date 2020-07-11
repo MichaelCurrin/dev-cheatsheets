@@ -4,6 +4,7 @@ title: Links
 ---
 
 {% raw %}
+
 ## Local paths
 
 There are multiple ways to do this, depending on your situation.
@@ -22,10 +23,10 @@ The downside to this approach that it uses a literal string - is does not valida
 
 If you reference a page object, then it is safer to expect the URL to be valid - use of config settings might affect this though such as permalink or collections.
 
-Use `site.page` object for the current page.
+Use `page` object for the current page.
 
 ```markdown
-- [Link text]({{ site.page.url | relative_url }})
+- [Link text]({{ page.url | relative_url }})
 ```
 
 Use a `for` loop on pages or a collection.
@@ -44,9 +45,10 @@ This will figure out the appropriate URL. And it will give build error if the pa
 
 e.g.
 
-
 ```markdown
--  [Link text]({% link about.md %})
+[Link text]({{ site.baseurl}} {% link about.md %}) - Jekyll 3
+
+[Link text]({% link about.md %}) - Jekyll 4
 ```
 
 
@@ -58,12 +60,9 @@ Result:
 
 You can pass a variable too:
 
-
 ```markdown
--  [Link text]({% link {{ item }} %})
+[Link text]({% link {{ item }} %})
 ```
-
-
 
 This works well for Jekyll 4 - which adds base URL for you. Otherwise you must do:
 
@@ -71,7 +70,6 @@ This works well for Jekyll 4 - which adds base URL for you. Otherwise you must d
 ```markdown
 {{ site.baseurl }}{% link about.md %}
 ```
-
 
 
 ## Footer links
@@ -121,5 +119,7 @@ Markdown:
 ```liquid
 [Link Text]({% post_url 2010-09-08-welcome-to-jekyll %})
 ```
+
+In Jekyll 4, this includes the base URL.
 
 {% endraw %}

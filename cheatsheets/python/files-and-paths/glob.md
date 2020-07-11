@@ -2,7 +2,10 @@
 title: Python glob
 ---
 
-See [glob](/cheatsheets/shell/glob.md) in the Shell section.
+See also the [glob] in the Shell section of this guide.
+
+[glob]: {{ site.baseurl }}{% link cheatsheets/shell/glob.md %}
+
 
 ## Resources
 
