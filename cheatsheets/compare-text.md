@@ -11,18 +11,19 @@ description: Using command-line tools and applications to compare files
 - [Tutorial](https://www.computerhope.com/unix/udiff.htm)
 
 ```sh
-diff foo.txt bar.txt
+$ diff foo.txt bar.txt
 ```
 
 ### vimdiff
 
 ```sh
-vimdiff foo.txt bar.txt
+$ vimdiff foo.txt bar.txt
 ```
 
 ```sh
-vimdiff foo/*
+$ vimdiff foo/*
 ```
+
 
 ## IDE
 
@@ -39,6 +40,6 @@ For a richer UI comparisons.
 
 Don't put any private or sensitive data here.
 
-- https://www.diffchecker.com/
-- https://text-compare.com/
-- https://www.diffnow.com - Let's you specify two files. Their example has two JS files.
+- [diffchecker.com/](https://www.diffchecker.com/)
+- [text-compare.com](https://text-compare.com/)
+- [diffnow.com](https://www.diffnow.com) - Let's you specify two files. Their example has two JS files.
