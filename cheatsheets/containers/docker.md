@@ -9,7 +9,7 @@ title: Docker
     - [Devhints](https://devhints.io/docker).
     - [wsargent/docker-cheat-sheet](https://github.com/wsargent/docker-cheat-sheet) on _Github_.
     - [Ultimate Docker Cheatsheet](https://hackernoon.com/docker-commands-the-ultimate-cheat-sheet-994ac78e2888) as _Hackernoon_ blog post.
-    - [Docker cheatsheet](http://dockerlabs.collabnix.com/docker/cheatsheet/) on Dockerlabs.
+    - [Docker cheatsheet](https://dockerlabs.collabnix.com/docker/cheatsheet/) on Dockerlabs.
 
 
 ## Common commands

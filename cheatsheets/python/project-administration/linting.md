@@ -14,12 +14,12 @@ Some VS Code choices - there are flags for each (so multiple can be used), plus 
 ## Pylint
 
 - [docs.pylint.org](https://docs.pylint.org/en/latest/index.html)
-- [Pylint messages](http://pylint-messages.wikidot.com/all-codes)
+- [Pylint messages](https://pylint-messages.wikidot.com/all-codes)
 - [Pylint message-control](https://pylint.readthedocs.io/en/latest/user_guide/message-control.html)
 
 ### Rules
 
-Formats that Pytlint accepts - copied from message-control doc.
+Formats that Pylint accepts - copied from message-control doc.
 
 > For all of these controls, `pylint` accepts the following values:
 > -   a symbolic message: `no-member`, `undefined-variable` etc.

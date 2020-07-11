@@ -10,11 +10,11 @@ This guide is based on Bash and ZSH.
 
 ## Resources
 
-- [GNU/Linux Command-Line Tools Summary: Wildcards](http://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm)
-- [Bash: globbing](http://tldp.org/LDP/abs/html/globbingref.html)
+- [GNU/Linux Command-Line Tools Summary: Wildcards](https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm)
+- [Bash: globbing](https://tldp.org/LDP/abs/html/globbingref.html)
 - [Wikipedia: glob (programming)](https://en.wikipedia.org/wiki/Glob_(programming))
-- [Linux Programmer's Manual: GLOB(7)](http://man7.org/linux/man-pages/man7/glob.7.html)
-- [Globs](http://mywiki.wooledge.org/glob) Bash guide.
+- [Linux Programmer's Manual: GLOB(7)](https://man7.org/linux/man-pages/man7/glob.7.html)
+- [Globs](https://mywiki.wooledge.org/glob) Bash guide.
 
 Some links copied from [begin/globbing](https://github.com/begin/globbing/blob/master/README.md)
 

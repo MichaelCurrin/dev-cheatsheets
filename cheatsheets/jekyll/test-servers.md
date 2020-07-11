@@ -31,7 +31,7 @@ Note this might exclude dotfiles.
 
 Now open the browser at:
 
-- [http:localhost/](http:localhost/)
+- [http://localhost/](http:localhost/)
 
 Disable:
 
@@ -53,4 +53,4 @@ python3 -m http.server 80
 
 Now open the browser at:
 
-- [http:localhost/](http:localhost/)
+- [http://localhost/](http:localhost/)

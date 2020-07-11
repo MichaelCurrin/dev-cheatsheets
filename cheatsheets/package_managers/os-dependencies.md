@@ -56,4 +56,4 @@ $ apt upgrade PACKAGE
 $ apt remove PACKAGE
 ```
 
-[Man page](http://manpages.ubuntu.com/manpages/trusty/man8/apt.8.html) for APT on Ubuntu.
+[Man page](https://manpages.ubuntu.com/manpages/trusty/man8/apt.8.html) for APT on Ubuntu.

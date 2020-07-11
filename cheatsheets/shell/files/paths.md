@@ -23,7 +23,7 @@ For script `~/foo/bar.sh`, printing that variable:
 /Users/my-user/foo/bar.sh
 ```
 
-From top answer on [SO](https://stackoverflow.com/questions/4774054/reliable-way-for-a-bash-script-to-get-the-full-path-to-itself/4774063). See also [page](http://mywiki.wooledge.org/BashFAQ/028).
+From top answer on [SO](https://stackoverflow.com/questions/4774054/reliable-way-for-a-bash-script-to-get-the-full-path-to-itself/4774063). See also [page](https://mywiki.wooledge.org/BashFAQ/028).
 
 ### Option B
 

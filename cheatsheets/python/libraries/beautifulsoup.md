@@ -10,7 +10,7 @@ title: BeautifulSoup
 - [PyPI](https://pypi.org/project/beautifulsoup4/)
 - Tutorials
     - [Python for beginners](https://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python)
-    - [Zetcode](http://zetcode.com/python/beautifulsoup/)
+    - [Zetcode](https://zetcode.com/python/beautifulsoup/)
 
 
 ## Install

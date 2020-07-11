@@ -47,7 +47,7 @@ There may be missing context or explanations and obvious things are excluded. As
 ### Other cheatsheets
 
 - [Dev Hints](https://devhints.io)
-- [Cheatsheet Factory](http://cheatsheetfactory.geekyhacker.com/)
+- [Cheatsheet Factory](https://cheatsheetfactory.geekyhacker.com/)
 - [Jekyll cheatsheet](https://learn.cloudcannon.com/jekyll-cheat-sheet/) on CloudCannon site
 
 ### My projects

@@ -26,11 +26,11 @@ curl -X GET "https://httpbin.org/get" -H  "accept: application/json"
 
 ### Get requests
 
-See [HTTP](https://www.rosettacode.org/wiki/HTTP) page on RosettaCode.
+See [HTTP](https://www.rosettacode.org/wiki/HTTP) page on _RosettaCode_.
 
 ### Post requests
 
-[source](http://requestbin.net/)
+Source: [requestbin.net](https://requestbin.net/)
 
 Bash:
 
