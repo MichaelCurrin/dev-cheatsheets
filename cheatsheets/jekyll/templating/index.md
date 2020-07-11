@@ -9,23 +9,49 @@ Cheat sheet for using Jekyll Liquid and plain HTML in Jekyll projects.
 
 ## Disable Liquid
 
-Set in frontmatter:
+See [Tags Filters](https://jekyllrb.com/docs/liquid/tags/) in the Jekyll docs.
+
+Set in frontmatter (Jekyll 4.X only):
 
 ```yaml
+---
+title: Foo
 render_with_liquid: false
+---
 ```
+
+Note that it does not disable everything - some things like `link` tag still work.
+
+Also this can be added inline or around the entire file.
+
+    ```liquid
+    My Liquid:
+
+    {% raw %}
+    {{ variable }}
+    {% endraw %}
+    ```
+
+```liquid
+My Liquid:
+
+{% raw %}
+{{ variable }}
+{% endraw %}
+```
+
+If you want the `raw` tag to appear literally as here, you can use `render_with_liquid` (Jekyll 4.X) for the file. Nesting `raw` tags might not work as the inner `endraw` will close the outer `raw`.
 
 
 ## Comment
 
 ```liquid
 {% comment %}
-Comment message
+    Comment message
 {% endcomment %}
 ```
 
 ## Collections
-
 
 ### Iterate over collection
 
@@ -50,7 +76,6 @@ Comment message
 
 [source](https://stackoverflow.com/questions/17677094/jekyll-for-loop-over-all-images-in-a-folder)
 
-
 ```liquid
 {% for asset in site.static_files %}
     {% if asset.path contains '<NEEDLE>' %}
@@ -62,7 +87,7 @@ Comment message
 
 ## SVGs
 
-See also the [SVG section of the markdown cheatsheet](/cheatsheets/markdown/index.md#svgs).
+See also the [SVGs]({% link cheatsheets/markdown/index.md %}#svgs) section of the markdown cheatsheet.
 
 ### Image tag
 
