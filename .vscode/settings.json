@@ -2,5 +2,5 @@
     "files.associations": {
         // Use "Jekyll (HTML)" so that Jekyll Liquid syntax is picked up correctly for validation and highlighting.
         "*.html": "jekyll",
-    },
+    }
 }
