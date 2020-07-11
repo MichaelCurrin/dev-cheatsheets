@@ -2,6 +2,8 @@
 title: Gmail
 ---
 
+This is not directly related to coding but covers syntax specific to Gmail searches.
+
 ## Cleaning up
 
 Archiving is the same as remove from inbox.
@@ -49,6 +51,7 @@ in:promotions
 ```
 
 Combined.
+
 ```
 in:inbox in:updates
 ```
