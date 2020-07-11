@@ -142,6 +142,8 @@ Example of `code` in a sentence.
 
 ### Code blocks with language syntax
 
+See [Code blocks]({{ site.baseurl }}{% link cheatsheets/markdown/code-blocks.md %}) page.
+
     ```python
     # Triple quotes are for code blocks and give more control over the language.
     print('Hello world'!)
@@ -152,30 +154,7 @@ Example of `code` in a sentence.
 print('Hello world'!)
 ```
 
-They also work nicely under bullet points. See [Code snippets in lists](#code-snippets-in-lists)] above.
-
-#### Language choices for syntax highlighting
-
-Some valid references for language-specific styling:
-
-- `markdown` or `md`
-- `json` or `json5` (the latter is built on top of JSON and supports comments)
-- `python`
-- `ruby`
-- `html`
-- `javascript` or `js`
-- `sh`
-- `bash`
-
-
-**Links:**
-
-- The full list that Github supports, on the Linguist repo:
-	- https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
-- This is separate by similar and easier to read:
-	- https://github.com/HappenApps/Quiver/wiki/Syntax-Highlighting-Supported-Languages
-- Rogue highlighter used for Github Pages
-	- https://github.com/rouge-ruby/rouge
+They also work well under bullet points - see [Code snippets in lists](#code-snippets-in-lists)] above.
 
 
 ## Todo list
