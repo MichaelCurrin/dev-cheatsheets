@@ -72,10 +72,25 @@ three     # match
 
 ### Markdown URLs
 
-| Pattern                | Description                  |
-| ---------------------- | ---------------------------- |
-| `\[.+\]\(.+\)`         | Internal and external paths. |
-| `\[.+\]\(.+\)`         | Internal path.               |
-| `\[.+\]\(/.+\)`        | Internal absolute path.      |
-| `\[.+\]\(http.+\)`     | External URLs.               |
-| `\[.+\]\(http[^s].+\)` | HTTP URL that is not secure. |
+- Internal and external paths. Allows for empty target too - `()`.
+    ```re
+    \[.+\]\(.*\)
+    ```
+- Internal path
+    ```re
+    \[.+\]\((?!http).+\)
+    ```
+- Internal absolute path
+    ```re
+    \[.+\]\(/.+\)
+    ```
+- External URLs
+    ```re
+    \[.+\]\(http.+\)
+    ```
+- HTTP URL that is not secure
+    ```re
+    \[.+\]\(http[^s].+\)
+    ```
+
+Note `www` without protocol is also external but not considered here as I don't use that style.
