@@ -1,9 +1,8 @@
 ---
 title: Code blocks
 ---
-<!-- TODO I've written about this somewhere before - combine -->
 
-- Github's source of highlighting:[languages.yml](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml) in the Linguist repo.
+See also [Jekyll Supported Languages]({{ site.baseurl }}{% link cheatsheets/jekyll/code-blocks/supported-languages.md %}) page.
 
 
 ## Language highlighting
@@ -16,7 +15,7 @@ title: Code blocks
 print("Hello, world!")
 ```
 
-The short name works - I don't know if it has the same coverage though.
+The short name works too. Note that outside of Github, other editing tools like an IDE or StackEdit might only support the long or the short form of a language.
 
 	```py
 	print("Hello, world!")
@@ -28,7 +27,22 @@ print("Hello, world!")
 
 ## Specific languages
 
-- `shell` or `sh` or `bash`
+Some valid references for language-specific styling that I use.
+
+- `markdown` or `md`
+- `json`
+- `json5`
+- `python` or `py`
+- `ruby` or `rb`
+- `html`
+- `javascript` or `js`
+- `sh` or `bash` (or the less common `shell`)
+- `diff`
+- `liquid`
+- `yaml` or `yml`
+
+
+## Examples
 
 ### Diff
 
@@ -72,3 +86,15 @@ With comments, use `json5` to avoid getting errors for invalid content on Github
     "foo": "bar"
 }
 ```
+
+### Regex
+
+	```re
+	[a-f]+
+	```
+
+```re
+[a-f]+
+```
+
+Note - from limited testing, `re` works but not `regex`.
