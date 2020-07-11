@@ -1,5 +1,5 @@
 ---
-title: JSON cheatsheet
+title: JSON
 ---
 
 See also [JSON](https://github.com/MichaelCurrin/learn-to-code/blob/master/data_formats.md#json) section of my data formats guide.
