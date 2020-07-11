@@ -2,9 +2,9 @@
 title: Python glob
 ---
 
-See also the [glob] in the Shell section of this guide.
+See also the [globbing] in the Shell section of this guide.
 
-[glob]: {{ site.baseurl }}{% link cheatsheets/shell/glob.md %}
+[globbing]: {{ site.baseurl }}{% link cheatsheets/shell/files/globbing.md %}
 
 
 ## Resources

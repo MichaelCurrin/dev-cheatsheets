@@ -55,8 +55,6 @@ find . -depth -name "*.foo" -exec sh -c 'mv "$1" "${1%.foo}.bar"' _ {} \;
 
 Use [globstar] to get recursive globs (`**`) - only Bash 4+ or ZSH.
 
-[globstar]: {{ site.baseurl }}{% link cheatsheets/shell/files/globstar.md %}
-
 
 ```sh
 for file in PATH/**/*.foo; do
@@ -94,8 +92,6 @@ Use `-n|--dry-run` flag to preview first. The `-v|--verbose` flag is implied wit
 
 Replace an _underscore_ with a _dash_ in file and directory names - using [globstar].
 
-[globstar]: {{ site.baseurl }}{% link cheatsheets/shell/globstar.md %}
-
 
 ```sh
 for P in **/*_*; do
@@ -124,3 +120,5 @@ Rename file extension of a batch of files.
 ```sh
 rename 's/.foo/.bar/' *.foo
 ```
+
+[globstar]: {{ site.baseurl }}{% link cheatsheets/shell/files/globstar.md %}

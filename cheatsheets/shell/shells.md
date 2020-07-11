@@ -15,9 +15,8 @@ You might not see anything different in the prompt. Though  some variables from 
 
 If you enter `exit` or press <kbd>CTRL</kbd>+<kbd>D</kbd>, then you will return to the outer shell session.
 
-Note that you should **not** use this to switch between shells, as the config file will not be executed appropriately. Use the [Start new shell session] section below.
+Note that you should **not** use this to switch between shells, as the config file will not be executed appropriately. Use the [Start new shell session](#start-new-shell-session) section below.
 
-[Start new shell session]: {{ site.baseurl }}{% link cheatsheets/shell/start-new-shell-session.md }}
 
 ## Get current shell
 
@@ -56,7 +55,6 @@ If using a single boolean:
 ```sh
 $ IS_ZSH=$([[ "$ZSH_NAME" ]] && echo 'true' || echo 'false')
 ```
-
 
 ### Using $0
 

@@ -4,7 +4,6 @@ title: Globstar
 
 ## Standard star
 
-
 The standard star gives files and directory at the current level.
 
 ```sh
@@ -72,13 +71,11 @@ if
 
 ### ZSH
 
-
 Globstar is enabled already - recommended to use this. Note `**` is not sufficient.
 
 ```sh
 **/*
 ```
-
 
 One piece of advice said to do this, but this works with `#`, `^` and `~` according to docs.
 
