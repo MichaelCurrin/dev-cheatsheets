@@ -4,7 +4,7 @@ title: Pip
 
 See also [project packages] section of this project and look for pip or Python pages.
 
-[project packages]: {{ site.baseurl }}{% link cheatsheets/package_managers/project-packages.md %}
+[project packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/project-packages.md %}
 
 ## Protect global environment
 
