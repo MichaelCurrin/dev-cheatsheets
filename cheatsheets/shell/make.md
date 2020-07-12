@@ -19,12 +19,16 @@ docs:
 
 ## Help
 
+### Basic
+
 ```make
 # Show summary of make targets.
 help:
 	@echo 'Print lines that are not indented (targets and comments) or empty.'
 	@egrep '^\S|^$$' Makefile
 ```
+
+### Extended
 
 If you use `@echo` within your targets:
 
@@ -35,9 +39,13 @@ help:
 	@egrep '(^\S)|(^$$)|\s+@echo' Makefile
 ```
 
+Alt echo: `@echo "Include left-aligned, empty lines and echo lines."`
+
+### Detailed
+
 Copied from Poetry's [Makefile](https://github.com/python-poetry/poetry/blob/master/Makefile). 
 
-This is complex - I don't know why.
+This is complex - I don't know why. I haven't tested yet but maybe something here is useful.
 
 ```makefile
 # lists all available targets
@@ -50,6 +58,7 @@ list:
 no_targets__:
 
 ```
+
 
 ## Export
 
