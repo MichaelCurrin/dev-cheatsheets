@@ -82,11 +82,13 @@ Add any other context or screenshots about the feature request here.
 MAINTAINERS.txt
 ```
 
+The code owners file contains `@` mentions of users or groups and is used to auto request reviews on PRs.
+
 ```
 .github/CODEOWNERS
 ```
 
-e.g. https://github.com/benbalter/jekyll-remote-theme/blob/master/.github/CODEOWNERS
+e.g. [CODEOWNERS](https://github.com/benbalter/jekyll-remote-theme/blob/master/.github/CODEOWNERS) of `benbalter/jekyll-remote-theme`
 
 You can also link to the Github contributors page.
 
@@ -97,7 +99,8 @@ e.g.
 presite © egoist, Released under the MIT License.
 Authored and maintained by egoist with help from contributors (list).
 ```
-Where  list links to:
+
+Where list links to:
 
 - [github.com/egoist/presite/graphs/contributors](https://github.com/egoist/presite/graphs/contributors)
 
@@ -115,7 +118,7 @@ docs/pull_request_template.md
 ```
 
 > In the body of the new file, add your pull request template. This could include:
-> -A reference to a related issue in your repository.
+> - A reference to a related issue in your repository.
 > - A description of the changes proposed in the pull request.
 > - @mentions of the person or team responsible for reviewing proposed changes.
 

@@ -56,7 +56,7 @@ EXAMPLES
 
      "ls | open -f" writes the output of the 'ls' command to a file in /tmp and opens the file in the default text editor (as determined by LaunchServices).
 
-     "open http://www.apple.com/" opens the URL in the default browser.
+     "open https://www.apple.com/" opens the URL in the default browser.
 
      "open 'file://localhost/Volumes/Macintosh HD/foo.txt'" opens the document in the default application for its type (as determined by LaunchServices).
 

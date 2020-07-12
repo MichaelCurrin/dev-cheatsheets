@@ -2,7 +2,7 @@
 title: Git prune
 ---
 
-Tutorial: https://www.atlassian.com/git/tutorials/git-prune
+Tutorial: [git prune](https://www.atlassian.com/git/tutorials/git-prune)
 
 ```sh
 git prune --dry-run --verbose

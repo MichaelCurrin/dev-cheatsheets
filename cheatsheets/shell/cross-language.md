@@ -6,7 +6,7 @@ description: How to run a shell command from another language
 
 ## Ruby
 
-See https://mentalized.net/journal/2010/03/08/5-ways-to-run-commands-from-ruby/
+See [mentalized.net/journal/2010/03/08/5-ways-to-run-commands-from-ruby](https://mentalized.net/journal/2010/03/08/5-ways-to-run-commands-from-ruby/)
 
 
 ### Use popen3

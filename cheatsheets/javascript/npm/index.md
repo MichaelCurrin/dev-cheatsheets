@@ -68,12 +68,12 @@ Either of these are fine as `"author"` values, according to the docs.
 {
     "name" : "Barney Rubble",
     "email" : "b@rubble.com",
-    "url" : "http://barnyrubble.tumblr.com/"
+    "url" : "https://barnyrubble.tumblr.com/"
 }
 ```
 
 ```json
-"Barney Rubble <b@rubble.com> (http://barnyrubble.tumblr.com/)"
+"Barney Rubble <b@rubble.com> (s)"
 ```
 
 ### Files

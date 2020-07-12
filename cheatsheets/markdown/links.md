@@ -156,7 +156,7 @@ Example:
 ```markdown
 Or leave it empty and use the [link text itself].
 
-[link text itself]: http://www.reddit.com
+[link text itself]: https://www.reddit.com
 ```
 
 **Result:**
@@ -165,4 +165,4 @@ Code:
 
 Or leave it empty and use the [link text itself].
 
-[link text itself]: http://www.reddit.com
+[link text itself]: https://www.reddit.com

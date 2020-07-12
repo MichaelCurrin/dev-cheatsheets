@@ -1,5 +1,6 @@
 ---
 title: Kubernetes
+description: The tool that lets you manage and deploy pods of containers at scale
 ---
 
 Also known as "K8s" for short.

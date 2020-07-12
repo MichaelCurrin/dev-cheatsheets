@@ -2,7 +2,7 @@
 title: Git push
 ---
 
-Docs: https://git-scm.com/docs/git-push
+Docs: [Git push](https://git-scm.com/docs/git-push)
 
 
 ## Push branch

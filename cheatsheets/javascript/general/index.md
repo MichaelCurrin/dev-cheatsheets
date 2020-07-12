@@ -315,7 +315,7 @@ document.querySelectorAll('div.my-class');
 var el = document.getElementById('my-id');
 
 el.getAttribute('src',);
-el.setAttribute('src', 'http://example.com');
+el.setAttribute('src', 'https://example.com');
 
 // classList is now widely supported https://caniuse.com/#search=classList
 if (el.classList.contains('my-class')) {
@@ -350,7 +350,7 @@ for (var value of ['a', 'b', 'c']) {
 [source](https://stackoverflow.com/questions/9872947/changing-svg-image-color-with-javascript)
 
 ```html
-<svg id="svg1" xmlns="http://www.w3.org/2000/svg" style="width: 3.5in; height: 1in">
+<svg id="svg1" xmlns="https://www.w3.org/2000/svg" style="width: 3.5in; height: 1in">
   <circle id="circle1" r="30" cx="34" cy="34"
     style="fill: red; stroke: blue; stroke-width: 2"/>
 </svg>

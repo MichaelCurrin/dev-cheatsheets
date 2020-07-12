@@ -2,10 +2,10 @@
 title: Repos
 ---
 
-- repos
-    - e.g. https://api.github.com/users/MichaelCurrin/repos
-- repo
-    - e.g. https://api.github.com/repos/MichaelCurrin/badge-generator
+- Multiple repos
+    - e.g.  [https://api.github.com/users/MichaelCurrin/repos](https://api.github.com/users/MichaelCurrin/repos)
+- Single repo
+    - e.g. [https://api.github.com/repos/MichaelCurrin/badge-generator](https://api.github.com/repos/MichaelCurrin/badge-generator)
 
 
 Note that there are parameters like limit and page but these are not covered here.

@@ -1,5 +1,5 @@
 ---
-title: Base64
+title: Base64 encoding
 ---
 
 - [Base64 on Wikipedia](https://en.wikipedia.org/wiki/Base64)

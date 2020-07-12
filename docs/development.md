@@ -9,14 +9,14 @@ Follow the install and usage docs to get this project setup locally.
 
 Recommended tool for markdown editing:
 
-- https://stackedit.io/
+- [stackedit.io](https://stackedit.io/)
 
 
 ## Structure
 
 The menus are auto-generated at each level to make it easy to nest content several layers down and not change a menu manually each time. The approach is in this project comes from this prototype project:
 
-- https://github.com/MichaelCurrin/nested-jekyll-menus
+- [github.com/MichaelCurrin/nested-jekyll-menus](https://github.com/MichaelCurrin/nested-jekyll-menus/)
 
 Put content in the [cheatsheets](/cheatsheets/) directory.
 

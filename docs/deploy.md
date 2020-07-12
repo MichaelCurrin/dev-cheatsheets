@@ -7,4 +7,4 @@ Setup this project on GitHub Pages.
 3. Enable GitHub Pages on the `master` branch.
 4. Go to the environment tab and wait for your site to build.
 5. Go to the GitHub Pages URL. e.g.
-    - https://michaelcurrin.github.io/dev-cheatsheets/
+    - [michaelcurrin.github.io/dev-cheatsheets](https://michaelcurrin.github.io/dev-cheatsheets/)

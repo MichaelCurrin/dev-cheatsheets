@@ -77,7 +77,7 @@ $ echo "Hello $([[ "$OSTYPE" == darwin* ]] && echo 'Mac')"
 
 ### Is Linux Lite
 
-- https://linuxliteos.com/
+- [linuxliteos.com](https://linuxliteos.com/)
 
 Linux Lite uses a text file which includes the version.
 

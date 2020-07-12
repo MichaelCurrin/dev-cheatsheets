@@ -8,7 +8,7 @@ See also [Code blocks] page.
 
 From the [docs](https://jekyllrb.com/docs/liquid/tags/):
 
-> Jekyll has built in support for syntax highlighting of over 100 languages thanks to [Rouge](http://rouge.jneen.net/). Rouge is the default highlighter in Jekyll 3 and above.
+> Jekyll has built in support for syntax highlighting of over 100 languages thanks to [Rouge](https://rouge.jneen.net/). Rouge is the default highlighter in Jekyll 3 and above.
 
 
 ## Linguist
@@ -28,4 +28,4 @@ This is similar but easier to read:
 Used for Github Pages
 
 - [rouge-ruby/rouge](https://github.com/rouge-ruby/rouge) repo
-- [Rouge](http://rouge.jneen.net/) homepage
+- [Rouge](https://rouge.jneen.net/) homepage

@@ -1,5 +1,6 @@
 ---
 title: Docker compose
+description: The tool that makes docker containers easier to manage
 ---
 
 - [Docker compose reference docs](https://docs.docker.com/compose/reference/overview/)

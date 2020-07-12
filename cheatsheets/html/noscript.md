@@ -46,6 +46,6 @@ Notice: While Javascript is not essential for this website, your interaction wit
 
 ## Resources
 
-- https://webdesign.tutsplus.com/tutorials/quick-tip-dont-forget-the-noscript-element--cms-25498
-- https://www.w3schools.com/TAGs/tag_noscript.asp
-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript
+- [Don't forget the noscript element](https://webdesign.tutsplus.com/tutorials/quick-tip-dont-forget-the-noscript-element--cms-25498)
+- [W3 schools noscript](https://www.w3schools.com/TAGs/tag_noscript.asp)
+- [Mozilla noscript](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript)

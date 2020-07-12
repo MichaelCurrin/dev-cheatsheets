@@ -5,7 +5,7 @@ layout: listing
 
 ## Man page
 
-Linux: https://ss64.com/bash/grep.html
+Linux: [ss64.com/bash/grep.html](https://ss64.com/bash/grep.html)
 
 ## Tutorials
 

@@ -1,5 +1,6 @@
 ---
 title: Docker
+description: The container management tool
 ---
 
 ## Resources

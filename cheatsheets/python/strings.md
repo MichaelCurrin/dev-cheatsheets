@@ -187,8 +187,8 @@ t.substitute(name=name)
 
 ### Resources
 
-- https://pyformat.info/
-- https://www.w3schools.com/python/ref_string_format.asp
+- [pyformat.info/](https://pyformat.info/)
+- [W3 Schools Python format reference](https://www.w3schools.com/python/ref_string_format.asp)
 
 
 ## Truncate long string

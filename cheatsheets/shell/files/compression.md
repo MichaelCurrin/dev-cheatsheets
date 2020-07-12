@@ -35,8 +35,8 @@ man zip
 
 Online
 
-- https://linux.die.net/man/1/zip
-- http://www.linuxguide.it/command_line/linux-manpage/do.php?file=zip
+- [linux.die.net/man/1/zip](https://linux.die.net/man/1/zip)
+- [Zip](https://www.linuxguide.it/command_line/linux-manpage/do.php?file=zip) on Linux Guide
 
 
 ### Compress

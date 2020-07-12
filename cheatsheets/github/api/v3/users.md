@@ -2,7 +2,7 @@
 title: Users
 ---
 
-e.g. https://api.github.com/users/michaelcurrin
+e.g. [https://api.github.com/users/michaelcurrin](https://api.github.com/users/michaelcurrin)
 
 ```json
 {

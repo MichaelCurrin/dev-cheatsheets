@@ -30,7 +30,7 @@ Used broadly, this does not lock minor version:
 ~1 := >=1.0.0 <(1+1).0.0 := >=1.0.0 <2.0.0 (Same as 1.x)
 ```
 
-- https://docs.npmjs.com/misc/semver#tilde-ranges-123-12-1
+- [tilde ranges](https://docs.npmjs.com/misc/semver#tilde-ranges-123-12-1) on NPM docs
 
 
 ## Caret ranges
@@ -52,4 +52,4 @@ This is _less_ restrictive as only locks the major version when used for version
 ^0.0.3 := >=0.0.3 <0.0.4
 ```
 
-- https://docs.npmjs.com/misc/semver#caret-ranges-123-025-004
+- [Caret ranges](https://docs.npmjs.com/misc/semver#caret-ranges-123-025-004) on NPM docs

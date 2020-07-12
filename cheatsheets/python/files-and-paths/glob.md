@@ -119,7 +119,7 @@ escape(pathname)
 
 ### Helper functions
 
-From: https://github.com/python/cpython/blob/3.8/Lib/glob.py
+From [glob.py](https://github.com/python/cpython/blob/3.8/Lib/glob.py) in CPython on Github.
 
 The `glob` module defines these public functions:
 
