@@ -101,14 +101,14 @@ test:
 
 ```makefile
 install:
-	bundle config --local path vendor/bundle
+	bundle config set path local 'vendor/bundle'
 	bundle install
 
 upgrade:
 	bundle update
 
 s serve:
-	bundle exec jekyll serve
+	bundle exec jekyll serve --trace --livereload
 ```
 
 
