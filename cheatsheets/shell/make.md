@@ -35,7 +35,9 @@ help:
 	@egrep '(^\S)|(^$$)|\s+@echo' Makefile
 ```
 
-Copied from Poetry. This is complex - I don't know why.
+Copied from Poetry's [Makefile](https://github.com/python-poetry/poetry/blob/master/Makefile). 
+
+This is complex - I don't know why.
 
 ```makefile
 # lists all available targets
@@ -46,6 +48,7 @@ list:
 		}' | grep -v '__\$$' | grep -v 'make\[1\]' | grep -v 'Makefile' | sort"
 # required for list
 no_targets__:
+
 ```
 
 ## Export
