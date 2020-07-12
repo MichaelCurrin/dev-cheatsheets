@@ -20,4 +20,4 @@ Released under [MIT](/LICENSE).
 
 You must include a copy of this original license if you fork this repo or use a significant portion of it.
 
-Github corner SVG from: http://tholman.com/github-corners/
+Github corner SVG from: [tholman.com/github-corners](https://tholman.com/github-corners/)
