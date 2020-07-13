@@ -4,7 +4,8 @@ title: Regex
 
 ## Resources
 
-https://regex101.com/
+- [regex101.com](https://regex101.com/)
+- [regexr.com](https://regexr.com/)
 
 
 ## Repeat
@@ -98,10 +99,11 @@ I made this and tested in VS Code.
 https:\/\/[\w./#-]*
 ```
 
+{% raw %}
 It does not match `?=` or trailing `/` or Jekyll `{{` URLs.
+{% endraw %}
 
 Add ` ` or `\s` or `\(` at the start to find URL in a certain context.
-
 
 
 #### Security
@@ -169,7 +171,7 @@ Sample
 - ` https://github.com/MichaelCurrin/nested-jekyll-menus` => ` [github.com/MichaelCurrin/nested-jekyll-menu](https://github.com/MichaelCurrin/nested-jekyll-menus`
 - ` https://github.com/MichaelCurrin/nested-jekyll-menus/` => ` [github.com/MichaelCurrin/nested-jekyll-menu](https://github.com/MichaelCurrin/nested-jekyll-menus/`
 
-This variation handles `#id` values.
+This variation handles `#` ID values.
 
 - Find:
     ```re
