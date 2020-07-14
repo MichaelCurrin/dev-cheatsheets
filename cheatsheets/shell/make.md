@@ -10,6 +10,8 @@ Targets (commands) will differ per project and environment but these can be appl
 
 ## Phony
 
+This can be done at the start or just be fore each target.
+
 ```makefile
 .PHONY docs
 
@@ -97,7 +99,64 @@ test:
 ```
 
 
+## Logic
+
+Using conditionals and iteration, similar to shell.
+
+### For
+
+```make
+foo:
+	for bar in my-dir/*; do \
+		export fizz=$$(echo $$bar) \
+		make plan; \
+	done
+```
+
+TODO: remove `\` and `;` and see if `$(MAKE)` is better than `make`.
+
+### If
+
+Note lack of indentation.
+
+```make
+TARGET:
+ifneq (CONDIITION, )
+	ACTION
+endif
+```
+
+[Syntax](https://www.gnu.org/software/make/manual/html_node/Conditional-Syntax.html) in Make docs.
+
+Example:
+
+```make
+libs_for_gcc = -lgnu
+normal_libs =
+
+foo: $(objects)
+ifeq ($(CC),gcc)
+        $(CC) -o foo $(objects) $(libs_for_gcc)
+else
+        $(CC) -o foo $(objects) $(normal_libs)
+endif
+```
+
+Alternate:
+
+
+```make
+TARGET:
+	@if [ CONDITION ]; then \
+		ACTION ; \
+	fi
+```
+
+
+
 ## Jekyll
+
+TODO: Move to cookbook
 
 ```makefile
 install:
