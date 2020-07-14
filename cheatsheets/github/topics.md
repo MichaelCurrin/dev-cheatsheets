@@ -24,6 +24,11 @@ Here are for Python:
 
 An easy way to get an icon for a language or library without downloading and searching to use the values supported by GitHub.
 
+This was based on the config section of [github/personal-website](https://github.com/github/personal-website) repo but can also be seen by inspecting an image on a topic page.
+
+
+### Approach
+
 Replace `TOPIC` with your value - not all topics are available but you can use some common ones. 
 
 The ID in the middle of the URL is constant.
@@ -37,14 +42,25 @@ The ID in the middle of the URL is constant.
     https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/python/python.png
     ```
 
-Rendered as image tags:
+### Rendered
+
+Rendered as image tags.
+
+Full size (blurry)
 
 ![Python icon](https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/python/python.png)
 
-![Jekyll icon](https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/jekyll/jekyll.png)
+Resized
 
-![Bash icon](https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/bash/bash.png)
+<img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/python/python.png"
+     width="100" height="100" alt="python icon" />
 
+<img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/jekyll/jekyll.png"
+     alt="jekyll icon"
+     width="100" height="100" />
 
-This was based on the config section of [github/personal-website](https://github.com/github/personal-website) repo but can also be seen by inspecting an image on a topic page.
+<img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/bash/bash.png"
+     alt="bash icon"
+     width="100" height="100" />
+
 
