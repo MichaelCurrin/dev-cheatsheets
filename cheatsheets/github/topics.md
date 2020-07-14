@@ -4,8 +4,15 @@ title: Topics
 
 ## Browse topics
 
-- All topics - [github.com/topics](https://github.com/topics)
-- Python - [github.com/topics/python](https://github.com/topics/python)
+- All topics
+    - [github.com/topics](https://github.com/topics)
+- Python
+    - [github.com/topics/python](https://github.com/topics/python)
+- Jekyll
+    - [github.com/topics/jekyll](https://github.com/topics/jekyll)
+- Bash
+    - [github.com/topics/bash](https://github.com/topics/bash)
+
 
 Note the summary paragraph and data. Is available in the API...?
 
@@ -62,5 +69,4 @@ Resized
 <img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/bash/bash.png"
      alt="bash icon"
      width="100" height="100" />
-
 
