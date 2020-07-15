@@ -53,18 +53,42 @@ The ID in the middle of the URL is constant.
 
 Rendered as image tags.
 
-Full size (blurry)
+#### Full size
+
+This is blurry if no max width or height is given.
 
 ![Python icon](https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/python/python.png)
 
-Resized
+#### Resized
+
+Using HTML `img` tag with `width` and `height` set.
+
+```html
+<img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/python/python.png"
+     width="100" height="100" 
+     alt="python icon" />
+```
 
 <img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/python/python.png"
-     width="100" height="100" alt="python icon" />
+     width="100" height="100" 
+     alt="python icon" />
+
+
+```html
+<img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/jekyll/jekyll.png"
+     alt="jekyll icon"
+     width="100" height="100" />
+```
 
 <img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/jekyll/jekyll.png"
      alt="jekyll icon"
      width="100" height="100" />
+
+```html
+<img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/bash/bash.png"
+     alt="bash icon"
+     width="100" height="100" />
+```
 
 <img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/bash/bash.png"
      alt="bash icon"
