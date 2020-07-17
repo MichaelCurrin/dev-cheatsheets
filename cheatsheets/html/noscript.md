@@ -1,8 +1,8 @@
 ---
-title: Noscript
+title: Noscript tag
 ---
 
-When JavaScript is disabled by the user, or by an adblocker or if the JS is not compatible in a browser, it is a good idea to have a fallback. The noscript HTML tag can be used to show a message. Especially if the site looks like a blank page without JS.
+When JavaScript is disabled by the user, or by an adblocker or if the JS is not compatible in a browser, it is a good idea to have a fallback message. The noscript HTML tag can be used to show a message is JS cannot run. This is especially useful if the site looks like a blank page when JS cannot run.
 
 Previously only in the body, it now also works in the head but there it must contain links etc. and not content.
 
@@ -14,34 +14,19 @@ e.g.
 </noscript>
 ```
 
-Or
+Alternate messages I've seen:
 
-
-```html
-<noscript>
-    You need to enable JavaScript to run this app.
-</noscript>
-```
-
-```html
-<noscript>
-    JavaScript must be enabled to use this feature.
-</noscript>
-```
+- You need to enable JavaScript to run this app.
+- JavaScript must be enabled to use this feature.
 
 Or my own
 
-```html
-<noscript>
-    This site is unsupported on your browser. Please enable JavaScript, turn off adblocker for this domain or switch to a different browser.
-</noscript>
-```
+- This site is unsupported on your browser. Please enable JavaScript, turn off adblocker for this domain or switch to a different browser.
+- This app works best with JavaScript enabled
 
 An idea for another note which also displays when JS is disabled but the site still partially works.
 
-```
-Notice: While Javascript is not essential for this website, your interaction with the content will be limited. Please turn Javascript on for the full experience
-```
+- Notice: While Javascript is not essential for this website, your interaction with the content will be limited. Please turn Javascript on for the full experience
 
 
 ## Resources
