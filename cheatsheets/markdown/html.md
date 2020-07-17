@@ -25,9 +25,11 @@ HTML will render in markdown, so you can do things not possible with plain markd
 
 ## Button
 
-Add a strong call to action with a button. Useful for an external link.
+Add a strong call to action with a button. Useful for an external link or a button to Get Started or Downloaded.
 
-Example with a link.
+_Note: The `button` element will not render in plain markdown but it does work on static sites_.
+
+Example below, with a link.
 
 
 **Code:**
@@ -39,7 +41,6 @@ Example with a link.
 ```
 
 **Result:**
-
 
 <a href="https://example.com">
     <button>Click me</button>
