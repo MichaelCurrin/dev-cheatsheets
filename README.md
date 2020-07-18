@@ -4,7 +4,16 @@
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/dev-cheatsheets)](https://github.com/MichaelCurrin/dev-cheatsheets/tags/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
 
-[![View site GH Pages](https://img.shields.io/badge/View_site-GH_Pages-green?style=for-the-badge)](https://MichaelCurrin.github.io/dev-cheatsheets/)
+[![View site GH Pages](https://img.shields.io/badge/View_site-GH_Pages-green?style=for-the-badge)](https://michaelcurrin.github.io/dev-cheatsheets/)
+
+
+## Sample
+
+Some content on the website.
+
+[![sample cheatsheets](/sample-cheatsheets.jpg)](https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/)
+
+[![sample cheatsheets jekyll](/sample-jekyll.jpg)](https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/jekyll/)
 
 
 ## Documentation
