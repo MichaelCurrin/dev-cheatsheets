@@ -11,10 +11,8 @@
 
 Some content on the website.
 
-[![sample cheatsheets](/sample-cheatsheets.jpg)](https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/)
-
-[![sample cheatsheets jekyll](/sample-jekyll.jpg)](https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/jekyll/)
-
+- [![sample cheatsheets](/sample-cheatsheets.jpg)](https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/)
+- [![sample cheatsheets jekyll](/sample-jekyll.jpg)](https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/jekyll/)
 
 ## Documentation
 
