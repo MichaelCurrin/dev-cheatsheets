@@ -68,7 +68,7 @@ Use variables in commands.
 
 Given file `.env` with variable set as `FOO=bar` and `script_that_echoes_foo.sh` which does `echo $FOO`.
 
-### Do
+### Do this
 
 The combination of `export` and `source` works well.
 
@@ -81,7 +81,7 @@ test:
 ```
 
 
-### Don't do
+### Don't do this
 
 The following will not work as expected ,due to `make` limitations on environment setting of child processes.
 
@@ -99,7 +99,7 @@ test:
 ```
 
 
-## Logic
+## Control flow
 
 Using conditionals and iteration, similar to shell.
 
@@ -152,6 +152,24 @@ TARGET:
 	fi
 ```
 
+
+## Recursive make
+
+Call `make` within a `Makefile`.
+
+This works:
+
+```make
+foo:
+	make bar
+```
+
+This seems preferred as I've seen this in a few places, although from light testing it looks to do the same.
+
+```make
+foo:
+	$(MAKE) bar
+```
 
 
 ## Jekyll
