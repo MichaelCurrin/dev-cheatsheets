@@ -153,7 +153,24 @@ TARGET:
 ```
 
 
-## Recursive make
+## Internal make calls
+
+### Call another target
+
+This will run `make bar`.
+
+```make
+foo: bar
+```
+
+This will run `make bar`, `make baz` and then only do the command inside `foo`.
+
+```make
+foo: bar baz
+	echo 'Foo'
+```
+
+### Recursive make
 
 Call `make` within a `Makefile`.
 
