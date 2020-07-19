@@ -59,6 +59,8 @@ To leave symlinks _unresolved_:
 realpath -s $0`
 ```
 
+_Warning: If you run `cd` in a script then you will change the working directory and then `realpath` will be relative to that, not the original working directory._
+
 ### Working directory
 
 Get the current _working directory_ - where the commands or scripts are run from, not where they are located.
