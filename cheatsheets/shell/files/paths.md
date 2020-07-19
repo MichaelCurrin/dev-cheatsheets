@@ -1,5 +1,6 @@
 ---
-title: Path
+title: Paths
+description: Getting the path value in shell scripts or the command-line
 ---
 
 ## Script path and directory
@@ -31,7 +32,7 @@ Get path to the current script and directory using `realpath`. Works on macOS or
 
 ```sh
 SCRIPT_FILEPATH=$(realpath $0)
-SCRIPT_DIR=$(dirname $SCRIPT)
+SCRIPT_DIR=$(dirname $SCRIPT_FILEPATH)
 ```
 
 For a script `~/foo/bar.sh`, printing those variables gives:
@@ -41,27 +42,32 @@ For a script `~/foo/bar.sh`, printing those variables gives:
 /Users/my-user/foo
 ```
 
-To leave symlinks unresolved:
+To leave symlinks _unresolved_:
 
 ```sh
 realpath -s $0`
 ```
 
-## Current directory
 
-Get path to the current script's directory.
+## Current script directory
+
+Get the path to directory of the current script.
 
 ```sh
 SCRIPT_DIR=$(dirname $(realpath $0))
 ```
 
-To get the current _working directory_:
+## Working directory
+
+Get the current _working directory_ - where the commands or scripts are run from, not where they are located.
+
+Print value:
 
 ```sh
 pwd
 ```
 
-Or in string.
+Use in a string:
 
 ```sh
 echo "You are here: $PWD"
