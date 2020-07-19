@@ -2,6 +2,7 @@
 title: List files
 ---
 
+
 ## List command
 
 ### List files
@@ -47,6 +48,17 @@ ls -d [PATH]
 
 # e.g.
 ls -d ~
+```
+
+
+### List hidden paths in home directory
+
+This will include files and directories - use `find` command to filter on type.
+
+The `-d` command looks at directories themselves rather than their contents.
+
+```sh
+$ ls -a -l -d ~/.*
 ```
 
 ## Globbing
