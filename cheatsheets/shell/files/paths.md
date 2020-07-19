@@ -112,9 +112,10 @@ SCRIPT_FILEPATH="$(
   cd "$(dirname "$0")" >/dev/null 2>&1
   pwd -P
 )"
-```
 
-Perhaps better in one line and using `&&` to separate.
+# Equivalent - a shell linter wraps it over multiple lines.
+SCRIPT_FILEPATH="$(cd "$(dirname "$0")" >/dev/null 2>&1; pwd -P)"
+```
 
 For script `~/foo/bar.sh`, printing that variable:
 
@@ -122,7 +123,9 @@ For script `~/foo/bar.sh`, printing that variable:
 /Users/my-user/foo/bar.sh
 ```
 
-From top answer on [SO](https://stackoverflow.com/questions/4774054/reliable-way-for-a-bash-script-to-get-the-full-path-to-itself/4774063). See also [page](https://mywiki.wooledge.org/BashFAQ/028).
+From top answer on [SO](https://stackoverflow.com/questions/4774054/reliable-way-for-a-bash-script-to-get-the-full-path-to-itself/4774063). 
+
+See also [BashFAQ page](https://mywiki.wooledge.org/BashFAQ/028).
 
 
 ### Directory
