@@ -5,9 +5,14 @@ layout: home
 
 > {{ site.description }}
 
-[![Go to cheatsheets](https://img.shields.io/badge/Go_to_cheatsheets-blue?style=for-the-badge)]({{ site.baseurl }}{% link cheatsheets/index.md %})
-
 You know that command or argument or function you used before but you can't remember exactly what it does how to use it. This is what Dev Cheatsheets is for!
+
+<div align="center" style="padding-bottom: 1em;">
+    <a href="{{ site.baseurl }}{% link cheatsheets/index.md %}">
+        <img src="https://img.shields.io/badge/Take_me_to_cheatsheets-blue?style=for-the-badge"
+            alt="Go to cheatsheets"/>
+    </a>
+</div>
 
 This is not comprehensive, but, it covers definitions and usage examples which cover the basics and some common flows (leaving out the obscure things I'll probably never need and can always lookup if I need to).
 
