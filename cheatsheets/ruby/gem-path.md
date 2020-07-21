@@ -16,9 +16,9 @@ The directory install to will not be in the `PATH` variable.
 
 Here is how to set it, such as in `~/.bashrc`.
 
-From [answer](https://stackoverflow.com/questions/14607193/installing-gem-or-updating-rubygems-fails-with-permissions-error)
+From [SO answer](https://stackoverflow.com/questions/14607193/installing-gem-or-updating-rubygems-fails-with-permissions-error).
 
-This first checks that `ruby` and `gem` are installed and available.
+This first checks that `ruby` and `gem` are installed and available, without printing. Note `[[` is not needed.
 
 ```sh
 if which ruby >/dev/null && which gem >/dev/null; then
