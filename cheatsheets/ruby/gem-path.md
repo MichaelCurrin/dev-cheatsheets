@@ -26,14 +26,25 @@ if which ruby >/dev/null && which gem >/dev/null; then
 fi
 ```
 
-### Testing
+### Breakdown
 
-This runs the library (`-r`) named `rubygems` and sends a command to it `puts Gem.user_dir` to print the user gem directory.
+This runs the library (`-r`) named `rubygems` and sends a command to it `puts Gem.user_dir` to print the user gem directory as a full path.
 
 ```sh
 $ echo "$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
 ```
+
+Example:
+
 ```
 /Users/mcurrin/.gem/ruby/2.6.0/bin
 ```
 
+Test it:
+
+```sh
+$ gem install bundler --user-install
+
+$ which bundler
+/Users/mcurrin/.gem/ruby/2.6.0/bin/bundle
+```
