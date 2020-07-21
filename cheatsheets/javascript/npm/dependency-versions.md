@@ -9,7 +9,45 @@ title: NPM dependency versions
 - [semvar](https://docs.npmjs.com/misc/semver) package docs.
 
 
-## Tilde ranges
+## Summary
+
+Here is a summary of using tilde and caret. 
+
+Note that this assumes using a version specified to 3 levels - see the [Detailed](#detailed) section for how this is handled in other cases. 
+
+TODO - how does this work on the command-line with npm install?
+
+
+### Tilde ranges
+
+Allow newer bug fixes with tilde:
+
+```
+~1.2.3
+```
+
+i.e.
+```
+1.2.*
+```
+
+### Caret ranges
+
+Allower newer minor versions with caret:
+
+```
+^1.2.3
+```
+i.e.
+```
+1.*.*
+```
+
+[source](https://bytearcher.com/goodies/semantic-versioning-cheatsheet/)
+
+## Detailed
+
+### Tilde ranges
 
 Approximately equivalent to version.
 
@@ -20,6 +58,7 @@ This is _more_ restrictive as it locks the major and minor versions.
 ```
 
 This is similar to above, but does not specify a minimum minor.
+
 ```
 ~1.2 := >=1.2.0 <1.(2+1).0 := >=1.2.0 <1.3.0 (Same as 1.2.x)
 ```
@@ -33,7 +72,7 @@ Used broadly, this does not lock minor version:
 - [tilde ranges](https://docs.npmjs.com/misc/semver#tilde-ranges-123-12-1) on NPM docs
 
 
-## Caret ranges
+### Caret ranges
 
 Compatible with version.
 
