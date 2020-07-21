@@ -87,3 +87,12 @@ This approach does **not** require the activate step.
 ```sh
 $ venv/bin/pip
 ```
+
+
+## Update pip
+
+Keep `pip` and related packages up to date.
+
+```sh
+$ pip3 install --upgrade pip setuptools wheel
+```
