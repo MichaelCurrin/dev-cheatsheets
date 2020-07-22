@@ -9,7 +9,7 @@
 
 ## Sample
 
-Some content on the website.
+Some content on the website:
 
 <a href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/">
     <img src="/sample-cheatsheets.jpg" height="500px" alt="sample cheatsheets"/>
@@ -21,7 +21,7 @@ Some content on the website.
 
 ## Documentation
 
-See the [docs](/docs/) directory.
+To setup and run this project from your own repos, see the [docs](/docs/) directory.
 
 Contributions are welcome - see [Contributing](/CONTRIBUTING.md) doc.
 
