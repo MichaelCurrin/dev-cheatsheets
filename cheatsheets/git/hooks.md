@@ -49,7 +49,7 @@ Copied from githooks homepage. I've grouped for convenience.
             - `merge` (if the commit is a merge or a .`git/MERGE_MSG` file exists)
             - `squash` (if a `.git/SQUASH_MSG` file exists)
             - `commit`
-        3. followed by a commit SHA-1 (if a -c, -C or --amend option was given).
+        3. The commit hash - SHA-1 (if a `-c`, `-C` or `--amend` option was given).
     - Aborting
         - If the exit status is non-zero, git commit will abort.
     - The sample prepare-commit-msg hook that comes with Git removes the help message found in the commented portion of the commit template.
