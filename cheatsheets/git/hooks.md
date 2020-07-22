@@ -1,5 +1,6 @@
 ---
-title: Git hooks
+title: Hooks
+description: Understanding and using git hooks
 ---
 
 
