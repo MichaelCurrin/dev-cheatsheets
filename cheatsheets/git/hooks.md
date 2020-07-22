@@ -42,14 +42,14 @@ Copied from githooks homepage. I've grouped for convenience.
     - Allow updating commit message in place before the user sees it.
     - This invoked `git commit` right after preparing the default log message, but before the editor is started.
     - Params - It takes one to three parameters:
-          1. The first is the **name of the file** that contains the commit log message. 
-          2. The second is the **source** of the commit message, and can be: 
-              - `message` (if the `-m` or `-F` option was given)
-              - `template` (if the `-t` option was given or the configuration option `commit.template` is set)
-              - `merge` (if the commit is a merge or a .`git/MERGE_MSG` file exists)
-              - `squash` (if a `.git/SQUASH_MSG` file exists)
-              - `commit`
-          3. followed by a commit SHA-1 (if a -c, -C or --amend option was given).
+        1. The first is the **name of the file** that contains the commit log message. 
+        2. The second is the **source** of the commit message, and can be: 
+            - `message` (if the `-m` or `-F` option was given)
+            - `template` (if the `-t` option was given or the configuration option `commit.template` is set)
+            - `merge` (if the commit is a merge or a .`git/MERGE_MSG` file exists)
+            - `squash` (if a `.git/SQUASH_MSG` file exists)
+            - `commit`
+        3. followed by a commit SHA-1 (if a -c, -C or --amend option was given).
     - Aborting
         - If the exit status is non-zero, git commit will abort.
     - The sample prepare-commit-msg hook that comes with Git removes the help message found in the commented portion of the commit template.
