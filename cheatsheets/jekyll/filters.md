@@ -4,8 +4,8 @@ title: Jekyll filters
 
 ## Reference docs
 
-- [filters](https://jekyllrb.com/docs/liquid/filters/ filters in Jekyll docs- see standard filters near the bottom
-- [abs](https://shopify.github.io/liquid/filters/abs/) - Shopify docs. Jekyll links to these.
+- [Filters](https://jekyllrb.com/docs/liquid/filters/) in Jekyll docs. See standard filters near the bottom.
+- [Filters](https://shopify.github.io/liquid/filters/abs/) in Shopify docs. Jekyll links to these.
 
 ## Cheatsheets
 
