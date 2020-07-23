@@ -2,8 +2,16 @@
 title: Dashes
 ---
 
-When using Kramdown in Jekyll, it handles converting `--` and `---` to en- and em-dashes.
+When using [Kramdown] in Jekyll and maybe others, you can write an en dash of em dash using plain hyphens. 
 
-A -- B
+You can escape this conversion by using code formatting.
 
-A --- C
+Examples below
+
+- en dash 
+    - `A -- B`
+    - A -- B
+- em dash
+    - `A --- B`
+    - A --- B
+
