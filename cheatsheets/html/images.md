@@ -2,7 +2,7 @@
 title: Images
 ---
 
-## Format of img tag
+## Format of the image tag
 
 ### HTML
 
@@ -22,7 +22,7 @@ Note that this is a self-closing tag.
     <img src="URL" alt="ALT TEXT" />
     ```
 - Detailed
-    ```
+    ```html
     <img src="URL"
          alt="ALT TEXT"
          title="TITLE TEXT"
@@ -57,6 +57,11 @@ Here is an equivalent image in Markdown - excluding dimensions.
 ```
 
 Note the quotes for the title.
+
+
+## Hover over effects
+
+- [How TO - Image Hover Overlay](https://www.w3schools.com/howto/howto_css_image_overlay.asp) on W3 Schools
 
 
 ## Optimizing image loading
