@@ -35,13 +35,13 @@ Example:
 <img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/linux/linux.png"
     alt="shell icon"
     title="Linux"
-    width="40px" height="40px" />
+    width="40" height="40" />
 ```
 
 <img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/linux/linux.png"
      alt="shell icon"
      title="Linux"
-     width="40px" height="40px" />
+     width="40" height="40" />
     
     
 ### Markdown
