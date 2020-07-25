@@ -12,7 +12,7 @@ See [The “Blur Up” Technique for Loading Background Images](https://css-tric
 Resources:
 
 - [The Complete Guide to Lazy Loading Images](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/) - using JS to lazy load main and background images
-- [A Native Lazy Load for the Web Platform](https://css-tricks.com/a-native-lazy-load-for-the-web-platform/
+- [A Native Lazy Load for the Web Platform](https://css-tricks.com/a-native-lazy-load-for-the-web-platform/)
 - [Tips for rolling your own lazy loading](https://css-tricks.com/tips-for-rolling-your-own-lazy-loading/) (2019 article)
 
 Native lazy loading is new and already available in Chrome 76 from 2019 and is supported in Chromium-based and Firefox browsers from 2020. [source](https://web.dev/native-lazy-loading/)
