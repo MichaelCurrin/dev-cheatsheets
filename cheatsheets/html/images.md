@@ -2,6 +2,54 @@
 title: Images
 ---
 
+## Format
+
+### HTML
+
+Attributes of `img` tag:
+
+- `src` - Local or external image path. Can be JPG, PNG, SVG, etc.
+- `alt` - Optional text to show as a fallback if the image fails to load. Also used for screen readers.
+- `title` - Optional text used to show on hover over.
+- `width` and `height` - optional attributes to set dimensions. These can be for example `40`, `40px` - not a percentage. Note these attributes. are similar but separate fro the CSS `width` and `height` attributes which are not specific to an `img` tag.
+
+
+```
+<img src="URL"
+     alt="ALT TEXT"
+     title="TITLE TEXT"
+     width="WIDTH" height=HEIGHT" />
+```
+
+Example:
+
+```html
+<img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/linux/linux.png"
+     alt="shell icon"
+     title="Linux"
+     width="40px" height="40px" />
+```
+
+<img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/linux/linux.png"
+     alt="shell icon"
+     title="Linux"
+     width="40px" height="40px" />
+    
+    
+### Markdown
+
+Here is an equivalent image in Markdown - excluding dimensions.
+
+```
+![](URL)
+
+![ALT TEXT](URL)
+
+![ALT TEXT](URL "TITLE TEXT")
+```
+
+Note the quotes for the title.
+
 
 ## Optimizing image loading
 
