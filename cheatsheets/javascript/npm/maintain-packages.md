@@ -30,18 +30,20 @@ $ npm outdated
 
 ## Update
 
+Update packages to the latest versions. This will stay within the bounds set by `package.json` such as `~` or `^`.
+
 ```sh
 $ npm update
 ```
 
-Note that the above command will still honor the caret and tilde limits so you won't get the newest always.
-
-If you want to force everything to the most modern version, run:
-
+If you want to force _everything_ to the most modern version, ignoring the versions set in `package.json`, run this:
 
 ```sh
 $ npx npm-update-all
 ```
+
+That downloads and runs the `npm-update-all` package.
+
 
 ## Open pages
 
