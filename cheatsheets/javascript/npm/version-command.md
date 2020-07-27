@@ -39,10 +39,12 @@ This also allows setting commands to run when you run `npm version [options]`.
 For example:
 
 ```json
-"scripts": {
-  "preversion": "npm test",
-  "version": "npm run build && git add -A dist",
-  "postversion": "git push && git push --tags && rm -rf build/temp"
+{
+  "scripts": {
+    "preversion": "npm test",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags && rm -rf build/temp"
+  }
 }
 ```
 
