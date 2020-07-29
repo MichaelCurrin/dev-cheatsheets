@@ -1,19 +1,26 @@
 ---
 title: List files
 description: Using commands like ls, find and du to show files
-layout: listing
 ---
 
 
-## List command
+## Using List command
+
+See also [ls commmand]({{ site.baseurl }}{% link cheatsheets/shell/commands/ls.md %) cheatsheet page.
 
 ### List files
 
 ```sh
-ls
+ls [PATH]
 ```
 
+e.g.
+
 ```sh
+ls Documents
+
+ls ~
+
 ls *
 ```
 
@@ -32,24 +39,32 @@ ls (.)*
 Same as this, but this only works with this command while the pattern above is more universal.
 
 ```sh
-ls -A
-```
-
-```
-     -A      List all entries except for . and ...  Always set for the super-user.
-
-     -a      Include directory entries whose names begin with a dot (.).
+$ ls -A
 ```
 
 ### List directories
 
-List directories. Note that `ls *` without `-d` flag would look at files inside each directory rather show the directory itself.
+List directories. Note that `ls *` without `-d` flag would look at files inside _each_ directory rather show the directory itself.
 
 ```sh
-ls -d [PATH]
+$ ls -d [PATH]
+```
 
-# e.g.
-ls -d ~
+Examples:
+
+```sh
+$ ls ~
+Documents/foo.txt
+Documents/bar.txt
+Downloads/baz.sh
+...
+```
+
+```sh
+$ ls -d ~
+Documents
+Downloads
+...
 ```
 
 ### List hidden paths in home directory
@@ -70,7 +85,7 @@ See [globstar] page.
 [globstar]: {{ site.baseurl }}{% link cheatsheets/shell/files/globstar.md %}
 
 
-## The find command
+## Using the find command
 
 ### List files recursively
 
@@ -94,7 +109,7 @@ find . -name '*.py'
 find . -type f
 ```
 
-## du command
+## Using the du command
 
 ### List files recursively
 
