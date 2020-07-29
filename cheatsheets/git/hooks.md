@@ -16,6 +16,9 @@ description: Understanding and using git hooks
     - The hook types and descriptions.
     - Here is the source file - [githooks.txt](https://github.com/git/git/blob/master/Documentation/githooks.txt)
 - [Customizing Git - Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) in the Git docs
+- Repos
+    - [#commit-msg](https://github.com/topics/commit-msg) GitHub topic
+    - [speedy-commit-msg-hook](https://github.com/alan-agius4/speedy-commit-msg-hook) - NPM package to validate a commit message. This also includes an install step in `src` irectory.
 
 ### Integrations
 
