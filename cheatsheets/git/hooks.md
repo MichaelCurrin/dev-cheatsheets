@@ -19,8 +19,16 @@ description: Understanding and using git hooks
 
 ### Integrations
 
+The shell will follow your hook, but VS Code will not.
+
+Here are some issues around preparing commit message.
+
 - [Git: Support prepare-commit-msg hook](https://github.com/microsoft/vscode/issues/94274) for VS Code. Closed issue.
 - [Git: Support editing the commit message in a text editor](https://github.com/microsoft/vscode/issues/30562) for VS Code. Open issue.
+
+Note that VS Code does follow the [commit template] file though - this can be useful for a branch description or ticket number. Unfortunately writing to this file at the _commit_ step is too late, as the template will have already been used in the hook. You could run a script every second to update the template file so it is always ready when you commit in the VS Code UI (which picks that up every few seconds) - that is just a lot of noise and processing to run it continously.
+
+[commit template]: https://github.com/MichaelCurrin/learn-to-code/blob/master/en/topics/version_control/Git/configure/commit_message_template.md
 
 
 ## Setting up hooks
