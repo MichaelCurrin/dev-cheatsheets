@@ -1,5 +1,5 @@
 ---
-title: ls command
+title: The ls command
 ---
 
 Some useful or frequently-used flags
@@ -12,13 +12,13 @@ Flag | Description
 `--color` | Add color to output. Only valid on Linux. Example: `--color=auto`.
 `--group-directories-first` | Sort by directories first.
 `-F --classify` | Add type as one of: `*/=>@|`
-`-a`  Include directory entries whose names begin with a dot (.).
 `-A --almost-all` | List all files including Hidden files, but not implied `.` and `..` . Always set for the super-user according to Linux manpage.
+`-a`  Include directory entries whose names begin with a dot. (Note using `-A` is probably preferred to `-a`.)
 `-S` | Largest files first
 `-t` | Newest modified first.
 `-d` | Show directories themselves and not their contents.
+`-R ` | Recursive.
 
-Note using `-A` is probably preferred to `-a`.
 
 ## Long listing
 
@@ -30,4 +30,3 @@ Flag | Description
 `-C` | Force multi-column output.
 `-1` | Show names only but as single column.
 `--full-time` | Show ISO time.
-
