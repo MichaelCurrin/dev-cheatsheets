@@ -28,10 +28,19 @@ $ uname
 
 e.g.
 
-| OS    | Example value |
+| OS    | Example `uname` value |
 | ----- | ------------- |
 | Linux | `Linux`       |
 | macOS | `Darwin`      |
+
+
+Using `uname` in a conditional using contains and `-s` flag. I've seen this approach used before.
+
+```sh
+if [[ "$(uname -s)" =~ 'Linux' ]]; then
+  echo 'Linux!'
+fi
+```
 
 
 ## Set boolean
