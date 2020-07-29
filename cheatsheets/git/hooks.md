@@ -17,13 +17,19 @@ description: Understanding and using git hooks
     - Here is the source file - [githooks.txt](https://github.com/git/git/blob/master/Documentation/githooks.txt)
 - [Customizing Git - Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) in the Git docs
 
+### Integrations
+
+- [Git: Support prepare-commit-msg hook](https://github.com/microsoft/vscode/issues/94274) for VS Code. Closed issue.
+- [Git: Support editing the commit message in a text editor](https://github.com/microsoft/vscode/issues/30562) for VS Code. Open issue.
+
 
 ## Setting up hooks
 
 Note that if you store hooks in a directory like `hooks`, you'll need a manual step to copy them or `.git/hooks`. 
 
 ```sh
-$ cp hooks/* .git/hooks
+$ cp hooks/pre-commit-msg .git/hooks/pre-commit-msg
+$ chmod x .git/hooks/pre-commit-msg
 ```
 
 Or sym-links from there to the directory.
