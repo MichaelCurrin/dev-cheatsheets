@@ -1,5 +1,7 @@
 ---
 title: List files
+description: Using commands like ls, find and du to show files
+layout: listing
 ---
 
 
@@ -50,7 +52,6 @@ ls -d [PATH]
 ls -d ~
 ```
 
-
 ### List hidden paths in home directory
 
 This will include files and directories - use `find` command to filter on type.
@@ -61,6 +62,7 @@ The `-d` command looks at directories themselves rather than their contents.
 $ ls -a -l -d ~/.*
 ```
 
+
 ## Globbing
 
 See [globstar] page.
@@ -68,7 +70,7 @@ See [globstar] page.
 [globstar]: {{ site.baseurl }}{% link cheatsheets/shell/files/globstar.md %}
 
 
-## Find command
+## The find command
 
 ### List files recursively
 
@@ -81,6 +83,8 @@ find DIR_NAME
 ```
 
 ### Filter
+
+Note that parsing the output of the `ls` command is recommended against - it is for humans to read. If you want to filter by size or name for example, use `find` instead.
 
 ```sh
 find . -name '*.py'
