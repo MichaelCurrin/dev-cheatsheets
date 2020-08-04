@@ -6,7 +6,7 @@ description: Using commands like ls, find and du to show files
 
 ## Using List command
 
-See also [ls commmand]({{ site.baseurl }}{% link cheatsheets/shell/commands/ls.md %) cheatsheet page.
+See also [ls commmand]({{ site.baseurl }}{% link cheatsheets/shell/commands/ls.md %}) cheatsheet page.
 
 ### List files
 
