@@ -6,7 +6,19 @@ description: git status
 
 ## Flags
 
+Some flags I am interested in.
+
 ```
+       -s, --short
+           Give the output in the short-format.
+           (Default is --long)
+           
+       -b, --branch
+           Show the branch and tracking info even in short-format.
+
+       --show-stash
+           Show the number of entries currently stashed away.
+           
        --porcelain[=<version>]
            Give the output in an easy-to-parse format for scripts. This is similar to the short output, but
            will remain stable across Git versions and regardless of user configuration. See below for details.
