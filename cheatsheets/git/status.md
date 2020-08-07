@@ -26,6 +26,10 @@ Some flags I am interested in.
            The version parameter is used to specify the format version. This is optional and defaults to the
            original version v1 format.
            
+           ...
+              
+           (This makes output without color for safety. Using with no arguments is OK.)
+           
        -v, --verbose
            In addition to the names of files that have been changed, also show the textual changes that are
            staged to be committed (i.e., like the output of git diff --cached). If -v is specified twice, then
