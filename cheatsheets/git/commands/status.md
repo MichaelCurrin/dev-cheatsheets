@@ -1,6 +1,5 @@
 ---
-title: Status
-description: git status
+title: Git status
 ---
 
 
