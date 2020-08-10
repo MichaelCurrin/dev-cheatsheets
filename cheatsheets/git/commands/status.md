@@ -83,6 +83,23 @@ This will show a summary, ignore untracked (untracked=no but not equals sign won
 git status -s -uno --porcelain
 ```
 
+## Z format
+
+As an alternative to porcelain.
+
+This means that `R  foo -> bar` becomes `R  bar\0foo\0`.
+
+From the man page:
+
+```
+       There is also an alternate -z format recommended for machine parsing. In that format, the status field is the same, but
+       some other things change. First, the -> is omitted from rename entries and the field order is reversed (e.g from -> to
+       becomes to from). Second, a NUL (ASCII 0) follows each filename, replacing space as a field separator and the terminating
+       newline (but a space still separates the status field from the first filename). Third, filenames containing special
+       characters are not specially formatted; no quoting or backslash-escaping is performed.
+```
+
+
 ## Anything to commit
 
 Check if repo is clean.
