@@ -1,6 +1,6 @@
 ---
 title: Git diff-index
-```
+---
 
 ## Docs
 
