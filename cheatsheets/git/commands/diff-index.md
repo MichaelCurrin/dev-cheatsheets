@@ -169,3 +169,56 @@ $ git diff-index --numstat   HEAD
            Added entries (because the set of paths included in the diff is limited by what is in the index). Similarly, copied and
            renamed entries cannot appear if detection for those types is disabled.
 ```
+
+### Include
+
+As per [Flags](#flags) at the top, you can include renames and copies.
+
+- `-M, --find-renames` - detect renames.
+- `-C, --find-copies` - detect copies.
+
+```
+       -M[<n>], --find-renames[=<n>]
+           Detect renames. If n is specified, it is a threshold on the similarity index (i.e. amount of addition/deletions
+           compared to the file’s size). For example, -M90% means Git should consider a delete/add pair to be a rename if more
+           than 90% of the file hasn’t changed. Without a % sign, the number is to be read as a fraction, with a decimal point
+           before it. I.e., -M5 becomes 0.5, and is thus the same as -M50%. Similarly, -M05 is the same as -M5%. To limit
+           detection to exact renames, use -M100%. The default similarity index is 50%.
+
+       -C[<n>], --find-copies[=<n>]
+           Detect copies as well as renames. See also --find-copies-harder. If n is specified, it has the same meaning as for
+           -M<n>.
+```
+
+Given status output:
+
+```sh
+$ git status -s
+R  README.md -> FEEDME
+ M src/extension.ts
+A  src/workspace.ts
+?? src/my-git.ts
+```
+
+Plain:
+
+```sh
+$ git diff-index --name-status HEAD
+```
+```
+A       FEEDME
+D       README.md
+M       src/extension.ts
+A       src/workspace.ts
+```
+
+With flags:
+
+```sh
+$ git diff-index --name-status -M -C HEAD
+```
+```
+R100    README.md       FEEDME
+M       src/extension.ts
+A       src/workspace.ts
+```
