@@ -109,7 +109,6 @@ This can be hidden with `s` for `--no-patch`
 --output=<file>
 ```
 
-
 ### Raw
 
 > Generate the diff in raw format.
@@ -154,6 +153,8 @@ $ git diff --summary --staged
 ```
  create mode 100644 src/my-git.ts
 ```
+
+Note this is only useful in certain cases such as when there is a new file AND it is staged. Otherwise you'll see no output. The other flags would be more useful.
 
 ### Compact summary
 
