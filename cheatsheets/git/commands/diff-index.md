@@ -222,3 +222,19 @@ R100    README.md       FEEDME
 M       src/extension.ts
 A       src/workspace.ts
 ```
+Note 100% for unchanged file.
+
+And here for a slightly changed file:
+
+```
+R096    README.md       FEEDME
+M       src/extension.ts
+A       src/workspace.ts
+```
+
+And longer line with a rename:
+
+```
+R096    README.md       FEEDME
+R100    vsc-extension-quickstart.md     src/vsc-extension-quickstart.md
+```
