@@ -2,6 +2,36 @@
 title: Git status
 ---
 
+## Usage
+
+Short help:
+
+```sh
+$ git status -h
+```
+```
+usage: git status [<options>] [--] <pathspec>...
+
+    -v, --verbose         be verbose
+    -s, --short           show status concisely
+    -b, --branch          show branch information
+    --show-stash          show stash information
+    --ahead-behind        compute full ahead/behind values
+    --porcelain[=<version>]
+                          machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --ignored[=<mode>]    show ignored files, optional modes: traditional, matching, no. (Default: traditional)
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules, optional when: all, dirty, untracked. (Default: all)
+    --column[=<style>]    list untracked files in columns
+    --no-renames          do not detect renames
+    -M, --find-renames[=<n>]
+                          detect renames, optionally set similarity index
+```
+
 
 ## Flags
 
@@ -39,6 +69,8 @@ Some flags I am interested in.
            Turn on rename detection, optionally setting the similarity threshold. See also git-diff(1)
            --find-renames.
 ```
+
+Using verbose will show the lines changed including of lines of staged files (even if new at the bottom.
 
 
 ## Parse output
