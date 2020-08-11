@@ -77,15 +77,14 @@ git diff-index --cached HEAD
 
 ## Flags
 
-Examples of usage and output
+Note the examples below are usually based on this state (output shown from `git status -s`)
 
-Given 3 files, two untracked and one of the untracked is staged:
-
-```
- M src/extension.ts
-A  src/workspace.ts
-?? src/my-git.ts
-```
+- Given 3 files, two untracked and one of the untracked is staged:
+    ```
+     M src/extension.ts
+    A  src/workspace.ts   # this was ?? but git add made it A
+    ?? src/my-git.ts
+    ```
 
 ### Staged
 
