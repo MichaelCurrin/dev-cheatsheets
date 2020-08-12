@@ -6,6 +6,8 @@ Note that `npm i` is an alias for `npm install`.
 
 You must create a `package.json` file with `npm init` before you can run installs in a project.
 
+See also the [npm ci](https://docs.npmjs.com/cli/ci) command which is simialr to `npm install` but is more suitable for deploy pipelines.
+
 
 ## Flags
 
