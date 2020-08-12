@@ -8,6 +8,8 @@ layout: listing
 
 ## Update
 
+You should probably update Node.js as a whole but you can update just NPM if you need to.
+
 ```sh
 $ npm i -g --update npm
 ```
@@ -166,6 +168,7 @@ It seems that `npm run` and `npm run-script` are equivalent, from basic testing.
 **Sample**
 
 Call a script command using the same target in the command-line as in the `package.json` file.
+
 ```sh
 $ npm run lint
 $ npm run lint:src
@@ -174,8 +177,8 @@ $ npm run lint:src
 ```json
 {
   "scripts": {
-    "lint": "npm run lint:src && npm run lint:examples",
     "lint:src": "eslint src test build",
+    "lint": "npm run lint:src && npm run lint:examples",
    }
 }
 ```
