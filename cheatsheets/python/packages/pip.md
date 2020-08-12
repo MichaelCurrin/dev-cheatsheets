@@ -6,6 +6,7 @@ See also [project packages] section of this project and look for pip or Python p
 
 [project packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/project-packages.md %}
 
+
 ## Protect global environment
 
 Prevent accidentally installing or upgrading in your user's global Python environment.
@@ -100,6 +101,8 @@ $ pip3 install --upgrade pip setuptools wheel
 ## CLI usage
 
 ### Install
+
+See also online docs, for example how to use `-e` is covered under [Editable installs](https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs).
 
 ```sh
 $ pip install --help
