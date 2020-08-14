@@ -8,6 +8,11 @@ Makefile templates topic on Github - [makefile-template](https://github.com/topi
 
 Targets (commands) will differ per project and environment but these can be applied where relevant.
 
+Remember, the `make` command also supports tab autocomplete for targets.
+
+For language specific examples, see my [Code Cookbook](https://github.com/MichaelCurrin/code-cookbook) project's `make` section.
+
+
 ## Phony
 
 This can be done at the start or just be fore each target.
@@ -187,25 +192,3 @@ This seems preferred as I've seen this in a few places, although from light test
 foo:
 	$(MAKE) bar
 ```
-
-
-## Jekyll
-
-TODO: Move to cookbook
-
-```makefile
-install:
-	bundle config set path local 'vendor/bundle'
-	bundle install
-
-upgrade:
-	bundle update
-
-s serve:
-	bundle exec jekyll serve --trace --livereload
-```
-
-
-## Python
-
-See [Makefile in MichaelCurrin/py-project-template](https://github.com/MichaelCurrin/py-project-template/blob/master/Makefile) on Github.
