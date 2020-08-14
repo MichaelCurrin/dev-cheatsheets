@@ -1,5 +1,5 @@
 ---
-title: Make
+title: Make command
 ---
 
 Use of `make` command in Unix environments.
@@ -45,7 +45,7 @@ Alt echo: `@echo "Include left-aligned, empty lines and echo lines."`
 
 ### Detailed
 
-Copied from Poetry's [Makefile](https://github.com/python-poetry/poetry/blob/master/Makefile). 
+Copied from Poetry's [Makefile](https://github.com/python-poetry/poetry/blob/master/Makefile).
 
 This is complex - I don't know why. I haven't tested yet but maybe something here is useful.
 
