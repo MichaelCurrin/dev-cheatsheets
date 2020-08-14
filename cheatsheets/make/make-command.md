@@ -1,5 +1,5 @@
 ---
-title: Make command
+title: Make command syntax
 ---
 
 Use of `make` command in Unix environments.
