@@ -29,7 +29,7 @@ This sets a minimum version but allows **patch** increments (bug fixes).
 ~1.2.3
 ```
 
-This is the same as setting:
+This is similar to setting this (which does not a set a minimum patch).
 
 ```
 1.2.*
@@ -43,7 +43,7 @@ This sets a minimum version but allows **minor version** increments within.
 ^1.2.3
 ```
 
-This is the same as setting:
+This is similar to setting this (which does not a set a minimum minor and patch).
 
 ```
 1.*.*
@@ -57,7 +57,7 @@ From [cheatsheet](https://bytearcher.com/goodies/semantic-versioning-cheatsheet/
 ### Tilde ranges
 > Approximately equivalent to version
 
-This is _more_ restrictive as it locks the major and minor versions.
+Using tilder is _more_ restrictive than caret, as it locks the major and minor versions.
 
 ```
 ~1.2.3 := >=1.2.3 <1.(2+1).0 := >=1.2.3 <1.3.0
@@ -80,7 +80,7 @@ Used broadly, this does not lock minor version:
 ### Caret ranges
 > Compatible with version
 
-This is _less_ restrictive as only locks the major version when used for version `1` and above.
+Using caret is _less_ restrictive than tilde, as only locks the major version when used for version `1` and above.
 
 ```
 ^1.2.3 := >=1.2.3 <2.0.0
