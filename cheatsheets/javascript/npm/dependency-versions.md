@@ -9,7 +9,7 @@ title: NPM dependency versions
 - [semvar](https://docs.npmjs.com/misc/semver) package docs.
 
 
-## Summary
+## Summary of common usage
 
 Here is a summary of using the tilde (`~`) and caret (`^`) symbols in versioning NPM packages. 
 
@@ -19,37 +19,40 @@ Note that Python and Ruby also use tilde but I haven't seen caret use.
 
 Note that this assumes using a version specified to 3 levels - see the [Detailed](#detailed) section for how this is handled in other cases. 
 
-TODO - how does this work on the command-line with npm install?
-
+_TODO - how does this work on the command-line with npm install?_
 
 ### Tilde ranges
 
-Allow newer bug fixes with tilde:
+This sets a minimum version but allows **patch** increments (bug fixes).
 
 ```
 ~1.2.3
 ```
 
-i.e.
+This is the same as setting:
+
 ```
 1.2.*
 ```
 
 ### Caret ranges
 
-Allower newer minor versions with caret:
+This sets a minimum version but allows **minor version** increments within.
 
 ```
 ^1.2.3
 ```
-i.e.
+
+This is the same as setting:
+
 ```
 1.*.*
 ```
 
-[source](https://bytearcher.com/goodies/semantic-versioning-cheatsheet/)
+From [cheatsheet](https://bytearcher.com/goodies/semantic-versioning-cheatsheet/)
 
-## Detailed
+
+## Broader usage
 
 ### Tilde ranges
 > Approximately equivalent to version
