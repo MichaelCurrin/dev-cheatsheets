@@ -11,10 +11,8 @@ See also the [npm ci](https://docs.npmjs.com/cli/ci) command which is simialr to
 
 ## Flags
 
-```
--D, --save-dev
--G, --global
-```
+- `-D, --save-dev` - Save to dev dependencies. By default, installs are saved to prod dependencies without any flag (at least on newer NPM versions).
+- `-G`, `-g`, `--global` - Install as a global dependency.
 
 
 ## Install by package name
@@ -62,21 +60,30 @@ $ npm i PACKAGE -D
 
 ## Install from package file
 
-## Production and dev
-
-This will install.
+## Install prod and dev deps
 
 ```sh
 $ npm i
 ```
 
-
 ### Install only production dependencies
-
-This will install from `dependencies` but not `devDependencies`:
 
 ```sh
 $ npm i --production
+```
+
+Or using `--only`.
+
+```sh
+$ npm i --only=prod
+$ npm i --only=production
+```
+
+### Install only dev dependencies
+
+```sh
+$ npm i --only=dev
+$ npm i --only=development
 ```
 
 
@@ -85,3 +92,24 @@ $ npm i --production
 ```sh
 $ npm i USERNAME/PACKAGE_NAME
 ```
+
+e.g.
+
+```sh
+$ npm install visionmedia/express#branch
+```
+
+Or add to package file:
+
+- HTTPS
+    ```json
+    [
+      "git+https://github.com/visionmedia/express.git"
+    ]
+    ```
+- SSH
+    ```json
+    [
+      "git+ssh://git@github.com/visionmedia/express.git"
+    ]
+    ```
