@@ -3,47 +3,78 @@ title: Docker compose
 description: The tool that makes docker containers easier to manage
 ---
 
-See the [Overview of docker-compose CLI](https://docs.docker.com/compose/reference/overview/) reference docs.
-
 Docker compose allows orchestration of multiple containers and it allows you to store and run parameters against those. Such as normally when you run a `docker` command with a port number.
+
+
+## Resources
+
+- [Overview of docker-compose CLI](https://docs.docker.com/compose/reference/overview/) reference docs.
+- [Docker compose file reference](https://docs.docker.com/compose/compose-file/)
+- [Volumes](https://docs.docker.com/storage/volumes/) (not docker-compose specific)
 
 
 ## Sample files
 
-Here is a sample setup.
+<!-- TODO move to cookbook -->
 
+Here is a sample setup:
 
 - `Dockerfile`
     ```docker
-	FROM ubuntu
-	```
+    FROM ubuntu
+    ```
 - `docker-compose.yml`
-	```
-	webapp:
-	  image: examples/web
-	  ports:
-		- "8000:8000"
-	  volumes:
-		- "/data"
-	```
-	Or
-	```
-	webapp:
-	  build: .
-	  environment:
-		- DEBUG=1
-	```
-	Or
-	```docker-compose
-	version: "3.8"
+    ```
+    webapp:
+      image: examples/web
+      ports:
+        - "8000:8000"
+      volumes:
+        - "/data"
+    ```
+    Or
+    ```
+    webapp:
+      build: .
+      environment:
+        - DEBUG=1
+    ```
+    Or
+    ```docker-compose
+    version: "3.8"
 
-	services:
-	  foo:
-		build: .
-		volumes:
-		  - bar
-	```
+    services:
+      foo:
+        build: .
+        volumes:
+          - bar
+    ```
+    ```dockercompose
+    version: "3.8"
+    
+    services:
+      web:
+        image: nginx:alpine
+        volumes:
+          - type: volume
+            source: mydata
+            target: /data
+            volume:
+              nocopy: true
+          - type: bind
+            source: ./static
+            target: /opt/app/static
 
+      db:
+        image: postgres:latest
+        volumes:
+          - "/var/run/postgres/postgres.sock:/var/run/postgres/postgres.sock"
+          - "dbdata:/var/lib/postgresql/data"
+
+    volumes:
+      mydata:
+      dbdata:
+    ```
 
 ## Build
 
