@@ -3,9 +3,10 @@ title: Docker compose
 description: The tool that makes docker containers easier to manage
 ---
 
-- [Docker compose reference docs](https://docs.docker.com/compose/reference/overview/)
+See the [Overview of docker-compose CLI](https://docs.docker.com/compose/reference/overview/) reference docs.
 
 Docker compose allows orchestration of multiple containers and it allows you to store and run parameters against those. Such as normally when you run a `docker` command with a port number.
+
 
 ## Build
 
@@ -48,6 +49,7 @@ Or, in one command.
 docker-compose up --build
 ```
 
+
 ## Start
 
 ### As main process
@@ -81,10 +83,23 @@ Stop and delete containers. Warning - you will lose any data in the container.
 ```sh
 docker-compose down
 ```
-## Man page
+
+
+## Choose config
 
 ```sh
-docker-compose --help
+$ docker-compose -f "docker-compose.yml" CMD
+```
+
+
+## Usage
+
+See the link at the top of this page for CLI usage info or see below.
+
+### Man page
+
+```sh
+$ docker-compose --help
 ```
 
 ```
