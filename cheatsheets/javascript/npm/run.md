@@ -1,9 +1,9 @@
 ---
-title: run
+title: NPM run
 description: About the npm run command
 ---
 
-See [npm-run-script](https://docs.npmjs.com/cli/run-script) in the docs.
+See [npm run-script](https://docs.npmjs.com/cli/run-script) in the docs.
 
 
 ## Flags
