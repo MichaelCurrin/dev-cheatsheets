@@ -8,6 +8,43 @@ See the [Overview of docker-compose CLI](https://docs.docker.com/compose/referen
 Docker compose allows orchestration of multiple containers and it allows you to store and run parameters against those. Such as normally when you run a `docker` command with a port number.
 
 
+## Sample files
+
+Here is a sample setup.
+
+
+- `Dockerfile`
+    ```docker
+	FROM ubuntu
+	```
+- `docker-compose.yml`
+	```
+	webapp:
+	  image: examples/web
+	  ports:
+		- "8000:8000"
+	  volumes:
+		- "/data"
+	```
+	Or
+	```
+	webapp:
+	  build: .
+	  environment:
+		- DEBUG=1
+	```
+	Or
+	```docker-compose
+	version: "3.8"
+
+	services:
+	  foo:
+		build: .
+		volumes:
+		  - bar
+	```
+
+
 ## Build
 
 ### Initial build
@@ -15,22 +52,32 @@ Docker compose allows orchestration of multiple containers and it allows you to 
 Build images.
 
 ```sh
-docker-compose build
+$ docker-compose build
 ```
 
 Start containers. If the above step was skipped, the build will happen now.
 
 ```sh
-docker-compose up
+$ docker-compose up
 ```
 
-Stop it with <kbd>CTRL</kbd>+<kbd>C</kbd>.
+If the container has a long-running task like a server, it will stay up. Stop it with <kbd>CTRL</kbd>+<kbd>C</kbd>.
 
-Start containers again. This will **not** rebuild the image.
+Or it will exit immediately.
 
 ```sh
-docker-compose up
+$ docker-compose up         
+Starting foo_bar_1 ... done
+Attaching to foo_bar_1
 ```
+
+Start containers again.
+
+```sh
+$ docker-compose up
+```
+
+This will **not** rebuild the image. Continue below.
 
 ### Rebuild
 
@@ -39,14 +86,14 @@ Add the latest code to the image by forcing a build.
 This is necessary as `up` alone will not rebuild, even if you delete the containers.
 
 ```sh
-docker-compose build
-docker-compose up
+$ docker-compose build
+$ docker-compose up
 ```
 
-Or, in one command.
+Or in one command.
 
 ```sh
-docker-compose up --build
+$ docker-compose up --build
 ```
 
 
@@ -55,10 +102,10 @@ docker-compose up --build
 ### As main process
 
 ```sh
-docker-compose up
+$ docker-compose up
 ```
 
-Stop it with <kbd>CTRL+C</kbd>
+Stop it with <kbd>CTRL</kbd>+<kbd>C</kbd>.
 
 
 ### As background process
@@ -66,15 +113,35 @@ Stop it with <kbd>CTRL+C</kbd>
 Start using `-d` for daemon.
 
 ```sh
-docker-compose up -d
+$ docker-compose up -d
 ```
 
 Stop the containers - this can be done from another terminal tab if needed.
 
 ```sh
-docker-compose stop
+$ docker-compose stop
 ```
 
+If you container exited immediately, use `run` instead.
+
+```sh
+$ docker-compose run
+```
+
+If you have no commands specified in the `Dockerfile`, this will start an interactive shell session.
+
+
+You can exit with `exit` or hit <kbd>CTRL</kbd>+<kbd>D</kbd>.
+
+Your container will be stopped but kept, so you can run again in the same container.
+
+See [docker-compose run](https://docs.docker.com/compose/reference/run/) docs.
+
+```
+Usage:
+    run [options] [-v VOLUME...] [-p PORT...] [-e KEY=VAL...] [-l KEY=VALUE...]
+        SERVICE [COMMAND] [ARGS...]
+```
 
 ## Delete
 
