@@ -23,7 +23,7 @@ Start containers. If the above step was skipped, the build will happen now.
 docker-compose up
 ```
 
-Stop it with <kbd>CTRL+C</kbd>
+Stop it with <kbd>CTRL</kbd>+<kbd>C</kbd>.
 
 Start containers again. This will **not** rebuild the image.
 
