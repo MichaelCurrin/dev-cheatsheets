@@ -42,7 +42,16 @@ If you want to install the absolute latest available, you a separate tool.
 $ npx npm-upgrade
 ```
 
-## Fix security sulnernabities
+## Fix security vulnernabities
+
+Use the `audit` command.
+
+### CLI usage
+
+```
+npm audit [--json] [--production]
+npm audit fix [--force|--package-lock-only|--dry-run|--production|--only=(dev|prod)]
+```
 
 ### Audit
 
@@ -52,6 +61,7 @@ $ npm audit
 
 ### Fix
 
+Use the fix subcommand.
 ```sh
-$ npm audit --fix
+$ npm audit fix
 ```
