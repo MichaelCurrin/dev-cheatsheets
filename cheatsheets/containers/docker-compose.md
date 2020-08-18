@@ -119,13 +119,19 @@ Usage:
 
 ### Using exec command
 
-Run a command against an already running container. This avoids spinning up duplicate containers.
+Run a command against an **already running** container. This avoids spinning up duplicate containers, but may not be practical if you container doesn't have a command to keep it running.
 
 See [docker-compose exec](https://docs.docker.com/compose/reference/exec/) docs.
 
 > This is the equivalent of docker exec. With this subcommand you can run arbitrary commands in your services. 
 
-Interactive prompt as recommended in docs:
+Usage:
+
+```sh
+$ docker-compose exec SERVICE COMMAND
+```
+
+Example of using `web` service with interactive prompt, as recommended in docs:
 
 ```sh
 $ docker-compose exec web sh
