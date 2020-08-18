@@ -10,71 +10,7 @@ Docker compose allows orchestration of multiple containers and it allows you to 
 
 - [Overview of docker-compose CLI](https://docs.docker.com/compose/reference/overview/) reference docs.
 - [Docker compose file reference](https://docs.docker.com/compose/compose-file/)
-- [Volumes](https://docs.docker.com/storage/volumes/) (not docker-compose specific)
 
-
-## Sample files
-
-<!-- TODO move to cookbook -->
-
-Here is a sample setup:
-
-- `Dockerfile`
-    ```docker
-    FROM ubuntu
-    ```
-- `docker-compose.yml`
-    ```
-    webapp:
-      image: examples/web
-      ports:
-        - "8000:8000"
-      volumes:
-        - "/data"
-    ```
-    Or
-    ```
-    webapp:
-      build: .
-      environment:
-        - DEBUG=1
-    ```
-    Or
-    ```docker-compose
-    version: "3.8"
-
-    services:
-      foo:
-        build: .
-        volumes:
-          - bar
-    ```
-    ```dockercompose
-    version: "3.8"
-    
-    services:
-      web:
-        image: nginx:alpine
-        volumes:
-          - type: volume
-            source: mydata
-            target: /data
-            volume:
-              nocopy: true
-          - type: bind
-            source: ./static
-            target: /opt/app/static
-
-      db:
-        image: postgres:latest
-        volumes:
-          - "/var/run/postgres/postgres.sock:/var/run/postgres/postgres.sock"
-          - "dbdata:/var/lib/postgresql/data"
-
-    volumes:
-      mydata:
-      dbdata:
-    ```
 
 ## Build
 
@@ -153,10 +89,10 @@ Stop the containers - this can be done from another terminal tab if needed.
 $ docker-compose stop
 ```
 
-If you container exited immediately, use `run` instead.
+If you container exited immediately, use `run` instead using the name of a service listed in `docker-compose.yml`.
 
 ```sh
-$ docker-compose run
+$ docker-compose run SERVICE
 ```
 
 If you have no commands specified in the `Dockerfile`, this will start an interactive shell session.
