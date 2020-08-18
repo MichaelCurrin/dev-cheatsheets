@@ -89,18 +89,25 @@ Stop the containers - this can be done from another terminal tab if needed.
 $ docker-compose stop
 ```
 
-If you container exited immediately, use `run` instead using the name of a service listed in `docker-compose.yml`.
+### Using run command
+
+If you container exited immediately when using `up`, you could use `run` instead, against the name of a service listed in `docker-compose.yml`.
 
 ```sh
 $ docker-compose run SERVICE
+$ # e.g.
+$ docker-compose run foo
 ```
 
-If you have no commands specified in the `Dockerfile`, this will start an interactive shell session.
+If you have no commands specified in the `Dockerfile`, this will start an interactive shell session in teh container.
 
+You can exit with `exit` command or hit <kbd>CTRL</kbd>+<kbd>D</kbd>.
 
-You can exit with `exit` or hit <kbd>CTRL</kbd>+<kbd>D</kbd>.
+Your container will be stopped but kept.
 
-Your container will be stopped but kept, so you can run again in the same container.
+When you use `run` again using the command aboeb, it will spin up a **new** container under a new ID. 
+
+You can add `--rm` command to delete the container each time. Note you will lose data in the container unless you persist in a volume.
 
 See [docker-compose run](https://docs.docker.com/compose/reference/run/) docs.
 
@@ -109,6 +116,21 @@ Usage:
     run [options] [-v VOLUME...] [-p PORT...] [-e KEY=VAL...] [-l KEY=VALUE...]
         SERVICE [COMMAND] [ARGS...]
 ```
+
+### Using exec command
+
+Run a command against an already running container. This avoids spinning up duplicate containers.
+
+See [docker-compose exec](https://docs.docker.com/compose/reference/exec/) docs.
+
+> This is the equivalent of docker exec. With this subcommand you can run arbitrary commands in your services. 
+
+Interactive prompt as recommended in docs:
+
+```sh
+$ docker-compose exec web sh
+```
+
 
 ## Delete
 
