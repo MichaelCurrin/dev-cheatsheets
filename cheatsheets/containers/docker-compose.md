@@ -107,7 +107,11 @@ Your container will be stopped but kept.
 
 When you use `run` again using the command aboeb, it will spin up a **new** container under a new ID. 
 
-You can add `--rm` command to delete the container each time. Note you will lose data in the container unless you persist in a volume.
+You can add `--rm` command to delete the container each time. Note you will **lose** data in the container unless you persist in a volume.
+
+```sh
+$ docker-compose run --rm SERVICE
+```
 
 See [docker-compose run](https://docs.docker.com/compose/reference/run/) docs.
 
@@ -126,6 +130,10 @@ See [docker-compose exec](https://docs.docker.com/compose/reference/exec/) docs.
 > This is the equivalent of docker exec. With this subcommand you can run arbitrary commands in your services. 
 
 Usage:
+
+```
+Usage: exec [options] [-e KEY=VAL...] SERVICE COMMAND [ARGS...]
+```
 
 ```sh
 $ docker-compose exec SERVICE COMMAND
@@ -150,7 +158,7 @@ docker-compose down
 ## Choose config
 
 ```sh
-$ docker-compose -f "docker-compose.yml" CMD
+$ docker-compose -f "docker-compose.yml" ARGS
 ```
 
 
