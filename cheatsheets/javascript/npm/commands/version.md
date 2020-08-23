@@ -1,5 +1,6 @@
 ---
-title: The npm version command
+title: Version
+description: About the npm-version command
 ---
 
 
