@@ -3,12 +3,14 @@ title: NPM
 layout: listing
 ---
 
+## Resources
+
 - NPM homepage: [npmjs.com](https://www.npmjs.com)
 
 
 ## Update
 
-You should probably update Node.js as a whole but you can update just NPM if you need to.
+You should probably update Node.js as a whole but you can update just NPM if you need to. NPM will prompt you to do this sometimes.
 
 ```sh
 $ npm i -g --update npm
