@@ -1,5 +1,6 @@
 ---
-title: npm-ci
+title: CI
+description: About the npm-ci command
 ---
 
 ## Usage
@@ -13,7 +14,7 @@ $ npm ci
 
 This command is similar to running `npm install` but except `npm ci` is intended for CI flows (automated build and deploy of Node apps).
 
-See [npm-ci](https://docs.npmjs.com/cli/ci.html) docs
+See [npm-ci](https://docs.npmjs.com/cli/ci.html) docs.
 
 Why use `npm ci` instead of `npm install`, based on the docs:
 
