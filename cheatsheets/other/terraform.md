@@ -9,7 +9,51 @@ title: Terraform
 - Download: [Downloads](https://www.terraform.io/downloads.html) page
 - GitHub: [hashicorp/terraform](https://github.com/hashicorp/terraform)
     > Terraform enables you to safely and predictably create, change, and improve infrastructure. It is an open source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.
-- [Commmands](https://www.terraform.io/docs/commands/index.html) in the docs.
+
+## CLI
+
+See [Commmands](https://www.terraform.io/docs/commands/index.html) in the docs.
+
+```sh
+$ terraform
+```
+```
+Usage: terraform [-version] [-help] <command> [args]
+
+The available commands for execution are listed below.
+The most common, useful commands are shown first, followed by
+less common or more advanced commands. If you're just getting
+started with Terraform, stick with the common commands. For the
+other commands, please read the help and docs before usage.
+
+Common commands:
+    apply              Builds or changes infrastructure
+    console            Interactive console for Terraform interpolations
+    destroy            Destroy Terraform-managed infrastructure
+    env                Workspace management
+    fmt                Rewrites config files to canonical format
+    get                Download and install modules for the configuration
+    graph              Create a visual graph of Terraform resources
+    import             Import existing infrastructure into Terraform
+    init               Initialize a Terraform working directory
+    output             Read an output from a state file
+    plan               Generate and show an execution plan
+    providers          Prints a tree of the providers used in the configuration
+    refresh            Update local state file against real resources
+    show               Inspect Terraform state or plan
+    taint              Manually mark a resource for recreation
+    untaint            Manually unmark a resource as tainted
+    validate           Validates the Terraform files
+    version            Prints the Terraform version
+    workspace          Workspace management
+
+All other commands:
+    0.12upgrade        Rewrites pre-0.12 module source code for v0.12
+    debug              Debug output management (experimental)
+    force-unlock       Manually unlock the terraform state
+    push               Obsolete command for Terraform Enterprise legacy (v1)
+    state              Advanced state management
+```
 
 
 ## Usage
@@ -40,6 +84,12 @@ Validate the Terraform code.
 $ terraform validate
 ```
 
+### Workspaces
+
+```sh
+$ terraform workspace select $WS_NAME
+$ terraform workspace create $WS_NAME
+```
 
 ### Alias
 
