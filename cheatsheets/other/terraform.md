@@ -12,11 +12,19 @@ title: Terraform
 
 ## CLI
 
-See [Commmands](https://www.terraform.io/docs/commands/index.html) in the docs.
+See [Commmands](https://www.terraform.io/docs/commands/index.html) in the docs. The menu on the left there covers each command in detail.
 
+Here is the help for Terraform `0.12`. Using `-help` will show the same output.
+
+<details>
+<summary>
+    
 ```sh
 $ terraform
 ```
+
+</summary>
+
 ```
 Usage: terraform [-version] [-help] <command> [args]
 
@@ -54,6 +62,8 @@ All other commands:
     push               Obsolete command for Terraform Enterprise legacy (v1)
     state              Advanced state management
 ```
+
+</details>
 
 
 ## Usage
