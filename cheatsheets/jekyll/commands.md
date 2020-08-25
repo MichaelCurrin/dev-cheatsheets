@@ -5,15 +5,25 @@ description: Using jekyll CLI commands
 
 ## Flags
 
-CLI flags of interest to me for `serve` and `build`. The flags are mostly the same - some like livereload are only for `serve`.
+CLI flags of interest to me for `serve` and `build`. 
 
-- `-I, --incremental`
-- `--trace`
+Debugging serve or build:
+
+- `--trace` - Show error details.
+`-V, --verbose`
 - `--profile`
-- `--live-reload`
-- `-q, --quiet` and `-V, --verbose`
+
+General use
+
+- `-q, --quiet`
 - `-b, --baseurl URL`
 - `--config CONFIG_FILE[,CONFIG_FILE2,...]`
+
+Serve flags:
+
+- `-l, --livereload`
+- `-I, --incremental`
+- `-H` e.g. `--host 0.0.0.0` Open up to requests on the network.
 
 
 ## Serve
@@ -27,10 +37,9 @@ $ jekyll s
 
 ### Run with bundler
 
-```
+```sh
 $ bundle exec jekyll serve
 ```
-
 
 ### Help
 
