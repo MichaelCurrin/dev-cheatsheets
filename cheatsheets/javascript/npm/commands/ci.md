@@ -9,6 +9,16 @@ description: About the npm-ci command
 $ npm ci
 ```
 
+### What about Yarn?
+
+Note for Yarn there is no `ci` command, so use this.
+
+> If you need reproducible dependencies, which is usually the case with the continuous integration systems, you should pass --frozen-lockfile flag.
+
+```sh
+$ yarn install --frozen-lockfile
+```
+
 
 ## Purpose
 
@@ -19,7 +29,7 @@ See [npm-ci](https://docs.npmjs.com/cli/ci.html) docs.
 Why use `npm ci` instead of `npm install`, based on the docs:
 
 - Good for automated deploys
-- Works on a clean slate - `node_modules` will be deleted if it exists.
+- Works on a clean slate - `node_modules` will be **deleted** if it exists.
 - Stricter
 - It can be "significantly faster than a regular npm install by skipping certain user-oriented features".
 - Requires `package-lock.json` or `npm-shrinkwrap.json`.
