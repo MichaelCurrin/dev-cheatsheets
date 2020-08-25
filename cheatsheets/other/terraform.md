@@ -20,13 +20,13 @@ Here is the help for Terraform `0.12`. Using `-help` will show the same output.
 <details>
 <summary>
     
-```sh
+<code>
 $ terraform
-```
+</code>
 
 </summary>
 
-```
+<pre>
 Usage: terraform [-version] [-help] <command> [args]
 
 The available commands for execution are listed below.
@@ -62,7 +62,7 @@ All other commands:
     force-unlock       Manually unlock the terraform state
     push               Obsolete command for Terraform Enterprise legacy (v1)
     state              Advanced state management
-```
+</pre>
 
 </details>
 
