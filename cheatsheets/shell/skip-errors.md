@@ -1,0 +1,103 @@
+---
+title: Skip errors
+---
+
+How to perform a command without causing the script to abort. Also reduce output error logging.
+
+The assumption is this set as start of the script such that any errors would cause the script to abort.
+
+```sh
+set -e
+```
+
+## Default
+
+Assume that `CMD` references a failing command such as running copy, move or remove on a file or folder that is not valid to operate on. e.g. `rm foo.txt` when `foo.txt` does not exist. 
+
+```sh
+CMD
+```
+
+Run `echo $?` after and you'll see `1` or another error status code.
+
+You'll also have any error messages logged on stderr.
+
+
+## Continue without aborting
+
+If a step is optional or will only be needed sometimes (like deleting a temporary file which won't exist on the very first run).
+
+```sh
+CMD || true
+```
+If you run `echo $?` you'll see `0` for success.
+
+
+## Run quietly
+
+Silence stderr, but keep stdout.
+
+```sh
+CMD &> /dev/null 
+```
+
+## Continue without aborting and fail silently 
+
+Combine the sections above:
+
+```sh
+CMD &> /dev/null || true
+```
+
+
+
+## If statement
+
+You could add a targeted `if` statement to check that a file or folder is already there or not, rather than using a catchall as in the previous sections.
+
+You could check if file exists and is readable and is executable. Or just pick one of those tests.
+
+```sh
+# Optional command
+if [ -f foo.txt ]; then
+  rm foo.txt
+fi
+
+# More commands
+```
+
+Here is a directory check in one line.
+
+```sh
+# Optional command.
+[ -d foo ] && rm -rf foo
+
+# More commands
+```
+
+
+Maybe you want to check it is empty.
+
+```
+[ -z foo.txt ]
+```
+
+There could be multiple reasons for the command to fail and you'd have to catch them all.
+
+
+## Set
+
+You could also reverse a flag so that errors are not fatal.
+
+```sh
+set -e
+
+# Do stuff.
+
+set +e
+# Do stuff that can fail.
+
+set -e
+
+# Do more stuff.
+```
