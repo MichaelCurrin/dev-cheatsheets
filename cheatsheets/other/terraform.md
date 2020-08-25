@@ -14,6 +14,8 @@ title: Terraform
 
 ## Usage
 
+### Preview and deploy infrastructure
+
 ```sh
 $ terraform init
 ```
@@ -23,6 +25,23 @@ $ terraform plan
 ```sh
 $ terraform apply
 ```
+
+### Development
+
+Format the Terraform code.
+
+```sh
+$ terraform fmt
+```
+
+Validate the Terraform code.
+
+```sh
+$ terraform validate
+```
+
+
+### Alias
 
 Recommended for shell config:
 
