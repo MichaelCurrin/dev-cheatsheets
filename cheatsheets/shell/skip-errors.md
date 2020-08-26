@@ -2,7 +2,7 @@
 title: Skip errors
 ---
 
-How to perform a command without causing the script to abort. Also reduce output error logging.
+How to perform a command without causing the script to abort, either by not executing the command or forcing a success result.
 
 The assumption is this set as start of the script such that any errors would cause the script to abort.
 
@@ -30,7 +30,8 @@ If a step is optional or will only be needed sometimes (like deleting a temporar
 ```sh
 CMD || true
 ```
-If you run `echo $?` you'll see `0` for success.
+
+If you run `echo $?` you'll see `0` for success, as it uses the exit code for the entire line above it (which will come from the last executed piece).
 
 
 ## Run quietly
@@ -50,8 +51,7 @@ CMD &> /dev/null || true
 ```
 
 
-
-## If statement
+## Run conditionally
 
 You could add a targeted `if` statement to check that a file or folder is already there or not, rather than using a catchall as in the previous sections.
 
@@ -84,10 +84,28 @@ Maybe you want to check it is empty.
 
 There could be multiple reasons for the command to fail and you'd have to catch them all.
 
+Here is a DRY approach (replace `source` with `echo` to just print).
 
-## Set
+```sh
+test -f ~/.git-completion.sh && source $_
+```
 
-You could also reverse a flag so that errors are not fatal.
+That uses the last argument of previous command on the same line and uses it in place of `$_`.
+
+Now this only works with the `test CONDITION` syntax. Using `[[ CONDITION ]]` ends up using `]]` instead of the path. 
+
+Compare with this (which works only works in interactive mode I think):
+
+```sh
+test -f ~/.git-completion.sh
+source !$
+```
+Also in ZSH, you have to press enter a second time at the end to confirm the substitution.
+
+
+## Set error flag
+
+You could also reverse the error flag so that errors are not fatal. This can be especially useful for ignoring errors on a series of lines.
 
 ```sh
 set -e
