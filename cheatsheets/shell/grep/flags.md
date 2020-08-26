@@ -1,8 +1,16 @@
 ---
-title: Grep flags
+title: CLI
 ---
 
-## Summary
+## Usage
+
+```
+grep [options] [pattern] [file ...]
+```
+
+
+## Flags
+
 
 | Short   | Long                 | Description                         |
 | ------- | -------------------- | ----------------------------------- |
@@ -19,19 +27,3 @@ title: Grep flags
 | -H      | –with-filename       |
 | -l      | –files-with-matches  | Just print filenames.               |
 | -L      | –files-without-match |
-
-
-## Examples
-
-### Recursive
-
-```sh
-grep -r foo *
-```
-
-
-### Exact match
-
-```
-grep -w "foo" bar.txt
-```
