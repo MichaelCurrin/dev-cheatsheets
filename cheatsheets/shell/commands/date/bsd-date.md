@@ -30,7 +30,7 @@ The `date` command on macOS.
     2020-08-26 19:42:40
     ```
 
-### Differnece
+### Difference
 
 Get tomorrow's time - use `-v` to adjust value. See formats.
 
