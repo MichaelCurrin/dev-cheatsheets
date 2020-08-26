@@ -1,5 +1,6 @@
 ---
 title: Python configs
+layout: listing
 ---
 
 

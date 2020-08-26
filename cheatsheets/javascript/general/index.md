@@ -1,5 +1,6 @@
 ---
 title: JavaScript general
+layout: listing
 ---
 
 Cheatsheet for the browser and Node.js.
