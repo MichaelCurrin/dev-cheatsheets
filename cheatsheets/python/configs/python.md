@@ -1,5 +1,5 @@
 ---
-title: Python config
+title: Python config file
 ---
 
 Store config values in a Python file.
