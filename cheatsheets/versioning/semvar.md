@@ -2,7 +2,9 @@
 title: Semantic versioning
 ---
 
-https://semver.org/
+See [semver.org](https://semver.org/).
+
+The format is:
 
 `MAJOR.MINOR.PATCH`
 

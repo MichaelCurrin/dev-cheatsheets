@@ -2,6 +2,8 @@
 title: Semantic commits
 ---
 
+<!-- TODO move out to another area -->
+
 ## Options
 
 - `feat`
