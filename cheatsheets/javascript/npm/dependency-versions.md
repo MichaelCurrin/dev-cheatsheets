@@ -11,13 +11,13 @@ title: NPM dependency versions
 
 ## Summary of common usage
 
-Here is a summary of using the tilde (`~`) and caret (`^`) symbols in versioning NPM packages. 
+Here is a summary of using the tilde (`~`) and caret (`^`) symbols in versioning NPM packages.
 
 They are both generally used followed by the full `X.Y.Z` version and this is covered first below, but they behave differently depending on how many levels are set.
 
 Note that Python and Ruby also use tilde but I haven't seen caret use.
 
-Note that this assumes using a version specified to 3 levels - see the [Detailed](#detailed) section for how this is handled in other cases. 
+Note that this assumes using a version specified to 3 levels - see the [Detailed](#detailed) section for how this is handled in other cases.
 
 _TODO - how does this work on the command-line with npm install?_
 
@@ -57,7 +57,7 @@ From [cheatsheet](https://bytearcher.com/goodies/semantic-versioning-cheatsheet/
 ### Tilde ranges
 > Approximately equivalent to version
 
-Using tilder is _more_ restrictive than caret, as it locks the major and minor versions.
+Using tilde is _more_ restrictive than caret, as it locks the major and minor versions.
 
 ```
 ~1.2.3 := >=1.2.3 <1.(2+1).0 := >=1.2.3 <1.3.0

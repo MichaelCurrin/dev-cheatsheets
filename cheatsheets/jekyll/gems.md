@@ -60,7 +60,7 @@ Calling `gem` from the shell.
 
 See also [plugins] page.
 
-[plugins]: {{ site.baseurl }}{% link cheatsheets/jekyll/gems.md %}
+[plugins]: {{ site.baseurl }}{% link cheatsheets/jekyll/plugins/index.md %}
 
 #### Help
 
@@ -109,8 +109,11 @@ Calling `gem` from inside Ruby code including a `Gemfile`.
 Ruby command examples.
 
 ```ruby
+# Unpinned
 gem 'minima'
-gem 'jekyll', '>=3.5', '<5'
+# Between range. Note upper bounded is needed.
+gem 'minima', '>= 2.5', '< 3'
+# Compatible but with minimum.
 gem 'minima', '~> 2.5', '>= 2.5.1'
 ```
 
