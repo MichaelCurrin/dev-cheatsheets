@@ -32,4 +32,4 @@ Here is how to export an extension and then install it globally, so you can use 
 [Node.js]: https://gist.github.com/MichaelCurrin/aa1fc56419a355972b96bce23f3bccba
 [Start fresh]: https://github.com/MichaelCurrin/vsc-extension-quickstart/blob/master/docs/start-fresh.md#start-fresh
 [Use this template]: https://github.com/MichaelCurrin/vsc-extension-quickstart/generate
-[Usage]: https://github.com/MichaelCurrin/vsc-extension-quickstart/blob/master/docs/usage.md
+[Usage]: https://github.com/MichaelCurrin/vsc-extension-quickstart/blob/master/docs/usage.md#usage
