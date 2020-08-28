@@ -11,7 +11,22 @@ render_with_liquid: false
 3. Do any plugin-specific setup.
 
 
+## Standard
+> How to add common plugins to your site
+
+These can go on most sites.
+
+- [jekyll-feed](https://github.com/jekyll/jekyll-feed)
+	- Produce RSS feed. _"A Jekyll plugin to generate an Atom (RSS-like) feed of your Jekyll posts."_
+- [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag)
+	- Use as `{% seo %}` in your `head` tag. The result will be a HTML tag which starts with "SEO plugin"  comment.
+	- See advanced usage for authors and image OG data.
+- [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)
+	- Adds a `sitemap.xml` and `robots.txt` file to the site.
+
+
 ## Analytics
+> How to add Google Analyics to your site
 
 ### Plugin
 
@@ -79,7 +94,7 @@ Instead of relying on a theme or plugin as above, you can add a JavaScript snipp
         ```
 3. Add the value to your `_config.yml` file:
     ```yaml
-    google_analytics: UA-123-456
+    google_analytics: UA-123467-78
     ```
 
 
@@ -104,16 +119,3 @@ repository: username/repo-name
 ```
 
 See [Configuration](https://jekyll.github.io/github-metadata/configuration/) help page for Jekyll.
-
-
-## Standard
-
-These can go on most sites.
-
-- [jekyll-feed](https://github.com/jekyll/jekyll-feed)
-	- Produce RSS feed. _"A Jekyll plugin to generate an Atom (RSS-like) feed of your Jekyll posts."_
-- [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag)
-	- Use as `{% seo %}` in your `head` tag. The result will be a HTML tag which starts with "SEO plugin"  comment.
-	- See advanced usage for authors and image OG data.
-- [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)
-	- Adds a `sitemap.xml` and `robots.txt` file to the site.
