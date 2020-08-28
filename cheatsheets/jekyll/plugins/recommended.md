@@ -15,8 +15,10 @@ render_with_liquid: false
 
 ### Plugin
 
+Note that is plugin is **not** whitelisted on GitHub Pages, so you need an Actions deploy or use the HTML approach - reference [hendrikschneider/jekyll-analytics issue#5](https://github.com/hendrikschneider/jekyll-analytics/issues/5).
+
 - Title: `jekyll-analytics`
-- Github: [hendrikschneider/jekyll-analytics](https://github.com/hendrikschneider/jekyll-analytics)
+- Repo: [hendrikschneider/jekyll-analytics](https://github.com/hendrikschneider/jekyll-analytics)
 - Additional setup:
     - Add to config:
         ```yaml
@@ -25,15 +27,18 @@ render_with_liquid: false
             id: UA-123-456
         ```
 
-### HTML
+### Theme
 
-Note the plugin above is **not** whitelisted on Github Pages, so you need an Actions deploy or use the HTML approach - reference [hendrikschneider/jekyll-analytics issue#5](https://github.com/hendrikschneider/jekyll-analytics/issues/5).
+The the Minima covers Google Analytics already - just set `google_analytics` in the config. 
 
-See [_includes/google-analytics.html](https://github.com/jekyll/minima/blob/master/_includes/google-analytics.html) on Minima. which expects `google_analytics` value in config.
+See [\_includes/google-analytics.html](https://github.com/jekyll/minima/blob/master/_includes/google-analytics.html)
 
+### Add own snippet
 
-1. Create `_includes/google-analytics.html`
-    - From `minima`:
+Instead of relying on a theme or plugin as above, you can add a JavaScript snippet to your project yourself. This does not have the limitations as covered above - it just means you have to maintain this code.
+
+1. Create `_includes/google-analytics.html` using either snippet below.
+    - Content from `minima`:
         ```liquid
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
         <script>
@@ -50,7 +55,7 @@ See [_includes/google-analytics.html](https://github.com/jekyll/minima/blob/mast
 
         </script>
         ```
-    - From Google Analytics (parametized for Jekyll):
+    - Or copied from Google Analytics (parametized for Jekyll):
         ```liquid
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
@@ -69,17 +74,16 @@ See [_includes/google-analytics.html](https://github.com/jekyll/minima/blob/mast
     - Copied here from `minima`.
         ```liquid
         {%- if jekyll.environment == 'production' and site.google_analytics -%}
-          {%- include google-analytics.html -%}
+            {%- include google-analytics.html -%}
         {%- endif -%}
         ```
-3. Update config with your value:
+3. Add the value to your `_config.yml` file:
     ```yaml
     google_analytics: UA-123-456
     ```
 
 
 ## Production environment
-
 
 Some plugins will only work when using prod env - locally or through GH Pags.
 
