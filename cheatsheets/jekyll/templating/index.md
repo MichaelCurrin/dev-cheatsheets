@@ -1,9 +1,8 @@
 ---
-title: Jekyll Templating
+title: Templating
+description: Cheatsheet for using Liquid templating and plain HTML in Jekyll projects
 layout: listing
 ---
-
-Cheat sheet for using Jekyll Liquid and plain HTML in Jekyll projects.
 
 {% raw %}
 
