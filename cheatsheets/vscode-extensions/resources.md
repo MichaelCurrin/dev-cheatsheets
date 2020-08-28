@@ -5,7 +5,7 @@ description: External links around developing VS Code extensions
 
 ## Beginner guides
 
-### Docs
+### Extension docs
 
 - [Extension overview](https://code.visualstudio.com/api) in the docs
 - [Your First Extension](https://code.visualstudio.com/api/get-started/your-first-extension) in the docs
@@ -25,6 +25,7 @@ description: External links around developing VS Code extensions
         - [Hello World Sample](https://github.com/microsoft/vscode-extension-samples/tree/master/helloworld-sample) without tests
         - [Hello World Test Sample](https://github.com/microsoft/vscode-extension-samples/tree/master/helloworld-test-sample) which includes tests.
 
+
 ## Export and publish your extension
 > What to do next once you've got a working extension that runs in debug mode
 
@@ -34,13 +35,18 @@ description: External links around developing VS Code extensions
     > vsce, short for "Visual Studio Code Extensions", is a command-line tool for packaging, publishing and managing VS Code extensions.
 - [Publishing extensions](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) in VS Code docs
 
+
 ## VS Code
 > Links around VS Code itself
 
 - [code.visualstudio.com](https://code.visualstudio.com/) - VS Code homepage
 - [microsoft/vscode](https://github.com/microsoft/vscode) GH repo for core VS Code
+- [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/vscode)
+    - Browse extensions in the browser. Click on an extension and click the GH repo link to look at the source code.
+    - Or open the Extensions tab in VS Code and search there.
 
-## Other extensions
+
+## More extensions
 > Some extensions I'd like to recommend
 
 - [MichaelCurrin/auto-commit-msg](https://github.com/MichaelCurrin/auto-commit-msg#readme)
