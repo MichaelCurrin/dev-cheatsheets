@@ -1,5 +1,6 @@
 ---
 title: VSIX format
+description: An exported form of a VS Code extension
 ---
 
 The VSCE command is used to export an extension as `.vsix` file. This extension is VS Code's format for bundling extensions as single compressed archive file.
@@ -14,4 +15,4 @@ That file can be used as follows:
     - Download on GitHub (such as if the file is uploaded to a Release)
 - Publish to the VS Code marketplace
 
-[Install]: {{ site.baseurl }}{% link cheatsheets/vscode-extensions/install.md %}
+[Install]: {{ site.baseurl }}{% link cheatsheets/vscode-extensions/extensions/install.md %}
