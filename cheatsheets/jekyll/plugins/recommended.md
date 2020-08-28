@@ -7,7 +7,7 @@ render_with_liquid: false
 ## Setup
 
 1. Add to `Gemfile`.
-2. Add to config plugins.
+2. Add to the config's `plugins` section.
 3. Do any plugin-specific setup.
 
 
