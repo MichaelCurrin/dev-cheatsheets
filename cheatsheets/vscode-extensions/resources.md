@@ -10,6 +10,10 @@ description: External links around developing VS Code extensions
 - [VSCode Extension Samples](https://github.com/Microsoft/vscode-extension-samples)
     - A repo containing many variations of extensions that demonstrate functionality
     - Use one of the directories in their as a starting point for one of your projects, or just use pieces you need from each
+- [MichaelCurrin/vsc-extension-quickstart](https://github.com/MichaelCurrin/vsc-extension-quickstart)
+    - An auto-generated Hello World extension
+    - I added screenshots and thorough docs
+    - It is available as a Template repo so you can easily get your own copy
 
 ## Export and publish your extension
 
