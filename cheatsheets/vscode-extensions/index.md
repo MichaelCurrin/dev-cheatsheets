@@ -13,8 +13,8 @@ The quickest way to get up an running with a Hello World extension in VS Code wi
 1. Install [Node.js][].
 2. Create a new project
     - Create an extension from scratch in a few steps - [Start fresh][].
-    - Or [Use this template][] and it a copy to your own repos.
-3. Start the extension in debug mode - [Usage][].
+    - Or click [Use this template][] so you can add a copy of a template project your own repos.
+3. Start the extension in debug mode - see [Usage][] instructions.
 
 [Node.js]: https://gist.github.com/MichaelCurrin/aa1fc56419a355972b96bce23f3bccba
 [Start fresh]: https://github.com/MichaelCurrin/vsc-extension-quickstart/blob/master/docs/start-fresh.md
