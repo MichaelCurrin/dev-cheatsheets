@@ -3,7 +3,7 @@ title: Resources
 description: External links around developing VS Code extensions
 ---
 
-## Beginners
+## Beginner guides
 
 - [Extension overview](https://code.visualstudio.com/api) in the docs
 - [Your First Extension](https://code.visualstudio.com/api/get-started/your-first-extension) in the docs
@@ -15,11 +15,12 @@ description: External links around developing VS Code extensions
     - This is good to look at once you're familiar with one of the simple setups above.
     - This Samples repo by Microsoft contains many variations of extensions that demonstrate functionality.
     - Use one of the directories in their as a starting point for one of your projects, or just use pieces you need from each.
+    - In particular, there is a [Hello World Test Sample](https://github.com/microsoft/vscode-extension-samples/tree/master/helloworld-test-sample) which includes tests.
 
 ## Export and publish your extension
 
-- [VSCE cli](https://vscode-docs.readthedocs.io/en/latest/tools/vscecli/) docs
-- [vsce package](https://www.npmjs.com/package/vsce) on NPM
+- [VSCE CLI](https://vscode-docs.readthedocs.io/en/latest/tools/vscecli/) docs
+- [vsce](https://www.npmjs.com/package/vsce) package on NPM
 - [microsoft/vscode-vsce](https://github.com/microsoft/vscode-vsce) GH repo
     > vsce, short for "Visual Studio Code Extensions", is a command-line tool for packaging, publishing and managing VS Code extensions.
 - [Publishing extensions](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) in VS Code docs
@@ -28,3 +29,14 @@ description: External links around developing VS Code extensions
 
 - [code.visualstudio.com](https://code.visualstudio.com/) - VS Code homepage
 - [microsoft/vscode](https://github.com/microsoft/vscode) GH repo for core VS Code
+
+## Other extensions
+> Some extensions I'd like to recommend
+
+- [MichaelCurrin/auto-commit-msg](https://github.com/MichaelCurrin/auto-commit-msg#readme)
+    > Generate descriptive commit messages based on files to be committed without touching your keyboard
+    - I wrote this as my first extension. It is still work in progress but it is working and has a nice flow of tests and installation. It was based heavily on the two extensions listed next.
+- [Git Semantic Commit](https://github.com/nitayneeman/vscode-git-semantic-commit)
+- [Git Prefix](https://github.com/srmeyers/git-prefix)
+
+You can also find _any_ extension in the marketplace and find a link to the GH repo. Look at the code yourself and use it as a reference or fork a repo.
