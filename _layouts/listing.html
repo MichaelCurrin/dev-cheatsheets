@@ -15,19 +15,20 @@ layout: default
 
     <br>
 
-    <h2>Topics</h2>
-
-    {% include flex-sections.html %}
-
-    <br>
-
-    <h2>Pages</h2>
-
-    {% include list-pages.html %}
-
-    <br>
-
     <div class="post-content">
+        {%- comment -%} Include these H2 headings inside post-content so they look bigger, leveraging post-content from the Jekyll theme {%- endcomment -%}
+        <h2>Topics</h2>
+
+        {% include flex-sections.html %}
+
+        <br>
+
+        <h2>Pages</h2>
+
+        {% include list-pages.html %}
+
+        <br>
+
         {{ content }}
     </div>
 
