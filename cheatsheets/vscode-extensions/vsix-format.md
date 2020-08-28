@@ -7,12 +7,16 @@ The VSCE command is used to export an extension as `.vsix` file. This extension 
 
 That file can be used as follows:
 
-- Locally
-    - unzipped and placed in `.~/vscode/extensions` for user and maybe repo level
-    - Using the [Install] flow makes it easy to install globally without having to worry about the path
+- Install locally
+    - Use the [Install] flow to install globally, without having to worry about unzipping or moving the package.
+    - Install by hand
+        1. Unzip the package e.g. using `tar` or `unzip`.
+        2. Move the folder `~/.vscode/extensions/` for your user. Or `./.vscode/extensions/` to scope it to just one repo.
 - Share with friends
     - Send your file by Slack/Email along with the appropriate [Install] command.
-    - Download on GitHub (such as if the file is uploaded to a Release)
-- Publish to the VS Code marketplace
+    - Download from GitHub (such as if the file is uploaded to a GH Release)
+- Publish to the VS Code marketplace to share publicly
+    - See the [Publish][] guide.
 
 [Install]: {{ site.baseurl }}{% link cheatsheets/vscode-extensions/extensions/install.md %}
+[Publish]: {{ site.baseurl }}{% link cheatsheets/vscode-extensions/extensions/publish.md %}
