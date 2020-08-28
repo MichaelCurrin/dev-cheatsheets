@@ -3,11 +3,23 @@ title: Resources
 description: External links around developing VS Code extensions
 ---
 
-- VS Code docs
-    - [Extension overview](https://code.visualstudio.com/api)
-    - [Your First Extension](https://code.visualstudio.com/api/get-started/your-first-extension) page in the docs
-- [vsce cli](https://vscode-docs.readthedocs.io/en/latest/tools/vscecli/) docs
-- [vsce](https://www.npmjs.com/package/vsce) package on NPM
-- [Publishing extensions](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) in VS Code docs
-- [Microsoft/vscode-vsce](https://github.com/Microsoft/vscode-vsce) GH repo
+## Beginners
+
+- [Extension overview](https://code.visualstudio.com/api) in the docs
+- [Your First Extension](https://code.visualstudio.com/api/get-started/your-first-extension) in the docs
+- [VSCode Extension Samples](https://github.com/Microsoft/vscode-extension-samples)
+    - A repo containing many variations of extensions that demonstrate functionality
+    - Use one of the directories in their as a starting point for one of your projects, or just use pieces you need from each
+
+## Export and publish your extension
+
+- [VSCE cli](https://vscode-docs.readthedocs.io/en/latest/tools/vscecli/) docs
+- [vsce package](https://www.npmjs.com/package/vsce) on NPM
+- [microsoft/vscode-vsce](https://github.com/microsoft/vscode-vsce) GH repo
     > vsce, short for "Visual Studio Code Extensions", is a command-line tool for packaging, publishing and managing VS Code extensions.
+- [Publishing extensions](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) in VS Code docs
+
+## VS Code
+
+- [code.visualstudio.com](https://code.visualstudio.com/) - VS Code homepage
+- [microsoft/vscode](https://github.com/microsoft/vscode) GH repo for core VS Code
