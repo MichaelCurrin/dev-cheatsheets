@@ -12,6 +12,8 @@ baseurl: "/dev-cheatsheets"
 
 theme: minima
 
+google_analytics: UA-87705880-12
+
 header_pages:
   - index.md
   - cheatsheets/index.md
@@ -21,10 +23,6 @@ plugins:
   - jekyll-analytics
   - jekyll-feed
   - jekyll-sitemap
-
-jekyll_analytics:
-  GoogleAnalytics:
-    id: UA-87705880-12
 
 exclude:
   - docs/
