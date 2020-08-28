@@ -22,6 +22,10 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+jekyll_analytics:
+  GoogleAnalytics:
+    id: UA-87705880-12
+
 exclude:
   - docs/
   - vendor/
