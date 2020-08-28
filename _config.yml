@@ -18,6 +18,7 @@ header_pages:
   - about.md
 
 plugins:
+  - jekyll-analytics
   - jekyll-feed
   - jekyll-sitemap
 
