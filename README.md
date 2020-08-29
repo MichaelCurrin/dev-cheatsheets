@@ -1,8 +1,8 @@
 # Dev Cheatsheets
 > A collection of code snippets and CLI guides for quick and easy reference while coding
 
-[![Hosted with GH Pages](https://img.shields.io/badge/Made_with-GH_Pages-blue.svg)](https://pages.github.com/)
-[![Made with Jekyll](https://img.shields.io/badge/Made_with-Jekyll-blue.svg)](https://jekyllrb.com)
+[![Hosted with GH Pages](https://img.shields.io/badge/Made_with-GH_Pages-blue.svg?logo=github)](https://pages.github.com/)
+[![Made with Jekyll](https://img.shields.io/badge/Made_with-Jekyll-blue.svg?logo=jekyll)](https://jekyllrb.com)
 
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/dev-cheatsheets)](https://github.com/MichaelCurrin/dev-cheatsheets/tags/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
@@ -36,4 +36,4 @@ Released under [MIT](/LICENSE).
 
 You must include a copy of this original license if you fork this repo or use a significant portion of it.
 
-Github corner SVG from: [tholman.com/github-corners](https://tholman.com/github-corners/)
+GitHub corner SVG from: [tholman.com/github-corners](https://tholman.com/github-corners/)
