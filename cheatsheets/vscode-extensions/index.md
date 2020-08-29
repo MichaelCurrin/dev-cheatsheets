@@ -18,7 +18,7 @@ The quickest way to get up an running with a Hello World extension in VS Code wi
 
 Here is how to export an extension and then install it globally, so you can use it.
 
-1. Export your extension as a `.vsix` file using `vsce`.
+1. Export your extension as a [.vsix][] file using [vsce][].
     ```sh
     $ npm install --save-dev vsce
     $ mkdir -p build
@@ -29,6 +29,8 @@ Here is how to export an extension and then install it globally, so you can use 
     $ code --install-extension PATH  # e.g. build/hello-world-0.1.0.vsix
     ```
 
+[.vsix]: {{ site.baseurl }}{% link cheatsheets/vscode-extensions/vsix-format.md %}
+[vsce]: {{ site.baseurl }}{% link cheatsheets/vscode-extensions/vsce-command.md %}
 [Node.js]: https://gist.github.com/MichaelCurrin/aa1fc56419a355972b96bce23f3bccba
 [Start fresh]: https://github.com/MichaelCurrin/vsc-extension-quickstart/blob/master/docs/start-fresh.md#start-fresh
 [Use this template]: https://github.com/MichaelCurrin/vsc-extension-quickstart/generate
