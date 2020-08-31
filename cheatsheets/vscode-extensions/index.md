@@ -24,10 +24,11 @@ Here is how to export an extension and then install it globally, so you can use 
     $ mkdir -p build
     $ vsce package --out build/"
     ```
-2. Install your extension globally in VS Code. Reload VS Code after this.
+2. Install your extension globally in VS Code. With the path with a value like `hello-world-0.1.0.vsix`.
     ```sh
-    $ code --install-extension PATH  # e.g. build/hello-world-0.1.0.vsix
+    $ code --install-extension VSIX_PATH
     ```
+3. Restart VS Code.
 
 [.vsix]: {{ site.baseurl }}{% link cheatsheets/vscode-extensions/vsix-format.md %}
 [vsce]: {{ site.baseurl }}{% link cheatsheets/vscode-extensions/vsce-command.md %}
