@@ -11,7 +11,7 @@ description: Understanding and using git hooks
     - The "Projects" section shows existing projects you can integrate with.
         - A couple of hook managers.
         - This one prevents bad Python commits - [git-pre-commit-hook](https://pypi.org/project/git-pre-commit-hook/)
-- [Hooks](https://git-scm.com/docs/githooks) in the Git docs
+- [Git Hooks](https://git-scm.com/docs/githooks) in the Git docs
     - How hooks work
     - The hook types and descriptions.
     - Here is the source file - [githooks.txt](https://github.com/git/git/blob/master/Documentation/githooks.txt)
@@ -19,12 +19,15 @@ description: Understanding and using git hooks
 - Repos
     - [#commit-msg](https://github.com/topics/commit-msg) GitHub topic
     - [speedy-commit-msg-hook](https://github.com/alan-agius4/speedy-commit-msg-hook) - NPM package to validate a commit message. This also includes an install step in `src` irectory.
+    - [pre-commit/pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks) GH repo
+- [pre-commit.com](https://pre-commit.com/) homepage 
+    - Good for use with Python projects.
 
 ### Integrations
 
-The shell will follow your hook, but VS Code will not.
+The shell will follow your hook, but VS Code will not use. Well, in my experience is actually uses the commit message hook when you commit with the UI, but the hook cannot use any input values so it ends up being a dumb message generator that ignores what you write if you have a custom mssage.
 
-Here are some issues around preparing commit message.
+Here are some GH issues around preparing commit message.
 
 - [Git: Support prepare-commit-msg hook](https://github.com/microsoft/vscode/issues/94274) for VS Code. Closed issue.
 - [Git: Support editing the commit message in a text editor](https://github.com/microsoft/vscode/issues/30562) for VS Code. Open issue.
