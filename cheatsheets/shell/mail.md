@@ -17,7 +17,73 @@ Without setting up an SMTP server like Gmail, you can get the benefit of localho
 
 ## Help
 
-- [mail](https://www.unix.com/man-page/osx/1/mail/) manpage for macOS.
+
+### Usage
+
+There is no `--help` but you use a bad flag you'll get this:
+
+```
+Usage: mail [-EiInv] [-s subject] [-c cc-addr] [-b bcc-addr] [-F] to-addr ...
+       mail [-EHiInNv] [-F] -f [name]
+       mail [-EHiInNv] [-F] [-u user]
+       mail -e [-f name]
+       mail -H
+```
+
+### Man page
+
+View help.
+
+```sh
+$ man mail
+```
+
+See online at [mail](https://www.unix.com/man-page/osx/1/mail/) manpage for macOS.
+
+Some highlights:
+
+```
+     -E      Do not send messages with an empty body.  This is useful for piping errors from
+             cron(8) scripts.
+             
+     -e      Test for the presence of mail in the (by default, system) mailbox.  An exit
+             status of 0 is returned if it has mail; otherwise, an exit status of 1 is
+             returned.
+             
+     -H      Write a header summary only.
+```
+
+
+### Interactive mode usage
+
+Output from running `?` help command in interactive mode:
+
+```
+? ?
+    Mail   Commands
+t <message list>                type messages
+n                               goto and type next message
+e <message list>                edit messages
+f <message list>                give head lines of messages
+d <message list>                delete messages
+s <message list> file           append messages to file
+u <message list>                undelete messages
+R <message list>                reply to message senders
+r <message list>                reply to message senders and all recipients
+pre <message list>              make messages go back to /var/mail
+m <user list>                   mail to specific users
+q                               quit, saving unresolved messages in mbox
+x                               quit, do not remove system mailbox
+h                               print out active message headers
+!                               shell escape
+cd [directory]                  chdir to directory or home if none given
+
+A <message list> consists of integers, ranges of same, or user names separated
+by spaces.  If omitted, Mail uses the last message typed.
+
+A <user list> consists of user names or aliases separated by spaces.
+Aliases are defined in .mailrc in your home directory.
+```
 
 
 ## Install
@@ -32,19 +98,11 @@ I have `mail` installed on macOS too. Perhaps standard or installed with coreuti
 
 ## Run
 
-### Help
-
-View help.
-
-```sh
-$ man mail
-```
-
 ### Interactive
 
 Start interactive session. 
 
-Press enter to advanced through mail. Enter a number to view that mail.
+Press enter to advanced through mail. The prompt will change to `?` and a point at `>` for the current position.
 
 ```sh
 $ mail
@@ -54,12 +112,34 @@ Sample output:
 
 ```sh
 $ mail
+```
+```
 Mail version 8.1 6/6/93.  Type ? for help.
 "/var/mail/mcurrin": 7 messages 7 unread
 >U  1 mcurrin@C02WL0Y2HV2T  Sun Aug 30 15:36  15/739   "Unicron task failed!"
  U  2 mcurrin@C02WL0Y2HV2T  Tue Sep  1 10:39  15/739   "Unicron task failed!"
+ ...
+ N  6 mcurrin@C02WL0Y2HV2T  Tue Sep  1 13:33  14/729   "Unicron task failed!"
 ?
 ```
+
+```sh
+$ mail
+```
+```
+Mail version 8.1 6/6/93.  Type ? for help.
+"/var/mail/mcurrin": 6 messages 1 new 6 unread
+ U  1 mcurrin@C02WL0Y2HV2T  Tue Sep  1 11:02  15/739   "Unicron task failed!"
+ U  2 mcurrin@C02WL0Y2HV2T  Tue Sep  1 12:00  20/765   "Cron <mcurrin@C02WL0Y2HV2T> echo Testing!"
+ U  3 mcurrin@C02WL0Y2HV2T  Tue Sep  1 12:05  15/739   "Unicron task failed!"
+ U  4 mcurrin@C02WL0Y2HV2T  Tue Sep  1 12:34  15/739   "Unicron task failed!"
+ U  5 mcurrin@C02WL0Y2HV2T  Tue Sep  1 13:01  15/739   "Unicron task failed!"
+>N  6 mcurrin@C02WL0Y2HV2T  Tue Sep  1 13:33  14/729   "Unicron task failed!"
+```
+
+Enter a number and press to view that mail or just press enter. Press it repeatedly. Press spacebar to jump to end of mail.
+
+After you read a mail it becomes read. And will be moved out the mailbox.
 
 Exit.
 
@@ -78,6 +158,14 @@ Delete all.
 ```
 ? d *
 ```
+
+### Check for mail
+
+```sh
+$ mail -e && echo 'You have mail' || echo 'Mailbox is empty'
+```
+
+Note that after mail is read, it is archived, but just moved from one [storage](#storage) space to another.
 
 ### Read mail
 
