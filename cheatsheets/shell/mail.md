@@ -53,7 +53,6 @@ Some highlights:
      -H      Write a header summary only.
 ```
 
-
 ### Interactive mode usage
 
 Output from running `?` help command in interactive mode:
@@ -159,7 +158,9 @@ Delete all.
 ? d *
 ```
 
-### Check for mail
+### Check mail status
+
+See [Man page](#man-page) section of this page.
 
 ```sh
 $ mail -e && echo 'You have mail' || echo 'Mailbox is empty'
@@ -169,7 +170,11 @@ Note that after mail is read, it is archived, but just moved from one [storage](
 
 ### Read mail
 
-Read mail and exit.
+You will get notified in a terminal window when you have unread mail. When a new tab starts or you press enter.
+
+There is an interval value for this which I think defaults to 60 for one hour.
+
+Use this command to display status, show mail list summary and exit.
 
 ```sh
 $ mail -H
