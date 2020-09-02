@@ -1,6 +1,6 @@
 ---
-title: run
-description: About the npm run command
+title: Run
+description: About the `npm run` command
 ---
 
 Typically this used as:
