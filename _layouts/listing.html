@@ -3,16 +3,15 @@ layout: default
 ---
 
 <article class="post">
-
     <header class="post-header">
         <h1 class="post-title">{{ page.title | escape }}</h1>
+
         {% if page.description %}
-            <blockquote>{{ page.description | escape }}</blockquote>
+            <blockquote>{{ page.description | escape | markdownify }}</blockquote>
         {% endif %}
     </header>
 
     {% include breadcrumbs.html %}
-
     <br>
 
     <div class="post-content">
@@ -20,13 +19,11 @@ layout: default
         <h2>Topics</h2>
 
         {% include flex-sections.html %}
-
         <br>
 
         <h2>Pages</h2>
 
         {% include list-pages.html %}
-
         <br>
 
         {{ content }}
