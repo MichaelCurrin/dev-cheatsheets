@@ -1,5 +1,6 @@
 ---
-title: NPM commands
+title: Commands
+description: NPM commands
 layout: listing
 ---
 

@@ -58,5 +58,49 @@ Warning - this will not raise an error if the page is not found.
 {"name"=>"someone", "items"=>[#], "size"=>1}
 ```
 
+## plus
+
+```liquid
+{% assign crumb_limit = forloop.index | plus: 1 %}
+```
+
+## Array and for loop handling
+
+### size
+
+```
+{% if crumbs.size > 2 %}
+```
+
+### limit
+
+```liquid
+{% for crumb in crumbs limit: crumb_limit %}
+{% endfor %}
+```
+
+### offset
+
+```
+{% for crumb in crumbs offset: 1 %}
+
+{% endfor %}
+```
+
+### unless, last, index
+
+```liquid
+{% for crumb in crumbs offset: 1 %}
+    {% unless forloop.first %}
+        ...
+    {% endunless %}
+    {% if forloop.last %}
+        ...
+    {% else %}
+        {% assign crumb_limit = forloop.index | plus: 1 %}
+        ...
+    {% endif %}
+{% endfor %}
+```
 
 {% endraw %}

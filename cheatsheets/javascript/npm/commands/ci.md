@@ -1,6 +1,6 @@
 ---
 title: CI
-description: About the npm-ci command
+description: About the `npm ci` command
 ---
 
 ## Usage

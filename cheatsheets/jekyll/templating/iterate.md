@@ -9,7 +9,7 @@ You can iterate over data in a data file or in the current page's frontmatter or
 ## List of key-value pairs
 
 `_data/items.yaml`
-```
+```yaml
 - foo: A
   bar: 10
   baz: 1000
@@ -19,7 +19,7 @@ You can iterate over data in a data file or in the current page's frontmatter or
 ```
 
 `index.md`
-```
+```liquid
 ---
 ---
 {% for item in site.data.items %}
@@ -31,14 +31,14 @@ You can iterate over data in a data file or in the current page's frontmatter or
 
 
 `_data/items.yaml`
-```
+```yaml
 Foo: A
 Bar: B
 ```
 
 
 `index.md`
-```
+```liquid
 {% for hash in site.data.items %}
 - Key: {{ hash[0] }} - Value: {{ hash[1] }}
 {% endfor %}
