@@ -5,6 +5,8 @@ description: About the `npm ci` command
 
 ## Usage
 
+No arguments are needed, however package lock file must exist to avoid an error.
+
 ```sh
 $ npm ci
 ```
