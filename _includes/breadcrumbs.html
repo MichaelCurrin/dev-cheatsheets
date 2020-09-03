@@ -17,8 +17,8 @@ and remove Home item from the start of the breadcrumbs.
                 {{ page.title }}
             </a>
         {% else %}
-            {% assign target_path = crumbs | slice: 0, forloop.index | join: '/' %}
-            {% include path-to-link.html path=target_path %}
+            {% assign target_url = crumbs | slice: 0, forloop.index | join: '/' %}
+            {% include path-to-link.html target_url=target_url %}
         {% endif %}
      {% endfor %}
     </div>

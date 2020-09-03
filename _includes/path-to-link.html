@@ -2,7 +2,7 @@
 Find page object from given path string and display title and link for the page.
 
 Required param:
-    path: URL of a page. e.g. "/cheatsheets/python/"
+    url: A page's path on the domain. e.g. "/cheatsheets/python/".
 
 Sample data, for context:
     "dir": "/cheatsheets/python/", # Too many match on dir. And dir and name is two passes.
@@ -10,8 +10,8 @@ Sample data, for context:
     "path": "cheatsheets/python/index.md",
     "url": "/cheatsheets/python/" # Only one matches on url.
 {%- endcomment -%}
-{%- assign target = include.path | append: '/' -%}
-{%- assign p = site.pages | where: 'url', target | first -%}
+{%- assign target_url = include.target_url | append: '/' -%}
+{%- assign p = site.pages | where: 'url', target_url | first -%}
 <a href="{{ p.url | relative_url }}">
     {{ p.title }}
 </a>
