@@ -1,18 +1,25 @@
-<div id="breadcrumbs">
 {% assign crumbs = page.url | remove: '/index.html' | split: '/' %}
 
-{% if crumbs.size > 0 %}
-    {% for crumb in crumbs offset: 1 %}
+{%- comment -%}
+Note first two pieces of crumbs are ["", "cheatsheets"]
+
+Hide entire breadcrumbs section on Home and Cheatsheets pages
+and remove Home item from the start of the breadcrumbs.
+{%- endcomment -%}
+{% if crumbs.size > 2 %}
+    <div id="breadcrumbs">
+    {% for _ in crumbs %}
         {% unless forloop.first %}
             /
         {% endunless %}
         {% if forloop.last %}
-            {{ page.title }}
+            <a href="{{ page.url | relative_url }}" class="underline">
+                {{ page.title }}
+            </a>
         {% else %}
             {% assign target_path = crumbs | slice: 0, forloop.index | join: '/' %}
             {% include path-to-link.html path=target_path %}
         {% endif %}
      {% endfor %}
+    </div>
 {% endif %}
-
-</div>

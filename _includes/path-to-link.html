@@ -12,4 +12,6 @@ Sample data, for context:
 {%- endcomment -%}
 {%- assign target = include.path | append: '/' -%}
 {%- assign p = site.pages | where: 'url', target | first -%}
-<a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+<a href="{{ p.url | relative_url }}">
+    {{ p.title }}
+</a>
