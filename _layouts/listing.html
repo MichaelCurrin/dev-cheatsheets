@@ -24,15 +24,15 @@ layout: default
         {% include flex-sections.html %}
         <br>
 
-        <h2>Pages</h2>
+        {% unless page.path == 'cheatsheets/index.md' %}
+            <h2>Pages</h2>
+            {% include list-pages.html %}
+            <br>
 
-        {% include list-pages.html %}
-        <br>
+            <h2>Content</h2>
 
-        <hr>
-
-        <h2>Content</h2>
-        {{ content }}
+            {{ content }}
+        {% endunless %}
     </div>
 
 </article>
