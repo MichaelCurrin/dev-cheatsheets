@@ -6,14 +6,18 @@ title: Branches
 
 ### Basic
 
+Show local branches.
+
 ```sh
 $ git branch
   foo
 * bar
-master
+  master
 ```
 
 ### Verbose
+
+Show local branches with references to the remote.
 
 ```sh
 $ git branch -v
@@ -26,13 +30,43 @@ $ git branch -v
 
 ### Remotes
 
+Show only remote branches.
+
 ```sh
 $ git branch -r
 ```
 ```
   origin/bar
   origin/HEAD -> origin/master
+  origin/master
 ```
+
+You can also run this with the verbose flag to which commit each points to.
+
+```sh
+$ git branch -r -v
+  origin/bar                                 a89446e Another message
+  origin/HEAD                                -> origin/master
+  origin/master                              5680e85 Yet another commit message
+```
+
+### All
+
+View both local and remote branch references.
+
+```sh
+$ git branch -a
+```
+```
+  foo
+* bar
+  master
+  remotes/origin/bar
+  remotes/origin/baz
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+```
+
 
 
 ## Delete local branches
@@ -48,6 +82,13 @@ $ git branch -D BRANCH_NAME
 ### Restore deleted branch
 
 Even often a branch is deleted, you can still create it from the local remote reference.
+
+```sh
+$ git branch -d foo
+$ git checkout foo
+Branch 'foo' set up to track remote branch 'foo' from 'origin'.
+Switched to a new branch 'foo'
+```
 
 From the `git checkout` manpage:
 
@@ -97,9 +138,7 @@ If you are sure you want to delete it, run 'git branch -D foo'.
 Perhaps this can be extended to exclude the current git branch.
 
 
-
-
-## Delete origin branches
+## Delete remote branches
 
 Even though you've deleted a branch locally as covered above, your git repo will have a local reference to that remote branch. And also the branch might still exist on GH itself.
 
@@ -112,6 +151,8 @@ $ git remote prune origin
 ```
 
 ## Delete branch on remote
+
+How to delete the actual branch on GitHub, using the command-line rather than clicking delete the Branches tab.
 
 Do a `push` with a _delete_ flag.
 
