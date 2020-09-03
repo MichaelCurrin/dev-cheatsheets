@@ -1,16 +1,32 @@
 ---
 title: Docker compose
-description: The tool that makes docker containers easier to manage
+description: A tool that makes docker containers easier to manage
 ---
 
-Docker compose allows orchestration of multiple containers and it allows you to store and run parameters against those. Such as normally when you run a `docker` command with a port number.
-
+Docker compose allows orchestration of multiple containers. It allows you to store and run parameters against those containers without typing each time.
 
 ## Resources
 
 - [Overview of docker-compose CLI](https://docs.docker.com/compose/reference/overview/) reference docs.
 - [Docker compose file reference](https://docs.docker.com/compose/compose-file/)
 
+
+## Requirements
+
+You need the following:
+
+- `Dockerfile`
+    - You could actually skip this if you use a prebuilt Ubuntu image for example but typically you'll use `Dockerfile` with `docker-compose`.
+    - You can have multiple `Dockerfile` files in different folders or within differ names. These each get used by the next part.
+- `docker-compose.yml`
+    - Single config file for one or more containers
+    - Allows configuration of volumes, port numbers, network settings, etc.
+
+When you run this, it will use the two files above.
+
+```sh
+$ docker-compose COMMAND
+```
 
 ## Build
 
@@ -33,7 +49,7 @@ If the container has a long-running task like a server, it will stay up. Stop it
 Or it will exit immediately.
 
 ```sh
-$ docker-compose up         
+$ docker-compose up
 Starting foo_bar_1 ... done
 Attaching to foo_bar_1
 ```
@@ -105,7 +121,7 @@ You can exit with `exit` command or hit <kbd>CTRL</kbd>+<kbd>D</kbd>.
 
 Your container will be stopped but kept.
 
-When you use `run` again using the command aboeb, it will spin up a **new** container under a new ID. 
+When you use `run` again using the command aboeb, it will spin up a **new** container under a new ID.
 
 You can add `--rm` command to delete the container each time. Note you will **lose** data in the container unless you persist in a volume.
 
@@ -127,7 +143,7 @@ Run a command against an **already running** container. This avoids spinning up 
 
 See [docker-compose exec](https://docs.docker.com/compose/reference/exec/) docs.
 
-> This is the equivalent of docker exec. With this subcommand you can run arbitrary commands in your services. 
+> This is the equivalent of docker exec. With this subcommand you can run arbitrary commands in your services.
 
 Usage:
 

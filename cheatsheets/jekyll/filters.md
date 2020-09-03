@@ -81,11 +81,29 @@ Warning - this will not raise an error if the page is not found.
 
 ### offset
 
-```
+Do a slice ignoring the last item.
+
+```liquid
 {% for crumb in crumbs offset: 1 %}
 
 {% endfor %}
 ```
+
+Similar to `pop` except `offet` preserves the original value.
+
+```liquid
+{% assign foo = bar | pop %}
+```
+
+Longer form for interest:
+
+```liquid
+{% assign foo = bar | slice: 0, -1 %}
+```
+
+You can't pop from the front, but you can do a slice starting at 2nd element.
+
+{% assign foo = slice: 1, foo.fize %}
 
 ### unless, last, index
 

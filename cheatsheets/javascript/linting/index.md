@@ -1,4 +1,5 @@
 ---
-title: JavaScript Linting
+title: Linting
+description: Linting JavaScript files
 layout: listing
 ---

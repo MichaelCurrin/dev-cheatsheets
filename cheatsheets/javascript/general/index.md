@@ -1,5 +1,6 @@
 ---
-title: JavaScript general
+title: General
+description: JavaScript guide for the browser and server
 layout: listing
 ---
 
