@@ -5,7 +5,9 @@ layout: home
 
 > {{ site.description }}
 
-You know that command or argument or function you used before but you can't remember exactly what it does how to use it. This is what Dev Cheatsheets is for!
+Welcome to **Dev Cheatsheets** - a quick reference for showing you how to use a CLI tool, language or library by focusing on syntax and real world examples. While keeping explanation paragraphs to a minimum.
+
+These are all in one place so you don't have to look at docs, man pages, tutorials. Sometimes, there are links to other Cheatsheet guides which do a good job.
 
 <div align="center" style="padding-bottom: 1em;">
     <a href="{{ site.baseurl }}{% link cheatsheets/index.md %}">

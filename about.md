@@ -13,6 +13,14 @@ There are plenty of tutorials and cheatsheets out there. This one is unique (for
 
 I do link to other cheatsheets in some cases here, but when I have time I like to bring in a few items to my own guide, since external sites will not always be around as pages or domains.
 
+
+## Why use Dev Cheatsheets?
+
+- You want a short **reference** (ideally one-page) for a tool or library, because you know the context and just need the syntax and an example.
+- You're thinking of that that **command**, **argument** or **function** you used before in **JS** or **Python** or **Jekyll**, but you just can't remember exactly what it does, or how to use it.
+- You want a reference of the most commonly used **CLI** commands (for NPM or Bash), what they mean and some real world examples.
+- You don't want to sift through the entire online docs or the manpage which can be long and formal, or tutorials or blog posts which can be verbose paragraphs and tell you mostly what you already know.
+
 <!-- NOTES
 
 ## Ramblings
