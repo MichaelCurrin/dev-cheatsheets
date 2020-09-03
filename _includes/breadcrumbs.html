@@ -1,7 +1,7 @@
 <div id="breadcrumbs">
 {% assign crumbs = page.url | remove: '/index.html' | split: '/' %}
 
-{% if crumbs.size > 2 %}
+{% if crumbs.size > 0 %}
     {% for crumb in crumbs offset: 1 %}
         {% unless forloop.first %}
             /
@@ -9,10 +9,8 @@
         {% if forloop.last %}
             {{ page.title }}
         {% else %}
-            {% assign crumb_limit = forloop.index | plus: 1 %}
-            <a href="{{ site.baseurl }}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">
-                {{- crumb | replace: '-', ' ' | remove: '.html' | capitalize -}}
-             </a>
+            {% assign target_path = crumbs | slice: 0, forloop.index | join: '/' %}
+            {% include path-to-link.html path=target_path %}
         {% endif %}
      {% endfor %}
 {% endif %}
