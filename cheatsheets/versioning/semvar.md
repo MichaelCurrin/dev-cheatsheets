@@ -1,5 +1,5 @@
 ---
-title: Semantic versioning
+title: Semantic versioning standard
 ---
 
 See [semver.org](https://semver.org/).
