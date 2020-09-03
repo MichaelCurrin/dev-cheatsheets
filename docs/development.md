@@ -58,7 +58,7 @@ Note first two pieces of crumbs are ["", "cheatsheets"].
 
 The outer if statement is to hide entire breadcrumbs section on Home and Cheatsheets pages.
 
-Use the `forloop.index` value rather than using `range`. And add `1` to the value where it is used to skip doing the Homepage.
+Use the range of `2` to the number of crumbs with `crumbs.size` so that the Home page gets excluded. The value of `2` is used because we slice from `0` (Home) to `1` (Cheatsheets) and so need `2` as one value higher to be inclusive of the `1`.
 
 A naïve approach for breadcrumbs just splits the URL and uses capitalize on the pieces, but that does not work for abbreviations ("NPM Command" -> "Npm Command").
 
