@@ -15,6 +15,12 @@ $ git clone git@github.com:MichaelCurrin/dev-cheatsheets.git
 $ cd dev-cheatsheets
 ```
 
+## Setup hooks
+
+```sh
+$ make hooks
+```
+
 
 ## Install project dependencies
 
