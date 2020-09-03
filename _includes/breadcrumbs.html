@@ -1,11 +1,8 @@
+{%- comment -%}
+See Breadcrumbs in docs/development.md
+{%- endcomment -%}
 {% assign crumbs = page.url | remove: '/index.html' | split: '/' %}
 
-{%- comment -%}
-Note first two pieces of crumbs are ["", "cheatsheets"]
-
-Hide entire breadcrumbs section on Home and Cheatsheets pages
-and remove Home item from the start of the breadcrumbs.
-{%- endcomment -%}
 {% if crumbs.size > 2 %}
     <div id="breadcrumbs">
     {% for _ in crumbs %}
