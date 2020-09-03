@@ -1,10 +1,10 @@
 {% comment %}
     Flexbox menu.
 
-    After removing the common part of the item's path, use an item if it goes exactly one level down.
+    After removing the common part of the item's path, show an directory if it is a direct descendent of the current directory.
 {% endcomment %}
 
-{% if page.layout == 'home' %}
+{% if page.url == '/' %}
     {% assign depth = 2 %}
 {% else %}
     {% assign depth = 1 %}
