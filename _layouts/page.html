@@ -8,7 +8,9 @@ layout: default
     <header class="post-header">
         <h1 class="post-title">{{ page.title | escape }}</h1>
         {% if page.description %}
-            <blockquote>{{ page.description | escape }}</blockquote>
+            <blockquote>
+                {{ page.description | escape | markdownify }}
+            </blockquote>
         {% endif %}
     </header>
 
