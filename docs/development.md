@@ -51,6 +51,15 @@ cheatsheets/javascript/general/index.md
 
 Note on [breadcrumbs.html](/_includes/breadcrumbs.html) and the [path-to-link](/_includes/path-to-link.html).
 
+Split the current path then build up breadcrumbs using home up to
+a point and turn that into a link.
+
+Note first two pieces of crumbs are ["", "cheatsheets"].
+
+The outer if statement is to hide entire breadcrumbs section on Home and Cheatsheets pages.
+
+Use the `forloop.index` value rather than using `range`. And add `1` to the value where it is used to skip doing the Homepage.
+
 A naïve approach for breadcrumbs just splits the URL and uses capitalize on the pieces, but that does not work for abbreviations ("NPM Command" -> "Npm Command").
 
 So instead we look up the relevant index.md page and use its title.
@@ -59,5 +68,3 @@ But we can't just use the first page we find as there could be duplicate folder 
 Therefore rather than using split pieces, we use the full path (a, then a/b then a/b/c) to find the index files.
 
 Each piece of the breadcrumb pieces needs a bigger slice to build a URL and then find the path. So we use `slice: 0, forloop.index` to get the URL for the first breadcrumb (slice 0 and 1), then the second (slice 0 and 2).
-
-Offset slices from the right same as `| pop`. but we still need to skip first, so "Home" doesn't appear in the breadcrumbs.
