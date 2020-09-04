@@ -21,14 +21,14 @@ These are useful to add for most sites and work on GH Pages.
 ### RSS feed
 
 - Repo: [jekyll-feed](https://github.com/jekyll/jekyll-feed)
+- _"A Jekyll plugin to generate an Atom (RSS-like) feed of your Jekyll posts."_
 - Produce an RSS feed of content - especially useful for consumers of your blog add to their RSS reader tools.
-- Add to your `head` tag.
+- Add to your `head` HTML tag such as in `_layouts/default.html`.
 	```liquid
 	{% feed_meta %}
 	```
-- _"A Jekyll plugin to generate an Atom (RSS-like) feed of your Jekyll posts."_
 
-Sample from [michaelcurrin.github.io/dev-cheatsheets](https://michaelcurrin.github.io/dev-cheatsheets/):
+Sample result from [michaelcurrin.github.io/dev-cheatsheets](https://michaelcurrin.github.io/dev-cheatsheets/):
 
 - `index.html`
 	```html
@@ -38,15 +38,17 @@ Sample from [michaelcurrin.github.io/dev-cheatsheets](https://michaelcurrin.gith
 		title="Dev Cheatsheets" /><script>
 	```
 
+See the generated feed on this site - [feed.xml](https://michaelcurrin.github.io/dev-cheatsheets/feed.xml).
+
 ### SEO tag
 
 - Repo: [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag)
 - This adds metadata for search engines to use, including `title`, `meta` and a canonical tag. If you use this plugin, you don't need to set `title` yourself or in a theme layout (as you'd duplicate the tag).
-- Use in your `head` tag.
+- Add to your `head` HTML tag such as in `_layouts/default.html`.
 	```liquid
 	{% seo %}
 	```
-- See _advanced usage_ in the docs for setting authors and image OG data.
+- See the _advanced usage_ in the docs for setting authors and image OG data.
 
 Sample from [michaelcurrin.github.io/dev-cheatsheets](https://michaelcurrin.github.io/dev-cheatsheets/):
 
