@@ -21,38 +21,64 @@ These are useful to add for most sites and work on GH Pages.
 ### RSS feed
 
 - Repo: [jekyll-feed](https://github.com/jekyll/jekyll-feed)
-- _"A Jekyll plugin to generate an Atom (RSS-like) feed of your Jekyll posts."_
-- Produce an RSS feed of content - especially useful for consumers of your blog add to their RSS reader tools.
-- Add to your `head` HTML tag such as in `_layouts/default.html`.
+	- > "A Jekyll plugin to generate an Atom (RSS-like) feed of your Jekyll posts."_
+	- > The plugin will automatically generate an Atom feed at /feed.xml.
+- Produce an feed of posts.
+	- If you don't have a `_posts` directory, this won't be useful for you.
+	- But useful for consumers of your blog add to their reader tools. 
+	- This uses _Atom_ and not _RSS_, which is explained why in the docs.
+- Follow the docs to configure.
+- After installing, add to your `head` HTML tag such as in `_layouts/default.html`.
 	```liquid
 	{% feed_meta %}
 	```
 
-Sample result from [michaelcurrin.github.io/dev-cheatsheets](https://michaelcurrin.github.io/dev-cheatsheets/):
+Sample:
 
-- `index.html`
+- `index.html` 
+	- The reason for the metadata is to generate a tag like this from [/michaelcurrin.github.io/jekyll-blog-demo](https://michaelcurrin.github.io/jekyll-blog-demo/).
 	```html
-	<link type="application/atom+xml" 
-		rel="alternate" 
-        href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" 
-		title="Dev Cheatsheets" /><script>
+	<link type="application/atom+xml" rel="alternate" 
+		href="https://michaelcurrin.github.io/jekyll-blog-demo/feed.xml" 
+		title="Jekyll Blog Demo" />
 	```
-
-See the generated feed on this site - [feed.xml](https://michaelcurrin.github.io/dev-cheatsheets/feed.xml).
+- `feed.xml`
+	- See file at [michaelcurrin.github.io/jekyll-blog-demo/feed.xml](https://michaelcurrin.github.io/jekyll-blog-demo/feed.xml). A piece is shown below.
+	```xml
+	<entry>
+		<title type="html">First post!</title>
+		<link href="https://michaelcurrin.github.io/jekyll-blog-demo/2018/12/22/first-post/" rel="alternate" type="text/html" title="First post!"/>
+		<published>2018-12-22T00:00:00+00:00</published>
+		<updated>2018-12-22T00:00:00+00:00</updated>
+		<id>
+			https://michaelcurrin.github.io/jekyll-blog-demo/2018/12/22/first-post
+		</id>
+		<content type="html" xml:base="https://michaelcurrin.github.io/jekyll-blog-demo/2018/12/22/first-post/">
+			<p>This is my first post after the one created as part of the blog template.</p>
+		</content>
+		<author>
+			<name/>
+		</author>
+		<summary type="html">
+			This is my first post after the one created as part of the blog template.
+		</summary>
+	</entry>
+	```
 
 ### SEO tag
 
 - Repo: [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag)
 - This adds metadata for search engines to use, including `title`, `meta` and a canonical tag. If you use this plugin, you don't need to set `title` yourself or in a theme layout (as you'd duplicate the tag).
-- Add to your `head` HTML tag such as in `_layouts/default.html`.
+- After installing, add to your `head` HTML tag such as in `_layouts/default.html`.
 	```liquid
 	{% seo %}
 	```
 - See the _advanced usage_ in the docs for setting authors and image OG data.
 
-Sample from [michaelcurrin.github.io/dev-cheatsheets](https://michaelcurrin.github.io/dev-cheatsheets/):
+Sample:
 
 - `index.html`
+	- From [michaelcurrin.github.io/dev-cheatsheets](https://michaelcurrin.github.io/dev-cheatsheets/):
 	```html
 	<!-- Begin Jekyll SEO tag v2.6.1 -->
 	<title>Home | Dev Cheatsheets</title>
@@ -76,7 +102,7 @@ Sample from [michaelcurrin.github.io/dev-cheatsheets](https://michaelcurrin.gith
 		"name": "Dev Cheatsheets",
 		"@context": "https://schema.org"
 	}
-    </script>
+	</script>
 	<!-- End Jekyll SEO tag -->
 	```
 
