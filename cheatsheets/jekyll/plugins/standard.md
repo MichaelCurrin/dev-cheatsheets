@@ -8,10 +8,12 @@ render_with_liquid: false # Jekyll 4 only
 These are useful to add for most sites and work on GH Pages.
 
 ## Setup
+> How to setup a plugin
 
-1. Add to `Gemfile`.
-2. Add to the config's `plugins` section.
-3. Do any plugin-specific setup.
+1. Add to your `Gemfile`
+1. Run `bundle install` locally.
+3. Add the plugin to the config's `plugins` section.
+3. Follow any plugin-specific setup like configuring and adding your layouts.
 
 
 ## Plugins
