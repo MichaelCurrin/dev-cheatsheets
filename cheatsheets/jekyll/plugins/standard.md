@@ -1,9 +1,10 @@
 ---
 title: Standard plugins
 description: How to add common plugins to your site
-render_with_liquid: false
+render_with_liquid: false # Jekyll 4 only
 ---
 
+{% raw %}
 These are useful to add for most sites and work on GH Pages.
 
 ## Setup
@@ -81,3 +82,5 @@ Sample from [michaelcurrin.github.io/dev-cheatsheets](https://michaelcurrin.gith
 - Adds a `sitemap.xml` and `robots.txt` file to the site.
 - Sample: [michaelcurrin.github.io/dev-cheatsheets/sitemap.xml](https://michaelcurrin.github.io/dev-cheatsheets/sitemap.xml)
 - Sample: [michaelcurrin.github.io/dev-cheatsheets/robots.txt](https://michaelcurrin.github.io/dev-cheatsheets/robots.txt)
+
+{% endraw %}
