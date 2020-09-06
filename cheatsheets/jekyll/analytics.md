@@ -10,9 +10,13 @@ You need to add a JavaScript snippet and your site ID to each page to enable GA.
 ## Enable production build
 
 Note that whichever approach you choose below, you'll probably only want analytics on a prod build (not local dev or remote dev/staging) and then enable it using this flag. Note that GH Pages sets this for you already.
+
 ```sh
 JEKYLL_ENV='production' bundle exec jekyll build
 ```
+
+You can of course use `serve` instead of `build` but know that you'll send stats to GA and the traffic will appear on the localhost domain under sources.
+
 
 ## Approaches
 
@@ -42,6 +46,7 @@ See [\_includes/google-analytics.html](https://github.com/jekyll/minima/blob/mas
 
 Instead of relying on a theme or plugin as above, you can add a JavaScript snippet to your project yourself. This does not have the limitations as covered above - it just means you have to maintain this code.
 
+{% raw %}
 1. Create `_includes/google-analytics.html` using either snippet below.
     - Content from `minima`:
         ```html
@@ -60,7 +65,7 @@ Instead of relying on a theme or plugin as above, you can add a JavaScript snipp
 
         </script>
         ```
-    - Or copied from Google Analytics (parametized for Jekyll):
+    - Or, copied from Google Analytics admin (I parametized it for use in Jekyll):
         ```html
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
@@ -75,7 +80,7 @@ Instead of relying on a theme or plugin as above, you can add a JavaScript snipp
 
         </script>
         ```
-2. Use the file in to your `head` tag.
+2. Use the file in to your HTML `head` tag such as in your `default.html` layout 
     - Copied here from `minima`.
         ```liquid
         {%- if jekyll.environment == 'production' and site.google_analytics -%}
@@ -86,4 +91,6 @@ Instead of relying on a theme or plugin as above, you can add a JavaScript snipp
     ```yaml
     google_analytics: UA-123467-78
     ```
+{% endraw %}
 
+Do a production build as covered at the start of this page to test it locally.
