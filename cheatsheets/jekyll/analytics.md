@@ -7,7 +7,6 @@ Using [Google Analytics](https://analytics.google.com) or "GA" is a free, GDR-co
 
 You need to add a JavaScript snippet and your site ID to each page to enable GA. This would be impractical by hand, but since we use Jekyll we can use templating and includes to repeat the JS snippet on all pages, or use a plugin so we don't have to maintain the JS snippet ourselves.
 
-
 ## Enable production build
 
 Note that whichever approach you choose below, you'll probably only want analytics on a prod build (not local dev or remote dev/staging) and then enable it using this flag. Note that GH Pages sets this for you already.
@@ -16,6 +15,8 @@ JEKYLL_ENV='production' bundle exec jekyll build
 ```
 
 ## Approaches
+
+Note that even if an approach below references Google Tag Manager, that is just where the script comes from. You don't have to login to GTM at all, you could login to Google Anlytics only and get all the functionality you need.
 
 ### Plugin
 
@@ -43,7 +44,7 @@ Instead of relying on a theme or plugin as above, you can add a JavaScript snipp
 
 1. Create `_includes/google-analytics.html` using either snippet below.
     - Content from `minima`:
-        ```liquid
+        ```html
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
         <script>
             window['ga-disable-{{ site.google_analytics }}'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" ||
@@ -60,7 +61,7 @@ Instead of relying on a theme or plugin as above, you can add a JavaScript snipp
         </script>
         ```
     - Or copied from Google Analytics (parametized for Jekyll):
-        ```liquid
+        ```html
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
         <script>
