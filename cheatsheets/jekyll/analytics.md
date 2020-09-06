@@ -65,12 +65,13 @@ Instead of relying on a theme or plugin as above, you can add a JavaScript snipp
 
         </script>
         ```
-    - Or, copied from Google Analytics admin (I parametized it for use in Jekyll):
+    - Or, use a snippet copied from Google Analytics admin which is very close to one above. I parametized it for use in Jekyll.q
         ```html
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
+            
             function gtag() {
                 dataLayer.push(arguments);
             }
