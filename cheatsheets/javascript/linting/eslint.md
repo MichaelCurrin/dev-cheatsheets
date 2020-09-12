@@ -2,7 +2,11 @@
 title: ESLint
 ---
 
-- [Configuring](https://eslint.org/docs/user-guide/configuring) doc.
+## Resources
+
+ES Lint docs:
+
+- [Configuring](https://eslint.org/docs/user-guide/configuring)
 - [Rules](https://eslint.org/docs/rules/)
 
 
@@ -42,7 +46,7 @@ COMMAND
 
 ### Ignore the next line
 
-```
+```javascript
 // eslint-disable-next-line [RULE, ]
 COMMAND
 ```
@@ -80,4 +84,5 @@ Run
 ```sh
 eslint foo.js
 ```
+
 And the output message will tell your `foo.js` was ignored and that you can use the `--no-ignore` flag.
