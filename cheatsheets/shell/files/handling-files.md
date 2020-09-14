@@ -2,6 +2,11 @@
 title: Handing files and paths
 ---
 
+See
+
+- [Bash redirections cheatsheet](https://catonmat.net/ftp/bash-redirections-cheat-sheet.pdf) on [catonmat.net](catonmat.net)
+- [Bash one-liners tutorial](https://catonmat.net/bash-one-liners-explained-part-three)
+
 
 ## Search
 
@@ -36,7 +41,7 @@ Links:
 ### Redirect stderr to stdout
 
 ```sh
-COMMAND 2>&1
+COMMAND 2 > &1
 ```
 
 This is not so useful in itself when just running in the console. But more useful when using crontab, `tee` or writing to a file.
@@ -53,7 +58,7 @@ COMMAND > stdout.txt 2> stderr.txt
 The `&1` is a point to where stdout is currently pointing.
 
 ```sh
-COMMAND > stdout_and_sterr.txt 2>&1
+COMMAND > stdout_and_sterr.txt 2 > &1
 ```
 
 Similar, supported in all shells. Works for Bash.
