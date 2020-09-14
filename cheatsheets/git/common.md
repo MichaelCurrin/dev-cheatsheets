@@ -25,31 +25,21 @@ $ git remote -v
 $ git branch -a
 ```
 
+## Compare commits
 
-## View changes
-
-```sh
-$ git log -p
-$ # OR
-$ git show
-```
-
-To show file names only:
-
-```sh
-$ git diff --name-status HEAD~ # OR two hashes
-```
-<!-- `--name-only` will exclude 'A' etc. -->
+See [Compare]({{ site.baseurl }}{% link cheatsheets/git/compare.md %}) page.
 
 
 ## Stash
 
 ```sh
-$ git stash show [-p]  # Extend from file summary to details.
+$ git stash show -p  # -p will extend from file summary to details.
 ```
 
 
 ## Diff
+
+See [diff command]({{ site.baseurl }}{% link cheatsheets/git/commands/diff.md %}) page.
 
 ```sh
 $ git checkout feature
