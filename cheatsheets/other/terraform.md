@@ -18,12 +18,9 @@ See [Commmands](https://www.terraform.io/docs/commands/index.html) in the docs. 
 Here is the help for Terraform `0.12`. Using `-help` will show the same output.
 
 <details>
-<summary>
     
-<code>
-$ terraform
-</code>
-
+<summary>
+    <pre><code>$ terraform</code></pre>
 </summary>
 
 <pre>
@@ -78,8 +75,53 @@ $ terraform init
 $ terraform plan
 ```
 ```sh
-$ terraform apply
+$ terraform apply .
 ```
+
+### Working with plans
+
+Generate plan on the console output with colors.
+
+```sh
+$ terraform plan
+```
+
+Or if you want to persist the plans.
+
+```sh
+$ mkdir -p plans
+```
+
+Write out to plain text file. Strip colors to avoid messages like `[0m[1m[32mNo changes. Infrastructure is up-to-date.[0m[32m`
+
+```sh
+$ terraform plan --color-color plans/foo.txt
+```
+
+Write out binary plan file.
+
+```sh
+$ terraform plan -out plans/foo.tfplan
+```
+
+That can be viewed using:
+
+```sh
+$ terraform show plans/foo.tfplan
+```
+
+You can apply a plan directly, which saves TF doing a plan internally within the apply step.
+
+```sh
+$ terraform apply plans/foo.tfplan
+```
+
+Or for a target directory.
+
+```sh
+$ terraform apply DIR
+```
+
 
 ### Development
 
