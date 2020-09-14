@@ -38,8 +38,14 @@ DESCRIPTION
        ...
 ```
 
+So you can run against zero, one or two commits. And can specify paths.
 
-## Default
+
+## Select scope
+
+What commits or files to run against.
+
+### Default - no arguments
 
 ```sh
 git diff
@@ -54,11 +60,12 @@ But not:
 
 - untracked
 
+If you have no uncommit changes, you'll see no output.
+
 
 If you want untracked files, then git status works file. The line count doesn't matter so much as the files are new and there is no lines changed.
 
-
-## Staged
+### Staged only
 
 Show diff of stages files only. 
 
@@ -70,16 +77,52 @@ $ git diff --cached
 
 Note `--cached` and `--staged` are synonyms.
 
+### Compare current against a commit
 
-## No index
+Specify target past commit only to compare against current `HEAD`. You might want to stash changes first.
 
-Compare when at least one of the file is out the repo, or the entire command is run outside the repo.
+```sh
+$ git diff COMMIT
+```
+
+e.g.
+
+```sh
+$ git diff HEAD~
+
+$ git checkout feature
+$ git diff master
+```
+
+### Compare two commits
+
+```sh
+$ git diff COMMIT COMMIT
+```
+The order doesn't matter.
+
+e.g.
+
+```sh
+$ git diff HEAD~5 HEAD~7
+$ git diff master feature
+```
+
+This works too and is similar to what you'd run for `git log`.
+
+```sh
+$ git diff HEAD~5..HEAD~7
+```
+
+### No index option
+
+Compare when at least one of the filse is out the repo, or the entire command is run outside the repo.
 
 ```sh
 $ git diff [<options>] --no-index [--] <path> <path> 
 ```
 
-## Ignore submodules
+### Ignore submodules
 
 ```
 --ignore-submodules[=<when>]
@@ -176,6 +219,13 @@ $ git diff --compact-summary
  src/my-git.ts (new) | 39 +++++++++++++++++++++++++++++++++++++++
  1 file changed, 39 insertions(+)
 ```
+
+### Name and status
+
+```sh
+$ git diff
+M       opm/datadog/Makefile
+M       opm/datadog/README.md
 
 ### Name only
 
