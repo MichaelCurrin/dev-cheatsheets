@@ -66,19 +66,26 @@ All other commands:
 
 ## Usage
 
-### Preview and deploy infrastructure
+### Basics
 
-```sh
-$ terraform init
-```
-```sh
-$ terraform plan
-```
-```sh
-$ terraform apply .
-```
+Follow these three commands in order as a started for using Terraform.
+
+1. Install depedendencies.
+    ```sh
+    $ terraform init
+    ```
+2. Preview changes.
+    ```sh
+    $ terraform plan
+    ```
+3. Deploy changes.
+    ```sh
+    $ terraform apply .
+    ```
 
 ### Working with plans
+
+- [Plan commands](https://www.terraform.io/docs/commands/plan.html) docs.
 
 Generate plan on the console output with colors.
 
@@ -92,11 +99,15 @@ Or if you want to persist the plans.
 $ mkdir -p plans
 ```
 
-Write out to plain text file. Strip colors to avoid messages like `[0m[1m[32mNo changes. Infrastructure is up-to-date.[0m[32m`
+Write out to human-readable plain text file.
 
 ```sh
-$ terraform plan --color-color plans/foo.txt
+$ terraform plan --no-color > plans/foo.txt
 ```
+
+Use `&>` instead of `>` to include `stderr`.
+
+We strip colors to avoid messages like `[0m[1m[32mNo changes. Infrastructure is up-to-date.[0m[32m`
 
 Write out binary plan file.
 
@@ -109,6 +120,14 @@ That can be viewed using:
 ```sh
 $ terraform show plans/foo.tfplan
 ```
+
+For JSON output: 
+
+```sh
+$ terraform show -json <planfile>
+```
+
+From [JSON Format](https://www.terraform.io/docs/internals/json-format.html) TF doc.
 
 You can apply a plan directly, which saves TF doing a plan internally within the apply step.
 
@@ -139,7 +158,9 @@ $ terraform validate
 
 ### Workspaces
 
-[Workspace command](https://www.terraform.io/docs/commands/workspace/index.html)
+- [Workspace command](https://www.terraform.io/docs/commands/workspace/index.html) docs.
+
+Usage:
 
 ```sh
 $ terraform workspace <subcommand> [options] [args]
