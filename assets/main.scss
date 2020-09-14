@@ -1,7 +1,7 @@
 ---
 ---
 
-/* Based on GH Pages minima v2.5.1 README. The newer minima handles custom styling differently.*/
+/* Based on GH Pages minima v2.5.1 README. The newer minima handles custom styling differently. */
 
 @import "minima";
 
@@ -19,4 +19,18 @@
 
 .underline {
     text-decoration: underline;
+}
+
+/* Details and summary blocks. Copied from GH Pages without Jekyll. The cursor pointer is the most useful here. */
+[hidden][hidden] {
+  display: none !important;
+}
+details summary {
+  cursor: pointer;
+}
+details:not([open]) > *:not(summary) {
+  display: none !important;
+}
+summary {
+  display: list-item;
 }
