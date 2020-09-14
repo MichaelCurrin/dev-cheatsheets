@@ -25,6 +25,7 @@ $ git remote -v
 $ git branch -a
 ```
 
+
 ## View changes
 
 ```sh
@@ -32,6 +33,14 @@ $ git log -p
 $ # OR
 $ git show
 ```
+
+To show file names only:
+
+```sh
+$ git diff --name-status HEAD~ # OR two hashes
+```
+<!-- `--name-only` will exclude 'A' etc. -->
+
 
 ## Stash
 
