@@ -6,11 +6,35 @@ description: How to run shell scripts
 The `.sh` extension is not necessary but is common when the script contains Bash or ZSH code.
 
 
+## Summary
+
+- Run executable.
+    ```sh
+    $ ./my_script.sh
+    ```
+- Pass script name to `bash` command.
+    ```sh
+    $ bash my_script.sh
+    ```
+- Run source code in current process.
+    ```sh
+    $ source my_script.sh
+    ```
+- Pass contents of a file to `bash` with no args.
+    ```sh
+    $ cat script.sh | bash -
+    ```
+- Redirect in
+    ```sh
+    $ bash < my_script.sh
+    ```
+
+
 ## Source
 
 This will run the content of the given script inside the parent shell. The target script should be a shell script and does not have to be executable.
 
-Use the source command to persist changes from a script, such as changing directories or activating a virtual environment.
+Use the source command to persist changes from a script, such as changing directories, setting variables or activating a virtual environment.
 
 - `persist.sh`
     ```sh
@@ -37,10 +61,10 @@ You can use arguments too.
 $ source persist.sh foo bar
 ```
 
+
 ## Execute with subshell
 
 This will not persist any changes.
-
 
 ```sh
 $ bash script.sh
