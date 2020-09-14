@@ -27,11 +27,13 @@ COMMAND > stdout.txt 2> stderr.txt
 
 ## Redirect stderr and stdout to the same file
 
-The `&1` is a point to where stdout is currently pointing.
 
 ```sh
 COMMAND > stdout_and_sterr.txt 2> &1
 ```
+
+The `&1` is a pointer to where `stdout` is currently pointing. 
+
 
 Similar, supported in all shells..
 
