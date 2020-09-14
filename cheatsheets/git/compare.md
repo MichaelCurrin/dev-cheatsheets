@@ -2,9 +2,10 @@
 title: Compare
 ---
 
-Compare commits
+## Compare commits
 
-## Patches
+
+### Patches
 
 View patches from each commit.
 
@@ -19,9 +20,11 @@ $ git show
 ```
 
 
-## Files changed
+### Files changed
 
 ```sh
 $ git diff --name-status COMMIT [COMMIT]
 $ git diff --name-status HEAD~2
 ```
+
+For sample output see [Diff command]({{ site.baseurl }}{% link cheatsheets/git/commands/diff.md %}) page.
