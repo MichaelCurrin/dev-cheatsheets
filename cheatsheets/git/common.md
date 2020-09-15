@@ -42,9 +42,10 @@ See [Compare]({{ site.baseurl }}{% link cheatsheets/git/compare.md %}) page.
 ```sh
 $ git stash show -p
 ```
-```sh
-$ git stash -u
-```
+
+Flags:
+
+- `-u, --include-untracked`
 
 
 ## Diff
