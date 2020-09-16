@@ -1,6 +1,6 @@
 ---
-title: Command
-description: About the shell command builtin
+title: command
+description: About the `command` builtin
 ---
 
 ## Usage
