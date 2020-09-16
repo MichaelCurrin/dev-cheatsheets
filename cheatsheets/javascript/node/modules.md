@@ -3,6 +3,10 @@ title: Modules
 description: How to import modules in Node
 ---
 
+See docs
+
+- https://nodejs.org/api/modules.html
+
 ## Require syntax
 
 Using CommonJS "require" syntax.
