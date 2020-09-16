@@ -4,22 +4,6 @@ layout: listing
 ---
 
 
-## Imports
-
-<!-- TODO: check these -->
-
-```javascript
-const request = require('request');
-
-const foo = require('./foo');
-const bar = require('./foo').bar;
-```
-
-```javascript
-import { foo } from 'foo';
-```
-
-
 ## Regex
 
 ```javascript
