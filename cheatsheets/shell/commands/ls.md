@@ -1,9 +1,10 @@
 ---
-title: The ls command
+title: ls
 ---
 
 Some useful or frequently-used flags
 
+Note that some commands work differntly on macOS and Linux.
 
 ## Short and long
 
@@ -13,11 +14,11 @@ Some useful or frequently-used flags
 | `--group-directories-first` | Sort by directories first.                                                                                                      |
 | `-F --classify`             | Add type as one of: `*/=>@|`                                                                                                    |
 | `-A --almost-all`           | List all files including Hidden files, but not implied `.` and `..` . Always set for the super-user according to Linux manpage. |
-`-a`  Include directory entries whose names begin with a dot. (Note using `-A` is probably preferred to `-a`.)
-`-S` | Largest files first
-`-t` | Newest modified first.
-`-d` | Show directories themselves and not their contents.
-`-R ` | Recursive.
+| `-a`  | Include directory entries whose names begin with a dot. (Note using `-A` is probably preferred to `-a`.) |
+| `-S` | Largest files first |
+| `-t` | Newest modified first. |
+| `-d` | Show directories themselves and not their contents. |
+| `-R ` | Recursive. |
 
 
 ## Long listing
