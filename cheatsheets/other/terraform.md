@@ -11,6 +11,11 @@ title: Terraform
     > Terraform enables you to safely and predictably create, change, and improve infrastructure. It is an open source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.
 
 
+## Builtins
+
+[Builtin functions](https://www.terraform.io/docs/configuration/functions.html) from the docs
+
+
 ## CLI
 
 See [Commmands](https://www.terraform.io/docs/commands/index.html) in the docs. The menu on the left there covers each command in detail.
