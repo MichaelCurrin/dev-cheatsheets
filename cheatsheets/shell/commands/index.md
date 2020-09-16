@@ -1,5 +1,5 @@
 ---
-title: Shell commands
-description: Info for a specific shell command on Linux or macOS
+title: Commands
+description: Info on specific Bash shell commands on Linux or macOS
 layout: listing
 ---
