@@ -1,16 +1,25 @@
 ---
 title: Extended
+description: About using extended grep matching
 ---
 
-Grep already supports some patterns like glob and regex.
+## About
 
-You can use `egrep` or `grep -e` for the extended matching.
+Basic grep already supports some patterns, like glob and regex.
+
+To extend the matching to be more powerful, you can use extended grep.
+
+
+## Usage
 
 ```sh
 egrep PATTERN PATH
 ```
 
-Examples:
+Or `grep -e` in place of `egrep`.
+
+
+## Examples
 
 ```sh
 egrep "support|help|windows" myfile.txt
@@ -20,6 +29,15 @@ egrep "support|help|windows" myfile.txt
 egrep '^[a-zA-Z]+$' myfile.txt
 ```
 
+Using a flag like `--count`.
+
 ```sh
 egrep -c '^begin|end$' myfile.txt
+```
+
+Note brackets are not needed as these both work.
+
+```sh
+egrep 'Foo bar|baz: ' myfile.txt
+egrep '(Foo bar)|(baz: )' myfile.txt
 ```
