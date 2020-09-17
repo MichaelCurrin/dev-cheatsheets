@@ -27,3 +27,21 @@ grep [options] [pattern] [file ...]
 | -H      | –with-filename       |
 | -l      | –files-with-matches  | Just print filenames.               |
 | -L      | –files-without-match |
+
+
+
+## Samples
+
+Search recursively in current directory, case insenstively.
+
+```sh
+$ grep -ir PATTERN
+```
+
+Show filename.
+
+```sh
+$ grep -H foobar *
+foo.txt:This is foobar
+bar.txt:This is another match for the foobar pattern
+```
