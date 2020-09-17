@@ -43,5 +43,5 @@ $ egrep '(Foo bar)|(baz: )' myfile.txt
 But are meaningful here:
 
 ```sh
-$ egrep -H '[^0] to (change|add|destroy)' *
+$ egrep -H '[^0] to (add|destroy)' *
 ```
