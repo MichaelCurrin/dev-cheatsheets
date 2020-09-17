@@ -1,6 +1,6 @@
 ---
 title: Extended
-description: About using extended grep matching
+description: About using grep's extended matching
 ---
 
 ## About
@@ -22,22 +22,26 @@ Or `grep -e` in place of `egrep`.
 ## Examples
 
 ```sh
-egrep "support|help|windows" myfile.txt
+$ egrep "support|help|windows" myfile.txt
 ```
 
 ```sh
-egrep '^[a-zA-Z]+$' myfile.txt
+$ egrep '^[a-zA-Z]+$' myfile.txt
 ```
 
-Using a flag like `--count`.
-
 ```sh
-egrep -c '^begin|end$' myfile.txt
+$ egrep -c '^begin|end$' myfile.txt
 ```
 
-Note brackets are not needed as these both work.
+Note that brackets are not needed in the simple case.
 
 ```sh
-egrep 'Foo bar|baz: ' myfile.txt
-egrep '(Foo bar)|(baz: )' myfile.txt
+$ egrep 'Foo bar|baz: ' myfile.txt
+$ egrep '(Foo bar)|(baz: )' myfile.txt
+```
+
+But are meaningful here:
+
+```sh
+$ egrep -H '[^0] to (change|add|destroy)' *
 ```
