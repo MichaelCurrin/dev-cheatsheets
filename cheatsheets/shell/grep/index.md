@@ -9,9 +9,9 @@ Linux: [ss64.com/bash/grep.html](https://ss64.com/bash/grep.html)
 
 ## Tutorials
 
-- [Linux grep command](https://www.computerhope.com/unix/ugrep.htm)
-- [Linux egrep command](https://www.computerhope.com/unix/ugrep.htm)
-- [Grep command in Linux Unix](https://www.journaldev.com/24271/grep-command-in-linux-unix)
+- [Linux grep command](https://www.computerhope.com/unix/ugrep.htm) 🔗
+- [Linux egrep command](https://www.computerhope.com/unix/uegrep.htm) 🔗
+- [Grep command in Linux Unix](https://www.journaldev.com/24271/grep-command-in-linux-unix) 🔗
 
 
 ## Get line from file
