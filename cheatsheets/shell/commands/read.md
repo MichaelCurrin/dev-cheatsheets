@@ -26,6 +26,20 @@ $ read TEXT
 $ echo "You entered: $TEXT"
 ```
 
+### Evaluate response
+
+For maths, use the `$(( EXPRESSION ))` syntax.
+
+```sh
+read NUMBER
+if [ $((NUMBER % 2)) -eq 0 ]; then
+    echo "Number is even"
+else
+    echo "Number is odd"
+fi 
+```
+
+
 ## Common flags
 
 ### Show message
