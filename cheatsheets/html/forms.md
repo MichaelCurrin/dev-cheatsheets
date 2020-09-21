@@ -22,26 +22,36 @@ Examples mostly from [W3Schools](https://www.w3schools.com).
 
 ## Input
 
+[Input](https://www.w3schools.com/tags/tag_input.asp) tag on W3 schools. It covers all the available `type` values.
+
 ```html
 <label for="fname">First name:</label>
 <input type="text" id="fname" name="fname" size="50"><br><br>
+
 <label for="pin">PIN:</label>
 <input type="text" id="pin" name="pin" maxlength="4" size="4"><br><br>
+
 <input type="submit" value="Submit">
 ```
 
 <label for="fname">First name:</label>
 <input type="text" id="fname" name="fname" size="50"><br><br>
+
 <label for="pin">PIN:</label>
 <input type="text" id="pin" name="pin" maxlength="4" size="4"><br><br>
+
 <input type="submit" value="Submit">
 
 
 - Size attribute - Specifies the width of an `<input>` element, in characters. Default value is 20.
 
+> Tip: Always use the `<label>` tag to define labels for `<input type="text">`, `<input type="checkbox">`, `<input type="radio">`, `<input type="file">`, and `<input type="password">`.
+
+
 See also:
 
 - [Searchbar](https://www.w3schools.com/howto/howto_css_searchbar.asp) tutorial.
+- [required](https://www.w3schools.com/tags/att_input_required.asp) attribute in `input` tag.
 
 
 ## Text area
@@ -51,9 +61,12 @@ See also:
 <textarea id="my-text" rows="4" cols="50">Text area input</textarea>
 
 <textarea maxlength="50">
-Text area with max length
+    Text area with max length
 </textarea>
 ```
+
+- [Text area](https://www.w3schools.com/tags/tag_textarea.asp) tutorial.
+
 
 
 ## Bulma note
@@ -94,19 +107,6 @@ This can be overridden. In the example below, the `search` class is targeted.
 See also:
 
 - [Searchbar](https://www.w3schools.com/howto/howto_css_searchbar.asp) tutorial.
-
-## Text area
-
-```html
-<label for="my-text">Label</label>
-<textarea id="my-text" rows="4" cols="50">Textarea input</textarea>
-
-<textarea maxlength="50">
-Text area with max length
-</textarea>
-```
-
-- [Text area](https://www.w3schools.com/tags/tag_textarea.asp) tutorial.
 
 
 ## Radio buttons
