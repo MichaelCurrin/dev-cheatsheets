@@ -1,3 +1,3 @@
 #!/bin/sh
 # Prevent push on failed Jekyll build.
-make build-dev
+make build-prod
