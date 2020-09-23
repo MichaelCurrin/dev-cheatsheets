@@ -83,17 +83,18 @@ new_vector = scale(2.0, [1.0, -4.2, 5.4])
 
 If you leave out the types on the function, they just won't be checked.
 
-You can specify a type on a variable, but this is again optional as it can be inferred.
+You can specify a type on a variable, but this is optional. Also you can get the type checking benefit without adding it yourself, if the type can be inferred.
 
 ```python
-# With type
+# With type. This doesn't add much.
 x: int = 1
-# Without type.
+# Without type specified. This will be inferred as int.
 y = 2
 
 # Initialize with type but no value. This will be the null value e.g. `0`.
 z: int
 
+# Example of initializing a null value.
 child: bool
 if age < 18:
     child = True
@@ -104,9 +105,9 @@ else:
 
 ## Benefits of type checking
 
-MyPy can pick up things like:
+MyPy can pick up things to alert on you, like:
 
-- Check if a variable changes type unexpectedly.
+- Check if a variable changes type unexpectedly. Like here:
     ```python
     x = 'hello'
     x =  2
