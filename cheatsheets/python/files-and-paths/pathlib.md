@@ -1,5 +1,6 @@
 ---
 title: Pathlib
+description: New builtin alternative to `os.path`
 ---
 
 
@@ -10,27 +11,28 @@ title: Pathlib
 - [Pathlib](https://realpython.com/python-pathlib/) on RealPython
 
 
-## Import
+## Basics
+
+### Import
 
 ```python
 from pathlib import Path
 ```
 
-## List subdirectories
+### List subdirectories
 
 ```python
 p = Path('.')
 dir_paths = [x for x in p.iterdir() if x.is_dir()]
 ```
 
-## Glob
+### Glob
 
 ```python
 list(p.glob('**/*.py'))
 ```
 
-
-## Navigating
+### Navigating
 
 ```python
 p = Path('/etc')
@@ -40,8 +42,7 @@ q.resolve()
 # => PosixPath('/etc/rc.d/init.d/halt')
 ```
 
-
-## Querying path properties:
+### Querying path properties:
 
 ```python
 q.exists()
@@ -49,9 +50,43 @@ q.exists()
 q.is_dir()
 ```
 
-## Opening a file
+### Opening a file
 
 ```python
 with q.open() as f_in:
     text = f_in.readline()
+```
+
+## Real projects
+
+### Absolute path to app directory
+
+This is useful when running the script from anywhere in or outside the repo and keeping paths relative to that app directory i.e. the top-level module inside the repo.
+
+```
+my_repo/
+    my_app/
+        my_app.py
+        constants.py
+```
+
+After research, I found this to be effective. It resolves relative and symlinks (I think?) and the directory will get parent directory.
+
+```python
+APP_DIR = Path(__file__).resolve().parent
+```
+
+This should be set in the config or constants module, so it can be imported by other scripts.
+
+```python
+from constants import APP_DIR
+```
+
+### Path to var directory
+
+For writing CSV or log files, for example.
+
+```python
+VAR_DIR = APP_DIR / "var"
+APP_LOG_PATH = VAR_DIR / "app.log"
 ```
