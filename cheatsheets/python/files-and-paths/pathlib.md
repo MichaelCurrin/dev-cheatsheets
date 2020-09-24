@@ -20,15 +20,15 @@ from pathlib import Path
 
 ```python
 p = Path('.')
-[x for x in p.iterdir() if x.is_dir()]
+dir_paths = [x for x in p.iterdir() if x.is_dir()]
 ```
 
 ## Glob
 
-
 ```python
 list(p.glob('**/*.py'))
 ```
+
 
 ## Navigating
 
@@ -39,6 +39,7 @@ q = p / 'init.d' / 'reboot'
 q.resolve()
 # => PosixPath('/etc/rc.d/init.d/halt')
 ```
+
 
 ## Querying path properties:
 
