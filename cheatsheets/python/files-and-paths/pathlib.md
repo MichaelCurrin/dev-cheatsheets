@@ -61,7 +61,9 @@ with q.open() as f_in:
 
 ### Absolute path to app directory
 
-This is useful when running the script from anywhere in or outside the repo and keeping paths relative to that app directory i.e. the top-level module inside the repo.
+If it dangerous to just use `Path('.')` as that is the current working directory, not the directory of the script.
+
+The approach is useful when running the script from anywhere in or outside the repo and keeping paths relative to that app directory i.e. the top-level module inside the repo.
 
 ```
 my_repo/
