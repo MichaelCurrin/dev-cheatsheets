@@ -116,3 +116,26 @@ MyPy can pick up things to alert on you, like:
 - Allow a range of types to be allowed (e.g. `None` or `int`)
 - Validate types of data structures
 - Create custom types to better represent concepts e.g. A `Coordinates` type which could be say a tuple of two `float` values. This makes the code easier to read especially for nested data structure. Note you don't have to pass in a class instance of `Coordinates`, you just need to pass in a tuple which matches the structure of the expected type.
+
+
+## MyPy usage
+
+```sh
+mypy --help
+```
+```
+usage: mypy [-h] [-v] [-V] [more options; see below]
+            [-m MODULE] [-p PACKAGE] [-c PROGRAM_TEXT] [files ...]
+
+Mypy is a program that will type check your Python code.
+
+Pass in any files or folders you want to type check. Mypy will
+recursively traverse any provided folders to find .py files:
+
+    $ mypy my_program.py my_src_folder
+
+For more information on getting started, see:
+
+- http://mypy.readthedocs.io/en/latest/getting_started.html
+...
+```
