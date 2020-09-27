@@ -98,21 +98,33 @@ This is useful if trying a few times to sync and not syncing files which are alr
 
 Syncing over SSH.
 
+
 ### Copy to remote
 
 ```sh
-$ rsync [OPTIONS] foo HOST:PATH
+$ rsync [OPTIONS] SOURCE [USER@]HOST:DEST
 ```
 
 e.g.
 
-```
-$ rsync [OPTIONS] foo michael@dell:~/Documents/baz
-$ rsync [OPTIONS] foo michael@192.168.1.35:/foo/bar/baz
-```
+- Copy to absolute path on host.
+    ```sh
+    $ rsync [OPTIONS] foo michael@192.168.1.35:/foo/bar/baz
+    ```
+- Copy to user path on a host identified from `/etc/hosts`. Note that `USER@` is not needed if you've setup the remote user in the config, or perhaps if the user names are identical across systems.
+    ```sh
+    $ rsync [OPTIONS] foo michael@dell:~/Documents/baz
+    ```
 
 Note that tab completion is supported to.
 
+### Copy from remote
+
+Same as above but reversed.
+
+```sh
+$ rsync [OPTIONS] [USER@]HOST:SOURCE DEST
+```
 
 
 ## Help
