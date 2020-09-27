@@ -27,11 +27,13 @@ Add trailing slash to `foo/` to sync contents.
 
 ### Common flag usage
 
-Archive, verbose, compressed and human-readable.
+Archive, verbose, compressed, human-readable. 
 
 ```sh
 $ rsync -avzh SOURCE DEST
 ```
+
+Add `-c` f
 
 ### Move
 
@@ -39,9 +41,13 @@ By default, `rsync` will copy files.
 
 If you want to move them (i.e. delete after copy), you can use these flags:
 
+Sender removes synchronized files (non-dir).
+
 ```
---remove-source-files   sender removes synchronized files (non-dir)
+--remove-source-files
 ```
+
+> This tells rsync to remove from the sending side the files (meaning non-directories) that are a part of the transfer and have been successfully duplicated on the receiving side.
 
 Note that the `--delete` flag and its variations will delete on the receiver (destination) so it is not appropriate here.
 
@@ -63,14 +69,27 @@ Note that the `--delete` flag and its variations will delete on the receiver (de
 
 ```
 -z compress
+```
+Copy symlinks as links
+```
+-l, --links
+```
 
+Archive
 
--l, --links   # Copy symlinks as links
+> This is equivalent to `-rlptgoD`. It is a quick way of saying you want recursion and want to preserve almost everything (with -H being a notable omission). The only exception to the above equivalence is when `--files-from` is specified, in which case -r is not implied
+
+```
 -a, --archive
+```
 
+Handled by the above.
+
+```
 -r, --recursive
+```
 
-
+```
 --delete     # Delete extra files     
 ```
 
@@ -87,15 +106,33 @@ Preserve permissions, etc.
 
 ### Skip
 
-```
--u, --update     # skip files newer on dest
-```
 
 This is useful if trying a few times to sync and not syncing files which are already processed.
 
+
+
+> This tells rsync to skip updating files that already exist on the destination (this does not ignore existing directories, or nothing would get done). S
+
 ```
--c, --checksum   # skip based on checksum, not mod-time & size
+--ignore-existing
 ```
+
+Checksum.
+
+> skip based on checksum, not mod-time & size
+
+Note that this is expensive to compute on both sides.
+
+```
+-c, --checksum
+```
+
+Skip files newer on dest to avoid overwriting remote changes.
+
+```
+-u, --update    
+```
+
 
 
 ## Remote examples
