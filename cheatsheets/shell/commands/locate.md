@@ -1,11 +1,12 @@
 ---
-title: Locate
+title: locate
 description: Utility to search for files or folders my name
 ---
 
 The `locate` command is an efficient way of searching a database which lists the files and folders on your machine. The DB is updatedly nightly for you.
 
-[article](https://www.bonusbits.com/wiki/HowTo:Install_Locate_on_MacOS_with_Homebrew)
+SEe [article](https://www.bonusbits.com/wiki/HowTo:Install_Locate_on_MacOS_with_Homebrew)
+
 
 ## Help
 
