@@ -20,14 +20,10 @@ It is similar to `scp`. But `rsync` has some more advanced features.
 Sync directory. The manpage uses `-avz` in examples.
 
 ```sh
-$ rsync -avz ./src /dest
+$ rsync -avz foo bar
 ```
 
-Add trailing slash to sync contents.
-
-```sh
-$ rsync -avz ./src/ /dest
-```
+Add trailing slash to `foo/` to sync contents.
 
 ### Move
 
