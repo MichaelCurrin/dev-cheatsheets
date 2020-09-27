@@ -4,17 +4,20 @@ title: rysnc
 
 ## Purpose
 
-This can be used for copying/moving 
+This can be used for copying/moving...
 
 - Within your file-system
 - From your local to a remote
 - From a remote to a local
 
-## Examples
+It is similar to `scp`. But `rsync` has some more advanced features.
+
+
+## Local examples
 
 ### Basic
 
-Sync directory.
+Sync directory. The manpage uses `-avz` in examples.
 
 ```sh
 $ rsync -avz ./src /dest
@@ -25,6 +28,19 @@ Add trailing slash to sync contents.
 ```sh
 $ rsync -avz ./src/ /dest
 ```
+
+### Move
+
+By default, `rsync` will copy files.
+
+If you want to move them (i.e. delete after copy), you can use these flags:
+
+```
+--remove-source-files   sender removes synchronized files (non-dir)
+```
+
+Note that the `--delete` flag and its variations will delete on the receiver (destination) so it is not appropriate here.
+
 
 ### Display
 
@@ -69,8 +85,34 @@ Preserve permissions, etc.
 
 ```
 -u, --update     # skip files newer on dest
+```
+
+This is useful if trying a few times to sync and not syncing files which are already processed.
+
+```
 -c, --checksum   # skip based on checksum, not mod-time & size
 ```
+
+
+## Remote examples
+
+Syncing over SSH.
+
+### Copy to remote
+
+```sh
+$ rsync [OPTIONS] foo HOST:PATH
+```
+
+e.g.
+
+```
+$ rsync [OPTIONS] foo michael@dell:~/Documents/baz
+$ rsync [OPTIONS] foo michael@192.168.1.35:/foo/bar/baz
+```
+
+Note that tab completion is supported to.
+
 
 
 ## Help
