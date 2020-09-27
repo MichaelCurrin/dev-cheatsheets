@@ -1,5 +1,5 @@
 ---
-title: Processes
+title: Process-related commands
 ---
 
 ```sh
@@ -7,5 +7,13 @@ $ ps aux
 ```
 
 ```sh
-pstree
+$ pstree
+```
+
+```sh
+$ top
+```
+
+```sh
+$ htop
 ```
