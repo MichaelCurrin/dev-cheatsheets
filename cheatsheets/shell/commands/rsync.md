@@ -6,7 +6,7 @@ title: rysnc
 
 This can be used for copying/moving...
 
-- Within your file-system
+- From local to local (whether on your file-system, or across removable media)
 - From your local to a remote
 - From a remote to a local
 
@@ -51,18 +51,34 @@ Sender removes synchronized files (non-dir).
 
 Note that the `--delete` flag and its variations will delete on the receiver (destination) so it is not appropriate here.
 
+### Dry run
+
+```
+--dry-run
+```
 
 ### Display
 
 ```
 -q, --quiet
 -v, --verbose
-
+```
+```
     --stats
+```
+```
 -h, --human-readable
+```
 
+> This option tells rsync to print information showing the progress of the transfer. This gives a bored user something to watch. This option is normally combined with -v. Using this option without the -v option will produce weird results on your display.
+```
     --progress
--P                  # same as --partial --progress
+```
+
+Same as `--partial --progress`.
+
+```
+-P                 
 ```
 
 ### Transfer
@@ -70,6 +86,7 @@ Note that the `--delete` flag and its variations will delete on the receiver (de
 ```
 -z compress
 ```
+
 Copy symlinks as links
 ```
 -l, --links
@@ -104,20 +121,34 @@ Preserve permissions, etc.
 -o, --owner
 ```
 
-### Skip
+### Sync safely
+> Handle long, repeat runs of possibly interrupted syncs
 
+#### Partial
 
-This is useful if trying a few times to sync and not syncing files which are already processed.
+> By default, rsync will **delete** any partially transferred file if the transfer is **interrupted**.
+> 
+> In some circumstances it is more desirable to **keep** partially transferred files. Using the `--partial` option tells rsync to keep the partial file which should make a subsequent transfer of the rest of the file much faster. 
 
+```
+--partial
+```
 
+This is perhaps safer than ignore existing, as partial will do a checksum to see if the file is the same as the one it wants to copy, rather than just checking its presence.
 
-> This tells rsync to skip updating files that already exist on the destination (this does not ignore existing directories, or nothing would get done). S
+Also partial might handle picking up from transferring a single large file without starting over.
+
+#### Ignore existing
+
+Ignore files which are already synced to the destination.
+
+> This tells rsync to skip updating files that already exist on the destination (this does not ignore existing directories, or nothing would get done).
 
 ```
 --ignore-existing
 ```
 
-Checksum.
+#### Checksum
 
 > skip based on checksum, not mod-time & size
 
@@ -127,6 +158,8 @@ Note that this is expensive to compute on both sides.
 -c, --checksum
 ```
 
+
+### Skip updated
 Skip files newer on dest to avoid overwriting remote changes.
 
 ```
