@@ -2,6 +2,9 @@
 title: Copy
 ---
 
+See also `cp` under Commands section.
+
+
 ## Directory
 
 ```sh
@@ -26,4 +29,5 @@ Note that will not work if you have interactive aliased. So you'll to reference 
 yes | cp SOURCE DEST
 ```
 
-https://stackoverflow.com/questions/8488253/how-to-force-cp-to-overwrite-without-confirmation
+[answer on SO](https://stackoverflow.com/questions/8488253/how-to-force-cp-to-overwrite-without-confirmation)
+
