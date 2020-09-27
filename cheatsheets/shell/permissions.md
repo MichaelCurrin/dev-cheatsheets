@@ -52,6 +52,25 @@ $ chmod 775 PATH
 $ chmod u=rwx,go=rx PATH
 ```
 
+### Recursive
+
+You can use the `-R` command, but that is not good if you have a mix of files and directories.
+
+So use `find` as in [blog post](https://linuxize.com/post/chmod-recursive/).
+
+
+Reset directories.
+
+```sh
+$ find . -type d -exec chmod 755 {} \;
+```
+
+Reset files.
+
+```sh
+$ find . -type f -exec chmod 644 {} \;
+```
+
 
 ## Help
 
