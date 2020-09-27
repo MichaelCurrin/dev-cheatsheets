@@ -14,16 +14,17 @@ cp [OPTIONS] SOURCE_A SOURCE_B [...] DESTINATION
 
 ### Copy files
 
-Be careful of trailing slash when copying to or from a directory name. I find it works better without.
+_Be careful of trailing slash when copying to or from a directory name. I find it works better without. Or maybe that is only `rsync` where is makes a difference?_
 
 ```sh
 $ cp foo.txt bazz
 ```
 
-Copy multiple.
+Copy multiple sources.
 
 ```sh
 $ cp foo.txt bar.txt bazz
+$ cp *.mp3 bazz
 ```
 
 Copy to current location.
