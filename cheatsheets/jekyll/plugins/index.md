@@ -1,5 +1,5 @@
 ---
-title: Jekyll plugins
+title: Plugins
 layout: listing
 ---
 
