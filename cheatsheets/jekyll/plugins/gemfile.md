@@ -11,7 +11,7 @@ If you using `Bundler`, you then run this at the top level of your project. This
 My [gist](https://gist.github.com/MichaelCurrin/5c8c45a86bcf53d7b49a7763c02943b1) of install instructions.
 
 ```sh
-bundle config --local path vendor/bundle
+bundle config set --local path vendor/bundle
 bundle install
 ```
 
