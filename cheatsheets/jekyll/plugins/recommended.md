@@ -28,6 +28,8 @@ Repo [rbuchberger/jekyll_picture_tag](https://github.com/rbuchberger/jekyll_pict
 
 [Install doc](https://rbuchberger.github.io/jekyll_picture_tag/users/installation).
 
+Add to Gemfile and install.
+
 ```ruby
 group :jekyll_plugins do
    gem 'jekyll_picture_tag', ~> '1'
@@ -35,6 +37,12 @@ end
 ```
 
 Install [ImageMagick](https://imagemagick.org/script/index.php) using source download or package manager.
+
+So you can run:
+
+```sh
+$ convert --version
+```
 
 #### Usage
 
