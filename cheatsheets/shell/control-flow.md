@@ -50,12 +50,40 @@ fi
 See [Bash cheatsheet](https://devhints.io/bash) for more info.
 
 
-## One liner status check
+## Variable not set
 
-Check if the status of the previous command was a pass or fail.
+Abort the script if a check evaluates to false. Here we see if a variable is set.
 
 ```sh
-[[ $? -eq 0 ]] && echo 'Passed!' || echo 'Failed!'
+$ [[ -z "$MY_VAR" ]] && (echo 'MY_VAR must be set' ; exit 1)
+```
+
+
+Note the brackets are needed, otherwise on a `true` evaluation of the first condition, the exit will still run.
+
+Using `exit` is good for a script and not for direct terminal use otherwise you will close the terminal tab. 
+
+
+Or in multiple lines.
+
+```sh
+if [[ -z "$MY_VAR" ]]; do 
+  echo 'MY_VAR must be set'
+  exit 1
+fi
+```
+
+
+## One-liner status check
+
+Check if the status of the **previous** command was a pass or fail. This can help if the command is long and you don't want to fit it on one line.
+
+### Skip error
+
+This will keep going and not abort the script.
+
+```sh
+$ [[ $? -eq 0 ]] && echo 'Passed!' || echo 'Failed!'
 ```
 
 Example use:
@@ -73,10 +101,13 @@ Example use:
     Failed!
     ```
 
-Note the `exit` command is added here, but this is good for a script and not for direct terminal use otherwise you will close the terminal tab. Note the brackets to get the correct behavior.
+### Exit on error
+
+Note brackets are needed.
 
 ```sh
-[[ $? -eq 0 ]] && echo 'Passed!' || (echo 'Failed!'; exit 1)
+$ false
+$ [[ $? -eq 0 ]] && echo 'Passed!' || (echo 'Failed!'; exit 1)
 ```
 
 
@@ -85,6 +116,8 @@ Note the `exit` command is added here, but this is good for a script and not for
 This is a multi-line `if` statement, which is useful for more complex statements or if readability is important.
 
 ```sh
+false
+
 if [[ $? -eq 0 ]]; then
   echo 'Passed!'
 else
@@ -96,6 +129,8 @@ fi
 Show message on failure only:
 
 ```sh
+false
+
 if [[ $? -ne 0 ]]; then
   echo 'Failed!';
   exit 1
