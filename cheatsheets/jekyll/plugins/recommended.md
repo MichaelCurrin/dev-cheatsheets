@@ -30,6 +30,8 @@ Install [ImageMagick](https://imagemagick.org/script/index.php) using source dow
 
 ### Usage
 
+[doc](https://rbuchberger.github.io/jekyll_picture_tag/)
+
 Write this: 
 
 {% raw %}
