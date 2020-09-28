@@ -1,5 +1,5 @@
 ---
-title: Jekyll gems
+title: Gems management
 ---
 
 ## Check environment
