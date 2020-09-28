@@ -16,6 +16,8 @@ description: List of recommended plugins I'd like to share
 
 Crop and resize images and serve them responsively.
 
+Repo [rbuchberger/jekyll_picture_tag](https://github.com/rbuchberger/jekyll_picture_tag)
+
 ### Install
 
 [Install doc](https://rbuchberger.github.io/jekyll_picture_tag/users/installation).
