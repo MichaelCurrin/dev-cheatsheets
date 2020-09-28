@@ -4,6 +4,9 @@ title: Pandas
 
 Commands in Pandas which I have used or would like to use. This is not meant to be complete, but cover some common usage situations or some tricky or obscure syntax.
 
+- [Homepage](https://pandas.pydata.org/)
+- [Docs](https://pandas.pydata.org/docs/)
+
 See also:
 
 - [Pandas Cheat Sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) PDF on Pandas main site.
@@ -107,6 +110,7 @@ Get pairs of values and frequency, sorted by frequency descending.
 df['foo'].value_counts()
 ```
 e.g.
+
 ```python
 df = pd.Series([2, 2, 5, 3, 4, np.nan])
 df.value_counts()
