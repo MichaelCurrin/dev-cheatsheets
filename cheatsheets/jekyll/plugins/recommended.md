@@ -11,14 +11,20 @@ description: List of recommended plugins I'd like to share
 - It also includes `noscript` support - fetches the raw content and build time and adds the content to the page so that this works with JS disable.
 - You can also just use the gist's standard embed functionality directly without this plugin, by clicking Embed on a gist or creating script tag yourself. That just requires JS to be enabled.
 
+## Images
 
-## Jekyll Picture Tag
+- https://github.com/mmistakes/jekyll-picture-tag
+- https://github.com/rbuchberger/jekyll_picture_tag
+- https://github.com/CloudCannon/jekyll-resize
+- https://github.com/MichaelCurrin/jekyll-resize (my fork)
+
+### jekyll_picture_tag
 
 Crop and resize images and serve them responsively.
 
 Repo [rbuchberger/jekyll_picture_tag](https://github.com/rbuchberger/jekyll_picture_tag)
 
-### Install
+#### Install
 
 [Install doc](https://rbuchberger.github.io/jekyll_picture_tag/users/installation).
 
@@ -30,7 +36,7 @@ end
 
 Install [ImageMagick](https://imagemagick.org/script/index.php) using source download or package manager.
 
-### Usage
+#### Usage
 
 [doc](https://rbuchberger.github.io/jekyll_picture_tag/)
 
