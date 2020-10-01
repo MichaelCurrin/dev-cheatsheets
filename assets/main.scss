@@ -45,7 +45,8 @@ summary {
   display: list-item;
 }
 
+/* Not to big otherwise the size of the blocks distort, unless text is also made bigger. */
 .logo-small {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 }
