@@ -67,3 +67,12 @@ Result:
     /generated/test-1000-195f7d.jpg 1000w
     ">
 ```
+
+## CMS
+
+### Jekyll Admin
+
+- [Docs homepage](https://jekyll.github.io/jekyll-admin/)
+- GitHub: [jekyll/jekyll-admin](https://github.com/jekyll/jekyll-admin)
+
+
