@@ -59,3 +59,4 @@ Alternatively run:
 ```sh
 $ git pull --rebase
 ```
+
