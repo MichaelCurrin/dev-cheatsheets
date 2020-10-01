@@ -1,0 +1,6 @@
+<svg class="logo-small">
+    {%- capture svg_path -%}
+        assets/img/{{ include.name }}.svg#icon-{{ include.name }}
+    {%- endcapture -%}
+    <use xlink:href="{{ svg_path | relative_url }}"></use>
+</svg>
