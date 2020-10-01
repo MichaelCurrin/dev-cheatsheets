@@ -34,3 +34,8 @@ details:not([open]) > *:not(summary) {
 summary {
   display: list-item;
 }
+
+.logo-small {
+  width: 30px;
+  height: 30px;
+}
