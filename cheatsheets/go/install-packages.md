@@ -1,5 +1,5 @@
 ---
-title: Go install cheatsheet
+title: Install packages
 ---
 
 ```sh
