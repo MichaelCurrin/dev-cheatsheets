@@ -1,4 +1,6 @@
-<svg class="logo-small">
+{% assign _size = include._size | default: 'small' %}
+
+<svg class="logo-{{ _size }}">
     {%- capture svg_path -%}
         assets/img/{{ include.name }}.svg#icon-{{ include.name }}
     {%- endcapture -%}
