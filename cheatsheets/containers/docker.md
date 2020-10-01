@@ -6,9 +6,9 @@ description: The container management tool
 ## Resources
 
 - Cheatsheets
-    - [Docker.com](https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf).
-    - [Devhints](https://devhints.io/docker).
-    - [wsargent/docker-cheat-sheet](https://github.com/wsargent/docker-cheat-sheet) on _Github_.
+    - [Docker.com](https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf) homepage.
+    - [Docker](https://devhints.io/docker) on DevHints.
+    - [wsargent/docker-cheat-sheet](https://github.com/wsargent/docker-cheat-sheet) on _GitHub_.
     - [Ultimate Docker Cheatsheet](https://hackernoon.com/docker-commands-the-ultimate-cheat-sheet-994ac78e2888) as _Hackernoon_ blog post.
     - [Docker cheatsheet](https://dockerlabs.collabnix.com/docker/cheatsheet/) on Dockerlabs.
 
