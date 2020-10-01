@@ -359,12 +359,14 @@ for (var value of ['a', 'b', 'c']) {
 
 [source](https://stackoverflow.com/questions/9872947/changing-svg-image-color-with-javascript)
 
-```html
-<svg id="svg1" xmlns="https://www.w3.org/2000/svg" style="width: 3.5in; height: 1in">
-  <circle id="circle1" r="30" cx="34" cy="34"
-    style="fill: red; stroke: blue; stroke-width: 2"/>
+```xml
+<svg id="svg1" xmlns="https://www.w3.org/2000/svg"
+  style="width: 3.5in; height: 1in">
+    <circle id="circle1" r="30" cx="34" cy="34"
+      style="fill: red; stroke: blue; stroke-width: 2"/>
 </svg>
-<!-- CSS should be used here instead of editing style -->
+
+<!-- CSS should be used here instead of editing style. -->
 <button onclick="circle1.style.fill='yellow';">Click to change to yellow</button>
 ```
 
