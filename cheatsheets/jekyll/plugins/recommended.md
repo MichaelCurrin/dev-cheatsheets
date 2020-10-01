@@ -70,11 +70,30 @@ Result:
 
 ## CMS
 
+### About
+
+You can add one of the plugins below to your Gemfile, install it and when you run serve, you'll get localhost:4000/admin available for you to edit your site in a modern GUI. You don't have to add it to your config file.
+
+You can then upload assets, edit and save pages and data and see stats on your site. You have to go to your repo actually commit and push any changes.
+
+My favorite part is that the admin view makes it easy to make a page or post and edit it with rich text editor. You can even preview images. But your path might not be right on the built site so you then have to insert your image as markdown and with liquid handling of the URL to be relative.
+
+The downside is that since there is **no auth** to login, that tool can only work for running local server.
+This can work for your flow if all your editing is local. And if you do a build command locally or or remotely, you'll just build a static site which acts as if the the admin plugin is not even installed which is good.
+
+#### Warnings
+
+Note that when you start the server, it will automatically run in hot-reload mode so any saved changes cause a server rebuild and refresh of the page. This can take time to rebuild but fortunately the admin view itself is always fast.
+
+Also if you save in files in your IDE, the server will **not** rebuild the site. It only listens for changes from the admin view. So you'll have to save a file in the admin or stop and start your server to see changes.
+
 ### Jekyll Admin
 
 - [Docs homepage](https://jekyll.github.io/jekyll-admin/)
 - GitHub: [jekyll/jekyll-admin](https://github.com/jekyll/jekyll-admin)
 
-##$ Jekyll Manager
+### Jekyll Manager
+
+This is a fork of the above. It has some more advanced features but generally I find the Admin one is fine for my needs.
 
 - GitHub: [ashmaroli/jekyll-manager](https://github.com/ashmaroli/jekyll-manager)
