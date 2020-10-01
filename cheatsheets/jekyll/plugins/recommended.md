@@ -75,4 +75,6 @@ Result:
 - [Docs homepage](https://jekyll.github.io/jekyll-admin/)
 - GitHub: [jekyll/jekyll-admin](https://github.com/jekyll/jekyll-admin)
 
+##$ Jekyll Manager
 
+- GitHub: [ashmaroli/jekyll-manager](https://github.com/ashmaroli/jekyll-manager)
