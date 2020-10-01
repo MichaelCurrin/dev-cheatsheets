@@ -21,14 +21,14 @@
  * This is also smoother using 900 rather than 800 or 800.
  */
 @media screen and (max-width: 900px) {
-    .site-nav {
-        position: absolute;
-        right: 90px;
-    }
+  .site-nav {
+    position: absolute;
+    right: 90px;
+  }
 }
 
 .underline {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Details and summary blocks. Copied from GH Pages without Jekyll. The cursor pointer is the most useful here. */
