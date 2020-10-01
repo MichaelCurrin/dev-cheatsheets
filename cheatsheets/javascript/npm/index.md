@@ -1,6 +1,7 @@
 ---
 title: NPM
 layout: listing
+icon: npm
 ---
 
 ## Resources

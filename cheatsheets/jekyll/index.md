@@ -1,6 +1,7 @@
 ---
 title: Jekyll
 layout: listing
+icon: jekyll
 ---
 
 
@@ -23,5 +24,5 @@ For a guide on getting start with or using Jekyll, see [Jekyll](https://github.c
 
 ### Deploy
 
-- [GitHub Pages](https://github.com/MichaelCurrin/code-resources/blob/master/resources/github-pages.md) resources 
-- [CI/CD](https://github.com/MichaelCurrin/code-cookbook/tree/master/recipes/ci-cd) - how to build, deploy and serve a Jekyll site using Netlify or GitHub Actions. 
+- [GitHub Pages](https://github.com/MichaelCurrin/code-resources/blob/master/resources/github-pages.md) resources
+- [CI/CD](https://github.com/MichaelCurrin/code-cookbook/tree/master/recipes/ci-cd) - how to build, deploy and serve a Jekyll site using Netlify or GitHub Actions.

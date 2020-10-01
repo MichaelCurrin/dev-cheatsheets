@@ -1,6 +1,7 @@
 ---
 title: Node
 layout: listing
+icon: node-dot-js
 ---
 
 

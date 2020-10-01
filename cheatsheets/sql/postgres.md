@@ -1,5 +1,6 @@
 ---
 title: Postgres SQL
+icon: postgres
 ---
 
 ## Docs and tutorials

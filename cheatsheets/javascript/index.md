@@ -1,6 +1,7 @@
 ---
 title: JavaScript
 layout: listing
+icon: javascript
 ---
 
 See also:

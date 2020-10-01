@@ -1,6 +1,7 @@
 ---
 title: Deno
 layout: listing
+icon: deno
 ---
 
 Deno is a JavaScript runtime which is a replacement to Node.js and with a few enhancements.

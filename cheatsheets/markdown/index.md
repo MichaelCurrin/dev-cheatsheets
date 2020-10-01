@@ -1,6 +1,7 @@
 ---
 title: Markdown
 layout: listing
+icon: markdown
 ---
 
 Applies to `.md` or `.markdown` files as both are equivalent.

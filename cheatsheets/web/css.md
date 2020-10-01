@@ -1,5 +1,6 @@
 ---
 title: CSS
+icon: css3
 ---
 
 ## Github Pages CSS

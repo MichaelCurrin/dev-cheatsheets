@@ -1,5 +1,6 @@
 ---
 title: Yarn
+icon: yarn
 ---
 
 ## Install
