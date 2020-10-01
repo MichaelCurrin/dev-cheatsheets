@@ -28,12 +28,14 @@ There are a lot of tools and languages on this site here for my own reference an
 <div class="flex-container">
     <a href="{{ site.baseurl }}{% link cheatsheets/python/index.md %}">
         <div>
-           Python
+            {% include icon.html name="python" %}
+            <span>Python</span>
         </div>
     </a>
     <a href="{{ site.baseurl }}{% link cheatsheets/javascript/index.md %}">
         <div>
-           JavaScript
+            {% include icon.html name="javascript" %}
+            <span>JavaScript</span>
         </div>
     </a>
 </div>
@@ -43,12 +45,14 @@ There are a lot of tools and languages on this site here for my own reference an
 <div class="flex-container">
     <a href="{{ site.baseurl }}{% link cheatsheets/markdown/index.md %}">
         <div>
-           Markdown
+            {% include icon.html name="markdown" %}
+            <span>Markdown</span>
         </div>
     </a>
     <a href="{{ site.baseurl }}{% link cheatsheets/jekyll/index.md %}">
         <div>
-           Jekyll
+            {% include icon.html name="jekyll" %}
+            <span>Jekyll</span>
         </div>
     </a>
 
@@ -59,12 +63,14 @@ There are a lot of tools and languages on this site here for my own reference an
 <div class="flex-container">
     <a href="{{ site.baseurl }}{% link cheatsheets/git/index.md %}">
         <div>
-           Git
+            {% include icon.html name="git" %}
+            <span>Git</span>
         </div>
     </a>
     <a href="{{ site.baseurl }}{% link cheatsheets/shell/index.md %}">
         <div>
-           Shell
+            {% include icon.html name="gnubash" %}
+            <span>Shell</span>
         </div>
     </a>
 
