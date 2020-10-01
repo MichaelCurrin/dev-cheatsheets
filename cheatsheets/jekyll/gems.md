@@ -1,5 +1,5 @@
 ---
-title: Gems management
+title: Gem management
 ---
 
 ## Check environment
