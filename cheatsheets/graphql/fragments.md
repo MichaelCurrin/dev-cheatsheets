@@ -2,9 +2,7 @@
 title: Fragments
 ---
 
-A fragment is a reusasble piece of code, like a function. It has fields and can take parameters.
-
-A fragment does not output the nature of the JSON output.
+A fragment is a reusasble piece of code, like a function. It has fields and can take parameters. A fragment does not affecte nature of the JSON output but makes your code lighter.
 
 
 ## Basic
