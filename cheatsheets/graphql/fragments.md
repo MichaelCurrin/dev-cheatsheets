@@ -2,6 +2,10 @@
 title: Fragments
 ---
 
+A fragment is a reusasble piece of code, like a function. It has fields and can take parameters.
+
+A fragment does not output the nature of the JSON output.
+
 
 ## Basic
 
@@ -55,7 +59,7 @@ query {
 <details>
 <summary>Result</summary>
 	
-```graphql
+```json
 {
   "data": {
     "viewer": {
@@ -100,6 +104,32 @@ query {
 </details>
 
 
+Here is an alternative fragment setup, which gives the same response.
+
+```graphql
+fragment RepoData on Repository {
+  name
+  updatedAt
+}
+
+{
+  viewer {
+    login
+    latest: repositories(first: 3, orderBy: {field: CREATED_AT, direction: DESC}) {
+      nodes {
+        ...RepoData
+      }
+    }
+    oldest: repositories(last: 3, orderBy: {field: CREATED_AT, direction: DESC}) {
+      nodes {
+        ...RepoData
+      }
+    }
+  }
+}
+```
+
+
 ## Variables
 
 Using a variable inside a fragment.
@@ -123,7 +153,7 @@ query HeroComparison ($first: Int = 3) {
 }
 ```
 
-Here we pass a param to a fragment:
+Here we pass on `to` and `from` params to a fragment without having specify them in the fragment.
 
 ```graphql
 fragment weekStats on ContributionsCollection {
