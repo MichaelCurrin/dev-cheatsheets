@@ -1,13 +1,11 @@
 ---
-title: Queries
+title: Basics
 ---
 
 From [Queries and Mutations](https://graphql.org/learn/queries/) section of the GraphQL learn docs.
 
 
-## Basic
-
-### Field
+## Field
 
 ```graphql
 {
@@ -29,9 +27,11 @@ From [Queries and Mutations](https://graphql.org/learn/queries/) section of the 
 ```
 
 
-### Lists
+## Lists
 
-Most of the time when you get a list, you'll have to specify pagination boundaries, which are covered below. See more in [Arguments](#arguments).
+Most of the time when you get a list, you'll have to specify pagination boundaries, which are covered below. See more in [Arguments](arguments.md) and [Paging](paging.md).
+
+### Edges and nodes
 
 ```graphql
 {
@@ -45,7 +45,7 @@ Most of the time when you get a list, you'll have to specify pagination boundari
 }
 ```
 
-Or, shorthand:
+### Nodes
 
 ```graphql
 {
@@ -56,7 +56,6 @@ Or, shorthand:
 	}
 }
 ```
-
 
 
 ## Arguments
@@ -89,6 +88,20 @@ Here we change from metres to feet.
     name
     height(unit: FOOT)
   }
+}
+```
+
+More complex params as a dictionary:
+
+```graphql
+{
+	viewer {
+		repositories(
+			first: 100, 
+			ownerAffiliations: OWNER, 
+			privacy: PUBLIC, 
+			orderBy: { field: UPDATED_AT, direction: DESC })
+	}
 }
 ```
 
