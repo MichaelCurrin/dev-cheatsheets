@@ -31,8 +31,10 @@ print("Hello, world!")
 Some valid references for language-specific styling that I use.
 
 - `markdown` or `md`
+	- The former shows better rendering in the GitHub editor view.
 - `json`
 - `json5`
+	- Support comments without giving red errors when rendered.
 - `python` or `py`
 - `ruby` or `rb`
 - `html`
@@ -41,6 +43,10 @@ Some valid references for language-specific styling that I use.
 - `diff`
 - `liquid`
 - `yaml` or `yml`
+- `regex` or `re`
+	- The former actually provide more/better highlighting when viewing the rendered content.
+- `mk`, `make`, `Makefile` (or lowercase).
+	- These all work, I haven't compared how well though.
 
 
 ## Examples
