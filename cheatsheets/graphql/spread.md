@@ -1,5 +1,5 @@
 ---
-title: Spread
+title: On type
 ---
 
 
@@ -26,3 +26,5 @@ Example:
   }
 }
 ```
+
+See also the Fragments page.
