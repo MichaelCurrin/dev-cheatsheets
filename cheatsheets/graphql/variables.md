@@ -28,7 +28,7 @@ query Foo ($name: String!, $is_released: Boolean!) {
 
 The `$name` can be anything but must match the key in the JSON data. The `name` here is an argument for `foo`, which is dependent on the external schema.
 
-### Sending JSON data
+## Sending JSON data
 
 - Query.
 	```graphql
