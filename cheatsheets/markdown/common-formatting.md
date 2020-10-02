@@ -58,7 +58,7 @@ _Italics_
 _**Nested styling**_
 ```
 
-The following are equivalent, though Github's markdown editor only shows a preview in the edit window for the later.
+The following are equivalent, though GitHub's markdown editor and VS Code only shows a preview in the edit window for the latter (double).
 
 ```markdown
 ~Strikethrough~
@@ -68,12 +68,17 @@ The following are equivalent, though Github's markdown editor only shows a previ
 
 ## Links
 
-```markdown
-[Link](url)
+The target will be used for `href` attribute.
 
-![Image](src)
+```markdown
+[Label](target)
 ```
 
+The target will be used for `src` attribute.
+
+```markdown
+![Label](target)
+```
 
 ## Paragraph
 
