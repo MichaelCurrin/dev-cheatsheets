@@ -28,6 +28,7 @@ From [Queries and Mutations](https://graphql.org/learn/queries/) section of the 
 }
 ```
 
+
 ### Lists
 
 Most of the time when you get a list, you'll have to specify pagination boundaries, which are covered below. See more in [Arguments](#arguments).
@@ -36,10 +37,10 @@ Most of the time when you get a list, you'll have to specify pagination boundari
 {
 	foo (first: 100) {
 		edges {
-      		node {
-        		name
-      		}
-    	}
+			node {
+				name
+			}
+    		}
 	}
 }
 ```
@@ -51,10 +52,11 @@ Or, shorthand:
 	foo (first: 100) {
 		nodes {
 			name
-    	}
+    		}
 	}
 }
 ```
+
 
 
 ## Arguments
@@ -107,55 +109,6 @@ An alias is necessary to avoid an error on duplicate key. By default each one be
 ```
 
 
-## Fragments
-
-### Basic
-
-Define and use a fragment.
-
-```graphql
-fragment comparisonFields on Character {
-  name
-  appearsIn
-  friends {
-    name
-  }
-}
-
-{
-  leftComparison: hero(episode: EMPIRE) {
-    ...comparisonFields
-  }
-  rightComparison: hero(episode: JEDI) {
-    ...comparisonFields
-  }
-}
-```
-
-### Variables
-
-Using a variable inside a fragment.
-
-```graphql
-fragment comparisonFields on Character {
-  name
-  friendsConnection(first: $first) {
-    totalCount
-    # ...
-  }
-}
-
-query HeroComparison($first: Int = 3) {
-  leftComparison: hero(episode: EMPIRE) {
-    ...comparisonFields
-  }
-  rightComparison: hero(episode: JEDI) {
-    ...comparisonFields
-  }
-}
-```
-
-
 ## Operation names
 
 - Basic 
@@ -182,53 +135,3 @@ query HeroComparison($first: Int = 3) {
 	  }
 	}
 	```
-
-
-## Variables
-
-### Basic
-
-Define and use a param. Here we have two and the second is required (`!` means may not be null).
-
-```graphql
-query Foo ($name: String, $bar: Boolean!) {
-	  foo (name: $name) {
-}
-```
-
-The `$name` can be anything but must match the key in the JSON data. The `name` here is an argument for `foo`, which is dependent on the external schema.
-
-Example:
-
-- Query.
-	```graphql
-	query HeroNameAndFriends ($episode: Episode) {
-	  hero(episode: $episode) {
-		name
-		friends {
-		  name
-		}
-	  }
-	}
-	```
-- JSON data.
-	```json
-	{
-	  "episode": "JEDI"
-	}
-	```
-	
-###
-### Default
-
-```graphql
-query Foo ($name: String = "Bar") {
-	  foo (name: $name) {
-}
-```
-
-You might reference a type instead.
-
-```
-($episode: Episode = JEDI) 
-```
