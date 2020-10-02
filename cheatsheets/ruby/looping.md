@@ -3,16 +3,9 @@ title: Looping
 ---
 
 
-## For
-
-```ruby
-for n in [1, 2, 3]
-  puts n
-end
-```
-
-
 ## Each
+
+This is the typical Ruby way to do things.
 
 One-line:
 
@@ -26,5 +19,16 @@ Multi-line:
 [1, 2, 3].each do |n|
   text = "Number:  #{n}"
   puts text
+end
+```
+
+
+## For
+
+This is more like Python.
+
+```ruby
+for n in [1, 2, 3] do
+  puts "Number: #{n}"
 end
 ```
