@@ -27,6 +27,79 @@ fragment comparisonFields on Character {
 ```
 
 
+## GitHub example
+
+Repos from GitHub GraphQL. If you use the wrong type for `on TYPE`, the explorer will warn you in the query and recommend a type.
+
+```graphql
+fragment Repos on RepositoryConnection {
+  nodes {
+    name
+    updatedAt
+  }
+}
+
+query {
+  viewer {
+    login
+    latest: repositories(first: 3, orderBy: {field: CREATED_AT, direction: DESC}) {
+      ...Repos
+    }
+    oldest: repositories(last: 3, orderBy: {field: CREATED_AT, direction: DESC}) {
+      ...Repos
+    }
+  }
+}
+```
+
+<details>
+<summary>Result</summary>
+	
+```graphql
+{
+  "data": {
+    "viewer": {
+      "login": "MichaelCurrin",
+      "latest": {
+        "nodes": [
+          {
+            "name": "table-sniffer",
+            "updatedAt": "2020-09-28T13:26:12Z"
+          },
+          {
+            "name": "territories",
+            "updatedAt": "2020-09-21T15:49:06Z"
+          },
+          {
+            "name": "delize.github.io",
+            "updatedAt": "2020-09-22T08:43:10Z"
+          }
+        ]
+      },
+      "oldest": {
+        "nodes": [
+          {
+            "name": "track-my-life",
+            "updatedAt": "2020-03-08T12:57:41Z"
+          },
+          {
+            "name": "git-sandbox",
+            "updatedAt": "2020-01-23T13:24:55Z"
+          },
+          {
+            "name": "python-flask-app-2016",
+            "updatedAt": "2020-05-31T17:22:32Z"
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+</details>
+
+
 ## Variables
 
 Using a variable inside a fragment.
