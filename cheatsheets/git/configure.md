@@ -104,10 +104,24 @@ $ git pull --ff-only
 fatal: Not possible to fast-forward, aborting.
 ```
 
-If there are remote changes, if will **fail**. Then you can run `git pull --rebase`.
+If there are remote changes, if will **fail**.
 
-If you **do** want a merge commit, then you can just run this after:
+Then you can run this do deliberately choose a rebase.
+
+```sh
+$ git pull --rebase
+```
+
+If you **do** want a merge commit, then you can just run this immediately after:
 
 ```sh
 $ git merge
+```
+
+You've already done the `git fetch` with the pull. So now this will merge `origin/master` into `master`, or the equivalent pair for the branch you're on.
+
+Generated message:
+
+```
+Merge remote-tracking branch 'refs/remotes/origin/master' into master
 ```
