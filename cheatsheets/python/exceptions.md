@@ -20,17 +20,32 @@ Traceback (most recent call last):
 RuntimeError: Message
 ```
 
-## Catch and re-raise
+
+### Catch and re-raise
 
 Python 3 syntax - you don't have to catch and raise `e` explicitly.
+
+Note the original message is kept. For debugging it can be useful to print the value that was used in a function as here.
 
 ```python
 try:
     foo = "My foo"
-    bar(foo)
+    bar('foo')
 except Exception:
     print(f"Foo: {foo}")
     raise
+```
+
+### Set custom message and reraise
+
+Here we change the message before reraising. Example is based on the docs.
+
+```
+try:
+    ...
+except SomeException:
+    tb = sys.exc_info()[2]
+    raise OtherException(...).with_traceback(tb)
 ```
 
 
