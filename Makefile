@@ -18,6 +18,9 @@ upgrade:
 
 s serve:
 	bundle exec jekyll serve --trace --livereload
+i serve-i:
+	bundle exec jekyll serve --trace --livereload --incremental
+
 
 build-dev:
 	bundle exec jekyll build
