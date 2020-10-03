@@ -65,7 +65,7 @@ So here are your options for `.gitconfig` under `[pull]` heading.
 
 ```toml
 [pull]
-rebase = false
+    rebase = false
 ```
 This was what we are used to.
 
@@ -76,7 +76,7 @@ Running `git pull` will create a merge commit if there are upstream changes. Thi
 
 ```toml
 [pull]
-rebase = true
+    rebase = true
 ```
 
 This means that `git pull` effectively does this:
@@ -93,7 +93,7 @@ The **problem** is that when setting the config as above, the pull will fail if 
 
 ```toml
 [pull]
-ff = "only"
+    ff = "only"
 ```
 
 This approach will attempt to do a `git pull` to get the branch up to date with the remote and fast-forward if possible. Equivalent to:
