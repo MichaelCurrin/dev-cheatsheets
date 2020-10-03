@@ -35,7 +35,7 @@ $ git config -e --global user.email nsurname@example.com
 ```
 
 
-## Merging
+## Configure merge strategy for pull
 
 If your pull strategy is not configured, `git` will now give this warning running `git pull`:
 
