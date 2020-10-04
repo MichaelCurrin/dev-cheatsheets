@@ -2,7 +2,7 @@
 
 <svg class="logo-{{ _size }}">
     {%- capture svg_path -%}
-        assets/img/{{ include.name }}.svg#icon-{{ include.name }}
+        https://michaelcurrin.github.io/logos/assets/img/{{ include.name }}.svg#logo-{{ include.name }}
     {%- endcapture -%}
     <use xlink:href="{{ svg_path | relative_url }}"></use>
 </svg>
