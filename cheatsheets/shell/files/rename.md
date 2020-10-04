@@ -1,6 +1,10 @@
 ---
-title: Rename files shell
+title: Rename
+description: How to batch rename files using shell commands
 ---
+
+
+## Notes
 
 Be careful not use reserved variables like `PATH` otherwise things can break. Use `file`, `FILE`, `p` or `PATH`.
 
@@ -33,13 +37,13 @@ Rename `.foo` to `.bar`. Note that the `*` glob is necessary otherwise you'll ge
 find . -name "*.foo" -exec bash -c 'mv "$1" "${1%.foo}".bar' - '{}' \;
 ```
 
-Using `git mv`.
+Using `git mv`:
 
 ```sh
 find . -name "*-it.md" -exec bash -c 'mv "$1" "${1%-it.md}".md' - '{}' \;
 ```
 
-Using `find` and [rename](#rename-tool)
+Using `find` and [rename](#rename-tool):
 
 ```sh
 find . -name "*.foo" -exec rename 's/\.foo$/.bar/' '{}' \;
@@ -47,7 +51,7 @@ find . -name "*.foo" -exec rename 's/\.foo$/.bar/' '{}' \;
 
 [source](https://askubuntu.com/questions/35922/how-do-i-change-extension-of-multiple-files-recursively-from-the-command-line)
 
-Use `find` to change extension from `.foo` to `.bar`.
+Use `find` to change extension from `.foo` to `.bar`:
 
 ```sh
 find . -depth -name "*.foo" -exec sh -c 'mv "$1" "${1%.foo}.bar"' _ {} \;
@@ -72,7 +76,7 @@ Here we replace extension `.foo` with `.bar` using a `for` loop:
 for file in *.foo; do mv -- "$file" "${file%.foo}.bar"
 ```
 
-Replace space with underscore in certain file types using parameter expansion.
+Replace space with underscore in certain file types, using parameter expansion.
 
 ```sh
 for P in *.doc *.mp3 *.wav *.txt; do
@@ -91,7 +95,6 @@ for P in **/README.md; do git mv -v "$P" "${P//README.md/index.md}"; done
 Use `-n|--dry-run` flag to preview first. The `-v|--verbose` flag is implied with that.
 
 Replace an _underscore_ with a _dash_ in file and directory names - using [globstar].
-
 
 ```sh
 for P in **/*_*; do
