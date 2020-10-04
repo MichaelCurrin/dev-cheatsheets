@@ -1,7 +1,7 @@
 ---
 title: Node
 layout: listing
-icon: node-dot-js
+logo: node-dot-js
 ---
 
 

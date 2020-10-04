@@ -1,6 +1,6 @@
 ---
 title: CSS
-icon: css3
+logo: css3
 ---
 
 ## Github Pages CSS

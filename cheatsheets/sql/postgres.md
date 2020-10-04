@@ -1,6 +1,6 @@
 ---
 title: PostgresSQL
-icon: postgres
+logo: postgres
 ---
 
 ## Docs and tutorials

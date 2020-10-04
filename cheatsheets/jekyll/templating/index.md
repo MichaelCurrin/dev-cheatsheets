@@ -62,7 +62,7 @@ Sample text:
 For an icon, use one of:
 
 - Unicode emoji, safe to use in HTML: 📝
-- FontAwesome icon: `<i class="fa fa-pencil"></i>`
+- FontAwesome logo: `<i class="fa fa-pencil"></i>`
 
 ### Jekyll
 

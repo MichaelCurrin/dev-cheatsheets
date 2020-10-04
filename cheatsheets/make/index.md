@@ -1,5 +1,5 @@
 ---
 title: Make
 layout: listing
-icon: cmake
+logo: cmake
 ---

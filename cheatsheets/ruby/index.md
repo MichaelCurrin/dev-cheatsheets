@@ -1,5 +1,5 @@
 ---
 title: Ruby
 layout: listing
-icon: ruby
+logo: ruby
 ---

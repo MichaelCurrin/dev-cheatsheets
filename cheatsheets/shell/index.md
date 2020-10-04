@@ -1,7 +1,7 @@
 ---
 title: Shell
 layout: listing
-icon: gnubash
+logo: gnubash
 ---
 
 Unix shell cheatsheet for macOS/Linux

@@ -1,7 +1,7 @@
 ---
 title: Git
 layout: listing
-icon: git
+logo: git
 ---
 
 See also [Git](https://github.com/MichaelCurrin/learn-to-code/tree/master/Version%20control/Git) section of Learn to Code repo.

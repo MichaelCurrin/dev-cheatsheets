@@ -1,7 +1,7 @@
 ---
 title: Jekyll
 layout: listing
-icon: jekyll
+logo: jekyll
 ---
 
 

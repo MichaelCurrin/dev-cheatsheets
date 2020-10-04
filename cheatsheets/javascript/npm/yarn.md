@@ -1,6 +1,6 @@
 ---
 title: Yarn
-icon: yarn
+logo: yarn
 ---
 
 ## Install

@@ -1,7 +1,7 @@
 ---
 title: Python
 layout: listing
-icon: python
+logo: python
 ---
 
 Some useful commands, boilerplate code from my existing projects or things to use in new development.

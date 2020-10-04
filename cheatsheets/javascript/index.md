@@ -1,7 +1,7 @@
 ---
 title: JavaScript
 layout: listing
-icon: javascript
+logo: javascript
 ---
 
 See also:

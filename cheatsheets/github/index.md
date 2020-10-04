@@ -1,5 +1,5 @@
 ---
 title: GitHub
 layout: listing
-icon: github
+logo: github
 ---

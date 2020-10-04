@@ -1,5 +1,5 @@
 ---
 title: Go
 layout: listing
-icon: go
+logo: go
 ---
