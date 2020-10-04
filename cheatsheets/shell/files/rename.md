@@ -57,7 +57,7 @@ Use `find` to change extension from `.foo` to `.bar`:
 find . -depth -name "*.foo" -exec sh -c 'mv "$1" "${1%.foo}.bar"' _ {} \;
 ```
 
-Use [globstar] to get recursive globs (`**`) - only Bash 4+ or ZSH.
+Use [globstar][] to get recursive globs (`**`) - only Bash 4+ or ZSH.
 
 
 ```sh
@@ -94,7 +94,7 @@ for P in **/README.md; do git mv -v "$P" "${P//README.md/index.md}"; done
 
 Use `-n|--dry-run` flag to preview first. The `-v|--verbose` flag is implied with that.
 
-Replace an _underscore_ with a _dash_ in file and directory names - using [globstar].
+Replace an _underscore_ with a _dash_ in file and directory names - using [globstar][].
 
 ```sh
 for P in **/*_*; do
