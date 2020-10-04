@@ -79,3 +79,8 @@ Does jekyll belong in static site resources repo?
 
 
 Would it be worth splitting out something like webserver file into multiple files? These can also be tagged or linked somehow with the original language. Then the files can be here or in the language, or both with a symlink.
+
+Find links on the site which are not made with {% link %}
+    VS Code regex:
+        \[.*\]\([^{h#]
+    Excludes https and ID tags.
