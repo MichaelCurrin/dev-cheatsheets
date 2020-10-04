@@ -40,10 +40,10 @@ find . -name "*.foo" -exec bash -c 'mv "$1" "${1%.foo}".bar' - '{}' \;
 Using `git mv`:
 
 ```sh
-find . -name "*-it.md" -exec bash -c 'mv "$1" "${1%-it.md}".md' - '{}' \;
+find . -name "*.foo" -exec bash -c 'git mv "$1" "${1%.foo}".bar' - '{}' \;
 ```
 
-Using `find` and [rename](#rename-tool):
+Using `find` and the [rename](#rename-tool):
 
 ```sh
 find . -name "*.foo" -exec rename 's/\.foo$/.bar/' '{}' \;
