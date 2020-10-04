@@ -13,6 +13,8 @@ Be careful about globbing on hidden directories - as you can break `.git`.
 
 ## Change extension
 
+The `find` command is probably more efficient and could let you run multiple commands, but using the `for` loop has more familiar syntax. There may be trade-offs for each when it comes to renaming (or moving) a directory, since it will affect future traversing steps in the same sequence. Using `find` might give more precision on the filename and type compared to using a `*` glob with `for` and having to use `if` statements in the loop to do checks. 
+
 ### Find command
 
 Note that the `find` command will work recursively by default.
@@ -54,19 +56,28 @@ find . -name "*.foo" -exec rename 's/\.foo$/.bar/' '{}' \;
 Use `find` to change extension from `.foo` to `.bar`:
 
 ```sh
-find . -depth -name "*.foo" -exec sh -c 'mv "$1" "${1%.foo}.bar"' _ {} \;
+find . -depth -name "*.foo" -exec sh -c 'mv "$1" "${1%.foo}.bar"' - {} \;
 ```
 
-Use [globstar][] to get recursive globs (`**`) - only Bash 4+ or ZSH.
+Remove `-` and test with `echo`.
 
+```sh
+$ find . -name README.md -exec bash -c 'echo $0' '{}' \;
+ci-cd/circle-ci/README.md
+ci-cd/README.md
+ci-cd/netlify/README.md
+...
+```
+
+### For loop
+
+Use [globstar][] to get recursive globs (`**`) - only Bash 4+ or ZSH.
 
 ```sh
 for file in PATH/**/*.foo; do
   mv "$file" "${file%.foo}.bar"
 done
 ```
-
-### For loop
 
 [source](https://www.howtogeek.com/423214/how-to-use-the-rename-command-on-linux/)
 
@@ -86,13 +97,13 @@ done
 
 Note the replacement syntax is different to that of `sed`. (Also, the double dash will skip files that are unchanged I think. Or use `mv -i`?)
 
-Here we rename `README.md` to `index.md`:
+Here we rename `README.md` to `index.md` (rather than changing extension):
 
 ```sh
 for P in **/README.md; do git mv -v "$P" "${P//README.md/index.md}"; done
 ```
 
-Use `-n|--dry-run` flag to preview first. The `-v|--verbose` flag is implied with that.
+Use `-n|--dry-run` flag to preview first (Linux only). Using he `-v|--verbose` flag is implied with that.
 
 Replace an _underscore_ with a _dash_ in file and directory names - using [globstar][].
 
