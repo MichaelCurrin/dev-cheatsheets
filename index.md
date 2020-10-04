@@ -22,13 +22,13 @@ Welcome to **Dev Cheatsheets** - a quick reference for showing you how to use a 
 <div class="flex-container">
     <a href="{{ site.baseurl }}{% link cheatsheets/python/index.md %}">
         <div>
-            {% include icon.html name="python" %}
+            {% include logo.html name="python" %}
             <span>Python</span>
         </div>
     </a>
     <a href="{{ site.baseurl }}{% link cheatsheets/javascript/index.md %}">
         <div>
-            {% include icon.html name="javascript" %}
+            {% include logo.html name="javascript" %}
             <span>JavaScript</span>
         </div>
     </a>
@@ -39,13 +39,13 @@ Welcome to **Dev Cheatsheets** - a quick reference for showing you how to use a 
 <div class="flex-container">
     <a href="{{ site.baseurl }}{% link cheatsheets/markdown/index.md %}">
         <div>
-            {% include icon.html name="markdown" %}
+            {% include logo.html name="markdown" %}
             <span>Markdown</span>
         </div>
     </a>
     <a href="{{ site.baseurl }}{% link cheatsheets/jekyll/index.md %}">
         <div>
-            {% include icon.html name="jekyll" %}
+            {% include logo.html name="jekyll" %}
             <span>Jekyll</span>
         </div>
     </a>
@@ -57,13 +57,13 @@ Welcome to **Dev Cheatsheets** - a quick reference for showing you how to use a 
 <div class="flex-container">
     <a href="{{ site.baseurl }}{% link cheatsheets/git/index.md %}">
         <div>
-            {% include icon.html name="git" %}
+            {% include logo.html name="git" %}
             <span>Git</span>
         </div>
     </a>
     <a href="{{ site.baseurl }}{% link cheatsheets/shell/index.md %}">
         <div>
-            {% include icon.html name="gnubash" %}
+            {% include logo.html name="gnubash" %}
             <span>Shell</span>
         </div>
     </a>
