@@ -1,5 +1,6 @@
 ---
 title: Default target
+description: Setting the default command if no args are given to `make`
 ---
 
 
@@ -57,7 +58,7 @@ Alternatively use `.DEFAULT_GOAL`
 e.g.
 
 ```make
-.DEFAULT_GOAL := build
+.DEFAULT_GOAL = build
 
 dev: deps serve
 build: deps site
