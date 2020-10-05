@@ -3,7 +3,7 @@ title: Variables
 ---
 
 
-## Setting variasbles
+## Setting variables
 
 From [Setting Variables](https://www.gnu.org/software/make/manual/html_node/Setting.html) in the docs.
 
@@ -59,8 +59,17 @@ But also make sure not to overwrite a value set already, such as with Netlify se
 
 ```make
 export GITHUB_TOKEN := $(if $(GITHUB_TOKEN), $(GITHUB_TOKEN), '')
+
+foo:
+    # ...
 ```
 
+Using the Bash `export` style.
+```mk
+foo:
+	@export ENVIRONTMENT=prod
+    # ...
+```
 
 ## Defaults files
 
