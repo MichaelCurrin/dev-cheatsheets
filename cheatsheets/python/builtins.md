@@ -1,5 +1,5 @@
 ---
-title: Python builtins
+title: Builtins
 ---
 
 ## Range
@@ -35,7 +35,6 @@ python -c 'print(list(range(1, 10, 2)))'
 
 
 ## Enum
-
 
 - [Enum](https://docs.python.org/3/library/enum.html) in PY 3 docs.
 
@@ -88,6 +87,7 @@ class Color(Enum):
 list(Color)
 # => [<Color.RED: 1>, <Color.BLUE: 2>, <Color.GREEN: 3>]
 ```
+
 
 ## Data Class
 
