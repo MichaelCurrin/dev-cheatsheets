@@ -2,11 +2,12 @@
 title: Challenges
 ---
 
+
 ## Fibonacci
 
-### While loop
+[Fibonacci sequence](https://www.mathsisfun.com/numbers/fibonacci-sequence.html)
 
-No function is used here.
+### While loop
 
 ```python
 a, b = 0, 1
