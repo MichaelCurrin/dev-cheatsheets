@@ -3,14 +3,53 @@ title: Variables
 ---
 
 
-## Basic
+## Setting variasbles
+
+From [Setting Variables](https://www.gnu.org/software/make/manual/html_node/Setting.html) in the docs.
+
+- Use `=`, `:=`, or `::=` and a value.
+- White space is ignored.
+
+
+### Simple
+
+Example:
 
 ```mk
+FOO =
+CXX = g++
+objects = main.o foo.o bar.o utils.o
 SHELL = /bin/bash
 JS_DIR = assets/js
 ```
 
-Sometimes you'll see `:=` instead of `=`.
+### Evaluate
+
+- Using `!= ...`. 
+    > If the result of the execution could produce a `$`, and you don’t intend what follows that to be interpreted as a `make` variable or function reference, then you must replace every `$` with `$$` as part of the execution.
+    ```mk
+    hash != printf '\043'
+    file_list != find . -name '*.c'
+    ```
+- Using `:= $(shell ...)`
+    ```mk
+    hash := $(shell printf '\043')
+    var := $(shell find . -name "*.c")
+    ```
+
+### Default value
+
+> If you’d like a variable to be set to a value only if it’s not already set, then you can use the shorthand operator `?=` instead of `=`. These two settings of the variable ‘FOO’ are identical:
+
+```mk
+FOO ?= bar
+```
+
+```mk
+ifeq ($(origin FOO), undefined)
+FOO = bar
+endif
+```
 
 
 ## Export variables
@@ -22,22 +61,23 @@ But also make sure not to overwrite a value set already, such as with Netlify se
 export GITHUB_TOKEN := $(if $(GITHUB_TOKEN), $(GITHUB_TOKEN), '')
 ```
 
-## Default variables
 
-Setup default values to be overridden by the user.
+## Defaults files
+
+Setup default values in another file.
 
 
 Set defaults.
 
 - `defaults.mk`
     ```mk
-    FOO=${FIZZ}
-    BAR=${BUZZ}
+    FIZZ=${FIZZ}
+    BUZZ=${BUZZ}
 
     export
     ```
 
-Import defaults.
+Import the defaults.
 
 - `Makefile`
     ```make
