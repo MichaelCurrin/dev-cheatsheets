@@ -16,8 +16,9 @@ class Foo
   end
 end
 
-f = Foo.new
+f = Foo.new(12)
 f.bar
+# 12
 ```
 
 
@@ -25,12 +26,12 @@ f.bar
 
 ```ruby
 class Foo
-  def baz
+  def foo
     puts 'Hello'
   end
   
   def bar
-    self.baz
+    self.foo
   end
 end
 
