@@ -71,6 +71,23 @@ Welcome to **Dev Cheatsheets** - a quick reference for showing you how to use a 
 </div>
 
 
+## Quick reference
+
+A few commands or code snippets that I want to keep all in one place, instead of within each category like Shell or Grep.
+
+```sh
+grep -r TERM .
+# find alias
+fn TERM
+```
+
+```ruby
+group :jekyll_plugins do
+  # ...
+end
+```
+
+
 ## About
 
 These are all in one place so you don't have to look at docs, man pages, tutorials. Sometimes, there are links to other Cheatsheet guides which do a good job.
