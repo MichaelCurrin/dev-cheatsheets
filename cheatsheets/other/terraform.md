@@ -146,7 +146,6 @@ Or for a target directory.
 $ terraform apply DIR
 ```
 
-
 ### Development
 
 Format the Terraform code.
@@ -193,6 +192,13 @@ Example:
 $ WS_NAME=foo
 $ terraform workspace select $WS_NAME || terraform workspace new $WS_NAME
 ```
+
+### Import
+
+```sh
+terraform import RESOURCE_TYPE.NAME ID
+```
+
 
 ### Alias
 
