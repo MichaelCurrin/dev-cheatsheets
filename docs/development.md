@@ -11,6 +11,8 @@ Recommended tool for markdown editing:
 
 - [stackedit.io](https://stackedit.io/)
 
+Warning: Adjust the autosave to be say every 5 or 10 minutes so it doesn't trigger a site rebuild every 2 minutes.
+
 
 ## Structure
 
@@ -38,6 +40,7 @@ Find all `index.md` files which do not match the layout.
 ```sh
 $ grep -L listing $(find . -type f -name index.md )
 ```
+
 Sample output before these were fixed:
 
 ```
