@@ -1,15 +1,31 @@
 ---
 title: Replace
+description: Find and replace text in a file, a variable or a string
 ---
 
-Find and replace text in files.
+
+## Using shell variable expansion
+
+Using a variable. 
+
+Syntax: `${VARNAME/FIND/REPLACE}`.
+
+```sh
+$ x=football
+$ echo ${x/foo/bar}
+bartball
+```
 
 
-## Regex pattern
+## Using sed and a regex pattern
 
 Regex substitution is used in this guide. Test your pattern at [regex101.com](https://regex101.com/).
 
-Example
+Syntax: `s/FIND/REPLACE/g`.
+
+The `g` is for global and is more useful for files and multi-line strings than for one-line strings.
+
+Example:
 
 ```sh
 s/foo/bar/g
@@ -19,19 +35,33 @@ Use `g` for global. Add `I` after `g` for case insensitive flag.
 
 Some characters must be escaped such as with backslash.
 
+### Replace word
 
-## Replace word in text
+Using a string.
 
 ```sh
 $ echo 'football' | sed 's/foo/bar/g'
+bartball
+```
+
+Using a variable.
+
+```sh
+$ x='football'
+$ echo $x | sed 's/foo/bar/g'
+bartball
 ```
 
 ### Replace newline character
+
+Using `sed`.
 
 ```sh
 # echo 'Hello\nworld' | sed 's/\\n/ /'
 Hello world
 ```
+
+Using `tr`.
 
 ```sh
 $ echo 'Hello\nworld' | tr '\\n' ' '
@@ -75,7 +105,6 @@ On macOS you have to provide an argument - even if its an empty string for no ba
 $ sed -i '.bak' PATTERN PATH
 $ sed -i '' PATTERN PATH
 ```
-
 
 
 ## Replace word in file
@@ -139,7 +168,6 @@ I don't think it goes into a directory though and it gives errors on processing 
 
 ## Delete lines
 
-
 Delete an entire line matching pattern.
 
 ### sed
@@ -198,7 +226,6 @@ Using `find`:
 ```sh
 $ find ./ -type f -exec sed -i 's/foo/bar/g' {} \;
 ```
-
 
 From [StackOverflow](https://stackoverflow.com/questions/11392478/how-to-replace-a-string-in-multiple-files-in-linux-command-line)
 
