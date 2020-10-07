@@ -4,7 +4,7 @@ description: Find and replace text in a file, a variable or a string
 ---
 
 
-## Using shell variable expansion
+## Using shell parameter expansion
 
 Using a variable. 
 
@@ -14,6 +14,8 @@ Syntax: `${VARNAME/FIND/REPLACE}`.
 $ x=football
 $ echo ${x/foo/bar}
 bartball
+$ echo ${x/foo/}
+tball
 ```
 
 
@@ -42,6 +44,8 @@ Using a string.
 ```sh
 $ echo 'football' | sed 's/foo/bar/g'
 bartball
+$ echo 'football' | sed 's/foo/bar/g'
+tball
 ```
 
 Using a variable.
