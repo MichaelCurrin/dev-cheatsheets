@@ -2,7 +2,7 @@
 title: Images
 ---
 
-Images in mardown as similar to a hyperlink, except it starts with an **exclamation mark**.
+Images in markdown as similar to a hyperlink, except it starts with an **exclamation mark**.
 
 The following apply, as with standard links:
 
@@ -13,19 +13,31 @@ The following apply, as with standard links:
 
 ## General format
 
-```markdown
-![Alt text](target)
+```md
+![ALT_TEXT](IMG_SRC)
 
-![Alt text](target "Hover text")
+![ALT_TEXT](IMG_SRC "HOVER TEXT")
 ```
 
-Example codCode sample:
+Example code:
 
-```markdown
-![My image](foo.jpg)
+```md
+![My foo](foo.jpg)
+
+![My foo](foo.jpg "A message about foo")
 ```
 
-Note that for local paths, the target is **case sensitive**. Github will show an error otherwise. Some IDE extensions are case-insensitive and so hide errors that will appear on Github.
+### Notes
+
+- For local paths, the target is **case sensitive**. GitHub will show an error otherwise. Some IDE extensions are case-insensitive and so hide errors that will appear on GitHub.
+- You can include multiple images on one line.
+    ```md
+    ![foo](foo.png) ![bar](bar.png)
+    ```
+- By default, an image tag alone will lead to a large version of the image (maybe not on static sites). But you can add a link around an image so clicking it goes somewhere.
+    ```md
+    [![ALT_TEXT](IMG_SRC)](CLICK TARGET)
+    ```
 
 
 ## Example of inline vs reference style
@@ -37,40 +49,22 @@ Example:
 
 **Code**:
 
-```
+```md
 ![Alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover")
 ```
 
 **Result:**
 
-
 Code:
 
-```
+```md
 ![Alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover")
-
 ```
 
 
 ### Reference-style
 
-
 **Code**:
-
-```markdownExample:
-
-![Alt text][logo]
-
-Some more text.
-
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover"
-
-There is a logo above but this elemement but it is not visible in the rendered HTML.
-```
-
-**Result**:
-
-Code:
 
 ```markdown
 ![Alt text][logo]
@@ -79,8 +73,18 @@ Some more text.
 
 [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover"
 
-There is a logo above but this elemement but it is not visible in the rendered HTML.
+There is a logo above but this element but it is not visible in the rendered HTML.
 ```
+
+**Result**:
+
+![Alt text][logo]
+
+Some more text.
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "This text shows on hover"
+
+There is a logo above but this element but it is not visible in the rendered HTML.
 
 
 ## Plain HTML
@@ -104,9 +108,9 @@ Here we make the image clickable, to emulate what a markdown image does.
 
 Resize and center an image using HTML attributes.
 
-Github also sets max-width to `100%` on the CSS when rendering the page, so that means your image can take up a lot of space.
+GitHub also sets max-width to `100%` on the CSS when rendering the page, so that means your image can take up a lot of space.
 
-A good way to do this is set the exact height - letting the pixel width change based on desktop or mobile. Fine-the value per image.
+A good way to do this is set the exact height - letting the pixel width change based on desktop or mobile. Fine-tune the value per image.
 
 ```html
 <p align="center">
@@ -118,9 +122,11 @@ Or use a relative width value:
 
 - `width="80%"`
 
+<!-- Does that work ^ ? -->
+
 Notes:
 
-- Centering and resizing as above **cannot** be achieved by setting CSS (inline or in a style tag) on Github, so you must update attributes of the tags.
+- Centering and resizing as above **cannot** be achieved by setting CSS (inline or in a style tag) on GitHub, so you must update attributes of the tags. The `align` attribute works for now in HTML5 but will eventually stop as it is deprecated.
 - The resizing above works for _HTML_ tags in markdown, but resizing cannot be done for _markdown_ image. At least in Github-flavored implementation of markdown - some other systems support resizing e.g. `![Alt](img.jpg =60x50)`.
 - The image will be hyperlinked to the full size version of the image, unless you add an anchor tag.
 
@@ -139,7 +145,7 @@ Example:
     <a href="https://michaelcurrin.github.io/unicron/">
         <img width="250" src="docs/_media/logo.png" alt="Unicron logo" />
 
-![Github Pages site](https://img.shields.io/badge/docs-Github_Pages-f967f9?style=for-the-badge)
+![GitHub Pages site](https://img.shields.io/badge/docs-GitHub_Pages-f967f9?style=for-the-badge)
     </a>
 
 </div>
@@ -164,7 +170,7 @@ The badge could also be converted to an `img` tag for consistency. Then a line b
 
 Format:
 
-```markdown
+```md
 ![Alt text](foo.svg)
 
 ![Alt text](https://example.com/foo.svg)
@@ -174,7 +180,7 @@ Example
 
 **Code:**:
 
-```markdown
+```md
 ![Alt text](https://placeholder.pics/svg/200x60/DEDEDE/555555/Sample%20SVG)
 ```
 
@@ -183,43 +189,41 @@ Example
 ![Alt text](https://placeholder.pics/svg/200x60/DEDEDE/555555/Sample%20SVG)
 
 
-### Github links
+### GitHub links
 
-#### raw.githubusercontent.com
+#### Using raw.githubusercontent.com
 
-If you reference an image on Github through the Raw button, you get a link on `raw.githubusercontent.com`. You might add this to the URL to avoid getting an error: `?sanitize=true`.
+If you reference an image on GitHub through the _Raw_ button, you get a link on `raw.githubusercontent.com`. You must add this to the URL to avoid getting an error: `?sanitize=true`.
 
- Example of the above. This could be markdown but is HTML to set the width.
+Example of the above. This could be markdown too, but is HTML to set the width.
 
 ```html
 <img width="100px"
-     src="https://raw.githubusercontent.com/graphql/graphql-spec/master/resources/GraphQL%20Logo.svg?sanitize=true">
+     src="https://raw.githubusercontent.com/graphql/graphql-spec/master/resources/GraphQL%20Logo.svg?sanitize=true" />
 ```
 
 <img width="100px"
-     src="https://raw.githubusercontent.com/graphql/graphql-spec/master/resources/GraphQL%20Logo.svg?sanitize=true">
+     src="https://raw.githubusercontent.com/graphql/graphql-spec/master/resources/GraphQL%20Logo.svg?sanitize=true" />
 
 Image link from Wikipedia icon [here](https://en.wikipedia.org/wiki/GraphQL).
 
-If you use a different domains below, though you do **not** need the sanitize parameter.
+If you use a different domains below, though you do **not** need the `sanitize` parameter.
 
-### github.io
+### Using github.io
 
-No sanitize parameter needed.
+An asset hosted on a GitHub Pages site.
 
-i.e. A Github Pages site's asset.
-
-```markdown
+```md
 ![Alt text](https://potherca-blog.github.io/StackOverflow/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
 ```
 
 ![Alt text](https://potherca-blog.github.io/StackOverflow/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
 
-### rawgithub.com
+### Using rawgithub.com
 
-No sanitize parameter needed.
+Raw content on GitHub. This could use reference a branch, tag, or commit hash reference.
 
-```markdown
+```md
 ![Alt text](https://rawgithub.com/potherca-blog/StackOverflow/master/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
 ```
 
