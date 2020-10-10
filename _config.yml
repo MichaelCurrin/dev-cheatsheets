@@ -34,8 +34,9 @@ exclude:
   - README.md
 
 # Warning - there are memory issues when using a pattern to define listing
-# layout for `cheatsheets/**/index.md` or even `cheatsheets/*/index.md`,
-# therefore it is best to be explicit in each index file.
+# layout for `cheatsheets/**/index.md` or even `cheatsheets/*/index.md`.
+# And you can only use path (and type) and not name.
+# Therefore it is best to be explicit in each index file to set its layout.
 defaults:
   - scope:
       path: ""
