@@ -1,6 +1,5 @@
 ---
 title: Links
-# link tag must still be made raw so setting render_with_liquid does not work here
 ---
 
 {% raw %}
@@ -17,8 +16,7 @@ The downside to this approach that it uses a literal string - is does not valida
 
 ```markdown
 - [Link text]({{ '/' | relative_url }})
-
-- [Link text]({{ 'foo/' | relative_url }})
+- [Link text]({{ 'asserts/foo.js' | relative_url }})
 ```
 
 If you reference a page object, then it is safer to expect the URL to be valid - use of config settings might affect this though such as permalink or collections.
@@ -37,66 +35,21 @@ Use a `for` loop on pages or a collection.
 {% endfor %}
 ```
 
-### Link tag
+## Liquid tags
+
+Use a Jekyll Liquid tag link to link to page rather than by URL. This is great for reliability, as means you will get an error if a link is invalid.
+
+### Link tag for pages
 
 Use the `link` tag. The smart way to do links for local pages.
 
-This will figure out the appropriate URL. And it will give build error if the page path is not valid.  Note - do NOT use quotes around the URL otherwise they will be rendered as escaped quote tags and possibly break the HTML.
+No colon and no quotes. (A quotes path will rendered as escaped quote tags and possibly break the HTML)
 
-e.g.
-
-```markdown
-[Link text]({{ site.baseurl}} {% link about.md %}) - Jekyll 3
-
-[Link text]({% link about.md %}) - Jekyll 4
+```liquid
+{% link PATH %}
 ```
 
-
-Result:
-
-```html
-<a href="/my-base-url/about.html">Link text</a>
-```
-
-You can pass a variable too:
-
-```markdown
-[Link text]({% link {{ item }} %})
-```
-
-This works well for Jekyll 4 - which adds base URL for you. Otherwise you must do:
-
-
-```markdown
-{{ site.baseurl }}{% link about.md %}
-```
-
-
-## Footer links
-
-More Markdown then Jekyll, but still useful to keep text readable. Also this link be just below the paragraph rather than the end of the page.
-
-```
-This paragraph covers [CircleCI][0], [GitHub][1] and also [Bitbucket][2].
-
-[0]: https://circleci.com/
-[1]: https://github.com/
-[2]: https://bitbucket.org/
-```
-
-## Liquid links
-
-Link to an internal page using the path to the file in the project, not on the URL. This means you will get an error if a link is invalid.
-
-*Since Jekyll 4.0 , you don’t need to prepend `link` and `post_url` tags with `site.baseurl`.*
-
-Examples from [docs](https://jekyllrb.com/docs/liquid/tags/).
-
-
-### Link to page
-
-Extension must be included.
-
+Examples below are from [docs](https://jekyllrb.com/docs/liquid/tags/).
 
 ```liquid
 {% link _collection/name-of-document.md %}
@@ -105,9 +58,30 @@ Extension must be included.
 {% link /assets/files/doc.pdf %}
 ```
 
+Since Jekyll 4.0, you don’t need to prepend `link` and `post_url` tags with `site.baseurl`.
 
-### Link to post
+- Jekyll 3
+    ```md
+    Link text]({{ site.baseurl}} {% link about.md %})
+    ```
+- Jekyll 4
+    ```md
+    [Link text]({% link about.md %})
+    ```
 
+Result:
+
+```html
+<a href="/my-base-url/about.html">Link text</a>
+```
+
+You can pass a variable too (maybe only in Jekyll 4 as I got errors on this when testing).
+
+```markdown
+[Link text]({% link {{ item }} %})
+```
+
+### The Post URL tag for posts
 
 ```liquid
 {% post_url 2010-07-21-name-of-post %}
@@ -120,6 +94,23 @@ Markdown:
 [Link Text]({% post_url 2010-09-08-welcome-to-jekyll %})
 ```
 
-In Jekyll 4, this includes the base URL.
+
+## Footer links
+
+More Markdown then Jekyll, but still useful to keep text readable. Also this link be just below the paragraph rather than the end of the page.
+
+```md
+This paragraph covers [CircleCI][0], [GitHub][1] and also [Bitbucket][2].
+
+[0]: https://circleci.com/
+[1]: https://github.com/
+[2]: https://bitbucket.org/
+```
+
+This paragraph covers [CircleCI][0], [GitHub][1] and also [Bitbucket][2].
+
+[0]: https://circleci.com/
+[1]: https://github.com/
+[2]: https://bitbucket.org/
 
 {% endraw %}
