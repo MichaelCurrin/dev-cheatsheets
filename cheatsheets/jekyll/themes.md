@@ -5,9 +5,9 @@ title: Themes
 
 ## Remote theme plugin
 
-Allow installing of themes from Github.
+Allow installing of themes from GitHub.
 
-This is specifically used on Github Pages for installing extra themes. But outside of Github Pages you can just these the standard `theme` field.
+This is specifically used on GitHub Pages for installing extra themes. But outside of GitHub Pages you can just these the standard `theme` field.
 
 - [benbalter/jekyll-remote-theme](https://github.com/benbalter/jekyll-remote-theme)
   > Jekyll plugin for building Jekyll sites with any public GitHub-hosted theme

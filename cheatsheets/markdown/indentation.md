@@ -4,7 +4,7 @@ title: Indentation
 
 ## Spaces
 
-Note that while using indentation of `2` spaces is allowed in general, it will cause unexpected styling in some cases, when using Github-Flavored Markdown.
+Note that while using indentation of `2` spaces is allowed in general, it will cause unexpected styling in some cases, when using GitHub-Flavored Markdown.
 
 So `4` spaces is preferred.
 

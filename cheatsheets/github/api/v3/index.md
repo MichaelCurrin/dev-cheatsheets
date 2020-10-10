@@ -1,5 +1,5 @@
 ---
-title: Github API V3
+title: GitHub API V3
 layout: listing
 ---
 
@@ -9,7 +9,7 @@ layout: listing
 
 See also project:
 
-- [MichaelCurrin/aggre-git ![Repo stars](https://img.shields.io/github/stars/MichaelCurrin/aggre-git?style=social)](https://github.com/MichaelCurrin/aggre-git) - Report on historical Github activity for your user or org. Uses on Github REST API, accessed through a Python library.
+- [MichaelCurrin/aggre-git ![Repo stars](https://img.shields.io/github/stars/MichaelCurrin/aggre-git?style=social)](https://github.com/MichaelCurrin/aggre-git) - Report on historical GitHub activity for your user or org. Uses on GitHub REST API, accessed through a Python library.
 
 
 ## Limitations

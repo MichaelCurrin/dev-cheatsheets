@@ -86,7 +86,7 @@ Some additional plugins to try:
   gem 'jekyll-github-metadata'
 ```
 
-Note that the _github-pages_ plugins includes the metadata one plus a lot of others, so you only need one of the above lines if you want to fetch Github metadata in your build.
+Note that the _github-pages_ plugins includes the metadata one plus a lot of others, so you only need one of the above lines if you want to fetch GitHub metadata in your build.
 
 ## Resources
 
@@ -95,13 +95,13 @@ Note that the _github-pages_ plugins includes the metadata one plus a lot of oth
     - [Groups](https://bundler.io/v1.12/groups.html)
 - [Jekyll Plugin Installation](https://jekyllrb.com/docs/plugins/installation/) doc.
 - Plugins
-    - Github Pages Plugin
+    - GitHub Pages Plugin
         - [github/pages-gem](https://github.com/github/pages-gem) repo
-        - [Github Pages](https://jekyllrb.com/docs/github-pages/) plugin in the Jekyll docs. This gives you a couple of Jekyll plugins and themes, which may be unnessary if you are running locally and only need to install one or two of those.
+        - [GitHub Pages](https://jekyllrb.com/docs/github-pages/) plugin in the Jekyll docs. This gives you a couple of Jekyll plugins and themes, which may be unnessary if you are running locally and only need to install one or two of those.
         - [Versions](https://pages.github.com/versions/) - Plugins supported by the `github-pages` plugin.
-    - Github Metadata
+    - GitHub Metadata
         - [jekyll/github-metadata](https://github.com/jekyll/github-metadata) repo.
-        - This is loaded by the Github Pages plugin. Sample output [here](https://github.com/jekyll/github-metadata/blob/master/docs/site.github.md) for `site.github` namespace.
+        - This is loaded by the GitHub Pages plugin. Sample output [here](https://github.com/jekyll/github-metadata/blob/master/docs/site.github.md) for `site.github` namespace.
 - See a fuller Gemfile with comments in one of my repos [here](https://github.com/MichaelCurrin/jekyll-blog-demo/blob/master/Gemfile).
 
 Why the `jekyll_plugins` group in the samples above? The docs say:

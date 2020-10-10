@@ -16,9 +16,9 @@ Some projects have `LICENSE-source` next to `LICENSE` - add that to doc instruct
 ## Resources
 
 
-### By Github
+### By GitHub
 
-- [License a repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository) from Github docs.
+- [License a repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository) from GitHub docs.
 - Choose a License
     - [choosealicense.com](https://choosealicense.com/) homepage.
     - [Licenses](https://choosealicense.com/licenses/) page - listed with short description on Choose a License. However over a colored dot for more info.

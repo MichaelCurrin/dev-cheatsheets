@@ -146,7 +146,7 @@ Simpler to use than curl and it prettifies JSON and HTML output with colors and 
     > HTTPie is a command line HTTP client that will make you smile.
 - [HTTPie docs](https://httpie.org/doc)
 - [HTTPie demo](https://httpie.org/run)
-- [jakubroztocil/httpie](https://github.com/jakubroztocil/httpie/) repo on Github.
+- [jakubroztocil/httpie](https://github.com/jakubroztocil/httpie/) repo on GitHub.
 - [HTTpie cheatsheet](https://devhints.io/httpie) on DevHints.
 
 

@@ -2,7 +2,7 @@
 title: Remote themes
 ---
 
-For themes not supported by Github Pages plugin, you can set a remote theme using a plugin.
+For themes not supported by GitHub Pages plugin, you can set a remote theme using a plugin.
 
 - [benbalter/jekyll-remote-theme](https://github.com/benbalter/jekyll-remote-theme)
 

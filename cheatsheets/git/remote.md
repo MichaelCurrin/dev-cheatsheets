@@ -4,7 +4,7 @@ title: Git remote
 
 ## New repo
 
-After creating a repo on Github
+After creating a repo on GitHub
 
 Clone it.
 

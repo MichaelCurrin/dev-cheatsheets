@@ -13,7 +13,7 @@ From the [docs](https://jekyllrb.com/docs/liquid/tags/):
 
 ## Linguist
 
-The full list that Github supports:
+The full list that GitHub supports:
 
 - [github/linguist](https://github.com/github/linguist) repo
 - [languages.yml](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml) file
@@ -25,7 +25,7 @@ This is similar but easier to read:
 
 ## Rogue highlighter
 
-Used for Github Pages
+Used for GitHub Pages
 
 - [rouge-ruby/rouge](https://github.com/rouge-ruby/rouge) repo
 - [Rouge](https://rouge.jneen.net/) homepage

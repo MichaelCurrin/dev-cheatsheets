@@ -49,7 +49,7 @@ Notes:
 
 - The empty are added here for readibility and grouping of related areas - when you do an `npm` command which updates your `package.json` file, all the empty lines will be removed.
 - From the docs: "If you don’t plan to publish your package, the name and version fields are optional."
-- Optionally include "homepage" with a URL such as Github Pages to Netlify URL for the service or docs site.
+- Optionally include "homepage" with a URL such as GitHub Pages to Netlify URL for the service or docs site.
 
 See my customized [package.json](https://github.com/MichaelCurrin/node-project-template/blob/master/package.json) file in my `node-project-template` repo.
 

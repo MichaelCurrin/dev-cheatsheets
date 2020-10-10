@@ -127,7 +127,7 @@ Or use a relative width value:
 Notes:
 
 - Centering and resizing as above **cannot** be achieved by setting CSS (inline or in a style tag) on GitHub, so you must update attributes of the tags. The `align` attribute works for now in HTML5 but will eventually stop as it is deprecated.
-- The resizing above works for _HTML_ tags in markdown, but resizing cannot be done for _markdown_ image. At least in Github-flavored implementation of markdown - some other systems support resizing e.g. `![Alt](img.jpg =60x50)`.
+- The resizing above works for _HTML_ tags in markdown, but resizing cannot be done for _markdown_ image. At least in GitHub-flavored implementation of markdown - some other systems support resizing e.g. `![Alt](img.jpg =60x50)`.
 - The image will be hyperlinked to the full size version of the image, unless you add an anchor tag.
 
 
@@ -160,7 +160,7 @@ The badge could also be converted to an `img` tag for consistency. Then a line b
     <a href="https://michaelcurrin.github.io/unicron/">
         <img width="250" src="docs/_media/logo.png" alt="Unicron logo">
         <br>
-        <img src="https://img.shields.io/badge/docs-Github_Pages-f967f9?style=for-the-badge" alt="Github Pages site"/>
+        <img src="https://img.shields.io/badge/docs-GitHub_Pages-f967f9?style=for-the-badge" alt="GitHub Pages site"/>
     </a>
 </div>
 ```

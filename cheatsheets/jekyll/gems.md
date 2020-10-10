@@ -133,7 +133,7 @@ $ bundle install
 ```
 
 
-## Install from Github
+## Install from GitHub
 
 ```ruby
 gem 'bar', git: 'https://github.com/foo/bar'

@@ -22,7 +22,7 @@ Here are for Python:
 >
 > - Created by Guido van Rossum
 > - Released February 20, 1991
-> - [python](https://github.com/python) (Github org)
+> - [python](https://github.com/python) (GitHub org)
 > - [www.python.org](https://www.python.org/)
 > - [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language))
 
@@ -36,7 +36,7 @@ This was based on the config section of [github/personal-website](https://github
 
 ### Approach
 
-Replace `TOPIC` with your value - not all topics are available but you can use some common ones. 
+Replace `TOPIC` with your value - not all topics are available but you can use some common ones.
 
 The ID in the middle of the URL is constant.
 
@@ -65,12 +65,12 @@ Using HTML `img` tag with `width` and `height` set.
 
 ```html
 <img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/python/python.png"
-     width="100" height="100" 
+     width="100" height="100"
      alt="python icon" />
 ```
 
 <img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/python/python.png"
-     width="100" height="100" 
+     width="100" height="100"
      alt="python icon" />
 
 
@@ -93,4 +93,3 @@ Using HTML `img` tag with `width` and `height` set.
 <img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/bash/bash.png"
      alt="bash icon"
      width="100" height="100" />
-

@@ -4,7 +4,7 @@ title: Collapsible items
 
 How to create sections which can expand and collapse again.
 
-Use the `details` and `summary` HTML tags in markdown on Github, without any additional CSS.
+Use the `details` and `summary` HTML tags in markdown on GitHub, without any additional CSS.
 
 Format:
 

@@ -4,7 +4,7 @@ title: Make command syntax
 
 Use of `make` command in Unix environments.
 
-Makefile templates topic on Github - [makefile-template](https://github.com/topics/makefile-template)
+Makefile templates topic on GitHub - [makefile-template](https://github.com/topics/makefile-template)
 
 Targets (commands) will differ per project and environment but these can be applied where relevant.
 

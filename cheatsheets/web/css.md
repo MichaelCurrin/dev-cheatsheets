@@ -3,9 +3,9 @@ title: CSS
 logo: css3
 ---
 
-## Github Pages CSS
+## GitHub Pages CSS
 
-If you have a Github Pages site of HTML files that do not use Jekyll, you can still prettify them using this:
+If you have a GitHub Pages site of HTML files that do not use Jekyll, you can still prettify them using this:
 
 ```html
 <link rel="stylesheet" href="assets/css/style.css">

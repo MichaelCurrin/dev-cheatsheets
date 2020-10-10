@@ -11,7 +11,7 @@ There are multiple ways to do this, depending on your situation.
 
 ### Relative URL
 
-Use the `relative_url` filter to ensure you get a Github Pages project prefix added.
+Use the `relative_url` filter to ensure you get a GitHub Pages project prefix added.
 
 The downside to this approach that it uses a literal string - is does not validate if the page actually exists and also does not obey and permalink settings set on the metadata or config.
 

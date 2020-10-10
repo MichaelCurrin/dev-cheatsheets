@@ -10,7 +10,7 @@ See also [Git](https://github.com/MichaelCurrin/learn-to-code/tree/master/Versio
 
 Provided on the git website:
 
-- Downloadable [cheatsheet](https://github.github.com/training-kit/) provided by Github
+- Downloadable [cheatsheet](https://github.github.com/training-kit/) provided by GitHub
 - [Visual cheatsheet](https://ndpsoftware.com/git-cheatsheet.html)
 
 

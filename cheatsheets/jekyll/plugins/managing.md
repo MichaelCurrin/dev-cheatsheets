@@ -14,7 +14,7 @@ Guides:
 
 ## External
 
-If you are building on Github Pages, then in addition to a _Gemfile_ you must add plugins to your `_config.yml` file as such:
+If you are building on GitHub Pages, then in addition to a _Gemfile_ you must add plugins to your `_config.yml` file as such:
 
 ```yml
 plugins:

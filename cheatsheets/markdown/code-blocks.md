@@ -51,7 +51,7 @@ They also work well under bullet points - see [Code snippets in lists][].
 
 [Code snippets in lists]: {{ site.baseurl }}{% link cheatsheets/markdown/lists.md %}#code-snippets-in-lists)
 
-The short name works too. Note that outside of Github, other editing tools like an IDE or StackEdit might only support the long or the short form of a language.
+The short name works too. Note that outside of GitHub, other editing tools like an IDE or StackEdit might only support the long or the short form of a language.
 
 	```py
 	print("Hello, world!")
@@ -112,7 +112,7 @@ Some valid references for language-specific styling that I use. There are many m
 }
 ```
 
-With comments, use `json5` to avoid getting errors for invalid content on Github. Note some platforms like StackEdit don't recognized `json5` but is okay.
+With comments, use `json5` to avoid getting errors for invalid content on GitHub. Note some platforms like StackEdit don't recognized `json5` but is okay.
 
 	```json5
 	{

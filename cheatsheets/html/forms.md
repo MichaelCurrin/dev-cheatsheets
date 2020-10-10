@@ -4,7 +4,7 @@ title: Forms
 
 Input elements for forms.
 
-Note that these do not render on Github, but could be viewed as a static site or an IDE's Markdown preview.
+Note that these do not render on GitHub, but could be viewed as a static site or an IDE's Markdown preview.
 
 Examples mostly from [W3Schools](https://www.w3schools.com).
 

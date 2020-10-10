@@ -79,7 +79,7 @@ In a `.html` layout file, you can use `markdownify` to turn markdown into HTML.
 ```markdown
 <footer>
 
-    {{ 'Github repo: [MichaelCurrin/cheatsheets ![Repo stars](https://img.shields.io/github/stars/MichaelCurrin/cheatsheets?style=social)](https://github.com/MichaelCurrin/cheatsheets)' | markdownify }}
+    {{ 'GitHub repo: [MichaelCurrin/cheatsheets ![Repo stars](https://img.shields.io/github/stars/MichaelCurrin/cheatsheets?style=social)](https://github.com/MichaelCurrin/cheatsheets)' | markdownify }}
 
 </footer>
 ```
