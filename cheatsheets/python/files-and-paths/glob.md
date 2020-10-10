@@ -2,7 +2,7 @@
 title: Python glob
 ---
 
-See also the [globbing] in the Shell section of this guide.
+See also the [globbing][] in the Shell section of this guide.
 
 [globbing]: {{ site.baseurl }}{% link cheatsheets/shell/files/globbing.md %}
 

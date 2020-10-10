@@ -2,7 +2,7 @@
 title: Supported languages
 ---
 
-See also [Code blocks] page.
+See also [Code blocks][] page.
 
 [Code blocks]: {{ site.baseurl }}{% link cheatsheets/markdown/code-blocks.md %}
 

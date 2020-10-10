@@ -7,7 +7,7 @@ Here we ensure that Liquid code is not evaluated but treated as literal text, bu
 
 Note that Liquid here uses a combination of HTML/Markdown and Jekyll templating and depending which approach you use a certain part of the same code block will be highlighted.
 
-Make sure you understand [Basics] first.
+Make sure you understand [Basics][] first.
 
 [Basics]: {{ site.baseurl }}{% link cheatsheets/jekyll/code-blocks/basics.md %}
 
@@ -75,7 +75,7 @@ Using the Jekyll `highlight` tag.
 Apply Liquid highlighting. Note you should use the `raw` tag inside the `div`, not shown here. Note the `raw` tag must go _inside_ the `highlight` tag - if it `raw` is on the outside then the `highlight` will be literal text.
 
 
-Code:
+**Code:**
 
 {% raw %}
 	{% highlight liquid %}
@@ -85,7 +85,7 @@ Code:
 	{% endhighlight %}
 {% endraw %}
 
-Result:
+**Result:**
 
 {% highlight liquid %}
 <div>

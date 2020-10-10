@@ -80,7 +80,7 @@ $ ls -a -l -d ~/.*
 
 ## Globbing
 
-See [globstar] page.
+See [globstar][] page.
 
 [globstar]: {{ site.baseurl }}{% link cheatsheets/shell/files/globstar.md %}
 
