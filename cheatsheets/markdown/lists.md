@@ -5,16 +5,23 @@ title: Lists
 
 ## Bulleted list
 
+### Basic
+
+The hyphen is preferred.
+
     - Bulleted
     - List
 
 - Bulleted
 - List
 
+### Nested
+
+The convention hyphen on the outside, then a star within that and a plus sign within that. Though this doesn't actually effect the result.
+
     - Nested
         * Bullet
             + List
-
     - Nested
         - Bullet
             - List
@@ -22,10 +29,31 @@ title: Lists
 - Nested
     * Bullet
         + List
-
 - Nested
     - Bullet
         - List
+
+### Multi-line text
+
+You can use line breaks in a bullet list (but not a numbered list).
+
+    - First point starts here.
+
+        Next line of same point.
+
+        And a third line.
+    - Second point starts here.
+
+        And keeps going here.
+
+- First point starts here.
+
+    Next line of same point.
+
+    And a third line.
+- Second point starts here.
+
+    And keeps going here.
 
 
 ## Numbered list
@@ -36,7 +64,7 @@ title: Lists
 1. Numbered
 2. List
 
-Note that numbering can be left as all `1.`.
+Note that numbering can be left as all `1.` and it will still work.
 
     1. Foo
     1. Bar
@@ -97,7 +125,9 @@ Don't do this:
     - Point B
 
 
-## Code snippets in lists
+## Code blocks in lists
+
+### Basic
 
     - Top-level
         - Foo
@@ -115,56 +145,24 @@ Don't do this:
         ```
     - Bar
 
+### Multi-line
 
-## Code
+    - Here is some code, indented so it shows under the point.
+        ```python
+        print("Hello, world!")
+        ```
+    More text in the same point.
+        ```python
+        print("Hello again, world!")
+        ```
+    - Bar.
 
-### Code styling
-
-You get monospaced text with no syntax highlighting if you do not specify a language.
-
-```
-Example of `code` in a sentence.
-```
-
-Example of `code` in a sentence.
-
-
-### Code blocks
-
-```markdown
-    # Indententing this line in markdown turned it into preformatted mono-spaced text, without any particular code syntax.
-    print('Hello world'!)
-```
-
-    # Indententing this line in markdown turned it into preformatted mono-spaced text, without any particular code syntax.
-    print('Hello world'!)
-
-
-### Code blocks with language syntax
-
-See [Code blocks]({{ site.baseurl }}{% link cheatsheets/markdown/code-blocks.md %}) page.
-
+- Here is some code, indented so it shows under the point.
     ```python
-    # Triple quotes are for code blocks and give more control over the language.
-    print('Hello world'!)
+    print("Hello, world!")
     ```
-
-```python
-# Triple quotes are for code blocks and give more control over the language.
-print('Hello world'!)
-```
-
-They also work well under bullet points - see [Code snippets in lists](#code-snippets-in-lists)] above.
-
-
-## Todo list
-
-Hard brackets. With either space or lowercase `x`.
-
-```markdown
-- [ ] not done.
-- [x] done
-```
-
-- [ ] not done
-- [x] done
+    More text in the same point.
+    ```python
+    print("Hello again, world!")
+    ```
+- Bar.

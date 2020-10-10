@@ -2,19 +2,54 @@
 title: Code blocks
 ---
 
-See also the [Jekyll Supported Languages] page.
+See also the [Jekyll Supported Languages][] page.
 
 [Jekyll Supported Languages]: {{ site.baseurl }}{% link cheatsheets/jekyll/code-blocks/supported-languages.md %}
 
-## Language highlighting
 
-	```python
-	print("Hello, world!")
-	```
+## Code styling
+
+You get mono-spaced text with no syntax highlighting if you do not specify a language.
+
+```
+Example of `code` in a sentence.
+```
+
+Example of `code` in a sentence.
+
+
+## Code blocks
+
+### Indent syntax
+
+Indent the code by 4 spaces.
+
+```markdown
+    # Indenting this line in markdown turned it into preformatted mono-spaced text, without any particular code syntax.
+    print('Hello world'!)
+```
+
+    # Indenting this line in markdown turned it into preformatted mono-spaced text, without any particular code syntax.
+    print('Hello world'!)
+
+
+### Backtick syntax
+
+Use triple backtick also known as a fenced code block. You can optionally specify a language for format with - this works well in markdown on GitHub but you might need extra setup in a Jekyll theme to get it to work properly.
+
+    ```python
+    # Triple quotes are for code blocks and give more control over the language.
+    print('Hello world'!)
+    ```
 
 ```python
-print("Hello, world!")
+# Triple quotes are for code blocks and give more control over the language.
+print('Hello world'!)
 ```
+
+They also work well under bullet points - see [Code snippets in lists][].
+
+[Code snippets in lists]: {{ site.baseurl }}{% link cheatsheets/markdown/lists.md %}#code-snippets-in-lists)
 
 The short name works too. Note that outside of Github, other editing tools like an IDE or StackEdit might only support the long or the short form of a language.
 
@@ -26,9 +61,9 @@ The short name works too. Note that outside of Github, other editing tools like 
 print("Hello, world!")
 ```
 
-## Specific languages
+## Supported languages
 
-Some valid references for language-specific styling that I use.
+Some valid references for language-specific styling that I use. There are many more available.
 
 - `markdown` or `md`
 	- The former shows better rendering in the GitHub editor view.
@@ -49,9 +84,9 @@ Some valid references for language-specific styling that I use.
 	- These all work, I haven't compared how well though.
 
 
-## Examples
+### Examples
 
-### Diff
+#### Diff
 
 	```diff
 	- a
@@ -63,7 +98,7 @@ Some valid references for language-specific styling that I use.
 + b
 ```
 
-### JSON
+#### JSON
 
 	```json
 	{
@@ -94,7 +129,7 @@ With comments, use `json5` to avoid getting errors for invalid content on Github
 }
 ```
 
-### Regex
+#### Regex
 
 	```re
 	[a-f]+
@@ -104,4 +139,4 @@ With comments, use `json5` to avoid getting errors for invalid content on Github
 [a-f]+
 ```
 
-Note - from limited testing, `re` works but not `regex`.
+Note - from limited testing, I found that `re` works better than `regex`.
