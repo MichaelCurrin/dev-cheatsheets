@@ -8,8 +8,11 @@ Jekyll docs reference - [Config options](https://jekyllrb.com/docs/configuration
 ## Null values
 
 ```yaml
-key: nil
+key: null
 ```
+
+YAML uses `null` but Ruby uses `nil`.
+
 
 ## Plugins
 
@@ -47,7 +50,7 @@ baseurl: "/my-repo"
 
 ## Build settings
 
-Thes can be set with CLI flags, or in the config here if you prefer.
+This can be set with CLI flags, or in the config here if you prefer.
 
 ```yaml
 future: true
