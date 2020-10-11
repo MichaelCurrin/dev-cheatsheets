@@ -1,5 +1,6 @@
 ---
-title: Gem management
+title: Manage
+description: Managing gems for Ruby and Jekyll projects
 ---
 
 ## Check environment
@@ -107,16 +108,7 @@ Usage: gem update GEMNAME [GEMNAME ...] [options]
 
 Calling `gem` from inside Ruby code including a `Gemfile`.
 
-Ruby command examples.
-
-```ruby
-# Unpinned
-gem 'minima'
-# Between range. Note upper bounded is needed.
-gem 'minima', '>= 2.5', '< 3'
-# Compatible but with minimum.
-gem 'minima', '~> 2.5', '>= 2.5.1'
-```
+See [Gem versions]({{ site.baseurl }}{% link cheatsheets/ruby/dependencies/versions.md %}) page.
 
 ### Bundler command
 

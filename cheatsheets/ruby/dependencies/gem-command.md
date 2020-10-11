@@ -1,6 +1,6 @@
 ---
-title: Ruby gems
-description: How to managed Ruby gems with the gem command
+title: Gem command
+description: How to manage Ruby gems with the gem command
 ---
 
 ## Install
@@ -38,9 +38,9 @@ sudo gem update --system
 ## Bundler
 
 ```sh
-gem install bundler --user-install
+$ gem install bundler --user-install
 ```
 
 ```sh
-gem update bundler --user-install
+$ gem update bundler --user-install
 ```

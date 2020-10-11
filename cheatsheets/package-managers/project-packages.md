@@ -40,6 +40,6 @@ $ npm -g list
 
 Understanding notation like `~> 3` and `^3.0.0` across languages:
 
-- [NPM]({{ site.baseurl }}{% link cheatsheets/javascript/npm/dependency-versions.md %})
-- [Python]({{ site.baseurl }}{% link cheatsheets/python/packages/versions.md %})
-- [Jekyll]({{ site.baseurl }}{% link cheatsheets/jekyll/gems.md %}) (this can be moved out to a focused Ruby page)
+- [NPM versions]({{ site.baseurl }}{% link cheatsheets/javascript/npm/dependency-versions.md %})
+- [Python versions]({{ site.baseurl }}{% link cheatsheets/python/packages/versions.md %})
+- [Gem versions]({{ site.baseurl }}{% link cheatsheets/ruby/dependencies/versions.md %})
