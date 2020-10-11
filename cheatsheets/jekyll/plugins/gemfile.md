@@ -2,7 +2,7 @@
 title: Gemfile
 ---
 
-How to setup a _Gemfile_, as a file managing dependencies.
+How to setup a _Gemfile_ as a file to manage dependencies.
 
 ## Install gems
 
@@ -11,16 +11,16 @@ If you using `Bundler`, you then run this at the top level of your project. This
 My [gist](https://gist.github.com/MichaelCurrin/5c8c45a86bcf53d7b49a7763c02943b1) of install instructions.
 
 ```sh
-bundle config set --local path vendor/bundle
-bundle install
+$ bundle config set --local path vendor/bundle
+$ bundle install
 ```
 
-Old style for reference - to be deprecated.
+Old style for reference - to be **deprecated**.
 
 ```sh
-bundle install --path vendor/bundle
-# On later runs you can just run:
-bundle install
+$ bundle install --path vendor/bundle
+$ # On later runs you can just run:
+$ bundle install
 ```
 
 
@@ -63,7 +63,8 @@ Note the Jekyll and a theme are alone and any Jekyll plugins go inside a group -
 ```ruby
 source 'https://rubygems.org'
 
-gem 'jekyll', '~> 3.8.5'
+gem 'jekyll', '~> 3.9'
+
 gem 'minima'
 
 group :jekyll_plugins do

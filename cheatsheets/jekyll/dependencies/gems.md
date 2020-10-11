@@ -59,7 +59,7 @@ $ code $(bundle show minima)
 
 Calling `gem` from the shell.
 
-See also [plugins] page.
+See also [plugins][] page.
 
 [plugins]: {{ site.baseurl }}{% link cheatsheets/jekyll/plugins/index.md %}
 

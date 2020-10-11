@@ -1,5 +1,5 @@
 ---
-title: Managing plugins
+title: Managing
 ---
 
 
