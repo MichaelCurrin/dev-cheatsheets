@@ -4,11 +4,12 @@ title: Configure environment
 
 ## Production builds
 
-Some plugins or includes blocks as around Jekyll Analytics will only run when using prod env - locally or through GH Pags.
+Some plugins or includes blocks as around Jekyll Analytics will only run when using prod env - locally or through GH Pages.
 
 ```sh
 JEKYLL_ENV='production' bundle exec jekyll build
 ```
+
 GH Pages will set this production flag for you when it builds.
 
 
