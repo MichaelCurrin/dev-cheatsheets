@@ -53,9 +53,9 @@ Thes can be set with CLI flags, or in the config here if you prefer.
 future: true
 profile: true
 livereload: true
-``
+```
 
-> Cause a build to fail if there is a YAML syntax error in a page's front matter. 
+> Cause a build to fail if there is a YAML syntax error in a page's front matter.
 
 ```yaml
 strict_front_matter: true
