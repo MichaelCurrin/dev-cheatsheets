@@ -34,6 +34,7 @@ addressable-2.7.0           i18n-0.9.5      ...
 ...
 ```
 
+
 ## Find gem locally
 
 For a gem installed locally such as `minima` theme.
@@ -54,7 +55,7 @@ $ code $(bundle show minima)
 ```
 
 
-#### Gem CLI
+### Gem CLI
 
 Calling `gem` from the shell.
 
@@ -62,20 +63,20 @@ See also [plugins] page.
 
 [plugins]: {{ site.baseurl }}{% link cheatsheets/jekyll/plugins/index.md %}
 
-#### Help
+### Help
 
 ```sh
 $ gem COMMAND --help
 $ gem help COMMAND
 ```
-##### Install
+### Install
 
 ```sh
 $ gem install GEMNAME
 $ gem install GEMNAME --user-level
 ```
 
-##### Update
+### Update
 
 Upgrade target gem.
 
@@ -102,7 +103,7 @@ Usage: gem update GEMNAME [GEMNAME ...] [options]
       --system                     Update the RubyGems system software
 ```
 
-#### Ruby gem command
+### Ruby gem command
 
 Calling `gem` from inside Ruby code including a `Gemfile`.
 
@@ -117,7 +118,7 @@ gem 'minima', '>= 2.5', '< 3'
 gem 'minima', '~> 2.5', '>= 2.5.1'
 ```
 
-#### Bundler command
+### Bundler command
 
 Gemfile should like this:
 
