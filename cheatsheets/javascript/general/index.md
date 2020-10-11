@@ -10,9 +10,7 @@ Cheatsheet for the browser and server side of JS.
 
 ECMAScript6 or ES2015 was the first major change to JS since 2009.
 
-Here an overview of the features.
-
-http://git.io/es6features
+Here an overview of the features - [http://git.io/es6features](http://git.io/es6features).
 
 
 ## Switch statement
