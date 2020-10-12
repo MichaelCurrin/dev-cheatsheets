@@ -2,6 +2,8 @@
 title: Analytics
 ---
 
+## Standard
+
 Adding Google Analytics to your site.
 
 - `snippet.html`
@@ -21,6 +23,8 @@ Adding Google Analytics to your site.
     </script>
     ```
 
+## Alternate
+
 Here is a variation from [HTML5 boilerplate](https://github.com/h5bp/html5-boilerplate/blob/master/dist/index.html) which might be the old style which uses GA directly rather than GTM as above.
 
 - `snippet.html
@@ -36,3 +40,10 @@ Here is a variation from [HTML5 boilerplate](https://github.com/h5bp/html5-boile
     </script>
     <script src="https://www.google-analytics.com/analytics.js" async></script>
     ```
+
+
+## Jekyll
+
+For approaches to adding analytics to a Jekyll site, see the [Jekyll Analytics][] section of this site.
+
+[Jekyll Analytics]: {{ site.baseurl }}{% cheatsheets/jekyll/analytics.md %}
