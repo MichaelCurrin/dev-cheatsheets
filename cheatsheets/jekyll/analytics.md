@@ -42,56 +42,41 @@ The the Minima covers Google Analytics already - just set `google_analytics` in 
 
 See [\_includes/google-analytics.html](https://github.com/jekyll/minima/blob/master/_includes/google-analytics.html)
 
-### Add own snippet
+### Add your own snippet
 
 Instead of relying on a theme or plugin as above, you can add a JavaScript snippet to your project yourself. This does not have the limitations as covered above - it just means you have to maintain this code.
 
+
 {% raw %}
-1. Create `_includes/google-analytics.html` using either snippet below.
-    - Content from `minima`:
-        ```html
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-        <script>
-            window['ga-disable-{{ site.google_analytics }}'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" ||
-                navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
-            window.dataLayer = window.dataLayer || [];
 
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
+1. Create `_includes/google-analytics.html` using a snippet below. Content from `minima` theme which is very close to what you get from GA itself:
+    ```html
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+        window['ga-disable-{{ site.google_analytics }}'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" ||
+            navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
 
-            gtag('config', '{{ site.google_analytics }}');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-        </script>
-        ```
-    - Or, use a snippet copied from Google Analytics admin which is very close to one above. I parametized it for use in Jekyll.q
-        ```html
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
 
-            gtag('config', '{{ site.google_analytics }}');
-
-        </script>
-        ```
-2. Use the file in to your HTML `head` tag such as in your `default.html` layout 
-    - Copied here from `minima`.
-        ```liquid
-        {%- if jekyll.environment == 'production' and site.google_analytics -%}
-            {%- include google-analytics.html -%}
-        {%- endif -%}
-        ```
+    </script>
+    ```
+2. Use the file in to your HTML `head` tag such as in your `default.html` layout. Copied here from `minima`.
+    ```liquid
+    {%- if jekyll.environment == 'production' and site.google_analytics -%}
+        {%- include google-analytics.html -%}
+    {%- endif -%}
+    ```
 3. Add the value to your `_config.yml` file:
     ```yaml
     google_analytics: UA-123467-78
     ```
+
 {% endraw %}
 
 Do a production build as covered at the start of this page to test it locally.
