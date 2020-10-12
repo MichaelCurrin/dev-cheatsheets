@@ -1,8 +1,9 @@
 ---
-title: Python tests
+title: Tests
+description: Cheatsheet for tests in Python
 ---
 
-[Getting started with testing in Python](https://realpython.com/python-testing/)
+See [Getting started with testing in Python](https://realpython.com/python-testing/) on RealPython
 
 - [Unittest](#unittest)
 	- Python builtin.
@@ -21,13 +22,11 @@ title: Python tests
 - [unittest docs](https://docs.python.org/3/library/unittest.html)
 
 
-
 ### Syntax
 
 - Create a class which inherits from `unittest.TestCase`.
 - Add methods that start with `test_*`.
 - Add a call in the `__main__` check which runs `unittest.main()`.
-
 
 ### Sample tests
 
@@ -99,6 +98,7 @@ Change to the `src/` directory, scan for all `test*.py` files inside the the `te
 ```sh
 python -m unittest discover -s tests -t src
 ```
+
 
 ## PyTest
 
