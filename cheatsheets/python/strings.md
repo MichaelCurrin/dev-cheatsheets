@@ -1,5 +1,5 @@
 ---
-title: Python strings
+title: Strings
 ---
 
 
@@ -18,6 +18,7 @@ title: Python strings
 ```
 12,345,678,910
 ```
+
 
 ## Representing objects
 
@@ -77,7 +78,6 @@ class Foo:
     def __str__(self):
         return f'a {self.color} foo'
 ```
-
 
 
 ## Formatting styles
@@ -167,8 +167,6 @@ Round a float.
 ```python
 logging.debug("User name: %s", name)
 ```
-
-### Template strings
 
 ### Template Strings
 
