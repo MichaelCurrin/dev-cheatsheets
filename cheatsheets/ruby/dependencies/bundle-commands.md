@@ -24,7 +24,7 @@ $ bundle init [OPTIONS]          # Generates a Gemfile into the current working 
 ```
 
 - `Gemfile` result.
-    ```Gemfile
+    ```ruby
     # frozen_string_literal: true
 
     source "https://rubygems.org"
