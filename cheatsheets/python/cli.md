@@ -1,5 +1,5 @@
 ---
-title: Python CLI
+title: CLI
 ---
 
 - [Command line and environment](https://docs.python.org/3/using/cmdline.html) on Python 3 docs - how to use the `python` command.
