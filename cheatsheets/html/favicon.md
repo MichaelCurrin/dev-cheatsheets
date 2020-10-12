@@ -5,7 +5,7 @@ title: Favicon
 Override favicon default. Some sources use `/myicon.png` and some `https://example.com/myicon.png`.
 
 
-## ICO
+## ICO format
 
 Use the `.ico` format - which is not just a rename PNG file.
 
@@ -32,8 +32,17 @@ From [CSS tricks](https://css-tricks.com/favicon-quiz/)
 
 > favicon.ico. And just to make sure: this is not a PNG renamed to favicon.ico. Although some browsers are easygoing enough to forgive this mistake, ICO is a different format, one that supports multiple versions of an image.
 
+From a page on GitHub:
 
-## PNG
+```html
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+```
+
+That handles using a light icon on a dark browser or OS theme.
+
+
+## PNG format
 
 From [W3 Schools](https://www.w3schools.com/tags/att_link_sizes.asp)
 
@@ -48,14 +57,14 @@ This style hasn't changed since [2005](https://www.w3.org/2005/10/howto-favicon)
 ```
 
 
-## SVG
+## SVG format
 
 ```html
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 ```
 
 
-## Apple icon PNG
+## Apple icon file
 
 ```html
 <link rel="apple-touch-icon" href="icon.png">
