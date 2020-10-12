@@ -1,5 +1,5 @@
 ---
-title: Python regex
+title: Regex
 ---
 
 ## Resources
