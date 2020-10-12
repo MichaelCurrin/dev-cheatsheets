@@ -1,5 +1,5 @@
 ---
-title: Python shell
+title: Shell
 description: Running shell commands through Python
 ---
 
