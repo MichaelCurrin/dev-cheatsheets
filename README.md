@@ -7,14 +7,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 
-<div align="center">
-
-<!-- TODO replace with URL in badge but need to restructure how the badge works to allow '/' -->
-[![View site GH Pages](https://img.shields.io/badge/View_site-GH_Pages-green?style=for-the-badge)](https://michaelcurrin.github.io/dev-cheatsheets/)
-
-</div>
-
-
 ## Sample
 
 Screenshots of the website:
@@ -28,20 +20,34 @@ Screenshots of the website:
     </a>
 </div>
 
+<div align="center">
+
+<!-- TODO replace with URL in badge but need to restructure how the badge works to allow '/' -->
+[![View site GH Pages](https://img.shields.io/badge/View_site-GH_Pages-green?style=for-the-badge)](https://michaelcurrin.github.io/dev-cheatsheets/)
+
+</div>
+
 
 ## Documentation
 
 To setup and run this project (or a fork), see the project docs:
 
+<div align="center">
+
 [![Docs](https://img.shields.io/badge/View-Docs-blue?style=for-the-badge)](/docs/)
+
+</div>
 
 
 ## Contributing
 
 Contributions are welcome.
 
+<div align="center">
+
 [![Contributing](https://img.shields.io/badge/View-Contributing-blue?style=for-the-badge)](/CONTRIBUTING.md)
 
+</div>
 
 
 ## License
