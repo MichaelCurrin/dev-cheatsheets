@@ -19,19 +19,24 @@
 
 Screenshots of the website:
 
-<a href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/">
-    <img src="/sample-cheatsheets.jpg" height="500px" alt="sample cheatsheets"/>
-</a>                                            
-<a href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/jekyll/">
-    <img src="/sample-jekyll.jpg" height="500px" alt="sample cheatsheets jekyll" />
-</a>     
+<div align="center">
+    <a href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/">
+        <img src="/sample-cheatsheets.png" height="500px" alt="sample cheatsheets"/>
+    </a>                                            
+    <a href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/jekyll/">
+        <img src="/sample-python.png" height="500px" alt="sample cheatsheets python" />
+    </a>
+</div>
 
 
 ## Documentation
 
 To setup and run this project (or a fork), see the [docs](/docs/) directory.
 
-Contributions are welcome - see [Contributing](/CONTRIBUTING.md) doc.
+
+## Contributing
+
+Contributions are welcome - see the [Contributing](/CONTRIBUTING.md) doc.
 
 
 ## License
