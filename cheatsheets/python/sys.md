@@ -43,3 +43,23 @@ sys.path.insert(0, os.path.abspath(os.path.join(
     os.path.dirname(__file__), os.path.pardir, os.path.pardir)
 ))
 ```
+
+
+## Platform
+
+`sys.platform`
+
+> This string contains a platform identifier that can be used to append platform-specific components to `sys.path`, for instance.
+
+```python
+if sys.platform.startswith('linux'):
+    # Linux-specific code here...
+```
+
+Platform        | Code
+---             | ---
+AIX             | `'aix'`
+Linux           | `'linux'`
+Windows         | `'win32'`
+Windows/Cygwin  | `'cygwin'`
+macOS           | 'darwin'
