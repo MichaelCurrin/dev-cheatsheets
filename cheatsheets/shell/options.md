@@ -1,10 +1,13 @@
 ---
-title: Set options
+title: Options
 ---
 
-Set these in a script or at a global level.
+Set shell options in a script or at a global level.
+
 
 ## Prevent accidental file overwrites
+
+### Copy and move
 
 [source](https://unix.stackexchange.com/questions/452865/are-there-any-disadvantages-of-setting-noclobber)
 
@@ -12,6 +15,8 @@ Set these in a script or at a global level.
 alias cp='cp -i'
 alias mv='mv -i'
 ```
+
+### Redirection
 
 > Prevent output redirection using ‘>’, ‘>&’, and ‘<>’ from overwriting existing files. [source](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html#The-Set-Builtin)
 
@@ -27,33 +32,29 @@ set -o noclobber
 
 When this is on, `> file` gives an error but `>| file` seems to force but need to confirm.
 
+
 ## Exit on error
 
-From `set` [docs](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html#The-Set-Builtin).
+- Using `set` [docs](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html#The-Set-Builtin).
+    ```sh
+    set -e
 
-```sh
-set -e
+    # Reverse it with this:
+    set +e
+    ```
+- In a shebang. Only works with `#!/bin/bash` and not `#!/usr/bin/env bash`.
+    ```sh
+    #!/bin/bash -e
 
-# Reverse it with this:
-set +e
-```
+    echo 'Hello!'
+    ```
+- Setting the body of the script.
+    ```sh
+    #!/usr/bin/env bash
 
-In a shebang:
-
-```sh
-#!/bin/bash -e
-
-echo 'Hello!'
-```
-
-Note that if you use this shebang style, you must **not** add options in the shebang otherwise you will get an error. So add the line in the script body.
-
-```sh
-#!/usr/bin/env bash
-
-set -e
-echo 'Hello!'
-```
+    set -e
+    echo 'Hello!'
+    ```
 
 
 ## Verbose
@@ -62,4 +63,10 @@ Print a trace of commands before running.
 
 ```sh
 set -x
+```
+
+Or
+
+```sh
+$ bash -x my_script.sh
 ```
