@@ -58,32 +58,71 @@ bartball
 
 ### Replace newline character
 
-Using `sed`.
+Given text:
 
 ```sh
-# echo 'Hello\nworld' | sed 's/\\n/ /'
+$ echo 'Hello\nworld'               
+Hello
+world
+```
+
+Note that those also remove a trailing newline.
+
+Note you don't need to escape `\n` as `\\n`.
+
+
+#### sed
+
+Using `sed`. This doesn't work on macOS `sed` though.
+
+```sh
+$ echo 'Hello\nworld' | sed 's/\n/ /'
 Hello world
 ```
+
+#### tr
 
 Using `tr`.
 
 ```sh
-$ echo 'Hello\nworld' | tr '\\n' ' '
-Hello  world
+$ echo 'Hello\nworld' | tr '\n' ' '
+Hello world
 ```
 
-### Replace character with newline character
 
-Note that `\\n` is not sufficient and the newline needs to be escaped with `\`.
+### Replace character with a newline character
+
+Use `\` followed by pressing enter. Using `\n` doesn't seem to work here.
+
+#### sed
 
 ```sh
-$ echo 'Hello,World | sed -e 's/,/\
+$ echo 'Hello,World' | sed -e 's/,/\
 /g'
 ```
 ```
 Hello
 World
 ```
+
+#### tr
+
+Both of these work.
+
+```sh
+$ echo "Hello:world" | tr ':' '\n' 
+Hello
+world
+```
+
+```sh
+$ echo "Hello:world" | tr ':' ' 
+'
+Hello
+world
+```
+Make sure that the 2nd argument for `tr` is `'` followed by enter - if you press space and then enter then it doesn't work.
+
 
 
 ## Backup
