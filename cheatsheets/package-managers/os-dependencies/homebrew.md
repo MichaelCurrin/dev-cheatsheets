@@ -5,7 +5,9 @@ description: A commonly-used macOS package manager
 
 ## Resources
 
-See the [Homebrew Cheatsheet](https://devhints.io/homebrew) on _DevHints_.
+- [Homebrew Cheatsheet](https://devhints.io/homebrew) on _DevHints_.
+- [Homebrew docs](https://docs.brew.sh/) homepage
+- [Homebrew Tips N' Tricks](https://docs.brew.sh/Tips-N%27-Tricks) in the docs
 
 
 ## Install brew
@@ -24,26 +26,47 @@ $ brew update
 
 ## Manage packages
 
-### Install packages
+### Install package
 
-Install a specific package. Note that `update` is done internally - [#1670](https://github.com/Homebrew/brew/issues/1670).
+Install a specific package by its formula. 
+
+_Note: Unlike `apt`, the `update` command is done internally to get the latest remote info - [#1670](https://github.com/Homebrew/brew/issues/1670)._
 
 ```sh
 $ brew install PACKAGE
+$ brew install PACKAGE@VERSION  # e.g. gcc@7 python@3.9
 ```
 
-See also [casks](https://formulae.brew.sh/cask/).
+_Warning: The install command will also upgrade all installed packages._
+
+Install without auto-upgrade - from [article](https://computingforgeeks.com/prevent-homebrew-auto-update-on-macos/).
+
+```sh
+$ HOMEBREW_NO_AUTO_UPDATE=1 brew install PACKAGE
+```
+
+Set in `.bashrc` or `.zshrc`.
+
+```sh
+$ export HOMEBREW_NO_AUTO_UPDATE=1
+```
+
+### Install cask
+
+See also [Homebrew casks](https://formulae.brew.sh/cask/).
 
 ```sh
 $ brew cask install CASK_NAME
 ```
 
-### Upgrade package
+## Upgrade
+
+
+### Upgrade one package
 
 ```sh
 $ brew upgrade PACKAGE
 ```
-
 
 ## Upgrade all packages
 
@@ -78,7 +101,7 @@ the upgraded formulae or, every 30 days, for all formulae.
 ```
 
 
-## Install taps
+## Taps
 
 ```sh
 $ brew tap <TAP_NAME>/taps
