@@ -116,3 +116,22 @@ $ ln -s  ../Cellar/python@3.9/3.9.0 python@3
 ```
 
 Then you can add this to `PATH` - `/usr/local/opt/python@3`.
+
+
+Also I can't just delete the old one as it is used by other Brew packages.
+
+```sh
+$ brew uninstall python@3.8
+Error: Refusing to uninstall /usr/local/Cellar/python@3.8/3.8.6
+because it is required by ipython, libxml2 and libxmlsec1, which are currently installed.
+You can override this and force removal with:
+  brew uninstall --ignore-dependencies python@3.8
+```
+
+Doing an install of Python 3.9 made it the default without having to update my `PATH`.
+
+```sh
+$ brew upgrade python@3.9
+```
+
+And `/usr/local/bin/python3` links to `../Cellar/python@3.9/3.9.0/bin/python3` now.
