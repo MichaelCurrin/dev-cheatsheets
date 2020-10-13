@@ -43,7 +43,7 @@ DESCRIPTION
 
 ### Submodules
 
-````
+```
        --[no-]recurse-submodules[=yes|on-demand|no]
            This option controls if new commits of populated submodules should be fetched, and if the working trees of active
            submodules should be updated, too (see git-fetch(1), git-config(1) and gitmodules(5)).
@@ -64,7 +64,9 @@ DESCRIPTION
 
            Note that fast-forward updates do not create a merge commit and therefore there is no way to stop those merges with
            --no-commit. 
-           
+```
+
+```
         --ff, --no-ff, --ff-only
            Specifies how a merge is handled when the merged-in history is already a descendant of the current history.  --ff is
            the default unless merging an annotated (and possibly signed) tag that is not stored in its natural place in the
@@ -79,6 +81,26 @@ DESCRIPTION
            With --ff-only, resolve the merge as a fast-forward when possible. When not possible, refuse to merge and exit with a
            non-zero status.
 ```
+
+Skip editing message of merge commit.
+
+e.g.
+
+```sh
+$ git pull origin my-feat --no-edit
+```
+```
+       --edit, -e, --no-edit
+           Invoke an editor before committing successful mechanical merge to further edit the auto-generated merge message, so
+           that the user can explain and justify the merge. The --no-edit option can be used to accept the auto-generated message
+           (this is generally discouraged).
+
+           Older scripts may depend on the historical behaviour of not allowing the user to edit the merge log message. They will
+           see an editor opened when they run git merge. To make it easier to adjust such scripts to the updated behaviour, the
+           environment variable GIT_MERGE_AUTOEDIT can be set to no at the beginning of them.
+```
+
+Note to self - don't worry about creating an alias for that as it is rare that I do a pull merge commit on the command-line and it easy to step through.
 
 ### Rebase
 
