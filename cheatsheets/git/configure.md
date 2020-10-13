@@ -37,7 +37,21 @@ $ git config -e --global user.email nsurname@example.com
 
 ## Configure merge strategy for pull
 
-If your pull strategy is not configured, `git` will now give this warning running `git pull`:
+### About
+
+In some situations, you do want a merge commit such as pulling a feature branch into master (if you want to do this on the CLI for some reason rather than PR  Merge button). And sometimes you don't want a commit and you just want to rebase the current branch on the remote or on the remote master. The sections below help with these.
+
+### Defaults
+
+The `git pull` default behavior is with `--ff`.
+
+You can set `--no-ff` or `--ff-only` using flags to config options.
+
+The 
+
+### Warning
+
+If your pull strategy is not configured, newer versions of `git` will now give this warning running `git pull`:
 
 <details>
 <summary>Warning message</summary>
@@ -59,7 +73,12 @@ invocation.
 
 </details>
 
-So here are your options for `.gitconfig` under `[pull]` heading.
+
+
+So here are your options for `.gitconfig` under `[pull]` heading. 
+
+Note lack of quotes on `true` and `false`.
+
 
 ### Merge approach
 
@@ -67,10 +86,12 @@ So here are your options for `.gitconfig` under `[pull]` heading.
 [pull]
     rebase = false
 ```
-This was what we are used to.
 
+This is the default behavior that we are used to, but now configure explicitly as a strategy in the config.
 
-Running `git pull` will create a merge commit if there are upstream changes. This is probably not desirable.
+Running `git pull` will create a **merge commit** if there are remote upstream changes. This commit probably not desirable when working on a feature branch.
+
+So you could set this option explicitly in your config to get the warning to disappear - and then use `git pull --rebase` manually when you do want to rebase.
 
 ### Rebase approach
 
@@ -106,22 +127,31 @@ fatal: Not possible to fast-forward, aborting.
 
 If there are remote changes, if will **fail**.
 
-Then you can run this do deliberately choose a rebase.
+Then you can run this to deliberately choose a rebase.
 
 ```sh
 $ git pull --rebase
 ```
 
-If you **do** want a merge commit, then you can just run this immediately after:
+If you **do** want a merge commit, could run this after.
 
 ```sh
 $ git merge
 ```
 
-You've already done the `git fetch` with the pull. So now this will merge `origin/master` into `master`, or the equivalent pair for the branch you're on.
+As you've already done the `git fetch` with the pull. So now this will merge `origin/master` into `master`, or the equivalent pair for the branch you're on.
 
 Generated message:
 
 ```
 Merge remote-tracking branch 'refs/remotes/origin/master' into master
 ```
+
+However, you may want to be more explict with your merge. Such as if you do `git pull origin my-feature` then `git merge` probably needs to be `git merge origin/my-feature`.
+
+Alternatively, you can do this to pull and merge in one move, avoiding the error. Maybe as an alias.
+
+```sh
+$ git pull origin my-feature && git merge origin/my-feature
+```
+
