@@ -27,7 +27,3 @@ build-dev:
 
 build-prod:
 	JEKYLL_ENV=production bundle exec jekyll build
-
-# For changes to Makefile and docs.
-p push-no-hooks:
-	git push --no-verify
