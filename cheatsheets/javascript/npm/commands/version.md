@@ -79,14 +79,35 @@ Example configuration to match that. I don't know where I found this but it make
       "scripts": {
         "preversion": "npm test",
         "version": "npm run build && git add -A dist",
-        "postversion": "git push && git push --tags && rm -rf build/temp"
+        "postversion": "git push --follow-tags && rm -rf build/temp"
       }
     }
     ```
 
-The push could be replaced with this - `git push --follow-tags`.
+### Warnings
 
-Note: You should probably run `git fetch --tags` first to make sure you don't increment to a tag which already exists on the remote. So adding that logic into `preversion` would make that automated.
+Note for `--follow-tags` the help says:
+
+```
+    --follow-tags         push missing but relevant tags
+```
+
+I'm not confident in that, as in my testing it only pushrf the **current tag**, so any older commits that I had tagged didn't have tags pushed.
+
+I recommend that you run `git fetch --tags` before running `npm version`. To make sure you don't increment to a tag which already exists on the remote. So adding that logic into `preversion` can make that safer.
+
+So here is a safer setup:
+
+- `package.json`
+    ```json
+    {
+      "scripts": {
+        "preversion": "git fetch --tags && npm test",
+        "version": "npm run build && git add -A dist",
+        "postversion": "git push && git push --tags && rm -rf build/temp"
+      }
+    }
+    ```
 
 
 ## Resources
