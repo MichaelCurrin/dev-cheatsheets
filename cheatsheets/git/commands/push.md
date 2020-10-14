@@ -1,5 +1,5 @@
 ---
-title: Git push
+title: push
 ---
 
 Docs: [Git push](https://git-scm.com/docs/git-push)

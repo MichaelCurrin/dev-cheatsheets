@@ -1,5 +1,5 @@
 ---
-title: Git stash
+title: stash
 ---
 
 Stashes are numbered where index `0` is the most recent. New stashes are added to the front of the list to become the new index `0`.

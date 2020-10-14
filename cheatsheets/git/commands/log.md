@@ -1,5 +1,5 @@
 ---
-title: Git log
+title: log
 ---
 
 Docs

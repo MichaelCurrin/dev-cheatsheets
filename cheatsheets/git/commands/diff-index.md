@@ -1,5 +1,5 @@
 ---
-title: Git diff-index
+title: diff-index
 ---
 
 ## Docs
@@ -142,12 +142,12 @@ $ git diff-index --stat  --cached  HEAD
 ### Num stat
 
 ```sh
-$ git diff-index --numstat  --cached  HEAD   
+$ git diff-index --numstat  --cached  HEAD
 8       0       src/workspace.ts
 ```
 
 ```sh
-$ git diff-index --numstat   HEAD         
+$ git diff-index --numstat   HEAD
 82      55      src/extension.ts
 8       0       src/workspace.ts
 ```

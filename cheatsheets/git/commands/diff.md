@@ -1,5 +1,5 @@
 ---
-title: Git diff
+title: diff
 ---
 
 See git docs: [git-diff](https://git-scm.com/docs/git-diff)
@@ -34,7 +34,7 @@ SYNOPSIS
 DESCRIPTION
        Show changes between the working tree and the index or a tree, changes between the index and a tree, changes between two
        trees, changes between two blob objects, or changes between two files on disk.
-       
+
        ...
 ```
 
@@ -67,7 +67,7 @@ If you want untracked files, then git status works file. The line count doesn't 
 
 ### Staged only
 
-Show diff of stages files only. 
+Show diff of stages files only.
 
 All the other flags below also assume all files that are tracked, unless you specifically ask for staged/cached, which can include previously untracked files.
 
@@ -119,7 +119,7 @@ $ git diff HEAD~5..HEAD~7
 Compare when at least one of the filse is out the repo, or the entire command is run outside the repo.
 
 ```sh
-$ git diff [<options>] --no-index [--] <path> <path> 
+$ git diff [<options>] --no-index [--] <path> <path>
 ```
 
 ### Ignore submodules
@@ -186,7 +186,7 @@ $ git diff --shortstat
 
 ### Summary
 
-`--summary` 
+`--summary`
 
 > Output a condensed summary of extended header information such as creations, renames and mode changes.
 
@@ -205,7 +205,7 @@ Note this is only useful in certain cases such as when there is a new file AND i
 
 > Output a condensed summary of extended header information such as file creations or deletions ("new" or "gone", optionally "+l" if it’s a symlink) and mode changes ("+x" or "-x" for adding or removing executable bit respectively) in diffstat. The information is put between the filename part and the graph part. Implies --stat.
 
-e.g. 
+e.g.
 
 ```sh
 $ git diff --compact-summary
