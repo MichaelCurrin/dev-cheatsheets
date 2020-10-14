@@ -34,9 +34,12 @@ layout: default
             {% include list-pages.html %}
             <br>
 
-            <h2>Content</h2>
+            {% assign c = content | strip %}
+            {% if c != '' %}
+                <h2>Content</h2>
 
-            {{ content }}
+                {{ c | inspect }}
+            {% endif %}
         {% endunless %}
     </div>
 
