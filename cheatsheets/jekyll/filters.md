@@ -1,5 +1,5 @@
 ---
-title: Jekyll filters
+title: Filters
 ---
 
 {% raw %}
@@ -122,3 +122,112 @@ You can't pop from the front, but you can do a slice starting at 2nd element.
 ```
 
 {% endraw %}
+
+
+## Full list
+
+Grouped by functionality.
+
+
+### Array
+
+The might work on an array too.
+
+    append
+
+    prepend
+
+    concat
+
+    join
+
+    first
+
+    last
+
+    slice
+
+    map
+
+    size
+
+    reverse
+
+    sort
+
+    sort_natural
+
+    uniq
+
+    remove
+
+    remove_first
+
+    compact - Removes any nil values from an array.
+
+
+### Text
+
+    date
+
+    replace
+
+    replace_first
+
+    escape
+
+    escape_once
+
+    default
+
+    strip
+
+    lstrip
+
+    rstrip
+
+    capitalize
+
+    downcase
+
+    upcase
+
+    strip_html
+
+    strip_newlines
+
+    split
+
+    newline_to_br
+
+    truncate
+
+    truncatewords
+
+    url_decode
+
+    url_encode
+
+### Maths and conditions
+
+    times
+
+    abs
+
+    divided_by
+
+    at_least
+
+    at_most
+
+    ceil
+
+    floor
+
+    minus
+
+    modulo
+
+    plus
+
+    round
