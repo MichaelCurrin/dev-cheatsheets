@@ -1,5 +1,5 @@
 ---
-title: Jekyll frontmatter
+title: Frontmatter
 ---
 
 Jekyll files have frontmatter metadata - it always starts and ends with `---`, followed by any HTML or markdown content. Contrast with YAML file which only have one `---` or none.
