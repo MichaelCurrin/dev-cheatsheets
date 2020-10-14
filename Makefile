@@ -1,6 +1,6 @@
 default: install
 
-help:
+h help:
 	@egrep '^\S|^$$' Makefile
 
 .PHONY: hooks
