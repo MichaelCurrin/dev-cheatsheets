@@ -1,8 +1,9 @@
 ---
-title: CLI usage
 description: How to run Terraform commands in the terminal
 layout: listing
 ---
+# CLI usage
+
 
 ## Basics
 
