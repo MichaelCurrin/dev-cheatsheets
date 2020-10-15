@@ -14,7 +14,7 @@ Screenshots of the website:
 <div align="center">
     <a href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/">
         <img src="/sample-cheatsheets.png" height="350" alt="sample cheatsheets"/>
-    </a>                                            
+    </a>
     <a href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/">
         <img src="/sample-python.png" height="350" alt="sample cheatsheets python" />
     </a>
@@ -26,6 +26,16 @@ Screenshots of the website:
 [![View site GH Pages](https://img.shields.io/badge/View_site-GH_Pages-green?style=for-the-badge)](https://michaelcurrin.github.io/dev-cheatsheets/)
 
 </div>
+
+
+## Contents
+
+And idea of what to expect in this guide.
+
+- **Languages** - Syntax and functions across languages. Including how to operate on an array in JavaScript, available Jekyll filters and common and specialized uses of Markdown. Most code snippets here are only one line.
+- **CLIs** - Terminal commands and flags that are useful to me, including listing what they are, what they mean and an example of how to use them. Especially using versatile/complex tools like `sed` or `git`.
+- **Help** - Portions of the manpages, to make it easier to read about command in the browser without going through the entire manpage on the terminal.
+- **Resources** - There are also some details for external resources.
 
 
 ## Documentation
@@ -41,11 +51,11 @@ To setup and run this project (or a fork), see the project docs:
 
 ## Contributing
 
-Contributions are welcome.
+Contributions are welcome. See instructions.
 
 <div align="center">
 
-[![Contributing](https://img.shields.io/badge/View-Contributing-blue?style=for-the-badge)](/CONTRIBUTING.md)
+[![Contributing doc](https://img.shields.io/badge/View-Contributing-blue?style=for-the-badge)](/CONTRIBUTING.md)
 
 </div>
 
