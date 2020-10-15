@@ -1,7 +1,8 @@
 ---
-title: PostgresSQL
 logo: postgres
 ---
+# PostgresSQL
+
 
 ## Docs and tutorials
 

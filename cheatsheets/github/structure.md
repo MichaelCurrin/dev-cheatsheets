@@ -1,7 +1,8 @@
 ---
-title: Project structure
 description: How to structure your GH repo
 ---
+# Project structure
+
 
 ## Issue templates
 
@@ -110,7 +111,7 @@ GH gives you a prompt to add a config file too.
 
 - `MAINTAINERS.txt`
 
-A list of users who maintain the project. 
+A list of users who maintain the project.
 
 Here is a large and structured one - [MAINTAINERS.txt](https://github.com/pressflow/7/blob/master/MAINTAINERS.txt)
 

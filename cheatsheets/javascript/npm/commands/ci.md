@@ -1,7 +1,8 @@
 ---
-title: CI
 description: About the `npm ci` command
 ---
+# CI
+
 
 ## Usage
 

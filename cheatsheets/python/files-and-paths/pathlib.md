@@ -1,7 +1,8 @@
 ---
-title: Pathlib
 description: New builtin alternative to `os.path`
 ---
+# Pathlib
+
 
 
 ## Resources

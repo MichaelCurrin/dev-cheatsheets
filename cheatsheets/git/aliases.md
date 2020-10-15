@@ -1,7 +1,8 @@
 ---
-title: Aliases
 description: Configure aliases for git
 ---
+# Aliases
+
 
 Set aliases in the `~/.gitconfig` file.
 

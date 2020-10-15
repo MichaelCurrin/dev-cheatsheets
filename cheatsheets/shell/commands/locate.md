@@ -1,7 +1,8 @@
 ---
-title: locate
 description: Utility to search for files or folders my name
 ---
+# locate
+
 
 The `locate` command is an efficient way of searching a database which lists the files and folders on your machine. The DB is updatedly nightly for you.
 

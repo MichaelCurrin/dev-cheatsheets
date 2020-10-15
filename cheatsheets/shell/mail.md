@@ -1,7 +1,8 @@
 ---
-title: Mail
 description: Using the mail command-line utility on Unix systems
 ---
+# Mail
+
 
 Send and receive mails on the command-line, for Linux and macOS.
 
@@ -45,11 +46,11 @@ Some highlights:
 ```
      -E      Do not send messages with an empty body.  This is useful for piping errors from
              cron(8) scripts.
-             
+
      -e      Test for the presence of mail in the (by default, system) mailbox.  An exit
              status of 0 is returned if it has mail; otherwise, an exit status of 1 is
              returned.
-             
+
      -H      Write a header summary only.
 ```
 
@@ -99,7 +100,7 @@ I have `mail` installed on macOS too. Perhaps standard or installed with coreuti
 
 ### Interactive
 
-Start interactive session. 
+Start interactive session.
 
 Press enter to advanced through mail. The prompt will change to `?` and a point at `>` for the current position.
 

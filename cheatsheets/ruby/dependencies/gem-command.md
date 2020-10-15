@@ -1,7 +1,8 @@
 ---
-title: Gem command
 description: How to manage Ruby gems with the gem command
 ---
+# Gem command
+
 
 ## Install
 

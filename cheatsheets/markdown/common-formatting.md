@@ -1,7 +1,8 @@
 ---
-title: Common formatting
 description: A reference for markdown basics you'll use daily
 ---
+# Common formatting
+
 
 
 ## Headings

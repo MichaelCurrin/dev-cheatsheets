@@ -1,7 +1,8 @@
 ---
-title: Install
 description: How to install an extension in multiple ways
 ---
+# Install
+
 
 Extensions must go in `~/.vscode/extensions` according to the docs - that's where other marketplace extensions go as directories.
 

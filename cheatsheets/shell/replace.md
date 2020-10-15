@@ -1,12 +1,13 @@
 ---
-title: Replace
 description: Find and replace text in a file, a variable or a string
 ---
+# Replace
+
 
 
 ## Using shell parameter expansion
 
-Using a variable. 
+Using a variable.
 
 Syntax: `${VARNAME/FIND/REPLACE}`.
 
@@ -61,7 +62,7 @@ bartball
 Given text:
 
 ```sh
-$ echo 'Hello\nworld'               
+$ echo 'Hello\nworld'
 Hello
 world
 ```
@@ -110,13 +111,13 @@ World
 Both of these work.
 
 ```sh
-$ echo "Hello:world" | tr ':' '\n' 
+$ echo "Hello:world" | tr ':' '\n'
 Hello
 world
 ```
 
 ```sh
-$ echo "Hello:world" | tr ':' ' 
+$ echo "Hello:world" | tr ':' '
 '
 Hello
 world

@@ -1,7 +1,8 @@
 ---
-title: List files
 description: Using commands like ls, find and du to show files
 ---
+# List files
+
 
 
 ## Using List command

@@ -1,7 +1,8 @@
 ---
-title: Default target
 description: Setting the default command if no args are given to `make`
 ---
+# Default target
+
 
 
 When running `make` without arguments, it will run the _first_ command in the file.

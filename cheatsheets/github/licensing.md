@@ -1,7 +1,8 @@
 ---
-title: Licensing
 description: How to choose and apply a license for your project
 ---
+# Licensing
+
 
 
 ## Notes

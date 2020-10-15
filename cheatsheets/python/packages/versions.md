@@ -1,7 +1,8 @@
 ---
-title: Python package versions
 description: Understanding versioning of Python packages
 ---
+# Python package versions
+
 
 
 ## Semantic versioning

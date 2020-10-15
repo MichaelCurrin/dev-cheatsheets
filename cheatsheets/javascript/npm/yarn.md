@@ -1,7 +1,8 @@
 ---
-title: Yarn
 logo: yarn
 ---
+# Yarn
+
 
 ## Install
 

@@ -1,7 +1,8 @@
 ---
-title: read
 description: Read input from a user
 ---
+# read
+
 
 ## Examples
 
@@ -36,7 +37,7 @@ if [ $((NUMBER % 2)) -eq 0 ]; then
     echo "Number is even"
 else
     echo "Number is odd"
-fi 
+fi
 ```
 
 
@@ -87,7 +88,7 @@ SYNOPSIS
 ```
 DESCRIPTION
     Read a line from the standard input and split it into fields.
-    
+
     Reads a single line from the standard input, or from file descriptor FD
     if the -u option is supplied.  The line is split into fields as with word
     splitting, and the first word is assigned to the first NAME, the second
@@ -131,4 +132,3 @@ DESCRIPTION
     (in which case it's greater than 128), a variable assignment error occurs,
     or an invalid file descriptor is supplied as the argument to -u.
 ```
-

@@ -1,7 +1,8 @@
 ---
-title: Gem path
 description: Allow access to gems in the PATH variable
 ---
+# Gem path
+
 
 Gems are installed to the user location with:
 

@@ -1,7 +1,8 @@
 ---
-title: Hooks
 description: Understanding and using git hooks
 ---
+# Hooks
+
 
 
 ## Resources
@@ -20,7 +21,7 @@ description: Understanding and using git hooks
     - [#commit-msg](https://github.com/topics/commit-msg) GitHub topic
     - [speedy-commit-msg-hook](https://github.com/alan-agius4/speedy-commit-msg-hook) - NPM package to validate a commit message. This also includes an install step in `src` irectory.
     - [pre-commit/pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks) GH repo
-- [pre-commit.com](https://pre-commit.com/) homepage 
+- [pre-commit.com](https://pre-commit.com/) homepage
     - Good for use with Python projects.
 
 ### Integrations
@@ -39,7 +40,7 @@ Note that VS Code does follow the [commit template] file though - this can be us
 
 ## Setting up hooks
 
-Note that if you store hooks in a directory like `hooks`, you'll need a manual step to copy them or `.git/hooks`. 
+Note that if you store hooks in a directory like `hooks`, you'll need a manual step to copy them or `.git/hooks`.
 
 ```sh
 $ cp hooks/pre-commit-msg .git/hooks/pre-commit-msg
@@ -85,8 +86,8 @@ Copied from githooks homepage. I've grouped for convenience.
     - Allow updating commit message in place before the user sees it. "You may use it in conjunction with a commit template to programmatically insert information."
     - This invoked `git commit` right after preparing the default log message, but before the editor is started.
     - Params - It takes one to three parameters:
-        1. The first is the **name of the file** that contains the commit log message. 
-        2. The second is the **source** or type of the commit message, and can be: 
+        1. The first is the **name of the file** that contains the commit log message.
+        2. The second is the **source** or type of the commit message, and can be:
             - `message` (if the `-m` or `-F` option was given)
             - `template` (if the `-t` option was given or the configuration option `commit.template` is set)
             - `merge` (if the commit is a merge or a .`git/MERGE_MSG` file exists)
@@ -132,4 +133,3 @@ I don't know what these are for.
 ### Push
 
 - `pre-push`
-

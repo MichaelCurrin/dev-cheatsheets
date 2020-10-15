@@ -1,7 +1,8 @@
 ---
-title: command
 description: About the `command` builtin
 ---
+# command
+
 
 ## Usage
 
@@ -105,7 +106,7 @@ $ command -v node
 
 ### Check if package exists
 
-Execute logic depending on if a system package is installed. 
+Execute logic depending on if a system package is installed.
 
 This will hide any output and errors and use the exit status to check if the target could be found or not.
 

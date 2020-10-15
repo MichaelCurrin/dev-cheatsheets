@@ -1,14 +1,15 @@
 ---
-title: Type checks
 description: How to add type safety to Python
 ---
+# Type checks
+
 
 In Python 3.6, type-hints were added as allowed syntax which can optionally be checked with a tool like MyPy.
 
 
 ## Resources
 
-- MyPy library 
+- MyPy library
     - [mypy-lang.org](https://mypy-lang.org/) homepage.
     - [MyPy Docs](https://mypy.readthedocs.io/en/stable/) page.
     - [Type hints cheat sheet (Python 3)](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html) in the docs.

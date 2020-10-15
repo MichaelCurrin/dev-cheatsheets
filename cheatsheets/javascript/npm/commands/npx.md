@@ -1,7 +1,8 @@
 ---
-title: npx
 description: Node package executor
 ---
+# npx
+
 
 This is not a subcommand of `npm`. It already comes with `npm` (at least newer versions) and works well with the NPM ecosystem
 

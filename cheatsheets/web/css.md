@@ -1,7 +1,8 @@
 ---
-title: CSS
 logo: css3
 ---
+# CSS
+
 
 ## GitHub Pages CSS
 

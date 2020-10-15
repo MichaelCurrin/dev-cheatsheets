@@ -1,7 +1,8 @@
 ---
-title: Homebrew
 description: A commonly-used macOS package manager
 ---
+# Homebrew
+
 
 ## Resources
 
@@ -28,7 +29,7 @@ $ brew update
 
 ### Install package
 
-Install a specific package by its formula. 
+Install a specific package by its formula.
 
 _Note: Unlike `apt`, the `update` command is done internally to get the latest remote info - [#1670](https://github.com/Homebrew/brew/issues/1670)._
 
