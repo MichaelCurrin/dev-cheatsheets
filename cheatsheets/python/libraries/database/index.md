@@ -1,4 +1,4 @@
 ---
-title: Database
 layout: listing
 ---
+# Database

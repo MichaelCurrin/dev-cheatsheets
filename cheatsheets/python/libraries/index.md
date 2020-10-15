@@ -1,7 +1,8 @@
 ---
-title: Python libraries
 layout: listing
 ---
+# Python libraries
+
 
 
 ## Resources

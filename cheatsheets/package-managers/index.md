@@ -1,4 +1,4 @@
 ---
-title: Package managers
 layout: listing
 ---
+# Package managers

@@ -1,4 +1,4 @@
 ---
-title: Code blocks
 layout: listing
 ---
+# Code blocks

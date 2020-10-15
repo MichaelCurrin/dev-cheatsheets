@@ -1,7 +1,8 @@
 ---
-title: Working with text files
 layout: listing
 ---
+# Working with text files
+
 
 
 ## View file

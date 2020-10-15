@@ -1,4 +1,4 @@
 ---
-title: Semantic versioning
 layout: listing
 ---
+# Semantic versioning

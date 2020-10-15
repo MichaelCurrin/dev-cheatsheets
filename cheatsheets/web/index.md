@@ -1,4 +1,4 @@
 ---
-title: Web
 layout: listing
 ---
+# Web
