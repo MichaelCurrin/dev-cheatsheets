@@ -1,8 +1,9 @@
 ---
-title: Docker
 description: The container management tool
-logo: docker
+logo: The container management tool
 ---
+# Docker
+
 
 ## Resources
 

@@ -1,8 +1,9 @@
 ---
-title: Kubernetes
 description: The tool that lets you manage and deploy pods of containers at scale
-logo: kubernetes
+logo: The tool that lets you manage and deploy pods of containers at scale
 ---
+# Kubernetes
+
 
 Also known as "K8s" for short.
 
