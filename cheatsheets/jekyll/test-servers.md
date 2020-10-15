@@ -1,6 +1,4 @@
----
-title: Test servers
----
+# Test servers
 
 The Jekyll server has some enhancements which are not like a production server. So to replicate a production environment, run the Jekyll `build` command and then serve that directory using one of the approaches below. Either locally or on a staging server.
 

@@ -1,6 +1,4 @@
----
-title: Undo
----
+# Undo
 
 ## Undo commit
 

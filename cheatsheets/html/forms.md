@@ -1,6 +1,4 @@
----
-title: Forms
----
+# Forms
 
 Input elements for forms.
 

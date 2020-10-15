@@ -1,6 +1,4 @@
----
-title: System
----
+# System
 
 
 ## Uptime

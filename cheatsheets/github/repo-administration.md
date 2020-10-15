@@ -1,6 +1,4 @@
----
-title: Repo administration
----
+# Repo administration
 
 So far everything in here is related to VS Code and also will work outside GitHub. Other useful sections would be the EditorConfig and other configs.
 
@@ -64,4 +62,3 @@ The example below is for a TypeScript project. <!-- TODO Move to cookbook -->
         "typescript.tsc.autoDetect": "off"
     }
     ```
-    

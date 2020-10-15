@@ -1,6 +1,4 @@
----
-title: Basic
----
+# Basic
 
 ## Selection
 

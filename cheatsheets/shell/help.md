@@ -1,6 +1,4 @@
----
-title: Help
----
+# Help
 
 ```sh
 help

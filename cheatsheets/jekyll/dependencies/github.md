@@ -1,6 +1,4 @@
----
-title: Install from GitHub
----
+# Install from GitHub
 
 How to install a gem from GitHub URL rather than RubyGems. This is useful for plugins which you have not published on RubyGems. This is not so useful for themes because you can just use Remote Themes Plugins on GH Pages.
 

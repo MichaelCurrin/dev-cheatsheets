@@ -1,6 +1,4 @@
----
-title: Bundler
----
+# Bundler
 
 Use as `bundler` or `bundle` (more common).
 

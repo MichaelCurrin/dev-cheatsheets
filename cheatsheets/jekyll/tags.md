@@ -1,6 +1,4 @@
----
-title: Jekyll tags
----
+# Jekyll tags
 
 {% raw %}
 

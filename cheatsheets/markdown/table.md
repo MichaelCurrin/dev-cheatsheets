@@ -1,6 +1,4 @@
----
-title: Table
----
+# Table
 
 The first row is the header and always followed by a row of dashes.
 

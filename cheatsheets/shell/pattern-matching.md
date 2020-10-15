@@ -1,6 +1,4 @@
----
-title: Pattern matching
----
+# Pattern matching
 
 See also globbing.
 

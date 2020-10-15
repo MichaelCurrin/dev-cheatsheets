@@ -1,6 +1,4 @@
----
-title: Collapsible items
----
+# Collapsible items
 
 How to create sections which can expand and collapse again.
 

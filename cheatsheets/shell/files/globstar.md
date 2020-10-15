@@ -1,6 +1,4 @@
----
-title: Globstar
----
+# Globstar
 
 ## Standard star
 

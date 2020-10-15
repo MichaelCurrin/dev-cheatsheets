@@ -1,5 +1,3 @@
----
-title: YAML
----
+# YAML
 
 Homepage: [yaml.org](https://yaml.org/)

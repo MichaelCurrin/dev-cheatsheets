@@ -1,11 +1,9 @@
----
-title: Variables
----
+# Variables
 
 
 ## Basic
 
-Define and use a param. 
+Define and use a param.
 
 ```graphql
 query Foo ($name: String) {
@@ -47,7 +45,7 @@ The `$name` can be anything but must match the key in the JSON data. The `name` 
 	  "episode": "JEDI"
 	}
 	```
-	
+
 
 ## Default
 
@@ -60,5 +58,5 @@ query Foo ($name: String = "Bar") {
 You might reference a type instead.
 
 ```
-($episode: Episode = JEDI) 
+($episode: Episode = JEDI)
 ```

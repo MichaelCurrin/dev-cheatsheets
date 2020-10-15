@@ -1,6 +1,4 @@
----
-title: Favicon
----
+# Favicon
 
 Override favicon default. Some sources use `/myicon.png` and some `https://example.com/myicon.png`.
 
@@ -24,7 +22,7 @@ From [Favicon generator](https://www.favicon-generator.org/) and other sources. 
 From [source](https://www.html.am/html-codes/image-codes/html-favicon-code.cfm):
 
 > Also, although this example uses the .ico extension, you could use other image formats, such as .png. .gif, .jpeg, and even animated GIFs. However, the .ico format has had wide acceptance from browsers for quite some time and is a common format when using favicons.
-> 
+>
 > Favicons can be 16x16, 32x32, 48x48, or 64x64 pixels in size, and 8-bit, 24-bit, or 32-bit in color depth
 
 

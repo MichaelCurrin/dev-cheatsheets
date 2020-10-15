@@ -1,6 +1,4 @@
----
-title: Call another target
----
+# Call another target
 
 
 ## Run before first step

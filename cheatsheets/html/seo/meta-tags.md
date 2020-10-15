@@ -1,6 +1,4 @@
----
-title: Meta tags
----
+# Meta tags
 
 The title shows in the tab and on a Google search result.
 

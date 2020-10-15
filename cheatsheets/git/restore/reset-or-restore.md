@@ -1,6 +1,4 @@
----
-title: Reset or restore git branches
----
+# Reset or restore git branches
 
 
 ## Restore local master to remote master

@@ -1,6 +1,4 @@
----
-title: Meta tags
----
+# Meta tags
 
 ## Summary
 

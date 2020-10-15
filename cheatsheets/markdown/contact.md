@@ -1,6 +1,4 @@
----
-title: Contact
----
+# Contact
 
 
 ## Email

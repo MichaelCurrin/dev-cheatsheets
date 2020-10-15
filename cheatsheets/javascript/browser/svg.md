@@ -1,6 +1,4 @@
----
-title: SVG
----
+# SVG
 
 ## Change color using JS
 

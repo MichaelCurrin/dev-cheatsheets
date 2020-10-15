@@ -1,6 +1,4 @@
----
-title: Variables
----
+# Variables
 
 See [Variables](https://www.terraform.io/docs/configuration/variables.html) in the docs.
 

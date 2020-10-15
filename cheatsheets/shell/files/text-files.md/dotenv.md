@@ -1,6 +1,4 @@
----
-title: Dotenv
----
+# Dotenv
 
 > A load a dotenv file.
 

@@ -1,6 +1,4 @@
----
-title: SVGs
----
+# SVGs
 
 See also the [SVGs]({% link cheatsheets/markdown/images.md %}#svgs) section of the markdown images cheatsheet.
 

@@ -7,9 +7,7 @@ description: A reference for markdown basics you'll use daily
 ## Headings
 
 ```markdown
----
-title: Header 1
----
+# Header 1
 
 Content
 

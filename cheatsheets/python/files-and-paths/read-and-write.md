@@ -1,6 +1,4 @@
----
-title: Read and write
----
+# Read and write
 
 ## Read text file
 

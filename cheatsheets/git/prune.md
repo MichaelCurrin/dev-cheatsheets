@@ -1,6 +1,4 @@
----
-title: Git prune
----
+# Git prune
 
 Tutorial: [git prune](https://www.atlassian.com/git/tutorials/git-prune)
 

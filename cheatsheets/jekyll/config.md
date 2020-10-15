@@ -1,6 +1,4 @@
----
-title: Jekyll config
----
+# Jekyll config
 
 Jekyll docs reference - [Config options](https://jekyllrb.com/docs/configuration/options/). That covers both CLI and config file options together.
 

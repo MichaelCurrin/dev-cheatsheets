@@ -1,6 +1,4 @@
----
-title: CLI
----
+# CLI
 
 ## Usage
 

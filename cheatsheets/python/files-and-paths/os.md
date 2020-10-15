@@ -1,6 +1,4 @@
----
-title: OS library
----
+# OS library
 
 ## Get current path
 

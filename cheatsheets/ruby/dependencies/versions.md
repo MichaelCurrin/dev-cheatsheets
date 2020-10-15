@@ -1,6 +1,4 @@
----
-title: Versions
----
+# Versions
 
 Setting gem versions a `Gemfile`.
 

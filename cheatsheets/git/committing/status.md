@@ -1,6 +1,4 @@
----
-title: Git status
----
+# Git status
 
 ## Flags
 

@@ -1,6 +1,4 @@
----
-title: Head and tail commands
----
+# Head and tail commands
 
 ## Head
 

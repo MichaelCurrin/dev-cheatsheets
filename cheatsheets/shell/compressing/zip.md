@@ -1,6 +1,4 @@
----
-title: Zip utility
----
+# Zip utility
 
 
 Compress and decompress - use the `zip` utility to handle `.zip` files.

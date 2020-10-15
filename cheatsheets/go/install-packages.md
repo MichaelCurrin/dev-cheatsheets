@@ -1,6 +1,4 @@
----
-title: Install packages
----
+# Install packages
 
 ```sh
 $ go get -u GITHUB_INSTALL_REF

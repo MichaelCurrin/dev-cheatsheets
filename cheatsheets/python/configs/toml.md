@@ -1,6 +1,4 @@
----
-title: TOML
----
+# TOML
 
 ## Example
 

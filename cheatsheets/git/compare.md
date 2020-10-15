@@ -1,6 +1,4 @@
----
-title: Compare
----
+# Compare
 
 ## Compare commits
 

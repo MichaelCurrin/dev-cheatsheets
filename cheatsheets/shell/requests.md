@@ -1,6 +1,4 @@
----
-title: Shell requests
----
+# Shell requests
 
 How to download or upload content at a URL using terminal tools.
 

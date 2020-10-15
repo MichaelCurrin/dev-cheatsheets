@@ -1,6 +1,4 @@
----
-title: View port
----
+# View port
 
 Reset the view port to make the site look good on all devices.
 

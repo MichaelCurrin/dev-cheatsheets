@@ -1,6 +1,4 @@
----
-title: Random
----
+# Random
 
 ## Number
 

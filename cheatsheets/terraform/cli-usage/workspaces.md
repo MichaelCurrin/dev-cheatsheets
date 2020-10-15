@@ -1,6 +1,4 @@
----
-title: Workspaces
----
+# Workspaces
 
 
 - [Workspace command](https://www.terraform.io/docs/commands/workspace/index.html) docs.

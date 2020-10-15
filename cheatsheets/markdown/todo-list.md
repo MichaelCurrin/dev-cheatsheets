@@ -1,6 +1,4 @@
----
-title: Todo list
----
+# Todo list
 
 Use hard brackets. With either a space or lowercase `x`.
 

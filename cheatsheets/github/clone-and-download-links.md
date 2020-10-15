@@ -1,6 +1,4 @@
----
-title: Clone and download links
----
+# Clone and download links
 
 
 ## Clone HTTPS

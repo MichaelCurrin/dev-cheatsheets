@@ -1,6 +1,4 @@
----
-title: Classes
----
+# Classes
 
 ```javascript
 export default class Foo extends Bar {

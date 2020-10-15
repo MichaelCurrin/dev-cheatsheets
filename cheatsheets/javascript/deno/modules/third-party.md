@@ -1,6 +1,4 @@
----
-title: Third-party modules
----
+# Third-party modules
 
 Examples of how to run
 

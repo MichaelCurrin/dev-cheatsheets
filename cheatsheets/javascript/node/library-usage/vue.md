@@ -1,6 +1,4 @@
----
-title: Vue
----
+# Vue
 
 See also [Vue JS Quickstart](https://github.com/MichaelCurrin/vue-js-quickstart) repo.
 

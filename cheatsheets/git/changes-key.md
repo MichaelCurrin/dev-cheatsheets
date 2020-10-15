@@ -1,6 +1,4 @@
----
-title: Changes key
----
+# Changes key
 
 This is relevant for `git status`, `git diff` and `git diff-index`.
 
@@ -9,4 +7,4 @@ This is relevant for `git status`, `git diff` and `git diff-index`.
 - `R` rename-edit - File has been renamed and modified
 - `A` added - File has been added
 - `D` deleted - File has been deleted
-- `U` unmerged - File has conflicts after a merge 
+- `U` unmerged - File has conflicts after a merge

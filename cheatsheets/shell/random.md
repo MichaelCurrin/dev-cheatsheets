@@ -1,6 +1,4 @@
----
-title: Random
----
+# Random
 
 ## Basic
 
@@ -32,10 +30,9 @@ Use a condition agains the value. Here if the value is `0` (with a 1 in 3 chance
 ```
 
 ```sh
-if (( $RANDOM % 3 != 0 )) ; then 
+if (( $RANDOM % 3 != 0 )) ; then
   echo 'Condition matched'
 else
   echo 'Not matched'
 fi
 ```
-

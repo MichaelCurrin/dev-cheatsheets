@@ -1,6 +1,4 @@
----
-title: Skeleton structure
----
+# Skeleton structure
 
 ```html
 <!DOCTYPE html>

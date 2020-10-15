@@ -1,6 +1,4 @@
----
-title: ESLint
----
+# ESLint
 
 ## Resources
 

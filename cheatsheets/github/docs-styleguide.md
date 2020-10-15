@@ -1,6 +1,4 @@
----
-title: Docs styleguide
----
+# Docs styleguide
 
 ## Variables
 

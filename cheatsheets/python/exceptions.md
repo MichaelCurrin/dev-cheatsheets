@@ -1,6 +1,4 @@
----
-title: Exceptions
----
+# Exceptions
 
 ## Resources
 
@@ -74,7 +72,7 @@ Message
 class NetworkError(RuntimeError):
     def __init__(self, msg):
         self.msg = msg
-        
+
 ```
 
 ```python

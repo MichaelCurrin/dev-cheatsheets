@@ -1,6 +1,4 @@
----
-title: diff-index
----
+# diff-index
 
 ## Docs
 

@@ -1,6 +1,4 @@
----
-title: Options
----
+# Options
 
 Set shell options in a script or at a global level.
 

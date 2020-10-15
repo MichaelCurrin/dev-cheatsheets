@@ -1,6 +1,4 @@
----
-title: Repo links
----
+# Repo links
 
 Without loading just the README, you can focus on it.
 

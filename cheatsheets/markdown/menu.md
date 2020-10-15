@@ -1,6 +1,4 @@
----
-title: Menu
----
+# Menu
 
 A one-line menu with dashes. Copied from [threejs](https://github.com/mrdoob/three.js/blob/dev/README.md).
 

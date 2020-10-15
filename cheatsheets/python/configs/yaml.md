@@ -1,6 +1,4 @@
----
-title: YAML
----
+# YAML
 
 ## Example
 

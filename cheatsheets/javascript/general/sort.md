@@ -1,6 +1,4 @@
----
-title: Sort
----
+# Sort
 
 ## Text
 

@@ -1,6 +1,4 @@
----
-title: Pull Request
----
+# Pull Request
 
 URL: https://github.com/MichaelCurrin/dev-cheatsheets/pull/17
 

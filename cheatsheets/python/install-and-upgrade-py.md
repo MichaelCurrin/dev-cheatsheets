@@ -1,6 +1,4 @@
----
-title: Install and upgrade Python
----
+# Install and upgrade Python
 
 ## macOS
 
@@ -85,7 +83,7 @@ To list all files that would be deleted:
 Or
 
 ```sh
-$ brew unlink python 
+$ brew unlink python
 $ brew link python@3.9
 Warning: python@3.9 is keg-only and must be linked with --force
 

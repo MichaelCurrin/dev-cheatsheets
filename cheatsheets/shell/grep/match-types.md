@@ -1,6 +1,4 @@
----
-title: Match types
----
+# Match types
 
 
 ## Basic

@@ -1,6 +1,4 @@
----
-title: Basics
----
+# Basics
 
 From [Queries and Mutations](https://graphql.org/learn/queries/) section of the GraphQL learn docs.
 
@@ -97,9 +95,9 @@ More complex params as a dictionary:
 {
 	viewer {
 		repositories(
-			first: 100, 
-			ownerAffiliations: OWNER, 
-			privacy: PUBLIC, 
+			first: 100,
+			ownerAffiliations: OWNER,
+			privacy: PUBLIC,
 			orderBy: { field: UPDATED_AT, direction: DESC })
 	}
 }
@@ -124,7 +122,7 @@ An alias is necessary to avoid an error on duplicate key. By default each one be
 
 ## Operation names
 
-- Basic 
+- Basic
 	- `query` is implied and there is no query name.
 	```graphql
 	{
@@ -136,7 +134,7 @@ An alias is necessary to avoid an error on duplicate key. By default each one be
 	  }
 	}
 	```
-- Specific 
+- Specific
 	- This helps in production apps including when viewing a debug message.
 	```graphql
 	query HeroNameAndFriends {

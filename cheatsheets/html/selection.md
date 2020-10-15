@@ -1,6 +1,4 @@
----
-title: Selection
----
+# Selection
 
 > Using CSS selectors
 

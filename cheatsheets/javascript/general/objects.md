@@ -1,6 +1,4 @@
----
-title: Objects
----
+# Objects
 
 JavaScript does not have an array or associative array or even a class - they are just ways of using the `object` type.
 

@@ -1,6 +1,4 @@
----
-title: Permissions
----
+# Permissions
 
 CLI flags for security.
 

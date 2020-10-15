@@ -1,6 +1,4 @@
----
-title: SQL connection
----
+# SQL connection
 
 ## Postgres
 

@@ -1,6 +1,4 @@
----
-title: Dotenv files
----
+# Dotenv files
 
 
 How to load a dotenv file, then use the values in your Python application.

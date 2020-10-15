@@ -1,6 +1,4 @@
----
-title: ZSH
----
+# ZSH
 
 See ZSH [options](https://zsh.sourceforge.net/Doc/Release/Options.html).
 

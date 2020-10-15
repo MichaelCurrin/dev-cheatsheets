@@ -1,6 +1,4 @@
----
-title: Piping and redirection
----
+# Piping and redirection
 
 
 ## Resources
@@ -26,7 +24,7 @@ This is not so useful in itself when just running in the console alone. But more
 COMMAND > stdout_and_sterr.txt 2> &1
 ```
 
-The `&1` is a pointer to where `stdout` is currently going. 
+The `&1` is a pointer to where `stdout` is currently going.
 
 
 Shorthand for the above.

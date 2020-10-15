@@ -1,6 +1,4 @@
----
-title: Basic
----
+# Basic
 
 ```html
 <!DOCTYPE html>

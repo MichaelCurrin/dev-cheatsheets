@@ -1,6 +1,4 @@
----
-title: Empty commit
----
+# Empty commit
 
 
 ## Commit with short message

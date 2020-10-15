@@ -1,6 +1,4 @@
----
-title: Writing a CLI
----
+# Writing a CLI
 
 Cross-language guide for writing a command-line interface - focussing on the interface and help messaging.
 

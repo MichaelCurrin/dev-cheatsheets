@@ -1,6 +1,4 @@
----
-title: Time handling
----
+# Time handling
 
 
 ## Resources

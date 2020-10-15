@@ -1,10 +1,8 @@
----
-title: HTML5 Boilerplate
----
+# HTML5 Boilerplate
 
 See the HTML5 Boilerplate website - [html5boilerplate.com](https://html5boilerplate.com/).
 
-The page below is based on [dist/index.html](https://github.com/h5bp/html5-boilerplate/blob/master/dist/index.html) of the `html5-boilerplate` repo. 
+The page below is based on [dist/index.html](https://github.com/h5bp/html5-boilerplate/blob/master/dist/index.html) of the `html5-boilerplate` repo.
 
 - `index.html`
     ```html
@@ -36,7 +34,7 @@ The page below is based on [dist/index.html](https://github.com/h5bp/html5-boile
 
     </html>
     ```
-    
+
 
 ## Notes
 

@@ -1,6 +1,4 @@
----
-title: Input methods
----
+# Input methods
 
 General
 
