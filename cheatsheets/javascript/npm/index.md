@@ -1,8 +1,9 @@
 ---
-title: NPM
-layout: listing
 logo: npm
+layout: listing
 ---
+# NPM
+
 
 ## Resources
 

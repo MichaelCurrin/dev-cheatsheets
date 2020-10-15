@@ -1,8 +1,9 @@
 ---
-title: Shell
-layout: listing
 logo: gnubash
+layout: listing
 ---
+# Shell
+
 
 Unix shell cheatsheet for macOS/Linux
 

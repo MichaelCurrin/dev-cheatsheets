@@ -1,8 +1,9 @@
 ---
-title: Markdown
-layout: listing
 logo: markdown
+layout: listing
 ---
+# Markdown
+
 
 Applies to `.md` or `.markdown` files as both are equivalent.
 

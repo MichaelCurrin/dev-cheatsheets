@@ -1,5 +1,5 @@
 ---
-title: SQL
-layout: listing
 logo: postgresql
+layout: listing
 ---
+# SQL

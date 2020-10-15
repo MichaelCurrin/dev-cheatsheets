@@ -1,8 +1,9 @@
 ---
-title: JavaScript
-layout: listing
 logo: javascript
+layout: listing
 ---
+# JavaScript
+
 
 See also:
 
