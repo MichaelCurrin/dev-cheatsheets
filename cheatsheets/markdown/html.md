@@ -1,7 +1,6 @@
----
-title: HTML
-render_with_liquid: false
----
+# HTML
+
+{% raw %}
 
 > How to add HTML tags to your markdown files
 
@@ -194,3 +193,5 @@ Or use ensure every line starts with an opening tag.
     <p>C</p>
     <p>D</p>
 </div>
+
+{% endraw %}

@@ -1,8 +1,7 @@
 ---
-title: Standard plugins
 description: How to add common plugins to your site
-render_with_liquid: false # Jekyll 4 only
 ---
+# Standard plugins
 
 {% raw %}
 These are useful to add for most sites and work on GH Pages.
@@ -25,7 +24,7 @@ These are useful to add for most sites and work on GH Pages.
 	- > The plugin will automatically generate an Atom feed at /feed.xml.
 - Produce an feed of posts.
 	- If you don't have a `_posts` directory, this won't be useful for you.
-	- But useful for consumers of your blog add to their reader tools. 
+	- But useful for consumers of your blog add to their reader tools.
 	- This uses _Atom_ and not _RSS_, which is explained why in the docs.
 - Follow the docs to configure.
 - After installing, add to your `head` HTML tag such as in `_layouts/default.html`.
@@ -35,11 +34,11 @@ These are useful to add for most sites and work on GH Pages.
 
 Sample:
 
-- `index.html` 
+- `index.html`
 	- The reason for the metadata is to generate a tag like this from [/michaelcurrin.github.io/jekyll-blog-demo](https://michaelcurrin.github.io/jekyll-blog-demo/).
 	```html
-	<link type="application/atom+xml" rel="alternate" 
-		href="https://michaelcurrin.github.io/jekyll-blog-demo/feed.xml" 
+	<link type="application/atom+xml" rel="alternate"
+		href="https://michaelcurrin.github.io/jekyll-blog-demo/feed.xml"
 		title="Jekyll Blog Demo" />
 	```
 - `feed.xml`
@@ -88,11 +87,11 @@ Sample:
 	<meta property="og:locale" content="en_US" />
 	<meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
 	<meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
-	
+
 	<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/" />
 	<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/" />
 	<meta property="og:site_name" content="Dev Cheatsheets" />
-	
+
 	<script type="application/ld+json">
 	{
 		"description": "A collection of code snippets and CLI guides for quick and easy reference while coding",

@@ -1,7 +1,7 @@
 ---
-title: Whitespace
 render_with_liquid: false
 ---
+# Whitespace
 
 ## Variable
 
