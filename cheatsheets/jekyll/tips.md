@@ -5,9 +5,6 @@ title: Tips
 
 ## Page not found
 
-
-
-
 Prevent  path from being`404/index.html` when using `permalink: pretty` in config.
 
 ```
@@ -19,6 +16,7 @@ Hide from sitemap. This is only necessary when using pretty, as it will be ignor
 ```
 sitemap: false
 ```
+
 
 ## Custom robots
 
