@@ -37,3 +37,10 @@ Use current time if value is not set.
 ```
 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ```
+
+
+## Drop
+
+```
+DROP TABLE IF EXISTS foo
+```
