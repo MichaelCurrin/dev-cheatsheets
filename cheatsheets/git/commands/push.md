@@ -1,6 +1,4 @@
----
-title: push
----
+# push
 
 Docs: [Git push](https://git-scm.com/docs/git-push)
 

@@ -1,6 +1,4 @@
----
-title: Pull Request
----
+# Pull Request
 
 Patterns for Pull Request URLs, with examples.
 

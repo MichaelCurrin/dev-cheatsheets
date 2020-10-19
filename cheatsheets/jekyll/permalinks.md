@@ -1,6 +1,4 @@
----
-title: Permalinks
----
+# Permalinks
 
 ## Resources
 

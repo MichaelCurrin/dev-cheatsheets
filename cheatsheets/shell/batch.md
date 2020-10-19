@@ -1,6 +1,4 @@
----
-title: Batch shell
----
+# Batch shell
 
 How to perform multiple actions easily.
 

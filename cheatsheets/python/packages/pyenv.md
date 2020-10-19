@@ -1,6 +1,4 @@
----
-title: Pyenv
----
+# Pyenv
 
 <!-- TODO: Copy from learn to code python -->
 

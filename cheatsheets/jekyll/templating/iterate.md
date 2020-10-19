@@ -1,6 +1,4 @@
----
-title: Iterate over data
----
+# Iterate over data
 
 You can iterate over data in a data file or in the current page's frontmatter or any global variables from Jekyll or a plugin.
 

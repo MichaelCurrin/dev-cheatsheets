@@ -1,6 +1,4 @@
----
-title: Piping
----
+# Piping
 
 Sending input to another command.
 

@@ -1,6 +1,4 @@
----
-title: Pandas
----
+# Pandas
 
 Commands in Pandas which I have used or would like to use. This is not meant to be complete, but cover some common usage situations or some tricky or obscure syntax.
 

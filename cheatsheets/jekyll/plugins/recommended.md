@@ -1,7 +1,8 @@
 ---
-title: Recommended
 description: List of recommended plugins I'd like to share
 ---
+# Recommended
+
 
 ## Embedding
 
@@ -48,7 +49,7 @@ $ convert --version
 
 [doc](https://rbuchberger.github.io/jekyll_picture_tag/)
 
-Write this: 
+Write this:
 
 {% raw %}
 ```liquid

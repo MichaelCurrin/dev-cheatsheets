@@ -1,6 +1,4 @@
----
-title: Text
----
+# Text
 
 ## Case
 

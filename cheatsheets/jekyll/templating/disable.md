@@ -1,6 +1,4 @@
----
-title: Disable Liquid
----
+# Disable Liquid
 
 ## Metadata
 

@@ -1,6 +1,4 @@
----
-title: Sitemaps
----
+# Sitemaps
 
 ## Resources
 

@@ -1,7 +1,8 @@
 ---
-title: Tags
 description: HTML tags
 ---
+# Tags
+
 
 See [HTML Element Reference](https://www.w3schools.com/tags/) on W3 schools.
 

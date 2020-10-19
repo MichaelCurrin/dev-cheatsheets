@@ -1,6 +1,4 @@
----
-title: Builtins
----
+# Builtins
 
 ## Range
 

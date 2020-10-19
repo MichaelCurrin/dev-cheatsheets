@@ -1,4 +1,4 @@
 ---
-title: Git committing
 layout: listing
 ---
+# Git committing

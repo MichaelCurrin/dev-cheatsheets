@@ -1,6 +1,4 @@
----
-title: Python glob
----
+# Python glob
 
 See also the [globbing][] in the Shell section of this guide.
 

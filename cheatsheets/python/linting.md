@@ -1,6 +1,4 @@
----
-title: Linting
----
+# Linting
 
 ## Flake8
 
@@ -8,12 +6,12 @@ title: Linting
 ### Config
 
 [Configuring Flake8](https://flake8.pycqa.org/en/latest/user/configuration.html)
- 
+
 Flake8 supports storing its configuration in the following places:
 
 - Your top-level user directory.
 - In your project in one of `setup.cfg`, `tox.ini`, or `.flake8`.
- 
+
 Example:
 
 - `setup.cfg`
@@ -34,7 +32,7 @@ Example:
         dist
     max-complexity = 10
     ```
-    
+
 ### Status codes
 
 "error", "error code" or "violation"
@@ -43,7 +41,7 @@ Example:
 
 
 - Flake8 docs
-    - [Error codes](https://flake8.pycqa.org/en/latest/user/error-codes.html) 
+    - [Error codes](https://flake8.pycqa.org/en/latest/user/error-codes.html)
     - Flake8 errors start with `F` - F4XX, F5XX, F6XX, F8XX and F901.
 - PyCodes style
     - [Error codes](https://pycodestyle.pycqa.org/en/latest/intro.html#error-codes) - linked from the Flake8 docs

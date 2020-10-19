@@ -1,6 +1,4 @@
----
-title: Standard lib
----
+# Standard lib
 
 Examples of how to run modules in the Deno standard library.
 

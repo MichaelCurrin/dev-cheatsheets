@@ -1,6 +1,4 @@
----
-title: Strings
----
+# Strings
 
 
 ## Resources

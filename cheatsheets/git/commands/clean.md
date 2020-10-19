@@ -1,6 +1,4 @@
----
-title: clean
----
+# clean
 
 
 ## Examples

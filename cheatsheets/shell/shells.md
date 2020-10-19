@@ -1,6 +1,4 @@
----
-title: Working with shells
----
+# Working with shells
 
 
 ## Start subshell

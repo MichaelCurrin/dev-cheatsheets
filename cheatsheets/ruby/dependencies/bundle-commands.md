@@ -1,6 +1,4 @@
----
-title: Bundler commands
----
+# Bundler commands
 
 Bundler and bundle are equivalent. Even the gem's own recommendation for upgrading is: `bundle update bundler`.
 
@@ -40,7 +38,7 @@ Note the file is only readable, you change the permissions first.
 $ chmod +w Gemfile
 $ nano Gemfile
 ```
- 
+
 ### Install
 
 Make sure to configure Bundle first:

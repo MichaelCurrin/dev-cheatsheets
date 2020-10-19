@@ -1,6 +1,4 @@
----
-title: Disk file system command
----
+# Disk file system command
 
 
 ```

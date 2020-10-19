@@ -1,6 +1,4 @@
----
-title: CLI help
----
+# CLI help
 
 
 Deno CLI help.

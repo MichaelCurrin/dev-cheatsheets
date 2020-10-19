@@ -1,6 +1,4 @@
----
-title: Numpy
----
+# Numpy
 
 See links:
 

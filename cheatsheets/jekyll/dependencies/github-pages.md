@@ -1,6 +1,4 @@
----
-title: GitHub Pages
----
+# GitHub Pages
 
 ## Gems on GH Pages
 > Environment for standard GH Pages setup (without GH Actions)

@@ -1,5 +1,5 @@
 ---
-title: GraphQL
-layout: listing
 logo: graphql
+layout: listing
 ---
+# GraphQL

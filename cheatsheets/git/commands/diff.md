@@ -1,6 +1,4 @@
----
-title: diff
----
+# diff
 
 See git docs: [git-diff](https://git-scm.com/docs/git-diff)
 

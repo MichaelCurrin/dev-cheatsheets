@@ -1,7 +1,8 @@
 ---
-title: Publish
 description: How to publish your extension to the VS Code extension marketplace
 ---
+# Publish
+
 
 I haven't gone through that flow yet but the VS Code docs will help you out. See the [Publishing extensions](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) help guide if you want more info.
 

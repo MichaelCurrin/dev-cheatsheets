@@ -1,6 +1,4 @@
----
-title: Tar utility
----
+# Tar utility
 
 ## Quick reference
 

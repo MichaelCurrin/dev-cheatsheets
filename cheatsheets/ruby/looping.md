@@ -1,6 +1,4 @@
----
-title: Looping
----
+# Looping
 
 
 ## Each

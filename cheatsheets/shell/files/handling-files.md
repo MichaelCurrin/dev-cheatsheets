@@ -1,6 +1,4 @@
----
-title: Handing files and paths
----
+# Handing files and paths
 
 ## Resources
 

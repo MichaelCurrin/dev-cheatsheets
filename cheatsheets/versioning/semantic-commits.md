@@ -1,6 +1,4 @@
----
-title: Semantic commits
----
+# Semantic commits
 
 <!-- TODO move out to another area -->
 

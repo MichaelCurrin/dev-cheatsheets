@@ -1,7 +1,8 @@
 ---
-title: Rename
 description: How to batch rename files using shell commands
 ---
+# Rename
+
 
 
 ## Notes
@@ -13,7 +14,7 @@ Be careful about globbing on hidden directories - as you can break `.git`.
 
 ## Change extension
 
-The `find` command is probably more efficient and could let you run multiple commands, but using the `for` loop has more familiar syntax. There may be trade-offs for each when it comes to renaming (or moving) a directory, since it will affect future traversing steps in the same sequence. Using `find` might give more precision on the filename and type compared to using a `*` glob with `for` and having to use `if` statements in the loop to do checks. 
+The `find` command is probably more efficient and could let you run multiple commands, but using the `for` loop has more familiar syntax. There may be trade-offs for each when it comes to renaming (or moving) a directory, since it will affect future traversing steps in the same sequence. Using `find` might give more precision on the filename and type compared to using a `*` glob with `for` and having to use `if` statements in the loop to do checks.
 
 ### Find command
 

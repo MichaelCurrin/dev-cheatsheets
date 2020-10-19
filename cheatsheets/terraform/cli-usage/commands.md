@@ -1,6 +1,4 @@
----
-title: Commands
----
+# Commands
 
 See [Commmands](https://www.terraform.io/docs/commands/index.html) in the docs. The menu on the left there covers each command in detail.
 

@@ -22,6 +22,7 @@ header_pages:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-titles-from-headings
 
 exclude:
   - docs/

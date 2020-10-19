@@ -1,6 +1,4 @@
----
-title: Control flow
----
+# Control flow
 
 Note the older format of `test CONDITION` is replaced by `[ CONDITION ]` and in some shell flavors extra functionality with `[[ CONDITION ]]`.
 
@@ -61,13 +59,13 @@ $ [[ -z "$MY_VAR" ]] && (echo 'MY_VAR must be set' ; exit 1)
 
 Note the brackets are needed, otherwise on a `true` evaluation of the first condition, the exit will still run.
 
-Using `exit` is good for a script and not for direct terminal use otherwise you will close the terminal tab. 
+Using `exit` is good for a script and not for direct terminal use otherwise you will close the terminal tab.
 
 
 Or in multiple lines.
 
 ```sh
-if [[ -z "$MY_VAR" ]]; do 
+if [[ -z "$MY_VAR" ]]; do
   echo 'MY_VAR must be set'
   exit 1
 fi

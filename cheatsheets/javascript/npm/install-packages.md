@@ -1,6 +1,4 @@
----
-title: Install packages
----
+# Install packages
 
 Note that `npm i` is an alias for `npm install`.
 

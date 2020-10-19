@@ -1,11 +1,12 @@
 ---
-title: Commands
 description: Using jekyll CLI commands
 ---
+# Commands
+
 
 ## Flags
 
-CLI flags of interest to me for `serve` and `build`. 
+CLI flags of interest to me for `serve` and `build`.
 
 Debugging serve or build:
 
@@ -93,7 +94,7 @@ Options:
         -h, --help         Show this message
         -v, --version      Print the name and version
         -t, --trace        Show the full backtrace when an error occurs
-```        
+```
 
 
 ## Build
@@ -167,9 +168,9 @@ Options:
         -t, --trace        Show the full backtrace when an error occurs
 
 Subcommands:
-  compose               
-  docs                  
-  import                
+  compose
+  docs
+  import
   build, b              Build your site
   clean                 Clean the site (removes site output and metadata file) without building.
   doctor, hyde          Search site and print specific deprecation warnings

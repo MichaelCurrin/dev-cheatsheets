@@ -1,6 +1,4 @@
----
-title: OG tags
----
+# OG tags
 
 ## Resources
 

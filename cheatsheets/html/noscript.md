@@ -1,6 +1,4 @@
----
-title: Noscript tag
----
+# Noscript tag
 
 When JavaScript is disabled by the user, or by an adblocker or if the JS is not compatible in a browser, it is a good idea to have a fallback message. The noscript HTML tag can be used to show a message is JS cannot run. This is especially useful if the site looks like a blank page when JS cannot run.
 

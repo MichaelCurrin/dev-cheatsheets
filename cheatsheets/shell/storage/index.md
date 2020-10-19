@@ -1,4 +1,4 @@
 ---
-title: Space on disk
 layout: listing
 ---
+# Space on disk

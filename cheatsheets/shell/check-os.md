@@ -1,6 +1,4 @@
----
-title: Check OS
----
+# Check OS
 
 Find what the current OS is using shell commands.
 
@@ -29,9 +27,9 @@ $ uname
 e.g.
 
 | OS    | Example `uname` value |
-| ----- | ------------- |
-| Linux | `Linux`       |
-| macOS | `Darwin`      |
+| ----- | --------------------- |
+| Linux | `Linux`               |
+| macOS | `Darwin`              |
 
 
 Using `uname` in a conditional using contains and `-s` flag. I've seen this approach used before.

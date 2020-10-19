@@ -1,6 +1,4 @@
----
-title: Filters
----
+# Filters
 
 {% raw %}
 

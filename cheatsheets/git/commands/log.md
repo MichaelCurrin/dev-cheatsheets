@@ -1,6 +1,4 @@
----
-title: log
----
+# log
 
 Docs
 

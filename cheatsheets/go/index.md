@@ -1,5 +1,5 @@
 ---
-title: Go
-layout: listing
 logo: go
+layout: listing
 ---
+# Go

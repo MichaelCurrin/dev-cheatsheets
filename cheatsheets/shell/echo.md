@@ -1,6 +1,4 @@
----
-title: Echo
----
+# Echo
 
 ## Echo
 

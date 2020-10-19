@@ -1,7 +1,8 @@
 ---
-title: Modules
 description: How to import modules in Node
 ---
+# Modules
+
 
 See docs
 
@@ -66,5 +67,3 @@ export default foo
 ```javascript
 import foo from 'foo';
 ```
-
-

@@ -1,6 +1,4 @@
----
-title: Features
----
+# Features
 
 What Deno includes or reasons to use Deno. Based on [post](https://dev.to/mbilgil/what-is-deno-41p3).
 

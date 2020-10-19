@@ -1,6 +1,4 @@
----
-title: Permissions
----
+# Permissions
 
 ## Defaults
 
@@ -94,6 +92,6 @@ DESCRIPTION
 
        The format of a symbolic mode is [ugoa...][[-+=][perms...]...], where perms is either zero or more letters from the set rwxXst, or a single letter from the  set  ugo.   Multiple
        symbolic modes can be given, separated by commas.
-       
+
        ...
 ```

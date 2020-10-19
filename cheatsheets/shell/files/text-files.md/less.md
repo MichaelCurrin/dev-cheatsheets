@@ -1,6 +1,4 @@
----
-title: Less command
----
+# Less command
 
 	DESCRIPTION
 	       Less  is a program similar to more (1), but which allows backward movement in the file as well as forward movement.  Also, less does not have to read the

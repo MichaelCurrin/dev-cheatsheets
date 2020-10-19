@@ -1,6 +1,4 @@
----
-title: Make command syntax
----
+# Make command syntax
 
 Use of `make` command in Unix environments.
 

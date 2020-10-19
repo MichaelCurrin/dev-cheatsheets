@@ -1,6 +1,4 @@
----
-title: Console command
----
+# Console command
 
 Start the interactive console
 

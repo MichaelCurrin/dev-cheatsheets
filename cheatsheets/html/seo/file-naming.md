@@ -1,6 +1,4 @@
----
-title: File naming
----
+# File naming
 
 ## Recommendation
 

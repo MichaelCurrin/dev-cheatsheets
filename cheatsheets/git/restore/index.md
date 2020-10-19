@@ -1,4 +1,4 @@
 ---
-title: Git restore
 layout: listing
 ---
+# Git restore

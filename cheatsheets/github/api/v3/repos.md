@@ -1,6 +1,4 @@
----
-title: Repos
----
+# Repos
 
 - Multiple repos
     - e.g.  [https://api.github.com/users/MichaelCurrin/repos](https://api.github.com/users/MichaelCurrin/repos)

@@ -1,4 +1,4 @@
 ---
-title: Project administration
 layout: listing
 ---
+# Project administration

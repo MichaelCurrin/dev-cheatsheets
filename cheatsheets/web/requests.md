@@ -1,6 +1,4 @@
----
-title: Requests
----
+# Requests
 
 See also [Shell requests][] for doing requests from the command-line.
 

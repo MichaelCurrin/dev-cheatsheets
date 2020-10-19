@@ -1,6 +1,4 @@
----
-title: Pitfalls
----
+# Pitfalls
 
 Don't define data structures in function parameters. Only constants.
 

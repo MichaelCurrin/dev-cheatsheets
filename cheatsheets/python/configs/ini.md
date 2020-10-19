@@ -1,6 +1,4 @@
----
-title: Ini file
----
+# Ini file
 
 ## Example
 

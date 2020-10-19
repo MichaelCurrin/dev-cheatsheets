@@ -1,6 +1,4 @@
----
-title: Shell
----
+# Shell
 
 
 ## Choosing your shell
@@ -18,7 +16,7 @@ Your `/bin/sh` is probably one of:
 
 ## Linux
 
-On Ubuntu, your `/bin/sh` probably points to `/bin/dash`. 
+On Ubuntu, your `/bin/sh` probably points to `/bin/dash`.
 
 This can cause issues with certain syntax, like:
 

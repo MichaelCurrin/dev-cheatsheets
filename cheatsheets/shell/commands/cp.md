@@ -1,7 +1,8 @@
 ---
-title: cp
 description: The copy shell command
 ---
+# cp
+
 
 ## Usage
 

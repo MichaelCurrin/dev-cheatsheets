@@ -1,6 +1,4 @@
----
-title: Configure environment
----
+# Configure environment
 
 ## Production builds
 

@@ -1,6 +1,4 @@
----
-title: tree
----
+# tree
 
 ## Usage
 
@@ -46,12 +44,12 @@ Highlights from the many flags.
     ...
     ```
 - `-l` - Follow symlinks.
-- `-f` - Include the full path prefix for each file. 
+- `-f` - Include the full path prefix for each file.
 - `-s` - Include file size.
 - `-h` - Human-readable size.
 - `-D` - Print the date of the last modification time for the file listed.
 - `-t` - Sort the output by last modification time instead of alphabetically.
-- `--dirsfirst` - List directories before files. 
+- `--dirsfirst` - List directories before files.
 
 
 ## Help

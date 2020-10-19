@@ -1,6 +1,4 @@
----
-title: URL encoding
----
+# URL encoding
 
 Convert characters in a URL to be "percent encoded", or reverse them.
 
@@ -15,19 +13,19 @@ e.g. `#` becomes `%23`.
 
 ## Javascript
 
-- `encodeURI` 
-    - Encode an entire URL. Preserves the domain and characters like `?` and `=`. 
-    - See [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) or [W3 schools](https://www.w3schools.com/jsref/jsref_encodeuri.asp). 
+- `encodeURI`
+    - Encode an entire URL. Preserves the domain and characters like `?` and `=`.
+    - See [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) or [W3 schools](https://www.w3schools.com/jsref/jsref_encodeuri.asp).
     - Note escaped:
         ```
         A-Z a-z 0-9 ; , / ? : @ & = + $ - _ . ! ~ * ' ( ) #
         ```
-- `encodeURIComponent` 
-    - Encode piece of a URL. 
+- `encodeURIComponent`
+    - Encode piece of a URL.
     - See [source](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
-- `decodeURI` 
+- `decodeURI`
     - Reverse an encoded URL.
-- `decodeURIComponent` 
+- `decodeURIComponent`
     - Reverse an encoded piece of a URL.
 
 Example:

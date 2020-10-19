@@ -1,6 +1,4 @@
----
-title: Images
----
+# Images
 
 Images in markdown as similar to a hyperlink, except it starts with an **exclamation mark**.
 

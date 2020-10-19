@@ -1,7 +1,8 @@
 ---
-title: Python configs
 layout: listing
 ---
+# Python configs
+
 
 
 See this [blog post](https://hackersandslackers.com/simplify-your-python-projects-configuration/#commento-login-box-container)

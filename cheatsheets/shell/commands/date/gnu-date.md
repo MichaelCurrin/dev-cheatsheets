@@ -1,6 +1,4 @@
----
-title: GNU Date
----
+# GNU Date
 
 
 ## Samples

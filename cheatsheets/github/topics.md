@@ -1,6 +1,4 @@
----
-title: Topics
----
+# Topics
 
 ## Browse topics
 

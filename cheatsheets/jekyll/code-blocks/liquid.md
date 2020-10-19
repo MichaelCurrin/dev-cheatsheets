@@ -1,7 +1,8 @@
 ---
-title: Liquid snippets
 description: How to Liquid code as highlighted snippets in Jekyll
 ---
+# Liquid snippets
+
 
 Here we ensure that Liquid code is not evaluated but treated as literal text, but with syntax highlighting. This is useful for docs and tutorials around Jekyll.
 

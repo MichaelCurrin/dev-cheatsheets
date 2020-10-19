@@ -1,6 +1,4 @@
----
-title: Command-line interfaces
----
+# Command-line interfaces
 
 How to write CLIs for applications such as in Bash or Python.
 

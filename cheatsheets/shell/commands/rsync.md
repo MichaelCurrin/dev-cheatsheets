@@ -1,6 +1,4 @@
----
-title: rysnc
----
+# rysnc
 
 ## Purpose
 
@@ -27,7 +25,7 @@ Add trailing slash to `foo/` to sync contents.
 
 ### Common flag usage
 
-Archive, verbose, compressed, human-readable. 
+Archive, verbose, compressed, human-readable.
 
 ```sh
 $ rsync -avzh SOURCE DEST
@@ -78,7 +76,7 @@ Note that the `--delete` flag and its variations will delete on the receiver (de
 Same as `--partial --progress`.
 
 ```
--P                 
+-P
 ```
 
 ### Transfer
@@ -107,7 +105,7 @@ Handled by the above.
 ```
 
 ```
---delete     # Delete extra files     
+--delete     # Delete extra files
 ```
 
 ### Preserve
@@ -115,9 +113,9 @@ Handled by the above.
 Preserve permissions, etc.
 
 ```
--p, --perms   
+-p, --perms
 -t, --times
--g, --group 
+-g, --group
 -o, --owner
 ```
 
@@ -127,8 +125,8 @@ Preserve permissions, etc.
 #### Partial
 
 > By default, rsync will **delete** any partially transferred file if the transfer is **interrupted**.
-> 
-> In some circumstances it is more desirable to **keep** partially transferred files. Using the `--partial` option tells rsync to keep the partial file which should make a subsequent transfer of the rest of the file much faster. 
+>
+> In some circumstances it is more desirable to **keep** partially transferred files. Using the `--partial` option tells rsync to keep the partial file which should make a subsequent transfer of the rest of the file much faster.
 
 ```
 --partial
@@ -163,7 +161,7 @@ Note that this is expensive to compute on both sides.
 Skip files newer on dest to avoid overwriting remote changes.
 
 ```
--u, --update    
+-u, --update
 ```
 
 
@@ -222,5 +220,5 @@ Access via rsync daemon:
   Push: rsync [OPTION...] SRC... [USER@]HOST::DEST
         rsync [OPTION...] SRC... rsync://[USER@]HOST[:PORT]/DEST
 
-Usages with just one SRC arg and no DEST arg will list the source files instead of copying. 
+Usages with just one SRC arg and no DEST arg will list the source files instead of copying.
 ```

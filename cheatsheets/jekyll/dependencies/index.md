@@ -1,4 +1,4 @@
 ---
-title: Dependencies
 layout: listing
 ---
+# Dependencies

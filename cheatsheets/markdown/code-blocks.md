@@ -1,6 +1,4 @@
----
-title: Code blocks
----
+# Code blocks
 
 See also the [Jekyll Supported Languages][] page.
 

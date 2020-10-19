@@ -1,6 +1,4 @@
----
-title: Dependabot
----
+# Dependabot
 
 
 

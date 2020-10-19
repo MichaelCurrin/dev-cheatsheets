@@ -1,6 +1,4 @@
----
-title: Classes
----
+# Classes
 
 
 ## Instance variable
@@ -10,7 +8,7 @@ class Foo
   def initialize(my_foo)
     @my_foo = my_foo
   end
-  
+
   def bar
     puts @my_foo
   end
@@ -29,7 +27,7 @@ class Foo
   def foo
     puts 'Hello'
   end
-  
+
   def bar
     self.foo
   end
@@ -45,7 +43,7 @@ f.bar
 ```ruby
 class Foo
   @@FOO = 'abc'
-  
+
   def bar
     puts @@FOO
   end
@@ -64,11 +62,11 @@ class Foo
   def initialize(protein)
     @protein = protein
   end
-  
+
   def protein
     @protein
   end
-  
+
   def protein=(value)
     @protein = value
   end
@@ -95,7 +93,7 @@ Shorthand for the getter and setter.
 ```ruby
 class Foo
   attr_accessor :protein
-  
+
   def initialize(protein)
     @protein = protein
   end
@@ -113,7 +111,7 @@ Using a colon.
 ```ruby
 class Foo
   attr_accessor :protein
-  
+
   def initialize(foo, bar, protein:)
     @protein = protein
   end
@@ -138,4 +136,3 @@ That is similar to Python:
 ```
 def initialize(foo, bar, **, debug=None):
 ```
-

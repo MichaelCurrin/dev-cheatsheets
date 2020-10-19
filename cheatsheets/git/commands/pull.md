@@ -1,6 +1,4 @@
----
-title: pull
----
+# pull
 
 
 ## Help
@@ -63,7 +61,7 @@ DESCRIPTION
            and further tweak the merge result before committing.
 
            Note that fast-forward updates do not create a merge commit and therefore there is no way to stop those merges with
-           --no-commit. 
+           --no-commit.
 ```
 
 ```

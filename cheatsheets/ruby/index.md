@@ -1,5 +1,5 @@
 ---
-title: Ruby
-layout: listing
 logo: ruby
+layout: listing
 ---
+# Ruby

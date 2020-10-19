@@ -1,6 +1,4 @@
----
-title: Flask
----
+# Flask
 
 This section assumes familiarity with the [Flask](https://flask.palletsprojects.com/en/1.1.x/) library.
 

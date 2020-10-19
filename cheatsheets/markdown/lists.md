@@ -1,6 +1,4 @@
----
-title: Lists
----
+# Lists
 
 
 ## Bulleted list

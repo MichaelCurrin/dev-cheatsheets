@@ -1,7 +1,8 @@
 ---
-title: Shell processing
 description: Shell tools for parsing JSON to prettify or get values
 ---
+# Shell processing
+
 
 ## Using Python JSON tool
 

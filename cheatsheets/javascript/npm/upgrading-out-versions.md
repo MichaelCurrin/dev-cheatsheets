@@ -1,7 +1,8 @@
 ---
-title: Upgrade old versions
 description: Guide to managing out NPM packages in your project
 ---
+# Upgrade old versions
+
 
 ## Find outdated packages
 

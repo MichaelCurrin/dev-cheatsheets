@@ -1,7 +1,8 @@
 ---
-title: Undo
 description: Restore a file to a versioned state
 ---
+# Undo
+
 
 
 Restore a target. Path is required, otherwise nothing will change.

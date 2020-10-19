@@ -1,6 +1,4 @@
----
-title: Globals
----
+# Globals
 
 ## Available
 

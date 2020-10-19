@@ -1,7 +1,8 @@
 ---
-title: Scripting
 description: How to handle JSON data in a scripting language
 ---
+# Scripting
+
 
 Within a programming language, convert a JSON-formatted string to data structure and then back to a string.
 

@@ -1,7 +1,8 @@
 ---
-title: Resources
 description: External links around developing VS Code extensions
 ---
+# Resources
+
 
 ## Beginner guides
 

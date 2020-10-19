@@ -1,6 +1,4 @@
----
-title: On type
----
+# On type
 
 
 When there are multiples types available, you need to use `... on TYPE`. Some options here from the explorer are `Commit`, `Tree`, `Blob` and `Tag`.

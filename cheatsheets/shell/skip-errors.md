@@ -1,6 +1,4 @@
----
-title: Skip errors
----
+# Skip errors
 
 How to perform a command without causing the script to abort, either by not executing the command or forcing a success result.
 
@@ -12,7 +10,7 @@ set -e
 
 ## Default
 
-Assume that `CMD` references a failing command such as running copy, move or remove on a file or folder that is not valid to operate on. e.g. `rm foo.txt` when `foo.txt` does not exist. 
+Assume that `CMD` references a failing command such as running copy, move or remove on a file or folder that is not valid to operate on. e.g. `rm foo.txt` when `foo.txt` does not exist.
 
 ```sh
 CMD
@@ -39,10 +37,10 @@ If you run `echo $?` you'll see `0` for success, as it uses the exit code for th
 Silence stderr, but keep stdout.
 
 ```sh
-CMD &> /dev/null 
+CMD &> /dev/null
 ```
 
-## Continue without aborting and fail silently 
+## Continue without aborting and fail silently
 
 Combine the sections above:
 
@@ -92,7 +90,7 @@ test -f ~/.git-completion.sh && source $_
 
 That uses the last argument of previous command on the same line and uses it in place of `$_`.
 
-Now this only works with the `test CONDITION` syntax. Using `[[ CONDITION ]]` ends up using `]]` instead of the path. 
+Now this only works with the `test CONDITION` syntax. Using `[[ CONDITION ]]` ends up using `]]` instead of the path.
 
 Compare with this (which works only works in interactive mode I think):
 

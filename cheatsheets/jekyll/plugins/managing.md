@@ -1,6 +1,4 @@
----
-title: Managing
----
+# Managing
 
 
 ## Local

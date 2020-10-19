@@ -1,6 +1,4 @@
----
-title: Git viewing
----
+# Git viewing
 
 ## Links
 

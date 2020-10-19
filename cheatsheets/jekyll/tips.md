@@ -1,6 +1,4 @@
----
-title: Tips
----
+# Tips
 
 
 ## Page not found

@@ -1,6 +1,4 @@
----
-title: Resources
----
+# Resources
 
 - Homepage: [terraform.io](https://www.terraform.io/)
     > Use Infrastructure as Code to provision and manage any cloud, infrastructure, or service

@@ -1,8 +1,7 @@
 ---
-title: Basics
 description: Backticks vs highlight tag
-render_with_liquid: false
 ---
+# Basics
 
 ## Markdown code blocks
 
@@ -10,13 +9,11 @@ This works in Jekyll and plain markdown too.
 
 Code:
 
-{% highlight markdown %}
-```ruby
-def foo
-  puts 'foo'
-end
-```
-{% endhighlight %}
+    ```ruby
+    def foo
+      puts 'foo'
+    end
+    ```
 
 Result:
 
@@ -75,7 +72,28 @@ def foo
 end
 {% endhighlight %}
 
-Unfortunately this renders poorly in Minima as it becomes a table - the width must be reduced to not be 100% and there are borders must be removed.
+Unfortunately this renders poorly in Minima as it becomes a table - the width must be reduced to not be 100% and there are borders must be removed:
+
+Code:
+
+```html
+<style>
+.rouge-table {
+	width: initial;
+}
+table {
+	border: none;
+}
+table td {
+	border: none;
+}
+td pre {
+	border: none;
+}
+</style>
+```
+
+<!-- Hidden on frontend -->
 
 <style>
 .rouge-table {

@@ -1,7 +1,8 @@
 ---
-title: Import
 description: How to import resources in TF
 ---
+# Import
+
 
 See [import](https://www.terraform.io/docs/commands/import.html) command in the docs.
 

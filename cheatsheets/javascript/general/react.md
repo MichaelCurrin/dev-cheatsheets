@@ -1,7 +1,8 @@
 ---
-title: React
 description: JSX syntax
 ---
+# React
+
 
 ## Comments
 

@@ -1,6 +1,4 @@
----
-title: Copy
----
+# Copy
 
 See also `cp` under Commands section.
 
@@ -30,4 +28,3 @@ yes | cp SOURCE DEST
 ```
 
 [answer on SO](https://stackoverflow.com/questions/8488253/how-to-force-cp-to-overwrite-without-confirmation)
-

@@ -1,7 +1,8 @@
 ---
-title: Encoding and escaping
 layout: listing
 ---
+# Encoding and escaping
+
 
 How to convert text into encoded or escaped text and back.
 

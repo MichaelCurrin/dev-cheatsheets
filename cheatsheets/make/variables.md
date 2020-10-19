@@ -1,6 +1,4 @@
----
-title: Variables
----
+# Variables
 
 
 ## Setting variables
@@ -25,7 +23,7 @@ JS_DIR = assets/js
 
 ### Evaluate
 
-- Using `!= ...`. 
+- Using `!= ...`.
     > If the result of the execution could produce a `$`, and you don’t intend what follows that to be interpreted as a `make` variable or function reference, then you must replace every `$` with `$$` as part of the execution.
     ```mk
     hash != printf '\043'
@@ -91,7 +89,7 @@ Import the defaults.
 - `Makefile`
     ```make
     include defaults.mk
-    
+
     foo:
         # ...
     ```

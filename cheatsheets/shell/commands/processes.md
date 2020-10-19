@@ -1,6 +1,4 @@
----
-title: Process-related commands
----
+# Process-related commands
 
 ```sh
 $ ps aux

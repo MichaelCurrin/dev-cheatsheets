@@ -1,7 +1,8 @@
 ---
-title: Git pager
 description: View all output at once or use a paginated view
 ---
+# Git pager
+
 
 The _pager_ functionality can be off or on depending on global config.
 

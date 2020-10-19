@@ -1,6 +1,4 @@
----
-title: Links
----
+# Links
 
 
 ## Format

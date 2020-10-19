@@ -1,6 +1,4 @@
----
-title: Indentation
----
+# Indentation
 
 ## Spaces
 

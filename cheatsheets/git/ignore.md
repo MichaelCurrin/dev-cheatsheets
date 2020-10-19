@@ -1,6 +1,4 @@
----
-title: Git ignore
----
+# Git ignore
 
 ## JavaScript
 

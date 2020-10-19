@@ -1,7 +1,8 @@
 ---
-title: View
 description: Look at the contents of a zipped file without unpacking it
 ---
+# View
+
 
 ```sh
 unzip -l ZIPPED_TARGET

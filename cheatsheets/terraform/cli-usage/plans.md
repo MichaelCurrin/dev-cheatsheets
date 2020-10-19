@@ -1,7 +1,8 @@
 ---
-title: Plans
 description: Working with plans in TF
 ---
+# Plans
+
 
 - [Plan commands](https://www.terraform.io/docs/commands/plan.html) docs.
 

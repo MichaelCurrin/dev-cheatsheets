@@ -1,8 +1,9 @@
 ---
-title: Jekyll
-layout: listing
 logo: jekyll
+layout: listing
 ---
+# Jekyll
+
 
 
 ## Resources

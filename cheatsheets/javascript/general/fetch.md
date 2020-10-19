@@ -1,17 +1,18 @@
 ---
-title: Fetch
 description: How to fetch data using JS
 ---
+# Fetch
+
 
 ## Fetch
 
 - Browser
     - `fetch` is builtin for modern browsers.
 - NPM
-    - [node-fetch](https://www.npmjs.com/package/node-fetch) 
+    - [node-fetch](https://www.npmjs.com/package/node-fetch)
         - The browser `fetch` function brought to Noded.js.
         - The docs show how to use it.
-    - [fetch](https://www.npmjs.com/package/fetch) 
+    - [fetch](https://www.npmjs.com/package/fetch)
         - Unrelated to `fetch` function but shown for interest.
 - [JavaScript.info](https://javascript.info/fetch) site
 - [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
@@ -57,7 +58,7 @@ POST with JSON.
 
 ```javascript
 const body = { a: 1 };
- 
+
 fetch('https://httpbin.org/post', {
         method: 'post',
         body:    JSON.stringify(body),

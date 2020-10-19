@@ -1,6 +1,4 @@
----
-title: How to
----
+# How to
 
 Based on [post](https://medium.com/deno-tutorial/deno-testing-bundling-formatting-and-debugging-9c8aad798fc2).
 

@@ -1,6 +1,4 @@
----
-title: Open graph tags
----
+# Open graph tags
 
 The Open Graph protocol - [ogp.me](https://ogp.me/) homepage.
 

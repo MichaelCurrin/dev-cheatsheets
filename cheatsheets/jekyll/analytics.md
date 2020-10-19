@@ -1,7 +1,8 @@
 ---
-title: Analytics
 description: How to add Google Analyics tracking to your site using various approaches
 ---
+# Analytics
+
 
 Using [Google Analytics](https://analytics.google.com) or "GA" is a free, GDR-compliant way of tracking what visitors do you on your site and where they came from. This is a common tool in marketing and SEO.
 
@@ -38,7 +39,7 @@ Note that is plugin is **not** whitelisted on GitHub Pages, so you need an Actio
 
 ### Theme
 
-The the Minima covers Google Analytics already - just set `google_analytics` in the config. 
+The the Minima covers Google Analytics already - just set `google_analytics` in the config.
 
 See [\_includes/google-analytics.html](https://github.com/jekyll/minima/blob/master/_includes/google-analytics.html)
 

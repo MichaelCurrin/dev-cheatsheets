@@ -1,6 +1,4 @@
----
-title: NPM dependency versions
----
+# NPM dependency versions
 
 
 ## Resources

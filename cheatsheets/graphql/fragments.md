@@ -1,6 +1,4 @@
----
-title: Fragments
----
+# Fragments
 
 A fragment is a reusasble piece of code, like a function. It has fields and can take parameters. A fragment does not affecte nature of the JSON output but makes your code lighter.
 
@@ -56,7 +54,7 @@ query {
 
 <details>
 <summary>Result</summary>
-	
+
 ```json
 {
   "data": {
@@ -172,4 +170,3 @@ fragment weekStats on ContributionsCollection {
 ```
 
 From [weekly.gql](https://github.com/MichaelCurrin/github-graphql-tool/blob/master/ghgql/queries/contributions/weekly.gql)
-

@@ -1,7 +1,8 @@
 ---
-title: Install
 layout: listing
 ---
+# Install
+
 
 See my gists.
 

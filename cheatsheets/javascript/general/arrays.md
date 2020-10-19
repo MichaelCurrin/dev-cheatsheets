@@ -1,6 +1,4 @@
----
-title: Arrays
----
+# Arrays
 
 See [Array cheatsheet](https://www.shortcutfoo.com/app/dojos/javascript-arrays/cheatsheet) on ShortCutFoo website.
 

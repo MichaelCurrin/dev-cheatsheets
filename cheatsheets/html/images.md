@@ -1,6 +1,4 @@
----
-title: Images
----
+# Images
 
 ## Format of the image tag
 
@@ -42,8 +40,8 @@ Example:
      alt="shell icon"
      title="Linux"
      width="40" height="40" />
-    
-    
+
+
 ### Markdown
 
 Here is an equivalent image in Markdown - excluding dimensions.

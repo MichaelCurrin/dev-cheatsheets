@@ -1,7 +1,8 @@
 ---
-title: Version
 description: About the npm-version command
 ---
+# Version
+
 
 
 ## Purpose

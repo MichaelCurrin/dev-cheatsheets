@@ -1,6 +1,4 @@
----
-title: BeautifulSoup
----
+# BeautifulSoup
 
 
 ## Resources

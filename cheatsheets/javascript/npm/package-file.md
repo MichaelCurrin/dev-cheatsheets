@@ -1,7 +1,8 @@
 ---
-title: Package file
 description: About the package.json for managing NPM packages
 ---
+# Package file
+
 
 ## Resources
 

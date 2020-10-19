@@ -1,5 +1,5 @@
 ---
-title: HTML
-layout: listing
 logo: html5
+layout: listing
 ---
+# HTML

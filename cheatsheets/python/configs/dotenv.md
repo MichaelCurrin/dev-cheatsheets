@@ -1,6 +1,4 @@
----
-title: Dotenv
----
+# Dotenv
 
 ## Example
 

@@ -1,6 +1,4 @@
----
-title: Git remote
----
+# Git remote
 
 ## New repo
 

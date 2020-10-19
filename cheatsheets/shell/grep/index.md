@@ -1,7 +1,8 @@
 ---
-title: Grep
 layout: listing
 ---
+# Grep
+
 
 ## Man page
 

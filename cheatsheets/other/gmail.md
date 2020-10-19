@@ -1,6 +1,4 @@
----
-title: Gmail
----
+# Gmail
 
 This is not directly related to coding but covers syntax specific to Gmail searches.
 

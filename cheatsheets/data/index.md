@@ -1,4 +1,4 @@
 ---
-title: Data
 layout: listing
 ---
+# Data

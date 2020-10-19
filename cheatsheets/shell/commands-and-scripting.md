@@ -1,6 +1,4 @@
----
-title: Commands and scripting
----
+# Commands and scripting
 
 Use these on the command-line or in shell scripts.
 

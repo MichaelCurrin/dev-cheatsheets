@@ -1,7 +1,8 @@
 ---
-title: Manage
 description: Managing gems for Ruby and Jekyll projects
 ---
+# Manage
+
 
 ## Check environment
 

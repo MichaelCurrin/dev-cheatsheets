@@ -1,6 +1,4 @@
----
-title: BSD Date
----
+# BSD Date
 
 The `date` command on macOS.
 

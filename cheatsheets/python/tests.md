@@ -1,7 +1,8 @@
 ---
-title: Tests
 description: Cheatsheet for tests in Python
 ---
+# Tests
+
 
 See [Getting started with testing in Python](https://realpython.com/python-testing/) on RealPython
 

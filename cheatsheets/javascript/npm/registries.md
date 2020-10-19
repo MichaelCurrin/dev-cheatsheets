@@ -1,6 +1,4 @@
----
-title: NPM package registries
----
+# NPM package registries
 
 ## NPM
 

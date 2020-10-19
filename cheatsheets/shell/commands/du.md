@@ -1,7 +1,8 @@
 ---
-title: du
 description: Disk usage shell command
 ---
+# du
+
 
 ## Usage
 
@@ -28,7 +29,7 @@ du [FLAGS] [PATH]
 [-a | -s | -d depth]
 
       -a      Display an entry for each file in a file hierarchy.
-            
+
       -s      Display an entry for each specified file.  (Equivalent to -d 0)
       -d depth
              Display an entry for all files and directories depth directories deep.
@@ -40,7 +41,7 @@ du [FLAGS] [PATH]
 ```
 
 
-## Examples 
+## Examples
 
 You'll probably want to use `-h` most of the time.
 
@@ -48,7 +49,7 @@ You'll probably want to use `-h` most of the time.
 du -h
 du -h .
 du -h *
-du -h 
+du -h
 ```
 
 Depth of one.

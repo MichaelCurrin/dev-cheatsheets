@@ -1,6 +1,4 @@
----
-title: Disk usage command
----
+# Disk usage command
 
 ```
 du - estimate file space usage

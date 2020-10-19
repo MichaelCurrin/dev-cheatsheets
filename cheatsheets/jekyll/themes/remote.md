@@ -1,6 +1,4 @@
----
-title: Remote
----
+# Remote
 
 ## About the Remote theme plugin
 

@@ -1,7 +1,8 @@
 ---
-title: Execution
 description: How to run shell scripts
 ---
+# Execution
+
 
 The `.sh` extension is not necessary but is common when the script contains Bash or ZSH code.
 
@@ -101,7 +102,7 @@ The file can be any language (Python, JS, Bash) as long it has an appropriate sh
     ```sh
     echo 'Hello, world!'
     ```
-    
+
 ```sh
 $ chmod+ x file.sh
 ```

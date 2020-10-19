@@ -1,7 +1,8 @@
 ---
-title: Extended
 description: About using grep's extended matching
 ---
+# Extended
+
 
 ## About
 

@@ -1,6 +1,4 @@
----
-title: Jekyll time
----
+# Jekyll time
 
 - [Date formatting](https://learn.cloudcannon.com/jekyll/date-formatting/) tutorial.
 

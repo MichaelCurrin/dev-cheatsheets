@@ -1,7 +1,8 @@
 ---
-title: Python package install
 description: How to install packages with `pip`
 ---
+# Python package install
+
 
 ## Resources
 

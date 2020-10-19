@@ -1,6 +1,4 @@
----
-title: Supported languages
----
+# Supported languages
 
 See also [Code blocks][] page.
 

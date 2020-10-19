@@ -1,6 +1,4 @@
----
-title: Conditional
----
+# Conditional
 
 
 ## if

@@ -1,6 +1,4 @@
----
-title: Pip command
----
+# Pip command
 
 See also [project packages] section of this project and look for pip or Python pages.
 
@@ -108,7 +106,7 @@ See also online docs, for example how to use `-e` is covered under [Editable ins
 $ pip install --help
 ```
 ```
-Usage:   
+Usage:
   pip install [options] <requirement specifier> [package-index-options] ...
   pip install [options] -r <requirements file> [package-index-options] ...
   pip install [options] [-e] <vcs project url> ...
@@ -118,12 +116,12 @@ Usage:
 ```
 Description:
   Install packages from:
-  
+
   - PyPI (and other indexes) using requirement specifiers.
   - VCS project urls.
   - Local project directories.
   - Local or remote source archives.
-  
+
   pip also supports installing from "requirements files", which provide
   an easy way to specify a whole environment to be installed.
 

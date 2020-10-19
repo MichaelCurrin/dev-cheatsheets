@@ -1,6 +1,4 @@
----
-title: Crontab
----
+# Crontab
 
 
 ## CLI

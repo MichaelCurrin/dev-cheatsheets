@@ -1,6 +1,4 @@
----
-title: status
----
+# status
 
 ## Usage
 

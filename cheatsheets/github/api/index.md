@@ -1,4 +1,4 @@
 ---
-title: GitHub API
 layout: listing
 ---
+# GitHub API

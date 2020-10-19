@@ -1,6 +1,4 @@
----
-title: Switch
----
+# Switch
 
 [W3 Schools](https://www.w3schools.com/js/js_switch.asp)
 

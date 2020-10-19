@@ -1,7 +1,8 @@
 ---
-title: Run
 description: About the `npm run` command
 ---
+# Run
+
 
 Typically this used as:
 

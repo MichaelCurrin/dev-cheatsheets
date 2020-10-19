@@ -1,6 +1,4 @@
----
-title: Clean
----
+# Clean
 
 Common approaches to clearing space on your machine.
 
