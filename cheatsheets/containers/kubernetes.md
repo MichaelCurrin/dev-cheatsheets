@@ -1,6 +1,6 @@
 ---
 description: The tool that lets you manage and deploy pods of containers at scale
-logo: The tool that lets you manage and deploy pods of containers at scale
+logo: kubernetes
 ---
 # Kubernetes
 
