@@ -1,6 +1,6 @@
 ---
 description: The container management tool
-logo: The container management tool
+logo: docker
 ---
 # Docker
 
