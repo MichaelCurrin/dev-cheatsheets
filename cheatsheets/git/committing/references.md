@@ -1,4 +1,7 @@
-# Commit references
+# References
+> References to commits
+
+From docs:
 
 > `HEAD` is a symbolic ref, and it can be seen with `git symbolic-ref HEAD`
 
