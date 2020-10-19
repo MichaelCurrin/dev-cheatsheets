@@ -33,7 +33,7 @@ usage: git status [<options>] [--] <pathspec>...
 
 ## Flags
 
-Some flags I am interested in.
+Some flags I am interested in. From the long help.
 
 ```
        -s, --short
@@ -75,7 +75,7 @@ Using verbose will show the lines changed including of lines of staged files (ev
 
 Use for scripting and git hooks.
 
-This will show a summary, ignore untracked (untracked=no but not equals sign won't work) and porcelain for clean, parseable output.
+This will show a summary, ignore untracked (untracked=no but not equals sign won't work) and porcelain for clean, parsable output.
 
 ```sh
 git status -s -uno --porcelain
@@ -98,12 +98,82 @@ From the man page:
 ```
 
 
-## Anything to commit
+## Conditional logic
+> Check for unstaged modified files
 
-Check if repo is clean.
+Check if repo is clean or dirty (unstaged changes to be committed still).
+
+### Using porcelain
+
+Check if there are unstaged changes.
 
 ```sh
-if $(git status -s --porcelain) ; then
-  echo 'Nothing to commit'
+if [ -z "$(git status --porcelain)" ]; then
+    echo 'No changes to commit'
 fi
+```
+
+
+### Using grep
+
+The ZSH way of doing it - [article](https://coderwall.com/p/e-tsng/ziraga-oh-my-zsh-theme).
+
+```sh
+INDEX=$(git status 2> /dev/null)
+
+if $(echo "$INDEX" | grep 'Untracked files' &> /dev/null); then
+  echo 'There are untracked files'
+fi
+
+if $(echo "$INDEX" | grep -E -e 'Changes not staged' &> /dev/null); then
+  echo 'Unstaged changes'
+fi
+```
+
+This is then used conditionally to determine when these should be used.
+
+```
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
+```
+
+
+## Format length style
+
+### Long format
+
+The default.
+
+```sh
+$ git status
+```
+```
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	deleted:    Makefile
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	test.text
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+### Short output
+
+```sh
+$ git status -s
+```
+
+e.g.
+
+```
+ D Makefile
+?? test.text
 ```
