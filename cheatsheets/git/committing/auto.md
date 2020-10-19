@@ -1,4 +1,4 @@
-# Git auto commit
+# Auto commit
 
 Shell flow to apply remote changes, run a script to update a versioned file then commit and push changes.
 
