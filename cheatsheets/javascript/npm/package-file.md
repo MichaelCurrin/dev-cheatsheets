@@ -14,7 +14,9 @@ NPM docs:
 
 ## Base
 
-A `package.json` file, based mostly on the default one you get fron `npm init` and accepting defaults.
+A `package.json` file, based mostly on the default one you get fron `npm init` and accepting defaults. Spaces will be removed by NPM but help here for readability.
+
+It can be useful to put `scripts` near the top like here and dependencies at the bottom, to make it easy to regularly check what scripts are configured.
 
 **Sample**
 
