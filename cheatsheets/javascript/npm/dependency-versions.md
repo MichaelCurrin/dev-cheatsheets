@@ -11,9 +11,9 @@
 
 Here is a summary of using the tilde (`~`) and caret (`^`) symbols in versioning NPM packages.
 
-They are both generally used followed by the full `X.Y.Z` version and this is covered first below, but they behave differently depending on how many levels are set.
+They are both generally used together with the full `X.Y.Z` version. This is covered first below, but they behave differently depending on how many levels are set. When you install packages, NPM may set `.Z` for you even if you only had `X.Y` set.
 
-Note that Python and Ruby also use tilde but I haven't seen caret use.
+Note that Python and Ruby also use tilde, but I haven't seen caret use there so it might be just JS thing.
 
 Note that this assumes using a version specified to 3 levels - see the [Detailed](#detailed) section for how this is handled in other cases.
 
@@ -27,7 +27,7 @@ This sets a minimum version but allows **patch** increments (bug fixes).
 ~1.2.3
 ```
 
-This is similar to setting this (which does not a set a minimum patch).
+This is similar to setting this, though this does not a set a minimum patch.
 
 ```
 1.2.*
@@ -41,7 +41,7 @@ This sets a minimum version but allows **minor version** increments within.
 ^1.2.3
 ```
 
-This is similar to setting this (which does not a set a minimum minor and patch).
+This is similar to setting this, though this does not a set a minimum minor and patch.
 
 ```
 1.*.*
@@ -84,7 +84,7 @@ Using caret is _less_ restrictive than tilde, as only locks the major version wh
 ^1.2.3 := >=1.2.3 <2.0.0
 ```
 
- It works differently when below `1`, as shown here.
+It works _differently_ when below the major `1.Y`, as shown here.
 
 > Allows changes that do not modify the left-most non-zero digit in the [major, minor, patch] tuple. In other words, this allows patch and minor updates for versions 1.0.0 and above, patch updates for versions 0.X >=0.1.0, and no updates for versions 0.0.X.
 
