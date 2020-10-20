@@ -147,7 +147,7 @@ Create a file with this path like one of these:
 - `docs/pull_request_template.md`
 - `.github/pull_request_template.md`
 
-Note that lowercase looks like the preferred style.
+Note that lowercase looks like the preferred style. But you could do `PULL_REQUEST_TEMPLATE.md` at the root and it will work.
 
 Or create a directory with a named file:
 
@@ -161,8 +161,40 @@ For the content:
 > - A description of the changes proposed in the pull request.
 > - @mentions of the person or team responsible for reviewing proposed changes.
 
+For example. Include exactly as it here with comments. The PR creator must then edit the messsage that is generated. Of course replace the username at the top with a maintainer's name.
+
+```markdown
+@MichaelCurrin
+
+
+## Description
+
+<!-- Add details -->
+
+
+## Issues
+
+<!-- Link to an issue if there is one. -->
+<!-- closes #1 -->
+
+
+<!--  Please also add labels to the PR using Github's labelling e.g. enhancement, bug, translation
+```
+
+Or questions to be answered.
+
+```markdown
+As part of the code review process please run branch locally and review
+ 
+- Is the AC being met?
+- Are there odd behaviors?
+- Are all necessary tests present?
+```
+
 
 ## Contributing doc
+
+Create as either:
 
 - `CONTRIBUTING.md`
 - `docs/CONTRIBUTING.md`
