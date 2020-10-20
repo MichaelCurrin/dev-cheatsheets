@@ -13,7 +13,7 @@ Here is a summary of using the tilde (`~`) and caret (`^`) symbols in versioning
 
 They are both generally used together with the full `X.Y.Z` version. This is covered first below, but they behave differently depending on how many levels are set. When you install packages, NPM may set `.Z` for you even if you only had `X.Y` set.
 
-Note that Python and Ruby also use tilde, but I haven't seen caret use there so it might be just JS thing.
+Note that Python and Ruby also use tilde, but I haven't seen caret use there so it might be just NPM thing. Setting a caret in NPM as `^X.Y.Z` is equivalent to setting `~> X.Y, >= X.Y.Z` in Ruby or Python. Setting `~> X.Y` would be dangerous there without a lock file as if a bug version increment broke your app you would not know what the last known minimum bug version was that worked.
 
 Note that this assumes using a version specified to 3 levels - see the [Detailed](#detailed) section for how this is handled in other cases.
 
