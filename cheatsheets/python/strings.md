@@ -61,7 +61,7 @@ True
 
 For classes, the `__repr__` might be set to exactly match the contents so a new instance be created, or it might be a summary. But it won't be set by default.
 
-From [# Python String Conversion 101: Why Every Class Needs a “repr”](https://dbader.org/blog/python-repr-vs-str)
+From [Python String Conversion 101: Why Every Class Needs a “repr”](https://dbader.org/blog/python-repr-vs-str) article.
 
 ```python
 class Foo:
