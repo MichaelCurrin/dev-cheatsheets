@@ -1,7 +1,7 @@
 ---
 layout: listing
 ---
-# Python configs
+# Configs
 
 
 
