@@ -2,7 +2,6 @@
 
 ## Example
 
-
 ### Storage
 
 Set ad-hoc values.
@@ -13,17 +12,18 @@ export MY_VARIABLE=abc
 
 Or store in a file.
 
-`.env`
-```python
-FOO=bar
-BUZZ=123
-```
+- `.env`
+    ```python
+    FOO=bar
+    BUZZ=123
+    ```
+
 Then load it:
 ```sh
-export $(< .env | xargs)
+$ export $(< .env | xargs)
 ```
 
-### Use
+### Usage
 
 ```python
 from os import environ
