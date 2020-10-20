@@ -139,11 +139,21 @@ Here is a sample list:
 
 ## Pull Request templates
 
-[Tutorial](https://help.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository)
+See [Tutorial](https://help.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository) on GH docs.
+
+Create a file with this path like one of these:
 
 - `pull_request_template.md`
 - `docs/pull_request_template.md`
 - `.github/pull_request_template.md`
+
+Note that lowercase looks like the preferred style.
+
+Or create a directory with a named file:
+
+- `.github/PULL_REQUEST_TEMPLATE/foo.md`
+
+For the content:
 
 > In the body of the new file, add your pull request template. This could include:
 >
