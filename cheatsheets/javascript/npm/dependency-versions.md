@@ -21,7 +21,7 @@ _TODO - how does this work on the command-line with npm install?_
 
 ### Tilde ranges
 
-This sets a minimum version but allows **patch** increments (bug fixes).
+This sets a minimum version but allows **patch** increments (bug fixes) only.
 
 ```
 ~1.2.3
@@ -35,13 +35,15 @@ This is similar to setting this, though this does not a set a minimum patch.
 
 ### Caret ranges
 
-This sets a minimum version but allows **minor version** increments within.
+When installing with `npm install foo`, NPM will write to your package file and use a caret and 3-level version for the package.
+
+This sets a minimum version but allows **minor version** increments within it.
 
 ```
 ^1.2.3
 ```
 
-This is similar to setting this, though this does not a set a minimum minor and patch.
+This is similar to setting this, though this does not a set a minimum minor and patch here.
 
 ```
 1.*.*
@@ -78,19 +80,21 @@ Used broadly, this does not lock minor version:
 ### Caret ranges
 > Compatible with version
 
-Using caret is _less_ restrictive than tilde, as only locks the major version when used for version `1` and above.
+Using caret is _less_ restrictive than tilde, as it only locks the major version when used for version `1` and above.
 
 ```
 ^1.2.3 := >=1.2.3 <2.0.0
 ```
 
-It works _differently_ when below the major `1.Y`, as shown here.
+It works _differently_ depending on of you've hit `1` in a major or minor level.
 
-> Allows changes that do not modify the left-most non-zero digit in the [major, minor, patch] tuple. In other words, this allows patch and minor updates for versions 1.0.0 and above, patch updates for versions 0.X >=0.1.0, and no updates for versions 0.0.X.
+> Allows changes that do not modify the left-most non-zero digit in the [major, minor, patch] tuple.
+>
+> In other words, this allows patch and minor updates for versions 1.0.0 and above, patch updates for versions 0.X >=0.1.0, and no updates for versions 0.0.X.
 
 ```
 ^0.2.3 := >=0.2.3 <0.3.0
 ^0.0.3 := >=0.0.3 <0.0.4
 ```
 
-- [Caret ranges](https://docs.npmjs.com/misc/semver#caret-ranges-123-025-004) on NPM docs
+From [Caret ranges](https://docs.npmjs.com/misc/semver#caret-ranges-123-025-004) on NPM docs
