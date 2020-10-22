@@ -71,3 +71,11 @@ But we can't just use the first page we find as there could be duplicate folder 
 Therefore rather than using split pieces, we use the full path (a, then a/b then a/b/c) to find the index files.
 
 Each piece of the breadcrumb pieces needs a bigger slice to build a URL and then find the path. So we use `slice: 0, forloop.index` to get the URL for the first breadcrumb (slice 0 and 1), then the second (slice 0 and 2).
+
+
+## Plugins
+
+Most pages are kept light as `# Title` without frontmatter by using two plugins.
+
+- [Optional frontmatter](https://rubygems.org/gems/jekyll-optional-front-matter) - Process a page without frontmatter.
+- [Title from Headings](https://rubygems.org/gems/jekyll-titles-from-headings/versions/0.5.3) to turn the first line of the page into `page.title`. This is setup in the config to hide the title, as there is a layout to take care that of that already.
