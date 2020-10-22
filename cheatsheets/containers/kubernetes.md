@@ -19,13 +19,13 @@ Example values:
 ## Services
 
 ```sh
-kubectl get services
+$ kubectl get services
 ```
 
 Get external IP for a service.
 
 ```sh
-kubectl get service SERVICE_NAME
+$ kubectl get service SERVICE_NAME
 ```
 Fields:
 ```
@@ -38,7 +38,7 @@ Or use `svc` for `service` above.
 Create service
 
 ```sh
-kubectl apply -f SERVICE_YAML_FILE
+$ kubectl apply -f SERVICE_YAML_FILE
 ```
 
 
@@ -47,21 +47,21 @@ kubectl apply -f SERVICE_YAML_FILE
 List.
 
 ```sh
-kubectl get pods
+$ kubectl get pods
 
-kubectl get pods --all-namespaces
+$ kubectl get pods --all-namespaces
 ```
 
 Describe config.
 
 ```sh
-kubectl describe pod POD_NAME
+$ kubectl describe pod POD_NAME
 ```
 
 Start tunnel in a pod using a command use `/bin/sh`, `/bin/bash`, `postgresql` or `python3`.
 
 ```sh
-kubectl exec -it POD COMMAND
+$ kubectl exec -it POD COMMAND
 ```
 
 
@@ -70,13 +70,13 @@ kubectl exec -it POD COMMAND
 List deployments.
 
 ```sh
-kubectl get deployments
+$ kubectl get deployments
 ```
 
 Get a deployment. Optionally get as YAML as below. Optionally write to a local YAML file.
 
 ```sh
-kubectl get deployment NAME -o yaml
+$ kubectl get deployment NAME -o yaml
 ```
 
 
@@ -87,27 +87,27 @@ kubectl get deployment NAME -o yaml
 ### Get secret
 
 ```sh
-kubectl get secrets
+$ kubectl get secrets
 ```
 
 ```sh
-kubectl get secret SECRET_NAME -o yaml
+$ kubectl get secret SECRET_NAME -o yaml
 ```
 
 ### Create secret
 
 ```sh
-kubectl create secret generic SECRET_NAME --from-file=username.txt --from-file=password.txt
+$ kubectl create secret generic SECRET_NAME --from-file=username.txt --from-file=password.txt
 ```
 
 ```sh
-kubectl create secret generic SECRET_NAME --from-literal=username=foo --from-literal=password='S!B\*d$zDsb'
+$ kubectl create secret generic SECRET_NAME --from-literal=username=foo --from-literal=password='S!B\*d$zDsb'
 ```
 
 ### Edit
 
 ```sh
-kubectl edit secrets SECRET_NAME
+$ kubectl edit secrets SECRET_NAME
 ```
 
 ### Dump secrets
@@ -115,7 +115,7 @@ kubectl edit secrets SECRET_NAME
 Create a YAML file for each secret available.
 
 ```sh
-kubectl get --no-headers secret | \
+$ kubectl get --no-headers secret | \
     awk '{print $1}' | \
     xargs -I{} sh -c 'kubectl get secret -o yaml "$1" > "$1.yaml"' - {}
 ```
@@ -124,7 +124,7 @@ kubectl get --no-headers secret | \
 ##  Man page
 
 ```sh
-kubectl --help
+$ kubectl --help
 ```
 ```
 kubectl controls the Kubernetes cluster manager.
@@ -194,8 +194,3 @@ Usage:
 Use "kubectl <command> --help" for more information about a given command.
 Use "kubectl options" for a list of global command-line options (applies to all commands).
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4MTcyNTUzMCwxMjIyMjc3OTAyLDU4Nz
-MxNTEwNCwtMTg1NzkxMzkzMiwxNTM4MTcwNDc5LC0xNjI0Mzgw
-MzU4XX0=
--->
