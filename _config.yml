@@ -23,6 +23,10 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-titles-from-headings
+  - jekyll-optional-front-matter
+
+titles_from_headings:
+  strip_title: true
 
 exclude:
   - docs/
