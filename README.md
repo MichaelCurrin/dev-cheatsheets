@@ -13,10 +13,12 @@ Screenshots of the website:
 
 <div align="center">
     <a href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/">
-        <img src="/sample-cheatsheets.png" height="300" alt="sample cheatsheets"/>
+        <img src="/sample-cheatsheets.png" height="300" alt="sample cheatsheets"
+            title="Cheatsheets homepage"/>
     </a>
     <a href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/">
-        <img src="/sample-python.png" height="300" alt="sample cheatsheets python" />
+        <img src="/sample-shell.png" height="300" alt="sample cheatsheets shell"
+            title="Shell cheatsheet"/>
     </a>
 </div>
 
