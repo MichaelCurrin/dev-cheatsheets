@@ -16,7 +16,7 @@ Screenshots of the website:
         <img src="/sample-cheatsheets.png" height="300" alt="sample cheatsheets"
             title="Cheatsheets homepage"/>
     </a>
-    <a href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/">
+    <a href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/">
         <img src="/sample-shell.png" height="300" alt="sample cheatsheets shell"
             title="Shell cheatsheet"/>
     </a>
