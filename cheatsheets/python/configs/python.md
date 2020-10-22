@@ -1,6 +1,6 @@
-# Python config file
+# Configs
 
-Store config values in a Python file.
+Various ways to store config values.
 
 Such as `config.py`.
 

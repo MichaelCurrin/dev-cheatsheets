@@ -1,8 +1,7 @@
 ---
 description: Understanding versioning of Python packages
 ---
-# Python package versions
-
+# Versions
 
 
 ## Semantic versioning
@@ -19,7 +18,6 @@ X.Y.Z
 
 
 ## Recommended pinning for safety
-
 
 ### Pinning
 

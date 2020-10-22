@@ -1,7 +1,7 @@
 ---
-description: How to install packages with `pip`
+description: How to install Python packages using `pip`
 ---
-# Python package install
+# Install
 
 
 ## Resources

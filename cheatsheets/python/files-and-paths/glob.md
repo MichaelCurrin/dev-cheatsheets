@@ -1,4 +1,4 @@
-# Python glob
+# Glob
 
 See also the [globbing][] in the Shell section of this guide.
 
