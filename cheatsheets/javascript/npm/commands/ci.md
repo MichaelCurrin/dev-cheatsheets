@@ -1,7 +1,7 @@
 ---
 description: About the `npm ci` command
 ---
-# CI
+# ci
 
 
 ## Usage

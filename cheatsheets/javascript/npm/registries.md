@@ -1,4 +1,4 @@
-# NPM package registries
+# Package registries
 
 ## NPM
 
