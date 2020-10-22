@@ -39,7 +39,7 @@ $ chmod +w Gemfile
 $ nano Gemfile
 ```
 
-### Install
+### Configure
 
 Make sure to configure Bundle first:
 
@@ -47,11 +47,63 @@ Make sure to configure Bundle first:
 $ bundle config set --local path vendor/bundle
 ```
 
-Then install gems.
+### Install
+
+Install gems already instead in the `Gemfile`.
 
 ```sh
-$ bundle add GEM VERSION         # Add gem to Gemfile and run bundle install
-$ bundle install [OPTIONS]       # Install the current environment to the system
+$ bundle install [OPTIONS]
+```
+
+### Add
+
+> Adds the specified gem to Gemfile (if valid) and run 'bundle install' in one step.
+
+```sh
+$ bundle add GEM VERSION
+```
+
+Example:
+
+```sh
+$ bundle add jekyll-optional-front-matter
+```
+
+Line appended to `Gemfile`:
+
+```ruby
+gem "jekyll-optional-front-matter", "~> 0.3.2"
+```
+
+Output:
+
+```
+Fetching gem metadata from https://rubygems.org/..........
+...
+Using jekyll-optional-front-matter 0.3.2
+```
+
+### Add in group
+
+To put the plugin in a group:
+
+```sh
+$ bundle add jekyll-optional-front-matter -g jekyll_plugins
+```
+
+Line appended:
+
+```ruby
+gem "jekyll-optional-front-matter", "~> 0.3.2", :group => :jekyll_plugins
+```
+
+But you may prefer to write it yourself like this:
+
+```ruby
+group :jekyll_plugins do
+  gem 'jekyll-optional-front-matter', '~>	0.3.2'
+  # Other plugins...
+end
 ```
 
 ### Update and clean
