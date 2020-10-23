@@ -1,3 +1,6 @@
-#!/bin/sh
+#!/bin/sh -e
+
+git pull --rebase
+
 # Prevent push on failed Jekyll build.
 make build
