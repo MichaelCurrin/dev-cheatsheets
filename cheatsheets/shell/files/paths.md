@@ -47,17 +47,18 @@ $ realpath Documents/mono.conf
 /home/michael/Documents/mono.conf
 ```
 
-Given that `~/bin` is a symlink, this command will resolve it.
+Given that `~/bin` is a symlink, this command will resolve it by default.
 
 ```sh
-realpath ~/bin/
+$ realpath ~/bin/
 /home/michael/repos/shell-dev-setup/bin
 ```
 
 To leave symlinks _unresolved_:
 
 ```sh
-realpath -s $0`
+$ realpath -s ~/bin
+/Users/mcurrin/bin
 ```
 
 _Warning: If you run `cd` in a script then you will change the working directory and then `realpath` will be relative to that, not the original working directory._
