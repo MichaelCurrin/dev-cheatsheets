@@ -1,6 +1,6 @@
-# Make command syntax
+# Syntax
 
-Use of `make` command in Unix environments.
+Use of `Makefile` and `make` command in Unix environments.
 
 Makefile templates topic on GitHub - [makefile-template](https://github.com/topics/makefile-template)
 
@@ -106,17 +106,16 @@ test:
 
 Using conditionals and iteration, similar to shell.
 
+Note that unlike in the shell, the `\` is necessary in a `Makefile` so that the command is combined on one line at run at once.
 ### For
 
 ```make
 foo:
 	for bar in my-dir/*; do \
 		export fizz=$$(echo $$bar) \
-		make plan; \
+		$(MAKE) plan; \
 	done
 ```
-
-TODO: remove `\` and `;` and see if `$(MAKE)` is better than `make`.
 
 ### If
 
@@ -127,6 +126,7 @@ TARGET:
 ifneq (CONDIITION, )
 	ACTION
 endif
+	ACTION
 ```
 
 [Syntax](https://www.gnu.org/software/make/manual/html_node/Conditional-Syntax.html) in Make docs.
@@ -146,7 +146,6 @@ endif
 ```
 
 Alternate:
-
 
 ```make
 TARGET:
@@ -175,18 +174,18 @@ foo: bar baz
 
 ### Recursive make
 
-Call `make` within a `Makefile`.
-
-This works:
+How to call a `make` target within a `Makefile`.
 
 ```make
 foo:
 	make bar
 ```
 
-This seems preferred as I've seen this in a few places, although from light testing it looks to do the same.
+Or this, which is more common and preferred.
 
 ```make
 foo:
 	$(MAKE) bar
 ```
+
+Usually `$(MAKE)` will evaluate to `make` but it might be different in some cases.
