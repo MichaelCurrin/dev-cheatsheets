@@ -153,39 +153,3 @@ TARGET:
 		ACTION ; \
 	fi
 ```
-
-
-## Internal make calls
-
-### Call another target
-
-This will run `make bar`.
-
-```make
-foo: bar
-```
-
-This will run `make bar`, `make baz` and then only do the command inside `foo`.
-
-```make
-foo: bar baz
-	echo 'Foo'
-```
-
-### Recursive make
-
-How to call a `make` target within a `Makefile`.
-
-```make
-foo:
-	make bar
-```
-
-Or this, which is more common and preferred.
-
-```make
-foo:
-	$(MAKE) bar
-```
-
-Usually `$(MAKE)` will evaluate to `make` but it might be different in some cases.
