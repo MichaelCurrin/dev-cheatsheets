@@ -10,6 +10,17 @@
 Usage: make [options] [target] ...
 ```
 
+e.g.
+
+```sh
+$ make foo
+$ make f  # alias
+$ make -n foo
+$ make foo bar  # Two targets
+$ FOO=1 make foo  # Pass env variable.
+$ make foo FOO=1  # Pass env variable alternative.
+```
+
 ### Flags summary
 
 #### Dry run:=
@@ -18,6 +29,21 @@ Usage: make [options] [target] ...
   -n, --just-print, --dry-run, --recon
                               Don't actually run any commands; just print them.
 ```
+
+Given `install:` as the default target and `h help:` as another target.
+
+```sh
+$ make -n
+pip install pip --upgrade
+pip install -r requirements-dev.txt --upgrade
+```
+
+```sh
+$ make -n help
+egrep '(^\S)|^$' Makefile
+```
+
+You can use the alias and you can move the option to the end.
 
 #### Verbosity
 
