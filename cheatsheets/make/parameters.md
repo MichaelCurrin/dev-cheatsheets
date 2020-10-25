@@ -1,6 +1,16 @@
 # Parameters
 > How to pass and use variables in a `Makefile`
 
+
+## Summary
+
+```sh
+$ FOO=1 make foo BAR=2
+```
+
+Note that `make foo BAR` will try and `make foo` and `make bar`.
+
+
 ## Use a variable
 
 Here is the sample file we'll use for testing.
