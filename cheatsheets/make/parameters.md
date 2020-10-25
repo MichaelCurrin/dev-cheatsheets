@@ -40,7 +40,7 @@ $ make foo
 $ FOO=bar make foo
 ```
 
-### Pass param to make
+### Pass known param to make
 
 ```sh
 $ make foo FOO=bar
