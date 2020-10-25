@@ -38,27 +38,27 @@ Approaches to disabling a *pylint* rule.
 
 Disable for scope. Either at the top of a file or scope like a function.
 
-```
+```python
 def test():
     # pylint: disable=no-member
-    ...
+    foo()
 ```
 
 Disable for line.
 
-```
-a, b = ... # pylint: disable=unbalanced-tuple-unpacking
+```python
+a, b = foo() # pylint: disable=unbalanced-tuple-unpacking
 ```
 
 Using [symbolic names](https://docs.pylint.org/en/latest/faq.html#do-i-have-to-remember-all-these-numbers)
 
-```
+```python
 # pylint: disable=locally-disabled, multiple-statements, fixme, line-too-long
 ```
 
 Using config file:
 
-```
+```init
 disable= wildcard-import,
  method-hidden,
  too-many-lines
@@ -71,39 +71,40 @@ disable= wildcard-import,
 
 Disable for file:
 
-`# flake8: noqa`
+```python
+# flake8: noqa
+```
 
 Disable inline - all.
 
 ```
-... #noqa
+foo() #noqa
 ```
 
 Disable inline - comma-separated codes.
 
 ```
-... # noqa: E234
+foo() # noqa: E234
 ```
 
-Example config:
+Example TOML (ini?) config:
 
-`.flake8`
-
-```toml
-[flake8]
-max-line-length = 88
-ignore = E501, E203, W503
-per-file-ignores = __init__.py:F401
-exclude =
-    .git
-    __pycache__
-    setup.py
-    build
-    .venv
-    .vscode
-    .github
-    foo/utils/_compat.py
-    tests/fixtures/
-    tests/repositories/fixtures/
-    tests/utils/fixtures/
-```
+- `.flake8`
+    ```toml
+    [flake8]
+    max-line-length = 88
+    ignore = E501, E203, W503
+    per-file-ignores = __init__.py:F401
+    exclude =
+        .git
+        __pycache__
+        setup.py
+        build
+        .venv
+        .vscode
+        .github
+        foo/utils/_compat.py
+        tests/fixtures/
+        tests/repositories/fixtures/
+        tests/utils/fixtures/
+    ```
