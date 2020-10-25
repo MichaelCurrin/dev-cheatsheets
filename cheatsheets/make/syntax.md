@@ -153,3 +153,23 @@ TARGET:
 		ACTION ; \
 	fi
 ```
+
+
+## Get the current target name
+
+- `Makefile`
+    ```Makefile
+    a:
+        echo $(@)
+    b:
+        echo $(@)
+    ```
+
+```sh
+$ make a b
+echo a
+a
+echo b
+b
+```
+
