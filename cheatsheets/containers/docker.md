@@ -183,3 +183,63 @@ Commands:
 
 Run 'docker COMMAND --help' for more information on a command.
 ```
+
+## Cheatsheet
+
+From [How to Use Docker Images, Containers, and Dockerfiles
+](https://medium.com/swlh/how-to-use-docker-images-containers-and-dockerfiles-39e4e8fc181a)
+
+### Images
+
+```sh
+docker build -t my-node-img .
+docker image ls my-node-img
+docker image ls
+```
+
+### Containers
+
+```sh
+# Check Linux version.
+docker run node:12-slim cat /etc/issue
+```
+
+```sh
+# Show a specific container
+docker ps -a --filter "name=my-app"
+
+# Show all running containers.
+docker ps
+
+# See containers logs (recommended)
+docker logs -f my-app
+```
+
+```sh
+# Create a container with the tiny package, a name, and port
+docker create --init --name my-app -p 3000:3000 my-node-img
+
+docker start my-app
+
+# Attach to container (not recommended) 
+docker attach my-app
+
+# Access container's system 
+docker exec -it my-app bash
+
+# Use the run shortcut 
+docker run --name my-app -p 3000:3000 -d --init --rm my-node-img
+```
+
+### Stopping
+
+```sh
+# Stop a running container
+docker stop my-app
+
+# Remove a non-running container
+docker rm my-app
+
+# Stop all running containers
+docker stop $(docker ps -q)
+```
