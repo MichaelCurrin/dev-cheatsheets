@@ -1,7 +1,7 @@
 ---
-description: About the npm-version command
+description: About the `npm version` command and how to use it
 ---
-# Version
+# version
 
 
 
@@ -43,9 +43,16 @@ npm version [<newversion> | major | minor | patch | premajor | preminor | prepat
 
 ## Example use
 
-```sh
-$ npm version v0.1.0
+Create a target version.
+TODO check if v is needed.
 
+```sh
+$ npm version 0.1.0
+```
+
+Increment by a given level.
+
+```sh
 $ npm version major
 
 $ npm version minor
@@ -69,10 +76,10 @@ From [npm-run-scripts](https://docs.npmjs.com/misc/scripts) doc:
 Example tasks:
 
 - Ensure tests pass _before_ a tag is generated.
-- Run a build command to output to `dist` directory and stage the directory (I find this part is not needed for the projects I work in).
-- Push the commits and tag and clean build directory.
+- Run a build command to output to `dist` directory and stage the directory, if relevant to your flow (I find this part is not needed for the projects I work in).
+- Push the commits and tag and the clean build directory (I prefer to run clean before the build step and I don't know why temp is used here but I just copied that line).
 
-Example configuration to match that. I don't know where I found this but it make sense.
+Example configuration to match that:
 
 - `package.json`
     ```json
