@@ -100,19 +100,19 @@ Note for `--follow-tags` the help says:
     --follow-tags         push missing but relevant tags
 ```
 
-I'm not confident in that, as in my testing it only pushrf the **current tag**, so any older commits that I had tagged didn't have tags pushed.
+I'm not confident in that description, as in my experience it only pushes the **current tag**, so any older commits that I had tagged didn't have tags pushed.
 
 I recommend that you run `git fetch --tags` before running `npm version`. To make sure you don't increment to a tag which already exists on the remote. So adding that logic into `preversion` can make that safer.
 
-So here is a safer setup:
+So here is a safer setup. Simplified to exclude the add and rm commands from above.
 
 - `package.json`
     ```json
     {
       "scripts": {
         "preversion": "git fetch --tags && npm test",
-        "version": "npm run build && git add -A dist",
-        "postversion": "git push && git push --tags && rm -rf build/temp"
+        "version": "npm run build",
+        "postversion": "git push && git push --tags"
       }
     }
     ```
