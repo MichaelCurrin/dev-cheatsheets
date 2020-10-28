@@ -141,11 +141,11 @@ If you prefer, specify template in the JS section.
 
 ```javascript
 export default {
- name: "Foo",
- props: {
+   name: "Foo",
+   props: {
     message: { type: String, required: true },
-  },
- template: "<span>{{ message }}</span>",
+    },
+   template: "<span>{{ message }}</span>",
 };
 ```
 
@@ -170,7 +170,7 @@ export default {
     newFoo() {
       return this.foo.toUppercase();
     },
-  },
+  }
 };
 ```
 
