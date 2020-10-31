@@ -4,10 +4,18 @@ layout: listing
 ---
 # Shell
 
+Unix shell guide.
 
-Unix shell programming for macOS and Linux.
-
-The tips will generally work for both Bash and ZSH but exceptions are noted.
+- Use-cases
+    - [x] Shell scripting
+    - [x] Command-line
+    - [x] Manage your system's configs and packages.
+- Operating systems
+    - [x] Linux
+    - [x] macOS
+- Shells
+    - [x] Bash (this is the focus)
+    - [x] ZSH (notes are provided where behavior is different for ZSH) 
 
 
 ## Resources
