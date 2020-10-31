@@ -5,11 +5,12 @@ layout: listing
 # Shell
 
 
-Unix shell cheatsheet for macOS/Linux
+Unix shell programming for macOS and Linux.
 
-Using Bash or ZSH shells. Some commands may be not valid on both shells.
+The tips will generally work for both Bash and ZSH but exceptions are noted.
 
 
 ## Resources
 
 - [devhints.io/bash](https://devhints.io/bash)
+- [Bash cheatsheets](https://cheatography.com/tag/bash/) on Cheatography.
