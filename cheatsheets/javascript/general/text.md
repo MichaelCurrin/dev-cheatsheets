@@ -16,6 +16,48 @@
 ```
 
 
+## Replace character
+
+```javascript
+> 'AAA'.replace(/A/g, 'C')
+'CCC'
+```
+
+Or the more verbose.
+
+```javascript
+> 'AAA'.replace(new RegExp("A", "g"), 'C')
+'CCC'
+```
+
+You might use `RegExp` to escape characters for you.
+
+```javascript
+> new RegExp("A", "g")
+/A/g
+> new RegExp("/A")
+/\/A/
+```
+
+### Warning
+
+These will only replace the **first** occurence.
+
+Using `.replace` without regex (like you would do in Python):
+
+```javascript
+> 'AAA'.replace('A', 'C')
+'CAA'
+```
+
+Using regex without `g`:
+
+```javascript
+> 'AAA'.replace(/A/, 'C')
+'CAA'
+```
+
+
 ## Remove empty lines
 
 ```javascript
