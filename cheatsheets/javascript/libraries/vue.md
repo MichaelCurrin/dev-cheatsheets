@@ -25,12 +25,25 @@ Shorthand:
 <a :href="url">...</a>
 ```
 
-It could be a value. Note the `:` turns string `"true"` into boolean `true`.
+It could be a value. Note use of `:` to process JS such as a value or functional call and not just plain text.
 
 ```html
-<input :required="true" />
+<input :foo="123" />
 ```
 
+Pass a boolean.
+
+```html
+<input isRequired />
+```
+
+This will appear as `isRequired` in the component with a value of `true`.
+
+Same as:
+
+```html
+<input :isRequired="true" />
+```
 
 ## Events
 
@@ -38,7 +51,7 @@ If you need to be pushed back up, then use events.
 
 
 ```
-      v-on:input="$emit('input', $event.target.value)"
+v-on:input="$emit('input', $event.target.value)"
 ```
 
 For example, we pass a variable to a component.
@@ -84,6 +97,7 @@ And use it.
     <p>{{ note }}</p>
 </small>
 ```
+
 
 ## Looping
 
@@ -163,13 +177,18 @@ export default {
   components: {
     Buzz,
   },
+  
   props: {
     foo: { type: String, required: true },
   },
+  
   computed: {
     newFoo() {
       return this.foo.toUppercase();
     },
+    buzz() {
+      return 'Buzz';
+    }
   }
 };
 ```
@@ -179,11 +198,13 @@ Here we have a view such as `About.vue`, which calculates and renders results. I
 ```javascript
 export default {
   name: "Foo",
+  
   data() {
     return {
       foo: "Foo",
       bar: "",
-    };
+  },
+  
   methods: {
     submit: function () {
       this.bar = this.foo.toUpperCase();
@@ -191,3 +212,11 @@ export default {
   }
 }
 ```
+
+
+## Space
+
+```html
+<span>{{ fruit }}</span>{{ ' ' }}
+```
+
