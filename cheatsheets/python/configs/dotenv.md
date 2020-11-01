@@ -1,5 +1,7 @@
 # Dotenv
 
+How to load values from a dotenv file.
+
 ## Basic
 
 Store values in a shell file.
@@ -10,7 +12,7 @@ Store values in a shell file.
     BUZZ=123
     ```
 
-Then load it:
+Then set the values as export variable.s
 
 ```sh
 $ export $(< .env | xargs)
@@ -18,21 +20,23 @@ $ export $(< .env | xargs)
 
 Run a script that uses the variables.
 
-```python
-from os import environ
+- `main.py`
+    ```python
+    import from os import environ
 
 
-class Config:
+    class Config:
+        """
+        """
 
-    FOO = environ.get('FOO')
-    BUZZ = environ.get('BUZZ')
-```
+        FOO = environ.get('FOO')
+        BUZZ = environ.get('BUZZ')
+    ```
 
 
-## Using python-dotenv package
+## Using Dotenv package
 
-
-How to load a dotenv file, then use the values in your Python application.
+How to load a dotenv file, then use the values in your Python application, without using the `export` command.
 
 Install [python-dotenv](https://pypi.org/project/python-dotenv/). Use the `-U` flag if installing globally to restrict to your user, or omit if in a virtual environment (recommended).
 
@@ -42,32 +46,32 @@ $ pip install python-dotenv
 
 Create a `.env` file which follows Bash Shell syntax, with content such as:
 
-```sh
-# a comment that will be ignored.
-REDIS_ADDRESS=localhost:6379
-MEANING_OF_LIFE=42
-MULTILINE_VAR="hello\nworld"
-```
+- `.env`
+    ```sh
+    # A comment that will be ignored.
+    REDIS_ADDRESS=localhost:6379
+    MEANING_OF_LIFE=42
+    MULTILINE_VAR="hello\nworld"
+    ```
 
-Load the file in Python such as in `settings.py` file.
+Load the file in Python.
 
-```python
-# settings.py
-import os
-from dotenv import load_dotenv
+- `settings.py`
+    ```python
+    from os import environ
+
+    from dotenv import load_dotenv
 
 
-load_dotenv()
+    load_dotenv()
+    # OR
+    load_dotenv(verbose=True)
 
-# OR, the same with increased verbosity
-load_dotenv(verbose=True)
+    # OR
+    from pathlib import Path 
+    env_path = Path('.') / '.env'
+    load_dotenv(dotenv_path=env_path)
 
-# OR, explicitly providing path to '.env'
-from pathlib import Path  # python3 only
-env_path = Path('.') / '.env'
-load_dotenv(dotenv_path=env_path)
-
-# Variables are now accessible through the OS environment variables, as if set with `export` command.
-SECRET_KEY = os.getenv("EMAIL")
-DATABASE_PASSWORD = os.getenv("DATABASE_PASSWORD")
-```
+    SECRET_KEY = environ("EMAIL")
+    DATABASE_PASSWORD = environ("DATABASE_PASSWORD")
+    ```
