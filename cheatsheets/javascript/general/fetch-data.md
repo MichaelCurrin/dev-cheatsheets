@@ -1,13 +1,21 @@
 ---
 description: How to fetch data using JS
 ---
-# Fetch
+# Fetch data
+
+
+## Options
+
+- `axios`
+- `fetch` (builtin)
+- `request`
+- `jquery` - use the `ajax` function.
 
 
 ## Fetch
 
 - Browser
-    - `fetch` is builtin for modern browsers.
+    - The `fetch` function is builtin for modern browsers.
 - NPM
     - [node-fetch](https://www.npmjs.com/package/node-fetch)
         - The browser `fetch` function brought to Noded.js.
@@ -20,30 +28,36 @@ description: How to fetch data using JS
 Using `fetch`. Builtin for modern browsers and you can use `node-fetch` on the server side.
 
 
-## Samples
+### Samples
 
-Basic from the Mozilla docs.
+Get JSON. Basic example from the Mozilla docs.
 
 ```javascript
-fetch('http://example.com/movies.json')
-  .then(response => response.json())
+const url = 'http://example.com/movies.json'
+
+fetch(url)
+  .then(resp => resp.json())
   .then(data => console.log(data));
 ```
 
-Plain HTML from node-fetch docs.
+From `node-fetch` docs.
 
 ```javascript
-fetch('https://github.com/')
-    .then(res => res.text())
-    .then(body => console.log(body));
+const url = 'https://api.github.com/users/github'
+
+fetch(url)
+    .then(resp => resp.json())
+    .then(json => console.log(json));
 ```
 
-Get JSON
+Plain HTML. From `node-fetch` docs.
 
 ```javascript
-fetch('https://api.github.com/users/github')
-    .then(res => res.json())
-    .then(json => console.log(json));
+const url = 'https://github.com/'
+
+fetch(url)
+    .then(resp => resp.text())
+    .then(body => console.log(body));
 ```
 
 Simple POST.
