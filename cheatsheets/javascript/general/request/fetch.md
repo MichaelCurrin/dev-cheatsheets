@@ -1,18 +1,10 @@
 ---
-description: How to fetch data using JS
+description: How to get data using `fetch`
 ---
-# Fetch data
+# Fetch
 
 
-## Options
-
-- `axios`
-- `fetch` (builtin)
-- `request`
-- `jquery` - use the `ajax` function.
-
-
-## Fetch
+## About
 
 - Browser
     - The `fetch` function is builtin for modern browsers.
@@ -28,7 +20,7 @@ description: How to fetch data using JS
 Using `fetch`. Builtin for modern browsers and you can use `node-fetch` on the server side.
 
 
-### Samples
+## Samples
 
 Get JSON. Basic example from the Mozilla docs.
 
