@@ -199,12 +199,14 @@ Here we have a view such as `About.vue`, which calculates and renders results. I
 export default {
   name: "Foo",
   
+  // A function returning a dictionary.
   data() {
     return {
       foo: "Foo",
       bar: "",
   },
   
+  // An attribute returning a dictionary of functions.
   methods: {
     submit: function () {
       this.bar = this.foo.toUpperCase();
@@ -212,6 +214,21 @@ export default {
   }
 }
 ```
+
+Note on modern JS:
+
+- Short
+    ```javascript
+    {
+        methodName() {}
+    }
+    ```
+- Long
+    ```javascript
+    {
+        methodName function() {}
+    }
+    ```
 
 
 ## Space
