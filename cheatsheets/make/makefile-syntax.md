@@ -1,4 +1,4 @@
-# Make syntax
+# Makefile syntax
 
 
 Makefile templates topic on GitHub - [makefile-template](https://github.com/topics/makefile-template)
@@ -53,8 +53,8 @@ The comment will be printed when the target runs. But you can use `@#` to preven
 - `Makefile
 	```mk
 	# Comment.
-	foo:
-		# Another comment.
+	foo: # Another comment.
+		# Yet another comment.
 		@# This comment won't be printed.
 		echo 'Foo'
 	```
