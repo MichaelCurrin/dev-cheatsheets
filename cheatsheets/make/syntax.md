@@ -13,56 +13,35 @@ For language specific examples, see my [Code Cookbook](https://github.com/Michae
 
 ## Phony
 
-This can be done at the start or just be fore each target.
+Phony is useful if your target matches an actual directory but you don't want to `make` to run against it. Normally, you could run `make DIR` for compiling a C program or similar, but that isn't helpful outside of compiled languages.
 
-```makefile
-.PHONY docs
 
-docs:
-	echo 'Test'
-```
+This can be done at the start, or just before each target.
 
-## Help
+Here we use PHONY where `foo` and `docs` are actual directories as well targets.
 
-### Basic
+- `Makefile
+	```makefile
+	.PHONY: foo docs
 
-```make
-# Show summary of make targets.
-help:
-	@echo 'Print lines that are not indented (targets and comments) or empty.'
-	@egrep '^\S|^$$' Makefile
-```
+	foo:
+		echo 'Foo'
 
-### Extended
+	docs:
+		echo 'Test'
+	```
+- `Makefile
+	```makefile
+	.PHONY: foo
+	foo:
+		echo 'Foo'
+		
+	.PHONY: docs
+	docs:
+		echo 'Test'
+	```
 
-If you use `@echo` within your targets:
-
-```make
-# Show summary of make targets.
-help:
-	@echo 'Print lines that are not indented (targets and comments) or empty, plus any indented echo lines.'
-	@egrep '(^\S)|(^$$)|\s+@echo' Makefile
-```
-
-Alt echo: `@echo "Include left-aligned, empty lines and echo lines."`
-
-### Detailed
-
-Copied from Poetry's [Makefile](https://github.com/python-poetry/poetry/blob/master/Makefile).
-
-This is complex - I don't know why. I haven't tested yet but maybe something here is useful.
-
-```makefile
-# lists all available targets
-list:
-	@sh -c "$(MAKE) -p no_targets__ | \
-		awk -F':' '/^[a-zA-Z0-9][^\$$#\/\\t=]*:([^=]|$$)/ {\
-			split(\$$1,A,/ /);for(i in A)print A[i]\
-		}' | grep -v '__\$$' | grep -v 'make\[1\]' | grep -v 'Makefile' | sort"
-# required for list
-no_targets__:
-
-```
+Please don't add PHONY to every target - since serves no purpose and just clutters the file.
 
 
 ## Export
@@ -82,7 +61,6 @@ test:
   source .env && echo $$FOO
   source .env && ./script_that_echoes_foo.sh
 ```
-
 
 ### Don't do this
 
