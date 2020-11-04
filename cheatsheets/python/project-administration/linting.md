@@ -15,6 +15,32 @@ Some VS Code choices - there are flags for each (so multiple can be used), plus 
 - [Pylint messages](https://pylint-messages.wikidot.com/all-codes)
 - [Pylint message-control](https://pylint.readthedocs.io/en/latest/user_guide/message-control.html)
 
+### Usage
+
+You can't use `.`, but you can use a directory name or `*`.
+
+```sh
+$ pylint my_app
+```
+
+If you have import problems, you can do this:
+
+```sh
+$ export PYTHONPATH=my_app && pylint my_app
+```
+
+But this will **not** work as you'll get the same import error as before.
+
+```sh
+$ cd my_app && pylint *
+```
+
+The exit codes are not meaningful to read. But you can use a package to be more verbose and it also takes flags so you can set the tolerance of level to error out on.
+
+```sh
+$ pylint my_app || pylint-exit $?
+```
+
 ### Rules
 
 Formats that Pylint accepts - copied from message-control doc.
@@ -46,7 +72,7 @@ Generate a config.
 $ pylint OPTIONS --generate-rcfile > .pylintrc
 ````
 
-### How to disable
+### How to disable rules
 
 Approaches to disabling a _pylint_ rule.
 
