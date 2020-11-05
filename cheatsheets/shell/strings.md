@@ -37,7 +37,31 @@ mcurrin
 
 See [guide](https://linuxize.com/post/bash-heredoc/).
 
-Bash supports a _heredoc_, which appears in other languages like PHP and is a more powerful way of writing a multi-line string. 
+Bash supports a _heredoc.
+
+This term appears in other languages like PHP and is a more powerful way of writing a multi-line string. 
+
+The equivalent in JS is backtick string.
+
+```javascript
+var x = `\
+Line 1
+Line 2
+${foo}
+`
+```
+
+```python
+x = f"""\
+Line 1
+Line 2
+{foo}
+"""
+```
+
+In the shell, for most cases I find using single or double quotes for a multi-line string works great. But the heredoc does have the advantage that you can use single and double quotes inside the string without escaping them, as your string terminator will be `EOF` for example. See below.
+
+Note you can use anything but `EOF` is the common term to start and end the shell heredoc.
 
 ### Evaluate
 
@@ -65,7 +89,7 @@ You can use anything at the start and end but `EOF` for "end of file" is the con
 
 ### Literal
 
-Prevent evaluation using quotes. `cat << "EOF"`
+Prevent evaluation by using quotes. `cat << "EOF"`
 
 Example:
 
