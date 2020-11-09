@@ -47,18 +47,17 @@ If you don't pass an array, you won't get an error, but you'll get unexpected ou
 ```
 
 
-## Keyword arguments for functions
-
-
-How to pass key-value pairs to a function
+## How to pass arguments to functions
 
 
 ### Keyword arg style
 
+How to pass key-value pairs to a function.
+
 Use destructuring in the definition of the function's parameters.
 
 ```javascript
-function b({foo, bar}) {
+function b({ foo, bar }) {
   console.log(foo, bar)
 }
 ```
@@ -66,9 +65,9 @@ function b({foo, bar}) {
 Call it using an associative array. The order doesn't matter.
 
 ```javascript
-> b({foo: 1, bar:2})
+> b({ foo: 1, bar:2 })
 1 2
-> b({bar: 2, foo: 1})
+> b({ bar: 2, foo: 1 })
 1 2
 ```
 
@@ -116,6 +115,6 @@ undefined 2
 Warning - if you try and pass key-value pairs, you will only pass an associative array to the first parameter, which is not what we want.
 
 ```javascript
-> a({foo: 1, bar:2})
+> a( { foo: 1, bar:2 } )
 { foo: 1, bar: 2 } undefined
 ```
