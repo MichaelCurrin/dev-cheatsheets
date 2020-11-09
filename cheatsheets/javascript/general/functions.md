@@ -1,7 +1,7 @@
 # Functions
 
 
-## Define args list
+## Handle any number of arguments
 
 Use the **spread operator** to allow the function to be called with any number of args.
 
