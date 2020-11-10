@@ -2,7 +2,7 @@
 description: The container management tool
 logo: docker
 ---
-# Docker
+# Docker CLI
 
 
 ## Resources
@@ -52,10 +52,10 @@ With no options, you will get a confirmation prompt and told that these will be 
 
 [source](https://docs.docker.com/engine/reference/commandline/system_prune/)
 
-Remove images.
+Remove images:
 
 ```sh
-docker image prune
+$ docker image prune
 ```
 
 ## Run
@@ -71,26 +71,26 @@ Links:
 Run a command in a **new** container. The container will then stop.
 
 ```sh
-docker run CONTAINER COMMAND
+$ docker run CONTAINER COMMAND
 ```
 
 Run a command in an **existing** container.
 
 ```sh
-docker start
-docker exec CONTAINER
+$ docker start
+$ docker exec CONTAINER
 ```
 
 Useful if you want to tunnel in and use an interactive session with Bash, Python, etc.
 
 ```sh
-docker exec -it CONTAINER bash
+$ docker exec -it CONTAINER bash
 ```
 
 Ad hoc entry point to start an container even if normally exists immediately and then start interactive terminal.
 
 ```sh
-docker run  --entrypoint bash -it IMAGE
+$ docker run  --entrypoint bash -it IMAGE
 ```
 
 You'll start a new container each time though.
@@ -99,7 +99,7 @@ You'll start a new container each time though.
 ## Man page
 
 ```sh
-docker --help
+$ docker --help
 ```
 
 ```
@@ -184,6 +184,7 @@ Commands:
 Run 'docker COMMAND --help' for more information on a command.
 ```
 
+
 ## Cheatsheet
 
 From [How to Use Docker Images, Containers, and Dockerfiles
@@ -192,54 +193,54 @@ From [How to Use Docker Images, Containers, and Dockerfiles
 ### Images
 
 ```sh
-docker build -t my-node-img .
-docker image ls my-node-img
-docker image ls
+$ docker build -t my-node-img .
+$ docker image ls my-node-img
+$ docker image ls
 ```
 
 ### Containers
 
 ```sh
 # Check Linux version.
-docker run node:12-slim cat /etc/issue
+$ docker run node:12-slim cat /etc/issue
 ```
 
 ```sh
 # Show a specific container
-docker ps -a --filter "name=my-app"
+$ docker ps -a --filter "name=my-app"
 
 # Show all running containers.
-docker ps
+$ docker ps
 
 # See containers logs (recommended)
-docker logs -f my-app
+$ docker logs -f my-app
 ```
 
 ```sh
 # Create a container with the tiny package, a name, and port
-docker create --init --name my-app -p 3000:3000 my-node-img
+$ docker create --init --name my-app -p 3000:3000 my-node-img
 
-docker start my-app
+$ docker start my-app
 
 # Attach to container (not recommended) 
-docker attach my-app
+$ docker attach my-app
 
 # Access container's system 
-docker exec -it my-app bash
+$ docker exec -it my-app bash
 
 # Use the run shortcut 
-docker run --name my-app -p 3000:3000 -d --init --rm my-node-img
+$ docker run --name my-app -p 3000:3000 -d --init --rm my-node-img
 ```
 
 ### Stopping
 
 ```sh
 # Stop a running container
-docker stop my-app
+$ docker stop my-app
 
 # Remove a non-running container
-docker rm my-app
+$ docker rm my-app
 
 # Stop all running containers
-docker stop $(docker ps -q)
+$ docker stop $(docker ps -q)
 ```
