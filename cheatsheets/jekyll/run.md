@@ -1,11 +1,11 @@
-# Jekyll run
+# Run
 
 
 ## Help
 
 For help see:
 
-```
+```sh
 jekyll --version
 jekyll help serve
 jekyll serve --help
@@ -63,7 +63,7 @@ For `jekyll serve [options]`
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | `--verbose` | Increase message logged in the console.                                                                                             |
 | `--debug`   | Show details about an error if there is one. Errors are very quiet so it is useful to always run this especially for remote builds. |
-| --trace`    | Show the full backtrace when an error occurs.                                                                                       |
+| `--trace`   | Show the full backtrace when an error occurs.                                                                                       |
 
 ### Loading flags
 
