@@ -32,12 +32,16 @@ Screenshots of the website:
 
 ## Contents
 
-And idea of what to expect in this guide.
+An idea of what to expect in this guide.
 
 - **Languages** - Syntax and functions across languages. Including how to operate on an array in JavaScript, available Jekyll filters and common and specialized uses of Markdown. Most code snippets here are only one line.
-- **CLIs** - Terminal commands and flags that are useful to me, including listing what they are, what they mean and an example of how to use them. Especially using versatile/complex tools like `sed` or `git`.
+- **CLI tools** - Terminal commands and flags that are useful to me, including listing what they are, what they mean and an example of how to use them. Especially using versatile/complex tools like `sed` or `git`.
 - **Help** - Portions of the manpages, to make it easier to read about command in the browser without going through the entire manpage on the terminal.
 - **Resources** - There are also some details for external resources.
+
+The idea for the first two types is that the code here is generic. There are placeholder values for demonstration but you'll need to change them for your own situation.
+
+See also my [Code Cookbook](https://michaelcurrin.github.io/code-cookbook/) project. It has recipes which structured similarly to cheatsheets, except that the recipes are usually entire snippets, files or even sets of files. And they usually have real-world values from my own or other projects, rather than generic placeholder values.
 
 
 ## Documentation
