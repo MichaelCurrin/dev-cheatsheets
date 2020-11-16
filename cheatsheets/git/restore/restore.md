@@ -17,27 +17,37 @@ Restore directory using a single dot. This is recursive - current directory and 
 git checkout .
 ```
 
-Restore to a commit reference. Such as a tag number, a commit hash, or a branch name (e.g. `master`, `my-feature`) .
+Restore to a commit reference. Such as a tag number, a commit hash, or a branch name (e.g. `master`, `my-feature`). The path could be `.` or a directory or filename.
 
 ```sh
 git checkout COMMIT_REF PATH
 ```
 
-If the remote branch is that state you want and you have since done local commits, you can restore to the remote state.
+If the remote branch is the state you want and you have since done local commits, you can restore to the remote state. 
 
-```sh
-# Now on feature branch.
-git checkout my-feature
-
-# Restore files to remote state.
-git checkout origin/my-feature .
-```
-
-Your local files are changed but not committed, so you might want to add and commit them now. I found when restoring to a branch name or remote branch, changes were changed. So I had to do this to unstage changes (does not change the files).
-
-```sh
-git reset
-```
+1. Start on your branch.
+    ```sh
+    git checkout my-feature
+    ```
+1. Update file or files to match the remote. 
+    ```sh
+    git reset origin/my-feature PATH
+    ```
+1. Get rid of the unstaged changes (You'll have staged changes which you want but also unstaged changes which you don't want. If you stage both or unstage both, you'll get nothing useful out. This command won't affect the staged changes.)
+    ```sh
+    git checkout .
+    ```
+1. Now just have the staged changes to revert to the remote state. 
+    - You can do a commit.
+        ```sh
+        git commit
+        ```
+    - Or you can the changes, modify them and then commit them.
+        ```sh
+        $ git reset
+        $ # ...    
+        $ git commit
+        ```
 
 ### Restore a deleted file
 
