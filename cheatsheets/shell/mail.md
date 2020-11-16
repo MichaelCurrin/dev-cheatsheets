@@ -6,18 +6,16 @@ description: Using the mail command-line utility on Unix systems
 
 Send and receive mails on the command-line, for Linux and macOS.
 
-
 ```sh
 $ mail
 ```
 
-Located at `/usr/bin/mail`, at least on macOS.
+Mail is located at `/usr/bin/mail` on macOS and Linux.
 
 Without setting up an SMTP server like Gmail, you can get the benefit of localhost mails for logging. Such shen running crontab commands and mailing successes and failures (or just failures) to localhost's mailbox (if `MAILTO` is set to a username).
 
 
 ## Help
-
 
 ### Usage
 
@@ -85,15 +83,53 @@ A <user list> consists of user names or aliases separated by spaces.
 Aliases are defined in .mailrc in your home directory.
 ```
 
+## Directories
+
+Relevant directories:
+
+- `/usr/bin/mail`
+- `/var/mail/michael` or your username
+- `~/mbox`
+
 
 ## Install
 
-- Debian/Ubuntu
-    ```sh
-    $ sudo apt install mailutils
-    ```
+### Debian/Ubuntu
+
+Install.
+
+```sh
+sudo apt-get install mailutils
+```
+
+You'll get prompted for configuration on first install. You can pick localhost if you only need to use it for crontab mails and don't need a server.
+
+Note that the user's mailbox cannot be created without root access.
+
+You'll get this error each time:
+
+```sh
+$ mail
+```
+```
+Cannot open mailbox /var/mail/michael: Permission denied
+No mail for michael
+```
+
+So run this:
+
+```sh
+$ sudo touch /var/mail/michael
+$ sudo chown michael /var/mail/michael
+```
+
+Now you can run `mail`.
+
+### macOS
 
 I have `mail` installed on macOS too. Perhaps standard or installed with coreutils.
+
+TBC
 
 
 ## Run
@@ -145,9 +181,11 @@ Exit.
 
 ```
 ? q
-````
+```
 
-Delete mail.
+#### Delete
+
+Delete target mail.
 
 ```
 ? d 2
@@ -167,6 +205,8 @@ See [Man page](#man-page) section of this page.
 $ mail -e && echo 'You have mail' || echo 'Mailbox is empty'
 ```
 
+Warning - if there is a permissions error or `mail` is not installed, you'll also get the latter message.
+
 Note that after mail is read, it is archived, but just moved from one [storage](#storage) space to another.
 
 ### Read mail
@@ -179,6 +219,8 @@ Use this command to display status, show mail list summary and exit.
 
 ```sh
 $ mail -H
+```
+```
 Mail version 8.1 6/6/93.  Type ? for help.
 "/var/mail/mcurrin": 7 messages 7 unread
 >U  1 mcurrin@C02WL0Y2HV2T  Sun Aug 30 15:36  15/739   "Unicron task failed!"
@@ -199,13 +241,19 @@ How to setup SMTP server access to send mail over the network.
 
 #### Send
 
+Send a mail to yourself using address as one of:
+
+- Your username e.g. `michael` or `$USER`
+- Local address e.g. `michael@localhost`
+- System address (host is setup on installing `mailutils`) e.g. `michael@dell-lite`
+
 Single line:
 
 ```sh
 $ echo "This is the body" | mail -s "My subject" $USER
 ```
 
-Multi-line:
+Multi-line using a Bash heredoc setup using a pair of `EOF` characters.
 
 ```
 $ mail -s "My subject" $USER <<EOF
@@ -213,6 +261,57 @@ This is
 the body
 EOF
 ```
+
+If you omit the message, you'll be prompted for it. You can use <kbd>CTRL</kbd>+<kbd>D</kbd> to trigger the EOF character. Press <kbd>enter</kbd> to skip over `Cc`.
+
+```sh
+$ mail michael@dell-lite
+```
+```
+Cc:
+Subject: Mail to self
+My content
+
+```
+
+Read it:
+
+```sh
+$ mail
+```
+```
+"/var/mail/michael": 2 messages 1 new 1 unread
+ U   1 Mail Delivery Syst Mon Nov 16 16:35  73/2216  Undelivered Mail Returned to Sender
+>N   2 Michael            Mon Nov 16 16:43  15/429   Mail to self
+```
+
+```
+? 2
+```
+```
+Return-Path: <michael@dell-lite>
+X-Original-To: michael@dell-lite
+Delivered-To: michael@dell-lite
+Received: by dell-lite (Postfix, from userid 1000)
+        id 3550D25E1744; Mon, 16 Nov 2020 16:43:25 +0200 (SAST)
+To: <michael@dell-lite>
+Subject: Mail to self
+X-Mailer: mail (GNU Mailutils 3.7)
+Message-Id: <20201116144325.3550D25E1744@dell-lite>
+Date: Mon, 16 Nov 2020 16:43:25 +0200 (SAST)
+From: Michael <michael@dell-lite>
+
+My content
+```
+
+```
+? q
+```
+```
+Saved 1 message in /home/michael/mbox
+Held 1 message in /var/mail/michael
+```
+
 
 ### Storage
 
@@ -244,6 +343,7 @@ From the man page:
      /usr/local/etc/mail.rc
      /etc/mail.rc		 System-wide initialization files.  Each file will be sourced, in order, if it exists.
 ```
+
 
 ## Alternatives
 
