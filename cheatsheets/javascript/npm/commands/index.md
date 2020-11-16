@@ -1,5 +1,5 @@
 ---
-description: NPM commands
+description: How to run the NPM CLI's commands
 layout: listing
 ---
 # Commands
@@ -8,7 +8,7 @@ layout: listing
 
 **Sample**
 
-Some special and don't need `npm run COMMAND` for the prefix.
+Some commands are special and don't need `npm run COMMAND` for the prefix.
 
 ```sh
 $ npm start
@@ -33,7 +33,7 @@ $ npm run eject
 }
 ```
 
-Running without arguments gives configured commands.
+Running without arguments gives configured commands:
 
 ```sh
 $ npm run
