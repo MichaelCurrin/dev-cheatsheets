@@ -4,7 +4,6 @@ description: Find and replace text in a file, a variable or a string
 # Replace
 
 
-
 ## Using shell parameter expansion
 
 Using a variable.
@@ -260,20 +259,33 @@ $ sed -e s/spam/eggs/ foo.html > bar.html
 ```
 
 
-## sed and find
+## Combine sed and find
 
-Use `sed` and `find` together. This is useful to apply to files only since `sed` will give an error on in-place replacements against directories.
+Use `find` to find files and replace in-line, while the `sed` part is your transformation.
 
+This is useful to apply to _files_ only since `sed` will give an error on in-place replacements against _directories_. Also, `find` is suited for finding files nested in directories.
 
-Using `find`:
+General:
 
 ```sh
-$ find ./ -type f -exec sed -i 's/foo/bar/g' {} \;
+$ find . -type f -exec sed -i 'PATTERN' {} \;
 ```
 
-From [StackOverflow](https://stackoverflow.com/questions/11392478/how-to-replace-a-string-in-multiple-files-in-linux-command-line)
+e.g.
 
-Make sure to use a star that is quoted. Also the star glob will not match hidden directories - so you don't accidentally update and break `.git`.
+```
+$ find . -type f -exec sed -i 's/foo/bar/g' {} \;
+```
+
+Replace tabs with 2 spaces in a directory:
+
+```sh
+$ find . -type f -exec sed -i 's/\t/  /g' {} \;
+```
+
+From [StackOverflow](https://stackoverflow.com/questions/11392478/how-to-replace-a-string-in-multiple-files-in-linux-command-line).
+
+You can narrow down the name. Here is a glob. Make sure to use a star that is _quoted_. Also the star glob will not match hidden directories - this will help you avoid accidentally updating and breaking `.git`.
 
 ```sh
 $ find . -type f -name '*' -exec 'sed -i .bak -e "PATTERN" {} +'
@@ -283,20 +295,21 @@ $ find . -type f -name '*' -exec 'sed -i .bak -e "PATTERN" {} +'
 $ find . -exec sed -i '' -e 'PATTERN' {} \;
 ```
 
-Or reverse the order. I found this easier than the syntax above which I copied but kept getting errors on.
-
-```sh
-$ sed -i 's/foo/bar/g' $(find . -type f)
-```
-
 ```
  -e command
              Append the editing commands specified by the command argument to the list of commands.
 ```
 
-### Install
+Or reverse the order so `find` is used by `sed`. I found this easier than the syntax above which I copied but kept getting errors on.
 
-Install Linux's `sed` on macOS.
+```sh
+$ sed -i 's/foo/bar/g' $(find . -type f)
+```
+
+
+### Install sed
+
+If you are used to the GNU (Linux) `sed`, you can set it up on macOS too.
 
 [StackOverflow](https://stackoverflow.com/questions/2320564/sed-i-command-for-in-place-editing-to-work-with-both-gnu-sed-and-bsd-osx/27595785#27595785)
 
@@ -304,7 +317,7 @@ Install Linux's `sed` on macOS.
 $ brew install gnu-sed
 ```
 
-Add to `.bashrc` or `.zshrc`.
+Add to `.bashrc` or `.zshrc` to make is accesible.
 
 ```sh
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
