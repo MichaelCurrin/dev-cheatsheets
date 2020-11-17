@@ -83,6 +83,8 @@ svg {
 }
 ```
 
-On my page here, my SVG is placed inside an anchor tag and so it matches the anchor tag's colors. Which is blue initially and then black when you hover over it. 
+On my pages here, my SVG is placed inside an anchor tag and so it matches the anchor tag's colors. Which is blue initially and then black when you hover over it. 
 
-[michaelcurrin.github.io/code-cookbook/recipes/](https://michaelcurrin.github.io/code-cookbook/recipes/)
+- [Cheatsheets](https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/)
+- [Cookbook](https://michaelcurrin.github.io/code-cookbook/recipes/)
+
