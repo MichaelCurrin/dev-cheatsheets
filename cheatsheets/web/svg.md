@@ -105,7 +105,7 @@ Based on the Minima theme `assets/minima-social-icons.svg` file.
 </svg>
 ```
 
-The icon is used like this on my [Jekyll Blog Demo](https://michaelcurrin.github.io/jekyll-blog-demo/).
+The icon is used like this in the footer on my [Jekyll Blog Demo](https://michaelcurrin.github.io/jekyll-blog-demo/).
 
 ```html
 <a href="https://github.com/MichaelCurrin">
@@ -117,9 +117,36 @@ The icon is used like this on my [Jekyll Blog Demo](https://michaelcurrin.github
 </a>
 ```
 
+It is also used like this in the [social.html](https://github.com/jekyll/minima/blob/master/_includes/social.html), with two classes to color it. 
+
+{% raw %}
+```html
+<a rel="me" 
+    href="https://github.com/{{ social.github | cgi_escape | escape }}" 
+    title="{{ social.github | escape }}">
+    <svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}">
+        </use>
+    </svg>
+</a>
+```
+{% endraw %}
+
 And here are relevant CSS styles from [Minima](https://github.com/jekyll/minima/blob/master/_sass/minima/_base.scss). Note that `fill: currentColor` is set.
 
 ```css
+/**
+ * Icons
+ */
+
+.orange {
+  color: #f66a0a;
+}
+
+.grey {
+  color: #828282;
+}
+
 .svg-icon {
   width: 16px;
   height: 16px;
