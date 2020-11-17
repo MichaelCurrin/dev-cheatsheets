@@ -52,9 +52,11 @@ You can set color of the entire SVG using inline style.
 
 ### Current color
 
+#### Current color on element
+
 This allows the SVG inherits the color from outside the element. 
 
-When loading an **external** SVG (loaded as a `.svg` file, you need to set `fill="currentColor"` for your CSS to work.
+When loading an **external** SVG (loaded as a `.svg` file), you need to set `fill="currentColor"` for your CSS to work.
 
 Here is an SVG file. Note use of `svg` and `use` tags, not `img`.
 
@@ -91,7 +93,7 @@ On my pages here, my SVG is placed inside an anchor tag and so it matches the an
 
 ### Current color in CSS
 
-I am new to the currentColor approach but looks like there is another way to achieve color changing without [Current color](#current-color) set directly on the SVG.
+I am new to the `currentColor` approach but looks like there is another way to achieve color changing without Current color set directly on the SVG, as above.
 
 Based on the Minima theme `assets/minima-social-icons.svg` file.
 
