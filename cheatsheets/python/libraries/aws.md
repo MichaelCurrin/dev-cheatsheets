@@ -1,11 +1,23 @@
 # AWS
-
-Install and run the AWS CLI in a new Python 3 virtual environment.
+> Perform actions on AWS using the command-line
 
 See [AWS CLI](https://aws.amazon.com/cli/) docs.
 
 
-## Installation
+## Install with Homebrew
+
+See [AWSCLI](https://formulae.brew.sh/formula/awscli) formula on Homebrew.
+
+```sh
+$ brew install awscli
+```
+
+
+## Virtual environment
+
+Install and run the AWS CLI in a new Python 3 virtual environment.
+
+### Installation
 
 ```sh
 $ mkdir ~/.local/virtualenvs
@@ -14,8 +26,7 @@ $ source ~/.local/virtualenvs/aws/bin/activate
 $ pip install awscli
 ```
 
-
-## Usage
+### Usage
 
 Note that even though the package is `awscli` on PyPI and your `pip list` output, you must invoke using `aws` command.
 
