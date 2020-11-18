@@ -1,28 +1,41 @@
 # Builtins
 
+
 ## Range
+
+A series of numbers. 
+
+### Arguments
+
+- `from` - inclusive
+- `to` - exclusive
+- `interval` - defaults to `1`
+
+### Basic
 
 ```python
 range(10)
 # => range(0, 10)
 ```
 
-```python
+```pythonh
 list(range(10))
 # => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-Interval:
+### Increment by value
 
 ```python
 range(1, 10, 2)
 ```
 
-Descending:
+### Descending
 
 ```python
 range(10, 1, -1)
 ```
+
+### Check
 
 Easy testing in the shell:
 
@@ -52,7 +65,6 @@ class Color(Enum):
     GREEN = 2
     BLUE = 3
 ```
-
 
 ### Get item
 
@@ -87,10 +99,10 @@ list(Color)
 ```
 
 
-## Data Class
+## Data class
 
 - [Data class](https://docs.python.org/3/library/dataclasses.html) in PY3 docs.
-- New in PY `3.7`.
+- Added in Python `3.7`.
 - A container of attributes, when you want to store data and not add methods, but methods are allowed. Similar to a named tuple or dict.
 - Lighter than a plain class - not `__init__` method needed.
 - Raises an error if an item omitted.
@@ -158,9 +170,9 @@ Example:
 
 ### Validation
 
-You do not an error for using the wrong type.
+You do **not** an error for using the wrong type.
 
-You can use [MyPY's additional features](https://mypy.readthedocs.io/en/stable/additional_features.html):
+But, you can use Mypy to check types for you. Example from [Additional features](https://mypy.readthedocs.io/en/stable/additional_features.html) docs page.
 
 ```python
 from dataclasses import dataclass, field
@@ -174,4 +186,4 @@ test = Application("Testing...")  # OK
 bad = Application("Testing...", "with plugin")  # Error: List[str] expected
 ```
 
- You have to use something like this [dataclass-type-validator](https://pypi.org/project/dataclass-type-validator/). Or perhaps MyP
+Or you could use a separate package like [dataclass-type-validator](https://pypi.org/project/dataclass-type-validator/).
