@@ -31,7 +31,7 @@ This is similar to running a linter. This can be done locally and ideally as par
 ## How to install and run
 
 - Install MyPy.
-    - Install redirectly.
+    - Install directly.
         ```sh
         $ pip install mypy
         ```
@@ -52,8 +52,7 @@ This is similar to running a linter. This can be done locally and ideally as par
         ```
 
 
-
-## Samples
+## Code samples
 
 Valid the input and output types on a function.
 
@@ -101,6 +100,38 @@ if age < 18:
     child = True
 else:
     child = False
+```
+
+### Type dictionary
+
+From [TypedDict](https://mypy.readthedocs.io/en/stable/more_types.html#typeddict) section of Mypy docs.
+
+```python
+from typing_extensions import TypedDict
+```
+
+Define a type.
+
+```python
+Movie = TypedDict('Movie', {'name': str, 'year': int})
+```
+
+Use the type - you must add the comment explicitly.
+
+```python
+movie = {'name': 'Blade Runner', 'year': 1982}  # type: Movie
+```
+
+Use it as a constructor.
+
+```python
+toy_story = Movie(name='Toy Story', year=1995)
+```
+
+Mypy will detect an invalid key as an error:
+
+```python
+director = movie['director']  # Error: 'director' is not a valid key
 ```
 
 
