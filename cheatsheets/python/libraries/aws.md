@@ -4,7 +4,9 @@
 See [AWS CLI](https://aws.amazon.com/cli/) docs.
 
 
-## Install with Homebrew
+## Install with a package manager
+
+### macOS
 
 See [AWSCLI](https://formulae.brew.sh/formula/awscli) formula on Homebrew.
 
@@ -12,8 +14,18 @@ See [AWSCLI](https://formulae.brew.sh/formula/awscli) formula on Homebrew.
 $ brew install awscli
 ```
 
+### Linux
 
-## Virtual environment
+From [Installing, updating, and uninstalling the AWS CLI version 2 on Linux](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html#cliv2-linux-install) doc.
+
+```sh
+$ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+$ unzip awscliv2.zip
+$ sudo ./aws/install
+```
+
+
+## Install in a virtual environment
 
 Install and run the AWS CLI in a new Python 3 virtual environment.
 
@@ -34,7 +46,12 @@ Note that even though the package is `awscli` on PyPI and your `pip list` output
 $ source ~/.local/virtualenvs/aws/bin/activate
 
 $ aws --version
+```
 
+
+## Help
+
+```sh
 $ aws help
 ```
 ```
