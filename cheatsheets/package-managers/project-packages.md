@@ -39,5 +39,5 @@ $ npm -g list
 Understanding notation like `~> 3` and `^3.0.0` across languages:
 
 - [NPM versions]({{ site.baseurl }}{% link cheatsheets/javascript/npm/dependency-versions.md %})
-- [Python versions]({{ site.baseurl }}{% link cheatsheets/python/packages/versions.md %})
+- [Python versions]({{ site.baseurl }}{% link cheatsheets/python/package-management/versions.md %})
 - [Gem versions]({{ site.baseurl }}{% link cheatsheets/ruby/dependencies/versions.md %})
