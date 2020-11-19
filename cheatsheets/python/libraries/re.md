@@ -1,4 +1,6 @@
-# Regex
+# re
+> Using the regex module in Python
+
 
 ## Resources
 
