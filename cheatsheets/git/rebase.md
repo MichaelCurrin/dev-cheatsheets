@@ -1,5 +1,8 @@
 # Rebase
 
+
+## Perform a rebase
+
 ```sh
 $ git pull --rebase
 ```
@@ -14,9 +17,9 @@ $ git rebase origin/master
 ```
 
 
-## Conflicts
+## Dealing with conflicts
 
-### Actions
+### Possible actions
 
 #### Update and continue
 
@@ -34,14 +37,15 @@ Common flow:
     $ git rebase --continue
     ```
 
-I think you can run `git commit` to add and continue.
+I think you can also just run `git commit` to add and continue.
 
 
 #### Skip
 
-Skip the current commit. 
+Skip the current commit.
 
 This is useful if after removing conflicts there are no changes to add or commit.
+
 ```sh
 $ git rebase --skip
 ```
@@ -52,7 +56,7 @@ $ git rebase --skip
 $ git rebase --abort
 ```
 
-### Restore
+#### Restore
 
 I am not familiar with this but it comes from the suggested commands.
 
@@ -61,6 +65,22 @@ Unstage a file.
 ```sh
 git restore --staged PATH
 ```
+
+#### Show patch
+
+When you experience a conflict, you can use this to see the patch (diff) for the current commit.
+
+This was suggested on a conflict.
+
+```sh
+$ git am --show-current-patch
+```
+
+Using `git am`:
+
+> Apply a series of patches from a mailbox
+>
+> Splits mail messages in a mailbox into commit log message, authorship information and patches, and applies
 
 ### Messaging
 
