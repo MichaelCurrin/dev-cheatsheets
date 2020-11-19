@@ -2,6 +2,8 @@
 
 See git docs: [git-diff](https://git-scm.com/docs/git-diff)
 
+See usage and flags below.
+
 
 ## Help
 
@@ -108,7 +110,7 @@ What commits or files to run against.
 ### Default - no arguments
 
 ```sh
-git diff
+$ git diff
 ```
 
 This will include:
@@ -293,4 +295,48 @@ M       opm/datadog/README.md
 $ git diff --name-only
 genesis/install.sh
 genesis/upgrade.sh
+```
+
+### Name and status
+
+This is similar to git status.
+
+`--name-status`
+
+> Show only names and status of changed files. See the description of the --diff-filter option on what the status letters mean.
+
+This is similar to git status short output.
+
+e.g.
+
+```sh
+$ git diff name-status
+M       cheatsheets/git/commands/status.md
+```
+
+### Hook
+
+Copied from sample hook:
+
+```sh
+git diff --cached --name-status -r
+```
+
+Breaking that down from the help:
+
+```
+--staged is a synonym of --cached
+
+--name-status
+    Show only names and status of changed files. See the description of the --diff-filter
+    option on what the status letters mean.
+
+--diff-filter=[(A|C|D|M|R|T|U|X|B)...[*]]
+    Select only files that are Added (A), Copied (C), Deleted (D), Modified (M), Renamed
+    (R), have their type (i.e. regular file, symlink, submodule, ...) changed (T), are
+    Unmerged (U), are Unknown (X), or have had their pairing Broken (B). Any combination
+    of the filter characters (including none) can be used. When * (All-or-none) is added
+    to the combination, all paths are selected if there is any file that matches other
+    criteria in the comparison; if there is no file that matches other criteria, nothing
+    is selected.
 ```
