@@ -74,7 +74,7 @@ This is useful if you capture a password and don't want to display it.
 
 ## Help
 
-[Manpage](http://linuxcommand.org/lc3_man_pages/readh.html)
+[Manpage](https://linuxcommand.org/lc3_man_pages/readh.html)
 
 ```
 NAME

@@ -8,7 +8,7 @@ Override favicon default. Some sources use `/myicon.png` and some `https://examp
 Use the `.ico` format - which is not just a rename PNG file.
 
 ```html
-<link rel="shortcut icon" href="http://example.com/favicon.ico" />
+<link rel="shortcut icon" href="https://example.com/favicon.ico" />
 ```
 
 From [Favicon generator](https://www.favicon-generator.org/) and other sources. The `type` attribute was not included in other source I found.
@@ -51,7 +51,7 @@ From [W3 Schools](https://www.w3schools.com/tags/att_link_sizes.asp)
 This style hasn't changed since [2005](https://www.w3.org/2005/10/howto-favicon). They explain there that this is preferred over implied favicon.
 
 ```html
-<link rel="icon" href="http://example.com/myicon.png" type="image/png">
+<link rel="icon" href="https://example.com/myicon.png" type="image/png">
 ```
 
 
