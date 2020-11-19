@@ -288,6 +288,7 @@ $ git diff --compact-summary
 $ git diff
 M       opm/datadog/Makefile
 M       opm/datadog/README.md
+```
 
 ### Name only
 
