@@ -142,7 +142,6 @@ U           U    unmerged, both modified
 ```
 
 
-
 ## Parse output
 
 Use for scripting and git hooks.
