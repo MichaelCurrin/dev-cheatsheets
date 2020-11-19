@@ -1,4 +1,3 @@
-
 # Data class
 
 See [Data class](https://docs.python.org/3/library/dataclasses.html) in PY3 docs.
