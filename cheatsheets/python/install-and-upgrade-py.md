@@ -4,7 +4,7 @@
 
 Using Homebrew.
 
-Note that upgrading Python with Homebrew causes all my virtual envs to break. Using pyenv is safer.
+Note that upgrading Python with Homebrew causes all my virtual envs to break. Using `pyenv` is safer.
 
 ### Upgrading
 
@@ -19,7 +19,7 @@ $ which python3
 /usr/bin/python3
 ```
 
-And Python3.8 was known by Brew.
+And Python 3.8 was known by Brew.
 
 ```sh
 $ brew info python
