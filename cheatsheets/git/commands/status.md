@@ -71,15 +71,105 @@ Some flags I am interested in. From the long help.
 Using verbose will show the lines changed including of lines of staged files (even if new at the bottom.
 
 
+## Short format
+
+
+From [Short format](https://git-scm.com/docs/git-status#_short_format) in the docs.
+
+> In the short-format, the status of each path is shown as one of these forms
+
+```
+XY PATH
+XY ORIG_PATH -> PATH
+```
+
+There are rules for merge conflicts in the doc.
+
+Untracked files are:
+
+```
+?? PATH
+```
+
+Here are the rules for remaining cases:
+
+```
+    ' ' = unmodified
+
+    M = modified
+
+    A = added
+
+    D = deleted
+
+    R = renamed
+
+    C = copied
+
+    U = updated but unmerged
+```
+
+> Ignored files are not listed, unless --ignored option is in effect, in which case XY are !!.
+
+Further details:
+
+```
+X          Y     Meaning
+-------------------------------------------------
+	     [AMD]   not updated
+M        [ MD]   updated in index
+A        [ MD]   added to index
+D                deleted from index
+R        [ MD]   renamed in index
+C        [ MD]   copied in index
+[MARC]           index and work tree matches
+[ MARC]     M    work tree changed since index
+[ MARC]     D    deleted in work tree
+[ D]        R    renamed in work tree
+[ D]        C    copied in work tree
+-------------------------------------------------
+D           D    unmerged, both deleted
+A           U    unmerged, added by us
+U           D    unmerged, deleted by them
+U           A    unmerged, added by them
+D           U    unmerged, deleted by us
+A           A    unmerged, both added
+U           U    unmerged, both modified
+-------------------------------------------------
+?           ?    untracked
+!           !    ignored
+-------------------------------------------------
+```
+
+
+
 ## Parse output
 
 Use for scripting and git hooks.
 
-This will show a summary, ignore untracked (untracked=no but not equals sign won't work) and porcelain for clean, parsable output.
+This will show a short summary (`-s`), ignore untracked (untracked=no but note equals sign won't work) and porcelain for clean, parseable output without colors.
 
 ```sh
-git status -s -uno --porcelain
+$ git status -s -uno --porcelain
 ```
+
+```
+-s --short
+
+-u[<mode>], --untracked-files[=<mode>]
+    Show untracked files.
+    ...
+        The possible options are:
+    •   no - Show no untracked files.
+    •   normal - Shows untracked files and directories.
+    •   all - Also shows individual files in untracked directories.
+
+--porcelain
+  Give the output in an easy-to-parse format for scripts. This is similar to the short
+  output, but will remain stable across Git versions and regardless of user
+  configuration.
+```
+
 
 ## Z format
 
