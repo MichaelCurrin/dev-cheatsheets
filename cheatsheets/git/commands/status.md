@@ -147,7 +147,7 @@ U           U    unmerged, both modified
 
 Use for scripting and git hooks.
 
-This will show a short summary (`-s`), ignore untracked (untracked=no but note equals sign won't work) and porcelain for clean, parseable output without colors.
+This will show a short summary (`-s`), ignore untracked (using `untracked=no` but note equals sign won't work) and porcelain for clean, parseable output without colors.
 
 ```sh
 $ git status -s -uno --porcelain
