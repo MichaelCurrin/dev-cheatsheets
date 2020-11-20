@@ -20,6 +20,22 @@ Another valid format, used for some examples below.
 date: 2016-03-23T10:20:00Z
 ```
 
+Note that if you give a value as:
+
+```yaml
+date: 2020-04-01
+```
+
+Then Jekyll will convert it to a time.
+
+```liquid
+{{ page.date }}
+```
+```
+2020-04-01 00:00:00 +0200
+```
+
+
 ## Conversion
 
 ### Basic
