@@ -1,13 +1,15 @@
 # Remote
+> How to use a non-standard remote theme in a Jekyll site on GH Pages
 
-## About the Remote theme plugin
+## About the Remote Theme plugin
 
 This allows installing of themes from GitHub.
 
 This is specifically used on GitHub Pages for installing extra themes. But outside of GitHub Pages you can just these the standard `theme` field.
 
-- [benbalter/jekyll-remote-theme](https://github.com/benbalter/jekyll-remote-theme)
-  > Jekyll plugin for building Jekyll sites with any public GitHub-hosted theme
+[![benbalter - jekyll-remote-theme](https://img.shields.io/static/v1?label=benbalter&message=jekyll-remote-theme&color=blue&logo=github)](https://github.com/benbalter/jekyll-remote-theme)
+
+> Jekyll plugin for building Jekyll sites with any public GitHub-hosted theme
 
 
 ## Setup
@@ -25,7 +27,6 @@ end
 ```
 
 You do **not**  need to add the actual theme to your `Gemfile` - it will be downloaded on `jekyll build` or `jekyll serve`, no `bundle install`.
-
 
 ### 2. Add to config
 
