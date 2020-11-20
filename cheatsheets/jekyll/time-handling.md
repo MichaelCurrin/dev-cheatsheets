@@ -89,6 +89,26 @@ Wed, 23 Mar 2016 23:20:00 +1300
 1 Feb 2020
 ```
 
+## Ordinal
+
+> One notable exclusion from this list getting the ordinal date. For example we couldn’t output “May 23rd” because there’s no placeholder for the “rd”.
+> 
+> A workaround for this is to use Liquid to calculate and output the ordinal.
+
+```liquid
+{% assign day = page.date | date: "%-d" %}
+{% case day %}
+    {% when '1' or '21' or '31' %}{{ day }}st
+    {% when '2' or '22' %}{{ day }}nd
+    {% when '3' or '23' %}{{ day }}rd
+    {% else %}{{ day }}th
+{% endcase %}
+{{ page.date | date: "of %B, %Y" }}
+```
+```
+23rd of March, 2016
+``
+
 
 ## Placeholders
 
