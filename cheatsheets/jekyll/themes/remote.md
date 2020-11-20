@@ -14,34 +14,42 @@ This is specifically used on GitHub Pages for installing extra themes. But outsi
 
 ## Setup
 
+For a live example, see [gh-pages](https://github.com/MichaelCurrin/jekyll-theme-quickstart/tree/gh-pages) branch of my Jekyll Theme Quickstart repo, which builds a site using the theme gem on the `master` branch.
+
 ### 1. Add to Gemfile
 
-Update your project's `Gemfile`.
+Update your project's dependencies.
 
-```ruby
-source 'https://rubygems.org'
+- `Gemfile`
+    ```ruby
+    source "https://rubygems.org"
 
-group :jekyll_plugins do
-  gem 'jekyll-remote-theme'
-end
-```
+    group :jekyll_plugins do
+      gem "jekyll-remote-theme", "0.4.2"
+    end
+    ```
 
 You do **not** need to add the actual theme to your `Gemfile`. It will be downloaded by the plugin at build time, when running `jekyll build` or `jekyll serve`
 
 ### 2. Add to config
 
-Update your project's `_config.yaml`:
+Update your project's config. Enable the plugin and pass it a repo as `USERNAME/REPO_NAME`.
 
-```yaml
-plugins:
-  - jekyll-remote-theme
+- `_config.yml
+    ```yaml
+    plugins:
+      - jekyll-remote-theme
 
-remote_theme: foo/bar
-```
+    remote_theme: foo/bar
+    ```
 
 Notes:
 
-- Note the underscore in `remote_theme` - the install/serve will fail quietly if there is a dash.
+- Note the **underscore** in `remote_theme` - the Jekyll commands will fail quietly if you incorrectly use a dash.
+- For example, you can use:
+    ```yaml
+    remote_theme: MichaelCurrin/jekyll-theme-quickstart
+    ```
 - You can also add a tag in the theme. e.g. `foo/bar@v1.0.0` or `foo/bar@develop`.
 - You do _not_ need to set the `theme` field. However, that might be better option if it works - since remote theme plugin runs on _every_ build which is not nice for large themes.
 
