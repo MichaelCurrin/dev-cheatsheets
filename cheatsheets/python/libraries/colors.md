@@ -72,3 +72,37 @@ important = partial(color, fg='red', style='bold+underline'))
 
 print(important('this is very important!'))
 ```
+
+
+Or without a library.
+
+Based on [SO](https://stackoverflow.com/questions/287871/how-to-print-colored-text-in-terminal-in-python)
+
+This might be better as a dataclass or enum.
+
+```python
+class color:
+
+    END_C = '\033[0m'
+
+    OK_BLUE = '\033[94m'
+    OK_GREEN = '\033[92m'
+    
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+    HEADER = '\033[95m'
+
+
+print(color.OK_BLUE, 'Hello, world', color.END_C)
+```
+
+As a function:
+
+```python
+def ok_blue(value):
+    print(color.OK_BLUE, value, color.END_C)
+```
