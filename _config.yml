@@ -17,18 +17,6 @@ header_pages:
   - cheatsheets/index.md
   - about.md
 
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-titles-from-headings
-  - jekyll-optional-front-matter
-  - jekyll-remote-theme
-
-remote_theme: MichaelCurrin/minima
-
-titles_from_headings:
-  strip_title: true
-
 exclude:
   - docs/
   - vendor/
@@ -39,10 +27,16 @@ exclude:
   - Makefile
   - README.md
 
-# Warning - there are memory issues when using a pattern to define listing
-# layout for `cheatsheets/**/index.md` or even `cheatsheets/*/index.md`.
-# And you can only use path (and type) and not name.
-# Therefore it is best to be explicit in each index file to set its layout.
+### Theme boilerplate
+
+plugins:
+  - jekyll-remote-theme
+
+remote_theme: MichaelCurrin/minima
+
+titles_from_headings:
+  strip_title: true
+
 defaults:
   - scope:
       path: ""
