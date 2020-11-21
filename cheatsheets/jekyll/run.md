@@ -14,7 +14,6 @@ jekyll doctor
 ```
 
 
-
 ## Serve subdirectory
 
 If Jekyll is installed with *Bundler* at the top-level of the project, you can run Jekyll from anywhere.
