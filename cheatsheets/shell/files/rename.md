@@ -44,18 +44,22 @@ $ find . -exec bash -c 'mv "$1" "RULE"' - '{}' \;
 Rename `.foo` to `.bar`.
 
 ```sh
-$ find . -name "*.foo" -exec bash -c 'mv "$1" "${1%.foo}".bar' - '{}' \;
+$ find . -name '*.foo' -exec bash -c 'mv "$1" "${1%.foo}".bar' - '{}' \;
 ```
 
 [AskUbuntu](https://askubuntu.com/questions/35922/how-do-i-change-extension-of-multiple-files-recursively-from-the-command-line)
 
-Replace underscores with dashes.
+Replace underscores with dashes. To avoid `mv` errors on renaming a file to the same name as before, we only match on files with underscores in them.
 
 ```sh
-$ find . -exec sh -c 'mv "$1" ${1/_/-}' - '{}' \;
+$ find . -name '*_*' '-exec sh -c 'mv "$1" ${1//_/-}' - '{}' \;
 ```
 
-You can use `find` and the [rename](#rename-tool) approach.
+You use the [rename tool](#rename-tool).
+
+```sh
+$ find . -name '*.foo' -exec rename 's/\.foo$/.bar/' '{}' \;
+```
 
 
 #### Preview
@@ -145,10 +149,6 @@ Rename file extension for a batch of files.
 
 ```sh
 rename 's/.foo/.bar/' *.foo
-```
-
-```sh
-$ find . -name "*.foo" -exec rename 's/\.foo$/.bar/' '{}' \;
 ```
 
 [globstar]: {{ site.baseurl }}{% link cheatsheets/shell/files/globstar.md %}
