@@ -96,21 +96,3 @@ These are all in one place so you don't have to look at docs, man pages, tutoria
 This is not comprehensive, but, it covers definitions and usage examples which cover the basics and some common flows (leaving out the obscure things I'll probably never need and can always lookup if I need to).
 
 There are a lot of tools and languages on this site here for my own reference and I hope you find something useful here too, by looking for something specific or just discovering what is here.
-
-
-<style>
-    .flex-container {
-        display: flex;
-        flex-wrap: wrap;
-        padding-bottom: 1em;
-    }
-
-    .flex-container>a>div {
-        margin: 10px;
-        padding: 20px;
-        font-size: 20px;
-
-        box-shadow: 1px 2px 4px gray;
-    }
-
-</style>
