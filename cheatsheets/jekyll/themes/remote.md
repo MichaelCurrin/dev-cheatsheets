@@ -29,7 +29,19 @@ Update your project's dependencies.
     end
     ```
 
-You do **not** need to add the actual theme to your `Gemfile`. It will be downloaded by the plugin at build time, when running `jekyll build` or `jekyll serve`
+You do **not** need to add the actual theme to your `Gemfile`. It will be downloaded by the plugin at build time, when running `jekyll build` or `jekyll serve`.
+
+But, if you get any **errors** because you do not have the theme's **dependencies** installed, you can install the dependencies by adding the theme to your `Gemfile` and then running `bundle install`.
+
+e.g.
+
+```ruby
+gem 'minima', git: 'https://github.com/MichaelCurrin/minima'
+```
+
+The Remote Theme plugin's are themes are stored in a temporary directory like this, which you'd see on some errors:
+
+- `/private/var/folders/vb/8rb6p.../T/jekyll-remote-theme-20201121-3213-1ngu5z4/`
 
 ### 2. Add to config
 
