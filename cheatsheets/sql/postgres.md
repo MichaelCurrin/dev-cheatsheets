@@ -1,16 +1,18 @@
 ---
-logo: postgres
+logo: postgresql
 ---
-# PostgresSQL
+# Postgres
 
 
 ## Docs and tutorials
 
 - [postgresql.org/docs/](https://www.postgresql.org/docs/)
 - [postgresqltutorial.com](https://www.postgresqltutorial.com/)
+    - [Postgres Cheatsheet](https://www.postgresqltutorial.com/postgresql-cheat-sheet/)
 
+## Show
 
-## Show database
+### Show database
 
 ```
 \l
@@ -18,7 +20,37 @@ logo: postgres
 
 [source](https://www.postgresqltutorial.com/postgresql-show-databases/)
 
-## Login
+### Tables
+
+Show all tables.
+
+```
+\dt
+```
+For more info.
+```
+\dt+
+```
+
+Get info on a table.
+
+```
+\d+ table_name
+```
+
+
+## Quit
+
+```
+\q
+```
+
+Or `CTRL`+`d`.
+
+
+## Users
+
+### Login
 
 Here we use a user named `postgres`.
 
@@ -34,7 +66,7 @@ postgres=#
 
 This is implied for the rest of this guide.
 
-## Create user
+### Create user
 
 ```sql
 CREATE USER postgres
@@ -46,9 +78,7 @@ CREATE USER foo WITH PASSWORD 'bar';
 
 https://www.postgresql.org/docs/current/app-createuser.html
 
-
-## Create role
-
+### Create role
 
 ```sql
 CREATE ROLE foo LOGIN;
@@ -59,8 +89,7 @@ CREATE ROLE admin WITH CREATEDB CREATEROLE;
 
 https://www.postgresql.org/docs/current/sql-createrole.html
 
-
-## Change password
+### Change password
 
 ```sql
 ALTER USER postgres WITH PASSWORD 'newpass';
@@ -76,7 +105,7 @@ Set it interactively.
 
 https://serverfault.com/questions/110154/whats-the-default-superuser-username-password-for-postgres-after-a-new-install/325596
 
-## List users
+### List users
 
 ```sql
 \du

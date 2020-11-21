@@ -10,8 +10,6 @@ github_username: MichaelCurrin
 url: "https://michaelcurrin.github.io"
 baseurl: "/dev-cheatsheets"
 
-theme: minima
-
 google_analytics: UA-87705880-12
 
 header_pages:
@@ -24,6 +22,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-titles-from-headings
   - jekyll-optional-front-matter
+  - jekyll-remote-theme
+
+remote_theme: MichaelCurrin/minima
 
 titles_from_headings:
   strip_title: true
