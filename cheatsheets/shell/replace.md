@@ -6,16 +6,14 @@ description: Find and replace text in a file, a variable or a string
 
 ## Using shell parameter expansion
 
-Using a variable.
-
-Syntax: `${VARNAME/FIND/REPLACE}`.
+Syntax: `${VARNAME//FIND/REPLACE}`. The `//` is necessary for global replacement.
 
 ```sh
-$ x=football
-$ echo ${x/foo/bar}
-bartball
-$ echo ${x/foo/}
-tball
+$ x=foo_bar_baz_buzz
+$ echo ${x//_/-}
+foo-bar-baz-buzz
+$ echo ${x/_/-}
+foo-bar_bazz_buzz
 ```
 
 
