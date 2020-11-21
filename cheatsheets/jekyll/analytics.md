@@ -21,7 +21,7 @@ You can of course use `serve` instead of `build` but know that you'll send stats
 
 ## Approaches
 
-Note that even if an approach below references Google Tag Manager, that is just where the script comes from. You don't have to login to GTM at all, you could login to Google Anlytics only and get all the functionality you need.
+Note that even if an approach below references Google Tag Manager, that is just where the script comes from. You don't have to login to GTM at all, you could login to Google Analytics only and get all the functionality you need.
 
 ### Plugin
 
