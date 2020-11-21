@@ -1,5 +1,5 @@
 ---
-logo: postgres
+logo: postgresql
 ---
 # PostgresSQL
 
