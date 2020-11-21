@@ -41,7 +41,7 @@ An idea of what to expect in this guide.
 
 The idea for the first two types is that the code here is generic. There are placeholder values for demonstration but you'll need to change them for your own situation. See also my [Code Cookbook](https://michaelcurrin.github.io/code-cookbook/) project. It has recipes which structured similarly to cheatsheets, except that the recipes are usually entire snippets, files or even sets of files. And they usually have real-world values from my own or other projects, rather than generic placeholder values.
 
-Cheatsheets are focussed on the syntax for a single line and useful if you forget something specific. Recipes are focussed on ordered steps to accomplish a task and are indended to by copied (with some possible modification) rather than rewritten by hand.
+Cheatsheets are focussed on the syntax for a single line and useful if you forget something specific. Recipes are focussed on ordered steps to accomplish a task and are intended to by copied (with some possible modification) rather than rewritten by hand.
 
 
 ## Documentation
