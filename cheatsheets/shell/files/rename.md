@@ -16,59 +16,70 @@ Be careful about globbing on hidden directories - as you can break `.git`.
 
 The `find` command is probably more efficient and could let you run multiple commands, but using the `for` loop has more familiar syntax. There may be trade-offs for each when it comes to renaming (or moving) a directory, since it will affect future traversing steps in the same sequence. Using `find` might give more precision on the filename and type compared to using a `*` glob with `for` and having to use `if` statements in the loop to do checks.
 
-### Find command
+### Using the find command
 
 Note that the `find` command will work recursively by default.
 
-Optionally use the `-depth` command and in some examples below. Note from the docs:
+Optionally add the `-depth` command. Note from the docs:
 
-```
--depth Process each directory's contents before the directory itself.  The -delete action also implies -depth.
-```
+> `-depth` Process each directory's contents before the directory itself.  The -delete action also implies -depth.
+
+You can omit `-name` and value. Note that the `*` glob is necessary there otherwise you'll get no results.
 
 Here is the general form to search and perform an action. The part at the end is hard to remember but is needed. Additionally add `-type f` for just files.
 
 ```sh
-find PATH -name SEARCH -exec bash -c 'COMMAND' - '{}' \;
+$ find PATH -name SEARCH -exec bash -c 'COMMAND' '{}' \;
 ```
+
+Renaming:
+
+```sh
+$ find . -exec bash -c 'mv "$1" "RULE"' - '{}' \;
+```
+
 
 [source](https://stackoverflow.com/questions/21985492/recursively-change-file-extensions-in-bash)
 
-Rename `.foo` to `.bar`. Note that the `*` glob is necessary otherwise you'll get no results.
+Rename `.foo` to `.bar`.
 
 ```sh
-find . -name "*.foo" -exec bash -c 'mv "$1" "${1%.foo}".bar' - '{}' \;
+$ find . -name "*.foo" -exec bash -c 'mv "$1" "${1%.foo}".bar' - '{}' \;
 ```
 
-Using `git mv`:
+[AskUbuntu](https://askubuntu.com/questions/35922/how-do-i-change-extension-of-multiple-files-recursively-from-the-command-line)
+
+Replace underscores with dashes.
 
 ```sh
-find . -name "*.foo" -exec bash -c 'git mv "$1" "${1%.foo}".bar' - '{}' \;
+$ find . -exec sh -c 'mv "$1" ${1/_/-}' - '{}' \;
 ```
 
-Using `find` and the [rename](#rename-tool):
+You can use `find` and the [rename](#rename-tool) approach.
+
+
+#### Preview
+
+Print only. Use `echo` instead of moving. 
+
+You need `$0` instead of `$1`. And the hyphen at the end can be removed.
 
 ```sh
-find . -name "*.foo" -exec rename 's/\.foo$/.bar/' '{}' \;
-```
-
-[source](https://askubuntu.com/questions/35922/how-do-i-change-extension-of-multiple-files-recursively-from-the-command-line)
-
-Use `find` to change extension from `.foo` to `.bar`:
-
-```sh
-find . -depth -name "*.foo" -exec sh -c 'mv "$1" "${1%.foo}.bar"' - {} \;
-```
-
-Remove `-` and test with `echo`.
-
-```sh
-$ find . -name README.md -exec bash -c 'echo $0' '{}' \;
+$ find . -name README.md -exec sh -c 'echo $0' '{}' \;
 ci-cd/circle-ci/README.md
 ci-cd/README.md
 ci-cd/netlify/README.md
 ...
 ```
+
+#### Git
+
+In a `git` repo, you can use `git mv`:
+
+```sh
+$ find . -name "*.foo" -exec bash -c 'git mv "$1" "${1%.foo}".bar' - '{}' \;
+```
+
 
 ### For loop
 
@@ -80,7 +91,7 @@ for file in PATH/**/*.foo; do
 done
 ```
 
-[source](https://www.howtogeek.com/423214/how-to-use-the-rename-command-on-linux/)
+[howtogeek.com](https://www.howtogeek.com/423214/how-to-use-the-rename-command-on-linux/)
 
 Here we replace extension `.foo` with `.bar` using a `for` loop:
 
@@ -104,7 +115,7 @@ Here we rename `README.md` to `index.md` (rather than changing extension):
 for P in **/README.md; do git mv -v "$P" "${P//README.md/index.md}"; done
 ```
 
-Use `-n|--dry-run` flag to preview first (Linux only). Using he `-v|--verbose` flag is implied with that.
+Use `-n|--dry-run` flag to preview first (Linux only). Using the `-v|--verbose` flag is implied with that.
 
 Replace an _underscore_ with a _dash_ in file and directory names - using [globstar][].
 
@@ -130,10 +141,14 @@ Install the `rename` utility.
 sudo apt install rename
 ```
 
-Rename file extension of a batch of files.
+Rename file extension for a batch of files.
 
 ```sh
 rename 's/.foo/.bar/' *.foo
+```
+
+```sh
+$ find . -name "*.foo" -exec rename 's/\.foo$/.bar/' '{}' \;
 ```
 
 [globstar]: {{ site.baseurl }}{% link cheatsheets/shell/files/globstar.md %}
