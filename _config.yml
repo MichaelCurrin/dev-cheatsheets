@@ -29,9 +29,6 @@ exclude:
 
 ### Theme boilerplate
 
-plugins:
-  - jekyll-remote-theme
-
 remote_theme: MichaelCurrin/minima
 
 titles_from_headings:
