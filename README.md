@@ -1,13 +1,13 @@
 # Dev Cheatsheets
 > A collection of code snippets and CLI guides for quick and easy reference while coding
 
-[![Hosted with - GitHub Pages](https://img.shields.io/badge/Hosted_with-GitHub_Pages-blue?logo=github&logoColor=white)](https://pages.github.com/)
-[![Made with Jekyll](https://img.shields.io/badge/Jekyll-3.9-blue.svg?logo=jekyll)](https://jekyllrb.com)
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/dev-cheatsheets)](https://github.com/MichaelCurrin/dev-cheatsheets/tags/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
+[![Hosted with - GitHub Pages](https://img.shields.io/badge/Hosted_with-GitHub_Pages-blue?logo=github&logoColor=white)](https://pages.github.com/)
+[![Made with Jekyll](https://img.shields.io/badge/Jekyll-3.9-blue.svg?logo=jekyll)](https://jekyllrb.com)
 
 
-## Sample
+## Preview
 
 Screenshots of the website:
 
