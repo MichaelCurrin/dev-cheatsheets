@@ -1,11 +1,12 @@
 # Undo
+> Step back one commit
 
 ## Undo commit
 
 Undo latest commit and drop all changes. Warning - any other changes files will also be reset.
 
 ```sh
-git reset --hard HEAD~
+$ git reset --hard HEAD~
 ```
 
 Safer:
@@ -14,10 +15,10 @@ Safer:
 [[ -z $(git status --porcelain) ]] && git reset --hard HEAD~ || echo 'Unstaged changes!'
 ```
 
-Then run
+Then run:
 
 ```sh
-git stash --include-untracked
+$ git stash --include-untracked
 ```
 
 Then try again.
@@ -28,5 +29,5 @@ Then try again.
 This will get rid of any unpushed commits.
 
 ```sh
-git checkout origin/master .
+$ git checkout origin/master .
 ```
