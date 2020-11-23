@@ -1,4 +1,6 @@
 ---
 layout: listing
 ---
-# Git restore
+# Restore
+
+See also the `restore` command in the Commands section.
