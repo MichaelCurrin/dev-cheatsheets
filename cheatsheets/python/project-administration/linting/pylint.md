@@ -1,21 +1,10 @@
-# Linting
-
-Some VS Code choices - there are flags for each (so multiple can be used), plus a linting enabled switch.
-
-- [Pylint](#pylint)
-    - [Rules](#rules)
-    - [How to disable](#how-to-disable)
-- [Flake8](#flake8)
-    - [Disable](#disable)
-
-
-## Pylint
+# Pylint
 
 - [docs.pylint.org](https://docs.pylint.org/en/latest/index.html)
 - [Pylint messages](https://pylint-messages.wikidot.com/all-codes)
 - [Pylint message-control](https://pylint.readthedocs.io/en/latest/user_guide/message-control.html)
 
-### Usage
+## Usage
 
 You can't use `.`, but you can use a directory name or `*`.
 
@@ -41,7 +30,7 @@ The exit codes are not meaningful to read. But you can use a package to be more 
 $ pylint my_app || pylint-exit $?
 ```
 
-### Rules
+## Rules
 
 Formats that Pylint accepts - copied from message-control doc.
 
@@ -72,7 +61,7 @@ Generate a config.
 $ pylint OPTIONS --generate-rcfile > .pylintrc
 ````
 
-### How to disable rules
+## How to disable rules
 
 Approaches to disabling a _pylint_ rule.
 
