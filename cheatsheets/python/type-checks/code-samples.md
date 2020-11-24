@@ -1,6 +1,11 @@
 # Code samples
 
-Valid the input and output types on a function.
+
+## Basic
+
+### Functions
+
+Validate the input and output types on a function.
 
 ```python
 def greeting(name: str, count: int) -> str:
@@ -29,6 +34,8 @@ new_vector = scale(2.0, [1.0, -4.2, 5.4])
 
 If you leave out the types on the function, they just won't be checked.
 
+### Variables
+
 You can specify a type on a variable, but this is optional. Also you can get the type checking benefit without adding it yourself, if the type can be inferred.
 
 ```python
@@ -49,9 +56,169 @@ else:
 ```
 
 
+
+## Typing
+
+Using the `Typing` module.
+
+Based on [Type hints cheat sheet (Python 3)](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html).
+
+Note from Python 3.9, you can use `dict` instead of `Dict` as so on, avoiding imports.
+
+### Built-in types
+
+```python
+x: int = 1
+x: float = 1.0
+x: bool = True
+x: str = "test"
+x: bytes = b"test"
+```
+
+```python
+x: List[int] = [1]
+x: Set[int] = {6, 7}
+
+x = [1]  # type: List[int]
+```
+
+```python
+x: Dict[str, float] = {'field': 2.0}
+```
+
+Fixed size `tuple`.
+
+```python
+x: Tuple[int, str, float] = (3, "yes", 7.5)
+```
+
+Variable size `tuple` - use ellipsis.
+```python
+x: Tuple[int, ...] = (1, 2, 3)
+```
+
+```python
+x: Optional[str] = some_function()
+```
+
+Mypy understands a value can't be None in an if-statement
+
+```python
+if x is not None:
+    print(x.upper())
+```
+
+If a value can never be `None` due to some invariants, use an `assert`.
+
+```python
+assert x is not None
+print(x.upper())
+```
+
+
+### Tuple
+
+```python
+Tuple[TYPE, TYPE, ...]
+```
+
+e.g.
+
+```python
+from typing import Tuple
+
+
+def foo() -> Tuple[bool, str]:
+    return True, 'Yes'
+```
+
+### Union
+
+Allow a variable to be one of given types.
+
+```
+Union[TYPE, TYPE, ...]
+```
+
+Here we allow an integer or string.
+
+```python
+def bar(bazz: bool) -> Union[int, str]:
+    if bazz:
+        return 'Yes'
+
+    return 12
+```
+
+
+### Optional
+
+Allow a variable to bw `None`.
+
+```
+Optional[TYPE]
+```
+
+Declare a type for a variable. This was recommended by the docs.
+
+```python
+foo: Optional[str] = None
+
+foo = 'abc'
+```
+
+Here we return a string or `None`. The second case shows a necessary annotation. Note you must declare the time on the first declariation from top to bottom - not the 2nd and not both.
+
+```python
+def foo() -> Optional[str]:
+    pass
+
+
+def bar(bazz: bool) -> Optional[str]:
+    if bazz:
+        buzz: Optional[str] = 'Yes'
+    else:
+        buzz = None
+    
+    return buzz
+```
+
+You may can an error from Pylint:
+
+```
+E1136: Value 'Optional' is unsubscriptable (unsubscriptable-object)
+```
+
+You can use use `Union` instead. But then you have to use it twice.
+
+```python
+def bar(bazz: bool) -> Union[str, None]:
+    if bazz:
+        buzz: Union[str, None] = 'Yes'
+    else:
+        buzz = None
+    return buzz
+```
+
+Or you have to use `Optional` like this.
+
+```python
+def bar(bazz: bool) -> Union[str, None]:
+    if bazz:
+        buzz: Optional[str] = 'Yes'
+    else:
+        buzz = None
+    return buzz
+```
+
+Unless you use a `return` sooner and so don't define `buzz`.
+ 
+
 ## Typed dictionary
 
-From [TypedDict](https://mypy.readthedocs.io/en/stable/more_types.html#typeddict) section of Mypy docs.
+Define and used a `TypeDict` type. This is resuable, unlike a plain `Dict[TYPE, TYPE` setup.
+
+Example from [TypedDict](https://mypy.readthedocs.io/en/stable/more_types.html#typeddict) section of Mypy docs.
 
 ```python
 from typing_extensions import TypedDict
@@ -63,7 +230,7 @@ Define a type.
 Movie = TypedDict('Movie', {'name': str, 'year': int})
 ```
 
-Use the type - you must add the comment explicitly.
+Use it as type. NB. You must add the comment explicitly.
 
 ```python
 movie = {'name': 'Blade Runner', 'year': 1982}  # type: Movie
