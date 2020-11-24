@@ -149,3 +149,12 @@ Use [symbolic names](https://docs.pylint.org/en/latest/faq.html#do-i-have-to-rem
 ```python
 # pylint: disable=locally-disabled, multiple-statements, fixme, line-too-long
 ```
+
+Note that this is more likely to push your length over the limit. Here is an example where Black wrapped the line.
+
+```python
+def handle_task(
+    task_name: str,
+) -> Optional[bool]:  # pylint: disable=unsubscriptable-object
+    pass
+```
