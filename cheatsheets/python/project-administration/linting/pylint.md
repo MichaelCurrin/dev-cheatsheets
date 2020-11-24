@@ -30,6 +30,7 @@ The exit codes are not meaningful to read. But you can use a package to be more 
 $ pylint my_app || pylint-exit $?
 ```
 
+
 ## Rules
 
 Formats that Pylint accepts - copied from message-control doc.
@@ -55,22 +56,47 @@ Print all messages:
 pylint OPTIONS --list-msgs         
 ```
 
+## Config
+
 Generate a config.
 
 ```sh
 $ pylint OPTIONS --generate-rcfile > .pylintrc
-````
+```
+
+Sample:
+
+- `.pylintrc`
+    ```
+    [MESSAGES CONTROL]
+
+    # Enable the message, report, category or checker with the given id(s). You can
+    # either give multiple identifier separated by comma (,) or put this option
+    # multiple time.
+    #enable=
+
+    # Disable the message, report, category or checker with the given id(s). You
+    # can either give multiple identifier separated by comma (,) or put this option
+    # multiple time (only on the command line, not in the configuration file where
+    # it should appear only once).
+    #disable=
+    ```
+
 
 ## How to disable rules
 
 Approaches to disabling a _pylint_ rule.
 
-From the shell.
+### Shell
+
+Disable from the shell.
 
 ```sh
 $ pylint OPTIONS --disable=W
 $ pylint OPTIONS --disable-all
 ```
+
+### File
 
 Disable for an entire file.
 
@@ -78,6 +104,8 @@ Disable for an entire file.
 # pylint: disable=missing-function-docstring
 ```
 
+### Scope
+ 
 Disable for a scope - same as above but only applies in the scope.
 
 ```python
@@ -86,23 +114,15 @@ def test():
     foo()
 ```
 
+### Line
+
 Disable for line.
 
 ```python
 a, b = foo() # pylint: disable=unbalanced-tuple-unpacking
 ```
 
-Using symbols:
-
-```python
-# pylint: disable=C0116, ..., ...
-```
-
-Using [symbolic names](https://docs.pylint.org/en/latest/faq.html#do-i-have-to-remember-all-these-numbers)
-
-```python
-# pylint: disable=locally-disabled, multiple-statements, fixme, line-too-long
-```
+### Config
 
 Using config file:
 
@@ -116,46 +136,16 @@ Using config file:
     ```
 
 
-## Flake8
+### Symbols and names
 
-### Disable
-
-Disable for entire file:
+Use symbols:
 
 ```python
-# flake8: noqa
+# pylint: disable=C0116, ..., ...
 ```
 
-Disable inline - all rules
+Use [symbolic names](https://docs.pylint.org/en/latest/faq.html#do-i-have-to-remember-all-these-numbers)
 
+```python
+# pylint: disable=locally-disabled, multiple-statements, fixme, line-too-long
 ```
-foo() # noqa
-```
-
-Disable inline - comma-separated codes.
-
-```
-foo() # noqa: E234
-```
-
-Example config:
-
-- `.flake8`
-    ```ini
-    [flake8]
-    max-line-length = 88
-    ignore = E501, E203, W503
-    per-file-ignores = __init__.py:F401
-    exclude =
-        .git
-        __pycache__
-        setup.py
-        build
-        .venv
-        .vscode
-        .github
-        foo/utils/_compat.py
-        tests/fixtures/
-        tests/repositories/fixtures/
-        tests/utils/fixtures/
-    ```
