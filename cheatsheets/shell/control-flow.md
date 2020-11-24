@@ -140,7 +140,7 @@ fi
 ## Check if root
 
 ```sh
-if [ $UID -ne 0 ];
+if [ $UID -ne 0 ]; then
   echo 'I am not root'
 fi
 ```
