@@ -1,8 +1,9 @@
 # Control flow
 
-Note the older format of `test CONDITION` is replaced by `[ CONDITION ]` and in some shell flavors extra functionality with `[[ CONDITION ]]`.
+Note the older format of `test CONDITION` is replaced by `[ CONDITION ]` and in some shell flavors extra functionality with using `[[ CONDITION ]]`.
 
-## Ignore file
+
+## Ignore
 
 ```sh
 CMD || true
@@ -132,5 +133,14 @@ false
 if [[ $? -ne 0 ]]; then
   echo 'Failed!';
   exit 1
+fi
+```
+
+
+## Check if root
+
+```sh
+if [ $UID -ne 0 ];
+  echo 'I am not root'
 fi
 ```
