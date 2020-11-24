@@ -25,9 +25,10 @@ resource "aws_elb" "example" {
 }
 ```
 
+
 ## Module versions
 
-Use a version number when referencing a module that is in a GitHub repo or the Terraform package pegistry.
+Use a version number when referencing a module that is in a GitHub repo or the Terraform package registry.
 
 ```tf
 module "consul" {
