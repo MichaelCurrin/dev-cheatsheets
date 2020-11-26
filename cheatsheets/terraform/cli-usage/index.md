@@ -2,7 +2,7 @@
 description: How to run Terraform commands in the terminal
 layout: listing
 ---
-# CLI usage
+# CLI
 
 
 ## Basics
@@ -40,7 +40,7 @@ $ terraform validate
 
 ## Alias
 
-Recommended for shell config:
+Recommended for your shell config:
 
 ```sh
 alias tf=terraform
