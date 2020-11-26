@@ -54,33 +54,42 @@ COMMAND
 COMMAND // eslint-disable-line [RULE, ]
 ```
 
-## ESLint ignore config
-
-### File formats
+## ESLint config
 
 From [Configuration file format](https://eslint.org/docs/2.0.0/user-guide/configuring#configuration-file-formats) in the docs.
 
 1. `.eslintrc.js`
-2. `.eslintrc.yaml` / `.eslintrc.yml`
+2. `.eslintrc.yaml` or `.eslintrc.yml`
 3. `.eslintrc.json`
-4. `.eslintrc` - DEPRECATED, can be JSON or YAML
+4. `.eslintrc` - DEPRECATED, as it can be JSON or YAML
 5. `package.json` - `eslintConfig` field.
 
+## ESLint ignore config
 
-### U
+See [Ignoring Files and Directories](https://eslint.org/docs/2.0.0/user-guide/configuring#ignoring-files-and-directories) in the docs.
 
-When you pass directories to ESLint, files and directories are silently ignored. 
+This is a plain text file with glob patterns.
 
-If you pass a specific file to ESLint, then you will see a warning indicating that the file was skipped. 
+e.g.
 
-For example, suppose you have an `.eslintignore` file that looks like this:
-
-- Example `.eslintignore` file:
+- `.eslintignore`
     ```
-    foo.js
+    **/*.js
     ```
 
-And run:
+### Logging ignored paths
+
+When you pass directories to ESLint, files and directories are **silently** ignored. 
+
+If you pass a specific file to ESLint, then you will see a **warning** indicating that the file was skipped. 
+
+Example file:
+
+```
+foo.js
+```
+
+When running:
 
 ```sh
 $ eslint foo.js
