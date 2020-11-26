@@ -70,12 +70,25 @@ See [Ignoring Files and Directories](https://eslint.org/docs/2.0.0/user-guide/co
 
 This is a plain text file with glob patterns.
 
-e.g.
+Samples from the docs:
 
 - `.eslintignore`
     ```
     **/*.js
     ```
+- `.eslintignore`
+    ```
+    # Ignore files compiled from TypeScript and CoffeeScript
+    **/*.{ts,coffee}.js
+    ```
+- `.eslintignore`
+    ```
+    # Ignore built files except build/index.js
+    build/
+    !build/index.js
+    ```
+
+Note that `node_modules` is ignored by default.
 
 ### Logging ignored paths
 
