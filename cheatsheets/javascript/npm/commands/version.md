@@ -85,7 +85,7 @@ Example configuration to match that:
     ```json
     {
       "scripts": {
-        "preversion": "npm test",
+        "preversion": "npm run lint:check && npm test",
         "version": "npm run build && git add -A dist",
         "postversion": "git push --follow-tags && rm -rf build/temp"
       }
@@ -110,7 +110,7 @@ So here is a safer setup. Simplified to exclude the `add` and `rm` commands from
     ```json
     {
       "scripts": {
-        "preversion": "git fetch --tags && npm test",
+        "preversion": "git fetch --tags && npm run lint:check && npm test",
         "version": "npm run build",
         "postversion": "git push --follow-tags"
       }
