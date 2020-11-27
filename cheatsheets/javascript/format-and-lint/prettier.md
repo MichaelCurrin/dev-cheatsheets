@@ -1,9 +1,8 @@
 # Prettier
+> JavaScript formatting with Prettier.
 
-Prettier is an opinionated code formatter.
+Prettier is an opinionated code formatter. Use Prettier for formatting and linters for catching bugs.
 
-
-Use Prettier for formatting and linters for catching bugs.
 
 ## Resources
 
@@ -12,13 +11,14 @@ Use Prettier for formatting and linters for catching bugs.
 - [Options](https://prettier.io/docs/en/options.html)
 - [Ignore](https://prettier.io/docs/en/ignore.html)
 
-JavaScript formatting with Prettier.
-
 
 ## Config
 
+Configure Prettier using a config:
+
 - `.prettierrc.json`
 - `prettier.config.js` or `.prettierrc.js`
+- `.prettierignore`
 
 
 ## Ignore
@@ -30,7 +30,7 @@ JavaScript formatting with Prettier.
 console.log('foo')
 ```
 
-If using ESLint.
+If using ESLint:
 
 ```javascript
 // eslint-disable-next-line prettier/prettier
