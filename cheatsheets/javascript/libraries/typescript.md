@@ -190,11 +190,10 @@ interface Bar {
 }
 ```
 
-Dynamic keys. I don't know where to use this.
-
 ```typescript
-{
-  [key: string]: Object[]
+interface Bar {
+  bazz: string[] // array
+  buzz: { [key: string]: string } // dictionary
 }
 ```
 
