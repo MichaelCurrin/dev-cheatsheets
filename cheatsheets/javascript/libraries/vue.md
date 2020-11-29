@@ -260,6 +260,7 @@ Notes copied from the docs linked in [Resources](#resources).
 ### Vue 2
 
 ```vue
+<script lang="ts">
 import Vue from 'vue'
 
 // Type inference enabled.
@@ -269,6 +270,7 @@ const Component = Vue.extend({
 // No type inference.
 const Component = {
 }
+</script>
 ```
 
 ### Vue 3
@@ -291,9 +293,10 @@ export default Vue.extend({
 #### Define Vue components
 
 ```vue
+<script lang="ts">
 import { defineComponent } from 'vue'
 
 const Component = defineComponent({
-  // type inference enabled
 })
+</script>
 ```
