@@ -8,6 +8,12 @@ See [Vue](https://devhints.io/vue) on DevHints.
 - Vue 3
     - [Homepage](https://v3.vuejs.org/)
     - [Installation](https://v3.vuejs.org/guide/installation.html)
+        - Upgrade to Vue 3. Note you have to replace the compiler as per [discussion](https://stackoverflow.com/questions/63863222/after-upgrading-to-vue-3-cannot-find-module-vue-compiler-sfc-package-json).
+            ```sh
+            $ yarn add vue@next
+            $ yarn remove vue-template-compiler
+            $ yarn add @vue/compiler-sfc -D
+            ```
     - [TypeScript Support](https://v3.vuejs.org/guide/typescript-support.html) - this explains how to configure your project and how to add TypeScript to your Vue components.
 - Vue 2
     - [Installation](https://vuejs.org/v2/guide/installation.html)
