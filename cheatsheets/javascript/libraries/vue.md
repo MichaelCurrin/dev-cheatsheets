@@ -4,9 +4,14 @@ See [Vue](https://devhints.io/vue) on DevHints.
 
 ## Resources
 
-- [Vue 3 homepage](https://v3.vuejs.org/)
-- [Vue Installation](https://v3.vuejs.org/guide/installation.html)
-- [TypeScript Support](https://v3.vuejs.org/guide/typescript-support.html) - this explains how to configure your project and how to add TypeScript to your Vue components.
+- [vuejs.org](https://vuejs.org/) homepage
+- Vue 3
+    - [Homepage](https://v3.vuejs.org/)
+    - [Installation](https://v3.vuejs.org/guide/installation.html)
+    - [TypeScript Support](https://v3.vuejs.org/guide/typescript-support.html) - this explains how to configure your project and how to add TypeScript to your Vue components.
+- Vue 2
+    - [Installation](https://vuejs.org/v2/guide/installation.html)
+    - [TypeScript Support](https://vuejs.org/v2/guide/typescript.html)
 
 
 ## Binding
@@ -244,11 +249,32 @@ Note on modern JS:
 ```
 
 
-## TypeScript
+## TypeScript support
 
 See my starter project.
 
 [![MichaelCurrin - vue-typescript-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=vue-typescript-quickstart&color=blue&logo=github)](https://github.com/MichaelCurrin/vue-typescript-quickstart)
+
+Notes copied from the docs linked in [Resources](#resources).
+
+### Vue 2
+
+```vue
+import Vue from 'vue'
+
+const Component = Vue.extend({
+  // type inference enabled
+})
+
+const Component = {
+  // this will NOT have type inference,
+  // because TypeScript can't tell this is options for a Vue component.
+}
+```
+
+### Vue 3
+
+#### Set language
 
 ```vue
 <script lang="ts">
@@ -261,4 +287,14 @@ export default Vue.extend({
   },
 });
 </script>
+```
+
+#### Define Vue components
+
+```vue
+import { defineComponent } from 'vue'
+
+const Component = defineComponent({
+  // type inference enabled
+})
 ```
