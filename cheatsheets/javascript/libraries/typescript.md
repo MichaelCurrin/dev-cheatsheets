@@ -45,14 +45,48 @@ Array<string>
 let foo: { [s: string]: string } = {}
 ```
 
+```typescript
 type Name = string | string[]
+```
 
 #### Enum
 
 ```typescript
-enum Color {Red, Green, Blue = 4}
-let c: Color = Color.Green
+const enum Color {
+  Red, 
+  Green, 
+  Blue = 4
+}
+
+const a: Color = Color.Green
+
+const b: Color = Color['Green']
 ```
+
+If you try and lookup with a variable, you get an error.
+
+> A const enum member can only be accessed using a string literal.
+
+```typescript
+const x = 'Green'
+const c: Color = Color[x]
+```
+
+You can use a function wrapper though.
+
+```typescript
+import { DESCRIPTION } from './constants';
+
+type DescriptionStrings = keyof typeof DESCRIPTION;
+
+export function describeCode(key: DescriptionStrings) {
+  return DESCRIPTION[key];
+}
+
+// Usage:
+describeCode('Foo')
+```
+
 
 ### Unions
 
