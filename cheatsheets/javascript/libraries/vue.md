@@ -8,7 +8,7 @@ See [Vue](https://devhints.io/vue) on DevHints.
 - Vue 3
     - [Homepage](https://v3.vuejs.org/)
     - [Installation](https://v3.vuejs.org/guide/installation.html)
-        - Upgrade to Vue 3. Note you have to replace the compiler as per [discussion](https://stackoverflow.com/questions/63863222/after-upgrading-to-vue-3-cannot-find-module-vue-compiler-sfc-package-json).
+        - Upgrade to Vue 3. Note you have to replace the compiler as per [discussion](https://stackoverflow.com/questions/63863222/after-upgrading-to-vue-3-cannot-find-module-vue-compiler-sfc-package-json). There are some code changes to make as well.
             ```sh
             $ yarn add vue@next
             $ yarn remove vue-template-compiler
