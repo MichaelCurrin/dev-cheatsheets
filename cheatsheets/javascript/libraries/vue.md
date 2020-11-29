@@ -2,6 +2,12 @@
 
 See [Vue](https://devhints.io/vue) on DevHints.
 
+## Resources
+
+- [Vue 3 homepage](https://v3.vuejs.org/)
+- [Vue Installation](https://v3.vuejs.org/guide/installation.html)
+- [TypeScript Support](https://v3.vuejs.org/guide/typescript-support.html) - this explains how to configure your project and how to add TypeScript to your Vue components.
+
 
 ## Binding
 
@@ -237,3 +243,22 @@ Note on modern JS:
 <span>{{ fruit }}</span>{{ ' ' }}
 ```
 
+
+## TypeScript
+
+See my starter project.
+
+[![MichaelCurrin - vue-typescript-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=vue-typescript-quickstart&color=blue&logo=github)](https://github.com/MichaelCurrin/vue-typescript-quickstart)
+
+```vue
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
+  name: "HelloWorld",
+  props: {
+    msg: String,
+  },
+});
+</script>
+```
