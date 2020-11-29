@@ -262,13 +262,12 @@ Notes copied from the docs linked in [Resources](#resources).
 ```vue
 import Vue from 'vue'
 
+// Type inference enabled.
 const Component = Vue.extend({
-  // type inference enabled
 })
 
+// No type inference.
 const Component = {
-  // this will NOT have type inference,
-  // because TypeScript can't tell this is options for a Vue component.
 }
 ```
 
