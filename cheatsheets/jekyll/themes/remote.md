@@ -47,11 +47,8 @@ The Remote Theme plugin's are themes are stored in a temporary directory like th
 
 Update your project's config. Enable the plugin and pass it a repo as `USERNAME/REPO_NAME`.
 
-- `_config.yml
+- `_config.yml`
     ```yaml
-    plugins:
-      - jekyll-remote-theme
-
     remote_theme: foo/bar
     ```
 
