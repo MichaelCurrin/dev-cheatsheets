@@ -14,7 +14,7 @@ Debugging serve or build:
 `-V, --verbose`
 - `--profile`
 
-General use
+General use:
 
 - `-q, --quiet`
 - `-b, --baseurl URL`
@@ -44,7 +44,7 @@ $ bundle exec jekyll serve
 
 ### Help
 
-Note some repetion because `jekyll` help is added to `jekyll serve` help output.
+Note some repetition here because `jekyll` help is added to `jekyll serve` help output.
 
 ```
 jekyll serve -- Serve your site locally
@@ -102,7 +102,6 @@ Options:
 ```sh
 $ jekyll build
 ```
-
 
 ### Help
 
