@@ -114,7 +114,7 @@ let myFruit: Fruit = myString as Fruit;
 let fruit = "Banana" as const;
 ```
 
-Here in my Vue cse:
+Here in my Vue case, where `this.color` is setup in `data` method.
 
 ```typescript
 export enum Color {
@@ -122,7 +122,7 @@ export enum Color {
   Green = 'green'
 }
 
-const key = this.$attrs.color as keyof typeof Color;
+const key = this.color as keyof typeof Color;
 const color = Color[key];
 ```
 
