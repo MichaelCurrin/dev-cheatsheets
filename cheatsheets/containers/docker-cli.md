@@ -71,10 +71,17 @@ Links:
 Run a command in a **new** container. The container will then stop.
 
 ```sh
-$ docker run CONTAINER COMMAND
+$ docker run IMAGE COMMAND
 ```
 
-Run a command in an **existing** container.
+e.g.
+
+```sh
+$ docker run -it node
+>
+```
+
+Run a command in an **existing** running container, given a tagged name or ID.
 
 ```sh
 $ docker start
@@ -87,10 +94,10 @@ Useful if you want to tunnel in and use an interactive session with Bash, Python
 $ docker exec -it CONTAINER bash
 ```
 
-Ad hoc entry point to start an container even if normally exists immediately and then start interactive terminal.
+Set an ad hoc entry point to start an container even if normally exists immediately and then start interactive terminal.
 
 ```sh
-$ docker run  --entrypoint bash -it IMAGE
+$ docker run  -it IMAGE --entrypoint bash
 ```
 
 You'll start a new container each time though.
