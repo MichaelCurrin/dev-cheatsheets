@@ -1,6 +1,6 @@
 # TypeScript
 
-- [TypeScript Cheatsheet](https://devhints.io/typescript) on DevHints.
+See also [TypeScript Cheatsheet](https://devhints.io/typescript) on DevHints.
 
 See also my [TypeScript](https://github.com/MichaelCurrin/learn-to-code/tree/master/en/topics/scripting_languages/TypeScript) guid.
 
@@ -139,7 +139,9 @@ enum COLOR {
 const key = 'Green';
 const bar = (<any>COLOR)[key];
 ```
-I've also come across using a wrapper.
+
+I've also come across using a wrapper function. 
+
 ```typescript
 enum COLOR {
   Red = 'red',
@@ -151,15 +153,14 @@ type ColorStrings = keyof typeof COLOR;
 function describeColor(key: ColorStrings) {
   return COLOR[key];
 }
+// OR
+export function describeCode(key: string) {
+  return DESCRIPTION[key as DescriptionKeys];
+}
+
 
 const key = 'Red';
 const bar = describeColor(key);
-```
-
-But it wasn't effective until I did this. Which is the casting approach and means the intermediate function is a waste.
-
-```typescript
-const bar = describeColor(key as ColorStrings);
 ```
 
 Getting the `type` of an enum. From the docs.
