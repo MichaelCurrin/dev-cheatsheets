@@ -17,7 +17,7 @@ Options. these are set in the terminal but you can set in the config too.
 
 Option              | Description
 ---                 | ---
-`--p .`             |  Set the _project_ directory. Here as the top-level directory (not `src`). A TS config must exist here. You can run `tsc foo.ts` if you prefer.
+`-p .`              |  Set the _project_ directory. Here as the top-level directory (not `src`). A TS config must exist here. You can run `tsc foo.ts` if you prefer.
 `--outDir dist`     | Output to given directory rather than the same directory as the source file. Note the directory is **not** cleared each time, so you might want to run `rm -rf dist && tsc -p . --outDir dist`.
 `--sourceMap false` | If you don't want `.map` files, you can turn this off like this.
 `--rootDir src`     | You probably don't need to set this. If you do an import from outside `src` such as to `../../package.json` then you end up changing the root directory and then have to set this param or change the import.
@@ -69,10 +69,10 @@ type Name = string | string[]
 
 #### Enum
 
-See the Enum section in the TS docs. This can get complicated for dynamic lookup.
+See the [Enum](https://www.typescriptlang.org/docs/handbook/enums.html) section in the TS docs. This can get complicated for dynamic lookup. In particular see the [const enums](https://www.typescriptlang.org/docs/handbook/enums.html#const-enums) section.
 
 ```typescript
-const enum Color {
+enum COLOR {
   Red, 
   Green, 
   Blue = 4
@@ -82,13 +82,13 @@ const enum Color {
 Lookup with attribute.
 
 ```typescript
-const a: Color = Color.Green;
+const a: COLOR = COLOR.Green;
 ```
 
 Lookup with literal.
 
 ```typescript
-const b: Color = Color['Green'];
+const b: COLOR = COLOR['Green'];
 ```
 
 Lookup by variable. Only works if the enum declaration is **not** done with `const`.
@@ -97,34 +97,106 @@ Lookup by variable. Only works if the enum declaration is **not** done with `con
 
 ```typescript
 const x = 'Green'
-const c: Color = Color[x]
+const c: COLOR = COLOR[x]
 ```
 
-If you a warning the result might be `undefined`, you can ignore warnings using `<any>`. Or you can add an assertion with an `if` statemement.
+When the input variable is dynamic like controlled by the UI, I had to change the approach to casting.
+
+Using `VAR as TYPE`. Or `<TYPE> VAR`. From [StackOverflow](https://stackoverflow.com/questions/37978528/typescript-type-string-is-not-assignable-to-type).
 
 ```typescript
-const enum COLOR {
+export type Fruit = "Orange" | "Apple" | "Banana";
+let myString: string = "Banana";
+
+let myFruit: Fruit = myString as Fruit;
+
+// Newer syntax.
+let fruit = "Banana" as const;
+```
+
+Here in my Vue cse:
+
+```typescript
+export enum Color {
   Red = 'red',
   Green = 'green'
 }
 
-const key = 'Red';
-const bar = (<any>FOO)[key];
+const key = this.$attrs.color as keyof typeof Color;
+const color = Color[key];
 ```
 
-I've also used come across using a wrapper.
+This is more effective and less code than alternatives below.
+
+This doesn't work when key is dynamic.
 
 ```typescript
-type DescriptionStrings = keyof typeof DESCRIPTION;
-
-function describeCode(key: DescriptionStrings) {
-  return DESCRIPTION[key];
+enum COLOR {
+  Red = 'red',
+  Green = 'green'
 }
 
-const key = 'Foo';
-const bar = describeCode(key);
+const key = 'Green';
+const bar = (<any>COLOR)[key];
+```
+I've also come across using a wrapper.
+```typescript
+enum COLOR {
+  Red = 'red',
+  Green = 'green'
+}
+
+type ColorStrings = keyof typeof COLOR;
+
+function describeColor(key: ColorStrings) {
+  return COLOR[key];
+}
+
+const key = 'Red';
+const bar = describeColor(key);
 ```
 
+But it wasn't effective until I did this. Which is the casting approach and means the intermediate function is a waste.
+
+```typescript
+const bar = describeColor(key as ColorStrings);
+```
+
+Getting the `type` of an enum. From the docs.
+
+```typescript
+enum LogLevel {
+  ERROR,
+  WARN,
+  INFO,
+  DEBUG,
+}
+
+type LogLevelStrings = keyof typeof LogLevel;
+// 'ERROR' | 'WARN' | 'INFO' | 'DEBUG';
+
+
+function printImportant(key: LogLevelStrings, message: string) {
+  const num = LogLevel[key];
+  if (num <= LogLevel.WARN) {
+    console.log("Log level key is:", key);
+    console.log("Log level value is:", num);
+    console.log("Log level message is:", message);
+  }
+}
+printImportant("ERROR", "This is a message");
+```
+
+Reverse mapping based on the docs. From the docs.
+
+```typescript
+enum COLOR {
+  Red,
+}
+
+const c = Enum.Red;
+const nameOfRed = Enum[c]; // "Red"
+```
 
 ### Unions
 
