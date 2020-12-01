@@ -1,7 +1,7 @@
 ---
 description: Guide to managing out NPM packages in your project
 ---
-# Upgrade old versions
+# Upgrade packages
 
 
 ## Find outdated packages
@@ -38,24 +38,30 @@ sirv-cli              1.0.3   1.0.3   1.0.6  preact-quickstart
 $ npm update
 ```
 
-This can be used with `-g` flag too.
+For global packages, add `-g`.
 
 Optionally supply package names as arguments.
 
 Note that the above command will still stick with your bounds of tilde and caret.
 
-
 ### Newest
 
-If you want to install the absolute latest available, you a separate tool.
+If you want to install the latest available.
 
-[docs](https://www.npmjs.com/package/npm-upgrade)
+```sh
+$ npm install PACKAGE
+```
+
+You can upgrade multiple packages at once using a 3rd party package. 
+
+See [npm-upgrade](https://www.npmjs.com/package/npm-upgrade) homepage and docs.
 
 > Interactive CLI utility to easily update outdated NPM dependencies with changelogs inspection support.
 
 ```sh
 $ npx npm-upgrade
 ```
+
 
 ## Fix security vulnernabities
 
