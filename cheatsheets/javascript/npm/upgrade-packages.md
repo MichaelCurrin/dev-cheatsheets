@@ -37,6 +37,11 @@ sirv-cli              1.0.3   1.0.3   1.0.6  preact-quickstart
 ```sh
 $ npm update
 ```
+Or the longer.
+
+```sh
+$ npm install --upgrade
+```
 
 For global packages, add `-g`.
 
@@ -48,11 +53,13 @@ Note that the above command will still stick with your bounds of tilde and caret
 
 If you want to install the latest available.
 
+Use NPM install. I Leave off the version number.
+
 ```sh
 $ npm install PACKAGE
 ```
 
-You can upgrade multiple packages at once using a 3rd party package. 
+You can upgrade multiple packages at once using a 3rd-party package. 
 
 See [npm-upgrade](https://www.npmjs.com/package/npm-upgrade) homepage and docs.
 
