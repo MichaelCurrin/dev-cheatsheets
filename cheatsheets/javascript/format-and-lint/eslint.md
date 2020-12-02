@@ -2,10 +2,44 @@
 
 ## Resources
 
-ES Lint docs:
+See ESLint docs:
 
 - [Configuring](https://eslint.org/docs/user-guide/configuring)
 - [Rules](https://eslint.org/docs/rules/)
+
+
+## Rules
+
+A reference for rules I typically like to know about or set, using my preferred values.
+
+Each rule has its own allowed fields. Sometimes you set `2` or `"error"`, or just `1`.
+
+Example:
+
+```js
+{
+  rules: {
+    semi: [2, 'always'],
+    semi: ['warn', 'always'],
+    'no-console': 'error'
+    'no-console': 2
+  }
+}
+```
+
+See [Rules](https://eslint.org/docs/rules/) in the docs. It provides descriptions and link to the rule's page.
+
+See below rule names and some recommended values (not all values).
+
+Name   | Values | Link
+---    | ---    | ---
+`semi` | `[2, "always"]` | 
+'comma-dangle' | `'always-multiline'`. Using `always` is to aggressive like `import { x, y, } from "bar"`. | [docs](https://eslint.org/docs/rules/comma-dangle)
+`quotes` | `[2, "single"]`, `[2, "double"]` | [docs](https://eslint.org/docs/rules/quotes)
+`no-console` | `'off'` | [docs](https://eslint.org/docs/rules/no-console)
+`no-console` | `1` |
+`no-undef` | `1` |
+`indent` | `["error", 2]` - you'll get 4 spaces for just `"error"` | [docs](https://eslint.org/docs/rules/indent)
 
 
 ## Script settings
@@ -54,7 +88,9 @@ COMMAND
 COMMAND // eslint-disable-line [RULE, ]
 ```
 
-## ESLint config
+## Config files
+
+### The ESLint config
 
 From [Configuration file format](https://eslint.org/docs/2.0.0/user-guide/configuring#configuration-file-formats) in the docs.
 
@@ -64,7 +100,7 @@ From [Configuration file format](https://eslint.org/docs/2.0.0/user-guide/config
 4. `.eslintrc` - DEPRECATED, as it can be JSON or YAML
 5. `package.json` - `eslintConfig` field.
 
-## ESLint ignore config
+### ESLint ignore config
 
 See [Ignoring Files and Directories](https://eslint.org/docs/2.0.0/user-guide/configuring#ignoring-files-and-directories) in the docs.
 
@@ -90,7 +126,7 @@ Samples from the docs:
 
 Note that `node_modules` is ignored by default.
 
-### Logging ignored paths
+#### Logging ignored paths
 
 When you pass directories to ESLint, files and directories are **silently** ignored. 
 
