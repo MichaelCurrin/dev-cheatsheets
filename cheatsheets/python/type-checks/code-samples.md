@@ -82,9 +82,15 @@ x: Set[int] = {6, 7}
 x = [1]  # type: List[int]
 ```
 
+A dictionary.
+
 ```python
-x: Dict[str, float] = {'field': 2.0}
+x: Dict[str, float] = {
+    'field': 2.0
+}
 ```
+See also the [Typed dictionary](#typed-dictionary) section.
+
 
 Fixed size `tuple`.
 
@@ -92,16 +98,19 @@ Fixed size `tuple`.
 x: Tuple[int, str, float] = (3, "yes", 7.5)
 ```
 
-Variable size `tuple` - use ellipsis.
+For a variable size `tuple` - use ellipsis.
+
 ```python
 x: Tuple[int, ...] = (1, 2, 3)
 ```
+
+Allow a value to be `None`.
 
 ```python
 x: Optional[str] = some_function()
 ```
 
-Mypy understands a value can't be None in an if-statement
+Mypy understands a value can't be `None` in used an if-statement.
 
 ```python
 if x is not None:
@@ -114,7 +123,6 @@ If a value can never be `None` due to some invariants, use an `assert`.
 assert x is not None
 print(x.upper())
 ```
-
 
 ### Tuple
 
@@ -216,7 +224,7 @@ Unless you use a `return` sooner and so don't define `buzz`.
 
 ## Typed dictionary
 
-Define and used a `TypeDict` type. This is resuable, unlike a plain `Dict[TYPE, TYPE` setup.
+Define and used a `TypeDict` type. This is resuable, unlike a plain `Dict[TYPE, TYPE]` setup.
 
 Example from [TypedDict](https://mypy.readthedocs.io/en/stable/more_types.html#typeddict) section of Mypy docs.
 
@@ -230,7 +238,7 @@ Define a type.
 Movie = TypedDict('Movie', {'name': str, 'year': int})
 ```
 
-Use it as type. NB. You must add the comment explicitly.
+Use the type. NB. You must add the comment explicitly.
 
 ```python
 movie = {'name': 'Blade Runner', 'year': 1982}  # type: Movie
@@ -242,7 +250,13 @@ Use it as a constructor.
 toy_story = Movie(name='Toy Story', year=1995)
 ```
 
-Mypy will detect an invalid key as an error:
+Which is the equivalent of a plain `dict` with a type annotation.
+
+```python
+toy_story =  dict(name='Toy Story', year=1995)  # type: Movie
+```
+
+When you use a typed dictionary, Mypy can detect an invalid key or value type and given an error:
 
 ```python
 director = movie['director']  # Error: 'director' is not a valid key
