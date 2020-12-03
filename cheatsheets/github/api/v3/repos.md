@@ -294,3 +294,5 @@ e.g.
 ```
 
 Read `has_pages` to determine if GitHub Pages is active. Then you can figure out the URL programmatically.
+
+{% endraw %}
