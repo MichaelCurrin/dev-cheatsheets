@@ -35,7 +35,7 @@ Name   | Values | Link
 ---    | ---    | ---
 `semi` | `[2, "always"]` | 
 `comma-dangle` | `'always-multiline'`. Using `always` is to aggressive like `import { x, y, } from "bar"`. | [docs](https://eslint.org/docs/rules/comma-dangle)
-`quotes` | `[2, "single"]`, `[2, "double"]` | [docs](https://eslint.org/docs/rules/quotes)
+`quotes` | `[2, "single"]` or `[2, "double"]` | [docs](https://eslint.org/docs/rules/quotes)
 `no-console` | `'off'` | [docs](https://eslint.org/docs/rules/no-console)
 `no-console` | `1` |
 `no-undef` | `1` |
