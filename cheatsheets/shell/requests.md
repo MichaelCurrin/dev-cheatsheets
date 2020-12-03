@@ -4,6 +4,8 @@ How to download or upload content at a URL using terminal tools.
 
 **Table of contents**
 
+<!-- TODO break out into separate files -->
+
 - [curl](#curl)
 - [httpie](#httpie)
 - [wget](#wget)
@@ -255,12 +257,12 @@ wget http://website.com/files/file.zip -O myfile.zip
 
 #### Print output
 
-Use as `-O-` to print output, without saving to a file.
+Specify no output file. This behaves like the default behavior of `curl`.
 
 This can be useful for piping text at endpoint to another tool.
 
 ```sh
-wget -qO- "https://api.github.com/repos/MichaelCurrin/badge-generator/releases/latest"
+wget -q -O - "https://api.github.com/repos/MichaelCurrin/badge-generator/releases/latest"
 ```
 
 ### Spider
