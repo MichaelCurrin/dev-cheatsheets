@@ -171,6 +171,7 @@ http -f POST httpbin.org/post hello=World
 ## Wget
 
 - [GNU Wget homepage](https://www.gnu.org/software/wget/)
+- [Manual](http://www.gnu.org/software/wget/manual/wget.html)
 - [Tutorial](https://www.computerhope.com/unix/wget.htm)
 - [Cheatsheet](https://gist.github.com/Dammmien/4af98e05f9c51c2da007cc70d62bf562) gist.
 
@@ -188,8 +189,90 @@ macOS:
 brew install wget
 ```
 
-### Download a file
+### Usage
+
+### Help
+
+```
+wget --help
+```
+
+```
+GNU Wget 1.20.3, a non-interactive network retriever.
+```
+```
+Usage: wget [OPTION]... [URL]...
+```
+
+Some useful options.
+
+```
+  -o,  --output-file=FILE          log messages to FILE
+  -a,  --append-output=FILE        append messages to FILE
+  -q,  --quiet                     quiet (no output)
+  -v,  --verbose                   be verbose (this is the default)
+```
+
+```
+  -O,  --output-document=FILE      write documents to FILE
+
+  -nc, --no-clobber                skip downloads that would download to
+                                     existing files (overwriting them)
+```
+
+```
+  -i,  --input-file=FILE           download URLs found in local or external FILE
+```
+
+```
+       --spider                    don't download anything
+```
+
+```
+Recursive download:
+  -r,  --recursive                 specify recursive download
+  -l,  --level=NUMBER              maximum recursion depth (inf or 0 for infinite)
+```
+
+```
+  -D,  --domains=LIST              comma-separated list of accepted domains
+       --exclude-domains=LIST      comma-separated list of rejected domains
+```
+
+#### Download a file
+
+With no flags, you'll get the file downloaded.
 
 ```sh
 wget http://website.com/files/file.zip
+```
+
+Change the output path or filename.
+
+```sh
+wget http://website.com/files/file.zip -O myfile.zip
+```
+
+#### Print output
+
+Use as `-O-` to print output, without saving to a file.
+
+This can be useful for piping text at endpoint to another tool.
+
+```sh
+wget -qO- "https://api.github.com/repos/MichaelCurrin/badge-generator/releases/latest"
+```
+
+### Spider
+
+```sh
+wget -r -l4 –spider -D example.com https://example.com
+```
+
+From the manual:
+
+> When invoked with this option, Wget will behave as a Web spider, which means that it will not download the pages, just check that they are there. For example, you can use Wget to check your bookmarks:
+
+```sh
+wget --spider --force-html -i bookmarks.html
 ```
