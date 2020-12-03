@@ -248,7 +248,7 @@ Note that there are also parameters like `limit` and `page` to set on repos, but
 
 Here are notes on fields of interest found on a repo.
 
-### Releases
+### Tags and releases
 
 All tags:
 
@@ -257,6 +257,21 @@ All tags:
 All releases:
 
 [/repos/MichaelCurrin/badge-generator/releases/](https://api.github.com/repos/MichaelCurrin/badge-generator/releases/)
+
+You'll see a field like `"tag_name": "v2.0.0"`.
+
+You can extract this with:
+
+```sh
+$ wget -qO- "https://api.github.com/repos/MichaelCurrin/badge-generator/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/';
+v2.0.0
+
+# Testing.
+$ echo '"tag_name": "v2.0.0"' | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/'
+v2.0.0
+```
+
+Though you might as well use `curl` instead of `wget` if you aren't saving a file.
 
 Latest release:
 
