@@ -2,10 +2,10 @@
 
 ## Resources
 
-See ESLint docs:
+See links to the ESLint docs:
 
-- [Configuring](https://eslint.org/docs/user-guide/configuring)
-- [Rules](https://eslint.org/docs/rules/)
+- [Configuring](https://eslint.org/docs/user-guide/configuring) guide.
+- [Rules](https://eslint.org/docs/rules/) doc.
 
 
 ## Rules
