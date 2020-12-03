@@ -1,21 +1,23 @@
 # Repos
 
-- Multiple repos
-    - e.g.  [https://api.github.com/users/MichaelCurrin/repos](https://api.github.com/users/MichaelCurrin/repos)
-- Single repo
-    - e.g. [https://api.github.com/repos/MichaelCurrin/badge-generator](https://api.github.com/repos/MichaelCurrin/badge-generator)
+{% raw %}
 
 
-Note that there are parameters like limit and page but these are not covered here.
+## Endpoints
 
+### Single repo 
 
-## Single repo sample output
+Get a single repo.
+
+e.g. [/repos/MichaelCurrin/badge-generator](https://api.github.com/repos/MichaelCurrin/badge-generator)
 
 For Badge Generator single repo URL.
 
 Summarized to the most interesting fields - commenting out or deleting the less interesting ones.
 
-
+<details>
+<summary>Expand output</summary>
+    
 ```json5
 {
   "name": "badge-generator",
@@ -31,6 +33,7 @@ Summarized to the most interesting fields - commenting out or deleting the less 
   "fork": false,
   "url": "https://api.github.com/repos/MichaelCurrin/badge-generator",
   "forks_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/forks",
+  
   // "keys_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/keys{/key_id}",
   // "collaborators_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/collaborators{/collaborator}",
   // "teams_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/teams",
@@ -38,6 +41,7 @@ Summarized to the most interesting fields - commenting out or deleting the less 
   //"issue_events_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/issues/events{/number}",
   //"events_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/events",
   //"assignees_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/assignees{/user}",
+  
   "branches_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/branches{/branch}",
   "tags_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/tags",
   "blobs_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/git/blobs{/sha}",
@@ -67,6 +71,7 @@ Summarized to the most interesting fields - commenting out or deleting the less 
   //"milestones_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/milestones{/number}",
   //"notifications_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/notifications{?since,all,participating}",
   //"labels_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/labels{/name}",
+  
   "releases_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/releases{/id}",
   "deployments_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/deployments",
 
@@ -111,29 +116,29 @@ Summarized to the most interesting fields - commenting out or deleting the less 
 }
 ```
 
-### URL notes
+</details>
+   
+
+### Multiple repos
+
+Get multiple repos for a user.
+
+e.g. [/users/MichaelCurrin/repos](https://api.github.com/users/MichaelCurrin/repos)
+
+Note that there are also parameters like `limit` and `page` to set on repos, but these are not covered here.
 
 
-Note that homepage will use whatever is in the repo's URL section, not necessarily GitHub Pages.
+<details>
+<summary>Expand output</summary>
 
-e.g.
-
-```
-homepage": "https://artists-portfolio.netlify.app/",
-```
-
-Use `has_pages` to determine if GitHub Pages is active (then you can figure out the URL programmatically).
-
-
-## Multiple repos sample output
-
-```json
+```json5
 {
     "id": 147400032,
     "node_id": "MDEwOlJlcG9zaXRvcnkxNDc0MDAwMzI=",
     "name": "aggre-git",
     "full_name": "MichaelCurrin/aggre-git",
     "private": false,
+    
     "owner": {
       "login": "MichaelCurrin",
       "id": 18750745,
@@ -154,6 +159,7 @@ Use `has_pages` to determine if GitHub Pages is active (then you can figure out 
       "type": "User",
       "site_admin": false
     },
+    
     "html_url": "https://github.com/MichaelCurrin/aggre-git",
     "description": "Report on aggregated GitHub activity data, based around PRs and users within your organization",
     "fork": false,
@@ -228,99 +234,48 @@ Use `has_pages` to determine if GitHub Pages is active (then you can figure out 
     "watchers": 0,
     "default_branch": "master"
   },
+  
   {
-    "id": 163117748,
-    "node_id": "MDEwOlJlcG9zaXRvcnkxNjMxMTc3NDg=",
-    "name": "alembic-kit",
-    "full_name": "MichaelCurrin/alembic-kit",
-    "private": false,
-    "owner": {
-      "login": "MichaelCurrin",
-      "id": 18750745,
-      "node_id": "MDQ6VXNlcjE4NzUwNzQ1",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/18750745?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/MichaelCurrin",
-      "html_url": "https://github.com/MichaelCurrin",
-      "followers_url": "https://api.github.com/users/MichaelCurrin/followers",
-      "following_url": "https://api.github.com/users/MichaelCurrin/following{/other_user}",
-      "gists_url": "https://api.github.com/users/MichaelCurrin/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/MichaelCurrin/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/MichaelCurrin/subscriptions",
-      "organizations_url": "https://api.github.com/users/MichaelCurrin/orgs",
-      "repos_url": "https://api.github.com/users/MichaelCurrin/repos",
-      "events_url": "https://api.github.com/users/MichaelCurrin/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/MichaelCurrin/received_events",
-      "type": "User",
-      "site_admin": false
-    },
-    "html_url": "https://github.com/MichaelCurrin/alembic-kit",
-    "description": "Copied from original alembic-kit repo using Deploy to Netlify button",
-    "fork": false,
-    "url": "https://api.github.com/repos/MichaelCurrin/alembic-kit",
-    "forks_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/forks",
-    "keys_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/keys{/key_id}",
-    "collaborators_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/collaborators{/collaborator}",
-    "teams_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/teams",
-    "hooks_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/hooks",
-    "issue_events_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/issues/events{/number}",
-    "events_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/events",
-    "assignees_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/assignees{/user}",
-    "branches_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/branches{/branch}",
-    "tags_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/tags",
-    "blobs_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/git/blobs{/sha}",
-    "git_tags_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/git/tags{/sha}",
-    "git_refs_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/git/refs{/sha}",
-    "trees_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/git/trees{/sha}",
-    "statuses_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/statuses/{sha}",
-    "languages_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/languages",
-    "stargazers_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/stargazers",
-    "contributors_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/contributors",
-    "subscribers_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/subscribers",
-    "subscription_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/subscription",
-    "commits_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/commits{/sha}",
-    "git_commits_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/git/commits{/sha}",
-    "comments_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/comments{/number}",
-    "issue_comment_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/issues/comments{/number}",
-    "contents_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/contents/{+path}",
-    "compare_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/compare/{base}...{head}",
-    "merges_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/merges",
-    "archive_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/{archive_format}{/ref}",
-    "downloads_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/downloads",
-    "issues_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/issues{/number}",
-    "pulls_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/pulls{/number}",
-    "milestones_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/milestones{/number}",
-    "notifications_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/notifications{?since,all,participating}",
-    "labels_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/labels{/name}",
-    "releases_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/releases{/id}",
-    "deployments_url": "https://api.github.com/repos/MichaelCurrin/alembic-kit/deployments",
-    "created_at": "2018-12-25T23:39:04Z",
-    "updated_at": "2018-12-26T15:05:51Z",
-    "pushed_at": "2018-12-25T23:40:37Z",
-    "git_url": "git://github.com/MichaelCurrin/alembic-kit.git",
-    "ssh_url": "git@github.com:MichaelCurrin/alembic-kit.git",
-    "clone_url": "https://github.com/MichaelCurrin/alembic-kit.git",
-    "svn_url": "https://github.com/MichaelCurrin/alembic-kit",
-    "homepage": "",
-    "size": 28,
-    "stargazers_count": 0,
-    "watchers_count": 0,
-    "language": "Ruby",
-    "has_issues": true,
-    "has_projects": true,
-    "has_downloads": true,
-    "has_wiki": true,
-    "has_pages": false,
-    "forks_count": 0,
-    "mirror_url": null,
-    "archived": false,
-    "disabled": false,
-    "open_issues_count": 0,
-    "license": null,
-    "forks": 0,
-    "open_issues": 0,
-    "watchers": 0,
-    "default_branch": "master"
+    // ...
   }
 ]
 ```
+
+</details>
+
+
+## Fields
+
+Here are notes on fields of interest found on a repo.
+
+### Releases
+
+All tags:
+
+[/repos/MichaelCurrin/badge-generator/tags](https://api.github.com/repos/MichaelCurrin/badge-generator/tags)
+
+All releases:
+
+[/repos/MichaelCurrin/badge-generator/releases/](https://api.github.com/repos/MichaelCurrin/badge-generator/releases/)
+
+Latest release:
+
+[/repos/MichaelCurrin/badge-generator/releases/latest](https://api.github.com/repos/MichaelCurrin/badge-generator/releases/latest)
+
+A target release - you can look up a release by ID. e.g. `34552316`
+
+[/repos/MichaelCurrin/badge-generator/releases/34552316](https://api.github.com/repos/MichaelCurrin/badge-generator/releases/34552316)
+
+### Homepage URL
+
+Note that homepage field will use whatever is in the repo's URL section, not necessarily a GitHub Pages URL.
+
+e.g.
+
+```json
+{
+  "homepage": "https://artists-portfolio.netlify.app/"
+}
+```
+
+Read `has_pages` to determine if GitHub Pages is active. Then you can figure out the URL programmatically.
