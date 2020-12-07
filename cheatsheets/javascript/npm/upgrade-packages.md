@@ -6,7 +6,7 @@ description: Guide to managing out NPM packages in your project
 
 ## Find outdated packages
 
-[docs](https://docs.npmjs.com/cli/outdated)
+From the [npm outdated](https://docs.npmjs.com/cli/outdated) command's docs.
 
 > This command will check the registry to see if any (or, specific) installed packages are currently outdated.
 
@@ -30,7 +30,7 @@ sirv-cli              1.0.3   1.0.3   1.0.6  preact-quickstart
 
 ## Upgrade packages
 
-[docs](https://docs.npmjs.com/cli/update)
+From the [npm update](https://docs.npmjs.com/cli/update) command's docs.
 
 > This command will update all the packages listed to the latest version (specified by the tag config), respecting semver.
 
