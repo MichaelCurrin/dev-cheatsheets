@@ -222,7 +222,9 @@ const nameOfRed = Enum[c]; // "Red"
 
 See [Union and intersections](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html) in the docs.
 
-A set of allowed types.
+See the sections in this guide on [Type aliases](#type-aliases) and [Intersections](#intersections).
+
+Declare a set of allowed types.
 
 ```typescript
 string | boolean
@@ -231,7 +233,33 @@ string | boolean
 You can define that as a named type and then use it later.
 
 ```typescript
-type Foo = string | boolean
+type Fuzz = string | boolean
+```
+
+Examples:
+
+```typescript
+type Foo = {
+  name: "string"
+};
+
+type Bar = {
+  name: "string"
+};
+
+type Person = Foo | Bar;
+```
+
+```typescript
+interface Foo {
+  name: "string"
+};
+
+interface Bar {
+  name: "string"
+};
+
+type Person = Foo | Bar;
 ```
 
 ### Type aliases
@@ -440,16 +468,7 @@ See [blog post](https://blog.logrocket.com/types-vs-interfaces-in-typescript/).
 
 Examples from [docs](https://www.typescriptlang.org/docs/handbook/advanced-types.html#interfaces-vs-type-aliases)
 
-
 ### Extending
-
-Both below can be used as:
-
-```typescript
-const bear = getBear() 
-bear.name
-bear.honey
-```
 
 ### Extend an interface
 
@@ -461,6 +480,10 @@ interface Animal {
 interface Bear extends Animal {
   honey: boolean
 }
+
+const bear = getBear() 
+bear.name
+bear.honey
 ```
 
 ### Extend a type via intersections
@@ -473,7 +496,40 @@ type Animal = {
 type Bear = Animal & { 
   honey: Boolean 
 }
+
+const bear = getBear() 
+bear.name
+bear.honey
 ```
+
+Combine two types.
+
+```typescript
+type Name = {
+  name: "string"
+};
+
+type Age = {
+  age: number
+};
+
+type Person = Name & Age;
+```
+
+Combine two interfaces. You can't reverse this as an interface made of two types.
+
+```typescript
+interface Name {
+  name: “string”
+};
+
+interface Age {
+  age: number
+};
+
+type Person = Name & Age;
+```
+
 
 ### Adding fields
 
