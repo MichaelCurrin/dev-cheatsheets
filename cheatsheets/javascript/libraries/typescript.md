@@ -1,9 +1,19 @@
+---
+logo: typescript
+---
 # TypeScript
 
-See also [TypeScript Cheatsheet](https://devhints.io/typescript) on DevHints.
 
-See also my [TypeScript](https://github.com/MichaelCurrin/learn-to-code/tree/master/en/topics/scripting_languages/TypeScript) guid.
+## Resources
 
+- [TypeScript Cheatsheet](https://devhints.io/typescript) on DevHints.
+- My [TypeScript](https://github.com/MichaelCurrin/learn-to-code/tree/master/en/topics/scripting_languages/TypeScript) guid.
+- TS docs
+    - [Basic types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+    - [Interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html) - type checking based on the _shape_ of the data.
+    - [Enums](https://www.typescriptlang.org/docs/handbook/enums.html)
+    - [Advanced types](https://www.typescriptlang.org/docs/handbook/advanced-types.html) - including type guards, nullable types, conditional types.
+    - [Triple-slash directive](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) - `/// <reference path="..." />`
 
 ## CLI
 
@@ -37,8 +47,17 @@ string
 
 null
 undefined
+unknown
 
 never  /* unreachable */
+```
+
+#### Unknown
+
+```typescript
+let foo: unknown = 4;
+foo = "maybe a string instead";
+foo = false;
 ```
 
 ### Data structures
@@ -201,6 +220,8 @@ const nameOfRed = Enum[c]; // "Red"
 
 ### Unions
 
+See [Union and intersections](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html) in the docs.
+
 A set of allowed types.
 
 ```typescript
@@ -213,7 +234,47 @@ You can define that as a named type and then use it later.
 type Foo = string | boolean
 ```
 
-### Declare a variable
+### Type aliases
+
+See [Type aliases](https://www.typescriptlang.org/docs/handbook/advanced-types.html#type-aliases) under Advanced Types in the docs.
+
+> Type aliases create a new **name** for a type. Type aliases are sometimes similar to interfaces, but can name primitives, unions, tuples, and any other types that you’d otherwise have to write by hand.
+
+> Aliasing doesn’t actually create a new type - it creates a **new name** to refer to that type. Aliasing a primitive is **not terribly useful**, though it can be used as a form of documentation.
+
+#### Basic
+
+Format:
+
+```typescript
+type VARIABLE_NAME = TYPE
+```
+
+Using a primitive.
+
+```typescript
+type Second = number;
+
+let timeInSecond: number = 10;
+let time: Second = 10;
+```
+
+Using a data structure.
+
+```typescript
+type Animal = {
+  name: string
+}
+```
+
+#### Generic
+
+```typescript
+type Container<T> = { value: T };
+```
+
+
+## Declare a variable
 
 Set type initially then change value.
 
@@ -276,10 +337,24 @@ Although this looks like a case for breaking out a separate type or interface, e
 
 ## Type assertions
 
-```typescript
-let len: number = (input as string).length
+Based on the [docs](https://www.typescriptlang.org/docs/handbook/basic-types.html#type-assertions)
 
-let len: number = (<string> input).length 
+Below we convert from a string to a number.
+
+### As syntax
+
+```typescript
+const foo = "this is a string";
+const len = (foo as string).length;
+```
+
+### Angle-bracket syntax
+
+Does not work with JSX syntax.
+
+```typescript
+const foo = "this is a string";
+const len = (<string> foo).length;
 ```
 
 
@@ -354,6 +429,73 @@ interface Building {
 
 // string[]
 type Walls = Building['room']['walls'];
+```
+
+
+## Interfaces vs Types aliases
+
+See the [Type aliases](#type-aliases) and [Interfaces](#interfaces) sections sections.
+
+See [blog post](https://blog.logrocket.com/types-vs-interfaces-in-typescript/).
+
+Examples from [docs](https://www.typescriptlang.org/docs/handbook/advanced-types.html#interfaces-vs-type-aliases)
+
+
+### Extending
+
+Both below can be used as:
+
+```typescript
+const bear = getBear() 
+bear.name
+bear.honey
+```
+
+### Extend an interface
+
+```typescript
+interface Animal {
+  name: string
+}
+
+interface Bear extends Animal {
+  honey: boolean
+}
+```
+
+### Extend a type via intersections
+
+```typescript
+type Animal = {
+  name: string
+}
+
+type Bear = Animal & { 
+  honey: Boolean 
+}
+```
+
+### Adding fields
+
+Declare an interface multiple types and they will all be collapsed into one.
+
+```typescript
+interface Window {
+  title: string
+}
+
+interface Window {
+  ts: import("typescript")
+}
+
+const src = 'const a = "Hello World"';
+window.ts.transpileModule(src, {});
+```
+
+You get an error if you do that with types.
+
+```typescript
+// Error: Duplicate identifier 'Window'.
 ```
 
 
