@@ -1,4 +1,16 @@
 # pull
+> The `git pull` command
+
+
+## Abort
+
+If you ever accidentally do `git pull` when you meant to do `git pull --rebase` and you end up with a merge commit but then don't actually commit, you won't actually be able to follow with a `git pull` as you're in an in between state.
+
+So do this:
+
+```sh
+git merge --abort
+```
 
 
 ## Help
