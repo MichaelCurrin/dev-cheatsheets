@@ -40,23 +40,31 @@ Note that VS Code does follow the [commit template] file though - this can be us
 
 ## Setting up hooks
 
-Note that if you store hooks in a directory like `hooks`, you'll need a manual step to copy them or `.git/hooks`.
+Note that if you store hooks in a directory like `hooks`, you'll need a manual step on installation to copy them to `.git/hooks`.
+
+See also my [Jekyll Hooks](https://michaelcurrin.github.io/code-cookbook/recipes/jekyll/hooks.html) recipe.
+
+Here we use a file from version control in `hooks/` directory and add it to `.git/hooks`.
 
 ```sh
 $ cp hooks/pre-commit-msg .git/hooks/pre-commit-msg
-$ chmod x .git/hooks/pre-commit-msg
 ```
 
-Or sym-links from there to the directory.
+If it wasn't executable, you'll need to change it now.
+```sh
+$ chmod +x .git/hooks/pre-commit-msg
+```
+
+Or sym-link from git hooks to the versioned hooks - if the file is executable.
 
 ```sh
 $ ln -s -r hooks/pre-commit-msg .git/hooks/pre-commit-msg
 ```
 
-You can also reset hooks (I think) using this in an existing repo:
+You can also _reset_ the git hooks (I think) using this in an existing repo:
 
 ```sh
-git init
+$ git init
 ```
 
 > It’s important to note that client-side hooks are not copied when you clone a repository. If your intent with these scripts is to enforce a policy, you’ll probably want to do that on the server side; see the example in [An Example Git-Enforced Policy](https://git-scm.com/book/en/v2/Customizing-Git-An-Example-Git-Enforced-Policy#_an_example_git_enforced_policy).
