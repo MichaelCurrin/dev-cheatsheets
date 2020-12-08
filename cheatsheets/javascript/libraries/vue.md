@@ -19,6 +19,32 @@ See [Vue](https://devhints.io/vue) on DevHints.
     - [Installation](https://vuejs.org/v2/guide/installation.html)
     - [TypeScript Support](https://vuejs.org/v2/guide/typescript.html)
 
+## CLI
+
+### Start dev server
+
+```sh
+$ vue-cli-service serve
+```
+
+### Build
+
+```sh
+$ # Clean.
+$ vue-cli-service build
+$ # Don't clean.
+$ vue-cli-service build --no-clean
+```
+
+### Lin
+
+```sh
+$ # Fix
+$ vue-cli-service lint
+$ # Don't fix.
+$ vue-cli-service lint --no-fix
+```
+
 
 ## Binding
 
