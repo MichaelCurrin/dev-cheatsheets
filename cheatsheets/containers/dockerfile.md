@@ -39,11 +39,61 @@ If the directory does not exist, you must create it.
 
 I read that using absolute paths is preferred in a container over a path like `~/foo`.
 
-## Running commands
+
+## Copy
+
+Use the `COPY` command directories into an image. 
+
+
+```Dockerfile
+COPY SRC DEST
+```
+
+Note that the source path is relative to the build context (usually the root of your repo). You **cannot** use any relative or absolute paths outside the context, such as paths like `/`, `..` or `~/`.
+
+
+e.g.
+
+```Dockerfile
+COPY . .
+COPY src .
+COPY package*.json .
+COPY foo /bar/
+COPY foo /root/bar/
+```
+
+Using absolute destinations is preferred. So avoid using `~/bar`, though it can actually work to point to the root user's home.
+
+You can also set the working directory in the image before your copy steps, to avoid using the prefix each time.
+
+```Dockerfile
+MKDIR /root/app
+WORKDIR /root/app
+
+COPY . .
+```
+
+Note that this works differently to the plain `cp` command - the contents of the source directory are copied, not the directory itself.
+
+So to keep the destination as `lib`, why you would use `COPY lib lib` rather than `COPY lib .`
+
+See also the older `ADD` command which is not used as much. It allows referencing a zip file on a URL, but the preferred way in the docs is to use `curl` and `tar` in a `RUN` command.
+
+See [Add vs Copy](https://phoenixnap.com/kb/docker-add-vs-copy) article.
+
+See in the docs:
+
+- [COPY](https://docs.docker.com/engine/reference/builder/#copy)
+- [ADD](https://docs.docker.com/engine/reference/builder/#add)
+
+See also `docker cp` as a CLI command to copy a file into a container rather than using `COPY` for building the image.
+
+
+## Run commands
 
 The [Run](#run) syntax to run in the shell at image build time. 
 
-See the [Command](#command) or [Entry](#entrypoint) sections for changing what a container exeucts
+See the [Command](#command) or [Entry](#entrypoint) sections for changing what a container executes.
 
 ### Run
 
@@ -81,7 +131,6 @@ RUN ["/bin/bash", "-c", "echo Hello"]
 # You must use the subshell in exec form to evaluate variables.
 RUN [ "sh", "-c", "echo $HOME" ]
 ```
-
 
 ### Command
 
@@ -155,4 +204,3 @@ Set default parameters for `ENTRYPOINT`:
 ```Dockerfile
 CMD ["param1", "param2"]   
 ```
-
