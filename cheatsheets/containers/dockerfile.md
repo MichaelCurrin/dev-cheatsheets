@@ -49,9 +49,6 @@ Use the `COPY` command directories into an image.
 COPY SRC DEST
 ```
 
-Note that the source path is relative to the build context (usually the root of your repo). You **cannot** use any relative or absolute paths outside the context, such as paths like `/`, `..` or `~/`.
-
-
 e.g.
 
 ```Dockerfile
@@ -88,6 +85,14 @@ See in the docs:
 
 See also `docker cp` as a CLI command to copy a file into a container rather than using `COPY` for building the image.
 
+Note that the source path is relative to the build context (usually the root of your repo). You **cannot** use any relative or absolute paths outside the context, such as paths like `/`, `..` or `~/`.
+
+If you want to copy from outside the project:
+
+```sh
+cd ..
+docker build -t my-app -f src/Dockerfile .
+```
 
 ## Run commands
 
@@ -134,7 +139,7 @@ RUN [ "sh", "-c", "echo $HOME" ]
 
 ### Command
 
-[CMD](https://docs.docker.com/engine/reference/builder/#cmd) doc reference.
+See [CMD](https://docs.docker.com/engine/reference/builder/#cmd) doc reference.
 
 The main purpose of a `CMD` is to provide defaults for an executing container.
 
