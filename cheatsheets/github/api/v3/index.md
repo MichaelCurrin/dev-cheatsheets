@@ -1,7 +1,8 @@
 ---
 layout: listing
 ---
-# GitHub API V3
+# V3
+> About the GitHub V3 REST API
 
 
 ## Resources
