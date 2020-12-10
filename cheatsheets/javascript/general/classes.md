@@ -6,9 +6,9 @@ Based on an example in the TypeScript docs [Classes](https://www.typescriptlang.
 
 This converts modern class code to the equivalent in old JS before a `class` existed.
 
-### Modern syntax
+### Class syntax
 
-For ES2015 onwards.
+For ES6 onwards.
 
 ```typescript
 class Greeter {
@@ -27,6 +27,8 @@ let greeter = new Greeter("world");
 ```
 
 ### Object syntax
+
+For ES5 and older.
 
 ```javascript
 "use strict";
