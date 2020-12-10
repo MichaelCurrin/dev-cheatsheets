@@ -18,7 +18,7 @@ When formatting a URL to request, ensure you escape it. For example `#` would tu
 ### Ignore invalid cert
 
 ```sh
-curl -k URL
+$ curl -k URL
 ```
 
 ### Request multiple files
@@ -26,10 +26,10 @@ curl -k URL
 Example below with braces expansion supported by curl - more succinct than writing a `for` loop. Note characters are escaped (some shells like ZSH will do this for you).
 
 ```sh
-curl 'http:example.com/{foo,bar}#baz'
+$ curl 'http:example.com/{foo,bar}#baz'
 
-# OR
-curl http:example.com/\{foo,bar\}\#baz
+$ # OR
+$ curl http:example.com/\{foo,bar\}\#baz
 ```
 
 ### Resources
@@ -86,7 +86,7 @@ curl 'http://example.com/{foo.html,bar.html}' -O
 
 ### POST reuqest
 
-The `-X POST` flag is implied.
+The `-X POST` flag is implied if you add data.
 
 #### Send form data
 
@@ -95,11 +95,11 @@ The `-X POST` flag is implied.
 ```
 
 ```sh
-curl http://example.com -d 'foo=bar,fizz=buzz'
+$ curl http://example.com \
+    -d 'foo=bar,fizz=buzz'
 ```
 
 Use `-G` to send data via get.
-
 
 #### Send JSON data
 
@@ -110,9 +110,10 @@ Use `-G` to send data via get.
 Example:
 
 ```sh
-curl http://example.com -d '{"foo": "bar", "fizz": "buzz"}' -H "Content-Type: application/json"
+$ curl http://example.com \
+    -d '{"foo": "bar", "fizz": "buzz"}' \
+    -H "Content-Type: application/json"
 ```
-
 
 #### Upload a file
 
@@ -123,7 +124,8 @@ curl http://example.com -d '{"foo": "bar", "fizz": "buzz"}' -H "Content-Type: ap
 Example
 
 ```sh
-curl -d @file.txt http:example.com
+$ curl http:example.com \
+    -d @file.txt
 ```
 
 #### Headers
@@ -182,13 +184,13 @@ http -f POST httpbin.org/post hello=World
 Debian/Ubuntu:
 
 ```sh
-sudo apt-get install wget
+$ sudo apt-get install wget
 ```
 
 macOS:
 
 ```sh
-brew install wget
+$ brew install wget
 ```
 
 ### Usage
