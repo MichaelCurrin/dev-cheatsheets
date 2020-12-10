@@ -6,12 +6,11 @@ ECMAScript (or JavaScript) is just a specification. One gets published every yea
 
 ## Compare releases
 
-See [ESNext](https://www.javascripttutorial.net/es-next/) on the JavaScript Tutorial website.
+See the [ESNext](https://www.javascripttutorial.net/es-next/) on the JavaScript Tutorial website. The term "ESNext" just means the next release, it is not a fixed name.
 
-It compares releases in order, with a short write-up for each. Further down, there is a table of ES1 to the latest version.
+That page compares releases in order, with a short write-up for each. Further down, there is a table of ES1 to the latest version.
 
 Here are the most recent rows. I left off the release date, as the official name also tells you the year at least (since ES5.1 that is).
-
 
 Edition	| Official name	
 ---     | ---           
