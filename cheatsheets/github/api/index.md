@@ -1,4 +1,5 @@
 ---
 layout: listing
 ---
-# GitHub API
+# API
+> About the GitHub APIs
