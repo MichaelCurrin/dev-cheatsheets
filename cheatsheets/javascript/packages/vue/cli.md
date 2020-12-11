@@ -15,6 +15,8 @@ That will be installed as `vue` in your `package.json` packages.
 
 ## Vue command
 
+Note, you cannot run `npx vue -h`. But you can run `npx @vue/cli -h`
+
 ### Help
 
 ```sh
@@ -47,6 +49,8 @@ Commands:
 
 ### Create
 
+See [Creating a project](https://cli.vuejs.org/guide/creating-a-project.html) in the docs. That covers the `create` and `ui` commands.
+
 If you have Vue installed globally.
 
 ```sh
@@ -61,6 +65,8 @@ $ npx @vue/cli create --default my-project
 ```
 
 ### UI
+
+Start the Vue GUI tool.
 
 ```sh
 $ npx @vue/cli ui
