@@ -1,18 +1,19 @@
-# Vue
-
-See also [Vue JS Quickstart](https://github.com/MichaelCurrin/vue-js-quickstart) repo.
+# CLI
 
 
 ## Install
 
-Optionall use `--global` flag.
+Optionally use the `--global` flag.
 
 ```sh
-$ npm i vue
+$ vue install @vue/cli
+$ yarn add @vue/cli
 ```
 
+That will be installed as `vue` in your `package.json` packages.
 
-## Usage
+
+## Help
 
 
 ```sh
@@ -41,4 +42,51 @@ Commands:
   info                                       print debugging information about your environment
 
   Run vue <command> --help for detailed usage of given command.
+```
+
+
+
+## Commands
+
+```sh
+$ vue --help
+$ vue create
+$ vue ui
+```
+
+Run without Vue installed globally or in your project. This is useful for setting up a new project.
+
+```sh
+$ npx vue create my-app
+$ npx @vue/cli create --default my-project
+```
+
+## Vue CLI Service
+
+You can run this after `vue` is installed.
+
+Usually as an NPM script but also available as `npx vue-cli-service COMMAND`
+
+### Start dev server
+
+```sh
+$ vue-cli-service serve
+```
+
+### Build
+
+```sh
+$ # Clean.
+$ vue-cli-service build
+$ # Don't clean.
+$ vue-cli-service build --no-clean
+```
+
+### Lint
+
+```sh
+$ # Fix
+$ vue-cli-service lint
+$ # Don't fix.
+$ vue-cli-service lint --no-fix
 ```
