@@ -1,5 +1,5 @@
 ---
 layout: listing
+logo: vue-dot-js
 ---
-# Packages
-> Guide to JavaScript packages aka libraries
+# Vue
