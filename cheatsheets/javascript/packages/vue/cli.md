@@ -13,8 +13,9 @@ $ yarn add @vue/cli
 That will be installed as `vue` in your `package.json` packages.
 
 
-## Help
+## Vue command
 
+### Help
 
 ```sh
 $ vue -h
@@ -44,28 +45,57 @@ Commands:
   Run vue <command> --help for detailed usage of given command.
 ```
 
+### Create
 
-
-## Commands
+If you have Vue installed globally.
 
 ```sh
-$ vue --help
 $ vue create
-$ vue ui
 ```
 
-Run without Vue installed globally or in your project. This is useful for setting up a new project.
+Without Vue installed globally. This is useful for setting up a new project as this works even if Vue is not installed anywhere.
 
 ```sh
-$ npx vue create my-app
+$ npx @vue/cli create my-app
 $ npx @vue/cli create --default my-project
 ```
 
-## Vue CLI Service
+### UI
 
-You can run this after `vue` is installed.
+```sh
+$ npx @vue/cli ui
+```
 
-Usually as an NPM script but also available as `npx vue-cli-service COMMAND`
+## CLI Service
+
+See [CLI Service](https://cli.vuejs.org/guide/cli-service.html) command docs.
+
+Available by installing `@vue/cli-service`. But I think installing `vue` is sufficient.
+
+Run it as an NPM script.
+
+Or as
+
+```sh
+$ npx vue-cli-service COMMAND
+```
+
+### Help
+
+```
+Usage: vue-cli-service serve [options] [entry]
+
+Options:
+
+  --open         open browser on server start
+  --copy         copy url to clipboard on server start
+  --mode         specify env mode (default: development)
+  --host         specify host (default: 0.0.0.0)
+  --port         specify port (default: 8080)
+  --https        use https (default: false)
+  --public       specify the public network URL for the HMR client
+  --skip-plugins comma-separated list of plugin names to skip for this run
+```
 
 ### Start dev server
 
