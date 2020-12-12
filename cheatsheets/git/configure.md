@@ -1,4 +1,5 @@
-# Configure git
+# Configure
+> How to configure git
 
 
 ## Edit directly
