@@ -3,7 +3,11 @@
 
 You probably don't need this command.
 
-If you need to prune deleted remote-tracking branches, see the [Prune Branches]({{ site.baseurl }}{% link cheatsheets/git/prune-braches.md %} page.
+From the help:
+
+> In most cases, users should run `git gc`, which calls `git prune`.
+
+If you want to know hw clean-up refereces to remote-tracking branches, see the [Prune Branches]({{ site.baseurl }}{% link cheatsheets/git/prune-braches.md %} page.
 
 
 ## Tutorial
