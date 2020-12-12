@@ -193,3 +193,5 @@ Or configure the branch then push.
 $ git branch --set-upstream-to=origin/my-feature my-feature
 $ git push
 ```
+
+There is a way to configure git to always set the upstream for you. But I think it is better to have more control, such as to avoid recreating a branch you deleted. You'll get an error when pushing and can stop and think if you are on the right branch.
