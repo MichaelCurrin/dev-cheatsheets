@@ -1,5 +1,6 @@
 # Branches
 
+
 ## View
 
 ### Basic
@@ -11,6 +12,13 @@ $ git branch
   foo
 * bar
   master
+```
+
+Get the current branch.
+
+```sh
+$ git branch --show-current
+bar
 ```
 
 ### Verbose
@@ -161,3 +169,27 @@ $ git push -d origin BRANCH_NAME
 This works on branches and tags.
 
 This has no effect on the local branch or tag.
+
+
+## Set upstream
+
+This is needed the first time pushing an new branch created locally.
+
+```sh
+$ git checkout -b my-feature
+```
+
+Use the `--set-upstream` flag when pushing.
+
+```sh
+$ git push -u origin my-feature
+$ # Or
+$ git push -u origin $(git branch --show-current)
+```
+
+Or configure the branch then push.
+
+```sh
+$ git branch --set-upstream-to=origin/my-feature my-feature
+$ git push
+```
