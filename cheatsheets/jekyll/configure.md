@@ -1,4 +1,4 @@
-# Config
+# Configure
 > How to setup a config file for Jekyll
 
 Jekyll docs reference - [Config options](https://jekyllrb.com/docs/configuration/options/). That covers both CLI and config file options together.
@@ -6,7 +6,7 @@ Jekyll docs reference - [Config options](https://jekyllrb.com/docs/configuration
 
 ## Load multiple configs
 
-Use a comma and no spaces to separate.
+Use a comma and no spaces.
 
 ```sh
 $ bundle exec jekyll build --trace \
@@ -134,3 +134,44 @@ Or:
 exclude:
   - sample*.png
 ```
+
+
+## Check for Liquid errors
+
+Add strict Liquid settings so Jekyll will fail on bad syntax.
+
+From [Liquid Options](https://jekyllrb.com/docs/configuration/liquid/) in the docs.
+
+Change error mode from `warn` to `strict`. And also make invalid variables and filters cause errors.
+
+```yaml
+liquid:
+  error_mode: strict
+  strict_variables: true
+  strict_filters: true
+```
+
+Note that this also applies to the code in your theme.
+
+This can be annoying - for example the Minima theme's `post.html` layout uses `site.minima.date_format` and `site.disqus.short_name` as optional config values. So to do a build, you have to set them as empty in your config, or override the layout. 
+
+And it is not safe to set the entire `site.minima` to null for example, as you might affect other values used by the theme. Plus that is not actually effective because you get the error anyway on the last level.
+
+This works though:
+
+```yaml
+minima:
+  date_format:
+disqus:
+  shortname:
+```
+
+Also set this on your `index.md` and `404.html`
+
+```yaml
+title:
+```
+
+I had issues in other parts of my `jekyll-blog-demo` repo so I stopped using all the strict settings.
+
+
