@@ -33,6 +33,7 @@ Use a `for` loop on pages or a collection.
 {% endfor %}
 ```
 
+
 ## Liquid tags
 
 Use a Jekyll Liquid tag link to link to page rather than by URL. This is great for reliability, as means you will get an error if a link is invalid.
@@ -110,5 +111,16 @@ This paragraph covers [CircleCI][0], [GitHub][1] and also [Bitbucket][2].
 [0]: https://circleci.com/
 [1]: https://github.com/
 [2]: https://bitbucket.org/
+
+
+## Open in new window
+
+This uses a feature of Kramdown, so you don't need an extra plugin.
+
+```md
+[Foo](https://jekyllrb.com){:target="_blank"}
+```
+
+This as adds `target="_blank"` to the `a` tag.
 
 {% endraw %}
