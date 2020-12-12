@@ -1,12 +1,15 @@
-# Git viewing
+# View
+> How to view git objects like commits and tags
+
 
 ## Links
 
 - [Pretty formats](https://git-scm.com/docs/pretty-formats)
 
+
 ## Tags
 
-## Simple
+### Simple
 
 ```
 $ git tags
@@ -19,7 +22,7 @@ v0.1.0
 v0.2.0
 ```
 
-## View tags and date
+### View tags and date
 
 Optionally add commit message.
 
