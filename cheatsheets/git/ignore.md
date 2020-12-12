@@ -1,4 +1,6 @@
-# Git ignore
+# Ignore
+> Reference for the git ignore file
+
 
 ## JavaScript
 
@@ -15,8 +17,6 @@ build/
 ```
 
 ### Env file
-
-
 
 ```
 .env.local
