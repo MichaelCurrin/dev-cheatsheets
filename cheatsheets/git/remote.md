@@ -1,21 +1,71 @@
-# Git remote
+# Remote
 
-## New repo
-
-After creating a repo on GitHub
-
-Clone it.
-
-Or add the remote to an existing local git repo.
+## Change remote
 
 ```sh
-git remote add origin git@github.com:MichaelCurrin/cheatsheets.git
+$ git remote set-url origin git@github.com:MichaelCurrin/cheatsheets.git
 ```
 
-If there are no commits yet, you won't be able to do  a pull, so you can just commit and push.
+## Add remote to a new repo
 
-If there are commits, you can pull but you need to include the remote name and branch.
+When you setup a repo like this, you won't have any remotes.
 
 ```sh
-git pull origin master
+$ git init
+```
+
+This should give nothing.
+
+```sh
+$ git remote -v
+```
+
+Add a remote.
+
+```sh
+$ git remote add origin git@github.com:MichaelCurrin/dev-cheatsheets.git
+```
+
+You can commit and push now. 
+
+You need to include the remote name and branch the first time you pull. Note you'll get an error doing a pull on an empty remote.
+
+```sh
+$ git pull origin master
+```
+
+Then just:
+
+```sh
+$ git pull
+```
+
+Note that if you use VS Code to push, it will create the repo for you on GitHub without having to go through the GitHub UI.
+
+### Add remote for a fork
+
+Give you have forked a repo and cloned it and it has this remote setup:
+
+- `origin git@github.com:MichaelCurrin/dev-cheatsheets.git`.
+
+If you want to pull in changes from the original repo into your fork, you can do this. The name `upstream` is a common name to use.
+
+```sh
+$ git remote add upstream git@github.com:SomeUsername/dev-cheatsheets.git`.
+```
+
+```sh
+$ git checkout master
+```
+
+```sh
+$ git pull upstream master
+$ # Or
+$ git reset --hard upstream master
+```
+
+Push your local commits to your fork.
+
+```sh
+$ git push
 ```
