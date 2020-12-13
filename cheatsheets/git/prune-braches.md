@@ -17,13 +17,13 @@ You can clean this up in your local reference to remote branches using pruning a
 
 ## Commands
 
-Both approaches below should give the same results. 
+Both approaches below should give the same results.
 
 They both require an internet connection, to check on the status of remote branches on GitHub.
 
 ### Prune remote
 
-This does a `git fetch` internally, which is does not long. 
+This does a `git fetch` internally, which is does not long.
 
 ```sh
 $ git remote prune origin
@@ -37,7 +37,10 @@ The remote name `origin` is implied here.
 
 ```sh
 $ git fetch --prune
+$ # Or
+$ git pull --prune
 ```
+
 
 From the help:
 
