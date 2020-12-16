@@ -1,7 +1,12 @@
 # Configure
-> How to setup a config file for Jekyll
+> How to configure Jekyll
+
+
+## Resources
 
 Jekyll docs reference - [Config options](https://jekyllrb.com/docs/configuration/options/). That covers both CLI and config file options together.
+
+[Default config](https://jekyllrb.com/docs/configuration/default/) values.
 
 
 ## Load multiple configs
@@ -10,7 +15,7 @@ Use a comma and no spaces.
 
 ```sh
 $ bundle exec jekyll build --trace \
-		--config _config.yml,_config_prod.yml
+  --config _config.yml,_config_prod.yml
 ```
 
 
