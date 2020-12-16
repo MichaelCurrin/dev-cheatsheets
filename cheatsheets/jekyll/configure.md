@@ -4,9 +4,10 @@
 
 ## Resources
 
-Jekyll docs reference - [Config options](https://jekyllrb.com/docs/configuration/options/). That covers both CLI and config file options together.
+Jekyll docs.
 
-[Default config](https://jekyllrb.com/docs/configuration/default/) values.
+- [Configuration options](https://jekyllrb.com/docs/configuration/options/). That covers both CLI and config file options together.
+- [Default config](https://jekyllrb.com/docs/configuration/default/) values.
 
 
 ## Load multiple configs
