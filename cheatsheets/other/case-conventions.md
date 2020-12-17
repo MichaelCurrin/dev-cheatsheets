@@ -6,7 +6,7 @@
 An overview of the main naming styles in use.
 
 - `snake_case` - [Wikipedia](https://en.wikipedia.org/wiki/Snake_case)
-- `SCREAMING_SNAKE_CASE`
+- `SCREAMING_SNAKE_CASE` - i.e. all caps, with underscores.
 - `camelCase` - [Wikipedia](https://en.wikipedia.org/wiki/Camel_case)
 - `PascalCase`
 - `kebab-case`
