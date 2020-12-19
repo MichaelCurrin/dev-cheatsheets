@@ -9,8 +9,10 @@ For example, from:
 
 ```diff
 {
+  "dependencies": {
 -  "foo": "^1.0.0"
 +  "@bar/foo": "^1.0.0"
+  }
 }
 ```
 
@@ -34,8 +36,10 @@ Which makes this change:
 
 ```diff
 {
+  "dependencies": {
 -  "foo": "^1.0.0"
-+  "foo": "npm:@buzz/foo@^1.0.0",
++  "foo": "npm:@buzz/foo@^1.0.0"
+  }
 }
 ```
 
