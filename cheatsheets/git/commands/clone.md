@@ -1,7 +1,7 @@
-# Clone
+# clone
 
 
-# Default
+## Default
 
 ```sh
 $ git clone URL
