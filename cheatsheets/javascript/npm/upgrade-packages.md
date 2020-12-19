@@ -30,6 +30,8 @@ sirv-cli              1.0.3   1.0.3   1.0.6  preact-quickstart
 
 ## Upgrade packages
 
+### Upgrade within bounds
+
 From the [npm update](https://docs.npmjs.com/cli/update) command's docs.
 
 > This command will update all the packages listed to the latest version (specified by the tag config), respecting semver.
@@ -37,6 +39,7 @@ From the [npm update](https://docs.npmjs.com/cli/update) command's docs.
 ```sh
 $ npm update
 ```
+
 Or the longer.
 
 ```sh
@@ -47,19 +50,48 @@ For global packages, add `-g`.
 
 Optionally supply package names as arguments.
 
-Note that the above command will still stick with your bounds of tilde and caret.
+For example, this might change as follows:
+
+```
+- "foo": "^1.0.0"
++ "foo": "^1.2.3"
+```
+
+But, the package will **remain** within the initial bounds. So the command here would not upgrade from `1` to `2`. See below for that.
 
 ### Newest
 
-If you want to install the latest available.
+Install to the latest package available.
 
-Use NPM install. I Leave off the version number.
+#### Use `npm install`
 
 ```sh
 $ npm install PACKAGE
+$ # e.g.
+$ npm install react
 ```
 
-You can upgrade multiple packages at once using a 3rd-party package. 
+This will ignore any existng any bounds for the package (such as `^1.0.0`). 
+
+But it will still honor other packages which have a peer dependency on certain versions of this package. In one case, I actually ended up downgrading from Vue 3 to Vue 2 instead of getting the latest Vue 3, because of another dependency needing Vue 2.
+
+You might put in a specific version, or get the latest available. I've seen `@latest` and `@next` recommended in install instructions. Those are aliases which point to the latest release version. e.g.
+
+```sh
+$ npm install react@17.0.0
+$ npm install react@latest
+$ npm install react@next
+```
+
+Repeat for all your outdated packages as separate commands or all in one. e.g.
+
+```sh
+$ npm install react react-dom
+```
+
+### Use the `npm-upgrade` package
+
+If you use this 3rd-party package, you can upgrade multiple packages and once and use the interactive view.
 
 See [npm-upgrade](https://www.npmjs.com/package/npm-upgrade) homepage and docs.
 
