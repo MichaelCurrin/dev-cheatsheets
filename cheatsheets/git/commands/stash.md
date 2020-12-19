@@ -14,25 +14,25 @@ Note you cannot stash on a repo with no commits.
 Create stash.
 
 ```sh
-git stash
+$ git stash
 ```
 
 
-Stash everything, track and not, without using `add`.
+Stash everything, tracked or not.
 
 ```sh
-git stash --include-untracked
+$ git stash --include-untracked
 ```
 
 Or use `add` if you need to include untracked files then stash.
 
 ```sh
-git add .
-git stash
+$ git add .
+$ git stash
 ```
 
 ```sh
-git stash save 'Name of stash'
+$ git stash save 'Name of stash'
 ```
 
 
@@ -41,7 +41,7 @@ git stash save 'Name of stash'
 List stashes
 
 ```sh
-git stash list
+$ git stash list
 ```
 e.g.
 ```
@@ -53,31 +53,50 @@ stash@{3}: WIP on master: a5a067af Commit message
 Show stashed file list.
 
 ```sh
-git stash show [STASH_REF]
+$ git stash show [STASH_REF]
 ```
 
 Show stashed diff.
 
 ```sh
-git stash show [STASH_REF] -p
+$ git stash show [STASH_REF] -p
 ```
+
 
 ## Unstash
 
 Apply and remove.
 
 ```sh
-git stash pop [STASH_REF]
+$ git stash pop [STASH_REF]
 ```
 
 Apply without removing.
 
 ```sh
-git stash apply [STASH_REF]
+$ git stash apply [STASH_REF]
 ```
 
 Remove without applying.
 
 ```sh
-git stash drop [STASH_REF]
+$ git stash drop [STASH_REF]
 ```
+
+
+## Split changed files
+
+If you have say 10 files changed and you want to stash just some of them, you can do this.
+
+1. Stage the files you want to stage.
+    ```sh
+    $ git add foo
+    ```
+1. Stash only staged files using the `--keep-index` flag.
+    ```sh
+    $ git stash -k
+    ```
+1. Optionally, you can now can stash the files which were not staged, so you'll end up with two stashes.
+    ```sh
+    $ git stash
+    ```
