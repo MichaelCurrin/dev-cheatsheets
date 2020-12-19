@@ -1,7 +1,7 @@
 ---
 description: How to run shell scripts
 ---
-# Execution
+# Executre
 
 
 The `.sh` extension is not necessary but is common when the script contains Bash or ZSH code.
@@ -54,7 +54,11 @@ Note that `.` is an alias for `source`.
 $ . persist.sh
 ```
 
-In scripting such as for setting up NVM, I've seen `.` escaped as `\.`.
+If you use using `/bin/sh` (such as in a Makefile or cronjob), on Ubuntu that `dash`. Which means you cannot use `source` and also you need to make the path relative. So use this:
+
+```sh
+$ . ./persist.sh
+```
 
 You can use arguments too.
 
