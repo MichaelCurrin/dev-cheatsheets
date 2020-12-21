@@ -56,7 +56,7 @@ Welcome to **Dev Cheatsheets** - a quick reference for showing you how to use a 
 ### Command-line
 
 <div class="flex-container">
-    <a href="{{ site.baseurl }}{% link cheatsheets/git/index.md %}">
+    <a href="{{ site.baseurl }}{% link cheatsheets/version-control/git/index.md %}">
         <div>
             {% include logo.html name="git" %}
             <span>Git</span>

@@ -7,7 +7,7 @@ From the help:
 
 > In most cases, users should run `git gc`, which calls `git prune`.
 
-If you want to know hw clean-up refereces to remote-tracking branches, see the [Prune Branches]({{ site.baseurl }}{% link cheatsheets/git/prune-braches.md %} page.
+If you want to know hw clean-up refereces to remote-tracking branches, see the [Prune Branches]({{ site.baseurl }}{% link cheatsheets/version-control/git/prune-braches.md %} page.
 
 
 ## Tutorial
@@ -16,7 +16,7 @@ See [git prune](https://www.atlassian.com/git/tutorials/git-prune) tutorial in t
 
 > The git prune command is an internal housekeeping utility that cleans up unreachable or "orphaned" Git objects.
 >
-> Unreachable objects are those that are inaccessible by any refs. 
+> Unreachable objects are those that are inaccessible by any refs.
 >
 > Any commit that cannot be accessed through a branch or tag is considered unreachable. git prune is generally not executed directly. Prune is considered a garbage collection command and is a child command of the `git gc` command.
 

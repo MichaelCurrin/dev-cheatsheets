@@ -312,7 +312,7 @@ e.g.
 
 ```sh
 $ git diff name-status
-M       cheatsheets/git/commands/status.md
+M       cheatsheets/version-control/git/commands/status.md
 ```
 
 ### Hook
