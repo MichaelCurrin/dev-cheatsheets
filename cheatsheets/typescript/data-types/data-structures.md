@@ -1,43 +1,22 @@
-
-# Data types
-
-## Basic
-
-```typescript
-any
-void
-
-boolean
-number
-string
-
-null
-undefined
-unknown
-
-never  /* unreachable */
-```
-
-### Unknown
-
-```typescript
-let foo: unknown = 4;
-foo = "maybe a string instead";
-foo = false;
-```
+# Data structures
 
 
-## Data structures
-
-### Array
+## Array
 
 ```typescript
 string[]
-// Or
-Array<string>
+number[]
 ```
 
-### Tuple
+Or the longer:
+
+```typescript
+Array<string>
+Array<number>
+```
+
+
+## Tuple
 
 ```typescript
 [string, number]
@@ -57,7 +36,8 @@ interface Foo {
 }
 ```
 
-### Dictionary
+
+## Dictionary
 
 ```typescript
 let foo: { [s: string]: string } = {}
@@ -67,7 +47,8 @@ let foo: { [s: string]: string } = {}
 type Name = string | string[]
 ```
 
-### Enum
+
+## Enum
 
 See the [Enum](https://www.typescriptlang.org/docs/handbook/enums.html) section in the TS docs. This can get complicated for dynamic lookup. In particular see the [const enums](https://www.typescriptlang.org/docs/handbook/enums.html#const-enums) section.
 
@@ -197,112 +178,4 @@ enum COLOR {
 
 const c = Enum.Red;
 const nameOfRed = Enum[c]; // "Red"
-```
-
-
-## Unions
-
-See [Union and intersections](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html) in the docs.
-
-See the sections in this guide on [Type aliases](#type-aliases) and [Intersections](#intersections).
-
-Declare a set of allowed types.
-
-```typescript
-string | boolean
-```
-
-For example, allow a variable to be of allowed types so you assign to either or even change.
-
-```typescript
-let foo: string | boolean;
-foo = 'a';
-foo = 10;
-```
-
-
-TypeScript infers types on initialization, not assignment.
-
-So this is valid but won't give you any validation or intellisense as the type of `foo` is `any`.
-
-```typescript
-let foo;
-foo = 10;
-foo = 'a';
-```
-
-
-## Type aliases
-
-See [Type aliases](https://www.typescriptlang.org/docs/handbook/advanced-types.html#type-aliases) under Advanced Types in the docs.
-
-> Type aliases create a new **name** for a type. Type aliases are sometimes similar to interfaces, but can name primitives, unions, tuples, and any other types that you’d otherwise have to write by hand.
-
-> Aliasing doesn’t actually create a new type - it creates a **new name** to refer to that type. Aliasing a primitive is **not terribly useful**, though it can be used as a form of documentation.
-
-### Basic
-
-Format:
-
-```typescript
-type VARIABLE_NAME = TYPE
-```
-
-Using a primitive.
-
-```typescript
-type Second = number;
-
-let timeInSecond: number = 10;
-let time: Second = 10;
-```
-
-Using a data structure.
-
-```typescript
-type Animal = {
-  name: string
-}
-```
-
-### Generic
-
-```typescript
-type Container<T> = { value: T };
-```
-
-
-### Types alias of primitives
-
-```typescript
-type Fuzz = string | boolean
-```
-
-### Type alias of types
-
-```typescript
-type Foo = {
-  name: "string"
-};
-
-type Bar = {
-  name: "string"
-};
-
-type Person = Foo | Bar;
-```
-
-### Type alias of interfaces
-
-
-```typescript
-interface Foo {
-  name: "string"
-};
-
-interface Bar {
-  name: "string"
-};
-
-type Person = Foo | Bar;
 ```
