@@ -3,4 +3,4 @@ logo: typescript
 ---
 # TypeScript
 
-See the [TypeScript]({{ site.baseurl }}{% link cheatsheets/typescript/index.md %}) section of this project.
+Jump to out of this JS section to the [TypeScript]({{ site.baseurl }}{% link cheatsheets/typescript/index.md %}) section.
