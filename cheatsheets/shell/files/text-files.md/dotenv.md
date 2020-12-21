@@ -22,4 +22,4 @@ fi
 
 See also in my cookbook:
 
-- [dotenv](https://github.com/MichaelCurrin/code-cookbook/blob/master/recipes/shell/dotenv.md)
+- [dotenv](https://michaelcurrin.github.io/code-cookbook/recipes/shell/dotenv.html)

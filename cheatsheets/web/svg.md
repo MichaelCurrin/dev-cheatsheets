@@ -85,10 +85,7 @@ svg {
 }
 ```
 
-On my pages here, my SVG is placed inside an anchor tag and so it matches the anchor tag's colors. Which is blue initially and then black when you hover over it.
-
-- [Cheatsheets](https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/)
-- [Cookbook](https://michaelcurrin.github.io/code-cookbook/recipes/)
+On this site, my SVG is placed inside an anchor tag and so it matches the anchor tag's colors. Which is blue initially and then black when you hover over it.
 
 
 ### Current color in CSS
