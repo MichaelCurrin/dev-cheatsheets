@@ -2,7 +2,7 @@
 layout: listing
 description: How to export and import modules in Node
 ---
-# Modules
+# Exports and imports
 
 
 - [Modules](https://nodejs.org/api/modules.html) in the Node docs
