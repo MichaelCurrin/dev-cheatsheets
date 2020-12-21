@@ -1,10 +1,11 @@
 # Interfaces vs Types aliases
 
-See the [Type aliases](#type-aliases) and [Interfaces](#interfaces) sections sections.
+See the Type Aliases and Interfaces sections.
 
 See [blog post](https://blog.logrocket.com/types-vs-interfaces-in-typescript/).
 
 Examples from [docs](https://www.typescriptlang.org/docs/handbook/advanced-types.html#interfaces-vs-type-aliases)
+
 
 ## Extending
 

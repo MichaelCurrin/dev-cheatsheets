@@ -1,4 +1,4 @@
-# Declare a variable
+# Variables
 
 Set type initially then change value.
 
@@ -12,6 +12,7 @@ Or:
 ```typescript
 let foo = true
 ```
+
 Types can be inferred but you can also do:
 
 ```typescript
