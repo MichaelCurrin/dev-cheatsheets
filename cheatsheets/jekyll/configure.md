@@ -38,7 +38,7 @@ Note that YAML uses `null`, while Ruby uses `nil`.
 
 From the [docs](https://jekyllrb.com/docs/plugins/installation/), a gem listed in the `:jekyll_plugins` group of the `Gemfile` will **always** get activated, even if it is not listed in the `plugins` field of the config.
 
-Therefore you can generally **omit** this key. 
+Therefore you can generally **omit** this key.
 
 This works both locally and on GH Pages, using a theme directly or using Remote Theme plugin.
 
@@ -149,7 +149,7 @@ Add strict Liquid settings so Jekyll will fail on bad syntax.
 
 From [Liquid Options](https://jekyllrb.com/docs/configuration/liquid/) in the docs.
 
-Change error mode from `warn` to `strict`. And also make invalid variables and filters cause errors.
+Change the error mode from `warn` to `strict`. And make any invalid variables and filters cause build errors.
 
 ```yaml
 liquid:
@@ -158,9 +158,13 @@ liquid:
   strict_filters: true
 ```
 
-Note that this also applies to the code in your theme.
+These are mutually exclusive settings according to the docs. Though my YAML linter doesn't like having the 1st line and the last 2 lines together.
 
-This can be annoying - for example the Minima theme's `post.html` layout uses `site.minima.date_format` and `site.disqus.short_name` as optional config values. So to do a build, you have to set them as empty in your config, or override the layout. 
+You may have issues caused by your _theme_ and not your actual code
+
+Which you'll have to leave out some fields covered above.
+
+Or you adjust for it. For example, the Minima theme's `post.html` layout uses `site.minima.date_format` and `site.disqus.short_name` as optional config values. So to do a build, you have to set them as empty in your config, or override the layout.
 
 And it is not safe to set the entire `site.minima` to null for example, as you might affect other values used by the theme. Plus that is not actually effective because you get the error anyway on the last level.
 
@@ -180,5 +184,3 @@ title:
 ```
 
 I had issues in other parts of my `jekyll-blog-demo` repo so I stopped using all the strict settings.
-
-
