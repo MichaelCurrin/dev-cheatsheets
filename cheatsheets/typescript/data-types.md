@@ -26,6 +26,7 @@ foo = "maybe a string instead";
 foo = false;
 ```
 
+
 ## Data structures
 
 ### Array
@@ -198,6 +199,7 @@ const c = Enum.Red;
 const nameOfRed = Enum[c]; // "Red"
 ```
 
+
 ## Unions
 
 See [Union and intersections](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html) in the docs.
@@ -210,37 +212,25 @@ Declare a set of allowed types.
 string | boolean
 ```
 
-You can define that as a named type and then use it later.
+For example, allow a variable to be of allowed types so you assign to either or even change.
 
 ```typescript
-type Fuzz = string | boolean
+let foo: string | boolean;
+foo = 'a';
+foo = 10;
 ```
 
-Examples:
+
+TypeScript infers types on initialization, not assignment.
+
+So this is valid but won't give you any validation or intellisense as the type of `foo` is `any`.
 
 ```typescript
-type Foo = {
-  name: "string"
-};
-
-type Bar = {
-  name: "string"
-};
-
-type Person = Foo | Bar;
+let foo;
+foo = 10;
+foo = 'a';
 ```
 
-```typescript
-interface Foo {
-  name: "string"
-};
-
-interface Bar {
-  name: "string"
-};
-
-type Person = Foo | Bar;
-```
 
 ## Type aliases
 
@@ -279,4 +269,40 @@ type Animal = {
 
 ```typescript
 type Container<T> = { value: T };
+```
+
+
+### Types alias of primitives
+
+```typescript
+type Fuzz = string | boolean
+```
+
+### Type alias of types
+
+```typescript
+type Foo = {
+  name: "string"
+};
+
+type Bar = {
+  name: "string"
+};
+
+type Person = Foo | Bar;
+```
+
+### Type alias of interfaces
+
+
+```typescript
+interface Foo {
+  name: "string"
+};
+
+interface Bar {
+  name: "string"
+};
+
+type Person = Foo | Bar;
 ```
