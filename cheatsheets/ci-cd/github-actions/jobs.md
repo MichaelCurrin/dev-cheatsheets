@@ -1,4 +1,4 @@
-# Jobs cheatsheet
+# Jobs
 > Syntax for jobs in GH actions workflow file
 
 {% raw %}
