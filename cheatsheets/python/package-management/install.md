@@ -51,7 +51,6 @@ e.g.
 
 ```sh
 $ pip install 'foo==1.1'
-
 ```
 
 Upgrade to the newest release:
@@ -60,11 +59,13 @@ Upgrade to the newest release:
 $ pip install foo --upgrade
 ```
 
+
 ## Uninstall
 
 ```sh
 $ pip uninstall foo
 ```
+
 
 ## List installed versions
 
@@ -93,15 +94,4 @@ $ pip freeze > requirements.txt
 Note that the this approach is likely to produce a list of packages that are dependencies of your dependencies. So you might want to reduce the lines in the file.
 
 There is no lockfile standard for `pip`. If you use alternative approaches like `pipenv` or `poetry` then you'll get a lockfile separate from the main requirements file.
-<!--stackedit_data:
-eyJkaXNjdXNzaW9ucyI6eyJKcnVCYUZQbUJJelBzbUpjIjp7In
-RleHQiOiJodHRwczovL3B5cGkub3JnL3Byb2plY3QvcGlwLyIs
-ImVuZCI6MjU3LCJzdGFydCI6MjU3fX0sImNvbW1lbnRzIjp7Im
-g4M2tWeFVtUXRYbmxUbXciOnsiZGlzY3Vzc2lvbklkIjoiSnJ1
-QmFGUG1CSXpQc21KYyIsInN1YiI6ImdoOjE4NzUwNzQ1IiwidG
-V4dCI6IkFkZCBsaW5rIiwiY3JlYXRlZCI6MTU4NzQ2Nzc0Mjg2
-Nn0sIjRkMjJWWkxKWm5weGFjbHUiOnsiZGlzY3Vzc2lvbklkIj
-oiSnJ1QmFGUG1CSXpQc21KYyIsInN1YiI6ImdoOjE4NzUwNzQ1
-IiwidGV4dCI6ImRvbmUiLCJjcmVhdGVkIjoxNTg3NDY3Nzc0ND
-E0fX0sImhpc3RvcnkiOlsxNjA0ODc5MzA5XX0=
--->
+
