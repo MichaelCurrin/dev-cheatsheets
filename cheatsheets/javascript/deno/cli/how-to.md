@@ -32,7 +32,13 @@ $ welcome
 Welcome to Deno 🦕
 ```
 
-> Remote code is fetched and cached on first execution, and never updated until the code is run with the `--reload` flag. (So, this will still work on an airplane.)
+Remote code is fetched and cached on first execution, and never updated until the code is run with the `--reload` flag. 
+
+If you need to force a fresh download, can run this. This also rebuilds the std library so can solve errors when switching Deno versions. 
+
+```sh
+$ demo cache --reload my_module.ts
+```
 
 
 ## Upgrade Deno
@@ -45,12 +51,6 @@ Upgrade to a target version.
 
 ```sh
 $ deno upgrade --version 1.2.0
-```
-
-The std packages get installed when you change versions. If you get errors, you can reload the cache for your application.
-
-```sh
-$ demo cache --reload my_app.ts
 ```
 
 
