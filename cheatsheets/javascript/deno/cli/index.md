@@ -1,4 +1,4 @@
 ---
 layout: listing
 ---
-# Deno CLI
+# CLI
