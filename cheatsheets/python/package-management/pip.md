@@ -23,6 +23,7 @@ How to force global install:
 $ PIP_REQUIRE_VIRTUALENV=false pip install PACKAGE
 ```
 
+
 ## Pip commands
 
 - `install PACKAGE`
@@ -32,6 +33,7 @@ $ PIP_REQUIRE_VIRTUALENV=false pip install PACKAGE
 - `install -r REQUIREMENTS_TXT_PATH`
 - `install pip --upgrade`
 - `uninstall PACKAGE`
+
 
 
 ## Ways to access pip
