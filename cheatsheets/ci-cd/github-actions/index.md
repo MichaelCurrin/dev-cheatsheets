@@ -5,9 +5,6 @@ logo: githubactions
 # GitHub Actions
 > Guide to syntax for GitHub Actions workflows
 
-
-## Intro
-
 ### About
 
 This section covers how to use GitHub Actions in a CI/CD flow such as you run automated tests, deploy and publish your repo. All running for free in the cloud whenever the workflow is triggered such as with a push or merged Pull Request.
