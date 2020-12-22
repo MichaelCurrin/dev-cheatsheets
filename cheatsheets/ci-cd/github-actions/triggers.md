@@ -30,7 +30,7 @@ on: pull_request
 on: [push, pull_request]
 ```
 
-That's the same as:
+Or
 
 ```yaml
 on:
@@ -54,6 +54,15 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
+```
+
+Or
+```yaml
+on:
+  push:
+    branches: master
+  pull_request:
+    branches: master
 ```
 
 This won't run on a PR between two branches which aren't the `master` branch.
@@ -110,6 +119,8 @@ on:
 ## On a tag or release
 
 I haven't used release yet but it is popular from looking at other projects and I cover this in other recipes in the [workflows](workflows/) section.
+
+Published could be safer to use - as a created release is not published yet.
 
 ```yaml
   release:
