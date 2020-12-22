@@ -32,11 +32,24 @@ $ welcome
 Welcome to Deno 🦕
 ```
 
-## Upgrade Deno version
+## Upgrade Deno
 
 ```sh
 $ deno upgrade
 ```
+
+Upgrade to a target version.
+
+```sh
+$ deno upgrade --version 1.2.0
+```
+
+The std packages get installed when you change versions. If you get errors, you can reload the cache for your application.
+
+```sh
+$ demo cache --reload my_app.ts
+```
+
 
 ## Run
 
