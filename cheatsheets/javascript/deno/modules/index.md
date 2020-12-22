@@ -1,7 +1,7 @@
 ---
 layout: listing
 ---
-# Deno modules
+# Modules
 
 
 See also online docs:
