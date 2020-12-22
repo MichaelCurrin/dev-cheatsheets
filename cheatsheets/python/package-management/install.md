@@ -12,13 +12,18 @@ description: How to install Python packages using `pip`
 
 ## Install
 
-### Requirements file
+### Install from requirements file
 
-Set the version in `requirements.txt` file:
+Set the version.
 
-```
-foo>=0.2
-```
+- `requirements.txt` for PyPI:
+    ```
+    foo>=0.2
+    ```
+- `requirement.txt` for GitHub:
+    ```
+    -e git+https://github.com/FooBar/baz.git@master
+    ```
 
 Then install from the file.
 
@@ -27,13 +32,18 @@ $ pip install -r requirements.txt
 ```
 
 
-### Command-line version
+### Install using CLI
 
 Or install the version directly. Note the quotes help to escape characters.
 
-```sh
-$ pip install 'foo>=0.2'
-```
+- Install from PyPI:
+    ```sh
+    $ pip install 'foo>=0.2'
+    ```
+- Install from GitHub:
+    ```
+    $ pip install -e git+https://github.com/FooBar/baz.git@master
+    ```
 
 You omit a version, though this can be dangerous for upgrading or setting up environments for import projects. If you omit a version, you'll get the latest.
 
@@ -42,6 +52,7 @@ $ pip install foo
 ```
 
 But note that command has no version number requested. So if you run the command repeatedly, you won't ever get a new version, except on a fresh install.
+
 
 ## Upgrade
 
