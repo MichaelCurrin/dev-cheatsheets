@@ -9,7 +9,7 @@ Based on [post](https://medium.com/deno-tutorial/deno-testing-bundling-formattin
 $ deno install https://deno.land/std/examples/welcome.ts
 ```
 
-The script will be downloaded to the cache and an executable will be added here as a stub.
+The script will be downloaded to the cache and an executable will be added as a stub as below.
 
 - `~/.deno/bin/welcome`
     ```sh
@@ -31,6 +31,9 @@ If the `bin` directory is in your `PATH` you can just run:
 $ welcome
 Welcome to Deno 🦕
 ```
+
+> Remote code is fetched and cached on first execution, and never updated until the code is run with the `--reload` flag. (So, this will still work on an airplane.)
+
 
 ## Upgrade Deno
 
