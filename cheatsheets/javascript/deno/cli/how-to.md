@@ -56,6 +56,8 @@ $ deno upgrade --version 1.2.0
 
 ## Run
 
+Note that you can use the `run` command without first doing an install and all external modules will be downloaded.
+
 ### Run local script
 
 Run a script in your project. Use `-A` to allow all permissions.
@@ -64,9 +66,9 @@ Run a script in your project. Use `-A` to allow all permissions.
 $ deno run index.ts
 ```
 
-### Download and run module
+### Run HTTP module
 
-This module will be downloaded from the Deno packages the first time and on subsequent runs it will run quicker as it is already installed in `bin`.
+Pass a URL to the `run` command. The module will be downloaded from the Deno packages the first time and on subsequent runs it will run quicker as it is already installed in `bin`.
 
 ```sh
 $ deno run https://deno.land/std/examples/welcome.ts
