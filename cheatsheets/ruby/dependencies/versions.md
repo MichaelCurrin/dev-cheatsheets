@@ -1,6 +1,7 @@
 # Versions
 
-Setting gem versions a `Gemfile`.
+Setting gem versions in a `Gemfile`.
+
 
 ## Format
 
@@ -10,7 +11,7 @@ gem GEM_NAME MIN_OR_COMPAT
 gem GEM_NAME, MIN, MAX
 ```
 
-Note that double quotes is needed for arguments. Single quotes works but will be replaced by a `rufo`, the Ruby Formatter.
+Note that double quotes are preferred arguments. Single quotes works but will be replaced by a `rufo`, the Ruby Formatter.
 
 
 ## Unpinned
@@ -20,11 +21,12 @@ gem "minima"
 ```
 
 
-## Pin
+## Pinned
 
 ```ruby
 gem "minima", "2.5.1"
 ```
+
 
 ## Min and max
 
@@ -33,26 +35,45 @@ gem "minima", "2.5.1"
 gem "minima", ">= 2.5", "< 3"
 ```
 
-## Compatible
 
-Using a tilde.
+## Compatible release
 
-Lock major only.
+Use a tilde and angle brackets - `~> X.Y.Z`.
+
+
+### Lock major only
+
+Let minor version float.
 
 ```ruby
 gem "minima", "~> 2.5"
-# Shorthand for >= 2.5, < 3
 ```
 
-Lock major and minor.
+Shorthand for `>= 2.5, < 3`
+
+i.e. `2.X` with a minimum of `2.5`.
+
+You can also do `~> 2` which I think will be `>= 2, < 3`, which is the same but without `2.5` as a minimum.
+
+### Lock major and minor
+
+Let patch version float only.
 
 ```ruby
 gem "minima", "~> 2.5.1"
-# Shorthand for >= 2.5.1, < 2.6
 ```
 
-Lock major but with minimum version.
+Shorthand for `>= 2.5.1, < 2.6`
+
+i.e. `2.5.X` with a minimum of `2.5.1`
+
+
+### Lock major, with a minimum patch version:
 
 ```ruby
 gem "minima", "~> 2.5", ">= 2.5.1"
 ```
+
+i.e. `2.X` with minimum of `2.5.1`.
+
+This last one is not so common.
