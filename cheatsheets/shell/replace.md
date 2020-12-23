@@ -133,19 +133,29 @@ Note that this flag works differently on macOS and Linux.
 
 Here assume pattern is like `'s/foo/bar/g'` and the PATH could be `*` or a filename.
 
-This works on Linux.
+This is for Linux.
+
 
 ```sh
 $ sed -i PATTERN PATH
-$ sed -i .bak PATTERN PATH
+$ sed -i=.bak PATTERN PATH
 ```
 
-On macOS you have to provide an argument - even if its an empty string for no backup.
+A backup is made if you supply a suffix - but you must _not_ leave a gap between the flag and the suffix.
+```
+-i[SUFFIX], --in-place[=SUFFIX]
+
+        edit files in place (makes backup if SUFFIX supplied)
+```
+
+On macOS you can't just use `-i`. You _have_ to provide an argument - even if its an empty string for no backup.
 
 ```sh
-$ sed -i '.bak' PATTERN PATH
 $ sed -i '' PATTERN PATH
+$ sed -i '.bak' PATTERN PATH
 ```
+
+Or you should install and alias the GNU sed.
 
 
 ## Replace word in file
