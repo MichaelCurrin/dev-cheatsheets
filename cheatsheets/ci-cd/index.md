@@ -1,5 +1,5 @@
 ---
 layout: listing
+description: Continuous Integration / Continuous Deployment
 ---
 # CI-CD
-> Continuous Integration / Continuous Deployment

@@ -1,8 +1,8 @@
 ---
 logo: docker
+description: Guide to synax for a `Dockerfile`
 ---
 # Docker
-> Guide to synax for a `Dockerfile`
 
 See [Dockerfile reference](https://docs.docker.com/engine/reference/builder/) doc.
 
@@ -12,15 +12,15 @@ See [Dockerfile reference](https://docs.docker.com/engine/reference/builder/) do
 - `Dockerfile`
     ```
     FROM image-name
-    
+
     ENV foo=bar
-    
+
     ARG fizz=buzz
-    
+
     RUN apt-get update
-    
+
     RUN apt install -q -y foo
-    
+
     RUN echo hello
     ```
 
@@ -42,7 +42,7 @@ I read that using absolute paths is preferred in a container over a path like `~
 
 ## Copy
 
-Use the `COPY` command directories into an image. 
+Use the `COPY` command directories into an image.
 
 
 ```Dockerfile
@@ -96,7 +96,7 @@ docker build -t my-app -f src/Dockerfile .
 
 ## Run commands
 
-The [Run](#run) syntax to run in the shell at image build time. 
+The [Run](#run) syntax to run in the shell at image build time.
 
 See the [Command](#command) or [Entry](#entrypoint) sections for changing what a container executes.
 
@@ -112,7 +112,7 @@ Two forms:
     ```Dockerfile
     RUN command
     ```
-- Exec form. 
+- Exec form.
     ```
     RUN ["executable", "param1", "param2"]
     ```
@@ -153,7 +153,7 @@ The `CMD` instruction has three forms:
     ```
 - Shell form:
     ```Dockerfile
-    CMD command param1 param2   
+    CMD command param1 param2
     ```
 
 ### Arguments
@@ -207,5 +207,5 @@ An `ENTRYPOINT` allows you to configure a container that will run as an executab
 Set default parameters for `ENTRYPOINT`:
 
 ```Dockerfile
-CMD ["param1", "param2"]   
+CMD ["param1", "param2"]
 ```
