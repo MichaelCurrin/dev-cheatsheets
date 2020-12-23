@@ -18,4 +18,4 @@ Here are some other areas to start with:
 - Workflow syntax and samples / use-cases around them
     - [Jobs](jobs.md)
     - [Triggers](triggers.md)
-- [Resources](resources.md) for external links such as to docs, to help you get into how Actions work and the syntax
+- [Resources](https://michaelcurrin.github.io/dev-resources/ci-cd/github-actions/) for external links such as to docs, to help you get into how Actions work and the syntax
