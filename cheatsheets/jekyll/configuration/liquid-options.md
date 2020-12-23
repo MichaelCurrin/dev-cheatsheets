@@ -1,8 +1,17 @@
 # Liquid options
 
-Add strict Liquid settings so Jekyll will fail on bad syntax.
+See [Liquid Options](https://jekyllrb.com/docs/configuration/liquid/) in the docs.
 
-From [Liquid Options](https://jekyllrb.com/docs/configuration/liquid/) in the docs.
+Here are the default options.
+
+```yaml
+liquid:
+  error_mode        : warn
+  strict_filters    : false
+  strict_variables  : false
+```
+
+Add strict Liquid settings so Jekyll will fail on bad syntax.
 
 Change the error mode from `warn` to `strict`. And make any invalid variables and filters cause build errors.
 
