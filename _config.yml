@@ -27,7 +27,7 @@ exclude:
   - Makefile
   - README.md
 
-### Theme boilerplate
+### Theme boilerplate ###
 
 remote_theme: MichaelCurrin/minima
 
