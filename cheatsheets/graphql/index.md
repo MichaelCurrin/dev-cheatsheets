@@ -1,5 +1,5 @@
 ---
-logo: graphql
 layout: listing
+logo: graphql
 ---
 # GraphQL
