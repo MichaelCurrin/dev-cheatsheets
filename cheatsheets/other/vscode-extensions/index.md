@@ -31,8 +31,8 @@ Here is how to export an extension and then install it globally, so you can use 
     ```
 3. Restart VS Code.
 
-[.vsix]: {{ site.baseurl }}{% link cheatsheets/vscode-extensions/vsix-format.md %}
-[vsce]: {{ site.baseurl }}{% link cheatsheets/vscode-extensions/vsce-command.md %}
+[.vsix]: {{ site.baseurl }}{% link cheatsheets/other/vscode-extensions/vsix-format.md %}
+[vsce]: {{ site.baseurl }}{% link cheatsheets/other/vscode-extensions/vsce-command.md %}
 [Node.js]: https://gist.github.com/MichaelCurrin/aa1fc56419a355972b96bce23f3bccba
 [Start fresh]: https://github.com/MichaelCurrin/vsc-extension-quickstart/blob/master/docs/start-fresh.md#start-fresh
 [Use this template]: https://github.com/MichaelCurrin/vsc-extension-quickstart/generate
