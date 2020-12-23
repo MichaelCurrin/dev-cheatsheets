@@ -1,5 +1,5 @@
 ---
 layout: listing
+description: Installing and managing Python
 ---
 # Install
-> Installing and managing Python

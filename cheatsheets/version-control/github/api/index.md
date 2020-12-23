@@ -1,5 +1,5 @@
 ---
 layout: listing
+description: About the GitHub APIs
 ---
 # API
-> About the GitHub APIs

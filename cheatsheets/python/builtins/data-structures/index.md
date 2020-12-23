@@ -1,8 +1,8 @@
 ---
 layout: listing
+description: A comparison of data structure syntax and usage in Python
 ---
 # Data structures
-> A comparison of data structure syntax and usage in Python
 
 See [Collections](https://docs.python.org/3/library/collections.html) in the docs.
 
