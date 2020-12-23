@@ -12,7 +12,7 @@ VSCE is the extension manager for developers working with VS Code extensions.
 
 It an NPM package which helps you package your VS Code extension as a [vsix] file so it can be shared and installed easily.
 
-[vsix]: {{ site.baseurl }}{% link cheatsheets/vscode-extensions/vsix-format.md %}
+[vsix]: {{ site.baseurl }}{% link cheatsheets/other/vscode-extensions/vsix-format.md %}
 
 ## Install
 

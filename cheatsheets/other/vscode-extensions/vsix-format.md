@@ -19,5 +19,5 @@ That file can be used as follows:
 - Publish to the VS Code marketplace to share publicly
     - See the [Publish][] guide.
 
-[Install]: {{ site.baseurl }}{% link cheatsheets/vscode-extensions/extensions/install.md %}
-[Publish]: {{ site.baseurl }}{% link cheatsheets/vscode-extensions/extensions/publish.md %}
+[Install]: {{ site.baseurl }}{% link cheatsheets/other/vscode-extensions/extensions/install.md %}
+[Publish]: {{ site.baseurl }}{% link cheatsheets/other/vscode-extensions/extensions/publish.md %}
