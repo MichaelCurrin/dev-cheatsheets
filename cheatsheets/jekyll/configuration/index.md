@@ -1,2 +1,4 @@
+---
+description: How to configure Jekyll
+---
 # Configuration
-> How to configure Jekyll

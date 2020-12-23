@@ -1,5 +1,7 @@
+---
+description: The double-ended queue in Python
+---
 # deque
-> The double-ended queue in Python
 
 See [deque](https://docs.python.org/3/library/collections.html#collections.deque) in the docs.
 

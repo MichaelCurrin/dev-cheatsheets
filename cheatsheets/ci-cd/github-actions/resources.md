@@ -1,5 +1,7 @@
+---
+description: External links around GH Actions, from basic to advanced usage
+---
 # Resources
-> External links around GH Actions, from basic to advanced usage
 
 If you are new to GitHub Actions, I recommend going over my blog posts on dev.to - [Intro to GitHub Actions series](https://dev.to/michaelcurrin/series/9032)
 

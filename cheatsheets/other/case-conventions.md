@@ -1,5 +1,7 @@
+---
+description: How to use the right case when naming objects in a language
+---
 # Case conventions
-> How to use the right case when naming objects in a language
 
 ## Styles
 

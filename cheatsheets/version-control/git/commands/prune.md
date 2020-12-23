@@ -1,5 +1,7 @@
+---
+description: Prune all unreachable objects from the object database
+---
 # prune
-> Prune all unreachable objects from the object database
 
 You probably don't need this command.
 

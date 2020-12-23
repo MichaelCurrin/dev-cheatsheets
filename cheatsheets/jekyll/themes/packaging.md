@@ -1,5 +1,7 @@
+---
+description: Packaging a Jekyll theme
+---
 # Packaging
-> Packaging a Jekyll theme
 
 See [Themes](https://michaelcurrin.github.io/code-cookbook/recipes/jekyll/themes.html) in my Cookbook for sample files in a theme.
 

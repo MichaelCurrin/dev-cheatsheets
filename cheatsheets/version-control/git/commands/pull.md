@@ -1,5 +1,7 @@
+---
+description: The `git pull` command
+---
 # pull
-> The `git pull` command
 
 
 ## Abort

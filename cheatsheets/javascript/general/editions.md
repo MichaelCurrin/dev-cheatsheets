@@ -1,5 +1,7 @@
+---
+description: Description of the JavaScript releases over the years
+---
 # JavaScript Editions
-> Description of the JavaScript releases over the years
 
 ECMAScript (or JavaScript) is just a specification. One gets published every year it seems and it becomes the standard. Browsers work to support the syntax. Server-side environments like Node and Deno add support to.
 
@@ -12,14 +14,14 @@ That page compares releases in order, with a short write-up for each. Further do
 
 Here are the most recent rows. I left off the release date, as the official name also tells you the year at least (since ES5.1 that is).
 
-Edition	| Official name	
----     | ---           
-ES11    | ES2020
-ES10    | ES2019 
-ES9     | ES2018
-ES8     | ES2017
-ES7     | ES2016
-ES6     | ES2015
+| Edition | Official name |
+| ------- | ------------- |
+| ES11    | ES2020        |
+| ES10    | ES2019        |
+| ES9     | ES2018        |
+| ES8     | ES2017        |
+| ES7     | ES2016        |
+| ES6     | ES2015        |
 
 
 ## ES6

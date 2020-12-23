@@ -1,5 +1,7 @@
+---
+description: Choose run condition with the `on` field
+---
 # Triggers
-> Choose run condition with the `on` field
 
 {% raw %}
 

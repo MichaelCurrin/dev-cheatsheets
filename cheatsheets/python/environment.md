@@ -1,9 +1,11 @@
+---
+description: Working with environment variables in Python
+---
 # Environment
-> Working with environment variables in Python
 
 We use the Python [os](https://docs.python.org/3/library/os.html) library.
 
-Using `os.environ` is the preferred way. Avoiding using `os.getenv('FOO')` and `os.putenv('FOO')`, since the latter does not update `os.environ`. 
+Using `os.environ` is the preferred way. Avoiding using `os.getenv('FOO')` and `os.putenv('FOO')`, since the latter does not update `os.environ`.
 
 
 ## Setup

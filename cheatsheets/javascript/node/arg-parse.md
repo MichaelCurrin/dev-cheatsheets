@@ -1,5 +1,7 @@
+---
+description: How to parse args given to a Node.js script
+---
 # Argument parsing
-> How to parse args given to a Node.js script
 
 
 ## Resources

@@ -1,5 +1,7 @@
+---
+description: About the `make` command
+---
 # Command
-> About the `make` command
 
 
 ## Usage
@@ -51,7 +53,7 @@ You can use the alias and you can move the option to the end.
   -d                          Print lots of debugging information.
   --debug[=FLAGS]             Print various types of debugging information.
   -s, --silent, --quiet       Don't echo commands.
-  
+
 ```
 
 #### Warnings
@@ -65,7 +67,7 @@ You can use the alias and you can move the option to the end.
   -f FILE, --file=FILE, --makefile=FILE
                               Read FILE as a makefile.
   -I DIRECTORY, --include-dir=DIRECTORY
-                              Search DIRECTORY for included makefiles.                              
+                              Search DIRECTORY for included makefiles.
 ```
 
 ### Help

@@ -1,5 +1,7 @@
+---
+description: About the git commit command
+---
 # commit
-> About the git commit command
 
 
 [git commit](https://git-scm.com/docs/git-commit) docs.
@@ -17,7 +19,7 @@ git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
 	   [-S[<keyid>]] [--] [<pathspec>…]
 ```
 
- 
+
 ## Flags
 
 Highlights of flags I am most likely use.

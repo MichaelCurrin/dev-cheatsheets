@@ -1,5 +1,7 @@
+---
+description: How to remove clean-up remote branches that no longer exist
+---
 # Prune
-> How to remove clean-up remote branches that no longer exist
 
 
 ## About

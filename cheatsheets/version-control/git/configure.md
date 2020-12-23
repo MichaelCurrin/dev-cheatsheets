@@ -1,5 +1,7 @@
+---
+description: How to configure git
+---
 # Configure
-> How to configure git
 
 
 ## Edit directly
@@ -48,7 +50,7 @@ The `git pull` default behavior is with `--ff`.
 
 You can set `--no-ff` or `--ff-only` using flags to config options.
 
-The 
+The
 
 ### Warning
 
@@ -76,7 +78,7 @@ invocation.
 
 
 
-So here are your options for `.gitconfig` under `[pull]` heading. 
+So here are your options for `.gitconfig` under `[pull]` heading.
 
 Note lack of quotes on `true` and `false`.
 
@@ -155,4 +157,3 @@ Alternatively, you can do this to pull and merge in one move, avoiding the error
 ```sh
 $ git pull origin my-feature && git merge origin/my-feature
 ```
-

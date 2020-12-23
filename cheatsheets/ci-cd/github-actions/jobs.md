@@ -1,5 +1,7 @@
+---
+description: Syntax for jobs in GH actions workflow file
+---
 # Jobs
-> Syntax for jobs in GH actions workflow file
 
 {% raw %}
 

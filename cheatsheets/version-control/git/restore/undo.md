@@ -1,5 +1,7 @@
+---
+description: Step back one commit
+---
 # Undo
-> Step back one commit
 
 ## Undo commit
 

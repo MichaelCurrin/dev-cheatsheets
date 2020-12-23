@@ -1,5 +1,7 @@
+---
+description: Working with dates and times in Jekyll
+---
 # Time-handling
-> Working with dates and times in Jekyll
 
 {% raw %}
 
@@ -108,7 +110,7 @@ Wed, 23 Mar 2016 23:20:00 +1300
 ## Ordinal
 
 > One notable exclusion from this list getting the ordinal date. For example we couldn’t output “May 23rd” because there’s no placeholder for the “rd”.
-> 
+>
 > A workaround for this is to use Liquid to calculate and output the ordinal.
 
 ```liquid

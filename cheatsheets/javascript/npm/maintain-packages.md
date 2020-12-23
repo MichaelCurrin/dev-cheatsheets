@@ -1,5 +1,7 @@
+---
+description: How to monitor and maintain your project's packages (dependencies)
+---
 # Maintain packages
-> How to monitor and maintain your project's packages (dependencies)
 
 
 From article [These NPM tricks will make you a pro](https://www.freecodecamp.org/news/10-npm-tricks-that-will-make-you-a-pro-a945982afb25/) on FreeCodeCamp.

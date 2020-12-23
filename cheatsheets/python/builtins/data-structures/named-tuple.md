@@ -1,6 +1,8 @@
 
+---
+description: Create tuples with named fields
+---
 # Named tuple
-> Create tuples with named fields
 
 Immutable, like a tuple.
 

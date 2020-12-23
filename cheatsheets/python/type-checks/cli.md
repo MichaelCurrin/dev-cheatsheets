@@ -1,5 +1,7 @@
+---
+description: Mypy usage
+---
 # CLI
-> Mypy usage
 
 ```sh
 mypy --help

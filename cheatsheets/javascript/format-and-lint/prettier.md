@@ -1,5 +1,7 @@
+---
+description: JavaScript formatting with Prettier.
+---
 # Prettier
-> JavaScript formatting with Prettier.
 
 Prettier is an opinionated code formatter. Use Prettier for formatting and linters for catching bugs.
 

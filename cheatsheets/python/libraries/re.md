@@ -1,5 +1,7 @@
+---
+description: Using the regex module in Python
+---
 # re
-> Using the regex module in Python
 
 
 ## Resources

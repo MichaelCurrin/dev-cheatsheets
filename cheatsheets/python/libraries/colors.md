@@ -1,5 +1,7 @@
+---
+description: Handling colors in Python
+---
 # Colors
-> Handling colors in Python
 
 
 ## Colour
@@ -87,10 +89,10 @@ class color:
 
     OK_BLUE = '\033[94m'
     OK_GREEN = '\033[92m'
-    
+
     WARNING = '\033[93m'
     FAIL = '\033[91m'
-    
+
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 

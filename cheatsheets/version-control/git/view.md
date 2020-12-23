@@ -1,5 +1,7 @@
+---
+description: How to view git objects like commits and tags
+---
 # View
-> How to view git objects like commits and tags
 
 
 ## Links

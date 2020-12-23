@@ -1,5 +1,7 @@
+---
+description: Print colored text with `echo`
+---
 # Colors
-> Print colored text with `echo`
 
 
 ## Basic

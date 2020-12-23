@@ -1,5 +1,7 @@
+---
+description: How to use a non-standard remote theme in a Jekyll site on GH Pages
+---
 # Remote
-> How to use a non-standard remote theme in a Jekyll site on GH Pages
 
 ## About the Remote Theme plugin
 

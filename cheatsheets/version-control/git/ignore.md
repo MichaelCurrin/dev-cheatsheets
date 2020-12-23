@@ -1,5 +1,7 @@
+---
+description: Reference for the git ignore file
+---
 # Ignore
-> Reference for the git ignore file
 
 
 ## JavaScript

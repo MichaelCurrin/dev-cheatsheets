@@ -1,5 +1,7 @@
+---
+description: How to pass and use variables in a `Makefile`
+---
 # Parameters
-> How to pass and use variables in a `Makefile`
 
 
 ## Summary
