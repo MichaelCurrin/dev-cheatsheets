@@ -35,11 +35,18 @@ The label element must have a `for` attribute which references the `id` of an in
 
 ## Name attribute
 
-The `name` is optionally set on an input and must match the `id`. If you don't need it, you can leave it out.
+The `name` is optionally set on an input and must match the `id`.
 
-According to W3 Schools, the `name `is used to to reference elements in a JavaScript or to reference form data after a form is submitted. 
+According to W3 Schools [name attribute](https://www.w3schools.com/tags/att_input_name.asp) page:
 
-Form elements with a `name` attribute will have their values passed when submitting a form.
+- The `name` is used to
+    - Reference elements in a JavaScript, or
+    - Rreference form data after a form is submitted. 
+- Form elements with a `name` attribute will have their values passed when submitting a form.
+
+In the case of a text input, each `name` value is unique.
+
+But in the case of [Radio buttons](#radios-buttons), the value must be repeated in order to **group** elements.
 
 
 ## Text input
@@ -94,6 +101,7 @@ This can be overridden. In the example below, the `search` class is targeted.
 }
 ```
 
+
 ## Text area
 
 ```html
@@ -115,15 +123,25 @@ This can be overridden. In the example below, the `search` class is targeted.
 ```html
 Package type:
 
-<input type="radio" id="py" name="py" value="python" checked>
+<input type="radio" id="py" name="package-type" value="python" checked>
 <label for="py">Python</label>
 
-<input type="radio" id="npm" name="npm" value="npm">
+<input type="radio" id="npm" name="package-type" value="npm">
 <label for="npm">NPM</label>
 
-<input type="radio" id="ruby" name="ruby" value="ruby">
+<input type="radio" id="ruby" name="package-type" value="ruby">
 <label for="ruby">Ruby</label>
 ```
+
+> Radio buttons are normally presented in radio groups (a collection of radio buttons describing a set of related options).
+>
+> Only **one** radio button in a group can be selected at the same time.
+>
+> Note: The radio group must have share the **same** `name` (the value of the `name` attribute) to be treated as a group. Once the radio group is created, selecting any radio button in that group automatically deselects any other selected radio button in the same group. You can have as many radio groups on a page as you want, as long as each group has its own name.
+>
+> Note: The `value` attribute defines the unique value associated with each radio button. The value is not shown to the user, but is the value that is sent to the server on "submit" to identify which radio button that was selected.
+>
+> Tip: Always add the `<label>` tag for best accessibility practices!
 
 
 ## Checkbox input
