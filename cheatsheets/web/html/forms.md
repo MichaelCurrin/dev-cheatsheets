@@ -1,13 +1,12 @@
 # Forms
+> Guide to input elements for forms
 
-Input elements for forms.
+Note that these do not render on GitHub's markdown, but can be viewed on a static site or an IDE's Markdown preview.
 
-Note that these do not render on GitHub, but could be viewed as a static site or an IDE's Markdown preview.
-
-Examples mostly from [W3Schools](https://www.w3schools.com).
+Examples are mostly from [W3Schools](https://www.w3schools.com).
 
 
-## Form
+## Form element
 
 ```html
 <form action="/action_page.php" method="get">
@@ -18,25 +17,25 @@ Examples mostly from [W3Schools](https://www.w3schools.com).
 ```
 
 
-## Input
+## Input element
 
-[Input](https://www.w3schools.com/tags/tag_input.asp) tag on W3 schools. It covers all the available `type` values.
+See [Input tag](https://www.w3schools.com/tags/tag_input.asp) tutorial on W3 Schools. It covers all the available `type` values.
 
 ```html
 <label for="fname">First name:</label>
-<input type="text" id="fname" name="fname" size="50"><br><br>
+<input type="text" id="fname" name="fname" size="50"><br>
 
 <label for="pin">PIN:</label>
-<input type="text" id="pin" name="pin" maxlength="4" size="4"><br><br>
+<input type="text" id="pin" name="pin" maxlength="4" size="4"><br>
 
 <input type="submit" value="Submit">
 ```
 
 <label for="fname">First name:</label>
-<input type="text" id="fname" name="fname" size="50"><br><br>
+<input type="text" id="fname" name="fname" size="50"><br>
 
 <label for="pin">PIN:</label>
-<input type="text" id="pin" name="pin" maxlength="4" size="4"><br><br>
+<input type="text" id="pin" name="pin" maxlength="4" size="4"><br>
 
 <input type="submit" value="Submit">
 
@@ -52,7 +51,7 @@ See also:
 - [required](https://www.w3schools.com/tags/att_input_required.asp) attribute in `input` tag.
 
 
-## Text area
+## Text area element
 
 ```html
 <label for="my-text">Label</label>
