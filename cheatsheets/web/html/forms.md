@@ -21,13 +21,15 @@ Examples are mostly from [W3Schools](https://www.w3schools.com).
 
 See [label](https://www.w3schools.com/tags/tag_label.asp) tag.
 
-It is recommended to add a `label` element next to an input and make the `for` part match the `id` of an input. 
+It is recommended to add a `label` element next to an input.
 
 This helps for accessibility so the correct label is read aloud on focussing and it increases the hit rate when clicking small regions - so you can click the label for a radio input to select an item.
 
 From W3 Schools:
 
 > Tip: Always use the `<label>` tag to define labels for `<input type="text">`, `<input type="checkbox">`, `<input type="radio">`, `<input type="file">`, and `<input type="password">`.
+
+The label element must have a `for` attribute which references the `id` of an input element.
 
 
 ## Text input
@@ -58,7 +60,7 @@ See [Input tag](https://www.w3schools.com/tags/tag_input.asp) tutorial on W3 Sch
 - Max length attribute 
     - How many characters that can be entered. This could exceed `size` - all the text just won't be visible at once.
 - Name attribute 
-    - The `name` is usually set on the input and this matches the `id`. The name is used to to reference elements in a JavaScript, or to reference form data after a form is submitted. Note: Only form elements with a name attribute will have their values passed when submitting a form.
+    - The `name` is optionally but usually set on the input matching the `id`. The name is used to to reference elements in a JavaScript, or to reference form data after a form is submitted. Note: Only form elements with a name attribute will have their values passed when submitting a form.
 
 See also:
 
@@ -100,9 +102,7 @@ This can be overridden. In the example below, the `search` class is targeted.
 
 ## Radio buttons
 
-- [Tutorial](https://www.w3schools.com/tags/att_input_type_radio.asp)
-
-Note `for` must match `id`, but `name` is optional.
+- [Radio input tutorial](https://www.w3schools.com/tags/att_input_type_radio.asp)
 
 ```html
 Package type:
