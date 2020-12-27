@@ -33,6 +33,15 @@ From W3 Schools:
 The label element must have a `for` attribute which references the `id` of an input element.
 
 
+## Name attribute
+
+The `name` is optionally set on an input and must match the `id`. If you don't need it, you can leave it out.
+
+According to W3 Schools, the `name `is used to to reference elements in a JavaScript or to reference form data after a form is submitted. 
+
+Form elements with a `name` attribute will have their values passed when submitting a form.
+
+
 ## Text input
 
 See [Input tag](https://www.w3schools.com/tags/tag_input.asp) tutorial on W3 Schools. It covers all the available `type` values.
@@ -60,8 +69,6 @@ See [Input tag](https://www.w3schools.com/tags/tag_input.asp) tutorial on W3 Sch
     - Specifies the width of an `<input>` element, in characters. Default value is 20.
 - Max length attribute 
     - How many characters that can be entered. This could exceed `size` - all the text just won't be visible at once.
-- Name attribute 
-    - The `name` is optionally but usually set on the input matching the `id`. The name is used to to reference elements in a JavaScript, or to reference form data after a form is submitted. Note: Only form elements with a name attribute will have their values passed when submitting a form.
 
 See also:
 
