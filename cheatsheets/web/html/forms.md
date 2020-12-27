@@ -17,7 +17,20 @@ Examples are mostly from [W3Schools](https://www.w3schools.com).
 ```
 
 
-## Input element
+## Labels
+
+See [label](https://www.w3schools.com/tags/tag_label.asp) tag.
+
+It is recommended to add a `label` element next to an input and make the `for` part match the `id` of an input. 
+
+This helps for accessibility so the correct label is read aloud on focussing and it increases the hit rate when clicking small regions - so you can click the label for a radio input to select an item.
+
+From W3 Schools:
+
+> Tip: Always use the `<label>` tag to define labels for `<input type="text">`, `<input type="checkbox">`, `<input type="radio">`, `<input type="file">`, and `<input type="password">`.
+
+
+## Text input
 
 See [Input tag](https://www.w3schools.com/tags/tag_input.asp) tutorial on W3 Schools. It covers all the available `type` values.
 
@@ -40,33 +53,19 @@ See [Input tag](https://www.w3schools.com/tags/tag_input.asp) tutorial on W3 Sch
 <input type="submit" value="Submit">
 
 
-- Size attribute - Specifies the width of an `<input>` element, in characters. Default value is 20.
-
-> Tip: Always use the `<label>` tag to define labels for `<input type="text">`, `<input type="checkbox">`, `<input type="radio">`, `<input type="file">`, and `<input type="password">`.
-
+- Size attribute 
+    - Specifies the width of an `<input>` element, in characters. Default value is 20.
+- Max length attribute 
+    - How many characters that can be entered. This could exceed `size` - all the text just won't be visible at once.
+- Name attribute 
+    - The `name` is usually set on the input and this matches the `id`. The name is used to to reference elements in a JavaScript, or to reference form data after a form is submitted. Note: Only form elements with a name attribute will have their values passed when submitting a form.
 
 See also:
 
 - [Searchbar](https://www.w3schools.com/howto/howto_css_searchbar.asp) tutorial.
 - [required](https://www.w3schools.com/tags/att_input_required.asp) attribute in `input` tag.
 
-
-## Text area element
-
-```html
-<label for="my-text">Label</label>
-<textarea id="my-text" rows="4" cols="50">Text area input</textarea>
-
-<textarea maxlength="50">
-    Text area with max length
-</textarea>
-```
-
-- [Text area](https://www.w3schools.com/tags/tag_textarea.asp) tutorial.
-
-
-
-## Bulma note
+### Bulma note
 
 If using [Bulma](https://bulma.io) for styling, you will find the inputs fill the width of their container.
 
@@ -85,25 +84,18 @@ This can be overridden. In the example below, the `search` class is targeted.
 }
 ```
 
-
-## Text input
+## Text area
 
 ```html
-<label for="fname">First name:</label>
-<input type="text" id="fname" name="fname" size="50"><br><br>
+<label for="my-text">Label</label>
+<textarea id="my-text" rows="4" cols="50">Text area input</textarea>
 
-<label for="pin">PIN:</label>
-<input type="text" id="pin" name="pin" maxlength="4" size="4"><br><br>
-
-<input type="submit" value="Submit">
+<textarea maxlength="50">
+    Text area with max length
+</textarea>
 ```
 
-- Size attribute - Specifies the width of an `<input>` element, in characters. Default value is 20.
-- Max length attribute - How many characters that can be entered. This could exceed `size` - all the text just won't be visible at once.
-
-See also:
-
-- [Searchbar](https://www.w3schools.com/howto/howto_css_searchbar.asp) tutorial.
+- [Text area](https://www.w3schools.com/tags/tag_textarea.asp) tutorial.
 
 
 ## Radio buttons
