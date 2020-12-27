@@ -12,6 +12,7 @@ Examples are mostly from [W3Schools](https://www.w3schools.com).
 <form action="/action_page.php" method="get">
     <div id="radio-toolbar">
     </div>
+
     <!-- etc. -->
 </form>
 ```
@@ -107,13 +108,13 @@ This can be overridden. In the example below, the `search` class is targeted.
 ```html
 Package type:
 
-<input type="radio" id="py" name="package-type" value="python" checked>
+<input type="radio" id="py" name="py" value="python" checked>
 <label for="py">Python</label>
 
-<input type="radio" id="npm" name="package-type" value="npm">
+<input type="radio" id="npm" name="npm" value="npm">
 <label for="npm">NPM</label>
 
-<input type="radio" id="ruby" name="package-type" value="ruby">
+<input type="radio" id="ruby" name="ruby" value="ruby">
 <label for="ruby">Ruby</label>
 ```
 
