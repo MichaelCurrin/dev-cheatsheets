@@ -10,10 +10,10 @@
         $("#my-table").DataTable({
             // Config options.
             orderCellsTop: true,
-            
+
             // Enable plugins.
             fixedHeader: true,
-            
+
             initComplete: function () {
                 foo(this)
             }
@@ -34,7 +34,7 @@ foo(table)
 
 Note that depending on the approach, you use a different reference to the table.
 
-With `table` declared, you can do `table.column(0)` for example. 
+With `table` declared, you can do `table.column(0)` for example.
 
 And in `initComplete`, you can pass `this` which gives you the same access in the other function.
 
@@ -45,7 +45,7 @@ e.g.
 ```javascript
 const bazzCol = this.api().column(0)
 bar(bazzCol)
-```           
+```
 
 
 ## Column types
@@ -94,8 +94,76 @@ var table = $('#example').DataTable( {
         { name: 'salary' }
     ]
 } );
- 
+
 table.column( 'salary:name' ).data();
+```
+
+### Unique values in a column
+
+```javascript
+var values = column.data().unique().sort()
+
+value.each( function (d, j) {
+    select.append(`<option value="${d}">${d}</option>`)
+});
+```
+
+### Column search
+
+See [column().search() API](https://datatables.net/reference/api/column().search()).
+
+
+## Escape string
+
+Use this function to escape a regex pattern.
+
+`escapeRegex`
+
+Example from the [docs](https://datatables.net/reference/api/%24.fn.dataTable.util.escapeRegex()).
+
+```javascript
+var val = $.fn.dataTable.util.escapeRegex(
+    $(this).val()
+);
+
+column
+    .search( val ? `^${val}$` : "", true, false )
+    .draw();
+```
+
+## Plugin structure
+
+Search functions to be attached here:
+
+```javascript
+$.fn.dataTable.ext.search
+```
+
+Use 5 inputs:
+
+```
+settings, searchData, index, rowData, counter )
+```
+
+e.g. From the [Search](https://datatables.net/manual/plug-ins/search) docs.
+
+```javascript
+$.fn.dataTable.ext.search.push(
+    function( settings, searchData, index, rowData, counter ) {
+        var min = parseInt( $('#min').val(), 10 );
+        var max = parseInt( $('#max').val(), 10 );
+        var age = parseFloat( searchData[3] ) || 0; // using the data from the 4th column
+
+        if ( ( isNaN( min ) && isNaN( max ) ) ||
+             ( isNaN( min ) && age <= max ) ||
+             ( min <= age   && isNaN( max ) ) ||
+             ( min <= age   && age <= max ) )
+        {
+            return true;
+        }
+        return false;
+    }
+);
 ```
 
 {% endraw %}
