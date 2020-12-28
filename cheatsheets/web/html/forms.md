@@ -5,6 +5,8 @@ Note that these do not render on GitHub's markdown, but can be viewed on a stati
 
 Examples are mostly from [W3Schools](https://www.w3schools.com).
 
+See [W3 CSS Input](https://www.w3schools.com/w3css/w3css_input.asp) tutorial for styling a form.
+
 
 ## Form element
 
@@ -53,7 +55,7 @@ But in the case of [Radio buttons](#radios-buttons), the value must be repeated 
 
 See [Input tag](https://www.w3schools.com/tags/tag_input.asp) tutorial on W3 Schools. It covers all the available `type` values.
 
-```html
+{% capture text_input %}
 <label for="fname">First name:</label>
 <input type="text" id="fname" name="fname" size="50"><br>
 
@@ -61,16 +63,19 @@ See [Input tag](https://www.w3schools.com/tags/tag_input.asp) tutorial on W3 Sch
 <input type="text" id="pin" name="pin" maxlength="4" size="4"><br>
 
 <input type="submit" value="Submit">
+{% endcapture %}
+
+**Code**
+
+```html
+{{ text_input }}
 ```
 
-<label for="fname">First name:</label>
-<input type="text" id="fname" name="fname" size="50"><br>
+**Result**
 
-<label for="pin">PIN:</label>
-<input type="text" id="pin" name="pin" maxlength="4" size="4"><br>
+{{ text_input }}
 
-<input type="submit" value="Submit">
-
+### Notes
 
 - Size attribute 
     - Specifies the width of an `<input>` element, in characters. Default value is 20.
@@ -120,7 +125,7 @@ This can be overridden. In the example below, the `search` class is targeted.
 
 - [Radio input tutorial](https://www.w3schools.com/tags/att_input_type_radio.asp)
 
-```html
+{% capture radio_buttons %}
 Package type:
 
 <input type="radio" id="py" name="package-type" value="python" checked>
@@ -131,7 +136,19 @@ Package type:
 
 <input type="radio" id="ruby" name="package-type" value="ruby">
 <label for="ruby">Ruby</label>
+{% endcapture %}
+
+**Code**
+
+```html
+{{ radio_buttons }}
 ```
+
+**Result**
+
+{{ radio_buttons }}
+
+### Notes
 
 > Radio buttons are normally presented in radio groups (a collection of radio buttons describing a set of related options).
 >
@@ -144,12 +161,42 @@ Package type:
 > Tip: Always add the `<label>` tag for best accessibility practices!
 
 
-## Checkbox input
+## Droplists
+
+See [select](https://www.w3schools.com/tags/tag_select.asp) tag.
+
+See also [Dropdown](https://www.w3schools.com/w3css/w3css_dropdowns.asp) menus.
+
+{% capture radio_buttons %}
+<label for="cars">Choose a car:</label>
+
+<select name="cars" id="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+</select> 
+{% endcapture %}
+
+Use `for` and `id` to associate the label with the input. Use `name` to ensure the values get submitted.
+
+**Code**
+
+```html
+{{ radio_buttons }}
+```
+
+**Result**
+
+{{ radio_buttons }}
+
+
+## Checkboxes
 
 - [Tutorial](https://www.w3schools.com/tags/att_input_type_checkbox.asp)
 - [Todo list](https://www.w3schools.com/howto/howto_js_todolist.asp)
 
-```html
+{% capture checkboxes %}
 <input type="checkbox" name="vehicle1" value="Bike">
 <label for="vehicle1">I have a bike</label><br>
 
@@ -160,18 +207,17 @@ Package type:
 <label for="vehicle3">I have a boat</label><br><br>
 
 <input type="submit" value="Submit">
+{% endcapture %}
+
+**Code**
+
+```html
+{{ checkboxes }}
 ```
 
-<input type="checkbox" name="vehicle1" value="Bike">
-<label for="vehicle1">I have a bike</label><br>
+**Result**
 
-<input type="checkbox" name="vehicle2" value="Car">
-<label for="vehicle2">I have a car</label><br>
-
-<input type="checkbox" name="vehicle3" value="Boat" checked>
-<label for="vehicle3">I have a boat</label><br><br>
-
-<input type="submit" value="Submit">
+{{ checkboxes }}
 
 
 ## Form sections
