@@ -1,5 +1,6 @@
 # Colors
 
+
 ## CSS variables
 
 In modern CSS, you can define variables without any pre-processing. See [CSS Variables](https://www.w3schools.com/css/css3_variables.asp) tutorials.
@@ -53,6 +54,48 @@ button {
   color: var(--blue);
 
   background-color: var(--white);
+}
+```
+
+
+## CSS filter
+> Use the `filter` function to change a color
+
+See [CSS filter Property](https://www.w3schools.com/cssref/css3_pr_filter.asp) tutorial on W3 Schools.
+
+### Syntax
+
+```
+filter: 
+    none | blur() | brightness() | contrast() | drop-shadow() | grayscale() | hue-rotate() 
+        | invert() | opacity() | saturate() | sepia() | url(); 
+```
+ 
+To change the brightness, use a percentage value from `0%` to `100%` for a darker value, or over `100%` for lighter results. You don't need to know the initial color value, so this is flexible.
+
+### Examples
+
+Make text lighter or faded.
+
+```css
+.faded {
+  filter: brightness(200%);
+}
+```
+
+Make text darker.
+
+```css
+.darker {
+  filter: brightness(50%);
+}
+```
+
+Make an image grayscale.
+
+```css
+img {
+  filter: grayscale(100%);
 }
 ```
 
