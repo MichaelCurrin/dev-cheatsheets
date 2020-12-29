@@ -12,13 +12,14 @@ e.g.
 
 ```typescript
 const COLOR = {
-  Red: "red",
-  Blue: "blue",
-  Green: "green",
+  RED: "red",
+  BLUE: "blue",
+  GREEN: "green",
 }
 ```
 
-Just remember you can't use an internal value here like `this.Red` (Error that Bbject might be undefined) or `COLOR.Red` (used before declaration).
+Just remember you can't use an value internally here, like `BLUE: this.RED` (Error that Object might be undefined) or `BLUE: COLOR.RED` (used before declaration).
+
 
 ## Numeric enum
 
