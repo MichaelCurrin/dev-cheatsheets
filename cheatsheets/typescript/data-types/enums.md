@@ -4,6 +4,21 @@ See the [Enum](https://www.typescriptlang.org/docs/handbook/enums.html) section 
 
 There are 3 types of enum - numeric, string and heterogenous.
 
+## Alternative
+
+If you run into limitations usin an enum (especially the string one), you can fallback to using a dictionary instead.
+
+e.g.
+
+```typescript
+const COLOR = {
+  Red: "red",
+  Blue: "blue",
+  Green: "green",
+}
+```
+
+Just remember you can't use an internal value here like `this.Red` (Error that Bbject might be undefined) or `COLOR.Red` (used before declaration).
 
 ## Numeric enum
 
