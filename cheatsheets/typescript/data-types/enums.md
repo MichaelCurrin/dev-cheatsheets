@@ -2,23 +2,23 @@
 
 See the [Enum](https://www.typescriptlang.org/docs/handbook/enums.html) section in the TS docs. This can get complicated for dynamic lookup. 
 
-In particular see the [const enums](https://www.typescriptlang.org/docs/handbook/enums.html#const-enums) section.
-
 There are 3 types of enum - numeric, string and heterogenous.
 
 
-## Numeric
+## Numeric enum
+
+The first value has a value of zero and then values increment.
 
 ```typescript
 enum COLOR {
-  Red,
-  Green,
+  Red,   // 0
+  Green, // 1
   Blue = 4
 }
 ```
 
 <details>
-<summary>Plain JS equivalent</summary>
+<summary>Compiled JS result</summary>
 
 ```javascript
 "use strict";
@@ -32,19 +32,51 @@ var COLOR;
 
 </details>
 
-### Lookup
+See what the enum is defined as.
+
+```javascript
+> COLOR
+{
+  "0": "Red",
+  "1": "Green",
+  "4": "Blue",
+  "Red": 0,
+  "Green": 1,
+  "Blue": 4
+}
+```
+
+If you override the first value, the others follow it.
+
+```typescript
+enum COLOR {
+  Red = 1,
+  Green,   // 2
+  Blue     // 3
+}
+```
+
+### Lookup key
+
+```typescript
+> COLOR[0]
+"Red"
+```
+
+### Lookup value
 
 Lookup by attribute.
 
 ```typescript
-// a has type COLOR
-const a = COLOR.Green;
+COLOR.Red;
+// 0
 ```
 
 Lookup by string.
 
 ```typescript
-const b = COLOR['Green'];
+COLOR['Red'];
+// 0
 ```
 
 Lookup by variable. Only works if the enum declaration is **not** done with `const`.
@@ -53,8 +85,66 @@ Lookup by variable. Only works if the enum declaration is **not** done with `con
 
 ```typescript
 const x = 'Green'
-const c = COLOR[x]
+COLOR[x]
+// 0
 ```
+
+
+## String enum
+
+```typescript
+enum StrangerThings {
+  Character = "Eleven",
+  Father = "Hopper",
+  Power = "Telekenesis",
+  Town = "Hawkins"
+}
+```
+
+<details>
+<summary>Compiled JS result</summary>
+
+```javascript
+"use strict";
+var StrangerThings;
+(function (StrangerThings) {
+    StrangerThings["Character"] = "Eleven";
+    StrangerThings["Father"] = "Hopper";
+    StrangerThings["Power"] = "Telekenesis";
+    StrangerThings["Town"] = "Hawkins";
+})(StrangerThings || (StrangerThings = {}));
+```
+
+</details>
+
+### Lookup key
+
+```typescript
+StrangerThings.Power
+// "Telekenesis"
+```
+
+### Lookup value
+
+```typescript
+StrangerThings.Character
+// "Eleven"
+```
+
+
+## Heterogenous enum
+
+```typescript
+enum StrangerThings {
+  Character = "Eleven",
+  Father = "",
+  Power = "Telekenesis",
+  age = 15
+}
+```
+
+
+## Dynamic lookup
 
 When the input variable is dynamic like controlled by the UI, I found had to change the approach to casting.
 
@@ -159,4 +249,56 @@ const c = Enum.Red;
 // 0
 const nameOfRed = Enum[c];
 // "Red"
+```
+
+## Constant enums
+
+See the [const enums](https://www.typescriptlang.org/docs/handbook/enums.html#const-enums) in the docs.
+
+They are **removed** in the compilation process and cannot have computed members.
+
+```typescript
+const enum Enum {
+  A = 1,
+  B = A * 2,
+}
+```
+
+```typescript
+const enum Direction {
+  Up,
+  Down,
+  Left,
+  Right,
+}
+
+let directions = [
+  Direction.Up,
+  Direction.Down,
+  Direction.Left,
+  Direction.Right,
+];
+```
+
+Compiled code:
+
+```javascript
+"use strict";
+let directions = [
+    0 /* Up */,
+    1 /* Down */,
+    2 /* Left */,
+    3 /* Right */,
+];
+```
+
+
+## Ambient enums
+
+```typescript
+declare enum Enum {
+  A = 1,
+  B,
+  C = 2,
+}
 ```
