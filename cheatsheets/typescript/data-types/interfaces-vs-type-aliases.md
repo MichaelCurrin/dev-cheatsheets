@@ -9,7 +9,7 @@ Examples from [docs](https://www.typescriptlang.org/docs/handbook/advanced-types
 
 ## Extending
 
-## Extend an interface
+### Extend an interface
 
 ```typescript
 interface Animal {
@@ -25,7 +25,7 @@ bear.name
 bear.honey
 ```
 
-## Extend a type via intersections
+### Extend a type via intersections
 
 ```typescript
 type Animal = {
