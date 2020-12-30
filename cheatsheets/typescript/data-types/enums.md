@@ -6,7 +6,7 @@ There are 3 types of enum - numeric, string and heterogenous.
 
 ## Alternative
 
-If you run into limitations usin an enum (especially the string one), you can fallback to using a dictionary instead.
+If you run into limitations using an enum (especially the string one), you can fallback to using a dictionary instead. You don't get the enum features, but you can get the safety and intellisense of looking up fixed values on an object.
 
 e.g.
 
@@ -16,6 +16,8 @@ const COLOR = {
   BLUE: "blue",
   GREEN: "green",
 }
+
+COLOR.Red
 ```
 
 Just remember you can't use an value internally here, like `BLUE: this.RED` (Error that Object might be undefined) or `BLUE: COLOR.RED` (used before declaration).
@@ -80,6 +82,8 @@ enum COLOR {
 ```
 
 ### Lookup value
+
+Note that when you get a value on this enum, the type is `COLOR`, not string or number.
 
 Lookup by attribute.
 
@@ -225,9 +229,9 @@ const bar = describeColor(key);
 ```
 
 
-## Get type
+## Enum for function types
 
-Getting the `type` of an enum. From the docs.
+Getting the keys of an enum. From the docs.
 
 ```typescript
 enum LogLevel {
@@ -239,18 +243,26 @@ enum LogLevel {
 
 type LogLevelStrings = keyof typeof LogLevel;
 // 'ERROR' | 'WARN' | 'INFO' | 'DEBUG';
+```
 
+Continuing below, we enforce that the key must be a string that matches the keys of the enum.
 
+```typescript
 function printImportant(key: LogLevelStrings, message: string) {
   const num = LogLevel[key];
+
   if (num <= LogLevel.WARN) {
     console.log("Log level key is:", key);
     console.log("Log level value is:", num);
     console.log("Log level message is:", message);
   }
 }
+
 printImportant("ERROR", "This is a message");
 ```
+
+You could also use `level: LogLevel` in place of the key, but then the function caller must pass in an enum value and not a string.
+
 
 ## Reverse mapping
 
@@ -261,11 +273,13 @@ enum COLOR {
   Red,
 }
 
-const c = Enum.Red;
+const c = COLOR.Red;
 // 0
-const nameOfRed = Enum[c];
+
+const nameOfRed = COLOR[c];
 // "Red"
 ```
+
 
 ## Constant enums
 
