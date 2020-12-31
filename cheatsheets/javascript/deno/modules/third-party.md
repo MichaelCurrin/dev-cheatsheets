@@ -35,7 +35,7 @@ Middleware is added with the `.use()` method.
 A Hello World server:
 
 - `index.ts`
-    ```typesript
+    ```typescript
     import { Application } from "https://deno.land/x/oak/mod.ts";
 
     const app = new Application();
@@ -55,7 +55,7 @@ $ deno run --allow-net index.ts
 
 View in the browswer:
 
-- http://localhost:8000
+- [http://localhost:8000](http://localhost:8000)
 
 
 ## Colors
