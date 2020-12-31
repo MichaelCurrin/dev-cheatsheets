@@ -4,4 +4,4 @@ logo: git
 ---
 # Version control
 
-See [Resources](https://michaelcurrin.github.io/dev-resources/resources/version-control/) page.
+See my [Version control](https://michaelcurrin.github.io/dev-resources/resources/version-control/) in my Dev Resources.
