@@ -3,6 +3,14 @@
 
 ## Allowed values
 
+Note on sections below.
+
+If the input is from a user like a form, then you need to cast a string to the right type. This doesn't guarantee the value though, so you might need your own input validation or throw an error.
+
+```typescript
+foo(fruitInput as Fruit)
+```
+
 ### Enum
 
 ```typescript
@@ -24,11 +32,6 @@ foo("")
 // Argument is not of type Fruit so is not allowed.
 ```
 
-If the input is from a user like a form, then you need to cast a string to the right.
-
-```typescript
-foo(fruitInput as Fruit)
-```
 
 ### Type
 
@@ -48,12 +51,6 @@ foo("banana")
 
 foo("")
 // Argument is not of type Fruit so is not allowed.
-```
-
-If the input is from a user like a form, then you need to cast a string to the right type.
-
-```typescript
-foo(fruitInput as Fruit)
 ```
 
 Unfortunately you can't use the type inline in the function as `fruit: "apple" | "banana"` as that sees as binary operator and the type gets seen as `boolean | undefined`.
