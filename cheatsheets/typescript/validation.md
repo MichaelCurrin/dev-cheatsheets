@@ -1,5 +1,52 @@
 # Validation
 
+
+## Allowed values
+
+### Enum
+
+```typescript
+enum Fruit  {
+  Apple = "apple",
+  Banana = "banana"
+}
+
+function foo(fruit: Fruit) {
+  console.log(fruit)
+}
+
+foo(Fruit.Apple)
+// apple
+foo(Fruit.Banana)
+// banana
+
+foo("")
+// Argument is not of type Fruit so is not allowed.
+```
+
+### Type
+
+Use a type definition to limit inputs to certain values.
+
+```typescript
+type Fruit = "apple" | "banana";
+
+function foo(fruit: Fruit) {
+  console.log(fruit)
+}
+
+foo("apple")
+// apple
+foo("banana")
+// banana
+
+Foo("")
+// Argument is not of type Fruit so is not allowed.
+```
+
+Unfortunately you can't use the type inline in the function as `fruit: "apple" | "banana"` as that sees as binary operator and the type gets seen as `boolean | undefined`.
+
+
 ## Required and optional values
 
 ### Make optional
