@@ -24,6 +24,12 @@ foo("")
 // Argument is not of type Fruit so is not allowed.
 ```
 
+If the input is from a user like a form, then you need to cast a string to the right.
+
+```typescript
+foo(fruitInput as Fruit)
+```
+
 ### Type
 
 Use a type definition to limit inputs to certain values.
@@ -40,8 +46,14 @@ foo("apple")
 foo("banana")
 // banana
 
-Foo("")
+foo("")
 // Argument is not of type Fruit so is not allowed.
+```
+
+If the input is from a user like a form, then you need to cast a string to the right type.
+
+```typescript
+foo(fruitInput as Fruit)
 ```
 
 Unfortunately you can't use the type inline in the function as `fruit: "apple" | "banana"` as that sees as binary operator and the type gets seen as `boolean | undefined`.
