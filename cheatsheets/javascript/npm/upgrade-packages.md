@@ -75,11 +75,21 @@ This will ignore any existng any bounds for the package (such as `^1.0.0`).
 
 But it will still honor other packages which have a peer dependency on certain versions of this package. In one case, I actually ended up downgrading from Vue 3 to Vue 2 instead of getting the latest Vue 3, because of another dependency needing Vue 2.
 
-You might put in a specific version, or get the latest available. I've seen `@latest` and `@next` recommended in install instructions. Those are aliases which point to the latest release version. e.g.
+You can put in a specific version, if you know what you want.
 
 ```sh
 $ npm install react@17.0.0
+```
+
+Use `@latest` which is an alias that points to the latest release.
+
+```sh
 $ npm install react@latest
+```
+
+Use `@next` if you want the bleeding edge version (probably pre-releases).`
+
+```sh
 $ npm install react@next
 ```
 
