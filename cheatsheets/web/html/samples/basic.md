@@ -1,5 +1,7 @@
 # Basic
 
+The character encoding soon appear as early as possible in `head` and you'll get a browser warning if you omit it.
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
