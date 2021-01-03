@@ -39,6 +39,12 @@ Use the fallback option last.
 
 ## Path
 
+Use this to match all pages.
+
+```yaml
+path: ""
+```
+
 Path can also be like:
 
 ```yaml
