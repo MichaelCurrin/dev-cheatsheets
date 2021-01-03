@@ -1,4 +1,4 @@
-# gt
+# get
 
 Reference for [get](https://golang.org/pkg/cmd/go/internal/get/) command.
 
