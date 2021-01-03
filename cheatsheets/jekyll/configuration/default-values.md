@@ -1,7 +1,6 @@
-# Default config
+# Default values
 
 See the [Default Config](https://jekyllrb.com/docs/configuration/default/) in the Jekyll docs.
-
 
 ```yaml
 # Where things are
