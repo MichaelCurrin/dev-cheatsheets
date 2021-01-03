@@ -10,13 +10,13 @@ See [Frontmatter defaults](https://jekyllrb.com/docs/configuration/front-matter-
 ```yaml
 defaults:
   - scope:
-      type: "bar"
+      type: "foo"
     values:
       layout: "bazz"
       fizz: "Buzz"
 
   - scope:
-      path: "_pages"
+      path: "_baar"
     values:
       layout: "page"
 
