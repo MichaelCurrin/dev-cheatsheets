@@ -5,11 +5,15 @@ description: About the `defaults` field for setting default values on the frontm
 
 See [Frontmatter defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/) in the docs.
 
+These values get set as defaults on pages, posts and collections. The values on an actual page's frontmatter take preference.
+
+
 ## Example syntax
 
 ```yaml
 defaults:
   - scope:
+      path: "_foo"
       type: "foo"
     values:
       layout: "bazz"
@@ -26,7 +30,7 @@ defaults:
       layout: "default"
 ```
 
-Use `type` for collections.
+Use `type` for collections. It might be better to use `path` and `type` together here - need to check.
 
 Later matches will override earlier matches.
 
