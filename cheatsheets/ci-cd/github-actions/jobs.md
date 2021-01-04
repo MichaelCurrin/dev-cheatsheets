@@ -114,17 +114,57 @@ Using job output in a dependent job:
     ```
 
 
-## If statement
+## Conditional logic
 
-This step only runs when the event type is `pull_request` and the event action is unassigned.
+### Job if statement 
+
+How to run jobs on a condition 
+
+```yaml
+jobs:
+  build:
+    steps:
+      # ...
+
+  deploy:
+    if: "github.event_name == 'push'"
+    needs: checks
+    steps:
+      # ...
+```
+
+### Step if statement 
+
+Control whether a single step will run or be skipped.
+
+Here, this step only runs when the event type is `pull_request` and the event action is `unassigned`.
 
 - `main.yml`
     ```yaml
     steps:
-     - name: My first step
+      - name: My first step
        if: ${{ github.event_name == 'pull_request' && github.event.action == 'unassigned' }}
        run: echo "This event is a pull request that had an assignee removed."
     ```
+
+This can be useful if you want just one workflow file and one job but want to skip a deploy steps at the end. It also saves the trouble of persisting artifacts (like build output) between jobs, which takes extra code.
+
+Read more:
+
+- [Context and Expression Syntax](https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions)
+- [If steps](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idsteps).
+
+
+## Related
+
+### Env variables
+
+```yaml
+env:
+  SERVER: production
+```
+
+
 - `main.yml`
     ```yaml
     steps:
@@ -137,23 +177,6 @@ This step only runs when the event type is `pull_request` and the event action i
       run: |
         echo "$MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME."
     ```
-
-This can be useful if you want just one workflow file and one job but want to skip a deploy steps at the end.
-
-Read more:
-
-- [Context and Expression Syntax](https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions)
-- [If steps](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idsteps).
-
-
-## Related
-
-### Env
-
-```yaml
-env:
-  SERVER: production
-```
 
 ### Defaults
 
