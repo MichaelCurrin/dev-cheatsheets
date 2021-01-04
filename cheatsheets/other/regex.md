@@ -1,5 +1,7 @@
 # Regex
 
+{% raw %}
+
 ## Resources
 
 - [regex101.com](https://regex101.com/)
@@ -97,9 +99,7 @@ I made this and tested in VS Code.
 https:\/\/[\w./#-]*
 ```
 
-{% raw %}
 It does not match `?=` or trailing `/` or Jekyll `{{` URLs.
-{% endraw %}
 
 Add a space or `\s` or `\(` at the start to find URL in a certain context.
 
@@ -179,3 +179,6 @@ This variation handles `#` ID values.
     ```re
      [$3]($1$2$3$4$5)
     ```
+    
+{% endraw %}
+
