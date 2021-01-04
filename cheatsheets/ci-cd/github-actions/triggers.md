@@ -125,8 +125,9 @@ I haven't used release yet but it is popular from looking at other projects and 
 Published could be safer to use - as a created release is not published yet.
 
 ```yaml
+on:
   release:
-    types: [created]
+    types: created
 ```
 
 ```yaml
@@ -246,6 +247,7 @@ on:
         description: 'Person to greet'
         required: true
         default: 'Mona the Octocat'
+
       home:
         description: 'location'
         required: false
@@ -254,6 +256,7 @@ on:
 jobs:
   say_hello:
     runs-on: ubuntu-latest
+
     steps:
     - run: |
         echo "Hello ${{ github.event.inputs.name }}!"
