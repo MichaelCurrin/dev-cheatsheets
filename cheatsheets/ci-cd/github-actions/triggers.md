@@ -1,14 +1,18 @@
 ---
-description: Choose run condition with the `on` field
+description: Choose events that trigger your workflow 
 ---
 # Triggers
 
 {% raw %}
 
-Note that, in general if you have test, lint and build steps, you probably want to run them on all pushes and PRs. If there is anything related to a deploy, you probably only want to run against the master branch. Also you will only want to run the deploy against `master` - if you run it against both `master` and `gh-pages`, you'll have issues.
+Here we use the `on` field and one or more events to trigger a workflow.
+
+See the docs [Events that trigger workflows](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows).
+
+Note - in general if you have test, lint and build steps, you probably want to run them on all pushes and PRs. If there is anything related to a deploy, you probably only want to run against the master branch. Also you will only want to run the deploy against `master` - if you run it against both `master` and `gh-pages`, you'll have issues.
 
 
-## Trigger on a push or Pull Request event
+## Trigger on a commit
 
 ### On push to any branch
 
@@ -26,7 +30,7 @@ This will not build on master. This will build on a feature branch, but only whe
 on: pull_request
 ```
 
-### On push or pull request to any branch
+### On push or Pull Request to any branch
 
 ```yaml
 on: [push, pull_request]
@@ -59,6 +63,7 @@ on:
 ```
 
 Or
+
 ```yaml
 on:
   push:
@@ -69,7 +74,8 @@ on:
 
 This won't run on a PR between two branches which aren't the `master` branch.
 
-## On a schedule
+
+## Trigger on a schedule
 
 Using [on.schedule](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#onschedule) parameter.
 
@@ -118,7 +124,7 @@ on:
 ```
 
 
-## On a tag or release
+## Trigger on a tag or release
 
 I haven't used release yet but it is popular from looking at other projects and I cover this in other recipes in the [workflows](workflows/) section.
 
@@ -144,9 +150,7 @@ on:
 ```
 
 
-## On page build
-
-On a GH Pages build.
+## Trigger on a GH Pages build
 
 ```yaml
 on:
