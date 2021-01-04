@@ -41,7 +41,7 @@ jobs:
 ```
 
 
-## Needs
+## Needs field
 
 By default jobs run in parallel.
 
@@ -81,6 +81,7 @@ Using job output in a dependent job:
         steps:
         - id: step1
           run: echo "::set-output name=test::hello"
+
         - id: step2
           run: echo "::set-output name=test::world"
 
@@ -90,20 +91,20 @@ Using job output in a dependent job:
         needs: job1
 
         steps:
-        - run: echo ${{needs.job1.outputs.output1}} ${{needs.job1.outputs.output2}}
+        - run: echo ${{ needs.job1.outputs.output1 }} ${{ needs.job1.outputs.output2 }}
     ```
 
 
 ## If statement
 
-This step only runs when the event type is a pull_request and the event action is unassigned.
+This step only runs when the event type is `pull_request` and the event action is unassigned.
 
 - `main.yml`
     ```yaml
     steps:
      - name: My first step
        if: ${{ github.event_name == 'pull_request' && github.event.action == 'unassigned' }}
-       run: echo This event is a pull request that had an assignee removed.
+       run: echo "This event is a pull request that had an assignee removed."
     ```
 - `main.yml`
     ```yaml
@@ -115,12 +116,12 @@ This step only runs when the event type is a pull_request and the event action i
         MIDDLE_NAME: The
         LAST_NAME: Octocat
       run: |
-        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+        echo "$MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME."
     ```
 
 This can be useful if you want just one workflow file and one job but want to skip a deploy steps at the end.
 
-Read more
+Read more:
 
 - [Context and Expression Syntax](https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions)
 - [If steps](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idsteps).
