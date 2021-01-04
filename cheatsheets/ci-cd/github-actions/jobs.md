@@ -16,6 +16,8 @@ See [Workflow syntax for Github Actions](https://help.github.com/en/actions/refe
 
 ## Job IDs
 
+A workflow usually has just one job. The example below has two jobs.
+
 Each job must have a unique ID as below. This must start with a letter or `_` and contain only alphanumeric characters, `-`, or `_`.
 
 ```yaml
@@ -27,7 +29,11 @@ jobs:
     name: My second job
 ```
 
-Using `runs-on`.
+Here the first job ID is `my_first_job`. This example from the docs and YAML in general uses underscores but usually I see hyphens used instead. 
+
+## Operating system
+
+Use `runs-on` to specify the operating system. Using `ubuntu-latest` as below is the most common approach.
 
 ```yaml
 jobs:
@@ -40,12 +46,25 @@ jobs:
     name: My second job
 ```
 
+Two test on multiple operating systems.
 
-## Needs field
+```yam
+job:
+  build:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macOS-latest
+```
 
-By default jobs run in parallel.
 
-Here we setup a sequence of jobs that only run if the previous one passed.
+## Job sequence
+
+By default, jobs run in **parallel**.
+
+Here we setup a **sequence** of jobs. Each job only run if the previous one passed.
 
 [Job Needs](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idneeds) docs.
 
