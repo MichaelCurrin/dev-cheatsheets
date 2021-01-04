@@ -5,13 +5,15 @@
 
 Here we use a standard [Checkout](https://github.com/actions/checkout) action and some install and build steps without installing any extra Actions.
 
+You might use a more specific name at the top, like `Node CI` or `GH Pages deploy`.
+
 ```yaml
 name: Build
 
 on: push
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
