@@ -147,7 +147,24 @@ Here, this step only runs when the event type is `pull_request` and the event ac
        run: echo "This event is a pull request that had an assignee removed."
     ```
 
-This can be useful if you want just one workflow file and one job but want to skip a deploy steps at the end. It also saves the trouble of persisting artifacts (like build output) between jobs, which takes extra code.
+This can be useful if you want just one workflow file and one job but want to skip a deploy steps at the end. 
+
+e.g.
+
+```yaml
+    steps:
+        - name: Build
+          # Create output in dist directory...
+
+        - name: Deploy to GH Pages 🚀
+          if: ${{ github.event_name != 'pull_request' }}
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: dist
+```
+
+Using a condition for the last step also saves the trouble of using code to persist artifacts (like build output) between two jobs.
 
 Read more:
 
@@ -174,8 +191,7 @@ env:
         FIRST_NAME: Mona
         MIDDLE_NAME: The
         LAST_NAME: Octocat
-      run: |
-        echo "$MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME."
+      run: echo "$MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME."
     ```
 
 ### Defaults
