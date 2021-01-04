@@ -101,7 +101,7 @@ https:\/\/[\w./#-]*
 It does not match `?=` or trailing `/` or Jekyll `{{` URLs.
 {% endraw %}
 
-Add ` ` or `\s` or `\(` at the start to find URL in a certain context.
+Add a space or `\s` or `\(` at the start to find URL in a certain context.
 
 
 #### Security
