@@ -5,14 +5,23 @@
 
 See [install](https://bundler.io/man/bundle-install.1.html) command help.
 
+Install all project gems.
+
 ```sh
 $ bundle install
 $ # Equivalent but less clear.
 $ bundle
 ```
 
+Check paths of installed gems.
+
 ```sh
-$ bundle install GEM
+$ ls vendor/bundle/ruby/2.7.0/gems
+```
+```
+addressable-2.7.0           jekyll-feed-0.15.1          minima-2.5.1
+colorator-1.1.0             jekyll-sass-converter-1.5.2 pathutil-0.16.2
+...
 ```
 
 Production install.
@@ -34,6 +43,15 @@ Summary of args I find useful.
 | `--jobs=[<number>], -j[<number>]` | The maximum number of parallel download and install jobs. The default is 1.                                                                                                                                        |
 
 [deployment mode]: https://bundler.io/man/bundle-install.1.html#DEPLOYMENT-MODE
+
+
+## Add
+
+Add a gem to `Gemfile` and install it.
+
+```sh
+$ bundle add GEM
+```
 
 
 ## Info
