@@ -64,3 +64,11 @@ $ which -a python3
 /usr/local/bin/python3
 /usr/bin/python3
 ```
+
+Use `xargs` to iterate over them to check if any are symlinks.
+
+```sh
+$ which -a python3 | xargs ls -l
+-rwxr-xr-x  1 root     wheel  31488 22 Sep 02:29 /usr/bin/python3
+lrwxr-xr-x  1 mcurrin  admin     38 13 Oct 13:15 /usr/local/bin/python3 -> ../Cellar/python@3.9/3.9.0/bin/python3
+```
