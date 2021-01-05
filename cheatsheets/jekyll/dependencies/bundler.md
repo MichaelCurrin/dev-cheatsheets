@@ -1,5 +1,39 @@
 # Bundler
 
+Guide to using [Bundler](https://bundler.io) for managing project gems in a Jekyll project or any Ruby project.
+
+## Quick reference
+
+
+```sh
+$ bundle install
+$ bundle update
+$ bundle config
+$ bundle exec COMMANDS
+$ bundle clean
+$ bundle help
+```
+
+
+## Config
+
+Run this when setting up a project.
+
+```sh
+$ bundle config set --local path vendor/bundle
+```
+
+That will create - `.bundle/config` file.
+
+Ignore it:
+
+- `.gitignore`
+    ```
+    .bundle
+    ```
+
+In the case of using the frozen or deploy flags, you'll get values added to the config.
+
 
 ## Install
 
@@ -45,13 +79,29 @@ Summary of args I find useful.
 [deployment mode]: https://bundler.io/man/bundle-install.1.html#DEPLOYMENT-MODE
 
 
-## Add
+## Adding gems
 
 Add a gem to `Gemfile` and install it.
 
 ```sh
 $ bundle add GEM
 ```
+
+
+## Upgrading gems
+
+If you've made changes to your `Gemfile`, then you `Gemfile.lock` file will not match.
+
+If you run `bundle install`, you'll get an error about a mismatch.
+
+Therefore you can do:
+
+```sh
+$ bundle update
+```
+
+You can also do that if there no changes in `Gemfile` and you just want to get newer gems.
+
 
 
 ## Info
@@ -83,3 +133,4 @@ $ bundle info minima --path
 ```
 
 This replaces the now deprecated `bundle show GEM`.
+
