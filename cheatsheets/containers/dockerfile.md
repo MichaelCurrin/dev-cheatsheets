@@ -2,7 +2,7 @@
 logo: docker
 description: Guide to synax for a `Dockerfile`
 ---
-# Docker
+# Dockerfile
 
 See [Dockerfile reference](https://docs.docker.com/engine/reference/builder/) doc.
 
