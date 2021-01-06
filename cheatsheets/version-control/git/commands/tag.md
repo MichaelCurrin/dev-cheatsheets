@@ -74,6 +74,8 @@ v0.0.0     v0.0.0
 v0.1.0     Add foo to bar
 ```
 
+If you view tags on GitHub, you'll see the message below the tag name.
+
 
 ## Annotate
 
