@@ -1,4 +1,7 @@
-# Dependency versions
+---
+description: Understanding the NPM packages version pattern
+---
+# Versions
 
 
 ## Resources

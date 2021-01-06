@@ -5,7 +5,7 @@ layout: listing
 # JavaScript
 
 
-### Related:
+### Related
 
 - [JavaScript guide][] on my [MichaelCurrin/learn-to-code][] repo.
 - [NPM][] section of this project.
