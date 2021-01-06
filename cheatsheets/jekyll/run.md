@@ -1,5 +1,6 @@
 # Run
 
+For running Jekyll in with Docker, see the [Jekyll]({% site.baseurl %}{% link cheatsheets/containers/jekyll.md %}) container section.
 
 ## Help
 
@@ -9,12 +10,13 @@ For help see:
 jekyll --version
 jekyll help serve
 jekyll serve --help
+
 # Find config issues.
 jekyll doctor
 ```
 
 
-## Serve subdirectory
+## Serve a subdirectory
 
 If Jekyll is installed with *Bundler* at the top-level of the project, you can run Jekyll from anywhere.
 
