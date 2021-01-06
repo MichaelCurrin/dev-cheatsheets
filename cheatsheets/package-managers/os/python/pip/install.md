@@ -1,112 +1,18 @@
-# Pip command
 
-See also [project packages] section of this project and look for pip or Python pages.
-
-[project packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/project-packages.md %}
+# Install
 
 
-## Protect global environment
-
-Prevent accidentally installing or upgrading in your user's global Python environment.
-
-In Linux or macOS, set this value in your `~/.bashrc` or `~/.zshrc` file.
-
-```sh
-PIP_REQUIRE_VIRTUALENV=true
-```
-
-Now, any time you run `pip install` **outside** a virtual environment you'll get an error.
-
-How to force global install:
-
-```sh
-$ PIP_REQUIRE_VIRTUALENV=false pip install PACKAGE
-```
-
-
-## Pip commands
-
-- `install PACKAGE`
-- `install PACKAGE==VERSION`
-- `install PACKAGE --user`
-- `install PACKAGE -U|--upgrade`
-- `install -r REQUIREMENTS_TXT_PATH`
-- `install pip --upgrade`
-- `uninstall PACKAGE`
-
-
-
-## Ways to access pip
-
-### Outside virtual environment
-
-Run global pip (probably uses Python 2).
-
-```sh
-$ pip
-```
-
-Run global pip for Python 3.
-
-```sh
-$ pip3
-```
-
-Or
-
-```sh
-$ python3 -m pip
-```
-
-Or target a more specific version which is not your system default.
-
-```sh
-$ python3.8 -m pip
-```
-
-Upgrade pip. If you get permissions errors, as `--user` flag.
-
-```sh
-$ PIP_REQUIRE_VIRTUALENV pip install --upgrade pip
-# OR
-$ PIP_REQUIRE_VIRTUALENV python3 -m pip install --upgrade pip
-```
-
-### Within a virtual environment
-
-Run the pip which is in the scope of the environment - this requires the environment to be activated.
-
-```sh
-$ source venv/bin/activate
-$ pip
-```
-
-Even if using Python 3, you won't need to use `pip3` - using `pip` in a virtual environment is fine.
-
-This approach does **not** require the activate step.
-
-```sh
-$ venv/bin/pip
-```
-
-
-## Update pip
-
-Keep `pip` and related packages up to date.
-
-```sh
-$ pip3 install --upgrade pip setuptools wheel
-```
-
-## CLI usage
-
-### Install
+## Help
 
 See also online docs, for example how to use `-e` is covered under [Editable installs](https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs).
 
 ```sh
 $ pip install --help
 ```
+
+<details>
+<summary>Output</summary>
+
 ```
 Usage:
   pip install [options] <requirement specifier> [package-index-options] ...
@@ -309,3 +215,47 @@ General Options:
                               Silence deprecation warnings for upcoming
                               unsupported Pythons.
 ```
+
+</details>
+
+
+## Install from requirements file
+
+Set the version.
+
+- `requirements.txt` for PyPI:
+    ```
+    foo>=0.2
+    ```
+- `requirement.txt` for GitHub:
+    ```
+    -e git+https://github.com/FooBar/baz.git@master
+    ```
+
+Then install from the file.
+
+```sh
+$ pip install -r requirements.txt
+```
+
+
+## Install using CLI
+
+Or install the version directly. Note the quotes help to escape characters.
+
+- Install from PyPI:
+    ```sh
+    $ pip install 'foo>=0.2'
+    ```
+- Install from GitHub:
+    ```
+    $ pip install -e git+https://github.com/FooBar/baz.git@master
+    ```
+
+You omit a version, though this can be dangerous for upgrading or setting up environments for import projects. If you omit a version, you'll get the latest.
+
+```sh
+$ pip install foo
+```
+
+But note that command has no version number requested. So if you run the command repeatedly, you won't ever get a new version, except on a fresh install.

@@ -1,5 +1,5 @@
 ---
-description: Understanding versioning of Python packages
+description: Understanding versioning of Python pip packages
 ---
 # Versions
 
@@ -29,7 +29,6 @@ Exact version lock
 
 
 ### Compatible release
-
 
 ```
 ~= X.Y
@@ -79,6 +78,7 @@ For compatible release clause, the documentation says that the following pairs o
     # Shorthand
     ~= 1.4.5
     ```
+
 
 ## Examples
 
