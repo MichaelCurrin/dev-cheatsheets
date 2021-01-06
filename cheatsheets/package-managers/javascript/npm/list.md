@@ -1,7 +1,4 @@
-# npm
-
-
-## List
+# List
 
 ```sh
 $ npm list
