@@ -1,6 +1,7 @@
 # Run
 
-For running Jekyll in with Docker, see the [Jekyll]({{ site.baseurl }}{% link cheatsheets/containers/jekyll.md %}) container section.
+For running Jekyll with Docker, see the [Jekyll Containers](https://michaelcurrin.github.io/code-cookbook/recipes/containers/jekyll.html) recipe.
+
 
 ## Help
 
