@@ -1,5 +1,5 @@
 ---
-description: The container management tool
+description: Guide to running CLI commands with `docker` - the container management tool
 logo: docker
 ---
 # Docker CLI
@@ -15,99 +15,14 @@ logo: docker
     - [Docker cheatsheet](https://dockerlabs.collabnix.com/docker/cheatsheet/) on Dockerlabs.
 
 
-## Common commands
-
-[source](https://www.mankier.com/1/docker#Examples_(TL;DR))
-
--   List currently running docker containers: `docker ps`
--   List all docker containers (running and stopped): `docker ps -a`
--   Start a container from an image, with a custom name: `docker run --name container_name image`
--   Start or stop an existing container: `docker start|stop container_name`
--   Pull an image from a docker registry: `docker pull image`
--   Open a shell inside of an already running container: `docker exec -it container_name sh`
--   Remove a stopped container: `docker rm container_name`
--   Fetch and follow the logs of a container: `docker logs -f container_name`
-
-
-## Clean
-
-Remove unused data.
-
-```sh
-$ docker system prune [OPTIONS]
-```
-
-| Options      | Description                                      |
-| ------------ | ------------------------------------------------ |
-| --all , -a   | Remove all unused images not just dangling ones. |
-| --force , -f | Do not prompt for confirmation                   |
-
-
-With no options, you will get a confirmation prompt and told that these will be removed:
-
-- all stopped containers
-- all networks not used by at least one container
-- all dangling images
-- all build cache
-
-[source](https://docs.docker.com/engine/reference/commandline/system_prune/)
-
-Remove images:
-
-```sh
-$ docker image prune
-```
-
-## Run
-
-Links:
-
-- Docker CLI reference:
-	- [run](https://docs.docker.com/engine/reference/run/)
-	- [exec](https://docs.docker.com/engine/reference/commandline/exec/)
-		> The `docker exec` command runs a new command in a running container.
-- [What is the different between “run” and “exec”](https://chankongching.wordpress.com/2017/03/17/docker-what-is-the-different-between-run-and-exec/)
-
-Run a command in a **new** container. The container will then stop.
-
-```sh
-$ docker run IMAGE COMMAND
-```
-
-e.g.
-
-```sh
-$ docker run -it node
->
-```
-
-Run a command in an **existing** running container, given a tagged name or ID.
-
-```sh
-$ docker start
-$ docker exec CONTAINER
-```
-
-Useful if you want to tunnel in and use an interactive session with Bash, Python, etc.
-
-```sh
-$ docker exec -it CONTAINER bash
-```
-
-Set an ad hoc entry point to start an container even if normally exists immediately and then start interactive terminal.
-
-```sh
-$ docker run  -it IMAGE --entrypoint bash
-```
-
-You'll start a new container each time though.
-
-
-## Man page
+## Help
 
 ```sh
 $ docker --help
 ```
+
+<details>
+<summary>Output</summary>
 
 ```
 Usage:	docker [OPTIONS] COMMAND
@@ -191,13 +106,28 @@ Commands:
 Run 'docker COMMAND --help' for more information on a command.
 ```
 
+</details>
 
-## Cheatsheet
 
-From [How to Use Docker Images, Containers, and Dockerfiles
-](https://medium.com/swlh/how-to-use-docker-images-containers-and-dockerfiles-39e4e8fc181a)
+## Common commands
 
-### Images
+From [source](https://www.mankier.com/1/docker#Examples_(TL;DR))
+
+-   List currently running docker containers: `docker ps`
+-   List all docker containers (running and stopped): `docker ps -a`
+-   Start a container from an image, with a custom name: `docker run --name container_name image`
+-   Start or stop an existing container: `docker start|stop container_name`
+-   Pull an image from a docker registry: `docker pull image`
+-   Open a shell inside of an already running container: `docker exec -it container_name sh`
+-   Remove a stopped container: `docker rm container_name`
+-   Fetch and follow the logs of a container: `docker logs -f container_name`
+
+
+## Summary of commands
+
+From [How to Use Docker Images, Containers, and Dockerfiles](https://medium.com/swlh/how-to-use-docker-images-containers-and-dockerfiles-39e4e8fc181a)
+
+### Manage Images
 
 ```sh
 $ docker build -t my-node-img .
@@ -205,10 +135,11 @@ $ docker image ls my-node-img
 $ docker image ls
 ```
 
-### Containers
+### Manage containers
+
+Check Linux version.
 
 ```sh
-# Check Linux version.
 $ docker run node:12-slim cat /etc/issue
 ```
 
@@ -239,15 +170,122 @@ $ docker exec -it my-app bash
 $ docker run --name my-app -p 3000:3000 -d --init --rm my-node-img
 ```
 
-### Stopping
+### Stop and remove container
+
+Stop a running container
 
 ```sh
-# Stop a running container
 $ docker stop my-app
+```
 
-# Remove a non-running container
-$ docker rm my-app
+Stop all running containers
 
-# Stop all running containers
+```sh
 $ docker stop $(docker ps -q)
 ```
+
+Remove a stopped container.
+
+```sh
+$ docker rm my-app
+```
+
+
+## How to run containers
+> Using `run`, `start` and `exec`
+
+Links:
+
+- Docker CLI reference:
+	- [run](https://docs.docker.com/engine/reference/run/)
+	- [exec](https://docs.docker.com/engine/reference/commandline/exec/)
+		> The `docker exec` command runs a new command in a running container.
+- [What is the different between “run” and “exec”](https://chankongching.wordpress.com/2017/03/17/docker-what-is-the-different-between-run-and-exec/)
+
+Run a command in a **new** container. The container will then stop.
+
+```sh
+$ docker run IMAGE COMMAND
+```
+
+e.g.
+
+```sh
+$ docker run -it node
+>
+```
+
+Run a command in an **existing** running container, given a tagged name or ID.
+
+```sh
+$ docker start
+$ docker exec CONTAINER
+```
+
+Useful if you want to tunnel in and use an interactive session with Bash, Python, etc.
+
+```sh
+$ docker exec -it CONTAINER bash
+```
+
+Set an ad hoc entry point to start an container even if normally exists immediately and then start interactive terminal.
+
+```sh
+$ docker run  -it IMAGE --entrypoint bash
+```
+
+You'll start a new container each time though.
+
+
+
+## List
+
+Show running containers.
+
+```sh
+$ docker ps
+```
+
+Show running and stopped containers - `--all`.
+
+```sh
+$ docker ps -a
+```
+
+Show images.
+
+```sh
+$ docker images
+```
+
+
+## Clean
+
+Remove unused data.
+
+```sh
+$ docker system prune [OPTIONS]
+```
+
+| Options      | Description                                      |
+| ------------ | ------------------------------------------------ |
+| --all , -a   | Remove all unused images not just dangling ones. |
+| --force , -f | Do not prompt for confirmation                   |
+
+
+With no options, you will get a confirmation prompt and told that these will be removed:
+
+- all stopped containers
+- all networks not used by at least one container
+- all dangling images
+- all build cache
+
+[source](https://docs.docker.com/engine/reference/commandline/system_prune/)
+
+Remove images:
+
+```sh
+$ docker image prune
+```
+
+
