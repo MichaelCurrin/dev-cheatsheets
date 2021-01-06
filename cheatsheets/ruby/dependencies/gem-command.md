@@ -62,6 +62,8 @@ Commands may be abbreviated, so long as they are unambiguous.
 e.g. 'gem i rake' is short for 'gem install rake'.
 ```
 
+</details>
+
 
 ## Help
 
