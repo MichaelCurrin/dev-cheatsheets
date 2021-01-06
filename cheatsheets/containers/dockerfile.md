@@ -12,16 +12,14 @@ See [Dockerfile reference](https://docs.docker.com/engine/reference/builder/) do
 - `Dockerfile`
     ```
     FROM image-name
-
+    
     ENV foo=bar
-
     ARG fizz=buzz
 
     RUN apt-get update
-
     RUN apt install -q -y foo
 
-    RUN echo hello
+    RUN echo "Hello"
     ```
 
 
@@ -171,6 +169,7 @@ ARG <name>[=<default value>]
 ```
 
 Example:
+
 ```Dockerfile
 FROM busybox
 ARG user1
@@ -192,7 +191,6 @@ CMD  /code/run-extras
 ### Entrypoint
 
 An `ENTRYPOINT` allows you to configure a container that will run as an executable.
-
 
 - Exec form - preferred.
     ```Dockerfile
