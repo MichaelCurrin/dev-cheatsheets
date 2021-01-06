@@ -82,3 +82,32 @@ Sign the tag with annotation.
 ```sh
 $ git tag v0.1.0 -a
 ```
+
+
+## Sort
+
+Sort the tags by semantic convention and then reverse the order with most recent first.
+
+```sh
+$ git tag -n | sort -V -r
+```
+```
+v0.5.0          Add docker support
+v0.4.0          v0.4.0
+v0.3.0          v0.3.0
+v0.2.0          v0.2.0
+v0.1.0          v0.1.0
+```
+
+Compare with:
+
+```sh
+$ git tag
+```
+```
+v0.1.0
+v0.2.0
+v0.3.0
+v0.4.0
+v0.5.0
+```
