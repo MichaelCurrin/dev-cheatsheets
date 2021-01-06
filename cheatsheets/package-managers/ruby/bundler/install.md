@@ -1,45 +1,11 @@
-# Bundler
-
-Guide to using [Bundler](https://bundler.io) for managing project gems in a Jekyll project or any Ruby project.
-
-## Quick reference
+# Install
 
 
-```sh
-$ bundle install
-$ bundle update
-$ bundle config
-$ bundle exec COMMANDS
-$ bundle clean
-$ bundle help
-```
-
-
-## Config
-
-Run this when setting up a project.
-
-```sh
-$ bundle config set --local path vendor/bundle
-```
-
-That will create - `.bundle/config` file.
-
-Ignore it:
-
-- `.gitignore`
-    ```
-    .bundle
-    ```
-
-In the case of using the frozen or deploy flags, you'll get values added to the config.
-
-
-## Install
+## `install`
 
 See [install](https://bundler.io/man/bundle-install.1.html) command help.
 
-Install all project gems.
+Install all gems listed in `Gemfile`.
 
 ```sh
 $ bundle install
@@ -64,6 +30,7 @@ Production install.
 $ bundle install --frozen --deployment
 ```
 
+
 ### Arguments
 
 Summary of args I find useful.
@@ -79,58 +46,53 @@ Summary of args I find useful.
 [deployment mode]: https://bundler.io/man/bundle-install.1.html#DEPLOYMENT-MODE
 
 
-## Adding gems
+## add
 
-Add a gem to `Gemfile` and install it.
-
-```sh
-$ bundle add GEM
-```
-
-
-## Upgrading gems
-
-If you've made changes to your `Gemfile`, then you `Gemfile.lock` file will not match.
-
-If you run `bundle install`, you'll get an error about a mismatch.
-
-Therefore you can do:
+> Adds the specified gem to Gemfile (if valid) and run 'bundle install' in one step.
 
 ```sh
-$ bundle update
+$ bundle add GEM VERSION
 ```
 
-You can also do that if there no changes in `Gemfile` and you just want to get newer gems.
-
-
-
-## Info
-
+Example:
 
 ```sh
-$ bundle info GEM [OPTIONS]
+$ bundle add jekyll-optional-front-matter
 ```
 
-### All info
+Line appended to `Gemfile`:
+
+```ruby
+gem "jekyll-optional-front-matter", "~> 0.3.2"
+```
+
+Output:
+
+```
+Fetching gem metadata from https://rubygems.org/..........
+...
+Using jekyll-optional-front-matter 0.3.2
+```
+
+### Add to group
+
+To put the plugin in a group:
 
 ```sh
-$ bundle info minima
-```
-```
-  * minima (2.5.1)
-	Summary: A beautiful, minimal theme for Jekyll.
-	Homepage: https://github.com/jekyll/minima
-	Path: /Users/mcurrin/repos/_static-sites/jekyll-blog-demo/vendor/bundle/ruby/2.7.0/gems/minima-2.5.1
+$ bundle add jekyll-optional-front-matter -g jekyll_plugins
 ```
 
-### Path
+Line appended:
 
-```sh
-$ bundle info minima --path
-```
-```
-/Users/mcurrin/repos/_static-sites/jekyll-blog-demo/vendor/bundle/ruby/2.7.0/gems/minima-2.5.1
+```ruby
+gem "jekyll-optional-front-matter", "~> 0.3.2", :group => :jekyll_plugins
 ```
 
-This replaces the now deprecated `bundle show GEM`.
+But you may prefer to write it yourself like this:
 
+```ruby
+group :jekyll_plugins do
+  gem 'jekyll-optional-front-matter', '~>	0.3.2'
+  # Other plugins...
+end
+```

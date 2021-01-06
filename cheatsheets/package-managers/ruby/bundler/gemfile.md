@@ -3,9 +3,34 @@
 
 See [Gemfile](https://bundler.io/gemfile.html) in Bundler docs.
 
+
+## Install gem
+
+- `Gemfile`
+    ```ruby
+    gem 'foo'
+
+    gem 'bar', '~> 2.5'
+    ```
+
+Then Bundler will use that.
+
+```sh
+$ bundle install
+```
+
+
+## Install from GitHub
+
+```ruby
+gem 'bar', git: 'https://github.com/foo/bar'
+```
+
 ## Groups
 
 From [Groups](https://bundler.io/guides/groups.html) doc.
+
+### Exclude development and test
 
 ```ruby
 # These gems are in the :default group
@@ -27,13 +52,11 @@ end
 gem 'cucumber', group: [:cucumber, :test]
 ```
 
-
 ```sh
 $ bundle install --without test development
 ```
 
-
-Or
+### Exclude production
 
 ```ruby
 source 'https://rubygems.org'
