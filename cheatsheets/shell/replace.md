@@ -122,7 +122,6 @@ world
 Make sure that the 2nd argument for `tr` is `'` followed by enter - if you press space and then enter then it doesn't work.
 
 
-
 ## Backup
 
 The default use of `sed` will just print, so use the inline flag to update the file.
@@ -133,26 +132,37 @@ Note that this flag works differently on macOS and Linux.
 
 Here assume pattern is like `'s/foo/bar/g'` and the PATH could be `*` or a filename.
 
-This is for Linux.
+### Linux
 
+This is for Linux.
 
 ```sh
 $ sed -i PATTERN PATH
 $ sed -i=.bak PATTERN PATH
 ```
 
+
 A backup is made if you supply a suffix - but you must _not_ leave a gap between the flag and the suffix.
+
 ```
 -i[SUFFIX], --in-place[=SUFFIX]
 
         edit files in place (makes backup if SUFFIX supplied)
 ```
 
-On macOS you can't just use `-i`. You _have_ to provide an argument - even if its an empty string for no backup.
+### macOS
+
+On the BSD `sed` on macOS you can't just use `-i`. You _must_ to provide an argument - even if its an empty string for no backup.
 
 ```sh
 $ sed -i '' PATTERN PATH
 $ sed -i '.bak' PATTERN PATH
+```
+
+For the first line, do **not** use this below, since it gets interpreted as a literal `=` sign.
+
+```sh
+sed -i=''
 ```
 
 Or you should install and alias the GNU sed.
