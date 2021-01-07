@@ -64,6 +64,15 @@ def
 ghi
 ```
 
+Note on Bash 3, that will print the first value and some text as `abc[@]`, instead of expanding.
+
+Then you need to do:
+
+```
+for X in ${MY_ARRAY[@]}; do
+```
+
+
 Or without an array variable:
 
 ```sh
