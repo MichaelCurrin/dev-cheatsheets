@@ -1,7 +1,7 @@
 ---
 description: How to run shell scripts
 ---
-# Executre
+# Execute
 
 
 The `.sh` extension is not necessary but is common when the script contains Bash or ZSH code.
