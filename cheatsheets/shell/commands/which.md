@@ -72,3 +72,13 @@ $ which -a python3 | xargs ls -l
 -rwxr-xr-x  1 root     wheel  31488 22 Sep 02:29 /usr/bin/python3
 lrwxr-xr-x  1 mcurrin  admin     38 13 Oct 13:15 /usr/local/bin/python3 -> ../Cellar/python@3.9/3.9.0/bin/python3
 ```
+
+Or without `xargs`.
+
+```sh
+ls -l $(which -a python3)
+lrwxrwxrwx 1 root 9 Jun  6  2020 /bin/python3 -> python3.8
+lrwxrwxrwx 1 root 9 Jun  6  2020 /usr/bin/python3 -> python3.8
+```
+
+Note - if `which` returns nothing here, then the subshell will be empty.
