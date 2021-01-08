@@ -14,7 +14,7 @@ Here are two recommended commands based on what you get in GitHub Actions for a 
     $ flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     ```
 
-I like to use those in a `Makefile` so they are easily to use locally and in CI.
+I like to use those in a `Makefile` such as [here](https://github.com/MichaelCurrin/py-project-template/blob/master/Makefile) so that they are easy to use locally and in CI.
 
 The arguments can be moved to a config as well.
 
