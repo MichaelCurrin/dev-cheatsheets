@@ -1,9 +1,7 @@
-# Linting
-
-## Flake8
+# Flake8
 
 
-### Config
+## Config
 
 [Configuring Flake8](https://flake8.pycqa.org/en/latest/user/configuration.html)
 
@@ -33,16 +31,19 @@ Example:
     max-complexity = 10
     ```
 
-### Status codes
+
+## Status codes
 
 "error", "error code" or "violation"
 
 > The symbol associated with a specific check. For example, pycodestyle implements checks that look for whitespace around binary operators and will either return an error code of W503 or W504.
 
+Using Flake8 gives error codes from Flake8 and the lower level PyCode project.
+
 - Flake8 docs
     - [Error codes](https://flake8.pycqa.org/en/latest/user/error-codes.html)
     - Flake8 errors start with `F` - F4XX, F5XX, F6XX, F8XX and F901.
-- PyCodes style
+- PyCode style
     - [Error codes](https://pycodestyle.pycqa.org/en/latest/intro.html#error-codes) - linked from the Flake8 docs
     - `E` errors - EXXX.
     - `W` warnings - WXXX. It looks like these are mostly taken care of by using an IDE to format the code and not using any deprecated code patterns.
