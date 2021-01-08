@@ -1,9 +1,27 @@
 # Flake8
 
 
+## CLI
+
+Here are two recommended commands based on what you get in GitHub Actions for a Python template.
+
+- Stop the build if there are Python syntax errors or undefined names.
+    ```sh
+    $ flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+    ```
+- Exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide.
+    ```sh
+    $ flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    ```
+
+I like to use those in a `Makefile` so they are easily to use locally and in CI.
+
+The arguments can be moved to a config as well.
+
+
 ## Config
 
-[Configuring Flake8](https://flake8.pycqa.org/en/latest/user/configuration.html)
+See [Configuring Flake8](https://flake8.pycqa.org/en/latest/user/configuration.html) guide.
 
 Flake8 supports storing its configuration in the following places:
 
@@ -32,9 +50,7 @@ Example:
     ```
 
 
-## Status codes
-
-"error", "error code" or "violation"
+## Error status codes
 
 > The symbol associated with a specific check. For example, pycodestyle implements checks that look for whitespace around binary operators and will either return an error code of W503 or W504.
 
