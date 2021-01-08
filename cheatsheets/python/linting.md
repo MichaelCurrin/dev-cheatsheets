@@ -24,12 +24,12 @@ Example:
     [flake8]
     ignore = D203
     exclude =
-        .git,
-        __pycache__,
-        docs/source/conf.py,
-        old,
-        build,
-        dist
+      .git,
+      __pycache__,
+      docs/source/conf.py,
+      old,
+      build,
+      dist
     max-complexity = 10
     ```
 
@@ -38,7 +38,6 @@ Example:
 "error", "error code" or "violation"
 
 > The symbol associated with a specific check. For example, pycodestyle implements checks that look for whitespace around binary operators and will either return an error code of W503 or W504.
-
 
 - Flake8 docs
     - [Error codes](https://flake8.pycqa.org/en/latest/user/error-codes.html)
