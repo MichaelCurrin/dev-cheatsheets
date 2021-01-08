@@ -21,12 +21,13 @@ exclude:
   - docs/
   - vendor/
   - Gemfile
-  - Gemfile.lock
   - LICENSE
   - Makefile
   - README.md
   - sample*.png
 ```
+
+Note that if you ignore `LICENSE` and `Gemfile`, then `LICENSE-source` and `Gemfile.lock` also get ignored.
 
 You may use a globstar pattern.
 
