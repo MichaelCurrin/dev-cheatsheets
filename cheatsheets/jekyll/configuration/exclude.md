@@ -29,7 +29,7 @@ exclude:
 
 Note that if you ignore `LICENSE` and `Gemfile`, then `LICENSE-source` and `Gemfile.lock` also get ignored.
 
-You may use a globstar pattern.
+You may use a globstar pattern. Make sure to use quotes if you pattern starts or ends with an asterisk.
 
 ```yaml
 exclude:
