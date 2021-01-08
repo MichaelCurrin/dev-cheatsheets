@@ -8,15 +8,61 @@ See [HTML Element Reference](https://www.w3schools.com/tags/) on W3 schools.
 
 See specific tags of interest to me covered below.
 
-- [code](https://www.w3schools.com/tags/tag_code.asp)
-- [pre](https://www.w3schools.com/tags/tag_pre.asp)
 - [div](https://www.w3schools.com/tags/tag_div.asp)
 - [blockquote](https://www.w3schools.com/tags/tag_blockquote.asp)
+- `mark` - highlighting by default in yellow
+
+
+## Code and pre
+
+- [code](https://www.w3schools.com/tags/tag_code.asp)
+- [pre](https://www.w3schools.com/tags/tag_pre.asp)
+
+Use `pre` for preformatted text - linebreaks are kept and HTML symbols don't need escaping.
+
+Use `code` for representing code snippets or if you have actual JSON data for example to store on the page.
+
+**Code**
+
+```html
+<pre>Using the
+pre tag
+over multiple lines.</pre>
+```
+
+**Result**
+
+<pre>Using the
+pre tag
+over multiple lines.</pre>
+
+**Code**
+
+It's best to keep everything one line to avoid rendering the whitespace.
+
+```html
+<code><pre>console.log('Hello, world');</pre></code>
+```
+
+**Result**
+
+<code><pre>console.log('Hello, world');</pre></code>
+
+**Code**
+
+```html
+<code><pre><div>HTML snippet</div></pre></code>
+```
+
+**Result**
+
+<code><pre><div>HTML snippet</div></pre></code>
+
 
 
 ## Table
 
-[table](https://www.w3schools.com/tags/tag_table.asp)
+See [table](https://www.w3schools.com/tags/tag_table.asp) tutorial
 
 ```html
 <table>
