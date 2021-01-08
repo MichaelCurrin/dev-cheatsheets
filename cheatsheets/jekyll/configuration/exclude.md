@@ -36,7 +36,7 @@ exclude:
   - "*.png"
 ```
 
-However, using `/*.png` doesn't work so images are removed at all levels such as assets.
+However, using `/*.png` doesn't work as expected, as images are removed at **all** levels such as in `assets/`.
 
 Therefore rather ignore explicitly:
 
