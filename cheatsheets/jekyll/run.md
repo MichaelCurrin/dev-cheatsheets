@@ -1,5 +1,7 @@
 # Run
 
+Guide to Jekyll CLI.
+
 For running Jekyll with Docker, see the [Jekyll Containers](https://michaelcurrin.github.io/code-cookbook/recipes/containers/jekyll.html) recipe.
 
 
@@ -16,6 +18,41 @@ jekyll serve --help
 jekyll doctor
 ```
 
+## Common
+
+This is my standard use.
+
+Use verbose error traces (rather than the default very minimal mostly useless errors) and enable browser reloading.
+
+```sh
+$ jekyll serve --trace --livereload
+```
+
+## Verbose
+
+If you want **very** detailed output to help understand Ruby plugins or Jekyll, then use 
+
+```sh
+$ jekyll serve --verbose
+```
+
+## Incremental
+
+If you want to only rebuild changed pages for a faster build while the server is running.
+
+```sh
+$ jekyll serve --incremental
+```
+
+I can also recommend Jekyll as it has a build cache which has made rebuilds 60x faster for me. And that was without using the incremental flag and that was actually stopping and starting the server and still getting the benefit of cache.
+
+## Profile
+
+If you want to find the slowest areas.
+
+```sh
+$ jekyll build --profile
+```
 
 ## Serve a subdirectory
 
@@ -89,10 +126,10 @@ For `jekyll serve [options]`
 | Flag                                     | Description   |
 | ---------------------------------------- | ------------- |
 | `--config CONFIG_FILE,[CONFIG_FILE,...]` | Read configs. |
-`-d, --destination DESTINATION`  The current folder will be generated into DESTINATION
-`-s, --source SOURCE` |  Custom source directory
-`-b, --baseurl URL` |  Serve the website from the given base URL
-`--layouts DIR` |  Layouts directory (defaults to ./_layouts)
+|`-d, --destination DESTINATION`  | The current folder will be generated into DESTINATION |
+|`-s, --source SOURCE` |  Custom source directory |
+|`-b, --baseurl URL` |  Serve the website from the given base URL |
+|`--layouts DIR` |  Layouts directory (defaults to ./_layouts) |
 
 ### Full
 
