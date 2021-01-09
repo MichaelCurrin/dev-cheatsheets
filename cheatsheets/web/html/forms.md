@@ -196,14 +196,16 @@ Use `for` and `id` to associate the label with the input. Use `name` to ensure t
 - [Tutorial](https://www.w3schools.com/tags/att_input_type_checkbox.asp)
 - [Todo list](https://www.w3schools.com/howto/howto_js_todolist.asp)
 
+As with radio buttons, use `for` and `id` for combining inputs and `name` for submitting.
+
 {% capture checkboxes %}
-<input type="checkbox" name="vehicle1" value="Bike">
+<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
 <label for="vehicle1">I have a bike</label><br>
 
-<input type="checkbox" name="vehicle2" value="Car">
+<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
 <label for="vehicle2">I have a car</label><br>
 
-<input type="checkbox" name="vehicle3" value="Boat" checked>
+<input type="checkbox" id="vehicle2" name="vehicle3" value="Boat" checked>
 <label for="vehicle3">I have a boat</label><br><br>
 
 <input type="submit" value="Submit">
