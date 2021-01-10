@@ -10,7 +10,6 @@
 - [Filters](https://jekyllrb.com/docs/liquid/filters/) in Jekyll docs. See standard filters near the bottom.
 - [Filters](https://shopify.github.io/liquid/filters/abs/) in Shopify docs. Jekyll links to these.
 
-
 ### Cheatsheets
 
 - [Jekyll Cheatsheet](https://learn.cloudcannon.com/jekyll-cheat-sheet/) on CloudCannon
@@ -21,6 +20,57 @@
 ## Filters
 
 From [tutorial](https://blog.webjeda.com/jekyll-filters/)
+
+### Convert HTML to Markdown
+
+```
+markdownify
+```
+
+e.g.
+
+```liquid
+{{ '# _Heading_ ' | markdownify }}
+```
+
+### Convert object to JSON
+
+Convert array or map or a primitive value to JSON value.
+
+```
+jsonify
+```
+
+e.g. `foo` with value `{"a" => 1, "b" => 2 }`
+
+```liquid
+{{ foo | jsonify }}
+```
+
+```json
+{"a":1,"b":2}
+```
+
+### inspect
+
+Show the value of a variable or expression as an object. This is useful for debugging, especially if a value is hard to find because it is nil or an empty string, this will make it explicity. It will also make sure an array gets rendered as an array and not just space-separated values.
+
+```
+inspect
+```
+
+```liquid
+{{ 'foo' | inspect }}
+```
+
+Try it on some frontmatter values or a data file.
+
+
+```liquid
+{{ page | inspect }}
+
+{{ site.data.foo | inspect }}
+```
 
 ### where
 
@@ -57,15 +107,34 @@ Warning - this will not raise an error if the page is not found.
 {"name"=>"someone", "items"=>[#], "size"=>1}
 ```
 
-## plus
+### plus
 
 ```liquid
 {% assign crumb_limit = forloop.index | plus: 1 %}
 ```
 
-## Array and for loop handling
 
-### size
+## Array and loop handling
+
+### Sorting
+
+```liquid
+{% assign foo = foo | reverse %}
+```
+
+If the variable is an array of strings:
+
+```liquid
+{% assign foo = foo | sort %}
+```
+
+If the variable is an array of hashes, you need to specify a key to sort on.
+
+```liquid
+{% assign foo = foo | sort: 'path' %}
+```
+
+### Size attribute
 
 ```liquid
 {% if crumbs.size > 2 %}
@@ -102,7 +171,9 @@ Longer form for interest:
 
 You can't pop from the front, but you can do a slice starting at 2nd element.
 
+```liquid
 {% assign foo = slice: 1, foo.fize %}
+```
 
 ### unless, last, index
 
