@@ -2,6 +2,7 @@
 
 {% raw %}
 
+
 ## Resources
 
 ### Reference docs
@@ -66,8 +67,9 @@ Warning - this will not raise an error if the page is not found.
 
 ### size
 
-```
+```liquid
 {% if crumbs.size > 2 %}
+{% endif %}
 ```
 
 ### limit
@@ -83,7 +85,6 @@ Do a slice ignoring the last item.
 
 ```liquid
 {% for crumb in crumbs offset: 1 %}
-
 {% endfor %}
 ```
 
@@ -125,7 +126,6 @@ You can't pop from the front, but you can do a slice starting at 2nd element.
 ## Full list
 
 Grouped by functionality.
-
 
 ### Array
 
