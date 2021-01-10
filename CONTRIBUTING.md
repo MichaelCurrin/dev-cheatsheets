@@ -3,17 +3,19 @@
 
 ## Request changes
 
-If you'd like to just request an addition or fix, create an issue under [Issues](https://github.com/MichaelCurrin/dev-cheatsheets/issues).
+If you'd like to just request an addition or fix, create an issue under Issues.
+
+[![View issues](https://img.shields.io/badge/View-Issues-blue?style=for-the-badge&logo=github)](https://github.com/MichaelCurrin/dev-cheatsheets/issues)
 
 
-## Submitting changes
+## Submit changes
 
 If you want to add or update content, fork the project to your own repos.
 
-[![ Fork repo](https://img.shields.io/badge/Fork_repo-blue?style=for-the-badge&logo=github)](https://github.com/MichaelCurrin/dev-cheatsheets/fork)
+[![Fork repo](https://img.shields.io/badge/Create-Fork-blue?style=for-the-badge&logo=github)](https://github.com/MichaelCurrin/dev-cheatsheets/fork)
 
 Make a feature branch with your names.
 
-Then go to the original repo's Pull Requests section and create a PR from your branch to the original repo.
+Then go to the original repo's Pull Requests section and create a PR from your fork's branch to the original repo.
 
-[Pulls](https://github.com/MichaelCurrin/dev-cheatsheets/pulls)
+[![Pulls](https://img.shields.io/badge/View-Pull_requests-blue?style=for-the-badge&logo=github)](https://github.com/MichaelCurrin/dev-cheatsheets/pulls)
