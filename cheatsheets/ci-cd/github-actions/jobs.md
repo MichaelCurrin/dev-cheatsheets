@@ -176,23 +176,60 @@ Read more:
 
 ### Env variables
 
-```yaml
+[Environment variables](https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables)
+
+You can use any case, but uppercase is typical. Note you cannot use `GITHUB_` as a variable name prefix as that is reserved.
+
+```sh
 env:
-  SERVER: production
+  FOO: bar
 ```
 
+Node example:
+
+```yaml
+steps:
+  - name: Build 🏗️
+    run: yarn build
+    env:
+      NODE_ENV: production
+```
+
+Using a variable in `echo`.
 
 - `main.yml`
     ```yaml
     steps:
-    - name: Print a greeting
-      env:
-        MY_VAR: Hi there! My name is
-        FIRST_NAME: Mona
-        MIDDLE_NAME: The
-        LAST_NAME: Octocat
-      run: echo "$MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME."
+      - name: Print a greeting
+        env:
+          MY_VAR: Hi there! My name is
+          FIRST_NAME: Mona
+          MIDDLE_NAME: The
+          LAST_NAME: Octocat
+        run: echo "$MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME."
     ```
+
+### Action parameters
+
+Some actions take arguments variables - use `with` for those.
+
+```yaml
+with:
+  foo: bar
+```
+
+e.g.
+
+```yaml
+steps:
+  - name: Deploy to GH Pages 🚀
+    if: ${{ github.event_name != 'pull_request' }}
+    uses: peaceiris/actions-gh-pages@v3
+    with:
+      github_token: ${{ secrets.GITHUB_TOKEN }}
+      publish_dir: dist
+      keep_files: true
+```
 
 ### Defaults
 
