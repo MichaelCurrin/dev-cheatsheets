@@ -13,12 +13,12 @@ See [Window.performance](https://developer.mozilla.org/en-US/docs/Web/API/Window
 [Resource Timing API]: https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API
 
 ```javascript
-const performanceData = window.performance;
+window.performance
 ```
 
 ### How to calculate metrics
 
-Using this object:
+The examples below come from the Mozilla docs and use this object:
 
 ```javascript
 const perfData = window.performance.timing;
