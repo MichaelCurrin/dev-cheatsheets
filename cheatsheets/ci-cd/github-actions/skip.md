@@ -54,9 +54,33 @@ on:
 ```
 
 
-## Skip step
+## Skip a step
 
-Add a condition to skip if the commit message containts the phrase `[ci skip]`.
+### Event type
+
+Here we run the workflow on both a Push and a Pull Request, but we only perform the deploy step when the event is **not** a pull request i.e. when doing a push to `master` (or `main` or `latest` etc.). 
+
+```yaml
+on:
+  push:
+  pull_request:
+
+jobs:
+  build_and_deploy:
+    steps:
+      - name: Build
+
+      - name: Deploy
+        if: ${{ github.event_name != 'pull_request' }}
+```
+
+Note we don't have to specify a branch name. 
+
+You might like using `!= 'pull_request'` as it is flexible - it will include a scheduled cron event. Or you might make this narrower as `== 'push'`.
+
+### Commit message
+
+Add a condition to skip if the commit message containts a phrase - here we use `[ci skip]`.
 
 ```yaml
 jobs:
@@ -66,5 +90,7 @@ jobs:
     steps:
       # ...
 ```
+
+In general I like to use an exclusion rule to exclude changes in `docs/` for example from causing an app rebuild. I don't why you would this CI skip example above as you have to remember to use. But I found it somewhere so added here.
 
 {% endraw %}
