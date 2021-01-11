@@ -24,11 +24,14 @@ The examples below come from the Mozilla docs and use this object:
 const perfData = window.performance.timing;
 ```
 
+The metrics are in milliseconds but you can divide by 1000 to get to seconds.
+
 #### Total page load time
 
 ```javascript
 const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
 // 4208
+
 pageLoadTime / 1000;
 // 4.208
 ```
