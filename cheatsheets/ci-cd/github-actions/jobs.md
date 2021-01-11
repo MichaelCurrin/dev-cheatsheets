@@ -82,7 +82,7 @@ Here we setup a **sequence** of jobs. Each job only run if the previous one pass
         needs: [job1, job2]
     ```
 
-See [job output](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjobs_idoutputs) in the docs for how to persist or [upload and download artifications](https://docs.github.com/en/actions/guides/storing-workflow-data-as-artifacts#passing-data-between-jobs-in-a-workflow). If you don't do this, then a `build` directory from one job can't be used by the other job.
+See [job output](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjobs_idoutputs) in the docs for how to persist or [upload and download artifacts](https://docs.github.com/en/actions/guides/storing-workflow-data-as-artifacts#passing-data-between-jobs-in-a-workflow). If you don't do this, then a `build` directory from one job can't be used by the other job.
 
 Using job output in a dependent job:
 
