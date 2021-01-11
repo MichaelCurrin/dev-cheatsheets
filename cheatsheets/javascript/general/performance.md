@@ -1,6 +1,8 @@
 # Performance
 
-## Window.performance
+## window.performance
+
+Browsers have a builtin object which contains performance-related durations which you can use to calculate performance metrics.
 
 See [Window.performance](https://developer.mozilla.org/en-US/docs/Web/API/Window/performance) in Mozilla dev docs.
 
@@ -14,12 +16,17 @@ See [Window.performance](https://developer.mozilla.org/en-US/docs/Web/API/Window
 const performanceData = window.performance;
 ```
 
-### Calculate measures
+### How to calculate metrics
+
+Using this object:
+
+```javascript
+const perfData = window.performance.timing;
+```
 
 #### Total page load time
 
 ```javascript
-const perfData = window.performance.timing;
 const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
 // 4208
 pageLoadTime / 1000;
