@@ -14,7 +14,9 @@ See [Window.performance](https://developer.mozilla.org/en-US/docs/Web/API/Window
 const performanceData = window.performance;
 ```
 
-### Total page load time
+### Calculate measures
+
+#### Total page load time
 
 ```javascript
 const perfData = window.performance.timing;
@@ -22,4 +24,16 @@ const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
 // 4208
 pageLoadTime / 1000;
 // 4.208
+```
+
+#### Request response time
+
+```javascript
+const connectTime = perfData.responseEnd - perfData.requestStart;
+```
+
+#### Page render time
+
+```javascript
+const renderTime = perfData.domComplete - perfData.domLoading;
 ```
