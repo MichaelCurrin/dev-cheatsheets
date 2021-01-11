@@ -233,6 +233,8 @@ steps:
 
 ### Defaults
 
+Setting the `defaults` attribute for variables to be used across the workflow file.
+
 ```yaml
 defaults:
   foo: bar
@@ -244,5 +246,21 @@ defaults:
     shell: bash
     working-directory: scripts
 ```
+
+### Contexts
+
+See [Contexts](https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions#contexts) in the docs.
+
+Here are a few values of interest:
+
+- `github.event_name` e.g. `'pull'`
+- `github.event.action` e.g. `'unassigned'`
+- `github.repository` e.g. `Codertocat/Hello-World`
+- `github.repository_owner` e.g. `Codertocat`
+- `job.status`
+- `runner.os`
+
+> Warning: When using the whole `github` context, be mindful that it includes sensitive information such as github.token. GitHub masks secrets when they are printed to the console, but you should be cautious when exporting or printing the context.
+
 
 {% endraw %}
