@@ -290,4 +290,32 @@ Remove images:
 $ docker image prune
 ```
 
+## Copy
+> Copy files/folders between a container and the local filesystem
 
+Copy files or from a container.
+
+See [cp](https://docs.docker.com/engine/reference/commandline/cp/) docs.
+
+### Usage
+
+```
+docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
+docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
+```
+
+### Examples
+
+Copy the entire directory and create a directory of the same name.
+
+```sh
+$ docker cp foo my-app:/root/app
+# => /root/app/foo
+```
+
+Copy contents of directory into a directory - using dot forwardlash in destination, as per the docs.
+
+```sh
+$ docker cp foo my-app:/root/app/foo/.
+# => /root/app/foo
+```
