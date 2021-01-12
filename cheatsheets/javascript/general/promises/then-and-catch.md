@@ -1,4 +1,5 @@
-# .then and .catch promises
+# Then syntax
+
 
 ## Overview
 
