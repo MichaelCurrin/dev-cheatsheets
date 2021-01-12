@@ -3,6 +3,7 @@ description: List of recommended plugins I'd like to share
 ---
 # Recommended
 
+{% raw %}
 
 ## Embedding
 
@@ -12,12 +13,13 @@ description: List of recommended plugins I'd like to share
 - It also includes `noscript` support - fetches the raw content and build time and adds the content to the page so that this works with JS disable.
 - You can also just use the gist's standard embed functionality directly without this plugin, by clicking Embed on a gist or creating script tag yourself. That just requires JS to be enabled.
 
+
 ## Images
 
-- https://github.com/mmistakes/jekyll-picture-tag
-- https://github.com/rbuchberger/jekyll_picture_tag
-- https://github.com/CloudCannon/jekyll-resize
-- https://github.com/MichaelCurrin/jekyll-resize (my fork)
+- [mmistakes/jekyll-picture-tag](https://github.com/mmistakes/jekyll-picture-tag) - most popular.
+- [rbuchberger/jekyll_picture_tag](https://github.com/rbuchberger/jekyll_picture_tag) - fork of above.
+- [CloudCannon/jekyll-resize](https://github.com/CloudCannon/jekyll-resize) - Jekyll 3 only. Similar to plugins above but simpler.
+- [MichaelCurrin/jekyll-resize](https://github.com/MichaelCurrin/jekyll-resize) - my fork of the above, for Jekyll 3 and 4.
 
 ### jekyll_picture_tag
 
@@ -47,15 +49,13 @@ $ convert --version
 
 #### Usage
 
-[doc](https://rbuchberger.github.io/jekyll_picture_tag/)
+[docs](https://rbuchberger.github.io/jekyll_picture_tag/)
 
 Write this:
 
-{% raw %}
 ```liquid
 {% picture test.jpg %}
 ```
-{% endraw %}
 
 Result:
 
@@ -98,3 +98,5 @@ Also if you save in files in your IDE, the server will **not** rebuild the site.
 This is a fork of the above. It has some more advanced features but generally I find the Admin one is fine for my needs.
 
 - GitHub: [ashmaroli/jekyll-manager](https://github.com/ashmaroli/jekyll-manager)
+
+{% endraw %}
