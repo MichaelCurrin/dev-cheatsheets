@@ -1,7 +1,7 @@
 # Examples
 
 ```sh
-gem help examples
+$ gem help examples
 ```
 
 <details>
