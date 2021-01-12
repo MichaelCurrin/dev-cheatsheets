@@ -6,7 +6,7 @@ layout: listing
 
 ### Summary
 
-### Callback
+#### Callback
 
 ```javascript
 foo('bar', function (bazz) {
@@ -14,7 +14,7 @@ foo('bar', function (bazz) {
 });
 ```
 
-### Promise
+#### Promise
 
 ```javascript
 // Promises.
@@ -24,7 +24,7 @@ foo('bar')
   });
 ```
 
-### Async-await
+#### Async-await
 
 ```javascript
 const bazz = await foo('bar')
