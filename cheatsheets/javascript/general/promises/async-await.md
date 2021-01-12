@@ -1,4 +1,4 @@
-# Async-await
+# Async-await syntax
 
 See [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) in Mozilla docs.
 
@@ -41,6 +41,7 @@ foo()
 
 Use the `async` keyword before function so you can use await on it.
 
+
 ## Top-level code vs functions
 
 In older version of Node, you could not use `await` in the main body, but this has changed.
@@ -60,4 +61,25 @@ If you get an error with the above, you can place inside an [IIFE](https://devel
   const user = await response.json();
   // ...
 })();
+```
+
+## Try catch
+
+Unlike with callback functions or `.then` promise chains, you can now use `try` and `catch` syntax.
+
+From [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises).
+
+> This symmetry with asynchronous code culminates in the async/await syntactic sugar in ECMAScript 2017:
+
+```javascript
+async function foo() {
+  try {
+    const result = await doSomething();
+    const newResult = await doSomethingElse(result);
+    const finalResult = await doThirdThing(newResult);
+    console.log(`Got the final result: ${finalResult}`);
+  } catch(error) {
+    failureCallback(error);
+  }
+}
 ```
