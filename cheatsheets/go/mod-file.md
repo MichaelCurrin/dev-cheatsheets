@@ -3,6 +3,14 @@
 
 ## Samples
 
+No dependencies.
+
+```go
+module help
+
+go 1.13
+```
+
 One dependency.
 
 ```go
@@ -13,7 +21,9 @@ go 1.15
 require github.com/urfave/cli/v2 v2.3.0 // indirect
 ```
 
-Multiple dependencies. GitHub module.
+GitHub module with multiple dependencies.
+
+From [github.com/urfave/cli](https://github.com/urfave/cli).
 
 ```go
 module github.com/urfave/cli/v2
