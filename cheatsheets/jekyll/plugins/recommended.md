@@ -1,7 +1,7 @@
 ---
+title: Recommended
 description: List of recommended plugins I'd like to share
 ---
-# Recommended
 
 {% raw %}
 
