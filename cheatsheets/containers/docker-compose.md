@@ -29,6 +29,7 @@ When you run this, it will use the two files above.
 $ docker-compose COMMAND
 ```
 
+
 ## Build
 
 ### Initial build
@@ -39,7 +40,7 @@ Build images.
 $ docker-compose build
 ```
 
-Start containers. If the above step was skipped, the build will happen now.
+Start containers. If the above step was skipped, the image build will happen now.
 
 ```sh
 $ docker-compose up
@@ -61,7 +62,9 @@ Start containers again.
 $ docker-compose up
 ```
 
-This will **not** rebuild the image. Continue below.
+That will **not** rebuild the image but use already built image. If you copied your codebase into the image using `COPY` in `Dockerfile`, then the image will have stale code. 
+
+Continue below to remedy this.
 
 ### Rebuild
 
@@ -74,7 +77,7 @@ $ docker-compose build
 $ docker-compose up
 ```
 
-Or in one command.
+Or in one command:
 
 ```sh
 $ docker-compose up --build
@@ -83,7 +86,7 @@ $ docker-compose up --build
 
 ## Start
 
-### As main process
+### As the main process
 
 ```sh
 $ docker-compose up
@@ -92,9 +95,9 @@ $ docker-compose up
 Stop it with <kbd>CTRL</kbd>+<kbd>C</kbd>.
 
 
-### As background process
+### As a background process
 
-Start using `-d` for daemon.
+Start with `-d` for daemon:
 
 ```sh
 $ docker-compose up -d
