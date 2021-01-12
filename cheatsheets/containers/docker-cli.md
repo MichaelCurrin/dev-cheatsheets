@@ -22,6 +22,7 @@ $ docker --help
 ```
 
 <details>
+
 <summary>Output</summary>
 
 ```
