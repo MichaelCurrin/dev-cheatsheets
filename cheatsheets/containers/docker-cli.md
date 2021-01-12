@@ -22,10 +22,10 @@ $ docker --help
 ```
 
 <details>
-
 <summary>Output</summary>
 
-```
+<pre>
+
 Usage:	docker [OPTIONS] COMMAND
 
 A self-sufficient runtime for containers
@@ -105,7 +105,8 @@ Commands:
   wait        Block until one or more containers stop, then print their exit codes
 
 Run 'docker COMMAND --help' for more information on a command.
-```
+
+</pre>
 
 </details>
 
