@@ -1,12 +1,13 @@
 # View
 
-## `info`
+
+## info
 
 ```sh
 $ bundle info GEM [OPTIONS]
 ```
 
-### All info
+### Show gem info
 
 ```sh
 $ bundle info minima
@@ -18,7 +19,7 @@ $ bundle info minima
 	Path: /Users/mcurrin/repos/_static-sites/jekyll-blog-demo/vendor/bundle/ruby/2.7.0/gems/minima-2.5.1
 ```
 
-### Path
+### Show gem path
 
 ```sh
 $ bundle info minima --path
@@ -30,7 +31,7 @@ $ bundle info minima --path
 This replaces the now deprecated `bundle show GEM`.
 
 
-## `open`
+## open
 
 Open the source directory of the given gem.
 
@@ -39,6 +40,16 @@ $ bundle open GEM
 ```
 
 That will use your default folder browser.
+
+But, this depends on your system default open program.
+
+Using `nano`, I get an error that the path is directory and that is can't open it.
+
+```sh
+$ bundle open minima
+```
+
+For more control, get the path first and pass that to a program like VS Code, Sublime or Finder.
 
 To open in VS Code:
 
