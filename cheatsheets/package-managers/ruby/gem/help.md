@@ -9,7 +9,8 @@ $ gem --help
 <details>
 <summary>Output</summary>
 
-```
+<pre>
+
 RubyGems is a sophisticated package manager for Ruby.  This is a
 basic help message containing pointers to more information.
 
@@ -36,7 +37,8 @@ basic help message containing pointers to more information.
                                  with info about installed gems
   Further information:
     https://guides.rubygems.org
-```
+
+</pre>
 
 </details>
 
