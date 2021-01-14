@@ -3,8 +3,9 @@ title: var, const and let keywords
 description: Variable declarations in modern JS
 ---
 
+## Keywords
 
-## var keyword
+### var keyword
 
 Avoid using this modern code. It is less safe / predictable. To support older browsers,  you can use transpilers to compile your code with `let` and `const` to use `var`.
 
@@ -21,8 +22,7 @@ console.log(message)
 // A
 ```
 
-
-## let keyword
+### let keyword
 
 This makes a variable "block-scoped".
 
@@ -54,7 +54,6 @@ if (true) {
     
 console.log(foo) // "A"
 ```
-
 
 You might see a loop like this, using `const` or `let` to declare a variable to each iteration.
 
@@ -97,8 +96,7 @@ x.foo = 'bar'
 // [{foo: 'bar'}, {foo: 'bar'}, {foo: 'bar'}
 ```
 
-
-## const keyword
+### const keyword
 
 A `const` variable cannot be updated or re-declared.
 
@@ -136,3 +134,70 @@ y.push(2)
 ```
 
 It is also block-scoped. So if you declare `const` variable inside an `if` statement, you can't use it outside it.
+
+
+## Initialization comparison
+
+### var keyword
+
+```javascript
+var x;
+x = 123;
+
+// Or simply
+var x = 123;
+```
+
+Repeat use of `var` does not cause an error.
+
+```javascript
+var x;
+var x;
+```
+
+### let keyword
+
+```javascript
+let y;
+y = 123;
+
+let z = 123;
+```
+
+Note that `let` can only be used once for a variable.
+
+```javascript
+let y;
+let y;
+// Uncaught SyntaxError: Identifier 'y' has already been declared
+
+
+### const keyword
+
+```javascript
+const y = 123;
+```
+
+```javascript
+const y;
+// Uncaught SyntaxError: Missing initializer in const declaration
+```
+
+
+## Reassignment comparison
+
+Reassignment is allowed for `let` and `var`.
+
+```javascript
+var x = 123;
+x = 10
+x = 'a'
+```
+
+But not for `const` variables.
+
+```javascript
+const x = 123
+// Uncaught TypeError: Assignment to constant variable.
+```
+
