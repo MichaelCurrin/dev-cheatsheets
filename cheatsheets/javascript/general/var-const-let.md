@@ -3,7 +3,7 @@ title: var, const and let keywords
 description: Variable declarations in modern JS
 ---
 
-## Keywords
+## Keywords avaible
 
 ### var keyword
 
@@ -119,7 +119,7 @@ y
 // [ 1 ]
 ```
 
-If you want to freeze a data structure so it is truly immutable, use `Object.freeze`.
+If you want to freeze a data structure so it is truly immutable, use [Object.freeze](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze).
 
 ```javascript
 const y = [ 1 ]
