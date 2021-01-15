@@ -6,7 +6,7 @@ See [Array cheatsheet](https://www.shortcutfoo.com/app/dojos/javascript-arrays/c
 ## Read
 
 ```javascript
-myArray = ['a', 'b', 'c', 'd']
+var myArray = ['a', 'b', 'c', 'd']
 ```
 
 Get length.
@@ -160,4 +160,23 @@ myArray.reduce((x, y) => x + y)
 
 ```javascript
 myArray.filter((x) => x > 2)
+```
+
+
+## Convert to array
+
+Use the `...` spread operator to make a copy of an array or if you need to convert a document selection to an array.
+
+```javascript
+const divs = document.getElementsByTagName('div')
+// Not available:
+//   divs.map
+//   divs.forEach
+
+const divsArr = [...divs]
+
+divsArr[0]
+// <div class="position-relative js-header-wrapper ">...</div>
+
+divsArr.map(i => i.innerText)
 ```
