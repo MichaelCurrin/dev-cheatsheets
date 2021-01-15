@@ -52,3 +52,55 @@ Or that a site is reachable.
 ```sh
 $ ping https://google.com
 ```
+
+
+## Understanding IP address ranges
+
+Any machine can connect to the host.
+
+```
+0.0.0.0
+```
+
+Maximum values.
+
+```
+255.255.255.255
+```
+
+Address of your machine.
+
+```
+127.0.0.1
+localhost
+[::]
+```
+
+Typical address of your router.
+
+```
+192.168.0.1
+192.168.8.1
+```
+
+When configuring, you'll see slash notation at the end of an IP range.
+
+It is the number of bits allowed that are fixed - 24, 8 or 16.
+
+The `/24` here indicates that the first 24 bits are part of the network address (`192.168.10`) leaving only the remaining `8` bits able to be changed for specific host addresses (`0-254`).
+
+10.0.0.0/24: Includes ranges 10.0.0.1–10.0.0.254 (can assign the last number)
+10.0.0.0/16: Includes ranges 10.0.0.1–10.0.255.254 (can assign the last two numbers)
+10.0.0.0/8: Includes ranges 10.0.0.1–10.255.255.254 (can assign the last three numbers)
+
+The limits are short for octet masks which are applied. Note a mask is inverted so 255 becomes 0 and means the octet can only be 0 and if the mask is 0 then it means the max is 255 so you have `0-255`.
+
+Short | Subnet mask | Total IP addresses
+--- | --- | ---
+/32 | 255.255.255.255 | 1
+/24 | 255.255.255.0 | 256
+/16 | 255.255.0.0 | 65,536
+/8  | 255.0.0.0 | 16,777,216
+```
+
+See this [table](https://docs.netgate.com/pfsense/en/latest/network/cidr.html) of subnet masks.
