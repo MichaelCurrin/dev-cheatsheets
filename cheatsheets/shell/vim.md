@@ -1,6 +1,10 @@
 # Vim
+---
+description: Guide to using the `vim` editor
+---
 
 _Vim_ is a text editor program for Unix, cloned from _Vi_.
+
 
 ## Configure
 
