@@ -1,4 +1,7 @@
-# Loops
+---
+title: Looping
+description: Guide to iterating over iterables in JavaScript
+---
 
 
 ## Summary
