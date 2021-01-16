@@ -1,4 +1,5 @@
-# Handing files and paths
+# Handing files
+
 
 ## Resources
 
@@ -12,18 +13,19 @@
 $ locate FILENAME
 ```
 
+
 ## Find executable
 
 Show location of an executable that is in a `bin` directory.
 
 ```sh
-which myscript
+$ which myscript
 ```
 
 Edit the file.
 
 ```sh
-open $(which myscript)
+$ open $(which myscript)
 ```
 
 Use `code` in place of `open`, to use VS Code IDE.
@@ -31,7 +33,7 @@ Use `code` in place of `open`, to use VS Code IDE.
 
 ## List
 
-Pass output as a list, where using pipe is not possible.
+Pass output as a list, where using a pipe is not possible.
 
 ```sh
 COMMAND <(COMMAND)
@@ -50,7 +52,6 @@ diff <(ls dirA) <(ls dirB)
 
 See [guide](https://linuxize.com/post/bash-check-if-file-exists/)
 
-
 ### How to check
 
 ```sh
@@ -67,7 +68,6 @@ x=$([[ -f "$FILE" ]] && 'yes' || 'no')
 # Use curly braces. Maybe round brackets?
 [ -f "$FILE" ] && { echo "$FILE exist"; cp "$FILE" /tmp/; }
 ```
-
 
 ### Path check options
 
