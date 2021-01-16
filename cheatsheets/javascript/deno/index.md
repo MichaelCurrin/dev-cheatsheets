@@ -1,6 +1,5 @@
 ---
 logo: deno
-layout: listing
 ---
 # Deno
 

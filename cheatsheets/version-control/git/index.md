@@ -1,6 +1,5 @@
 ---
 logo: git
-layout: listing
 ---
 # Git
 

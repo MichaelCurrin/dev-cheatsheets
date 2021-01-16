@@ -1,5 +1,4 @@
 ---
-layout: listing
 description: Fetch and send data using JavaScript
 ---
 # Request

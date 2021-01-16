@@ -1,5 +1,4 @@
 ---
-layout: listing
 ---
 # Working with text files
 

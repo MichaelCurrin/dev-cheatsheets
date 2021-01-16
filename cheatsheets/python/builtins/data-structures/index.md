@@ -1,5 +1,4 @@
 ---
-layout: listing
 description: A comparison of data structure syntax and usage in Python
 ---
 # Data structures

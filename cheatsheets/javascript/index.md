@@ -1,6 +1,5 @@
 ---
 logo: javascript
-layout: listing
 ---
 # JavaScript
 

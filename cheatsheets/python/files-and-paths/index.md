@@ -1,5 +1,4 @@
 ---
-layout: listing
 ---
 # Files and paths
 

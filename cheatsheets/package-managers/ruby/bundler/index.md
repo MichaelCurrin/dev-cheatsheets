@@ -1,5 +1,4 @@
 ---
-layout: listing
 description: Working with the `bundle` package manager i.e. Bundler
 ---
 # Bundler

@@ -1,5 +1,4 @@
 ---
-layout: listing
 description: How to add type safety to Python
 ---
 # Type checks

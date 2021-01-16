@@ -1,4 +1,3 @@
 ---
-layout: listing
 ---
 # Code blocks

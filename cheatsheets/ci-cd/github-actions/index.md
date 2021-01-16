@@ -1,5 +1,4 @@
 ---
-layout: listing
 logo: githubactions
 description: Guide to syntax for GitHub Actions workflows
 ---

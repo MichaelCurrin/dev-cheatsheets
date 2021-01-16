@@ -1,6 +1,5 @@
 ---
 logo: npm
-layout: listing
 ---
 # npm
 

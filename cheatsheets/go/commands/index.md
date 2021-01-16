@@ -1,6 +1,5 @@
 ---
 description: Reference for subcommands of the `go` command
-layout: listing
 ---
 # Commands
 
@@ -9,10 +8,10 @@ layout: listing
 
 From [doc](https://golang.org/cmd/go/).
 
-Command   | Description
----       | ---
-build     | compile packages and dependencies
-install   | compile and install packages and dependencies
-fmt       | gofmt (reformat) package sources
-run       | compile and run Go program
-version   | print Go version
+| Command | Description                                   |
+| ------- | --------------------------------------------- |
+| build   | compile packages and dependencies             |
+| install | compile and install packages and dependencies |
+| fmt     | gofmt (reformat) package sources              |
+| run     | compile and run Go program                    |
+| version | print Go version                              |

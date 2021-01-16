@@ -1,4 +1,3 @@
 ---
 title: Formatting
-layout: listing
 ---

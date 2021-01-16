@@ -1,5 +1,4 @@
 ---
-layout: listing
 logo: visualstudiocode
 description: From how to develop an extension all the way to publishing it
 ---

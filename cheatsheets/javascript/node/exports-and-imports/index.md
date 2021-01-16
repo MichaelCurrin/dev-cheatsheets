@@ -1,5 +1,4 @@
 ---
-layout: listing
 description: How to export and import modules in Node
 ---
 # Exports and imports

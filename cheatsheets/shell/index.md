@@ -1,6 +1,5 @@
 ---
 logo: gnubash
-layout: listing
 ---
 # Shell
 
@@ -15,7 +14,7 @@ Unix shell guide.
     - [x] macOS
 - Shells
     - [x] Bash (this is the focus)
-    - [x] ZSH (notes are provided where behavior is different for ZSH) 
+    - [x] ZSH (notes are provided where behavior is different for ZSH)
 
 
 ## Resources

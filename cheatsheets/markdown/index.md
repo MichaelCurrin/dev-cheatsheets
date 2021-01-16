@@ -1,6 +1,5 @@
 ---
 logo: markdown
-layout: listing
 ---
 # Markdown
 

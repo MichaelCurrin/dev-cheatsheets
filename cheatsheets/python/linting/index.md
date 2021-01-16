@@ -1,4 +1,3 @@
 ---
 title: Linting
-layout: listing
 ---

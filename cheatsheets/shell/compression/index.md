@@ -1,6 +1,5 @@
 ---
 description: How to zip and unzip with a few shell utilities
-layout: listing
 ---
 # Compression
 
@@ -10,8 +9,8 @@ layout: listing
 
 Command-line tools available for Unix-like systems (Linux and macOS):
 
-- [zip utility]({{ site.baseurl }}{% link cheatsheets/shell/compressing/zip.md %})
-- [tar utility]({{ site.baseurl }}{% link cheatsheets/shell/compressing/tar.md %})
+- [zip utility]({{ site.baseurl }}{% link cheatsheets/shell/compression/zip.md %})
+- [tar utility]({{ site.baseurl }}{% link cheatsheets/shell/compression/tar.md %})
 - `gzip`
 - `bzip2`
 

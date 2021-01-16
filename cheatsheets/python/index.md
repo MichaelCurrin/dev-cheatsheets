@@ -1,6 +1,5 @@
 ---
 logo: python
-layout: listing
 ---
 # Python
 
