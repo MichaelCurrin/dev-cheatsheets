@@ -3,6 +3,7 @@
 
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/dev-cheatsheets?include_prereleases&sort=semver)](https://github.com/MichaelCurrin/dev-cheatsheets/releases/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
+
 [![Hosted with - GitHub Pages](https://img.shields.io/badge/Hosted_with-GitHub_Pages-blue?logo=github&logoColor=white)](https://pages.github.com/)
 [![Made with Jekyll](https://img.shields.io/badge/Jekyll-3.9-blue.svg?logo=jekyll)](https://jekyllrb.com)
 
@@ -38,7 +39,7 @@ An idea of what to expect in this guide.
 - **Help** - Portions of the man pages, to make it easier to read about command in the browser without going through the entire manpage on the terminal.
 - **Resources** - There are some details for external resources.
 
-The idea for the first two types is that the code here is generic. There are placeholder values or made-up use-cases for demonstration. You'll need to change them for your own situation. 
+The idea for the first two types is that the code here is generic. There are placeholder values or made-up use-cases for demonstration. You'll need to change them for your own situation.
 
 See also my [Code Cookbook](https://michaelcurrin.github.io/code-cookbook/) project. It has Recipes which structured similarly to Cheatsheets here, except that the Recipes are usually longer blocks of code to be copied and they focus on real-world use-cases.
 
