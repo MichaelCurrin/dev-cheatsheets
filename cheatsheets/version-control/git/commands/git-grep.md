@@ -1,6 +1,17 @@
-# Git-grep cheatsheet
-
+# git-grep
 > How to use git's search tool
+
+
+## Help
+
+```sh
+$ git grep --help
+```
+
+```
+       git-grep - Print lines matching a pattern
+...
+```
 
 
 ## Resources
@@ -14,13 +25,13 @@
 Looks for `time_t` in all tracked `.c` and `.h` files in the working directory and its subdirectories.
 
 ```sh
-git grep 'time_t' -- '*.[ch]'
+$ git grep 'time_t' -- '*.[ch]'
 ```
 
 Looks for a line that has #define and either MAX_PATH or PATH_MAX.
 
 ```sh
-git grep -e '#define' --and \( -e MAX_PATH -e PATH_MAX \)
+$ git grep -e '#define' --and \( -e MAX_PATH -e PATH_MAX \)
 ```
 
 Looks for a line that has NODE or Unexpected in files that have lines that match both.
@@ -32,5 +43,5 @@ git grep --all-match -e NODE -e Unexpected
 Looks for solution, excluding files in Documentation.
 
 ```sh
-git grep solution -- :^Documentation
+$ git grep solution -- :^Documentation
 ```
