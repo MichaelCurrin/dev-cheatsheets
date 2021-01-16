@@ -41,7 +41,7 @@ Note that is plugin is **not** whitelisted on GitHub Pages, so you need an Actio
 
 ### Theme
 
-The the Minima covers Google Analytics already - just set `google_analytics` in the config.
+The Minima theme covers Google Analytics already - just set `google_analytics` in the config.
 
 See [\_includes/google-analytics.html](https://github.com/jekyll/minima/blob/master/_includes/google-analytics.html). Here is the content last updated on `master` in 2018.
 
