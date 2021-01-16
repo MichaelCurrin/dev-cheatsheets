@@ -43,7 +43,7 @@ $ docker run --help
 --volume=$PWD:/app
 ```
 
-You can't use `.` for from as you'll get an error that is must be at least two characters. 
+You can't use `.` for from as you'll get an error that is must be at least two characters.
 
 e.g.
 
@@ -74,23 +74,23 @@ Samples from [compose file](https://docs.docker.com/compose/compose-file/) docs.
 ### Short syntax
 
 - `docker-compose.yml`
-  ```yaml
-  volumes:
-  # Just specify a path and let the Engine create a volume
-  - /var/lib/mysql
+    ```yaml
+    volumes:
+      # Just specify a path and let the Engine create a volume
+      - /var/lib/mysql
 
-  # Specify an absolute path mapping
-  - /opt/data:/var/lib/mysql
+      # Specify an absolute path mapping
+      - /opt/data:/var/lib/mysql
 
-  # Path on the host, relative to the Compose file
-  - ./cache:/tmp/cache
+      # Path on the host, relative to the Compose file
+      - ./cache:/tmp/cache
 
-  # User-relative path
-  - ~/configs:/etc/configs/:ro
+      # User-relative path
+      - ~/configs:/etc/configs/:ro
 
-  # Named volume
-  - datavolume:/var/lib/mysql
-  ```
+      # Named volume
+      - datavolume:/var/lib/mysql
+    ```
 
 ### Named volumes
 
