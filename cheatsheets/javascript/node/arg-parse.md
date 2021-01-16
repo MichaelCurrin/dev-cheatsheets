@@ -34,9 +34,9 @@ $ node app.js foo --bar=bazz
 You need a package like [minimist](https://www.npmjs.com/package/minimist) to parse key-value pairs for you.
 
 ```javascript
-const minima = require('minimist')
+const minimist = require('minimist')
 
-const args = minima(process.argv.slice(2))
+const args = minimist(process.argv.slice(2))
 console.log(args['name'])
 ```
 
