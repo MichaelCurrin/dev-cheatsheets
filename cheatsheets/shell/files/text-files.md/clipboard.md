@@ -5,6 +5,7 @@ Copy to and paste from clipboard. Especially useful for very large files or when
 
 See [StackOverflow answer](https://stackoverflow.com/questions/749544/pipe-to-from-the-clipboard-in-bash-script) for usage and shortcuts.
 
+
 ## Linux
 
 Use `xclip` - see [man page](https://linux.die.net/man/1/xclip).
