@@ -1,7 +1,7 @@
 # Working with shells
 
 
-## Start subshell
+## Start a subshell
 
 In a Bash shell, you can invoke another Bash *subshell* in interactive mode.
 
