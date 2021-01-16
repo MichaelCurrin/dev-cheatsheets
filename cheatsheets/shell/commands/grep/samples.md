@@ -27,7 +27,7 @@ $ grep -ir PATTERN
 
 ## Filename
 
-Show filename.
+Show the filename.
 
 ```sh
 $ grep -H foobar *
@@ -63,3 +63,14 @@ https://
 ```
 
 Without `-o` flag, you see the entire line, but with the match patterns highlighted (assuming colors are enabled).
+
+
+## Advanced path matching
+
+Use the `find` command to filter the paths and then apply `grep`.
+
+Here we look for files named `index.md` which do not contain the text `foo`. And only show each path once.
+
+```sh
+$ grep -L foo $(find . -type f -name index.md )
+```
