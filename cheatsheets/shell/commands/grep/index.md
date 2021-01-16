@@ -1,21 +1,10 @@
 ---
 layout: listing
 ---
-# Grep
+# grep
 
 
-## Man page
-
-Linux: [ss64.com/bash/grep.html](https://ss64.com/bash/grep.html)
-
-## Tutorials
-
-- [Linux grep command](https://www.computerhope.com/unix/ugrep.htm) 🔗
-- [Linux egrep command](https://www.computerhope.com/unix/uegrep.htm) 🔗
-- [Grep command in Linux Unix](https://www.journaldev.com/24271/grep-command-in-linux-unix) 🔗
-
-
-## Get line from file
+### Get line from file
 <!-- TODO move to cookbook -->
 
 Get bundler version from lock file, which has a title on one line and version on the next (and in this case always the last line of the file).
@@ -28,7 +17,6 @@ Get bundler version from lock file, which has a title on one line and version on
 BUNDLED WITH:
   1.17.2
 ```
-
 
 ```sh
 $ VSN="$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
