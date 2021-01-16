@@ -5,25 +5,25 @@ Highlights of some of the flags I use most or want to use.
 
 ## Common
 
-| Short  | Long           | Description                                   |
-| ------ | -------------- | --------------------------------------------- |
-| -r, -R | –-recursive    | Recursive                                     |
-| -v     | –-invert-match | Invert match                                  |
-| -i     | –-ignore-case  | Case insensitive                              |
-| -c     | --count        | print only a count of selected lines per FILE |
-| -n     | --line-number  | print line number with output lines           |
+| Short    | Long             | Description                                     |
+| -------- | ---------------- | ----------------------------------------------- |
+| `-r, -R` | `–-recursive`    | Recursive                                       |
+| `-v`     | `–-invert-match` | Invert match                                    |
+| `-i`     | `–-ignore-case`  | Case insensitive                                |
+| `-c`     | `--count`        | Print only a count of selected lines per `FILE` |
+| `-n`     | `--line-number`  | Print line number with output lines             |
 
 
 ## Change output
 
-| Short | Long                    | Description                                                                                                                                                    |
-| ----- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `-A`  | `--after-context=NUM`   | Print num lines of trailing **context**                                                                                                                        |
-| `-o`  | `--only-matching`       | Show only **nonempty** parts of lines that match - this is useful when there are multiple matches on a line and you want to show each match on a separate line |
-| `-H`  | `–-with-filename`       | Print **file name** with output lines                                                                                                                          |
-| `-h`  | `–-no-filename`         | **Suppress** the file name prefix on output                                                                                                                    |
-| `-l`  | `–-files-with-matches`  | Print only names of FILEs **with** selected lines                                                                                                              |
-| `-L`  | `-–files-without-match` | Print only names of FILEs with **no** selected lines                                                                                                           |
+| Short | Long                    | Description                                                                                                                                                            |
+| ----- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-A`  | `--after-context=NUM`   | Print num lines of trailing **context**                                                                                                                                |
+| `-o`  | `--only-matching`       | Show only **nonempty** parts of lines that match - this is useful when there are multiple matches on a line and you want to show each match on a separate line         |
+| `-H`  | `–-with-filename`       | Print **file name** with output lines                                                                                                                                  |
+| `-h`  | `–-no-filename`         | **Suppress** the file name prefix on output                                                                                                                            |
+| `-l`  | `–-files-with-matches`  | Print only names of `FILE`s **with** selected lines. This collapses multiple matches in one file.                                                                      |
+| `-L`  | `-–files-without-match` | Print only names of `FILE`s with **no** selected lines. This is similar to using `-v` to invert the match, except also means you'll see a file path covered only once. |
 
 
 ## Type of matches
@@ -38,5 +38,5 @@ Highlights of some of the flags I use most or want to use.
 
 ## Pattern
 
-| `-f PATH` | `-–file PATH`           | take PATTERNS from FILE             |
-| `-e`      | `--regexp=PATTERNS`    | use PATTERNS for matching           |
+| `-f PATH` | `-–file PATH`           | take `PATTERNS` from FILE             |
+| `-e`      | `--regexp=PATTERNS`    | use `PATTERNS` for matching           |
