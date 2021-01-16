@@ -32,7 +32,7 @@ liquid:
 
 ### Theme boilerplate ###
 
-remote_theme: MichaelCurrin/minima
+remote_theme: MichaelCurrin/fractal
 
 titles_from_headings:
   strip_title: true
