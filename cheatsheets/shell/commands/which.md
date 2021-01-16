@@ -3,6 +3,7 @@
 
 See also `locate` command.
 
+
 ## Help
 
 ```sh
@@ -41,7 +42,7 @@ SEE ALSO
 
 ## Examples
 
-Find an executable. 
+Find an executable.
 
 The **first** match from `PATH` is returned.
 
