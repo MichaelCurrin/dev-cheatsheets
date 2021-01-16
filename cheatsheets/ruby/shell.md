@@ -23,6 +23,9 @@ puts files
 # CONTRIBUTING.md
 # Gemfile
 # Gemfile.lock
+
+files = split("\x0")
+# ["404.html", "CONTRIBUTING.md", "Gemfile", "Gemfile.lock" ]
 ```
 
 
