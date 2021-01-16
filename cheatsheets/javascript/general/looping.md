@@ -9,7 +9,7 @@ description: Guide to iterating over iterables in JavaScript
 ```javascript
 for (const index = 0; i < iterableLength; index++) { }
 
-for (const index in iterable) {}
+for (const index in iterable) { }
 
 for (const item of iterable) { }
 
@@ -54,7 +54,7 @@ console.log(upper)
 This is similar to using the index style but shorter.
 
 ```javascript
-for (const index in iterable) {}
+for (const index in iterable) { }
 ```
 
 Example using an array.
@@ -62,17 +62,15 @@ Example using an array.
 ```javascript
 const letters = ["a", "b", "c"]
 
-for (const j in letters) {
-  console.log(i)
-  console.log(letters[i])
+for (const i in letters) {
+  console.log(i, letters[i])
 }
-// 0
-// a
-// 1
-// b
-// 2
-// c
+// 0 a
+// 1 b
+// 2 c
 ```
+
+This is **not** so useful, as you only get the index and still have to look up the value. So using `for...of` is better, as covered below.
 
 A more common use is using an `Object` of key-value pairs - based on [for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) docs.
 
@@ -106,6 +104,14 @@ for (const letter of letters) {
 // a
 // b
 // c
+
+// Get the index and value.
+for (const [i, letter] of Object.entries(letters)) {
+  console.log(letter);
+}
+// a
+// b
+// c
 ```
 
 Iterate over a string.
@@ -116,16 +122,17 @@ const letters = "abc";
 for (const letter of letters) {
   console.log(letter);
 }
-// "a"
-// "b"
-// "c"
+// a
+// b
+// c
 ```
 
-Iterate over an `Object` of key-value pairs. Note that `foo` is not an iterable so you have to pass it to something.
+Iterate over an `Object` of key-value pairs. Note that `foo` is **not** an iterable, so you have to pass it to something to avoid an error.
 
 ```javascript
 const foo = { a: 1, b: 2, c: 3 }
 
+// Keys.
 for (const key of Object.keys(foo)) {
   console.log(key)
 }
@@ -133,7 +140,15 @@ for (const key of Object.keys(foo)) {
 // b
 // c
 
-// Unpack tuple as two variables.
+// Values
+for (const key of Object.values(foo)) {
+  console.log(key)
+}
+// 1
+// 2
+// 3
+
+// Keys and values.
 for (const [key, value] of Object.entries(foo)) {
   console.log(key, value)
 }
@@ -142,26 +157,27 @@ for (const [key, value] of Object.entries(foo)) {
 // c 3
 ```
 
-Iterate over a `Map`.
+Iterate over a `Map` object.
 
 ```javascript
-const foo = new Map([['a', 1], ['b', 2], ['c', 3]]);
+const foo = new Map( [ ['a', 1], ['b', 2], ['c', 3] ] );
+// Map(3) { a → 1, b → 2, c → 3 }
 
-// As a tuple.
-for (const pair of foo) {
-  console.log(pair);
-}
-// ['a', 1]
-// ['b', 2]
-// ['c', 3]
-
-// Unpack tuple as two variables.
+// Keys and values.
 for (const [key, value] of foo) {
   console.log(key, value);
 }
 // a 1
 // b 2
 // c 3
+
+// Or if you want to keep as a tuple.
+for (const pair of foo) {
+  console.log(pair);
+}
+// ['a', 1]
+// ['b', 2]
+// ['c', 3]
 ```
 
 
