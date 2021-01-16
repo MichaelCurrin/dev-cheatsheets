@@ -1,13 +1,14 @@
 # Pattern matching
 
-See also globbing.
+See also globbing section.
 
 Check if value matches pattern.
+
 
 ## Starts with
 
 Example:
 
-```
-[[ "$OSTYPE" == "darwin"* ]] && echo 'macOS!'
+```sh
+[[ "$OSTYPE" == darwin* ]] && echo 'macOS!'
 ```
