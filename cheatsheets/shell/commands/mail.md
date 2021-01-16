@@ -1,5 +1,5 @@
 ---
-description: Using the mail command-line utility on Unix systems
+description: Using the `mail` command-line utility on Unix systems
 ---
 # Mail
 
@@ -12,7 +12,7 @@ $ mail
 
 Mail is located at `/usr/bin/mail` on macOS and Linux.
 
-Without setting up an SMTP server like Gmail, you can get the benefit of localhost mails for logging. Such shen running crontab commands and mailing successes and failures (or just failures) to localhost's mailbox (if `MAILTO` is set to a username).
+Without setting up an SMTP server like Gmail, you can get the benefit of localhost mails for logging. Such as running crontab commands and mailing successes and failures (or just failures) to localhost's mailbox (if `MAILTO` is set to a username).
 
 
 ## Help
