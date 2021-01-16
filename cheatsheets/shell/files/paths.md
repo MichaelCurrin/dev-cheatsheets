@@ -25,7 +25,7 @@ The path does not have to exist as this is a string operation.
 
 Expand a relative path to a full path - resolving symlinks. The path must be valid.
 
-Works on macOS or Debian - requires *coreutils*.
+Works on macOS or Debian - requires _coreutils_.
 
 ```
 REALPATH(1)
