@@ -2,7 +2,7 @@
 description: How to zip and unzip with a few shell utilities
 layout: listing
 ---
-# Compressing
+# Compression
 
 
 <!-- Move to Learn to Code and then link to a shorter version here, maybe with tables -->
