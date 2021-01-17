@@ -3,12 +3,11 @@ description: Reference for subcommands of the `go` command
 ---
 # Commands
 
-See the [command](https://golang.org/doc/cmd) referenced in the docs.
+See the [commands](https://golang.org/doc/cmd) referenced in the docs.
 
+See [go command](https://golang.org/cmd/go/) doc. It lists available commands and then shows usage for each.
 
 ### Overview of common commands
-
-From [go command doc](https://golang.org/cmd/go/).
 
 | Command | Description                                   |
 | ------- | --------------------------------------------- |
