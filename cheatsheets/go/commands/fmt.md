@@ -1,6 +1,8 @@
 # fmt
 
-Docs: [gofmt](https://golang.org/cmd/gofmt/)
+Docs: [gofmt](https://golang.org/cmd/gofmt/) command.
+
+Use as `gofmt` or `go fmt`.
 
 ```
 gofmt [flags] [path ...]
