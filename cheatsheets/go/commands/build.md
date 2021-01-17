@@ -22,6 +22,8 @@ build treats them as a list of source files specifying a single package.
 
 ## Examples
 
+For current directory.
+
 ```sh
 $ go build
 ```
