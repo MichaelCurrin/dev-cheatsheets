@@ -27,3 +27,11 @@ array, slice:       [elem0 elem1 ...]
 maps:               map[key1:value1 key2:value2 ...]
 pointer to above:   &{}, &[], &map[]
 ```
+
+
+## Examples
+
+```go
+i := 23
+fmt.Printf("%v\n", i)
+```
