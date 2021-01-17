@@ -2,10 +2,13 @@
 
 Docs: [fmt](https://golang.org/pkg/fmt/) in standard lib.
 
+## Basic
+
+### Default
+
 ```
 %v	the value in a default format
 ```
-
 
 > The default format for %v is:
 
@@ -26,6 +29,41 @@ struct:             {field0 field1 ...}
 array, slice:       [elem0 elem1 ...]
 maps:               map[key1:value1 key2:value2 ...]
 pointer to above:   &{}, &[], &map[]
+```
+
+### Modifiers
+
+> Maps formatted with `%v` show keys and values in their default formats.
+>
+> The `%#v` form (the `#` is called a "flag" in this context) shows the map in the Go source format. 
+
+Maps are printed in a consistent order, sorted by the values of the keys.
+
+```go
+	isLegume := map[string]bool{
+		"peanut":    true,
+		"dachshund": false,
+	}
+
+	fmt.Printf("%v %#v\n", isLegume, isLegume)
+	// map[dachshund:false peanut:true] 
+        // map[string]bool{"dachshund":false, "peanut":true}
+```
+
+> Structs formatted with `%v` show field values in their default formats.
+>
+> The `%+v` form shows the fields by name, while `%#v` formats the struct in Go source format.
+
+```go
+	person := struct {
+		Name string
+		Age  int
+	}{"Kim", 22}
+
+	fmt.Printf("%v %+v %#v\n", person, person, person)
+	// {Kim 22}
+        // {Name:Kim Age:22}
+        // struct { Name string; Age int }{Name:"Kim", Age:22}
 ```
 
 
