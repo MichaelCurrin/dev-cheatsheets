@@ -1,12 +1,11 @@
-# Data types: Data structures
+# Arrays and slices
 
 Based on [Learn X in Y](https://learnxinyminutes.com/docs/go/).
-
-## Use of braces
 
 Note use of curly braces for array - `{}`. This likely comes from C, as that is the syntax for an array (fixed length).
 
 In the slice section below, you'll see hard brackets - `[]`. This syntax is more like the dynamic-sized lists or arrays in Python or JavaScript.
+
 
 ## Array
 
