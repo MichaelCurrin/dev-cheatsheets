@@ -45,7 +45,7 @@ for (const j = 0; i < letters.length; i++) {
 // 1
 // 2
 
-console.log(upper)
+upper
 // [ "A", "B", "C" ]
 ```
 
@@ -195,8 +195,10 @@ Here we create a new array with the new values in it, passing an arrow function 
 const letters = ["a", "b", "c"]
 
 const upper = letters.map(x => x.toUpperCase())
+upper
 // [ "A", "B", "C" ]
 
+// Log without storing a result.
 letters.map(x => console.log(x.toUpperCase()))
 // A
 // B
