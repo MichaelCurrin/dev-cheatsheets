@@ -1,5 +1,6 @@
-# Time
+# time
 
+Docs: [time](https://golang.org/pkg/time/) in standard lib.
 
 ```go
 time.Now()
