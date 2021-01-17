@@ -1,6 +1,6 @@
 # fmt
 
-Docs: [fmt](https://golang.org/pkg/fmt/).
+Docs: [fmt](https://golang.org/pkg/fmt/) in standard lib.
 
 ```
 %v	the value in a default format
@@ -31,7 +31,15 @@ pointer to above:   &{}, &[], &map[]
 
 ## Examples
 
+From examples section of the docs.
+
 ```go
-i := 23
-fmt.Printf("%v\n", i)
+integer := 23
+
+// Each of these prints "23" (without the quotes)
+fmt.Println(integer)
+fmt.Printf("%v\n", integer)
+fmt.Printf("%d\n", integer)
 ```
+
+`Println(x)` is the same as `Printf("%v\n", x)`.
