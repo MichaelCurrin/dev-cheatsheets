@@ -2,6 +2,7 @@
 
 Docs: [fmt](https://golang.org/pkg/fmt/) in standard lib.
 
+
 ## Basic
 
 ### Default
@@ -40,14 +41,14 @@ pointer to above:   &{}, &[], &map[]
 Maps are printed in a consistent order, sorted by the values of the keys.
 
 ```go
-	isLegume := map[string]bool{
-		"peanut":    true,
-		"dachshund": false,
-	}
+isLegume := map[string]bool{
+	"peanut":    true,
+	"dachshund": false,
+}
 
-	fmt.Printf("%v %#v\n", isLegume, isLegume)
-	// map[dachshund:false peanut:true] 
-        // map[string]bool{"dachshund":false, "peanut":true}
+fmt.Printf("%v %#v\n", isLegume, isLegume)
+// map[dachshund:false peanut:true] 
+// map[string]bool{"dachshund":false, "peanut":true}
 ```
 
 > Structs formatted with `%v` show field values in their default formats.
@@ -55,15 +56,15 @@ Maps are printed in a consistent order, sorted by the values of the keys.
 > The `%+v` form shows the fields by name, while `%#v` formats the struct in Go source format.
 
 ```go
-	person := struct {
-		Name string
-		Age  int
-	}{"Kim", 22}
+person := struct {
+	Name string
+	Age  int
+}{"Kim", 22}
 
-	fmt.Printf("%v %+v %#v\n", person, person, person)
-	// {Kim 22}
-        // {Name:Kim Age:22}
-        // struct { Name string; Age int }{Name:"Kim", Age:22}
+fmt.Printf("%v %+v %#v\n", person, person, person)
+// {Kim 22}
+// {Name:Kim Age:22}
+// struct { Name string; Age int }{Name:"Kim", Age:22}
 ```
 
 
