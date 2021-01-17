@@ -10,11 +10,14 @@ Run it like this:
 $ go run cli/myapp/main.go
 ```
 
-That runs these two steps internally:
+That seems to run these steps internally:
 
 ```sh
-$ go build -o ~/go/bin/myapp
-$ ./myapp
+$ go install
+$ # Or 
+$ go build -o $GOBIN/myapp
+
+$ myapp
 ```
 
-Or where your Go bin directory is.
+Note the name of the directory is used and not the script name.
