@@ -9,5 +9,5 @@ $ go install
 That is the same as doing:
 
 ```sh
-$ go build -o $GOBIN/myapp
+$ go build -o ~/go/bin/myapp cmd/myapp/main.go
 ```
