@@ -3,6 +3,7 @@ description: Reference for subcommands of the `go` command
 ---
 # Commands
 
+See the [command](https://golang.org/doc/cmd) referenced in the docs.
 
 ### Overview of common commands
 
