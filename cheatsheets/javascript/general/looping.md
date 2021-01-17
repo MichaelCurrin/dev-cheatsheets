@@ -208,7 +208,7 @@ This is based on `map` function in Functional Progamming languages like Haskell.
 
 ## forEach
 
-Avoid using this. This is 3x slower than `.map` and doesn't persist anything. Rather use `.map` as a drop-in replacement.
+Avoid using this. This is 3x slower than `.map` and it returns `undefined`. Rather use `.map` as a drop-in replacement wherever you see `.forEach`.
 
 ```javascript
 iterable.forEach(item => expression)
@@ -235,4 +235,7 @@ letters.forEach(function (x) {
     const u = x.toUpperCase()
     upper.push(u)
 })
+
+upper
+// [ "A", "B", "C" ]
 ```
