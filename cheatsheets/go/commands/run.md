@@ -10,13 +10,10 @@ Run it like this:
 $ go run cli/myapp/main.go
 ```
 
-That seems to run these steps internally:
+That seems to run these steps internally: write to `~/go/bin/myapp` and then execute.
 
 ```sh
 $ go install
-$ # Or 
-$ go build -o $GOBIN/myapp
-
 $ myapp
 ```
 
