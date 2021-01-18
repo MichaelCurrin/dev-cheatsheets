@@ -82,7 +82,7 @@ for (let i = letters.length; i > 0; i--) {
 // 1
 ```
 
-### Using for...in
+### Using for..in
 
 This is similar to using the index style but shorter.
 
@@ -118,7 +118,7 @@ for (const key in foo) {
 // c 3
 ```
 
-### Using for...of
+### Using for..of
 
 Get the items, without having to deal with the index.
 
