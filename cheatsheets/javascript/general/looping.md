@@ -9,17 +9,18 @@ description: Guide to iterating over iterables in JavaScript
 Click a link to jump to that section of this guide.
 
 - [for](#for)
-    ```javascript
-    for (const index = 0; i < iterableLength; index++) { }
-    ```
-- [for..in](#for..in)
-    ```javascript
-    for (const index in iterable) { }
-    ```
-- [for..of](#for..of)
-    ```javascript
-    for (const item of iterable) { }
-    ```
+    - [Using index](#using-index)
+        ```javascript
+        for (let index = 0; i < iterableLength; index++) { }
+        ```
+    - [Using for..in](#for..in)
+        ```javascript
+        for (const index in iterable) { }
+        ```
+    - [Using for..of](#for..of)
+        ```javascript
+        for (const item of iterable) { }
+        ```
 - [map](#map)
     ```javascript
     iterable.map(item => expression)
@@ -32,12 +33,12 @@ Click a link to jump to that section of this guide.
 
 ## for
 
-### Using array index
+### Using index
 
-The old-fashioned index-based loop, based on the C and Java languages.
+The old-fashioned index-based loop, based on the C and Java languages. Traditionally this was done using `var` but `let` is the modern way.
 
 ```javascript
-for (const index = 0; i < iterableLength; index++) { }
+for (let index = 0; i < iterableLength; index++) { }
 ```
 
 The value of `i` is `0` initially, then incremented to `1` and `2`. When it becomes `3`, it is then longer than the length of the array (`letters.length` is `3`) so stops.
@@ -46,7 +47,7 @@ The value of `i` is `0` initially, then incremented to `1` and `2`. When it beco
 const letters = ["a", "b", "c"]
 
 let upper = []
-for (const j = 0; i < letters.length; i++) {
+for (let i = 0; i < letters.length; ++i) {
   console.log(i)
   
   const u = letters[i].toUpperCase()
@@ -58,6 +59,19 @@ for (const j = 0; i < letters.length; i++) {
 
 upper
 // [ "A", "B", "C" ]
+```
+
+Some prefer to use `++i` to `i++`. Some argue that this is faster but will give the same result (the incremen still happens at the end of the iteration, just the returning and checking the value changes).
+
+If you need to count down:
+
+```javascript
+for (let i = letters.length; i > 0; i--) {
+  console.log(i)
+}
+// 3
+// 2
+// 1
 ```
 
 ### Using for...in
