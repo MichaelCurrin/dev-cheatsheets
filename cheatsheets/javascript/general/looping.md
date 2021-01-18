@@ -144,14 +144,19 @@ for (const letter of letters) {
 // a
 // b
 // c
+```
 
-// Get the index and value.
+Get the index and value, using `Object.entries`. Compare wih `enumerate` in Python.
+
+```javascript
+const letters = ['a', 'b', 'c'];
+
 for (const [i, letter] of Object.entries(letters)) {
-  console.log(letter);
+  console.log(i, letter);
 }
-// a
-// b
-// c
+// 0 a
+// 1 b
+// 2 c
 ```
 
 Iterate over a string.
@@ -169,26 +174,37 @@ for (const letter of letters) {
 
 Iterate over an `Object` of key-value pairs. Note that `foo` is **not** an iterable, so you have to pass it to something to avoid an error.
 
+Keys.
+
 ```javascript
 const foo = { a: 1, b: 2, c: 3 }
 
-// Keys.
 for (const key of Object.keys(foo)) {
   console.log(key)
 }
 // a
 // b
 // c
+```
 
-// Values
+Values.
+
+```javascript
+const foo = { a: 1, b: 2, c: 3 }
+
 for (const key of Object.values(foo)) {
   console.log(key)
 }
 // 1
 // 2
 // 3
+```
 
-// Keys and values.
+Keys and values.
+
+```javascript
+const foo = { a: 1, b: 2, c: 3 }
+
 for (const [key, value] of Object.entries(foo)) {
   console.log(key, value)
 }
