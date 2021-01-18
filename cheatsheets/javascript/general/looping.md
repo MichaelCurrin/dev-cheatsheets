@@ -13,11 +13,11 @@ Click a link to jump to that section of this guide.
         ```javascript
         for (let index = 0; i < iterableLength; index++) { }
         ```
-    - [Using for..in](#for..in)
+    - [Using for..in](#using-for..in)
         ```javascript
         for (const index in iterable) { }
         ```
-    - [Using for..of](#for..of)
+    - [Using for..of](#using-for..of)
         ```javascript
         for (const item of iterable) { }
         ```
