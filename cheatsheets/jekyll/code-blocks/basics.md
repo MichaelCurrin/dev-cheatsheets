@@ -50,7 +50,7 @@ end
 
 ### With line numbers
 
-Add `linenos` to the tag.
+Add `linenos` to the `highlight` tag. Warning: You may need to add or update your CSS so that the result displays as you expect.
 
 Code:
 
