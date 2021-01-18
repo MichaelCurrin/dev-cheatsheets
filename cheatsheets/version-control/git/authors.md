@@ -3,6 +3,8 @@ title: Authors
 description: Show author names and their contributions to a repo
 ---
 
+In a git repo, show a summary of GitHub users (using author names) and the number of commits by each, sorted by commit count.
+
 ```sh
 $ git shortlog -n -s
    969  michaelcurrin
