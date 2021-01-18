@@ -13,11 +13,11 @@ Click a link to jump to that section of this guide.
         ```javascript
         for (let index = 0; i < iterableLength; index++) { }
         ```
-    - [Using for..in](#using-for..in)
+    - [Using for...in](#using-for...in)
         ```javascript
         for (const index in iterable) { }
         ```
-    - [Using for..of](#using-for..of)
+    - [Using for...of](#using-for...of)
         ```javascript
         for (const item of iterable) { }
         ```
@@ -82,7 +82,7 @@ for (let i = letters.length; i > 0; i--) {
 // 1
 ```
 
-### Using for..in
+### Using for...in
 
 This is similar to using the index style but shorter.
 
@@ -118,7 +118,7 @@ for (const key in foo) {
 // c 3
 ```
 
-### Using for..of
+### Using for...of
 
 Get the items, without having to deal with the index.
 
@@ -138,7 +138,7 @@ for item in iterable:
 Based on [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of) docs.
 
 ```javascript
-const letters = ['a', 'b', 'c'];
+const letters = ["a", "b", "c"];
 
 for (const letter of letters) {
   console.log(letter);
@@ -223,19 +223,23 @@ for (const [key, value] of Object.entries(foo)) {
 
 Iterate over a `Map` object.
 
+Keys and values.
+
 ```javascript
-const foo = new Map( [ ['a', 1], ['b', 2], ['c', 3] ] );
+const foo = new Map( [ ["a", 1], ["b", 2], ["c", 3] ] );
 // Map(3) { a → 1, b → 2, c → 3 }
 
-// Keys and values.
 for (const [key, value] of foo) {
   console.log(key, value);
 }
 // a 1
 // b 2
 // c 3
+```
 
-// Or, if you want to keep as a tuple.
+To understanding the unpacking, see use with tuples.
+
+```javascript
 for (const pair of foo) {
   console.log(pair);
 }
