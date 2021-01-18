@@ -68,16 +68,28 @@ Output options:
 
 ### Examples
 
-The default behavior will print changes only. Be sure to use a path to a file or directory.
+Be sure to use a path to a file or directory.
+
+The default behavior will print changes (possibly very long) without writing them.
 
 ```sh
 $ prettier .
 ```
 
-Update files in place with.
+Get a summary with `--check`.
 
 ```sh
-$ prettier --write .
+$ prettier -c .
+Checking formatting...
+[warn] index.js
+[warn] foo/bar.js
+...
+```
+
+Update files in place.
+
+```sh
+$ prettier -w .
 ```
 
 Complicated example:
