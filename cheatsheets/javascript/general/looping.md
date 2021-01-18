@@ -4,26 +4,37 @@ description: Guide to iterating over iterables in JavaScript
 ---
 
 
-## Summary
+## Overview
 
-```javascript
-for (const index = 0; i < iterableLength; index++) { }
+Click a link to jump to that section of this guide.
 
-for (const index in iterable) { }
-
-for (const item of iterable) { }
-
-iterable.map(item => expression)
-
-iterable.forEach(item => expression)
-```
+- [for](#for)
+    ```javascript
+    for (const index = 0; i < iterableLength; index++) { }
+    ```
+- [for..in](#for..in)
+    ```javascript
+    for (const index in iterable) { }
+    ```
+- [for..of](#for..of)
+    ```javascript
+    for (const item of iterable) { }
+    ```
+- [map](#map)
+    ```javascript
+    iterable.map(item => expression)
+    ```
+- [forEach](#forEach)
+    ```javascript
+    iterable.forEach(item => expression)
+    ```
 
 
 ## for
 
 ### Using array index
 
-The old-fashioned style, based on the C language or Java.
+The old-fashioned index-based loop, based on the C and Java languages.
 
 ```javascript
 for (const index = 0; i < iterableLength; index++) { }
@@ -87,10 +98,17 @@ for (const key in foo) {
 
 ### Using for...of
 
-Get the item without having to deal with the index.
+Get the items, without having to deal with the index.
 
 ```javascript
 for (const item of iterable) { }
+```
+
+In Python:
+
+```python
+for item in iterable:
+    # expression
 ```
 
 Based on [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of) docs.
@@ -185,11 +203,12 @@ for (const pair of foo) {
 
 The modern way of doing loops. 
 
-This is based on `map` function in Functional Progamming languages like Haskell. See also `map` which was introduced to Python.
+This is based on `map` function in Functional Progamming languages like Haskell. See also `map` function and _list comprehensions_ in Python.
 
 It is useful for performing a transformation on an array without side effects (while a `for` or `.forEach` loop accesses a variable outsides its scope block normally). You can also chain multiple `.map` calls together and use them with `.filter` and `.reduce`.
 
 ### Syntax
+
 ```javascript
 iterable.map(item => expression)
 ```
@@ -213,18 +232,19 @@ letters.map(x => console.log(x.toUpperCase()))
 ```
 
 
-
 ## forEach
 
 Unlike `.map`, this returns `undefined` so can't be used for chaining expressions or returning an array. Rather use `.map` as a drop-in replacement wherever you see `.forEach`.
 
 The performance of `.map` is supposed to be faster than `.forEach`, though speed tests show mixed results.
 
+### Syntax
+
 ```javascript
 iterable.forEach(item => expression)
 ```
 
-Examples.
+### Examples
 
 ```javascript
 const letters = ["a", "b", "c"]
@@ -248,4 +268,10 @@ letters.forEach(function (x) {
 
 upper
 // [ "A", "B", "C" ]
+```
+
+See also `.each` in Ruby:
+
+```ruby
+[1, 2, 3].each { |n| puts "Number: #{n}" }
 ```
