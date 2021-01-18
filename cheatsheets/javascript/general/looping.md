@@ -133,6 +133,8 @@ for item in iterable:
     # expression
 ```
 
+#### Array
+
 Based on [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of) docs.
 
 ```javascript
@@ -159,6 +161,8 @@ for (const [i, letter] of Object.entries(letters)) {
 // 2 c
 ```
 
+#### String
+
 Iterate over a string.
 
 ```javascript
@@ -172,9 +176,11 @@ for (const letter of letters) {
 // c
 ```
 
+#### Associative array
+
 Iterate over an `Object` of key-value pairs. Note that `foo` is **not** an iterable, so you have to pass it to something to avoid an error.
 
-Keys.
+##### Keys
 
 ```javascript
 const foo = { a: 1, b: 2, c: 3 }
@@ -187,7 +193,7 @@ for (const key of Object.keys(foo)) {
 // c
 ```
 
-Values.
+##### Values
 
 ```javascript
 const foo = { a: 1, b: 2, c: 3 }
@@ -200,7 +206,7 @@ for (const key of Object.values(foo)) {
 // 3
 ```
 
-Keys and values.
+##### Keys and values
 
 ```javascript
 const foo = { a: 1, b: 2, c: 3 }
@@ -212,6 +218,8 @@ for (const [key, value] of Object.entries(foo)) {
 // b 2
 // c 3
 ```
+
+#### Map
 
 Iterate over a `Map` object.
 
@@ -227,7 +235,7 @@ for (const [key, value] of foo) {
 // b 2
 // c 3
 
-// Or if you want to keep as a tuple.
+// Or, if you want to keep as a tuple.
 for (const pair of foo) {
   console.log(pair);
 }
