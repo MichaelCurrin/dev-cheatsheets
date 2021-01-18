@@ -183,11 +183,18 @@ for (const pair of foo) {
 
 ## map
 
-The modern way of doing loops. It is useful for performin a transformation an array - you can also chain multiple `.map` calls together and use them with `.filter` and `.reduce`.
+The modern way of doing loops. 
 
+This is based on `map` function in Functional Progamming languages like Haskell. See also `map` which was introduced to Python.
+
+It is useful for performing a transformation on an array without side effects (while a `for` or `.forEach` loop accesses a variable outsides its scope block normally). You can also chain multiple `.map` calls together and use them with `.filter` and `.reduce`.
+
+### Syntax
 ```javascript
 iterable.map(item => expression)
 ```
+
+### Example
 
 Here we create a new array with the new values in it, passing an arrow function with no side effects. This makes for cleaner and more efficient and reliable code. As we don't have initialize an array and push values to it.
 
@@ -205,7 +212,6 @@ letters.map(x => console.log(x.toUpperCase()))
 // C
 ```
 
-This is based on `map` function in Functional Progamming languages like Haskell. See also `map` which was introduced to Python.
 
 
 ## forEach
