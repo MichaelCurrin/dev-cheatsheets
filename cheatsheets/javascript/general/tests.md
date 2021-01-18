@@ -22,6 +22,7 @@ describe('#foo', () => {
     expect(result).toEqual({ 'a': 12 })
   })
 })
+```
 
 
 ## Methods
