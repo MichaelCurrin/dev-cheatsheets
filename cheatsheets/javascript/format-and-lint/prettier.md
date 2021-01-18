@@ -84,6 +84,7 @@ Checking formatting...
 [warn] index.js
 [warn] foo/bar.js
 ...
+[warn] Code style issues found in the above file(s). Forgot to run Prettier?
 ```
 
 Update files in place.
