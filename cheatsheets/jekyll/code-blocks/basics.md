@@ -50,7 +50,7 @@ end
 
 ### With line numbers
 
-Add `linenos` to the `highlight` tag. Warning: You may need to add or update your CSS so that the result displays as you expect.
+Add `linenos` to the `highlight` tag. 
 
 Code:
 
@@ -72,7 +72,19 @@ def foo
 end
 {% endhighlight %}
 
-Unfortunately this renders poorly in Minima as it becomes a table - the width must be reduced to not be 100% and there are borders must be removed:
+Here is the HTML result:
+
+```html
+<table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">foo</span>
+  <span class="nb">puts</span> <span class="s1">'foo'</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+```
+
+Warning: You may need to add or update your CSS so that the result displays as you expect. For example, in Minima, the width must be reduced to not be 100% and the borders must be removed:
 
 Code:
 
@@ -93,7 +105,7 @@ td pre {
 </style>
 ```
 
-<!-- Hidden on frontend -->
+<!-- Applied but not visible code on this page. -->
 
 <style>
 .rouge-table {
