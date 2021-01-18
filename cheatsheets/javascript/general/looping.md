@@ -24,10 +24,18 @@ Click a link to jump to that section of this guide.
 - [map](#map)
     ```javascript
     iterable.map(item => expression)
+    
+    iterable.map(function (item) {
+        expression
+    })
     ```
 - [forEach](#forEach)
     ```javascript
     iterable.forEach(item => expression)
+    
+    iterable.forEach(function (item) {
+        expression
+    })
     ```
 
 
