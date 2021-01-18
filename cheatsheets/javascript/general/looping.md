@@ -216,7 +216,9 @@ letters.map(x => console.log(x.toUpperCase()))
 
 ## forEach
 
-Avoid using this. This is 3x slower than `.map` and it returns `undefined`. Rather use `.map` as a drop-in replacement wherever you see `.forEach`.
+Unlike `.map`, this returns `undefined` so can't be used for chaining expressions or returning an array. Rather use `.map` as a drop-in replacement wherever you see `.forEach`.
+
+The performance of `.map` is supposed to be faster than `.forEach`, though speed tests show mixed results.
 
 ```javascript
 iterable.forEach(item => expression)
