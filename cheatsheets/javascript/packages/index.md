@@ -6,6 +6,4 @@ description: Guide to JavaScript packages aka libraries
 
 ### Related
 
-- [NPM versions][]
-
-[NPM]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/versions.md %}
+- [NPM versions]({{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/versions.md %})
