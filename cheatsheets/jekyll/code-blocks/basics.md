@@ -3,6 +3,7 @@ description: Backticks vs highlight tag
 ---
 # Basics
 
+
 ## Markdown code blocks
 
 This works in Jekyll and plain markdown too.
