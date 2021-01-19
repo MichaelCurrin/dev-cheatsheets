@@ -3,10 +3,11 @@
 
 ## Resources
 
-See links to the ESLint docs:
-
-- [Configuring](https://eslint.org/docs/user-guide/configuring) guide.
-- [Rules](https://eslint.org/docs/rules/) doc.
+- ESLint documentation
+    - [ESLint docs homepage](https://eslint.org)
+    - [Configuring](https://eslint.org/docs/user-guide/configuring) guide.
+    - [Rules](https://eslint.org/docs/rules/) doc.
+    - [Specifiying enviroments](https://eslint.org/docs/user-guide/configuring#specifying-environments)
 - ESLint guides on GitHub
     - [Walmart](https://github.com/walmartlabs/eslint-config-walmart)
     - [Google](https://github.com/google/eslint-config-google)
