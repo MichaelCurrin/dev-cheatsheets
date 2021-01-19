@@ -177,3 +177,19 @@ echo b
 b
 ```
 
+
+## Find files
+
+Using `wildcard` to evaluate a globstar.
+
+```Makefile
+js_files  := $(wildcard test/*.js)
+```
+
+Evaluate a `shell` expression and using `find` command inside it.
+
+```sh
+all_files := $(shell find . -name "*")
+```
+
+This does not work if you leave out `:=`, `$()` or `shell`.
