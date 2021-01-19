@@ -13,7 +13,13 @@ See links to the ESLint docs:
 
 A reference for rules I typically like to know about or set, using my preferred values.
 
-Each rule has its own allowed fields. Sometimes you set `2` or `"error"`, or just `1`.
+Each rule has its own allowed fields.
+
+For level, you can use:
+
+- `2` or `"error"`
+- `1` or `"warn"`
+- `0` or `"off"`
 
 Example:
 
@@ -21,9 +27,10 @@ Example:
 {
   rules: {
     semi: [2, 'always'],
-    semi: ['warn', 'always'],
-    'no-console': 'error'
-    'no-console': 2
+    semi: ['error', 'always'], // same as above
+    
+    'no-console': 'warn'
+    'no-console': 1 // same as above
   }
 }
 ```
@@ -35,12 +42,51 @@ See below rule names and some recommended values (not all values).
 Name   | Values | Link
 ---    | ---    | ---
 `semi` | `[2, "always"]` | 
-`comma-dangle` | `'always-multiline'`. Using `always` is to aggressive like `import { x, y, } from "bar"`. | [docs](https://eslint.org/docs/rules/comma-dangle)
-`quotes` | `[2, "single"]` or `[2, "double"]` | [docs](https://eslint.org/docs/rules/quotes)
-`no-console` | `'off'` | [docs](https://eslint.org/docs/rules/no-console)
-`no-console` | `1` |
-`no-undef` | `1` |
-`indent` | `["error", 2]` - you'll get 4 spaces for just `"error"` | [docs](https://eslint.org/docs/rules/indent)
+`comma-dangle` | `'always-multiline'`. Using `always` is to aggressive like `import { x, y, } from "bar"`. | [docs](https://eslint.org/docs/rules/comma-dangle) |
+`quotes` | `[2, "single"]` or `[2, "double"]` | [docs](https://eslint.org/docs/rules/quotes) |
+`no-console` | `'off'` | [docs](https://eslint.org/docs/rules/no-console) |
+`no-console` | `1` | |
+`no-undef` | `1` | [docs](https://eslint.org/docs/rules/no-undef)
+`indent` | `["error", 2]` - you'll get 4 spaces for just `"error"` | [docs](https://eslint.org/docs/rules/indent) |
+
+
+
+### Extend
+
+You can extend from an external ruleset. This keeps your project light.
+
+For example, using:
+
+```
+eslint:recommended
+```
+
+Gives you rules covered in [conf/eslint-recommended.js](https://github.com/eslint/eslint/blob/master/conf/eslint-recommended.js) of the ESLint repo.
+
+See also [conf/eslint-all.js](https://github.com/eslint/eslint/blob/master/conf/eslint-all.js).
+
+```
+eslint:all
+```
+
+See the [Extending](https://eslint.org/docs/user-guide/configuring#extending-configuration-files) section in the docs.
+
+Here is an example from the docs:
+
+```json
+{
+    "plugins": [
+        "react"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "rules": {
+       "react/no-set-state": "off"
+    }
+}
+```
 
 
 ## Script settings
