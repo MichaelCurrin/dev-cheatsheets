@@ -180,16 +180,70 @@ b
 
 ## Find files
 
-Using `wildcard` to evaluate a globstar.
+### Wildcard
+
+Using `wildcard` to evaluate a globstar. 
+
+This will only search at the directory level given - **not** subdirectories.
+
+Don't quote the glob.
 
 ```Makefile
-js_files  := $(wildcard test/*.js)
+files  := $(wildcard *.lock)
+
+a:
+	@echo $(all_files)
 ```
-
-Evaluate a `shell` expression and using `find` command inside it.
-
 ```sh
-all_files := $(shell find . -name "*")
+$ make a
+Gemfile.lock
 ```
+
+Or in a directory.
+
+```Makefile
+# Top-level.
+docs := $(wildcard *.md)
+# CONTRIBUTING.md README.md about.md index.md
+
+# Target directory.
+docs := $(wildcard docs/*.md)
+# docs/README.md docs/deploy.md docs/development.md docs/installation.md docs/usage.md
+
+# Exactly one level down in any directory. Ignores top-level and 2 levels down.
+docs := $(wildcard */*.md)
+# _site/about.md docs/README.md docs/deploy.md docs/development.md docs/installation.md docs/usage.md resources/index.md
+```
+
+Note using `**/*.md` will **not** work for finding the current directory - it will still search one level down.
+
+### Shell find
+
+Evaluate a `shell` expression and using `find` command inside it. Quote the glob.
 
 This does not work if you leave out `:=`, `$()` or `shell`.
+
+This will search in subdirectories.
+
+```make
+files := $(shell find . -name "*.lock")
+
+a:
+	@echo $(all_files)
+```
+
+```sh
+$ make a
+./Gemfile.lock ./vendor/bundle/ruby/2.7.0/gems/http_parser.rb-0.6.0/Gemfile.lock
+```
+
+Note that is an array moved to one line.
+
+Here is the original output:
+
+```sh
+$ find . -name '*.lock'
+./Gemfile.lock
+./vendor/bundle/ruby/2.7.0/gems/http_parser.rb-0.6.0/Gemfile.lock
+```
+
