@@ -7,6 +7,12 @@ See links to the ESLint docs:
 
 - [Configuring](https://eslint.org/docs/user-guide/configuring) guide.
 - [Rules](https://eslint.org/docs/rules/) doc.
+- ESLint guides on GitHub
+    - [Walmart](https://github.com/walmartlabs/eslint-config-walmart)
+    - [Google](https://github.com/google/eslint-config-google)
+    - [AirBnB](https://github.com/airbnb/javascript)
+    - [Gulp](https://github.com/gulpjs/eslint-config-gulp)
+    - [Formidable](https://github.com/FormidableLabs/eslint-config-formidable)
 
 
 ## Rules
