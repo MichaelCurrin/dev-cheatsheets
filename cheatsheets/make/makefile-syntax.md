@@ -19,7 +19,7 @@ This can be done at the start, or just before each target.
 
 Here we use PHONY where `foo` and `docs` are actual directories as well targets.
 
-- `Makefile
+- `Makefile`
 	```makefile
 	.PHONY: foo docs
 
@@ -29,7 +29,7 @@ Here we use PHONY where `foo` and `docs` are actual directories as well targets.
 	docs:
 		echo 'Test'
 	```
-- `Makefile
+- `Makefile`
 	```makefile
 	.PHONY: foo
 	foo:
@@ -50,7 +50,7 @@ You can put a comment anywhere.
 The comment will be printed when the target runs. But you can use `@#` to prevent it from printing.
 
 
-- `Makefile
+- `Makefile`
 	```mk
 	# Comment.
 	foo: # Another comment.
@@ -70,7 +70,7 @@ Given file `.env` with variable set as `FOO=bar` and `script_that_echoes_foo.sh`
 
 The combination of `export` and `source` works well.
 
-- `Makefile
+- `Makefile`
 	```makefile
 	export FOO=''
 
@@ -83,7 +83,7 @@ The combination of `export` and `source` works well.
 
 The following will not work as expected ,due to `make` limitations on environment setting of child processes.
 
-- `Makefile
+- `Makefile`
 	```make
 	test:
 		source .env
@@ -92,7 +92,7 @@ The following will not work as expected ,due to `make` limitations on environmen
 
 The following will not work either, with or without `export` set at the top.
 
-- `Makefile
+- `Makefile`
 	```makefile
 	test:
 		export $(<.env) && ./script_that_echoes_foo.sh
@@ -107,7 +107,7 @@ Note that unlike in the shell, the `\` is necessary in a `Makefile` so that the 
 
 ### For
 
-- `Makefile
+- `Makefile`
 	```make
 	foo:
 		for bar in my-dir/*; do \
@@ -120,7 +120,7 @@ Note that unlike in the shell, the `\` is necessary in a `Makefile` so that the 
 
 Note lack of indentation.
 
-- `Makefile
+- `Makefile`
 	```make
 	TARGET:
 	ifneq (CONDIITION, )
@@ -133,7 +133,7 @@ Note lack of indentation.
 
 Example:
 
-- `Makefile
+- `Makefile`
 	```make
 	libs_for_gcc = -lgnu
 	normal_libs =
@@ -148,7 +148,7 @@ Example:
 
 Alternate:
 
-- `Makefile
+- `Makefile`
 	```make
 	TARGET:
 		@if [ CONDITION ]; then \
