@@ -1,12 +1,10 @@
 ---
+title: CLI
 description: About the `make` command
 ---
-# Command
 
 
 ## Usage
-
-### Usage summary
 
 ```
 Usage: make [options] [target] ...
@@ -23,9 +21,9 @@ $ FOO=1 make foo  # Pass env variable.
 $ make foo FOO=1  # Pass env variable alternative.
 ```
 
-### Flags summary
+## Flags summary
 
-#### Dry run:=
+### Dry run
 
 ```
   -n, --just-print, --dry-run, --recon
@@ -47,7 +45,7 @@ egrep '(^\S)|^$' Makefile
 
 You can use the alias and you can move the option to the end.
 
-#### Verbosity
+### Verbosity
 
 ```
   -d                          Print lots of debugging information.
@@ -56,12 +54,13 @@ You can use the alias and you can move the option to the end.
 
 ```
 
-#### Warnings
+### Warnings
+
 ```
   --warn-undefined-variables  Warn when an undefined variable is referenced.
 ```
 
-#### Input
+### Input
 
 ```
   -f FILE, --file=FILE, --makefile=FILE
@@ -70,13 +69,14 @@ You can use the alias and you can move the option to the end.
                               Search DIRECTORY for included makefiles.
 ```
 
-### Help
+
+## Help
 
 ```sh
 $ make --help
 ```
 
-Output on macOS
+Output on macOS:
 
 ```
 Usage: make [options] [target] ...
