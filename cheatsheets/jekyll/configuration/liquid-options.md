@@ -38,6 +38,11 @@ I don't know why error mode needs to set and what it does - perhaps those are er
 
 These are mutually exclusive fields according to the docs. Though weirdly my IDE's YAML linter doesn't like having the both error mode and strict settings in the same file.
 
+See related field outside of `liquid`:
+
+```yaml
+strict_front_matter: true
+```
 
 ## When strict checks are too strict
 
