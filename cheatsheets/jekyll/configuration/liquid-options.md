@@ -2,6 +2,8 @@
 
 See [Liquid Options](https://jekyllrb.com/docs/configuration/liquid/) in the docs.
 
+Jekyll allows you to customize Liquid options so you can catch invalid code that is normally is allowed go to a deploy with a warning message only.
+
 ## Fields
 
 ### Defaults
