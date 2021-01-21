@@ -1,16 +1,25 @@
 ---
-description: How to Liquid code as highlighted snippets in Jekyll
+description: How to show Liquid code as highlighted snippets in Jekyll
 ---
 # Liquid snippets
 
 
-Here we ensure that Liquid code is not evaluated but treated as literal text, but with syntax highlighting. This is useful for docs and tutorials around Jekyll.
+Here we ensure that Jekyll templating Liquid code is not evaluated but treated as literal text, but with syntax highlighting. This is useful for docs and tutorials around Jekyll.
 
-Note that Liquid here uses a combination of HTML/Markdown and Jekyll templating and depending which approach you use a certain part of the same code block will be highlighted.
+e.g.
+
+{% raw %}
+```liquid
+{{ foo }}
+
+{% link bar.md %}
+```
+{% endraw %}
 
 Make sure you understand [Basics][] first.
 
 [Basics]: {{ site.baseurl }}{% link cheatsheets/jekyll/code-blocks/basics.md %}
+
 
 ## Code block approach
 
@@ -26,7 +35,7 @@ Note - you will also need to use the `raw` tag - not shown here since nesting a 
 
 {% raw %}
 
-Code:
+**Code:**
 
 	```html
 	<div>
@@ -34,7 +43,7 @@ Code:
 	</div>
 	```
 
-Result:
+**Result:**
 
 ```html
 <div>
@@ -69,12 +78,11 @@ Result:
 {% endraw %}
 
 
-## The highlight tag approach
+## Highlight tag approach
 
 Using the Jekyll `highlight` tag.
 
 Apply Liquid highlighting. Note you should use the `raw` tag inside the `div`, not shown here. Note the `raw` tag must go _inside_ the `highlight` tag - if it `raw` is on the outside then the `highlight` will be literal text.
-
 
 **Code:**
 
