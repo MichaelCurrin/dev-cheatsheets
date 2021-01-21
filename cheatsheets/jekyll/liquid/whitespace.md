@@ -3,6 +3,7 @@ render_with_liquid: false
 ---
 # Whitespace
 
+
 ## Variable
 
 Trim whitespace from value.
@@ -10,6 +11,7 @@ Trim whitespace from value.
 ```liquid
 {{- my_text -}}
 ```
+
 
 ## Raw
 
@@ -33,4 +35,5 @@ def foo
   puts 'foo'
 end
 {% endhighlight %}
+
 {% endraw %}

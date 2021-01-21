@@ -107,6 +107,16 @@ Wed, 23 Mar 2016 23:20:00 +1300
 1 Feb 2020
 ```
 
+Just year:
+
+```liquid
+{{ page.date | date: "%Y" }}
+```
+
+```
+2020
+```
+
 ## Ordinal
 
 > One notable exclusion from this list getting the ordinal date. For example we couldn’t output “May 23rd” because there’s no placeholder for the “rd”.

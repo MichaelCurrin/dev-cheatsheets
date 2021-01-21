@@ -2,6 +2,7 @@
 
 {% raw %}
 
+
 ## Iterate over collection
 
 - `_config.yml`
@@ -16,7 +17,7 @@
     ---
     ---
     {% for item in site.foo.bars %}
-    {{ item.title }}
+        {{ item.title }}
     {% endfor %}
     ```
 

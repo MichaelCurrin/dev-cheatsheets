@@ -2,19 +2,16 @@
 
 {% raw %}
 
+See [Jekyll Permalinks doc](https://jekyllrb.com/docs/permalinks/).
+
 > Permalinks are the output path for your pages, posts, or collections. They allow you to structure the directories of your source code different from the directories in your output.
-
-
-## Resources
-
-- [Jekyll Permalinks doc](https://jekyllrb.com/docs/permalinks/)
 
 
 ## Index pages
 
-Regardless of using the default or `pretty` setting, the page `foo/index.md` will become `/foo/index.html`. 
+Regardless of using the default or `pretty` setting, the page `foo/index.md` will become `/foo/index.html`.
 
-Then a browser will find it using `/foo/`. That is also the preferred format for linking to pages. 
+Then a browser will find it using `/foo/`. That is also the preferred format for linking to pages.
 
 You'll get the forward slash in your link to a page using the link tag - `{% link foo/index.md %}`.
 
@@ -89,7 +86,7 @@ Example usage:
     permalink: pretty
     ```
 
-Using `pretty` will turn `/foo/bar.html` to `/foo/bar`. 
+Using `pretty` will turn `/foo/bar.html` to `/foo/bar`.
 
 From [Built in formats](https://jekyllrb.com/docs/permalinks/#built-in-formats) in the docs.
 
@@ -107,7 +104,7 @@ From [Built in formats](https://jekyllrb.com/docs/permalinks/#built-in-formats) 
 Here we have use a forward
 Note: Make sure not to remove categories and year/month/day in some way, otherwise your posts will not work. If you do not have posts, that is okay.
 
-Example of a 
+Example of a
 
 ```yaml
 permalink: /:title/
@@ -138,21 +135,21 @@ What did make a difference was adding a trailing forward slash to any one of tho
 
 Here are definitions based on the docs:
 
-| Variable       | Value                                                                                          |
-| -------------- | ---------------------------------------------------------------------------------------------- |
-| `:path`        | Page's directory. |
-| `:basename` or `:title`       | The page's basename. The docs cover `:basename` though `:title` is used in practice as it works for posts and pages. If you set `permalink: /:title/` then your output paths will be like: `/`, `/foo` and `/foo/bar/`. You don't need to worry about directory.                                                                   |
-| `:output_ext`  | Extension of the output file.  |                  |
+| Variable                | Value                                                                                                                                                                                                                                                            |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `:path`                 | Page's directory.                                                                                                                                                                                                                                                |
+| `:basename` or `:title` | The page's basename. The docs cover `:basename` though `:title` is used in practice as it works for posts and pages. If you set `permalink: /:title/` then your output paths will be like: `/`, `/foo` and `/foo/bar/`. You don't need to worry about directory. |
+| `:output_ext`           | Extension of the output file.                                                                                                                                                                                                                                    |  |
 
 ### Post attributes
 
 Here are a few of the many post attribuutes.
 
-| Variable       | Value                                                                                          |
-| -------------- | ---------------------------------------------------------------------------------------------- |
-| `:year` | |
-| `:title` | |
-| `:date`  |  |
-| `:categories` |  |
+| Variable      | Value |
+| ------------- | ----- |
+| `:year`       |       |
+| `:title`      |       |
+| `:date`       |       |
+| `:categories` |       |
 
 {% endraw %}

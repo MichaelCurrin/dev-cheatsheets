@@ -2,6 +2,7 @@
 
 {% raw %}
 
+
 ## Split path
 
 ```liquid
@@ -15,7 +16,7 @@ For page with URL `/demo/python/pypi.html`:
 ```
 
 ```json
-["", "demo", "python", "pypi.html"] 
+["", "demo", "python", "pypi.html"]
 ```
 
 Recombine:
