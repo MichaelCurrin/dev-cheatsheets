@@ -12,9 +12,45 @@
 
 ## Null list 
 
+This is only safe for primitive types.
+
 ```python
->>> [None]*10
+>>> x = [None]*10
 [None, None, None, None, None, None, None, None, None, None]
+>>> x[0] = 'abc'
+>>> x
+['abc', None, None, None, None, None, None, None, None, None]
+```
+
+For data structures, this gives unexpected reuslts as each element points to the same variable.
+
+```python
+>>> x = [[]]*10
+>>> x
+[[], [], [], [], [], [], [], [], [], []]
+
+>>> # Append a value inside the first item.
+>>> x[0].append('abc')
+>>> # It gets added to all.
+>>> x
+[['abc'], ['abc'], ['abc'], ['abc'], ['abc'], ['abc'], ['abc'], ['abc'], ['abc'], ['abc']
+```
+
+You can't use this either.
+
+```python
+[list()]*10
+```
+
+You'll need a `lambda`.
+
+Or list comprehension. With `[]` or `list()` inside.
+
+```python
+>>> x = [[] for _ in range(10)]
+>>> x[0].append('abc')
+>>> x
+[['abc'], [], [], [], [], [], [], [], [], []]
 ```
 
 
