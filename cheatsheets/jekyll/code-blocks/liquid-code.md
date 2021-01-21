@@ -1,10 +1,10 @@
 ---
 description: How to show Liquid code as highlighted snippets in Jekyll
 ---
-# Liquid snippets
+# Display Liquid code snippets
 
 
-Here we ensure that Jekyll templating Liquid code is not evaluated but treated as literal text, but with syntax highlighting. This is useful for docs and tutorials around Jekyll.
+Here we ensure that Jekyll templating Liquid code is not evaluated at build time, but treated as literal text, with syntax highlighting. This is useful for docs and tutorials around Jekyll.
 
 e.g.
 
