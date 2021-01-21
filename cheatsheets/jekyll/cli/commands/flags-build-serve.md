@@ -1,118 +1,29 @@
-# Run
+# Flags for build and serve
 
-Guide to Jekyll CLI.
-
-For running Jekyll with Docker, see the [Jekyll Containers](https://michaelcurrin.github.io/code-cookbook/recipes/containers/jekyll.html) recipe.
+CLI flags of interest to me for `serve` and `build`.
 
 
-## Help
+## Debugging
 
-For help see:
-
-```sh
-jekyll --version
-jekyll help serve
-jekyll serve --help
-
-# Find config issues.
-jekyll doctor
-```
-
-## Common
-
-This is my standard use.
-
-Use verbose error traces (rather than the default very minimal mostly useless errors) and enable browser reloading.
-
-```sh
-$ jekyll serve --trace --livereload
-```
-
-## Verbose
-
-If you want **very** detailed output to help understand Ruby plugins or Jekyll, then use 
-
-```sh
-$ jekyll serve --verbose
-```
-
-## Incremental
-
-If you want to only rebuild changed pages for a faster build while the server is running.
-
-```sh
-$ jekyll serve --incremental
-```
-
-I can also recommend Jekyll as it has a build cache which has made rebuilds 60x faster for me. And that was without using the incremental flag and that was actually stopping and starting the server and still getting the benefit of cache.
-
-## Profile
-
-If you want to find the slowest areas.
-
-```sh
-$ jekyll build --profile
-```
-
-## Serve a subdirectory
-
-If Jekyll is installed with *Bundler* at the top-level of the project, you can run Jekyll from anywhere.
-
-```sh
-cd sample_site
-bundle exec jekyll serve
-```
-
-Specify source content in a subdirectory using `--source` flag  and value (which defaults to `./`).
-
-```sh
-bundle exec jekyll serve -s sample_site -d sample_site/_site
-```
-
-Still builds to top-level `_site`, so destination is set here too. Note that when running a local server, it doesn't actually matter where `_site` is as long it is not versioned.
+| Flag            | Description                                                                    |
+| --------------- | ------------------------------------------------------------------------------ |
+| `--trace`       | Show the full backtrace when an error occurs                                   |
+| `-V, --verbose` | Print verbose output.                                                          |
+| `--profile`     | Generate a Liquid rendering profile (e.g. to find the slowest pages to render) |
 
 
-## Testing
+## Serving
 
-If you want to test a snippet or part of another site in your own, create a subdirectory. You can use the gems from the top-level directory.
-```
-_site
-test_site/ # Sub directory project
-  _site
-  index.md
-  _config.yml
-Gemfile
-index.md
-_config.yml
-```
-
-```sh
-cd test_site
-bundle exec jekyll serve
-```
-
-## Flags
-
-For `jekyll serve [options]`
-
-
-### Debug flags
-
-| Flag        | Description                                                                                                                         |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `--verbose` | Increase message logged in the console.                                                                                             |
-| `--debug`   | Show details about an error if there is one. Errors are very quiet so it is useful to always run this especially for remote builds. |
-| `--trace`   | Show the full backtrace when an error occurs.                                                                                       |
-
-### Loading flags
+For `serve` only.
 
 | Flag                 | Description                                                                                                                 |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `-H, --host`         | e.g. `--host 0.0.0.0` Open up to requests on the network.                                                                   |
 | `--show-dir-listing` | Show contents of the directory. Ignores an existing `index.html`. This flag is not needed if there is no `index.html` file. |
 | `-l, --livereload`   | Use LiveReload to automatically refresh browsers                                                                            |
-| --no-watch           | Disabling the default option to watch for changes and rebuild.                                                              |
+| `--no-watch`         | Disabling the default option to watch for changes and rebuild.                                                              |
 
-### Show and hide content
+## Show and hide content
 
 | Flag                      | Description                                     |
 | ------------------------- | ----------------------------------------------- |
@@ -121,17 +32,19 @@ For `jekyll serve [options]`
 | `--future`                | Publishes posts with a future date              |
 | `--limit_posts MAX_POSTS` | Limits the number of posts to parse and publish |
 
-### Configuration
 
-| Flag                                     | Description   |
-| ---------------------------------------- | ------------- |
-| `--config CONFIG_FILE,[CONFIG_FILE,...]` | Read configs. |
-|`-d, --destination DESTINATION`  | The current folder will be generated into DESTINATION |
-|`-s, --source SOURCE` |  Custom source directory |
-|`-b, --baseurl URL` |  Serve the website from the given base URL |
-|`--layouts DIR` |  Layouts directory (defaults to ./_layouts) |
+## Configuration
 
-### Full
+| Flag                                     | Description                                           |
+| ---------------------------------------- | ----------------------------------------------------- |
+| `--config CONFIG_FILE,[CONFIG_FILE,...]` | Read configs.                                         |
+| `-d, --destination DESTINATION`          | The current folder will be generated into DESTINATION |
+| `-s, --source SOURCE`                    | Custom source directory                               |
+| `-b, --baseurl URL`                      | Serve the website from the given base URL             |
+| `--layouts DIR`                          | Layouts directory (defaults to ./_layouts)            |
+
+
+## Full
 
 Copied from the command-line for Jekyll 4:
 
