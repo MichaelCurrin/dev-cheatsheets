@@ -55,11 +55,11 @@ Note - you will also need to use the `raw` tag - not shown here since nesting a 
 
 ### Liquid
 
-Apply Liquid highlighting - HTML tags will be plain.
+Apply Liquid highlighting - HTML tags will not get highlighting.
 
 {% raw %}
 
-Code:
+**Code:**
 
 	```liquid
 	<div>
@@ -67,7 +67,7 @@ Code:
 	</div>
 	```
 
-Result:
+**Result:**
 
 ```liquid
 <div>
