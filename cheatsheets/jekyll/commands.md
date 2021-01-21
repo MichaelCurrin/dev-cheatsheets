@@ -1,5 +1,5 @@
 ---
-description: Using jekyll CLI commands
+description: Using `jekyll` CLI commands
 ---
 # Commands
 
