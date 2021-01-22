@@ -57,6 +57,12 @@ e.g.
 Revert commit abc9872 through to def1231
 ```
 
+Or
+
+```
+Undo all changes to revert back to commit abc9872.
+```
+
 
 ## Manage a revert in progress
 
