@@ -129,6 +129,15 @@ metadata:
 ```
 
 
+## Logs
+
+Use `k get pods` then use a pod ID.
+
+```sh
+$ kubectl get logs foobarb-backend-stg-abcd55cdc4-7qqxz
+```
+
+
 ## Secrets
 
 - [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/) docs
