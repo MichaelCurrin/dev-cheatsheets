@@ -22,11 +22,39 @@ $ git commit REF
 
 Choose a commit hash for the start and another for the end, such as `HEAD` for current commit.
 
-The flag here means changes will be made without committing.
+This will prompt you to make multiple commits, each reversing a commit (starting from the latest). The message will be populated for you.
+
+```sh
+$ git commit
+```
+
+If you prefer to create a _single_ commit, you can do this.
 
 ```sh
 $ git revert --no-commit 4eab63b2..HEAD
+```
+
+Check the changed files.
+
+Then commit.
+
+```sh
 $ git commit
+```
+
+The placeholder message will be taken from the oldest commit. 
+```
+Revert "My commit message"
+
+This reverts commit 27ad6.....
+```
+
+So you'll want to update it to reflect you are reverting a range.
+
+e.g.
+
+```
+Revert commit abc9872 through to def1231
 ```
 
 
