@@ -5,21 +5,29 @@ logo: kubernetes
 # Kubernetes
 
 
-Also known as "K8s" for short.
+Also known as "k8s" for short (since the name is 8 letters long)
 
 - [kubernetes.io](https://kubernetes.io) homepage.
 - [Cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) on Kubernetes homepage.
 
-Example values:
+Example values for commands below.
 
-- SERVICE_NAME: `foo`
-- PODNAME: `foo-0f4988689-l5hfa`
+- `SERVICE_NAME` and `DEPLOYMENT_NAME` -  `foobarb`
+- `PODNAME` - `foo-0f4988689-l5hfa`
 
 
 ## Services
 
 ```sh
 $ kubectl get services
+$ kubectl get svc
+```
+
+```
+NAME                    TYPE           CLUSTER-IP       EXTERNAL-IP            PORT(S)                      AGE
+foobarb-backend-dev      ClusterIP      10.100.104.121   <none>                5000/TCP                     164d
+foobarb-backend-stg      ClusterIP      10.100.218.0     <none>                5000/TCP                     164d
+...
 ```
 
 Get external IP for a service.
@@ -48,14 +56,30 @@ List.
 
 ```sh
 $ kubectl get pods
-
 $ kubectl get pods --all-namespaces
 ```
 
-Describe config.
+```
+NAME                                     READY   STATUS    RESTARTS   AGE
+foobarb-backend-dev-abcdc7fdb5-wdhl4      1/1     Running   0          46h
+foobarb-backend-stg-abcd549c97-d8jn6      1/1     Running   0          14d
+...
+```
+
+Describe in long detail. Using `pods` for `pod` also works.
 
 ```sh
 $ kubectl describe pod POD_NAME
+```
+
+```
+Name:         foobarb-backend-stg-abcd549c97-d8jn6
+Namespace:    ...
+Priority:     0
+Node:         ip-...
+Start Time:   Thu, 21 Jan 2021 21:16:30 +0200
+Labels:       ...
+...
 ```
 
 Start tunnel in a pod using a command use `/bin/sh`, `/bin/bash`, `postgresql` or `python3`.
@@ -73,10 +97,35 @@ List deployments.
 $ kubectl get deployments
 ```
 
-Get a deployment. Optionally get as YAML as below. Optionally write to a local YAML file.
+Get a deployment.
 
 ```sh
-$ kubectl get deployment NAME -o yaml
+$ kubectl get deployment DEPLOYMENT_NAME
+```
+
+```
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+foobarb-backend-stg     2/2     2            2           2d18h
+```
+
+Get a deployment. Optionally get as long YAML output as below. Optionally write to a local YAML file.
+
+```sh
+$ kubectl get deployment DEPLOYMENT_NAME -o yaml  # > foo.yaml
+```
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "12"
+    meta.helm.sh/release-name: foobarb-backend-stg
+    meta.helm.sh/release-namespace: marketing
+  creationTimestamp: "2021-01-19T18:14:59Z"
+  generation: 12
+  ...
+....
 ```
 
 
