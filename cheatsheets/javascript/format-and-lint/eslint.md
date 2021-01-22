@@ -44,7 +44,7 @@ You can also enforce some styling and formatting issues which don't affect funct
 
 ## Rules
 
-A reference for rules I typically like to know about or set, using my preferred values.
+### Format
 
 Each rule has its own allowed fields.
 
@@ -70,17 +70,35 @@ Example:
 
 See [Rules](https://eslint.org/docs/rules/) in the docs. It provides descriptions and link to the rule's page.
 
+### My list
+
+A reference for rules I typically like to know about or set, using my preferred values.
+
 See below rule names and some recommended values (not all values).
 
 Name   | Values | Link
 ---    | ---    | ---
-`semi` | `[2, "always"]` | 
+`semi` | `[2, "always"]` |  |
 `comma-dangle` | `'always-multiline'`. Using `always` is to aggressive like `import { x, y, } from "bar"`. | [docs](https://eslint.org/docs/rules/comma-dangle) |
 `quotes` | `[2, "single"]` or `[2, "double"]` | [docs](https://eslint.org/docs/rules/quotes) |
 `no-console` | `'off'` | [docs](https://eslint.org/docs/rules/no-console) |
 `no-console` | `1` | |
 `no-undef` | `1` | [docs](https://eslint.org/docs/rules/no-undef)
 `indent` | `["error", 2]` - you'll get 4 spaces for just `"error"` | [docs](https://eslint.org/docs/rules/indent) |
+`max-len` | `["error", { "code": 80 }]` | [docs](https://eslint.org/docs/rules/max-len) |
+
+
+You can set more fields for `max-len`. e.g. 
+
+```json
+{
+  "code": 80 ,
+  "tabWidth": 2,
+  "ignoreUrls": true,
+  "ignoreStrings": true,
+  "ignoreTemplateLiterals": true
+}
+```
 
 ### Extend
 
