@@ -28,3 +28,12 @@ The flag here means changes will be made without committing.
 $ git revert --no-commit 4eab63b2..HEAD
 $ git commit
 ```
+
+
+## Manage a revert in progress
+
+```sh
+$ git revert --continue
+$ git revert --abort
+$ git revert --quit
+```
