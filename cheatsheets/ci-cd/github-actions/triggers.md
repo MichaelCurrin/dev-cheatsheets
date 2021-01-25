@@ -231,11 +231,20 @@ You can manually trigger workflow runs. If you configure your workflow to use a 
 
 > To trigger specific workflows in a repository, use the `workflow_dispatch event`.
 
-Example:
-
 ```yaml
 on: workflow_dispatch
 ```
+
+Or
+
+```yaml
+on:
+  workflow_dispatch:
+    inputs:
+      # ...
+```
+
+Basic trigger and job example:
 
 ```yaml
 name: Manually triggered workflow
@@ -258,10 +267,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: |
+      - run: |
         echo "Hello ${{ github.event.inputs.name }}!"
         echo "- in ${{ github.event.inputs.home }}!"
 ```
+
+Example suggested by GH Actions on a new workflow. 
+
+```yaml
+name: Manual workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        # Friendly description to show in the UI instead of 'name'
+        description: 'Person to greet'
+        default: 'World'
+        required: true
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send greeting
+        run: echo "Hello ${{ github.event.inputs.name }}"
+```
+
 
 ### Repo dispatch
 
