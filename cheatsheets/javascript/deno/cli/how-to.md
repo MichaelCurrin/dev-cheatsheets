@@ -2,6 +2,8 @@
 
 Based on [post](https://medium.com/deno-tutorial/deno-testing-bundling-formatting-and-debugging-9c8aad798fc2).
 
+See also my [MichaelCurrin/deno-project-template](https://github.com/MichaelCurrin/deno-project-template) repo.
+
 
 ## Install
 
@@ -177,7 +179,7 @@ $ deno lint PATH
 
 ### Test
 
-- `test.ts`
+- `test.ts` or `src/index_test.ts` or `tests/index_test.ts`.
     ```javascript
     import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 
@@ -190,7 +192,7 @@ $ deno lint PATH
     ```
 
 ```sh
-$ deno test test_index.ts
+$ deno test test.ts
 ```
 
 Assertions:
