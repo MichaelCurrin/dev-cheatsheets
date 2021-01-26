@@ -3,7 +3,28 @@
 Based on [post](https://medium.com/deno-tutorial/deno-testing-bundling-formatting-and-debugging-9c8aad798fc2).
 
 
-## Install module
+## Install
+
+## Install a module
+
+- `deno install -h`
+    ```
+    deno-install
+    Installs a script as an executable in the installation root's bin directory.
+    deno install --allow-net --allow-read https://deno.land/std/http/file_server.ts
+    deno install https://deno.land/std/examples/colors.ts
+    ...
+    
+    -r, --reload=<CACHE_BLOCKLIST>     
+            Reload source code cache (recompile TypeScript)
+            --reload
+              Reload everything
+            --reload=https://deno.land/std
+              Reload only standard modules
+            --reload=https://deno.land/std/fs/utils.ts,https://deno.land/std/fmt/colors.ts
+              Reloads specific modules
+    ...
+    ```
 
 ```sh
 $ deno install https://deno.land/std/examples/welcome.ts
@@ -32,12 +53,30 @@ $ welcome
 Welcome to Deno 🦕
 ```
 
-Remote code is fetched and cached on first execution, and never updated until the code is run with the `--reload` flag. 
+### Update dependencies
 
-If you need to force a fresh download, can run this. This also rebuilds the std library so can solve errors when switching Deno versions. 
+Remote code is fetched and cached on the first execution. It will only be updated when requested.
+
+- `deno cache -h`
+    ```
+    deno-cache 
+    Cache and compile remote dependencies recursively.
+
+    Download and compile a module with all of its static dependencies and save them
+    in the local cache, without running any code:
+      deno cache https://deno.land/std/http/file_server.ts
+
+    Future runs of this module will trigger no downloads or compilation unless
+    --reload is specified.
+    ...
+    
+        -r, --reload=<CACHE_BLOCKLIST>    Reload source code cache (recompile TypeScript)
+    ```
+
+If you need to force a fresh download, can run this. This also rebuilds the standard library so can solve errors when switching Deno versions. 
 
 ```sh
-$ demo cache --reload my_module.ts
+$ deno cache --reload src/index.ts
 ```
 
 
@@ -63,7 +102,7 @@ Note that you can use the `run` command without first doing an install and all e
 Run a script in your project. Use `-A` to allow all permissions.
 
 ```sh
-$ deno run index.ts
+$ deno run src/index.ts
 ```
 
 ### Run HTTP module
@@ -123,7 +162,7 @@ Listening on 0.0.0.0:8080
 ### Format
 
 ```sh
-$ deno fmt index.ts
+$ deno fmt src/index.ts
 ```
 
 ```sh
@@ -151,10 +190,10 @@ $ deno lint PATH
     ```
 
 ```sh
-$ deno test test.ts
+$ deno test test_index.ts
 ```
 
-Assertions
+Assertions:
 
 - `equal`
 - `assert`
@@ -179,12 +218,26 @@ Allow browser dev tools debugging by using a flag.
 $ deno --inspect
 ```
 
-- `--inspect` flag allows attaching a debugger at any point in time,
-- `inspect-brk` will wait for debugger breakpoint and pause execution on the first line of code.
+- `--inspect` - allows attaching a debugger at any point in time.
+- `--inspect-brk` - will wait for debugger breakpoint and pause execution on the first line of code.
 
 ### VS Code
 
-- `settings.json`
+- `.vscode/extensions.json` - Suggest extensions to the user.
+    ```json
+    {
+      "recommendations": [
+        "denoland.vscode-deno"
+      ]
+    }
+    ```
+- `.vscode/settings.json`
+    ```json
+    {
+      "deno.enable": true
+    }
+    ```
+- `.vscode/launch.json`
     ```json
     {
         "version": "0.2.0",
@@ -195,7 +248,7 @@ $ deno --inspect
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "runtimeExecutable": "deno",
-            "runtimeArgs": ["run", "--inspect-brk", "-A", "index.ts"],
+            "runtimeArgs": ["run", "--inspect-brk", "-A", "src/index.ts"],
             "port": 9229
             }
         ]
