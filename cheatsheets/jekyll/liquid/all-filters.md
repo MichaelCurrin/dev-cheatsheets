@@ -18,8 +18,13 @@ cheatsheet:
           - cmd: markdownify
           - cmd: jsonify
             usage: |
-                {{ site.data.dinosaurs | jsonify }}
-
+                {{ my_var | jsonify }}
+                {{ site.data.my_data | jsonify }}
+          - cmd: inspect
+            usage: |
+                {{ my_var | inspect }}
+                {{ site.page | inspect }}
+            help: Show a value as a Ruby object. Useful for debugging. Especially useful if a value is possibly null and therefore invisible or if you have a data structure to understand.
           - cmd: date
           - cmd: default
             usage: |
@@ -45,10 +50,10 @@ cheatsheet:
           - cmd: strip_html
           - cmd: strip_newlines
             help: |
-              Remove \n characters
+              Remove `\n` characters
 
           - cmd: newline_to_br
-            help: Convert \n to two br tags
+            help: Convert `\n` to two `br` tags
 
           - cmd: escape
           - cmd: escape_once
