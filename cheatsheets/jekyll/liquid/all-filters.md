@@ -184,7 +184,7 @@ cheatsheet:
 
 Grouped by functionality.
 
-This is a based info on the [CloudCannon Jekyll cheatsheet](https://learn.cloudcannon.com/jekyll-cheat-sheet/).
+This is a based info on the [CloudCannon Jekyll cheatsheet](https://learn.cloudcannon.com/jekyll-cheat-sheet/). See also [Liquid filters](https://jekyllrb.com/docs/liquid/filters/) on Jekyll docs.
 
 The items here are grouped and ordered by use, rather than alpabetically.
 
