@@ -42,19 +42,65 @@ I read that using absolute paths is preferred in a container over a path like `~
 
 Use the `COPY` command directories into an image.
 
+You can copy a file or a directory.
 
 ```Dockerfile
 COPY SRC DEST
 ```
 
-e.g.
+Examples - note we leave working directory as `/root/` here so copying to relative path will use that.
+
+<!-- TODO research and experiment to check I got these right -->
 
 ```Dockerfile
-COPY . .
-COPY src .
-COPY package*.json .
-COPY foo /bar/
+# Copy file to working directory.
+COPY foo .
+# cp foo /root/foo
+
 COPY foo /root/bar/
+# cp foo /root/bar/foo
+
+COPY foo /bar/
+# cp foo /bar/foo
+
+# Copy files and directories
+COPY . .
+# cp -r . /root/
+
+# Copy whole directory.
+COPY src . 
+# cp -r src /root/src
+
+# Warning.
+# If the destination is a directory, the whole directory will be copied into the directory. Different to 
+COPY src fuzz 
+# mkdir /root/fuzz
+# cp -r src /root/fuzz/src
+# NOT
+# cp -r src /root/fuzz
+
+# Use globstart to copy contents of directory into a new name.
+COPY src/* fuzz
+# mkdir /root/fuzz/
+# cp -r src/* /root/fuzz
+
+# Copy files
+COPY package*.json .
+# cp package.json /root/package.json
+# cp package-lock.json /root/package-lock
+```
+
+Subdirectories will be created. For example, if `fizz` does not exist.
+
+```Dockerfile
+COPY foo /root/fizz/buzz/
+```
+
+Then that is equivalent to:
+
+```sh
+mkdir -p /root/fizz/buzz/
+cp foo /root/fizz/buzz/foo
 ```
 
 Using absolute destinations is preferred. So avoid using `~/bar`, though it can actually work to point to the root user's home.
@@ -88,9 +134,10 @@ Note that the source path is relative to the build context (usually the root of 
 If you want to copy from outside the project:
 
 ```sh
-cd ..
-docker build -t my-app -f src/Dockerfile .
+$ cd ..
+$ docker build -t my-app -f src/Dockerfile .
 ```
+
 
 ## Run commands
 
