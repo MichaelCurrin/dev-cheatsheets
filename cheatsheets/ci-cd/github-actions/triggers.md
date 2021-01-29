@@ -173,11 +173,15 @@ From the docs:
 
 > Note: The release event is not triggered for draft releases.
 
+So presumably it is safe to use `created`. Perhaps that only runs once, while a release could be published, unpublished and published (I've seen a release unpublished, i.e. moved to drafts, by deleting its tag).
+
 ```yaml
 on:
   release:
     types: created
 ```
+
+Here is one I found which covers more events.
 
 ```yaml
 on:
