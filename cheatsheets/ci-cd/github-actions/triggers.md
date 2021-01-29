@@ -136,9 +136,7 @@ on:
 
 ## Trigger on a tag or release
 
-I haven't used release yet but it is popular from looking at other projects and I cover this in other recipes in the [workflows](workflows/) section.
-
-Published could be safer to use - as a created release is not published yet.
+Published could be safer to use - as a created release is for not published yet.
 
 ```yaml
 on:
@@ -152,7 +150,7 @@ on:
     types: [published, created, edited]
 ```
 
-Or tags.
+Or on a tag.
 
 ```yaml
 on:
