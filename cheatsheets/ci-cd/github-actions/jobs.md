@@ -35,7 +35,7 @@ Here the first job ID is `my_first_job`. This example from the docs and YAML in 
 
 Use `runs-on` to specify the operating system. Using `ubuntu-latest` as below is the most common approach.
 
-- `main.yml
+- `main.yml`
     ```yaml
     jobs:
       my_first_job:
@@ -51,7 +51,7 @@ Use `runs-on` to specify the operating system. Using `ubuntu-latest` as below is
 
 Two test on multiple operating systems.
 
-- `main.yml
+- `main.yml`
     ```yaml
     jobs:
       build:
