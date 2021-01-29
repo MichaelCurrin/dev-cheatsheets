@@ -54,25 +54,35 @@ on:
 
 ### On push to master or Pull Request to master
 
-```yaml
-on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
-```
-
-Or
-
-```yaml
-on:
-  push:
-    branches: master
-  pull_request:
-    branches: master
-```
-
 This won't run on a PR between two branches which aren't the `master` branch.
+
+```yaml
+on:
+  push:
+    branches: master
+  pull_request:
+    branches: master
+```
+
+Or more verbose:
+
+```yaml
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+```
+Or
+```yaml
+on:
+  push:
+    branches: 
+      - master
+  pull_request:
+    branches: 
+      - master
+```
 
 
 ## Trigger on a schedule
