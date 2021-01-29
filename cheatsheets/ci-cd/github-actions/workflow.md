@@ -1,4 +1,7 @@
-# Workflow
+---
+title: Workflow
+description: Summary of workflow syntax
+---
 
 
 ## Basic
