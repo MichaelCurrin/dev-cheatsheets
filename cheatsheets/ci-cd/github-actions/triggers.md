@@ -134,9 +134,38 @@ on:
 ```
 
 
-## Trigger on a tag or release
+## Trigger on tag
 
-Published could be safer to use - as a created release is for not published yet.
+Specify a tag rule under `on.push.tags`. Use a regex pattern - this must be set.
+
+```yaml
+on:
+  push:
+    tags:
+      - 'v*'
+```
+
+You can make a advanced rule that only triggers on `v1` and up or excludes `-alpha` releases, if that matters to you.
+
+You can add `branches` rules - if for some reason you are making a tag that is _not_ your on main branch and you don't want that to trigger your workflow.
+
+```yaml
+on:
+  push:
+    tags: 
+    branches: [ main ]
+```
+
+There is no `on.tag` or `on.tags` option, but there is `on.release` - see below.
+
+
+## Trigger on a release
+
+Trigger your workflow when you create a release under Releases section of your repo - note that a release is not the same as a tag.
+
+From the docs:
+
+> Note: The release event is not triggered for draft releases.
 
 ```yaml
 on:
@@ -150,12 +179,16 @@ on:
     types: [published, created, edited]
 ```
 
-Or on a tag.
+Types available:
 
-```yaml
-on:
-  tags:
-```
+- `published`
+- `unpublished`
+- `created`
+- `edited`
+- `deleted`
+- `prereleased`
+- `released`
+
 
 
 ## Trigger on a GH Pages build
