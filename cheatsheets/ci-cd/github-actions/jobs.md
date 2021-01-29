@@ -57,11 +57,36 @@ Two test on multiple operating systems.
       build:
         strategy:
           matrix:
-            os:
-              - ubuntu-latest
-              - windows-latest
-              - macOS-latest
+            os: [ubuntu-latest, macOS-latest, windows-latest]
+        runs-on: ${{ matrix.os }}
     ```
+
+## Package version matrix
+
+Within `matrix` you can specify a version of your language.
+
+Under `matrix`, you can set any variable name and pass it an array, then use the value later using `with` and an appropriate field name for the action.
+
+- `main.yml`
+    ```yaml
+    strategy:
+      matrix:
+        foo-version: ["1", "2"]
+
+    steps:
+      - name: Set up Foo ${{ matrix.foo-version }}
+        uses: # ...
+        with:
+          foo-version: ${{ matrix.foo-version }}
+    ```
+
+Example:
+
+```yaml
+matrix:
+  python-version: ["3.6", "3.x" ]
+  deno: ["v1.x", "nightly"]
+```
 
 
 ## Job sequence
