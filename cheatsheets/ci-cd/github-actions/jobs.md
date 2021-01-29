@@ -35,29 +35,31 @@ Here the first job ID is `my_first_job`. This example from the docs and YAML in 
 
 Use `runs-on` to specify the operating system. Using `ubuntu-latest` as below is the most common approach.
 
-```yaml
-jobs:
-  my_first_job:
-    runs-on: ubuntu-latest
-    name: My first job
+- `main.yml
+    ```yaml
+    jobs:
+      my_first_job:
+        runs-on: ubuntu-latest
+        name: My first job
 
-  my_second_job:
-    runs-on: ubuntu-latest
-    name: My second job
-```
+      my_second_job:
+        runs-on: ubuntu-latest
+        name: My second job
+    ```
 
 Two test on multiple operating systems.
 
-```yam
-job:
-  build:
-    strategy:
-      matrix:
-        os:
-          - ubuntu-latest
-          - windows-latest
-          - macOS-latest
-```
+- `main.yml
+    ```yaml
+    jobs:
+      build:
+        strategy:
+          matrix:
+            os:
+              - ubuntu-latest
+              - windows-latest
+              - macOS-latest
+    ```
 
 
 ## Job sequence
