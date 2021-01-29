@@ -7,7 +7,7 @@ description: Choose events that trigger your workflow
 
 Here we use the `on` field and one or more events to trigger a workflow.
 
-See the docs [Events that trigger workflows](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows).
+See the docs - [Events that trigger workflows](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows).
 
 Note - in general if you have test, lint and build steps, you probably want to run them on all pushes and PRs. If there is anything related to a deploy, you probably only want to run against the master branch. Also you will only want to run the deploy against `master` - if you run it against both `master` and `gh-pages`, you'll have issues.
 
