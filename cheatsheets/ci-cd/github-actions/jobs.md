@@ -80,12 +80,21 @@ Under `matrix`, you can set any variable name and pass it an array, then use the
           foo-version: ${{ matrix.foo-version }}
     ```
 
-Example:
+Example - here the `x` is a literal character that gets interpeted for you by an action.
 
 ```yaml
 matrix:
   python-version: ["3.6", "3.x" ]
   deno: ["v1.x", "nightly"]
+```
+
+Without matrix, you would just do steps as:
+
+```yaml
+steps:
+  - name: Set up Foo
+    with:
+      foo-version: "v1.x"
 ```
 
 
