@@ -39,12 +39,14 @@ Use `runs-on` to specify the operating system. Using `ubuntu-latest` as below is
     ```yaml
     jobs:
       my_first_job:
-        runs-on: ubuntu-latest
         name: My first job
+        
+        runs-on: ubuntu-latest
 
       my_second_job:
-        runs-on: ubuntu-latest
         name: My second job
+        
+        runs-on: ubuntu-latest
     ```
 
 Two test on multiple operating systems.
