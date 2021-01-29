@@ -156,6 +156,12 @@ on:
     branches: [ main ]
 ```
 
+You can also use a conditional statement on a step.
+
+```yaml
+if: startsWith(github.ref, 'refs/tags/')
+```
+
 There is no `on.tag` or `on.tags` option, but there is `on.release` - see below.
 
 
