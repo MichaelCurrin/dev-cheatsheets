@@ -12,7 +12,8 @@ An advantage of a submodule is that you can treat it as a repo. You navigate in 
 
 As with cloning, you don't have to own a repo to add it as a submodule.
 
-## Why submodules?
+
+## Why use submodules?
 
 Before submodules existed, you would have to copy the external repo files into your repo and then commit them, causing a huge diff in lines and files added to your repo. And when the external repo changes, you'd be stuck. And you definitely don't want to version repo inside a git repo as that is bad practice. You could copy the external directory into your repo using git clone and add the directory to ignore list. 
 
@@ -23,3 +24,8 @@ One reason to use submodules is for a theme in a Hugo site. Hugo doesn't use a p
 Maybe you want to pull in content from another repo for your static site.
 
 You can also use submodules to collect multiple repos together as a monorepo. Which can be viewed locally or on GitHub. You might have submodules depend on each other such as using a symlink. Or you just view them all in one place.
+
+
+## Resources
+
+[Submodules](https://www.atlassian.com/git/tutorials/git-submodule) tutorial in Atlassian docs.
