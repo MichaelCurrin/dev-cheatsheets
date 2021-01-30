@@ -3,4 +3,4 @@ logo: vue-dot-js
 ---
 # Vue
 
-See [Vue](https://michaelcurrin.github.io/dev-resources/resources/javascript/vue/) in Dev Resources site.
+See also [Vue](https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/vue/) in my Dev Resources site.
