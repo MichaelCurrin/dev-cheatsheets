@@ -85,14 +85,14 @@ Name   | Values | Link
 `no-console` | `1` | |
 `no-undef` | `1` | [docs](https://eslint.org/docs/rules/no-undef)
 `indent` | `["error", 2]` - you'll get 4 spaces for just `"error"` | [docs](https://eslint.org/docs/rules/indent) |
-`max-len` | `["error", { "code": 80 }]` | [docs](https://eslint.org/docs/rules/max-len) |
+`max-len` | `["error", { "code": 100 }]` | [docs](https://eslint.org/docs/rules/max-len) |
 
 
 You can set more fields for `max-len`. e.g. 
 
 ```json
 {
-  "code": 80 ,
+  "code": 100,
   "tabWidth": 2,
   "ignoreUrls": true,
   "ignoreStrings": true,
