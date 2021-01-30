@@ -19,7 +19,7 @@ Before submodules existed, you would have to copy the external repo files into y
 
 But there is no guarantee that the next time you clone you'll get the same content. Having a submodule lock onto a specific external commit makes this reliable. Similar when you lock a package at v2.3.4 in your Node, Python or Ruby packages.
 
-One reason to use submodules is for a theme in a Hugo site. Hugo doesn't use a package manager like other tools do (such as Jekyll). So you have to copy the theme as a directory. Submodules is a light and reliable way to install and update themes. And if you need to change to another theme, you can clone another submodule in its place or next to it. It will take up very little space in version control using just the commit reference.
+One reason to use submodules is for a theme in a Hugo or MkDocs site. Hugo doesn't use a package manager like other tools do (such as Jekyll). So you have to copy the theme as a directory. Submodules is a light and reliable way to install and update themes. And if you need to change to another theme, you can clone another submodule in its place or next to it. It will take up very little space in version control using just the commit reference.
 
 Maybe you want to pull in content from another repo for your static site.
 
@@ -29,3 +29,50 @@ You can also use submodules to collect multiple repos together as a monorepo. Wh
 ## Resources
 
 [Submodules](https://www.atlassian.com/git/tutorials/git-submodule) tutorial in Atlassian docs.
+
+
+## Example flow
+
+```sh
+$ git submodule add https://bitbucket.org/jaredw/awesomelibrary
+```
+
+```sh
+$ git status
+...
+ new file:   .gitmodules
+ new file:   awesomelibrary
+```
+
+Contents of .gitmodules:
+
+```ini
+[submodule "awesomelibrary"]
+ path = awesomelibrary
+ url = https://bitbucket.org/jaredw/awesomelibrary
+```
+
+Commit the submodule changes.
+
+```sh
+$ git add .gitmodules awesomelibrary/
+$ git commit -m "Add submodule"
+```
+
+When you clone the outer repo, the submodule references will be included but the directories will be empty.
+
+To download the content, you need to do one of these steps.
+
+```sh
+$ git clone URL --recursive
+```
+
+That is equivalent to:
+
+```sh
+$ git clone URL
+$ cd repo
+$ git submodule init
+$ git submodule update
+```
+
