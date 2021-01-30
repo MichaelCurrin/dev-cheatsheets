@@ -3,10 +3,12 @@
 
 ## Install
 
-Optionally use the `--global` flag.
+Add Vue to your project.
+
+Optionally use the `--global` flag to install Vue Vue your user.
 
 ```sh
-$ vue install @vue/cli
+$ npm install @vue/cli
 $ yarn add @vue/cli
 ```
 
@@ -57,7 +59,7 @@ If you have Vue installed globally.
 $ vue create
 ```
 
-Without Vue installed globally. This is useful for setting up a new project as this works even if Vue is not installed anywhere.
+Without Vue installed globally, download and execute Vue. This is useful for setting up a new project as this works even if Vue is not installed anywhere.
 
 ```sh
 $ npx @vue/cli create my-app
@@ -80,7 +82,7 @@ Available by installing `@vue/cli-service`. But I think installing `vue` is suff
 
 Run it as an NPM script.
 
-Or as
+Or as:
 
 ```sh
 $ npx vue-cli-service COMMAND
@@ -114,6 +116,7 @@ $ vue-cli-service serve
 ```sh
 $ # Clean.
 $ vue-cli-service build
+
 $ # Don't clean.
 $ vue-cli-service build --no-clean
 ```
@@ -123,6 +126,7 @@ $ vue-cli-service build --no-clean
 ```sh
 $ # Fix
 $ vue-cli-service lint
+
 $ # Don't fix.
 $ vue-cli-service lint --no-fix
 ```
