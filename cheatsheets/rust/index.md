@@ -1,0 +1,4 @@
+---
+title: Rust
+logo: rust
+---
