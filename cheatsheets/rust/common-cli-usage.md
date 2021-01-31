@@ -142,11 +142,13 @@ This step will also **download** and **install** any missing packages.
 
 ### Check
 
-This is faster than the build command.
+This is faster than doing build command.
 
 ```sh
 $ cargo check
 ```
+
+It will install dependencies If you removed a package from `Cargo.toml`, this comamnd will also remove the unnecessary dependencies from the lockfile.
 
 ### Build package
 
@@ -214,7 +216,6 @@ $ rustc src/main.rs -o build/rust-project-template
 $ build/rust-project-template
 Hello, World!
 ```
-
 
 
 ## Docs
