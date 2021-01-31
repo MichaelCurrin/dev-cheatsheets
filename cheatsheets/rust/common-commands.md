@@ -28,13 +28,36 @@ Linting to catch common API misuses and unidiomatic code.
 $ cargo clippy
 ```
 
+## Manifest commands
 
-## Tree
+### Tree
 
 Check the dependency graph.
 
 ```sh
 $ cargo tree
+```
+
+### Install package
+
+```sh
+$ cargo install PACKAGE_NAME
+```
+
+e.g. Using [rand](https://crates.io/crates/rand) crate, which is currently on top the most-downloaded Crates list.
+
+```sh
+$ cargo install rand
+```
+
+### Update
+
+[doc](https://doc.rust-lang.org/cargo/commands/cargo-update.html)
+
+> cargo-update - Update dependencies as recorded in the local lock file
+
+```sh
+$ cargo update
 ```
 
 
@@ -49,7 +72,17 @@ $ cargo run src/main.rs
 That will also create the `target` directory and add to it.
 
 
-## Build package
+## Building
+
+### Check
+
+This is faster than the build command.
+
+```sh
+$ cargo check
+```
+
+### Build package
 
 - `cargo build`
     > Compile the current package
@@ -82,6 +115,37 @@ Run the output binary in a release directory.
 target/release/rust-project-template
 Hello, World!
 ```
+
+### Compile
+
+Output a binary using `rustrc` compiler. This useful if you have a Rust project which is not structured for distribution as a Cargo pacakge.
+
+The `cargo build` command will run the `rustc` compiler internally.
+
+Compile the main script - this will output as `main` in the project root.
+
+```sh
+$ rustc src/main.rs
+```
+
+Run the output binary:
+
+```sh
+$ ./main
+Hello, World!
+```
+
+Output to custom path.
+
+```sh
+$ rustc src/main.rs -o build/rust-project-template
+```
+
+```sh
+$ build/rust-project-template
+Hello, World!
+```
+
 
 
 ## Docs
@@ -128,33 +192,3 @@ Relative paths are used for assets - e.g. `href="../normalize.css"`.
 
 This doc sites does't seem to need a web server to run. In fact, if you start a web server in `doc/rust_project_template`, you'll be unable to load assets on level up. So you will have to start a web server in `doc` where there is no `index.html` file, then navgiate to `/rust_project_template/`.
 
-
-## Compile
-
-Output a binary using `rustrc` compiler. This useful if you have a Rust project which is not structured for distribution as a Cargo pacakge.
-
-The `cargo build` command will run the `rustc` compiler internally.
-
-Compile the main script - this will output as `main` in the project root.
-
-```sh
-$ rustc src/main.rs
-```
-
-Run the output binary:
-
-```sh
-$ ./main
-Hello, World!
-```
-
-Output to custom path.
-
-```sh
-$ rustc src/main.rs -o build/rust-project-template
-```
-
-```sh
-$ build/rust-project-template
-Hello, World!
-```
