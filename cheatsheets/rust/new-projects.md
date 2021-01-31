@@ -3,19 +3,28 @@
 
 ## Cargo init
 
-Create a fresh project for basic Cargo package.
+[doc](https://doc.rust-lang.org/cargo/commands/cargo-init.html)
 
-The default it so initialize in the current directory, so make a new directory first.
+> cargo-init - Create a new Cargo package in an existing directory
+
+The default behavior will also run `git init` for you.
+
+```
+cargo init [options] [path]
+```
+
+Setup a directory first.
 
 ```sh
-$ mkdir my-app && cd my-app
+$ mkdir my-app
+$ cd my-app
 $ cargo init
 ```
 
-Or create the directory using the command. This will also initialize as a git repo.
+Or create the directory using the command.
 
 ```sh
-$ cargo init my-app --vcs git
+$ cargo init my-app 
 $ cd my-app
 ```
 
@@ -24,9 +33,22 @@ Note from the cargo file:
 > See more keys and their definitions at [https://doc.rust-lang.org/cargo/reference/manifest.html](https://doc.rust-lang.org/cargo/reference/manifest.html)
 
 
+## Cargo new
+
+[docs](https://doc.rust-lang.org/cargo/commands/cargo-new.html)
+
+> cargo-new - Create a new Cargo package
+
+```
+cargo new [options] path
+```
+
+
 ## Cargo generate
 
 Create a new project using a template.
+
+This in not a builtin package.
 
 ```sh
 $ cargo install cargo-generate
