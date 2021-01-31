@@ -25,7 +25,7 @@ info: component 'rustfmt' for target 'x86_64-apple-darwin' is up to date
 Linting to catch common API misuses and unidiomatic code.
 
 ```sh
-cargo clippy
+$ cargo clippy
 ```
 
 
@@ -63,25 +63,70 @@ Cargo is package manager. It runs the Rustc compiler for you (with a lot of opti
 $ cargo build
 ```
 
-Run the output binary:
+Run the output binary in a debug directory.
 
 ```sh
 target/debug/rust-project-template
 Hello, World!
 ```
 
-Do a production build.
+Do a production-optimized build.
 
 ```sh
 $ cargo build --release
 ```
 
-Run the output binary:
+Run the output binary in a release directory.
 
 ```sh
 target/release/rust-project-template
 Hello, World!
 ```
+
+
+## Docs
+
+Generate HTML docs from your code.
+
+
+```sh
+$ cargo doc
+```
+
+Check the contents:
+
+```sh
+$ ls target/doc
+```
+```
+COPYRIGHT.txt
+...
+rust-logo.png
+rust_project_template/
+...
+src/
+...
+wheel.svg
+```
+
+Notable HTML paths in `doc`:
+
+- `rust_project_template/index.html`
+- `rust_project_template/main.rs.html`
+
+Build docs and open the browser automatically.
+
+```sh
+$ cargo doc --open
+```
+
+The full path to the `index.html` on disk is used. 
+
+e.g. `/Users/mcurrin/repos/rust-project-template/target/doc/rust_project_template/index.html`
+
+Relative paths are used for assets - e.g. `href="../normalize.css"`.
+
+This doc sites does't seem to need a web server to run. In fact, if you start a web server in `doc/rust_project_template`, you'll be unable to load assets on level up. So you will have to start a web server in `doc` where there is no `index.html` file, then navgiate to `/rust_project_template/`.
 
 
 ## Compile
