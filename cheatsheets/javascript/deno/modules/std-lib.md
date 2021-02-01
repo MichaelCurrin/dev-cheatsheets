@@ -1,4 +1,4 @@
-# Standard lib
+# Standard library
 
 Examples of how to run modules in the Deno standard library.
 
@@ -10,6 +10,8 @@ These are hosted at [deno.land/std](https://deno.land/std).
 
 
 ## Welcome
+
+Run this package directly in the shell - no script needed.
 
 ```sh
 $ deno run https://deno.land/std/examples/welcome.ts
@@ -39,8 +41,37 @@ Or write a more complex one using `http/server.ts`:
     }
     ```
 
-Start the server.
+Start the server with necessary permissions.
 
 ```sh
 $ deno run --allow-read --allow-net index.ts
+```
+
+
+
+## Flags
+
+From the [Flags](https://deno.land/std@0.84.0/flags/README.md) documentation.
+
+```typescript
+import { parse } from "https://deno.land/std@$STD_VERSION/flags/mod.ts";
+
+console.dir(parse(Deno.args));
+```
+
+```sh
+$ deno run https://deno.land/std/examples/flags.ts -a beep -b boop
+{ _: [], a: 'beep', b: 'boop' }
+```
+
+```sh
+$ deno run https://deno.land/std/examples/flags.ts -x 3 -y 4 -n5 -abc --beep=boop foo bar baz
+{ _: [ 'foo', 'bar', 'baz' ],
+  x: 3,
+  y: 4,
+  n: 5,
+  a: true,
+  b: true,
+  c: true,
+  beep: 'boop' }
 ```
