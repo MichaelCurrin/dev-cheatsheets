@@ -21,7 +21,7 @@ See docs - [Linking to external code](https://deno.land/manual/linking_to_extern
 
 ## Central dependencies file
 
-See also [deps.ts](https://deno.land/x/oak/deps.ts) in _Oak_.
+See also [deps.ts](https://deno.land/x/oak/deps.ts) in _Oak_. Or as [documentation](https://doc.deno.land/https/deno.land/x/oak@v6.5.0/deps.ts).
 
 Based on Deno docs:
 
