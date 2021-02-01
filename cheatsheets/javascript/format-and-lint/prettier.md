@@ -41,6 +41,8 @@ Otherwise, run ad hoc commands on the CLI as:
 $ npx prettier
 ```
 
+Using `npx` here works even if `prettier` is not installed anywhere.
+
 
 ## CLI
 
