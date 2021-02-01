@@ -59,7 +59,11 @@ cheatsheet:
           - cmd: escape_once
           - cmd: url_decode
           - cmd: url_encode
-
+          
+          - cmd: slugify
+            usage: |
+                {{ "The _config.yml file" | slugify }} <!-- the-config-yml-file -->
+                
     - title: Array filters
       items:
           - cmd: join
