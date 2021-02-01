@@ -1,6 +1,6 @@
 ---
 title: ESLint
-description: Find and fix problems in your JavaScript code
+description: Find and fix problems in your JS code
 ---
 
 ## About
@@ -12,11 +12,12 @@ It can syntax that is invalid. It can give warnings (like a variable that is unu
 You can also enforce some styling and formatting issues which don't affect functionality. Like indenting code, wrapping lines, trailing semi-colons and trailing commas (for the last item in a structure). If you setup ESLint right, you might not even need Prettier.
 
 
-## When to run
+## When should run ESLint?
 
-- Manually.
+- Anytime, manually.
     ```sh
     $ npm run lint:fix
+    $ # eslint . --ext .ts --fix
     ```
 - As a hook - like on every commit or on a push.
 - As a pre-release step - add to `preversion` in `package.json`, for when you run `npm version TAG`.
@@ -99,6 +100,9 @@ You can set more fields for `max-len`. e.g.
   "ignoreTemplateLiterals": true
 }
 ```
+
+Note - using `ignoreStrings` gave unexpected results for me. Instead of allowing a single string to be over the limit, it allowed a line with multiple strings in it to pass quietly.
+
 
 ### Extend
 
