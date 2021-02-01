@@ -1,8 +1,10 @@
-# How to
+# Common commands
 
-Based on [post](https://medium.com/deno-tutorial/deno-testing-bundling-formatting-and-debugging-9c8aad798fc2).
+See also [Getting started](https://deno.land/manual/getting_started/command_line_interface) in the docs.
 
 See also my [MichaelCurrin/deno-project-template](https://github.com/MichaelCurrin/deno-project-template) repo.
+
+Thanks also to info from Medium [post](https://medium.com/deno-tutorial/deno-testing-bundling-formatting-and-debugging-9c8aad798fc2).
 
 
 ## Install
