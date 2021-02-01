@@ -1,6 +1,12 @@
-# Third-party modules
+---
+title: Third-party modules
+description: Examples of how to install and run a Deno package
+---
 
-Examples of how to run
+
+Deno's 3rd party package registry is:
+
+- [deno.land/x](https://deno.land/x)
 
 
 ## About
@@ -12,6 +18,10 @@ Examples of how to run
 > deno.land also provides a simple public hosting service for ES modules that work with Deno. It can be found at deno.land/x. [source](https://deno.land/)
 
 From [deno.land/x](https://deno.land/x):
+
+> What is deno.land/x?
+>
+> deno.land/x is a hosting service for Deno scripts. It caches releases of open source modules stored on GitHub and serves them at one easy to remember domain.
 
 > deno.land/x is a URL rewriting service for Deno scripts.
 >
