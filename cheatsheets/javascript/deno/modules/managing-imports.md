@@ -21,6 +21,10 @@ See docs - [Linking to external code](https://deno.land/manual/linking_to_extern
 
 ## Central dependencies file
 
+See also [deps.ts](https://deno.land/x/oak/deps.ts) in _Oak_.
+
+Based on Deno docs:
+
 - `deps.ts`
     ```typescript
     export {
@@ -35,3 +39,8 @@ See docs - [Linking to external code](https://deno.land/manual/linking_to_extern
     
     assertEquals("hello", "hello");
     ```
+
+You can split into:
+
+- `deps.ts` - core dependencies.
+- `test_deps.ts` - test dependencies.
