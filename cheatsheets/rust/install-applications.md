@@ -1,6 +1,6 @@
 # Install applications
 
-Install a Rust application globally.
+Install a Rust application.
 
 Run the `install` command from anywhere - it is not specific to a project.
 
