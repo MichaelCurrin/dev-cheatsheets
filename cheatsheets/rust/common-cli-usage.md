@@ -7,26 +7,12 @@ Resources:
 - [Cargo commands](https://doc.rust-lang.org/cargo/commands/index.html) in the docs.
 
 
-## Update Rust
-
-```sh
-$ rustup update
-```
-
-
 ## Formatting
 
 Automatic code formatter.
 
 ```sh
 $ cargo fmt
-```
-
-Update the global formatter.
-
-```sh
-$ rustup component add rustfmt
-info: component 'rustfmt' for target 'x86_64-apple-darwin' is up to date
 ```
 
 
