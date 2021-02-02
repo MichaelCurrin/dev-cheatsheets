@@ -108,22 +108,6 @@ $ cargo update
 
 Additionally, if you remove a package from your `Cargo.toml` list of `dependencies`, then running `cargo update` will also remove unneeded packages in your `Cargo.lock` file.
 
-### Install binary
-
-Install a **binary** package. I think this will install it globally.
-
-```sh
-$ cargo install PACKAGE_NAME
-```
-
-This won't work for any packages without binaries as you will get an error.
-
-```sh
-$ cargo install rand
-Updating crates.io index
-error: specified package `rand v0.8.3` has no binaries
-```
-
 
 ## Run
 
