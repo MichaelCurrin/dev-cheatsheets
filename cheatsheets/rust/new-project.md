@@ -98,13 +98,15 @@ Note from the cargo file:
 
 ## Cargo generate
 
-Create a new project using a template.
+Create a new project based on a template.
 
-This in not a builtin package.
+Use `cargo-generate`. This in not a builtin package, so install it globally.
 
 ```sh
 $ cargo install cargo-generate
 ```
+
+Pass a Rust git repo as a flag value.
 
 Example, using [ashleygwilliams/wasm-pack-template](https://github.com/ashleygwilliams/wasm-pack-template).
 
