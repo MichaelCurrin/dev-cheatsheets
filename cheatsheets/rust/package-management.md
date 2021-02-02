@@ -53,3 +53,13 @@ clap             2.20.0   2.20.5  2.26.0   Normal       ---
 clap->bitflags   0.7.0    ---     0.9.1    Normal       ---
 ...
 ```
+
+
+## Install binary package
+
+From [docs](https://doc.rust-lang.org/cargo/commands/cargo-install.html).
+
+```sh
+$ cargo install CRATE
+$ cargo install --git URL CRATE
+```
