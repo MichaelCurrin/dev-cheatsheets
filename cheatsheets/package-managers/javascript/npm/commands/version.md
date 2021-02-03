@@ -29,6 +29,8 @@ This command will bump the version in `package.json` and tag that commit.
 
 ## CLI
 
+### Help
+
 ```sh
 $ npm version --help
 ```
@@ -40,14 +42,54 @@ npm version [<newversion> | major | minor | patch | premajor | preminor | prepat
 'npm ls' to inspect current package/dependency versions
 ```
 
+The default behavior for `npm version` is to:
+
+- Update version number in `package.json` (this is always like `0.1.0` regardless of whether the tag is `v0.1.0` or `0.1.0`.
+- Create a commit.
+- Tag the commit.
+- Follow any `preversion` and `postversion` scripts in `package.json`.
+
+The CLI help is limited. Here is more info below, from the docs.
+
+Note there doesn't seem to be an `-a, --annotate` flag like for `git tag`.
+
+### Skip git tag
+
+This will increment the package version in `package.json` but will not create a commit or a tag.
+
+```sh
+$ npm version --no-git-tag-version
+$ git commit package.json package-lock.json
+```
+
+You can force with `-f`.
+
+> It will fail if the working directory is not clean, unless the `-f` or `--force` flag is set.
+
+
+### Message
+
+> If supplied with -m or --message config option, npm will use it as a commit message when creating a version commit. 
+
+```sh
+$ npm version patch -m "My release"
+```
+
+> If the message config contains `%s `then that will be replaced with the resulting version number. 
+
+For example:
+
+```sh
+$ npm version patch -m "Upgrade to %s for reasons"
+```
+
 
 ## Example use
 
 Create a target version.
-TODO check if v is needed.
 
 ```sh
-$ npm version 0.1.0
+$ npm version v0.1.0
 ```
 
 Increment by a given level.
