@@ -1,7 +1,7 @@
 ---
 description: Understanding the NPM packages version pattern
 ---
-# Versions
+# Pacakage versions
 
 
 ## Resources
