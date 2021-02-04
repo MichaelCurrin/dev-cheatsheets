@@ -58,11 +58,11 @@ Using Flake8 gives error codes from Flake8 and the lower level PyCode project.
 
 - Flake8 docs
     - [Error codes](https://flake8.pycqa.org/en/latest/user/error-codes.html)
-    - Flake8 errors start with `F` - F4XX, F5XX, F6XX, F8XX and F901.
+    - Flake8 errors start with `F` - `F4XX`, `F5XX`, `F6XX`, `F8XX` and `F901`.
 - PyCode style
     - [Error codes](https://pycodestyle.pycqa.org/en/latest/intro.html#error-codes) - linked from the Flake8 docs
-    - `E` errors - EXXX.
-    - `W` warnings - WXXX. It looks like these are mostly taken care of by using an IDE to format the code and not using any deprecated code patterns.
+    - `E` errors - `EXXX`.
+    - `W` warnings - `WXXX`. It looks like these are mostly taken care of by using an IDE to format the code and not using any deprecated code patterns.
         ```
         100 indentation
         200 whitespace
