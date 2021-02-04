@@ -1,14 +1,15 @@
-# Bundle
+---
+title: Bundle
+description: Generate a single JS file from your TS modules
+---
 
-Bundle a TS or JS module as a single JS file.
-
-This includes import modules, both your scripts and external packages.
+This includes imported modules - both your scripts and external packages.
 
 
 ## Usage
 
 ```
-deno bundle [OPTIONS] SOURCE [DESTIONATION]
+deno bundle [OPTIONS] SOURCE_FILE [OUT_FILE]
 ```
 
 
@@ -20,7 +21,7 @@ deno bundle [OPTIONS] SOURCE [DESTIONATION]
 
 ## Preview bundle
 
-This does not persist - it just prints.
+This does not persist anything - it just prints.
 
 ```sh
 $ deno bundle index.ts
@@ -38,7 +39,6 @@ Or if you refer:
 ```sh
 $ deno bundle src/index.ts dist/myApp.bundle.ts
 ```
-
 
 
 ## Write and watch bundle
