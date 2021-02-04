@@ -24,7 +24,18 @@ Write to a custom path.
 deno compile --unstable -o build/bundle.js index.ts
 ```
 
-Note flags must _come_ before arguments. Using `deno compile index.ts --unstable` gives an error and using `-o` at the end gets ignored.
+### Order of galgs
+
+Note flags must _come_ before arguments. 
+
+Using `deno compile index.ts --unstable` gives an error and using `-o` at the end gets ignored. 
+
+This contrasts with other commands. For example, this is suggested by the CLI for bundling and watching and it does work:
+
+```
+USAGE:
+    deno bundle <source_file> --unstable --watch
+```
 
 
 ## URL
