@@ -3,8 +3,7 @@
 {% raw %}
 
 ```html
-<li v-for="item in items"
-    :key="item.id">
+<li v-for="item in items" :key="item.id">
   {{ item }}
 </li>
 ```
