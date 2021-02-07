@@ -35,7 +35,8 @@ export default {
 };
 ```
 
-## Script
+
+## Script section
 
 Note that computed values are cached and are usually referenced like a variable but without brackets, unlike methods which need brackets to be called.
 
@@ -101,5 +102,38 @@ Note on modern JS:
         methodName function() {}
     }
     ```
+    
+### Component defintion
+
+#### Plain
+
+```javascript
+export default {
+}
+```
+
+#### Extends
+
+I think this might only be needed if you use Vue on the frontend without the Node flow.
+
+```javascript
+export default Vue.extends({
+})
+```
+
+This might be needed:
+
+```javascript
+import Vue from "vue";
+```
+
+#### TypeScript
+
+```javascript
+import { defineComponent } from "vue";
+
+export default defineComponent({
+})
+```
 
 {% endraw %}
