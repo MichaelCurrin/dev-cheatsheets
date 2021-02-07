@@ -29,8 +29,8 @@ If you prefer, specify template in the JS section.
 export default {
    name: "Foo",
    props: {
-    message: { type: String, required: true },
-    },
+     message: { type: String, required: true },
+   },
    template: "<span>{{ message }}</span>",
 };
 ```
