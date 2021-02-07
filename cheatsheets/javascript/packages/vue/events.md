@@ -5,8 +5,11 @@ If you need the value of variable to be pushed back up outside a component, then
 
 In the docs:
 
-- [Events](https://v3.vuejs.org/guide/events.html) - Vue 3.
-- [Events](https://vuejs.org/v2/guide/events.html) - Vue 2.
+- Vue 3
+    - [Events](https://v3.vuejs.org/guide/events.html)
+    - [Custom events](https://v3.vuejs.org/guide/component-custom-events.html)
+- Vue 2
+    - [Events](https://vuejs.org/v2/guide/events.html)
 
 
 ## Why
