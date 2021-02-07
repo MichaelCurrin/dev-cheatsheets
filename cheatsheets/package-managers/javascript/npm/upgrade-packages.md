@@ -38,8 +38,7 @@ From the [npm update](https://docs.npmjs.com/cli/update) command's docs.
 
 ```sh
 $ npm update
-$ # Alias
-$ npm upgrade
+$ # aliases: up, upgrade, udpate
 ```
 
 Or the longer.
@@ -78,7 +77,7 @@ Your `package.json` and `package-lock.json` files will reflect the new version.
 For running Yarn, it appears that `package.json` does not get affected.
 
 ```sh
-$ yarn update PACKAGE
+$ yarn upgrade PACKAGE
 ```
 
 #### Use NPM install
