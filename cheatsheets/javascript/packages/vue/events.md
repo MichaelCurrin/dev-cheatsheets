@@ -77,8 +77,7 @@ For example, we pass a variable to a component like `TextInput` and then use it.
     </template>
 
     <script>
-
-    export default Vue.extend({
+    export default {
       components: {
         TextInput,
       },
@@ -87,6 +86,6 @@ For example, we pass a variable to a component like `TextInput` and then use it.
           foo: "My default value",
         };
       },
-    }
+    };
     </script>
     ```
