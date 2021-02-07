@@ -38,6 +38,8 @@ From the [npm update](https://docs.npmjs.com/cli/update) command's docs.
 
 ```sh
 $ npm update
+$ # Alias
+$ npm upgrade
 ```
 
 Or the longer.
@@ -57,13 +59,29 @@ For example, this might change as follows:
 + "foo": "^1.2.3"
 ```
 
-But, the package will **remain** within the initial bounds. So the command here would not upgrade from `1` to `2`. See below for that.
+But, the package will **remain** within the initial bounds. So the command here would not upgrade from `1` to `2`. See the sections below for that.
 
-### Newest
+### Upgrade package
 
-Install to the latest package available.
+Upgrade a specific package.
 
-#### Use `npm install`
+#### Use NPM update
+
+This will upgrade the package within the bounds (such as staying in 1.x for `^1.0.0`).
+
+```sh
+$ npm update PACKAGE
+```
+
+Your `package.json` and `package-lock.json` files will reflect the new version.
+
+For running Yarn, it appears that `package.json` does not get affected.
+
+```sh
+$ yarn update PACKAGE
+```
+
+#### Use NPM install
 
 ```sh
 $ npm install PACKAGE
@@ -71,7 +89,9 @@ $ # e.g.
 $ npm install react
 ```
 
-This will ignore any existng any bounds for the package (such as `^1.0.0`). 
+This will upgrade the package, but it will not upgrade it to a point where peer dependencies are broken.
+
+This will follow any existng any bounds for the package (such as `^1.0.0`). 
 
 But it will still honor other packages which have a peer dependency on certain versions of this package. In one case, I actually ended up downgrading from Vue 3 to Vue 2 instead of getting the latest Vue 3, because of another dependency needing Vue 2.
 
@@ -81,10 +101,16 @@ You can put in a specific version, if you know what you want.
 $ npm install react@17.0.0
 ```
 
-Use `@latest` which is an alias that points to the latest release.
+Use `@latest` which is an alias that points to the latest release. This will get the newes available, even if it breaks peer dependencies.
 
 ```sh
 $ npm install react@latest
+```
+
+In Yarn, you do this, _without_ using `@latest` but get the same result.
+
+```sh
+$ yarn add react
 ```
 
 Use `@next` if you want the bleeding edge version (probably pre-releases).`
@@ -99,7 +125,7 @@ Repeat for all your outdated packages as separate commands or all in one. e.g.
 $ npm install react react-dom
 ```
 
-### Use the `npm-upgrade` package
+### Use the npm-upgrade package
 
 If you use this 3rd-party package, you can upgrade multiple packages and once and use the interactive view.
 
