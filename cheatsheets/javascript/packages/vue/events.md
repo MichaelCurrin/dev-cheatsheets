@@ -30,13 +30,15 @@ You will get unexpected behavior or build errors if you don't use events.
   </div>
 </template>
 
-export default Vue.extend({
+<script>
+export default {
   data() {
     return {
       counter: 0
     }
   }
-})
+};
+</script>
 ```
 
 
