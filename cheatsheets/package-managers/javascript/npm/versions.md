@@ -20,8 +20,6 @@ Note that Python and Ruby also use tilde, but I haven't seen caret use there so 
 
 Note that this assumes using a version specified to 3 levels - see the [Detailed](#detailed) section for how this is handled in other cases.
 
-_TODO - how does this work on the command-line with npm install?_
-
 ### Tilde ranges
 
 This sets a minimum version but allows **patch** increments (bug fixes) only.
@@ -101,3 +99,10 @@ It works _differently_ depending on of you've hit `1` in a major or minor level.
 ```
 
 From [Caret ranges](https://docs.npmjs.com/misc/semver#caret-ranges-123-025-004) on NPM docs
+
+
+## NPM usage
+
+```sh
+$ npm install foo@^1.2.3
+```
