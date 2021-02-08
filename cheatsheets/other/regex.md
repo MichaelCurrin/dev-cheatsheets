@@ -2,6 +2,9 @@
 
 {% raw %}
 
+Don't blindly copy regular expressions from online libraries or discussion forums. Always test them on your own data and with your own applications.
+
+
 ## Resources
 
 - [regex101.com](https://regex101.com/)
@@ -278,6 +281,12 @@ The specific answer linked suggests:
 
 As the most complete answer, meeting the full RFC spec, though it caveats that with reasons why not to use it.
 
+We get a more practical implementation of RFC 2822 if we omit the syntax using double quotes and square brackets. It will still match 99.99% of all email addresses in actual use today.
+
+```re
+[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?
+```
+
 You'd be far better off not validating an email with JS at all and instead using
 
 ```html
@@ -287,5 +296,13 @@ You'd be far better off not validating an email with JS at all and instead using
 to provide immediate user feedback and, of course, strong validation on the server receiving the input. 
 
 You can still style your inputs based on valid and invalid input and the validation is done for you.
+
+[How to Find or Validate an Email Address](http://www.regular-expressions.info/email.html)
+
+```re
+\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b
+```
+
+Presumably using case-insensitive matching.
 {% endraw %}
 
