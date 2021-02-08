@@ -1,8 +1,10 @@
 # CommonJS
 
-The newer ES Modules syntax is preferred over this style.
+CommonJS is a way of exporting and import modules. It only works in Node.js as far as I know. i.e. It does **not** work in the browser.
 
-Use `module.exports` to export and `require` to import a module.
+The syntax uses `module.exports` to export and `require` to import a module.
+
+Note that The newer ES Modules syntax is **preferred** over this style.
 
 
 ## Import installed package

@@ -1,7 +1,7 @@
 ---
-description: How to export and import modules in Node
+description: How to export and import modules
 ---
-# Exports and imports
+# Modules
 
 
 - [Modules](https://nodejs.org/api/modules.html) in the Node docs
