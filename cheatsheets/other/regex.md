@@ -246,6 +246,25 @@ This variation handles `#` ID values.
     ```re
      [$3]($1$2$3$4$5)
     ```
-    
+
+
+## Email address
+
+### Basic
+
+Check for one `@` and a domain with at least one dot.
+
+```re
+^[^\s@]+@[^\s@]+\.[^\s@]+$
+```
+
+### Advanced
+
+Stricter check on first character, disallowed characters and invalid domain.
+
+```re
+^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$
+```
+
 {% endraw %}
 
