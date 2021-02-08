@@ -75,3 +75,28 @@ $ deno run https://deno.land/std/examples/flags.ts -x 3 -y 4 -n5 -abc --beep=boo
   c: true,
   beep: 'boop' }
 ```
+
+
+## Argument parsing
+
+Using this command:
+
+```sh
+$ deno run index.ts --foo bar
+```
+
+The arguments are just an array. Which is not so easy to work with.
+
+```typescript
+const args = Deno.args
+// ["--foo", "bar"]
+```
+
+We can use `parse` from the standard library to convert to key-value pairs.
+
+```typescript
+import { parse } from "https://deno.land/std@0.84.0/flags/mod.ts";
+
+const args = parse(Deno.args);
+// { foo: "bar" }
+```
