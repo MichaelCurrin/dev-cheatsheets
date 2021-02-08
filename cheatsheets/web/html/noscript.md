@@ -16,8 +16,12 @@ Alternate messages I've seen:
 
 - You need to enable JavaScript to run this app.
 - JavaScript must be enabled to use this feature.
+- Twitter:
+    > JavaScript is not available.
+    > 
+    > We’ve detected that JavaScript is disabled in this browser. Please enable JavaScript or switch to a supported browser to continue using twitter.com. You can see a list of supported browsers in our Help Centre.
 
-Or my own
+My own:
 
 - This site is unsupported on your browser. Please enable JavaScript, turn off adblocker for this domain or switch to a different browser.
 - This app works best with JavaScript enabled
