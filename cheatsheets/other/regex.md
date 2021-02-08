@@ -266,5 +266,26 @@ Stricter check on first character, disallowed characters and invalid domain.
 ^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$
 ```
 
+### RFC
+
+StackOverflow link: [How to validate an email in Javascript](https://stackoverflow.com/a/1373724)
+
+The specific answer linked suggests:
+
+```re
+(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])
+```
+
+As the most complete answer, meeting the full RFC spec, though it caveats that with reasons why not to use it.
+
+You'd be far better off not validating an email with JS at all and instead using
+
+```html
+<input type="email" />
+```
+
+to provide immediate user feedback and, of course, strong validation on the server receiving the input. 
+
+You can still style your inputs based on valid and invalid input and the validation is done for you.
 {% endraw %}
 
