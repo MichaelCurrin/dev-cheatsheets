@@ -43,23 +43,32 @@ Insecure URLs excluding localhost. Make secure. Using VS Code find and replace.
 
 ## Markdown URLs
 
+Check for a URL in a markdown document - searching for both the alternate text and target.
+
+Generally the pattern is:
+
+```markdown
+[Alt text](target)
+```
+
+Here sare
 - Internal and external paths. Allows for empty target too - `()`.
     ```re
     \[.+\]\(.*\)
     ```
-- Internal path
+- Internal path.
     ```re
     \[.+\]\((?!http).+\)
     ```
-- Internal absolute path
+- Internal absolute path.
     ```re
     \[.+\]\(/.+\)
     ```
-- External URLs
+- External URLs.
     ```re
     \[.+\]\(http.+\)
     ```
-- HTTP URL that is not secure
+- HTTP URL that is not secure.
     ```re
     \[.+\]\(http[^s].+\)
     ```
