@@ -78,7 +78,6 @@ var patt1 = /^is/m;
 
 > The m modifier treat beginning (`^`) and end (`$`) characters to match the beginning or end of each line of a string (delimited by `\n` or `\r`), rather than just the beginning or end of the string.
 
-
 ### Global
 
 [g modified](https://www.w3schools.com/jsref/jsref_regexp_g.asp)
