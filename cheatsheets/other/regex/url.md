@@ -96,7 +96,7 @@ Includes an optional trailing slash (if not matched, this gets left outside the 
 
 Note leading space. This could be remove for lines starting with URL.
 
-Sample:
+Samples:
 
 - ` https://stackedit.io/` => ` [stackedit.io](https://stackedit.io/)`
 - ` https://github.com/MichaelCurrin/nested-jekyll-menus` => ` [github.com/MichaelCurrin/nested-jekyll-menu](https://github.com/MichaelCurrin/nested-jekyll-menus`
