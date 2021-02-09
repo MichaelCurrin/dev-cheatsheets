@@ -2,6 +2,7 @@
 
 {% raw %}
 
+
 ## URL validation
 
 ### Detailed
@@ -38,6 +39,7 @@ Insecure URLs excluding localhost. Make secure. Using VS Code find and replace.
     ```re
     $1s$2
     ```
+
 
 ## Markdown URLs
 

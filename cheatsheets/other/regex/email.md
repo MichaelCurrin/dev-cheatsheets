@@ -2,6 +2,7 @@
 
 {% raw %}
 
+
 ## Basic
 
 Check for one `@` and a domain with at least one dot.
@@ -9,6 +10,7 @@ Check for one `@` and a domain with at least one dot.
 ```re
 ^[^\s@]+@[^\s@]+\.[^\s@]+$
 ```
+
 
 ## Advanced
 
@@ -18,7 +20,7 @@ Stricter check on first character, disallowed characters and invalid domain.
 ^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$
 ```
 
-### RFC
+## RFC
 
 StackOverflow link: [How to validate an email in Javascript](https://stackoverflow.com/a/1373724)
 
@@ -39,15 +41,16 @@ We get a more practical implementation of RFC 2822 if we omit the syntax using d
 [a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?
 ```
 
-You'd be far better off not validating an email with JS at all and instead using
+You'd be far better off not validating an email with JS at all and instead using HTML as follows:
 
 ```html
 <input type="email" />
 ```
 
-to provide immediate user feedback and, of course, strong validation on the server receiving the input.
+That will provide immediate user feedback. It won't valid data of course send to your API or form POST request.
 
 You can still style your inputs based on valid and invalid input and the validation is done for you.
+
 
 ## Between breaks
 
