@@ -1,5 +1,7 @@
 default: install
 
+all: hooks install build
+
 h help:
 	@egrep '^\S|^$$' Makefile
 
