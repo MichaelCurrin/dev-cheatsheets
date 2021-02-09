@@ -106,11 +106,11 @@ This variation handles `#` ID values.
 
 - Find:
     ```re
-     (https:\/\/)(www\.)?([\w./-]+[\w-]+)(#[\w-]*)?(/?)
+    (https:\/\/)(www\.)?([\w./-]+[\w-]+)(#[\w-]*)?(/?)
     ```
 - Replace:
     ```re
-     [$3]($1$2$3$4$5)
+    [$3]($1$2$3$4$5)
     ```
 
 {% endraw %}
