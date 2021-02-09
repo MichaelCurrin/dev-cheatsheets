@@ -28,7 +28,7 @@ The specific answer linked suggests this most complete answer but warns not to u
 
 > The official standard is known as [RFC 2822][]. It describes the syntax that valid email addresses must adhere to. You can (but you shouldn't — [read on][]) implement it with this regular expression.
 
-[RFVC 2822]: https://tools.ietf.org/html/rfc2822#section-3.4.1
+[RFC 2822]: https://tools.ietf.org/html/rfc2822#section-3.4.1
 [read on]: http://www.regular-expressions.info/email.html
 
 ```re
