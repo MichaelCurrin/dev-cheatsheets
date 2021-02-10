@@ -3,11 +3,12 @@ title: Strict rendering
 description: How to force an error when getting a warnig on bad Liquid or frontmatter fields
 ---
 
+
 ## Strict frontmatter
 
-In `_config.yml`.
+Make a build to abort if there is a syntax error in a page's frontmatter.
 
-Set this to `true` to validate frontmatter as proper YAML syntax.
+In `_config.yml`, set this field. 
 
 ```yaml
 strict_front_matter: true
