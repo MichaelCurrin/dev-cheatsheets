@@ -1,6 +1,6 @@
 ---
 title: Options
-Set shell options in a script or at a global level to change how the shell behaves
+description: Set shell options in a script or at a global level to change how the shell behaves
 ---
 
 This applies both for shell scripting and running commands in interactive CLI.
