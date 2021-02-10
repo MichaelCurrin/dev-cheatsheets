@@ -1,12 +1,28 @@
-# Liquid options
+---
+title: Strict rendering
+description: How to force an error when getting a warnig on bad Liquid or frontmatter fields
+---
+
+## Strict frontmatter
+
+In `_config.yml`.
+
+Set this to `true` to validate frontmatter as proper YAML syntax.
+
+```yaml
+strict_front_matter: true
+```
+
+
+## Liquid options
 
 See [Liquid Options](https://jekyllrb.com/docs/configuration/liquid/) in the docs.
 
-Jekyll allows you to customize Liquid options so you can catch invalid code that is normally is allowed go to a deploy with a warning message only.
+Jekyll allows you to customize Liquid options under `liquid` in `_config.yml`.
 
-## Fields
+This can cause your deploy or local build to abort if an undefined filter or variable is used.
 
-### Defaults
+### Default values
 
 Here are the default options:
 
@@ -19,11 +35,13 @@ liquid:
 
 ### Strict settings
 
+Set those all to strict values.
+
 ```yaml
 liquid:
-  error_mode: strict
+  error_mode:       strict
   strict_variables: true
-  strict_filters: true
+  strict_filters:   true
 ```
 
 Add strict Liquid settings so Jekyll will fail on bad syntax and give you confidence in deployed code.. 
@@ -38,11 +56,6 @@ I don't know why error mode needs to set and what it does - perhaps those are er
 
 These are mutually exclusive fields according to the docs. Though weirdly my IDE's YAML linter doesn't like having the both error mode and strict settings in the same file.
 
-See related field outside of `liquid`:
-
-```yaml
-strict_front_matter: true
-```
 
 ## When strict checks are too strict
 
