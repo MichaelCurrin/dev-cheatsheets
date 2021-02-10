@@ -1,33 +1,57 @@
 # How to run commands
 
-**Sample**
+## Without the run command
 
-Some commands are special and don't need `npm run COMMAND` for the prefix.
+Some special commands are special and don't need `npm run COMMAND` for the prefix.
 
 ```sh
 $ npm start
 $ npm test
+$ npm version
 ```
+
+You can also run them more verbosely but there is no point.
+
+```sh
+$ npm run start
+```
+
+
+## Using the run command
+
+Other commands need `run`.
 
 ```sh
 $ npm run build
-$ npm run eject
 ```
+
+Example configuration:
 
 ```json
 {
   "name": "example-basic",
-
+  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom"
   }
 }
 ```
 
-Using `run` without arguments lists the configured commands:
+If you don't specify `start`, then the `main` field will be used. If you do specify `start`, you can probably omit the `main` field as you won't use it.
+
+```json
+{
+  "name": "example-basic",
+  "main": "server.js"
+}
+```
+
+
+## List
+
+Using `run` without arguments will list the configured commands. 
 
 ```sh
 $ npm run
@@ -50,7 +74,7 @@ available via `npm run-script`:
 Note that `npm run` and `npm run-script` are equivalent.
 
 
-**Sample**
+## Linting
 
 Call a script command using the same target in the command-line as in the `package.json` file.
 
