@@ -122,7 +122,7 @@ world
 Make sure that the 2nd argument for `tr` is `'` followed by enter - if you press space and then enter then it doesn't work.
 
 
-## Backup
+## Replace inline with backup flag
 
 The default use of `sed` will just print, so use the inline flag to update the file.
 
