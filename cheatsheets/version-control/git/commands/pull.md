@@ -4,19 +4,64 @@ description: The `git pull` command
 # pull
 
 
-## Abort
+## Remove an unnecessary merge commit
 
-If you ever accidentally do `git pull` when you meant to do `git pull --rebase` and you end up with a merge commit but then don't actually commit, you won't actually be able to follow with a `git pull` as you're in an in between state.
+Say you have committed and no pushed and there are also changes on the remote.
+
+You should ideally do rebase of your local commits on the remote. This is **safe**, as it does **not** change the history of commits on other machines or GitHub - it only rewrites your local unpushed commits.
+
+```sh
+$ git pull --rebase
+
+$ # If you need to specify a branch:
+$ git pull --rebase origin master
+```
+
+If you run into errors, you can abort and revert to where you were.
+
+```sh
+$ git rebase --abort
+```
+
+If you do a plain pull, you'll get prompted to make a merge commit.
+
+```sh
+$ git pull
+```
+
+This can make your history look weird and non-linear. One way to solve this to follow with a rebase.
+
+```sh
+$ git pull --rebase
+```
+
+Then you'll get a linear histoy.
+
+This will **remove** any merge commits, like the one you created earlier. This will rebase your local commits on the remote commits at the point where they differ, so the rebase only affects your unpushed commits and won't go back and rebase everything (this would miss with older commits already on the remote).
+
+
+## Abort a pull
+
+If you ever accidentally do run `git pull` when you meant to do `git pull --rebase`.
+
+Then you'll be prompted to for a message. If you leave it blank and save, then the commit will be aborted.
+
+But you might have a files appearing as changed. And you can't do `git pull` again. As you're in an inbetween state.
 
 So do this:
 
 ```sh
-git merge --abort
+$ git merge --abort
+```
+
+Then you can carry on.
+
+```sh
+$ git pull --rebase
 ```
 
 
 ## Help
-
 
 ```sh
 $ git pull --help
@@ -125,6 +170,7 @@ $ git pull --no-rebase
 ```
 
 Help:
+
 ```
        -r, --rebase[=false|true|merges|preserve|interactive]
            When true, rebase the current branch on top of the upstream branch after fetching. If there is a remote-tracking
