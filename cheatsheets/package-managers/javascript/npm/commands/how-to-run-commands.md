@@ -1,5 +1,20 @@
 # How to run commands
 
+
+Example configuration:
+
+```json
+{
+  "name": "example-basic",
+  
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom"
+  }
+}
+```
+
 ## Without the run command
 
 Some special commands are special and don't need `npm run COMMAND` for the prefix.
@@ -25,21 +40,14 @@ Other commands need `run`.
 $ npm run build
 ```
 
-Example configuration:
 
-```json
-{
-  "name": "example-basic",
-  
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom"
-  }
-}
-```
+## Server script
 
-If you do not specify `start`, then the `main` field will be used as a Node script to run. It is the same if you set a `start` script command as `node server.js`.
+You can leave out specifying `start` if you want.
+
+Then you need a script at the top-level named `server.js` - NPM will look for this by name.
+
+You can _optionally_ add the server script to `main` field to set an entrypoint, but it runs fine without it and it doesn't seem to work to tell NPM to point at another script.
 
 ```json
 {
@@ -48,11 +56,11 @@ If you do not specify `start`, then the `main` field will be used as a Node scri
 }
 ```
 
+Then run:
+
 ```sh
 $ npm start
 ```
-
-If you _do_ specify `start`, you should probably omit the `main` field, as you won't use it.
 
 
 ## List
