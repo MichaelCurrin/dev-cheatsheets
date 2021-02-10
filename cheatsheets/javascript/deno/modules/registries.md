@@ -110,3 +110,15 @@ e.g.
 ```typescript
 import confetti from "https://cdn.skypack.dev/confetti?dts"
 ```
+
+URL formats, from the homepage:
+
+- Default: https://cdn.skypack.dev/package-name
+- Version: https://cdn.skypack.dev/preact@10
+- Min: https://cdn.skypack.dev/preact?min
+- Deno: https://cdn.skypack.dev/fast-xml-parser?dts
+
+React:
+
+- Default: https://cdn.skypack.dev/react
+- Deno: https://cdn.skypack.dev/react?dts
