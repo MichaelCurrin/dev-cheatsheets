@@ -4,7 +4,7 @@
 
 
 
-## View file
+### View file
 
 ```sh
 # Show entire file at once.
@@ -21,7 +21,7 @@ more file.txt
 ```
 
 
-## Open
+### Open
 
 ```sh
 $ open directory_name
@@ -69,7 +69,7 @@ EXAMPLES
      "open -h NSView -s OSX10.12" lists headers whose names contain NSView in the MacOSX 10.12 SDK and allows you to choose which ones to open.
 ```
 
-## Iterate over lines in a file
+### Iterate over lines in a file
 
 ```sh
 for ROW in $(cat requirements.txt)
