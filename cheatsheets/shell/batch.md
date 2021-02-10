@@ -1,8 +1,8 @@
-# Batch shell
+# Batch
 
 How to perform multiple actions easily.
 
-Pipe output, use awk to get the first column, then split into separate commands (`xargs` is more efficient than for loop I think).
+Pipe output, use awk to get the first column, then split into separate commands. I think `xargs` is more efficient `for` loop and more inline with Functional Programming.
 
 ```sh
 FOO | \
