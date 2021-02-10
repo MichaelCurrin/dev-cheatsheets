@@ -1,7 +1,7 @@
 ---
+title: NPM
 logo: npm
 ---
-# npm
 
 
 ### Resources
