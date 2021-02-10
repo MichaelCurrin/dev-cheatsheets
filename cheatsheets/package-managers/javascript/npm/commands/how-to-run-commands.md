@@ -39,7 +39,7 @@ Example configuration:
 }
 ```
 
-If you don't specify `start`, then the `main` field will be used. If you do specify `start`, you can probably omit the `main` field as you won't use it.
+If you do not specify `start`, then the `main` field will be used as a Node script to run. It is the same if you set a `start` script command as `node server.js`.
 
 ```json
 {
@@ -47,6 +47,12 @@ If you don't specify `start`, then the `main` field will be used. If you do spec
   "main": "server.js"
 }
 ```
+
+```sh
+$ npm start
+```
+
+If you _do_ specify `start`, you should probably omit the `main` field, as you won't use it.
 
 
 ## List
