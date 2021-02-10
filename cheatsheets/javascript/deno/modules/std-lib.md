@@ -1,5 +1,7 @@
 # Standard library
 
+<!-- TODO move to cookbook -->
+
 Examples of how to run modules in the Deno standard library.
 
 >  Deno also provides a list of audited standard modules that are reviewed by the core Deno team and are guaranteed to work with a specific Deno version. [source](https://deno.land/)
@@ -46,7 +48,6 @@ Start the server with necessary permissions.
 ```sh
 $ deno run --allow-read --allow-net index.ts
 ```
-
 
 
 ## Flags
