@@ -3,7 +3,7 @@ title: Create
 descriptipn: How to create a text file
 ---
 
-See also the [Piping and redirection]({{ site.baseurl }}{% link cheatsheets/shell/piping-redirection.md %}) page.
+See also the [Piping and redirection]({{ site.baseurl }}{% link cheatsheets/shell/files/piping-redirection.md %}) page.
 
 
 ## Redirect from stdin
