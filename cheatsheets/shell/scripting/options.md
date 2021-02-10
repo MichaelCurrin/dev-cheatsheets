@@ -3,6 +3,8 @@ title: Options
 Set shell options in a script or at a global level to change how the shell behaves
 ---
 
+This applies both for shell scripting and running commands in interactive CLI.
+
 
 ## Overview of how to set flags
 
@@ -50,7 +52,8 @@ set -e
 set +e
 ```
 
-## Options
+
+## Options flag
 
 From `man bash`.
 
@@ -62,8 +65,40 @@ From `man bash`.
 
 Provide `opname` as `errexit`, `noclobber`, `pipefail`, etc.
 
+Omit `optname` to print values.
 
-In the rest of this guide, some other flags are covered.
+```sh
+$ bash -o
+```
+```
+allexport       off
+braceexpand     on
+emacs           on
+errexit         off
+errtrace        off
+functrace       off
+hashall         on
+histexpand      on
+history         on
+ignoreeof       off
+interactive-comments    on
+keyword         off
+monitor         off
+noclobber       off
+noexec          off
+noglob          off
+nolog           off
+notify          off
+nounset         off
+onecmd          off
+physical        off
+pipefail        off
+posix           off
+privileged      off
+verbose         off
+vi              off
+xtrace          off
+```
 
 
 ## Prevent accidental file overwrites
@@ -96,6 +131,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 ```
 
+
 ## Exit on error
 
 - Using `set` [docs](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html#The-Set-Builtin).
@@ -123,6 +159,22 @@ alias mv='mv -i'
     ```
 
 
+## Error trace
+
+```
+-o errtrace
+-E
+```
+
+From the man page:
+
+```
+  -E      If  set, any trap on ERR is inherited by shell functions, command substitutions, and com-
+          mands executed in a subshell environment.  The ERR trap is normally not inherited in such
+          cases.
+```
+
+
 ## Pipe fail
 
 ```
@@ -147,14 +199,35 @@ From `man bash`:
 
 ## Verbose
 
-Print a trace of commands before running.
-
-```sh
-set -x
+```
+-v      Print shell input lines as they are read.
 ```
 
-Or
 
-```sh
-$ bash -x my_script.sh
+## Xtrace
+
+From the man page:
+
+```
+-o xtrace
+-x
+```
+
+From the docs:
+
+```
+-x      After expanding each simple command, for command, case command, select command, or arith-
+        metic for command, display the expanded value of PS4, followed by  the  command  and  its
+        expanded arguments or associated word list.
+```
+
+
+## Dashes
+
+```
+  --      If no arguments follow this option, then the positional parameters are unset.  Otherwise,
+          the positional parameters are set to the args, even if some of them begin with a -.
+  -       Signal the end of options, cause all remaining args to  be  assigned  to  the  positional
+          parameters.   The -x and -v options are turned off.  If there are no args, the positional
+          parameters remain unchanged.
 ```
