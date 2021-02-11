@@ -20,17 +20,32 @@ $ cd my-app
 ```
 
 
-## Set default branch
+## Change default branch
 
-Change the default branch used for future runs on `init`.
+Change the default branch for new repos setup with `init`.
 
 Currently, the Git default is `master`. You might want to override to `main` or `dev` or `edge`.
+
+### Configure globally
 
 ```sh
 $ git config --global init.defaultBranch main
 ```
 
-Or set it once-off:
+Then review your config:
+
+```sh
+$ git config --global -e
+```
+
+```ini
+[init]
+        defaultBranch = main
+```
+
+### Configure for one repo
+
+Set the default with a flag.
 
 ```sh
 $ git init -b main
