@@ -1,14 +1,20 @@
 ---
-title: Vue files
+title: Single-file components
 description: How to a structure and write a `.vue` file
 ---
 
 {% raw %}
 
+Docs:
+
+- Vue 3 - [Single-file components](https://v3.vuejs.org/guide/single-file-component.html)
+- Vue 2 - [Single-file components](https://vuejs.org/v2/guide/single-file-components.html)
+
 
 ## Outline
 
-The skeleton structure. Note that `template` cannot actually be blank.
+The skeleton structure.
+
 - `Foo.vue`
     ```vue
     <template>
@@ -20,6 +26,8 @@ The skeleton structure. Note that `template` cannot actually be blank.
     <style>
     </style>
     ```
+
+Note that `template` cannot actually be blank as you'll get an error.
 
 
 ## Template section
