@@ -1,7 +1,10 @@
 ---
 title: Install
 description: How to install the Vue CLI
-```
+---
+
+
+For more info on running Vue commands, see the [CLI]({{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/cli.md %) cheatsheet.
 
 
 ## Install globally
@@ -19,7 +22,7 @@ $ yarn install -g @vue/cli
 Then run as:
 
 ```sh
-$ vue
+$ vue COMMAND
 ```
 
 
