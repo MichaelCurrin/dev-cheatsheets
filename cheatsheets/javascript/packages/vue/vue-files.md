@@ -1,38 +1,33 @@
-# Component structure
+---
+title: Vue files
+description How to a structure and write a `.vue` file
+---
 
 {% raw %}
 
+
 ## Outline
 
-```vue
-<template>
-</template>
+The skeleton structure. Note that `template` cannot actually be blank.
+- `Foo.vue`
+    ```vue
+    <template>
+    </template>
 
-<style>
-</style>
+    <script>
+    </script>
+    
+    <style>
+    </style>
+    ```
 
-<script>
-</script>
-```
 
-## Template
+## Template section
 
 ```html
 <template>
     <span>{{ message }}</span>
 </template>
-```
-
-If you prefer, specify template in the JS section.
-
-```javascript
-export default {
-   name: "Foo",
-   props: {
-     message: { type: String, required: true },
-   },
-   template: "<span>{{ message }}</span>",
-};
 ```
 
 
@@ -134,6 +129,32 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
 })
+```
+
+### Template in script
+
+If you prefer, you can leave out the `template` tag and specify that content in the `script` tag as follows.
+
+```javascript
+export default {
+   name: "Foo",
+   props: {
+     message: { type: String, required: true },
+   },
+   template: "<span>{{ message }}</span>",
+};
+```
+
+This can be useful if you have Vue on the frontend without a build step, as this the template variable does not need a compilation step.
+
+
+## Style section
+
+Scope you CSS styles to the current template only.
+
+```vue
+<style scoped>
+</style>
 ```
 
 {% endraw %}
