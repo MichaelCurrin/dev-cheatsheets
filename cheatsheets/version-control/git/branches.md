@@ -9,6 +9,8 @@ Show local branches.
 
 ```sh
 $ git branch
+```
+```
   foo
 * bar
   master
