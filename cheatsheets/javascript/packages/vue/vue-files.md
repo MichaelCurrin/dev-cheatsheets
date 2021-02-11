@@ -1,6 +1,6 @@
 ---
 title: Vue files
-description How to a structure and write a `.vue` file
+description: How to a structure and write a `.vue` file
 ---
 
 {% raw %}
@@ -16,7 +16,7 @@ The skeleton structure. Note that `template` cannot actually be blank.
 
     <script>
     </script>
-    
+
     <style>
     </style>
     ```
@@ -97,7 +97,7 @@ Note on modern JS:
         methodName function() {}
     }
     ```
-    
+
 ### Component defintion
 
 #### Plain
