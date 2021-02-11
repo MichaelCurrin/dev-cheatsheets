@@ -16,37 +16,48 @@ NPM docs:
 
 A `package.json` file, based mostly on the default one you get fron `npm init` and accepting defaults. Spaces will be removed by NPM but help here for readability.
 
-It can be useful to put `scripts` near the top like here and dependencies at the bottom, to make it easy to regularly check what scripts are configured.
-
 **Sample**
 
-```json
-{
-    "name": "package-name",
-    "description": "Foo all the bars",
+The first half of the fields are useful for most projects. 
 
-    "version": "1.0.0",
-    "keywords": [
-        "foo",
-        "bar"
-    ],
-    "author": "FIRSTNAME SURNAME <FIRSTNAME.SURNAME@gmail.com> (https://github.com/USERNAME)",
-    "license": "MIT",
+The fields from `"displayName"` on are only really useful if you are **publishing*** your project as an installable package on NPM, since the fields will appear in the NPM registry UI. Otherwise they are not so useful for viewing on a GitHub repo, such as a web app which is for serving and not for installing as a package.
 
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
+- `package.json`
+    ```json
+    {
+      "name": "my-package",
+      "version": "1.0.0",
 
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/USERNAME/REPO_NAME.git"
-    },
-    "bugs": {
-      "url": "https://github.com/USERNAME/REPO_NAME/issues"
-    }
- }
-```
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "dependencies": {
+      }
+      "devDependencies": {
+      }
+
+      "author": "FIRSTNAME SURNAME <FIRSTNAME.SURNAME@gmail.com> (https://github.com/USERNAME)",
+      "license": "MIT",
+
+      "displayName": "My Package",
+      "description": "Foo all the bars",
+
+      "homepage": "https://github.com/USERNAME/REPO_NAME#readme",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/USERNAME/REPO_NAME.git"
+      },
+      "bugs": {
+        "url": "https://github.com/USERNAME/REPO_NAME/issues"
+      },
+
+      "keywords": [
+          "foo",
+          "bar"
+      ],
+     }
+    ```
 
 Notes:
 
@@ -65,9 +76,9 @@ Either of these are fine as `"author"` values, according to the docs.
 
 ```json
 {
-    "name" : "Barney Rubble",
-    "email" : "b@rubble.com",
-    "url" : "https://barnyrubble.tumblr.com/"
+  "name" : "Barney Rubble",
+  "email" : "b@rubble.com",
+  "url" : "https://barnyrubble.tumblr.com/"
 }
 ```
 
@@ -97,15 +108,11 @@ Either of these are fine as `"author"` values, according to the docs.
 
 ```json
 {
+  "dependencies": {
+    "react": "^16.1.1"
+  },
   "devDependencies": {
     "react-scripts": "^0.6.1"
-  },
-  "dependencies": {
-    "history": "^4.2.0",
-    "prop-types": "^15.5.9",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
-    "react-url-query": "^1"
   }
 }
 ```
