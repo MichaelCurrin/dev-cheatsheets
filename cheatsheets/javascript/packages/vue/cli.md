@@ -1,20 +1,6 @@
 # CLI
 
 
-## Install
-
-Add Vue to your project.
-
-Optionally use the `--global` flag to install Vue Vue your user.
-
-```sh
-$ npm install @vue/cli
-$ yarn add @vue/cli
-```
-
-That will be installed as `vue` in your `package.json` packages.
-
-
 ## Vue command
 
 Note, you cannot run `npx vue -h`. But you can run `npx @vue/cli -h`
