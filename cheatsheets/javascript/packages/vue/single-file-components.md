@@ -43,53 +43,59 @@ Note that `template` cannot actually be blank as you'll get an error.
 
 Note that computed values are cached and are usually referenced like a variable but without brackets, unlike methods which need brackets to be called.
 
-Here we have a script for a component like `TextInput.vue` that accept props.
+Here we have a script for a component that accepts props.
 
-```javascript
-import Buzz from "@/components/Buzz.vue";
+- `myComponent.vue`
+    ```javascript
+    <script>
+    import Buzz from "@/components/Buzz.vue";
 
-export default {
-  name: "Foo",
-  components: {
-    Buzz,
-  },
+    export default {
+      name: "Foo",
+      components: {
+        Buzz,
+      },
 
-  props: {
-    foo: { type: String, required: true },
-  },
+      props: {
+        foo: { type: String, required: true },
+      },
 
-  computed: {
-    newFoo() {
-      return this.foo.toUppercase();
-    },
-    buzz() {
-      return 'Buzz';
-    }
-  }
-};
-```
+      computed: {
+        newFoo() {
+          return this.foo.toUppercase();
+        },
+        buzz() {
+          return 'Buzz';
+        }
+      }
+    };
+    </script>
+    ```
 
 Here we have a view such as `About.vue`, which calculates and renders results. It might use components in its template section. There might be a cleaner way to set `bar` as the result based in inputs but this works for me.
 
-```javascript
-export default {
-  name: "Foo",
+- `About.vue`
+    ```vue
+    <script>
+    export default {
+      name: "Foo",
 
-  // A function returning a dictionary.
-  data() {
-    return {
-      foo: "Foo",
-      bar: "",
-  },
+      // A function returning a dictionary.
+      data() {
+        return {
+          foo: "Foo",
+          bar: "",
+      },
 
-  // An attribute returning a dictionary of functions.
-  methods: {
-    submit: function () {
-      this.bar = this.foo.toUpperCase();
+      // An attribute returning a dictionary of functions.
+      methods: {
+        submit: function () {
+          this.bar = this.foo.toUpperCase();
+        }
+      }
     }
-  }
-}
-```
+    </script>
+    ```
 
 Note on modern JS:
 
@@ -139,7 +145,7 @@ export default defineComponent({
 })
 ```
 
-### Template in script
+### Template on JS object
 
 If you prefer, you can leave out the `template` tag and specify that content in the `script` tag as follows.
 
