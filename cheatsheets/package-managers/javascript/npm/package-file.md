@@ -63,15 +63,34 @@ Notes:
 - The empty are added here for readibility and grouping of related areas - when you do an `npm` command which updates your `package.json` file, all the empty lines will be removed.
 - From the docs: "If you don’t plan to publish your package, the name and version fields are optional."
 - Optionally include "homepage" with a URL such as GitHub Pages to Netlify URL for the service or docs site.
-- Entry point.
-    - Setting an entry point only matters if you are distributing your package so that is can be imported as a package.
-    - According to Node [docs](https://nodejs.org/api/packages.html#packages_dual_commonjs_es_module_packages), the `"main"` field is an entry point that is only relevant for CommonJS packages. Example: `"main": "index.js"`.
-    - That field is ignored in ES Modules, which uses something else.
 
 See my customized [package.json](https://github.com/MichaelCurrin/node-project-template/blob/master/package.json) file in my `node-project-template` repo.
 
 
 ## Fields
+
+See [package.json](https://docs.npmjs.com/cli/v6/configuring-npm/package-json) config guide in the docs.
+
+### Entry point
+
+Setting an entry point only matters if you are distributing your package so that is can be imported as a package.
+
+> The main field is a module ID that is the primary entry point to your program. That is, if your package is named `foo`, and a user installs it, and then does `require("foo")`, then your main module's exports object will be returned.
+
+According to Node [docs](https://nodejs.org/api/packages.html#packages_dual_commonjs_es_module_packages), the `"main"` field is an entry point that is only relevant for CommonJS packages. Example: `"main": "index.js"`.
+
+That field is ignored in ES Modules, which uses something else.
+
+
+### Private
+
+> If you set "private": true in your package.json, then npm will refuse to publish it.
+
+```json
+{
+  "private": true
+}
+```
 
 ### Author
 
