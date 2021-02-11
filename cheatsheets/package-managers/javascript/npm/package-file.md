@@ -33,9 +33,9 @@ The fields from `"displayName"` on are only really useful if you are **publishin
         "test": "echo \"Error: no test specified\" && exit 1"
       },
       "dependencies": {
-      }
+      },
       "devDependencies": {
-      }
+      },
 
       "author": "FIRSTNAME SURNAME <FIRSTNAME.SURNAME@gmail.com> (https://github.com/USERNAME)",
       "license": "MIT",
