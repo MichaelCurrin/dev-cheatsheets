@@ -329,3 +329,22 @@ a
   b
 c
 ```
+
+
+## Case
+
+```python
+>>> 'abc d'.title()
+'Abc D'
+```
+
+
+```python
+>>> 'abc d'.capitalize()
+'Abc d'
+```
+
+```python
+>>> 'abc d'.upper()
+'ABC D'
+```
