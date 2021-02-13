@@ -32,7 +32,7 @@ $ bundle exec jekyll build -d ../build
 
 This will result in the following:
 
-- `build`
+- `build/` - in place of `_site`.
 - `docs/`
     - `vendor/`
     - `_config.yml`
@@ -42,7 +42,9 @@ This will result in the following:
 
 ## Build subdirectory from root approach
 
-If you prefer, you can stay at the root.
+If you prefer, you can stay at the root and build a subdirectory.
+
+This is probably not a good idea if you have a subdirectory like `docs`, typically you'll want _all_ Jekyll-related files together the and isolated from other code in the root.
 
 Here we use the `--source` and `--destination` flags.
 
@@ -58,5 +60,6 @@ This assumes you have a structure like this:
     - `index.md`
 - `vendor/`
 - `Gemfile`
+
 
  As another use case, perhaps you have multiple Jekyll sites in your repo and they all share gems at the top-level.
