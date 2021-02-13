@@ -197,3 +197,33 @@ $ git push
 ```
 
 There is a way to configure git to always set the upstream for you. But I think it is better to have more control, such as to avoid recreating a branch you deleted. You'll get an error when pushing and can stop and think if you are on the right branch.
+
+
+## Rename
+
+Use the `--move` flag.
+
+```sh
+$ git branch -m current new
+```
+
+In GitHub settings for a default branch, you can rename the branch.
+
+You get this prompt for renaming from `master` to something else.
+
+> Your members will have to manually update their local environments. We'll let them know when they visit the repository, or you can share these commands:
+
+```sh
+$ git branch -m master <BRANCH>
+$ git fetch origin
+$ git branch -u origin/<BRANCH> <BRANCH>
+```
+
+After a rename, GH gives you a filled snippet to copy, like:
+
+```sh
+$ git branch -m master main
+$ git fetch origin
+$ git branch -u origin/main main
+```
+
