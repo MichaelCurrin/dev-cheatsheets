@@ -1,4 +1,4 @@
-# One
+# Single
 
 
 ## Install package in your project
