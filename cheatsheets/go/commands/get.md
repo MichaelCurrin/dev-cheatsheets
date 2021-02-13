@@ -3,7 +3,7 @@
 Reference for [get](https://golang.org/pkg/cmd/go/internal/get/) command.
 
 
-## Flow
+## Actions
 
 The `go get` command will:
 
@@ -80,10 +80,23 @@ $ go get -u github.com/go-delve/delve/cmd/dlv
 ```
 
 
+### Install a specific version
+
+```sh
+go install URL@VERSION
+
+```
+You can add a tag like `@1.2.3`.
+
+Or `@latest` if you don't care about tags. 
+
+Note that you can't specify version on `go install` as it gives an error.
+
+
 ### Install all packages
 
 Similar to `go install`.
 
 ```sh
-$ go get
+$ go get ./...
 ```
