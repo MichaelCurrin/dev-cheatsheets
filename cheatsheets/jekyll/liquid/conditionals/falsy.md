@@ -1,5 +1,7 @@
 # Falsy
 
+{% raw %}
+
 These are all falsy, as you would expect.
 
 - False boolean.

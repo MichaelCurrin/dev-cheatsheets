@@ -1,6 +1,6 @@
 ---
 title: Non-empty checks
-description: Check that a variable has a non-null value
+description: Use an `if` statement to check if a variable has a non-null value
 ---
 
 {% raw %}
@@ -36,6 +36,7 @@ Warning - this check will return `true` even for a value that is a zero number, 
 
 
 ## Check that string is not empty
+
 
 ```liquid
 {% if my_str and my_str.size != 0 %}

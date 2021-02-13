@@ -1,5 +1,6 @@
 # Truthy
 
+{% raw %}
 
 ## Tricky ones
 
@@ -50,3 +51,5 @@ my_hash:
 my_bool: true
 ---
 ```
+
+{% endraw %}
