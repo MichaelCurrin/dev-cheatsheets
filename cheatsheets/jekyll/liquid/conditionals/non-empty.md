@@ -1,4 +1,7 @@
-# Non-empty
+---
+title: Non-empty checks
+description: Check that a variable has a non-null value
+---
 
 {% raw %}
 
@@ -23,7 +26,7 @@ In Jekyll, an `if` statement on a variable will be truth if:
 Warning - this check will return `true` even for a value that is a zero number, an empty string, or an empty array.
 
 
-## Check number is non-zero
+## Check that number is non-zero
 
 ```liquid
 {% if my_int and my_int != 0 %}
@@ -32,7 +35,16 @@ Warning - this check will return `true` even for a value that is a zero number, 
 ```
 
 
-## Check array has items in it
+## Check that string is not empty
+
+```liquid
+{% if my_str and my_str.size != 0 %}
+    {{ my_str }}
+{% endif %}
+```
+
+
+## Check that array has items in it
 
 Here we check an array is defined and that it has at least one element.
 
