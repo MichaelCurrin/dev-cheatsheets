@@ -74,3 +74,38 @@ Here we look for files named `index.md` which do not contain the text `foo`. And
 ```sh
 $ grep -L foo $(find . -type f -name index.md )
 ```
+
+
+## Search for a string starting with a dash
+
+Say you are looking for flag `-m`.
+
+You'll get an error with:
+
+```sh
+$ grep -m
+```
+
+So use double dash to signal end of flags:
+
+```sh
+$ grep -- -m
+```
+
+
+## Convert search results to an array
+
+Grep will return results as a single multi-line string. This can be split into a Bash array like this.
+
+```sh
+$ MATCHES=($(grep -l -R needle .))
+```
+
+And the items (note index starts at one, not zero).
+
+```sh
+$ echo ${MATCHES[1]}
+$ echo ${MATCHES[2]}
+```
+
+Use the `-l` flag to show paths of files and not the actual content matches.
