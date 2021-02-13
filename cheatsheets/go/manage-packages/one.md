@@ -59,3 +59,19 @@ If `GOBIN` is in your `PATH`, you can run from anywhere:
 ```sh
 $ my-app -h
 ```
+
+You can't use the upgrade flag with `install`, but you can with `get`.
+
+```sh
+$ go get -u URL
+```
+
+e.g.
+
+```sh
+$ go get -u github.com/MichaelCurrin/go-project-template/cmd/myapp    
+```
+```
+go: github.com/cpuguy83/go-md2man/v2 upgrade => v2.0.0
+go: github.com/russross/blackfriday/v2 upgrade => v2.1.0
+```
