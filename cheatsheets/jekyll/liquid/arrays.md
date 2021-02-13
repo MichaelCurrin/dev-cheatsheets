@@ -12,7 +12,7 @@
 {{ my_array | last }}
 ```
 
-Note - returns an array containg the one element.
+Note - returns an array containing the one element.
 
 ```liquid
 {{ my_array | slice: 0 }}
