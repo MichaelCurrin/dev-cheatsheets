@@ -41,7 +41,7 @@ This will compile the app and add it to your `GOBIN` directory, so you can run i
 
 ### No module given
 
-Given module `cmd/myapp/main.go` and no arguments, the current directory will be used.
+Given module `main.go` and no arguments, the current directory's name will be used (such as the repo name). This does not the script name or the script's directory.
 
 ```sh
 $ go install
@@ -49,10 +49,10 @@ $ go install
 
 The result will be:
 
-- `cmd/myapp/main.go`
+- `main.go`
 - `~/go/bin/my-repo`
 
-Note the name of the _current directory_ is used and not the script name or the script's directory.
+If there is no Go script at the top-level, you'll get an error.
 
 ### Module given
 
@@ -65,7 +65,10 @@ $ go install cmd/myapp/main.go
 
 Result:
 
+- `main.go` or `cmd/myapp/main.go`
 - `~/go/bin/main`
+
+I don't know a more precise way of doing this where the package name is kept.
 
 
 ## Verbose
