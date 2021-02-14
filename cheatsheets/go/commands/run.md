@@ -1,6 +1,20 @@
 # run
 
-Execute a script without explicitly building it first.
+Execute a script. This will compile/build it first for you.
+
+
+## Basic
+
+Given script `main.go`.
+
+Run it like this:
+
+```sh
+$ go run main.go
+```
+
+
+## CLI
 
 Given script `cli/myapp/main.go`.
 
@@ -10,11 +24,8 @@ Run it like this:
 $ go run cli/myapp/main.go
 ```
 
-That seems to run these steps internally: write to `~/go/bin/myapp` and then execute.
+Or even:
 
 ```sh
-$ go install
-$ myapp
+$ go run ./...
 ```
-
-Note the name of the directory is used and not the script name.
