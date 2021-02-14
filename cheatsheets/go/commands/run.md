@@ -29,3 +29,14 @@ Or even:
 ```sh
 $ go run ./...
 ```
+
+But if there are multiple matches you'll get an error.
+
+```sh
+$ go run ./...
+```
+```
+go run: pattern ./... matches multiple packages:
+        github.com/MichaelCurrin/go-project-template
+        github.com/MichaelCurrin/go-project-template/cmd/myapp
+```
