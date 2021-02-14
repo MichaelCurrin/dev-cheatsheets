@@ -1,6 +1,6 @@
 ---
 title: Functions
-description: Guide to print functions in Go
+description: Guide to functions for printing in Go
 ---
 
 
@@ -67,4 +67,33 @@ You can use `Printf` _without_ any variables, but you have to remember to add th
 ```go
 fmt.Printf("Hello\n")
 // Hello
+```
+
+
+## Sprintf
+
+This formats a string and returns it, without actually printing it.
+
+From the docs:
+
+```go
+func Sprintf(format string, a ...interface{}) string
+```
+
+> Sprintf formats according to a format specifier and returns the resulting string.
+
+```go
+package main
+
+import (
+	"fmt"
+	"io"
+	"os"
+)
+
+func main() {
+	const name, age = "Kim", 22
+	s := fmt.Sprintf("%s is %d years old.\n", name, age)
+	io.WriteString(os.Stdout, s)
+}
 ```
