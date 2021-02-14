@@ -39,19 +39,33 @@ See also: go build, go get, go clean.
 
 This will compile the app and add it to your `GOBIN` directory, so you can run it anywhere.
 
+### No module given
+
+Given module `cmd/myapp/main.go` and no arguments, the current directory will be used.
+
 ```sh
 $ go install
 ```
 
-That is the same as doing this:
+The result will be:
+
+- `cmd/myapp/main.go`
+- `~/go/bin/my-repo`
+
+Note the name of the _current directory_ is used and not the script name or the script's directory.
+
+### Module given
+
+Both of these give the same output name.
 
 ```sh
-$ go build -o ~/go/bin/myapp cmd/myapp/main.go
+$ go install main.go
+$ go install cmd/myapp/main.go
 ```
 
-From [docs](https://golang.org/cmd/go/).
+Result:
 
-> Executables are installed in the directory named by the `GOBIN` environment variable, which defaults to `$GOPATH/bin` or `$HOME/go/bin` if the `GOPATH` environment variable is not set. Executables in `$GOROOT` are installed in `$GOROOT/bin` or `$GOTOOLDIR` instead of `$GOBIN`. 
+- `~/go/bin/main`
 
 
 ## Verbose
