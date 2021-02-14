@@ -31,7 +31,7 @@ GOCACHE="/Users/mcurrin/Library/Caches/go-build"
 ```
 
 
-## Show ariable
+## Show variable
 
 ```sh
 $ go env GOPATH
@@ -40,3 +40,4 @@ $ go env GOPATH
 ```
 /Users/mcurrin/go
 ```
+
