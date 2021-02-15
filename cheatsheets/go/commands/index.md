@@ -3,9 +3,12 @@ description: Reference for subcommands of the `go` command
 ---
 # Commands
 
-See the [commands](https://golang.org/doc/cmd) referenced in the docs.
 
-See [go command](https://golang.org/cmd/go/) doc. It lists available commands and then shows usage for each.
+### Doc links
+
+- [Commands](https://golang.org/doc/cmd) reference in the docs.
+- [go command](https://golang.org/cmd/go/) reference. This lists available commands and then shows usage for each. All on one page. This saves having to run `go help` for each.
+
 
 ### Overview of common commands
 
@@ -13,7 +16,7 @@ See [go command](https://golang.org/cmd/go/) doc. It lists available commands an
 | ------- | --------------------------------------------- |
 | `build`   | compile packages and dependencies             |
 | `install` | compile and install packages and dependencies |
-| `fmt`     | `gofmt` (reformat) package sources              |
+| `fmt`     | `gofmt` (reformat) package sources             |
 | `run`     | compile and run Go program                    |
 | `version` | print Go version                              |
 
