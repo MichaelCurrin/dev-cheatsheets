@@ -79,6 +79,23 @@ SET registered = TRUE
 WHERE id < 5
 ```
 
+Using `UPDATE`, `FROM` and `WHERE`. Here we update table using a search against the same table with an alias. This works becaues using `FROM` and `WHERE` is like doing `FROM` and `INNER JOIN` - which works for both update or select.
+
+```sql
+UPDATE customer
+SET registered = FALSE
+FROM (
+	SELECT 
+	    customer.id,
+	FROM customer 
+	-- INNER JOIN ...
+    -- WHERE ...
+) AS inactive_customer
+WHERE customer.id = inactive_customer.id
+```
+
+It doesn't matter that the `customer` name on the inside doesn't have an alias.
+
 Using `UPDATE` and `WHERE` with a column.
 
 ```sql
@@ -90,22 +107,21 @@ WHERE customer.id IN (
 )
 ```
 
-
-You can also use `WITH` statement and `WHERE`.
+Using `WITH` statement and `WHERE` with a column, which feels more verbose.
 
 ```sql
-WITH A AS (
+WITH old_customer AS (
 	SELECT 
-	    sessions.id
-    FROM sessions
+	    customer.id
+    FROM customer
     -- INNER JOIN ...
     -- WHERE ...
 )
 
-UPDATE sessions
-SET status = 'ACTIVE'
-WHERE sessions.id IN (
+UPDATE customer
+SET registered = FALSE
+WHERE customer.id IN (
     SELECT id
-    FROM A
+    FROM old_customer
 )
 ```
