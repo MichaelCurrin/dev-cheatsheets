@@ -24,6 +24,8 @@ Or `grep -e` in place of `egrep`.
 
 ## Examples
 
+I think `+` is something in particular that only works in extended grep.
+
 ```sh
 $ egrep "support|help|windows" myfile.txt
 ```
@@ -40,14 +42,19 @@ $ egrep -c '^begin|end$' myfile.txt
 $ egrep '^[a-z -]+:' Makefile
 ```
 
-Note that brackets are not needed in the simple case.
+```sh
+$ egrep 'go \d*\.\d+' go.mod
+go 1.15
+```
+
+Note that brackets are optional in the simple case.
 
 ```sh
 $ egrep 'Foo bar|baz: ' myfile.txt
 $ egrep '(Foo bar)|(baz: )' myfile.txt
 ```
 
-But are meaningful here:
+But brackets are meaningful here:
 
 ```sh
 $ egrep -H '[^0] to (add|destroy)' *
