@@ -72,6 +72,8 @@ steps:
 
 ### Examples
 
+Note use of the display in the first step, to check the value which was set in the same step.
+
 ```yaml
 steps:
   - name: Get Go version
