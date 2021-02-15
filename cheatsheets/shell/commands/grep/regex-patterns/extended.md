@@ -43,7 +43,7 @@ $ egrep '^[a-z -]+:' Makefile
 ```
 
 ```sh
-$ egrep 'go \d*\.\d+' go.mod
+$ egrep 'go \d+\.\d+' go.mod
 go 1.15
 ```
 
