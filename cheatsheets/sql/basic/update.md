@@ -42,7 +42,6 @@ WHERE
 
 ### Update all records
 
-
 ```sql
 UPDATE my_table
 SET foo = "a",
@@ -50,3 +49,63 @@ SET foo = "a",
 ```
 
 If you are not confident in the update, you can always do a `SELECT` instead.
+
+
+### Update subset of rows
+
+Using `UPDATE`, `FROM` and `WHERE`. Similar to `SELECT`, `FROM` and `WHERE` (which is safer to test with). 
+
+From [PostgreSQL UPDATE Join with Practical Examples](https://www.postgresqltutorial.com/postgresql-update-join/) post.
+
+```sql
+UPDATE t1
+SET t1.c1 = new_value
+FROM t2
+WHERE t1.c2 = t2.c2;
+```
+
+```sql
+UPDATE product
+SET net_price = price - price * discount
+FROM product_segment
+WHERE product.segment_id = product_segment.id;
+```
+
+Using `UPDATE` and `WHERE`.
+
+```sql
+UPDATE customer
+SET registered = TRUE
+WHERE id < 5
+```
+
+Using `UPDATE` and `WHERE` with a column.
+
+```sql
+UPDATE customer
+SET registered = TRUE
+WHERE customer.id IN (
+    SELECT id
+    FROM customer
+)
+```
+
+
+You can also use `WITH` statement and `WHERE`.
+
+```sql
+WITH A AS (
+	SELECT 
+	    sessions.id
+    FROM sessions
+    -- INNER JOIN ...
+    -- WHERE ...
+)
+
+UPDATE sessions
+SET status = 'ACTIVE'
+WHERE sessions.id IN (
+    SELECT id
+    FROM A
+)
+```
