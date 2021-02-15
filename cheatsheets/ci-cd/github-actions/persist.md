@@ -1,6 +1,6 @@
 ---
-title: Persist across steps
-description: How to reuse a value from one step in a later step
+title: Persist 
+description: How to reuse a value from one step in a later step or job
 ---
 
 {% raw %}
@@ -8,7 +8,36 @@ description: How to reuse a value from one step in a later step
 See more info the GH Actions [Setup Go](https://michaelcurrin.github.io/code-cookbook/recipes/ci-cd/github-actions/workflows/go/setup-go.html) section of my Code Cookbooks.
 
 
-## Using env file
+## Using GitHub env file
+
+From [Environment Variables](https://docs.github.com/en/actions/reference/environment-variables#about-environment-variables) in the docs.
+
+> You can also use the `GITHUB_ENV` environment file to set an environment variable that the following steps in a workflow can use. 
+>
+> The environment file can be used directly by an action or as a shell command in a workflow file using the run keyword.
+
+That links to [Setting an environment variable](https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-environment-variable)
+
+```sh
+echo "{name}={value}" >> $GITHUB_ENV
+```
+
+> Creates or updates an environment variable for any actions running next in a job. The action that creates or updates the environment variable does not have access to the new value, but all subsequent actions in a job will have access. Environment variables are case-sensitive and you can include punctuation.
+
+```yaml
+steps:
+  - name: Set the value
+    id: step_one
+    run: echo "action_state=yellow" >> $GITHUB_ENV
+        
+  - name: Use the value
+    id: step_two
+    run: echo "${{ env.action_state }}" # This will output 'yellow'
+```
+
+### Examples
+
+Get a version from a file and use it as a parameter for an action in another step.
 
 ```yaml
 steps:
