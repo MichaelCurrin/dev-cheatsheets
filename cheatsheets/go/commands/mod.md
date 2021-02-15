@@ -1,5 +1,26 @@
 # mod
 
+## Common
+
+Setup `go.mod` file.
+
+```sh
+$ go mod init example.com/m
+$ go mod init github.com/username/repo-name
+```
+
+Download modules.
+
+```sh
+$ go mod download
+```
+
+Clean up `go.sum` and remove unused packages from `go.mod`.
+
+```sh
+$ go mod tidy
+```
+
 
 ## Help
 
@@ -50,7 +71,7 @@ If possible, init will guess the module path from import comments
 To override this guess, supply the module path as an argument.
 ```
 
-If you run without a module name, you get this:
+If you run without a module name supplier, you get this prompt:
 
 ```
 Example usage:
