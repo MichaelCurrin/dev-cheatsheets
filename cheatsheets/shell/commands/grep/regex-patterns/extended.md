@@ -1,7 +1,7 @@
 ---
+title: Extended
 description: About using grep's extended matching
 ---
-# Extended
 
 
 ## About
@@ -10,11 +10,13 @@ Basic grep already supports some patterns, like glob and regex.
 
 To extend the matching to be more powerful, you can use extended grep.
 
+You won't get an error using `grep` here in place of `egrep` - you'll probably just get an error.
+
 
 ## Usage
 
 ```sh
-egrep PATTERN PATH
+$ egrep PATTERN PATH
 ```
 
 Or `grep -e` in place of `egrep`.
@@ -32,6 +34,10 @@ $ egrep '^[a-zA-Z]+$' myfile.txt
 
 ```sh
 $ egrep -c '^begin|end$' myfile.txt
+```
+
+```sh
+$ egrep '^[a-z -]+:' Makefile
 ```
 
 Note that brackets are not needed in the simple case.
