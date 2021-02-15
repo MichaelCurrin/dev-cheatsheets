@@ -43,23 +43,30 @@ current directory, if any.
 
 ## Examples
 
+### Download only
+
+```sh
+$ go get -d github.com/gorilla/mux
+```
+
 ### Install target package
 
-Short and long URLs.
+Run this anywhere.
 
 ```sh
 $ go get -u github.com/gorilla/mux
 $ go get -u github.com/godoctor/godoctor
 ```
 
-
 ### Install target in a repo
 
 ```sh
+$ cd my-repo
+$ go mod init my-project
 $ go get -u github.com/urfave/cli/v2
 ```
 
-See [cli/go.mod](https://github.com/urfave/cli/blob/v2.3.0/go.mod)
+To see what you are installing here and its depednecies, see [cli/go.mod](https://github.com/urfave/cli/blob/v2.3.0/go.mod).
 
 ```go
 module github.com/urfave/cli/v2
@@ -73,9 +80,13 @@ require (
 )
 ```
 
+Install V2.
+
 ```sh
 $ go get -u github.com/cpuguy83/go-md2man/v2
 ```
+
+Install command.
 
 ```sh
 $ go get -u github.com/go-delve/delve/cmd/dlv
@@ -86,8 +97,8 @@ $ go get -u github.com/go-delve/delve/cmd/dlv
 
 ```sh
 go install URL@VERSION
-
 ```
+
 You can add a tag like `@1.2.3`.
 
 Or `@latest` if you don't care about tags. 
@@ -97,8 +108,22 @@ Note that you can't specify version on `go install` as it gives an error.
 
 ### Install all packages
 
-Similar to `go install`.
+This looks in subdirectories not just the root `main.go`.
 
 ```sh
 $ go get ./...
+```
+
+### Verbose
+
+```sh
+$ go get -v github.com/MichaelCurrin/go-project-template
+```
+```
+github.com/cpuguy83/go-md2man (download)
+github.com/MichaelCurrin/go-project-template/internal
+github.com/cpuguy83/go-md2man/vendor/github.com/russross/blackfriday/v2
+github.com/cpuguy83/go-md2man/md2man
+github.com/urfave/cli
+github.com/MichaelCurrin/go-project-template
 ```
