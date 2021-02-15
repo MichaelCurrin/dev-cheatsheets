@@ -71,6 +71,21 @@ FROM product_segment
 WHERE product.segment_id = product_segment.id;
 ```
 
+If you need to do more advanced join on the join, then use a subquery. It's easy to run the self-contained subquery alone has it has its own `SELECT`.
+
+```sql
+UPDATE product
+SET net_price = price - price * discount
+FROM (
+    SELECT id
+    FROM product_segment
+    -- INNER JOIN ...
+    -- GROUP BY ...
+    -- WHERE >.
+) product_segment_b
+WHERE product.segment_id = product_segment_b.id;
+```
+
 Using `UPDATE` and `WHERE`.
 
 ```sql
@@ -79,7 +94,11 @@ SET registered = TRUE
 WHERE id < 5
 ```
 
-Using `UPDATE`, `FROM` and `WHERE`. Here we update table using a search against the same table with an alias. This works becaues using `FROM` and `WHERE` is like doing `FROM` and `INNER JOIN` - which works for both update or select.
+Using `UPDATE`, `FROM` and `WHERE`. Here we update table using a search against the same table with an alias. 
+
+This works becaues using `FROM` and `WHERE` is like doing `FROM` and `INNER JOIN` - which works for both update or select.
+
+It doesn't matter that the `customer` name on the inside doesn't have an alias.
 
 ```sql
 UPDATE customer
@@ -89,12 +108,11 @@ FROM (
 	    customer.id,
 	FROM customer 
 	-- INNER JOIN ...
+    -- GROUP BY ...
     -- WHERE ...
 ) AS inactive_customer
 WHERE customer.id = inactive_customer.id
 ```
-
-It doesn't matter that the `customer` name on the inside doesn't have an alias.
 
 Using `UPDATE` and `WHERE` with a column.
 
