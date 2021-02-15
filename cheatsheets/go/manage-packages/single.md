@@ -48,10 +48,27 @@ github.com/lib/pq v1.0.0 v1.1.0 v1.1.1 ... ....
 
 ## Install a package globally
 
-Provide a URL such as to a GitHub repo. Here using [MichaelCurrin/go-project-template](https://github.com/MichaelCurrin/go-project-template).
+Use the `go get` command a URL.
+
+The URL should point to a repo's directory containing a `main.go`. file.
+
+Such as to a GitHub repo. Here using [MichaelCurrin/go-project-template](https://github.com/MichaelCurrin/go-project-template).
 
 ```sh
-$ go install github.com/MichaelCurrin/go-project-template/cmd/myapp
+$ go get github.com/MichaelCurrin/go-project-template
+```
+
+Run it in `GOBIN`.
+
+```sh
+$ cd ~
+$ go-project-template -h
+```
+
+If there was `cmd/myapp/main.go`:
+
+```sh
+$ go get github.com/MichaelCurrin/go-project-template/cmd/myapp
 ```
 
 If `GOBIN` is in your `PATH`, you can run from anywhere:
@@ -74,4 +91,21 @@ $ go get -u github.com/MichaelCurrin/go-project-template/cmd/myapp
 ```
 go: github.com/cpuguy83/go-md2man/v2 upgrade => v2.0.0
 go: github.com/russross/blackfriday/v2 upgrade => v2.1.0
+```
+
+
+## Check installed packages
+
+Show names in `GOBIN`, sorted by most recently updated.
+
+```sh
+$ ls -1 -t ~/go/bin
+```
+```
+go-project-template
+...
+gopls
+golint
+goreturns
+...
 ```
