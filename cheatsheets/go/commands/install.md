@@ -70,6 +70,30 @@ Result:
 
 I don't know a more precise way of doing this where the package name is kept.
 
+### URL given
+
+To install a Go module by URL, rather use the `go get` command.
+
+If you run this just anywhere, it will fail:
+
+```go
+$ go install github.com/MichaelCurrin/go-project-template
+```
+
+But, if you run it inside that directory, it will work because of the `go.mod` file definition.
+
+```sh
+$ cd go-project-template
+$ go install github.com/MichaelCurrin/go-project-template
+```
+
+Though, you might as well just do this which seems equivalent.
+
+```sh
+$ cd go-project-template
+$ go install
+```
+
 
 ## Verbose
 
