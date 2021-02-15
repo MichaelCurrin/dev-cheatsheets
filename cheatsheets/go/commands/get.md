@@ -3,7 +3,9 @@
 Reference for [get](https://golang.org/pkg/cmd/go/internal/get/) command.
 
 
-## Actions
+## What it does
+
+> Get downloads the packages named by the import paths, along with their dependencies. It then installs the named packages, like `go install`.
 
 The `go get` command will:
 
