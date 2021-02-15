@@ -3,7 +3,7 @@
 
 ## Subquery
 
-Use `SELECT and `FROM` with an aliased "subquery" or "window query". From [post](https://www.essentialsql.com/get-ready-to-learn-sql-server-22-using-subqueries-in-the-from-clause/).
+Use `SELECT` and `FROM` with an aliased "subquery" or "window query". From [post](https://www.essentialsql.com/get-ready-to-learn-sql-server-22-using-subqueries-in-the-from-clause/).
 
 ```sql
 SELECT
