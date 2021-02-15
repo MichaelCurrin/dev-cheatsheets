@@ -1,15 +1,30 @@
 # fmt
 
-Docs: [gofmt](https://golang.org/cmd/gofmt/) command.
 
-Use as `gofmt` or `go fmt`.
+## What it does
 
-```
-gofmt [flags] [path ...]
-```
-
-Update file in place.
+From the docs, running `go fmt` runs this:
 
 ```sh
-$ gofmt -w hello.go
+$ gofmt -l -w
 ```
+
+Any packages listed are passed on to.
+
+
+## Usage
+
+```
+usage: go fmt [-n] [-x] [packages]
+```
+
+## Flags
+
+The flags on `go fmt` are limited.
+
+- `-n` - Dry-run. Pprints commands that would be executed.
+- `-x` - Trace. Prints commands as they are executed.
+
+For more control, use the standalone `gofmt` command directly.
+
+See more info on [gofmt]({{ site.baseurl }}{% link cheatsheets/go/commands/gofmt.md %}) guide.
