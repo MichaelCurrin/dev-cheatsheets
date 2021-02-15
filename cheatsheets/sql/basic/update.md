@@ -1,9 +1,15 @@
 # Update
 
-See [Update](https://sqlite.org/lang_update.html) in the SQLite docs and [SQLite update](https://www.sqlitetutorial.net/sqlite-update/) on SQLite Tutorial site.
+## Resources
+
+- [Update](https://sqlite.org/lang_update.html) in the SQLite docs
+- [SQLite update](https://www.sqlitetutorial.net/sqlite-update/) on SQLite Tutorial site.
+- [Update](https://www.postgresql.org/docs/current/sql-update.html) in Postgres docs.
 
 
 ## Syntax
+
+SQLite:
 
 ```sql
 UPDATE table
@@ -15,7 +21,31 @@ ORDER column_or_expression
 LIMIT row_count OFFSET offset;
 ```
 
-You can update just one record - but you probably want to then set the offset so you don't update it twice.
+You can use LIMIT to update just one record - but you probably want to set the offset, so you don't update it twice accidentally.
+
+Postgres:
+
+```sql
+[ WITH [ RECURSIVE ] with_query [, ...] ]
+UPDATE [ ONLY ] table_name [ * ] [ [ AS ] alias ]
+    SET { column_name = { expression | DEFAULT } |
+          ( column_name [, ...] ) = [ ROW ] ( { expression | DEFAULT } [, ...] ) |
+          ( column_name [, ...] ) = ( sub-SELECT )
+        } [, ...]
+    [ FROM from_item [, ...] ]
+    [ WHERE condition | WHERE CURRENT OF cursor_name ]
+    [ RETURNING * | output_expression [ [ AS ] output_name ] [, ...] ]
+```
+
+> There are two ways to modify a table using information contained in other tables in the database: 
+>
+> using sub-selects, 
+> 
+> or specifying additional tables in the FROM clause.
+>
+> Which technique is more appropriate depends on the specific circumstances.
+
+> The syntax of the RETURNING list is identical to that of the output list of SELECT.
 
 
 ## Examples
@@ -142,4 +172,16 @@ WHERE customer.id IN (
     SELECT id
     FROM old_customer
 )
+```
+
+
+## Return
+
+Add return values.
+
+```sql
+UPDATE registered = FALSE
+FROM customers
+RETURNING id
+-- RETURING *
 ```
