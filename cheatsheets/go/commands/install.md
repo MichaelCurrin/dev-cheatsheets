@@ -87,7 +87,7 @@ $ cd go-project-template
 $ go install github.com/MichaelCurrin/go-project-template
 ```
 
-Though, you might as well just do this which seems equivalent.
+Though, you might as well just do this, which seems equivalent.
 
 ```sh
 $ cd go-project-template
