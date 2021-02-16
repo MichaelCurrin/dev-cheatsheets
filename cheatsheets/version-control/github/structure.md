@@ -152,6 +152,8 @@ Or create a directory with a named file:
 
 - `.github/PULL_REQUEST_TEMPLATE/foo.md`
 
+Note template, not templates.
+
 For the content:
 
 > In the body of the new file, add your pull request template. This could include:
@@ -195,5 +197,5 @@ As part of the code review process please run branch locally and review
 
 Create as either:
 
-- `CONTRIBUTING.md`
 - `docs/CONTRIBUTING.md`
+- `CONTRIBUTING.md`
