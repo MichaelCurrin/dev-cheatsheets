@@ -1,8 +1,7 @@
 ---
-description: How to structure your GH repo
+title: Project structure
+description: How to structure your repo with docs and directories specific to GitHub
 ---
-# Project structure
-
 
 ## Issue templates
 
