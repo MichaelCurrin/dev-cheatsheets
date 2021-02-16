@@ -18,9 +18,11 @@ Use the GH UI to help you:
 
 ### Structure
 
-The files sit in this directory.
+The files sit in this directory:
 
 - `.github/ISSUE_TEMPLATE/`
+
+Note singular template.
 
 This can have your markdown files in that.
 
@@ -152,7 +154,7 @@ Or create a directory with a named file:
 
 - `.github/PULL_REQUEST_TEMPLATE/foo.md`
 
-Note template, not templates.
+Note singular template.
 
 For the content:
 
