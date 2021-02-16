@@ -1,7 +1,8 @@
 ---
-title: Project structure
-description: How to structure your repo with docs and directories specific to GitHub
+title: Docs and templates
+description: How to structure your repo with docs and templates that are used on GitHub
 ---
+
 
 ## Issue templates
 
