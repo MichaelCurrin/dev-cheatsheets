@@ -37,9 +37,11 @@ DESCRIPTION
      including newlines, may be escaped by a backslash.
  ```
  
- ## Flags
  
-Use a zero (not a letter O).
+## Flags
+ 
+Use the number zero as a flag.
+
 ```
       -0      Change xargs to expect NUL (``\0'') characters as separators, instead of spaces and newlines.  This is expected
              to be used in concert with the -print0 function in find(1).
@@ -112,4 +114,26 @@ done
 ```
 lrwxr-xr-x  1 mcurrin  admin  38 13 Oct 13:15 /usr/local/bin/python3 -> ../Cellar/python@3.9/3.9.0/bin/python3
 -rwxr-xr-x  1 root  wheel  31488 22 Sep 02:29 /usr/bin/python3
+```
+
+Deleting branches with `xargs`.
+
+```sh
+$ echo 'foo bar' | xargs git branch -D
+
+echo 'foo
+bar' | xargs git branch -D
+```
+
+Without `xargs`.
+
+```sh
+$ git branch -D foo bar
+```
+
+Or a `for` loop that does.
+
+```sh
+$ git branch -D foo
+$ git branch -D bar
 ```
