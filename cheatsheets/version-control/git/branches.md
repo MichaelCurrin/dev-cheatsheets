@@ -145,12 +145,20 @@ If you are sure you want to delete it, run 'git branch -D foo'.
 
 Perhaps this can be extended to exclude the current git branch.
 
+If you have list of branches from `git branch`, you can pass them to the delete command without a `for` loop.
 
-## Delete remote branches
+```sh
+echo 'foo
+bar
+baz' | xargs git branch -D
+```
+
+
+## Delete local references to remote branches
+
+How to delete local remote references with no branch on GitHub
 
 Even though you've deleted a branch locally as covered above, your git repo will have a local reference to that remote branch. And also the branch might still exist on GH itself.
-
-### Delete many
 
 Use this to remove local references to remote branches which have been deleted on GitHub.
 
@@ -158,7 +166,19 @@ Use this to remove local references to remote branches which have been deleted o
 $ git remote prune origin
 ```
 
-## Delete branch on remote
+This will not delete your local branch. Just the origin references you see with:
+
+```sh
+$ git branch -r
+```
+```
+origin/foo
+origin/bar
+origin/master
+```
+
+
+## Delete branch on GitHub
 
 How to delete the actual branch on GitHub, using the command-line rather than clicking delete the Branches tab.
 
@@ -170,7 +190,12 @@ $ git push -d origin BRANCH_NAME
 
 This works on branches and tags.
 
-This has no effect on the local branch or tag.
+```sh
+$ git push -d origin foo
+$ git push -d origin v1.2.3
+```
+
+This has no effect on a local branch or tag.
 
 
 ## Set upstream
@@ -196,18 +221,29 @@ $ git branch --set-upstream-to=origin/my-feature my-feature
 $ git push
 ```
 
-There is a way to configure git to always set the upstream for you. But I think it is better to have more control, such as to avoid recreating a branch you deleted. You'll get an error when pushing and can stop and think if you are on the right branch.
+As a shortcut, you can skip setting upstream by adding `HEAD`. You'll just have to do this on _every_ push.
+
+```sh
+$ git checkout -b my-feature
+$ git push HEAD
+```
+
+There is a also way to configure git to always set the upstream for you. But I think it is better to have more control, such as to avoid recreating a branch you deleted. You'll get an error when pushing and can stop and think if you are on the right branch.
 
 
-## Rename
+## Rename branch
+
+### Locally
 
 Use the `--move` flag.
 
 ```sh
-$ git branch -m current new
+$ git branch -m CURRENT NEW
 ```
 
-In GitHub settings for a default branch, you can rename the branch.
+### On GitHub
+
+In GitHub settings for a default branch, you can rename the branch .
 
 You get this prompt for renaming from `master` to something else.
 
@@ -226,4 +262,3 @@ $ git branch -m master main
 $ git fetch origin
 $ git branch -u origin/main main
 ```
-
