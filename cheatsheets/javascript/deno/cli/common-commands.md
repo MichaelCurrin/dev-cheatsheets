@@ -9,7 +9,7 @@ Thanks also to info from Medium [post](https://medium.com/deno-tutorial/deno-tes
 
 ## Install
 
-## Install a module
+### Install a module
 
 - `deno install -h`
     ```
