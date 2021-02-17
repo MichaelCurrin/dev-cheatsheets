@@ -1,14 +1,68 @@
-# Pattern matching
+---
+title: Pattern matching
+description: Check if a string matchs a pattern
+---
 
-See also globbing section.
+See also Globbing section.
 
-Check if value matches pattern.
+## Plain text matching
 
+Test using `==` and `*` globstar.
 
-## Starts with
-
-Example:
+Examples are for system with this environment variable:
 
 ```sh
-[[ "$OSTYPE" == darwin* ]] && echo 'macOS!'
+OSTYPE=darwin19.0
 ```
+
+### Starts with
+
+```sh
+[[ "$OSTYPE" == darwin* ]] && echo 'Yes' || echo 'No'
+# Yes
+```
+
+### Contains
+
+```sh
+[[ "$OSTYPE" == *rwin* ]] && echo 'Yes' || echo 'No'
+# Yes
+```
+
+Omitting leading `*`:
+
+```sh
+[[ "$OSTYPE" == rwin* ]] && echo 'Yes' || echo 'No' 
+No
+```
+
+
+## Regex matching
+
+Use `=~` and a regex pattern.
+```sh
+[[ STRING =~ PATTERN ]]	
+```
+
+### Basic
+
+No special functionality. Just string contains.
+
+```sh
+[[ "$PATH" =~ "ruby" ]] && echo 'Yes' || echo 'No'
+```
+
+### Starts with
+
+```sh
+[[ "$PATH" =~ "^/" ]] && echo 'Yes' || echo 'No'
+```
+
+This will give an error as it is **not** valid regex:
+
+```
+"*ruby*"
+```
+
+
+
