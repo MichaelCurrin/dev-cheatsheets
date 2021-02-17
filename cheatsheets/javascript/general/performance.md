@@ -1,8 +1,8 @@
 # Performance
 
-## window.performance
+## Browser performance timings
 
-Browsers have a builtin object which contains performance-related durations which you can use to calculate performance metrics.
+Browsers have a built-in JS object which contains performance-related timings, which you can use to calculate performance metrics.
 
 See [Window.performance](https://developer.mozilla.org/en-US/docs/Web/API/Window/performance) in Mozilla dev docs.
 
