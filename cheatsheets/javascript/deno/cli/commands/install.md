@@ -1,6 +1,6 @@
 # install
 
-Install a Deno package for global use. Use the install command.
+Install a Deno package for global use.
 
 ```sh
 $ deno install --allow-net --unstable https://deno.land/x/vno/install/vno.ts
