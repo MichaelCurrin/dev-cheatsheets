@@ -5,6 +5,8 @@ description: How to make imports easier to manage in Deno
 
 Warning - **this is an unstable feature.**.
 
+## About
+
 This page is based on [Import maps](https://deno.land/manual/linking_to_external_code/import_maps) in the Deno manual.
 
 This uses the following:
@@ -15,7 +17,18 @@ This uses the following:
 For use in general and outside of the Deno context, see the JS [Import maps]({{ site.baseurl }}{% link cheatsheets/javascript/general/modules/import-maps.md %}) section of this cheatsheets guide.
 
 
-## Standard syntax
+## How to use
+
+This means you need a file like for the mapping:
+
+- `import_map.json`
+
+And then all your imports can be from a short URLs like `"react"`, without using the full URL and version all over.
+
+
+## Examples
+
+### Standard syntax
 
 This is what an import looks like without an import map.
 
@@ -23,8 +36,7 @@ This is what an import looks like without an import map.
 import { red } from "https://deno.land/std@0.82.0/fmt/colors"
 ```
 
-
-## Import map syntax
+### Import map syntax
 
 You can collect imports in a central file like this:
 
