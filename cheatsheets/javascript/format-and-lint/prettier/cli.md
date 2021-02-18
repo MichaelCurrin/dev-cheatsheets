@@ -68,3 +68,14 @@ $ prettier --single-quote \
   package.json \
   "{app,__{tests,mocks}__}/**/*.js"
 ```
+
+
+## Use without installing
+
+If you don't have Prettier installed globally or in a project, you can still download and run it on a project. This won't install it.
+
+```sh
+$ npx prettier -w .
+```
+
+That will use the default options plus any overrides you've set in Prettier configs.
