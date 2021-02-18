@@ -1,9 +1,25 @@
 # CLI
 
-See [CLI](https://prettier.io/docs/en/cli.html) in the docs.
+See [CLI](https://prettier.io/docs/en/cli.html) in the Prettier docs.
 
+Once installed, Prettier can be used as a CLI tool.
 
 ## Usage
+
+You might install it globally and use it as:
+
+```sh
+$ prettier .
+```
+
+Or you might install it in a project and set it up as an NPM script. So you can run it as:
+
+```sh
+$ npm run format
+```
+
+
+## Help
 
 ```sh
 $ prettier -h
@@ -30,7 +46,7 @@ Be sure to use a path to a file or directory.
 
 ### Default
 
-The default behavior will print changes (possibly very long) without writing them.
+The default behavior will print changes (possibly very long). Without saving changes.
 
 ```sh
 $ prettier .
@@ -38,7 +54,7 @@ $ prettier .
 
 ### Check
 
-Get a summary with `--check`.
+Get a summary with `--check`. Again this doesn't save changes.
 
 ```sh
 $ prettier -c .
@@ -49,9 +65,11 @@ Checking formatting...
 [warn] Code style issues found in the above file(s). Forgot to run Prettier?
 ```
 
+This can be useful in a CI or git hooks flow, where you want to automate a check and abort if at least one file needs changing and a commit.
+
 ### Edit
 
-Update files in place.
+Format files and save changes.
 
 ```sh
 $ prettier -w .
