@@ -23,9 +23,11 @@ Screenshots of the website:
     </a>
 </div>
 
+<br>
+
 <div align="center">
 
-[![View - michaelcurrin.github.io/dev-cheatsheets/](https://img.shields.io/static/v1?label=View&message=michaelcurrin.github.io%2Fdev-cheatsheets%2F&color=green&style=for-the-badge)](michaelcurrin.github.io/dev-cheatsheets/)
+[![View - michaelcurrin.github.io/dev-cheatsheets/](https://img.shields.io/static/v1?label=View&message=michaelcurrin.github.io%2Fdev-cheatsheets%2F&color=2ea44f&style=for-the-badge)](michaelcurrin.github.io/dev-cheatsheets/)
 
 </div>
 
