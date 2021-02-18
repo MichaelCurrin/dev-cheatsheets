@@ -10,9 +10,9 @@ This page is based on [Import maps](https://deno.land/manual/linking_to_external
 This uses the following:
 
 - [![WICG - import-maps](https://img.shields.io/static/v1?label=WICG&message=import-maps&color=blue&logo=github)](https://github.com/WICG/import-maps)
-    > How to control the behavior of JavaScript imports 
+    > How to control the behavior of JavaScript imports
 
-For use in general and outside of the Deno context, see the JS [Import maps]({{ site.baseurl }}{% link cheatsheets/javascript/general/modules/import-maps.html %}) section of this cheatsheets guide.
+For use in general and outside of the Deno context, see the JS [Import maps]({{ site.baseurl }}{% link cheatsheets/javascript/general/modules/import-maps.md %}) section of this cheatsheets guide.
 
 
 ## Standard syntax
@@ -42,7 +42,7 @@ You can collect imports in a central file like this:
 
     console.log(red("hello world"));
     ```
-    
+
 Then run as:
 
 ```sh
