@@ -5,9 +5,20 @@ description: How to make your imports easier to manage
 
 {% raw %}
 
+Define a script with type set to `importmap`, including mapping of short names to long URLs. 
+
+Then, after that you can do imports from the short names.
+
+This will keep your code light. 
+
+This also makes it easier to control your versions - you can use `"react"` as an import all over the place but you only have to define `react@17.0.1` in one place.
+
+Another approach would be have a central dependencies script which is not an import map, and have that export everything which you need and import later. But there could be collisions between names.
+
 
 ## Syntax
 
+```html
 <script type="importmap">
 {
   "imports": {
@@ -16,6 +27,7 @@ description: How to make your imports easier to manage
   }
 }
 </script>
+```
 
 
 ## Examples
