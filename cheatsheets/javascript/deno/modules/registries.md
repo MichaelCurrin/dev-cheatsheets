@@ -45,11 +45,15 @@ import { numbers } from "https://deno.land/x/npm:numbers@v0.7.0/index.js";
 
 ## CDNs
 
-You can use a CDN which provides a few lines to import from say NPM. This uses the new Moduled syntax, which is reusable across applications and even on the frontend.
+You can install a module from a CDN tool. These tools provided optmized builds and multiple files to choose from.
 
-Sometimes you need a URL flag to indicate that that you need a Deno-specific module.
+You can reference the CDN URL in your Deno TS code or directly in your browser as an ES Module. These CDN URLs are reusuable - they also provide instructions on how to use in Deno, the browser, etc. Sometimes you need a URL flag to indicate that that you need a Deno-specific module.
 
-You can load a script from a CDN which provides a few lines so you can import the packages you need from say NPM.
+The CDN URLs scripts I've seen so far tend to be just a few lines long and reference multiple packages on NPM. This means that even if a package is not in the Deno package registry, you can still easily use it in your Deno project. And this means you can use Deno to build say a React application using a CDN for dependencies and then you can bundle your app as a single JS file that can be loaded on the browser.
+
+Here are some CDNs I've come across and how to use them for Deno projects.
+
+See also [CDNs](https://michaelcurrin.github.io/dev-resources/resources/javascript/cdns.html) in my Dev Resources guide.
 
 ### JSPM
 
@@ -113,12 +117,52 @@ import confetti from "https://cdn.skypack.dev/confetti?dts"
 
 URL formats, from the homepage:
 
-- Default: https://cdn.skypack.dev/package-name
-- Version: https://cdn.skypack.dev/preact@10
-- Min: https://cdn.skypack.dev/preact?min
-- Deno: https://cdn.skypack.dev/fast-xml-parser?dts
+- Default: `https://cdn.skypack.dev/package-name`
+- Version: `https://cdn.skypack.dev/preact@10`
+- Min: `https://cdn.skypack.dev/preact?min`
+- Deno: `https://cdn.skypack.dev/fast-xml-parser?dts`
 
 React:
 
-- Default: https://cdn.skypack.dev/react
-- Deno: https://cdn.skypack.dev/react?dts
+- Default: `https://cdn.skypack.dev/react`
+- Deno: `https://cdn.skypack.dev/react?dts`
+
+### ESM
+
+- [esm.sh](https://esm.sh/)
+    > A fast, global content delivery network for ES Modules. All modules are transformed to ESM by esbuild in NPM.
+
+You don't need an extra flag for use with Deno. The default will work.
+
+Format:
+
+- Default: `https://esm.sh/package`
+- Version: `https://esm.sh/package@version`
+
+React:
+
+```typescript
+import React from 'https://esm.sh/react'
+```
+
+Content from following that React URL:
+
+```javascript
+/* esm.sh - react@17.0.1 */
+export * from "https://cdn.esm.sh/v15/react@17.0.1/esnext/react.js";
+export { default } from "https://cdn.esm.sh/v15/react@17.0.1/esnext/react.js";
+```
+
+Sample from the _Deno Compatibility_ section of the homepage:
+
+> esm.sh will polyfill the `node` internal modules (`fs`, `os` , etc.) with `https://deno.land/std/node` to support some modules to work in Deno, like `postcss`:
+
+```typescript
+import postcss from 'https://esm.sh/postcss'
+import autoprefixer from 'https://esm.sh/autoprefixer'
+
+const css = (await postcss([ autoprefixer]).process(`
+    backdrop-filter: blur(5px);
+    user-select: none;
+`).async()).content
+```
