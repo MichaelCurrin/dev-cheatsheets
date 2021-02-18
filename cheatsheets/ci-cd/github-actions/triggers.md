@@ -7,7 +7,7 @@ description: Choose events that trigger your workflow
 
 Here we use the `on` field and one or more events to trigger a workflow.
 
-See the docs - [Events that trigger workflows](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows).
+See the docs - [Events that trigger workflows](https://docs.github.com/en/actions/reference/events-that-trigger-workflows).
 
 Note - in general if you have test, lint and build steps, you probably want to run them on all pushes and PRs. If there is anything related to a deploy, you probably only want to run against the master branch. Also you will only want to run the deploy against `master` - if you run it against both `master` and `gh-pages`, you'll have issues.
 
@@ -24,10 +24,52 @@ on: push
 
 ### On pull request
 
-This will not build on master. This will build on a feature branch, but only when creating the PR or pushing to the PR's branch.
+Trigger only with pull requests. See [docs](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#pull_request).
+
+This will build on a feature branch if it has PR. 
+
+#### Commits
+
+This triggers **every time** you you push a commit to the feature branch or edit it on GitHub UI.
 
 ```yaml
 on: pull_request
+```
+
+```yaml
+on:
+    pull_request:
+```
+
+Limit to Pull Requests which target `master`. This is safer, as you avoid triggering on PRs between feature branches.
+
+```yaml
+on:
+  pull_request:
+    branches: master
+```
+
+#### PR events
+
+Available event types are listed in the doc linked above.
+
+> Note: By default, a workflow only runs when a pull_request's activity type is `opened`, `synchronize`, or `reopened`. To trigger workflows for more activity types, use the types keyword.
+
+Add a trigger for when a PR is assigned.
+
+```yaml
+on:
+  pull_request:
+    types: [assigned, opened, synchronize, reopened]
+```
+
+Limit to when a PR against master is merged. This is similar to listening to `push` event on `master`, but it requires a PR to exist and does not pick up just any commit to `master`.
+
+```yaml
+on:
+  pull_request:
+    branches: master
+    types: closed
 ```
 
 ### On push or Pull Request to any branch
@@ -69,11 +111,13 @@ Or more verbose:
 ```yaml
 on:
   push:
-    branches: [master]
+    branches: [ master ]
   pull_request:
-    branches: [master]
+    branches: [ master ]
 ```
+
 Or
+
 ```yaml
 on:
   push:
@@ -117,20 +161,24 @@ on:
 
 ### Ignore path
 
+Trigger on any path except the ignored paths.
+
 ```yaml
 on:
   push:
     paths-ignore:
-    - 'docs/**'
+      - 'docs/**'
 ```
 
 ### Include path
+
+Only trigger on given paths.
 
 ```yaml
 on:
   push:
     paths:
-    - '**.js'
+      - '**.js'
 ```
 
 
