@@ -4,6 +4,12 @@
 
 Pass command line flags to change Prettier behavior.
 
+Example to override the default behavior of semiquotes on and double quotes to be used.
+
+```sh
+$ prettier . --no-semi --single-quote
+```
+
 
 ## Config file
 
@@ -16,6 +22,7 @@ Setup a config file:
 You might want to edit VS Code settings too if you use a Prettier extension.
 
 
-## Available options
+## Options
 
-See [Options](https://prettier.io/docs/en/options.html) in the docs.
+See [Options](https://prettier.io/docs/en/options.html) in the docs. This shows you what you can set and what the default values are.
+
