@@ -188,3 +188,20 @@ Combined:
 ```javascript
 import React, { Application } from "./deps.ts";
 ```
+
+
+## Nomodule
+
+In case a browser does not support ES Modules, you can prompt the user to upgrade.
+
+Example - based on [esm.sh](https://esm.sh/) homepage source.
+
+```html
+<script module>
+    // ...
+</script>
+<script nomodule>
+    const mainEl = document.querySelector('main');
+    mainEl.innerHTML = '<p><em style="color: #999;">nomodule, please upgrade your browser...</em></p>'
+</script>
+```
