@@ -10,7 +10,7 @@ How to do something in a Node/NPM project and the equivalent in a Deno project.
 
 Area | Node/NPM | Deno
 ---  | --- | ---
-Package managment file | `package.json` with `dependencies` section | Use imports by URL inline, or use `deps.ts` (commonly used) or `import_map.json` (unstable)
+Package management file | `package.json` with `dependencies` section | Use imports by URL inline, or use `deps.ts` (commonly used) or `import_map.json` (unstable)
 Install a package `npm install PACKAGE` | Add a package's URL to imports of a module and then run `deno run index.ts` or `deno cache index.ts`
 Install packages | `npm install` | `deno run index.ts` (missing packages will be installed) or `deno cache index.ts`
 Upgrade packages | `npm update` | `deno cache --reload index.ts` or change locked version numbers and install
