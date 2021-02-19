@@ -25,8 +25,8 @@ JavaScript needs a runtime environment to execute in. Traditionally this was the
 - [JS in Code Cookbook][]
 
 [Browser]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/index.md %}
-[Node]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/node/index.md %}
-[Deno]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/deno/index.md %}
+[Node]: {{ site.baseurl }}{% link cheatsheets/javascript/node/index.md %}
+[Deno]: {{ site.baseurl }}{% link cheatsheets/javascript/deno/index.md %}
 
 [NPM]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/index.md %}
 [Yarn]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/yarn/index.md %}
