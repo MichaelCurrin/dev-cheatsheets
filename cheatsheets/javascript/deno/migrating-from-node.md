@@ -16,7 +16,7 @@ Install packages | `npm install` | `deno run index.ts` (missing packages will be
 Upgrade packages | `npm update` | `deno cache --reload index.ts` or change locked version numbers and install
 Registry | [npmjs.com](https://www.npmjs.com) | Standard lib: [deno.land/std](https://deno.land/std), 3rd party: [deno.land/x](https://deno.land/x) or CDNs - see more in [Modules][] section
 
-[Modules]: {{ site.baseurl }}{% link cheatsheets/javascript/deno/modules.md %}
+[Modules]: {{ site.baseurl }}{% link cheatsheets/javascript/deno/modules/index.md %}
 
 
 ## Project mainenance
