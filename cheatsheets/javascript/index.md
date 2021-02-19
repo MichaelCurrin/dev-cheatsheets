@@ -6,6 +6,9 @@ logo: javascript
 
 ### Runtimes
 
+JavaScript needs a runtime environment to execute in. Traditionally this was the browser, later expanded to Node and then Deno on the server side.
+
+- [Browser][]
 - [Node][]
 - [Deno][]
 
@@ -21,7 +24,7 @@ logo: javascript
 - [JS in Learn to Code][]
 - [JS in Code Cookbook][]
 
-
+[Browser]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/index.md %}
 [Node]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/node/index.md %}
 [Deno]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/deno/index.md %}
 
