@@ -47,3 +47,6 @@ Some values for `compilerOptions` in `tsconfig.json`.
     "strict": true 
 }
 ```
+
+
+See [What is a tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) is the TS docs.
