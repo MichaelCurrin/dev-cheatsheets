@@ -16,7 +16,8 @@ How to do something in a Node/NPM project and the equivalent in a Deno project.
 | Install packages                        | `npm install`                                                                                        | `deno run index.ts` (missing packages will be installed) or `deno cache index.ts`                                                             |
 | Upgrade packages                        | `npm update`                                                                                         | `deno cache --reload index.ts` or change locked version numbers and install                                                                   |
 | Registry                                | [npmjs.com](https://www.npmjs.com)                                                                  | Standard lib: [deno.land/std](https://deno.land/std), 3rd party: [deno.land/x](https://deno.land/x) or CDNs - see more in [Modules][] section |
-| Browser a package in the registry       | Example: [npmjs.com/package/vue][] | Example: [deno.land/x/oak][] or `https://deno.land/x/oak@v6.5.0`
+| Browse a package in the registry        | Example: [npmjs.com/package/vue][] | Example: [deno.land/x/oak][] or `https://deno.land/x/oak@v6.5.0`
+| Import a package                        | Example: `import React from "react";` | CDN example: `import React from "https://dev.jspm.io/react";`. Deno land example: `import { Application } from "https://deno.land/x/oak/mod.ts";`. Though, dependencies can by adjusted so you don't have to use the full URL everywhere. |
 
 [Modules]: {{ site.baseurl }}{% link cheatsheets/javascript/deno/modules/index.md %}
 [Integrity checking & lock files]: https://deno.land/manual/linking_to_external_code/integrity_checking
