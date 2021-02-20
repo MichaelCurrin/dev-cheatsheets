@@ -13,7 +13,7 @@ Deno will download and install dependencies when they are needed in your project
 Such as with `deno run` or `deno test` (test dependencies). 
 
 
-## Install with cach subcommand
+## Install with cache subcommand
 
 You can get dependencies downloaded and installed without running your app. Any installed dependecies will not be upgraded.
 
@@ -24,36 +24,57 @@ $ deno cache index.ts
 ```
 
 
-## Upgrade
+## Upgrade packages
 
-For Deno to upgrade to the latest dependency.
+### Change locked versions
+
+Change the version in your URL.
+
+- `deps.ts`
+    ```diff
+    -export { Application } from "https://deno.land/x/abc@v1.2.4/mod.ts";
+    +export { Application } from "https://deno.land/x/abc@v1.2.0/mod.ts";
+    ```
+
+You can lock using `@0.87.0`. But `@0.87` syntax doesn't work, like it does in NPM projects.
+
+Then run the same command as to install. This works since the new package version has to be installed for the first time.
+
+```sh
+$ deno cache index.ts
+```
+
+### Use reload to force upgrade
 
 ```sh
 $ deno cache --reload index.ts
 ```
 
-You should probably install all your packages using locked URL versions, for predictable dev environments and deploys. If you already do that, then upgrading them as above may not actually change anything. 
-
-Even the subdependencies I think would not change, because a release of `1.2.3` should also (hopefully) lock external packages with versions. 
-
-Though, if the external package only locks within a **range** like `^3.4.5` in NPM, then if you use the upgrade command then you'll keep your direct dependenices frozen by version numbers but allow floating subdependencies to be upgraded.
-
-This upgrade command could maybe be used in conjunction with the lockfile, to upgrade subdependencies.
-
-
 ## Locking versions
+
+You should probably install all your packages using locked URL versions though.
 
 This version will be the same whenever installed:
 
 ```
-https://deno.land/x/abc@v1.2.4/mod.ts"
+"https://deno.land/x/abc@v1.2.4/mod.ts"
 ```
 
-This will install the latest at the time. This is not reliable though - as if you upgrade or delete/install dependencies on your machine or install on another machine or on CI, then you'll get a newer version. Which might break you app.
+This will install the latest at the time and will float.
 
 ```
-https://deno.land/x/abc/mod.ts"
+"https://deno.land/x/abc/mod.ts"
 ```
+
+This is not reliable though - as if you upgrade or delete/install dependencies on your machine or install on another machine or on CI, then you'll get a newer version. Which might break you app.
+
+### Thoughts on locking and doing an upgrade
+
+If you already lock versions, then upgrading them with `--reload` as above may not actually change anything. Even the subdependencies I think would not change, because a release of `1.2.3` should also (hopefully) lock external packages with versions. 
+
+Though, if the external package only locks within a **range** like `^3.4.5` in NPM, then if you use the upgrade command then you'll keep your direct dependenices frozen by version numbers but allow floating subdependencies to be upgraded.
+
+This upgrade command could be used in conjunction with the lockfile I guess.
 
 
 ## Cache directory
