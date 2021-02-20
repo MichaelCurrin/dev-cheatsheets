@@ -36,7 +36,7 @@ Change the version in your URL.
     +export { Application } from "https://deno.land/x/abc@v1.2.0/mod.ts";
     ```
 
-You can lock using `@0.87.0`. But `@0.87` syntax doesn't work, like it does in NPM projects.
+You can lock using an exact version `@0.87.0`. But `@0.87` syntax doesn't work on Deno.land. On CDNs, you can partially lock - like JSPM says `pkg@1.2` translates to `~1.2` including pre-releases.
 
 Then run the same command as to install. This works since the new package version has to be installed for the first time.
 
@@ -49,6 +49,7 @@ $ deno cache index.ts
 ```sh
 $ deno cache --reload index.ts
 ```
+
 
 ## Locking versions
 
