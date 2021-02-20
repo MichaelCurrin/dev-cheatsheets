@@ -1,6 +1,6 @@
 ---
 title: Package registries
-description: Where to download NPM packages from
+description: Where to download Node packages from
 ---
 
 
