@@ -6,7 +6,47 @@ description: How to install and upgrade packages across projects
 Dependencies are stored in a global cache - there is no `node_modules` directory.
 
 
-## Install when running
+## Check installed version
+
+Given this package in use.
+
+```typescript
+export { default as React } from "https://dev.jspm.io/react";
+```
+
+Actually it doesn't have to be in use. It just means the next step will probably find it downloaded already and not have to download it.
+
+Check the package by URL.
+
+```sh
+$ deno info https://dev.jspm.io/react
+```
+```
+local: /Users/mcurrin/Library/Caches/deno/deps/https/dev.jspm.io/HASH
+type: JavaScript
+deps: 4 unique (total 84.4KB)
+
+https://dev.jspm.io/react (168B)
+├─┬ https://dev.jspm.io/npm:object-assign@4?dew (61B)
+│ └── https://dev.jspm.io/npm:object-assign@4.1.1/index.dew.js (2.36KB)
+├── https://dev.jspm.io/npm:react@17.0.1/cjs/react.development.dew.js *
+└─┬ https://dev.jspm.io/npm:react@17.0.1/index.dew.js (264B)
+  └─┬ https://dev.jspm.io/npm:react@17.0.1/cjs/react.development.dew.js (81.56KB)
+    └── https://dev.jspm.io/npm:object-assign@4?dew *
+```
+
+From this, I see that React version `17.0.1` is in use.
+
+Or I can check the content in the browser at [dev.jspm.io/react](https://dev.jspm.io/react) if I am happy with the latest version.
+
+If I want to lock it, I would then set `17.0.1` as my version, or `17.0` to allow the patch version to float or `17` to allow minor version to float.
+
+```typescript
+export { default as React } from "https://dev.jspm.io/react@17.0.1";
+```
+
+
+## Install by running
 
 Deno will download and install dependencies when they are needed in your project.
 
