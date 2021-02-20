@@ -28,15 +28,16 @@ How to do something in a Node/NPM project and the equivalent in a Deno project.
 | Lint code               | `npm run lint` with command pointing to `eslint . --fix` after installing ESLint                                                                                         | `deno lint` - includes ESLint and TSConfig support out the box                                                                                               |
 | Format code             | `npm run format` with command pointing to `prettier -w .` after installing Prettier                                                                                      | `deno fmt` - uses Prettier internally                                                                                                                        |
 | Run tests               | `npm test`, with command pointing to `jest` or `jasmine` or `mocha` etc. after installing                                                                                | `deno test` - uses a test runner internally                                                                                                                  |
+| Bundle app as a single JS file | `npm run build`, with command pointing to `webpack` or `babel` or some other package which needs to be installed and configured. | `mkdir build` and then `deno bundle index.ts build/bundle.js` - no external dependencies or config files needed. |
 | Compile TypeScript code | `npm run compile` with command pointing to `tsc . -p` usually                                                                                                            | TypeScript support out the box. Use `deno bundle index.ts build/bundle.js`                                                                                   |
-| Run TypeScript code     | `npm run dev` that uses a combination of TS compilation and then running JS files as two steps, or using Vue or React runner which can run TS with a hidden compile step | Use `deno run index.ts` to run TS directly. No need to compile first. Or in two steps: `deno bundle index.ts build/bundle.js` and `deno run build/bundle.js` |
+| Run TypeScript code     | `npm start` or `npm run dev`, with a command that uses a combination of two steps - TS compilation and then run JS files. Or use Vue or React runner which can run TS with a hidden in-memory compile step | Use `deno run index.ts` to run TS directly. No need to compile first. Or in two steps: `deno bundle index.ts build/bundle.js` and `deno run build/bundle.js` |
 
 ### Resources
 
-- [Makefile](https://github.com/MichaelCurrin/deno-project-template/blob/main/Makefile) on my Deno Project Template
-- [Formatter](https://deno.land/manual/tools/formatter) in the docs
-- [Deno lint](https://github.com/denoland/deno_lint) repo
-- [Testing](https://deno.land/manual/testing) in the docs
+- [Makefile](https://github.com/MichaelCurrin/deno-project-template/blob/main/Makefile) on my Deno Project Template.
+- [Formatter](https://deno.land/manual/tools/formatter) in the docs.
+- [Deno lint](https://github.com/denoland/deno_lint) repo.
+- [Testing](https://deno.land/manual/testing) in the docs.
 
 Note that minifying JS code is not supported directly in Node or Deno. See my [Minifiers][] guide for available packages.
 
