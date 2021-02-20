@@ -1,5 +1,5 @@
 ---
-title: Manage packages
+title: Managing packages
 description: How to install and upgrade packages across projects
 ---
 
@@ -31,6 +31,14 @@ For Deno to upgrade to the latest dependency.
 ```sh
 $ deno cache --reload index.ts
 ```
+
+You should probably install all your packages using locked URL versions, for predictable dev environments and deploys. If you already do that, then upgrading them as above may not actually change anything. 
+
+Even the subdependencies I think would not change, because a release of `1.2.3` should also (hopefully) lock external packages with versions. 
+
+Though, if the external package only locks within a **range** like `^3.4.5` in NPM, then if you use the upgrade command then you'll keep your direct dependenices frozen by version numbers but allow floating subdependencies to be upgraded.
+
+This upgrade command could maybe be used in conjunction with the lockfile, to upgrade subdependencies.
 
 
 ## Locking versions
