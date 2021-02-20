@@ -4,7 +4,9 @@ Note that `npm i` is an alias for `npm install`.
 
 You must create a `package.json` file with `npm init` before you can run installs in a project.
 
-See also the [npm ci](https://docs.npmjs.com/cli/ci) command which is simialr to `npm install` but is more suitable for deploy pipelines.
+See also the [npm ci][] command.
+
+[npm ci]: {{ site.basurl }}{% link cheatsheets/package-managers/javascript/npm/commands/ci.md %}
 
 
 ## Flags
@@ -45,7 +47,6 @@ Example:
 $ npm i foo@1.2.3
 ```
 
-
 ### Install and save as dev dependency
 
 Save to `devDependencies` in `package.json` using one of:
@@ -58,7 +59,7 @@ $ npm i PACKAGE -D
 
 ## Install from package file
 
-## Install prod and dev deps
+### Install prod and dev deps
 
 ```sh
 $ npm i
@@ -87,6 +88,8 @@ $ npm i --only=development
 
 ## Install from GitHub
 
+You can install the latest code on a GitHub repo easily, without it being published on the NPM registry.
+
 ```sh
 $ npm i USERNAME/PACKAGE_NAME
 ```
@@ -94,20 +97,10 @@ $ npm i USERNAME/PACKAGE_NAME
 e.g.
 
 ```sh
-$ npm install visionmedia/express#branch
+$ npm install visionmedia/express
+$ npm install visionmedia/express#develop
 ```
 
-Or add to package file:
+For more info, see the [Registries][] page.
 
-- HTTPS
-    ```json
-    [
-      "git+https://github.com/visionmedia/express.git"
-    ]
-    ```
-- SSH
-    ```json
-    [
-      "git+ssh://git@github.com/visionmedia/express.git"
-    ]
-    ```
+[Registries]: {{ site.basurl }}{% link cheatsheets/package-managers/javascript/npm/registries.md %}
