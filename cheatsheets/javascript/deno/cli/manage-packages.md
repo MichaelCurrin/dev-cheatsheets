@@ -52,6 +52,10 @@ https://deno.land/x/abc/mod.ts"
 
 Deno uses a single cache directory for packages installed across projects.
 
+See [Dependency Inspector](https://deno.land/manual/tools/dependency_inspector) in the docs.
+
+Run like this:
+
 ```sh
 $ deno info
 ```
@@ -61,7 +65,7 @@ Remote modules cache: "/Users/mcurrin/Library/Caches/deno/deps"
 TypeScript compiler cache: "/Users/mcurrin/Library/Caches/deno/gen"
 ```
 
-Check a specific package. If it not installed, it will be downloaded first.
+Check a specific package. If that not installed, it will be downloaded first.
 
 ```sh
 $ deno info https://deno.land/x/abc@v1.2.4/mod.ts
