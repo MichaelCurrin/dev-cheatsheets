@@ -1,4 +1,7 @@
-# Package registries
+---
+title: Package registries
+description: Where to download NPM packages from
+---
 
 
 ## Overview
@@ -179,9 +182,8 @@ e.g. Install from `master` branch.
 
 ```sh
 $ npm install https://github.com/vuejs/vue-cli
+$ npm install https://github.com/vuejs/vue-cli#develop
 ```
-
-Or add reference like `@feat-branch` or `@v1.2.3` at the end.
 
 ### Download from private repo
 
