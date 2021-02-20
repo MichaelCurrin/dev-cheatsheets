@@ -1,13 +1,14 @@
 # Package registries
 
+
 ## NPM
 
 [registry.npmjs.org/](https://registry.npmjs.org/)
 
 Download from one of:
 
-- `https://npm.pkg.github.com/repo`
-- `https://npm.pkg.github.com/@company/repo`
+- `https://npm.pkg.github.com/PACKAGE`
+- `https://npm.pkg.github.com/@ORG/PACKAGE`
 
 e.g.
 
@@ -21,10 +22,10 @@ e.g.
 
 Download from one of:
 
-- `https://npm.pkg.github.com//repo`
-- `https://npm.pkg.github.com/@company/repo`
+- `https://npm.pkg.github.com/PACKAGE`
+- `https://npm.pkg.github.com/@ORG/PACKAGE`
 
 
 ### Resources
 
-[Introducing GitHub Package Registry ](https://github.blog/2019-05-10-introducing-github-package-registry/) on GitHub's blog.
+[Introducing GitHub Package Registry](https://github.blog/2019-05-10-introducing-github-package-registry/) on GitHub's blog.
