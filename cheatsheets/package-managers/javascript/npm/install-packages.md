@@ -104,3 +104,21 @@ $ npm install visionmedia/express#develop
 For more info, see the [Registries][] page.
 
 [Registries]: {{ site.basurl }}{% link cheatsheets/package-managers/javascript/npm/registries.md %}
+
+
+## View
+
+Get info on a package before installing it.
+
+```sh
+$ npm view @vue/cli
+```
+
+```
+@vue/cli@4.5.11 | MIT | deps: 35 | versions: 140
+Command line interface for rapid Vue.js development
+https://cli.vuejs.org/
+...
+dist-tags:
+latest: 4.5.11       next: 5.0.0-alpha.4
+```
