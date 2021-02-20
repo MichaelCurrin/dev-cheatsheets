@@ -7,10 +7,22 @@ description: Where to download Node packages from
 ## Overview
 
 
-Location | Command | Explore | Download URL
---- | --- | --- | ---
-NPM registry |  `npm install @vue/cli` |  `registry.npmjs.org/react` | `npm.pkg.github.com/@vue/cli`
-GitHub repo | `npm install https://github.com/vuejs/vue-cli` | `https://github.com/vuejs/vue-cli` | n/a
+<!-- This did not fit well in a single table because of horizontal space limitations -->
+
+Installing from NPM:
+
+Area | Example
+--- | ---
+Command | `npm install @vue/cli`
+Explore | `registry.npmjs.org/@vue-cli`
+Download | `https://registry.npmjs.org/@vue/cli/-/cli-4.5.11.tgz`
+
+Install from a GitHub repo:
+
+Area | Example
+--- | ---
+Command | `npm install https://github.com/vuejs/vue-cli` 
+Explore | `https://github.com/vuejs/vue-cli`
 
 
 ## To use a registry or not
@@ -30,7 +42,7 @@ There have also been incidents on both GitHub and NPM where package used bymany 
 
 ## NPM registry
 
-[registry.npmjs.org/](https://registry.npmjs.org/)
+[registry.npmjs.org](https://registry.npmjs.org/)
 
 Help from `npm install -h`:
 
@@ -45,8 +57,8 @@ npm install [<@scope>/]<pkg>@<version range>
 
 There are a limited set of unique package names on NPM.
 
-- `npm.pkg.github.com/PACKAGE`
-- e.g. [npm.pkg.github.com/react](https://npm.pkg.github.com/react)
+- `registry.npmjs.org/PACKAGE`
+- e.g. [registry.npmjs.org/react](https://npm.pkg.github.com/react)
 
 Use as:
 
@@ -60,7 +72,7 @@ $ npm install react
 
 Some packages are published under an organization / username, to show ownership and to make it easy to find all their packages.
 
-- `https://npm.pkg.github.com/@ORG/PACKAGE`
+- `registry.npmjs.org/@ORG/PACKAGE`
 - e.g. [registry.npmjs.org/@vue/cli](https://registry.npmjs.org/@vue/cli)
 - e.g. [registry.npmjs.org/@vue/cli-plugin-babel](https://registry.npmjs.org/@vue/cli-plugin-babel)
 - e.g. [registry.npmjs.org/@types/lodash](https://registry.npmjs.org/@types/lodash)
@@ -81,7 +93,7 @@ For example, `react` is taken, but you can publish a fork on NPM which people ca
 $ npm install @my-user/react
 ```
 
-#### Aliases
+### Aliases
 
 You can even set that up with an alias so you can import is as `react` in your app. It's probably better to be more explicit and verbose.
 
@@ -104,11 +116,44 @@ Changes in `package.json`:
 
 ```diff
 {
-  "dependencie": {
+  "dependencies": {
     -"vue-markdown": "^2.2.4"
     +"vue-markdown": "npm:@adapttive/vue-markdown@3.0.0-beta.2"
   }
 }
+```
+
+### Download URL
+
+This is what the download URL looks like for an NPM package.
+
+Install command:
+
+```sh
+$ npm install @vue/cli
+```
+
+URL for tarball (zip file) which gets downloaded:
+
+- `https://registry.npmjs.org/@vue/cli/-/cli-4.5.11.tgz`
+
+You can find this URL for a package with:
+
+```sh
+$ npm view @vue/cli
+```
+```
+@vue/cli@4.5.11 | MIT | deps: 35 | versions: 140
+Command line interface for rapid Vue.js development
+https://cli.vuejs.org/
+...
+dist
+.tarball: https://registry.npmjs.org/@vue/cli/-/cli-4.5.11.tgz
+...
+.unpackedSize: 158.9 kB
+...
+dist-tags:
+latest: 4.5.11       next: 5.0.0-alpha.4
 ```
 
 
@@ -204,3 +249,10 @@ This does something like this internally.
 ```sh
 $ git clone git@github.com:USERNAME/REPO_NAME.git
 ```
+
+
+### CDN
+
+On the browser side, you'll probably want to download a JS file or other asset from a CDN, rather than NPM.
+
+See my [CDNs](https://michaelcurrin.github.io/dev-resources/resources/javascript/cdns.html) guide.
