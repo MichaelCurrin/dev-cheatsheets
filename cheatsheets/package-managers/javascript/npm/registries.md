@@ -14,7 +14,7 @@ Installing from NPM:
 Area | Example
 --- | ---
 Command | `npm install @vue/cli`
-Explore | `registry.npmjs.org/@vue-cli`
+Explore | `https://registry.npmjs.org/@vue-cli`
 Download | `https://registry.npmjs.org/@vue/cli/-/cli-4.5.11.tgz`
 
 Install from a GitHub repo:
