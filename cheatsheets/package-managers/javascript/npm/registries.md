@@ -13,16 +13,22 @@ NPM registry |  `npm install @vue/cli` |  `registry.npmjs.org/react` | `npm.pkg.
 GitHub repo | `npm install https://github.com/vuejs/vue-cli` | `https://github.com/vuejs/vue-cli` | n/a
 
 
-## Registry or not
+## To use a registry or not
 
-A developer can publish to an NPM package registry like NPM or GitHub. These require authenicating and using a _publish_ step as part of your deploy workflow.
+A developer can publish to an NPM package registry like NPM or GitHub. These require authenticating and using a _publish_ step as part of your deploy workflow.
+
+A package on a registry is easier to search for and browse.
 
 If you don't want go through that hassle for your project and you care more about using your own project than others finding and installing it, there is another much lighter approach. See [GitHub repos as a registry](#github-repos-as-a-registry) section. 
 
 The GitHub repo approach makes using code on public repos easy. The downside is that when you install a package from GitHub, you machine will have to download content it might not need and it might have to compile, bundle and minify JS code. Compared to using a package which is already published on NPM as a ready-to-use optimized JS file.
 
+There is also more trust behind a package that is on NPM versus just a repo that only gives the option of installing using GitHub. And if a package is malicious on NPM, the NPM community can have it maintained, while a GitHub repo might be harder to remove. However, just because something is on NPM doesn't make it more secure - they have been security incidents over the years with malicious or insecure packages.
 
-## NPM
+There have also been incidents on both GitHub and NPM where package used bymany products is removed by the owner and is no longer available to download, causing products to break.
+
+
+## NPM registry
 
 [registry.npmjs.org/](https://registry.npmjs.org/)
 
