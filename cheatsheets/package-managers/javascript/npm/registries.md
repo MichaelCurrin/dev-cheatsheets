@@ -172,14 +172,16 @@ npm install <github username>/<github project>
 Given repo `https://github.com/USERNAME/REPO_NAME` which has a `package.json` at the root.
 
 ```sh
-$ npm install https://github.com/USERNAME/REPO_NAME
+$ npm install https://github.com/USERNAME/REPO_NAME@COMMIT_REF
 ```
 
-e.g. Installing from `master` branch. You can probably use branches and tags too but I haven't tried.
+e.g. Install from `master` branch.
 
 ```sh
 $ npm install https://github.com/vuejs/vue-cli
 ```
+
+Or add reference like `@feat-branch` or `@v1.2.3` at the end.
 
 ### Download from private repo
 
