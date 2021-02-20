@@ -11,13 +11,17 @@ How to do something in a Node/NPM project and the equivalent in a Deno project.
 | Area                                    | Node and NPM                                                                                             | Deno                                                                                                                                          |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | Package management file                 | `package.json` with `dependencies` section                                                           | Use imports by URL inline, or use `deps.ts` (commonly used) or `import_map.json` (unstable)                                                   |
+| Package lock file                       | `package-lock.json` | `lock.json` and `deno cache --lock=lock.json --lock-write src/deps.ts` - see [Integrity checking & lock files][] in the docs. |
 | Install a package `npm install PACKAGE` | Add a package's URL to imports of a module and then run `deno run index.ts` or `deno cache index.ts` |
 | Install packages                        | `npm install`                                                                                        | `deno run index.ts` (missing packages will be installed) or `deno cache index.ts`                                                             |
 | Upgrade packages                        | `npm update`                                                                                         | `deno cache --reload index.ts` or change locked version numbers and install                                                                   |
-| Registry                                | [npmjs.com](https://www.npmjs.com)                                                                   | Standard lib: [deno.land/std](https://deno.land/std), 3rd party: [deno.land/x](https://deno.land/x) or CDNs - see more in [Modules][] section |
+| Registry                                | [npmjs.com](https://www.npmjs.com)                                                                  | Standard lib: [deno.land/std](https://deno.land/std), 3rd party: [deno.land/x](https://deno.land/x) or CDNs - see more in [Modules][] section |
+| Browser a package in the registry       | Example: [npmjs.com/package/vue][] | Example: [deno.land/x/oak][] or `https://deno.land/x/oak@v6.5.0`
 
 [Modules]: {{ site.baseurl }}{% link cheatsheets/javascript/deno/modules/index.md %}
-
+[Integrity checking & lock files]: https://deno.land/manual/linking_to_external_code/integrity_checking
+[npmjs.com/package/vue]: https://www.npmjs.com/package/vue
+[deno.land/x/oak]: https://deno.land/x/oak
 
 ## Project maintenance
 
