@@ -6,12 +6,16 @@ description: Generate a single JS file from your TS modules
 This includes imported modules - both your scripts and external packages.
 
 
-## Usage
+## CLI usage
 
-```
-deno bundle [OPTIONS] SOURCE_FILE [OUT_FILE]
-```
+See my [deno bundle][] page.
 
+[deno bundle]: {{ site.baseurl }}{% link cheatsheets/javascript/deno/cli/commands/bundle.md %}
+
+
+## How to run the bundled file
+
+See more details in the [bundle](https://deno.land/manual/tools/bundler) manual.
 
 ## Where you bundle can run
 
@@ -23,52 +27,6 @@ Warning:
 
 If you use a Deno package in the code that gets bundled, you'll have a `Deno` object in the input. Then you cannot run the JS script outside of Deno (like with Node or in the browser). However, if you are careful to bundle only code from CDNs that rely on NPM and not Deno, then your bundled JS code can be run outside of Deno.
 
-
-## Preview bundle
-
-This does not persist anything - it just prints.
-
-```sh
-$ deno bundle index.ts
-```
-
-
-## Write bundle
-
-```sh
-$ deno bundle index.ts build/bundle.js
-```
-
-Or if you refer:
-
-```sh
-$ deno bundle src/index.ts dist/myApp.bundle.ts
-```
-
-
-## Write and watch bundle
-
-Watch for changes continuously using the `--watch` flag.
-
-```sh
-$ deno bundle --unstable --watch index.ts dist/bundle.js
-```
-
-This is **unstable**. See [issue](https://github.com/denoland/deno/issues/2401#issuecomment-744563503).
-
-
-## Bundle a URL
-
-The manual says you pass a URL too, if you want to do that for some reason.
-
-```sh
-$ deno bundle https://deno.land/std@0.85.0/examples/colors.ts colors.bundle.js
-```
-
-
-## How to run the bundled file
-
-See more details in the [bundle](https://deno.land/manual/tools/bundler) manual.
 
 ### Run with Deno
 
