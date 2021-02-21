@@ -9,14 +9,19 @@ The modern, easy-to-test way.
 
 ```jsx
 function Welcome(props) {
+  return <h1>Hello, { props.name }</h1>;
+}
+```
+
+Or with destructuring:
+
+```jsx
+function Welcome(props) {
   const { name } = props;
   
   return <h1>Hello, { name }</h1>;
 }
 ```
-
-Or use directly as `props.name`.
-
 
 ### Class component
 
