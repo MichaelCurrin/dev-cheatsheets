@@ -87,7 +87,11 @@ Note that if you use anything Deno-specific, it won't be recognized.
 e.g. `Deno.args`, which is intended for the CLI anyway.
 
 
-## Minification
+## Optmization production builds
+
+### Minification
+
+In production, you'd probably want to use a minification tool to minify your JS bundle. Deno and Node do not have anything built-in to support this but you can find package to do this.
 
 Deno does not currently support JS minification yet - see [issue #6900](https://github.com/denoland/deno/issues/6900).
 
@@ -101,7 +105,7 @@ $ deno bundle https://deno.land/std@0.79.0/http/file_server.ts \
 $ deno run --allow-net --allow-read file_server.min.js
 ```
 
-Or my variation, using existing bundled file. 
+Or run against an bundled file.
 
 ```sh
 $ cat build/bundle.js \
@@ -109,4 +113,14 @@ $ cat build/bundle.js \
   > build/bundle.min.js
 ```
 
+The minfied version was 1/3 of the 1MB file.
+
 That uses `npx`, assuming Node is installed, but without having to install ESBuild first.
+
+### Unique names
+
+You probably also want to use unique names for each production build. This ensures that a user gets the latest JS app, instead of the browser caching and reusing an old `bundle.js` file.
+
+Such as creating as using a Git tag, like `bundle-1.2.3.js`
+
+Or using a computed hash, like `bundle-abcdef12.js`.
