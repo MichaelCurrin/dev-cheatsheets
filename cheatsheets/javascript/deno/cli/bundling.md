@@ -1,5 +1,5 @@
 ---
-title: Bundle
+title: Bundling
 description: Generate a single JS file from your TS modules
 ---
 
@@ -18,7 +18,6 @@ deno bundle [OPTIONS] SOURCE_FILE [OUT_FILE]
 - [x] Deno - `deno run build/bundle.js`
 - [x] Browser - load as an ES Module.
 - [x] Node - `node run build/bundle.js` this could work if you really wanted to.
-
 
 Warning:
 
@@ -139,6 +138,15 @@ You can of course run a separate [Minifier](https://michaelcurrin.github.io/dev-
 Suggestion from issue comments:
 
 ```sh
-$ deno bundle https://deno.land/std@0.79.0/http/file_server.ts | esbuild --minify > file_server.min.js
+$ deno bundle https://deno.land/std@0.79.0/http/file_server.ts \
+  | esbuild --minify > file_server.min.js
 $ deno run --allow-net --allow-read file_server.min.js
 ```
+
+Or my variation, using existing bundled file. 
+
+```sh
+$ cat build/bundle.js |  npx esbuild --minify
+```
+
+That uses `npx`, assuming Node is installed, but without having to install ESBuild first.
