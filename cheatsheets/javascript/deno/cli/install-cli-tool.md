@@ -1,6 +1,6 @@
 ---
-title: Install CLI package
-description: Install a Deno package globally
+title: Install CLI tool
+description: Install a Deno package globally for use in teh CLI
 ---
 
 
@@ -8,12 +8,14 @@ Example from [minifier](https://deno.land/x/minifier).
 
 ```sh
 $ deno install --allow-read --allow-write --allow-hrtime \
-  -n minifier https://deno.land/x/minifier/cli.ts
+  https://deno.land/x/minifier/cli.ts
 ```
 
-Note permissions are set at install time here.
+Use `-f` to force install.
 
-But you can also set them at the time of using the tool.
+Use custom name with `-n my-name`.
+
+Flags are set at install time so you don't have to set them at usage time.
 
 Note from that package:
 
