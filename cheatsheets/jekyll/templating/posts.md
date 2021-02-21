@@ -37,6 +37,8 @@ Do not use quotes. You can use a space in the multi-line array but then your out
 
 ### Use a directory
 
+Here using a directory that contains `_posts`. As well as a frontmatter. These both become categories.
+
 - `foo/_posts/2021-01-02-abc.md`
     ```liquid
     categories: bar
