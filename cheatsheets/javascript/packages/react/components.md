@@ -69,4 +69,4 @@ Tutorials:
 
 - [W3 Schools - React components](https://www.w3schools.com/react/react_components.asp)
 - [Class Component Overview in React](https://www.digitalocean.com/community/tutorials/react-class-components)
-- [ReactJS | Class Based Components](https://www.geeksforgeeks.org/reactjs-class-based-components/)
+- [ReactJS \| Class Based Components](https://www.geeksforgeeks.org/reactjs-class-based-components/)
