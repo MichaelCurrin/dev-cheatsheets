@@ -104,7 +104,9 @@ $ deno run --allow-net --allow-read file_server.min.js
 Or my variation, using existing bundled file. 
 
 ```sh
-$ cat build/bundle.js |  npx esbuild --minify
+$ cat build/bundle.js \
+  | npx esbuild --minify \
+  > build/bundle.min.js
 ```
 
 That uses `npx`, assuming Node is installed, but without having to install ESBuild first.
