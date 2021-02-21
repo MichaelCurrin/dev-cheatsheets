@@ -13,10 +13,16 @@ deno bundle [OPTIONS] SOURCE_FILE [OUT_FILE]
 ```
 
 
-## Limitations
+## Where you bundle can run
 
-- Deno does not currently support JS minification yet - see [issue #6900](https://github.com/denoland/deno/issues/6900).
-- If you use a Deno package in the code that gets bundled, you'll have a `Deno` object in the input. Then you cannot run the JS script outside of Deno (like with Node or in the browser). However, if you are careful to bundle only code from CDNs that rely on NPM and not Deno, then your bundled JS code can be run outside of Deno.
+- [x] Deno - `deno run build/bundle.js`
+- [x] Browser - load as an ES Module.
+- [x] Node - `node run build/bundle.js` this could work if you really wanted to.
+
+
+Warning:
+
+If you use a Deno package in the code that gets bundled, you'll have a `Deno` object in the input. Then you cannot run the JS script outside of Deno (like with Node or in the browser). However, if you are careful to bundle only code from CDNs that rely on NPM and not Deno, then your bundled JS code can be run outside of Deno.
 
 
 ## Preview bundle
@@ -119,8 +125,20 @@ Or use in an inline script.
 ```
 
 
-
-
 Note that if you use anything Deno-specific, it won't be recognized.
 
 e.g. `Deno.args`, which is intended for the CLI anyway.
+
+
+## Minification
+
+Deno does not currently support JS minification yet - see [issue #6900](https://github.com/denoland/deno/issues/6900).
+
+You can of course run a separate [Minifier](https://michaelcurrin.github.io/dev-resources/resources/javascript/minifiers.html) tool over the Deno output.
+
+Suggestion from issue comments:
+
+```sh
+$ deno bundle https://deno.land/std@0.79.0/http/file_server.ts | esbuild --minify > file_server.min.js
+$ deno run --allow-net --allow-read file_server.min.js
+```
