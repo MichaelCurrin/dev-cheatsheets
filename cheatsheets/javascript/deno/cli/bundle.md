@@ -15,8 +15,8 @@ deno bundle [OPTIONS] SOURCE_FILE [OUT_FILE]
 
 ## Limitations
 
-- Deno does not currently support JS minification yet.
-- You cannot run the JS script with Node.
+- Deno does not currently support JS minification yet - see [issue #6900](https://github.com/denoland/deno/issues/6900).
+- If you use a Deno package in the code that gets bundled, you'll have a `Deno` object in the input. Then you cannot run the JS script outside of Deno (like with Node or in the browser). However, if you are careful to bundle only code from CDNs that rely on NPM and not Deno, then your bundled JS code can be run outside of Deno.
 
 
 ## Preview bundle
