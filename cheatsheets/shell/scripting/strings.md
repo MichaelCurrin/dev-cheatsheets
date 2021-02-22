@@ -71,9 +71,9 @@ Works with `cat` but not `echo`.
 
 You can use anything at the start and end but `EOF` for "end of file" is the convention.
 
-If you need to use double quotes in your heredoc and also evaluate.
+A heredoc allows a multi-line string with evaluation. Without escaping double quotes like `"\"user\": \"$(whoami)\""`.
 
-With a variable:
+With a variable (instead of `cat`).
 
 ```sh
 MY_VAR=$(cat << EOF
