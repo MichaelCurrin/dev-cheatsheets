@@ -399,7 +399,7 @@ jobs:
 
 > To trigger more than one workflow in a repository and create custom events and event types, use the `repository_dispatch` event.
 
-```
+```yaml
 on:
   repository_dispatch:
     types: [opened, deleted]
