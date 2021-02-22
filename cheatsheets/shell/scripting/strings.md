@@ -42,25 +42,6 @@ Bash supports a _heredoc.
 
 This term appears in other languages like PHP and is a more powerful way of writing a multi-line string. 
 
-Equivalents:
-
-- `index.js`
-    ```javascript
-    var x = `\
-    Line 1
-    Line 2
-    ${foo}
-    `
-    ```
-- `app.py`
-    ```python
-    x = f"""\
-    Line 1
-    Line 2
-    {foo}
-    """
-    ```
-
 In the shell, for most cases I find using single or double quotes for a multi-line string works great. But the heredoc does have the advantage that you can use single and double quotes inside the string without escaping them, as your string terminator will be `EOF` for example. See below.
 
 Note you can use anything but `EOF` is the common term to start and end the shell heredoc.
@@ -156,3 +137,23 @@ Hello
 world
 EOF
 ```
+
+
+### Other languages
+
+- `index.js` for JavaScript.
+    ```javascript
+    var x = `\
+    Line 1
+    Line 2
+    ${foo}
+    `
+    ```
+- `app.py` for Python.
+    ```python
+    x = f"""\
+    Line 1
+    Line 2
+    {foo}
+    """
+    ```
