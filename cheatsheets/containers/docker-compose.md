@@ -83,6 +83,16 @@ Or in one command:
 $ docker-compose up --build
 ```
 
+### Scale
+
+Setup multiple instances of a container locally.
+
+Use the `--scale` flag.
+
+```sh
+$ docker-compose up --build --remove-orphans --scale my-app=3
+```
+
 
 ## Start
 
