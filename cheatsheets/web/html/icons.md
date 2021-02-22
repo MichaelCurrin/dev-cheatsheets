@@ -2,6 +2,9 @@
 
 This guide covers inserting HTML icons in webpages, focussing on _FontAwesome_.
 
+See also [Icons](https://michaelcurrin.github.io/dev-resources/resources/web/html/icons.html) on my Dev Resources.
+
+
 ## Example
 
 ```html
