@@ -43,7 +43,7 @@ interface Bar {
 }
 ```
 
-Make it readonly.
+Make it read-only.
 
 ```typescript
 interface Bar {
