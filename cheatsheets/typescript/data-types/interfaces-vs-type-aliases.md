@@ -59,7 +59,7 @@ Combine two interfaces. You can't reverse this as an interface made of two types
 
 ```typescript
 interface Name {
-  name: “string”
+  name: "string"
 };
 
 interface Age {
