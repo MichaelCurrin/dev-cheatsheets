@@ -3,29 +3,30 @@
 
 ## Basic
 
-Single or multi-line - nothing special needed like in other languages.
+Use **single** quotes for literal string - not evaluated. Nothing special needed like in other languages to include multiple lines.
 
 ```sh
 X='Hello,
 world'
 
-echo $X
+echo "$X"
 ```
+
 Output:
 ```
 Hello,
 world
 ```
 
-
-Double quotes to evaluate.
+Use **double quotes** to evaluate expressions.
 
 ```sh
 X="Hello,
 $(whoami)"
 
-echo $X
+echo "$X"
 ```
+
 Output:
 ```
 Hello,
@@ -119,10 +120,10 @@ Here we indent the text with **tab** (not spaces) and also use `<<-`.
 
 ```sh
 if true; then
-		cat <<- EOF
-		Line 1
-		Line 2
-		EOF
+  cat <<- EOF
+  Line 1
+  Line 2
+  EOF
 fi
 ```
 Output:
