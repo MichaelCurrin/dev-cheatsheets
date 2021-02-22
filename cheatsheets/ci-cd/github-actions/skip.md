@@ -5,6 +5,7 @@ description: How to skip some or all of the build steps
 
 {% raw %}
 
+
 ## Ignore paths
 
 Don't run the workflow if changes were only made to certain paths, such as the `docs` directory.
@@ -53,8 +54,30 @@ on:
       - "!sub-project/docs/**"
 ```
 
+## Skip a job
+
+Place an `if` condition on the job to determine if it runs.
+
+```yaml
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-deploy:
+    if: ${{ github.event_name != 'pull_request' }}
+    
+    steps:
+      - name: Build
+      - name: Deploy
+```
+
 
 ## Skip a step
+
+Add a check for a given step. If the condition returns false, then the current step _and_ subsequent steps will be skipped.
+
+The steps before will always run. 
 
 ### Event type
 
@@ -77,6 +100,12 @@ jobs:
 Note we don't have to specify a branch name. 
 
 You might like using `!= 'pull_request'` as it is flexible - it will include a scheduled cron event. Or you might make this narrower as `== 'push'`.
+
+Or with a boolean - no quotes.
+
+```
+if: github.event.pull_request.merged == true
+```
 
 ### Commit message
 
