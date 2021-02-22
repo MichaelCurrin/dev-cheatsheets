@@ -71,14 +71,46 @@ Works with `cat` but not `echo`.
 
 You can use anything at the start and end but `EOF` for "end of file" is the convention.
 
+If you need to use double quotes in your heredoc and also evaluate.
+
+With a variable:
+
+```sh
+MY_VAR=$(cat << EOF
+{
+    "user": "$(whoami)"
+}
+EOF)
+
+echo "$MY_VAR"
+echo $MY_VAR
+```
+
+Result:
+
+```
+{
+    "user": "mcurrin"
+}
+{ "user": "mcurrin" }
+```
+
+Note double quotes on `echo` to keep newlines.
+
+
 ### Literal
 
-Prevent evaluation by using quotes. `cat << "EOF"`
+Prevent evaluation by using quotes - single or double. 
+
+```sh
+cat << "EOF"
+EOF
+```
 
 Example:
 
 ```sh
-cat <<- "EOF"
+cat << "EOF"
 Line 1
 Line 2
 You are $(whoami)
@@ -91,20 +123,42 @@ Line 2
 You are $(whoami)
 ```
 
+With a variable:
+
+```sh
+MY_VAR=$(cat << 'EOF'
+{
+    "user": "$(whoami)"
+}
+EOF)
+
+echo "$MY_VAR"
+echo $MY_VAR
+```
+
+Result:
+
+```
+{
+    "user": "$(whoami)"
+}
+{ "user": "$(whoami)" }
+```
+
 ### Indent
 
 From [guide](https://www.oreilly.com/library/view/bash-cookbook/0596526784/ch03s04.html)
 
 The heredoc becomes more useful than a plain string when you use remove common indentation.
 
-Here we indent the text with **tab** (not spaces) and also use `<<-`.
+Here we indent the text with **tab** (not spaces) and then use `<<-` to remove tabs (does not remove spaces.
 
 ```sh
 if true; then
-  cat <<- EOF
-  Line 1
-  Line 2
-  EOF
+	cat <<- EOF
+	Line 1
+	Line 2
+	EOF
 fi
 ```
 Output:
@@ -114,6 +168,20 @@ Line 2
 ```
 
 Note that `EOF` must not be indented.
+
+Or with a variable.
+
+```sh
+VAR=$(cat <<- EOF
+	{
+		"user": "$(whoami)",
+	}
+EOF
+)
+
+echo "$VAR"
+```
+
 
 ### Piping
 
