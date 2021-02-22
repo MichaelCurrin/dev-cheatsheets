@@ -1,7 +1,9 @@
 # Date and time
 
+See [How To Format Date And Time In Linux, MacOS, And Bash?](https://www.shell-tips.com/linux/how-to-format-date-and-time-in-linux-macos-and-bash/).
 
-## Full
+
+## Full time
 
 Get a standardized ISO date.
 
@@ -39,11 +41,48 @@ Mon 22 Feb 2021 17:58:01 SAST
     ```
     2021
     ```
+- Time only.
+    ```sh
+    $ date '+%H:%M:%S'
+    ```
+    ```
+    18:34:49
+    ```
+    
+
+## Unix timestamp
+
+Use a built-in variable for current time in seconds.
+
+```sh
+$ echo $EPOCHSECONDS
+```
+```
+1614012035
+```
+
+Same as above but as a float.
+
+```sh
+echo $EPOCHREALTIME
+```
+```
+1614012035.3449261189
+```
+
+Or use the `date` command.
+
+```sh
+$ date '+%s'
+```
+```
+1614012035
+```
 
 
-## Convert unix timestamp
+## Convert unix timestamp to date and time
 
-Give seconds as a number.
+Given seconds as a number.
 
 ```sh
 $ date -r 0
