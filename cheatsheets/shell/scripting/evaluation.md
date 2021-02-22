@@ -1,9 +1,8 @@
 # Evalation
 
-Here we evaluate a command.
+Here we evaluate a command using two approaches. This executes a subshell which does not have access to the outer env variables and runs in another process.
 
 The result can be _executed_ directly.
-
 
 ```sh
 $(which ruby)
