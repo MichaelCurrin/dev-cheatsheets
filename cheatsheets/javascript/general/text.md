@@ -16,7 +16,9 @@
 ```
 
 
-## Replace character
+## Replace character in text
+
+### Replace all occurences
 
 ```javascript
 > 'AAA'.replace(/A/g, 'C')
@@ -39,18 +41,18 @@ You might use `RegExp` to escape characters for you.
 /\/A/
 ```
 
-### Warning
+### Replace first occurence only
 
-These will only replace the **first** occurence.
+Replace the **first** occurence, not a global replace.
 
-Using `.replace` without regex (like you would do in Python):
+Pass first param as a string, not regex.
 
 ```javascript
 > 'AAA'.replace('A', 'C')
 'CAA'
 ```
 
-Using regex without `g`:
+Or pass regex, but without `g`:
 
 ```javascript
 > 'AAA'.replace(/A/, 'C')
