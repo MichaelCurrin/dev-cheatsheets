@@ -100,6 +100,10 @@ pick f6f2295 First message
 # Rebase 69e697c..f6f2295 onto 69e697c (3 commands)
 ```
 
+You'll see a key of options available.
+
+The word `pick` means you want to keep the commit in your commit history (i.e. don't drop it), but that you don't want to edit it.
+
 ### Edit commit messages
 
 Using the interacive mode above.
