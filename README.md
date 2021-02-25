@@ -52,7 +52,7 @@ To setup and run this project (or a fork), see the project docs:
 
 <div align="center">
 
-[![Docs](https://img.shields.io/badge/View-Docs-blue?style=for-the-badge)](/docs/)
+[![Docs](https://img.shields.io/badge/View-Project_docs-blue?style=for-the-badge)](/docs/)
 
 </div>
 
@@ -72,4 +72,10 @@ Contributions are welcome. See instructions:
 
 Released under [MIT](/LICENSE) by [@MichaelCurrin](https://github.com/MichaelCurrin/dev-cheatsheets).
 
-You must include a copy of this original license if you fork this repo or use a significant portion of it.
+The content is all written and owned by me, except where external links are provided to the original code author or website.
+
+If use a significant portion of it, you must include a copy of this license in your repo and please link back to the original repo.
+
+Forks must include a copy of the license.
+
+If you adapt this repo not intended to contributing back from your fork, then you need to add a copy of the orignal license as `LICENSE-source` and then you only need your own name only in `LICENSE`.
