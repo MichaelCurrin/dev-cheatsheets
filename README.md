@@ -72,10 +72,10 @@ Contributions are welcome. See instructions:
 
 Released under [MIT](/LICENSE) by [@MichaelCurrin](https://github.com/MichaelCurrin/dev-cheatsheets).
 
-The content is all written and owned by me, except where external links are provided to the original code author or website.
+This site has content written and owned by me. Except where external links are provided to the original code author or website. Or if someone contributes a PR with their own content.
 
-If use a significant portion of it, you must include a copy of this license in your repo and please link back to the original repo.
+If use a significant portion of it in your own repo, you must include a copy of this license in your repo. Please link back to the original repo in your own repo, or blog post, etc. that mentions this.
 
-Forks must include a copy of the license.
+Forks will by default include a copy of the license.
 
 If you adapt this repo not intended to contributing back from your fork, then you need to add a copy of the orignal license as `LICENSE-source` and then you only need your own name only in `LICENSE`.
