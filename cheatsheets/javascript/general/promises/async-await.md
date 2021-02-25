@@ -72,6 +72,10 @@ From [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_
 > This symmetry with asynchronous code culminates in the async/await syntactic sugar in ECMAScript 2017:
 
 ```javascript
+function failureCallback(error) {
+  console.error("Error generating audio file: " + error);
+}
+
 async function foo() {
   try {
     const result = await doSomething();
