@@ -1,8 +1,14 @@
-# Read and write
+---
+title: Read and write
+description: Guide to reading and writing files in Python - including text, JSON and CSVs
+---
+
 
 ## Text
 
 ### Read text file
+
+Such as a `.txt` file, though this will work on any file that is text (i.e. not a zip or image or binary executable).
 
 The result is a single `str` object.
 
