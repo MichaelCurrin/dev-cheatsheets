@@ -27,7 +27,7 @@ Screenshots of the website:
 
 <div align="center">
 
-[![View - michaelcurrin.github.io/dev-cheatsheets/](https://img.shields.io/static/v1?label=View&message=michaelcurrin.github.io%2Fdev-cheatsheets%2F&color=2ea44f&style=for-the-badge)](michaelcurrin.github.io/dev-cheatsheets/)
+[![View - michaelcurrin.github.io/dev-cheatsheets/](https://img.shields.io/static/v1?label=View+site&message=Dev+Cheatsheets&color=2ea44f&style=for-the-badge)](michaelcurrin.github.io/dev-cheatsheets/)
 
 </div>
 
@@ -59,7 +59,7 @@ To setup and run this project (or a fork), see the project docs:
 
 ## Contributing
 
-Contributions are welcome. See instructions.
+Contributions are welcome. See instructions:
 
 <div align="center">
 
@@ -70,6 +70,6 @@ Contributions are welcome. See instructions.
 
 ## License
 
-Released under [MIT](/LICENSE).
+Released under [MIT](/LICENSE) by [@MichaelCurrin](https://github.com/MichaelCurrin/dev-cheatsheets).
 
 You must include a copy of this original license if you fork this repo or use a significant portion of it.
