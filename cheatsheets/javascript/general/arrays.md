@@ -146,6 +146,8 @@ Join elements using a separator e.g. `', '`. This will return a single string.
 
 ## Map, reduce, filter
 
+### Overview
+
 Return a new object after applying transformation. The old object is no affected, unless you reassign over the same name.
 
 Examples:
@@ -163,9 +165,45 @@ myArray.filter((x) => x > 2)
 ```
 
 
-## Convert to array
+## Iterate
 
-Use the `...` spread operator to make a copy of an array or if you need to convert a document selection to an array.
+### Use map to get values
+
+```javascript
+const myArray = ['a', 'b', 'c']
+
+myArray.map(value=> value.toUpperCase())
+// [ 'A', 'B', 'C' ]
+```
+
+### Get value and index
+
+```javascript
+const myArray = ['a', 'b', 'c']
+
+myArray.map((value, index) => [index, value.toUpperCase() ])
+// [ 
+//   [ 0, 'A' ], 
+//   [ 1, 'B' ],
+//   [ 2, 'C' ]
+// ]
+```
+
+```javascript
+const myArray = ['a', 'b', 'c']
+
+for (const [index, value] of Object.entries(myArray)) {
+  console.log(index, value.toUpperCase())
+}
+// 0 A
+// 1 B
+// 2 C
+```
+
+
+## Convert iterable to an array
+
+Use the `...` spread operator to make a copy of an array. Or if you need to convert a document selection to an array, so you can use array methods on it like `.map`.
 
 ```javascript
 const divs = document.getElementsByTagName('div')
