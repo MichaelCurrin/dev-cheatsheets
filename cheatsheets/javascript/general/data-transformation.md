@@ -13,7 +13,7 @@ var y = [1, 2, 3, ...x];
 // [1, 2, 3, 4, 5, 6]
 ```
 
-### Merge two associtiave arrays
+### Merge two associative arrays
 
 Use the **spread operator**.
 
@@ -43,6 +43,29 @@ var b = { a };
 var c = 1000;
 { c }
 // { c: 1000 }
+```
+
+
+## Unpack an array
+
+```javascript
+var myArray = [
+  "a",
+  "b",
+  "c",
+]
+
+for (const [ index, value ] of Object.entries(myArray)) {
+  console.log(index, value)
+}
+// 0 a
+// 1 b
+// 2 c
+
+// OR using forEach. Note index and value switch places.
+myArray.forEach((value, index) => {
+  console.log(index, value)
+})
 ```
 
 
