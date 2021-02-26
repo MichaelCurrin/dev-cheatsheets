@@ -6,37 +6,105 @@ description: Guide to reading and writing files in Python - including text, JSON
 
 ## Text files
 
-### Read text file
-
 Such as a `.txt` file, though this will work on any file that is text (i.e. not a zip or image or binary executable).
 
-The result is a single `str` object.
+### Read text file
+
+#### Turn entire file as a string
+
+Get a file as a single string variable, with line breaks in it.
 
 ```python
 with open(path) as f_in:
     text = f_in.read()
 ```
 
-Get a `list` of `str` objects.
+The value will be like:
+
+```python
+>>> text
+"Line 1\And line 2\nLine 3\n"
+```
+
+#### Split lines
+
+You'll probably find it more useful to **split*** that string into a **list of strings**. Here we use `str.splitlines` method.
 
 ```python
 with open(path) as f_in:
     text = f_in.read()
     lines = text.splitlines()
-    
-print(len(lines))
 ```
 
-Note `list.splitlines` will remove newlines by default and something similar could be achived with `list.split("\n")`
+Then the value will be like:
+
+```python
+>>> lines
+[
+    "Line 1",
+    "And line 2",
+    "Line 3",
+]
+```
+
+Get the line count with `len`:
+
+```
+>>> len(lines)
+3
+>>> print(f"Line count: {len(lines)}")
+Line count: 3
+```
+
+Note that calling `list.splitlines` will split by the **newline** characters and will also **remove** them by default. This is useful as you probably don't want to have `"\n"` at the end of each item in the list. 
+
+Alternative:
+
+```python
+lines.split("\n")
+```
+
+Note explict use of `"\n"` as `lines.split()` with no arguments will split on other whitespaces like spaces.
+
+#### Read one line at at ime
+
+Read line by line, as you need a line. This is usually more memory efficient than reading the entire file into memory. And is more practical if you might only need the first few lines and then will close the file.
+
+```python
+def process_line(line):
+    print(line)
+
+
+with open(path) as f_in:
+    for line in f_in:
+        process_line(line)
+```
+
+#### How to use seek
+
+After you've the whole file, then Python will have moved open. If you try and read the file again it will appear empty.
+
+So you'll have to close the file and open it again.
+
+Or, you can use the seek method.
 
 Use `f.seek(0)` to reset if you need to read the entire file multiple times.
 
-Read line by line as you need a line. This is usually more memory efficient than reading the entire file into memory.
+Example, in the interactive console:
 
 ```python
-with open(path) as f_in:
-    for line in f_in:
-        print(line)
+>>> f_in = open('file.txt')
+
+>>> f_in.read()   # It has content.
+'First line\nSecond line\n'
+
+>>> f_in.read()   # Appears empty
+''
+
+>>> f_in.seek(0)  # Reset.
+
+>>> f_in.read()   # It has content again
+'First line\nSecond line\n'
 ```
 
 ### Write text file
