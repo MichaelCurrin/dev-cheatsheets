@@ -1,6 +1,15 @@
 # Manage packages
 
 
+## View
+
+```sh
+$ yarn list
+```
+
+Note `ls` will not work like for `npm`.
+
+
 ## Install package
 
 ### Project-scoped
@@ -8,7 +17,7 @@
 Install package by name. Use `-D` for `--save-dev`.
 
 ```sh
-$ yarn add markdown-it
+$ yarn add react
 
 $ yarn add -D tslint typescript
 ```
@@ -30,9 +39,9 @@ $ yarn add tslint -g
 ```
 
 
-## Install all
+## Install all packages
 
-Install all packages in `package.json`.
+Install packages listed in `package.json`.
 
 ```sh
 $ yarn install
@@ -40,6 +49,8 @@ $ yarn install
 
 
 ## Outdated
+
+Check for outdated packages.
 
 ```sh
 $ yarn outdated
@@ -52,4 +63,10 @@ Upgrade all packages. Note you cannot use `yarn update`.
 
 ```sh
 $ yarn upgrade
+```
+
+Upgrade just one package.
+
+```sh
+$ yarn add react
 ```
