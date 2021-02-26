@@ -46,9 +46,9 @@ var c = 1000;
 ```
 
 
-## Unpack associative array
+## Unpack an associative array
 
-Get key-value pairs.
+### Get key-value pairs with a for loop
 
 The order is not guaranteed.
 
@@ -72,8 +72,73 @@ Object.entries(obj).sort((a, b) => b[0].localeCompare(a[0]));.
 
 [source](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries)
 
+### Merge associative arrays
 
-## Invert associative array
+Here we unpack each of the values in `x` into a new associative array `y`, keeping them as before but merging with other values such as `c: 3`.
+
+```javascript
+const x = {
+    a: 1, 
+    b: 2
+}
+
+const y = {
+    ...x,
+    c: 3
+}
+
+y
+// { a: 1, b: 2, c: 3 }
+```
+
+Note use of `...` spread operator above. If you omit that, then `x` becomes the key in the new object, with keys `a` and `b` intact within that.
+
+```javascript
+const z = {
+    x,
+    c: 3
+}
+
+// { x: { a: 1, b: 2 }, c: 3 } 
+```
+
+If you want to merge two objects:
+
+```javascript
+const x = {
+    a: 1, 
+    b: 2
+}
+const y = {
+    b: 100,
+    c: 3, 
+    d: 4
+}
+
+const z = {
+  ...x,
+  ...y,
+}
+z
+// { a: 1, b: 100, c: 3, d: 4 } 
+```
+
+Note evaluation is top to bottom. Regardless of if using a value or an object, the second one takes preference.
+
+Here we have `x` second, so the value of `b` is used.
+
+```javascript
+const z = {
+  ...y,
+  ...x,
+}
+
+z
+// { b: 2, c: 3, d: 4, a: 1 } 
+```
+
+
+## Invert an associative array
 
 ```javascript
 var pairs = {
