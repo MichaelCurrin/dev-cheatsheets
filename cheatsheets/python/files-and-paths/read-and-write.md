@@ -4,7 +4,7 @@ description: Guide to reading and writing files in Python - including text, JSON
 ---
 
 
-## Text
+## Text files
 
 ### Read text file
 
