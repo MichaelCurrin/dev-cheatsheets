@@ -70,3 +70,9 @@ Upgrade just one package.
 ```sh
 $ yarn add react
 ```
+
+Or, for the absolute latest, which may conflict with your other packages.
+
+```sh
+$ yarn add react@latest
+```
