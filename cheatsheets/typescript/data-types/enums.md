@@ -4,7 +4,17 @@ See the [Enum](https://www.typescriptlang.org/docs/handbook/enums.html) section 
 
 There are 3 types of enum - numeric, string and heterogenous.
 
-## Alternative
+Note - I couldn't get an `enum` to export from a `.d.ts` file, but it works fine in `.ts` file.
+
+
+## Naming convention
+
+Use uppercase letters for your enums - they are global constants which have usable values. They are more than just types, which use usually like `Foo` or `TFoo`.
+
+The keys on an enum tend to be titlecase.
+
+
+## Using an object an alternative to enums
 
 If you run into limitations using an enum (especially the string one), you can fallback to using a dictionary instead. You don't get the enum features, but you can get the safety and intellisense of looking up fixed values on an object.
 
@@ -12,15 +22,15 @@ e.g.
 
 ```typescript
 const COLOR = {
-  RED: "red",
-  BLUE: "blue",
-  GREEN: "green",
+  Red: "red",
+  Blue: "blue",
+  Green: "green",
 }
 
 COLOR.Red
 ```
 
-Just remember you can't use an value internally here, like `BLUE: this.RED` (Error that Object might be undefined) or `BLUE: COLOR.RED` (used before declaration).
+Just remember thhat you can't use a value internally here, like `BLUE: this.RED` (Error that the Object might be undefined) or `BLUE: COLOR.RED` (used before declaration).
 
 
 ## Numeric enum
