@@ -8,7 +8,8 @@ In VS Code, under "Refactor..." you can select "Convert parameters to destructur
 Original:
 
 ```typescript
-function foo(repo, pkgName, logo, logoColor) {
+function foo(repo: Repo, pkgName: string, logo: string?, logoColor: string?) {
+  console.log(repo, pkgName, logoName, logoColor)
 }
 
 // Usage:
@@ -26,10 +27,10 @@ function foo({
 }: {
   repo: Repo;
   pkgName: string;
-  logo?: string;
+  logoName?: string;
   logoColor?: string;
 }) {
-  console.log(repo, pkgName, logo, logoColor)
+  console.log(repo, pkgName, logoName, logoColor)
 }
 
 // Usage:
@@ -37,7 +38,7 @@ const pkgName = 'bar'
 foo({
   repo: myRepo, 
   pkgName, // i.e. Same as `pkgName: pkgName`.
-  logo: 'jekyll'
+  logoName: 'jekyll'
 })
 ```
 
@@ -47,17 +48,17 @@ We can tidy that up making a type or interface to define the structure of the in
 interface IFoo {
     repo: Repo;
     pkgName: string;
-    logo?: string;
+    logoName?: string;
     logoColor?: string;
 }
 
 function foo({
   repo,
   pkgName,
-  logo,
+  logoName,
   logoColor,
 }: IFoo) {
-  console.log(repo, pkgName, logo, logoColor)
+  console.log(repo, pkgName, logoName, logoColor)
 }
 
 // Usage - as previous example.
@@ -65,7 +66,7 @@ const pkgName = 'bar'
 foo({
   repo: myRepo, 
   pkgName, 
-  logo: 'jekyll'
+  logoName: 'jekyll'
 })
 ```
 
@@ -75,12 +76,12 @@ Convert object params into a single object. You don't have to use an interface h
 interface IBazz {
     repo: Repo;
     pkgName: string;
-    logo?: string;
+    logoName?: string;
     logoColor?: string;
 }
 
 function foo(bazz: IBazz) {
-  console.log(bazz.repo, bazz.pkgName, bazz.logo, bazz.logoColor)
+  console.log(bazz.repo, bazz.pkgName, bazz.logoName, bazz.logoColor)
 }
 
 // Usage.
@@ -89,7 +90,7 @@ function foo(bazz: IBazz) {
 const myBazz: IBazz = {
   repo: myRepo, 
   pkgName: 'bar', 
-  logo: 'jekyll'
+  logoName: 'jekyll'
 }
 foo(myBazz)
 ```
@@ -98,7 +99,27 @@ You could add an extra step in the function to unpack as this. But then that und
 
 ```typescript
 function foo(bazz: IBazz) {
-  const { repo, pkgName, logo, logoColor } = bazz
-  console.log(repo, pkgName, logo, logoColor)
+  const { repo, pkgName, logoName, logoColor } = bazz
+  console.log(repo, pkgName, logoName, logoColor)
+}
+```
+
+Note that refactoring from 4 params.
+
+```typescript
+function foo(repo: Repo, pkgName: string, logoName: string?, logoColor: string?) {
+}
+```
+
+To use named params or single object can improve readibility, especially for a lot of params.
+
+You could also just create more high-level types. 
+
+The `Repo` type is already a class, or a type using `username` and `repoName` as strings.
+
+We can do something similar with the logo.
+
+```typescript
+function foo(repo: Repo, pkgName: string, logo: Logo?) {
 }
 ```
