@@ -31,6 +31,7 @@ jobs:
 
 Here the first job ID is `my_first_job`. This example from the docs and YAML in general uses underscores but usually I see hyphens used instead. 
 
+
 ## Operating system
 
 Use `runs-on` to specify the operating system. Using `ubuntu-latest` as below is the most common approach.
@@ -60,6 +61,33 @@ Two test on multiple operating systems.
             os: [ubuntu-latest, macOS-latest, windows-latest]
         runs-on: ${{ matrix.os }}
     ```
+
+Support multiple jobs - one for each OS. Based on [OBS Studio](https://github.com/obsproject/obs-studio/blob/master/.github/workflows/main.yml) workflow.
+
+```yaml
+jobs:
+  macos64:
+    name: 'macOS 64-bit'
+    runs-on: [ macos-latest ]
+    
+    steps:
+    # ...
+    
+  ubuntu64:
+    name: 'Linux/Ubuntu 64-bit'
+    runs-on: [ ubuntu-18.04 ]
+    
+    steps:
+    # ...
+    
+  win64:
+    name: 'Windows 64-bit'
+    runs-on: [ windows-latest ]
+        
+    steps:
+    # ...
+```
+
 
 ## Package version matrix
 
