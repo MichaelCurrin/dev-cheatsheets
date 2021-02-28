@@ -4,6 +4,33 @@ description: Get info on the running state of your machine
 ---
 
 
+## Current time
+
+```sh
+$ date
+```
+
+```
+Sun Feb 28 17:07:19 SAST 2021
+```
+```sh
+$ date "+%A %d %B %Y, %T"
+```
+```
+Sunday 28 February 2021, 17:07:27
+```
+
+welcome() {
+ 
+## Memory usage
+
+Linux only.  Based on Linux Lite 5 welcome message.
+
+```sh
+$ free -m | awk 'NR==2{printf "Memory usage: %s / %s MB (%.2f%%)\n", $3,$2,$3*100/$2 }'
+```
+
+
 ## Uptime
 
 ```sh
@@ -15,13 +42,66 @@ $ uptime
 ```
 
 
-## Usage
+## Disk usage
 
-Breakdown of sorted sizes of files and directories at current level. Sorted by human-readable sizes and reversed.
+Linux and macOS.
+
+Get a summary of disk usage used out of available space. Based on Linux Lite 5 welcome message. Using the `df` utility which will "display free disk space".
+
+```sh
+$ df -h | awk '$NF=="/"{printf "Disk usage: %d / %d GB (%s)\n", $3,$2,$5}'
+```
+
+```
+Disk usage: 11 / 233 GB (23%)
+```
+
+Without filtering:
+
+```sh
+$ df -h
+```
+```
+df -h  
+Filesystem      Size   Used  Avail Capacity iused      ifree %iused  Mounted on
+/dev/disk1s5   233Gi   11Gi   36Gi    23%  488327 2447612993    0%   /
+devfs          253Ki  253Ki    0Bi   100%     876          0  100%   /dev
+```
+
+Or
+
+```sh
+$ df -h ~
+```
+
+```
+Filesystem     Size   Used  Avail Capacity iused      ifree %iused  Mounted on
+/dev/disk1s1  233Gi  183Gi   36Gi    84% 4116299 2443985021    0%   /System/Volumes/Data
+```
+
+
+## Overview of files and folders
+
+Get breakdown of sorted sizes of files and directories for the **current level** and below. Sorted by human-readable sizes and reversed.
+
+Using the `du` utility which will "display disk usage statistics".
 
 ```sh
 $ du -hsc * | sort -hr
 ```
+
+Example run in `~/Documents`.
+
+```
+799M    total
+464M    Download archive
+138M    Zoom
+ 88M    PythonAnywhere data
+ 71M    Dev Projects
+...
+```
+
+You can run this at `/` or `~`. It will just take longer than in a subdirectory and you might get permissions warnings where you don't have access.
 
 
 ## Processes
