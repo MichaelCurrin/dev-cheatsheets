@@ -1,4 +1,7 @@
-# System
+---
+title: System
+description: Get info on the running state of your machine
+---
 
 
 ## Uptime
