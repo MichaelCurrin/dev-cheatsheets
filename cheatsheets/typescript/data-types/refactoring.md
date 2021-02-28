@@ -40,6 +40,14 @@ foo({
   pkgName, // i.e. Same as `pkgName: pkgName`.
   logoName: 'jekyll'
 })
+
+// Or with an declared object.
+const myBazz = {
+  repo: myRepo, 
+  pkgName: 'bar',
+  logoName: 'jekyll'
+}
+foo(myBazz)
 ```
 
 We can tidy that up making a type or interface to define the structure of the input object. Especially useful if you want to use the type or interface elswhere.
