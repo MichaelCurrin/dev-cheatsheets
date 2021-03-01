@@ -161,11 +161,21 @@ StrangerThings.Character
 // "Eleven"
 ```
 
-### Keys
+
+## Get keys
+
+For string enum:
 
 ```typescript
 Object.keys(StrangerThings)
 // [ "Character", "Father", "Power", "Town" ]
+```
+
+For numeric enum:
+
+```typescript
+Object.keys(StrangerThings)
+// [ "0", "1", "2", "3", "Character", "Father", "Power", "Town" ]
 ```
 
 
