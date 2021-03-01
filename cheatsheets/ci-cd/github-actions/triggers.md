@@ -181,6 +181,42 @@ on:
       - '**.js'
 ```
 
+### Ignore markdown changes
+
+Triggered on a commit or push to your main branch or any branch with a Pull Request. Ignore changes to markdown files (docs).
+ 
+- `main.yml` 
+    ```yaml
+    on:
+      push:
+       branches: main
+        paths-ignore:
+          - "**.md"
+
+      pull_request:
+        branches: main
+        paths-ignore:
+          - "**.md"
+    ```
+
+Similar to above but still watches for changes in markdown files outside the docs directory. Such as if you have a static site with markdown content in the root of the repo.
+
+- `main.yml` 
+    ```yaml
+    on:
+      push:
+        branches: main
+        paths-ignore:
+          - "docs/**"
+          - README.md
+
+      pull_request:
+        branches: main
+        paths-ignore:
+          - "docs/**"
+          - README.md
+    ```
+
 
 ## Trigger on tag
 
@@ -246,7 +282,6 @@ Types available:
 - `deleted`
 - `prereleased`
 - `released`
-
 
 
 ## Trigger on a GH Pages build
