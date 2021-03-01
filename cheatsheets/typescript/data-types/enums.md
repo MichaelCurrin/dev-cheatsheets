@@ -161,6 +161,13 @@ StrangerThings.Character
 // "Eleven"
 ```
 
+### Keys
+
+```typescript
+Object.keys(StrangerThings)
+// [ "Character", "Father", "Power", "Town" ]
+```
+
 
 ## Heterogenous enum
 
@@ -288,6 +295,23 @@ const c = COLOR.Red;
 
 const nameOfRed = COLOR[c];
 // "Red"
+```
+
+Or in one line:
+
+```typescript
+const colorKey = COLOR[COLOR.Red]]
+// "Red"
+```
+
+Note that only works on **numeric** enums. You'll get a type error and `undefined` value if you try this with strings like:
+
+```typescript
+enum COLOR {
+  Red = "red",
+}
+const colorKey = COLOR[COLOR.Red]]
+// undefined
 ```
 
 
