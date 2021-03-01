@@ -1,5 +1,6 @@
 # Performance
 
+
 ## Browser performance timings
 
 Browsers have a built-in JS object which contains performance-related timings, which you can use to calculate performance metrics.
