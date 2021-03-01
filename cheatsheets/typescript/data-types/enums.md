@@ -207,7 +207,7 @@ let myFruit: Fruit = myString as Fruit;
 let fruit = "Banana" as const;
 ```
 
-Here in my Vue case, where `this.color` is setup in `data` method.
+Here is my example from a frontend Vue app where the color comes from the frontend. This would be more like `this.color` in place of `chosenColor`.
 
 ```typescript
 export enum Color {
@@ -215,11 +215,20 @@ export enum Color {
   Green = 'green'
 }
 
-const key = this.color as keyof typeof Color;
-const color = Color[key];
+const colorKey = chosenColor as keyof typeof Color;
+const color = Color[colorKey];
+
+// One line
+const color = Color[chosenColor as keyof typeof Color];
 ```
 
-This is more effective and less code than alternatives below.
+You need as a type cast to the key before using it to lookup. You'll get a TS **error** if you do this:
+
+```typescript
+const color = Color[colorKey];
+```
+
+The approach is more effective and less code than alternatives below.
 
 This doesn't work when key is dynamic.
 
@@ -233,7 +242,9 @@ const key = 'Green';
 const bar = (<any>COLOR)[key];
 ```
 
-I've also come across using a wrapper function.
+I've come across using a wrapper function - useful to replace `keyof typeof` in multiple places with a function call. Not really worthwhile for once-off use.
+
+Here we use `type` to alias the type of a key of `COLOR` and use that as the function type.
 
 ```typescript
 enum COLOR {
@@ -242,6 +253,7 @@ enum COLOR {
 }
 
 type ColorStrings = keyof typeof COLOR;
+// I think the same as: 'Red' | 'Green'
 
 function describeColor(key: ColorStrings) {
   return COLOR[key];
