@@ -4,11 +4,23 @@ description: Install a Go package globally so that it can be run anywhere as a C
 ---
 
 
-Use the `go get` command a URL.
+Use the `go get` command a URL - such as a GitHub repo, excluding the protocol.
 
-The URL should point to a repo's directory containing a `main.go`. file.
+The URL should point to directory containing a `main.go`. file.
 
-Such as to a GitHub repo. Here using [MichaelCurrin/go-project-template](https://github.com/MichaelCurrin/go-project-template).
+If using GitHub, the URL will be like one of:
+
+```
+github.com/USERNAME/REPO_NAME
+github.com/USERNAME/REPO_NAME/PATH
+```
+
+
+## Install package from root directory
+
+Point as to a GitHub repo with `main.go` at the root. 
+
+Here using [MichaelCurrin/go-project-template](https://github.com/MichaelCurrin/go-project-template).
 
 ```sh
 $ go get github.com/MichaelCurrin/go-project-template
@@ -20,19 +32,54 @@ Run the command which now exists in `GOBIN`.
 $ go-project-template -h
 ```
 
-If there was a `cmd/myapp/main.go` file:
+
+## Install package from a subdirectory
+
+If there was a CLI command, it will typically in the `cmd` directory.
+
+e.g. `cmd/myapp/main.go`
+
+### Generic example
 
 ```sh
-$ go get github.com/MichaelCurrin/go-project-template/cmd/myapp
+$ go get github.com/MichaelCurrin/my-app/cmd/myapp
 ```
 
 If `GOBIN` is in your `PATH`, you can run from anywhere:
 
 ```sh
-$ my-app -h
+$ myapp -h
 ```
 
-You can't use the upgrade flag with `install`, but you can with `get`.
+### ESBuild example
+
+Download the ESBuild CLI.
+
+```sh
+$ go get github.com/evanw/esbuild/cmd/esbuild
+```
+
+Check that it is accessible.
+
+```sh
+$ type esbuild
+esbuild is /Users/mcurrin/go/bin/esbuild
+```
+
+Run it:
+
+```sh
+$ esbuild -h
+...
+```
+
+- GitHub repo: [evanw/esbuild](https://github.com/evanw/esbuild)
+- GitHub module path: [cmd/esbuild](https://github.com/evanw/esbuild/tree/master/cmd/esbuild)
+
+
+## Upgrade
+
+You can't use an upgrade flag with `install`, but you can use it with `get` as below.
 
 ```sh
 $ go get -u URL
