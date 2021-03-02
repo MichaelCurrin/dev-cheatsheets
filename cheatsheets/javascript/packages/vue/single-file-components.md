@@ -41,8 +41,6 @@ Note that `template` cannot actually be blank as you'll get an error.
 
 ## Script section
 
-Note that computed values are cached and are usually referenced like a variable but without brackets, unlike methods which need brackets to be called.
-
 Here we have a script for a component that accepts props.
 
 - `myComponent.vue`
@@ -56,10 +54,12 @@ Here we have a script for a component that accepts props.
         Buzz,
       },
 
+      // An attribute returning a dictionary where each value is a dictionary.
       props: {
         foo: { type: String, required: true },
       },
 
+      // An attribute returning a dictionary of functions.
       computed: {
         newFoo() {
           return this.foo.toUppercase();
@@ -71,6 +71,24 @@ Here we have a script for a component that accepts props.
     };
     </script>
     ```
+
+Note on computed section:
+
+- The `computed` values are cached, for efficiency. This computed variable will appear to change immediately based on user input, but in some cases it won't (I had issues before using a computed variable as a `slot` which was frozen, but passing it as a binding parameter was fine). 
+- Computed variables can be reference in a script tag or template tag but without brackets and without arguments i.e. without brackets. They are useful if you have a value to generate based on other use choices.
+- Methods need brackets to be called and are more interactive behavior or events.
+
+In TypeScript, it is as good idea to add the return type for a computed variable explicitly. This was advised by the docs, to avoid weird behavior. I also found that if I did _not_ include the type, then the attributes on `this` would cause an error in TypeScript compilation.
+
+```typescript
+{
+  computed: {
+    myVar(): number {
+      return this.myNumber ** 2;
+    },
+  }
+}
+```
 
 Here we have a view such as `About.vue`, which calculates and renders results. It might use components in its template section. There might be a cleaner way to set `bar` as the result based in inputs but this works for me.
 
@@ -89,7 +107,7 @@ Here we have a view such as `About.vue`, which calculates and renders results. I
 
       // An attribute returning a dictionary of functions.
       methods: {
-        submit: function () {
+        submit() {
           this.bar = this.foo.toUpperCase();
         }
       }
