@@ -3,13 +3,15 @@ description: Prune all unreachable objects from the object database
 ---
 # prune
 
-You probably don't need this command.
+You probably **don't** need this command.
 
 From the help:
 
 > In most cases, users should run `git gc`, which calls `git prune`.
 
-If you want to know hw clean-up refereces to remote-tracking branches, see the [Prune Branches]({{ site.baseurl }}{% link cheatsheets/version-control/git/prune-braches.md %} page.
+If you want to know how clean-up references to **remote-tracking** branches, see the [Prune branches][] page.
+
+[Prune branches]: {{ site.baseurl }}{% link cheatsheets/version-control/git/prune-branches.md %}
 
 
 ## Tutorial
@@ -25,19 +27,25 @@ See [git prune](https://www.atlassian.com/git/tutorials/git-prune) tutorial in t
 > The `git prune` command is intended to be invoked as a child command to `git gc`. It is **highly unlikely** you will ever need to invoke `git prune` in a day to day software engineering capacity. Other commands are needed to understand the effects of `git prune`.
 
 
-### Commands
-
-```sh
-git prune --dry-run --verbose
-```
-
-```sh
-git prune --dry-run --verbose --expire=now
-```
-
-
 ## Help
 
 ```
 git prune [-n] [-v] [--progress] [--expire <time>] [--] [<head>...]
+```
+
+
+## Examples
+
+```sh
+$ git prune --dry-run --verbose
+```
+
+```sh
+$ git prune --dry-run --verbose --expire=now
+```
+
+Delete branches which have been deleted on the GitHub remote.
+
+```sh
+$ git prune remote origin
 ```
