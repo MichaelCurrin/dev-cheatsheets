@@ -5,13 +5,55 @@
 - [git fetch](https://git-scm.com/docs/git-fetch) in Git docs.
 
 
-## Default
+## Default behavior
 
-This will fetch _all_ branches for the default remote (such as origin).
+Run without flags. This will fetch _all_ branches - see [Verbose](#verbose) section output for more details.
 
 ```sh
 $ git fetch
 ```
+
+This runs for the default remote only.
+
+This will **not** fetch tags or other remotes.
+
+
+## Fetch one branch only
+
+If for some reason you only want to fetch a single branch, you can do this.
+
+```sh
+g fetch origin abc
+From github.com:MichaelCurrin/my-repo
+ * branch            abc             -> FETCH_HEAD
+```
+
+
+## Fetch all remotes
+
+You probably don't need this.
+
+If you have multiple remotes, then use this.
+
+```sh
+$ git fetch --all
+```
+
+For example, if you created a fork and want to keep your fork in sync with the original repo (or "upstream" as it is conventionally named).
+
+Here are two remotes and both will be fetched.
+
+- `origin` - the remote in use for your own branches. Including if your repo is a fork.
+- `upstream` - the remote used for the original repo's branches.
+
+
+## Fetch tags
+
+```sh
+$ git fetch --tags
+```
+
+
 
 
 ## Verbose
@@ -24,7 +66,7 @@ $ git fetch -v
 ```
 remote: Enumerating objects: 21, done.
 ...
-From github.com:MichaelCurrin/repo-name
+From github.com:MichaelCurrin/my-repo
  = [up to date]      abc       -> origin/abc
  = [up to date]      master    -> origin/master
    e63d881..9b27383  def       -> origin/def
@@ -59,27 +101,3 @@ For example:
     $ git reset --hard origin/def
     ```
 
-
-## Fetch all remotes
-
-You probably don't need this.
-
-If you have multiple remotes, then use this.
-
-```sh
-$ git fetch --all
-```
-
-For example, if you created a fork and want to keep your fork in sync with the original repo (or "upstream" as it is conventionally named).
-
-Here are two remotes and both will be fetched.
-
-- `origin` - the remote in use for your own branches. Including if your repo is a fork.
-- `upstream` - the remote used for the original repo's branches.
-
-
-## Fetch tags
-
-```sh
-$ git fetch --tags
-```
