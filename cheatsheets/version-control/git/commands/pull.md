@@ -61,6 +61,17 @@ $ git pull --rebase
 ```
 
 
+## Get all branches in sync
+
+This will do a fetch and then merge changes into all local branches.
+
+```sh
+$ git pull --all
+```
+
+Leaving out the `--all` flag would do a merge for the _current_ branch only.
+
+
 ## Help
 
 ```sh
