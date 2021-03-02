@@ -8,7 +8,7 @@ description: How to remove clean-up remote branches that no longer exist
 
 If your branch `my-feature` no longer exists on GitHub, then after doing a fetch or pull, you'll have a local reference to remote branch that no longer exists on GitHub reference. As `origin/my-feature`
 
-It will appear when listing all branchs (including remote references_.
+It will appear when listing all branches (including remote references).
 
 ```sh
 $ git branch -a
@@ -61,6 +61,6 @@ From the docs for `git fetch`:
 >
 > Before fetching, remove any remote-tracking references that no longer exist on the remote. Tags are not subject to pruning if they are fetched only because of the default tag auto-following or due to a `--tags` option. However, if tags are fetched due to an explicit refspec (either on the command line or in the remote configuration, for example if the remote was cloned with the `--mirror` option), then they are also subject to pruning. Supplying `--prune-tags` is a shorthand for providing the tag refspec.
 
-> `-P, `--prune-tags`
+> `-P`, `--prune-tags`
 >
 > Before fetching, remove any local tags that no longer exist on the remote if `--prune` is enabled. This option should be used more **carefully**, unlike `--prune` it will remove any **local** references (local tags) that have been created. This option is a shorthand for providing the explicit tag refspec along with `--prune`, see the discussion about that in its documentation.
