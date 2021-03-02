@@ -1,7 +1,7 @@
 ---
+title: Prune branches
 description: How to remove clean-up remote branches that no longer exist
 ---
-# Prune
 
 
 ## About
