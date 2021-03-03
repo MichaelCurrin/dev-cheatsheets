@@ -38,7 +38,7 @@ mcurrin
 
 See [guide](https://linuxize.com/post/bash-heredoc/).
 
-Bash supports a _heredoc.
+Bash supports a _heredoc_.
 
 This term appears in other languages like PHP and is a more powerful way of writing a multi-line string. 
 
@@ -48,7 +48,9 @@ Note you can use anything but `EOF` is the common term to start and end the shel
 
 ### Evaluate
 
-`cat << EOF`
+```sh
+cat << EOF
+```
 
 Example:
 
