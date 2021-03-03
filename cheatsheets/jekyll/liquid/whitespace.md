@@ -1,8 +1,9 @@
 ---
-render_with_liquid: false
+render_with_liquid: false # Jekyll 4
 ---
 # Whitespace
 
+{% raw %}
 
 ## Variable
 
@@ -17,23 +18,28 @@ Trim whitespace from value.
 
 `raw` tag without the whitespace. This is useful inside `capture` tag.
 
+The proper raw tag is shown as "raw" here otherwise it would not render on this page.
+
 ```liquid
-{%- raw -%}{% highlight ruby %}
+ raw {% highlight ruby %}
 def foo
   puts 'foo'
 end
-{% endhighlight %}{% endraw -%}
+{% endhighlight %} endraw 
 ```
 
-Note the `endraw` cannot start with `%-`.
+Note the `endraw` cannot start with `{%-`.
 
 This would give too much whitespace:
 
-{% raw %}
+```liquid
+raw 
 {% highlight ruby %}
 def foo
   puts 'foo'
 end
 {% endhighlight %}
+endraw
+```
 
 {% endraw %}
