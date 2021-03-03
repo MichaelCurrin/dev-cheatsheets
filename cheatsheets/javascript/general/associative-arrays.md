@@ -13,14 +13,15 @@ const x = 'abc123'
 const y = {
   x: 'Hello, World!'
 }
+
 y
 // { x: 'Hello, World!' }
 ```
 
-Note that only strings are allowed for keys and other types will be converted.
+Note that only _strings_ are allowed for keys and other types will be converted to strings.
 
 ```javascript
-{1: 'Hello, World!'
+{ 1: 'Hello, World!' }
 // { '1': 'Hello, World!' }
 ```
 
@@ -31,7 +32,7 @@ Note that only strings are allowed for keys and other types will be converted.
 const x = 'abc123'
 // 'abc123'
 
-consty = {
+const y = {
   [x]: 'Hello, World!'
 }
 y
