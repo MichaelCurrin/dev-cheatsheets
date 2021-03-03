@@ -79,3 +79,20 @@ x
 y
 // [ "a", "b", "c", "d" ]
 ```
+
+
+### On an iterable
+
+Convert an iterable which is not an array into an array, so you can use array methods on it.
+
+For example, a selection of DOM elements.
+
+```javascript
+// Iterable.
+const divs = document.getElementsByTagName('div')
+
+// Array.
+const divsArr = [...divs]
+// Array method.
+divsArray.map(myFunc)
+```
