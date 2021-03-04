@@ -95,7 +95,7 @@ Use `\` followed by pressing enter. Using `\n` doesn't seem to work here.
 #### sed
 
 ```sh
-$ echo 'Hello,World' | sed -e 's/,/\
+$ echo 'Hello,World' | sed 's/,/\
 /g'
 ```
 ```
@@ -273,7 +273,7 @@ $ grep -v "foo" file.txt > temp && mv temp file.txt
 ## Replace and output a new file
 
 ```sh
-$ sed -e s/spam/eggs/ foo.html > bar.html
+$ sed 's/spam/eggs/g' foo.html > bar.html
 ```
 
 
