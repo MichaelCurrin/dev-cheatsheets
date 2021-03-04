@@ -1,6 +1,27 @@
 # Control flow
 
-Note the older format of `test CONDITION` is replaced by `[ CONDITION ]` and in some shell flavors extra functionality with using `[[ CONDITION ]]`.
+
+## Test syntax
+
+Note the older format of:
+
+```sh
+test CONDITION
+```
+
+That is replaced by:
+
+```sh
+[ CONDITION ]
+```
+
+And in some shell flavors such as Bash and ZSH, you can use double brackets which adds some extra functionality you might want.
+
+```sh
+[[ CONDITION ]]
+```
+
+But note that `dash` does not support double brackets - if you use `sh` command on Ubuntu, you'll end up running `dash` and **not** `bash` and so will get a syntax error on double brackets.
 
 
 ## Ignore
@@ -56,6 +77,8 @@ Abort the script if a check evaluates to false. Here we see if a variable is set
 ```sh
 $ [[ -z "$MY_VAR" ]] && (echo 'MY_VAR must be set' ; exit 1)
 ```
+
+Use `-n` for not empty.
 
 
 Note the brackets are needed, otherwise on a `true` evaluation of the first condition, the exit will still run.
