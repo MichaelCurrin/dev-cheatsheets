@@ -54,9 +54,20 @@ on:
       - "!sub-project/docs/**"
 ```
 
+
 ## Skip a job
 
-Place an `if` condition on the job to determine if it runs.
+Place an `if` condition on the job.
+
+Syntax:
+
+```yaml
+jobs:
+  job-name:
+    if: CONDITION
+```
+
+Example:
 
 ```yaml
 on:
@@ -65,19 +76,20 @@ on:
 
 jobs:
   build-deploy:
+    name: Build and deploy
+    
     if: ${{ github.event_name != 'pull_request' }}
     
     steps:
       - name: Build
+      
       - name: Deploy
 ```
 
 
 ## Skip a step
 
-Add a check for a given step. If the condition returns false, then the current step _and_ subsequent steps will be skipped.
-
-The steps before will always run. 
+Add a check for a given step.
 
 ### Event type
 
@@ -93,8 +105,10 @@ jobs:
     steps:
       - name: Build
 
-      - name: Deploy
+      - name: Deploy   # Run conditionally
         if: ${{ github.event_name != 'pull_request' }}
+      
+      - name: Clean-up # This step will always run
 ```
 
 Note we don't have to specify a branch name. 
