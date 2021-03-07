@@ -39,6 +39,21 @@ $ yarn add tslint -g
 ```
 
 
+## Remove package
+
+### Project-scoped
+
+```sh
+$ yarn remove react
+```
+
+### Global
+
+```sh
+$ yarn global remove react
+```
+
+
 ## Install all packages
 
 Install packages listed in `package.json`.
@@ -75,4 +90,21 @@ Or, for the absolute latest, which may conflict with your other packages.
 
 ```sh
 $ yarn add react@latest
+```
+
+
+## Create app
+
+Using the `create` subcommand.
+
+For React:
+
+```sh
+$ yarn create react-app my-app
+```
+
+Equivalent of:
+
+```sh
+$ npx create-react-app my-app 
 ```
