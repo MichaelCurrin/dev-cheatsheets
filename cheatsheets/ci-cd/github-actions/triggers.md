@@ -359,11 +359,19 @@ jobs:
 
 See [Manual events](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#manual-events) in the docs.
 
-You can manually trigger workflow runs. If you configure your workflow to use a manual event, then you'll get a button on the workflow to run it directly, without a commit.
+There are two formats available.
 
 ### Workflow dispatch
 
+Trigger a workflow on a button click.
+
 > To trigger specific workflows in a repository, use the `workflow_dispatch event`.
+
+If you setup this option, then you'll get a button on the Actions tab to click and so run the workflow directly. Without a commit needed and without having to wait for a cron trigger.
+
+You can even specify text **inputs** so that you get prompted to fill those in and have them used in the job.
+
+Syntax:
 
 ```yaml
 on: workflow_dispatch
@@ -406,7 +414,7 @@ jobs:
         echo "- in ${{ github.event.inputs.home }}!"
 ```
 
-Example suggested by GH Actions on a new workflow. 
+An example suggested by GH Actions, when making new workflow file. 
 
 ```yaml
 name: Manual workflow
