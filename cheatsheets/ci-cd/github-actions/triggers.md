@@ -383,8 +383,15 @@ Or
 on:
   workflow_dispatch:
     inputs:
+      my-title:
+        description: # ...
+        required: # true or false
+        default: # ...
+      
       # ...
 ```
+
+The default is the value that is shown in the pop-up.
 
 Basic trigger and job example:
 
@@ -405,12 +412,12 @@ on:
         default: 'The Octoverse'
 
 jobs:
-  say_hello:
+  say-hello:
     runs-on: ubuntu-latest
 
     steps:
       - run: |
-        echo "Hello ${{ github.event.inputs.name }}!"
+        echo "Hello, ${{ github.event.inputs.name }}!"
         echo "- in ${{ github.event.inputs.home }}!"
 ```
 
@@ -425,8 +432,8 @@ on:
       name:
         # Friendly description to show in the UI instead of 'name'
         description: 'Person to greet'
-        default: 'World'
         required: true
+        default: 'World'
 
 jobs:
   greet:
