@@ -34,37 +34,38 @@ These are useful to add for most sites and work on GH Pages.
 	{% feed_meta %}
 	```
 
-Sample:
+#### Sample
 
-- `index.html`
-	- The reason for the metadata is to generate a tag like this from [/michaelcurrin.github.io/jekyll-blog-demo](https://michaelcurrin.github.io/jekyll-blog-demo/).
-	```html
-	<link type="application/atom+xml" rel="alternate"
-		href="https://michaelcurrin.github.io/jekyll-blog-demo/feed.xml"
-		title="Jekyll Blog Demo" />
-	```
+- The reason for the metadata is to generate a tag like this from [/michaelcurrin.github.io/jekyll-blog-demo](https://michaelcurrin.github.io/jekyll-blog-demo/).
+```html
+<link type="application/atom+xml" rel="alternate"
+    href="https://michaelcurrin.github.io/jekyll-blog-demo/feed.xml"
+    title="Jekyll Blog Demo" />
+```
+
+See file at [michaelcurrin.github.io/jekyll-blog-demo/feed.xml](https://michaelcurrin.github.io/jekyll-blog-demo/feed.xml). A piece is shown below.
+
 - `feed.xml`
-	- See file at [michaelcurrin.github.io/jekyll-blog-demo/feed.xml](https://michaelcurrin.github.io/jekyll-blog-demo/feed.xml). A piece is shown below.
-	```xml
-	<entry>
-		<title type="html">First post!</title>
-		<link href="https://michaelcurrin.github.io/jekyll-blog-demo/2018/12/22/first-post/" rel="alternate" type="text/html" title="First post!"/>
-		<published>2018-12-22T00:00:00+00:00</published>
-		<updated>2018-12-22T00:00:00+00:00</updated>
-		<id>
-			https://michaelcurrin.github.io/jekyll-blog-demo/2018/12/22/first-post
-		</id>
-		<content type="html" xml:base="https://michaelcurrin.github.io/jekyll-blog-demo/2018/12/22/first-post/">
-			<p>This is my first post after the one created as part of the blog template.</p>
-		</content>
-		<author>
-			<name/>
-		</author>
-		<summary type="html">
-			This is my first post after the one created as part of the blog template.
-		</summary>
-	</entry>
-	```
+    ```xml
+    <entry>
+        <title type="html">First post!</title>
+        <link href="https://michaelcurrin.github.io/jekyll-blog-demo/2018/12/22/first-post/" rel="alternate" type="text/html" title="First post!"/>
+        <published>2018-12-22T00:00:00+00:00</published>
+        <updated>2018-12-22T00:00:00+00:00</updated>
+        <id>
+            https://michaelcurrin.github.io/jekyll-blog-demo/2018/12/22/first-post
+        </id>
+        <content type="html" xml:base="https://michaelcurrin.github.io/jekyll-blog-demo/2018/12/22/first-post/">
+            <p>This is my first post after the one created as part of the blog template.</p>
+        </content>
+        <author>
+            <name/>
+        </author>
+        <summary type="html">
+            This is my first post after the one created as part of the blog template.
+        </summary>
+    </entry>
+    ```
 
 ### SEO tag
 
@@ -76,10 +77,11 @@ Sample:
 	```
 - See the _advanced usage_ in the docs for setting authors and image OG data.
 
-Sample:
+#### Sample
+
+From [michaelcurrin.github.io/dev-cheatsheets](https://michaelcurrin.github.io/dev-cheatsheets/):
 
 - `index.html`
-	- From [michaelcurrin.github.io/dev-cheatsheets](https://michaelcurrin.github.io/dev-cheatsheets/):
 	```html
 	<!-- Begin Jekyll SEO tag v2.6.1 -->
 	<title>Home | Dev Cheatsheets</title>
@@ -96,12 +98,12 @@ Sample:
 
 	<script type="application/ld+json">
 	{
-		"description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-		"@type": "WebSite",
-		"headline": "Home",
-		"url": "https://michaelcurrin.github.io/dev-cheatsheets/",
-		"name": "Dev Cheatsheets",
-		"@context": "https://schema.org"
+	  "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
+	  "@type": "WebSite",
+	  "headline": "Home",
+	  "url": "https://michaelcurrin.github.io/dev-cheatsheets/",
+	  "name": "Dev Cheatsheets",
+	  "@context": "https://schema.org"
 	}
 	</script>
 	<!-- End Jekyll SEO tag -->
@@ -110,7 +112,7 @@ Sample:
 ### Sitemap and robots
 
 - Repo: [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)
-- Adds a `sitemap.xml` and `robots.txt` file to the site.
+- It adds a `sitemap.xml` and `robots.txt` file to the site.
 - Sample: [michaelcurrin.github.io/dev-cheatsheets/sitemap.xml](https://michaelcurrin.github.io/dev-cheatsheets/sitemap.xml)
 - Sample: [michaelcurrin.github.io/dev-cheatsheets/robots.txt](https://michaelcurrin.github.io/dev-cheatsheets/robots.txt)
 
