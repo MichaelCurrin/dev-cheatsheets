@@ -1,4 +1,7 @@
-# clone
+---
+title: clone
+docs-link: https://git-scm.com/docs/git-clone
+---
 
 
 ## Default
