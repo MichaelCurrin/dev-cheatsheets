@@ -163,14 +163,14 @@ Works with `cat` but not `echo`.
 
 You can use anything at the start and end, but `EOF` for "end of file" is the convention.
 
-A heredoc allows a multi-line string with evaluation. Without escaping double quotes like `"\"user\": \"$(whoami)\""`.
+A heredoc allows a multi-line string with evaluation. Without having to explicitly escape quotes as `"\"user\": \"$(whoami)\""`.
 
-With a variable (instead of `cat`).
+Storing as a variable and formatting as a JSON string.
 
 ```sh
 MY_VAR=$(cat << EOF
 {
-    "user": "$(whoami)"
+    "user": "$USER"
 }
 EOF
 )
@@ -180,8 +180,6 @@ echo "$MY_VAR"
 echo "Unquoted"
 echo $MY_VAR
 ```
-
-Result:
 
 ```
 Quoted
@@ -210,22 +208,22 @@ Example:
 cat << "EOF"
 Line 1
 Line 2
-You are $(whoami)
+You are $USER
 EOF
 ```
 Output:
 ```
 Line 1
 Line 2
-You are $(whoami)
+You are $USE
 ```
 
-With a variable:
+Storing as a variable and formatting as a JSON string.
 
 ```sh
 MY_VAR=$(cat << 'EOF'
 {
-    "user": "$(whoami)"
+    "user": "$USER"
 }
 EOF
 )
