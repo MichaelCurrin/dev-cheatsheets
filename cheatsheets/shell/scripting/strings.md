@@ -38,11 +38,15 @@ mcurrin
 
 See [guide](https://linuxize.com/post/bash-heredoc/).
 
-Bash supports a _heredoc_.
+Bash supports a _heredoc_:
 
-This term appears in other languages like PHP and is a more powerful way of writing a multi-line string. 
+- This lets you create a string which implicitly escapes all single and double quotes, letting you write a clean string. 
+- Typically, a heredoc is used for writing multi-line strings, but you don't have it.
+- You might use it for a literal string or evaluate expressions.
 
-In the shell, for most cases I find using single or double quotes for a multi-line string works great. But the heredoc does have the advantage that you can use single and double quotes inside the string without escaping them, as your string terminator will be `EOF` for example. See below.
+For most cases, I don't need a heredoc. A standard single or double-quoted string works well - including for multiple lines.
+
+But, the heredoc does have the advantage that you can use single and double quotes inside the string without escaping them, as your string terminator will be `EOF` for example.
 
 Note you can use anything but `EOF` is the common term to start and end the shell heredoc.
 
@@ -63,6 +67,7 @@ EOF
 ```
 
 Output:
+
 ```
 Line 1
 Line 2
@@ -84,16 +89,20 @@ MY_VAR=$(cat << EOF
 }
 EOF)
 
+echo "Quoted"
 echo "$MY_VAR"
+echo "Unquoted"
 echo $MY_VAR
 ```
 
 Result:
 
 ```
+Quoted
 {
     "user": "mcurrin"
 }
+Unquoted
 { "user": "mcurrin" }
 ```
 
@@ -134,16 +143,20 @@ MY_VAR=$(cat << 'EOF'
 }
 EOF)
 
+echo "Quoted"
 echo "$MY_VAR"
+echo "Unquoted"
 echo $MY_VAR
 ```
 
 Result:
 
 ```
+Quoted
 {
     "user": "$(whoami)"
 }
+Unquoted
 { "user": "$(whoami)" }
 ```
 
@@ -208,22 +221,52 @@ world
 EOF
 ```
 
-
 ### Other languages
+
+#### PHP
+
+Using a heredoc in PHP - from the [PHP manual](https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc).
+
+```php
+$foo = 'abc;
+$x = <<<EOT
+Line 1
+Line 2
+'Single quotes' line.
+"Double quotes" line.
+$foo
+EOT;
+}
+?>
+```
+
+#### JavaScript
+
+In JavaScript, you would do use backticks. This will evaulate expressions though.
 
 - `index.js` for JavaScript.
     ```javascript
+    foo = 'abc'
     var x = `\
     Line 1
     Line 2
+    'Single quotes' line.
+    "Double quotes" line.
     ${foo}
     `
     ```
+    
+#### Python
+
+In Python you would use three quotes. You could use double quotes (`"`) usually, just for convention. You would use an `f` string as below for evaluation.
+ 
 - `app.py` for Python.
     ```python
     x = f"""\
     Line 1
     Line 2
+    'Single quotes' line.
+    "Double quotes" line.
     {foo}
     """
     ```
