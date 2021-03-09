@@ -1,6 +1,10 @@
-# Evalation
+---
+title: Evaluation
+description: Evaluating expressions in the shell
+---
 
 Here we evaluate a command using two approaches. This executes a subshell which does not have access to the outer env variables and runs in another process.
+
 
 ## Base syntax
 
@@ -8,7 +12,7 @@ Here we evaluate a command using two approaches. This executes a subshell which 
 $(EXPRESSION)
 ```
 
-Don't confuse with the maths evaluation syntax:
+Don't confuse with the **maths** evaluation syntax:
 
 ```sh
 $ echo $((1 + 3))
@@ -17,13 +21,13 @@ $ echo $((1 + 3))
 
 ### Backticks versus brackets
 
-Using backticks is legacy syntax.
+Using **backticks** is legacy syntax. Don't do this.
 
 ```sh
 $ X=`which ruby`
 ```
 
-Using `$()` which is more modern and easier to notice.
+Using **brackets** like `$()` is more modern and easier to notice.
 
 ```sh
 X=$(which ruby)
@@ -58,7 +62,7 @@ $ DATE=$(date)
 
 ### Execute
 
-The result can be executed without an in between step.
+The result can be executed without an in-between step.
 
 ```sh
 $(which ruby)
@@ -87,7 +91,7 @@ I've seen this approach for setting environment variables before, where you call
 
 ### Print
 
-Ue it in an `echo`.
+Use it with an `echo` command.
 
 ```sh
 $ echo "Ruby location $(which ruby)"
