@@ -1,35 +1,61 @@
 # Conditionals
 
-## If else
+## If statement
 
-The `then` keyword is optional.
-
-```ruby
-if conditional [then]
-   code...
-[elsif conditional [then]
-   code...]...
-[else
-   code...]
-end
-```
-
-e.g. 
+Using `if`, `elsif` and `else`.
 
 ```ruby
-#!/usr/bin/ruby
-
-x = 1
-if x > 2
-   puts "x is greater than 2"
-elsif x <= 2 and x!=0
-   puts "x is 1"
+if CONDITIONAL
+  EXPRESSION
+elsif CONDITIONAL
+  EXPRESSION
 else
-   puts "I can't guess the number"
+  EXPRESSION
 end
 ```
+
+e.g. From [Tutorials Point page](https://www.tutorialspoint.com/ruby/ruby_if_else.htm).
+
+```ruby
+x = 1
+
+if x > 2
+  puts "x is greater than 2"
+elsif x <= 2 and x!=0
+  puts "x is 1"
+else
+  puts "I can't guess the number"
+end
+```
+
+
+## Unless
+
+```ruby
+x = 1 
+unless x >= 2
+   puts "x is less than 2"
+ else
+   puts "x is greater than 2"
+end
+```
+
+
+## One-line if statement
+
+```ruby
+debug = 1
+
+puts "Yes" if debug
+
+# Same as `if not debug`
+puts "Yes" unless debug
+```
+
 
 ## Case
+
+Use `case` as an alternative to `if else`. This is similar to `switch` in other languages, or `CASE` in SQL.
 
 Based on [article](https://www.rubyguides.com/2015/10/ruby-case/).
 
