@@ -1,9 +1,37 @@
 # Strings
 
 
-## Basic
+## Single and double quotes
 
-Use **single** quotes for literal string - not evaluated. Nothing special needed like in other languages to include multiple lines.
+### Evaluation
+
+Use single quotes for a literal string one that is not evaluated. 
+
+```sh
+X='Hello, $(whoami) / $USER'
+
+echo "$X"
+```
+```
+Hello, Hello, $(whoami) / $USER'
+```
+
+Use double quotes to evaluate
+
+```sh
+X="Hello, $(whoami) / $USER!"
+
+echo "$X"
+```
+```
+Hello, mcurrin / mcurrin!
+```
+
+### Multi-line
+
+Just press enter for a newline, in single or double quotes.
+
+Nothing special is needed like in other languages to include multiple lines.
 
 ```sh
 X='Hello,
@@ -11,27 +39,76 @@ world'
 
 echo "$X"
 ```
-
-Output:
 ```
 Hello,
 world
 ```
 
-Use **double quotes** to evaluate expressions.
+You can also use `\n` for a newline. But you need to use `-e` flag to evaulate newlines (need in Bash but ZSH doesn't need the flag).
 
 ```sh
-X="Hello,
-$(whoami)"
-
-echo "$X"
+X="A\nB\nC"
+echo -e "$X"
+```
+```
+A
+B
+C
 ```
 
-Output:
+Or using `echo` directly:
+
+```sh
+echo "ABC\nDEF\nGHI"
 ```
-Hello,
-mcurrin
 ```
+ABC\nDEF\nGHI
+```
+
+With `-e` flag.
+
+```sh
+echo -e "ABC\nDEF\nGHI"
+```
+```
+ABC
+DEF
+GHI
+```
+
+Using `printf`:
+
+```sh
+printf 'ABC\nDEF\nGHI\n'
+```
+```
+ABC
+DEF
+GHI
+```
+
+Or `print`:
+
+```sh
+print 'ABC\nDEF\nGHI'
+```
+```
+ABC
+DEF
+GHI
+```
+
+### Escaping quotes
+
+```sh
+echo "With 'single' quotes"
+echo 'With "double" quotes'
+
+echo 'With \'escaped single\' quotes'
+echo "With \"escaped single\" quotes"
+```
+
+If you need to use single and double quotes in the same string and don't want to use `\` to escape them, then read on for the heredoc belo.
 
 
 ## Heredoc
