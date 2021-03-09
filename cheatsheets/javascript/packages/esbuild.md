@@ -1,0 +1,5 @@
+# esbuild
+
+```sh
+$ esbuild --minify
+```
