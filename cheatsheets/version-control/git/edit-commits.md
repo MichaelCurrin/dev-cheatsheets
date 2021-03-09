@@ -5,16 +5,20 @@ description: Workflow to edit various details of a commit
 
 You're about to edit commits locally. This changes the git history, rather than adding on top of it with new commits. A `git revert` commit is a good way of undoing work without changing the history.
 
+See also: [git rebase](https://git-scm.com/docs/git-rebase) docs.
 
-## Changing histoy
 
-### Warning on editing
+## Changing history
 
-Before deciding to edit commit locally.
+### A warning about editing
 
-Check if you have already pushed the commit. If not then, no issue.
+Before deciding to edit commit locally (whether the message, contents, whatever).
 
-But if you have pushed already, then you are going to need to do a **force push** to replace the existing commits on GitHub with your altered commits. This is usually fine if you are the **only** one working on a feature branch. And sometimes it might be okay to do it on **master** or **main.
+Check if you have **already pushed** the commit. 
+
+If you have **not pushed** yet, then nothing to worry about.
+
+But if you **have pushed** already, then after your edit, you are going to need to do a **force push** to replace the existing commits on GitHub with your altered commits. This is usually fine if you are the **only** one working on a feature branch. And sometimes it might be okay to do it on **master** or **main.
 
 ```sh
 $ git push --force
@@ -44,7 +48,7 @@ Here are two ways to drop the old history and use the new ones. Note if there ar
 
 ## Edit latest commit
 
-This is an easy approach but only works for the last commit.
+This is an easy approach but only works for the **most recent commit**.
 
 Here we get the chance to edit the commit message of the commit in the prompt that comes up.
 
@@ -82,47 +86,78 @@ $ git commit --amend
 
 ## Edit multiple commits
 
+Edit any number of commits in your history. A certain commit in your history, multiple commits, or even all commits (like if you want to change the email).
+
 ### Interactive rebase
 
-Start an interactive rebase for 3 commits back.
+Start an interactive rebase with a reference to a commit to rebase on top of. 
+
+If you want to change the last 3 commits, then would do this:
 
 ```sh
 $ git rebase -i HEAD~3
 ```
 
-You'll get an editor prompt like this, with the 3 commits:
+This describes the following:
+
+- `HEAD` - current commit.
+- `HEAD~` - one commit before current.
+- `HEAD~2` - two commits before current.
+- `HEAD~` - three commits back. This will **not** be edited, but we will rebase on **top** of this commit.
+
+You'll get an editor prompt like this, showing the 3 commits we are editing.
 
 ```
 pick 2d2bf05 Latest message
-pick e624deb Second message
-pick f6f2295 First message
+pick e624deb One back message
+pick f6f2295 Two back message
 
 # Rebase 69e697c..f6f2295 onto 69e697c (3 commands)
 ```
 
-You'll see a key of options available.
+At the bottom, you'll see a commented section with options available. 
 
-The word `pick` means you want to keep the commit in your commit history (i.e. don't drop it), but that you don't want to edit it.
+```
+# Commands:
+#  p, pick = use commit
+#  r, reword = use commit, but edit the commit message
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#  f, fixup = like "squash", but discard this commit's log message
+#  x, exec = run command (the rest of the line) using shell
+```
 
-### Edit commit messages
+You'll have to change at least one `pick` keyword to another option, then save, so you get to edit some commits.
 
-Using the interacive mode above.
+All options described in the [GitHub docs](https://docs.github.com/en/github/using-git/about-git-rebase).
 
-Change one or more of the `pick` words to `r` or `reword`.
+Some are covered next in more detail.
+
+### Pick commit
+
+The word `pick` means you want to **keep** the commit in your commit history (i.e. don't drop it), but that you **don't** want to edit it.
+
+### Edit commit message
+
+Using the interactive mode above, we can edit the wording of a commit message without changing the diff.
+
+Change one or more of the `pick` keywords to either `r` or `reword`.
 
 e.g.
 
 ```
 reword 2d2bf05 Latest message
-pick e624deb Second message
-reword f6f2295 First message
+pick e624deb One back message
+reword f6f2295 Two back message
 ```
 
-Then save the content.
+Then save that message.
 
-You'll then get prompted one commit at a time to write a new commit message and save it. 
+You will then get prompted **one commit at a time** to write a new commit message and save it. You can over course save without changing.
 
-After that, you can run:
+After the last one is done, you'll see that the rebase is done.
+
+Then you can check like this:
 
 ```sh
 $ git log
