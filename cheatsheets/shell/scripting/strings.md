@@ -48,12 +48,20 @@ For most cases, I don't need a heredoc. A standard single or double-quoted strin
 
 But, the heredoc does have the advantage that you can use single and double quotes inside the string without escaping them, as your string terminator will be `EOF` for example.
 
-Note you can use anything but `EOF` is the common term to start and end the shell heredoc.
+### Syntax
+
+Note you can use anything, but `EOF` is the common term to start and end the shell heredoc.
+
+The last occurence should be on a line of its own, without indentation and without characters after it.
+
+In one situation, I found `EOF)` as the last line was actually valid in my shell, but in a CI flow I got a linting error.
 
 ### Evaluate
 
 ```sh
 cat << EOF
+CONTENT
+EOF
 ```
 
 Example:
@@ -76,7 +84,7 @@ You are mcurrin
 
 Works with `cat` but not `echo`.
 
-You can use anything at the start and end but `EOF` for "end of file" is the convention.
+You can use anything at the start and end, but `EOF` for "end of file" is the convention.
 
 A heredoc allows a multi-line string with evaluation. Without escaping double quotes like `"\"user\": \"$(whoami)\""`.
 
@@ -87,7 +95,8 @@ MY_VAR=$(cat << EOF
 {
     "user": "$(whoami)"
 }
-EOF)
+EOF
+)
 
 echo "Quoted"
 echo "$MY_VAR"
@@ -108,13 +117,13 @@ Unquoted
 
 Note double quotes on `echo` to keep newlines.
 
-
 ### Literal
 
 Prevent evaluation by using quotes - single or double. 
 
 ```sh
 cat << "EOF"
+CONTENT
 EOF
 ```
 
@@ -141,7 +150,8 @@ MY_VAR=$(cat << 'EOF'
 {
     "user": "$(whoami)"
 }
-EOF)
+EOF
+)
 
 echo "Quoted"
 echo "$MY_VAR"
@@ -246,7 +256,7 @@ In JavaScript, you would do use backticks. This will evaulate expressions though
 
 - `index.js` for JavaScript.
     ```javascript
-    foo = 'abc'
+    foo = 'abc';
     var x = `\
     Line 1
     Line 2
@@ -255,7 +265,9 @@ In JavaScript, you would do use backticks. This will evaulate expressions though
     ${foo}
     `
     ```
-    
+
+Note use of escaped newline at the start, to prevent first line from appearing as empty.
+
 #### Python
 
 In Python you would use three quotes. You could use double quotes (`"`) usually, just for convention. You would use an `f` string as below for evaluation.
@@ -270,3 +282,5 @@ In Python you would use three quotes. You could use double quotes (`"`) usually,
     {foo}
     """
     ```
+
+Note use of escaped newline at the start, to prevent first line from appearing as empty.
