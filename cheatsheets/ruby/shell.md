@@ -1,12 +1,14 @@
-
-# Ruby
+---
+title: Shell
+description: Run shell commands from Ruby scripts
+---
 
 See [mentalized.net/journal/2010/03/08/5-ways-to-run-commands-from-ruby](https://mentalized.net/journal/2010/03/08/5-ways-to-run-commands-from-ruby/)
 
 
-## Back ticks
+## Using backticks
 
-This is the easiest way in Ruby and compared to other programming languages. No imports needed.
+This is the easiest way to run shell commands in Ruby.
 
 ```ruby
 `COMMAND`
@@ -28,12 +30,16 @@ files = split("\x0")
 # ["404.html", "CONTRIBUTING.md", "Gemfile", "Gemfile.lock" ]
 ```
 
+It is the lightest in syntax, compared with other programming languages. Not even any imports needed.
+
 
 ## Use popen3
 
 From [gist](https://gist.github.com/zparnold/0e72d7d3563da2704b900e3b953a8229).
 
 ```ruby
+require 'open3'
+
 def run_command(cmd_text)
   Open3.popen3(cmd_text) do |stdin, stdout, stderr, wait_thr|
     exit_status = wait_thr.value
