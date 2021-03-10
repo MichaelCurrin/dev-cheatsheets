@@ -29,6 +29,8 @@ Hello, mcurrin / mcurrin!
 
 ### Multi-line
 
+#### Using enter
+
 Just press enter for a newline, in single or double quotes.
 
 Nothing special is needed like in other languages to include multiple lines.
@@ -43,6 +45,8 @@ echo "$X"
 Hello,
 world
 ```
+
+#### Using escaped newline character
 
 You can also use `\n` for a newline. But you need to use `-e` flag to evaulate newlines (need in Bash but ZSH doesn't need the flag).
 
@@ -96,6 +100,33 @@ print 'ABC\nDEF\nGHI'
 ABC
 DEF
 GHI
+```
+
+#### Skip first line.
+
+For indentation reason, you might want to leave text off of the first line. Use the `\` symbol to split your command so you start the string on the next line.
+
+```sh
+$ echo \
+'First line
+Second line'
+```
+```
+First line
+second line
+```
+
+Note that this does **not** work. It adds a literal backslash. But in JavaScript or Python, this approach works.
+
+```sh
+$ echo '\
+First line
+Second line'
+```
+```
+\
+First line
+Second line
 ```
 
 ### Escaping quotes
