@@ -6,7 +6,9 @@ layout: home
 
 > {{ site.description }}
 
-Welcome to **Dev Cheatsheets** - a quick reference for showing you how to use a CLI tool, language or library by focusing on syntax and real world examples. While keeping explanation paragraphs to a minimum.
+Welcome to **Dev Cheatsheets**. A quick reference for showing you how to use a CLI tool, language or library. 
+
+Including syntax but emphasizing real world examples. While trying to keep explanation paragraphs to a minimum.
 
 <div align="center" style="padding-bottom: 1em;">
     <a href="{{ site.baseurl }}{% link cheatsheets/index.md %}">
@@ -14,6 +16,10 @@ Welcome to **Dev Cheatsheets** - a quick reference for showing you how to use a 
             alt="Go to cheatsheets"/>
     </a>
 </div>
+
+Why? I got tired of doing the same kind of searches over and over. Or trying to look at my history of Google and StackOverflow searches. Or looking at my scattered notes from months ago. So I built this cheatsheets site. To collect my experience all in one place, around using code snippets and CLI tools.
+
+Contributions are welcome via PRs and issues.
 
 
 ## Featured topics
