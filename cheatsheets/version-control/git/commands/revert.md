@@ -14,7 +14,7 @@ This reverses a single commit's changes. Any changes from later commits will be 
 You'll get a prompt for a commit message and then the commit will be made.
 
 ```sh
-$ git commit REF
+$ git revert COMMIT_REF
 ```
 
 
@@ -31,6 +31,8 @@ $ git commit
 If you prefer to create a _single_ commit, you can do this.
 
 ```sh
+$ git revert --no-commit COMMIT_REF..COMMIT_REF
+$ # e.g.
 $ git revert --no-commit 4eab63b2..HEAD
 ```
 
