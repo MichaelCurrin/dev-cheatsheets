@@ -105,7 +105,7 @@ $ deno bundle https://deno.land/std@0.79.0/http/file_server.ts \
 $ deno run --allow-net --allow-read file_server.min.js
 ```
 
-Or run against an bundled file.
+Or minify a file which was bundled already using Deno.
 
 ```sh
 $ cat build/bundle.js \
