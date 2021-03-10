@@ -1,5 +1,141 @@
 # esbuild
 
+
+## How to install
+
+Install globally, or in your project packages.
+
+Or don't install and rather run with `npx` - which will do a fresh download each time.
+
 ```sh
-$ esbuild --minify
+$ npx esbuild --help
+```
+
+## Help
+
+### Overview
+
+Summary of my typical use of this tool:
+
+- I point this a single JS entrypoint of my app. Then all imports (both my own modules and installed modules) will get used in the output.
+- I usually use `--minify` as I like the speed and ease of this as a minifier tool.
+- If I want to bundle, I'll use `--bundle` flag. For use with Deno, I prefer `deno bundle` (including TS etc. support) and then run `esbuild --minify` on that.
+- It's best to always make the [source map][] output file. If you serve this with your app, then it makes debugging easier as your browser will look for the source map - allow you to see what original code looked like.
+- If you omit the `--bundle` flag and use `--minify` flag and give multiple scripts as paths, then I think you'll created multiple separate minified files. And you can change where they go using `--outdir`.
+
+[source map]: https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map
+
+### Usage
+
+```
+Usage:
+  esbuild [options] [entry points]
+```
+
+### Flags
+
+Some common flags:
+
+Flag | Description
+---  | ---
+`--minify` | Minify the output. See [Minifiers][] guide for more info.
+`--bundle` | Bundle all dependencies into the output files.
+`--sourcemap` | Emit a source map. This will be like `bundle.js.map`.
+`--outfile=PATH` | The output file (for one entry point). Write to given path. e.g. `bundle.min.js` or `build/bundle.min.js`.
+`--outdir` | The output directory (for multiple entry points). Directory to write file to. e.g. `build`. The filename will be based on the input filename. If you have one entrypoint, this flag is not so useful - rather set `--outfile` and give it a fullpath of directory and filename.
+
+[Minifiers]: https://michaelcurrin.github.io/dev-resources/resources/javascript/minifiers.html
+
+Some more flags:
+
+Flag | Description
+---  | ---
+`--summary`           |  Print some helpful information at the end of a build
+`--serve=...`         |  Start a local HTTP server on this host:port for outputs
+`--watch`             |  Watch mode: rebuild on file system changes
+
+
+## Minify only
+
+To minify an already bundled JS script.
+
+```sh
+$ esbuild --minify bundle.js
+```
+
+You could set this as `minify` command in `Makefile` or in `package.json` scripts.
+
+Using `build` directory.
+
+### Without changing directory
+
+Note `--outfile` does actually need the equals sign.
+
+```sh
+$ esbuild build/bundle.js --outfile=build/bundle.min.js --minify --sourcemap
+```
+
+### With changing directory
+
+Read and write on given paths.
+
+```sh    
+$ cd build && esbuild --minify bundle.js --outfile=bundle.min.js
+```
+
+Use `stdin` to read and `stdout` to write.
+
+```sh
+$ cd build && esbuild --minify < bundle.js > bundle.min.js
+```
+
+Wrapped on multiple lines.
+
+```sh
+$ cat build/bundle.js \
+  | npx esbuild --minify \
+  > build/bundle.min.js
+```
+
+            
+## Bundle only
+
+```sh
+$ esbuild --bundle main.js
+```
+
+Note `--bundle PATH` is the same as just using `PATH`. And 
+
+
+Example NPM usage from the docs.
+
+You could set this as `build` command in `Makefile` or in `package.json` scripts.
+
+```sh
+$ esbuild app.jsx --bundle --outfile=out.js
+```
+
+
+## Bundle and minify
+
+Taking multiple JS files into one bundled, minified file.
+
+From the CLI help.
+
+```sh
+$ esbuild --bundle entry_point.js --outdir=dist --minify --sourcemap
+```
+
+Produces:
+
+- `dist/entry_point.js`
+- `dist/entry_point.js.map`
+
+
+## Production build
+
+- [Getting Started](https://esbuild.github.io/getting-started/) docs recommend setting a production environment, to avoid errors when using `process.env` in the browser. It says this can happen in React.
+
+```sh
+--define:'process.env.NODE_ENV="production"'
 ```
