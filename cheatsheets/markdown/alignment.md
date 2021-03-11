@@ -15,7 +15,7 @@ But, you can use the `align` attribute, on a `div` tag, `p` tag or `img` tag. Wi
 ```markdown
 <div align="center">
   
-My **markdown** text.
+My _markdown_ text.
 
 More text.
 
@@ -31,7 +31,7 @@ Some SVG images:
 
 <div align="center">
   
-My **markdown** text.
+My _markdown_ text.
 
 More text.
 
@@ -45,7 +45,7 @@ Some SVG images:
 
 ### Align right
 
-Note, in the code, the text comes _after_ the image.
+Note the text comes _after_ the image in the code, but the results shows the text as _before_ on the left.
 
 #### Code
 
