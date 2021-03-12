@@ -5,9 +5,41 @@ description: List of recommended plugins I'd like to share
 
 {% raw %}
 
+
+## GitHub metadata
+
+[![jekyll - github-metadata](https://img.shields.io/static/v1?label=jekyll&message=github-metadata&color=blue&logo=github)](https://github.com/jekyll/github-metadata)
+[![stars - github-metadata](https://img.shields.io/github/stars/jekyll/github-metadata?style=social)](https://github.com/jekyll/github-metadata)
+
+See [docs](https://github.com/jekyll/github-metadata/blob/master/docs/site.github.md) for a description of the data available on the `site.github` object in Liquid.
+
+```ruby
+group :jekyll_plugins do
+  gem 'jekyll-github-metadata'
+end
+```
+
+
+## GitHub Pages
+
+This includes many other gems, listed on [Dependency versions](https://pages.github.com/versions/) page.
+
+Including themes, plugins and Jekyll itself.
+
+```ruby
+group :jekyll_plugins do
+  gem 'github-pages'
+end
+```
+
+This is rather heavy - you'll install a lot and only use a little.
+
+
 ## Embedding
 
-- [jekyll-gist](https://github.com/jekyll/jekyll-gist)
+[![jekyll - jekyll-gist](https://img.shields.io/static/v1?label=jekyll&message=jekyll-gist&color=blue&logo=github)](https://github.com/jekyll/jekyll-gist)
+[![stars - jekyll-gist](https://img.shields.io/github/stars/jekyll/jekyll-gist?style=social)](https://github.com/jekyll/jekyll-gist)
+
 - See _Installation_ section of README for setup.
 - This will take a gist ID and optional filename and add the JS snippet to your page.
 - It also includes `noscript` support - fetches the raw content and build time and adds the content to the page so that this works with JS disable.
@@ -25,7 +57,8 @@ description: List of recommended plugins I'd like to share
 
 Crop and resize images and serve them responsively.
 
-Repo [rbuchberger/jekyll_picture_tag](https://github.com/rbuchberger/jekyll_picture_tag)
+[![rbuchberger - jekyll_picture_tag](https://img.shields.io/static/v1?label=rbuchberger&message=jekyll_picture_tag&color=blue&logo=github)](https://github.com/rbuchberger/jekyll_picture_tag)
+[![stars - jekyll_picture_tag](https://img.shields.io/github/stars/rbuchberger/jekyll_picture_tag?style=social)](https://github.com/rbuchberger/jekyll_picture_tag)
 
 #### Install
 

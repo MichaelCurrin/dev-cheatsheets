@@ -2,6 +2,7 @@
 
 How to setup a _Gemfile_ as a file to manage dependencies.
 
+
 ## Install gems
 
 If you using `Bundler`, you then run this at the top level of your project. This will read from the _Gemfile_.
@@ -13,7 +14,7 @@ $ bundle config set --local path vendor/bundle
 $ bundle install
 ```
 
-Old style for reference - to be **deprecated**.
+Old style - just for reference. Don't use this. Bundler docs mark this as **deprecated**.
 
 ```sh
 $ bundle install --path vendor/bundle
@@ -77,18 +78,8 @@ Notes on the above:
 - Jekyll restriction will prevent getting Jekyll `4.0.0`.
 - The group helps plugins to be loaded at the correct point when building the site.
 
+See also [Recommended Jekyll plugins]({{ site.baseurl }}{% link cheatsheets/jekyll/plugins/recommended.md %}) page.
 
-Some additional plugins to try:
-
-```ruby
-group :jekyll_plugins do
-  # ...
-  gem 'github-pages'
-  gem 'jekyll-github-metadata'
-end
-```
-
-Note that the _github-pages_ plugins includes the metadata one plus a lot of others, so you only need one of the above lines if you want to fetch GitHub metadata in your build.
 
 ## Resources
 
@@ -99,7 +90,7 @@ Note that the _github-pages_ plugins includes the metadata one plus a lot of oth
 - Plugins
     - GitHub Pages Plugin
         - [github/pages-gem](https://github.com/github/pages-gem) repo
-        - [GitHub Pages](https://jekyllrb.com/docs/github-pages/) plugin in the Jekyll docs. This gives you a couple of Jekyll plugins and themes, which may be unnessary if you are running locally and only need to install one or two of those.
+        - [GitHub Pages](https://jekyllrb.com/docs/github-pages/) plugin in the Jekyll docs. This gives you a couple of Jekyll plugins and themes, which may be unnecessary if you are running locally and only need to install one or two of those.
         - [Versions](https://pages.github.com/versions/) - Plugins supported by the `github-pages` plugin.
     - GitHub Metadata
         - [jekyll/github-metadata](https://github.com/jekyll/github-metadata) repo.
