@@ -59,6 +59,7 @@ The short name works too. Note that outside of GitHub, other editing tools like 
 print("Hello, world!")
 ```
 
+
 ## Supported languages
 
 Some valid references for language-specific styling that I use. There are many more available.
@@ -138,3 +139,43 @@ With comments, use `json5` to avoid getting errors for invalid content on GitHub
 ```
 
 Note - from limited testing, I found that `re` works better than `regex`.
+
+
+## Code blocks in bullet points
+
+It can look messy to alternate between bullet points and code blocks, especially if using numbered points.
+
+But you can nest code blocks under bullet points, like this.
+
+Code:
+
+    - First point
+        ```
+        My code
+        ```
+    - Second point
+        ```
+        More code
+        ```
+
+Result:
+
+- First point
+    ```
+    My code
+    ```
+- Second point
+    ```
+    More code
+    ```
+
+### Warning
+
+You may **not** start a nested code block with a **dash**. Markdown gets confused and the formatting looks broken.
+
+So don't do this:
+
+- First point
+    ```
+    - My code
+    ```
