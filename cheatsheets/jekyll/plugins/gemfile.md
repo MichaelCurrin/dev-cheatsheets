@@ -81,8 +81,11 @@ Notes on the above:
 Some additional plugins to try:
 
 ```ruby
+group :jekyll_plugins do
+  # ...
   gem 'github-pages'
   gem 'jekyll-github-metadata'
+end
 ```
 
 Note that the _github-pages_ plugins includes the metadata one plus a lot of others, so you only need one of the above lines if you want to fetch GitHub metadata in your build.
