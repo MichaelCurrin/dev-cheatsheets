@@ -23,6 +23,8 @@ plugins:
 Additional:
 
 ```yml
+plugins:
+  # ...
   - github-pages
   - jekyll-github-metadata
 ```
