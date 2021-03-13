@@ -1,23 +1,41 @@
 # chmod
 
-[Tutorial](https://www.howtogeek.com/437958/how-to-use-the-chmod-command-on-linux/)
+See [Tutorial on chmod](https://www.howtogeek.com/437958/how-to-use-the-chmod-command-on-linux/) on How to Geek site.
 
 
 ## Help
 
 ### Usage
 
-```
-chmod - change file mode bits  
+Note that the flags (options) must come **before** position parameters.
+
+```sh
+$ man chmod 
 ```
 
+Linux:
+
 ```
+chmod - change file mode bits  
+
 chmod [OPTION]... MODE[,MODE]... FILE...
 chmod [OPTION]... OCTAL-MODE FILE...
 chmod [OPTION]... --reference=RFILE FILE...  
 ```
 
-Note that the flags (options) must come **before** position parameters.
+macOS:
+
+```
+NAME
+     chmod -- change file modes or Access Control Lists
+
+SYNOPSIS
+     chmod [-fv] [-R [-H | -L | -P]] mode file ...
+     chmod [-fv] [-R [-H | -L | -P]] [-a | +a | =a] ACE file ...
+     chmod [-fhv] [-R [-H | -L | -P]] [-E] file ...
+     chmod [-fhv] [-R [-H | -L | -P]] [-C] file ...
+     chmod [-fhv] [-R [-H | -L | -P]] [-N] file ...
+```
 
 #### Mode
 
@@ -44,13 +62,11 @@ $ chmod 755 PATH
 
 ### Flags
 
-```
--v, --verbose
-    output a diagnostic for every file processed 
+Note that flags are different on Linux and macOS. Only Linux supports the longer form of a flag.
 
--R, --recursive
-    change files and directories recursively 
-```
+- `-v, --verbose` - Output a diagnostic for every file processed. Useful for recursive use.
+- `-c` - Like verbose, but only show if a file was changed.
+- `-R, --recursive` - Change files and directories recursively 
 
 ### Manpage
 
@@ -75,12 +91,39 @@ If none of these are given, the effect is as if `a` were given. But bits that ar
 
 ### Access types
 
+These appear for permissions when using `ls -l`.
+
+e.g.
+
+```
+-rw-------
+lrwxr-xr-x
+drwxr-xr-x
+```
+
 Symbol | Description
 ---    | ---
 `r`    | Read.
 `w`    | Write.
 `x`    | Execute.
+
+Other symbols:
+
+Symbol | Description
+---    | ---
 `d`    | Directory - appears for directories.
+`l`    | Symbolic link.
+`t`    | Sticky 
+`s`    | The set-user-ID-on-execution and set-group-ID-on-execution bits.
+`+`    | Access control.
+
+Access control is visible with `ls -le`
+
+e.g.
+
+```
+drwxr-xr-x+
+```
 
 ### Bits
 
