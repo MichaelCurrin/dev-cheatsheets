@@ -1,5 +1,8 @@
 # chmod
 
+[Tutorial](https://www.howtogeek.com/437958/how-to-use-the-chmod-command-on-linux/)
+
+
 ## Help
 
 ### Usage
