@@ -50,7 +50,7 @@ Note the text comes _after_ the image in the code, but the results shows the tex
 #### Code
 
 ```markdown
-<img width="50%" align="right" src="https://github-readme-streak-stats.herokuapp.com/?user=michaelcurrin&" />
+<img width="50%" align="right" src="https://github-readme-streak-stats.herokuapp.com/?user=michaelcurrin" />
 
 Paragraph of text.
 
@@ -61,10 +61,14 @@ Last line.
 
 #### Result
 
-<img width="50%" align="right" src="https://github-readme-streak-stats.herokuapp.com/?user=michaelcurrin&" />
+<img width="50%" align="right" src="https://github-readme-streak-stats.herokuapp.com/?user=michaelcurrin" />
 
+<p>
 Paragraph of text.
-
+</p>
+<p>
 Next line.
-
+</p>
+<p>
 Last line.
+</p>
