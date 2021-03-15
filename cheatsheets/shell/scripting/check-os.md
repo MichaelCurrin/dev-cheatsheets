@@ -1,14 +1,15 @@
-# Check OS
-
-Find what the current OS is using shell commands.
+---
+title: Check OS
+description: Get the name of the current operating using the shell and use it in control flow
+---
 
 
 ## Display
 
-### OSTYPE variable
+### The OS type variable
 
 ```sh
-echo $OSTYPE
+echo "$OSTYPE"
 ```
 
 | OS    | Example value |
@@ -16,7 +17,7 @@ echo $OSTYPE
 | Linux | `linux-gnu`   |
 | macOS | `darwin19.0`  |
 
-### uname command
+### The uname command
 
 See `uname` [manpage](https://ss64.com/osx/uname.html).
 
@@ -43,7 +44,7 @@ fi
 
 ## Set boolean
 
-This was based on Grails quickstart which uses `case` and `uname`.
+This was based on a Grails quickstart app which uses `case` and `uname`.
 
 ```sh
 IS_MAC=false
