@@ -47,6 +47,8 @@ Some SVG images:
 
 Note the text comes _after_ the image in the code, but the results shows the text as _before_ on the left.
 
+Note that this only works because of the `width` attribute on the `img` tag. Something like the `div` tag won't have that. And using `style` to set width will work on a static site but not in plain GitHub markdown.
+
 #### Code
 
 ```markdown
