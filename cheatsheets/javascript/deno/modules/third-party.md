@@ -4,7 +4,7 @@ description: Examples of how to install and run a Deno package
 ---
 
 
-Deno's 3rd party package registry is:
+Deno's 3rd-party package registry is:
 
 - [deno.land/x](https://deno.land/x)
 
@@ -85,7 +85,7 @@ Demo of using the [deno.land/x/color](https://deno.land/x/color#color) module.
     ```
 - `index.js` - JavaScript alternative.
     ```javascript
-    import clc from 'https://deno.land/x/color/index.js
+    import clc from 'https://deno.land/x/color/index.js'
 
     console.log(clc.red.text("I am red"))
 
