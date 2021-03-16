@@ -9,8 +9,9 @@ Warning - **this is an unstable feature.**.
 
 This page is based on [Import maps](https://deno.land/manual/linking_to_external_code/import_maps) in the Deno manual.
 
-This uses the following:
+This Import Maps standard.
 
+- [Homepage](https://wicg.github.io/import-maps/)
 - [![WICG - import-maps](https://img.shields.io/static/v1?label=WICG&message=import-maps&color=blue&logo=github)](https://github.com/WICG/import-maps)
     > How to control the behavior of JavaScript imports
 
