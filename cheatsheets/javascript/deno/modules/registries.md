@@ -51,7 +51,7 @@ You can reference the CDN URL in your Deno TS code or directly in your browser a
 
 The CDN URLs scripts I've seen so far tend to be just a few lines long and reference multiple packages on NPM. This means that even if a package is not in the Deno package registry, you can still easily use it in your Deno project. And this means you can use Deno to build say a React application using a CDN for dependencies and then you can bundle your app as a single JS file that can be loaded on the browser.
 
-Here are some CDNs I've come across and how to use them for Deno projects.
+Here are some CDNs I've come across and how to use them for Deno projects so you can get packages that are on NPM.
 
 See also [CDNs](https://michaelcurrin.github.io/dev-resources/resources/javascript/cdns.html) in my Dev Resources guide.
 
@@ -59,10 +59,11 @@ See also [CDNs](https://michaelcurrin.github.io/dev-resources/resources/javascri
 
 - [JSPM](https://jspm.org/)
 
-> jspm provides a module CDN allowing any package from npm to be directly loaded
-in the browser and other JS environments as a fully optimized native JavaScript module.
+> jspm provides a module CDN allowing any package from npm to be directly loaded in the browser and other JS environments as a fully optimized native JavaScript module.
 
-e.g. I learnt this in a tutorial on Deno.
+Everything is already an ESModule and works well in Deno - no query params needed.
+
+Example:
 
 ```javascript
 import React from "https://dev.jspm.io/react";
