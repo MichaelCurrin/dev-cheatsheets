@@ -8,7 +8,8 @@ Note the GH and NPM imports might still be experimenal features.
 
 ## Deno standard library
 
-- [deno.land/std](https://deno.land/std)
+- [deno.land/std](https://deno.land/std) on Deno homepage.
+- [denoland/deno_std](https://github.com/denoland/deno_std) repo of packages.
 
 ```typescript
 import * as log from "https://deno.land/std@0.86.0/log/mod.ts";
@@ -18,24 +19,37 @@ import { serve } from "https://deno.land/std@0.86.0/http/server.ts";
 
 ## Deno x
 
-Deno has its own packages registry of 3rd party registry.
+Deno has its own registry of 3rd-party packages.
 
 - [deno.land/x](https://deno.land/x)
+    > deno.land/x is a hosting service for Deno scripts. It caches releases of open source modules stored on GitHub and serves them at one easy to remember domain.
+
+The URL format is:
+
+- Latest version: `https://deno.land/x/IDENTIFIER/FILE_PATH`
+- Locked version: `https://deno.land/x/IDENTIFIER@VERSION/FILE_PATH`
+
+
+### Native
+
+Example:
 
 ```typescript
 import { Application } from "https://deno.land/x/oak/mod.ts";
 ```
 
+### GitHub
 
-## GitHub
+Example:
 
 ```typescript
 import { amqp } from "https://deno.land/x/gh:lenkan:amqp/mod.ts";
 import { amqp } from "https://deno.land/x/gh:lenkan:amqp@v0.9.1/mod.ts";
 ```
 
+### NPM
 
-## NPM
+Example:
 
 ```typescript
 import { numbers } from "https://deno.land/x/npm:numbers/index.js";
@@ -45,7 +59,11 @@ import { numbers } from "https://deno.land/x/npm:numbers@v0.7.0/index.js";
 
 ## CDNs
 
-You can install a module from a CDN tool. These tools provided optmized builds and multiple files to choose from.
+If you want to install an NPM package in a Deno project, you can do that using one of many CDNs.
+
+They might not store anything themselves directly but might just point to NPM.
+
+The CDN will give you a choice of optmized builds and multiple files to choose from. Such as minified or not. And CommonJS or ESModule.
 
 You can reference the CDN URL in your Deno TS code or directly in your browser as an ES Module. These CDN URLs are reusuable - they also provide instructions on how to use in Deno, the browser, etc. Sometimes you need a URL flag to indicate that that you need a Deno-specific module.
 
