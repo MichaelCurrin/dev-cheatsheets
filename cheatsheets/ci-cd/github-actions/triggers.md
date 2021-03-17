@@ -63,7 +63,9 @@ on:
     types: [assigned, opened, synchronize, reopened]
 ```
 
-Limit to when a PR against master is merged. This is similar to listening to `push` event on `master`, but it requires a PR to exist and does not pick up just any commit to `master`.
+Limit to when a PR against master is merged. There is no `merged` so use `closed`. This closed event I think might be triggered when you close without merging.
+
+This is similar to listening to `push` event on `master`, but it requires a PR to exist and does not pick up on just any commit to `master`.
 
 ```yaml
 on:
@@ -183,21 +185,25 @@ on:
 
 ### Ignore markdown changes
 
-Triggered on a commit or push to your main branch or any branch with a Pull Request. Ignore changes to markdown files (docs).
+Triggered on a commit or push to your main branch or any branch with a Pull Request. Ignore changes to markdown files at all levels (such as `README.md` and in `docs`).
  
 - `main.yml` 
     ```yaml
     on:
       push:
-       branches: main
+        branches: main
         paths-ignore:
-          - "**.md"
+          - "*.md"
 
       pull_request:
         branches: main
         paths-ignore:
-          - "**.md"
+          - "*.md"
     ```
+
+### Ignore doc changes
+
+More explicit - trigger on markdown changes but not doc-related changes. 
 
 Similar to above but still watches for changes in markdown files outside the docs directory. Such as if you have a static site with markdown content in the root of the repo.
 
