@@ -1,14 +1,18 @@
 ---
 title: Single-file components
-description: How to a structure and write a `.vue` file
+description: How to a structure and write a component in `.vue` file
 ---
+
+A Single-File Component is also known as a "SFC".
 
 {% raw %}
 
-Docs:
+## Documenation
 
 - Vue 3 - [Single-file components](https://v3.vuejs.org/guide/single-file-component.html)
 - Vue 2 - [Single-file components](https://vuejs.org/v2/guide/single-file-components.html)
+
+See [Pre-compiling templates](https://v3.vuejs.org/guide/tooling/deployment.html#pre-compiling-templates) in the Vue 3 Production Deployment guide. That gives you a choice of SFCs as linked above, or `vue-template-loader` for Webpack. See also my [No build step](https://michaelcurrin.github.io/code-cookbook/recipes/javascript/packages/vue/no-build-step.html) recipe.
 
 
 ## Outline
