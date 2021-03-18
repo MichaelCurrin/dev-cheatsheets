@@ -1,15 +1,13 @@
 ---
+title: Docker compose
 description: A tool that makes docker containers easier to manage
 ---
-# Docker compose
-
 
 Docker compose allows orchestration of multiple containers. It allows you to store and run parameters against those containers without typing each time.
 
 ## Resources
 
-- [Overview of docker-compose CLI](https://docs.docker.com/compose/reference/overview/) reference docs.
-- [Docker compose file reference](https://docs.docker.com/compose/compose-file/)
+See my [Dev Resources](https://michaelcurrin.github.io/dev-resources/resources/containers/docker-compose.html).
 
 
 ## Requirements
