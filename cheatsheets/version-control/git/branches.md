@@ -81,11 +81,14 @@ $ git branch -a
 
 ### Delete one branch
 
+Both of these will delete a branch immediately. In the case of the first one, you'll get a warning if the branch is not merged, but it will continue anyway.
+
 ```sh
 $ git branch -d BRANCH_NAME
-# Delete even if not merged.
 $ git branch -D BRANCH_NAME
 ```
+
+You can supply multiple branch names if you want.
 
 ### Restore deleted branch
 
@@ -114,19 +117,30 @@ $ git checkout -b foo --track origin/foo
 
 ### Delete unneeded branches
 
-Based on the ZSH alias `gbda` - probably "git branch delete all".
+Based on the ZSH alias `gbda`. Which probably stands for "git branch delete all".
 
 Select all _merged_ branches, excluding `master` and `develop`, then delete each.
 
 ```sh
-$ git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(master|develop)\s*$)" | command xargs -n 1 git branch -d
+$ git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(main|master|develop)\s*$)" | command xargs -n 1 git branch -d
 ```
 
-Note that a branch might be merged but might not known to git if it was a squash merge.
+Using `xargs` will take each branch name and run the delete branch command against it, using a functional programming approach.
 
-You can run `git fetch` first to make sure you are up to date with the remote.
+You could also get the branch names as one long string, remove line breaks, then pass that all to the command. Like this, based on another source I found.
 
-Here is a more aggressive one (best to run this on master or develop and push your feature branches first, so you can recreate them from the remote references).
+```sh
+$ git branch -d $(git branch --merged | grep -v '^*' | grep -v 'main|master|develop' | tr -d '\n')
+```
+
+The regex is also shorter.
+
+Note on accuracy:
+
+- Run `git fetch` (or `git pull`) first to make sure you are up to date with the remote.
+- A branch might be merged but might not known to `git` if it was a **squash** merge.
+
+Here is a more aggressive approach (best to run this on `master` or `develop` and push your feature branches first, so you can recreate them from the remote references).
 
 ```sh
 $ git checkout master
@@ -138,6 +152,7 @@ Deleted branch foo (was 125f0d2).
 If you use `-d` you'll get warnings on unmerged branches and `-D` will delete it anyway.
 
 Here with `-d`:
+
 ```
 error: The branch 'foo' is not fully merged.
 If you are sure you want to delete it, run 'git branch -D foo'.
