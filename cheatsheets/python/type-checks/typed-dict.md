@@ -30,7 +30,7 @@ Define a type.
 Movie = TypedDict('Movie', {'name': str, 'year': int})
 ```
 
-### Approaches to using the type
+### Approaches to using the defined type
 
 #### Annotation
 
@@ -46,6 +46,13 @@ Use it as a constructor. Similar to a class.
 
 ```python
 movie = Movie(name='Toy Story', year=1995)
+```
+
+#### Function parameter
+
+```python
+def foo(movie: Movie): -> None
+    print(movie['name'])
 ```
 
 
