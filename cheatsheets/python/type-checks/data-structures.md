@@ -1,5 +1,5 @@
 ---
-title: Validating structures
+title: Data structures
 description: How to choose a type approach for your data structure 
 ---
 
@@ -22,7 +22,15 @@ def foo(name: str, age: int, height: float): -> None
 A typed dictionary is useful for defining a type to represent a recurring object structure or an object with many fields. Then your functions can be lighter to define.
 
 ```python
+from typing_extensions import TypedDict
+
 Person = TypedDict(
+    'Person', 
+    {
+        'name': str, 
+        'age': int, 
+        'height': float
+    }
 )
 
 
