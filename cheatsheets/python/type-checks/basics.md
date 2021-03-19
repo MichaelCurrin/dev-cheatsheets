@@ -1,9 +1,7 @@
-# Code samples
+# Basics
 
 
-## Basic
-
-### Functions
+## Functions
 
 Validate the input and output types on a function.
 
@@ -34,7 +32,8 @@ new_vector = scale(2.0, [1.0, -4.2, 5.4])
 
 If you leave out the types on the function, they just won't be checked.
 
-### Variables
+
+## Variables
 
 You can specify a type on a variable, but this is optional. Also you can get the type checking benefit without adding it yourself, if the type can be inferred.
 
@@ -123,7 +122,8 @@ assert x is not None
 print(x.upper())
 ```
 
-### Tuple
+
+## Tuple
 
 ```python
 Tuple[TYPE, TYPE, ...]
@@ -139,7 +139,8 @@ def foo() -> Tuple[bool, str]:
     return True, 'Yes'
 ```
 
-### Union
+
+## Union
 
 Allow a variable to be one of given types.
 
@@ -163,7 +164,8 @@ Tip: From Python 3.10 you can use a pipe like:
 int | str
 ```
 
-### Optional
+
+## Optional
 
 Allow a variable to be `None`.
 
@@ -225,43 +227,3 @@ def bar(bazz: bool) -> Union[str, None]:
 
 Unless you use a `return` sooner and so don't define `buzz`.
  
-
-## Typed dictionary
-
-Define and used a `TypeDict` type. This is resuable, unlike a plain `Dict[TYPE, TYPE]` setup.
-
-Example from [TypedDict](https://mypy.readthedocs.io/en/stable/more_types.html#typeddict) section of Mypy docs.
-
-```python
-from typing_extensions import TypedDict
-```
-
-Define a type.
-
-```python
-Movie = TypedDict('Movie', {'name': str, 'year': int})
-```
-
-Use the type. NB. You must add the comment explicitly.
-
-```python
-movie = {'name': 'Blade Runner', 'year': 1982}  # type: Movie
-```
-
-Use it as a constructor.
-
-```python
-toy_story = Movie(name='Toy Story', year=1995)
-```
-
-Which is the equivalent of a plain `dict` with a type annotation.
-
-```python
-toy_story =  dict(name='Toy Story', year=1995)  # type: Movie
-```
-
-When you use a typed dictionary, Mypy can detect an invalid key or value type and given an error:
-
-```python
-director = movie['director']  # Error: 'director' is not a valid key
-```
