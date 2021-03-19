@@ -56,14 +56,13 @@ else:
 ```
 
 
-
 ## Typing
 
 Using the `Typing` module.
 
 Based on [Type hints cheat sheet (Python 3)](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html).
 
-Note from Python 3.9, you can use `dict` instead of `Dict` as so on, avoiding imports.
+Note from Python 3.9, you can use `dict` and `list` instead of `Dict` and `List`, avoiding imports.
 
 ### Built-in types
 
@@ -158,10 +157,15 @@ def bar(bazz: bool) -> Union[int, str]:
     return 12
 ```
 
+Tip: From Python 3.10 you can use a pipe like:
+
+```python
+int | str
+```
 
 ### Optional
 
-Allow a variable to bw `None`.
+Allow a variable to be `None`.
 
 ```
 Optional[TYPE]
