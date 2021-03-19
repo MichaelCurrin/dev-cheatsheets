@@ -48,6 +48,8 @@ def greet(person: Person) -> None:
 
 ### Class
 
+[Class basics](https://mypy.readthedocs.io/en/stable/class_basics.html) in the docs.
+
 You could use a class with type annotations in the constructor.
 
 ```python 
