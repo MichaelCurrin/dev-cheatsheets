@@ -5,6 +5,8 @@ description: How to choose a type approach for your data structure
 
 ## Approaches 
 
+For height to be optional before, you could have a union with float and None. Or just set `height=0.0` as a default as then it is never None type and the float type will be inferred.
+
 ### Parameters
 
 For some cases you might be okay without a naming a structure as a type and go for a simpler approach of just using a function expecting 2 or 3 named parameters with types.
@@ -15,7 +17,6 @@ def foo(name: str, age: int, height: float): -> None
     print(age >= 18)
     print(height)
 ```
-
 
 ### Typed dict
 
@@ -34,23 +35,32 @@ Person = TypedDict(
 )
 
 
-def foo(person: Person): -> None
+def foo(person: Person) -> None:
     print(person['name'])
     print(person['age'] >= 18)
     print(person['height'])
 
 
-def greet(person: Person): -> None
+def greet(person: Person) -> None:
     print(f"Hello, {person['name']}")
 ```
 
 
 ### Class
 
-You could use a class with type annotations. 
+You could use a class with type annotations in the constructor.
 
 ```python 
+class Person:
+    def __init__(self, name: str, age: int, height: float) -> None:
+        self.name = name
+        self.age = age
+        self.height = height
 
+person = Person("Michael", 31, 1.83)
+person.name = "Bob"
+person.weight = 70 
+# Error: 'Person' has no attribute 'weight'
 ```
 
 But don't go for a class just for the sake of it. 
