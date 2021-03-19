@@ -1,7 +1,7 @@
 # Basics
 
 
-## Functions
+## Functions with types
 
 Validate the input and output types on a function.
 
@@ -33,7 +33,7 @@ new_vector = scale(2.0, [1.0, -4.2, 5.4])
 If you leave out the types on the function, they just won't be checked.
 
 
-## Variables
+## Variables with types
 
 You can specify a type on a variable, but this is optional. Also you can get the type checking benefit without adding it yourself, if the type can be inferred.
 
@@ -55,9 +55,9 @@ else:
 ```
 
 
-## Typing
+## Kinds of types
 
-Using the `Typing` module.
+See [Kinds of types](https://mypy.readthedocs.io/en/latest/kinds_of_types.html) in the docs.
 
 Based on [Type hints cheat sheet (Python 3)](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html).
 
@@ -87,10 +87,10 @@ x: Dict[str, float] = {
     'field': 2.0
 }
 ```
-See also the [Typed dictionary](#typed-dictionary) section.
 
+See also the Typed Dictionary section.
 
-Fixed size `tuple`.
+Fixed size `tuple`. More details in Tuple section below.
 
 ```python
 x: Tuple[int, str, float] = (3, "yes", 7.5)
@@ -102,7 +102,7 @@ For a variable size `tuple` - use ellipsis.
 x: Tuple[int, ...] = (1, 2, 3)
 ```
 
-Allow a value to be `None`.
+Allow a value to be `None`. More details in Optional section below.
 
 ```python
 x: Optional[str] = some_function()
@@ -140,9 +140,9 @@ def foo() -> Tuple[bool, str]:
 ```
 
 
-## Union
+## Multiple types 
 
-Allow a variable to be one of given types.
+Use Union to allow a variable to be one of given types.
 
 ```
 Union[TYPE, TYPE, ...]
@@ -165,7 +165,7 @@ int | str
 ```
 
 
-## Optional
+## Optional values
 
 Allow a variable to be `None`.
 
