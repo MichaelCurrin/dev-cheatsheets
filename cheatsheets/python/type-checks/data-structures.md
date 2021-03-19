@@ -5,14 +5,16 @@ description: How to choose a type approach for your data structure
 
 ## Approaches 
 
-For height to be optional before, you could have a union with float and None. Or just set `height=0.0` as a default as then it is never None type and the float type will be inferred.
+For height to be optional, you could have a union with float and None. But the docs say that prefered way is `Optional[float]` - see [page](https://mypy.readthedocs.io/en/latest/kinds_of_types.html).
+
+Or just set `height=0.0` as a default as then it is never None type and the float type will be inferred.
 
 ### Parameters
 
 For some cases you might be okay without a naming a structure as a type and go for a simpler approach of just using a function expecting 2 or 3 named parameters with types.
 
 ```python
-def foo(name: str, age: int, height: float): -> None
+def foo(name: str, age: int, height: Optional[float]): -> None
     print(name)
     print(age >= 18)
     print(height)
@@ -30,7 +32,7 @@ Person = TypedDict(
     {
         'name': str, 
         'age': int, 
-        'height': float
+        'height': Optional[float]
     }
 )
 
@@ -54,7 +56,7 @@ You could use a class with type annotations in the constructor.
 
 ```python 
 class Person:
-    def __init__(self, name: str, age: int, height: float) -> None:
+    def __init__(self, name: str, age: int, height: Optional[float]) -> None:
         self.name = name
         self.age = age
         self.height = height
