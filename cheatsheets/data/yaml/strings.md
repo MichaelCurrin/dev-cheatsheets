@@ -103,12 +103,29 @@ Without quotes it appears literally.
 You can use implicit newlines in your scalar. But I would recommend against this - rather use [Block scalars](#block-scalars).
 
 ```yaml
+# Unquoted
+
 my_string: Abc
   def
 
-quoted: "Abc
+quotes_escaped: See
+  quotes used "here" without escaping
+  
+newline_escaped: See
+  the newline \n doesn't do anything and is literal.
+  
+# Quoted
+
+my_string: "Abc
   def"
+  
+quotes_escaped: "See
+  some \"escaped quotes\" here." 
+  
+newline_escaped: "See
+  a literal newline here as \\n"
 ```
+
 
 ## Block scalars
 
