@@ -16,14 +16,14 @@ $ bundle config set --local path vendor/bundle
 
 That will create - `.bundle/config` file.
 
-Ignore it:
+Make sure to ignore the file, as it is environment-specific:
 
 - `.gitignore`
     ```
     .bundle
     ```
 
-In the case of using the frozen or deploy flags, you'll get values added to the config.
+In the case of using the frozen or deploy flags, you'll get values added to the config too.
 
 
 ## Clean mode
@@ -35,7 +35,7 @@ In the case of using the frozen or deploy flags, you'll get values added to the 
 
 Disallow changes to the `Gemfile.lock` file.
 
-Use the deploy option when configuring.
+Use the deploy option when configuring. TBC is it `true` or `True`?
 
 ```sh
 $ bundle config set deployment true
