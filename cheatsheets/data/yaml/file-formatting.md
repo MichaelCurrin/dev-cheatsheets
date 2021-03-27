@@ -24,6 +24,9 @@ For a Jekyll site:
 
 ```yaml
 ---
-my_string: Hello
+title: Hello
+my_string: Greetings
 ---
+
+My page content.
 ```
