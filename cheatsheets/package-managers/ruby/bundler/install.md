@@ -24,24 +24,23 @@ colorator-1.1.0             jekyll-sass-converter-1.5.2 pathutil-0.16.2
 ...
 ```
 
-Production install.
-
-```sh
-$ bundle install --frozen --deployment
-```
-
 ### Arguments
 
 Summary of args I find useful.
 
 | Arg                               | Description                                                                                                                                                                                                        |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `--frozen`                        | Do not allow the `Gemfile.lock` to be updated after this install. Exits non-zero if there are going to be changes to the `Gemfile.lock`.                                                                           |
 | `--quiet`                         | Do not print progress information to the standard output. Instead, Bundler will exit using a status code ($?).                                                                                                     |
 | `--gemfile=PATH` | Specify path to a `Gemfile`. Defaults to the file in the current working directory. |
 | `--jobs=[<number>], -j[<number>]` | The maximum number of parallel download and install jobs. The default is 1. This seems to be popular in CI installs.                                                                                                                                      |
 
-Note that `--clean` and `--deployment` flags are marked as deprecated in the CLI help.
+Note that `--frozen`, `--clean` and `--deployment` flags are marked as deprecated in the CLI help.
+
+Production install - you might see this used and it still works in Bundler 2, but it is deprecated.
+
+```sh
+$ bundle install --frozen --deployment
+```
 
 
 ## clean subcommand
