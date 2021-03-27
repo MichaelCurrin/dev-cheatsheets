@@ -52,9 +52,13 @@ Single quotes works the same.
 
 ## Block scalars
 
-A block scalar is similar to a string. The value starts on its own line, indented. The value is escaped, so you can use quotes and symbols easily without having to escape them.
+A block scalar is a variation of a string. 
+
+As an advantage over a plain scalar string, the value gets escaped, so you can use quotes and symbols easily without having to escape them.
 
 They are especially useful for multi-line strings, but also work fine for single-line strings.
+
+The value starts on its own line. All lines of the value must be indented - usually by 2 spaces, but this is inferred so you can actually indent by another count.
 
 Single line:
 
@@ -67,7 +71,6 @@ Single line:
     ```
     My single line string value.
     ```
-
 
 Multi-line:
 
@@ -83,13 +86,27 @@ Multi-line:
     continues to another line.
     ```
 
-There are a few characters to change how the block scalar is handled. See sections below or or see [yaml-multiline.info](https://yaml-multiline.info/) for more info and an updating demo.
+### Modifiers
 
-### Set block style
+There are a few characters to modify how a block scalar is handled. See sections below or or see [yaml-multiline.info](https://yaml-multiline.info/) for more info and an updating demo.
+
+Quick reference:
+
+- Block Scalar Style
+    - Replace newlines with spaces (folded)
+    - Keep newlines (literal)
+- Block Chomping
+    - Single newline at end (clip)
+    - No newline at end (strip)
+    - All newlines from end (keep)
+ 
+See formatting examples below.
+
+#### Block style
 
 Change newline behavior.
 
-#### Literal newlines
+##### Literal newlines
 
 Use a pipe (`|`) to interpret newlines literally.
 
@@ -111,7 +128,7 @@ Use a pipe (`|`) to interpret newlines literally.
     plus another line at the end.
     ```
 
-#### Fold newlines
+##### Fold newlines
 
 Use an arrow (`>`) to fold newlines so they become spaces. To force a newline, use an empty line i.e. two newlines.
 
@@ -128,4 +145,54 @@ Use an arrow (`>`) to fold newlines so they become spaces. To force a newline, u
     ```
     Several lines of text, with some "quotes" of various 'types', and also a blank line:
     plus another line at the end.
+    ```
+
+#### Block chomping
+
+Change what happens to a newline at the end of the entire string. Shown using JSON, as it includes newlines explicitly.
+
+You can use literal or folded block style here.
+
+##### Clip
+
+This is the default. It adds a newline at the end.
+
+- YAML
+    ```yaml
+    my_string: |
+      My text
+    ```
+- JSON result
+    ```json
+    "My text\n"
+    ```
+    
+##### Strip
+
+Remove newlines with minus sign (`-`).
+
+- YAML
+    ```yaml
+    my_string: |-
+      My text
+    ```
+- JSON result
+    ```json
+    "My text"
+    ```
+
+##### Keep
+
+Both of the above ignore existing newlines. To keep them, use a plus sign (`+`).
+
+- YAML
+    ```yaml
+    my_string: |+
+      My text
+      
+      
+    ```
+- JSON result
+    ```json
+    "My text\n\n\n"
     ```
