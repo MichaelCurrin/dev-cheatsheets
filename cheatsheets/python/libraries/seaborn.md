@@ -15,7 +15,7 @@ From the docs:
 ## Resources
 
 - [Homepage](https://seaborn.pydata.org/)
-
+- [Gallery](https://seaborn.pydata.org/examples/index.html) - heatmap, bar chart, relationship map, catblot, boxplot, scatterplot, etc.
 
 ## Examples
 
