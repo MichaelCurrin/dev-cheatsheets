@@ -1,16 +1,19 @@
 ---
-description: Using the builtin `sys` module
+title: sys
+description: Using the built-in `sys` system module
 ---
-# sys
 
 
-[PY 3 docs](https://docs.python.org/3/library/sys.html)
+## Resources
+
+- [PY 3 docs](https://docs.python.org/3/library/sys.html)
+
 
 ## Path
 
 ### View
 
-```
+```python
 sys.path
 ```
 
@@ -25,7 +28,6 @@ sys.path
 ```python
 sys.path.insert(0, path)
 ```
-
 
 Allow imports to be done when executing this file directly with `python foo/script.py` or `python ~/repo-name/foo/script.py`. This will get the absolute path to current directory of the script, regardless of where running the script from.
 
@@ -48,13 +50,15 @@ sys.path.insert(0, os.path.abspath(os.path.join(
 
 ## Platform
 
-`sys.platform`
+```python
+sys.platform
+```
 
 > This string contains a platform identifier that can be used to append platform-specific components to `sys.path`, for instance.
 
 ```python
 if sys.platform.startswith('linux'):
-    # Linux-specific code here...
+    print("Linux-specific code here...")
 ```
 
 Platform        | Code
@@ -63,4 +67,4 @@ AIX             | `'aix'`
 Linux           | `'linux'`
 Windows         | `'win32'`
 Windows/Cygwin  | `'cygwin'`
-macOS           | 'darwin'
+macOS           | `'darwin'`
