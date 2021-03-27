@@ -1,8 +1,45 @@
 # YAML
 
+## Resources
 
-Homepage: [yaml.org](https://yaml.org/)
+- Homepage: [yaml.org](https://yaml.org/)
+- [YAML validator](https://codebeautify.org/yaml-validator)
+- [JSON to YAML](https://onlineyamltools.com/convert-yaml-to-json) - useful to check your YAML data got interpreted as expected. The JSON will be verbose but precise/explicit.
 
+
+## YAML type formatting
+
+Use `.yml` or `.yaml` extension.
+
+YAML files strictly should start with triple dash, but in practice this is only used sometimes.
+
+e.g.
+
+```yaml
+my_string: Hello
+```
+
+```yaml
+---
+my_string: Hello
+```
+
+For a Jekyll site:
+
+```yaml
+---
+my_string: Hello
+---
+```
+
+
+## Null
+
+Same as in JSON.
+
+```yaml
+my_null: null
+```
 
 
 ## Boolean
@@ -11,6 +48,10 @@ Homepage: [yaml.org](https://yaml.org/)
 my_bool: True
 my_bool: False
 ```
+
+Note case - `true` would be a string as `"true"`, not a boolean.
+
+But in JSON, you do use `true`.
 
 
 ## Numbers
@@ -21,70 +62,21 @@ my_float: 123.4
 ```
 
 
-## Strings
-
-### Scalar
-
-A scalar could by another type but only string is covered here.
-
-Double quotes are recommended - some formatters will convert single quotes to double quotes.
-
-```yaml
-my_string: "Hello, world!"
-```
-
-Quotes are optional, even for strings with spaces. 
-
-```yaml
-my_string: Hello, world!
-```
-
-Quotes are useful when you have special characters you want to escape. 
-
-For example, a value starting or ending with an asterisk, like a cron schedule below.
-
-```yaml
-my_string: '* 0 * * *'
-```
-
-Quotes can also prevent a value from being cast to another type.
-
-```yaml
-my_string: 'True'
-my_string: '123'
-```
-
-New lines:
-
-```yaml
-my_string: "abc\ndef"
-```
-
-### Block scalars
-
-A block scalar is similar to a string. The value starts on its own line, indented. The value is escaped, so you can use quotes and symbols easily without having to escape them.
-
-They are especially useful for multi-line strings, but also work fine for single-line strings.
-
-```yaml
-my_string: |
-  My single line string value.
-  
-my_string: |
-  My multi-line
-  string value.
-```
-
-
 ## Data structures
 
 YAML is a superset of JSON, so you can use JSON syntax, or the ligher YAML syntax, even without quotes.
 
 ### Arrays
 
+Empty array.
+
 ```yaml
 my_array: []
+```
 
+Two strings and an integer.
+
+```yaml
 my_array: [abc, def, 123]
 my_array:
   - abc
@@ -97,8 +89,8 @@ my_array:
 ```yaml
 my_dict: {} 
 
-my_dict: { "abc": 1, "def": 20} 
+my_dict: { "abc": "Hello", "def": 20 } 
 my_dict:
-  abc: 1
+  abc: Hello
   def: 20
 ```
