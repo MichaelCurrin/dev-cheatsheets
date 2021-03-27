@@ -1,6 +1,6 @@
 # YAML
 
-## Resources
+### Resources
 
 - Homepage: [yaml.org](https://yaml.org/)
 - [YAML validator](https://codebeautify.org/yaml-validator)
