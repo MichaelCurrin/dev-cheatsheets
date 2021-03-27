@@ -28,3 +28,15 @@ But in JSON, you do use `true`.
 my_int: 123
 my_float: 123.4
 ```
+
+
+## Strings
+
+```yaml
+my_string: abc def
+my_string: "abc def"
+my_string: |
+  abc def
+```
+
+See more info in the [Strings]({{ site.baseurl }}{% link cheatsheets/data/yaml/strings.md %}) page.
