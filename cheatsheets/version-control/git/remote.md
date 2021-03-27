@@ -44,14 +44,16 @@ Note that if you use VS Code to push, it will create the repo for you on GitHub 
 
 ### Add remote for a fork
 
-Give you have forked a repo and cloned it and it has this remote setup:
+Given you have forked a repo and cloned it and it has this remote setup:
 
-- `origin git@github.com:MichaelCurrin/dev-cheatsheets.git`.
+- `origin git@github.com:MyUsername/dev-cheatsheets.git`
 
-If you want to pull in changes from the original repo into your fork, you can do this. The name `upstream` is a common name to use.
+And the the original repo is at `MichaelCurrin/dev-cheatsheets`.
+
+So to pull in changes from the original repo into your fork, you can do this. The name `upstream` is a common name to use.
 
 ```sh
-$ git remote add upstream git@github.com:SomeUsername/dev-cheatsheets.git`.
+$ git remote add upstream git@github.com:MichaelCurrin/dev-cheatsheets.git
 ```
 
 ```sh
@@ -68,4 +70,10 @@ Push your local commits to your fork.
 
 ```sh
 $ git push
+```
+
+That implies:
+
+```sh
+$ git push origin master
 ```
