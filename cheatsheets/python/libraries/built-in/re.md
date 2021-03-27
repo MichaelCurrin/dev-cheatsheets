@@ -1,7 +1,8 @@
 ---
-description: Using the regex module in Python
+title: re
+description: Using the `re` regex module in Python
 ---
-# re
+
 
 
 ## Resources
@@ -14,10 +15,13 @@ description: Using the regex module in Python
 ```python
 # Search string starting from the left.
 re.search
+
 # Search at beginning of string.
 re.match
+
 # If the whole string matches the regular expression pattern
 re.fullmatch
+
 # Return list.
 re.findall
 ```
