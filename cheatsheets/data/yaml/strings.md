@@ -5,6 +5,8 @@
 
 A scalar could by another type but only string is covered here.
 
+### Quotes
+
 Double quotes are recommended - some formatters will convert single quotes to double quotes.
 
 ```yaml
@@ -33,11 +35,7 @@ my_string: "True"
 my_string: "123"
 ```
 
-New lines:
-
-```yaml
-my_string: "abc\ndef"
-```
+### Escaping quotes
 
 Escape double quotes with any of:
 
@@ -49,6 +47,68 @@ my_string: "Hello \"world\""
 
 Single quotes works the same.
 
+### Scalar limations
+
+You cannot use a colon as you'll get an error.
+
+```yaml
+# Error!
+my_string: abc : def
+```
+
+A hash will be interpreted as a comment.
+      
+```yaml
+my_string: abc # def
+```
+
+If you want to use those characters literally, escape them with quotes.
+
+```yaml
+my_string: "abc : def"
+my_string: "abc # def"
+```
+
+Don't use a backlash to escape - this doesn't solve the error for the colon and ends up as a literal backslash for a comment.
+
+Or use [Block scalars](#block-scalars) as below, so the characters all become literal characters.
+
+### Newlines
+
+A newline character works differently depending quoting.
+
+Here with quotes it gets interpeted, as in other languages.
+
+- YAML:
+    ```yaml
+    my_string: "Abc\ndef"
+    ```
+- Result:
+    ```
+    Abc
+    def
+    ```
+    
+Without quotes it appears literally.
+
+- YAML:
+    ```yaml
+    my_string: Abc\ndef
+    ```
+- Result:
+    ```
+    Abc\ndef
+    ```
+
+You can use implicit newlines in your scalar. But I would recommend against this - rather use [Block scalars](#block-scalars).
+
+```yaml
+my_string: Abc
+  def
+
+quoted: "Abc
+  def"
+```
 
 ## Block scalars
 
@@ -58,11 +118,15 @@ As an advantage over a plain scalar string, the value gets escaped, so you can u
 
 They are especially useful for multi-line strings, but also work fine for single-line strings.
 
-The value starts on its own line. All lines of the value must be indented - usually by 2 spaces, but this is inferred so you can actually indent by another count.
+The value starts on its own line. 
+
+All lines of the value must be indented - usually by 2 spaces, but this is inferred so you can actually indent by another count. The indentation gets removed in the result.
+
+### Basic examples
 
 Single line:
 
-- YAML
+- YAML:
     ```yaml
     my_string: |
       My single line string value.
@@ -72,9 +136,23 @@ Single line:
     My single line string value.
     ```
 
+Using special characters:
+
+- YAML:
+    ```yaml
+    my_string: |
+      abc : def
+      ghi # jkl
+    ```
+- Result:
+    ```
+    abc : def
+    ghi # jkl
+    ```
+
 Multi-line:
 
-- YAML
+- YAML:
     ```yaml
     my_string: |
       My multi-line string value
