@@ -1,7 +1,7 @@
-# Install
+# Installing gems
 
 
-## `install`
+## install subcommand
 
 See [install](https://bundler.io/man/bundle-install.1.html) command help.
 
@@ -30,23 +30,34 @@ Production install.
 $ bundle install --frozen --deployment
 ```
 
-
 ### Arguments
 
 Summary of args I find useful.
 
 | Arg                               | Description                                                                                                                                                                                                        |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `--clean`                         | On finishing the installation Bundler is going to **remove** any gems not present in the current Gemfile(5). Don't worry, gems currently in use will not be removed.                                               |
-| `--deployment`                    | In [deployment mode], Bundler will 'roll-out' the bundle for production or CI use. Please check carefully if you want to have this option enabled in your development environment. Requires a `Gemfile.lock` file. |
 | `--frozen`                        | Do not allow the `Gemfile.lock` to be updated after this install. Exits non-zero if there are going to be changes to the `Gemfile.lock`.                                                                           |
 | `--quiet`                         | Do not print progress information to the standard output. Instead, Bundler will exit using a status code ($?).                                                                                                     |
-| `--jobs=[<number>], -j[<number>]` | The maximum number of parallel download and install jobs. The default is 1.                                                                                                                                        |
+| `--gemfile=PATH` | Specify path to a `Gemfile`. Defaults to the file in the current working directory. |
+| `--jobs=[<number>], -j[<number>]` | The maximum number of parallel download and install jobs. The default is 1. This seems to be popular in CI installs.                                                                                                                                      |
 
-[deployment mode]: https://bundler.io/man/bundle-install.1.html#DEPLOYMENT-MODE
+Note that `--clean` and `--deployment` flags are marked as deprecated in the CLI help.
 
 
-## add
+## clean subcommand
+
+Remove unused gems from the vendor directory. i.e. Remove the gems and subdependencies not covered by Gemfile.
+
+```sh
+$ bundle clean
+```
+
+```sh
+$ bundle clean --dry-run
+```
+
+
+## add subcommand
 
 > Adds the specified gem to Gemfile (if valid) and run 'bundle install' in one step.
 
