@@ -1,5 +1,7 @@
 # Primitive types
 
+See [Type](https://yaml.org/type/) docs.
+
 
 ## Null
 
