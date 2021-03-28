@@ -12,14 +12,16 @@ my_null: null
 
 ## Boolean
 
+While JSON only supports `"true"` for input, there are multiple ways in YAML to get a boolean.
+
 ```yaml
+my_bool: true
 my_bool: True
-my_bool: False
+my_bool: yes
+my_bool: on
 ```
 
-Note case - `true` would be a string as `"true"`, not a boolean.
-
-But in JSON, you do use `true`.
+See [Boolean docs](https://yaml.org/type/bool.html)
 
 
 ## Numbers
@@ -35,6 +37,7 @@ my_float: 123.4
 ```yaml
 my_string: abc def
 my_string: "abc def"
+
 my_string: |
   abc def
 ```
