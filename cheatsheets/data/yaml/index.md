@@ -6,7 +6,7 @@ Some use-cases include storing data for pages on a site like title and descripti
 
 YAML is a superset if JSON, so you can use JSON within YAML. But YAML is lighter in syntax making it easier to read and write. Especially for non-developers. It is light because you don't need quotes for keys or values, you don't need commas to separate lines and indentation is used for nested data like arrays or dictionaries, without having to use square or curly brackets.
 
-From history in the docs:
+From [history](https://yaml.org/spec/history/2001-08-01.html) in the docs:
 
 > Yet Another Markup Language, abbreviated YAML, describes a class of data objects called YAML documents and partially describes the behavior of computer programs that process them.
 >
