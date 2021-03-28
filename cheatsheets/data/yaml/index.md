@@ -20,4 +20,4 @@ From [history](https://yaml.org/spec/history/2001-08-01.html) in the docs:
 - [Wikipedia](https://en.m.wikipedia.org/wiki/YAML)
 - [YAML validator](https://codebeautify.org/yaml-validator)
 - [JSON to YAML](https://onlineyamltools.com/convert-yaml-to-json) - useful to check your YAML data got interpreted as expected. The JSON will be verbose but precise/explicit.
-- [W3](https://www.tutorialspoint.com/yaml/index.htm)
+- [W3](https://www.tutorialspoint.com/yaml/index.htm) - this gives an intro and then builds up the rules of the syntax and examples.
