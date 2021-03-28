@@ -1,6 +1,6 @@
 # YAML
 
-YAML stands for YAML Ain't Markup Language. It is a convenient way of storing data, typically for config files. 
+YAML stands for YAML Ain't Markup Language. It is a convenient way of storing data, typically for config files. YAML is supported in many programming languages - the homepage linked below covers libraries you can use.
 
 Some use-cases include storing data for pages on a site like title and description, describing a CI workflow or setting up containers in a docker compose file.
 
