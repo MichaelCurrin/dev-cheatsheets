@@ -6,7 +6,11 @@ layout: home
 
 > {{ site.description }}
 
-Welcome to **Dev Cheatsheets**. A quick reference for showing you how to use a CLI tool, language or library. 
+Welcome to **Dev Cheatsheets**. 
+
+Coding ingredients or building blocks. This is about having a central eference for languge syntax or CLI features, without having to wade through docs and tutorials and StackOverflow.
+
+A reference for how to use a CLI tool, language or library. It's mean to be a quick reference so you can get what you need without having to scroll or navigate a lot.
 
 Including syntax but emphasizing real world examples. While trying to keep explanation paragraphs to a minimum.
 
