@@ -1,5 +1,7 @@
 # Install
 
+See also the Upgrade page.
+
 Install gem in `/var/lib/gems`.
 
 ```sh
