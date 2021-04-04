@@ -111,18 +111,27 @@ Run 'docker COMMAND --help' for more information on a command.
 </details>
 
 
+## Hello world
+
+Test that Docker works.
+
+```sh
+$ docker run hello-world
+```
+
+
 ## Common commands
 
-From [source](https://www.mankier.com/1/docker#Examples_(TL;DR))
+From [source](https://www.mankier.com/1/docker#Examples_(TL;DR)).
 
 -   List currently running docker containers: `docker ps`
 -   List all docker containers (running and stopped): `docker ps -a`
--   Start a container from an image, with a custom name: `docker run --name container_name image`
--   Start or stop an existing container: `docker start|stop container_name`
--   Pull an image from a docker registry: `docker pull image`
--   Open a shell inside of an already running container: `docker exec -it container_name sh`
--   Remove a stopped container: `docker rm container_name`
--   Fetch and follow the logs of a container: `docker logs -f container_name`
+-   Start a container from an image, with a custom name: `docker run --name CONTAINER_NAME IMAGE`
+-   Start or stop an existing container: `docker start|stop CONTAINER_NAME`
+-   Pull an image from a docker registry: `docker pull IMAGE`
+-   Open a shell inside of an already running container: `docker exec -it CONTAINER_NAME sh`
+-   Remove a stopped container: `docker rm CONTAINER_NAME`
+-   Fetch and follow the logs of a container: `docker logs -f CONTAINER_NAME`
 
 
 ## Summary of commands
