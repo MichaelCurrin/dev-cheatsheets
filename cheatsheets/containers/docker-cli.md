@@ -111,15 +111,6 @@ Run 'docker COMMAND --help' for more information on a command.
 </details>
 
 
-## Hello world
-
-Test that Docker works.
-
-```sh
-$ docker run hello-world
-```
-
-
 ## Common commands
 
 From [source](https://www.mankier.com/1/docker#Examples_(TL;DR)).
