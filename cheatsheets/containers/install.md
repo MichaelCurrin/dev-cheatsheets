@@ -45,3 +45,17 @@ Install instructions from the [Debian install guide](https://docs.docker.com/eng
     $ sudo apt-get update
     $ sudo apt-get install docker-ce docker-ce-cli containerd.io
     ```
+
+For Linux Lite, those packages not available, so use:
+
+```sh
+$ sudo apt-get install docker.io
+```
+
+That will install `bridge-utils`, `containerd`, `runc` and `ubuntu-fan`.
+
+Verify that Docker works by using:
+
+```sh
+$ sudo docker run hello-world
+```
