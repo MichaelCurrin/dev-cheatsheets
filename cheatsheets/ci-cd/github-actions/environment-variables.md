@@ -3,6 +3,9 @@ title: Environment variables
 description: How to set at various levels
 ---
 
+{% raw %}
+
+
 ## Resources
 
 See docs:
@@ -80,3 +83,5 @@ steps:
       GITHUB_CONTEXT: ${{ toJSON(github) }}
     run: echo "$GITHUB_CONTEXT"
 ```
+
+{% endraw %}
