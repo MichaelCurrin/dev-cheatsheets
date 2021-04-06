@@ -104,7 +104,7 @@ cheatsheet:
 
           - cmd: where
             usage: |
-              {{ site.posts | where:"category","foo" }}
+              {{ site.posts | where:"category", "foo" }}
               {{ page.people | where: "school", "Stanford" }}
 
           - cmd: where_expr
