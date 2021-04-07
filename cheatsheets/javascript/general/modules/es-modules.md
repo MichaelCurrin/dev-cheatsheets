@@ -1,6 +1,6 @@
-# ES modules
+# ES Modules
 
-As of ES6 (ES2015), JavaScript supports a native module format. This is modern way to do modules in JavaScript.
+As of ES6 (ES2015), JavaScript supports a native module format called ES Modules, or ECMAScript Modules. This is modern way to do modules in JavaScript.
 
 This approach uses the `export` and `import` keywords, instead of `require`.
 
@@ -25,10 +25,10 @@ For browsers which don't support it, you can use a fallback:
 
 ## Resources
 
-- [ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/) blog post.
-- [Introduction to ES Modules](https://flaviocopes.com/es-modules/) blog post.
 - [ECMAScript Modules](https://nodejs.org/api/esm.html) in the Node.js docs.
 - [Import and export examples](https://deno.land/manual/examples/import_export) in the Deno docs.
+- [Introduction to ES Modules](https://flaviocopes.com/es-modules/) blog post.
+- [ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/) blog post.
 
 
 ## Configure
