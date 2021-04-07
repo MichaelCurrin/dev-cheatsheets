@@ -163,24 +163,37 @@ on:
 
 ### Ignore path
 
-Trigger on any path except the ignored paths.
+Trigger on any path **except** the ignored paths.
 
 ```yaml
 on:
   push:
     paths-ignore:
-      - 'docs/**'
+      - "dir-name/**"
+      - "file.txt"
 ```
+
+Or maybe just `dir0name` without the stars?
 
 ### Include path
 
-Only trigger on given paths.
+Trigger **only** on changes in given paths. Note you don't need `**`. This will already work nested.
+
+Examples:
 
 ```yaml
 on:
   push:
     paths:
-      - '**.js'
+      - "*.js"
+      - "*.css"
+```
+
+```yaml
+on:
+  push:
+    paths:
+      - src
 ```
 
 ### Ignore markdown changes
@@ -226,7 +239,9 @@ Similar to above but still watches for changes in markdown files outside the doc
 
 ## Trigger on tag
 
-Specify a tag rule under `on.push.tags`. Use a regex pattern - this must be set.
+Specify a tag rule under `on.push.tags`. 
+
+Use a regex pattern - this must be set.
 
 ```yaml
 on:
