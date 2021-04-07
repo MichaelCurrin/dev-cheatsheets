@@ -1,30 +1,75 @@
 # ES modules
 
-As of ES6 (ES2015), JavaScript `supports` a native module format.
+As of ES6 (ES2015), JavaScript supports a native module format.
 
-This approach uses the `export` and `import` keywords.
+This approach uses the `export` and `import` keywords, instead of `require`.
+
+## Support
 
 This approach is widely supported:
 
-- [x] Browser.
-- [x] Node.js.
-- [x] Deno.
+- [x] Browsers (including Chrome, Firefox and Safari since at least 2018).
+- [x] Node.js
+- [x] Deno
+
+For browsers which don't support it, you can use a fallback:
+
+```javascript
+<script type="module" src="main.js"></script>
+<script nomodule src="fallback.js"></script>
+```
+
+
+## Resources
+
+- [ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/) blog post.
+- [Introduction to ES Modules](https://flaviocopes.com/es-modules/) blog post.
+- [ECMAScript Modules](https://nodejs.org/api/esm.html) in the Node.js docs.
+- [Import and export examples](https://deno.land/manual/examples/import_export) in the Deno docs.
 
 
 ## Configure
 
-Choose ES Module approach.
+Set the type of script tag to `module`. 
 
-```html
-<script type="module">
-import { foo } from './foo';
-</script>
-```
+This works for an inline script or linking using `src`. 
+
+Keep in mind for the sections later on this page that you can use either approach. Having your JS in a file or files separate from HTML can make JS easier to manage.
+
+### Inline approach
+
+- `index.html`
+    ```html
+    <script type="module">
+    import { bar } from "https://dev.jspm.io/some-library";
+
+    import { foo } from "./foo";
+    </script>
+    ```
+
+### External approach
+
+- `index.html`
+    ```html
+    <script type="module" src="main.js"></script>
+    ```
+- `main.js`
+    ```javascript
+    import { bar } from "https://dev.jspm.io/some-library";
+    
+    import { foo } from './foo';
+    ```
+
+### Scoping note
+
+Note that imports are **scoped** to where they are used. So after script runs, you cannot access it in the dev console. But the plus side is that you can don't have to worry about namespace collisions of different packages. And you can even import two versions of say React on the same page and use them independently in two `script` tags.
 
 
 ## Import sources
 
-### Local module
+Reminder that these work either with 
+
+### Import local JS module
 
 Import from a local module. Note dot slash.
 
@@ -35,7 +80,9 @@ import { buzz } from '../bazz/bizz';
 
 Often the extension is omitted - like `.js`, `.ts` or `.jsx`. You might have to include if `.vue`.
 
-Import types.
+### Import type definitions
+
+For use in TypeScript.
 
 ```javascript
 import { IFoo } from './foo.d';
@@ -52,9 +99,11 @@ import Foo from './components/Foo';
 import logo from './logo.svg';
 ```
 
-### Installed package
+### Import a 3rd-party package
 
-Import from a packag installed with NPM.
+#### From Node modules
+
+Import from a package installed with NPM.
 
 ```javascript
 import * as vscode from "vscode";
@@ -62,17 +111,25 @@ import * as assert from "assert";
 import React from 'react';
 ```
 
+Or if you've aliased a package name to a URL with import maps or a `deps.ts` file (Deno).
+
+#### From a URL
+
 Import from a URL of a package - such as on GH, NPM or a CDN.
 
 ```javascript
 import React from "https://dev.jspm.io/react";
 ```
 
-I don't know if this URL approach is used in Node, but it is the main way in Deno and it works well in the browser if using and ES Module.
+The browser will download that script for you. No NPM needed.
 
-This avoids having to load React from a CDN in a `script` tag with `src` set to a URL.  Normally a JS script on the server side would have no awareness of that.
+This means can run your JS code consistently on the server-side and in the browser. At least with Deno. I don't know about Node.
 
-If using Deno, this means can run your JS code consistently on the server side and in the browser.
+Normally a JS script on the server side would have no awareness of the HTML tag to load JS using `script` tag with `src`.
+
+Pl
+
+This is also the default approach Deno.
 
 
 ## Local modules
@@ -109,6 +166,8 @@ Some ways to export with a name.
     }
     ```
 
+Usage:
+
 ```javascript
 import { foo } from './foo';
 
@@ -144,6 +203,8 @@ foo.buzz()
 
     export default foo;
     ```
+
+Usage:
 
 ```javascript
 import foo from './foo';
