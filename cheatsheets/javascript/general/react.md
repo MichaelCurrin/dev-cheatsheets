@@ -15,6 +15,14 @@ description: JSX syntax
 
 ## Add JSX support
 
+### Use server-side conversion
+
+Use Node with Babel from NPM and possibly Webpack.
+
+Or use Deno, which handle JSX syntax already.
+
+### Add Babel standalone
+
 From [React docs](https://reactjs.org/docs/add-react-to-a-website.html).
 
 Add this `<script>` tag to your page:
