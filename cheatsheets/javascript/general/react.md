@@ -13,6 +13,19 @@ description: JSX syntax
 ```
 
 
+## Add JSX support
+
+From [React docs](https://reactjs.org/docs/add-react-to-a-website.html).
+
+Add this `<script>` tag to your page:
+
+```html
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+```
+
+Then setup a `<script>` tag with `type="text/babel"` attribute to it.
+
+
 ## Install
 
 - CDN
