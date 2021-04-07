@@ -2,7 +2,7 @@
 
 As of ES6 (ES2015), JavaScript supports a native module format called ES Modules, or ECMAScript Modules. This is modern way to do modules in JavaScript.
 
-This approach uses the `export` and `import` keywords, instead of `require`.
+This approach uses the `export` and `import` keywords, instead of the older CommonJS syntax of `module.exports` and `require`.
 
 This page covers more details on the syntax and examples of loading modules in different situations.
 
@@ -31,7 +31,9 @@ For browsers which don't support it, you can use a fallback:
 - [ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/) blog post.
 
 
-## Configure
+## Enable ESModules
+
+### Set script tag type
 
 Set the type of script tag to `module`. 
 
@@ -39,7 +41,7 @@ This works for an inline script or linking using `src`.
 
 Keep in mind for the sections later on this page that you can use either approach. Having your JS in a file or files separate from HTML can make JS easier to manage.
 
-### Inline approach
+#### Inline approach
 
 - `index.html`
     ```html
@@ -50,7 +52,7 @@ Keep in mind for the sections later on this page that you can use either approac
     </script>
     ```
 
-### External approach
+#### External approach
 
 - `index.html`
     ```html
@@ -63,14 +65,37 @@ Keep in mind for the sections later on this page that you can use either approac
     import { foo } from './foo';
     ```
 
-### Scoping note
+### Set package type
+
+Configure NPM to see your project as ES Modules.
+
+- `package.json`
+    ```json
+    {
+      "name": "my-app",
+      "type": "module"
+    }
+    ```
+    
+Warning - if you have a config or ESLint or similar which uses the old `module.exports` syntax, you'll get an error and so you'll have to rewrite that config. VS Code provides a neat feature to do that for you.
+
+### Set file extension
+
+Use `.mjs` extension in place of `.js`. This is not so common, but it allows you do mix both types in a project which does not have the NPM config set to use the module type.
+
+### External
+
+When loading a JS library from a CDN, make sure you pick a URL which is compatible with ES Modules approach. This might mean a param like `?module` or loook for `.mjs` extension.
+
+See my [JS CDNs](https://michaelcurrin.github.io/dev-resources/resources/javascript/cdns.html) guide.
+
+
+## Scoping note
 
 Note that imports are **scoped** to where they are used. So after script runs, you cannot access it in the dev console. But the plus side is that you can don't have to worry about namespace collisions of different packages. And you can even import two versions of say React on the same page and use them independently in two `script` tags.
 
 
 ## Import sources
-
-Reminder that these work either with 
 
 ### Import local JS module
 
@@ -93,13 +118,30 @@ import { IFoo } from './foo.d';
 
 ### Import an asset
 
-Copied from [React Quickstart](https://github.com/MichaelCurrin/react-quickstart/tree/master/src).
+#### Styling
+
+Load a CSS file so that it gets added to the page. Note you don't have to specify an object to import or how it will be used on the page.
+
+```javacript
+import './index.css';
+```
+
+#### Images
+
+Load a image as an object so you can use it as a URL in your content.
+
+Based on [React Quickstart](https://github.com/MichaelCurrin/react-quickstart/blob/main/src/App.jsx).
 
 ```javascript
-import './index.css';
-
-import Foo from './components/Foo';
 import logo from './logo.svg';
+
+export default function App() {
+  return (
+    <div className="App">
+      <img src={logo} />
+    </div>
+  );
+}
 ```
 
 ### Import a 3rd-party package
@@ -130,9 +172,7 @@ This means can run your JS code consistently on the server-side and in the brows
 
 Normally a JS script on the server side would have no awareness of the HTML tag to load JS using `script` tag with `src`.
 
-Pl
-
-This is also the default approach Deno.
+This is also the default approach for Deno.
 
 
 ## Local modules
