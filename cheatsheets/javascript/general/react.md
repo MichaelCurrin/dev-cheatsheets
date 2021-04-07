@@ -13,27 +13,6 @@ description: JSX syntax
 ```
 
 
-## Add JSX support
-
-### Use server-side conversion
-
-Use Node with Babel from NPM and possibly Webpack.
-
-Or use Deno, which handle JSX syntax already.
-
-### Add Babel standalone
-
-From [React docs](https://reactjs.org/docs/add-react-to-a-website.html).
-
-Add this `<script>` tag to your page:
-
-```html
-<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-```
-
-Then setup a `<script>` tag with `type="text/babel"` attribute to it.
-
-
 ## Install
 
 - CDN
