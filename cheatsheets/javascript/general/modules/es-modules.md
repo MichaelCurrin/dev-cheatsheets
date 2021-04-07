@@ -1,8 +1,11 @@
 # ES modules
 
-As of ES6 (ES2015), JavaScript supports a native module format.
+As of ES6 (ES2015), JavaScript supports a native module format. This is modern way to do modules in JavaScript.
 
 This approach uses the `export` and `import` keywords, instead of `require`.
+
+This page covers more details on the syntax and examples of loading modules in different situations.
+
 
 ## Support
 
