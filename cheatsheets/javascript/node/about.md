@@ -3,9 +3,15 @@ title: About
 description: What is Node and what can you do with it?
 ---
 
-Node (or Node.js or NodeJS) is a **server-side** runtime environment for JavaScript. It is an alternative to the **browser** runtime environment.
+Node (or "Node.js", or less commonly "NodeJS") is a **server-side** runtime environment for JavaScript. It is an alternative to the **browser** runtime environment (which was the first place JS was used).
 
-It can process JavaScript on a machine locally or in the cloud, even without a desktop display or a browser installed.
+Node can process JavaScript on a machine locally or in the cloud, even without a desktop display or a browser installed.
+
+So Node lets you run scripts and applications and use libraries in a similary way to how Python, Java and PHP have done since they were created.
+
+For interest, [Deno][] is another server-side environment of JS. 
+
+[Deno]: https://michaelcurrin.github.io/dev-resources/resources/javascript/deno/
 
 
 ## What can Node do?
