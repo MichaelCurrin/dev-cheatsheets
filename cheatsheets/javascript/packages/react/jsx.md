@@ -1,5 +1,40 @@
 # JSX
 
+This page is specific to React. For a more general guide, see the [JSX][] page.
+
+[JSX]: {{ site.baseurl }}{% link cheatsheets/javascript/general/jsx.md %}
+
+
+## With and without JSX
+
+Example from [React docs](https://reactjs.org/docs/add-react-to-a-website.html)
+
+Without JSX. Create an element using the `createElement` function. Here it is aliased to `e`.
+
+```javascript
+const e = React.createElement;
+
+function LikeButton() {
+  return e(
+    'button',
+    { onClick: () => this.setState({ liked: true }) },
+    'Like'
+  );
+}
+```
+
+With JSX.
+
+```jsx
+function LikeButton() {
+  return (
+    <button onClick={() => this.setState({ liked: true })}>
+      Like
+    </button>
+  );
+}
+```
+
 
 ## Allow JSX syntax in TypeScript
 
