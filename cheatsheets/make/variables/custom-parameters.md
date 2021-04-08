@@ -8,14 +8,20 @@ description: How to pass and use variables with the `make` command
 
 You can pass variables to your `Makefile` using environment variables or using key-value pairs. Or a mix of both.
 
+Values below available in `Makefile`. Note case sensitivity - pass as `bar=1` if you want to use as `bar`.
+
 ```sh
 $ BAR=1 make foo
-$ make foo BAZZ=abc
 ```
 
-Values are available in `Makefile` as `BAR` and `BAZZ`.
+```sh
+$ export BAR=1 
+$ make foo
+```
 
-Note case sensitivity - pass as `bar=1` if you want to use as `bar`.
+```sh
+$ make foo BAR=abc
+```
 
 
 ## Use a variable
@@ -32,12 +38,13 @@ Here is the sample file we'll use for testing in the section sections
 
 Note that `FOO` will be available for commands, **without** having to export it like this:
 
-```mk
-export FOO
+- `Makefile`
+    ```Makefile
+    export FOO
 
-foo:
-    # ...
-```
+    foo:
+        # ...
+    ```
 
 
 ## Pass a variable
@@ -57,7 +64,7 @@ bar
 bar
 ```
 
-### Pass environment variable
+### Passas  environment variable
 
 ```sh
 $ FOO=bar make foo
@@ -69,7 +76,7 @@ bar
 bar
 ```
 
-### Pass as command option
+### Pass as keyword parameter
 
 ```sh
 $ make foo FOO=bar
@@ -81,6 +88,28 @@ $ make FOO=bar foo
 bar
 bar
 bar
+```
+
+## Rename variable
+
+Perhaps you want to pass a variable name with a short name or different case on the shell, then use it under another name in the `Makefile`.
+
+Here we rename a variable from `v` to `VERSION` using shell evaluation.
+
+- `Makefile`
+    ```sh
+    VERSION := $(v)
+
+    show-vsn:
+        @echo "Target version: $(VERSION)"
+    ```
+
+Example use:
+
+```sh
+$ export v=1.2.3
+$ make show-version
+Target version: 1.2.3
 ```
 
 
