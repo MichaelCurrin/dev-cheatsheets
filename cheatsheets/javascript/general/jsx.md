@@ -1,9 +1,51 @@
-# JSX
+---
+title: JSX
+---
 
-Add JSX support to an app
+
+## Comments
+
+[source](https://wesbos.com/react-jsx-comments/)
+
+```
+{/* A JSX comment */}
+```
 
 
-## Server-side conversion
+## With and without JSX
+
+Example from [React docs](https://reactjs.org/docs/add-react-to-a-website.html)
+
+Without JSX. Create an element using the `createElement` function. Here it is aliased to `e`.
+
+```javascript
+const e = React.createElement;
+
+function LikeButton() {
+  return e(
+    'button',
+    { onClick: () => this.setState({ liked: true }) },
+    'Like'
+  );
+}
+```
+
+With JSX.
+
+```jsx
+function LikeButton() {
+  return (
+    <button onClick={() => this.setState({ liked: true })}>
+      Like
+    </button>
+  );
+}
+```
+
+
+## Add JSX support to an app
+
+### Server-side conversion
 
 Use Node with Babel from NPM and possibly Webpack.
 
@@ -21,8 +63,7 @@ $ npx babel --watch src --out-dir . --presets react-app/prod
 
 Or use Deno, which handle JSX syntax already.
 
-
-## Add Babel standalone
+### Add Babel standalone
 
 From [React docs](https://reactjs.org/docs/add-react-to-a-website.html).
 
@@ -34,8 +75,7 @@ Add this `<script>` tag to your page:
 
 Then setup a `<script>` tag with `type="text/babel"` attribute to it.
 
-
-## Add HTM
+### Add HTM
 
 Here we use [htm](https://www.npmjs.com/package/htm) NPM package. 
 
