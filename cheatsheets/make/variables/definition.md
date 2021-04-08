@@ -19,7 +19,6 @@ JS_DIR = assets/js
 You don't need quotes around multiple words.
 
 
-
 ## Evaluation
 
 Using `:= $(shell ...)` syntax:
@@ -62,7 +61,7 @@ endif
 
 ## User input with a default value
 
-Use the `?=` syntax to set a Make variable with a default value which can be overriden by the user.
+Use the `?=` syntax to set a Make variable with a default value which can be overridden by the user.
 
 Code:
 
