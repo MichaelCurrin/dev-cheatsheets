@@ -1,6 +1,6 @@
 ---
 title: Custom parameters
-description: How to pass and use variables with the `make` command
+description: How to pass variables to the `make` command in the shell and use them in the `Makefile`.
 ---
 
 
@@ -91,6 +91,8 @@ bar
 ```
 
 ## Rename variable
+
+See also the Definition page setting a default value for an input variable.
 
 Perhaps you want to pass a variable name with a short name or different case on the shell, then use it under another name in the `Makefile`.
 
