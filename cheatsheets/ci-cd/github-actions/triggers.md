@@ -142,11 +142,15 @@ Example:
 ```yaml
 on:
   schedule:
-    - cron:  '0 0 * * *'
+    - cron:  "0 0 * * *"
 ```
+
+Be sure to **quote** the value, to prevent YAML expansion of globstars which will then cause an error.
 
 
 ## Include or ignore
+
+From [On push pull request paths](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onpushpull_requestpaths) in the docs.
 
 ### Ignore a branch or tag
 
@@ -177,7 +181,7 @@ Or maybe just `dir0name` without the stars?
 
 ### Include path
 
-Trigger **only** on changes in given paths. Note you don't need `**`. This will already work nested.
+Trigger **only** on changes in given paths. Note you don't need `**` - a single `*` is enough to work at multiple levels.
 
 Examples:
 
