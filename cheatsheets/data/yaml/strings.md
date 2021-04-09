@@ -225,7 +225,7 @@ Use a pipe (`|`) to interpret newlines literally.
 
 ##### Fold newlines
 
-Use an arrow (`>`) to fold newlines so they become spaces. To force a newline, use an empty line i.e. two newlines.
+Use an arrow (`>`) to fold newlines throughout the string, so they become spaces. To force a newline, use an empty line i.e. two newlines.
 
 - YAML
     ```yaml
@@ -244,7 +244,7 @@ Use an arrow (`>`) to fold newlines so they become spaces. To force a newline, u
 
 #### Block chomping
 
-Change what happens to a newline at the end of the entire string. Shown using JSON, as it includes newlines explicitly.
+Change what happens to a newline at the **end** of the whole string. Shown using results as JSON here for clarity, as it includes newlines explicitly.
 
 You can use literal or folded block style here.
 
