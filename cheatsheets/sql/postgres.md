@@ -25,27 +25,28 @@ logo: postgresql
 Show all tables.
 
 ```
-\dt
+postgres=# \dt
 ```
+
 For more info.
 ```
-\dt+
+postgres=# \dt+
 ```
 
 Get info on a table.
 
 ```
-\d+ table_name
+postgres=# \d+ table_name
 ```
 
 
 ## Quit
 
 ```
-\q
+postgres=# \q
 ```
 
-Or `CTRL`+`d`.
+Or <kbd>CTRL</kbd>+<kbd>d</kbd>.
 
 
 ## Users
@@ -63,8 +64,6 @@ The console will now look like this:
 ```
 postgres=#
 ```
-
-This is implied for the rest of this guide.
 
 ### Create user
 
@@ -87,7 +86,7 @@ CREATE ROLE foo LOGIN;
 CREATE ROLE admin WITH CREATEDB CREATEROLE;
 ```
 
-https://www.postgresql.org/docs/current/sql-createrole.html
+[create role](https://www.postgresql.org/docs/current/sql-createrole.html) docs.
 
 ### Change password
 
@@ -95,30 +94,85 @@ https://www.postgresql.org/docs/current/sql-createrole.html
 ALTER USER postgres WITH PASSWORD 'newpass';
 ```
 
-https://www.postgresql.org/docs/current/sql-alteruser.html
+[alter user](https://www.postgresql.org/docs/current/sql-alteruser.html) docs.
 
 Set it interactively.
 
 ```sql
-\password
+postgres=# \password
 ```
 
-https://serverfault.com/questions/110154/whats-the-default-superuser-username-password-for-postgres-after-a-new-install/325596
+[question on forum](https://serverfault.com/questions/110154/whats-the-default-superuser-username-password-for-postgres-after-a-new-install/325596)
 
 ### List users
 
 ```sql
-\du
+postgres=# \du
                                    List of roles
  Role name |                         Attributes                         | Member of
 -----------+------------------------------------------------------------+-----------
  postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
 ```
 
-More detail:
+More details:
 
 ```
-# \du+
+postgres=# \du+
 ```
 
 [List users](https://www.postgresqltutorial.com/postgresql-list-users/) PG tutorial.
+
+
+## Connect
+
+From the [docs](https://www.postgresql.org/docs/13/app-psql.html).
+
+```sh
+$ psql "service=myservice sslmode=require"
+$ psql postgresql://dbmaster:5433/mydb?sslmode=require
+```
+
+## Run query using CLI
+
+```sh
+$ psql -U "$DB_USER" -d "$DB_NAME" -c "SELECT COUNT(*) FROM my_table"
+```
+
+Or you can pass the name of a `.sql` file.
+
+If using a remote database, add host:
+
+```sh
+$ psql -h "$HOST" ...
+```
+
+## Passwords
+
+
+If you database is password-protected.
+
+You can get prompted in the CLI to enter a password.
+
+Or enter password using an approach here.
+
+### Env vars
+
+```sh
+$ PGPASSWORD=123 psql ...
+```
+[env vars](http://www.postgresql.org/docs/current/static/libpq-envars.html) manual.
+
+### PG pass
+Use a `.pgpass` file to store the password. [pgpass](http://www.postgresql.org/docs/current/static/libpq-pgpass.html) manual.
+
+#### Trust authentication
+
+For that specific user:
+
+[Auth trust](http://www.postgresql.org/docs/current/static/auth-methods.html#AUTH-TRUST).
+
+#### Connection URI
+
+Use a connection string that contains everything:
+
+[Connect](http://www.postgresql.org/docs/current/static/libpq-connect.html#AEN42532) in manual.
