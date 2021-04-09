@@ -1,11 +1,11 @@
 # Strings
 
 
-## Single and double quotes
+## Quote strings
 
 ### Evaluation
 
-Use single quotes for a literal string one that is not evaluated. 
+Use **single quotes** for a literal string one that is not evaluated. 
 
 ```sh
 X='Hello, $(whoami) / $USER'
@@ -16,7 +16,7 @@ echo "$X"
 Hello, Hello, $(whoami) / $USER'
 ```
 
-Use double quotes to evaluate
+Use **double quotes** to evaluate.
 
 ```sh
 X="Hello, $(whoami) / $USER!"
@@ -27,7 +27,7 @@ echo "$X"
 Hello, mcurrin / mcurrin!
 ```
 
-### Multi-line
+### Multi-line strings
 
 #### Using enter
 
@@ -141,8 +141,32 @@ echo "With \"escaped single\" quotes"
 
 If you need to use single and double quotes in the same string and don't want to use `\` to escape them, then read on for the heredoc belo.
 
+### Defaults
 
-## Heredoc
+Set a default value in case a variable is not set.
+
+The syntax here is within `${}` substitution, as `${VARIABLE:-DEFAULT}`.
+
+e.g.
+
+No default - empty string.
+
+```sh
+$ Hello, ${NAME}!"'
+Hello, !
+```
+
+With default fallback:
+
+```sh
+$ Hello, ${NAME:-World}!"'
+Hello, World!
+$ NAME=developer Hello, ${NAME:-World}!"'
+Hello, developer!
+```
+
+
+## Heredoc strings
 
 See [guide](https://linuxize.com/post/bash-heredoc/).
 
