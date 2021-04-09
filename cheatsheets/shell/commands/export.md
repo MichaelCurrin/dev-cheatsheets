@@ -38,8 +38,8 @@ Here the `NAME` variable is not set, so we default to using `World`.
 
 ```sh
 $ NAME=developer
-$ bash -c 'echo "Hello, ${NAME}!"
-Hello, !
+$ bash -c 'echo "Hello, ${NAME}."
+Hello, .
 ```
 
 In the flow, we export a new variable.
@@ -47,11 +47,11 @@ In the flow, we export a new variable.
 ```sh
 $ export NAME=developer
 
-$ bash -c 'echo "Subshell - hello, ${NAME}!"'
-Hello, developer!
+$ bash -c 'echo "Subshell - hello, ${NAME}."'
+Hello, developer.
 
-$ echo "Outer shell - hello, $NAME!"
-Outer shell - hello, developer
+$ echo "Outer shell - hello, $NAME."
+Outer shell - hello, developer.
 ```
 
 Or export an existing variable.
@@ -59,8 +59,8 @@ Or export an existing variable.
 ```sh
 $ NAME=developer
 $ export NAME
-$ bash -c 'echo "Subshell - hello, ${NAME}!"'
-Subshell - hello, developer!
+$ bash -c 'echo "Subshell - hello, ${NAME}."'
+Subshell - hello, developer.
 ```
 
 
@@ -82,16 +82,16 @@ Here we in a Bash subshell, passing commands inline with `-c` flag. Or we could 
 
 ```sh
 $ NAME=developer
-$ bash -c 'echo "Hello, $NAME!"'
-Hello, !
+$ bash -c 'echo "Hello, $NAME."'
+Hello, .
 ```
 
 Now we use `export` to make the variable accessible in the subshell.
 
 ```sh
 $ export NAME=developer
-$ bash -c 'echo "Hello, $NAME!"'
-Hello, developer!
+$ bash -c 'echo "Hello, $NAME."'
+Hello, developer.
 ```
 
 
