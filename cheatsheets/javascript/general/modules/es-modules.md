@@ -27,7 +27,7 @@ For browsers which don't support it, you can use a fallback:
 
 - [ECMAScript Modules](https://nodejs.org/api/esm.html) in the Node.js docs.
 - [Import and export examples](https://deno.land/manual/examples/import_export) in the Deno docs.
-- [Introduction to ES Modules](https://flaviocopes.com/es-modules/) blog post.
+- [Introduction to ES Modules](https://flaviocopes.com/es-modules/) blog post by Flavio Copes.
 - [ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/) blog post.
 
 
