@@ -5,10 +5,10 @@
 
 - [Python f-strings](https://realpython.com/python-f-strings/) article on RealPython site.
 - [Using % and .format() for great good!](https://pyformat.info/) website.
+- [string — Common string operations](https://docs.python.org/3/library/string.html) from Python standard library docs.
 
 
 ## Make a long number readable
-
 
 ```python
 >>> "{:,}".format(12345678910)
@@ -378,4 +378,20 @@ Check if alphabet only characters. Note spaces will make this false.
 False
 >>> 'abcd'.isalpha()
 True
+```
+
+```python
+>>> ' '.isspace()
+True'
+>>> ' \n\t'.isspace()
+True
+>>> 'a '.isspace()
+False
+```
+
+```python
+>>> 'Abc Def'.istitle()
+True
+>>> 'Abc def'.istitle()
+False
 ```
