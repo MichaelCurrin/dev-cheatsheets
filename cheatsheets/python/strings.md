@@ -3,8 +3,8 @@
 
 ## Resources
 
-- [Python f-strings](https://realpython.com/python-f-strings/) on RealPython site.
-- [Using % and .format() for great good!](https://pyformat.info/)
+- [Python f-strings](https://realpython.com/python-f-strings/) article on RealPython site.
+- [Using % and .format() for great good!](https://pyformat.info/) website.
 
 
 ## Make a long number readable
@@ -347,4 +347,35 @@ c
 ```python
 >>> 'abc d'.upper()
 'ABC D'
+```
+
+
+## Validate
+
+Built-in string methods to help with validation.
+
+- `isalnum`
+- `isalpha`
+- `isdigit` 
+- `islower`
+- `isspace`
+- `istitle`
+- `isupper`
+
+Examples:
+
+```python
+>>> 'abc d'.isupper()
+False
+>>> 'abc d'.islower()
+True
+```
+
+Check if alphabet only characters. Note spaces will make this false.
+
+```python
+'abc d'.isalpha()
+False
+>>> 'abcd'.isalpha()
+True
 ```
