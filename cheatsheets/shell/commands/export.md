@@ -1,6 +1,7 @@
-# Export
+# export
 
-## Function
+
+## Functions
 
 Note: If you are in ZSH, then **first** run `bash -l` to make sure that you define and export the function in Bash, before using it in a Bash subshell.
 
@@ -23,7 +24,7 @@ $ bash -c foo bar
 Foo
 ```
 
-Example use-case:
+Example use case:
 
 ```sh
 $ export -f foo
