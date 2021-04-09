@@ -5,7 +5,9 @@
 
 - [Python f-strings](https://realpython.com/python-f-strings/) article on RealPython site.
 - [Using % and .format() for great good!](https://pyformat.info/) website.
-- [string — Common string operations](https://docs.python.org/3/library/string.html) from Python standard library docs.
+- Python docs
+    - [Built-in types - String methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+    - [string — Common string operations](https://docs.python.org/3/library/string.html) from Python standard library docs.
 
 
 ## Make a long number readable
