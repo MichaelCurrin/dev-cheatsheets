@@ -5,15 +5,17 @@ This page is specific to React. For a more general guide, see the [JSX][] page.
 [JSX]: {{ site.baseurl }}{% link cheatsheets/javascript/general/jsx.md %}
 
 
+{% raw %}
+
 ## Structuring JSX
 
-Add parent element.
+Add parent element. Such as a div with a class or just `<>`.
 
 ```jsx
 return (
   <>
     <h1>Hello, World!</h1>
-    <h2>Hi!</h2>
+    <h2>This is React</h2>
   </>
 )
 ```
@@ -23,8 +25,70 @@ Comma to separate items.
 ```jsx
 return (
   <h1>Hello, World!</h1>,
-  <h2>Hi!</h2>
+  <h2>This is React</h2>
 )
+```
+
+### Attributes
+
+Here, inline CSS.
+
+```jsx
+function App(){
+  return <h1 style={{ color: 'red' }}>
+    Hello, World!
+  </h1>
+}
+```
+
+### JS variables in JSX
+
+```jsx
+function App(props){
+ const { age } = props
+
+  const status = age >= 18 ? 'major' : 'minor'
+
+  return (
+    <>
+      <h1>Hello</h1>
+      <p>{{ status }}</p>
+    </>
+  )
+} 
+```
+
+### JS expression in JSX
+
+Use `{ EXPRESSION }`.
+
+Example:
+
+```jsx
+function App(props){
+  const { age } = props
+
+  return (
+    <>
+      <h1>Hello</h1>
+      <p>{age >= 18 ? 'major' : 'minor'}</p>
+    </>
+  )
+} 
+```
+
+If your JSX gets long and complicated, consider making a variable first and then inserting that.
+
+Setting a function as an event.
+
+```jsx
+function LikeButton() {
+  return (
+    <button onClick={() => this.setState({ liked: true })}>
+      Like
+    </button>
+  );
+}
 ```
 
 
@@ -90,3 +154,5 @@ You can try as `.d.ts` to match [shims-vue.d.ts](https://github.com/MichaelCurri
       }
     }
     ```
+
+{% endraw %}
