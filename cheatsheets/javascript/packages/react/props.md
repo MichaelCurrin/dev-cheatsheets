@@ -9,9 +9,10 @@ A few approaches are covered below. These are just standard JavaScript and JSX i
 
 ## Attributes 
 
+This is not so clear because you only see a variable unpacked when it is used. Which can be confusing in longer functions or if the variable is used in a complex JSX.
 
 ```jsx
-function App(props){
+function App(props) {
   console.log(props.foo, props.bar)
 
   // return ...
@@ -20,8 +21,9 @@ function App(props){
 
 ## Destructure object
 
+This is clear as all the props are unpacked at the start of the function. So you know what it expects.
 ```jsx
-function App(props){
+function App(props) {
   const { foo, bar } = props
 
   console.log(foo, bar)
@@ -33,14 +35,13 @@ function App(props){
 
 ## Destructured params 
 
+I have not seen this syntax so much. It allows the props variable so be left out and saves a line of code.
 ```jsx
-function App({ foo, bar }){
+function App({ foo, bar }) {
   console.log(foo, bar)
 
   // return ...
 }
 ```
-
-
 
 {% endraw %}
