@@ -5,6 +5,29 @@ This page is specific to React. For a more general guide, see the [JSX][] page.
 [JSX]: {{ site.baseurl }}{% link cheatsheets/javascript/general/jsx.md %}
 
 
+## Structuring JSX
+
+Add parent element.
+
+```jsx
+return (
+  <>
+    <h1>Hello, World!</h1>
+    <h2>Hi!</h2>
+  </>
+)
+```
+
+Comma to separate items.
+
+```jsx
+return (
+  <h1>Hello, World!</h1>,
+  <h2>Hi!</h2>
+)
+```
+
+
 ## With and without JSX
 
 Example from [React docs](https://reactjs.org/docs/add-react-to-a-website.html)
