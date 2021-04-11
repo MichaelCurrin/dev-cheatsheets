@@ -41,7 +41,9 @@ function App(){
 }
 ```
 
-### JS variables in JSX
+### JS expressions in JSX
+
+Use `{ EXPRESSION }`.
 
 ```jsx
 function App(props){
@@ -52,17 +54,13 @@ function App(props){
   return (
     <>
       <h1>Hello</h1>
-      <p>{{ status }}</p>
+      <p>{ status }</p>
     </>
   )
 } 
 ```
 
-### JS expression in JSX
-
-Use `{ EXPRESSION }`.
-
-Example:
+Using a ternary expression.
 
 ```jsx
 function App(props){
@@ -77,16 +75,39 @@ function App(props){
 } 
 ```
 
-If your JSX gets long and complicated, consider making a variable first and then inserting that.
+If your JSX gets long and complicated, consider rather making a variable first and then inserting that.
 
 Setting a function as an event.
 
 ```jsx
+import { setState } from "react";
+
 function LikeButton() {
   return (
-    <button onClick={() => this.setState({ liked: true })}>
+    <button onClick={() => setState({ liked: true })}>
       Like
     </button>
+  );
+}
+```
+
+Or `this.setState` above but I need to test.
+
+Here using an intermediate function. Useful for multiple lines that would not good look is JSX.
+```jsx
+import { useState } from "react";
+
+export default function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+
+      const increment = () => setCount(count + 1)
+
+      <button onClick={increment}</button>
+    </div>
   );
 }
 ```
