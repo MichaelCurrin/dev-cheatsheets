@@ -29,9 +29,9 @@ return (
 )
 ```
 
-### Attributes
+### CSS
 
-Here, inline CSS.
+Use `{{ EXPRESSION }}`.
 
 ```jsx
 function App(){
@@ -45,15 +45,17 @@ function App(){
 
 Use `{ EXPRESSION }`.
 
+Substituting variables.
+
 ```jsx
 function App(props){
- const { age } = props
+ const { name, age } = props
 
   const status = age >= 18 ? 'major' : 'minor'
 
   return (
     <>
-      <h1>Hello</h1>
+      <h1>Hello, { name }</h1>
       <p>{ status }</p>
     </>
   )
@@ -76,6 +78,16 @@ function App(props){
 ```
 
 If your JSX gets long and complicated, consider rather making a variable first and then inserting that.
+
+Setting attributes.
+
+```jsx
+function Imags(props){
+  const { path } = props
+
+  return <img src={ path } />
+} 
+```
 
 Setting a function as an event.
 
@@ -122,6 +134,36 @@ export default function Counter() {
       <button onClick={increment}</button>
     </div>
   );
+}
+```
+
+### Custom components 
+
+Insert a component as a element in JSX.
+
+The first component here doesn't take any properties.
+
+The second one takes a `name` property, which can be passed as a literal value or as a JS expression such as a variable.
+
+```jsx
+function Greet() {
+  return <p>Hello</p>
+}
+
+function GreetPerson(props) {
+  return <p>Hello, {props.name}!</p>
+}
+
+function App() {
+  const name = "Joe"
+
+  return (
+    <div className="App">
+      <Greet/>
+      <GreetPerson name="World"/>
+      <GreetPerson name={name}/>
+    </div>
+  )
 }
 ```
 
