@@ -62,7 +62,7 @@ function App(props){
 } 
 ```
 
-Using a ternary expression.
+You can put an expression in like an arrow function call or ternary.
 
 ```jsx
 function App(props){
@@ -82,7 +82,7 @@ If your JSX gets long and complicated, consider rather making a variable first a
 Setting attributes.
 
 ```jsx
-function Imags(props){
+function Image(props){
   const { path } = props
 
   return <img src={ path } />
