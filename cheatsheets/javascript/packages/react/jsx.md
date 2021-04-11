@@ -113,7 +113,7 @@ function LikeButton() {
 }
 ```
 
-Or `this.setState` for class components. 
+Or `this.setState` - possibly only for class components?
 
 Here using an intermediate function. Useful for multiple lines that would not good look is JSX.
 
