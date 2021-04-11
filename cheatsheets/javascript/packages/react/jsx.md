@@ -80,6 +80,16 @@ If your JSX gets long and complicated, consider rather making a variable first a
 Setting a function as an event.
 
 ```jsx
+function Greet() {
+  return (
+    <button onClick={() => alert("Hello!")}>
+      Greet
+    </button>
+  );
+}
+```
+
+```jsx
 import { setState } from "react";
 
 function LikeButton() {
@@ -91,9 +101,12 @@ function LikeButton() {
 }
 ```
 
-Or `this.setState` above but I need to test.
+Or `this.setState` for class components. 
 
 Here using an intermediate function. Useful for multiple lines that would not good look is JSX.
+
+Usestate is unpacked as a value and a function to set, using your own names.
+
 ```jsx
 import { useState } from "react";
 
