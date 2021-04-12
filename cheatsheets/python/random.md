@@ -1,10 +1,11 @@
 # Random
 
-Docs
 
-- [random](https://docs.python.org/3/library/random.html) lib
+## Documentation
 
-See Examples and Recipes in the docs.
+See PY 3 documentation for [random](https://docs.python.org/3/library/random.html) module in the standard library.
+
+See Examples and Recipes in those docs.
 
 
 ## General
@@ -46,6 +47,7 @@ Interval between arrivals averaging 5 seconds
 >>> expovariate(1 / 5)                   
 5.148957571865031
 ```
+
 
 ## Integers
 
