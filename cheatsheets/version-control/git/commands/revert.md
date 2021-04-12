@@ -22,27 +22,17 @@ $ git revert COMMIT_REF
 
 Choose a commit hash for the start and another for the end, inclusive.
 
-### Create multiple revert commits
-
-```sh
-$ git revert FIRST..LAST
-$ # e.g.
-$ git revert 4eab63b2..HEAD
-$ git revert HEAD~3..HEAD
-```
-
-Then you'll be prompted to make multiple commits, stepping back from the the latest point to the oldest. Each time you'll have to edit and save the pre-filled commit message.
-
 ### Create a single revert commit
 
 ```sh
 $ git revert --no-commit FIRST..LAST
-$ # e.g.
-$ git revert --no-commit 4eab63b2..HEAD
+$ # e.g. Target commit to now.
+$ git revert --no-commit abc9872..HEAD
+$ # e.g. 3 commits back to now.
 $ git revert --no-commit HEAD~3..HEAD
 ```
 
-Check the changed files.
+Check the modified files. These will be staged already.
 
 Then commit.
 
@@ -65,6 +55,24 @@ Or
 ```
 Undo all changes to revert back to commit abc9872.
 ```
+
+You can then check that your current state after your revert commit now matches the state before the earliest commit you were reverting. You should see no difference.
+
+```sh
+$ git diff abc9872..HEAD
+```
+
+### Create multiple revert commits
+
+```sh
+$ git revert FIRST..LAST
+$ # e.g. Target commit to now.
+$ git revert abc9872..HEAD
+$ # e.g. 3 commits back to now.
+$ git revert HEAD~3..HEAD
+```
+
+Then you'll be prompted to make multiple commits, stepping back from the the latest point to the oldest. Each time you'll have to edit and save the pre-filled commit message.
 
 
 ## Manage a revert in progress
