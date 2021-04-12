@@ -117,10 +117,12 @@ From [source](https://www.mankier.com/1/docker#Examples_(TL;DR)).
 
 -   List currently running docker containers: `docker ps`
 -   List all docker containers (running and stopped): `docker ps -a`
--   Start a container from an image, with a custom name: `docker run --name CONTAINER_NAME IMAGE`
+-   Start a container from an image, with a random name: `docker run --rm IMAGE`
+-   Start a container from an image, with a custom name: `docker run  --rm --name CONTAINER_NAME IMAGE`
+-   Expose and publish ports of a server. `docker run --rm -p 80:8080 IMAGE`
 -   Start or stop an existing container: `docker start|stop CONTAINER_NAME`
 -   Pull an image from a docker registry: `docker pull IMAGE`
--   Open a shell inside of an already running container: `docker exec -it CONTAINER_NAME sh`
+-   Open a shell inside of an already running container: `docker exec -it CONTAINER_NAME bash`
 -   Remove a stopped container: `docker rm CONTAINER_NAME`
 -   Fetch and follow the logs of a container: `docker logs -f CONTAINER_NAME`
 
@@ -238,6 +240,23 @@ $ docker run  -it IMAGE --entrypoint bash
 
 You'll start a new container each time though.
 
+### Open ports
+
+Expose and publish ports.
+
+Format:
+
+`--publish EXTERNAL:INTERNAL`
+
+With that flag, that you don't need `EXPOSE` in the `Dockerfile`. Also, using `EXPOSE` alone doesn't publish.
+
+Example:
+
+```sh
+$ docker run --rm -p 80:8080 node-app
+```
+
+The Node app will serve on port `8080` and Docker routes that port `80` on the host.
 
 
 ## List
