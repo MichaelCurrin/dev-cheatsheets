@@ -20,20 +20,26 @@ $ git revert COMMIT_REF
 
 ## Revert a range of commits
 
-Choose a commit hash for the start and another for the end, such as `HEAD` for current commit.
+Choose a commit hash for the start and another for the end, inclusive.
 
-This will prompt you to make multiple commits, each reversing a commit (starting from the latest). The message will be populated for you.
+### Create multiple revert commits
 
 ```sh
-$ git commit
+$ git revert FIRST..LAST
+$ # e.g.
+$ git revert 4eab63b2..HEAD
+$ git revert HEAD~3..HEAD
 ```
 
-If you prefer to create a _single_ commit, you can do this.
+Then you'll be prompted to make multiple commits, stepping back from the the latest point to the oldest. Each time you'll have to edit and save the pre-filled commit message.
+
+### Create a single revert commit
 
 ```sh
-$ git revert --no-commit COMMIT_REF..COMMIT_REF
+$ git revert --no-commit FIRST..LAST
 $ # e.g.
 $ git revert --no-commit 4eab63b2..HEAD
+$ git revert --no-commit HEAD~3..HEAD
 ```
 
 Check the changed files.
@@ -44,14 +50,9 @@ Then commit.
 $ git commit
 ```
 
-The placeholder message will be taken from the oldest commit. 
-```
-Revert "My commit message"
+The placeholder message will be taken from the oldest commit.
 
-This reverts commit 27ad6.....
-```
-
-So you'll want to update it to reflect you are reverting a range.
+So you'll want to update that to reflect you are reverting a range.
 
 e.g.
 
