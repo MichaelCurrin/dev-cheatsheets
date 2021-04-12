@@ -258,6 +258,22 @@ $ docker run --rm -p 80:8080 node-app
 
 The Node app will serve on port `8080` and Docker routes that port `80` on the host.
 
+### Start shell
+
+Start an interactive Bash shell in the container by setting the entrypoint. This overrides whatever value was set in the `Dockerfile` for `ENTRYPOINT`.
+
+```sh
+$ docker run -it my-app bash
+```
+
+Or with more verbose `--entrypoint ENTRYPOINT` flag.
+
+Note that flags must come _before_ the app name.
+
+```sh
+$ docker run -it --entrypoint bash my-app 
+```
+
 
 ## List
 
