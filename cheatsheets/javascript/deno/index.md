@@ -23,7 +23,11 @@ Are you tired of choosing and managing separate dependencies which do all these 
 - Transpile TS to JS (TypeScript)
 - Run tests (Jasmine, Jest, Mocha ...)
 
-Then consider using Deno. It is a modern alternative to NodeJS by the same author and it provides all the functionality just mentioned above - without extra dependencies.
+Then consider using Deno. It is a modern alternative to NodeJS by the same author and it provides all the functionality just mentioned above - without installing dependencies. And often without a config.
+
+Packages are managed using URLs in your code, which can be centralized in one if you prefer.
+
+Running Deno with the explicit permissions it needs can be cumbersone. Insteading using `npm` and `package.json` to run commands, I find that `make` and `Makefile` work well. At least for Linux and macOS where `make` is standard.
 
 
 ### Template project
