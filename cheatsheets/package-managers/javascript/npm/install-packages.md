@@ -24,27 +24,27 @@ This will add to `dependencies` of `package.json` after installing.
 Install latest:
 
 ```sh
-$ npm i PACKAGE
+$ npm install PACKAGE
 ```
 
 Example:
 
 ```sh
-$ npm i foo
+$ npm install foo
 $ # Install multiple at once.
-$ npm i foo bar baz
+$ npm install foo bar baz
 ```
 
 Install specific version:
 
 ```sh
-$ npm i PACKAGE@VERSION
+$ npm install PACKAGE@VERSION
 ```
 
 Example:
 
 ```sh
-$ npm i foo@1.2.3
+$ npm install foo@1.2.3
 ```
 
 ### Install and save as dev dependency
@@ -52,8 +52,8 @@ $ npm i foo@1.2.3
 Save to `devDependencies` in `package.json` using one of:
 
 ```sh
-$ npm i PACKAGE --save-dev
-$ npm i PACKAGE -D
+$ npm install PACKAGE --save-dev
+$ npm install PACKAGE -D
 ```
 
 
@@ -62,20 +62,26 @@ $ npm i PACKAGE -D
 ### Install prod and dev deps
 
 ```sh
-$ npm i
+$ npm install
 ```
 
 ### Install only production dependencies
 
 ```sh
-$ npm i --production
+$ npm install --production
 ```
 
-Or using `--only`.
+Or using the more verbose `--only`.
 
 ```sh
-$ npm i --only=prod
-$ npm i --only=production
+$ npm install --only=prod
+$ npm install --only=production
+```
+
+The `ci` subcommand also has a flag like this.
+
+```sh
+$ npm ci --production
 ```
 
 ### Install only dev dependencies
