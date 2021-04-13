@@ -232,13 +232,17 @@ Useful if you want to tunnel in and use an interactive session with Bash, Python
 $ docker exec -it CONTAINER bash
 ```
 
-Set an ad hoc entry point to start an container even if normally exists immediately and then start interactive terminal.
+If you container exits immediately, you'll struggle to `exec` into it.
+
+So then use `run` against a built image. Set a **new** container from a given image, passing a shell entry point. Use `/bin/sh` if you prefer.
 
 ```sh
-$ docker run  -it IMAGE --entrypoint bash
+$ docker run --rm -it --entrypoint IMAGE bash
+$ # OR
+$ docker run --rm -it IMAGE --entrypoint bash
 ```
 
-You'll start a new container each time though.
+In VS Code, under the Docker extension and "Images" you can select an image and "Run interactive" to achieve the same thing. Though, you might start with Node or something else, as you can't specify Bash.
 
 ### Open ports
 
