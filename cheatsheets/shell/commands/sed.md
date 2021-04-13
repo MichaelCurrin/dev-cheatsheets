@@ -1,6 +1,27 @@
 # sed
 
-## Replace inline
+
+## Replace word
+
+Using a string literal.
+
+```sh
+$ echo 'football' | sed 's/foo/bar/g'
+bartball
+$ echo 'football' | sed 's/foo/bar/g'
+tball
+```
+
+Using a variable.
+
+```sh
+$ x='football'
+$ echo $x | sed 's/foo/bar/g'
+bartball
+```
+
+
+## Replace inline in file with backup flag
 
 You can optionally provide an extension - typically `.bak`. This will create a backup of the file before overwriting it.
 
