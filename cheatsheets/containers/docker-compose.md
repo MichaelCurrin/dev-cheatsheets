@@ -20,7 +20,33 @@ You need the following:
 When you run this, it will use the two files above.
 
 ```sh
-$ docker-compose COMMAND
+$ docker-compose SUBCOMMAND
+```
+
+
+## Note
+
+Since around the start of 2021, you get this message from Docker Compose
+
+> Docker Compose is now in the Docker CLI, try `docker compose up`
+
+So instead of:
+
+```sh
+$ docker-compose up
+```
+
+Use
+
+```sh
+$ docker compose up
+```
+
+Either way, an alias makes it much easier to type.
+
+```sh
+$ alias dc='docker compose'
+$ dc up
 ```
 
 
