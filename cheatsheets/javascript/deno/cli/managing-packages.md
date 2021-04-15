@@ -55,13 +55,15 @@ Such as with `deno run` or `deno test` (test dependencies).
 
 ## Install with cache subcommand
 
-You can get dependencies downloaded and installed without running your app. Any installed dependecies will not be upgraded.
+You can get dependencies downloaded and installed without running your app. 
 
 Provide a file, not a directory.
 
 ```sh
 $ deno cache index.ts
 ```
+
+Subsequent runs of that will **not** upgrade dependecies. Unless you follow the [Upgrade packages](#upgrade-packagse) section below.
 
 
 ## Upgrade packages
@@ -84,20 +86,32 @@ Then run the same command as to install. This works since the new package versio
 $ deno cache index.ts
 ```
 
-### Force upgrade
+Or skip updating cache and just run. You'll get the installed packages still.
 
-Use the `--reload` flag to force upgrading packages.
+```sh
+$ deno run index.ts
+```
+
+### Reload packages
+
+Use the `--reload` flag to force upgrading packages to the newest available. 
+
+This is useful if a dependency is not locked.
 
 ```sh
 $ deno cache --reload index.ts
 ```
 
-After `deno upgrade`, standard lib packages may be in a broken state and this will fix that.
+- `-r, --reload=<CACHE_BLOCKLIST>` - Reload source code cache (recompile TypeScript)
+
+This will upgrade the standard library as well (old packages will be kept though alongside the new ones). This helps, as your use of std lib packages which not locked can break after running `deno upgrade`
 
 
 ## Locking versions
 
-You should probably install all your packages using locked URL versions though.
+You should probably install all your packages using locked URL versions.
+
+The [Standard library](https://deno.land/manual/standard_library) manual recommends that you **lock** packages used from the standard lib.
 
 This version will be the same whenever installed:
 
