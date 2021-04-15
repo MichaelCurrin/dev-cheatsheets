@@ -84,11 +84,15 @@ Then run the same command as to install. This works since the new package versio
 $ deno cache index.ts
 ```
 
-### Use reload to force upgrade
+### Force upgrade
+
+Use the `--reload` flag to force upgrading packages.
 
 ```sh
 $ deno cache --reload index.ts
 ```
+
+After `deno upgrade`, standard lib packages may be in a broken state and this will fix that.
 
 
 ## Locking versions
