@@ -78,7 +78,15 @@ Change the version in your URL.
     +export { Application } from "https://deno.land/x/abc@v1.2.0/mod.ts";
     ```
 
-You can lock using an exact version `@0.87.0`. But `@0.87` syntax doesn't work on Deno.land. On CDNs, you can partially lock - like JSPM says `pkg@1.2` translates to `~1.2` including pre-releases.
+Deno land:
+
+- You can lock using an exact version like `@v0.87.0`. 
+- Some packages will provide a short number for the major release number if you are okay with less stability. e.g. `@v1` like for [deno.land/x/abc@v1](https://deno.land/x/abc@v1), but in this case it is not the same as the latest `v1.X.X`, based on looking and subdependencies.. 
+- Locking to minor version `@v1.2` syntax doesn't work as far I've seen.
+
+CDNS:
+
+- On some CDNs, you can partially lock such as on a minor version. The JSPM site says `pkg@1.2` translates to `~1.2` including pre-releases.
 
 Then run the same command as to install. This works since the new package version has to be installed for the first time.
 
@@ -111,6 +119,8 @@ Info on the flag:
 This will upgrade the standard library as well (old packages will be kept though alongside the new ones). This helps, as your use of std lib packages which not locked can break after running `deno upgrade`.
 
 Note that 3rd-party packages are also likely to rely on the std lib - hopefully with version numbers.
+
+I found using `abc@v1.2.4` then after upgrading Deno and after running the reload above, things still broke even at the cache stage. I had to upgrade to `abc@v1.3.1`. Using `abc@v1` did not help as that was even further behind, but not as far behind as `v1.0.0`.
 
 
 ## Locking versions
