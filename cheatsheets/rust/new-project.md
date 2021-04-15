@@ -66,7 +66,7 @@ Note that this will give an **error** if you run it in project which already has
 cargo init [options] [path]
 ```
 
-Setup a directory first.
+Set up a directory first.
 
 ```sh
 $ mkdir my-app
@@ -77,7 +77,7 @@ $ cargo init .
 Or create the directory using the command.
 
 ```sh
-$ cargo init my-app 
+$ cargo init my-app
 $ cd my-app
 ```
 

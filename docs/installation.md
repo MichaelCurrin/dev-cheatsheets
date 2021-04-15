@@ -15,7 +15,7 @@ $ git clone git@github.com:MichaelCurrin/dev-cheatsheets.git
 $ cd dev-cheatsheets
 ```
 
-## Setup hooks
+## Set up hooks
 
 ```sh
 $ make hooks

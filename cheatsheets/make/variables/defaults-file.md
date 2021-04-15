@@ -1,6 +1,6 @@
 ---
 title: Default files
-description: Setup default values in another file.
+description: Set up default values in another file.
 ---
 
 Set defaults.

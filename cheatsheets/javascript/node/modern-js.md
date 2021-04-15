@@ -2,7 +2,7 @@
 
 ## Destructure key-value pairs
 
-Setup associative array.
+Set up associative array.
 
 ```javascript
 const myHash = {

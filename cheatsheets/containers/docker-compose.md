@@ -86,7 +86,7 @@ Start containers again.
 $ docker-compose up
 ```
 
-That will **not** rebuild the image but use already built image. If you copied your codebase into the image using `COPY` in `Dockerfile`, then the image will have stale code. 
+That will **not** rebuild the image but use already built image. If you copied your codebase into the image using `COPY` in `Dockerfile`, then the image will have stale code.
 
 Continue below to remedy this.
 
@@ -109,7 +109,7 @@ $ docker-compose up --build
 
 ### Scale
 
-Setup multiple instances of a container locally.
+Set up multiple instances of a container locally.
 
 Use the `--scale` flag.
 

@@ -1,6 +1,6 @@
 ---
 title: Create a package
-description: Setup a new Go module as an installable package, with any dependencies
+description: Set up a new Go module as an installable package, with any dependencies
 ---
 
 Paths are relative to the repo root.

@@ -2,13 +2,13 @@
 > Setting environment variables
 
 
-Setup a variable.
+Set up a variable.
 
 ```terraform
 variable "FOO" {}
 ```
 
-Setup your code.
+Set up your code.
 
 ```
 {

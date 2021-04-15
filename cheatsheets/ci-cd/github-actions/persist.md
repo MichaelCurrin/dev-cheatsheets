@@ -1,18 +1,18 @@
 ---
-title: Persist 
+title: Persist
 description: How to reuse a value from one step in a later step or job
 ---
 
 {% raw %}
 
-See more info the GH Actions [Setup Go](https://michaelcurrin.github.io/code-cookbook/recipes/ci-cd/github-actions/workflows/go/setup-go.html) section of my Code Cookbooks.
+See more info the GH Actions [Set up Go](https://michaelcurrin.github.io/code-cookbook/recipes/ci-cd/github-actions/workflows/go/setup-go.html) section of my Code Cookbooks.
 
 
 ## Using GitHub env file
 
 From [Environment Variables](https://docs.github.com/en/actions/reference/environment-variables#about-environment-variables) in the docs.
 
-> You can also use the `GITHUB_ENV` environment file to set an environment variable that the following steps in a workflow can use. 
+> You can also use the `GITHUB_ENV` environment file to set an environment variable that the following steps in a workflow can use.
 >
 > The environment file can be used directly by an action or as a shell command in a workflow file using the run keyword.
 
@@ -29,7 +29,7 @@ steps:
   - name: Set the value
     id: step_one
     run: echo "action_state=yellow" >> $GITHUB_ENV
-        
+
   - name: Use the value
     id: step_two
     run: echo "${{ env.action_state }}" # This will output 'yellow'
@@ -43,7 +43,7 @@ Get a version from a file and use it as a parameter for an action in another ste
 steps:
   - name: Get Go version
     run: echo "GO_VERSION=$(grep ...)" >> $GITHUB_ENV
-    
+
   - uses: actions/setup-go@v2
     with:
       go-version: ${{ env.GO_VERSION }}
@@ -82,7 +82,7 @@ steps:
       echo ::set-output name=go_version::$(grep ...)
       echo "Using Go version ${{ steps.vars.outputs.go_version }}"
 
-  - name: Setup go
+  - name: Set up go
     uses: actions/setup-go@v2
     with:
       go-version: ${{ steps.vars.outputs.go_version }}
@@ -111,7 +111,7 @@ steps:
 
 From [docs](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions).
 
-> A map of outputs for a job. Job outputs are available to all downstream jobs that depend on this job. 
+> A map of outputs for a job. Job outputs are available to all downstream jobs that depend on this job.
 
 > Outputs containing secrets are redacted on the runner and not sent to GitHub Actions.
 
@@ -153,22 +153,22 @@ Returning a JSON object - from [docs](https://docs.github.com/en/actions/referen
     jobs:
       job1:
         runs-on: ubuntu-latest
-        
+
         outputs:
           matrix: ${{ steps.set-matrix.outputs.matrix }}
-          
+
         steps:
           - id: set-matrix
             run: echo "::set-output name=matrix::{\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}"
-      
+
       job2:
         needs: job1
-        
+
         runs-on: ubuntu-latest
-        
+
         strategy:
           matrix: ${{ fromJSON(needs.job1.outputs.matrix) }}
-          
+
         steps:
           - run: build
     ```

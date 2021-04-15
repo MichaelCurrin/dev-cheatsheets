@@ -56,7 +56,7 @@ $ date --date='TZ="America/Los_Angeles" 09:00 next Fri'
 Fri Aug 28 18:00:00 SAST 2020
 ```
 
-## Setup on macOS
+## Set up on macOS
 
 On macOS, the GNU Linux one can be installed:
 

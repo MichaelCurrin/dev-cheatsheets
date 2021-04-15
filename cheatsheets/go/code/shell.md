@@ -3,7 +3,7 @@ title: Shell
 description: Run a shell command within a Go script
 ---
 
-Setup a shell command as a string and run it. You could run a shell command like `date` or even access programming language CLI tool like `python` or `node`.
+Set up a shell command as a string and run it. You could run a shell command like `date` or even access programming language CLI tool like `python` or `node`.
 
 This is using the `exec` builtin module. Similar using the `subprocess` module in Python.
 

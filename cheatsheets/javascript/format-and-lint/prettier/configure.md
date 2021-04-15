@@ -13,7 +13,7 @@ $ prettier . --no-semi --single-quote
 
 ## Config file
 
-Setup a config file:
+Set up a config file:
 
 - `.prettierrc.json`
 - `prettier.config.js` or `.prettierrc.js`
@@ -25,4 +25,3 @@ You might want to edit VS Code settings too if you use a Prettier extension.
 ## Options
 
 See [Options](https://prettier.io/docs/en/options.html) in the docs. This shows you what you can set and what the default values are.
-

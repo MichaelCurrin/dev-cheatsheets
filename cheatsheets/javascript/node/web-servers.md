@@ -32,7 +32,7 @@ See [HTTP](https://nodejs.org/api/http.html) module docs.
 
 Example based on [Getting started with NodeJS for frontend developers - Part 1](https://www.youtube.com/watch?v=F3eiqoNTniY&t=41s).
 
-Setup HTTP server with returns a greeting as plain text.
+Set up HTTP server with returns a greeting as plain text.
 
 - `server.js`
     ```javascript

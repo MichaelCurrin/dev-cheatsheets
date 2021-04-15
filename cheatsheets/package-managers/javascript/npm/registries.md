@@ -11,18 +11,18 @@ description: Where to download Node packages from
 
 Installing from NPM:
 
-Area | Example
---- | ---
-Command | `npm install @vue/cli`
-Explore | `https://registry.npmjs.org/@vue-cli`
-Download | `https://registry.npmjs.org/@vue/cli/-/cli-4.5.11.tgz`
+| Area     | Example                                                |
+| -------- | ------------------------------------------------------ |
+| Command  | `npm install @vue/cli`                                 |
+| Explore  | `https://registry.npmjs.org/@vue-cli`                  |
+| Download | `https://registry.npmjs.org/@vue/cli/-/cli-4.5.11.tgz` |
 
 Install from a GitHub repo:
 
-Area | Example
---- | ---
-Command | `npm install https://github.com/vuejs/vue-cli` 
-Explore | `https://github.com/vuejs/vue-cli`
+| Area    | Example                                        |
+| ------- | ---------------------------------------------- |
+| Command | `npm install https://github.com/vuejs/vue-cli` |
+| Explore | `https://github.com/vuejs/vue-cli`             |
 
 
 ## To use a registry or not
@@ -31,7 +31,7 @@ A developer can publish to an NPM package registry like NPM or GitHub. These req
 
 A package on a registry is easier to search for and browse.
 
-If you don't want go through that hassle for your project and you care more about using your own project than others finding and installing it, there is another much lighter approach. See [GitHub repos as a registry](#github-repos-as-a-registry) section. 
+If you don't want go through that hassle for your project and you care more about using your own project than others finding and installing it, there is another much lighter approach. See [GitHub repos as a registry](#github-repos-as-a-registry) section.
 
 The GitHub repo approach makes using code on public repos easy. The downside is that when you install a package from GitHub, you machine will have to download content it might not need and it might have to compile, bundle and minify JS code. Compared to using a package which is already published on NPM as a ready-to-use optimized JS file.
 
@@ -161,7 +161,7 @@ latest: 4.5.11       next: 5.0.0-alpha.4
 
 [npm.pkg.github.com](https://npm.pkg.github.com)
 
-Setup a config to tell your NPM command to look at GitHub.
+Set up a config to tell your NPM command to look at GitHub.
 
 - `.npmrc`
     ```
@@ -202,8 +202,8 @@ $ npm install @lodash  # Matches standard use of installing 'lodash', I think.
 - [Introducing GitHub Package Registry](https://github.blog/2019-05-10-introducing-github-package-registry/) on GitHub's blog.
 - [Configuring npm for use with GitHub Packages](https://docs.github.com/en/packages/guides/configuring-npm-for-use-with-github-packages)
     - How to publish an NPM package to GitHub's registry
- 
- 
+
+
 ## GitHub repos as a registry
 
 When to make your NPM package installable from GitHub.

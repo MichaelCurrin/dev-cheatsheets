@@ -1,6 +1,6 @@
 # Dynamic targets
 
-1. Setup a target like `PRE.%` where the `%` can be matched dynamically.
+1. Set up a target like `PRE.%` where the `%` can be matched dynamically.
 2. Then call it using `PRE.VALUE` e.g. `echo.deps`.
 3. Use the value in the `PRE.%` target as `$*`.
 

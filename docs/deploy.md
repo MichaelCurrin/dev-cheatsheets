@@ -1,6 +1,6 @@
 # Deploy
 
-Setup this project on GitHub Pages.
+Set up this project on GitHub Pages.
 
 1. Add this project to your GitHub repos.
 2. Go to Settings.

@@ -1,7 +1,7 @@
 # SQLite
 
 
-## Setup cursor
+## Set up cursor
 
 ```python
 import sqlite3
@@ -45,7 +45,7 @@ cur.execute(insert_sql, "Fizz", 123)
 ```python
 
 select_sql = """
-    SELECT * 
+    SELECT *
     FROM foo;
 """
 
