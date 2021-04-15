@@ -1,5 +1,5 @@
 ---
-description: Choose events that trigger your workflow 
+description: Choose events that trigger your workflow
 ---
 # Triggers
 
@@ -26,7 +26,7 @@ on: push
 
 Trigger only with pull requests. See [docs](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#pull_request).
 
-This will build on a feature branch if it has PR. 
+This will build on a feature branch if it has PR.
 
 #### Commits
 
@@ -123,10 +123,10 @@ Or
 ```yaml
 on:
   push:
-    branches: 
+    branches:
       - master
   pull_request:
-    branches: 
+    branches:
       - master
 ```
 
@@ -203,8 +203,8 @@ on:
 ### Ignore markdown changes
 
 Triggered on a commit or push to your main branch or any branch with a Pull Request. Ignore changes to markdown files at all levels (such as `README.md` and in `docs`).
- 
-- `main.yml` 
+
+- `main.yml`
     ```yaml
     on:
       push:
@@ -220,11 +220,11 @@ Triggered on a commit or push to your main branch or any branch with a Pull Requ
 
 ### Ignore doc changes
 
-More explicit - trigger on markdown changes but not doc-related changes. 
+More explicit - trigger on markdown changes but not doc-related changes.
 
 Similar to above but still watches for changes in markdown files outside the docs directory. Such as if you have a static site with markdown content in the root of the repo.
 
-- `main.yml` 
+- `main.yml`
     ```yaml
     on:
       push:
@@ -243,7 +243,7 @@ Similar to above but still watches for changes in markdown files outside the doc
 
 ## Trigger on tag
 
-Specify a tag rule under `on.push.tags`. 
+Specify a tag rule under `on.push.tags`.
 
 Use a regex pattern - this must be set.
 
@@ -261,7 +261,7 @@ You can add `branches` rules - if for some reason you are making a tag that is _
 ```yaml
 on:
   push:
-    tags: 
+    tags:
     branches: [ main ]
 ```
 
@@ -392,7 +392,7 @@ Trigger a workflow on a button click.
 
 > To trigger specific workflows in a repository, use the `workflow_dispatch event`.
 
-If you setup this option, then you'll get a button on the Actions tab to click and so run the workflow directly. Without a commit needed and without having to wait for a cron trigger.
+If you set up this option, then you'll get a button on the Actions tab to click and so run the workflow directly. Without a commit needed and without having to wait for a cron trigger.
 
 You can even specify text **inputs** so that you get prompted to fill those in and have them used in the job.
 
@@ -412,7 +412,7 @@ on:
         description: # ...
         required: # true or false
         default: # ...
-      
+
       # ...
 ```
 
@@ -446,7 +446,7 @@ jobs:
         echo "- in ${{ github.event.inputs.home }}!"
 ```
 
-An example suggested by GH Actions, when making new workflow file. 
+An example suggested by GH Actions, when making new workflow file.
 
 ```yaml
 name: Manual workflow

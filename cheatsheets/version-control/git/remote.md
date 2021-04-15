@@ -8,7 +8,7 @@ $ git remote set-url origin git@github.com:MichaelCurrin/cheatsheets.git
 
 ## Add remote to a new repo
 
-When you setup a repo like this, you won't have any remotes.
+When you set up a repo like this, you won't have any remotes.
 
 ```sh
 $ git init
@@ -26,7 +26,7 @@ Add a remote.
 $ git remote add origin git@github.com:MichaelCurrin/dev-cheatsheets.git
 ```
 
-You can commit and push now. 
+You can commit and push now.
 
 You need to include the remote name and branch the first time you pull. Note you'll get an error doing a pull on an empty remote.
 

@@ -235,7 +235,7 @@ You can send to yourself or another user by setting as target `my-user`, which i
 
 Alternatively, send to external address (e.g. example@example.com), however, you will have to configure an SMTP server with credentials, such using your Gmail account. Be careful when storing your email password in plain text on your machine.
 
-How to setup SMTP server access to send mail over the network.
+How to set up SMTP server access to send mail over the network.
 - [article](https://hints.macworld.com/article.php?story=20081217161612647)
 - [Send mail over your network](https://www.mactricksandtips.com/2008/09/send-mail-over-your-network.html)
 
@@ -245,7 +245,7 @@ Send a mail to yourself using address as one of:
 
 - Your username e.g. `michael` or `$USER`
 - Local address e.g. `michael@localhost`
-- System address (host is setup on installing `mailutils`) e.g. `michael@dell-lite`
+- System address (host is set up on installing `mailutils`) e.g. `michael@dell-lite`
 
 Single line:
 
@@ -253,7 +253,7 @@ Single line:
 $ echo "This is the body" | mail -s "My subject" $USER
 ```
 
-Multi-line using a Bash heredoc setup using a pair of `EOF` characters.
+Multi-line using a Bash heredoc set up using a pair of `EOF` characters.
 
 ```
 $ mail -s "My subject" $USER <<EOF

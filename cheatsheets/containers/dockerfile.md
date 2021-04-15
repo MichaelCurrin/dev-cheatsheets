@@ -12,7 +12,7 @@ See [Dockerfile reference](https://docs.docker.com/engine/reference/builder/) do
 - `Dockerfile`
     ```Dockerfile
     FROM image-name
-    
+
     ENV foo=bar
     ARG fizz=buzz
 
@@ -40,7 +40,7 @@ If the directory does not exist, you must create it using `mkdir.
     WORKDIR /usr/src/app
     ```
 
-Though, you can setup working directory and then use `COPY` to add something there and the directory will be created, without the need for `mkdir`.
+Though, you can set up working directory and then use `COPY` to add something there and the directory will be created, without the need for `mkdir`.
 
 Given `app` in the current directory, the `app` directory will be copied to where the working directory expects it to be.
 
@@ -83,12 +83,12 @@ COPY . .
 # cp -r . /root/
 
 # Copy whole directory.
-COPY src . 
+COPY src .
 # cp -r src /root/src
 
 # Warning.
 # If the destination is a directory, the whole directory will be copied into the directory.
-COPY src fuzz 
+COPY src fuzz
 # mkdir /root/fuzz
 # cp -r src /root/fuzz/src
 # NOT

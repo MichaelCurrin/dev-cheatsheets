@@ -10,7 +10,7 @@
 
 For your GH Actions workflow steps, normally you just write shell commands.
 
-To setup your language environment and to perform complex tasks, you'll often end up using an action from the GH Actions Marketplace.
+To set up your language environment and to perform complex tasks, you'll often end up using an action from the GH Actions Marketplace.
 
 - [Actions](https://github.com/marketplace?type=actions) in the Marketplace.
 

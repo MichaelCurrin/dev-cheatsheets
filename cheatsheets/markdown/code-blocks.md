@@ -33,7 +33,7 @@ Indent the code by 4 spaces.
 
 ### Backtick syntax
 
-Use triple backtick also known as a fenced code block. You can optionally specify a language for format with - this works well in markdown on GitHub but you might need extra setup in a Jekyll theme to get it to work properly.
+Use triple backtick also known as a fenced code block. You can optionally specify a language for format with - this works well in markdown on GitHub but you might need extra set up in a Jekyll theme to get it to work properly.
 
     ```python
     # Triple quotes are for code blocks and give more control over the language.

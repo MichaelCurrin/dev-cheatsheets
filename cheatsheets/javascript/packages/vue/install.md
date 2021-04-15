@@ -46,7 +46,7 @@ Execute it in your `node_modules` as:
 $ npx vue-cli-service COMMAND
 ```
 
-Or setup in your `package.json` scripts.
+Or set up in your `package.json` scripts.
 
 ```json
 {

@@ -9,7 +9,7 @@ Therefore you can generally **omit** this key.
 
 This works both locally and on GH Pages, using a theme directly or using Remote Theme plugin.
 
-However, if you setup a GH Pages site without a `Gemfile`, then you should setup `plugins` in your config.
+However, if you set up a GH Pages site without a `Gemfile`, then you should set up `plugins` in your config.
 
 ## Syntax
 

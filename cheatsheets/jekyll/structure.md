@@ -6,7 +6,7 @@ description: Understand the basic structure of a Jekyll project
 
 ## Files and directories
 
-This project is setup to demonstrate use of the _Required_ file structure below.
+This project is set up to demonstrate use of the _Required_ file structure below.
 
 If you are looking for a template project with more substantial content like multiple pages, see [jekyll-blog-demo](https://github.com/MichaelCurrin/jekyll-blog-demo). If you are looking for use of layouts, see this project - [themeless-jekyll-quickstart](https://github.com/MichaelCurrin/themeless-jekyll-quickstart).
 

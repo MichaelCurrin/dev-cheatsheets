@@ -1,7 +1,7 @@
 # GitHub Pages
 
 ## Gems on GH Pages
-> Environment for standard GH Pages setup (without GH Actions)
+> Environment for standard GH Pages set up (without GH Actions)
 
 See the [Dependency versions](https://pages.github.com/versions/) page for what gems GH Pages uses for builds.
 

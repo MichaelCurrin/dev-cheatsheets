@@ -1,6 +1,6 @@
 # Gemfile
 
-How to setup a _Gemfile_ as a file to manage dependencies.
+How to set up a _Gemfile_ as a file to manage dependencies.
 
 
 ## Install gems

@@ -130,7 +130,7 @@ steps:
 
 By default, jobs run in **parallel**.
 
-Here we setup a **sequence** of jobs. Each job only run if the previous one passed.
+Here we set up a **sequence** of jobs. Each job only run if the previous one passed.
 
 [Job Needs](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idneeds) docs.
 

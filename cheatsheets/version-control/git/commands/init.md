@@ -22,7 +22,7 @@ $ cd my-app
 
 ## Change default branch
 
-Change the default branch for new repos setup with `init`.
+Change the default branch for new repos set up with `init`.
 
 Currently, the Git default is `master`. You might want to override to `main` or `dev` or `edge`.
 

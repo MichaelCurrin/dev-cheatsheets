@@ -183,7 +183,7 @@ e.g.
     ```sh
     $ rsync [OPTIONS] foo michael@192.168.1.35:/foo/bar/baz
     ```
-- Copy to user path on a host identified from `/etc/hosts`. Note that `USER@` is not needed if you've setup the remote user in the config, or perhaps if the user names are identical across systems.
+- Copy to user path on a host identified from `/etc/hosts`. Note that `USER@` is not needed if you've set up the remote user in the config, or perhaps if the user names are identical across systems.
     ```sh
     $ rsync [OPTIONS] foo michael@dell:~/Documents/baz
     ```

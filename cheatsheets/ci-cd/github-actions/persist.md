@@ -117,7 +117,7 @@ From [docs](https://docs.github.com/en/actions/reference/workflow-syntax-for-git
 
 ### Syntax
 
-This docs example shows how to reuse values across steps and across jobs. You only need to setup the `outputs` section for reuse across jobs.
+This docs example shows how to reuse values across steps and across jobs. You only need to set up the `outputs` section for reuse across jobs.
 
 - `main.yml`
     ```yaml

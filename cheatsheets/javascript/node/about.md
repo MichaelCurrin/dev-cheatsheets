@@ -9,7 +9,7 @@ Node can process JavaScript on a machine locally or in the cloud, even without a
 
 So Node lets you run scripts and applications and use libraries in a similar way to how Python, Java, and PHP have done since they were created.
 
-For interest, [Deno][] is another server-side environment of JS. 
+For interest, [Deno][] is another server-side environment of JS.
 
 [Deno]: https://michaelcurrin.github.io/dev-resources/resources/javascript/deno/
 
@@ -27,16 +27,16 @@ Node can be used for the following, among other use cases.
     - Rendering dynamic website content.
         - In the same way that PHP or Python web servers generate and return HTML pages.
         - You might host your app as a server on AWS (such as with EC2 or Kubernetes) or [Vercel](https://vercel.com/) (they actually turn your app into multiple server-less endpoints.
-    - It can be used to make a REST API, sending and receiving JSON data. 
+    - It can be used to make a REST API, sending and receiving JSON data.
         - The Express library is a common choice here.
         - Again might host your app on AWS or Vercel.
     - Serverless computing.
         - Scale cheaply and fast, having your script run in parallel, adapting as demand changes.
         - Use AWS _Lambda_ or Netlify _Functions_.
-    - Single-Page Applications. 
+    - Single-Page Applications.
         - Like using [React](https://github.com/MichaelCurrin/react-quickstart), [Vue](https://github.com/MichaelCurrin/vue-quickstart), or [Docsify](https://github.com/MichaelCurrin/docsify-js-template). Where there is one `index.html` and the multi-page site experience is created dynamically using JavaScript.
         - For the common use case, a Node server is unnecessary to serve a SPA. So you can use any static hosting site to make your site public.
-    - Rendering static sites. 
+    - Rendering static sites.
         - Like using [VuePress](https://github.com/MichaelCurrin/vuepress-quickstart), [Nuxt](https://github.com/MichaelCurrin/nuxt-default-quickstart), or [Hexo](https://github.com/MichaelCurrin/hexo-quickstart).
         - Use static hosting as described for SPA above.
     - Hybrid sites.
@@ -97,7 +97,7 @@ Node can perform the following, using NPM:
 
 Using these tasks means that you improve the code quality and performance of your app, which improves the lives of your developer team and of end-users.
 
-You can setup a JavaScript project that is a SPA but that doesn't need Node.
+You can set up a JavaScript project that is a SPA but that doesn't need Node.
 
 Here is a Vue-based application. Rather than loading Vue using a `script` tag in the HTML, rather the newer ES Module syntax is used. So within the JS script, there is an import of Vue from a CDN and the browser knows to download this and use it.
 

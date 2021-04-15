@@ -10,7 +10,7 @@ Using `os.environ` is the preferred way. Avoiding using `os.getenv('FOO')` and `
 
 ## Setup
 
-Run this in the shell to setup the environment.
+Run this in the shell to set up the environment.
 
 ```sh
 FOO=bar python main.py

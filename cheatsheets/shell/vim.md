@@ -8,7 +8,7 @@ _Vim_ is a text editor program for Unix, cloned from _Vi_.
 
 ## Configure
 
-Try out a config and if you like it, set it in the config so it is setup whenever you open a file.
+Try out a config and if you like it, set it in the config so it is set up whenever you open a file.
 
 ### Once-off
 

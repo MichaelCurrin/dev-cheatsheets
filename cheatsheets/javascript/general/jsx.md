@@ -46,14 +46,14 @@ Add this `<script>` tag to your page:
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 ```
 
-Then setup a `<script>` tag with `type="text/babel"` attribute to it.
+Then set up a `<script>` tag with `type="text/babel"` attribute to it.
 
 ### Add HTM
 
-Here we use [htm](https://www.npmjs.com/package/htm) NPM package. 
+Here we use [htm](https://www.npmjs.com/package/htm) NPM package.
 
 > HTM (Hyperscript Tagged Markup)
-> 
+>
 > htm is JSX-like syntax in plain JavaScript - no transpiler necessary.
 
 This works on the frontend -  we use that package to render the a JSX-like string to plain JS, without actually using JSX. Note the backticks.
@@ -66,14 +66,14 @@ From HTM docs:
     ```javascript
     import { render } from 'preact';
     import { html } from 'htm/preact';
-    
+
     render(html`<a href="/">Hello!</a>`, document.body);
     ```
 - React sample.
     ```javascript
     import ReactDOM from 'react-dom';
     import { html } from 'htm/react';
-    
+
     ReactDOM.render(html`<a href="/">Hello!</a>`, document.body);
     ```
 - Generic sample.

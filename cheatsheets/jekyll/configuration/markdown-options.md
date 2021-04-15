@@ -4,7 +4,7 @@
 
 See [Markdown Options](https://jekyllrb.com/docs/configuration/markdown/) in the Jekyll docs.
 
-The typical Jekyll setup uses Kramdown, which is covered there.
+The typical Jekyll set up uses Kramdown, which is covered there.
 
 Here are the default settings:
 

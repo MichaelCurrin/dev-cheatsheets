@@ -26,7 +26,7 @@ Welcome!
 
 Traditionally, a Makefile will have an `all` or `default` command.
 
-The target word can be anything must be setup _first_ in the file in order to be the default when running without arguments.
+The target word can be anything must be set up _first_ in the file in order to be the default when running without arguments.
 
 ```make
 default: install
@@ -45,7 +45,7 @@ $ make
 Installing deps...
 ```
 
-The GNU docs recommend `all` but the `default` makes more sense to me. The `all` can be useful if there are many steps to run while `default` I would setup as one command.
+The GNU docs recommend `all` but the `default` makes more sense to me. The `all` can be useful if there are many steps to run while `default` I would set up as one command.
 
 ```make
 default: install

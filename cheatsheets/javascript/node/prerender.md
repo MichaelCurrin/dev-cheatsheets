@@ -37,7 +37,7 @@ See the link for config options.
 
 > Presite is an alternative to static site generators like Gatsby, Next.js and Nuxt.js etc, the difference is that it uses Puppeteer to prerender websites instead of relying on server-side rendering.
 
-#### GitHub 
+#### GitHub
 
 ![egoist - presite](https://img.shields.io/static/v1?label=egoist&message=presite&color=blue&logo=github)](https://github.com/egoist/presite)
 [![stars - presite](https://img.shields.io/github/stars/egoist/presite?style=social)](https://github.com/egoist/presite)
@@ -61,7 +61,7 @@ This is not actually make static assets. It just wraps your SPA with a Node serv
 
 ## Configure script commands
 
-Using `package.json`, you can setup a build and prerender commands and run both when you need to.
+Using `package.json`, you can set up a build and prerender commands and run both when you need to.
 
 Here using `presite` and `react`.
 
@@ -109,8 +109,8 @@ The process involves using a headless browser that renders the HTML and JS on al
 
 This turns your app into a _static_ site.
 
-Dynamic behavior will not work anymore, unless you make additional work to do that. 
+Dynamic behavior will not work anymore, unless you make additional work to do that.
 
-Like a counter will be frozen and any data pulled in from an external source will be frozen and baked into the HTML as build time. 
+Like a counter will be frozen and any data pulled in from an external source will be frozen and baked into the HTML as build time.
 
 On the other hand, that might not matter to you like if you only need to update content at build time and not be live.

@@ -238,7 +238,7 @@ $ npm install https://github.com/vuejs/vue-cli#develop
 
 ### Download from private repo
 
-Assuming you have your SSH keys setup locally and on GitHub, for access to private repos.
+Assuming you have your SSH keys set up locally and on GitHub, for access to private repos.
 
 ```sh
 $ npm install git+ssh://git@github.com:USERNAME/REPO_NAME.git
