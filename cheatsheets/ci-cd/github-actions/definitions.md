@@ -1,5 +1,5 @@
 ---
-description: Copied from Github UI or docs
+description: Copied from GitHub UI or docs
 ---
 # Definitions
 

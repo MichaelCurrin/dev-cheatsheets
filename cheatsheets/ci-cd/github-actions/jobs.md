@@ -5,7 +5,7 @@ description: Syntax for jobs in GH actions workflow file
 
 {% raw %}
 
-See [Workflow syntax for Github Actions](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions) in Github docs.
+See [Workflow syntax for GitHub Actions](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions) in GitHub docs.
 
 > A workflow run is made up of one or more jobs. Jobs run in **parallel** by default.
 >
@@ -29,7 +29,7 @@ jobs:
     name: My second job
 ```
 
-Here the first job ID is `my_first_job`. This example from the docs and YAML in general uses underscores but usually I see hyphens used instead. 
+Here the first job ID is `my_first_job`. This example from the docs and YAML in general uses underscores but usually I see hyphens used instead.
 
 
 ## Operating system
@@ -41,12 +41,12 @@ Use `runs-on` to specify the operating system. Using `ubuntu-latest` as below is
     jobs:
       my_first_job:
         name: My first job
-        
+
         runs-on: ubuntu-latest
 
       my_second_job:
         name: My second job
-        
+
         runs-on: ubuntu-latest
     ```
 
@@ -69,21 +69,21 @@ jobs:
   macos64:
     name: 'macOS 64-bit'
     runs-on: [ macos-latest ]
-    
+
     steps:
     # ...
-    
+
   ubuntu64:
     name: 'Linux/Ubuntu 64-bit'
     runs-on: [ ubuntu-18.04 ]
-    
+
     steps:
     # ...
-    
+
   win64:
     name: 'Windows 64-bit'
     runs-on: [ windows-latest ]
-        
+
     steps:
     # ...
 ```
@@ -182,9 +182,9 @@ Using job output in a dependent job:
 
 ## Conditional logic
 
-### Job if statement 
+### Job if statement
 
-How to run jobs on a condition 
+How to run jobs on a condition
 
 ```yaml
 jobs:
@@ -199,7 +199,7 @@ jobs:
       # ...
 ```
 
-### Step if statement 
+### Step if statement
 
 Control whether a single step will run or be skipped.
 
@@ -213,7 +213,7 @@ Here, this step only runs when the event type is `pull_request` and the event ac
        run: echo "This event is a pull request that had an assignee removed."
     ```
 
-This can be useful if you want just one workflow file and one job but want to skip a deploy steps at the end. 
+This can be useful if you want just one workflow file and one job but want to skip a deploy steps at the end.
 
 e.g.
 

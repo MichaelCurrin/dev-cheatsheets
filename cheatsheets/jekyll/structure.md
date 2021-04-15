@@ -27,12 +27,12 @@ You can add additional pages, themes, layouts and so on to that setup.
 
 ### Optional files
 
-You might be happy with a site that runs only on Github Pages - this could be fine for a simple site or for doc. 
+You might be happy with a site that runs only on GitHub Pages - this could be fine for a simple site or for doc.
 
 If you do want to install and run locally, you will need to add these to the project. See [MichaelCurrin/jekyll-blog-demo](https://github.com/MichaelCurrin/jekyll-blog-demo) for a complete example.
 
 - `Gemfile`
-    - Github Pages installs based on the config file and not the `Gemfile`, so this is optional if not running locally. 
+    - GitHub Pages installs based on the config file and not the `Gemfile`, so this is optional if not running locally.
     - But one is recommended for local use if you have any gems (such as plugins and themes).
 - `.gitignore`
     - To ignore the built `_site` directory.
@@ -42,7 +42,7 @@ If you do want to install and run locally, you will need to add these to the pro
 
 ## Pages and frontmatter
 
-For other pages (whether markdown or index), they will default to have **no** Jekyll processing. So you probably want to set YAML metadata. 
+For other pages (whether markdown or index), they will default to have **no** Jekyll processing. So you probably want to set YAML metadata.
 
 The minimum would be _empty_ metadata.
 

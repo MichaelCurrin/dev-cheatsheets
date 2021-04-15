@@ -182,14 +182,14 @@ For example. Include exactly as it here with comments. The PR creator must then 
 <!-- closes #1 -->
 
 
-<!--  Please also add labels to the PR using Github's labelling e.g. enhancement, bug, translation
+<!--  Please also add labels to the PR using GitHub's labelling e.g. enhancement, bug, translation
 ```
 
 Or questions to be answered.
 
 ```markdown
 As part of the code review process please run branch locally and review
- 
+
 - Is the AC being met?
 - Are there odd behaviors?
 - Are all necessary tests present?
