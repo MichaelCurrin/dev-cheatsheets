@@ -69,7 +69,9 @@ You can use a negative index here.
 [ 'd' ]
 ```
 
-Warning - this returns an array, not a string, so do this.
+Warning - that returns an array.
+
+To get a single element, use:
 
 ```javascript
 > myArray.slice(-1)[0]
