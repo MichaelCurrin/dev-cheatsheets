@@ -102,9 +102,15 @@ This is useful if a dependency is not locked.
 $ deno cache --reload index.ts
 ```
 
+Or maybe point as `deps.ts` instead.
+
+Info on the flag:
+
 - `-r, --reload=<CACHE_BLOCKLIST>` - Reload source code cache (recompile TypeScript)
 
-This will upgrade the standard library as well (old packages will be kept though alongside the new ones). This helps, as your use of std lib packages which not locked can break after running `deno upgrade`
+This will upgrade the standard library as well (old packages will be kept though alongside the new ones). This helps, as your use of std lib packages which not locked can break after running `deno upgrade`.
+
+Note that 3rd-party packages are also likely to rely on the std lib - hopefully with version numbers.
 
 
 ## Locking versions
