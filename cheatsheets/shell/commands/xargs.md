@@ -49,9 +49,11 @@ Use the number zero as a flag.
 
 Here is an example I found that uses that.
 
-```
+```sh
 $ find Pictures/tecmint/ -name "*.png" -type f -print0 | xargs -0 tar -cvzf images.tar.gz
 ```
+
+In general, I would not use `xargs` with `find`. Rather use the ability of `find` to run a shell command for each file it finds - such as delete or rename a file.
 
  
 ## Examples
@@ -104,7 +106,7 @@ $ which -a python3 | xargs ls -l
 lrwxr-xr-x  1 mcurrin  admin     38 13 Oct 13:15 /usr/local/bin/python3 -> ../Cellar/python@3.9/3.9.0/bin/python3
 ```
 
-Here is that with a `for` loop.
+Here is that using a `for` loop instead.
 
 ```sh
 for P in $(which -a python3); do
@@ -116,7 +118,11 @@ lrwxr-xr-x  1 mcurrin  admin  38 13 Oct 13:15 /usr/local/bin/python3 -> ../Cella
 -rwxr-xr-x  1 root  wheel  31488 22 Sep 02:29 /usr/bin/python3
 ```
 
-Deleting branches with `xargs`.
+### git and xargs
+
+In git, you might want to loop over your branchs or remotes do clean them up.
+
+Here, deleting branches with `xargs`.
 
 ```sh
 $ echo 'foo bar' | xargs git branch -D
@@ -125,13 +131,13 @@ echo 'foo
 bar' | xargs git branch -D
 ```
 
-Without `xargs`.
+Though, commands let you pass multiple options, so you don't need actually `xargs` in this case. Here is a simpler form.
 
 ```sh
 $ git branch -D foo bar
 ```
 
-Or a `for` loop that does.
+Or a `for` loop that does this.
 
 ```sh
 $ git branch -D foo
