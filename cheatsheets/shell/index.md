@@ -21,3 +21,4 @@ Unix shell guide.
 
 - [devhints.io/bash](https://devhints.io/bash)
 - [Bash cheatsheets](https://cheatography.com/tag/bash/) on Cheatography.
+- [Shell](https://github.com/MichaelCurrin/learn-to-code/tree/master/en/topics/shell) in Learn to Code project.
