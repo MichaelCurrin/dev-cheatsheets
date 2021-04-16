@@ -1,6 +1,6 @@
 ---
 title: Install CLI tool
-description: Install a Deno package globally for use in teh CLI
+description: Install a Deno package globally for use in the shell, outside of Deno
 ---
 
 
