@@ -8,6 +8,27 @@ description: Working with dates and times in Jekyll
 See [Date formatting](https://learn.cloudcannon.com/jekyll/date-formatting/) tutorial.
 
 
+## Now
+
+### Date
+
+```liquid
+{{ 'now' | date: "%Y/%m/%d" }}
+```
+```
+2021/04/18
+```
+
+### Date and time
+
+```liquid
+{{ 'now' | date_to_xmlschema }}
+```
+```
+2021-04-18T20:27:23+02:00
+```
+
+
 ## Date input
 
 Sample datetime value in metadata. Must be valid or Jekyll will throw an error.
