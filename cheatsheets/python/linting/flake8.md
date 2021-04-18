@@ -49,6 +49,8 @@ Example:
     max-complexity = 10
     ```
 
+I find it useful to ignore `E203`. Since Black adds whitespace before a colon (e.g. `rows[(-1 * preview) :]` but Flake8 gives an error.
+
 
 ## Error status codes
 
