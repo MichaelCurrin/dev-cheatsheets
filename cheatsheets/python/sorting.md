@@ -84,16 +84,56 @@ my_strings
 # ['abc', 'def', 'xyz']
 ```
 
+### List of dictionaries
+
+If you try and apply `sorted`
 
 ## Dictionaries
 
-This will get keys only.
+Applying `sorted` on `dict` will sort and return its keys only.
 
 ```python
 my_dict = {1: 'D', 2: 'B', 3: 'B', 4: 'E', 5: 'A'}
 sorted(my_dict)
 # [1, 2, 3, 4, 5]
 ```
+
+You can use `dict.item` to get a list of tuples (each with a key and value). If you sort that list, the key will be used first to sort on. If two items have the same key, then the value will also be used.
+
+```python
+sorted(my_dict.items())
+# [(1, 'D'), (2, 'B'), (3, 'B'), (4, 'E'), (5, 'A')]
+```
+
+You could use that like this, unpacking the two values of the tuple pair as key and value pairs.
+
+```python
+for k, v in sorted(my_dict.items()):
+    print(k, v)
+
+# 1 D
+# 2 B
+# 3 B
+# 4 E
+# 5 A
+```
+
+Or iterate over the sorted keys and get the value too.
+This can be used to get keys and values together though.
+
+```python
+my_dict = {1: 'D', 2: 'B', 3: 'B', 4: 'E', 5: 'A'}
+
+for k in sorted(my_dict):
+     print(k, my_dict[k])
+ 
+# 1 D
+# 2 B
+# 3 B
+# 4 E
+# 5 A
+```
+
 
 ## Sort functions
 
