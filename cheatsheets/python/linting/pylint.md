@@ -1,7 +1,7 @@
-# pylint
+# Pylint
 
 
-- [pylint.org](https://pylint.org/)
+- Homepage: [pylint.org](https://pylint.org/)
 
 
 ## CLI
