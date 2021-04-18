@@ -12,6 +12,8 @@ See [Date formatting](https://learn.cloudcannon.com/jekyll/date-formatting/) tut
 
 ### Date
 
+You can `'now'` as pass it to a date-related filter.
+
 ```liquid
 {{ 'now' | date: "%Y/%m/%d" }}
 ```
@@ -26,6 +28,24 @@ See [Date formatting](https://learn.cloudcannon.com/jekyll/date-formatting/) tut
 ```
 ```
 2021-04-18T20:27:23+02:00
+```
+
+### Old approach
+
+```liquid
+{{ site.time }}
+```
+```
+2021-04-18 20:28:58 +0200
+```
+
+Or pass that to `date`, `date_to_xmlschema`, or similar.
+
+```liquid
+{{ site.time | date_to_xmlschema }}
+```
+```
+2021-04-18T20:28:58+02:00
 ```
 
 
