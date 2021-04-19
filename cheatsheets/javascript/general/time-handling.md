@@ -8,6 +8,11 @@ description: Working with dates, times and current time in JS
 
 See [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object and methods in the Mozilla docs.
 
+> A JavaScript date is fundamentally specified as the number of **milliseconds** that have elapsed since midnight on January 1, 1970, UTC.
+> 
+> This date and time are **not the same** as the UNIX epoch (the number of seconds that have elapsed since midnight on January 1, 1970, UTC), which is the predominant base value for computer-recorded date and time values.
+
+
 ### Get attribute from datetime
 
 ```javascript
