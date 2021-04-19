@@ -4,9 +4,11 @@
 ## Categories
 > How to set categories on a post
 
+You can use either `category` or `categories`. Both get evaluated by Jekyll as a category and made available on `page.categories`.
+
 ### Set category field
 
-Single value in `category`.
+Using `category` only accepts a single value.
 
 - `_posts/2021-01-02-abc.md`
     ```liquid
@@ -17,34 +19,65 @@ Single value in `category`.
 
 ### Set categories field
 
-Space-separated in `categories`.
+Using `categories` lets you use specifiy multiple values.
+
+Either by using spaces between words in a string - this is normally just a single string in YAML but Jekyll does magic to convert to a array.
 
 - `_posts/2021-01-02-abc.md`
     ```liquid
     ---
     categories: foo bar bazz-buzz
+    ---
+    ```
 
-    # Or
+Or using an array. 
+
+- `_posts/2021-01-02-abc.md`
+    ```liquid
+    ---
     categories:
       - foo
       - bar
       - bazz-buzz
     ---
     ```
-- Output path: `foo/bar/bazz-buzz/2021/01/02/abc.html`
+    
+The resulting path will be:
 
-Do not use quotes. You can use a space in the multi-line array but then your output path has a space which is not good - rather use a hyphen.
+- `foo/bar/bazz-buzz/2021/01/02/abc.html`
 
-### Use a directory
+Do not use quotes. 
 
-Here using a directory that contains `_posts`. As well as a frontmatter. These both become categories.
+Use a dash for multi-word categories - e.g. `bazz-buzz`. If you used space in the array form above, then your output path has a space in, which is not good - rather use a dash.
+
+### Put posts directory in a directory
+
+Here using a directory `foo` which contains `_posts` directory.
 
 - `foo/_posts/2021-01-02-abc.md`
     ```liquid
-    categories: bar
+    ---
+    ---
     ```
 
-The outer directory gets added to categories.
+Resulting categories:
+
+```json
+["foo"]
+```
+
+Resulting path:
+
+- `foo/bar/2021/01/02/abc.html`
+
+Here use the outer directory and the frontmatter categories together.
+
+- `foo/_posts/2021-01-02-abc.md`
+    ```liquid
+    ---
+    categories: bar
+    ---
+    ```
 
 Resulting categories:
 
@@ -52,18 +85,16 @@ Resulting categories:
 ["foo", "bar"]
 ```
 
-Resulting path:
+### Put a directory inside the posts directory
 
-- `foo/bar/2021/01/02/abc.html`
+You could even a directory _inside_ of `_posts`.
 
-Or you can do a directory inside `_posts`.
+But this would only be for your own structure convenience. Using `_posts/foo` below does **not** affect the categories variable or the output path.
 
 - `_posts/foo/2021-01-02-abc.md`
     ```liquid
     categories: bar
     ```
-
-The inner path does **not** affect categories variable.
 
 Resulting categories:
 
