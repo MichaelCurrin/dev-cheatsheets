@@ -82,7 +82,9 @@ Convert a `Date` instance to a string.
 ```
 
 
-## Now
+## Get current date and time
+
+### Using Date
 
 Create an `Date` object with type `object. If you don't pass a value to the constructor, you get the current date and time.
 
@@ -97,12 +99,16 @@ Then use methods on it.
 2021-03-02T11:47:43.759Z
 ```
 
-Without using `new` keyword, it still works but you just get a string. Note so usable.
+If you omit `new` keyword, you get a string. This is not so useful to work with.
 
 ```javascript
 > Date()
 "Mon Apr 19 2021 10:43:22 GMT+0200 (South Africa Standard Time)"
 ```
+
+It is a shortcut for calling `new Date().toString()`.
+
+### Using Date.now
 
 Create unix timestamp for current time.
 
