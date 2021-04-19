@@ -3,31 +3,10 @@ title: Time handling
 description: Working with dates, times and current time in JS
 ---
 
-## Unix timestamp
 
-Convert unix timestamp to datetime.
+## Date constructor
 
-```javascript
-> const datetime = new Date(1000000000000)
-```
-
-Create unix timestamp from string.
-
-```javascript
-> Date.parse('1970-01-02')
-86400000
-
-> Date.parse('1970-01-01 02:00') // Currently at GMT+2
-0
-
-> Date.parse('1970-01-01 03:00')
-3600000
-
-> Date.parse('2021-02-03 04:05:01')
-1612317901000
-```
-
-## Date construction
+See [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object and methods in the Mozilla docs.
 
 ### Get attribute from datetime
 
@@ -120,9 +99,62 @@ Without using `new` keyword, it still works but you just get a string. Note so u
 "Mon Apr 19 2021 10:43:22 GMT+0200 (South Africa Standard Time)"
 ```
 
-Create unix timestamp.
+Create unix timestamp for current time.
+
+Passing a param doesn't seem to make a difference.
 
 ```javascript
 > Date.now()
 1618822230513
+```
+
+## UTC constructor
+
+From [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC)
+
+> The Date.UTC() method accepts parameters similar to the Date constructor, but treats them as UTC. It returns the number of milliseconds since January 1, 1970, 00:00:00 UTC.
+
+Syntax:
+
+```
+Date.UTC(year[, month[, day[, hour[, minute[, second[, millisecond]]]]]])
+```
+
+Example:
+
+```javascript
+Date.UTC(2020, 1, 2, 3, 4, 5)
+1580612645000
+```
+
+Example use with `Date` constructor:
+
+```javascript
+new Date(Date.UTC(2020, 1, 2, 3, 4, 5))
+Date Sun Feb 02 2020 05:04:05 GMT+0200 (South Africa Standard Time)
+```
+
+
+## Unix timestamp
+
+Convert unix timestamp to datetime.
+
+```javascript
+> const datetime = new Date(1000000000000)
+```
+
+Create unix timestamp from string.
+
+```javascript
+> Date.parse('1970-01-02')
+86400000
+
+> Date.parse('1970-01-01 02:00') // Currently at GMT+2
+0
+
+> Date.parse('1970-01-01 03:00')
+3600000
+
+> Date.parse('2021-02-03 04:05:01')
+1612317901000
 ```
