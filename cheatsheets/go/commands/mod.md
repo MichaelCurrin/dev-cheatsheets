@@ -1,21 +1,21 @@
 # mod
 
-## Common
+## Overview
 
-Set up `go.mod` file.
+Use [init](#init) to set up `go.mod` file.
 
 ```sh
 $ go mod init example.com/m
 $ go mod init github.com/username/repo-name
 ```
 
-Download modules.
+Use [download](#download) to download packages.
 
 ```sh
 $ go mod download
 ```
 
-Clean up `go.sum` and remove unused packages from `go.mod`.
+Use [tidy](#tidy) to clean up `go.sum`, download packages and remove unused packages from `go.mod`.
 
 ```sh
 $ go mod tidy
@@ -53,8 +53,9 @@ The commands are:
 Use "go help mod <command>" for more information about a command.
 ```
 
+## Mod subcommands
 
-## Init
+### init
 
 ```sh
 $ go help mod init
@@ -77,4 +78,41 @@ If you run without a module name supplier, you get this prompt:
 Example usage:
         'go mod init example.com/m' to initialize a v0 or v1 module
         'go mod init example.com/m/v2' to initialize a v2 module
+```
+
+### download
+
+```sh
+$ go help mod download
+```
+
+```
+usage: go mod download [-x] [-json] [modules]
+
+Download downloads the named modules, which can be module patterns selecting
+dependencies of the main module or module queries of the form path@version.
+With no arguments, download applies to all dependencies of the main module
+(equivalent to 'go mod download all').
+
+...
+
+The -x flag causes download to print the commands download executes.
+```
+
+### tidy
+
+```sh
+$ go mod help tidy
+```
+```
+usage: go mod tidy [-v]
+
+Tidy makes sure go.mod matches the source code in the module.
+It adds any missing modules necessary to build the current module's
+packages and dependencies, and it removes unused modules that
+don't provide any relevant packages. It also adds any missing entries
+to go.sum and removes any unnecessary ones.
+
+The -v flag causes tidy to print information about removed modules
+to standard error.
 ```
