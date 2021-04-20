@@ -190,9 +190,11 @@ NB. Use of `1000` because JS uses milliseconds not seconds.
 
 ```javascript
 var fiveYears = 1000 * 60 * 60 * 24 * 365 * 5
+fiveYears
 // 157680000000
 
 var expiry = Date.now() + fiveYears;
+expiry
 // 1776618462014
 
 new Date(expiry)
@@ -200,3 +202,24 @@ new Date(expiry)
 ```
 
 Remember the `new` keyword or you'll just get the current time even with an argument passes.
+
+Or using `.setYear`
+
+```javascript
+var expiry = new Date() // Now
+expiry
+// Date Tue Apr 20 2021 19:28:52 GMT+0200 (South Africa Standard Time)
+
+var currYear = expiry.getFullYear()
+currYear
+// 2021
+
+expiry.setYear(currYear + 5);
+
+expiry
+// Date Mon Apr 20 2026 19:28:52 GMT+0200 (South Africa Standard Time) 
+
+expiry.toGMTString() // now 2026!
+// "Mon, 20 Apr 2026 17:28:52 GMT"
+```
+
