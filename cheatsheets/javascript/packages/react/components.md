@@ -37,6 +37,35 @@ class Welcome extends React.Component {
 
 See documentation on [React.Component](https://reactjs.org/docs/react-component.html).
 
+A more complex example.
+
+```jsx
+import React from "react";
+
+export default class Foo extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      // 
+    };
+  }
+
+  showHide() {
+    this.setState((currentState) => ({
+      // ...
+    }));
+  }
+
+  render() {
+    return (
+      <>
+      </>
+    );
+  }
+}
+```
+
 
 ## Choosing an approach
 
