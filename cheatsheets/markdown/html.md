@@ -8,18 +8,7 @@ This page is aimed at both markdown docs files on GitHub as well as markdown pag
 
 HTML will render in markdown, so you can do things not possible with plain markdown syntax. Such as add an ID or class or resize and align images. HTML doesn't care about whitespace so much so it is also easier to build a bullet list or table using a if statements and for loops when using HTML rather than markdown.
 
-
-```html
-<p>
-    This is a paragraph with **markdown bold** which will be ignored.
-    This is the next line but there was no break tag so it is on the same line.
-</p>
-```
-
-<p>
-    This is a paragraph with **markdown bold** which will be ignored.
-    This is the next line but there was no break tag so it is on the same line.
-</p>
+Related - see [HTML Cheatsheet]({{ site.baseurl }}{% link cheatsheets/web/html/links.md %}).
 
 
 ## Button
@@ -61,9 +50,11 @@ HTML comments will not be visible when viewed as HTML. So they are good for note
 
 Especially good for a static website where you don't want your TODO items to show up on the site. Though you might want to use the Jekyll `comment` filter if you want to avoid your comment from being rendered as HTML source.
 
+```liquid
 {% comment %}
 Message here
 {% endcomment %}
+```
 
 
 ## Formatting
@@ -93,9 +84,33 @@ Press <kbd>CTRL</kbd>+<kbd>C</kbd>
 Press <kbd>CTRL</kbd>+<kbd>C</kbd>
 
 
-## Warning notes
+## Mixing
 
-Be careful when putting markdown instead HTML tags.
+### Rendering markdown as plain HTML
+
+Node that the markdown here gets ignored inside HTML tags. So you can use a dash or underscore without getting styling.
+
+Code:
+
+```html
+<p>
+    This is a paragraph with **markdown bold** which will be IGNORED.
+    This is the next line but there was no break tag so it is on the same line.
+</p>
+```
+
+Result:
+
+<p>
+    This is a paragraph with **markdown bold** which will be IGNORED.
+    This is the next line but there was no break tag so it is on the same line.
+</p>
+
+If you actually want to show markdown as code, consider a markdown or Liquid code block instead.
+
+### Rendering markdown in HTML
+
+Be careful when putting markdown instead HTML tags when you do actually want the markdown to be used.
 
 This will work as are open lines between HTML and markdown.
 
