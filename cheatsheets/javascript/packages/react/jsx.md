@@ -7,34 +7,121 @@ This page is specific to React. For a more general guide, see the [JSX][] page.
 
 {% raw %}
 
+
 ## Structuring JSX
 
-Add parent element. Such as a div with a class or just `<>`.
+### Single element
 
-```jsx
-return (
-  <>
-    <h1>Hello, World!</h1>
-    <h2>This is React</h2>
-  </>
-)
-```
+- JSX:
+    ```jsx
+    return <h1>Hello, World!</h1>
+    ```
+- HTML DOM
+    ```html
+    <div id="root"
+        <h1>Hello, World!</h1>
+    </div>
+    ```
+- Compiled JS:
+    ```javascript
+    return React.createElement("h1", null, "Hello, World!");
+    ```
+    
+### Group elements without a parent element
 
-Comma to separate items.
+Use a parent element that doesn't get rendered.
 
-```jsx
-return (
-  <h1>Hello, World!</h1>,
-  <h2>This is React</h2>
-)
-```
+That is JSX fragment - formatted as  `<>...</>`
+
+- JSX:
+    ```jsx
+    return <>
+        <h1>Hello, World!</h1>
+        <h2>This is React</h2>
+      </>
+    ```
+    Or with brackets.
+    ```jsx
+    return (
+      <>
+        <h1>Hello, World!</h1>
+        <h2>This is React</h2>
+      </>
+    )
+    ```
+- HTML DOM
+    ```html
+    <div id="root"
+        <h1>Hello, World!</h1>
+        <h2>This is React</h2>
+    </div>
+    ```
+- Compiled JS:
+    ```javascript
+    return React.createElement(React.Fragment, null,
+        React.createElement("h1", null, "Hello, World!"),
+        React.createElement("h2", null, "This is React"));
+    };
+    ```
+
+Be careful - without bracket, this would return `undefined`.
+
+- JSX:
+    ```jsx
+    return
+      <>
+        <h1>Hello, World!</h1>
+        <h2>This is React</h2>
+      </>
+    ```
+
+### Group elements under a parent element
+
+Add a parent element. Such as a `div`, with a class if you like.
+
+You can optionally use the brackets. It doesn't change the result but allows you to start your opening tag on a new line. Note there are no commas between elements.
+
+
+- JSX:
+    ```jsx
+    return <div>
+        <h1>Hello, World!</h1>
+        <h2>This is React</h2>
+      </div>
+    ```
+    Or with brackets.
+    ```jsx
+    return (
+      <div>
+        <h1>Hello, World!</h1>
+        <h2>This is React</h2>
+      </div>
+    )
+    ```
+
+- HTML DOM
+    ```html
+    <div id="root"
+        <div>
+            <h1>Hello, World!</h1>
+            <h2>This is React</h2>
+        </div>
+    </div>
+    ```
+- Compiled JS equivalent:
+    ```javasript
+    return React.createElement("div", null,
+            React.createElement("h1", null, "Hello, World!"),
+            React.createElement("h2", null, "This is React"));
+    };
+    ```
 
 ### CSS
 
 Use `{{ EXPRESSION }}`.
 
 ```jsx
-function App(){
+function App() {
   return <h1 style={{ color: 'red' }}>
     Hello, World!
   </h1>
