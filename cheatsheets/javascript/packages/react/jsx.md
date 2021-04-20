@@ -1,12 +1,11 @@
 # JSX
 
-This page is specific to React. For a more general guide, see the [JSX][] page.
+This page is specific to React. For a more general guide, see the [JSX][] general page. Including various ways to process JSX.
 
 [JSX]: {{ site.baseurl }}{% link cheatsheets/javascript/general/jsx.md %}
 
 
 {% raw %}
-
 
 ## Structuring JSX
 
@@ -259,7 +258,19 @@ function App() {
 
 Example from [React docs](https://reactjs.org/docs/add-react-to-a-website.html)
 
-Without JSX. Create an element using the `createElement` function. Here it is aliased to `e`.
+Writing code with JSX.
+
+```jsx
+function LikeButton() {
+  return (
+    <button onClick={() => this.setState({ liked: true })}>
+      Like
+    </button>
+  );
+}
+```
+
+Writing code without JSX - it is more verbose and less like HTML. Create an element using the `createElement` function. Here it is aliased to `e`.
 
 ```javascript
 const e = React.createElement;
@@ -269,18 +280,6 @@ function LikeButton() {
     'button',
     { onClick: () => this.setState({ liked: true }) },
     'Like'
-  );
-}
-```
-
-With JSX.
-
-```jsx
-function LikeButton() {
-  return (
-    <button onClick={() => this.setState({ liked: true })}>
-      Like
-    </button>
   );
 }
 ```
