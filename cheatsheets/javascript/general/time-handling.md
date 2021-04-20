@@ -121,6 +121,13 @@ Date.now()
 // 1618822230513
 ```
 
+That is the same as using `Date` constructor but shorter and cleaner.
+
+```javascript
+Date.now() === (new Date()).getTime()
+// true
+```
+
 
 ## UTC constructor
 
@@ -149,12 +156,15 @@ new Date(Date.UTC(2020, 1, 2, 3, 4, 5))
 ```
 
 
-## Unix timestamp
+## Timestamp
 
-Convert unix timestamp to datetime.
+Convert timestamp to datetime. 
+
+Timestamp is in milliseconds, otherewise it is like unix timestamp (which is in seconds).
 
 ```javascript
 const datetime = new Date(1000000000000)
+// Sun Sep 09 2001 03:46:40 GMT+0200 (South Africa Standard Time)
 ```
 
 Create unix timestamp from string.
@@ -172,3 +182,21 @@ Date.parse('1970-01-01 03:00')
 Date.parse('2021-02-03 04:05:01')
 // 1612317901000
 ```
+
+
+## Calculate time relative to now
+
+NB. Use of `1000` because JS uses milliseconds not seconds.
+
+```javascript
+var fiveYears = 1000 * 60 * 60 * 24 * 365 * 5
+// 157680000000
+
+var expiry = Date.now() + fiveYears;
+// 1776618462014
+
+new Date(expiry)
+// Sun Apr 19 2026 19:07:42 GMT+0200 (South Africa Standard Time)
+```
+
+Remember the `new` keyword or you'll just get the current time even with an argument passes.
