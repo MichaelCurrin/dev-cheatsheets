@@ -8,7 +8,7 @@ This page is aimed at both markdown docs files on GitHub as well as markdown pag
 
 HTML will render in markdown, so you can do things not possible with plain markdown syntax. Such as add an ID or class or resize and align images. HTML doesn't care about whitespace so much so it is also easier to build a bullet list or table using a if statements and for loops when using HTML rather than markdown.
 
-Related - see [HTML Cheatsheet]({{ site.baseurl }}{% link cheatsheets/web/html/links.md %}).
+Related - see [HTML Cheatsheet]({{ site.baseurl }}{% link cheatsheets/web/html/index.md %}).
 
 
 ## Button
