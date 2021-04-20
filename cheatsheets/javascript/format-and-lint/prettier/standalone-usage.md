@@ -1,6 +1,7 @@
 ---
 title: Standalone usage
 description: Quick reference for using Prettier in a JS project, without installing it
+---
 
 If you don't have Prettier installed globally or in a project, you can still download and run it on a project and then have the package discarded.
 
