@@ -9,7 +9,7 @@ This page is generic - for guide specific to React, see the [React JSX][] page.
 
 ## Comments
 
-[source](https://wesbos.com/react-jsx-comments/)
+Based on [React JSX Comments](https://wesbos.com/react-jsx-comments/) guide.
 
 ```
 {/* A JSX comment */}
@@ -40,13 +40,22 @@ Or use Deno, which handle JSX syntax already.
 
 From [React docs](https://reactjs.org/docs/add-react-to-a-website.html).
 
-Add this `<script>` tag to your page:
+You can add Babel Standalone as a package on your frontend. When it loads, it will compile your JSX code in place, without a servr-side compile stp.
 
-```html
-<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-```
+1. Add this `<script>` tag to your page:
+    ```html
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    ```
+2. Set up your JS to be recognized by Babel by setting `type`.
+    ```html
+    <script src="main.js" type="text/babel"></script>
 
-Then set up a `<script>` tag with `type="text/babel"` attribute to it.
+    <!-- OR -->
+
+    <script type="text/babel">
+        console.log('Your JSX here')
+    </script>
+    ```
 
 ### Add HTM
 
