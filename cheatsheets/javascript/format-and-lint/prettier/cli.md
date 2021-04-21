@@ -129,6 +129,14 @@ Test JS files in multiple directories.
 $ prettier "{app,__{tests,mocks}__}/**/*.js"
 ```
 
+### Mixed
+
+File, directory and glob together.
+
+```sh
+$ prettier main.js src docs/**/*.md"
+```
+
 
 ## Flags
 
@@ -237,16 +245,16 @@ Format files and **save** the changes.
 $ prettier -w .
 ```
 
-### Passing a few flags and a long pattern
+### Long example
 
-Complicated example from the docs.
+Detailed example from the docs.
 
 ```sh
-$ prettier --single-quote \
+$ prettier \
+  --single-quote \
   --trailing-comma all \
-  --write docs \
-  package.json \
-  "{app,__{tests,mocks}__}/**/*.js"
+  --write \
+  docs package.json "{app,__{tests,mocks}__}/**/*.js"
 ```
 
 [Prettier CLI]: https://prettier.io/docs/en/cli.html
