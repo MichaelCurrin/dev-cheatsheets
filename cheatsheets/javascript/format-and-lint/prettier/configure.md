@@ -1,27 +1,24 @@
 # Configure
 
-## Flags
 
-Pass command line flags to change Prettier behavior.
+## How to configure
 
-Example to override the default behavior of semiquotes on and double quotes to be used.
-
-```sh
-$ prettier . --no-semi --single-quote
-```
-
-
-## Config file
+### Config file
 
 Set up a config file:
 
-- `.prettierrc.json`
-- `prettier.config.js` or `.prettierrc.js`
-- `.prettierignore`
-
+- Main config
+    - `.prettierrc.json`
+    - `prettier.config.js` or `.prettierrc.js`
+- Ignore config
+    - `.prettierignore`
+- Editor config
+    - Prettier uses `.editorconfig` by default. You can ignore this with `--no-editorconfig` if you need it.
+    
 You might want to edit VS Code settings too if you use a Prettier extension.
 
+### Flags
 
-## Options
+Pass command line flags to change Prettier behavior. See the [CLI cheatsheet][] for more info.
 
-See [Options](https://prettier.io/docs/en/options.html) in the docs. This shows you what you can set and what the default values are.
+[CLI cheatsheet]: {{ site.baseurl }}{% link cheatsheets/javascript/format-and-lint/prettier/cli.md %}
