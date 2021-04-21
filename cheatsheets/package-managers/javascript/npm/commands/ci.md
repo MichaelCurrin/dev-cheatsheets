@@ -3,9 +3,16 @@ title: ci
 description: About the `npm ci` command
 ---
 
+## What is it?
+
+This info about "clean install" command, as an alterentive to the plain install.
+
+- It will **delete** `node_modules` and then install from scratch (so it will take logner).
+- It requires a **lock** file to exist. It will not update that file. So it is very predictable - it will not install unexpected versions packages. 
+
 This command is suited for production deploys. You can use it in your CI flow.
 
-It will delete `node_modules` for a clean deploy (which will take longer), it requires a lock file to exist and will not update the lock file.
+Note that `npm clean-install` and `npm ci` are the same thing. Running `--help` for either gives `npm ci` text and no other output.
 
 
 ## Usage
