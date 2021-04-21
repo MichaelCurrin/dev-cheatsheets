@@ -77,7 +77,9 @@ COPY foo /root/bar/
 
 COPY foo /bar/
 # cp foo /bar/foo
+```
 
+```Dockerfile
 # Copy files and directories
 COPY . .
 # cp -r . /root/
@@ -87,8 +89,9 @@ COPY src .
 # cp -r src /root/src
 
 # Warning.
-# If the destination is a directory, the whole directory will be copied into the directory.
+# If the destination is a directory, the whole directory will be copied INTO the directory.
 COPY src fuzz
+# i.e.
 # mkdir /root/fuzz
 # cp -r src /root/fuzz/src
 # NOT
@@ -96,13 +99,20 @@ COPY src fuzz
 
 # Use globstar to copy contents of directory into a new name.
 COPY src/* fuzz
+# i.e.
 # mkdir /root/fuzz/
 # cp -r src/* /root/fuzz
+```
 
+```Dockerfile
 # Copy files
 COPY package*.json .
+# i.e.
 # cp package.json /root/package.json
-# cp package-lock.json /root/package-lock
+# cp package-lock.json /root/package-lock.json
+
+# OR
+COPY package.json package-lock.json .
 ```
 
 Subdirectories will be created. For example, if `fizz` does not exist.
