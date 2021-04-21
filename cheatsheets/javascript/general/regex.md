@@ -66,11 +66,14 @@ See what is at characte with index `6` in the text:
 
 A method on a string.
 
+Find matches in text and get an object back.
+
 ```javascript
-var patt = new RegExp("e");
-var str = "The best things in life are free";
-var res = str.match(patt);
-// str
+const patt = new RegExp("e");
+const text = "The best things in life are free";
+
+const matches = text.match(patt);
+// ["e", index: 2, input: "The best things in life are free", groups: undefined]
 ```
 
 
@@ -81,7 +84,13 @@ A method on a regex object.
 Check a string matches a regex pattern and return `true` or `false`.
 
 ```javascript
-pattern.test(text)
+patt.test(text)
+```
+
+This is equivalent to using `match` and use `!!` to convert to a boolean.
+
+```javascript
+!!text.match(patt)
 ```
 
 ### Examples
@@ -94,22 +103,14 @@ pattern.test(text)
 From [W3 Schools](https://www.w3schools.com/jsref/jsref_regexp_test.asp).
 
 ```javascript
-var patt = new RegExp("e");
-var str = "The best things in life are free";
-var res = patt.test(str);
-```
-
-Using `g` for global.
-
-```javascript
-var patt = /Hello/g;
-var str = "Hello world!";
-
-var result = patt.test(str);
+const patt = /e/;
+const text = "The best things in life are free";
+const result = patt.test(str);
+// true
 ```
 
 
-## replace method
+## Replace method
 
 A method on a string.
 
@@ -123,7 +124,7 @@ From [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 text.replace(pattern, replaceStr)
 ```
 
-_Warning - the default behavior is to only replace the **first occurrence**. So make sure to use `g` global flag in your regex, even if you have to convert your plain string or regex. You can use the [replaceAll](#replaceAll-method) method to replace all values for a string pattern, but you still need global flag for regex pattern._
+_Warning - the default behavior is to only replace the **first occurrence**. So make sure to use `g` global flag in your regex, even if you have to convert your plain string or regex. You can use the [replaceAll](#replace-all-method) method to replace all values for a string pattern, but you still need global flag for regex pattern._
 
 ### Examples
 
@@ -150,7 +151,7 @@ text.replace(pattern, 'ferret')
 ```
 
 
-## replaceAll method
+## Replace all method
 
 From [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll).
 
