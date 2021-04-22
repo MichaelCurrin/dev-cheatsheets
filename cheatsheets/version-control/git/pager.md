@@ -1,5 +1,5 @@
 ---
-description: Changing pagination behavior in git
+description: Changing pagination behavior for git
 ---
 # Pager
 
@@ -9,28 +9,6 @@ description: Changing pagination behavior in git
 Basic non-paging behavior lets you view all output at once (which can be very long like for `git log`).
 
 The pager behavior gives you a paginated view (more user-friendly where you can scroll to output or search). Similar to running `git log | less`.
-
-### Why have both
-
-The non-page behavior I guess might be better for a CI flow (when you want to log output from any command and there is no interactive view). 
-
-I don't see an advantage of using the non-page behavior for writing to a file or piping to another command, as the behavior seems identical from my testing.
-
-e.g.
-
-```sh
-$ git -p log | sed 's/feat:/✨ feat:/g'
-```
-
-Or
-
-```sh
-$ git -p log > test.text
-$ git -P log > test2.text
-$ vimdiff
-```
-
-That says there is no difference.
 
 
 ## Switching paging on and off
@@ -113,3 +91,26 @@ $ git --no-pager lol -40
 ```
 
 These long comamnds can be aliased as well.
+
+
+
+## Why have both modes
+
+The non-page behavior I guess might be better for a CI flow (when you want to log output from any command and there is no interactive view). 
+
+I don't see an advantage of using the non-page behavior for writing to a file or piping to another command, as the behavior seems identical from my testing.
+
+Using both modes will load the the _entire_ from the git command and pipe it to the next:
+
+```sh
+$ git -p log | sed 's/feat:/✨ feat:/g'
+$ git -P log | sed 's/feat:/✨ feat:/g'
+```
+
+Confirming that writing to a file with both approaches gives the same result:
+
+```sh
+$ git -p log > test.text
+$ git -P log > test2.text
+$ vimdiff  # Says no difference.
+```
