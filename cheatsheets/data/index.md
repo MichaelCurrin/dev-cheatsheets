@@ -1,3 +1,3 @@
 ---
+title: Data formats
 ---
-# Data
