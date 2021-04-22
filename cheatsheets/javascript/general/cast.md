@@ -1,5 +1,5 @@
 ---
-title: Casting
+title: Cast
 description: Converting between data types
 ---
 
@@ -12,13 +12,22 @@ description: Converting between data types
 
 ## Number to string
 
+### Integer or float
+
 ```javascript
 const myNumber = 123
 myNumber.toString()
 // "123"
 ```
 
-But note that `123.toString()` without a variable will give an error.
+Optionally supply `10` as the base.
+
+Note that a method directly on number (without a variable declared first) will give an error.
+
+```javascript
+123.toString()
+// Uncaught SyntaxError: Invalid or unexpected token
+```
 
 
 ## String to number
@@ -84,3 +93,22 @@ parseInt("10", 2)
 > parseInt("0xf")
 15
 ```
+
+### Number base 2 sting
+
+```javascript
+const myNumber = 10
+
+myNumber.toString(2)
+// '1010'
+```
+
+### Number to base 16 string
+
+```javascript
+const myNumber = 10
+
+myNumber.toString(16)
+// 'a'
+```
+
