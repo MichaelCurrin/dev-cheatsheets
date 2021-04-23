@@ -285,6 +285,26 @@ function LikeButton() {
 ```
 
 
+## Compiled JSX
+
+See the [Babel REPL](https://babeljs.io/repl/) to get live conversion of your JSX to plain JS.
+
+For example:
+
+- Input
+    ```jsx
+    const element = <h1>Hello, world!</h1>;
+    const container = document.getElementById('root');
+    ReactDOM.render(element, container);
+    ```
+- Result
+    ```jsx
+    const element = /*#__PURE__*/React.createElement("h1", null, "Hello, world!");
+    const container = document.getElementById('root');
+    ReactDOM.render(element, container);
+    ```
+
+
 ## Allow JSX syntax in TypeScript
 
 From [IntrinsicElements](https://www.typescriptlang.org/docs/handbook/jsx.html#intrinsic-elements) in JSX docs of TS.
