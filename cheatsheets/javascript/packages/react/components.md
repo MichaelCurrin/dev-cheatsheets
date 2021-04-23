@@ -5,10 +5,10 @@
 
 ### Functional component
 
-The modern, easy-to-test way that uses functions. 
+The modern, easier-to-test way that uses functions. 
 
 ```jsx
-function Welcome (props) {
+function Welcome(props) {
   return <h1>Hello, { props.name }</h1>;
 }
 ```
@@ -16,7 +16,7 @@ function Welcome (props) {
 Or with destructuring:
 
 ```jsx
-function Welcome (props) {
+function Welcome(props) {
   const { name } = props;
   
   return <h1>Hello, { name }</h1>;
@@ -28,10 +28,25 @@ To handle state, you can use [React Hooks](https://reactjs.org/docs/hooks-intro.
 ```jsx
 import { useState } from "react";
 
-function Welcome () {
+function Welcome() {
   const { value, setValue } = useState("my default value");
   
-  
+  const onChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  return (
+    <>
+      <input
+        id="value-input"
+        value={value}
+        onChange={onChange}
+      />
+      <br />
+      <br />
+      <div>{ value }</div>
+    </>
+  );
 }
 ```
 
@@ -63,7 +78,7 @@ export default class Foo extends React.Component {
     };
   }
 
-  showHide() {
+  onClick() {
     this.setState((currentState) => ({
       // ...
     }));
@@ -72,6 +87,14 @@ export default class Foo extends React.Component {
   render() {
     return (
       <>
+        <input
+          id="value-input"
+          value={value}
+          onChange={onChange}
+        />
+        <br />
+        <br />
+        <div>{ value }</div>
       </>
     );
   }
