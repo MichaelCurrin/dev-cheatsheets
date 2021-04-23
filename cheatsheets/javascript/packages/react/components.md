@@ -1,14 +1,14 @@
 # Components
 
 
-## Component types
+## Component approach
 
 ### Functional component
 
-The modern, easy-to-test way.
+The modern, easy-to-test way that uses functions. 
 
 ```jsx
-function Welcome(props) {
+function Welcome (props) {
   return <h1>Hello, { props.name }</h1>;
 }
 ```
@@ -16,16 +16,28 @@ function Welcome(props) {
 Or with destructuring:
 
 ```jsx
-function Welcome(props) {
+function Welcome (props) {
   const { name } = props;
   
   return <h1>Hello, { name }</h1>;
 }
 ```
 
+To handle state, you can use [React Hooks](https://reactjs.org/docs/hooks-intro.html) or a state library. This makes is easier think about and layer components.
+
+```jsx
+import { useState } from "react";
+
+function Welcome () {
+  const { value, setValue } = useState("my default value");
+  
+  
+}
+```
+
 ### Class component
 
-The older, more verbose way.
+The older, more verbose way. Using a class and `this` (which can be confusing and works differently to other languages)
 
 ```jsx
 class Welcome extends React.Component {
@@ -37,7 +49,7 @@ class Welcome extends React.Component {
 
 See documentation on [React.Component](https://reactjs.org/docs/react-component.html).
 
-A more complex example.
+A more complex example with state. Manage state using `this.state` and `this.setState`.
 
 ```jsx
 import React from "react";
@@ -80,6 +92,7 @@ Reasons to use functional components:
 > 3. They help you to use best practices. It will get easier to separate container and presentational components because you need to think more about your component’s state if you don’t have access to `setState()` in your component.
 > 4. The React team mentioned that there may be a performance boost for functional component in future React versions.
 
+Another reasons against class components is that [Classes confuse both people and machines](https://reactjs.org/docs/hooks-intro.html#classes-confuse-both-people-and-machines) (React docs section on Hooks release).
 
 
 ## Component lifecycle
