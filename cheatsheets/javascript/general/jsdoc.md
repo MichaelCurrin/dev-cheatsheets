@@ -38,13 +38,13 @@ function Book(title, author) {
 }
 ```
 
-### Name only
+### Parameter name only
 
 ```javascript
 /**
- * @param somebody
+ * @param author
  */
-function sayHello(somebody) {
+function sayHello(author) {
 }
 ```
 
@@ -52,9 +52,9 @@ function sayHello(somebody) {
 
 ```javascript
 /**
- * @param {string} somebody
+ * @param {string} author
  */
-function sayHello(somebody) {
+function sayHello(author) {
 }
 ```
 
@@ -62,9 +62,9 @@ function sayHello(somebody) {
 
 ```javascript
 /**
- * @param {string} somebody Somebody's name.
+ * @param {string} author Somebody's name.
  */
-function sayHello(somebody) {
+function sayHello(author) {
 }
 ```
 
@@ -72,9 +72,9 @@ Or with a hyphen.
 
 ```javascript
 /**
- * @param {string} somebody - Somebody's name.
+ * @param {string} author - Somebody's name.
  */
-function sayHello(somebody) {
+function sayHello(author) {
 }
 ```
  
@@ -85,9 +85,11 @@ Use square brackets.
 
 ```javascript
 /**
- * @param {string} [somebody] - Somebody's name.
+ * @param {string} author - Somebody's name.
+ * // OR
+ * @param {?string} author - Somebody's name.
  */
-function sayHello(somebody) {
+function sayHello(author) {
 }
 ```
 
@@ -108,8 +110,28 @@ Note use of lowercase.
 
 ### Key-value pairs
 
+Note use of titlecase.
+
 ```
 {Object}
+```
+
+e.g.
+
+```javascipt
+/**
+ * @param {Object[]} employee - The employees who is responsible for the project.
+ */
+```
+
+If you want to break out the attributes with the type, key name and description:
+
+```javascipt
+/**
+ * @param {Object[]} employee - The employees who is responsible for the project.
+ * @param {string} employee.name - The name of the employee.
+ * @param {string} employee.department - The employee's department.
+ */
 ```
 
 ### Array
@@ -117,20 +139,20 @@ Note use of lowercase.
 Array of strings.
 
 ```
-{Array.<string>}
-// or:
 {string[]}
+// or:
+{Array.<string>}
 ```
 
 An array of `MyClass` instances.
 
 ```
-{Array.<MyClass>}
-// or:
 {MyClass[]}
+// or:
+{Array.<MyClass>}
 ```
 
-An array of key-value pair objects.
+An array of key-value pair objects:
 
 ```javascript
 /**
@@ -144,7 +166,7 @@ An array of key-value pair objects.
 
 ### Nullable
 
-A number or null.
+Either number or null.
 
 ```
 {?number}
@@ -152,7 +174,7 @@ A number or null.
 
 ### Non-nullable
 
-A number, but never null.
+A number that is required never null (or undefined).
 
 ```
 {!number}
