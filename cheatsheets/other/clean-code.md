@@ -23,7 +23,7 @@ What is clean code?
 
 ## B
 
-[Clean Code - Uncle Bob - Lesson 1](https://youtu.be/7EmboKQH8lM) on YouTube
+[Clean Code - Uncle Bob / Lesson 1](https://youtu.be/7EmboKQH8lM) on YouTube
 
 - A function should have one job and do well.
 - Clean code is when each function is mostly what you expect it to be. No surprises.
@@ -39,3 +39,8 @@ What is clean code?
 - Use polymorphism in FP or OOP so can have dynamic dispatch that is a few lines. Rather than a fragile if/else section that is long to read, might miss cases and you have to remember to update it.
 - If you are looking up a value nested in a data structure, you don't want to do this all over the place. Make it a function or a method. It is easy to use and to change.
 - Design patterns are important to understand. We can use a word to communicate and know how that pattern will be implemented.
+
+
+## C
+
+[Clean Code - Uncle Bob / Lesson](https://youtu.be/2a_ytyt9sf8)
