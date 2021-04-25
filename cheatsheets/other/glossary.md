@@ -1,6 +1,6 @@
-# Glossary of computing terms
+# Glossary
 
-Definitions are similar but possibly confusing programming terms.
+Explainations of computing terms which might be confusing to tell apart.
 
 These are based on my experience reading widely and looking up definitions myself. Some people may use these terms in a different way or treat two terms as the same thing. I have mentioned this as far as possible here.
 
@@ -11,8 +11,10 @@ From small and low-level to the high-level.
 
 1. Character. A letter, stored as a byte.
 2. Line of code.
-3. Script. Code to run directly by a user through an entrypoint. It might be a standalone script or it might reply on importing modules. Such as run a Python script in shell or JavaScript file in browser.
-4. Module. A unit of code for reuse. A script that can be imported by another script. A standalone script can also count a module, but usually a module is imported and can be reused by other scripts or modules.
+3. Script. 
+    - Code to run directly by a user through an entrypoint. It might be a standalone script or it might reply on importing modules. Such as run a Python script in shell or JavaScript file in browser.
+4. Module. 
+    - A unit of code for reuse. A script that can be imported by another script. A standalone script can also count a module, but usually a module is imported and can be reused by other scripts or modules.
 5. Application or library (as a choice on how the code can be run) and package (if the code can be installed).
    - Application. 
        - A script that might import modules and external libraries. It can be **run** directly, such as through the shell, or started via a menu and run as a desktop or mobile application. 
@@ -37,7 +39,9 @@ Other terms not covered above:
         > Programs are a collection or sequence of executable instructions that aid in the automatic performance of targeted tasks on a computer.
         >
         > It refers to a set of coded instructions that a computer can recognize to solve a problem or yield the desired result.
-- Code. In one respect, code is same as a program or script. But code can also include a configuration files, HTML files or CSS files. You cannot "run" those as a sequence like you can a script, but they are still instructions for a machine to follow and are used to build applications.
+- Code. 
+    - In one respect, code is same as a program or script. 
+    - But code can also include a configuration files, HTML files or CSS files. You cannot "run" those as a sequence like you can a script, but they are still instructions for a machine to follow and are used to build applications.
 - Web app.
     - A website is usually not considered an application. In runs inside your browser, which an application.
     - With the rise of JS, websites have become more complex and interactive. A website built on Python or JavaScript is usually 
