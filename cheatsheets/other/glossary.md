@@ -85,7 +85,7 @@ I'd say these are same. They are used to describe the industry, career and a sub
     - Computer Science, Comm Sci or CS are all terms I've seen a lot when someone is recruiting for a programmer with a relevant degree.
 - Software Engineering 
     - Building software using engineering approaches.
-    - There are various definitions which cover design, testing, maintenance, documenting and producing of software. Imagine an engineer working on a car in a factory or building a structure and these make sense.
+    - There are various definitions which cover design, testing, implementing, reliability, maintenance, documenting, economics and producing of software. Imagine an engineer working on a car in a factory or building a structure that has to have a sound design and be sold to customer and kept in good working condition, then these make sense.
     - [Software engineering - Wikipedia][]
         > Software engineering is the systematic application of engineering approaches to the development of software
 
