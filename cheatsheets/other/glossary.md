@@ -14,9 +14,16 @@ From small and low-level to the high-level.
 3. Script. Code to run directly by a user through an entrypoint. It might be a standalone script or it might reply on importing modules. Such as run a Python script in shell or JavaScript file in browser.
 4. Module. A unit of code for reuse. A script that can be imported by another script. A standalone script can also count a module, but usually a module is imported and can be reused by other scripts or modules.
 5. Application or library (as a choice on how the code can be run) and package (if the code can be installed).
-   - Application. A script and that might import modules and external libraries. It can be **run** directly, such as through the shell, or started via a menu and run as a desktop or mobile application. A website can be considered an application, whether built on HTML, Jekyll or React.
-   - Library. A library is intended to be imported as a module and used inside another application or library. It contains a collection or "library" of functions or classes to use. A library might do nothing of you run it directly. Unless it is set up to also run as an application.
-   - Package. A project that can be bundled or "packaged" as a single unit containing other files, then installed when needed. The bundle package can be moved around on a machine and is often published (uploaded to a public location) so other can download and install it. A package could be for running code as an, application, as a a library, letting you do both. A patckagenusually includes some metadata like author, license, version number and entrypoint (which script to execute when starting running the package). Usually a package manager will have an install step that will unzip a package if needed and _copy_ the contents of the package to a location where it can be run widely. Such as installing a Python package from a git repo, a zip file or a URL, and then running that package as a standalone app in the shell or importing and using in other Python applications. A package is often made available publically in a packages repository (like for Debian and Ubuntu) or package registry (NPM or Pypi)
+   - Application. 
+       - A script that might import modules and external libraries. It can be **run** directly, such as through the shell, or started via a menu and run as a desktop or mobile application. 
+       - [Rapid API post][].
+           > An application (app) is a program or a collection of programs that have been designed for the end-users.
+           >
+           > They help you to perform a set of coordinated tasks, functions, or activities. 
+   - Library. 
+       - A library is intended to be imported as a module and used inside another application or library. It contains a collection or "library" of functions or classes to use. A library might do nothing of you run it directly. Unless it is set up to also run as an application.
+   - Package. 
+       - A project that can be bundled or "packaged" as a single unit containing other files, then installed when needed. The bundle package can be moved around on a machine and is often published (uploaded to a public location) so other can download and install it. A package could be for running code as an, application, as a a library, letting you do both. A patckagenusually includes some metadata like author, license, version number and entrypoint (which script to execute when starting running the package). Usually a package manager will have an install step that will unzip a package if needed and _copy_ the contents of the package to a location where it can be run widely. Such as installing a Python package from a git repo, a zip file or a URL, and then running that package as a standalone app in the shell or importing and using in other Python applications. A package is often made available publically in a packages repository (like for Debian and Ubuntu) or package registry (NPM or Pypi)
    
 Note that a package makes an application or library able to be installed. You might get a package using the command-line like `pip install` or `npm install` or `apt install`. Or you might download an installer from a website. Or you might install a package at a higher level, like browsing apps in a desktop or mobile app store or using a disc.
 
@@ -24,8 +31,18 @@ All libraries are also packages - otherwise you can't install and use them.
 
 Other terms not covered above:
 
-- Program. A set of instructions that can be executed on a computer or machine. Using the structure above, a script and all the levels which build on scripts are all programs.
+- Program. 
+    - A set of instructions that can be executed on a computer or machine. Using the structure above, a script and all the levels which build on scripts are all programs.
+    - From [Rapid API post][].
+        > Programs are a collection or sequence of executable instructions that aid in the automatic performance of targeted tasks on a computer.
+        >
+        > It refers to a set of coded instructions that a computer can recognize to solve a problem or yield the desired result.
 - Code. In one respect, code is same as a program or script. But code can also include a configuration files, HTML files or CSS files. You cannot "run" those as a sequence like you can a script, but they are still instructions for a machine to follow and are used to build applications.
+- Web app.
+    - A website is usually not considered an application. In runs inside your browser, which an application.
+    - With the rise of JS, websites have become more complex and interactive. A website built on Python or JavaScript is usually 
+
+[Rapid API post]: https://rapidapi.com/blog/application-vs-program/
 
 
 ## Title
@@ -63,7 +80,8 @@ REPL | Read Evaluate Print Loop. An interactive program that takes a command (re
 
 Term | Description 
 ---  | ---
-UI | User Interface. General way to describe how a user interacts with a program. Such as using a shell CLI, a REPL, a desktop application or a browser.
+UI | User Interface. General way to describe what the user sees and **interacts** with in an application. Such as using a shell CLI, a REPL, a desktop application or a browser. Usually, one talks about the UI as the theme, layout and components (buttons, images) of a webpage or mobile app view.
 GUI | Graphical User Interface. Often the acronym is said as "gooey". A GUI is a general term for interacting with an application using a **visual** interface rather than a text interface. For example, viewing buttons, images and colors in a window and you can click on items with mouse. A text interface is usually linear (top to bottom) while a GUI lets you follow different paths. The font and color are mostly fixed in a text UI, while a visual UI uses these and other elements to make a more user-friendly application.
+UX | User Experience. While the UI is more literally what the user sees, the user experience is **how** the application feels and changes as the user **moves** or transitions between say pages, or steps on a form. One might describe an application's UX as clunky and hard to use or understand, or as smooth, natural and intuitive. If clicking a button does something unexpected or takes unreasonably long to load, that is bad user experience. What the button or loading bar looks like as images or animations is more related to the UI.
 
 A GUI is great for inexperienced users or non-coders to use. However, it takes more work to make and is more complex to design.
