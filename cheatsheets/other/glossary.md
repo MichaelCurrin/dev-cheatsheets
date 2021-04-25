@@ -3,7 +3,17 @@
 Definitions are similar but possibly confusing programming terms.
 
 
-## Levels of software 
+## Levels of software complexity 
+
+From small and low-level to the high-level.
+
+1. Character. A letter, stored as a byte.
+2. Line.
+3. Script. Code to run directly by a user through an entrypoint. It might be a standalone script or it might reply on importing modules. Such as run a Python script in shell or JavaScript file in browser.
+4. Module. A unit of code for reuse. A script that can be imported by another script. A standalone script can also count a module, but usually a module is imported and can be reused by other scripts or modules.
+5. Application. A script and possibly imported modules and libraries which can be run, such as through the shell or started a menu and run as a desktop application.
+6. Package. An application or module that can be installed and includes some metadata like author, license and entrypoint. Usually the install step will unzip a package if needed and _copy_ the contents of the package to a location where it can be run widely. Such as installing a Python package from a git repo, a zip file or a URL, and then running that package as a standalone app in the shell or importing and using in other Python applications. A package is often made available publically in a packages repository (like for Debian and Ubuntu) or package registry (NPM or Pypi)
+7. Library. Similar to a package. A library is intended to be imported as a module inside an application. It contains a collection or "library" of functions or classes to use. A library might do nothing of you run it directly.
 
 
 ## Title
