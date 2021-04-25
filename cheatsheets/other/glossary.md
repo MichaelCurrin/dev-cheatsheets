@@ -1,4 +1,4 @@
-# Glossary
+# Glossary of computing terms
 
 Definitions are similar but possibly confusing programming terms.
 
@@ -22,6 +22,10 @@ Note that a package makes an application or library able to be installed. You mi
 
 All libraries are also packages - otherwise you can't install and use them.
 
+Other terms not covered above:
+
+- Program. A set of instructions that can be executed on a computer or machine. Using the structure above, a script and all the levels which build on scripts are all programs.
+- Code. In one respect, code is same as a program or script. But code can also include a configuration files, HTML files or CSS files. You cannot "run" those as a sequence like you can a script, but they are still instructions for a machine to follow and are used to build applications.
 
 
 ## Title
@@ -53,11 +57,13 @@ Console | A way to run commands and view output. While Command-line mostly is fo
 Terminal | Same as command-line. e.g. Open your terminal and run the shell command there.
 Terminal emulator | Originally a terminal was a dumb keyboard and screen that did no processing alone but allowed you to interface with a larger machine, which had many terminals for people to use. On modern day machines, you will use a terminal emulator (or terminal applications) which feels like the old terminal and lets you run shell commands. You'll download and use a terminal emulator like Konsole, iTerm2, or Yakuake.
 Command-prompt | A way to interact with an application or the shell. e.g. Open the command-prompt application on Windows to run shell commands. Or use the command-prompt on your IDE to type or select commands to run like to format a file.
-REPL
+REPL | Read Evaluate Print Loop. An interactive program that takes a command (read), processes it (evaluate), displays output (print) and then waits to read more input (loop). Unlike a program that runs or stops but without asking for more input, a REPL is a text-based interactive way to repeatedly send ad hoc instructions. A Bash shell and Python interactive console are good examples of a REPL. But you can also build your own REPL within say your Python program. Rather than expecting code as input, you expect text. Like asking a user for their name on one line, asking for their age on the next and doing something with those. Typically a REPL has a help command to see available commands you can give, including an exit command to break out the loop with `exit`, `quit` or `q`.
 
 ## Visual interfaces
 
 Term | Description 
 ---  | ---
-UI
-GUI | Graphical User Interface. Often the acronym is said as "gooey". A GUI is a general term for interacting with an application using a visual interface rather than a text interface. For example, 
+UI | User Interface. General way to describe how a user interacts with a program. Such as using a shell CLI, a REPL, a desktop application or a browser.
+GUI | Graphical User Interface. Often the acronym is said as "gooey". A GUI is a general term for interacting with an application using a **visual** interface rather than a text interface. For example, viewing buttons, images and colors in a window and you can click on items with mouse. A text interface is usually linear (top to bottom) while a GUI lets you follow different paths. The font and color are mostly fixed in a text UI, while a visual UI uses these and other elements to make a more user-friendly application.
+
+A GUI is great for inexperienced users or non-coders to use. However, it takes more work to make and is more complex to design.
