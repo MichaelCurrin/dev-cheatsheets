@@ -31,7 +31,7 @@ Note that a package makes an application or library able to be installed. You mi
 
 All libraries are also packages - otherwise you can't install and use them.
 
-Other terms not covered above:
+Other terms not covered above because they don't fit into the structure neatly.
 
 - Program. 
     - A set of instructions that can be executed on a computer or machine. Using the structure above, a script and all the levels which build on scripts are all programs.
@@ -45,7 +45,18 @@ Other terms not covered above:
 - Web app.
     - A website is usually not considered an application. In runs inside your browser, which an application.
     - With the rise of JS, websites have become more complex and interactive. A website built on Python or JavaScript is usually 
+- Software
+    - A collection of data (including config files and a database) and instructions (from scripts to applications) which tell a machine what to do. Software needs to run on physical hardware.
+    - From [Software - Wikipedia][]
+       > Software is a collection of data or computer instructions that tell the computer how to work.
+       >
+       > This is in contrast to physical hardware, from which the system is built and actually performs the work
+       >
+       > In computer science and software engineering, computer software is all **information** processed by computer systems, including **programs** and **data**. 
+       >
+       > Computer software includes computer programs, libraries and related non-executable data, such as online documentation or digital media. Computer hardware and software require each other and neither can be realistically used on its own.
 
+[Software - Wikipedia]: https://en.m.wikipedia.org/wiki/Software
 [Rapid API post]: https://rapidapi.com/blog/application-vs-program/
 
 
@@ -54,8 +65,7 @@ Other terms not covered above:
 Term | Description 
 ---  | ---
 Coder | This most literally writing code. Coder doesn't appear as a title of job. It is also a broad term, including people who like to code but aren't IT professionals.
-Programmer or computer programmer | A broad term.
-Developer | A broad term.
+Programmer or developer | A broad term for someone who writes uses code to build something. From a script or program to a larger application or website. More old-fashioned - "computer programmer".
 Web developer | This kind of person likely knows HTML, CSS and JS. They might just do the frontend. Or they might also do backend like APIs and databases, which are integral for many websites even though users don't seem these parts directly.
 Software engineer | In some cases, developer and engineer are used interchangeably. But "engineer" does have a different meaning. While a programmer or developer executes a design to build something, an engineer designs a solution and considers the architecture and then builds the solution.
 
@@ -64,8 +74,25 @@ Software engineer | In some cases, developer and engineer are used interchangeab
 
 I'd say these are same. They are used to describe the industry, career and a subject on school or university.
 
-- Information Systems.
+- Information Systems or IS.
 - Information Technology or IT.
+- Computer Science
+    - [Computer Science - Wikipedia][]
+        > Computer science is the study of algorithmic processes, computational machines and computation itself.
+        >
+        > As a discipline, computer science spans a range of topics from **theoretical studies** of algorithms, computation and information to the **practical issues** of implementing computational systems in hardware and software.
+    - In the early days, someone who made software or hardware was a "computer scientist", but I've not seen that used more recently.
+    - Computer Science, Comm Sci or CS are all terms I've seen a lot when someone is recruiting for a programmer with a relevant degree.
+- Software Engineering 
+    - Building software using engineering approaches.
+    - There are various definitions which cover design, testing, maintenance, documenting and producing of software. Imagine an engineer working on a car in a factory or building a structure and these make sense.
+    - [Software engineering - Wikipedia][]
+        > Software engineering is the systematic application of engineering approaches to the development of software
+
+The job posts don't really mention IS or IT. But those are used to describe a study path, a subject or course to study, or a department in a business.
+
+[Computer Science - Wikipedia]: https://en.m.wikipedia.org/wiki/Computer_science
+[Software engineering - Wikipedia]: https://en.m.wikipedia.org/wiki/Software_engineering
 
 
 ## Code interfaces 
@@ -79,6 +106,7 @@ Terminal | Same as command-line. e.g. Open your terminal and run the shell comma
 Terminal emulator | Originally a terminal was a dumb keyboard and screen that did no processing alone but allowed you to interface with a larger machine, which had many terminals for people to use. On modern day machines, you will use a terminal emulator (or terminal applications) which feels like the old terminal and lets you run shell commands. You'll download and use a terminal emulator like Konsole, iTerm2, or Yakuake.
 Command-prompt | A way to interact with an application or the shell. e.g. Open the command-prompt application on Windows to run shell commands. Or use the command-prompt on your IDE to type or select commands to run like to format a file.
 REPL | Read Evaluate Print Loop. An interactive program that takes a command (read), processes it (evaluate), displays output (print) and then waits to read more input (loop). Unlike a program that runs or stops but without asking for more input, a REPL is a text-based interactive way to repeatedly send ad hoc instructions. A Bash shell and Python interactive console are good examples of a REPL. But you can also build your own REPL within say your Python program. Rather than expecting code as input, you expect text. Like asking a user for their name on one line, asking for their age on the next and doing something with those. Typically a REPL has a help command to see available commands you can give, including an exit command to break out the loop with `exit`, `quit` or `q`.
+
 
 ## Visual interfaces
 
