@@ -1,13 +1,13 @@
 # Glossary
 
-Explainations of computing terms which might be confusing to tell apart.
+I've collected terms from programming which I see or use regularly. I've given explanations from my experience and research to make the differences clear, so you know which term to use.
 
-These are based on my experience reading widely and looking up definitions myself. Some people may use these terms in a different way or treat two terms as the same thing. I have mentioned this as far as possible here.
+Note that some people may use these terms in a different way or treat two terms as the same thing. And some terms change over time. I have mentioned this as far as possible here.
 
 
 ## Levels of software complexity 
 
-From small and low-level to the high-level.
+From small and low-level to high-level software.
 
 1. Character. A letter, stored as a byte.
 2. Line of code.
@@ -31,22 +31,26 @@ Note that a package makes an application or library able to be installed. You mi
 
 All libraries are also packages - otherwise you can't install and use them.
 
-Other terms not covered above because they don't fit into the structure neatly.
+More terms which don't fit into the above structure neatly.
 
+- Code. 
+    - [Code - Simple English Wikipedia][]
+    - [Code - Wikipedia][]
+    - A method for changing information into something else.
+    - Code is used for humans to write instructions that computers understand. At the low level, computers deal with zeroes and ones as code for off and on. Then there are higher levels like byte code and machine code (both are compiled output and are mostly unreadable for humans), assembly language (obscure but human-readable) and then more human-friendly programming languages. 
+    - Code is usually thought of as commands, expressions or instructions for a computer, usually stored in a file as a script or module in an application.
+    - Code can also include a configuration files, HTML files or CSS files. You cannot "run" those as a sequence like you can a script, but they are still instructions for a machine to follow and are used to build applications.
 - Program. 
     - A set of instructions that can be executed on a computer or machine. Using the structure above, a script and all the levels which build on scripts are all programs.
     - From [Rapid API post][].
         > Programs are a collection or sequence of executable instructions that aid in the automatic performance of targeted tasks on a computer.
         >
         > It refers to a set of coded instructions that a computer can recognize to solve a problem or yield the desired result.
-- Code. 
-    - In one respect, code is same as a program or script. 
-    - But code can also include a configuration files, HTML files or CSS files. You cannot "run" those as a sequence like you can a script, but they are still instructions for a machine to follow and are used to build applications.
 - Web app.
     - A website is usually not considered an application. In runs inside your browser, which an application.
     - With the rise of JS, websites have become more complex and interactive. A website built on Python or JavaScript is usually 
 - Software
-    - A collection of data (including config files and a database) and instructions (from scripts to applications) which tell a machine what to do. Software needs to run on physical hardware.
+    - A collection of data (including config files and a database) and instructions (scripts to applications) which tell a machine what to do. Software needs to run on physical hardware.
     - From [Software - Wikipedia][]
        > Software is a collection of data or computer instructions that tell the computer how to work.
        >
@@ -56,6 +60,8 @@ Other terms not covered above because they don't fit into the structure neatly.
        >
        > Computer software includes computer programs, libraries and related non-executable data, such as online documentation or digital media. Computer hardware and software require each other and neither can be realistically used on its own.
 
+[Code - Simple English Wikipedia]: https://simple.m.wikipedia.org/wiki/Code
+[Code - Wikipedia]: https://en.m.wikipedia.org/wiki/Code
 [Software - Wikipedia]: https://en.m.wikipedia.org/wiki/Software
 [Rapid API post]: https://rapidapi.com/blog/application-vs-program/
 
