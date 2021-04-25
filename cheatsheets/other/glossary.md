@@ -10,15 +10,18 @@ These are based on my experience reading widely and looking up definitions mysel
 From small and low-level to the high-level.
 
 1. Character. A letter, stored as a byte.
-2. Line.
+2. Line of code.
 3. Script. Code to run directly by a user through an entrypoint. It might be a standalone script or it might reply on importing modules. Such as run a Python script in shell or JavaScript file in browser.
 4. Module. A unit of code for reuse. A script that can be imported by another script. A standalone script can also count a module, but usually a module is imported and can be reused by other scripts or modules.
-5. Application or library (as a choice on how the code can be run) and package (if the code can be installed)..
+5. Application or library (as a choice on how the code can be run) and package (if the code can be installed).
    - Application. A script and that might import modules and external libraries. It can be **run** directly, such as through the shell, or started via a menu and run as a desktop or mobile application. A website can be considered an application, whether built on HTML, Jekyll or React.
    - Library. A library is intended to be imported as a module and used inside another application or library. It contains a collection or "library" of functions or classes to use. A library might do nothing of you run it directly. Unless it is set up to also run as an application.
-   - Package. A project that can be bundled as a single "package" or container, usually as a zip file. The bundled package can be moved around on a machine and is often published (uploaded to a public location) so other can download and install it. A package might be for an application or a library or it could be run as both. A key part is that can be **installed**. It usually includes some metadata like author, license and entrypoint. Usually a package manager will have an install step that will unzip a package if needed and _copy_ the contents of the package to a location where it can be run widely. Such as installing a Python package from a git repo, a zip file or a URL, and then running that package as a standalone app in the shell or importing and using in other Python applications. A package is often made available publically in a packages repository (like for Debian and Ubuntu) or package registry (NPM or Pypi)
+   - Package. A project that can be bundled or "packaged" as a single unit containing other files, then installed when needed. The bundle package can be moved around on a machine and is often published (uploaded to a public location) so other can download and install it. A package could be for running code as an, application, as a a library, letting you do both. A patckagenusually includes some metadata like author, license, version number and entrypoint (which script to execute when starting running the package). Usually a package manager will have an install step that will unzip a package if needed and _copy_ the contents of the package to a location where it can be run widely. Such as installing a Python package from a git repo, a zip file or a URL, and then running that package as a standalone app in the shell or importing and using in other Python applications. A package is often made available publically in a packages repository (like for Debian and Ubuntu) or package registry (NPM or Pypi)
    
 Note that a package makes an application or library able to be installed. You might get a package using the command-line like `pip install` or `npm install` or `apt install`. Or you might download an installer from a website. Or you might install a package at a higher level, like browsing apps in a desktop or mobile app store or using a disc.
+
+All libraries are also packages - otherwise you can't install and use them.
+
 
 
 ## Title
@@ -40,7 +43,7 @@ I'd say these are same. They are used to describe the industry, career and a sub
 - Information Technology or IT.
 
 
-## Interfaces 
+## Code interfaces 
 
 Term | Description 
 ---  | ---
@@ -50,3 +53,11 @@ Console | A way to run commands and view output. While Command-line mostly is fo
 Terminal | Same as command-line. e.g. Open your terminal and run the shell command there.
 Terminal emulator | Originally a terminal was a dumb keyboard and screen that did no processing alone but allowed you to interface with a larger machine, which had many terminals for people to use. On modern day machines, you will use a terminal emulator (or terminal applications) which feels like the old terminal and lets you run shell commands. You'll download and use a terminal emulator like Konsole, iTerm2, or Yakuake.
 Command-prompt | A way to interact with an application or the shell. e.g. Open the command-prompt application on Windows to run shell commands. Or use the command-prompt on your IDE to type or select commands to run like to format a file.
+REPL
+
+## Visual interfaces
+
+Term | Description 
+---  | ---
+UI
+GUI | Graphical User Interface. Often the acronym is said as "gooey". A GUI is a general term for interacting with an application using a visual interface rather than a text interface. For example, 
