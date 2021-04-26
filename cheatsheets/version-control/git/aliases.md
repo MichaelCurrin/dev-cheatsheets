@@ -1,11 +1,10 @@
 ---
+title: Aliases
 description: Configure aliases for git
 ---
-# Aliases
 
 
-Set aliases in the `~/.gitconfig` file.
-
+Set up aliases in your global  `~/.gitconfig` file.
 
 I did a blog post [here](https://dev.to/michaelcurrin/dotfiles-git-config-348o) on git aliases.
 
@@ -31,7 +30,7 @@ That will run:
 $ git log -p
 ```
 
-**Double quotes** are best for aliases whether using git or shell commands. Setting up an alias as `lg = 'log -p'` or `lg = '''log -p'''` would mean it gets called incorrectly as `git 'log -p'`. And the error will be that `log -p` is not a command.
+**Double quotes** are best for aliases whether using git or shell commands. Setting up an alias as `lg = 'log -p'` or `lg = '''log -p'''` would mean it gets called incorrectly as `git 'log -p'`. And the error will be that `log -p` is "not a git command".
 
 
 ## Shell
