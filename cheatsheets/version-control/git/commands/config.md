@@ -59,6 +59,7 @@ $ git config --system
 ### Edit config
 
 Use the command-line.
+
 ```sh
 $ git config -e # --edit
 ```
@@ -66,6 +67,8 @@ $ git config -e # --edit
 Or use your editor to open the `~/.gitconfig` file. This makes it easy to read, add and update values.
 
 Note that the config uses `TOML` format and tabs for indentation.
+
+After you save the changes to the git config, the changes will be immediately available without restarting the terminal. As the config is read each `git` is called.
 
 ### Set a value
 
