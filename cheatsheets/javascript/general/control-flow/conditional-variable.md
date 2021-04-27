@@ -1,4 +1,4 @@
-# if-else variable
+# Conditional variable
 
 
 ## Ternary
