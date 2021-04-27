@@ -64,14 +64,14 @@ type Container<T> = { myKey: T };
 Check if all items in an array are equal.
 
 ```typescript
-function equal<Type>(items: Array<Type>) {
+function equal<Type>(items: Array<Type>) {  // OR Type[]
   return items.every(i => i === items[0]) 
 }
 ```
 
 Pass an array of numbers.
 
-```
+```javascript
 const x = [1, 1, 1]
 equal(x)
 // true
