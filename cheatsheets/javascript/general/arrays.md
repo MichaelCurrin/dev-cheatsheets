@@ -4,7 +4,7 @@ See [Array cheatsheet](https://www.shortcutfoo.com/app/dojos/javascript-arrays/c
 
 See [map reduce filter][] page for how to apply those to an array.
 
-[map reduce filter]: {{ site.baseurl }}{% cheatsheets/javascript/general/map-reduce-filter.md %}
+[map reduce filter]: {{ site.baseurl }}{% link cheatsheets/javascript/general/map-reduce-filter.md %}
 
 
 ## Read
