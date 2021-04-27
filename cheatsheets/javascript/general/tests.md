@@ -3,7 +3,10 @@ description: Writing tests for your JavaScript app
 ---
 # Tests
 
-For resources and links, see [Tests](https://github.com/MichaelCurrin/learn-to-code/blob/master/en/topics/scripting_languages/JavaScript/tests.md) guide.
+
+## Resources
+
+For links around the frameworks and using them, see [Tests](https://michaelcurrin.github.io/dev-resources/resources/javascript/tests/) guide.
 
 
 ## Spec file
@@ -33,6 +36,8 @@ describe('#foo', () => {
 
 
 ## Frameworks
+
+See example of tests in my projects, to get an idea of syntax in larger scripts.
 
 ### Mocha
 
