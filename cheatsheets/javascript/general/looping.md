@@ -4,6 +4,11 @@ description: Guide to iterating over iterables in JavaScript
 ---
 
 
+See [map reduce filter][] page for how to apply `map` to an array.
+
+[map reduce filter]: {{ site.baseurl }}{% link cheatsheets/javascript/general/map-reduce-filter.md %}
+
+
 ## Overview
 
 Click a link to jump to that section of this guide.
