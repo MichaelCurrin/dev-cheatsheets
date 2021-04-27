@@ -100,7 +100,6 @@ $ prettier src
 $ prettier src tests
 ```
 
-
 ### Glob
 
 Recommended - use quotes. You can actually leave out the quotes in some shells, but you might get inconsistent behavior depending on if your shell supports `**` for example (older Bash doesn't).
@@ -179,6 +178,7 @@ Flag | Description
 `--tab-width CHARS` | How many spaces to indent by. Defaults to `2` characters.
 `--use-tabs` | Use tabs instead of spaces.
 `--html-whitespace-sensitivity MODE` | Valide modes are `css` (default), `strict` and `ignore`. See the docs for more info.
+`--arrow-parens always|avoid` | Include parentheses around a sole arrow function parameter. e.g. `i => console.log(i)` vs `(i) => console.log(i)`.
 
 e.g.
 
