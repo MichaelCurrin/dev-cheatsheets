@@ -21,6 +21,15 @@ every((element, index) => { ... } )
 every((element, index, array) => { ... } )
 ```
 
+Or passing a callback function and optional success value instead of `true`.
+
+```javascript
+every(callbackFn)
+every(callbackFn, thisArg)
+```
+
+> If a thisArg parameter is provided to `every`, it will be used as callback's this value. Otherwise, the value `undefined` will be used as its `this` value. 
+
 ## Examples
 
 Check values are positive.
@@ -38,3 +47,5 @@ const myArray = [2, 2, 2]
 myArray.every(i => i === myArray[0])
 // true
 ```
+
+
