@@ -19,6 +19,6 @@ You might want to edit VS Code settings too if you use a Prettier extension.
 
 ### Flags
 
-Pass command line flags to change Prettier behavior. See the [CLI cheatsheet][] for more info.
+Pass command line flags to change Prettier behavior. See the [Prettier CLI cheatsheet][] for more info.
 
-[CLI cheatsheet]: {{ site.baseurl }}{% link cheatsheets/javascript/format-and-lint/prettier/cli.md %}
+[Prettier CLI cheatsheet]: {{ site.baseurl }}{% link cheatsheets/javascript/format-and-lint/prettier/cli.md %}
