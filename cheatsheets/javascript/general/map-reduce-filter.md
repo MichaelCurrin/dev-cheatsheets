@@ -29,7 +29,7 @@ myArray.filter(x => x > 2)
 
 ## Reduce
 
-The `reduce` method reduces the array to a single value. It executes a function for each value of the array (from left-to-right).
+The `reduce` executes a function for each value of the array (from left-to-right). It reduces the array to a single value. Think of it as collapsing an array or vector to a single scalar result, like adding up scores.
 
 The return value of the function is stored in an accumulator, which is passed to the evaluation step.
 
@@ -150,6 +150,8 @@ const equal = (acc, item) => acc === item ? item : null)
  If the first two items in the array are equal, return the first item, otherwise `null`. Then compare that value to the third item.
  
  Note you could also do this using `filter` - we don't care about an accumulator like a sum, so we could just check if all values in the array are equal to the first item at `myArray[0]`.
+ 
+ Using `every` could be more efficient, as it can return as `false` with the first value that is different, instead of evaluating every single item .
 
 
 ## Chaining
