@@ -147,11 +147,13 @@ const equal = (acc, item) => acc === item ? item : null)
 // null
 ```
 
- If the first two items in the array are equal, return the first item, otherwise `null`. Then compare that value to the third item.
+If the first two items in the array are equal, return the first item, otherwise `null`. Then compare that value to the third item.
  
- Note you could also do this using `filter` - we don't care about an accumulator like a sum, so we could just check if all values in the array are equal to the first item at `myArray[0]`.
+Note you could also do this using `filter` - we don't care about an accumulator like a sum, so we could just check if all values in the array are equal to the first item at `myArray[0]`.
  
- Using `every` could be more efficient, as it can return as `false` with the first value that is different, instead of evaluating every single item .
+Using `every` could be more efficient, as it can return as `false` with the first value that is different, instead of evaluating every single item. See [every][] page.
+
+[every]: {{ site.baseurl }}{% link cheatsheets/javascript/general/control-flow/every.md %}
 
 
 ## Chaining
