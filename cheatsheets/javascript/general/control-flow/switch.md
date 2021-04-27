@@ -2,8 +2,10 @@
 
 [W3 Schools](https://www.w3schools.com/js/js_switch.asp)
 
+Note use of break, otherwise a matched level _and_ all levels underneath it will be evaluated.
+
 ```javascript
-var x = 2;
+const x = 2;
 
 switch(x) {
   case 1:
