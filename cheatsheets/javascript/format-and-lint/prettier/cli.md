@@ -178,7 +178,7 @@ Flag | Description
 `--tab-width CHARS` | How many spaces to indent by. Defaults to `2` characters.
 `--use-tabs` | Use tabs instead of spaces.
 `--html-whitespace-sensitivity MODE` | Valide modes are `css` (default), `strict` and `ignore`. See the docs for more info.
-`--arrow-parens always|avoid` | Include parentheses around a sole arrow function parameter. e.g. `i => console.log(i)` vs `(i) => console.log(i)`.
+`--arrow-parens MODE` | Include parentheses around a sole arrow function parameter. Use either `always` to include or `avoid` for never. e.g. `i => console.log(i)` vs `(i) => console.log(i)`.
 
 e.g.
 
