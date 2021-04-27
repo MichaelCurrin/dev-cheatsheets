@@ -31,15 +31,33 @@ myArray.filter(x => x > 2)
 
 The `reduce` method reduces the array to a single value. It executes a function for each value of the array (from left-to-right).
 
-The return value of the function is stored in an accumulator.
+The return value of the function is stored in an accumulator, which is passed to the evaluation step.
+
+- [Array.prototype.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) on MDN docs.
 
 JS has no `sum` function (like in Python), but you can make your own, using `reduce`.
 
-### Named function
+### Syntax
+
+All of thes functions passed to `reduce` are valid.
 
 ```javascript
+myArray.reduce((accumulator, currentValue) => { ... } )
+myArray.reduce((accumulator, currentValue, index) => { ... } )
+myArray.reduce((accumulator, currentValue, index, array) => { ... } )
+```
+
+You can pass an initial value too.
+
+```javascript
+myArray.reduce((accumulator, currentValue, index, array) => { ... }, initialValue)
+```
+
+### Named function
+
+General naming. In this case we use `+` symbol.
+```javascript
 function reducer(accumulator, currentValue) {
-  // Expression - here we add.
   return accumulator + currentValue;
 }
 
@@ -62,10 +80,11 @@ myArray.reduce(add)
 
 ### Anonymous function
 
-We we add numbers in an array, by using an anonymous fucntion.
+We we add numbers in an array, by using an anonymous fucntion. You can use `x` for accumulator and `y` for the current value.
 
 ```javascript
 const myArray = [1, 2, 3, 4];
+
 myArray.reduce((x, y) => x + y)
 ```
 
@@ -95,6 +114,42 @@ Optionally provide an extra param as the starting value.
 myArray.reduce((x, y) => x + y, 3000)
 // 4111
 ```
+
+You could use `*` if you wanted to multiple the values.
+
+```javascript
+const myArray = [1, 2, 3, 4];
+myArray.reduce((x, y) => x*y)
+// 24
+```
+
+### Why use reduce
+
+In some cases, a `for` loop would work fine. For example to go through all items in an array, maybe only those matching a condition, and multiply them together or add them or count them.
+
+A `for` loop uses state though. This value is persisted across iterations. This can get harder to think about and debug in more complex cases. Especially if your accumulator is an array or hash (which are mutable) and not just an number.
+
+Using `reduce` also allows you to compare pairs of items against each other. In a `for` loop this is messy, as you have to use the current item and keep track of the next (or previous) item.
+
+Using `reduce` is also an easy way to do recursion, without having to write a recursive call yourself. Where each step of the recursion call calls another using an item and an accumulator, both are dropped in the next call.
+
+Here, checking if all items in an array are equal to each other. Note this is different to checking if all values are equal to a given value.
+
+```javascript
+const equal = (acc, item) => acc === item ? item : null) 
+```
+
+```javascript
+[2, 2, 2].reduce(equal)
+// 2
+
+[2, 2, 3].reduce(equal)
+// null
+```
+
+ If the first two items in the array are equal, return the first item, otherwise `null`. Then compare that value to the third item.
+ 
+ Note you could also do this using `filter` - we don't care about an accumulator like a sum, so we could just check if all values in the array are equal to the first item at `myArray[0]`.
 
 
 ## Chaining
