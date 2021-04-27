@@ -3,15 +3,29 @@
 
 ## Ternary
 
-Use a single line to define a variable using `if-else` logic. 
+Use a single line to define a variable using `if`/ `else` logic.
+
+```javascript
+CONDITIONAL_EXPRESSION ? VALUE_IF_TRUTHY : VALUE_IF_FALSY
+```
+
+Example:
 
 ```javascript
 var x = 0
 var y = 10
 
-var answer = x ? "yes" || "no"
-answer = y ? "yes" : "no"
+x ? "yes" || "no"
+// "no"
+y ? "yes" : "no"
 // "yes"
+```
+
+Or using an expression.
+
+```
+y > 5 ? "y is big" : "y is small"
+y > 5 ? y : x
 ```
 
 This syntax is the same as in C.
@@ -37,15 +51,15 @@ You can use `&&` and `||` operators for the same effect as above, though it is i
 var x = 0
 var y = 10
 
-var answer = x && "yes" || "no"
+x && "yes" || "no"
 // "no"
-answer = y && "yes" || "no"
+y && "yes" || "no"
 // "yes"
 ```
 
 You'll find the same thing in shell programming.
 
-```
+```sh
 ./script.sh && echo 'Success' || echo 'Failed'
 ```
 
