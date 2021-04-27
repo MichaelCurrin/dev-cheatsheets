@@ -17,6 +17,15 @@ Set up a config file:
     
 You might want to edit VS Code settings too if you use a Prettier extension.
 
+Example config with one rule in it:
+
+- `.prettierrc.json`
+    ```json
+    {
+      "arrowParens": "avoid"
+    }
+    ```
+
 ### Flags
 
 Pass command line flags to change Prettier behavior. See the [Prettier CLI cheatsheet][] for more info.
