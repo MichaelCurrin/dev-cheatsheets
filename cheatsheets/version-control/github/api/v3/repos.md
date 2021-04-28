@@ -7,13 +7,14 @@
 
 ### Single repo 
 
-Get a single repo.
+Get a single repo. There will be more URLs in the response to you navigate or automate request.
 
-e.g. [/repos/MichaelCurrin/badge-generator](https://api.github.com/repos/MichaelCurrin/badge-generator)
+Example for Badge Generator single repo URL.
 
-For Badge Generator single repo URL.
+- [/repos/MichaelCurrin/badge-generator](https://api.github.com/repos/MichaelCurrin/badge-generator)
 
-Summarized to the most interesting fields - commenting out or deleting the less interesting ones.
+
+Summarized below as the most interesting fields - commenting out or deleting the less interesting ones.
 
 <details>
 <summary>Expand output</summary>
@@ -123,7 +124,7 @@ Summarized to the most interesting fields - commenting out or deleting the less 
 
 Get multiple repos for a user.
 
-e.g. [/users/MichaelCurrin/repos](https://api.github.com/users/MichaelCurrin/repos)
+- [/users/MichaelCurrin/repos](https://api.github.com/users/MichaelCurrin/repos)
 
 Note that there are also parameters like `limit` and `page` to set on repos, but these are not covered here.
 
@@ -248,15 +249,11 @@ Note that there are also parameters like `limit` and `page` to set on repos, but
 
 Here are notes on fields of interest found on a repo.
 
-### Tags and releases
+### Tags
 
 All tags:
 
-[/repos/MichaelCurrin/badge-generator/tags](https://api.github.com/repos/MichaelCurrin/badge-generator/tags)
-
-All releases:
-
-[/repos/MichaelCurrin/badge-generator/releases/](https://api.github.com/repos/MichaelCurrin/badge-generator/releases/)
+- [/repos/MichaelCurrin/badge-generator/tags](https://api.github.com/repos/MichaelCurrin/badge-generator/tags)
 
 You'll see a field like `"tag_name": "v2.0.0"`.
 
@@ -273,13 +270,17 @@ v2.0.0
 
 Though you might as well use `curl` instead of `wget` if you aren't saving a file.
 
-Latest release:
+### Releases
 
-[/repos/MichaelCurrin/badge-generator/releases/latest](https://api.github.com/repos/MichaelCurrin/badge-generator/releases/latest)
+You can't see all releases I don't think, but you can get target releases.
 
-A target release - you can look up a release by ID. e.g. `34552316`
+Latest release (doesn't include those marked as "pre-release"):
 
-[/repos/MichaelCurrin/badge-generator/releases/34552316](https://api.github.com/repos/MichaelCurrin/badge-generator/releases/34552316)
+- [/repos/MichaelCurrin/badge-generator/releases/latest](https://api.github.com/repos/MichaelCurrin/badge-generator/releases/latest)
+
+Look up by ID. e.g. `34552316`
+
+- [/repos/MichaelCurrin/badge-generator/releases/34552316](https://api.github.com/repos/MichaelCurrin/badge-generator/releases/34552316)
 
 ### Homepage URL
 
