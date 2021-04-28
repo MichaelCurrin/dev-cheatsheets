@@ -10,11 +10,15 @@ description: Bullet points and numbered lists
 
 The hyphen is preferred.
 
-    - Bulleted
-    - List
+Code:
 
-- Bulleted
-- List
+    - First item.
+    - Second item.
+
+Result:
+
+- First item.
+- Second item.
 
 ### Nested
 
@@ -239,3 +243,33 @@ Result:
     print("Hello again, world!")
     ```
 - Bar.
+
+
+## Tables inside a bullet point
+
+I've discovered this by accident and not seen it in practice, but anyway in case it is useful. Note that standard markdown doesn't support this (like on GitHub), but Jekyll does support it.
+
+Single row tables
+
+    - ghi | jkl
+    - first | second | third | fourth
+
+
+- ghi | jkl
+- first | second | third | fourth
+
+Multi-row table.
+
+    - abc | def
+      def | ghj
+
+- abc | def
+  def | ghj
+
+
+Not that you can't have a table span multiple bullet points. Don't do this.
+
+    - abc | def
+    - ghi | jkl
+    - ABC | DEF | XYZ
+
