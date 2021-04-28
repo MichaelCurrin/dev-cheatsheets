@@ -3,24 +3,30 @@
 
 ## Resources
 
+- [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) on Mozilla docs.
 - [JavaScript Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)
 - [JavaScript RegExp Reference](https://www.w3schools.com/jsref/jsref_obj_regexp.asp) - that has a long list on the list for more info.
 
 
 ## Regex object
 
-JavaScript lets you create a regex expression in a few days.
+How to create a `RegExp` instance.
 
 ### With a constructor
 
 ```javascript
 new RegExp("e");
+
+new RegExp('ab+c', 'i')  // string pattern as argument
+new RegExp(/ab+c/, 'i')  // regular expression literal as first argument - from ES6
 ```
 
-### Using forward slash syntax
+### Literal notation
 
 ```
 /e/
+
+/ab+c/i
 ```
 
 e.g. 
@@ -32,6 +38,14 @@ text.search(/my pattern/i);
 // with object
 const patt = /my pattern/i;
 text.search(patt);
+```
+
+### Flags
+
+```javascript
+/\w+/
+
+new RegExp('\\w+')
 ```
 
 
@@ -54,7 +68,7 @@ text.search(/w3schools/i);
 // 6
 ```
 
-See what is at characte with index `6` in the text:
+See what is at character with index `6` in the text:
 
 ```
 // 0123456
@@ -186,3 +200,31 @@ text.replaceAll(/Dog/gi, 'monkey')
 //                                            | NB.         | NB.
 // "The quick brown fox jumps over the lazy monkey. If the monkey reacted, was it really lazy?"
 ```
+
+
+## Groups and ranges
+
+- [Groups and ranges](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges) in Mozilla docs.
+
+Get an array of matches - in this case, words.
+
+```javascript
+const aliceExcerpt = 'The Caterpillar and Alice looked at each other';
+const regexpWithoutE = /\b[a-df-z]+\b/ig;
+
+aliceExcerpt.match(regexpWithoutE)
+// ["and", "at"]
+```
+
+Match groups created with brackets.
+
+```javascript
+const imageDescription = 'This image has a resolution of 1440×900 pixels.';
+const regexpSize = /([0-9]+)×([0-9]+)/;
+
+const match = imageDescription.match(regexpSize);
+`Width: ${match[1]} / Height: ${match[2]}.`
+// "Width: 1440 / Height: 900."
+```
+
+Note index starts at `1`.
