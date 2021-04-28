@@ -249,27 +249,22 @@ Result:
 
 I've discovered this by accident and not seen it in practice, but anyway in case it is useful. Note that standard markdown doesn't support this (like on GitHub), but Jekyll does support it.
 
-Single row tables
+### Single row tables
 
+Not that you can't have a table span multiple bullet points. So these are bullet points with one table each.
+
+    - abc | def
     - ghi | jkl
     - first | second | third | fourth
 
-
+- abc | def
 - ghi | jkl
 - first | second | third | fourth
 
-Multi-row table.
+### Multi-row table
 
     - abc | def
       def | ghj
 
 - abc | def
   def | ghj
-
-
-Not that you can't have a table span multiple bullet points. Don't do this.
-
-    - abc | def
-    - ghi | jkl
-    - ABC | DEF | XYZ
-
