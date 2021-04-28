@@ -63,9 +63,10 @@ A backup is made if you supply a suffix - but you must _not_ leave a gap between
 
 Using BSD macOS version.
 
-You can't just use `-i`. You _must_ provide an argument. Even if it's an empty string for no backup.
+You _must_ provide an argument for inline. Even if it's an empty string for no backup.
 
-Examples:
+
+Good examples:
 
 ```sh
 $ # No backup.
@@ -75,6 +76,13 @@ $ # Backup as .bak files.
 $ sed -i '.bak' PATTERN PATH
 ```
 
-Note that a space is **required** - using `-i=''` will get the equals sign interpeted literally.
+Note that a space is **required** and not use of equals sign. Using `-i=''` will get the equals sign interpreted **literally**.
 
-Or you should install and alias the GNU sed.
+Leaving out a space or leaving out the argument will give an **error**.
+
+```sh
+$ sed -i'' PATTERN PATH
+$ sed -i PATTERN PATH
+```
+
+Or you should install and alias the GNU `sed` on macOS as `sed`.
