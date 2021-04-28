@@ -120,20 +120,24 @@ Use optional colons for alignment. You can also add a border to the markdown, wh
 
 You can use styling (bold, italics, code, links). 
 
-    Name     | Description
-    ---      | ---
-    **abc**  | _def_
-    ghi      | [jkl](#)
-    ABC      | `DEF`
+    Name       | Description
+    ---        | ---
+    **abc**    | _def_
+    <b>abc</b> | <i>def</i>
+    ghi        | [jkl](#)
+    ABC        | `DEF`
 
-Name     | Description
----      | ---
-**abc**  | _def_
-ghi      | [jkl](#)
-ABC      | `DEF`
+Name       | Description
+---        | ---
+**abc**    | _def_
+<b>abc</b> | <i>def</i>
+ghi        | [jkl](#)
+ABC        | `DEF`
 
 
-Cells with long sentences will wrap automatically.
+## Breaks
+
+Cells with long sentences will wrap automatically. You can force a break though with the HTML `br` tag.
 
     Name     | Description
     ---      | ---
