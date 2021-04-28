@@ -126,13 +126,22 @@ Make sure that the 2nd argument for `tr` is `'` followed by enter - if you press
 
 ## Replace inline in file with backup flag
 
-The default use of `sed` will just print, so use the inline flag to update the file.
+The default use of `sed` will just print, without saving to a file.
 
 ```sh
-sed -i'' 's/foo/bar/g' file.txt
+sed 's/foo/bar/g' file.txt
 ```
 
-See more info in [sed][] guide.
+So use the inline flag to update the file.
+
+```sh
+# Linux
+sed -i'' 's/foo/bar/g' file.txt
+# macOS
+sed -i '' 's/foo/bar/g' file.txt
+```
+
+See more info in my [sed][] guide.
 
 [sed]: {{ site.baseurl }}{% link cheatsheets/shell/commands/sed.md %}
 
@@ -144,8 +153,6 @@ Replace `foo` with `bar` in _file.txt_ and print to the console.
 ```sh
 sed -i 's/foo/bar/g' file.txt
 ```
-
-Note: Use `-i` flag to update the file _in place_. Or remove it to just preview in the console.
 
 From [tutorial](https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace-text-in-files-in-linux-unix-shell/)
 
