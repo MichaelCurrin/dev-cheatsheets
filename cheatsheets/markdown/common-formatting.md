@@ -1,6 +1,6 @@
 ---
 title: Common formatting
-description: A reference for markdown basics you'll use daily
+description: A reference for Markdown basics you'll use daily
 ---
 
 
