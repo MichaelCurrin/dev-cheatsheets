@@ -1,4 +1,7 @@
-# Lists
+---
+title: Lists
+description: Bullet points and numbered lists
+---
 
 
 ## Bulleted list
@@ -17,12 +20,16 @@ The hyphen is preferred.
 
 The convention hyphen on the outside, then a star within that and a plus sign within that. Though this doesn't actually effect the result.
 
+Code:
+
     - Nested
         * Bullet
             + List
     - Nested
         - Bullet
             - List
+
+Result:
 
 - Nested
     * Bullet
@@ -35,6 +42,8 @@ The convention hyphen on the outside, then a star within that and a plus sign wi
 
 You can use line breaks in a bullet list (but not a numbered list).
 
+Code:
+
     - First point starts here.
 
         Next line of same point.
@@ -43,6 +52,8 @@ You can use line breaks in a bullet list (but not a numbered list).
     - Second point starts here.
 
         And keeps going here.
+
+Result:
 
 - First point starts here.
 
@@ -56,17 +67,25 @@ You can use line breaks in a bullet list (but not a numbered list).
 
 ## Numbered list
 
+Code:
+
     1. Numbered
     2. List
+
+Result:
 
 1. Numbered
 2. List
 
 Note that numbering can be left as all `1.` and it will still work.
 
+Code:
+
     1. Foo
     1. Bar
     1. Baz
+
+Result:
 
 1. Foo
 1. Bar
@@ -74,9 +93,13 @@ Note that numbering can be left as all `1.` and it will still work.
 
 Note the number formatting style will change by itself at each indentation level.
 
+Code:
+
     1. Nested
         1. Bullet
             1. List
+
+Result:
 
 1. Nested
     1. Bullet
@@ -85,11 +108,15 @@ Note the number formatting style will change by itself at each indentation level
 
 ## Mixed list
 
+Code:
+
     1. Number
     2. Number
         * Bullet
         * Bullet
     3. Number
+
+Result:
 
 1. Number
 2. Number
@@ -100,22 +127,62 @@ Note the number formatting style will change by itself at each indentation level
 
 ## Quotes in lists
 
+### Quote under a bullet point
+
+Code:
+
     - Top-level
-        - > Point A, which is also a quote.
-        - Point B
+        - Point A
             > Indented, so shows **within** the point neatly.
 
+Result:
+
 - Top-level
-    - > Point A, which is also a quote.
-    - Point B
+    - Point A
         > Indented, so shows **within** the point neatly.
 
-Don't do this:
+### Multi-line quote under a bullet point
+
+Code:
+
+    - Top-level
+        - Point A
+            > First line.
+            > 
+            > Next line.
+
+Result:
+
+- Top-level
+    - Point A
+        > First line.
+        > 
+        > Next line.
+
+### Quote as a bullet point
+
+Code:
+
+    - Top-level
+        - > Point A, which is a quote.
+
+Result:
+
+- Top-level
+    - > Point A, which is a quote.
+
+### Bad formatting
+
+Make sure not to mix a quote and bullet at the same level.
+
+Code:
 
     - Top-level
         - Point A
         > There is no indent here, probably not what you want.
         - Point B
+
+Result:
 
 - Top-level
     - Point A
@@ -127,6 +194,8 @@ Don't do this:
 
 ### Basic
 
+Code:
+
     - Top-level
         - Foo
         - Here is some code, indented so it shows under the point.
@@ -134,6 +203,8 @@ Don't do this:
             print("Hello, world!")
             ```
         - Bar
+
+Result:
 
 - Top-level
     - Foo
@@ -145,6 +216,8 @@ Don't do this:
 
 ### Multi-line
 
+Code:
+
     - Here is some code, indented so it shows under the point.
         ```python
         print("Hello, world!")
@@ -154,6 +227,8 @@ Don't do this:
         print("Hello again, world!")
         ```
     - Bar.
+
+Result:
 
 - Here is some code, indented so it shows under the point.
     ```python
