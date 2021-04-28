@@ -206,7 +206,13 @@ text.replaceAll(/Dog/gi, 'monkey')
 
 - [Groups and ranges](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges) in Mozilla docs.
 
-Get an array of matches - in this case, words.
+A match will return positional values in an array. The first is the matched string, then at index `1` is the first matched group, index `2` the second and so on. The match object has also has some key-value attributes - `index`, `input` and `groups`. 
+
+Examples copied from link above.
+
+### Basic
+
+Get as many groups as matched. Here these are words without the letter `e`.
 
 ```javascript
 const aliceExcerpt = 'The Caterpillar and Alice looked at each other';
@@ -215,6 +221,8 @@ const regexpWithoutE = /\b[a-df-z]+\b/ig;
 aliceExcerpt.match(regexpWithoutE)
 // ["and", "at"]
 ```
+
+### Groups
 
 Match groups created with brackets.
 
@@ -228,3 +236,53 @@ const match = imageDescription.match(regexpSize);
 ```
 
 Note index starts at `1`.
+
+### Non-capturing group
+
+Here we need the protocol to match on the value but we drop it in the result.
+
+```javascript
+const patt = new RegExp('(?:https?)://([^/\r\n]+)(/[^\r\n]*)?')
+
+cont matches = 'http://stackoverflow.com/'.match(patt)
+matches[1])
+// stackoverflow.com
+```
+
+### Topic example
+
+Get hashtag keywords.
+
+This only matches _once_.
+
+```javascript
+pat = /#(\w+)/
+m = 'abc #python #def'.match(pat)
+m
+// [ '#python', 
+//   'python', 
+//   index: 4, 
+//   input: 'abc #python #def', 
+//   groups: undefined ] 
+```
+
+Using `g` for a global matches to get more than one match. But made the attributes disappear. Maybe I don't understand this area properly and what the best practice is.
+
+```javascript
+pat = /#(\w+)/g
+m = 'abc #python #def'.match(pat)
+m
+// [ 
+//   '#python', 
+//   '#def' 
+// ] 
+```
+
+Extending the pattern to capture hyphens (not valid hashtags on Twitter but useful on other platforms for keyword topics).
+
+```javascript
+pat = /#([\w-]+)/g
+m = 'abc #ruby #data-science'.match(pat)
+m
+// [ '#ruby', '#data-science' ] 
+```
