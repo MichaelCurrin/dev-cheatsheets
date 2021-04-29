@@ -2,6 +2,9 @@
 
 If you don't set a value in your config, then the Jekyll default values below will be used.
 
+
+## Jekyll config defaults
+
 Copied from [Default Config](https://jekyllrb.com/docs/configuration/default/) in the Jekyll docs.
 
 ```yaml
@@ -63,3 +66,9 @@ defaults            : []
 ```
 
 The Liquid Options and Markdown Options pages in this guide for the `liquid` and `kramdown` sections.
+
+For [Permalink][] page for more info on `permalink`. 
+
+[Permalink]: {{ site.baseurl }}{% link cheatsheets/jekyll/templating/permalinks.md %}
+ 
+Set show directory listing to true if you want Jekyll server to list files and directories if an index file is absent.
