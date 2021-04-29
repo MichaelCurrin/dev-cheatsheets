@@ -70,7 +70,7 @@ Resulting path:
 
 - `foo/bar/2021/01/02/abc.html`
 
-Here use the outer directory and the frontmatter categories together.
+Here using an outer directory category and the frontmatter categories together.
 
 - `foo/_posts/2021-01-02-abc.md`
     ```liquid
@@ -105,3 +105,5 @@ Resulting categories:
 Output path:
 
 - `bar/2021/01/02/abc.html`
+
+Note the `foo` directory is absent both.
