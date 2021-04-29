@@ -36,7 +36,7 @@ Use a `for` loop on pages or a collection.
 
 ## Liquid tags
 
-Use a Jekyll Liquid tag link to link to page rather than by URL. This is great for reliability, as means you will get an error if a link is invalid.
+Use a Jekyll Liquid tag `link` to link to page rather than by URL. This is great for reliability, as means you will get an error if a link is invalid, like if you made a typo or the target page is renamed, moved or deleted.
 
 ### Link tag for pages
 
@@ -48,20 +48,23 @@ No colon and no quotes. (A quotes path will rendered as escaped quote tags and p
 {% link PATH %}
 ```
 
-Examples below are from [docs](https://jekyllrb.com/docs/liquid/tags/).
+Examples below are adapted from the [docs](https://jekyllrb.com/docs/liquid/tags/).
 
 ```liquid
-{% link _collection/name-of-document.md %}
-{% link _posts/2016-07-26-name-of-post.md %}
+{% link _products/coffee-machine.md %}
+{% link _posts/2021-07-26-name-of-post.md %}
+{% link about.md %}
 {% link news/index.html %}
-{% link /assets/files/doc.pdf %}
+{% link assets/css/styles.css %}
 ```
 
-Since Jekyll 4.0, you don’t need to prepend `link` and `post_url` tags with `site.baseurl`.
+Add a leading `/` if you want. It makes no difference.
+
+Since Jekyll 4.0, you don’t need to prepend the `link` or `post_url` tags with `site.baseurl`.
 
 - Jekyll 3
     ```md
-    Link text]({{ site.baseurl}} {% link about.md %})
+    [Link text]({{ site.baseurl }}{% link about.md %})
     ```
 - Jekyll 4
     ```md
@@ -81,6 +84,8 @@ You can pass a variable too (maybe only in Jekyll 4 as I got errors on this when
 ```
 
 ### The Post URL tag for posts
+
+Link to a post by name using `post_url`.
 
 ```liquid
 {% post_url 2010-07-21-name-of-post %}
