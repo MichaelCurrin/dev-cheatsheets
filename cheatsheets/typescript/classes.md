@@ -1,5 +1,9 @@
 # Classes
 
+See also [JavaScript Classes][] cheatsheet.
+
+[JavaScript Classes]: {{ site.baseurl }}{% link cheatsheets/javascript/general/classes.md %}
+
 
 ## Class syntax
 
