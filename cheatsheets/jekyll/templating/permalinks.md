@@ -2,8 +2,7 @@
 
 See [Default values][] to see the Jekyll default value. 
 
-[Default value]: {{ site.baseurl }}{% link cheatsheets/jekyll/templating/permalinks.md %}
-
+[Default values]: {{ site.baseurl }}{% link cheatsheets/jekyll/configuration/default-values.md %}
 
 {% raw %}
 
