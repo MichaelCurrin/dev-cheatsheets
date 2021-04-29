@@ -106,4 +106,4 @@ Output path:
 
 - `bar/2021/01/02/abc.html`
 
-Note the `foo` directory is absent both.
+Note the `foo` directory is absent from both.
