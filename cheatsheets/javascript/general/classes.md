@@ -1,49 +1,63 @@
 # Classes
 
-## Sample
 
-Based on an example in the TypeScript docs [Classes](https://www.typescriptlang.org/docs/handbook/classes.html) page.
+## Resources
 
-This converts modern class code to the equivalent in old JS before a `class` existed.
+- [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor) in Mozilla docs.
 
-### Class syntax
 
-For ES6 onwards.
+## Example class
 
-```typescript
+```javascript
 class Greeter {
-  greeting: string;
-
-  constructor(message: string) {
+  constructor(message) {
     this.greeting = message;
   }
 
   greet() {
-    return "Hello, " + this.greeting;
+    return `Hello, ${this.greeting}`;
   }
 }
 
 let greeter = new Greeter("world");
 ```
 
-### Object syntax
 
-For ES5 and older.
+## Object accessors
+
+Setting up setters and getters and a class.
+
+See [JavaScript Object Accessors](https://www.w3schools.com/js/js_object_accessors.asp) guide.
 
 ```javascript
-"use strict";
+class Person {
+  constructor() {
+    this.language = 'n/a'
+  }
+  
+  get lang() {
+    return this.language 
+  }
+  
+  set lang(lang) {
+    this.language = lang
+  }
+}
+```
 
-var Greeter = /** @class */ (function () {
-    function Greeter(message) {
-        this.greeting = message;
-    }
-    
-    Greeter.prototype.greet = function () {
-        return "Hello, " + this.greeting;
-    };
-    
-    return Greeter;
-}());
+```javascript
+const p = new Person()
 
-var greeter = new Greeter("world");
+p
+// Person { language: 'n/a' }
+
+// Get
+p.lang
+// 'n/a'
+
+// Set
+p.lang = 'English'
+
+p
+// Person { language: 'English' }
 ```
