@@ -1,5 +1,10 @@
 # Permalinks
 
+See [Default values][] to see the Jekyll default value. 
+
+[Default value]: {{ site.baseurl }}{% link cheatsheets/jekyll/templating/permalinks.md %}
+
+
 {% raw %}
 
 See [Jekyll Permalinks doc](https://jekyllrb.com/docs/permalinks/).
