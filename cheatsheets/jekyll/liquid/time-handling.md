@@ -1,7 +1,7 @@
 ---
 description: Working with dates and times in Jekyll
 ---
-# Time-handling
+# Time handling
 
 {% raw %}
 
