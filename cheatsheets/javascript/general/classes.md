@@ -1,6 +1,11 @@
 # Classes
 
 
+See also [TypeScript Classes][] cheatsheet.
+
+[TypeScript Classes]: {{ site.baseurl }}{% link cheatsheets/typescript/classes.md %}
+
+
 ## Resources
 
 - [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor) in Mozilla docs.
