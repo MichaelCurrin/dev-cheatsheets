@@ -63,6 +63,16 @@ The unsafe way - it will cause JS errors because the body cannot be found.
 
 ## Add event listener
 
+Put your code inside a function that only loads when the body is done loading - when the `load` event fires.
+
+This works great as you can put it anywhere on the page and as an inline or external script but it won't run too soon.
+
+Related section - [Load and ready events][].
+
+Load and ready events]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/load-ready-events.md %}
+
+### Set onload
+
 Warning - this will override all existing onload triggers set up by you or other scripts.
 
 ```javascript
@@ -71,7 +81,9 @@ window.onload = function() {
 }
 ```
 
-Add multiple listeners like this:
+### Add to onload events
+
+Add one or more `load` listeners like this:
 
 ```javascript
 window.addEventListener('load', function () {
