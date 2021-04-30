@@ -7,7 +7,11 @@ Based on this video - [5 Must Know JavaScript Features That Almost Nobody Knows]
 Note that these are newer features and not supported by all browsers.
 
 
-## Nullish Coalescing
+## Nullish coalescing
+
+```javascript
+VALUE ?? VALUE_IF_NULL_OR_UNDEFINED
+```
 
 Provide an default fallback value, only if the variable is `null` or `undefined`.
 
@@ -24,41 +28,29 @@ foo || 'default'
 ```
 
 
-## Styling Console Log
-
-Supply CSS styling to `console.log`. Note use of `%c`.
-
-### Single style
-
-```javascript
-console.log('%cMy red text', 'color: red')
-```
-
-### Combine styles
-
-```javascript
-console.log('%cMy bold and red text', 'font-weight: bold; color: red')
-```
-
-### Split styles
-
-```javascript
-console.log('%cMy bold text %cMy red text', 'font-weight: bold', 'color: red')
-```
-
-
-This only seems to work in the browser and not in Node. You'll need come control characters or an NPM package to handle colors in Node.
-
-
-## Optional Chaining
+## Optional chaining for variables
 
 You could get an error when accessing an attribute on object which is not set or missing attributes. So here we avoid that.
+
+```javascript
+VARIABLE?.ATTRIBUTE
+
+VARIABLE?.ATTRIBUTE?.ATTRIBUTE
+```
+
+For an object `foo` with optional attribute `bar`.
+
+```javascript
+foo?.bar
+```
+
+For an object `foo` with optional attribute `bar`, which has optional attribute `bazz`.
 
 ```javascript
 foo?.bar?.bazz
 ```
 
-That replaces having do this:
+That replaces having do this longer old format.
 
 ```javascript
 foo && foo.bar && foo.bar.bazz
@@ -110,9 +102,17 @@ foo && foo.badKey && foo.badKey.bazz
 // undefined
 ```
 
-It also works for functions.
+## Optional chaining for functions
 
 ```javascript
+VARIABLE.OPTIONAL_METHOD?.()
+```
+
+### Examples
+
+```javascript
+const foo = {}
+
 foo.toString?.()
 // '[object Object]'
 
@@ -123,7 +123,8 @@ foo.badMethod()
 // Uncaught TypeError: foo.badMethod is not a function
 ```
 
-## Object Shorthand
+
+## Object shorthand
 
 ```javascript
 const x = 123
@@ -143,3 +144,28 @@ const y = {
   x: x
 }
 ```
+
+
+## Styling console log
+
+Supply CSS styling to `console.log`. Note use of `%c`.
+
+### Single style
+
+```javascript
+console.log('%cMy red text', 'color: red')
+```
+
+### Combine styles
+
+```javascript
+console.log('%cMy bold and red text', 'font-weight: bold; color: red')
+```
+
+### Split styles
+
+```javascript
+console.log('%cMy bold text %cMy red text', 'font-weight: bold', 'color: red')
+```
+
+This only seems to work in the browser and not in Node. You'll need come control characters or an NPM package to handle colors in Node.
