@@ -4,6 +4,8 @@ Lesser-known features of JavaScript.
 
 Based on this video - [5 Must Know JavaScript Features That Almost Nobody Knows](https://www.youtube.com/watch?v=v2tJ3nzXh8I&list=LL).
 
+Note that these are newer features and not supported by all browsers.
+
 
 ## Nullish Coalescing
 
