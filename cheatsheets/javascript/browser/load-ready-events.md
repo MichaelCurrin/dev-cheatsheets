@@ -15,9 +15,23 @@ e.g.
 
 ```javascript
 window.addEventListener('DOMContentLoaded', (event) => {
-    console.log('DOM fully loaded and parsed');
+  console.log('DOM fully loaded and parsed');
 });
 ```
+
+If you need access to `this`, then don't use an arrow function.
+
+```javacsript
+window.addEventListener('DOMContentLoaded', function(event) {
+  console.log('DOM fully loaded and parsed');
+  console.log(event)
+  console.log(this)
+})
+```
+
+I tried doing that on `document` and got an error if using `this`:
+
+> Error: Promised response from onMessage listener went out of scope
 
 
 ## Load
@@ -61,4 +75,3 @@ document.addEventListener('readystatechange', (event) => {
   console.log(document.readyState)
 });
 ```
-
