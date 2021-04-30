@@ -18,11 +18,11 @@ Padding character: `=`.
 
 ## Usage
 
-### JavaScript
+### Browser JavaScript
 
-Use the built-in functions `btoa` and `atob`. No imports are needed.
+Use the built-in functions `btoa` and `atob`. You can use these directly in the browser. But not in Node.
 
-Note `b` is `binary` and **not** base-64.
+Note that `b` stands for [binary string](https://developer.mozilla.org/en-US/docs/Web/API/DOMString/Binary) (UTF-16 encoded strings) and **not** base-64.
 
 From [Mozilla docs](https://developer.mozilla.org/en-US/docs/Glossary/Base64):
 
@@ -46,6 +46,21 @@ Convert from binary string to base-64 ASCII string.
 > atob("SGVsbG8sIHdvcmxk")
 "Hello, world!"
 ```
+
+## Node
+
+Using the built-in [buffer](https://nodejs.org/api/buffer.html) API. No imports are needed.
+
+```javascript
+const buf = Buffer.from('hello world', 'utf8');
+
+buf.toString('hex')
+// 68656c6c6f20776f726c64
+
+buf.toString('base64')
+//  aGVsbG8gd29ybGQ=
+```
+
 
 ## Python
 
@@ -92,7 +107,6 @@ Or (unicode) string input.
 >>> base64.b64decode('SGVsbG8sIHdvcmxkIQ==')
 b'Hello, world!'
 ```
-
 
 ### Shell
 
