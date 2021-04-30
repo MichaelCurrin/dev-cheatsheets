@@ -206,33 +206,46 @@ Links:
 		> The `docker exec` command runs a new command in a running container.
 - [What is the different between “run” and “exec”](https://chankongching.wordpress.com/2017/03/17/docker-what-is-the-different-between-run-and-exec/)
 
-Run a command in a **new** container. The container will then stop.
+Run a command in a **new** container. The container will then stop when it is finished, unless it continues to run like for a server.
 
 ```sh
+$ docker run IMAGE
 $ docker run IMAGE COMMAND
 ```
 
 e.g.
 
 ```sh
-$ docker run -it node
->
+$ docker run my-image
+$ docker run my-image bash
 ```
 
-Run a command in an **existing** running container, given a tagged name or ID.
+Optioanally give the container name.
+
+```sh
+$ docker run --rm --name CONTAINER_NAME IMAGE
+```
+
+e.g.
+
+```sh
+$ docker run --rm --name my-app my-image
+```
+
+Run a command in an **existing** and **running** container, given a tagged name or ID.
 
 ```sh
 $ docker start
 $ docker exec CONTAINER
 ```
 
-Useful if you want to tunnel in and use an interactive session with Bash, Python, etc.
+That is useful if you want to tunnel in and use an interactive session with Bash, Python, etc.
 
 ```sh
 $ docker exec -it CONTAINER bash
 ```
 
-If you container exits immediately, you'll struggle to `exec` into it.
+If you container exits immediately when run, you'll struggle to `exec` into it.
 
 So then use `run` against a built image. Set a **new** container from a given image, passing a shell entry point. Use `/bin/sh` if you prefer.
 
@@ -243,6 +256,19 @@ $ docker run --rm -it IMAGE --entrypoint bash
 ```
 
 In VS Code, under the Docker extension and "Images" you can select an image and "Run interactive" to achieve the same thing. Though, you might start with Node or something else, as you can't specify Bash.
+
+Start an interactive Node console in a downloaded `node` image.
+
+```sh
+$ docker run -it node
+>
+```
+
+```sh
+$ docker run -it node bash
+#
+```
+
 
 ### Open ports
 
@@ -310,8 +336,8 @@ $ docker system prune [OPTIONS]
 
 | Options      | Description                                      |
 | ------------ | ------------------------------------------------ |
-| --all , -a   | Remove all unused images not just dangling ones. |
-| --force , -f | Do not prompt for confirmation                   |
+| `--all`, `-a`   | Remove all unused images not just dangling ones. |
+| `--force`, `-f` | Do not prompt for confirmation                   |
 
 
 With no options, you will get a confirmation prompt and told that these will be removed:
