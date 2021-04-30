@@ -9,15 +9,15 @@ Note that these are newer features and not supported by all browsers.
 
 ## Nullish Coalescing
 
-Provide an default fallback value if the variable is `null` or `undefined`.
+Provide an default fallback value, only if the variable is `null` or `undefined`.
 
 ```javascript
 foo ?? 'default'
 ```
 
-Note that even if the variable is falsy like `0` or an empty string, the fallback will **not** be used.
+Note that even if the variable is a null number (`0`) or null string (`""`),  the fallback will **not** be used.
 
-Contrast with this.
+Contrast with this broader syntax using `OR` logic, where the fallback is used on any falsy value (`null`, `undefined`, `0`, `""`, etc.)
 
 ```javascript
 foo || 'default'
