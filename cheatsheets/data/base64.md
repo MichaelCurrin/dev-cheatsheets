@@ -26,8 +26,8 @@ From [Mozilla docs](https://developer.mozilla.org/en-US/docs/Glossary/Base64):
 
 > In JavaScript there are two functions respectively for decoding and encoding base64 strings:
 >
-> - btoa(): creates a base-64 encoded ASCII string from a "string" of binary data ("btoa" should be read as "binary to ASCII").
->  - atob(): decodes a base64 encoded string("atob" should be read as "ASCII to binary").
+> - `btoa()`: creates a base-64 encoded ASCII string from a "string" of binary data ("btoa" should be read as "binary to ASCII").
+> - `atob()`: decodes a base64 encoded string("atob" should be read as "ASCII to binary").
 
 No imports are needed.
 
