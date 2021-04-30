@@ -14,6 +14,8 @@ logo: docker
     - [Ultimate Docker Cheatsheet](https://hackernoon.com/docker-commands-the-ultimate-cheat-sheet-994ac78e2888) as _Hackernoon_ blog post.
     - [Docker cheatsheet](https://dockerlabs.collabnix.com/docker/cheatsheet/) on Dockerlabs.
 
+See also my [Docker shell basics](https://github.com/MichaelCurrin/docker-quickstarts/blob/master/shell-basics.md) inside my `docker-quickstarts` repo.
+
 
 ## Help
 
