@@ -20,18 +20,20 @@ Padding character: `=`.
 
 ### JavaScript
 
-Use the builtin functions `btoa` and `atob`.
+Use the built-in functions `btoa` and `atob`. No imports are needed.
+
+Note `b` is `binary` and **not** base-64.
 
 From [Mozilla docs](https://developer.mozilla.org/en-US/docs/Glossary/Base64):
 
 > In JavaScript there are two functions respectively for decoding and encoding base64 strings:
 >
 > - `btoa()`: creates a base-64 encoded ASCII string from a "string" of binary data ("btoa" should be read as "binary to ASCII").
-> - `atob()`: decodes a base64 encoded string("atob" should be read as "ASCII to binary").
-
-No imports are needed.
+> - `atob()`: decodes a base-64 encoded string ("atob" should be read as "ASCII to binary").
 
 ### Encode
+
+Convert from binary string to base-64 ASCII string.
 
 ```javascript
 > btoa("Hello, world!")
@@ -49,7 +51,7 @@ No imports are needed.
 
 Guide for Python 3.
 
-Use the builtin library.
+Use the built-in `base64` library.
 
 ### Import
 
