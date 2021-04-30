@@ -13,14 +13,13 @@ These values get set as defaults on pages, posts and collections. The values on 
 ```yaml
 defaults:
   - scope:
-      path: "_foo"
       type: "foo"
     values:
       layout: "bazz"
       fizz: "Buzz"
 
   - scope:
-      path: "_baar"
+      path: "_bar"
     values:
       layout: "page"
 
@@ -30,16 +29,19 @@ defaults:
       layout: "default"
 ```
 
-Use `type` for collections. It might be better to use `path` and `type` together here - need to check.
+Use `type` for collections, such as the `foo` collection or `posts` collection (yes, posts are also in `site.collections`.
+
+
+## Ordering
 
 Later matches will override earlier matches.
 
-Use the fallback option last.
+Use your fallback option _last_.
 
 
 ## Path
 
-Use this to match all pages.
+Use this to match _all_ pages.
 
 ```yaml
 path: ""
@@ -53,4 +55,4 @@ path: "_foo/*/index.md"
 
 I don't know if `_foo/*` is different to just `_foo`. Maybe the latter goes all levels down and not just one.
 
-Warning: As covered in the docs, you will get performance issues if you use double globstar (`**`) in your pattern due to a Jekyll limitation, but one (`*`) is okay.
+**Warning:** As covered in the docs, you will get performance issues if you use double globstar (`**`) in your pattern, due to a Jekyll limitation. But one globstar (`*`) is okay.
