@@ -1,8 +1,8 @@
 # Advanced
 
-Less-known features of JavaScript.
+Lesser-known features of JavaScript.
 
-Based on this video - [5 Must Know JavaScript Features That Almost Nobody Knows](https://www.youtube.com/watch?v=v2tJ3nzXh8I&list=LL.
+Based on this video - [5 Must Know JavaScript Features That Almost Nobody Knows](https://www.youtube.com/watch?v=v2tJ3nzXh8I&list=LL).
 
 
 ## Nullish Coalescing
