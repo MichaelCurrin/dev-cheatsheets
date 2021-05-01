@@ -1,6 +1,6 @@
 ---
 title: Create
-descriptipn: How to create a text file
+description: How to create a text file
 ---
 
 See also the [Piping and redirection]({{ site.baseurl }}{% link cheatsheets/shell/files/redirection.md %}) page.
