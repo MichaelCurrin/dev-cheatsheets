@@ -5,6 +5,8 @@ description: Set shell options in a script or at a global level to change how th
 
 This applies both for shell scripting and running commands in interactive CLI.
 
+This page is focussed on `bash` but behavior should be similar for `zsh`.
+
 
 ## Overview of how to set flags
 
@@ -119,7 +121,6 @@ Using `>| file` seems to force.
 
 This is useful to set in your `~/.bashrc` file, so it is always set globally.
 
-
 ### Copy and move
 
 Here is an alternative, using aliases and flags instead of shell optios.
@@ -176,6 +177,10 @@ From the man page:
 
 
 ## Pipe fail
+
+See more info in [Piping][] cheatsheet.
+
+[Piping]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/input-output.md %}
 
 ```
 -o pipefail
