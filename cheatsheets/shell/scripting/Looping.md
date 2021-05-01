@@ -1,4 +1,4 @@
-# looping
+# Looping
 
 ## For loop
 
