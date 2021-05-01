@@ -34,6 +34,8 @@ Summary of args I find useful.
 | `--gemfile=PATH`                  | Specify path to a `Gemfile`. Defaults to the file in the current working directory.                                  |
 | `--jobs=[<number>], -j[<number>]` | The maximum number of parallel download and install jobs. The default is 1. This seems to be popular in CI installs. |
 
+### Deprecated flags
+
 Note that `--frozen`, `--clean` and `--deployment` flags are marked as deprecated in the CLI help.
 
 Production install - you might see this used and it still works in Bundler 2, but it is deprecated.
@@ -42,14 +44,24 @@ Production install - you might see this used and it still works in Bundler 2, bu
 $ bundle install --frozen --deployment
 ```
 
+The CLI also warns not to use `--with GROUP` for install groups.
+
+### Install groups of dependencies
+
+See the [Groups][] cheatsheet,
+
+[Groups]: {{ site.baseurl }}{% link cheatsheets/package-managers/ruby/bundler/groups.md %}
+
 
 ## clean subcommand
 
-Remove unused gems from the vendor directory. i.e. Remove the gems and subdependencies not covered by Gemfile.
+Remove unused gems from the vendor directory. i.e. Remove the gems and subdependencies not covered by `Gemfile`.
 
 ```sh
 $ bundle clean
 ```
+
+Dry run:
 
 ```sh
 $ bundle clean --dry-run
@@ -84,9 +96,12 @@ Fetching gem metadata from https://rubygems.org/..........
 Using jekyll-optional-front-matter 0.3.2
 ```
 
-### Add to group
 
-To put the plugin in a group:
+## Install in group
+
+Install a gem and add it to a group.
+
+Here we set `jekyll_plugins` as the group on the CLI, which becomes `:jekyll_plugins` in the `Gemfile`.
 
 ```sh
 $ bundle add jekyll-optional-front-matter -g jekyll_plugins
@@ -98,7 +113,7 @@ Line appended:
 gem "jekyll-optional-front-matter", "~> 0.3.2", :group => :jekyll_plugins
 ```
 
-But you may prefer to write it yourself like this:
+But you may prefer to rewrite write it yourself like this:
 
 ```ruby
 group :jekyll_plugins do
