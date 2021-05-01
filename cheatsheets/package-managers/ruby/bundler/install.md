@@ -28,11 +28,11 @@ colorator-1.1.0             jekyll-sass-converter-1.5.2 pathutil-0.16.2
 
 Summary of args I find useful.
 
-| Arg                               | Description                                                                                                                                                                                                        |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `--quiet`                         | Do not print progress information to the standard output. Instead, Bundler will exit using a status code ($?).                                                                                                     |
-| `--gemfile=PATH` | Specify path to a `Gemfile`. Defaults to the file in the current working directory. |
-| `--jobs=[<number>], -j[<number>]` | The maximum number of parallel download and install jobs. The default is 1. This seems to be popular in CI installs.                                                                                                                                      |
+| Arg                               | Description                                                                                                          |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `--quiet`                         | Do not print progress information to the standard output. Instead, Bundler will exit using a status code ($?).       |
+| `--gemfile=PATH`                  | Specify path to a `Gemfile`. Defaults to the file in the current working directory.                                  |
+| `--jobs=[<number>], -j[<number>]` | The maximum number of parallel download and install jobs. The default is 1. This seems to be popular in CI installs. |
 
 Note that `--frozen`, `--clean` and `--deployment` flags are marked as deprecated in the CLI help.
 
