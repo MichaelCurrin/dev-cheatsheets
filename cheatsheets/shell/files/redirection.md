@@ -1,4 +1,7 @@
-# Piping and redirection
+---
+title: Redirection
+description: Writing stderr and stdout to files
+---
 
 
 ## Resources
@@ -7,27 +10,33 @@
 - [Pipes and Redirection](https://github.com/MichaelCurrin/learn-to-code/blob/master/Shell/Bash/beginning_linux_programming/pipes_and_redirection.md) guide.
 
 
+## Send stderr and stdout to different files
+
+```sh
+$ COMMAND > stdout.txt 2> stderr.txt
+```
+
+
 ## Send stderr to stdout
 
-Send any error output to the same place as stdout.
+Send any error output to the same place as where `stdout` is going.
 
 ```sh
 $ COMMAND 2> &1
 ```
 
-This is not so useful in itself when just running in the console alone. But more useful when using crontab, `tee` or writing to a file.
+This is not so useful in itself when just running in the console alone. But more useful when using crontab, `tee` or writing to a file. 
 
 
 ## Send stderr and stdout to the same file
+
+Send `stdout` to a file and then send `stderr` there too.
 
 ```sh
 $ COMMAND > stdout_and_sterr.txt 2> &1
 ```
 
-The `&1` is a pointer to where `stdout` is currently going.
-
-
-Shorthand for the above.
+Or, shorthand for the above.
 
 ```sh
 $ COMMAND &> stdout_and_sterr.txt
@@ -36,13 +45,6 @@ $ COMMAND &> stdout_and_sterr.txt
 Apparently supported in all shells.
 
 From [askubuntu.com question](https://askubuntu.com/questions/625224/how-to-redirect-stderr-to-a-file).
-
-
-## Send stderr and stdout to different files
-
-```sh
-$ COMMAND > stdout.txt 2> stderr.txt
-```
 
 
 ## Append output
@@ -82,5 +84,5 @@ fi
 ## Store file as a variable
 
 ```sh
-$ CONTENT=$(<file.txt)
+$ CONTENT=$(< file.txt)
 ```
