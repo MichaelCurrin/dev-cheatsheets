@@ -1,4 +1,9 @@
-# Input and output
+# Input and output between commands
+
+See also [Redirection][] cheatsheet under Files.
+
+[Redirection]: {{ site.baseurl }}{% link cheatsheets/shell/files/redirection.md %}
+
 
 ## Piping
 
@@ -64,9 +69,13 @@ bash: line 3: another_non_existent_cmd: command not found
 Hello
 ```
 
-### Pipefail
+### Pipe fail
 
-If the pipefail is enabled, the pipeline’s return status is the value of the last (rightmost) command to exit with a non-zero status, or zero if all commands exit successfully.
+If the `pipefail` is enabled, the pipeline;s return status is the value of the last (rightmost) command to exit with a non-zero status, or zero if all commands exit successfully.
+
+See more info in the [Options][] cheatsheet.
+
+[Options]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/options.md %}
 
 ```sh
 set -o pipefail
@@ -82,4 +91,3 @@ set -eo pipefail
 non_existent_cmd | another_non_existent_cmd | cat
 echo "Hello"
 ```
-
