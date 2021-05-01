@@ -1,13 +1,20 @@
 # Rebase
 
 
+## Related sections
+
+See [rebase][] page in Git section for more help on handling rebases.
+
+[rebase]: {{ site.baseurl }}{% link cheatsheets/version-control/git/commands/rebase.md %}
+
+
 ## Perform a rebase
 
 ### Using pull subcommand
 
 I find these the most useful, as it is one line and forces pulling in the remote with an implied `git fetch`.
 
-Rebase the current branch - useful for working on master or a feature branch when you have unpushed changes to rebase.
+This implies a rebase of current branch on the remote branch of the same name. Useful for working on master or a feature branch when you have unpushed changes to rebase.
 
 ```sh
 $ git pull --rebase
@@ -19,7 +26,7 @@ Useful for rebasing a feature branch on master.
 $ git pull --rebase origin master
 ```
 
-Warning - that last one above this may alter the history of your feature branch. So you'll have to do a force push. And other machines with the branch checked out will have to deal with differeing histories such as deleting and recreating the branch on that machine.
+**Warning** - that last one above this may alter the history of your feature branch. So you'll have to do a force push. And other machines with the branch checked out will have to deal with differeing histories such as deleting and recreating the branch on that machine.
 
 Similarly, you can rebase your fork's feature branch or master branch on the original upstream repo's master, but changing `origin` to `upstream` above.
 
