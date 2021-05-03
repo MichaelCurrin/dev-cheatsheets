@@ -12,12 +12,14 @@ It can syntax that is invalid. It can give warnings (like a variable that is unu
 You can also enforce some styling and formatting issues which don't affect functionality. Like indenting code, wrapping lines, trailing semi-colons and trailing commas (for the last item in a structure). If you set up ESLint right, you might not even need Prettier.
 
 
-### When should run ESLint?
+### When should I run ESLint?
 
 - Anytime, manually.
     ```sh
     $ npm run lint:fix
-    $ # eslint . --ext .ts --fix
+    ```
+    ```sh
+    $ npx eslint . --ext .ts --fix
     ```
 - As a hook - like on every commit or on a push.
 - As a pre-release step - add to `preversion` in `package.json`, for when you run `npm version TAG`.
