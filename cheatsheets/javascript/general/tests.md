@@ -6,7 +6,7 @@ description: Writing tests for your JavaScript app
 
 ## Resources
 
-For links around the frameworks and using them, see [Tests](https://michaelcurrin.github.io/dev-resources/resources/javascript/tests/) guide.
+For links around the frameworks and using them, see [Test Frameworks](https://michaelcurrin.github.io/dev-resources/resources/javascript/test-frameworks/) guide.
 
 
 ## Spec file
