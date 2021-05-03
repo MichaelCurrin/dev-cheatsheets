@@ -7,12 +7,10 @@ description: Find and fix problems in your JS code
 
 ESLint can statically analyze your JS code to find and fix problems.
 
-It can syntax that is invalid. It can give warnings (like a variable that is unused or was never declared). You can customize what you want to be alerted on and you can change a warning level to an error level.
-
-You can also enforce some styling and formatting issues which don't affect functionality. Like indenting code, wrapping lines, trailing semi-colons and trailing commas (for the last item in a structure). If you set up ESLint right, you might not even need Prettier.
+It can check syntax that is invalid. It gives errors and warnings.
 
 
-### When should I run ESLint?
+### When is good to run ESLint?
 
 - Anytime, manually.
     ```sh
