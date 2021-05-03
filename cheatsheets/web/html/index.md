@@ -3,4 +3,6 @@ logo: html5
 ---
 # HTML
 
-Related - see [Markdown HTML Cheatsheet]({{ site.baseurl }}{% link cheatsheets/markdown/html.md %}).
+### Related sections
+
+- [Markdown HTML]({{ site.baseurl }}{% link cheatsheets/markdown/html.md %}) cheatsheet
