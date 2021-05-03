@@ -23,7 +23,11 @@ You configure a particular rule to fire as an error level, a warning level, or s
 
 ## Handle errors and warnings
 
-ESLint will give a non-zero exit code if there are an errors. This can be useful in CI or in chaining commands like `eslint . && npm run foo`. 
+ESLint will give a non-zero exit code if there are an errors. This can be useful in CI, git hooks or in chaining commands like `eslint . && npm run foo`. 
+
+You may want your CI to **not** fail a deploy just because of just style warnings. This is the default behavior.
+
+Note lack of `--fix` flag below, so these are just checks.
 
 ### Hide warnings
 
@@ -35,7 +39,7 @@ $ eslint . --quiet
 
 ### Fail on warnings
 
-The cases below assuming no errors in a run.
+The cases below assuming no errors in a run. 
 
 - The default behavior is to continue with a success status code if there any warnings.
 - If there are 10 warnings then fail.
