@@ -41,12 +41,12 @@ $ eslint . --quiet
 
 The cases below assuming no errors in a run. 
 
-- The default behavior is to continue with a success status code if there any warnings.
-- If there are 10 warnings then fail.
+- The default behavior is to continue with a success status code if there any warnings. This is very tolerant of warnings.
+- If there are 10 warnings then fail. This is tolerant, but will come up if the quality drops.
     ```sh
     $ eslint . --max-warnings 10
     ```
-- More strictly, if there is at least 1 warning, then fail.
+- This is strict. If there is at least 1 warning, then fail.
     ```sh
     $ eslint . --max-warnings 1
     ```
