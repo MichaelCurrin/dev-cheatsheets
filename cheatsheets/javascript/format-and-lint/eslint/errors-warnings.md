@@ -23,15 +23,15 @@ You configure a particular rule to fire as an error level, a warning level, or s
 
 ## Handle errors and warnings
 
+ESLint will give a non-zero exit code if there are an errors. This can be useful in CI or in chaining commands like `eslint . && npm run foo`. 
+
 ### Hide warnings
 
-Hide warnings from the output.
+Hide warnings from the output and pass quietly if there are any warnings.
 
 ```sh
 $ eslint . --quiet
 ```
-
-ESLint will give a non-zero exit code if there are an errors. This can be useful in CI or in chaining commands like `eslint . && npm run foo`.
 
 ### Fail on warnings
 
