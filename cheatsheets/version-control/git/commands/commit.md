@@ -52,7 +52,15 @@ Interactive patch mode.
 
 `-e, --edit`
 
-> The message taken from file with -F, command line with -m, and from commit object with -C are usually used as the commit log message unmodified. This option lets you further edit the message taken from these sources.
+> The message taken from file with `-F`, command line with `-m`, and from commit object with `-C` are usually used as the commit log message unmodified. This option lets you further edit the message taken from these sources.
+
+For example, set a message with a short string or a empty string but force edit mode so you get a prompt, where you don't have to worry about how the shell handles quotes and line breaks.
+
+```sh
+$ git commit --edit -m 'Start of commit message'
+```
+
+This is especially useful if you are doing a squash merge, where prefilled commit message is potentially a hundred lines and so could be tedious to delete the terminal in the next step.
 
 ### Reuse
 
