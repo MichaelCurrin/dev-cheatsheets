@@ -1,28 +1,9 @@
 # Semtantic versioning
 
-## Standard used
+
+## Standard
 
 Most software teams use **Semantic Versioning** standard for creating release tags.
-
-Specifically:
-
-```
-MAJOR.MINOR.PATCH
-```
-
-That is defined as:
-
-```
-Given a version number MAJOR.MINOR.PATCH, increment the:
-
-    MAJOR version when you make incompatible API changes,
-    MINOR version when you add functionality in a backwards compatible manner, and
-    PATCH version when you make backwards compatible bug fixes.
-    Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
-```
-
-Read more on [semvar.org](https://semver.org/) homepage.
-
 
 For example:
 
@@ -35,6 +16,33 @@ The `v` prefix is popular.
 ```
 v1.2.3
 ```
+
+
+## Syntax
+
+That can be broken down as:
+
+```
+MAJOR.MINOR.PATCH
+```
+
+That standard defined as:
+
+```
+Given a version number MAJOR.MINOR.PATCH, increment the:
+
+    MAJOR version when you make incompatible API changes,
+    MINOR version when you add functionality in a backwards compatible manner, and
+    PATCH version when you make backwards compatible bug fixes.
+    Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+```
+
+Read more on [semvar.org](https://semver.org/) homepage.
+
+Note that this is defined above as a **API**, in the sense of how other people rely on the **external-facing** functionality. 
+
+Such as if you have a CLI tool, code that will imported and used as library into other projects, or a REST API. You can make larger changes more safely if it doesn't affect the external view of your code.
+
 
 ## Example sequence
 
