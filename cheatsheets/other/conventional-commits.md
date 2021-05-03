@@ -1,6 +1,7 @@
-# Semantic commits
+# Conventional commits
 
 <!-- TODO move out to another area -->
+
 
 ## Options
 
@@ -8,6 +9,7 @@
 - `fix`
 - `style`
 - `refactor`
+- `perf`
 - `docs`
 - `test`
 - `chore`
@@ -18,7 +20,8 @@ See links for more details:
 - [hackwild.com/article/semantic-git-commits](https://hackwild.com/article/semantic-git-commits/)
 - [karma-runner.github.io/1.0/dev/git-commit-msg.html](https://karma-runner.github.io/1.0/dev/git-commit-msg.html)
 
-## Conventional commits
+
+## Conventional commits site
 
 - [conventionalcommits.org/en](https://www.conventionalcommits.org/en/)
 
