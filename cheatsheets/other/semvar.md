@@ -64,4 +64,13 @@ We might make releases like this for a product in a Git repo.
 1. `2.0.2-alpha` - alpha release or "pre-release".
 1. `2.0.2` - confirmed release.
 
-See for example the [taxi releases](https://github.com/2uinc/taxi/releases). Ignore the numbers with are like `100`. Those are tags created by BuildKite automatically.
+
+## Repo example
+
+See the [Releases](https://github.com/vuejs/vue/releases) section of the Vue repo.
+
+If you use Vue and are upgrading from Vue 2.1 to Vue 2.3, there will be features, but it will probably not break your existing code.
+
+But to upgrade from Vue 2 to Vue 3, things could break all over. Unless you change your your functional calls, imports and CLI commands.
+
+Same for React 16 to 17.
