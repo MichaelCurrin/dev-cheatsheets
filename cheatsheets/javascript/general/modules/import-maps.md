@@ -8,11 +8,13 @@ description: How to make your imports easier to manage
 Import maps allows control over what URLs get fetched by JavaScript `import` statements and `import()` expressions.
 
 
-## Warning
+## Compatibility
 
-The `importmaps` specification is not widely used yet.
+Warning - the `importmaps` specification is not widely used yet.
 
-See [Can I Use](https://caniuse.com/?search=importmap).
+See [Can I Use](https://caniuse.com/?search=importmap). Currently Firefox has no support. There is a [Feature request](https://bugzilla.mozilla.org/show_bug.cgi?id=1688879) open though.
+
+> This is probably the most anticipated feature in JavaScript history. It will, finally, after 25 years, enable the bundler-free web development. Please prioritize it, thank you!
 
 
 ## How to set it up
@@ -144,6 +146,16 @@ import Button from "primevue/button";
 ```
 
 Then that allowed those imports to work.
+
+Only in Chrome though. Firefox is not supported.
+
+I tried without the import maps syntax to load in transitive dependencies. I was strict with keeping this order. Unfortunately, `ripple` still gets an error on not finding `primevue/utils`.
+
+```javascript
+import "https://unpkg.com/primevue@3.4.0/utils/utils.esm.js";
+import "https://unpkg.com/primevue@3.4.0/ripple/ripple.esm.js";
+import Button from "https://unpkg.com/primevue@3.4.0/button/button.esm.js";
+```
 
 
 ## Importing a directory or not
