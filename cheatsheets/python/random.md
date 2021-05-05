@@ -13,7 +13,7 @@ See Examples and Recipes in those docs.
 ```python
 import random
 
-random.random()     
+random.random()
 ```
 
 Or
@@ -30,21 +30,21 @@ random()
 Random float:  0.0 <= x < 1.0
 
 ```python
->>> random()                             
+>>> random()
 0.37444887175646646
 ```
 
 Random float:  2.5 <= x < 10.0
- 
+
 ```python
->>> uniform(2.5, 10.0)                   
+>>> uniform(2.5, 10.0)
 3.1800146073117523
 ```
 
 Interval between arrivals averaging 5 seconds
 
 ```python
->>> expovariate(1 / 5)                   
+>>> expovariate(1 / 5)
 5.148957571865031
 ```
 
@@ -54,14 +54,14 @@ Interval between arrivals averaging 5 seconds
 Integer from 0 to 9 inclusive
 
 ```python
->>> randrange(10)                       
+>>> randrange(10)
 7
 ```
 
 Even integer from 0 to 100 inclusive
 
 ```python
->>> randrange(0, 101, 2)                
+>>> randrange(0, 101, 2)
 26
 ```
 
@@ -73,7 +73,7 @@ Even integer from 0 to 100 inclusive
 Single random element from a sequence.
 
 ```python
->>> choice(['win', 'lose', 'draw'])      
+>>> choice(['win', 'lose', 'draw'])
 'lose'
 
 >>> choice('abcdef')
@@ -102,7 +102,7 @@ Similar to `choice` but accepts an optional count to return.
 Four samples without replacement.
 
 ```python
->>> sample([10, 20, 30, 40, 50], k=4)    
+>>> sample([10, 20, 30, 40, 50], k=4)
 [40, 10, 50, 30]
 ```
 
@@ -113,7 +113,7 @@ Shuffle a list.
 
 ```python
 >>> deck = 'ace two three four'.split()
->>> shuffle(deck)                        
+>>> shuffle(deck)
 >>> deck
 ['four', 'two', 'ace', 'three']
 ```
@@ -125,7 +125,7 @@ Generate random text.
 
 See [String Constants][] page for more info on the `string` module's values.
 
-[String constants]: {{ site.baseurl }}{% link cheatsheets/python/string-constants.md %}
+[String constants]: {{ site.baseurl }}{% link cheatsheets/python/strings/constants.md %}
 
 ```python
 import random
