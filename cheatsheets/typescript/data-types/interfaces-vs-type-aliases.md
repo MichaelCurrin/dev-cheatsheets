@@ -1,10 +1,34 @@
 # Interfaces vs Types aliases
 
-See the Type Aliases and Interfaces sections.
 
-See [blog post](https://blog.logrocket.com/types-vs-interfaces-in-typescript/).
+## Related sections
 
-Examples from [docs](https://www.typescriptlang.org/docs/handbook/advanced-types.html#interfaces-vs-type-aliases)
+- [Type Aliases][] cheatsheet.
+- [Interfaces][] cheatsheet.
+
+[Type Aliases]: {{ site.baseurl }}{% link cheatsheets/typescript/data-types/type-aliases.md %}
+[Inferfaces]: {{ site.baseurl }}{% link cheatsheets/typescript/data-types/interfaces.md %}
+
+
+## Resources
+
+- [Types vs Interfaces in TypeScript](https://blog.logrocket.com/types-vs-interfaces-in-typescript/) blog post.
+- [Inferfaces vs Type Aliases](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces) in TS docs.
+
+
+## Choosing one
+
+Type aliases and interfaces are very similar.
+
+Type has more features, but most of their features are the same.
+
+The key distinction is:
+
+- A `type` cannot be re-opened to add new properties.
+- An `interface` which is always extendable.
+
+Which one to use? The docs say you can choose based on personal preference and the compiler will tell you if it needs something else.
+And gives a recommendation to you use `interface` (with fewer feature), until you need to use a feature specific to `type`.
 
 
 ## Extending
