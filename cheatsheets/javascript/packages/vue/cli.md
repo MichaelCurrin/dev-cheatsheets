@@ -39,26 +39,33 @@ Commands:
 
 See [Creating a project](https://cli.vuejs.org/guide/creating-a-project.html) in the docs. That covers the `create` and `ui` commands.
 
-If you have Vue installed globally.
+If you have Vue installed globally, you can run this.
 
 ```sh
 $ vue create
 ```
 
-Without Vue installed globally, download and execute Vue. This is useful for setting up a new project as this works even if Vue is not installed anywhere.
+Without Vue installed globally, use `npx` to download and execute the Vue CLI. This is useful for setting up a new project as this works even if Vue is not installed anywhere.
 
 ```sh
 $ npx @vue/cli create my-app
-$ npx @vue/cli create --default my-project
+$ cd my-app
+```
+
+Use the default option to skip prompts and use defaults.
+
+```sh
+$ npx @vue/cli create my-app --default
 ```
 
 ### UI
 
-Start the Vue GUI tool.
+Start the Vue GUI tool. To create or manage a project.
 
 ```sh
 $ npx @vue/cli ui
 ```
+
 
 ## CLI Service
 
