@@ -3,6 +3,8 @@
 If you need the value of variable to be pushed back up outside a component, then use Vue events.
 
 
+## Resources
+
 In the docs:
 
 - Vue 3
@@ -20,6 +22,20 @@ You will get unexpected behavior or build errors if you don't use events.
 
 
 ## Event handling
+
+### Log
+
+Using `console.log` or `alert` for basic messaging.
+
+```html
+<p @click="console.log('Hello')">Click me</p>
+
+<p v-on:click="console.log('Hello')">Click me</p>
+```
+
+### Modify data
+
+Using events to increment a counter.
 
 ```vue
 <template>
@@ -42,9 +58,34 @@ export default {
 ```
 
 
+## Custom event names
+
+From the docs:
+
+```javascript
+this.$emit('myEvent')
+```
+
+```html
+<my-component @my-event="doSomething"></my-component>
+```
+
 ## Custom events
 
+Emitted events can be defined on the component via the emits option.
+
+```javascript
+app.component('custom-form', {
+  emits: ['inFocus', 'submit']
+})
+```
+
+
+## Emit events
+
 ### Syntax
+
+When a native event (e.g., click) is defined in the emits option, the component event will be used instead of a native event listener.
 
 Here is the syntax for adding an emit event to an input tag, with the pushed value set to the value on the element.
 
@@ -52,7 +93,7 @@ Here is the syntax for adding an emit event to an input tag, with the pushed val
 v-on:input="$emit('input', $event.target.value)"
 ```
 
-### Example
+### Emit example
 
 For example, we pass a variable to a component like `TextInput` and then use it.
 
