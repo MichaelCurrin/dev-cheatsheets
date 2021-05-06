@@ -235,6 +235,12 @@ That provided me with this snippet, giving me a choice of a polyfill from either
 
 I added the UNPKG one to my site, which now works well on Firefox.
 
+You might still see an error in the console, but that is not a concern.
+
+> This execution failure is wanted - it avoids the polyfill causing double execution. The first import being a bare specifier in the pattern above is important to ensure this.
+> 
+> This is because the polyfill cannot disable the native loader - instead it can only execute modules that would otherwise fail instantiation while avoiding duplicate fetches or executions.
+
 Here is a snippet from the first time I saw it in use, on JSPM Generator playground:
 
 ```html
