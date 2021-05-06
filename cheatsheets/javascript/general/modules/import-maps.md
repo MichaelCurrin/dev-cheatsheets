@@ -16,6 +16,8 @@ See [Can I Use](https://caniuse.com/?search=importmap). Currently Firefox has no
 
 > This is probably the most anticipated feature in JavaScript history. It will, finally, after 25 years, enable the bundler-free web development. Please prioritize it, thank you!
 
+See [Polyfill](#polyfill) section below for adding support with a polyfill.
+
 
 ## How to set it up
 
@@ -200,5 +202,50 @@ Then JS imports are light.
 import Button from "primevue/button";
 import Timeline from "primevue/timeline";
 ```
+
+## Polyfill
+
+You can bring Import Map support to more browsers by using a polyfill, which adds functionality.
+
+Here I am using "ES Module Shims".
+
+From the docs:
+
+> 93% of users are now running browsers with baseline support for ES modules.
+> 
+> But modules features like Import Maps will take a while to be supported in browsers.
+> 
+> It turns out that we can actually polyfill new modules features on top of these baseline implementations in a performant 7KB shim.
+
+So a small file size seems great.
+
+Check out the repo and docs.
+
+[![guybedford - es-module-shims](https://img.shields.io/static/v1?label=guybedford&message=es-module-shims&color=blue&logo=github)](https://github.com/guybedford/es-module-shims)
+
+That provided me with this snippet, giving me a choice of a polyfill from either CDN.
+
+```html
+<!-- UNPKG -->
+<script src="https://unpkg.com/es-module-shims@0.10.1/dist/es-module-shims.js"></script>
+
+<!-- JSPM.IO -->
+<script async src="https://ga.jspm.io/npm:es-module-shims@0.10.1/dist/es-module-shims.js"></script>
+```
+
+I added the UNPKG one to my site, which now works well on Firefox.
+
+Here is a snippet from the first time I saw it in use, on JSPM Generator playground:
+
+```html
+<!-- ES Module Shims: Import maps polyfill for modules browsers without import maps support (all except Chrome 89+) -->
+<script src="https://ga.jspm.io/npm:es-module-shims@0.10.1/dist/es-module-shims.min.js"></script>
+```
+
+### Async and defer
+
+I took out `async` though from the examples above. As that is not reliable though. As the script might be loaded _after_ it is needed. The impact is so small, so it is fine to use no `async`. 
+
+You can also use `defer` instead. Then you can have the polyfill deferred and your main JS script deferred, so they will be non-blocking (making them easy to put in the `head`, yet will still load in the correct order.
 
 {% endraw %}
