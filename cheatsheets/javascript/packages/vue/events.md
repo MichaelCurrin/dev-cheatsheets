@@ -35,27 +35,34 @@ Using `console.log` or `alert` for basic messaging.
 
 ### Modify data
 
-Using events to increment a counter.
+Using events to increment a counter:
 
-```vue
-<template>
-  <div id="basic-event">
-    <button @click="counter += 1">Add 1</button>
-    
-    <p>The button above has been clicked {{ counter }} times.</p>
-  </div>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      counter: 0
-    }
-  }
-};
-</script>
 ```
+@click="counter += 1"
+```
+
+e.g.
+
+- `components/Counter.vue`
+    ```vue
+    <template>
+      <div id="basic-event">
+        <button @click="counter += 1">Add 1</button>
+
+        <p>The button above has been clicked {{ counter }} times.</p>
+      </div>
+    </template>
+
+    <script>
+    export default {
+      data() {
+        return {
+          counter: 0
+        }
+      }
+    };
+    </script>
+    ```
 
 
 ## Custom event names
