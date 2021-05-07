@@ -77,6 +77,7 @@ this.$emit('myEvent')
 <my-component @my-event="doSomething"></my-component>
 ```
 
+
 ## Custom events
 
 Emitted events can be defined on the component via the emits option.
@@ -102,7 +103,11 @@ v-on:input="$emit('input', $event.target.value)"
 
 ### Emit example
 
-For example, we pass a variable to a component like `TextInput` and then use it.
+For example, we pass a parent-level variable to a child component like `TextInput`. Then we use the component to modify parent variable through an event.
+
+This relies on the standard `input` event.
+
+Note use of `v-model="my_variable"` in the parent and `v-on:input="$emit('input', $event.target.value)"` in the child.
 
 - `components/TextInput.vue`
     ```vue
@@ -119,9 +124,7 @@ For example, we pass a variable to a component like `TextInput` and then use it.
 - `App.vue`
     ```vue
     <template>
-      <TextInput
-        v-model="foo"
-      />
+      <TextInput v-model="foo" />
     </template>
 
     <script>
@@ -136,4 +139,69 @@ For example, we pass a variable to a component like `TextInput` and then use it.
       },
     };
     </script>
-    ```
+    ```  
+
+This relates to the section below.
+
+
+## Listen to a child component event
+
+Using events is the safe way to let multiple child components change a variable in the parent level.
+
+My example, tested and adapted from Vue 2 docs - [Listening to Child Components Events](https://vuejs.org/v2/guide/components.html#Listening-to-Child-Components-Events)
+
+This uses `v-on:custom-event` in the parent and `v-on:click="$emit('custom-event')"` in the child.
+
+### Child components
+
+In the component, add a button. Now, clicking this will update the parent value.
+
+```vue
+<template>
+    <button v-on:click="$emit('enlarge-text')">
+        Enlarge text
+    </button>
+</template>
+```
+
+### App view
+
+In `App.vue`, set up the value to be displayed and add some components.
+
+```vue
+<template>
+    <h2>Font size</h2>
+    <p>{{ postFontSize }}</p>
+    
+    <h2>Components</h2>
+    <MyComponent v-on:enlarge-text="postFontSize += 0.1" />
+    <!-- Add more components if you want. -->
+    <MyComponent v-on:enlarge-text="postFontSize += 0.1" />  
+</template>
+```
+    
+If you are using Vue Router, you can add it to the router like this:
+
+```html
+<router-view v-on:enlarge-text="postFontSize += 0.1" />
+```
+
+This means across multiple pages you can set and display the same shared variable.
+
+If you want to actually use the value in CSS, you can do this:
+
+```html
+<div :style="{ fontSize: postFontSize + 'em' }">
+```
+
+And set up the JS with your variable in `data`.
+
+```javascript
+export default Vue.extend({
+  data() {
+    return {
+      postFontSize: 1,
+    };
+  },
+});
+```
