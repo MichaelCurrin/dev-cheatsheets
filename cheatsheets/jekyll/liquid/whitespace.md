@@ -21,7 +21,7 @@ Trim whitespace from value.
 The proper raw tag is shown as "raw" here otherwise it would not render on this page.
 
 ```liquid
- raw {% highlight ruby %}
+raw {% highlight ruby %}
 def foo
   puts 'foo'
 end
