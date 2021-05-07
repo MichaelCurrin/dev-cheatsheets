@@ -28,9 +28,9 @@ end
 {% endhighlight %} endraw 
 ```
 
-Note the `endraw` cannot start with `{%-`.
+Note the `endraw` cannot start with a dash.
 
-This would give too much whitespace:
+This would give **too much** whitespace:
 
 ```liquid
 raw 
