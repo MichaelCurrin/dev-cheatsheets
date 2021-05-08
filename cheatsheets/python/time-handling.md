@@ -10,39 +10,160 @@
 
 ## Date and time
 
+### Today
 
-### Current time
+Get a `date` object.
 
+```python
+datetime.date.today()
+# => datetime.date(2021, 5, 8)
+```
+
+### Now
+
+Get a float.
 
 ```python
 time.time()
-# => 1588530495.7379987
+# => 1620464710.3691561
 ```
+
+Get a `datetime` object. Both `today` and `now` give the same result, but only `now` can accept a [time zone](#time-zone).
 
 ```python
 datetime.datetime.today()
-# => datetime.datetime(2020, 5, 3, 20, 26, 31, 4754)
+# => datetime.datetime(2021, 5, 8, 11, 4, 58, 331706)
+
+datetime.datetime.now()
+# => datetime.datetime(2021, 5, 8, 11, 9, 39, 197198)
 ```
 
-#### Time zone aware
 
-This accepts option `tzinfo` value. See `pytz` library.
+## Create
+
+### Date
 
 ```python
-datetime.datetimen.now()
-# => datetime.datetime(2020, 5, 3, 20, 26, 27, 20361)
+x= datetime.date(2021, 1, 2)
+# datetime.date(2021, 1, 2)
+str(x)
+# '2021-01-02'
 ```
 
+### Datetime
 
-### Get current date
+Create a datetime from a date - defaults to midnight.
 
 ```python
-datetime.date.now()
-# => datetime.date(2020, 5, 3)
+datetime.datetime(2021, 1, 2)
+# datetime.datetime(2021, 1, 2, 0, 0)
+str(datetime.datetime(2021, 1, 2))
+'2021-01-02 00:00:00'
+```
+
+Create a datetime.
+
+```python
+x = datetime.datetime(2021, 1, 2, 3, 40)
+# datetime.datetime(2021, 1, 2, 3, 40)
+str(x)
+# '2021-01-02 03:40:00'
+```
+
+If you want to be more explicit:
+
+```python
+datetime.datetime(year=2021, month=1, day=2)
+# datetime.datetime(2021, 1, 2, 0, 0)
 ```
 
 
-### Get date from datetime
+## Attributes
+
+```python
+datetime.datetime.ATTRIBUTE
+```
+
+e.g.
+
+```python
+n = datetime.datetime.now()
+
+n.hour
+# 11
+
+n.year
+# 2021
+
+n.month
+# 5
+
+n.day
+# 8
+
+n.hour
+# 11
+
+n.minute
+# 30
+
+n.second
+# 51
+```
+
+
+## Format
+
+Using `.strf` where `f` is for format. Supply a custom format.
+
+```python
+MY_DATETIME.strftime(MY_FORMAT)
+```
+
+e.g.
+
+```python
+n = datetime.datetime.now()
+# datetime.datetime(2021, 5, 8, 11, 30, 51, 733268)
+
+str(n)
+'2021-05-08 11:30:51.733268'
+
+n.strftime('%Y_%m_%d - %b %y - %H:%m:%S')
+'2021_05_08 - May 21 - 11:05:51'
+```
+
+
+## Parse
+
+Convert from string to datetime. The `p` stands for "parse". Only available on `datetime`.
+
+```python
+datetime.datetime.strptime(DATETIME_STRING, CUSTOM_FORMAT)
+```
+
+e.g.
+
+```python
+x = datetime.datetime.strptime('2021-01-02', '%Y-%m-%d')
+# datetime.datetime(2021, 1, 2, 0, 0)
+str(x)
+'2021-01-02 00:00:00'
+```
+
+```python
+x = datetime.datetime.strptime('12/05/19', '%M/%d/%y')
+# datetime.datetime(2019, 1, 5, 0, 12)
+str(datetime.datetime.strptime('12/05/19', '%M/%d/%y'))
+# '2019-01-05 00:12:00'
+```
+
+
+## Conversion
+
+Move between date formats.
+
+### Convert from date from datetime
 
 ```python
 d = datetime.datetime.now()
@@ -50,41 +171,14 @@ d.date()
 # => datetime.date(2020, 5, 3)
 ```
 
-### Convert from unixtimestamp
+### Convert from unix timestamp to datetime
 
 ```python
 datetime.datetime.fromtimestamp(1403602426.0)
 # => datetime.datetime(2014, 6, 24, 11, 33, 46)
 ```
-Must be an integer or float - a string will give an error.
 
-#### With hours offset
-
-There may be a cleaner way to do this in the `datetime` library.
-
-```python
-def my_time(unix_time, hours_diff=0):
-    """
-    Change unix timestamp in seconds into datetime format, with optional
-    time difference hours specified.
-
-    Usecase: receive timestamp from API and return as datetime object
-        which has properties
-            year, month, day, hour, minute, second
-    Args
-        unix_time: unix timestamp in seconds
-        hours_diff: <type 'int'> e.g. -2, or 6
-            numbers of hours to add or subtract.
-    Returns
-        datetime object.
-            Shows in format '2016-12-11 15:40:00' if printed
-    """
-    unix_time_diff = hours_diff * 60 * 60  # hours * min * seconds
-    in_time = unix_time + unix_time_diff
-
-    return datetime.datetime.fromtimestamp(in_time)
-```
-
+The input be an integer or float.
 
 ### Convert from ISO 8061
 
@@ -115,67 +209,120 @@ def parse_datetime(value):
     return datetime.datetime.strptime(clean_value, TIME_FORMAT_IN)
 ```
 
+### Unix timestamp to date and time
+
+Convert duration in seconds to equivalent value in days, hours, minutes or seconds. Using maths and without using `datetime`.
+
+```python
+duration = 1234
+
+d = duration / (24 * 60 * 60)
+h = duration / (60 * 60) % 24
+m = duration / 60 % 60
+s = duration % 60
+d, h, m, s
+# (0.014282407407407407, 0.3427777777777778, 20.566666666666666, 34)
+```
+
 
 ## Timedelta
 > Or time difference or duration
 
-### Find difference between a timestamp and now
+You can add and subtract date or datetime objects from each other.
+
+### How many days
+
+Get timedelta in days between two dates.
 
 ```python
-def get_duration(duration, initial_time=None):
-    """
-    Usecase:
-        a timestamp is provided as when an access token expires,
-         then add it to the current time, then showing it as a human-readable
-         future time.
-         Alternatively specify a *initial_time* as manual now value.
-
-    Args
-        duration: <type 'int'> OR <type 'str'> Duration in seconds.
-            If given as a string, convert to int.
-        initial_time: <type 'int'> OR <type 'str'> Time to start differenc
-            calculation from. If given as a string, convert to int.
-            If not set, use current time.
-    Returns
-        datetime object
-            What time will it be after number seconds in have elapsed.
-            Shows in format '2016-12-11 15:40:00' if printed.
-    """
-    duration = int(duration)
-
-    if initial_time:
-        initial_time = int(initial_time)
-    else:
-        initial_time = time.time()
-
-    in_time = initial_time + duration
-
-    return datetime.datetime.fromtimestamp(in_time)
+datetime.date(2021, 1, 5) - datetime.date(2021, 1, 1)
+# datetime.timedelta(days=4)
 ```
 
-### Unix timestamp to date and time
+### Difference in seconds
 
-There might be a cleaner way to do this in the `datetime` library.
 ```python
-def unix_to_datetime(duration):
-    """
-    Convert duration (in unix_timestamp seconds) to days, hours, minutes and
-        seconds.
-    Args
-        duration: <type 'int'> OR <type 'str'> Duration in seconds.
-            If given as a string, convert to integer.
-    Returns
-        d: days [0+]
-        h: hours [0-23]
-        m: minute [0-59]
-        s: seconds [0-59]
-    """
-    duration = int(duration)
+x = datetime.datetime.now()
+y = datetime.datetime.now()
 
-    d = duration / (24 * 60 * 60)
-    h = duration / (60 * 60) % 24
-    m = duration / 60 % 60
-    s = duration % 60
+y - x
+# datetime.timedelta(seconds=2, microseconds=693039)
 
-    return d, h, m, s
+x - y
+# datetime.timedelta(days=-1, seconds=86397, microseconds=306961)
+```
+
+### Find difference between a timestamp and now
+
+Lets say you want to get age.
+
+```python
+x = datetime.date.today() - datetime.date(1990, 1, 2)
+# datetime.timedelta(days=11449)
+
+x.days
+# 11449
+
+# Appromiate age in years.
+round(x.days / 365.25, 2)
+# 31.35
+
+x.total_seconds()
+989193600.0
+```
+
+In one line from the CLI:
+
+```sh
+$ python3 -c 'import datetime; print( round( ( datetime.date.today() - datetime.date(1989, 6, 3) ).days / 365.25, 2 ) )'
+31.93
+```
+
+### Future time
+
+Let's say you want something to expire in 30 minutes from now and you want to know when that is.
+
+```python
+n = datetime.datetime.now()
+str(n)
+# '2021-05-08 11:30:51.733268'
+
+expire_at = n + datetime.timedelta(minutes=30)
+str(expire_at)
+# '2021-05-08 12:00:51.733268'
+```
+
+You can be more precise with hours, minutes and seconds.
+
+```python
+d = datetime.timedelta(hours=1, minutes=2, seconds=3)
+# datetime.timedelta(seconds=3723)
+
+str(d)
+'1:02:03'
+```
+
+Or with days.
+
+```python
+d = datetime.timedelta(days=1000,seconds=10)
+# datetime.timedelta(days=1000, seconds=10)
+
+str(d)
+# '1000 days, 0:00:10'
+```
+
+
+## Time zone
+
+You can also set a time zone with a `tzinfo` object. See  the [pytz](https://pypi.org/project/pytz/) library, which can be installed a package.
+
+> The preferred way of dealing with times is to always work in UTC, converting to localtime only when generating output to be read by humans.
+
+```python
+import pytz
+
+datetime.datetime(2002, 10, 27, 6, 0, 0, tzinfo=pytz.utc)
+
+datetime.datetime.now(tzinfo=pytz.utc)
 ```
