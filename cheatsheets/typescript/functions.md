@@ -1,7 +1,10 @@
 
 # Functions
 
-Return type is optional.
+
+## Basic
+
+Set the type of each parameter.
 
 ```typescript
 function foo(a: number, b: number): number {
@@ -9,12 +12,20 @@ function foo(a: number, b: number): number {
 }
 ```
 
+And set optionally the return type - it it can be inferred from the functions called within, but you may want to enforce that the encounter function returns a certain type when the the internal functions change.
 
-Optional types must be last.
+```typescript
+function foo(a: number): string {
+  return fizz(a)
+}
+```
+
+Optional types with `?` must be last.
 
 ```typescript
 function foo(message: string, color = "blue", label?: string) {}
 ```
+
 
 ## Convert to named arguments
 
