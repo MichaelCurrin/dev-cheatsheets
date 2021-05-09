@@ -51,3 +51,32 @@ Sync on `change` event rather than `input`.
 ```html
 <input v-model.trim="msg" />
 ```
+
+
+## Long vs shorthand
+
+From [v-model migration](https://v3.vuejs.org/guide/migration/v-model.html#_3-x-syntax) doc.
+
+### Vue 3
+
+```html
+<ChildComponent v-model:title="pageTitle" />
+```
+
+Would be shorthand for:
+
+```html
+<ChildComponent :title="pageTitle" @update:title="pageTitle = $event" />
+```
+
+### Vue 2
+
+```html
+<ChildComponent v-model="pageTitle" />
+```
+
+Would be shorthand for:
+
+```html
+<ChildComponent :value="pageTitle" @input="pageTitle = $event" />
+```
