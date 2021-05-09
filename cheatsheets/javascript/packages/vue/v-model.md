@@ -1,7 +1,33 @@
 # v-model
 
+Use variable which are on the `data` method or in `props`.
+
+
+## Single basic
+
+```html
+<MyComponent v-model="firstName" />
+```
+
+
+## Multiple bindings
+
+You can only the `v-model` property once, but here is how to pass multiple values.
+
+This is for Vue 3 only, according to [migration](https://v3.vuejs.org/guide/migration/v-model.html#overview) guide.
+
+Based on [Multiple v-model bindings](https://v3.vuejs.org/guide/component-custom-events.html#multiple-v-model-bindings) in the Vue 3 docs:
+
+```html
+<MyComponent
+  v-model:first-name="firstName"
+  v-model:last-name="lastName"
+/>
+```
+
 
 ## Modifiers
+
 - [Modifiers](https://v3.vuejs.org/guide/forms.html#modifiers) in the Vue 3 docs.
 
 `v-model` has built-in modifiers - `.trim`, `.number` and `.lazy`
