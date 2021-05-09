@@ -184,8 +184,20 @@ In `App.vue`, set up the value to be displayed and add some components.
         <MyComponent v-on:enlarge-text="postFontSize += 0.1" />  
     </template>
     ```
+
+And then set up the JS with your variable in `data`.
+
+```javascript
+export default Vue.extend({
+  data() {
+    return {
+      postFontSize: 1,
+    };
+  },
+});
+```
     
-If you are using Vue Router, you can add it to the router like this:
+If you are using **Vue Router**, you can add it to the router like this using `v-on` property:
 
 ```html
 <router-view v-on:enlarge-text="postFontSize += 0.1" />
@@ -197,16 +209,4 @@ If you want to actually use the value in CSS, you can do this:
 
 ```html
 <div :style="{ fontSize: postFontSize + 'em' }">
-```
-
-And set up the JS with your variable in `data`.
-
-```javascript
-export default Vue.extend({
-  data() {
-    return {
-      postFontSize: 1,
-    };
-  },
-});
 ```
