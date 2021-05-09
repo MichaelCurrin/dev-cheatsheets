@@ -213,26 +213,4 @@ If you want to actually use the value in CSS, you can do this:
 <div :style="{ fontSize: postFontSize + 'em' }">
 ```
 
-### Using v-bind.sync
-
-In Vue 2.
-
-we could communicate the intent of assigning a new value with:
-
-```javascript
-this.$emit('update:title', newValue)
-```
-
-Then the parent could listen to that event and update a local data property, if it wants to. For example:
-
-```javascript
-<ChildComponent :title="pageTitle" @update:title="pageTitle = $event" />
-```
-
-For convenience, we had a shorthand for this pattern with the `.sync` modifier:
-
-```javascript
-<ChildComponent :title.sync="pageTitle" />
-```
-
 {% endraw %}
