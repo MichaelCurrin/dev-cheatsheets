@@ -115,7 +115,7 @@ We pass a parent-level variable to a child component like `TextInput`. Then we u
 
 This relies on the standard `input` event.
 
-Note use of `v-model="my_variable"` in the parent and `v-on:input="$emit('input', $event.target.value)"` in the child.
+Note use of `v-model="myVariable"` in the parent and `v-on:input="$emit('input', $event.target.value)"` in the child.
 
 - `components/TextInput.vue`
     ```vue
