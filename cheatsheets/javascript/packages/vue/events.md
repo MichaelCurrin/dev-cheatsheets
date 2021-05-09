@@ -10,6 +10,7 @@ In the docs:
 - Vue 3
     - [Events](https://v3.vuejs.org/guide/events.html)
     - [Custom events](https://v3.vuejs.org/guide/component-custom-events.html)
+    - [v-model](https://v3.vuejs.org/guide/migration/v-model.html) and events migration from Vue 2 to 3.
 - Vue 2
     - [Events](https://vuejs.org/v2/guide/events.html)
 
