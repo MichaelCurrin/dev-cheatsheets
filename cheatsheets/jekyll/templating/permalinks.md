@@ -54,12 +54,16 @@ You are allowed to use dynamic variables here - see the [Placeholders](#placehol
 
 ### Pages and posts
 
+Set permalink for plain pages and posts, but not collections.
+
 - `_config.yml`
     ```yaml
     permalink: PATTERN
     ```
 
 ### Collections
+
+Set permalink for collections only.
 
 - `_config.yml`
     ```yaml
