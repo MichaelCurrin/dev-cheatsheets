@@ -21,7 +21,9 @@ Syntax:
     
 The docs say `END TRANSACTION` is an alias for `COMMIT`.
 
-You can also use `ROLLBACK;` instead of `COMMIT;`.
+You can also use `ROLLBACK` instead of `COMMIT`.
+
+ When running interactively, I get an error gets reported and flow stops with the transaction open, then I need to run `COMMIT` still even if it was in my selection. Then I get `ROLLBACK` logged. Or I can run `ROLLBACK` directly.
 
 
 ## SQLite
