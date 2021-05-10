@@ -69,14 +69,16 @@ e.g.
 
 In Python you simply use a negative index `my_list[-1]`, but in JS that gives a `undefined`.
 
-#### Use slice
+#### Use slice method
 
-Use one or two arguments.
+See also [splice](#splice-an-array) method.
+
+Use one or two arguments. If you omit the second argument, it is implied as the lenght of the array (i.e. up to the end of the array.
 
 ```javascript
-ARRAY.slice(FROM_INDEX_INCLUSIVE)
-
 ARRAY.slice(FROM_INDEX_INCLUSIVE, TO_INDEX_EXCLUSIVE)
+
+ARRAY.slice(FROM_INDEX_INCLUSIVE)
 ```
 
 One index:
@@ -84,25 +86,28 @@ One index:
 ```javascript
 const myArray = ['a', 'b', 'c', 'd']
 
+// All elements.
 myArray.slice(0)
 // [ 'a', 'b', 'c', 'd' ]
 
+// Second element onwards.
 myArray.slice(1)
 // [ 'b', 'c', 'd' ]
 
+// Last element only (in this case because there are 4 elements0.
 myArray.slice(3)
 // [ 'd' ]
 
-// Use a negative index to count from the back.
+// Last element, regardless of how many elements.
 myArray.slice(-1)
 // [ 'd' ]
-myArray.slice(-1)
+
+// Last two elements.
+myArray.slice(-2)
 // [ 'c', 'd' ]
 ```
 
-Warning - that returns an array, even if it just one element.
-
-To get a _single_ element as a scalar and not an array, do this:
+A slice is returned as an array. So to get the last element as a scalar (like a string), then use need to get the element from the array.
 
 ```javascript
 myArray.slice(-1)[0]
@@ -114,17 +119,28 @@ Two indexes:
 ```javascript
 const myArray = ['a', 'b', 'c', 'd']
 
+# Second item onwards.
+myArray.slice(1, 4)
+[ 'b', 'c', 'd' ]
+
+// Second and third items.
 myArray.slice(1, 3)
 // [ 'b', 'c' ]
 
-myArray.slice(1,2)
+// Second item.
+myArray.slice(1, 2)
 // [ 'b' ]
 ```
 
 
-## Update array
+## Update
 
-Mutate element.
+Add, remove and update elements in an array.
+
+
+### Assign value
+
+Basis syntax for setting a value:
 
 ```javascript
 > myArray[index] = value
@@ -186,6 +202,24 @@ Join elements using a separator e.g. `', '`. This will return a single string.
 
 ```javascript
 > myArray.join(sep)
+```
+
+### Splice an array
+
+The [slice](#use-slice-method) method only _reads_ elements from a range.
+
+The `splice` reads a range too, but also **deletes** the items from the original array.
+
+```javascript
+const oldArray = ['a', 'b', 'c', 'd']
+// [ 'a', 'b', 'c', 'd' ]
+
+const newArray = oldArray.splice(1, 2)
+// [ 'b', 'c' ]
+
+// Items have been removed.
+oldArray
+// [ 'a', 'd' ]
 ```
 
 
