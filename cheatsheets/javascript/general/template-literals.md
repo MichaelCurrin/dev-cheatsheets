@@ -66,15 +66,14 @@ If you want to write JSX code but don't want to add Babel, you can write you cod
 html`<div>Hello, { name }</div>`
 ```
 
-e.g.
+e.g. React example from the docs.
 
-```javascript
-import { render } from 'preact';
-import { html } from 'htm/preact';
+```jsx
+import ReactDOM from 'react-dom';
+import { html } from 'htm/react';
 
-const app = html`
-  <a href="/">Hello!</a>
-`
-
-render(app, document.body);
+ReactDOM.render(
+  html`<a href="/">Hello!</a>`,
+  document.body
+);
 ```
