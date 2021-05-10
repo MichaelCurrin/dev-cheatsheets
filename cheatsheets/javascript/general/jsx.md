@@ -86,7 +86,7 @@ From HTM docs:
     ReactDOM.render(html`<a href="/">Hello!</a>`, document.body);
     ```
 - Generic sample.
-    ```
+    ```javascript
     import htm from 'htm';
 
     function h(type, props, ...children) {
