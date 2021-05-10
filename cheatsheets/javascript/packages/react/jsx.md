@@ -17,7 +17,7 @@ This page is specific to React. For a more general guide, see the [JSX][] genera
     ```
 - HTML DOM
     ```html
-    <div id="root"
+    <div id="root">
         <h1>Hello, World!</h1>
     </div>
     ```
