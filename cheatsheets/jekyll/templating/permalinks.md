@@ -48,9 +48,9 @@ Examples:
     ```
 
 
-## Set permalink in the config
+## Set permalinks in the config
 
-You are allowed to use dynamic variables here - see the [Placeholders](#placeholders) section.
+See [Patterns](#patterns) section for sample patterns.
 
 ### Pages and posts
 
@@ -65,17 +65,22 @@ Set permalink for plain pages and posts, but not collections.
 
 Set permalink for collections only.
 
+Normally I don't bother setting this at this level. 
+
+The default value is `/:collection/:name` and that produces a URL like `/products/shirt.html`.
+
 - `_config.yml`
     ```yaml
     collections:
       my_collection:
         output: true
-        permalink: /:collection/:name
+        permalink: PATTERN
     ```
-
 
 ## Patterns
 > How to build a permalink pattern using placeholders
+
+You are allowed to use dynamic variables here - see the [Placeholders](#placeholders) section.
 
 ### Default
 
@@ -85,7 +90,9 @@ Here is Jekyll's default value:
 permalink: /:categories/:year/:month/:day/:title:output_ext
 ```
 
-### Built in patterns
+### Built-in patterns
+
+Use one of tbe built-in permalink patterns which are short and readable.
 
 Example usage:
 
