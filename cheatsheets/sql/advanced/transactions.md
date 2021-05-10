@@ -12,18 +12,23 @@ Syntax:
       -- Do one or more steps like select, or update/set/delete
     COMMIT;
     ```
+- `query.sql` with more verbose but equivalent syntax.
+    ```sql
+    BEGIN TRANSACTION;
+      -- Do one or more steps like select, or update/set/delete
+    END TRANSACTION;
+    ```
+    
+The docs say `END TRANSACTION` is an alias for `COMMIT`.
 
-Or use `ROLLBACK;` instead of `COMMIT;`
+You can also use `ROLLBACK;` instead of `COMMIT;`.
 
 
 ## SQLite
 
 Notes for SQLite:
 
-- Alternatively use the more verbose `BEGIN TRANSACTION`.
-- `END TRANSACTION` is an alias for `COMMIT`.
 - Transactions can be `DEFERRED`, `IMMEDIATE`, or `EXCLUSIVE`. The default transaction behavior is `DEFERRED`.
-
 
 Example from [tutorial](https://www.sqlitetutorial.net/sqlite-transaction/).
 
