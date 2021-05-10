@@ -67,8 +67,8 @@ defaults            : []
 
 The Liquid Options and Markdown Options pages in this guide for the `liquid` and `kramdown` sections.
 
-For [Permalink][] page for more info on `permalink`. 
+See the [Permalink][] page for more info on `permalink` field.
 
 [Permalink]: {{ site.baseurl }}{% link cheatsheets/jekyll/templating/permalinks.md %}
  
-Set show directory listing to true if you want Jekyll server to list files and directories if an index file is absent.
+Set show directory listing to true if you want Jekyll server to list files and directories if an index file is absent. This is not so useful, as normally you'd have an index page otherwise the page is not styled. Also this only applies to local Jekyll. A use for this field would be when you are developing and you don't yet have a menu to access all your pages, so then you can explore all your pages in a directory view.
