@@ -77,3 +77,5 @@ ReactDOM.render(
   document.body
 );
 ```
+
+The docs on NPM also cover advanced usage with `h` or `htm` instead of `html`.
