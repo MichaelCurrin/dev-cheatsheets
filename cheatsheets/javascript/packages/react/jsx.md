@@ -217,7 +217,7 @@ export default function Counter() {
 
       const increment = () => setCount(count + 1)
 
-      <button onClick={increment}</button>
+      <button onClick={increment}>Click me</button>
     </div>
   );
 }
