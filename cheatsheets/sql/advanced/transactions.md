@@ -1,4 +1,4 @@
-# Transaction
+# Transactions
 
 No reads or writes occur except within a transaction. 
 
