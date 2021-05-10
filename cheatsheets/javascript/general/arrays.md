@@ -7,10 +7,10 @@ See [map reduce filter][] page for how to apply those to an array.
 [map reduce filter]: {{ site.baseurl }}{% link cheatsheets/javascript/general/map-reduce-filter.md %}
 
 
-## Read
+## Read an array
 
 ```javascript
-var myArray = ['a', 'b', 'c', 'd']
+const myArray = ['a', 'b', 'c', 'd']
 ```
 
 Get length.
@@ -52,6 +52,12 @@ Leave out `end`.
 #### Use hard bracket slicing
 
 ```javascript
+ARRAY[INDEX]
+```
+
+e.g.
+
+```javascript
 > myArray = ['a', 'b', 'c', 'd']
 > myArray[myArray.length - 1]
 'd'
@@ -65,25 +71,58 @@ In Python you simply use a negative index `my_list[-1]`, but in JS that gives a 
 
 #### Use slice
 
-You can use a negative index here.
+Use one or two arguments.
 
 ```javascript
-> myArray = ['a', 'b', 'c', 'd']
-> myArray.slice(-1)
-[ 'd' ]
+ARRAY.slice(FROM_INDEX_INCLUSIVE)
+
+ARRAY.slice(FROM_INDEX_INCLUSIVE, TO_INDEX_EXCLUSIVE)
 ```
 
-Warning - that returns an array.
-
-To get a single element, use:
+One index:
 
 ```javascript
-> myArray.slice(-1)[0]
-'d'
+const myArray = ['a', 'b', 'c', 'd']
+
+myArray.slice(0)
+// [ 'a', 'b', 'c', 'd' ]
+
+myArray.slice(1)
+// [ 'b', 'c', 'd' ]
+
+myArray.slice(3)
+// [ 'd' ]
+
+// Use a negative index to count from the back.
+myArray.slice(-1)
+// [ 'd' ]
+myArray.slice(-1)
+// [ 'c', 'd' ]
+```
+
+Warning - that returns an array, even if it just one element.
+
+To get a _single_ element as a scalar and not an array, do this:
+
+```javascript
+myArray.slice(-1)[0]
+// 'd'
+```
+
+Two indexes:
+
+```javascript
+const myArray = ['a', 'b', 'c', 'd']
+
+myArray.slice(1, 3)
+// [ 'b', 'c' ]
+
+myArray.slice(1,2)
+// [ 'b' ]
 ```
 
 
-## Update
+## Update array
 
 Mutate element.
 
@@ -150,8 +189,7 @@ Join elements using a separator e.g. `', '`. This will return a single string.
 ```
 
 
-
-## Iterate
+## Iterate over an array
 
 ### Use map to get values
 
