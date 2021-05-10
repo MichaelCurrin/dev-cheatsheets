@@ -15,100 +15,72 @@ Based on [React JSX Comments](https://wesbos.com/react-jsx-comments/) guide.
 {/* A JSX comment */}
 ```
 
+## Pass values
 
-## Add JSX support to an app
+See [React JSX][] cheatsheet for more complete examples in functions.
 
-### Server-side conversion
+[React JSX]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/react/jsx.html %}
 
-Use Node with Babel from NPM and possibly Webpack.
+### Basic
 
-From React docs, we install Babel.
+Use a variable name.
 
-```sh
-$ npm install babel-cli@6 babel-preset-react-app@3
+```jsx
+name = "World"
+
+return <p>Hello, {name}!</p>
 ```
 
-Run this against a `src` directory. This also works _without_ Babel installed, as it will download.
+Or some other JS expression.
 
-```sh
-$ npx babel --watch src --out-dir . --presets react-app/prod
+```jsx
+name = "World"
+
+return <p>Hello, {name.toUpperCase()}!</p>
 ```
 
-Or use Deno, which handle JSX syntax already.
+A value directly on function props.
 
-### Add Babel standalone
+```jsx
+return <p>Hello, {props.name}!</p>
+```
 
-From [React docs](https://reactjs.org/docs/add-react-to-a-website.html).
+### Attributes
 
-You can add Babel Standalone as a package on your frontend. When it loads, it will compile your JSX code in place, without a servr-side compile stp.
+```jsx
+EVENT={EXPRESSION}
+```
 
-1. Add this `<script>` tag to your page:
-    ```html
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    ```
-2. Set up your JS to be recognized by Babel by setting `type`.
-    ```html
-    <script src="main.js" type="text/babel"></script>
+```jsx
+path = "abc.png"
 
-    <!-- OR -->
+return <img src={ path } />
+```
 
-    <script type="text/babel">
-        console.log('Your JSX here')
-    </script>
-    ```
+Plain HTML:
 
-### Add HTM
+```jsx
+<img src="abc.png" />
+```
 
-Here we use [htm](https://www.npmjs.com/package/htm) NPM package.
+#### Events
 
-> HTM (Hyperscript Tagged Markup)
->
-> htm is JSX-like syntax in plain JavaScript - no transpiler necessary.
+Set an attribute like `onClick` with a function.
 
-This works on the frontend -  we use that package to render the a JSX-like string to plain JS, without actually using JSX. Note the backticks.
+```jsx
+EVENT={MY_FUNTION}
+```
 
-- [main.js](https://github.com/MichaelCurrin/preact-frontend-quickstart/blob/main/main.js) of Preact project, as per Preact docs.
+e.g.
 
-From HTM docs:
+```jsx
+<button onClick={() => console.log('Hello')}>
+  Click me
+</button>
+```
 
-- Preact sample.
-    ```javascript
-    import { render } from 'preact';
-    import { html } from 'htm/preact';
+### CSS
 
-    render(html`<a href="/">Hello!</a>`, document.body);
-    ```
-- React sample.
-    ```javascript
-    import ReactDOM from 'react-dom';
-    import { html } from 'htm/react';
-
-    ReactDOM.render(html`<a href="/">Hello!</a>`, document.body);
-    ```
-- Generic sample.
-    ```javascript
-    import htm from 'htm';
-
-    function h(type, props, ...children) {
-      return { type, props, children };
-    }
-
-    const html = htm.bind(h);
-
-    console.log( html`<h1 id=hello>Hello world!</h1>` );
-    ```
-
-Note that you can get just `html`, or use `htm/react` to get HTM and React together.
-
-e.g. [dev.jspm.io/htm/react](https://dev.jspm.io/htm/react) or [dev.jspm.io/htm@3.0.4/react](https://dev.jspm.io/htm@3.0.4/react).
-
-Currently React 17 is out but the URLs above only go to `react@16`.
-
-Look at available browser modules, with a forwardslash, [here](https://dev.jspm.io/htm/react).
-
-Preact also has two, but one step further - there is a `standalone.module.js` file as per docs.
-
-```javascript
-// just want htm + preact in a single file? there's a highly-optimized version of that:
-import { html, render } from 'https://unpkg.com/htm/preact/standalone.module.js'
+```jsx
+<h1 style={{ color: 'red' }}>
 ```
