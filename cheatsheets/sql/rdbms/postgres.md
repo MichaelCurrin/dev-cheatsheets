@@ -4,6 +4,13 @@ logo: postgresql
 # Postgres
 
 
+## Resources
+
+- [Homepage](https://www.postgresql.org/about/) on Postgres homepage.
+    > PostgreSQL: The World's Most Advanced Open Source Relational Database
+- [About](https://www.postgresql.org/about/) on Postgres homepage.
+
+
 ## Docs and tutorials
 
 - [postgresql.org/docs/](https://www.postgresql.org/docs/)
