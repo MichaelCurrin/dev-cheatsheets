@@ -13,7 +13,7 @@ Syntax:
     COMMIT;
     ```
 
-Or use `ROLLBACK; instead of `COMMIT;`
+Or use `ROLLBACK;` instead of `COMMIT;`
 
 
 ## SQLite
