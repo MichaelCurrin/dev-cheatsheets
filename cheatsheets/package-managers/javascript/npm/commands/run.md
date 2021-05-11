@@ -36,7 +36,7 @@ $ npn run build --if-present
 ```
 
 
-## Pass arguments
+## Pass ad hoc arguments
 
 Use `--` to indicate end of `npm run` arguments and then you can add the additional arguments.
 
@@ -67,3 +67,5 @@ Then you'll get this:
 ```sh
 $ eslint . --fix
 ```
+
+Though I prefer to set up `npm run lint:fix` as a script command that will run that for me.
