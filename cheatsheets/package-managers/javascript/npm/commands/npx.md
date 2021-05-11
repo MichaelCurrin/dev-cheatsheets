@@ -4,13 +4,21 @@ description: Node package executor
 # npx
 
 
-This is not a subcommand of `npm`. It already comes with `npm` (at least newer versions) and works well with the NPM ecosystem
+## Overview
 
 - [npx](https://www.npmjs.com/package/npx) on NPM
     > execute npm package binaries
 
+It is not a subcommand of `npm`. It already comes with `npm` (at least newer versions) and works well with the NPM ecosystem.
+
 
 ## Usage
+
+```sh
+$ npx NODE_PACKAGE OPTIONS
+```
+
+From the help:
 
 ```
 npx [options] <command>[@version] [command-arg]...
@@ -22,9 +30,15 @@ npx [options] -c '<command-string>'
 npx --shell-auto-fallback [shell]
 ```
 
+e.g.
+
+```sh
+$ npx prettier --help
+$ npx prettier -w .
+```
+
 
 ## Purpose
-
 
 ### Run installed package
 
@@ -32,18 +46,25 @@ npx --shell-auto-fallback [shell]
 >
 > By default, npx will check whether <command> exists in $PATH, or in the local project binaries, and execute that.
 
-For example, install a package in a local project:
+For example, install a package in a project:
 
 ```sh
 $ npm install eslint
-$ # Equivalent to:
+
+$ # Run with:
 $ ./node_modules/.bin/eslint
+$ # OR
+$ npx eslint
 ```
 
 Or globally:
 
 ```sh
 $ npm install --global eslint
+
+$ eslint
+$ # OR
+$ /usr/local/bin/eslint
 ```
 
 Then use NPX to run it, either from in your project or from anywhere (if globally installed):
@@ -81,23 +102,41 @@ If you install a lot of packages in you global NPM directory using `npm i -g`, t
 [reference](https://github.com/zkat/npx/issues/113#issuecomment-369379654)
 
 
-## Commons uses
+## Common uses
 
 NPX is great for one-off commands where you don't plan to reuse the package. And if you always want to run the latest version (you don't have to worry if you installed package is outdated).
 
-### Quickstarts
+### Bootstrap projects
 
-Such and when you want to scaffold a new app.
+When you want to scaffold a new app.
+
+React:
 
 ```sh
-$ npx create-react-app
+$ npx create-react-app my-app
+```
+
+Neutrino:
+
+```sh
+$ npx @neutrinojs/create-project my-app
+```
+
+### Format
+
+Download and run Prettier against your project.
+
+```sh
+$ npx prettier -w .
 ```
 
 ### Test commands
 
-Or to run an ad hoc command for expermenting with arguments.
+Run an ad hoc command for experimenting with arguments. In Vue, you'll typicall have `vue-cli-service` installed directly and access it through `npm run COMMAND`, but you might want to explore the CLI using `npx`.
 
 ```sh
+$ npx vue-cli-service --help
+
 $ npx vue-cli-service serve
 ```
 
