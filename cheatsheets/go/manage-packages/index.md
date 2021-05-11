@@ -1,1 +1,1 @@
-# Manage packages
+# Package management
