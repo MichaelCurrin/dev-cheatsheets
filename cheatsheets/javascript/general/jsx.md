@@ -6,6 +6,8 @@ This page is generic - for guide specific to React, see the [React JSX][] page.
 
 [React JSX]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/react/jsx.md %}
 
+{% raw %}
+
 
 ## Comments
 
@@ -84,3 +86,6 @@ e.g.
 ```jsx
 <h1 style={{ color: 'red' }}>
 ```
+
+
+{% endraw %}
