@@ -70,7 +70,7 @@ Plain HTML:
 Set an attribute like `onClick` with a function.
 
 ```jsx
-EVENT={MY_FUNTION}
+EVENT={MY_FUNCTION}
 ```
 
 e.g.
