@@ -1,6 +1,6 @@
 ---
 title: Custom
-description: How to create a Jekyll plugin
+description: How to write and use a Jekyll plugin within a repo
 ---
 
 {% raw %}
@@ -9,13 +9,46 @@ This page covers generic syntax. See [Plugin](https://michaelcurrin.github.io/co
 
 See [Plugins](https://jekyllrb.com/docs/plugins/) in the Jekyll docs for getting started writing an installing a plugin.
 
-To set up a plugin, add a Ruby snippet from a below as `.rb` file in the `_plugins` directory. Then build or serve your site.
+
+## Installation
+
+To set up a plugin from below, copy the Ruby code to a `.rb` file in the `_plugins` directory. Then build or serve your site.
+
+If you want to manage your plugin so you can share it across your projects and make it easy for others to install, then you can make a repo which is a gem that can be installed with `gem` or `bundle`. But this is not necessary.
 
 
 ## Tag
 > Create custom Liquid tags
 
-See [Tags](https://jekyllrb.com/docs/plugins/tags/) in the Jekyll dos.
+See [Tags](https://jekyllrb.com/docs/plugins/tags/) in the Jekyll docs.
+
+This tag will output the time that the page was rendered, taking text and showing it.
+
+```ruby
+module Jekyll
+  class MyFooTag < Liquid::Tag
+
+    def initialize(tag_name, text, tokens)
+      super
+      @text = text
+    end
+
+    def render(context)
+      "#{@text} #{Time.now}"
+    end
+  end
+end
+
+Liquid::Template.register_tag('foo', Jekyll::MyFooTag)
+```
+
+Usage:
+
+```liquid
+{% foo Page rendered rendered at %}
+<!-- Possibly also -->
+{% foo text='Page rendered at' %}
+```
 
 
 ## Filter
@@ -25,20 +58,20 @@ See [Filters](https://jekyllrb.com/docs/plugins/filters/) in the Jekyll docs.
 
 ```ruby
 module Jekyll
-  module MyFilter
-    def my_filter(input)
+  module MyFooFilter
+    def foo(input)
       puts input
     end
   end
 end
 
-Liquid::Template.register_filter(Jekyll::MyFilter)
+Liquid::Template.register_filter(Jekyll::MyFooFilter)
 ```
 
-Use like:
+Usage:
 
 ```liquid
-{{ 'hello' | my_filter }}
+{{ 'hello' | foo }}
 ```
 
 
@@ -72,6 +105,7 @@ module Jekyll
 end
 ```
 
+
 ## Generator
 > Create additional content on your site
 
@@ -98,5 +132,5 @@ module MyModule
   end
 end
 ```
-  
+
 {% endraw %}
