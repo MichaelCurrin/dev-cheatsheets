@@ -34,3 +34,36 @@ e.g.
 ```sh
 $ npn run build --if-present
 ```
+
+
+## Pass arguments
+
+Use `--` to indicate end of `npm run` arguments and then you can add the additional arguments.
+
+```sh
+$ npm run COMMAND -- OPTIONS
+```
+
+For example, you would usually run this:
+
+```sh
+$ npm run lint
+```
+
+And you'd get:
+
+```sh
+$ eslint .
+```
+
+If you do this:
+
+```sh
+$ npm run lint -- --fix
+```
+
+Then you'll get this:
+
+```sh
+$ eslint . --fix
+```
