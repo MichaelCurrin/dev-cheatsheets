@@ -14,13 +14,13 @@ The repo must have a `.gemspec` file at the root.
 
 Add it to your `Gemfile`:
 
-```Gemfile
+```ruby
 gem 'GEMNAME', git: 'https://github.com/USERNAME/REPO_NAME'
 ```
 
 Example:
 
-```Gemfile
+```ruby
 gem 'rack', git: 'https://github.com/rack/rack
 ```
 

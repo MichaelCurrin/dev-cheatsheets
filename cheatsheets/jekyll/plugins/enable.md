@@ -5,7 +5,7 @@
 
 For local development and use outside of GH Pages, it is sufficient to add a plugin to the `Gemfile` under the `:jekyll_plugins` group to enable it.
 
-```Gemfile
+```ruby
 group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-sitemap"
