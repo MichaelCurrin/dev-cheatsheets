@@ -44,28 +44,18 @@ Use `--` to indicate end of `npm run` arguments and then you can add the additio
 $ npm run COMMAND -- OPTIONS
 ```
 
-For example, you would usually run this:
+For example, if you run these commands:
 
 ```sh
 $ npm run lint
-```
-
-And you'd get:
-
-```sh
-$ eslint .
-```
-
-If you do this:
-
-```sh
 $ npm run lint -- --fix
 ```
 
-Then you'll get this:
+Then you'll get these respectively:
 
 ```sh
+$ eslint .
 $ eslint . --fix
 ```
 
-Though I prefer to set up `npm run lint:fix` as a script command that will run that for me.
+Though, I prefer to set up `npm run lint:fix` as a separate script command so run the `--fix` command for me.
