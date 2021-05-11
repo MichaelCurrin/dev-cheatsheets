@@ -80,9 +80,9 @@ Usage:
 
 Jekyll uses a converter internally to process Markdown as HTML. You can support additional formats with your own converter.
 
-Based on [Converters](https://jekyllrb.com/docs/plugins/converters/) section of the Jekyll docs.
+See also [Markown Processors](https://jekyllrb.com/docs/configuration/markdown/) in the docs.
 
-This will process all files ending with `.myext`. In the `convert` method, we make all the text uppercase.
+Based on [Converters](https://jekyllrb.com/docs/plugins/converters/) section of the Jekyll docs. This will process all files ending with `.myext`. In the `convert` method, we make all the text uppercase.
 
 ```ruby
 module Jekyll
