@@ -7,9 +7,7 @@ A markdown link's format is:
 
 
 ```markdown
-[link text](target)
-
-[](target)
+[Link text](target)
 ```
 
 The link text is what will be shown on error or while the image is loading. It can also help with SEO. It can be left blank.
@@ -72,7 +70,6 @@ The target could go to another page.
 
 ## URL
 
-
 ### Inline links
 
 Set the target as a full URL, requiring protocol, domain and optional path.
@@ -89,7 +86,6 @@ For example, this will link add `/example.com` to the current path.
 [Bad example](example.com)
 ```
 
-
 Add optional alternative text. You can hover over the link to see the alt text.
 
 **Code:**
@@ -105,62 +101,113 @@ Add optional alternative text. You can hover over the link to see the alt text.
 
 ## Reference-style links
 
-Use text or a number or reference a link in the next paragraph or at the end of the page. The full link will not be visible.
+Use text or a number or reference a link in the next paragraph or at the end of the page. 
 
-### Text
+This helps keep use of links within paragraphs very readable, as you are able to as alias/shortcut to the full link and reuse it across a page. 
 
-Arbitrary case-insensitive reference text in target. Here we have `Foo bar` but you could use `foo-bar` instead. It is not user-facing.
+The full link will **not** be visible.
 
-Example:
+### Text alias
+
+Use arbitrary case-insensitive reference text in target. 
+
+And case-sensitive link alias in the link and in the reference. You might prefer dashes and lowercase for predictabilty. The alias is not seen by the end-user.
 
 **Code:**
 
 ```markdown
-[I'm a reference-style link][Foo bar]
+Here is my [Homepage][MichaelCurrin home]
 
-[Foo bar]: https://www.mozilla.org
+I'm using another link to my site [here][MichaelCurrin home] in case you missed it.
+
+[MichaelCurrin home]: https://michaelcurrin.github.io/
 ```
 
 **Result:**
 
-[I'm a reference-style link][Foo bar]
+Here is my [Homepage][MichaelCurrin home]
 
-[Foo bar]: https://www.mozilla.org
+I'm using another link to my site [here][MichaelCurrin home] in case you missed it.
+
+[MichaelCurrin home]: https://michaelcurrin.github.io/
 
 ### Numbered reference links
 
+Use can use number aliases for your links.
+
 Example:
 
 **Code:**
 
 ```markdown
-[You can use numbers for reference-style link definitions][1]
+Here is my [Homepage][1] with a numbered reference.
 
-[1]: http://slashdot.org
+[1]: https://michaelcurrin.github.io/
 ```
 
 **Result:**
 
-[You can use numbers for reference-style link definitions][1]
+Here is my [Homepage][1] with a numbered reference.
 
-[1]: http://slashdot.org
+[1]: https://michaelcurrin.github.io/
 
 ### Link text
 
-Example:
+Similar to [Text alias](#text-alias) but using hard brackets with no text. Or not using hard brackets at all. This then takes on the alias from the link text.
+
+Using hard brackets.
 
 **Code:**
 
-```markdown
-Or leave it empty and use the [link text itself].
+```md
+Here is my [Homepage][].
 
-[link text itself]: https://www.reddit.com
+And here is my [Homepage][] again.
+
+[Homepage]: https://michaelcurrin.github.io/
 ```
 
 **Result:**
 
-Code:
+Here is my [Homepage][].
 
-Or leave it empty and use the [link text itself].
+And here is my [Homepage][] again.
 
-[link text itself]: https://www.reddit.com
+[Homepage]: https://michaelcurrin.github.io/
+
+Leave out hard brackets.
+
+**Code:**
+
+```md
+Here is my [Homepage].
+
+And here is my [Homepage] again.
+
+[Homepage]: https://michaelcurrin.github.io/
+```
+
+**Result:**
+
+Here is my [Homepage].
+
+And here is my [Homepage] again.
+
+[Homepage]: https://michaelcurrin.github.io/
+
+### Use with Jekyll
+
+This reference style is especially good if your have an internal link that is managed with Jekyll and the `link` tag, which would otherwise make your Markdown source hard to read and edit.
+
+{% raw %}
+
+```md
+Go to my [About][] page.
+
+Order a [Fidget Spinner][] from the Products section.
+
+[About]: {% link about.md %}
+[Fidget Spinner]: {% links _projects/fidget-spinner.md %}
+```
+
+{% end %}
