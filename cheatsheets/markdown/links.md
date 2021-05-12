@@ -101,15 +101,15 @@ Add optional alternative text. You can hover over the link to see the alt text.
 
 ## Reference-style links
 
-Use text or a number or reference a link in the next paragraph or at the end of the page. 
+Use text or a number or reference a link in the next paragraph or at the end of the page.
 
-This helps keep use of links within paragraphs very readable, as you are able to as alias/shortcut to the full link and reuse it across a page. 
+This helps keep use of links within paragraphs very readable, as you are able to as alias/shortcut to the full link and reuse it across a page.
 
 The full link will **not** be visible.
 
 ### Text alias
 
-Use arbitrary case-insensitive reference text in target. 
+Use arbitrary case-insensitive reference text in target.
 
 And case-sensitive link alias in the link and in the reference. You might prefer dashes and lowercase for predictabilty. The alias is not seen by the end-user.
 
@@ -194,20 +194,3 @@ Here is my [Homepage].
 And here is my [Homepage] again.
 
 [Homepage]: https://michaelcurrin.github.io/
-
-### Use with Jekyll
-
-This reference style is especially good if your have an internal link that is managed with Jekyll and the `link` tag, which would otherwise make your Markdown source hard to read and edit.
-
-{% raw %}
-
-```md
-Go to my [About][] page.
-
-Order a [Fidget Spinner][] from the Products section.
-
-[About]: {% link about.md %}
-[Fidget Spinner]: {% links _projects/fidget-spinner.md %}
-```
-
-{% end %}

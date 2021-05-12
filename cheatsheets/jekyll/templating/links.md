@@ -99,28 +99,40 @@ Markdown:
 ```
 
 
-## Footer links
+## Reference-style links
 
-More Markdown then Jekyll, but still useful to keep text readable. Also this link be just below the paragraph rather than the end of the page.
+### Plain Markdown
 
+In Markdown and therefore also Jekyll sites, you can use reference-style links. This means your Markdown code is shorter and more readable in a paragraph, while not changing the rendered HTML.
+
+For example, set up like this, as per the [Markdown Links][] page.
 ```md
-This paragraph covers [CircleCI][0], [GitHub][1] and also [Bitbucket][2].
+Here is my [Homepage][].
 
-[0]: https://circleci.com/
-[1]: https://github.com/
-[2]: https://bitbucket.org/
+And here is my [Homepage][] again.
+
+[Homepage]: https://michaelcurrin.github.io/
 ```
 
-This paragraph covers [CircleCI][0], [GitHub][1] and also [Bitbucket][2].
+### Liquid
 
-[0]: https://circleci.com/
-[1]: https://github.com/
-[2]: https://bitbucket.org/
+This reference style is especially good if your have an internal link that is managed with Jekyll and the `link` tag.
+
+```liquid
+Go to my [About][] page.
+
+Order a [Fidget Spinner][] from the Products section.
+
+[About]: {% link about.md %}
+[Fidget Spinner]: {% links _projects/fidget-spinner.md %}
+```
+
+Which is easier to read and manage than putting the links and Liquid code in a parapraph.
 
 
-## Open in new window
+## Open in a new window
 
-This uses a feature of Kramdown, so you don't need an extra plugin.
+This uses a feature of _Kramdown_, which is used by Jekyll by default. So you don't need to add a plugin or anything.
 
 ```md
 [Foo](https://jekyllrb.com){:target="_blank"}
@@ -129,3 +141,5 @@ This uses a feature of Kramdown, so you don't need an extra plugin.
 This as adds `target="_blank"` to the `a` tag.
 
 {% endraw %}
+
+[Markdown Links]: {{ site.baseurl }}{% link cheatsheets/markdown/links.md %}
