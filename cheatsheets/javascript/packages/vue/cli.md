@@ -3,7 +3,17 @@
 
 ## Vue command
 
-Note, you cannot run `npx vue -h`. But you can run `npx @vue/cli -h`
+If you have Vue installed globally, you can run as:
+
+```sh
+$ vue COMMAND [OPTIONS]
+```
+
+Otherwise, run as:
+
+```sh
+$ npx @vue/cli COMMAND [OPTIONS]
+```
 
 ### Help
 
@@ -52,7 +62,7 @@ $ npx @vue/cli create my-app
 $ cd my-app
 ```
 
-Use the default option to skip prompts and use defaults.
+Use the default flag if you want to skip prompts and use defaults.
 
 ```sh
 $ npx @vue/cli create my-app --default
@@ -60,7 +70,7 @@ $ npx @vue/cli create my-app --default
 
 ### UI
 
-Start the Vue GUI tool. To create or manage a project.
+Start the Vue GUI tool. To create or manage a Vue project, such as adding dependencies.
 
 ```sh
 $ npx @vue/cli ui
