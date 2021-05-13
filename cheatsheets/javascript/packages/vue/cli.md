@@ -62,6 +62,8 @@ $ npx @vue/cli create my-app
 $ cd my-app
 ```
 
+Choose _manual_ options if you want to add TypeScript.
+
 Use the default flag if you want to skip prompts and use defaults.
 
 ```sh
