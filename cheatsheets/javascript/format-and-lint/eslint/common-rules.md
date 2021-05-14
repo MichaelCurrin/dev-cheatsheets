@@ -1,5 +1,8 @@
 # Common rules
 
+
+See [Rules](https://eslint.org/docs/rules/) in the docs. It provides descriptions and link to the rule's page.
+
 A reference for rules I typically like to know about or set, using my preferred values.
 
 See below rule names and some recommended values (not all values).
