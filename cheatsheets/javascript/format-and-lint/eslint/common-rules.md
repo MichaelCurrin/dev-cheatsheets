@@ -19,6 +19,8 @@ See below rule names and some recommended values (not all values).
 | `max-len`      | `["error", { "code": 100 }]`                                                                                                                                                                                                                                                           | [docs](https://eslint.org/docs/rules/max-len)      |
 | `func-style`   | For `function` style - `["error", "declaration"]`. For `const foo () => {};`, use `["error", "expression"]` or `["error", "declaration", { "allowArrowFunctions": true }]` (rule only valid as an option for "declaration" and it will override default of no arrow functions allowed. | [docs](https://eslint.org/docs/rules/func-style)   |
 
+Note that these may conflict with Prettier. For example, Prettier with single quotes setting allows a double quote string with single quote inside, by ES Lint set up for single quotes see this as an error.
+
 You can set more fields for `max-len`. e.g.
 
 ```json
