@@ -1,7 +1,9 @@
-# Rules
+# Rule format
 
+See also [Common rules][] page.
 
-## Format
+[Common Rules]: {{ site.baseurl }}{% link javascript/format-and-lint/eslint/common-rules.md %}
+
 
 Each rule has its own allowed fields.
 
@@ -24,5 +26,3 @@ Example:
   }
 }
 ```
-
-See [Rules](https://eslint.org/docs/rules/) in the docs. It provides descriptions and link to the rule's page.
