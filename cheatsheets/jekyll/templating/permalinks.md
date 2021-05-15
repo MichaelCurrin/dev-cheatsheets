@@ -6,7 +6,7 @@ See [Default values][] to see the Jekyll default value.
 
 {% raw %}
 
-See [Jekyll Permalinks doc](https://jekyllrb.com/docs/permalinks/).
+See [Jekyll Permalinks](https://jekyllrb.com/docs/permalinks/) guide in the docs.
 
 > Permalinks are the output path for your pages, posts, or collections. They allow you to structure the directories of your source code different from the directories in your output.
 
