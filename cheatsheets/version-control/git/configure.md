@@ -27,18 +27,18 @@ View or edit the config using `-e` for edit.
 
 - Local config:
     ```sh
-    $ git config -e SECTION.SUBSECTION VALUE
+    $ git config SECTION.SUBSECTION VALUE
     ```
 - Global config
     ```sh
-    $ git config -e --global SECTION.SUBSECTION VALUE
+    $ git config --global SECTION.SUBSECTION VALUE
     ```
 
 Example:
 
 ```sh
-$ git config -e --global user.name 'Name Surname'
-$ git config -e --global user.email nsurname@example.com
+$ git config --global user.name 'Name Surname'
+$ git config --global user.email nsurname@example.com
 ```
 
 
