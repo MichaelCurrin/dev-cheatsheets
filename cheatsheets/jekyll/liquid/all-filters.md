@@ -31,6 +31,7 @@ cheatsheet:
                 {% assign new_var = foo | default: 'fallback' %}
                 {% assign new_var = bar.buzz | default: 'fallback' %}
           - cmd: replace
+            help: Warning - if you do `replace` on an array, it converts it to a string.
           - cmd: replace_first
           - cmd: strip
           - cmd: lstrip
