@@ -145,7 +145,8 @@ cheatsheet:
           - cmd: uniq
             usage: |
                 {{ my_array | uniq }}
-
+                {{ my_array | sort | uniq }}
+            help: You don't _have_ to sort, but if you do then your results will read better.
           - cmd: push
             usage: |
                 {% assign my_array = my_array | push: 'my value ' %}
