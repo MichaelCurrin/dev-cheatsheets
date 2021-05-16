@@ -2,7 +2,7 @@
 
 See also [Common rules][] page.
 
-[Common Rules]: {{ site.baseurl }}{% link javascript/format-and-lint/eslint/common-rules.md %}
+[Common Rules]: {{ site.baseurl }}{% link cheatsheet javascript/format-and-lint/eslint/common-rules.md %}
 
 
 Each rule has its own allowed fields.
