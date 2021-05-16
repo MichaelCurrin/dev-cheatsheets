@@ -13,22 +13,26 @@ Open `~/.gitconfig` in you IDE.
 
 View or edit the config using `-e` for edit.
 
-```sh
-$ git config -e
-```
-
-Or global config.
-
-```sh
-$ git config -e --global
-```
+- Local config:
+    ```sh
+    $ git config -e
+    ```
+- Global config:
+    ```sh
+    $ git config -e --global
+    ```
 
 
 ## Set specific details
 
-```sh
-$ git config -e --global SECTION.SUBSECTION VALUE
-```
+- Local config:
+    ```sh
+    $ git config -e SECTION.SUBSECTION VALUE
+    ```
+- Global config
+    ```sh
+    $ git config -e --global SECTION.SUBSECTION VALUE
+    ```
 
 Example:
 
