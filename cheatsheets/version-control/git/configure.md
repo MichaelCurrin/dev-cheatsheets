@@ -59,29 +59,25 @@ If your pull strategy is not configured, newer versions of `git` will now give t
 <details>
 <summary>Warning message</summary>
 
-```
-warning: Pulling without specifying how to reconcile divergent branches is
-discouraged. You can squelch this message by running one of the following
-commands sometime before your next pull:
+    warning: Pulling without specifying how to reconcile divergent branches is
+    discouraged. You can squelch this message by running one of the following
+    commands sometime before your next pull:
 
-    git config pull.rebase false  # merge (the default strategy)
-    git config pull.rebase true   # rebase
-    git config pull.ff only       # fast-forward only
+        git config pull.rebase false  # merge (the default strategy)
+        git config pull.rebase true   # rebase
+        git config pull.ff only       # fast-forward only
 
-You can replace "git config" with "git config --global" to set a default
-preference for all repositories. You can also pass --rebase, --no-rebase,
-or --ff-only on the command line to override the configured default per
-invocation.
-```
+    You can replace "git config" with "git config --global" to set a default
+    preference for all repositories. You can also pass --rebase, --no-rebase,
+    or --ff-only on the command line to override the configured default per
+    invocation.
 
 </details>
-
 
 
 So here are your options for `.gitconfig` under `[pull]` heading.
 
 Note lack of quotes on `true` and `false`.
-
 
 ### Merge approach
 
