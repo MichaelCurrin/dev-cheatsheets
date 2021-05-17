@@ -7,11 +7,15 @@ See also the [Jekyll Supported Languages][] page.
 
 ## Code styling
 
-You get mono-spaced text with no syntax highlighting if you do not specify a language.
+If you just use backticks as below, you'll get a mono-spaced text all in one color. No language-specific colors.
 
-```
+**Code**:
+
+```md
 Example of `code` in a sentence.
 ```
+
+**Result:**
 
 Example of `code` in a sentence.
 
@@ -35,31 +39,60 @@ Indent the code by 4 spaces.
 
 Use triple backtick also known as a fenced code block. You can optionally specify a language for format with - this works well in markdown on GitHub but you might need extra set up in a Jekyll theme to get it to work properly.
 
+**Code:**
+
     ```python
     # Triple quotes are for code blocks and give more control over the language.
     print('Hello world'!)
     ```
+
+**Result**:
 
 ```python
 # Triple quotes are for code blocks and give more control over the language.
 print('Hello world'!)
 ```
 
-They also work well under bullet points - see [Code snippets in lists][].
+Triple backtickcs also works well under bullet points - see [Code snippets in lists][].
 
 [Code snippets in lists]: {{ site.baseurl }}{% link cheatsheets/markdown/lists.md %}#code-snippets-in-lists)
 
 The short name works too. Note that outside of GitHub, other editing tools like an IDE or StackEdit might only support the long or the short form of a language.
 
+**Code**:
+
 	```py
 	print("Hello, world!")
 	```
+
+**Result**:
 
 ```py
 print("Hello, world!")
 ```
 
 
+You can even nest them, provided you have a bullet point.
+
+**Code**:
+
+    ```md
+    - Run the greeting.
+        ```sh
+        echo 'Hello'
+        ```
+    ```
+
+**Result**:
+
+```md
+- Run the greeting.
+    ```sh
+    echo 'Hello'
+    ```
+```
+    
+    
 ## Supported languages
 
 Some valid references for language-specific styling that I use. There are many more available.
