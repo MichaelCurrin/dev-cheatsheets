@@ -72,11 +72,12 @@ Subsequent runs of that will **not** upgrade dependecies. Unless you follow the 
 
 Change the version in your URL.
 
-- `deps.ts`
-    ```diff
-    -export { Application } from "https://deno.land/x/abc@v1.2.4/mod.ts";
-    +export { Application } from "https://deno.land/x/abc@v1.2.0/mod.ts";
-    ```
+`deps.ts`
+
+```diff
+-export { Application } from "https://deno.land/x/abc@v1.2.4/mod.ts";
++export { Application } from "https://deno.land/x/abc@v1.2.0/mod.ts";
+```
 
 Deno land:
 
