@@ -119,7 +119,7 @@ Info on the flag:
 
 This will upgrade the standard library as well (old packages will be kept though alongside the new ones). This helps, as your use of std lib packages which not locked can break after running `deno upgrade`.
 
-Note that 3rd-party packages are also likely to rely on the std lib - hopefully with version numbers.
+Note that 3rd-party packages are also likely to rely on the [std lib](https://deno.land/std) - hopefully with version numbers.
 
 I found using `abc@v1.2.4` then after upgrading Deno and after running the reload above, things still broke even at the cache stage. I had to upgrade to `abc@v1.3.1`. Using `abc@v1` did not help as that was even further behind, but not as far behind as `v1.0.0`.
 
