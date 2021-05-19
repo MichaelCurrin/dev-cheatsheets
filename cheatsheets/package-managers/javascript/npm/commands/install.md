@@ -33,9 +33,12 @@ common options: [--save-prod|--save-dev|--save-optional] [--save-exact] [--no-sa
 
 ## Flags
 
+Some common or useful flags.
+
 - `-D, --save-dev` - Save to dev dependencies. By default, installs are saved to prod dependencies without any flag (at least on newer NPM versions).
 - `-G`, `-g`, `--global` - Install as a global dependency.
 - `--production` or `--only=prod` or `--only=production` - Install only prod dependecies from `package.json` file.
+- `-E, --save-exact`: Saved dependencies will be configured with an exact version rather than using npm's default semver range operator. e.g. `1.2.3` instead of `^1.2.3` if doing `npm install foo`.
 
 
 ## Install by package name
