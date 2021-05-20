@@ -32,14 +32,27 @@ Example code:
     ```md
     ![foo](foo.png) ![bar](bar.png)
     ```
-- By default, an image tag alone will lead to a large version of the image (maybe not on static sites). But you can add a link around an image so clicking it goes somewhere.
-    ```md
-    [![ALT_TEXT](IMG_SRC)](CLICK TARGET)
-    ```
+
+## Linked images 
+
+By default, an image tag alone will lead to a large version of the image (maybe not on static sites). But you can add a link around an image so clicking it goes somewhere.
+
+```md
+[![ALT_TEXT](IMG_SRC)](CLICK_TARGET)
+
+With whitespace for demonstration:
+
+[ ![ALT_TEXT](IMG_SRC) ](CLICK_TARGET)
+```
+
+e.g.
+
+```md
+[![Photo of me](/photo.png)](/about.html)
+```
 
 
 ## Example of inline vs reference style
-
 
 ### Inline-style
 
