@@ -33,7 +33,10 @@ Example code:
     ![foo](foo.png) ![bar](bar.png)
     ```
 
+
 ## Linked images 
+
+Wrap an image a link so you navigate somewhere by clicking the image.
 
 By default, an image tag alone will lead to a large version of the image (maybe not on static sites). But you can add a link around an image so clicking it goes somewhere.
 
@@ -50,6 +53,27 @@ e.g.
 ```md
 [![Photo of me](/photo.png)](/about.html)
 ```
+
+### Building it up
+
+Image:
+```md
+![Alt text for broken image link](assets/logo.png)
+```
+
+Link:
+```md
+[Alt text for broken link](httsp://example.com)
+```
+
+Image with link:
+```md
+[![Alt text for broken image link](assets/logo.png)](https://example.com)
+```
+
+Note the link on the outside doesn’t have alt text anymore but the link still wraps the image.
+
+Yes it is hard to read and edit but you get used to it as a pattern in Markdown.
 
 
 ## Example of inline vs reference style
