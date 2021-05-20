@@ -2,7 +2,7 @@
 
 See also [Common rules][] page.
 
-[Common Rules]: {{ site.baseurl }}{% link cheatsheet javascript/format-and-lint/eslint/common-rules.md %}
+[Common Rules]: {{ site.baseurl }}{% link cheatsheets/javascript/format-and-lint/eslint/common-rules.md %}
 
 
 Each rule has its own allowed fields.
@@ -18,11 +18,13 @@ Example:
 ```js
 {
   rules: {
-    semi: [2, 'always'],
-    semi: ['error', 'always'], // same as above
+    semi: [2, "always"],
+    // OR
+    semi: ["error", "always"],
 
-    'no-console': 'warn'
-    'no-console': 1 // same as above
+    "no-console": "warn"
+    // OR
+    "no-console": 1
   }
 }
 ```
