@@ -7,8 +7,6 @@ Node (or "Node.js", or less commonly "NodeJS") is a **server-side** runtime envi
 
 Node can process JavaScript on a machine locally or in the cloud, even without a desktop display or a browser installed.
 
-So Node lets you run scripts and applications and use libraries in a similar way to how Python, Java, and PHP have done since they were created.
-
 For interest, [Deno][] is another server-side environment of JS.
 
 [Deno]: https://michaelcurrin.github.io/dev-resources/resources/javascript/deno/
@@ -16,11 +14,23 @@ For interest, [Deno][] is another server-side environment of JS.
 
 ## Why Node?
 
-JavaScript generally works the same in the browser and in Node on the server.
+JavaScript generally works the same in the browser and in Node on the server. 
 
-But if you use pure browser JavaScript, you miss out on the tooling that exists for other languages (like Java, Ruby or Python) around managing dependencies, quality control and deploying.
+You can use Node to write a backend application, or to build your frontend application, or you might do a mix where you have a Node server and also use Node to make your frontend. You could also leave out Node completely - write your frontend in HTML, CSS and JS and write your backend in Python, PHP or Java.
 
-Plus there are many tasks covered in the next section which are difficult, impractical or impossible using _only_ the browser. Using Node means you can run these tasks locally or in the cloud, at speed, without a browser running (or even installed). And you have access to write to files on disk or a local database, which is impractical using the browser alone - since for security reasons a browser cannot read or write files on your machine unless you explicitly save or upload a file.
+If you use pure browser-based JavaScript, you miss out on things that other languages (like Java, PHP, Ruby or Python) could do from early on.
+
+- Tooling around things like:
+    - Managing dependencies (stored in disk rather than in memory in the browser).
+    - Code quality control.
+    - Deployment, optimization and conversion between languages or to older versions of JS.
+- Running a script as local file.
+- Create a GUI.
+- Do logic which is obscured from the user, so can include more expensive API calls, requests to a database, use of secret credentials, caching a respose to use.
+
+There are many tasks covered in the next section which are difficult, impractical or impossible using _only_ the browser. Using Node means you can run these tasks locally or in the cloud, at speed, without a browser running (or even installed). 
+
+And with Node, you get access to write to files on disk or a local database, which is impractical using the browser alone - since for security reasons a browser cannot read or write files on your machine unless you explicitly save or upload a file.
 
 
 ## What is Node good for?
