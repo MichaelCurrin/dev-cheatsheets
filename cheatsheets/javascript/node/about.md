@@ -14,11 +14,18 @@ For interest, [Deno][] is another server-side environment of JS.
 [Deno]: https://michaelcurrin.github.io/dev-resources/resources/javascript/deno/
 
 
-## What can Node do?
+## Why Node?
+
+JavaScript generally works the same in the browser and in Node on the server.
+
+But if you use pure browser JavaScript, you miss out on the tooling that exists for other languages (like Java, Ruby or Python) around managing dependencies, quality control and deploying.
+
+Plus there are many tasks covered in the next section which are difficult, impractical or impossible using _only_ the browser. Using Node means you can run these tasks locally or in the cloud, at speed, without a browser running (or even installed). And you have access to write to files on disk or a local database, which is impractical using the browser alone - since for security reasons a browser cannot read or write files on your machine unless you explicitly save or upload a file.
+
+
+## What is Node good for?
 
 Node can be used for the following, among other use cases. 
-
-These would be difficult, impractical or impossible using _only_ the browser. Node means you can run these tasks locally or in the cloud at speed, without a browser running (or even installed) and you have access to write to files on disk or a database on the machine (which is impractical using the browser alone).
 
 - Web scraping
 - CLI tools
