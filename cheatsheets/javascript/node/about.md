@@ -16,13 +16,15 @@ For interest, [Deno][] is another server-side environment of JS.
 
 ## What can Node do?
 
-Node can be used for the following, among other use cases.
+Node can be used for the following, among other use cases. 
+
+These would be difficult, impractical or impossible using _only_ the browser. Node means you can run these tasks locally or in the cloud at speed, without a browser running (or even installed) and you have access to write to files on disk or a database on the machine (which is impractical using the browser alone).
 
 - Web scraping
 - CLI tools
 - Desktop applications
     - e.g. VS Code, WhatsApp
-    - Often built with Electron.
+    - Often built with [Electron](https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/electron/).
 - Web applications
     - Rendering dynamic website content.
         - In the same way that PHP or Python web servers generate and return HTML pages.
@@ -34,17 +36,24 @@ Node can be used for the following, among other use cases.
         - Scale cheaply and fast, having your script run in parallel, adapting as demand changes.
         - Use AWS _Lambda_ or Netlify _Functions_.
     - Single-Page Applications.
-        - Like using [React](https://github.com/MichaelCurrin/react-quickstart), [Vue](https://github.com/MichaelCurrin/vue-quickstart), or [Docsify](https://github.com/MichaelCurrin/docsify-js-template). Where there is one `index.html` and the multi-page site experience is created dynamically using JavaScript.
+        - Like using [React][], [Vue][], or [Docsify][]. Where there is one `index.html` and the multi-page site experience is created dynamically using JavaScript.
         - For the common use case, a Node server is unnecessary to serve a SPA. So you can use any static hosting site to make your site public.
     - Rendering static sites.
-        - Like using [VuePress](https://github.com/MichaelCurrin/vuepress-quickstart), [Nuxt](https://github.com/MichaelCurrin/nuxt-default-quickstart), or [Hexo](https://github.com/MichaelCurrin/hexo-quickstart).
+        - Like using [VuePress][], [Nuxt][], or [Hexo][].
         - Use static hosting as described for SPA above.
     - Hybrid sites.
         - Nuxt renders static content for the initial load and search engine crawlers, then switches to SPA experience.
         - Next lets you choose between server-side rendering and statically rendered content, probably on different routes in the same app too.
 - Mobile apps
-    - Like using React Native.
+    - Like using [React Native](https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/react-native/).
 - Games (web or desktop or mobile)
+
+[React]: https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/react
+[Vue]: https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/vue
+[Docsify]: https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/docsify/
+[VuePress]: https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/vuepress
+[Nuxt]: https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/nuxt/
+[Hexo]: https://github.com/MichaelCurrin/hexo-quickstart
 
 ### Node as a build tool
 
