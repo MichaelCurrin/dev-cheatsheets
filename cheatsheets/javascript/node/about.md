@@ -81,24 +81,42 @@ Hello, World!
 
 ## Node as a dev tool
 
-Node can perform the following, using NPM:
+Node can perform the following, using the NPM CLI.
 
 - Package management.
     - Download packages.
     - Upgrade packages when newer ones are available - especially useful for security updates.
-- Linting. e.g. `npm run lint` or `npx eslint .`
-- Formatting. e.g. `npm run fmt` or `npx prettier -w .
-- Run tests. e.g. `npm test`
-- Run typechecks - if using TypeScript. e.g. `npm run compile`
+- Quality checks (using an installed NPM package)
+    - Lint code. e.g. `npm run lint` or `npx eslint .`
+    - Format code. e.g. `npm run fmt` or `npx prettier -w .
+    - Run tests. e.g. `npm test`
+    - Run typechecks for TypeScript projects. e.g. `npm run compile`
 - Do production builds
     - Minify to reduce the size of the content to be downloaded.
     - Bundle - to collect all your JS modules and external libraries and bundle them as a single JS file.
-    - Transpile - convert newer JS to older JS syntax, or from JSX or TypeScript to plain JS.
+    - Transpile - convert newer JS to older JS syntax, or from JSX or TypeScript to plain JS. Typically with Babel or Webpack.
 
 Using these tasks means that you improve the code quality and performance of your app, which improves the lives of your developer team and of end-users.
 
-You can set up a JavaScript project that is a SPA but that doesn't need Node.
+
+## Web apps without Node
+
+The typical flow for Vue and React projects is to use Node to handle dependencies, a dev server and building static output (HTML, CSS and JS files).
+
+But you can easily JavaScript project that follow the SPA approach of those, without Node. Then you don't need a build step. And hanks to ES Modules, you get to import your packages by UR Lin your JS files rather than loading them in an HTML file, so it keeps your dependencies close to where they re used.
+
+This approach without Node is great for small projects with just a few pages, or if you want to add some forms or interactivity to an existing site without rewriting the whole thing with Node and all the associated overhead of structure and dependencies.
+
+The examples below focus on one HTML file, one CSS file and one JS file. And you can load additional JS files such as for more components, if you need to.
+
+### Vue
 
 Here is a Vue-based application. Rather than loading Vue using a `script` tag in the HTML, rather the newer ES Module syntax is used. So within the JS script, there is an import of Vue from a CDN and the browser knows to download this and use it.
 
 - [![MichaelCurrin - vue-frontend-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=vue-frontend-quickstart&color=blue&logo=github)](https://github.com/MichaelCurrin/vue-frontend-quickstart)
+
+### React
+
+And here is one for React.
+
+- [![MichaelCurrin - react-frontend-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=rect-frontend-quickstart&color=blue&logo=github)](https://github.com/MichaelCurrin/react-frontend-quickstart)
