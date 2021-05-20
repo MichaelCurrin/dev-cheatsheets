@@ -1,6 +1,6 @@
 ---
 title: About
-description: What is Node and what can you do with it?
+description: What is Node, why use it and what can you do with it?
 ---
 
 Node (or "Node.js", or less commonly "NodeJS") is a **server-side** runtime environment for JavaScript. It is an alternative to the **browser** runtime environment (which was the first place JS was used).
