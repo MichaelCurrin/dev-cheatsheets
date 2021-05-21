@@ -200,11 +200,13 @@ cheatsheet:
 
 Grouped by functionality.
 
-This is a based info on the [CloudCannon Jekyll cheatsheet](https://learn.cloudcannon.com/jekyll-cheat-sheet/). See also [Liquid filters](https://jekyllrb.com/docs/liquid/filters/) on Jekyll docs.
+This is a based info on the [CloudCannon Jekyll cheatsheet][]. See also [Liquid filters][] on Jekyll docs.
 
 The items here are grouped and ordered by use, rather than alpabetically.
 
-<!-- Note - highligh or pre causes the code to be on a newline but code doesn't and is like single ticks. -->
+See also the [Arrays][] cheatsheet.
+
+<!-- Note - highlight or pre causes the code to be on a newline but code doesn't and is like single ticks. -->
 
 {% for section in page.cheatsheet %}
 ### {{ section.title }}
@@ -224,3 +226,7 @@ The items here are grouped and ordered by use, rather than alpabetically.
 </ul>
 
 {% endfor %}
+
+[CloudCannon Jekyll cheatsheet]: https://learn.cloudcannon.com/jekyll-cheat-sheet/
+[Liquid filters]: https://jekyllrb.com/docs/liquid/filters/
+[Arrays]: {{ site.baseurl }}{% link cheatsheets/jekyll/liquid/arrays.md %}
