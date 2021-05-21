@@ -1,3 +1,3 @@
 ---
-title: Truthy falsy
+title: Truthy and falsy logic
 ---
