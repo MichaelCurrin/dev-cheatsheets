@@ -10,7 +10,33 @@ Such as a `.txt` file, though this will work on any file that is text (i.e. not 
 
 ### Read text file
 
-#### Turn entire file as a string
+Given file with contents:
+
+```
+Line 1
+Line 2
+Line 3
+```
+
+### Process as needed
+
+Instead of reading the whole file into memory, process lines as they are needed. Such as to print them or add to a database.
+
+```python
+with open(path) as f_in:
+    for line in f_in:
+        print(repr(line))
+```
+
+Result:
+
+```
+'Line 1\n'
+'Line 2\n'
+'Line 3\n'
+```
+
+#### File contents as a string
 
 Get a file as a single string variable, with line breaks in it.
 
@@ -26,9 +52,9 @@ The value will be like:
 "Line 1\And line 2\nLine 3\n"
 ```
 
-#### Split lines
+#### File rows as strings
 
-You'll probably find it more useful to **split*** that string into a **list of strings**. Here we use `str.splitlines` method.
+Here we **split** that single string of the file text into a **list of strings**. Using the `str.splitlines` method.
 
 ```python
 with open(path) as f_in:
@@ -36,37 +62,51 @@ with open(path) as f_in:
     lines = text.splitlines()
 ```
 
-Then the value will be like:
+Result:
 
 ```python
 >>> lines
 [
     "Line 1",
-    "And line 2",
+    "Line 2",
     "Line 3",
 ]
 ```
 
+Note there are **no** trailing newline characters.
+
 Get the line count with `len`:
 
-```
+```python
 >>> len(lines)
 3
 >>> print(f"Line count: {len(lines)}")
 Line count: 3
 ```
 
-Note that calling `list.splitlines` will split by the **newline** characters and will also **remove** them by default. This is useful as you probably don't want to have `"\n"` at the end of each item in the list. 
-
-Alternative:
+### Convert file to list
 
 ```python
-lines.split("\n")
+with open(path) as f_in:
+    lines = list(f_in)
+    # OR
+    lines = [l for l in f_in]
 ```
 
-Note explict use of `"\n"` as `lines.split()` with no arguments will split on other whitespaces like spaces.
+Result:
 
-#### Read one line at at ime
+```python
+>>> lines
+[
+    'Line 1\n', 
+    'Line 2\n', 
+    'Line 3\n'
+]
+```
+
+Note the trailing newlines, which can be avoided by using another approach above.
+
+#### Read one line at a time
 
 Read line by line, as you need a line. This is usually more memory efficient than reading the entire file into memory. And is more practical if you might only need the first few lines and then will close the file.
 
