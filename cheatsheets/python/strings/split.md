@@ -39,10 +39,18 @@ my_string.splitlines()
 e.g.
 
 ```python
+with open(path) as f_in:
+    text = f_in.read()
+    lines = text.splitlines()
+```
+
+Or not from a file.
+
+```python
 """abc
 def
 ghi
-""".split("\n")
+""".splitlines("\n")
 ['abc', 'def', 'ghi']
 ```
 
