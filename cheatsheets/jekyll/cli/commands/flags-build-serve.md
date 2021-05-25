@@ -1,15 +1,18 @@
-# Flags for build and serve
+---
+title: Flags for build and serve
+description: CLI flags of interest to me for `serve` and `build`.
+---
 
-CLI flags of interest to me for `serve` and `build`.
+See also [Options](https://jekyllrb.com/docs/configuration/options/) in the Jekyll docs for global options, build options and serve options. These can be set in the CLI and in the config.
 
 
 ## Debugging
 
 | Flag            | Description                                                                    |
 | --------------- | ------------------------------------------------------------------------------ |
-| `--trace`       | Show the full backtrace when an error occurs                                   |
-| `-V, --verbose` | Print verbose output.                                                          |
-| `--profile`     | Generate a Liquid rendering profile (e.g. to find the slowest pages to render) |
+| `--trace`       | Show the full backtrace when an error occurs.                                   |
+| `-V`, `--verbose` | Print verbose output.                                                          |
+| `--profile`     | Generate a Liquid rendering profile (e.g. to find the slowest pages to render). |
 
 
 ## Serving
@@ -20,15 +23,15 @@ For `serve` only.
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | `-H, --host`         | e.g. `--host 0.0.0.0` Open up to requests on the network.                                                                   |
 | `--show-dir-listing` | Show contents of the directory. Ignores an existing `index.html`. This flag is not needed if there is no `index.html` file. |
-| `-l, --livereload`   | Use LiveReload to automatically refresh browsers                                                                            |
-| `--no-watch`         | Disabling the default option to watch for changes and rebuild.                                                              |
+| `-l`, `--livereload`   | Automatically refresh the browser on a rebuild.                                                                            |
+| `--no-watch`         | The default of `--watch` will watch for changes to files and rebuild the site. This flag turns off that behavior.     |
 
 ## Show and hide content
 
 | Flag                      | Description                                     |
 | ------------------------- | ----------------------------------------------- |
-| `-D, --drafts`            | Render posts in the _drafts folder              |
-| `--unpublished `          | Render posts that were marked as unpublished    |
+| `-D, --drafts`            | Render posts in the `_drafts` folder              |
+| `--unpublished`          | Render posts that were marked as unpublished    |
 | `--future`                | Publishes posts with a future date              |
 | `--limit_posts MAX_POSTS` | Limits the number of posts to parse and publish |
 
@@ -38,9 +41,9 @@ For `serve` only.
 | Flag                                     | Description                                           |
 | ---------------------------------------- | ----------------------------------------------------- |
 | `--config CONFIG_FILE,[CONFIG_FILE,...]` | Read configs.                                         |
-| `-d, --destination DESTINATION`          | The current folder will be generated into DESTINATION |
-| `-s, --source SOURCE`                    | Custom source directory                               |
-| `-b, --baseurl URL`                      | Serve the website from the given base URL             |
+| `-d`, `--destination DESTINATION`          | The current folder will be generated into DESTINATION |
+| `-s`, `--source SOURCE`                    | Custom source directory                               |
+| `-b`, `--baseurl URL`                      | Serve the website from the given base URL             |
 | `--layouts DIR`                          | Layouts directory (defaults to ./_layouts)            |
 
 
