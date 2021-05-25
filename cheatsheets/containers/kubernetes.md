@@ -146,7 +146,7 @@ metadata:
 
 ### Scale
 
-Scale the number of pods up or down.
+Scale the number of pods up or down using `scale` subcommand.
 
 Use a name from `kubectl get deployments` here and add a prefix.
 
@@ -164,14 +164,26 @@ Output:
 deployment.apps/helloworld-dev scaled
 ```
 
+Or updating your config's replica count and apply the config.
+
+```sh
+$ kubectl apply -f myapp.yaml
+```
+
 
 ## Logs
 
-Use `k get pods` then use a pod ID.
-
 ```sh
-$ kubectl get logs foobarb-backend-stg-abcd55cdc4-7qqxz
+$ kubectl get logs POD_ID
 ```
+
+For example
+
+1. Use `k get pods` to get a pod's ID (which changes on running a deploy).
+2. Then run:
+    ```sh
+    $ kubectl get logs foobarb-backend-stg-abcd55cdc4-7qqxz
+    ```
 
 
 ## Secrets
