@@ -102,18 +102,18 @@ $ kubectl exec -it foobarb-backend-stg-abcd549c97-d8jn6 -- sh
 
 Note:
 
-> kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.
+> `kubectl exec [POD] [COMMAND]` is DEPRECATED and will be removed in a future version. Use `kubectl exec [POD] -- [COMMAND]` instead.
 
 
 ## Deployment
 
-List deployments.
+### List deployments
 
 ```sh
 $ kubectl get deployments
 ```
 
-Get a deployment.
+### Get a deployment
 
 ```sh
 $ kubectl get deployment DEPLOYMENT_NAME
@@ -124,7 +124,7 @@ NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
 foobarb-backend-stg     2/2     2            2           2d18h
 ```
 
-Get a deployment. Optionally get as long YAML output as below. Optionally write to a local YAML file.
+Optionally get as long YAML output as below. Optionally write to a local YAML file.
 
 ```sh
 $ kubectl get deployment DEPLOYMENT_NAME -o yaml  # > foo.yaml
@@ -142,6 +142,22 @@ metadata:
   generation: 12
   ...
 ....
+```
+
+### Scale
+
+Scale the number of pods up or down.
+
+Use a name from `kubectl get deployments` here and add a prefix.
+
+```sh
+$ kubectl scale deployments/NAME --replicas 1
+```
+
+e.g.
+
+```sh
+$ kubectl scale deployments/helloworld-dev --replicas 1
 ```
 
 
