@@ -151,13 +151,17 @@ Scale the number of pods up or down.
 Use a name from `kubectl get deployments` here and add a prefix.
 
 ```sh
-$ kubectl scale deployments/NAME --replicas 1
+$ kubectl scale deployments/NAME --replicas 2
 ```
 
 e.g.
 
 ```sh
-$ kubectl scale deployments/helloworld-dev --replicas 1
+$ kubectl scale deployments/helloworld-dev --replicas 2
+```
+Output:
+```
+deployment.apps/helloworld-dev scaled
 ```
 
 
