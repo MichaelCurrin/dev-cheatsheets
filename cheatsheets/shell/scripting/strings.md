@@ -414,3 +414,55 @@ In Python you would use three quotes. You could use double quotes (`"`) usually,
     ```
 
 Note use of escaped newline at the start, to prevent first line from appearing as empty.
+
+
+## Case
+
+From [article](https://linuxhint.com/bash_lowercase_uppercase_strings/).
+
+For Bash 4 and up only. Not Bash 3 or ZSH.
+
+### Titlecase
+
+```s
+$ x='abc'
+
+$ echo "${x^}
+Abc
+```
+
+### Uppercase
+
+```sh
+$ x='abc'
+
+$ echo "${x^^}
+ABC
+```
+
+For Bash 3 - from [answer](https://unix.stackexchange.com/questions/51983/how-to-uppercase-the-command-line-argument).
+
+```sh
+$ MY_VALUE="Some string"
+$ printf '%s\n' "$MY_VALUE" | awk '{ print toupper($0) }'
+SOME STRING
+```
+
+### Selective uppercase
+
+Here we uppercase only `p` and `j` letters.
+
+```sh
+$ LANGUAGES='python perl java php c#'
+$ echo ${LANGUAGES^^[p,j]}
+```
+
+### Handle inputs
+
+Apply titlecase to an input. e.g. `yes` becomes `Yes`.
+
+```
+read -p "Do you like music? " ans
+answer=${ans^}
+echo "Your answer is $answer."
+```
