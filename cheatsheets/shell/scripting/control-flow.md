@@ -1,18 +1,138 @@
-# Control flow
+---
+title: Control flow
+description: Conditionals in shell scripting
+---
 
+## Basic
 
-## Test syntax
-
-Note the older format of:
+### Built-in commands
 
 ```sh
-test CONDITION
+$ true
+$ false
 ```
 
-That is replaced by:
+### Chain
+
+Use in a chain.
 
 ```sh
-[ CONDITION ]
+$ true && echo 'True!' || echo 'False!'
+True!
+```
+
+### If else
+
+Use with `if`.
+
+```sh
+if true; then
+  echo 'True!'
+fi
+# True!
+```
+
+Use with `if` and `else`.
+
+```sh
+if true; then
+  echo 'True!'
+else
+  echo 'False!'
+fi
+# True!
+```
+
+### Negate
+
+```sh
+if ! false; then
+  echo 'Yes!'
+fi
+# Yes!
+```
+
+
+## Expressions
+
+### Match string
+
+Replace `true` or `false` above with an expression.
+
+Text check
+
+```sh
+x='abc'
+
+if [[ "$x" == 'abc' ]]; then
+  echo 'Yes!'
+fi
+# Yes!
+```
+
+### Check numberic condition
+
+```sh
+AGE=20
+
+if [[ "$AGE" -ge 18 ]]; then
+  echo 'Major!'
+fi
+# Major!
+```
+
+### Contains
+
+```sh
+[[ VARIABLE =~ *NEEDLE* ]]
+```
+
+e.g.
+
+```sh
+GREETING='Hello, world'
+
+[[ "$GREETING" = *lo* ]] && echo 'Match' || echo 'No match'
+Match
+```
+
+Check if a string is in your OS type.
+
+```sh
+[[ "$OSTYPE" = *darwin* ]] && echo 'I'm a mac' || echo 'I'm not a mac'
+```
+
+### Regex
+
+```sh
+[[ VARIABLE =~ CONDITION ]]
+```
+
+e.g.
+
+```sh
+FIRST=abc
+SECOND=def
+
+[[ "$FIRST" =~ '^d' ]] && echo 'Match' || echo 'No match'
+# No match
+[[ "$SECOND" =~ '^d' ]] && echo 'Match' || echo 'No match'
+# Match
+```
+
+
+## Test command syntax vs hard bracket syntax
+
+Note the older format of the `test` command:
+
+```sh
+test EXPRESSION
+```
+
+That is mostly replaced by:
+
+```sh
+[ EXPRESSION ]
 ```
 
 And in some shell flavors such as Bash and ZSH, you can use double brackets which adds some extra functionality you might want.
@@ -21,7 +141,7 @@ And in some shell flavors such as Bash and ZSH, you can use double brackets whic
 [[ CONDITION ]]
 ```
 
-But note that `dash` does not support double brackets - if you use `sh` command on Ubuntu, you'll end up running `dash` and **not** `bash` and so will get a syntax error on double brackets.
+But note that `dash` (on Ubuntu) is similar to Bash does **not** support double brackets. Why does this matter? if you use `sh` command on Ubuntu, you'll end up running `dash` and **not** `bash` and so will get a syntax error on double brackets.
 
 
 ## Ignore
@@ -49,7 +169,9 @@ set -e
 ```
 
 
-## Check file
+## Common checks
+
+### Check file
 
 If a file exists:
 
@@ -69,8 +191,7 @@ fi
 
 See [Bash cheatsheet](https://devhints.io/bash) for more info.
 
-
-## Variable not set
+### Variable not set
 
 Abort the script if a check evaluates to false. Here we see if a variable is set.
 
@@ -96,11 +217,48 @@ fi
 ```
 
 
-## One-liner status check
+### Check if root
+
+```sh
+if [ "$UID" -ne 0 ]; then
+  echo 'I am not root'
+fi
+```
+
+
+## Status check
+
+### If
+
+This is a multi-line `if` statement, which is useful for more complex statements or if readability is important.
+
+```sh
+false
+
+if [[ "$?" -eq 0 ]]; then
+  echo 'Passed!'
+else
+  echo 'Failed!'
+  exit 1
+fi
+```
+
+Show message on failure only:
+
+```sh
+false
+
+if [[ "$?" -ne 0 ]]; then
+  echo 'Failed!';
+  exit 1
+fi
+```
+
+### One-liner status check
 
 Check if the status of the **previous** command was a pass or fail. This can help if the command is long and you don't want to fit it on one line.
 
-### Skip error
+#### Skip error
 
 This will keep going and not abort the script.
 
@@ -123,47 +281,11 @@ Example use:
     Failed!
     ```
 
-### Exit on error
+#### Exit on error
 
 Note brackets are needed.
 
 ```sh
 $ false
 $ [[ $? -eq 0 ]] && echo 'Passed!' || (echo 'Failed!'; exit 1)
-```
-
-
-## If statement
-
-This is a multi-line `if` statement, which is useful for more complex statements or if readability is important.
-
-```sh
-false
-
-if [[ $? -eq 0 ]]; then
-  echo 'Passed!'
-else
-  echo 'Failed!'
-  exit 1
-fi
-```
-
-Show message on failure only:
-
-```sh
-false
-
-if [[ $? -ne 0 ]]; then
-  echo 'Failed!';
-  exit 1
-fi
-```
-
-
-## Check if root
-
-```sh
-if [ $UID -ne 0 ]; then
-  echo 'I am not root'
-fi
 ```
