@@ -44,4 +44,43 @@ The safest is to always do imports of locked versions in your apps.
 
 See [Managing packages][] page for more info around locking and upgrading standard lib and 3rd-party packages.
 
+
+## Uninstall Deno
+
+### Delete Deno binary
+
+```sh
+$ rm $(which deno)
+```
+
+### Delete Deno directory
+
+Including `.deno/bin` which has installed CLI packages.
+
+```sh
+$ rm -rf ~/.deno
+```
+
+### Delete cache
+
+The cache includes downloaded packages.
+
+On macOS, here is the configuration:
+
+```sh
+$ deno info
+```
+```
+DENO_DIR location: "/Users/mcurrin/Library/Caches/deno"
+Remote modules cache: "/Users/mcurrin/Library/Caches/deno/deps"
+Emitted modules cache: "/Users/mcurrin/Library/Caches/deno/gen"
+Language server registries cache: "/Users/mcurrin/Library/Caches/deno/registries"
+```
+
+So then you know what to delete. e.g.
+
+```sh
+$ rm -rf ~/Library/Caches/deno
+```
+
 [Managing packages]: {{ site.baseurl }}{% link cheatsheets/javascript/deno/cli/managing-packages.md %}
