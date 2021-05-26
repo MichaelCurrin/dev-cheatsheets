@@ -49,9 +49,19 @@ fi
 if ! false; then
   echo 'Yes!'
 fi
-# Yes!
 ```
 
+```sh
+if [[ ! "$x" == 'abc' ]]; then
+  echo 'Yes!'
+fi
+```
+
+```sh
+if [[ "$x" != 'abc' ]]; then
+  echo 'Yes!'
+fi
+```
 
 ## Expressions
 
@@ -216,12 +226,27 @@ if [[ -z "$MY_VAR" ]]; do
 fi
 ```
 
-
-### Check if root
+### Check if root user
 
 ```sh
 if [ "$UID" -ne 0 ]; then
   echo 'I am not root'
+fi
+```
+
+### Check if value in PATH
+
+Check if `$HOME/.deno/bin` is in the `PATH` variable.
+
+```sh
+[[ "$PATH" == *$HOME/.deno/bin* ]] && echo 'yes' || echo 'no'
+```
+
+### Check if installed
+
+```sh
+if command -v node >/dev/null 2>&1; then
+  echo 'Node is installed'
 fi
 ```
 
