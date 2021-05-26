@@ -91,11 +91,43 @@ fi
 # Major!
 ```
 
-### Contains
+### Check maths condition
+
+Use double brackets `$((CALC))` to evaluate a mathemetical expression.
 
 ```sh
-[[ VARIABLE =~ *NEEDLE* ]]
+[[ "$(($a))" -eq "$(($b))" ]]
 ```
+
+OR
+
+```sh
+[[ "$((a == b))" -ne 0 ]]
+```
+
+### Pattern matching
+
+Use single or double equals sign - the same in newer shells.
+
+```sh
+[[ VARIABLE == VALUE ]]
+```
+
+e.g.
+
+```sh
+[[ "$NAME" == "Joe" ]]
+```
+
+#### Contains
+
+A more specific case of pattern matching.
+
+```sh
+[[ VARIABLE = *NEEDLE* ]]
+```
+
+Note lack of quotes so that `*` gets expanded for the check. In this case `*` does not have to do with paths like it usually does.
 
 e.g.
 
