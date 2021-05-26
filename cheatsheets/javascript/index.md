@@ -14,6 +14,9 @@ Navigation links for related sections.
 
 JavaScript needs a runtime environment to execute in. Traditionally this was the browser, later expanded to Node and then Deno on the server side.
 
+See this short video for how the runtime fits in.
+
+- [FullStack Web Development iceberg short](https://youtu.be/JMWNYfPIF2U)
 
 ### Package managers
 
