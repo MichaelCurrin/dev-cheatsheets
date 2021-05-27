@@ -1,7 +1,7 @@
 ---
+title: AWS CLI
 description: Perform actions on AWS using the command-line
 ---
-# AWS
 
 See [AWS CLI](https://aws.amazon.com/cli/) docs.
 
