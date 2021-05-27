@@ -5,6 +5,7 @@ description: AWS SDK for Python
 
 ## Resources
 
+- [aws.amazon.com/sdk-for-python/](http://aws.amazon.com/sdk-for-python/) homepage
 - [boto3](https://pypi.org/project/boto3/) on PyPi.
 
 
