@@ -17,7 +17,7 @@ Unix shell guide.
     - [x] ZSH (notes are provided where behavior is different for ZSH)
 
 
-## Resources
+### Resources
 
 - [devhints.io/bash](https://devhints.io/bash)
 - [Bash cheatsheets](https://cheatography.com/tag/bash/) on Cheatography.
