@@ -3,18 +3,28 @@
 [Arrays](https://www.gnu.org/software/bash/manual/html_node/Arrays.html) reference in GNU docs.
 
 
+## Overview
+
+```sh
+$ MONTHS=("Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov" "Dec")
+$ echo ${MONTHS[1]}
+$ echo ${MONTHS[@]}
+```
+
+
+
 ## Create
 
 Create using brackets and spaces.
 
 ```sh
-x=(abc def ghi)
+X=(abc def ghi)
 ```
 
 Or newlines.
 
 ```sh
-x=(abc
+X=(abc
 def
 ghi)
 ```
@@ -22,38 +32,55 @@ ghi)
 Or
 
 ```sh
-$ declare -A name
+$ declare -A X
 ```
 
 
 ## Slice
 
-Note that indexing is **not** zero-based, so the firs element is at index `1`.
+#### New
+
+In ZSH and Bash 4 (?) the index starts at 1.
 
 ```sh
-$ echo $x[1]
-abc
-$ echo $x[2]
-def
-$ echo $x[3]
-ghi
+echo ${MONTHS[1]}
+Jan
+echo ${MONTHS[4]}
+Apr
 ```
 
-All elements.
+### Old
+
+In Bash 3, it starts at 0.
 
 ```sh
-$ echo $x[@]
-abc def ghi
+$ echo ${MONTHS[0]}
+Jan
+$ echo ${MONTHS[3]}
+Apr
 ```
 
-Any invalid index such as `0` or `4` here returns nothing and also success code.
+Any invalid index here returns nothing and also a success code.
+
+All elements. You can use `*` too but `@` seems most common.
+
+```sh
+$ echo $MONTHS[@]
+Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+```
 
 
 ## Iterate
 
 ```sh
 MY_ARRAY=(abc def ghi)
+```
 
+### New
+
+ZSH and Bash 4.
+
+```sh
 for X in $MY_ARRAY[@]; do
   echo $X
 done
@@ -64,14 +91,15 @@ def
 ghi
 ```
 
-Note on Bash 3, that will print the first value and some text as `abc[@]`, instead of expanding.
+### Old
 
-Then you need to do:
+For Bash 3 - you need braces. Otherwise you'll only get the first element.
 
-```
+```sh
 for X in ${MY_ARRAY[@]}; do
+  echo $X
+done
 ```
-
 
 Or without an array variable:
 
@@ -90,8 +118,8 @@ ghi
 ## Update
 
 ```sh
-$ x[2]=zzz
-$ echo $x[2]
+$ X[2]=zzz
+$ echo $X[2]
 zzz
 ```
 
