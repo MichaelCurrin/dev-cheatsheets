@@ -3,7 +3,9 @@
 
 ## Install
 
-See gist - [Install Ruby and Bundler](https://gist.github.com/fb758aea4d35e03b9ed093afddf4e7ec)
+See gist - [Install Ruby and Bundler](https://gist.github.com/fb758aea4d35e03b9ed093afddf4e7ec).
+
+<script src="https://gist.github.com/MichaelCurrin/fb758aea4d35e03b9ed093afddf4e7ec.js"></script>
 
 
 ## Uninstall
