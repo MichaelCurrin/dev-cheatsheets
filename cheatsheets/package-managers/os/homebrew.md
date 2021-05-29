@@ -195,3 +195,6 @@ jruby                                        ruby-build                         
 ==> Casks
 rubymine
 ```
+
+Note that `ruby` at time of writing also can referenced by `ruby@3` or `ruby@3.0`, as those are aliases, though the aliases do not appear in the search results. Similarly, you can use `ruby@2` to get `ruby@2.7`.
+
