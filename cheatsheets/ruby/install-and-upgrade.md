@@ -1,6 +1,44 @@
 # Install and upgrade
 
 
+## Directories
+
+For macOS and Linux.
+
+### Ruby
+
+```
+/usr/local/opt/ruby/bin/ruby
+/usr/bin/ruby
+```
+
+### Bundler
+
+```
+/usr/local/opt/ruby/bin/bundler
+/usr/bin/bundler
+```
+
+### System gems
+
+```
+/usr/local/opt/ruby/bin/
+```
+
+### User gems
+
+When install with `gem install GEM --user-install`.
+
+- Ruby 3:
+    ```
+    ~/.local/share/gem/ruby/3.X.0/bin
+    ```
+- Ruby 2: 
+    ```
+    ~/.gem/ruby/2.X.0/bin
+    ```
+
+
 ## Install
 
 See gist - [Install Ruby and Bundler](https://gist.github.com/fb758aea4d35e03b9ed093afddf4e7ec).
