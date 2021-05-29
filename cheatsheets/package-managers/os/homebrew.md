@@ -151,3 +151,23 @@ e.g.
 $ brew tap isacikgoz/taps
 $ brew install gitbatch
 ```
+
+
+## Link
+
+You can run `brew link` directly but it also runs as part of install or upgrade.
+
+If a symlink cannot be created, you will get an error message with instructions as below.
+
+To force the link and overwrite all conflicting files:
+
+```sh
+brew link --overwrite PACKAGE
+```
+
+To list all files that would be deleted:
+
+```sh
+$ brew link --overwrite --dry-run PACKAGE
+```
+  
