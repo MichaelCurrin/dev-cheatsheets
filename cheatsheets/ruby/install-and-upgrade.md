@@ -3,23 +3,21 @@
 
 ## Directories
 
-For macOS and Linux.
+For macOS and Linux. The custom installs as are using a package manager like APT or Homebrew.
 
 ### Ruby
 
-```
-/usr/local/opt/ruby/bin/ruby
-/usr/bin/ruby
-```
+- Custom: `/usr/local/opt/ruby/bin/ruby`
+- Built-in: `/usr/bin/ruby`
 
 ### Bundler
 
-```
-/usr/local/opt/ruby/bin/bundler
-/usr/bin/bundler
-```
+- Custom: `/usr/local/opt/ruby/bin/bundler`
+- Built-in: `/usr/bin/bundler`
 
 ### System gems
+
+When installing with `gem install GEM`.
 
 ```
 /usr/local/opt/ruby/bin/
@@ -27,7 +25,7 @@ For macOS and Linux.
 
 ### User gems
 
-When install with `gem install GEM --user-install`.
+When installing with `gem install GEM --user-install`.
 
 - Ruby 3:
     ```
@@ -37,6 +35,8 @@ When install with `gem install GEM --user-install`.
     ```
     ~/.gem/ruby/2.X.0/bin
     ```
+
+If you install Bundler at the user level, it will be in there too.
 
 
 ## Install
