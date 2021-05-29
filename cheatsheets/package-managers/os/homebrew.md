@@ -76,7 +76,7 @@ $ brew cask install CASK_NAME
 $ brew upgrade PACKAGE
 ```
 
-## Upgrade all packages
+### Upgrade all packages
 
 Update outdated packages. WARNING Use this with caution - it can break Python virtual environments for example.
 
@@ -85,7 +85,6 @@ $ brew upgrade --dry-run
 
 $ brew upgrade
 ```
-
 
 Here is a shortcut I found - from [article](https://medium.com/@kkostov/how-to-install-node-and-npm-on-macos-using-homebrew-708e2c3877bd ).
 
