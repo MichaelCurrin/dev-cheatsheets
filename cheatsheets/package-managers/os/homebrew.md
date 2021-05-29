@@ -70,6 +70,14 @@ $ brew cask install CASK_NAME
 
 ## Upgrade packages
 
+### Outdated
+
+Check for outdated packages.
+
+```sh
+$ brew outdated
+```
+
 ### Upgrade one package
 
 ```sh
