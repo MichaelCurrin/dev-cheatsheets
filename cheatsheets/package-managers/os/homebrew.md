@@ -18,7 +18,9 @@ See the [brew.sh](https://brew.sh) homepage.
 
 ## Update list
 
-Update Homebrew's package list - this does _not_ actually update packages. Note you probably don't need to use this since an update is done before commands like install.
+Update Homebrew's local list of packages.
+
+This does _not_ actually update packages. Note you probably _don't_ need to use this, since an update is done before commands like install.
 
 ```sh
 $ brew update
