@@ -35,10 +35,15 @@ _Note: Unlike `apt`, the `update` command is done internally to get the latest r
 
 ```sh
 $ brew install PACKAGE
-$ brew install PACKAGE@VERSION  # e.g. gcc@7 python@3.9
+$ brew install PACKAGE@VERSION
+```
+e.g.
+
+```sh
+$ brew install gcc@7 python@3.9
 ```
 
-_Warning: The install command will also upgrade all installed packages._
+Warning: The `install` command will also **automatically upgrade** all installed packages. This has caused issues for me where Python environments broke when upgrading something unrelated to Python.
 
 Install without auto-upgrade - from [article](https://computingforgeeks.com/prevent-homebrew-auto-update-on-macos/).
 
@@ -46,10 +51,10 @@ Install without auto-upgrade - from [article](https://computingforgeeks.com/prev
 $ HOMEBREW_NO_AUTO_UPDATE=1 brew install PACKAGE
 ```
 
-Set in `.bashrc` or `.zshrc`.
+Or set once-off in `.bashrc` or `.zshrc` so it is always set.
 
 ```sh
-$ export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_AUTO_UPDATE=1
 ```
 
 ### Install cask
