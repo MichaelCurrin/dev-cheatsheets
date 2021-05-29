@@ -45,7 +45,7 @@ e.g.
 $ brew install gcc@7 python@3.9
 ```
 
-Warning: The `install` command will also **automatically upgrade** all installed packages. This has caused issues for me where Python environments broke when upgrading something unrelated to Python.
+**Warning**: The default behavior is for the `install` command to automatically **upgrade all installed packages**. This has caused issues for me where Python environments broke when upgrading something unrelated to Python.
 
 Install without auto-upgrade - from [article](https://computingforgeeks.com/prevent-homebrew-auto-update-on-macos/).
 
