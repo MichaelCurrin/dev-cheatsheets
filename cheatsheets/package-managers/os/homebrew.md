@@ -29,7 +29,9 @@ $ brew update
 
 ## Install
 
-### Install package
+If a package is _already_ installed and you install it again, you'll get an error message telling you to upgrade it instead.
+
+### Install selected package
 
 Install a specific package by its formula.
 
@@ -72,16 +74,29 @@ $ brew cask install CASK_NAME
 
 ### Outdated
 
-Check for outdated packages.
+List outdated packages - including current and latest versions.
 
 ```sh
 $ brew outdated
 ```
 
-### Upgrade one package
+### Upgrade selected package
 
 ```sh
 $ brew upgrade PACKAGE
+```
+
+Warning: This will also upgrade dependents.
+
+e.g. Upgrading `shfmt` upgraded these too:
+
+```
+...
+==> Upgrading shfmt 2.6.4 -> 3.3.0
+...
+==> Upgrading 14 dependents:
+cython 0.29.21 -> 0.29.23, gnutls 3.6.15 -> 3.6.16, httpie 2.2.0_1 -> 2.4.0, ipython 7.18.1 -> 7.24.0, krb5 1.18.2 -> 1.19.1, libxml2 2.9.10_1 -> 2.9.12, libxmlsec1 1.2.30 -> 1.2.32, mysql-client 8.0.21 -> 8.0.25, mysql-connector-c++ 8.0.21 -> 8.0.25, pyenv 1.2.21 -> 2.0.0, python@3.8 3.8.6 -> 3.8.10, python@3.9 3.9.0 -> 3.9.5, sphinx-doc 3.2.1_1 -> 4.0.
+...
 ```
 
 ### Upgrade all packages
