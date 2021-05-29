@@ -25,7 +25,7 @@ $ brew update
 ```
 
 
-## Manage packages
+## Install
 
 ### Install package
 
@@ -57,7 +57,7 @@ Or set once-off in `.bashrc` or `.zshrc` so it is always set.
 export HOMEBREW_NO_AUTO_UPDATE=1
 ```
 
-### Install cask
+### Install a cask
 
 See also [Homebrew casks](https://formulae.brew.sh/cask/).
 
@@ -65,8 +65,8 @@ See also [Homebrew casks](https://formulae.brew.sh/cask/).
 $ brew cask install CASK_NAME
 ```
 
-## Upgrade
 
+## Upgrade packages
 
 ### Upgrade one package
 
@@ -104,6 +104,13 @@ pin, unpin).
 
 Unless HOMEBREW_NO_INSTALL_CLEANUP is set, brew cleanup will then be run for
 the upgraded formulae or, every 30 days, for all formulae.
+```
+
+
+## Remove
+
+```sh
+$ brew uninstall PACKAGE
 ```
 
 
