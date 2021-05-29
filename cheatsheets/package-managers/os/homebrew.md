@@ -171,3 +171,27 @@ To list all files that would be deleted:
 $ brew link --overwrite --dry-run PACKAGE
 ```
   
+  
+## Search
+
+Provide one text or regex argument.
+
+```sh
+$ brew search SEARCH_TERM
+```
+
+e.g.
+
+```sh
+$ brew search ruby
+```
+```
+==> Formulae
+chruby                                       mruby                                        ruby-completion                              ruby@2.7
+chruby-fish                                  mruby-cli                                    ruby-install                                 rubyfmt
+cucumber-ruby                                rbenv-bundler-ruby-version                   ruby@2.4                                     homebrew/portable-ruby/portable-ruby
+imessage-ruby                                ruby                                         ruby@2.5
+jruby                                        ruby-build                                   ruby@2.6
+==> Casks
+rubymine
+```
