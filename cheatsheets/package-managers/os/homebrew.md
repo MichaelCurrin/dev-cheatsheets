@@ -171,30 +171,17 @@ To list all files that would be deleted:
 $ brew link --overwrite --dry-run PACKAGE
 ```
   
-  
-## Search
 
-Provide one text or regex argument.
+## Services
+
+Set up a service to start now and then start up whenever you boot the machine. This uses `launchd`.
+
+### Example 
+
+Sample instructions given when installing `dnsmasq`.
+
+To have `launchd` start `dnsmasq` now and restart at startup:
 
 ```sh
-$ brew search SEARCH_TERM
+$ sudo brew services start dnsmasq
 ```
-
-e.g.
-
-```sh
-$ brew search ruby
-```
-```
-==> Formulae
-chruby                                       mruby                                        ruby-completion                              ruby@2.7
-chruby-fish                                  mruby-cli                                    ruby-install                                 rubyfmt
-cucumber-ruby                                rbenv-bundler-ruby-version                   ruby@2.4                                     homebrew/portable-ruby/portable-ruby
-imessage-ruby                                ruby                                         ruby@2.5
-jruby                                        ruby-build                                   ruby@2.6
-==> Casks
-rubymine
-```
-
-Note that `ruby` at time of writing also can referenced by `ruby@3` or `ruby@3.0`, as those are aliases, though the aliases do not appear in the search results. Similarly, you can use `ruby@2` to get `ruby@2.7`.
-
