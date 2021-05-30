@@ -45,15 +45,39 @@ Note that `template` cannot actually be blank as you'll get an error.
 
 ## Script section
 
+### Overview
+
+As defined on the Vuex site, a component has 3 aspects:
+
+- Model - data names and types understood by the component.
+- View - present content to the user as HTML. Vue is named from the French word for "view".
+- Actions - where logic gets done, passing data to and from the view.
+
+This is similar to the classic "Model View Controller" programming approach - which actually originally was used for components and not intended to describe the entire structure of an app, so it makes sense to use it at the Vue component level.
+
+Vue uses methods on a component in the script section which map to the above.
+
+- Model
+    - `data` function of attributes, for managing state. Previously an attribute but deprecation warnings say it must be a function now.
+    - `props` attribute for accepting parameters.
+- View
+    - `template` attribute. Or set `<template>` tag. Both give the same result.
+- Actions
+    - `methods` attribute of functions. Handle user input and get or set values in the state such as on `data`.
+    - `computed` attribute of functions. Similar to methods but used for getting values only, values are **cached**, you can't pass parameters and you access computed values without brackets.
+
+### Props and computed
+
 Here we have a script for a component that accepts props.
 
 - `myComponent.vue`
-    ```javascript
+    ```vue
     <script>
     import Buzz from "@/components/Buzz.vue";
 
     export default {
       name: "Foo",
+
       components: {
         Buzz,
       },
@@ -94,7 +118,9 @@ In TypeScript, it is as good idea to add the return type for a computed variable
 }
 ```
 
-Here we have a view such as `About.vue`, which calculates and renders results. It might use components in its template section. There might be a cleaner way to set `bar` as the result based in inputs but this works for me.
+### Data and methods 
+
+Here we have a view such as `About.vue`, which calculates and renders results. It might use further components in its template section. 
 
 - `About.vue`
     ```vue
