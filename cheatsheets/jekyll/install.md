@@ -5,20 +5,16 @@ See [gist](https://gist.github.com/MichaelCurrin/c4a748ebae3d64e5052ceaee987c853
 <script src="https://gist.github.com/MichaelCurrin/c4a748ebae3d64e5052ceaee987c8534.js"></script>
 
 
-## Ruby 3 fix
+## Ruby 3
 
-You need to install Webrick to avoid an error on serving. 
+I did a blog post series on upgrading to Ruby 3 and fixing up Jekyll projects.
 
-See issue [#8523](https://github.com/jekyll/jekyll/issues/8523).
+- [Upgrade to Ruby 3](https://dev.to/michaelcurrin/series/13019).
 
-Add to `Gemfile` and install:
+In particular, you need to install _Webrick_ to avoid an error on Jekyll serve command. See issue [#8523](https://github.com/jekyll/jekyll/issues/8523). Perhaps this will be fixed in newer versions of Jekyll.
+
+Run this to add the gem to your `Gemfile` and install it.
 
 ```sh
 $ bundle add webrick
-```
-
-You may need to run this too as recommended, but I was fine without it.
-
-```sh
-$ bundle update
 ```
