@@ -90,10 +90,22 @@ That contains `gems/` and `site_ruby`.
 
 ### Remove Ruby
 
-Remove the custom Ruby using your package manager. e.g.
+Remove the custom Ruby using your package manager.
+
+#### macOS
 
 ```sh
 $ brew uninstall ruby
+```
 
-$ sudo apt remove ruby
+#### Linux
+
+```sh
+$ sudo apt remove ruby ruby-dev
+```
+
+Or if you installed as `ruby-full`:
+
+```sh
+$ sudo apt remove ruby-full
 ```
