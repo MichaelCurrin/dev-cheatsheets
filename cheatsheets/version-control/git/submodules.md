@@ -80,17 +80,22 @@ Then push to GitHub.
 
 ### 1. Pull in changes
 
-```sh
-$ git submodule update
-```
-
-I found that didn't actually do anything, but this works great:
+Pull in changes. Note that without `--remote`, nothing will happen.
 
 ```sh
 $ git submodule update --rebase --remote
 ```
 
-Check changes.
+
+That is effectively the same as this, but I wouldn't recommend this. Also note that `git pull` alone will warn that you are not on a branch.
+
+```sh
+$ cd themes/ananke
+$ git pull origin master
+$ cd ..
+```
+
+Check for changes. You should see that the submodule object appears to change from one commit to another, without showing the full details (because you repo doesn't care about the all commits and the files, just the commit reference).
 
 ```sh
 $ git diff
