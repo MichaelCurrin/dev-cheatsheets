@@ -20,7 +20,7 @@ plugins:
   - jekyll-sitemap
 ```
 
-Additional:
+Additional plugins:
 
 ```yml
 plugins:
@@ -31,6 +31,8 @@ plugins:
 
 
 ## Submodule
+
+See more info in the [Git Submodule][] section.
 
 Add the submodule.
 
@@ -43,3 +45,6 @@ Update for the latest content.
 ```sh
 $ git submodule update --rebase --remote
 ```
+
+[Git Submodule]: {{ site.baseurl }}{% link cheatsheets/version-control/git/submodules.md %}
+
