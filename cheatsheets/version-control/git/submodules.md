@@ -70,7 +70,7 @@ Then push to GitHub.
 
 ## Update submodule
 
-### 1. Pull in changes for the submodule repo.
+### 1. Pull in changes
 
 ```sh
 $ git submodule update
