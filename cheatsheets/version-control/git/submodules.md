@@ -7,7 +7,9 @@ See the [About](#about) section below to learn what Submodules are and how to us
 
 If you view a submodule on GitHub, you get a reference to the directory name and the commit.
 
-e.g. In the [themes](https://github.com/MichaelCurrin/hugo-quickstart/tree/master/themes) directory on my Hugo Quickstart, the submodule `ananke` is displayed as `ananke @ 0cc2c6c` in the GitHub UI.
+e.g. In the [themes](https://github.com/MichaelCurrin/hugo-quickstart/tree/master/themes) directory on my Hugo Quickstart, the submodule `ananke` is displayed in the GitHub UI as
+
+- `ananke @ 0cc2c6c` 
 
 
 ## Set up a submodule
