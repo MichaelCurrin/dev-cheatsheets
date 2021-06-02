@@ -14,11 +14,19 @@ e.g. In the [themes](https://github.com/MichaelCurrin/hugo-quickstart/tree/maste
 
 ### 1. Add a submodule
 
+Reference a git repo such as by GitHub or BitBucket URL.
+
+```sh
+$ git submodule add SUB_MODULE_URL
+```
+
+e.g.
+
 ```sh
 $ git submodule add https://bitbucket.org/jaredw/awesomelibrary
 ```
 
-For a Hugo site, where you add a submodule to the `themes` directory.
+e.g. For a Hugo site, where you add a submodule to the `themes` directory.
 
 ```sh
 $ git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
@@ -40,6 +48,12 @@ $ git status
      url = https://bitbucket.org/jaredw/awesomelibrary
     ```
 
+Check the contents.
+
+```sh
+$ ls awesomelibrary
+```
+
 ### 2. Commit
 
 Commit the submodule changes.
@@ -54,19 +68,42 @@ Then push to GitHub.
 
 ## Update submodule
 
-Pull in changes for the submodule repo.
+### 1. Pull in changes for the submodule repo.
 
 ```sh
 $ git submodule update
 ```
 
-I found this even better:
+I found that didn't actually do anything, but this works great:
 
 ```sh
 $ git submodule update --rebase --remote
 ```
 
+Check changes.
+
+```sh
+$ git diff
+```
+```
+...
+--- a/themes/ananke
++++ b/themes/ananke
+@@ -1 +1 @@
+-Subproject commit 0cc2c6cb62bbe86dbafc3e4e3b083d2654934aa3
++Subproject commit 988c731a5762a6e0a1aad4fd2023caa2dc1e082d
+...
+```
+
+### 2. Commit
+
 Then commit the new reference.
+
+```sh
+$ git commit SUB_MODULE_PATH
+$ # e.g.
+$ git commit themes/ananke
+```
 
 
 ## Get submodule content
@@ -75,8 +112,7 @@ Assuming you have repo on GitHub that has at least one submodule, you want to cl
 
 When you clone the outer repo, the internal repo references will be included, since submodule reference exist are commit objects. But, the submodule directories will be **empty** initially.
 
-To download the content, you need to do one of these steps.
-
+To download the content, you need to either one of these steps.
 
 ### Clone recursively
 
@@ -94,6 +130,19 @@ $ cd my-repo
 $ git submodule init
 $ git submodule update
 ```
+
+
+## Restore
+
+After updating a submodule but not committing, I wanted to go back the old submodule reference. Using `git checkout` doesn't help here, even though the reference shows up as modified.
+
+This worked though:
+
+```sh
+$ git submodule update
+```
+
+Then `git status` was clean.
 
 
 ## About
