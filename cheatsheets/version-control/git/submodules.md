@@ -7,28 +7,36 @@ See the [About](#about) section below to learn what Submodules are and how to us
 
 If you view a submodule on GitHub, you get a reference to the directory name and the commit.
 
-e.g. In the [themes](https://github.com/MichaelCurrin/hugo-quickstart/tree/master/themes) directory on my Hugo Quickstart, the submodule `ananke` is displayed in the GitHub UI as
+e.g. 
+
+In the [themes](https://github.com/MichaelCurrin/hugo-quickstart/tree/master/themes) directory on my Hugo Quickstart, the submodule `ananke` is displayed in the GitHub UI as:
 
 - `ananke @ 0cc2c6c` 
+
+In the [themes](https://github.com/MichaelCurrin/hexo-quickstart/tree/master/themes) directory of my Hexo Quickstart, the submodule `landscape` shows as 
+
+- `landscape @ f20626c`
 
 
 ## Set up a submodule
 
 ### 1. Add a submodule
 
-Reference a git repo such as by GitHub or BitBucket URL.
+Reference a git repo such as by GitHub or BitBucket URL. The repo name will be used by default, but you can set your own name for the path and a directory path if you need to.
 
 ```sh
 $ git submodule add SUB_MODULE_URL
+$ # Or
+$ git submodule add SUB_MODULE_URL PATH
 ```
 
-e.g.
+e.g. Add the `awesomelibrary` repo as a submodule in the outer repo root as `awesomelibrary`.
 
 ```sh
 $ git submodule add https://bitbucket.org/jaredw/awesomelibrary
 ```
 
-e.g. For a Hugo site, where you add a submodule to the `themes` directory.
+e.g. For a Hugo site, add the `gohugo-theme-ananke` repo to the `themes` directory as `ananke`.
 
 ```sh
 $ git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
