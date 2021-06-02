@@ -1,26 +1,137 @@
 # Submodules
 
+See the [About](#about) section below to learn what Submodules are and how to use them.
 
-## What are submodules?
+
+## GitHub view
+
+If you view a submodule on GitHub, you get a reference to the directory name and the commit.
+
+e.g. In the [themes](https://github.com/MichaelCurrin/hugo-quickstart/tree/master/themes) directory on my Hugo Quickstart, the submodule `ananke` is displayed as `ananke @ 0cc2c6c` in the GitHub UI.
+
+
+## Set up a submodule
+
+### 1. Add a submodule
+
+```sh
+$ git submodule add https://bitbucket.org/jaredw/awesomelibrary
+```
+
+For a Hugo site, where you add a submodule to the `themes` directory.
+
+```sh
+$ git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+```
+
+Check the result:
+
+```sh
+$ git status
+...
+ new file:   .gitmodules
+ new file:   awesomelibrary
+```
+
+- `.gitmodules` file contents:
+    ```ini
+    [submodule "awesomelibrary"]
+     path = awesomelibrary
+     url = https://bitbucket.org/jaredw/awesomelibrary
+    ```
+
+### 2. Commit
+
+Commit the submodule changes.
+
+```sh
+$ git add .gitmodules awesomelibrary/
+$ git commit -m "Add submodule"
+```
+
+Then push to GitHub.
+
+
+## Update submodule
+
+Pull in changes for the submodule repo.
+
+```sh
+$ git submodule update
+```
+
+I found this even better:
+
+```sh
+$ git submodule update --rebase --remote
+```
+
+Then commit the new reference.
+
+
+## Get submodule content
+
+Assuming you have repo on GitHub that has at least one submodule, you want to clone it somewhere (maybe in another local location to test it) or on another machine or in CI.
+
+When you clone the outer repo, the internal repo references will be included, since submodule reference exist are commit objects. But, the submodule directories will be **empty** initially.
+
+To download the content, you need to do one of these steps.
+
+
+### Clone recursively
+
+```sh
+$ git clone OUTER_REPO_URL --recursive
+```
+
+That is equivalent to below.
+
+### Initialize and update submodule manually
+
+```sh
+$ git clone OUTER_REPO_URL
+$ cd my-repo
+$ git submodule init
+$ git submodule update
+```
+
+
+## About
+
+### Resources
+
+[Submodules](https://www.atlassian.com/git/tutorials/git-submodule) tutorial in Atlassian docs.
+
+### What are submodules?
 
 A git submodule allows you to put a git repo as a directory inside another git repo, but without inflating the outer repo or duplicating content.
 
-A submodule gets added with reference to a commit in the external repo. When you update the submodule with the latest external changes, your diff will be small as you have just updated a pointer and not
-the actual files.
+A submodule gets added with reference to a **commit** in the external repo. When you update the submodule with the latest external changes, your diff will be small as you have just updated a pointer and not the actual files.
 
 An advantage of a submodule is that you can treat it as a repo. You navigate in it to look around. You use pull in updates. I would avoid trying to make commits of new content in there directly. Rather make them in the external repo in a different part of your machine or on GitHub, then update your submodule and commit the new reference.
 
 As with cloning, you don't have to own a repo to add it as a submodule.
 
+### Benefits
 
-## Why use submodules?
+The great thing about submodules:
+
+- It lets you reference other repos in your repo, by commit.
+- It keep your commit history short, simple and light. You repo doesn't store all the external files and commits, just a pointer which is small in size.
+- You get to lock your repo reference against an external repo, so you get to choose when you pull in changes and thus avoid surprises.
+
+For example:
+
+- If you _add_ a submodule, you only add a single reference to the external commit, as a single object. In Git it is like a file or an alias but it's really a directory because you can pull in content.
+- If _update_ a submodule from one commit to hundred commits later and many files changes later, the only change that gets recorded in your repo is change that the module when from one commit reference to another. That's just one file change and one commit that is in your history.
+
+### Why use submodules?
 
 Before submodules existed, you would have to copy the external repo files into your repo and then commit them, causing a huge diff in lines and files added to your repo. And when the external repo changes, you'd be stuck. And you definitely don't want to version repo inside a git repo as that is bad practice. You could copy the external directory into your repo using git clone and add the directory to ignore list. 
 
 But there is no guarantee that the next time you clone you'll get the same content. Having a submodule lock onto a specific external commit makes this reliable. Similar to when you lock a package at v2.3.4 in your Node, Python or Ruby packages.
 
-
-## When should I use submodules?
+### When should I use submodules?
 
 A submodule is a way of managing an external dependency reliably. Whether code you wrote or by someone else.
 
@@ -33,54 +144,4 @@ You can also use submodules to collect multiple repos together as a monorepo. Wh
 
 In Terraform, there is the concept of Terraform modules. These are referenced as repos with version numbers. These get installed for you using traditional cloning in an ignored directory of modules. That does not use submodules, but it achieves the same accuracy by locking a release number in a script. So you don't have to know the submodule system or commit a submodule reference.
 
-
-## Resources
-
-[Submodules](https://www.atlassian.com/git/tutorials/git-submodule) tutorial in Atlassian docs.
-
-
-## Example flow
-
-```sh
-$ git submodule add https://bitbucket.org/jaredw/awesomelibrary
-```
-
-```sh
-$ git status
-...
- new file:   .gitmodules
- new file:   awesomelibrary
-```
-
-Contents of .gitmodules:
-
-```ini
-[submodule "awesomelibrary"]
- path = awesomelibrary
- url = https://bitbucket.org/jaredw/awesomelibrary
-```
-
-Commit the submodule changes.
-
-```sh
-$ git add .gitmodules awesomelibrary/
-$ git commit -m "Add submodule"
-```
-
-When you clone the outer repo, the submodule references will be included but the directories will be empty.
-
-To download the content, you need to do one of these steps.
-
-```sh
-$ git clone URL --recursive
-```
-
-That is equivalent to:
-
-```sh
-$ git clone URL
-$ cd repo
-$ git submodule init
-$ git submodule update
-```
 
