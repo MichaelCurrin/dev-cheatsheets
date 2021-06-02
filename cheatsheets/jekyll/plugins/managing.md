@@ -32,15 +32,14 @@ plugins:
 
 ## Submodule
 
-Add.
+Add the submodule.
 
 ```sh
 $ git submodule add git://github.com/foo/bar.git _plugins/foo
 ```
 
-Update.
+Update for the latest content.
 
 ```sh
-$ cd _plugins/bar
-$ git pull origin master
+$ git submodule update --rebase --remote
 ```
