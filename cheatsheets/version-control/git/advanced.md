@@ -11,12 +11,24 @@ Not your everyday git commands, but useful in aliases and scripts.
 
 > The command finds the most recent tag that is reachable from a commit....
 
-e.g.
+> By default (without --all or --tags) git describe only shows **annotated** tags
+
+Shows tag and commit reference.
 
 ```sh
 $ g describe
 v0.19.0-1-gdc17e80
 ```
+
+If you're only tag's commit already, only the tag is shown.
+
+```sh
+$ git checkout gdc17e80
+$ git describe
+v0.19.0-1
+```
+
+Show just commit reference.
 
 ```sh
 $ g describe --abbrev=0
