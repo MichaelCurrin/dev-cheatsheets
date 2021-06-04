@@ -129,13 +129,13 @@ When you clone the outer repo, the internal repo references will be included, si
 
 To download the content, you need to either one of these steps.
 
-### Clone recursively
+### Clone with submodules
 
 ```sh
-$ git clone OUTER_REPO_URL --recursive
+$ git clone OUTER_REPO_URL --recurse-submodules
 ```
 
-That is equivalent to below.
+That is equivalent to the section below.
 
 ### Initialize and update submodule manually
 
@@ -144,6 +144,17 @@ $ git clone OUTER_REPO_URL
 $ cd my-repo
 $ git submodule init
 $ git submodule update
+```
+
+
+## Switch branches
+
+When you have branches pointing to different commits of a submodule, the submodule will appear as modified.
+
+The docs recommend this as a solution, presumably with a branch name passed too.
+
+```sh
+$ git checkout --recurse-submodules
 ```
 
 
