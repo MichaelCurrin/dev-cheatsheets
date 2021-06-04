@@ -87,3 +87,10 @@ $ git clone URL --branch my-branch --single-branch
     > Further fetches into the resulting repository will only update the remote-tracking branch for the branch this option was used for the initial cloning. 
     > 
     > If the `HEAD` at the remote did not point at any branch when `--single-branch` clone was made, no remote-tracking branch is created.
+- `--shallow-submodules`
+    > any cloned submodules will be shallow
+- `--recurse-submodules`
+    > initialize submodules in the clone
+- `--recursive`
+    > alias of `--recurse-submodules`
+    
