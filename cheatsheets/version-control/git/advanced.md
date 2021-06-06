@@ -16,7 +16,7 @@ Not your everyday git commands, but useful in aliases and scripts.
 Shows tag number found, the number of commits back as a number and then a short commit hash.
 
 ```sh
-$ g describe
+$ git describe
 v0.19.0-1-gdc17e80
 ```
 
@@ -58,8 +58,13 @@ Commit reference is required for both below.
 Using [git rev-parse](https://git-scm.com/docs/git-rev-parse).
 
 ```sh
-$ g rev-parse HEAD
-dc17e80907f0a9d809b0997baf4114bc2b8338f7
+$ git rev-parse HEAD 
+9641372537f8025591b8808c6f9194f211062394
+```
+
+```sh
+$ git rev-parse --short HEAD 
+9641372
 ```
 
 ### Range
