@@ -42,12 +42,16 @@ Commit reference is required for both below.
 
 ### Single
 
+Using [git rev-parse](https://git-scm.com/docs/git-rev-parse).
+
 ```sh
 $ g rev-parse HEAD
 dc17e80907f0a9d809b0997baf4114bc2b8338f7
 ```
 
 ### Range
+
+Using [git rev-list](https://git-scm.com/docs/git-rev-parse).
 
 ```sh
 $ g rev-list HEAD
@@ -74,6 +78,8 @@ Show summary of a commit and the diff.
 
 Defaults to the current commit.
 
+Using [git show](https://git-scm.com/docs/git-show).
+
 ```sh
 $ git show
 ```
@@ -89,6 +95,8 @@ index 230a716..b7dc357 100644
 ```
 
 ### Range of commits
+
+Using [git log](https://git-scm.com/docs/git-log).
 
 ### From latest commit
 
@@ -125,6 +133,8 @@ $ git log my-file.txt
 
 
 ## Show diff
+
+Using [git diff](https://git-scm.com/docs/git-diff).
 
 Only shows uncommit changes.
 
