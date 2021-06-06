@@ -3,6 +3,11 @@ title: Control flow
 description: Conditionals in shell scripting
 ---
 
+See the [Conditionals][] section for syntax of expressions in a test.
+
+[Conditionals]: {% link cheatsheets/shell/scripting/conditionals.md %}
+
+
 ## Basic
 
 ### Built-in commands
@@ -14,11 +19,15 @@ $ false
 
 ### Chain
 
-Use in a chain.
+Use check in a chain.
 
 ```sh
 $ true && echo 'True!' || echo 'False!'
 True!
+```
+
+```sh
+$ [[ -n "$FOO" ]] && echo 'FOO is set'
 ```
 
 ### If else
@@ -62,6 +71,28 @@ if [[ "$x" != 'abc' ]]; then
   echo 'Yes!'
 fi
 ```
+
+
+## AND OR
+
+### AND
+
+```sh
+[[ EXPRESSION ]] && [[ EXPRESSION ]]
+```
+
+That is preferred to:
+
+```sh
+[[ EXPRESSION && EXPRESSION ]]
+```
+
+### OR
+
+```sh
+[[ EXPRESSION ]] || [[ EXPRESSION ]]
+```
+
 
 ## Expressions
 
