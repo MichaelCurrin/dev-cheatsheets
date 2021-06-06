@@ -1,5 +1,10 @@
 # Globstar
 
+See also [Globbing][] section.
+
+[Globbing]: {{ site.baseurl }}{% link cheatsheets/shell/files/globbing.md %}
+
+
 ## Standard star
 
 The standard star gives files and directory at the current level.
