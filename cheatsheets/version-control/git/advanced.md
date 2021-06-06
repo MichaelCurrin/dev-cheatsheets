@@ -11,7 +11,7 @@ Not your everyday git commands, but useful in aliases and scripts.
 
 > The command finds the most recent tag that is reachable from a commit....
 
-> By default (without --all or --tags) git describe only shows **annotated** tags
+> By default (without `--all` or `--tags`) git describe only shows **annotated** tags
 
 Shows tag number found, the number of commits back as a number and then a short commit hash.
 
