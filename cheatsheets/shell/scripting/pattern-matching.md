@@ -38,11 +38,11 @@ Yes
 
 Use `=~` and a regex pattern.
 
-Be sure to **not** use quotes on the pattern or you'll get unexpected behavior.
-
 ```sh
 [[ STRING =~ PATTERN ]]	
 ```
+
+Be sure to **not** use quotes on the pattern or you'll get unexpected behavior.
 
 ### Basic
 
@@ -66,7 +66,28 @@ No special functionality. Just string contains.
 ### List
 
 ```sh
-BRANCH='main'
-[[ "$BRANCH" =~ master|main|dev|edge ]] && echo 'Yes' || echo 'No'
+FRUIT='apple'
+[[ "$FRUIT" =~ banana|apple|orange ]] && echo 'Yes' || echo 'No'
+# Yes
+```
+
+Negate:
+
+```sh
+if [[ ! "$FRUIT" =~ banana|apple|orange ]]; then
+  echo 'Your fruit is not one of the allowed fruit
+  exit 1
+fi
+```
+
+### Pattern as a variable
+
+Store your regex pattern as a variable and then use it later.
+
+```sh
+PATTERN='banana|apple|orange'
+
+FRUIT='apple'
+[[ "$FRUIT" =~ "$PATTERN" ]] && echo 'Yes' || echo 'No'
 # Yes
 ```
