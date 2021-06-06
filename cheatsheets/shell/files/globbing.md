@@ -1,8 +1,7 @@
 ---
+title: Globbing
 description: How to match paths using "glob" patterns
 ---
-# Globbing shell
-
 
 Globbing is a programming concept that involves the use of wildcards and special characters to match and filter. Glob patterns are similar to regex patterns, but simpler and limited in scope.
 
@@ -35,6 +34,7 @@ Basic wildcards:
 - `[X-Y]` - Match a range. e.g. `[0-9a-z]`, `[\w]`
 
 Example:
+
 - `*/*` - will match `foo/bar`.
 - `*` will match all files and directories in the current directory.
 	```sh
@@ -47,7 +47,6 @@ Example:
 
 
 ## Advanced
-
 
 Wildcard expansion can be done. This can be previewed with `echo` but might be used with `ls`.
 
@@ -88,6 +87,6 @@ setopt dotglob
 
 ## Globstar
 
-See [globstar] page.
+See the [Globstar][] section.
 
 [globstar]: {{ site.baseurl }}{% link cheatsheets/shell/files/globstar.md %}
