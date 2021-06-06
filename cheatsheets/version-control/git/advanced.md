@@ -13,26 +13,39 @@ Not your everyday git commands, but useful in aliases and scripts.
 
 > By default (without --all or --tags) git describe only shows **annotated** tags
 
-Shows tag and commit reference.
+Shows tag number found, the number of commits back as a number and then a short commit hash.
 
 ```sh
 $ g describe
 v0.19.0-1-gdc17e80
 ```
 
-If you're only tag's commit already, only the tag is shown.
+Another case:
+
+```sh
+$ git describe
+v1.0.2-32-g9641372
+```
+
+If the current commit already has a tag, only the tag will be shown.
 
 ```sh
 $ git checkout gdc17e80
 $ git describe
-v0.19.0-1
+v0.19.0
 ```
 
-Show just commit reference.
+Show just commit reference by setting the hash length to zero.
 
 ```sh
 $ g describe --abbrev=0
 v0.19.0
+```
+
+Including tags that are not annotated.
+
+```sh
+$ git describe --tags
 ```
 
 
