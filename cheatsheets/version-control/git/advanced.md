@@ -20,7 +20,7 @@ $ git describe
 v0.19.0-1-gdc17e80
 ```
 
-Another case:
+Another case for 32 commits back. The hash is `9641372`. The `-g` always seems to appear as a prefix.
 
 ```sh
 $ git describe
