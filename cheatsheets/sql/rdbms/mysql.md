@@ -46,6 +46,8 @@ SHOW TABLES;
 
 ### Describe table
 
+See [tutorial](https://www.tutorialspoint.com/how-do-i-show-the-schema-of-a-table-in-a-mysql-database).
+
 ```sql
 DESCRIBE my_table;
 
