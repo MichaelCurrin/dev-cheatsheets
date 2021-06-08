@@ -16,10 +16,10 @@ $ npm install -g @vue/cli
 Or
 
 ```sh
-$ yarn install -g @vue/cli
+$ yarn global add @vue/cli
 ```
 
-Then run as:
+Then run using:
 
 ```sh
 $ vue COMMAND
