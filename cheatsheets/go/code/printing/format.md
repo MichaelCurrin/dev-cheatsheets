@@ -6,7 +6,7 @@ description: Guide to formatting text in Go
 
 ## Print verbs
 
-- `%v` - the value in a default format 
+- `%v` - the value in a default format
 - `%+v` - when printing structs, the plus flag adds field names
 - `%#v`	- a Go-syntax representation of the value
 - `%T` - a Go-syntax representation of the type of the value
@@ -22,7 +22,7 @@ Use `%s` specifically for strings or slices of bytes.
 
 ```go
 var name = "World!"
-fmt.Print("Hello, %s!", name)
+fmt.Printf("Hello, %s!", name)
 // Hello, World!
 ```
 

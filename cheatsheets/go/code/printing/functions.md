@@ -3,6 +3,13 @@ title: Functions
 description: Guide to functions for printing in Go
 ---
 
+**Overview**
+
+- [Println](#println)
+- [Print](#print)
+- [Printf](#printf)
+- [Sprintf](#sprintf)
+
 
 ## Println
 
@@ -20,7 +27,7 @@ In Python:
 
 ```python
 name = "World"
-print("Hello", name")
+print("Hello", name)
 ```
 
 Equivalent in JS:
@@ -33,20 +40,33 @@ console.log("Hello", name");
 
 ## Print
 
-Same as `Println` except without the newline.
+Same as `Println`, except without the newline.
+
+e.g.
+
+```go
+name := "World"
+fmt.Println("Hello", name)
+// Hello Gopher
+```
 
 
 ## Printf
 
-Print with format specifier.
+Print with formatting specifier.
 
-The `printf` name also used in C and Bash.
+Note use of `%v` to substitute variable inside the string.
+
+Remember to add the newline character yourself.
 
 ```go
 name := "World"
 fmt.Printf("Hello %v!\n", name)
 // Hello, World!
 ```
+
+The `printf` name also used in C and Bash.
+
 
 Equivalent in Python:
 
@@ -57,7 +77,7 @@ print(f"Hello {name}")
 
 Equivalent in JS:
 
-```python
+```javascript
 name = "World"
 console.log(`Hello ${name}`);
 ```
