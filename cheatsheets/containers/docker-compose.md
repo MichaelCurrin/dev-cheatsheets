@@ -202,10 +202,16 @@ $ docker-compose exec web sh
 
 ## Delete
 
-Stop and delete containers. Warning - you will lose any data in the container.
+Stop and then delete containers. Warning - you will **lose** any data in the container.
 
 ```sh
-docker-compose down
+$ docker-compose down
+```
+
+To delete volumes too:
+
+```sh
+$ docker-compose down --volumes
 ```
 
 
@@ -223,7 +229,7 @@ See the link at the top of this page for CLI usage info or see below.
 ### Help
 
 ```sh
-docker compose -h
+$ docker compose -h
 ```
 
 ```
