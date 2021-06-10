@@ -1,10 +1,16 @@
 # YAML
 
-YAML stands for YAML Ain't Markup Langauge according to the homepage, or Yet Another Markup Language on an older page of the site from 2001.
+## What is YAML?
+
+YAML stands for _YAML Ain't Markup Language_ according to the homepage.
+
+Or _Yet Another Markup Language_, from an older page of the same site, from 2001.
 
 It is a convenient way of storing data, typically for config files. YAML is supported in many programming languages - the homepage linked below covers libraries you can use.
 
 Some use-cases include storing data for pages on a site like title and description, describing a CI workflow or setting up containers in a docker compose file.
+
+## YAML vs JSON
 
 YAML is a superset if JSON, so you can use JSON within YAML. But YAML is lighter in syntax making it easier to read and write. Especially for non-developers. It is light because you don't need quotes for keys or values, you don't need commas to separate lines and indentation is used for nested data like arrays or dictionaries, without having to use square or curly brackets.
 
