@@ -48,7 +48,7 @@ This logic is set up in `src/router/index.js` using `createWebHistory` from `vue
 
 > Creates an HTML5 history. Most common history for single page applications.
 
-### Error page
+### Fallback pages
 
 Normally a bad path like this would still look like app outline, but with no content.
 
@@ -58,6 +58,10 @@ Now if you use slash-based routing and you send someone to a bad path like this,
 
 - `/not-a-path`
 
-So docs recommend you to set up a fallback for 404 error to go to your hoempage so that you root to the page. This important both for bad URLs in the app but _also_ for any external links to your app. As a link to `/about` will _not_ go through `index.html` unless you configure it to.
+So docs recommend you to set up a fallback for 404 error to go to your homepage so that you root to the page. 
+
+This important both for bad URLs in the app but _also_ more importantly, for any **external links** to your app. Since a link to `/about` will _not_ go through `index.html` unless you configure it to.
 
 You need to do this in an Nginx config, or if use use Netlify config.
+
+_But_, if you put your app through a static site renderer like `presite`, then you won't have this issue as each HTML page at the expected path will actually exist. So that fixes the issue for Docsify. I don't think Vue and React have this issue because your run the rendering against a static directory, but I need to check what happens to routes.
