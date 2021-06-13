@@ -117,9 +117,16 @@ cheatsheet:
                 {{ page.people | where_exp: "item", "item.school != "Stanford" }}
             help: A filter where a given expression is true.
           - cmd: group_by
+            usage: |
+              {{ page.people | group_by: country }}
+              <!-- 
+                Source:
+                    [ [name: 'Joe', country: 'England'], [name: 'Sally', country: 'England']
+                Result:
+                    { England: [ [name: 'Joe', country: 'England'], [name: 'Sally', country: 'England'] ] }
+              -->
             help: |
-                Provide the attribute name for an array of hashes and you'll create an array of hashes with name as a string and items as an array of the original values (the attribute won't be removed)
-
+                Provide the attribute name and you'll create a hash where that attribute is used as the key and the value is all the match items (the attribute is not removed).
           - cmd: group_by_exp
             usage: |
                 {{ page.people | group_by_exp: "item", "item.name | size" }}
