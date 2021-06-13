@@ -172,6 +172,10 @@ In TypeScript, it is as good idea to add the return type for a computed variable
 
 ### Component defintion
 
+The basics of defining a component without caring about the contents here except for name.
+
+Based on [Style Guide](https://v3.vuejs.org/style-guide/) in the Vue 3 docs.
+
 #### Plain
 
 For both Vue 2 and 3.
@@ -180,6 +184,8 @@ When using Node.
 
 ```javascript
 export default {
+  name: "MyFoo",
+  // ...
 }
 ```
 
@@ -187,12 +193,24 @@ When using frontend only JS without node.
 
 ```javascript
 const MyComponent = {
+  name: "MyFoo",
+  // ...
 }
 
 export default myComponent
 ```
 
 If you use the component in the main script, of course then you don't need to export it.
+
+#### Add to app
+
+Add a component directly to the `app` instance without defining it as a standalone object.
+
+```javascript
+app.component('my-foo', {
+  // ...
+})
+```
 
 #### Extends
 
@@ -202,6 +220,8 @@ I don't know when this is needed.
 import Vue from "vue";
 
 export default Vue.extend({
+  name: "MyFoo"
+  // ...
 })
 ```
 
@@ -213,6 +233,8 @@ Vue 3.
 import { defineComponent } from "vue";
 
 export default defineComponent({
+  name: "MyFoo"
+  // ...
 })
 ```
 
@@ -222,7 +244,7 @@ If you prefer, you can leave out the `template` tag and specify that content in 
 
 ```javascript
 export default {
-   name: "Foo",
+   name: "MyFoo",
    props: {
      message: { type: String, required: true },
    },
@@ -235,7 +257,11 @@ This can be useful if you have Vue on the frontend without a build step, as this
 
 ## Style section
 
-Scope you CSS styles to the current template only.
+Note that you'll get an error adding `style` in your template section.
+
+Add a separate `style` section in your `.vue` file.
+
+Scope you CSS styles to the current template only using `scoped`.
 
 ```vue
 <style scoped>
