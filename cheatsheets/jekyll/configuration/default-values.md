@@ -65,7 +65,10 @@ verbose             : false
 defaults            : []
 ```
 
-The Liquid Options and Markdown Options pages in this guide for the `liquid` and `kramdown` sections.
+See the [Strict rendering][] and [Markdown Options][] pages in this guide for info on the `liquid` and `kramdown` sections of the config.
+
+[Strict rendering]: {{ site.baseurl }}{% link cheatsheets/jekyll/configuration/strict-rendering.md %}
+[Markdown Options]: {{ site.baseurl }}{% link cheatsheets/jekyll/configuration/markdown-options.md %}
 
 See the [Permalink][] page for more info on `permalink` field.
 
