@@ -227,6 +227,6 @@ See also the [Arrays][] cheatsheet.
 
 {% endfor %}
 
-[CloudCannon Jekyll cheatsheet]: https://learn.cloudcannon.com/jekyll-cheat-sheet/
+[CloudCannon Jekyll cheatsheet]: https://cloudcannon.com/community/jekyll-cheat-sheet/
 [Liquid filters]: https://jekyllrb.com/docs/liquid/filters/
 [Arrays]: {{ site.baseurl }}{% link cheatsheets/jekyll/liquid/arrays.md %}
