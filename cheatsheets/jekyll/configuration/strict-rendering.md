@@ -3,8 +3,10 @@ title: Strict rendering
 description: How to force an error when getting a warnig on bad Liquid or frontmatter fields
 ---
 
+Jekyll is forgiving when you use a variable or key name or filter that does not exist. This can make debugging tricky. To stop these things failing silently, you can configure Jekyll to be stricter.
 
-## Strict frontmatter
+
+## Enforce strict frontmatter
 
 Make a build to abort if there is a syntax error in a page's frontmatter.
 
