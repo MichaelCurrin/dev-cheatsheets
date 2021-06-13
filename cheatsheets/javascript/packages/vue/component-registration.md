@@ -4,6 +4,10 @@ The basics of defining a component without caring about the contents here except
 
 Note that components actually work fine without `name`. The `name` doesn't actually get used in the output element so I don't know of its use.
 
+See also the [Single-file components][] section.
+
+[Single-file components]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/single-file-components.md %}
+
 
 ## Resources
 
