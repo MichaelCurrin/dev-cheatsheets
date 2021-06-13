@@ -96,9 +96,11 @@ cheatsheet:
               ---
               foo: ['abc', 'def', 'ghi', 'jkl' ]
               ---
-              {{ page.foo | slice: 0 | inspect }} <!-- ['abc'] -->
-              {{ page.foo | slice: 1, 3 | inspect }} <!-- ["def", "ghi", "jkl"] -->
-
+              {{ page.foo | slice: 0 | inspect }} <!-- 1st element -->
+              {{ page.foo | slice: 3 | inspect }} <!-- 4th element -->
+              {{ page.foo | slice: 1, 3 | inspect }} <!-- Elements 1 to 3 inclusive -->
+              {{ page.foo | slice: 0, 2| inspect }} <!-- First 3 elements -->
+            help: There is no `limit` filter (aside for the `for` loop modifier), but you can use slice to get the first N elements.
           - cmd: map
             usage: |
               {{ my_array | map: "some_attribute" }}
