@@ -5,6 +5,10 @@ description: How to a structure and write a component in `.vue` file
 
 A Single-File Component is also known as a "SFC".
 
+See also [Component registration][] section.
+
+[Component registration]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/component-registration.md %}
+
 {% raw %}
 
 ## Documentation
@@ -169,6 +173,22 @@ In TypeScript, it is as good idea to add the return type for a computed variable
   }
 }
 ```
+
+### Template on JS object
+
+If you prefer, you can leave out the `template` tag and specify that content in the `script` tag as follows.
+
+```javascript
+export default {
+   name: "MyFoo",
+   props: {
+     message: { type: String, required: true },
+   },
+   template: "<span>{{ message }}</span>",
+};
+```
+
+This can be useful if you have Vue on the frontend without a build step, as this the template variable does not need a compilation step.
 
 
 ## Style section
