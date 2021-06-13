@@ -28,7 +28,9 @@ Or with a global scope, using `:root`.
   --white: #faf0e6;
 }
 
-body { background-color: var(--blue); }
+body { 
+  background-color: var(--blue); 
+}
 ```
 
 From Vue.js:
