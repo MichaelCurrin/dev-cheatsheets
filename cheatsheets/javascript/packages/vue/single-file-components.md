@@ -154,6 +154,17 @@ Use it as:
 <MyComponent :foo="my_expression"></MyComponent>
 ```
 
+Notes on props:
+
+- Optional
+    ```
+    foo: String
+    ```
+- Required
+    ```
+    foo: { type: String, required: true }
+    ```
+    
 Note on computed section:
 
 - The `computed` values are cached, for efficiency. This computed variable will appear to change immediately based on user input, but in some cases it won't (I had issues before using a computed variable as a `slot` which was frozen, but passing it as a binding parameter was fine). 
