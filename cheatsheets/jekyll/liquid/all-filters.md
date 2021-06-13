@@ -107,15 +107,15 @@ cheatsheet:
 
           - cmd: where
             usage: |
-              {{ site.posts | where:"category", "foo" }}
+              {{ site.posts | where: "category", "foo" }}
               {{ page.people | where: "school", "Stanford" }}
-
-          - cmd: where_expr
+            help: A simple filter where an attribute value matches a given value. 
+          - cmd: where_exp
             usage: |
                 {{ page.people | where_exp: "item", "item.name contains 'Jo'" }}
                 {{ page.people | where_exp: "item", "item.year >= 2016" }}
                 {{ page.people | where_exp: "item", "item.school != "Stanford" }}
-
+            help: A filter where a given expression is true.
           - cmd: group_by
             help: |
                 Provide the attribute name for an array of hashes and you'll create an array of hashes with name as a string and items as an array of the original values (the attribute won't be removed)
