@@ -66,59 +66,9 @@ Vue uses methods on a component in the script section which map to the above.
     - `methods` attribute of functions. Handle user input and get or set values in the state such as on `data`.
     - `computed` attribute of functions. Similar to methods, but, this is used for _getting_ values only, values are **cached**, you can't pass parameters, and you access computed values like a variable i.e. without using brackets like for a method call.
 
-### Props and computed
-
-Here we have a script for a component that accepts props.
-
-- `myComponent.vue`
-    ```vue
-    <script>
-    import Buzz from "@/components/Buzz.vue";
-
-    export default {
-      name: "Foo",
-
-      components: {
-        Buzz,
-      },
-
-      // An attribute returning a dictionary where each value is a dictionary.
-      props: {
-        foo: { type: String, required: true },
-      },
-
-      // An attribute returning a dictionary of functions.
-      computed: {
-        newFoo() {
-          return this.foo.toUppercase();
-        },
-        buzz() {
-          return 'Buzz';
-        }
-      }
-    };
-    </script>
-    ```
-
-Note on computed section:
-
-- The `computed` values are cached, for efficiency. This computed variable will appear to change immediately based on user input, but in some cases it won't (I had issues before using a computed variable as a `slot` which was frozen, but passing it as a binding parameter was fine). 
-- Computed variables can be reference in a script tag or template tag but without brackets and without arguments i.e. without brackets. They are useful if you have a value to generate based on other use choices.
-- Methods need brackets to be called and are more interactive behavior or events.
-
-In TypeScript, it is as good idea to add the return type for a computed variable explicitly. This was advised by the docs, to avoid weird behavior. I also found that if I did _not_ include the type, then the attributes on `this` would cause an error in TypeScript compilation.
-
-```typescript
-{
-  computed: {
-    myVar(): number {
-      return this.myNumber ** 2;
-    },
-  }
-}
-```
-
 ### Data and methods 
+
+Most components will just need data and methods.
 
 Here we have a view such as `About.vue`, which calculates and renders results. It might use further components in its template section. 
 
@@ -160,31 +110,104 @@ Note on modern JS:
     }
     ```
 
+### Props and computed
+
+Here we have a script for a component that accepts props and has some computed values.
+
+- `myComponent.vue`
+    ```vue
+    <script>
+    import Buzz from "@/components/Buzz.vue";
+
+    export default {
+      name: "Foo",
+
+      components: {
+        Buzz,
+      },
+
+      // An attribute returning a dictionary where each value is a dictionary.
+      props: {
+        foo: { type: String, required: true },
+      },
+
+      // An attribute returning a dictionary of functions.
+      computed: {
+        newFoo() {
+          return this.foo.toUppercase();
+        },
+        buzz() {
+          return 'Buzz';
+        }
+      }
+    };
+    </script>
+    ```
+
+Use it as:
+
+```html
+<MyComponent :foo="my_expression"></MyComponent>
+```
+
+Note on computed section:
+
+- The `computed` values are cached, for efficiency. This computed variable will appear to change immediately based on user input, but in some cases it won't (I had issues before using a computed variable as a `slot` which was frozen, but passing it as a binding parameter was fine). 
+- Computed variables can be reference in a script tag or template tag but without brackets and without arguments i.e. without brackets. They are useful if you have a value to generate based on other use choices.
+- Methods need brackets to be called and are more interactive behavior or events.
+
+#### TypeScript note
+
+In TypeScript, it is as good idea to add the return type for a computed variable explicitly. This was advised by the docs, to avoid weird behavior. I also found that if I did _not_ include the type, then the attributes on `this` would cause an error in TypeScript compilation.
+
+```typescript
+{
+  computed: {
+    myVar(): number {
+      return this.myNumber ** 2;
+    },
+  }
+}
+```
+
 ### Component defintion
 
 #### Plain
+
+For both Vue 2 and 3.
+
+When using Node.
 
 ```javascript
 export default {
 }
 ```
 
-#### Extends
-
-I think this might only be needed if you use Vue on the frontend without the Node flow.
+When using frontend only JS without node.
 
 ```javascript
-export default Vue.extends({
-})
+const MyComponent = {
+}
+
+export default myComponent
 ```
 
-This might be needed:
+If you use the component in the main script, of course then you don't need to export it.
+
+#### Extends
+
+I don't know when this is needed.
 
 ```javascript
 import Vue from "vue";
+
+export default Vue.extend({
+})
 ```
 
 #### TypeScript
+
+Vue 3.
 
 ```javascript
 import { defineComponent } from "vue";
