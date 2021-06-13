@@ -126,13 +126,14 @@ cheatsheet:
                     { England: [ [name: 'Joe', country: 'England'], [name: 'Sally', country: 'England'] ] }
               -->
             help: |
-                Provide the attribute name and you'll create a hash where that attribute is used as the key and the value is all the match items (the attribute is not removed).
+                Group an array's items by a given property. You'll get a hash where that attribute is used as the key and the value is all the match items (the attribute is not removed).
           - cmd: group_by_exp
             usage: |
                 {{ page.people | group_by_exp: "item", "item.name | size" }}
                 {{ page.people | group_by_exp: "item", "item.year | modulo: 2" }}
-                {{ page.people | group_by_exp: "item", "item.school | replace: 'rd', 'ry' " }}
-
+                {{ page.people | group_by_exp: "item", "item.country | replace: 'rd', 'ry' " }}
+            description: Group an array's items using a Liquid expression.
+            
           - cmd: size
             usage: |
                 {{ my_array | size }}
