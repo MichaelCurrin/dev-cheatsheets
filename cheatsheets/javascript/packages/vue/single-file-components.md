@@ -64,7 +64,7 @@ Vue uses methods on a component in the script section which map to the above.
     - `template` attribute. Or set `<template>` tag. Both give the same result.
 - Actions
     - `methods` attribute of functions. Handle user input and get or set values in the state such as on `data`.
-    - `computed` attribute of functions. Similar to methods but used for getting values only, values are **cached**, you can't pass parameters and you access computed values without brackets.
+    - `computed` attribute of functions. Similar to methods, but, this is used for _getting_ values only, values are **cached**, you can't pass parameters, and you access computed values like a variable i.e. without using brackets like for a method call.
 
 ### Props and computed
 
