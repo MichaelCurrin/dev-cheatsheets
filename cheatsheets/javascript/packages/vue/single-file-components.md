@@ -7,7 +7,7 @@ A Single-File Component is also known as a "SFC".
 
 {% raw %}
 
-## Documenation
+## Documentation
 
 - Vue 3 - [Single-file components](https://v3.vuejs.org/guide/single-file-component.html)
 - Vue 2 - [Single-file components](https://vuejs.org/v2/guide/single-file-components.html)
@@ -169,90 +169,6 @@ In TypeScript, it is as good idea to add the return type for a computed variable
   }
 }
 ```
-
-### Component defintion
-
-The basics of defining a component without caring about the contents here except for name.
-
-Based on [Style Guide](https://v3.vuejs.org/style-guide/) in the Vue 3 docs.
-
-#### Plain
-
-For both Vue 2 and 3.
-
-When using Node.
-
-```javascript
-export default {
-  name: "MyFoo",
-  // ...
-}
-```
-
-When using frontend only JS without node.
-
-```javascript
-const MyComponent = {
-  name: "MyFoo",
-  // ...
-}
-
-export default myComponent
-```
-
-If you use the component in the main script, of course then you don't need to export it.
-
-#### Add to app
-
-Add a component directly to the `app` instance without defining it as a standalone object.
-
-```javascript
-app.component('my-foo', {
-  // ...
-})
-```
-
-#### Extends
-
-I don't know when this is needed.
-
-```javascript
-import Vue from "vue";
-
-export default Vue.extend({
-  name: "MyFoo"
-  // ...
-})
-```
-
-#### TypeScript
-
-Vue 3.
-
-```javascript
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  name: "MyFoo"
-  // ...
-})
-```
-
-### Template on JS object
-
-If you prefer, you can leave out the `template` tag and specify that content in the `script` tag as follows.
-
-```javascript
-export default {
-   name: "MyFoo",
-   props: {
-     message: { type: String, required: true },
-   },
-   template: "<span>{{ message }}</span>",
-};
-```
-
-This can be useful if you have Vue on the frontend without a build step, as this the template variable does not need a compilation step.
 
 
 ## Style section
