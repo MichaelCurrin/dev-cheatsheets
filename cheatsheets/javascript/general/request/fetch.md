@@ -19,7 +19,7 @@ description: How to get data using `fetch`
 
 Using `fetch`. Builtin for modern browsers and you can use `node-fetch` on the server side.
 
-Warning - an error will **not** be thrown on a non-200 status so you must handle this yourself. Other libraries might do this differently.
+Warning - an error will **not** be thrown on a non-200 status so you must handle this yourself. Other libraries tend to handle errors for.
 
 
 ## Samples
@@ -33,15 +33,25 @@ Using the modern `async` and `await` syntax.
 ```javascript
 const url = 'https://api.github.com/users/github'
 const resp = await fetch(url);
+```
 
+Then either:
+
+```javascript
 // JSON such as from REST API or static file.
 const json = await resp.json();
+```
 
-// Plain text such a scraping HTML.
+```javascript
+// Plain text such as scraping HTML.
 const body = await resp.text()
 ```
 
-With error handling added. Based on _JS.info_ example.
+### With error handling
+
+Use `resp.ok` to check for a success message.
+
+Based on _JS.info_ example. I don't know if `alert` will actually break the flow or code after will still get executed.
 
 ```javascript
 const resp = await fetch(url);
@@ -51,6 +61,16 @@ if (resp.ok) {
 } else {
   alert(`HTTP-Error: ${resp.status}`);
 }
+```
+
+My own variation.
+
+```javascript
+const resp = await fetch(url);
+if (!resp.ok) {
+  throw new Error(`${resp.status} - ${resp.statusText}`);
+}
+const data = await resp.json();
 ```
 
 ### Promises approach
