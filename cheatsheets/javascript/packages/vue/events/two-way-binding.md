@@ -3,6 +3,8 @@ title: Two-way binding
 description: Pass data from a child component to a parent component
 ---
 
+{% raw %}
+
 Using events is the safe way to let multiple child components change a variable in the parent level.
 
 
