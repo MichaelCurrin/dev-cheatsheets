@@ -50,7 +50,9 @@ e.g.
     ```vue
     <template>
       <div id="basic-event">
-        <button @click="counter += 1">Add 1</button>
+        <button @click="counter += 1">
+          Add 1
+        </button>
 
         <p>The button above has been clicked {{ counter }} times.</p>
       </div>
@@ -101,15 +103,60 @@ When a native event (e.g., click) is defined in the emits option, the component 
 Here is the syntax for adding an emit event to an input tag, with the pushed value set to the value on the element.
 
 ```
-v-on:input="$emit('input', $event.target.value)"
+v-on:input="$emit('input', $event.target.modelValue)"
 ```
 
 See examples below that use this.
 
 
-## Pass data from a child component to a parent component
+## Two-way binding
+> Pass data from a child component to a parent component
 
 Using events is the safe way to let multiple child components change a variable in the parent level.
+
+### Syntax
+
+From the Vue 3 docs.
+
+Basic. Pass a variable to a component, which must expect it as `modelValue` param.
+
+```html
+<ChildComponent v-model="pageTitle" />
+
+<!-- would be shorthand for: -->
+
+<ChildComponent
+  :modelValue="pageTitle"
+  @update:modelValue="pageTitle = $event"
+/>
+```
+
+With arguments, you can change the model name. Here we pass a variable to a component, which must expect it as `title` param.
+
+```html
+<ChildComponent v-model:title="pageTitle" />
+
+<!-- would be shorthand for: -->
+
+<ChildComponent :title="pageTitle" @update:title="pageTitle = $event" />
+```
+
+This also serves as a replacement to `.sync` modifier and allows us to have multiple `v-models` on the custom component. Not possible in Vue 2.
+
+Here passing `title` and `content` params.
+
+```html
+<ChildComponent v-model:title="pageTitle" v-model:content="pageContent" />
+
+<!-- would be shorthand for: -->
+
+<ChildComponent
+  :title="pageTitle"
+  @update:title="pageTitle = $event"
+  :content="pageContent"
+  @update:content="pageContent = $event"
+/>
+```
 
 ### Input event example
 
@@ -119,15 +166,17 @@ This relies on the standard `input` event.
 
 Note use of `v-model="myVariable"` in the parent and `v-on:input="$emit('input', $event.target.value)"` in the child.
 
+Vue 3 - `modelValue`. Vue 2 - `value`.
+
 - `components/TextInput.vue`
     ```vue
     <template>
       <input
-          type="text"
-          :value="value"
-          v-on:input="$emit('input', $event.target.value)"
-          :placeholder="placeholder"
-          :required="isRequired"
+        type="text"
+        :value="modelValue"
+        v-on:input="$emit('input', $event.target.modelValue)"
+        :placeholder="placeholder"
+        :required="isRequired"
       />
     </template>
     ```
@@ -164,9 +213,9 @@ In the component, add a button. Now, clicking this will update the parent value.
 - `Hello.vue`
     ```vue
     <template>
-        <button v-on:click="$emit('enlarge-text')">
-            Enlarge text
-        </button>
+      <button v-on:click="$emit('enlarge-text')">
+        Enlarge text
+      </button>
     </template>
     ```
 
@@ -177,13 +226,13 @@ In `App.vue`, set up the value to be displayed and add some components.
 - `App.vue`
     ```vue
     <template>
-        <h2>Font size</h2>
-        <p>{{ postFontSize }}</p>
+      <h2>Font size</h2>
+      <p>{{ postFontSize }}</p>
 
-        <h2>Components</h2>
-        <MyComponent v-on:enlarge-text="postFontSize += 0.1" />
-        <!-- Add more components if you want. -->
-        <MyComponent v-on:enlarge-text="postFontSize += 0.1" />  
+      <h2>Components</h2>
+      <MyComponent v-on:enlarge-text="postFontSize += 0.1" />
+      <!-- Add more components if you want. -->
+      <MyComponent v-on:enlarge-text="postFontSize += 0.1" />  
     </template>
     ```
 
