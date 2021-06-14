@@ -1,5 +1,6 @@
 # Listen
 
+{% raw %}
 
 ## Event types
 
@@ -128,3 +129,5 @@ Vue.createApp({
   }
 }
 ```
+
+{% endraw %}
