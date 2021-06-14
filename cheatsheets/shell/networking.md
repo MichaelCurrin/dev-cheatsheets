@@ -9,6 +9,8 @@ $ hostname -I
 
 ### ip command
 
+Linux only, not macOS.
+
 From [tutorial](https://www.howtogeek.com/657911/how-to-use-the-ip-command-on-linux/). That explains what the output means.
 
 Use one of these equivalent commands.
@@ -20,11 +22,29 @@ $ ip addr
 $ ip a
 ```
 
-To lookup for specific network:
+To look-up for specific network:
 
 ```sh
 $ ip addr show dev lo
 $ ip addr show dev enp0s3
+```
+
+### ifconfig
+
+On Linux and macOS.
+
+```sh
+$ ifconfig en0
+```
+```
+en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=400<CHANNEL_IO>
+	ether 88:e9:fe:57:a8:6b
+	inet6 fe80::1c4a:70f:5ec6:fb68%en0 prefixlen 64 secured scopeid 0x5
+	inet 192.168.0.161 netmask 0xffffff00 broadcast 192.168.0.255
+	nd6 options=201<PERFORMNUD,DAD>
+	media: autoselect
+	status: active
 ```
 
 
