@@ -9,7 +9,9 @@ See also [Component registration][] section.
 
 [Component registration]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/component-registration.md %}
 
+
 {% raw %}
+
 
 ## Documentation
 
@@ -69,6 +71,8 @@ Vue uses methods on a component in the script section which map to the above.
 - Actions
     - `methods` attribute of functions. Handle user input and get or set values in the state such as on `data`.
     - `computed` attribute of functions. Similar to methods, but, this is used for _getting_ values only, values are **cached**, you can't pass parameters, and you access computed values like a variable i.e. without using brackets like for a method call.
+
+For info on `template` attribute and `render` method, see [DOM](https://v3.vuejs.org/api/options-dom.html) in the docs.
 
 ### Data and methods 
 
