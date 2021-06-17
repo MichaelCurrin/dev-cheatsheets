@@ -1,6 +1,6 @@
 ---
 title: Environment variables
-description: How to set at various levels
+description: How to set env variables at various levels
 ---
 
 {% raw %}
@@ -14,13 +14,33 @@ See docs:
 - [Context and expression syntax](https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions)
 
 
-## Set and use value
+## Summary
 
-You could even combine these levels - such as set a value at a higher level and then override it at a lower level.
+How to set an environment variable at each level.
 
-An `if` statement is used here to show how it works with `env`, but you can omit that.
+```yaml
+env:
+  MY_VAR: My global-level value
+  
+jobs:
+  my-build:
+    env: 
+      MY_VAR: My job-level value
+    
+    steps:
+      - name: My step
+        env: 
+          MY_VAR: My step-level value
+```
 
-### Global
+Note that you can set the same variable at multiple levels, it will just be overriden at lower levels.
+
+
+## Examples
+
+Here we set and use a value at each level, with an `if` statement and `echo`.
+
+### Global level
 
 Set values available to all jobs and steps in the workflow file.
 
@@ -79,9 +99,9 @@ steps:
       Last_Name: Octocat
 
   - name: Dump GitHub context
+    run: echo "$GITHUB_CONTEXT"
     env:
       GITHUB_CONTEXT: ${{ toJSON(github) }}
-    run: echo "$GITHUB_CONTEXT"
 ```
 
 {% endraw %}
