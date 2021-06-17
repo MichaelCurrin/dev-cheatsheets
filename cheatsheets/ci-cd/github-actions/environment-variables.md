@@ -35,6 +35,8 @@ jobs:
 
 Note that you can set the same variable at multiple levels, it will just be overriden at lower levels.
 
+For security, you should avoid setting a variable at the job or global level, unless it actually needs to be used across multiple steps.
+
 
 ## Examples
 
