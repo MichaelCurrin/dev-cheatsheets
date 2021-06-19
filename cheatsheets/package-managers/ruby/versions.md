@@ -25,7 +25,7 @@ Setting gem versions in a `Gemfile`.
 
 ```ruby
 gem GEM_NAME
-gem GEM_NAME MIN_OR_COMPAT
+gem GEM_NAME, MIN_OR_COMPAT
 gem GEM_NAME, MIN, MAX
 ```
 
