@@ -1,3 +1,3 @@
-# TSConfig
+# TS Config
 
-See [TSConfig](https://michaelcurrin.github.io/code-cookbook/recipes/typescript/tsconfig.html) in Code Cookbook.
+See [TS Config](https://michaelcurrin.github.io/code-cookbook/recipes/typescript/tsconfig.html) in Code Cookbook.
