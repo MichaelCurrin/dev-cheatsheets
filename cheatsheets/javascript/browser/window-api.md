@@ -41,11 +41,11 @@ window.open(url, windowName, windowFeatures)
 ```javascript
 const windowObjectRefs = {};
 
-function nav(href, windowName) {
+function nav(url, windowName) {
   let ref = windowObjectRefs[windowName];
 
   if (!ref || ref.closed) {
-    ref = window.open(href, windowName);
+    ref = window.open(url, windowName);
     windowObjectRefs[windowName] = ref;
   } else {
     ref.focus();
