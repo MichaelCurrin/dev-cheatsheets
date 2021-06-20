@@ -1,7 +1,5 @@
 # Events
 
-{% raw %}
-
 If you need the value of variable to be pushed back up outside a component, then use Vue events.
 
 
@@ -22,4 +20,3 @@ In the docs:
 Events are the preferred way.
 
 You will get unexpected behavior or build errors if you don't use events.
-
