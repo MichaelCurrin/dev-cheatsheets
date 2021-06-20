@@ -58,7 +58,7 @@ This allows the SVG inherits the color from outside the element.
 
 When loading an **external** SVG (loaded as a `.svg` file), you need to set `fill="currentColor"` for your CSS to work.
 
-Here is an SVG file. Note use of `svg` and `use` tags, not `img`.
+Here defining an SVG.
 
 ```html
 <svg role="img" id="logo-ansible" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
@@ -69,11 +69,15 @@ Here is an SVG file. Note use of `svg` and `use` tags, not `img`.
 </svg>
 ```
 
-Here is how I load it:
+And now loading by URL. 
+
+Note loading by ID as defined above as `id` - you could put multiple SVG images in one SVG file like this. 
+
+Note use of `svg` and `use` tags, not `img`.
 
 ```html
 <svg class="logo-small">
-    <use xlink:href="https://michaelcurrin.github.io/logos/assets/img/ansible.svg#logo-ansible"></use>
+    <use xlink:href="assets/img/ansible.svg#logo-ansible"></use>
 </svg>
 ```
 
