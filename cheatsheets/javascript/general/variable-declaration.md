@@ -1,6 +1,6 @@
 ---
-title: var, const and let keywords
-description: Variable declarations in modern JS
+title: Variable declaration
+description: `var`, `const` and `let` keywords
 ---
 
 ## Keywords avaible
@@ -28,7 +28,6 @@ This makes a variable "block-scoped".
 
 Using this approach scopes the variable to a block (such as `if`, `for` or `function`). A `let` variable can only be accessed in its current scope and below.
 
-
 ```javascript
 var foo = "A";
 
@@ -55,7 +54,7 @@ if (true) {
 console.log(foo) // "A"
 ```
 
-You might see a loop like this, using `const` or `let` to declare a variable to each iteration.
+You might see a loop like this, using `const` or `let` to declare a variable in the scope of _each_ iteration.
 
 ```javascript
 for (const a of [1, 2, 3]) {
@@ -66,7 +65,27 @@ for (const a of [1, 2, 3]) {
 // 3
 ```
 
-Use in `if` statement. Declare outside the blocks, so the variable persists.
+Here is why `var` is a bad idea for that.
+
+If you use `var`, then the variable gets gets added to the global scope with the `var` keyword, then the reference to the single variable is used for each function. But when you use `let` or `const`, the variable gets added to the block scope and set in the function, so when the variable is printed after a delay then the scoped variable is used.
+
+```javascript
+for (var i of [1, 2, 3]) {
+  setTimeout(() => console.log(i), 1000)
+}
+// 3
+// 3
+// 3
+
+for (let i of [1, 2, 3]) {
+  setTimeout(() => console.log(i), 1000)
+}
+// 1
+// 2
+// 3
+```
+
+Use `let` in an `if` statement. Declare outside the blocks, so the variable persists.
 
 ```javascript
 let x
@@ -83,7 +102,7 @@ console.log(x)
 
 Using `let` is also useful in more complex logic around loops, to force a variable to be declared multiple times.
 
-Here is a something that `let` does _not_ prevent.
+Here is a something that still happens even with `let`. The `x` reference is used as pointer and changing the value of the `x` object changes all the items in an array pointing to `x`.
 
 ```javascript
 let x = {}
@@ -170,7 +189,7 @@ Note that `let` can only be used once for a variable.
 let y;
 let y;
 // Uncaught SyntaxError: Identifier 'y' has already been declared
-
+```
 
 ### const keyword
 
@@ -201,3 +220,35 @@ const x = 123
 // Uncaught TypeError: Assignment to constant variable.
 ```
 
+
+## Scope
+
+Here, the variable exists only in the block and not available outside of it.
+
+```javascript
+if (true) {
+  let x = 1
+  console.log(x)
+}
+console.log(x)
+```
+
+```
+1
+ReferenceError: x is not defined
+```
+
+You can use block scope without using an `if` statement or `for` loop.
+
+```javascript
+{
+  let x = 1
+  console.log(x)
+}
+console.log(x)
+```
+
+```
+1
+ReferenceError: x is not defined
+```
