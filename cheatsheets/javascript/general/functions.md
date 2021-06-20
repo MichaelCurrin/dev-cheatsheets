@@ -49,7 +49,6 @@ If you don't pass an array, you won't get an error, but you'll get unexpected ou
 
 ## How to pass arguments to functions
 
-
 ### Keyword arg style
 
 How to pass key-value pairs to a function.
@@ -62,16 +61,19 @@ function b({ foo, bar }) {
 }
 ```
 
-Call it using an associative array. The order doesn't matter.
+Call it using an associative array, either inline or as an object reference. The order doesn't matter.
 
 ```javascript
-> b({ foo: 1, bar:2 })
+> b({ foo: 1, bar: 2 })
 1 2
 > b({ bar: 2, foo: 1 })
 1 2
+> const x = { foo: 1, bar: 2 }
+> b(x)
+1 2
 ```
 
-Omit arguments.
+If you omit arguments, they are `undefined`.
 
 ```javascript
 > b()
@@ -80,7 +82,6 @@ undefined undefined
 > b({bar:2})
 undefined 2
 ```
-
 
 ### List style
 
@@ -115,6 +116,18 @@ undefined 2
 Warning - if you try and pass key-value pairs, you will only pass an associative array to the first parameter, which is not what we want.
 
 ```javascript
-> a( { foo: 1, bar:2 } )
+> a( { foo: 1, bar: 2 } )
 { foo: 1, bar: 2 } undefined
 ```
+
+### Mixed
+
+```javascript
+function c(bazz, { foo, bar }) {
+  console.log(bazz, foo, bar)
+}
+
+c(1, {foo: 2, bar: 3})
+// 1 2 3
+```
+
