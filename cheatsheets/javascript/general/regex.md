@@ -166,7 +166,7 @@ text.replace(pattern, 'ferret')
 
 
 ## Replace all method
-
+ 
 From [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll).
 
 > The replaceAll() method returns a new string with all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match.
@@ -177,7 +177,11 @@ Syntax:
 str.replaceAll(regexp|substr, newSubstr|function)
 ```
 
-Note that as per linked docs, this only replaces **all** occurrences for a string pattern. While if you use a regex pattern, it will still only replace the **one** occurence unless you use `g` flag. Which is annoying.
+Note that as per linked docs, this only replaces **all** occurrences for a string pattern. 
+
+While if you use a **regex** pattern, it will still only replace the **one** occurence unless you use `g` flag as before. Which is annoying. So for regex you might as well use the place `.replace`.
+
+This is a newer method so not supported on all browsers - see [Can I Use?](https://caniuse.com/mdn-javascript_builtins_string_replaceall) page.
 
 ### Examples
 
