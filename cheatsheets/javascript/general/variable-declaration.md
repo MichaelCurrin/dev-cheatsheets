@@ -1,6 +1,7 @@
 ---
 title: Variable declaration
-description: `var`, `const` and `let` keywords
+description: |
+  `var`, `const` and `let` keywords
 ---
 
 ## Keywords avaible
