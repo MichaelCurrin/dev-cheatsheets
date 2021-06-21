@@ -2,7 +2,7 @@
 
 ## What are Local storage and Session storage?
 
-The browser lets you store data against a key.
+The browser lets you store data against a key. Up 5MB.
 
 Local storage data has no expiration time. It applies across tabs/windows of the same site.
 
@@ -15,6 +15,10 @@ In Mozilla docs.
 
 - [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) 
 - [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
+
+See also [Cookies][] cheatsheet.
+
+[Cookies]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/cookies.md %}
 
 
 ## Methods
