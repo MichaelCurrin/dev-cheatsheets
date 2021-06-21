@@ -1,19 +1,25 @@
-# Storage
+# Storage API
 
-## Local storage vs Session storage
+## What are Local storage and Session storage?
 
-- [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) in Mozilla docs.
-- [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage) in Mozilla docs.
+The browser lets you store data against a key.
 
-> localStorage data has no expiration time
+Local storage data has no expiration time. It applies across tabs/windows of the same site.
 
-> sessionStorage data gets cleared when the page session ends — that is, when the page is closed.
+While session sStorage data gets cleared when the page session ends — that is, when the page is closed.
+
+
+## Resources
+
+In Mozilla docs.
+
+- [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) 
+- [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
 
 
 ## Methods
 
 These work on both `localStorage` and `sessionStorage`.
-
 
 -  `Storage.key(n)` - return name of the Nth key.
 - `Storage.getItem(keyName)` - get value.
