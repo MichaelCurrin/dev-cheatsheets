@@ -124,7 +124,27 @@ const result = patt.test(str);
 ```
 
 
-## Replace method
+## Replace
+
+### Replace method vs replace all method
+
+Here using both to replace every occurence, using `replaceAll` and a string and then `replace` with multiline regex.
+
+```javascript
+> 'ABC ABC ABC'.replaceAll('ABC', "X")
+'X X X'
+> 'ABC ABC ABC'.replace(/ABC/g, "X")
+'X X X'
+```
+
+Replace one.
+
+```javacript
+'ABC ABC ABC'.replace('ABC', "X")
+'X ABC ABC'
+```
+
+### Replace method
 
 A method on a string.
 
@@ -140,7 +160,7 @@ text.replace(pattern, replaceStr)
 
 _Warning - the default behavior is to only replace the **first occurrence**. So make sure to use `g` global flag in your regex, even if you have to convert your plain string or regex. You can use the [replaceAll](#replace-all-method) method to replace all values for a string pattern, but you still need global flag for regex pattern._
 
-### Examples
+#### Examples
 
 Use `'dog'` string or `/Dog/i` regex as the pattern. Either way, it will only replace replace **once**.
 
@@ -164,8 +184,7 @@ text.replace(pattern, 'ferret')
 // "The quick brown fox jumps over the lazy ferret. If the ferret reacted, was it really lazy?"
 ```
 
-
-## Replace all method
+### Replace all method
  
 From [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll).
 
@@ -183,7 +202,7 @@ While if you use a **regex** pattern, it will still only replace the **one** occ
 
 This is a newer method so not supported on all browsers - see [Can I Use?](https://caniuse.com/mdn-javascript_builtins_string_replaceall) page.
 
-### Examples
+#### Examples
 
 String pattern to replace all.
 
