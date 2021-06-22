@@ -1,4 +1,6 @@
-# Conventional commits
+# Conventional Commits
+
+About the standard for writing commit messages. These can be validated with tools like commitlint and even auto-generated - see [Auto Commit Message](https://github.com/MichaelCurrin/auto-commit-msg) for VS Code.
 
 <!-- TODO move out to another area -->
 
@@ -23,7 +25,7 @@ See links for more details:
 
 ## Conventional commits site
 
-- [conventionalcommits.org/en](https://www.conventionalcommits.org/en/)
+- [Conventional Commits](https://www.conventionalcommits.org/en/) homepage 
 
 > A specification for adding human and machine readable meaning to commit messages
 
