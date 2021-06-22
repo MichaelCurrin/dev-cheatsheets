@@ -4,26 +4,7 @@ About the standard for writing commit messages. These can be validated with tool
 
 <!-- TODO move out to another area -->
 
-
-## Options
-
-- `feat`
-- `fix`
-- `style`
-- `refactor`
-- `perf`
-- `docs`
-- `test`
-- `chore`
-
-See links for more details:
-
-- [seesparkbox.com/foundry/semantic_commit_messages](https://seesparkbox.com/foundry/semantic_commit_messages)
-- [hackwild.com/article/semantic-git-commits](https://hackwild.com/article/semantic-git-commits/)
-- [karma-runner.github.io/1.0/dev/git-commit-msg.html](https://karma-runner.github.io/1.0/dev/git-commit-msg.html)
-
-
-## Conventional commits site
+## Overview 
 
 - [Conventional Commits](https://www.conventionalcommits.org/en/) homepage 
 
@@ -37,7 +18,80 @@ See links for more details:
 [optional footer]
 ```
 
-See also
+### Resources
 
 - [udacity.github.io/git-styleguide](https://udacity.github.io/git-styleguide/)
 - [github.com/angular/angular/blob/master/CONTRIBUTING.md](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit)
+
+
+## Type
+
+A prefix for the commit message describing the type of the change.
+
+### Type values allowed
+
+This should be only one of the types defined in the standard.
+
+See [allowed types](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional#type-enum) defined in the docs of the `config-conventional` section of the `commitlint` repo.
+
+- `feat`
+- `fix`
+- `style`
+- `refactor`
+- `perf`
+- `docs`
+- `test`
+- `chore`
+
+### Resources 
+
+See links for more details:
+
+- [seesparkbox.com/foundry/semantic_commit_messages](https://seesparkbox.com/foundry/semantic_commit_messages)
+- [hackwild.com/article/semantic-git-commits](https://hackwild.com/article/semantic-git-commits/)
+- [karma-runner.github.io/1.0/dev/git-commit-msg.html](https://karma-runner.github.io/1.0/dev/git-commit-msg.html)
+
+### Examples
+
+Here is an example of the feature type used as a prefix.
+
+```
+feat: add foo
+```
+
+A documentation change:
+
+```
+docs: fix typo in foo.md and bar.md
+```
+
+From the docs:
+
+> Commits MUST be prefixed with a type, which consists of a noun, feat, fix, etc., followed by a colon and a space.
+
+
+## Scope
+
+The standard defines use of an optional scope, which is used in additional to the required type.
+
+From the docs:
+
+> An optional scope MAY be provided after a type.
+>
+> A scope is a phrase describing a section of the codebase enclosed in parenthesis.
+>
+> e.g. 'fix(parser):'
+This would be specific to a particular project, so you cannot know the generalize scopes for all projects. The standard says you should agree in your team what the scopes would be. Perhaps based on features, projects or directories.
+
+I believe there are some scope values which do generalize well.
+
+All dependency changes can have scope of `deps`.
+
+Some possible examples.
+
+```
+build(deps): upgrade packages
+style(deps): remove whitespace in requirements.txt
+fix(deps): correct typo in package.json package name
+```
+
