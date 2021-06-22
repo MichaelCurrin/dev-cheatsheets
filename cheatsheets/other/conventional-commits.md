@@ -6,7 +6,7 @@ About the standard for writing commit messages. These can be validated with tool
 
 ## Overview 
 
-- [Conventional Commits](https://www.conventionalcommits.org/en/) homepage 
+From the homepage:
 
 > A specification for adding human and machine readable meaning to commit messages
 
@@ -20,8 +20,13 @@ About the standard for writing commit messages. These can be validated with tool
 
 ### Resources
 
+- [Conventional Commits](https://www.conventionalcommits.org/) homepage
+    - See this to learn more on writing Conventional Commits messages. The _Summary_ section covers the prefixes used here.
+- Angular
+   - [Type](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type) on the Angular repo. This is linked from the Conventional Commits website as "Angular Convention" and explains what `build` etc. means.
+- [Gitmoji](https://gitmoji.dev/) site
+   - For a standard of using emojis in commits. 
 - [udacity.github.io/git-styleguide](https://udacity.github.io/git-styleguide/)
-- [github.com/angular/angular/blob/master/CONTRIBUTING.md](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit)
 
 
 ## Type
