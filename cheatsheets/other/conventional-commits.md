@@ -34,14 +34,21 @@ This should be only one of the types defined in the standard.
 
 See [allowed types](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional#type-enum) defined in the docs of the `config-conventional` section of the `commitlint` repo.
 
-- `feat`
-- `fix`
-- `style`
-- `refactor`
-- `perf`
-- `docs`
-- `test`
-- `chore`
+I've grouped them as they make sense to me.
+
+- Core
+    - `feat` - feature
+    - `fix`
+    - `style`
+    - `refactor`
+    - `build`
+    - `perf` - performance
+- Supplemental (the app can still run locally without these)
+    - `ci` - update workflow for CI.
+    - `docs`
+    - `test` - relating to running tests.
+- `chore` - like configs and file renames or moves.
+- `revert`
 
 ### Resources 
 
@@ -95,3 +102,4 @@ style(deps): remove whitespace in requirements.txt
 fix(deps): correct typo in package.json package name
 ```
 
+Perhaps updating test dependencies would be under test rather than build.
