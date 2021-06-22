@@ -22,8 +22,8 @@ From the homepage:
 
 - [Conventional Commits](https://www.conventionalcommits.org/) homepage
     - See this to learn more on writing Conventional Commits messages. The _Summary_ section covers the prefixes used here.
-- Angular
-   - [Type](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type) on the Angular repo. This is linked from the Conventional Commits website as "Angular Convention" and explains what `build` etc. means.
+- [Commit Message Format](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit)
+    - In the Angular Contributing doc. The standard came out of Angular.
 - [Gitmoji](https://gitmoji.dev/) site
    - For a standard of using emojis in commits. 
 - [udacity.github.io/git-styleguide](https://udacity.github.io/git-styleguide/)
@@ -36,8 +36,6 @@ A prefix for the commit message describing the type of the change.
 ### Type values allowed
 
 This should be only one of the types defined in the standard.
-
-See [allowed types](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional#type-enum) defined in the docs of the `config-conventional` section of the `commitlint` repo.
 
 I've grouped them as they make sense to me.
 
@@ -55,9 +53,14 @@ I've grouped them as they make sense to me.
 - `chore` - like configs and file renames or moves.
 - `revert`
 
-### Resources 
+Check these pages to see officially allowed types.
 
-See links for more details:
+- [Type](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type) section on the Angular repo. This is linked from the Conventional Commits website as "Angular Convention". It explains what `build` etc. means.
+- [Allowed types](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional#type-enum) defined in the docs of the `config-conventional` section of the `commitlint` repo. This presumably works closely or exactly to the Angular standard.
+
+### Resources
+
+Here are some less offical guides for more help.
 
 - [seesparkbox.com/foundry/semantic_commit_messages](https://seesparkbox.com/foundry/semantic_commit_messages)
 - [hackwild.com/article/semantic-git-commits](https://hackwild.com/article/semantic-git-commits/)
