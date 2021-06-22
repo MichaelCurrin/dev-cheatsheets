@@ -24,8 +24,11 @@ From the homepage:
     - See this to learn more on writing Conventional Commits messages. The _Summary_ section covers the prefixes used here.
 - [Commit Message Format](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit)
     - In the Angular Contributing doc. The standard came out of Angular.
-- [Gitmoji](https://gitmoji.dev/) site
-   - For a standard of using emojis in commits. 
+- Emojis
+    - [Gitmoji](https://gitmoji.dev/) site
+       - For a standard of using emojis in commits. 
+    - [Git log emoji](https://github.com/MichaelCurrin/emoji-resources/blob/main/git-log-emoji.md)
+       - An alias I came up with to prettify your commit log view without actually inserting emojis into commit messages.
 - [udacity.github.io/git-styleguide](https://udacity.github.io/git-styleguide/)
 
 
