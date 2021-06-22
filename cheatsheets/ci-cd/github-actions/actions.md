@@ -1,4 +1,8 @@
-# Actions
+---
+title: Actions
+description: What an Actions is, how to use one and how to make your own
+---
+
 
 {% raw %}
 
@@ -23,16 +27,18 @@ You can use any repo but only ones that have been approved by GitHub make it to 
 
 ## How to use an Action
 
-GitHub provides many actions under a certain account.
+An Action exists as a public repo on GitHub.
+
+GitHub provides many actions under a certain account:
 
 - [actions](https://github.com/actions).
 
 For example:
 
-- [actions/checkout@v2]https://github.com/actions/checkout)
+- [actions/checkout@v2](https://github.com/actions/checkout)
 - [actions/setup-node](https://github.com/actions/setup-node)
 
-Use like this:
+Use one like this:
 
 ```yaml
 steps:
@@ -48,7 +54,8 @@ You can reference an action in a subdirectory like this.
 Based on [cancel-outdated-builds](https://github.com/rust-lang/simpleinfra/tree/master/github-actions/cancel-outdated-builds) insructions.
 
 ```yaml
-- uses: rust-lang/simpleinfra/github-actions/cancel-outdated-builds@master
+- name: Cancel outdated builds
+  uses: rust-lang/simpleinfra/github-actions/cancel-outdated-builds@master
 ```
 
 {% endraw %}
