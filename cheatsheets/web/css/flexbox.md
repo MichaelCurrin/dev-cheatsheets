@@ -1,8 +1,51 @@
 # Flexbox
 
+See [Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) tutorial on W3 Schools.
+
+
+## Flex
+
+From [Flex](https://www.w3schools.com/cssref/css3_pr_flex.asp) on W3 Schools.
+
+```css
+el {
+  flex: 1;
+}
+```
+
+Values:
+
+- flex-grow flex-shrink flex-basis|auto|initial|inherit;
+
+
+### Example
+
+> Using `flex` together with media queries to create a different layout for different screen sizes/devices:
+
+```css
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item-left {
+  flex: 50%;
+}
+
+.flex-item-right {
+  flex: 50%;
+}
+
+/* Responsive layout - makes a one column layout (100%) instead of a two-column layout (50%) */
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+}
+```
+
 
 ## Align
-
 
 ### Align content
 
