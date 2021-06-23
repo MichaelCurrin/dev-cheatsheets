@@ -6,10 +6,10 @@ description: Guide to iterating over iterables in JavaScript
 
 See [map, reduce and filter][] page for how to apply `map` to an array.
 
-See the [Iterables][] page for unpacking variables without necessarily using a for loop.
+See the [Unpack][] page for unpacking variables without necessarily using a for loop.
 
 [map, reduce and filter]: {{ site.baseurl }}{% link cheatsheets/javascript/general/map-reduce-filter.md %}
-[Iterables]: {{ site.baseurl }}{% link cheatsheets/javascript/general/iterablea.md %}
+[Unpack]: {{ site.baseurl }}{% link cheatsheets/javascript/general/unpack.md %}
 
 
 ## Overview
