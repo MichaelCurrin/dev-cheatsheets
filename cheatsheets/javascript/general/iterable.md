@@ -6,6 +6,8 @@ See the [Looping][] section for more details on styles of for loops and how to a
 
 [Looping]: {{ site.baseurl }}{% link cheatsheets/javascript/general/looping.md %}
 
+See [Object.entries](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries) in MDN docs.
+
 
 ## Array
 
