@@ -33,3 +33,14 @@ Object.keys(x)
 Object.values(x)
 // [ 1, 2 ]
 ```
+
+Note that if you iterate over a `Map` type, you get the keys and values without having to add an Object method.
+
+
+## From entries
+
+Convert an array of arrays into an associative array.
+
+[Object.fromEntries](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries)
+
+So you could apply `.entries` and then `.fromEntries` and get back to the associative array where you started.
