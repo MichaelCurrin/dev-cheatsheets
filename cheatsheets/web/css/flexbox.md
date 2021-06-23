@@ -3,13 +3,26 @@
 
 ## Align
 
-From [flexbox froggy](https://flexboxfroggy.com/).
 
-`align-content` determines the spacing between lines
+### Align content
 
-`align-items` determines how the items as a whole are aligned within the container.
+The `align-content` property modifies the behavior of the `flex-wrap` property.
 
-When there is only one line, `align-content` has no effect
+It aligns flex lines.
+
+There must be **multiple** lines of items for this property to have any effect!
+
+### Align items
+
+Aligns flex items.
+
+
+### Difference
+
+Summary from [flexbox froggy](https://flexboxfroggy.com/).
+
+- `align-content` determines the spacing between lines
+- `align-items` determines how the items as a whole are aligned within the container.
 
 
 ## Jusify content
