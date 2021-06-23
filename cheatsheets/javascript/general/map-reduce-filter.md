@@ -1,6 +1,6 @@
-# map reduce filter
+# map, reduce, and filter
 
-We use the `map`, `reduce` and `filter` methods on an array. These are not available on other data types (in Python, these are standalone functions and you can pass any iterable to them).
+We use the `map`, `reduce`, and `filter` methods on an array. These are not available on other data types (in Python, these are standalone functions and you can pass any iterable to them).
 
 They will a **new** object after the applying transformation. The old array will not be affected, unless you reassign over the same name.
 
@@ -56,6 +56,7 @@ myArray.reduce((accumulator, currentValue, index, array) => { ... }, initialValu
 ### Named function
 
 General naming. In this case we use `+` symbol.
+
 ```javascript
 function reducer(accumulator, currentValue) {
   return accumulator + currentValue;
@@ -74,6 +75,7 @@ function add(total, item) {
 }
 
 const myArray = [1, 10, 100, 1000];
+
 myArray.reduce(add)
 // 1111
 ```
@@ -119,6 +121,7 @@ You could use `*` if you wanted to multiple the values.
 
 ```javascript
 const myArray = [1, 2, 3, 4];
+
 myArray.reduce((x, y) => x*y)
 // 24
 ```
@@ -167,11 +170,13 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 ```
 
 ```javascript
-numbers.map(x => x*2).filter(x => x > 5);
+numbers.map(x => x*2)
+  .filter(x => x > 5);
 //  [ 6, 8, 10, 12, 14, 16, 18, 20 ]
 ```
 
 ```javascript
-numbers.map(x => x*2).reduce((x, y) => x + y)
+numbers.map(x => x*2)
+  .reduce((x, y) => x + y)
 // 110
 ```
