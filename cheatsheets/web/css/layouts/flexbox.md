@@ -15,7 +15,7 @@ el {
 
 Values:
 
-- flex-grow flex-shrink flex-basis|auto|initial|inherit;
+- `flex-grow flex-shrink flex-basis|auto|initial|inherit`
 
 
 ### Example
