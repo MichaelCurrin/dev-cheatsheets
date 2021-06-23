@@ -45,6 +45,16 @@ Note that if you iterate over a `Map` type, you get the keys and values without 
 
 Convert an array of arrays into an associative array.
 
-[Object.fromEntries](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries)
+From [Object.fromEntries](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries)
+
+```javascript
+const myMap = [
+  ['foo', 'bar'],
+  ['baz', 42]
+];
+
+const myHash = Object.fromEntries(myMap);
+// { foo: "bar", baz: 42 }
+```
 
 So you could apply `.entries` and then `.fromEntries` and get back to the associative array where you started.
