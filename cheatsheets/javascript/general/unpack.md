@@ -1,12 +1,16 @@
-# Iterable
+# Unpack
 
-How to iterate over objects of various types. You might not use these with a for loop. For example if you want to convert a associative array to an array.
+How to unpack objects of various types to iterate or convert. You might not use these with a for loop. For example if you want to convert a associative array to an array.
+
+
+## Resources
 
 See the [Looping][] section for more details on styles of for loops and how to apply them to object types.
 
-[Looping]: {{ site.baseurl }}{% link cheatsheets/javascript/general/looping.md %}
+See also [Object.entries][] in MDN docs.
 
-See [Object.entries](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries) in MDN docs.
+[Looping]: {{ site.baseurl }}{% link cheatsheets/javascript/general/looping.md %}
+[Object.entries]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
 
 
 ## Array
@@ -37,7 +41,7 @@ Object.values(x)
 Note that if you iterate over a `Map` type, you get the keys and values without having to add an Object method.
 
 
-## From entries
+## From entries method
 
 Convert an array of arrays into an associative array.
 
