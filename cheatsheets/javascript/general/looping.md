@@ -11,6 +11,8 @@ See [map reduce filter][] page for how to apply `map` to an array.
 
 ## Overview
 
+Nothing is simple in JavaScript. How do I iterate over an object? Well there are a few days, more than usual in a programming language.
+
 Click a link to jump to that section of this guide.
 
 - [for](#for)
@@ -25,6 +27,10 @@ Click a link to jump to that section of this guide.
     - [Using for...of](#using-for...of)
         ```javascript
         for (const item of iterable) { }
+
+        for (const [index, value] of Object.entries(myArray)) { }
+
+        for (const [key, value] of Object.entries(myAssociativeArray)) { }
         ```
 - [map](#map)
     ```javascript
@@ -48,7 +54,11 @@ Click a link to jump to that section of this guide.
 
 ### Using index
 
-The old-fashioned index-based loop, based on the C and Java languages. Traditionally this was done using `var` but `let` is the modern way.
+The old-fashioned index-based loop, based on the C and Java languages. 
+
+Please don't use this in your JS unless you have a good reason to. The code is verbose. And it obscures getting a value. If you do need the key or index _and_ the value, there is a cleaner way. Jump to [for...of](#using-for...of) section.
+
+Traditionally this style was done using `var`, but `let` is the modern way for block scoping.
 
 ```javascript
 for (let index = 0; i < iterableLength; index++) { }
@@ -89,28 +99,31 @@ for (let i = letters.length; i > 0; i--) {
 
 ### Using for...in
 
-This is similar to using the index style but shorter.
+Get the index using `in`.
+
+This is similar to using the C-based index style but shorter (no need for `i++` etc.).
 
 ```javascript
 for (const index in iterable) { }
 ```
+
+What if you want an array index or associative array key, as well as the value?
+It is possible as shown with the examples below, but is it verbose and inefficient. See the [for...of](#using-for...of) section for a more elegant way rather.
 
 Example using an array.
 
 ```javascript
 const letters = ["a", "b", "c"]
 
-for (const i in letters) {
-  console.log(i, letters[i])
+for (const index in letters) {
+  console.log(index, letters[index])
 }
 // 0 a
 // 1 b
 // 2 c
 ```
 
-This is **not** so useful, as you only get the index and still have to look up the value. So using `for...of` is better, as covered below.
-
-A more common use is using an `Object` of key-value pairs - based on [for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) docs.
+Get a key and value. Based on [for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) docs.
 
 ```javascript
 const foo = { a: 1, b: 2, c: 3 }
@@ -125,7 +138,7 @@ for (const key in foo) {
 
 ### Using for...of
 
-Get the items, without having to deal with the index.
+Get the items using `of`, without having to deal with the index.
 
 ```javascript
 for (const item of iterable) { }
@@ -137,6 +150,8 @@ In Python:
 for item in iterable:
     # expression
 ```
+
+See examples below for how to get the index or key and value at once - no need for a C style loop.
 
 #### Array
 
@@ -153,13 +168,13 @@ for (const letter of letters) {
 // c
 ```
 
-Get the index and value, using `Object.entries`. Compare wih `enumerate` in Python.
+Get the index _and_ the value, using `Object.entries`. Compare wih `enumerate` in Python.
 
 ```javascript
 const letters = ['a', 'b', 'c'];
 
-for (const [i, letter] of Object.entries(letters)) {
-  console.log(i, letter);
+for (const [index, letter] of Object.entries(letters)) {
+  console.log(index, letter);
 }
 // 0 a
 // 1 b
