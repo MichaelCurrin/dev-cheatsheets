@@ -24,4 +24,4 @@ el {
 
 Use of `align-content` is for [Flexbox][].
 
-[Flexbox]: {{ site.baseurl }}{% link cheatsheets/web/css/flexbox.md %}
+[Flexbox]: {{ site.baseurl }}{% link cheatsheets/web/css/layouts/flexbox.md %}
