@@ -103,6 +103,7 @@ This is valid JS though, updating an object in place.
 
 ```javascript
 const myArray = [1, 2, 3])
+
 myArray.push(4)
 ```
 
@@ -110,5 +111,6 @@ But `const` is still good at stopping your from doing this, because you will get
 
 ```javascript
 const myArray = [1, 2, 3]
+
 myArray = myArray.map(myFunction)
 ```
