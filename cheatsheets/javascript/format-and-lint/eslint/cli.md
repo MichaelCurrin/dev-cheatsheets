@@ -33,7 +33,7 @@ $ eslint . --ext .ts
 Some flags to highlight.
 
 
-### Extenions
+### Extensions
 
 ```
   --ext [String]                  Specify JavaScript file extensions
