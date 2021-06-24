@@ -186,7 +186,7 @@ $ mdbook build
 
 **console**
 
-I think this might apply for Windows too.
+Note unlike the shell styles above, everything after a `$` entry is all one color (not trying to apply shell highlighting to something that could be plain text or _any_ program language). And it also separates output nicely in a different color to the input.
 
 ```console
 $ cargo install mdbook-linkcheck
