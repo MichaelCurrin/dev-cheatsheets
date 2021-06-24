@@ -1,4 +1,7 @@
-# Common rules
+---
+title: Common
+description: Some rules you are likely to need with configuring and running ESLint
+---
 
 
 See [Rules](https://eslint.org/docs/rules/) in the docs. It provides descriptions and link to the rule's page.
