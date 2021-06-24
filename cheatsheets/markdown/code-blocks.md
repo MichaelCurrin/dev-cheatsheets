@@ -1,8 +1,4 @@
-# Code blocks
-
-See also the [Jekyll Supported Languages][] page.
-
-[Jekyll Supported Languages]: {{ site.baseurl }}{% link cheatsheets/jekyll/code-blocks/supported-languages.md %}
+# Codeblocks
 
 
 ## Code styling
@@ -20,7 +16,7 @@ Example of `code` in a sentence.
 Example of `code` in a sentence.
 
 
-## Code blocks
+## Codeblocks
 
 ### Indent syntax
 
@@ -95,7 +91,13 @@ You can even nest them, provided you have a bullet point.
     
 ## Supported languages
 
-Some valid references for language-specific styling that I use. There are many more available.
+Some valid references for language-specific styling, focusing on the ones I use. There are many more available.
+
+See also the [Jekyll Supported Languages][] page.
+
+[Jekyll Supported Languages]: {{ site.baseurl }}{% link cheatsheets/jekyll/code-blocks/supported-languages.md %}
+
+These are usually based on the file extension.
 
 - `markdown` or `md`
 	- The former shows better rendering in the GitHub editor view.
@@ -106,7 +108,9 @@ Some valid references for language-specific styling that I use. There are many m
 - `ruby` or `rb`
 - `html`
 - `javascript` or `js`
-- `sh` or `bash` (or the less common `shell`)
+- `sh` or `shell`
+- `bash`
+- `powershell`
 - `diff`
 - `liquid`
 - `yaml` or `yml`
@@ -114,9 +118,92 @@ Some valid references for language-specific styling that I use. There are many m
 	- The former actually provide more/better highlighting when viewing the rendered content.
 - `mk`, `make`, `Makefile` (or lowercase).
 	- These all work, I haven't compared how well though.
-
+- `c`
+- `c++`, `cpp`, `cplusplus`
 
 ### Examples
+
+#### Shell
+
+Content from [MDBook](https://github.com/rust-lang/mdBook/blob/master/README.md).
+
+**sh**
+
+```sh
+$ cargo install mdbook-linkcheck
+$ edit book.toml && cat book.toml
+[book]
+title = "My Awesome Book"
+authors = ["Michael-F-Bryan"]
+
+[output.html]
+
+[output.linkcheck]  # enable the "mdbook-linkcheck" renderer
+
+$ mdbook build
+2018-10-20 13:57:51 [INFO] (mdbook::book): Book building has started
+2018-10-20 13:57:51 [INFO] (mdbook::book): Running the html backend
+2018-10-20 13:57:53 [INFO] (mdbook::book): Running the linkcheck backend
+```
+
+**shell**
+
+```shell
+$ cargo install mdbook-linkcheck
+$ edit book.toml && cat book.toml
+[book]
+title = "My Awesome Book"
+authors = ["Michael-F-Bryan"]
+
+[output.html]
+
+[output.linkcheck]  # enable the "mdbook-linkcheck" renderer
+
+$ mdbook build
+2018-10-20 13:57:51 [INFO] (mdbook::book): Book building has started
+2018-10-20 13:57:51 [INFO] (mdbook::book): Running the html backend
+2018-10-20 13:57:53 [INFO] (mdbook::book): Running the linkcheck backend
+```
+
+**bash**
+
+```bash
+$ cargo install mdbook-linkcheck
+$ edit book.toml && cat book.toml
+[book]
+title = "My Awesome Book"
+authors = ["Michael-F-Bryan"]
+
+[output.html]
+
+[output.linkcheck]  # enable the "mdbook-linkcheck" renderer
+
+$ mdbook build
+2018-10-20 13:57:51 [INFO] (mdbook::book): Book building has started
+2018-10-20 13:57:51 [INFO] (mdbook::book): Running the html backend
+2018-10-20 13:57:53 [INFO] (mdbook::book): Running the linkcheck backend
+```
+
+**console**
+
+I think this might apply for Windows too.
+
+```console
+$ cargo install mdbook-linkcheck
+$ edit book.toml && cat book.toml
+[book]
+title = "My Awesome Book"
+authors = ["Michael-F-Bryan"]
+
+[output.html]
+
+[output.linkcheck]  # enable the "mdbook-linkcheck" renderer
+
+$ mdbook build
+2018-10-20 13:57:51 [INFO] (mdbook::book): Book building has started
+2018-10-20 13:57:51 [INFO] (mdbook::book): Running the html backend
+2018-10-20 13:57:53 [INFO] (mdbook::book): Running the linkcheck backend
+```
 
 #### Diff
 
