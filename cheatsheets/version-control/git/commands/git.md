@@ -2,8 +2,6 @@
 
 Git CLI [docs](https://git-scm.com/docs/git)
 
-See [Git Every Day](https://git-scm.com/docs/giteveryday) part of the docs for common daily commands.
-
 
 ## Reset, restore and revert
 
