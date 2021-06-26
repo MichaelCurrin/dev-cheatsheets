@@ -1,5 +1,7 @@
 ---
 logo: git
+description: |
+  "the stupid content tracker"
 ---
 # Git
 
