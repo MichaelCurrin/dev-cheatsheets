@@ -1,8 +1,13 @@
 # jQuery DataTables
 
+See [Dev Resources](https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/jquery-datatables/) page.
+
+
 {% raw %}
 
 ## Initialize
+
+In your HTML:
 
 ```html
 <script>
