@@ -85,3 +85,9 @@ $ git checkout $(git rev-list -n 1 HEAD -- PATH)^ -- PATH
 As the file isn't in the `HEAD` commit, this commit must have deleted it. 
 
 Note that `HEAD` is literal and `PATH` will be your file or directory.
+
+I've also seen a recommendation for this but don't know if it works.
+
+```sh
+$ git checkout -- PATH
+```
