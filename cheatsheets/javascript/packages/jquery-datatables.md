@@ -53,6 +53,24 @@ bar(bazzCol)
 ```
 
 
+## Load data
+
+### Ajax JSON file
+
+See [ajax.json()](https://datatables.net/reference/api/ajax.json())
+
+```javascript
+const table = $('#example').DataTable( {
+  ajax: "data.json"
+} );
+ 
+table.on( 'xhr', function () {
+  const json = table.ajax.json();
+  alert( json.data.length +' row(s) were loaded' );
+} );
+```
+
+
 ## Column types
 
 This is supposed to be automatic, but that might not be true for dirty data.
