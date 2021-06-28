@@ -72,44 +72,60 @@ table.on( 'xhr', function () {
 } );
 ```
 
-See also [Ajax Sourced Data](https://datatables.net/examples/data_sources/ajax.html) under examples in the docs.
+See also [Ajax Sourced Data](https://datatables.net/examples/data_sources/ajax.html) and [POST data](https://datatables.net/examples/server_side/post.html) under examples in the docs.
 
 - Script tag.
     ```html
     <script>
     $(document).ready(function() {
-        $('#example').DataTable( {
-            "ajax": '../ajax/data/arrays.txt'
-        } );
-    } );
+      $('#example').DataTable( {
+        ajax: 'data.json'
+      });
+    });
     </script>
     ```
-- HTML table - set up the table outline with no data.
-    ```html
-    <table id="example" class="display" style="width:100%">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Extn.</th>
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Extn.</th>
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
-        </tfoot>
-    </table>
-    ```
-- Data in a JSON file:
+    
+If doing a `POST` to an API, you can do this instead.
+
+```javascript
+$('#example').DataTable( {
+  ajax: {
+    url: "api/data.json",
+    type: "POST"
+  },
+});
+```
+        
+Set up the table outline with no data.
+
+```html
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Extn.</th>
+            <th>Start date</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Extn.</th>
+            <th>Start date</th>
+            <th>Salary</th>
+        </tr>
+    </tfoot>
+</table>
+```
+
+Data in a JSON file:
+
+- `data.json`
     ```json
     {
       "data": [
