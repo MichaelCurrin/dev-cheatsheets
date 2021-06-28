@@ -1,9 +1,9 @@
-# Event modifiers
+# Modifiers
 
 From [Event modifiers](https://v3.vuejs.org/guide/events.html#event-modifiers) in the docs.
 
 
-## Modifiers
+## Event modifiers
 
 - `.stop`
 - `.prevent`
