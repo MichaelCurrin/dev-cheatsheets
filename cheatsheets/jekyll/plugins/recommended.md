@@ -62,9 +62,9 @@ Crop and resize images and serve them responsively.
 
 #### Install
 
-[Install doc](https://rbuchberger.github.io/jekyll_picture_tag/users/installation).
+See [Installation](https://rbuchberger.github.io/jekyll_picture_tag/users/installation) page in the docs.
 
-Add to Gemfile and install.
+Add to your Gemfile and install it.
 
 ```ruby
 group :jekyll_plugins do
@@ -74,7 +74,7 @@ end
 
 Install [ImageMagick](https://imagemagick.org/script/index.php) using source download or package manager.
 
-So you can run:
+Then you can run:
 
 ```sh
 $ convert --version
@@ -82,9 +82,9 @@ $ convert --version
 
 #### Usage
 
-[docs](https://rbuchberger.github.io/jekyll_picture_tag/)
+See [Jekyll Picture Tag](https://rbuchberger.github.io/jekyll_picture_tag/) docs homepage.
 
-Write this:
+Code:
 
 ```liquid
 {% picture test.jpg %}
@@ -101,6 +101,7 @@ Result:
     /generated/test-1000-195f7d.jpg 1000w
     ">
 ```
+
 
 ## CMS
 
