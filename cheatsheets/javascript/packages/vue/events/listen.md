@@ -1,23 +1,11 @@
 # Listen
 
+How to listen to an event and perform an action or actions.
+
+See [Events](https://v3.vuejs.org/guide/events.html) in Vue 3 docs.
+
 {% raw %}
 
-## Event types
-
-- `@click` - when the element is clicked
-- `@input` - fires when user changes input value.
-- `@change` - fires when user changed value and unfocus input (for example, clicked somewhere outside)
-
-
-## Modifiers
-
-- `.stop`
-- `.prevent`
-- `.capture`
-- `.self`
-- `.once`
-- `.passive`
-    
 
 ## Syntax
 
@@ -25,9 +13,14 @@ We can use the `v-on` directive, which we typically shorten to the `@` symbol, t
 
 ```
 @click="methodName"
-// i.e.
+```
+
+Or
+
+```
 v-on:click="methodName"
 ```
+
 
 ## Calling
 
@@ -45,6 +38,10 @@ Or use brackets and parameters.
 
 ```html
 <input @input="methodName('hello')" />
+```
+
+```html
+<input @input="methodName('hello'), secondMethod('world')" />
 ```
 
 Using `console.log` or `alert` for basic messaging.
@@ -65,6 +62,7 @@ Example:
   </button>
 </div>
 ```
+
 ```javascript
 Vue.createApp({
   methods: {
