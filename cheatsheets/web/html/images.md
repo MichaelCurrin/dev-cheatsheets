@@ -1,5 +1,6 @@
 # Images
 
+
 ## Format of the image tag
 
 ### HTML
@@ -41,7 +42,6 @@ Example:
      title="Linux"
      width="40" height="40" />
 
-
 ### Markdown
 
 Here is an equivalent image in Markdown - excluding dimensions.
@@ -62,7 +62,28 @@ Note the quotes for the title.
 - [How TO - Image Hover Overlay](https://www.w3schools.com/howto/howto_css_image_overlay.asp) on W3 Schools
 
 
-## Optimizing image loading
+## Image source set
+
+Provide a set of images of different sizes so the browser can load the appropriate one given with screen size.
+
+e.g.
+
+```html
+<img src="foo-800.jpg"
+  srcset="
+    foo-400.jpg   400w,
+    foo-600.jpg   600w,
+    foo-800.jpg   800w,
+    foo-1000.jpg 1000w
+    ">
+```
+
+You can find a Jekyll plugins like [jekyll_picture_tag][] to do this for you.
+
+[jekyll_picture_tag]: {{ site.baseurl }}{% link cheatsheets/jekyll/plugins/recommended.md %}
+
+
+## Optimize image loading
 
 Code snippets and references to read more.
 
