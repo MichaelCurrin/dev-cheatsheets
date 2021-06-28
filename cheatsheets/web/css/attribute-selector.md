@@ -73,3 +73,36 @@ a[class~="logo"] {
   padding: 2px;
 }
 ```
+
+
+## Forms
+
+From [W3 Schools](https://www.w3schools.com/css/css_form.asp).
+
+- `input[type=text]` - will only select text fields
+- `input[type=password]` - will only select password fields
+- `input[type=number]` - will only select number fields
+
+
+e.g.
+
+```css
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+```
+
+Incease the size of a search input on focus.
+
+```css
+input[type=text] {
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+```
