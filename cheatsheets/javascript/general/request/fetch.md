@@ -90,25 +90,31 @@ fetch(url)
 
 ### POST requests
 
-#### Send form data
-
-```javascript
-const body = 'a=1';
-
-fetch('https://httpbin.org/post', { 
-    method: 'POST', 
-    body,  
-  })
-```
+Note that method is case-insensitive.
 
 #### Send JSON data
 
 ```javascript
 const body = { a: 1 };
 
-fetch('https://httpbin.org/post', {
-    method: 'post',
-    body:    JSON.stringify(body),
-    headers: { 'Content-Type': 'application/json' },
-  })
+const payload = {
+  method: 'POST',
+  body:    JSON.stringify(body),
+  headers: { 'Content-Type': 'application/json' },
+}
+
+await fetch('https://httpbin.org/post')
+```
+
+#### Send form data
+
+```javascript
+const body = 'a=1';
+
+const payload = { 
+  method: 'POST', 
+  body,  
+}
+
+await fetch('https://httpbin.org/post', payload)
 ```
