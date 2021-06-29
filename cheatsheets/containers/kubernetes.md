@@ -1,14 +1,12 @@
 ---
+title: Kubernetes
 description: The tool that lets you manage and deploy pods of containers at scale
 logo: kubernetes
 ---
-# Kubernetes
-
 
 Also known as "k8s" for short (since the name is 8 letters long)
 
-- [kubernetes.io](https://kubernetes.io) homepage.
-- [Cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) on Kubernetes homepage.
+See also [Cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) on Kubernetes homepage.
 
 Example values for commands below.
 
