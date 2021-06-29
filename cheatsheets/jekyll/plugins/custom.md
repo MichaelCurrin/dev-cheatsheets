@@ -42,11 +42,12 @@ end
 Liquid::Template.register_tag('foo', Jekyll::MyFooTag)
 ```
 
-Usage:
+Usage. Note lack of quotes.
 
 ```liquid
-{% foo Page rendered rendered at %}
-<!-- Possibly also -->
+{% foo Page rendered at %}
+
+<!-- Possibly also? -->
 {% foo text='Page rendered at' %}
 ```
 
