@@ -202,6 +202,8 @@ And repeat with a _for_ loop for every page you want to add.
 
 The page must be an instance of [Jekyll::Page][], [Jekyll::StaticFile][], or a class that derives from one of those.
 
+What the docs _don't_ tell you is that you'll get an error if the page does _not_ yet exist. So for a _new_ page you'll want to use `PageWithoutAFile`.
+
 From the Page class's initialize method in Jekyll codebase.
 
 ```ruby
@@ -213,12 +215,22 @@ From the Page class's initialize method in Jekyll codebase.
     # name - The String filename of the file.
 ```
 
-In the docs, `base` can be `site.source`.
+- Pass in `site` as is.
+- From the docs, `base` can be `site.source`. Using `__dir__` can also work.
+- Directory is output directory within the `_site` build. Use an empty string for top-level.
+- Set name as `index.html` or whatever HTML, JSON or XML file you want to make.
 
+The Jekyll [Feed][] plugin generates a single file so is a good simple plugin to look at for its source code.
+
+Example from the plugin's [generator.rb][] module:
+
+```ruby
+PageWithoutAFile.new(@site, __dir__, "", file_path)
+```
 
 [Jekyll::Page]: https://github.com/jekyll/jekyll/blob/master/lib/jekyll/page.rb
 [Jekyll::StaticFile]: https://github.com/jekyll/jekyll/blob/master/lib/jekyll/static_file.rb
-
-
+[Feed]: https://github.com/jekyll/jekyll-feed
+[generator.rb]: https://github.com/jekyll/jekyll-feed/blob/master/lib/jekyll-feed/generator.rb
 
 {% endraw %}
