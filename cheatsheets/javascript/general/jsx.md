@@ -4,6 +4,11 @@ title: JSX
 
 This page is generic - for guide specific to React, see the [React JSX][] page.
 
+See also [JSX][] in my Code Cookbook.
+
+[JSX]: https://michaelcurrin.github.io/code-cookbook/recipes/javascript/general/jsx.html
+
+
 {% raw %}
 
 
