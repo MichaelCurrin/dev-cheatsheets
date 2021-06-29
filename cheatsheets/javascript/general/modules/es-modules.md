@@ -1,4 +1,8 @@
-# ES Modules
+---
+title: ES Modules
+description: |
+  Import modules using `import IMPORTS from "MODULE"` - in Node, Deno or the browser.
+---
 
 As of ES6 (ES2015), JavaScript supports a native module format called ES Modules, or ECMAScript Modules. This is modern way to do modules in JavaScript.
 
