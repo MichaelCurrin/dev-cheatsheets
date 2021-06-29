@@ -1,12 +1,12 @@
 ---
-description: Fetch and send data using JavaScript
+title: Request
+description: How to fetch and send data over HTTP using JavaScript
 ---
-# Request
 
 
 A few common options:
 
-- `axios`
-- `fetch` (builtin)
-- `request`
+- `fetch` (built-in) or `node-fetch`
+- `axios` package
+- `request` package
 - `jquery` - use the `ajax` function.
