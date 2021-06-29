@@ -6,12 +6,12 @@ description: Create, edit, compose, or convert digital images in a variety of fo
 
 ## About
 
-[Homepage](https://imagemagick.org/script/index.php)
+- [Homepage](https://imagemagick.org/script/)
 
 
 ## Download
 
-[Download](https://imagemagick.org/script/download.php) page.
+- [Download](https://imagemagick.org/script/download.php) page.
 
 ### Install from source
 
@@ -101,6 +101,11 @@ $ magick '*.jpg[120x120+10+5]' thumbnail%03d.png
 
 ### Shadow
 
+{% raw %}
+
 ```
 -shadow percent-opacity{xsigma}{+-}x{+-}y{%}
 ```
+
+{% endraw %}
+
