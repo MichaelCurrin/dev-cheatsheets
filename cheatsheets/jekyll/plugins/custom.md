@@ -207,14 +207,14 @@ What the docs _don't_ tell you is that you'll get an error if the page does _not
 From the Jekyll unit tests, you can use it like this:
 
 ```ruby
-PageWithoutAFile.new(site, site.source, dir, name)
+Jekyll::PageWithoutAFile.new(site, site.source, dir, name)
 ```
 
 Based on the Page class's initialize method in Jekyll codebase, here are the parameters for Page, with my own notes.
 
 - `site` - Pass in `site` as is.
 - `base` -  From the docs, `base` can be `site.source`. Using `__dir__` can also work.
-- `dir` - Output directory within the `_site` build. Use an empty string for top-level.
+- `dir` - Output directory within the `_site` build. Use `"."` for top-level.
 - `name` - Output filename. Set as `index.html` or whatever HTML, JSON or XML file you want to make.
 
 The Jekyll [Feed][] plugin generates a single file so is a good simple plugin to look at for its source code.
@@ -225,6 +225,47 @@ Example from the plugin's [generator.rb][] module:
 PageWithoutAFile.new(@site, __dir__, "", file_path)
 ```
 
+Here is a more specific example based on my answer I submitted in [Jekyll Forums][]. 
+
+It generates a file `my-file.xml` with one row as `abcdef`.
+
+```ruby
+module SamplePlugin
+  class MyPageGenerator < Jekyll::Generator
+    safe true
+
+    def generate(site)
+      dir = '.'
+      name = 'my-file.xml'
+
+      new_page = Jekyll::PageWithoutAFile.new(site, site.source, dir, name).tap do |file|
+        file.content = 'abcdef'
+        file.data.merge!(
+          "layout"     => nil,
+          "sitemap"    => false,
+        )
+
+        file.output
+      end
+
+      site.pages << new_page
+    end
+  end
+end
+```
+
+This worked fine for me. I don't know what `.tap` is about. Perhaps this will work instead.
+
+```ruby 
+new_page.content = "Hello, World!"
+```
+
+I made layout `nil` so there is nothing else on this XML page. Or you can use a layout like `"page"` or `"default"`. - the `'abcdef'` content gets inserted as `{{ content }}` of the layout.
+
+To do that, replace `nil` above, or take out the merge and in the config then set layouts for all pages to be `page`.
+
+
+[Jekyll Forums]: https://talk.jekyllrb.com/t/how-to-create-a-page-from-a-generator-plugin/6053/4
 [Jekyll::Page]: https://github.com/jekyll/jekyll/blob/master/lib/jekyll/page.rb
 [Jekyll::StaticFile]: https://github.com/jekyll/jekyll/blob/master/lib/jekyll/static_file.rb
 [Feed]: https://github.com/jekyll/jekyll-feed
