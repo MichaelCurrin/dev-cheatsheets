@@ -33,7 +33,7 @@ foo || 'default'
 
 ## Optional chaining for variables
 
-You could get an error when accessing an attribute on object which is not set or missing attributes. So here we avoid that.
+When you have an object that is not null or undefined, you could still get an error when using an attribute or method on a object which is not set or missing attributes. So here we avoid that.
 
 ```javascript
 VARIABLE?.ATTRIBUTE
@@ -45,6 +45,12 @@ For an object `foo` with optional attribute `bar`.
 
 ```javascript
 foo?.bar
+```
+
+Or method.
+
+```javascript
+foo?.fizz()
 ```
 
 For an object `foo` with optional attribute `bar`, which has optional attribute `bazz`.
