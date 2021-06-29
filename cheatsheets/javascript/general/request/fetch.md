@@ -97,13 +97,13 @@ Note that method is case-insensitive.
 ```javascript
 const body = { a: 1 };
 
-const payload = {
+const options = {
   method: 'POST',
   body:    JSON.stringify(body),
   headers: { 'Content-Type': 'application/json' },
 }
 
-await fetch('https://httpbin.org/post')
+await fetch('https://httpbin.org/post', options)
 ```
 
 #### Send form data
@@ -111,10 +111,10 @@ await fetch('https://httpbin.org/post')
 ```javascript
 const body = 'a=1';
 
-const payload = { 
+const options = { 
   method: 'POST', 
   body,  
 }
 
-await fetch('https://httpbin.org/post', payload)
+await fetch('https://httpbin.org/post', options)
 ```
