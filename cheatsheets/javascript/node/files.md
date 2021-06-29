@@ -2,6 +2,8 @@
 > Working with paths, files and directories
 
 
+## Resources
+
 See the standard lib docs:
 
 - [fs](https://nodejs.org/api/fs.html)
@@ -39,26 +41,28 @@ Options can be omitted, or encoding (e.g. `utf8`) or an object (e.g. `{ encoding
     - [docs](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options)
     - We can read files in a **synchronous** way, i.e. we are telling node.js to block other parallel process and do the current file reading process. 
 
-Using async way.
+Using async way with `readFile`.
 
 ```javascript
-var fs = require('fs');
+import fs from 'fs';
 
-fs.readFile('file.txt', 'utf-8', 
-    (err, data) => {
-        if (err) {
-            console.log(err); 
-        }
-        else {
-            console.log(data); 
-        }
+const file = await fs.readFile(
+  'file.txt', 
+  'utf-8', 
+  (err, data) => {
+    if (err) {
+      console.log(err); 
+    }
+    else {
+      console.log(data); 
+    }
 });
 ```
 
-Using sync way. If there is a problem, an error will be thrown and you won't get to the last line. So you will need `try catch` logic.
+Using the synchronous way with `readFileSync`. If there is a problem, an error will be thrown and you won't get to the last line. So you will need `try catch` logic.
 
-```javacript
-var fs = require('fs');
+```javascript
+import fs from 'fs';
 
 fs.readFileSync('file.txt', 'utf-8')
 console.log(data); 
@@ -89,6 +93,19 @@ fs.readFile(p, 'utf-8',
             console.log(data); 
         }
 });
+```
+
+Using `open` and `close` explicitly.
+
+```javascript
+import { open } from 'fs/promises';
+
+let filehandle;
+try {
+  filehandle = await open('thefile.txt', 'r');
+} finally {
+  await filehandle?.close();
+}
 ```
 
 
