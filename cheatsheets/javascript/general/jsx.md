@@ -4,8 +4,6 @@ title: JSX
 
 This page is generic - for guide specific to React, see the [React JSX][] page.
 
-[React JSX]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/react/jsx.md %}
-
 {% raw %}
 
 
@@ -35,7 +33,6 @@ Or
 
 See [React JSX][] cheatsheet for more complete examples in functions.
 
-[React JSX]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/react/jsx.html %}
 
 ### Basic
 
@@ -101,5 +98,8 @@ e.g.
 <h1 style={{ color: 'red' }}>
 ```
 
-
 {% endraw %}
+
+
+[React JSX]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/react/jsx.md %}
+
