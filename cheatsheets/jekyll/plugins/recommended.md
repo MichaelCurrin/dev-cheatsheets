@@ -72,7 +72,7 @@ group :jekyll_plugins do
 end
 ```
 
-Install [ImageMagick](https://imagemagick.org/script/index.php) using source download or package manager.
+Install [ImageMagick](https://imagemagick.org/script/) using a source download or your package manager.
 
 Then you can run:
 
