@@ -204,21 +204,18 @@ The page must be an instance of [Jekyll::Page][], [Jekyll::StaticFile][], or a c
 
 What the docs _don't_ tell you is that you'll get an error if the page does _not_ yet exist. So for a _new_ page you'll want to use `PageWithoutAFile`.
 
-From the Page class's initialize method in Jekyll codebase.
+From the Jekyll unit tests, you can use it like this:
 
 ```ruby
-    # Initialize a new Page.
-    #
-    # site - The Site object.
-    # base - The String path to the source.
-    # dir  - The String path between the source and the file.
-    # name - The String filename of the file.
+PageWithoutAFile.new(site, site.source, dir, name)
 ```
 
-- Pass in `site` as is.
-- From the docs, `base` can be `site.source`. Using `__dir__` can also work.
-- Directory is output directory within the `_site` build. Use an empty string for top-level.
-- Set name as `index.html` or whatever HTML, JSON or XML file you want to make.
+Based on the Page class's initialize method in Jekyll codebase, here are the parameters for Page, with my own notes.
+
+- `site` - Pass in `site` as is.
+- `base` -  From the docs, `base` can be `site.source`. Using `__dir__` can also work.
+- `dir` - Output directory within the `_site` build. Use an empty string for top-level.
+- `name` - Output filename. Set as `index.html` or whatever HTML, JSON or XML file you want to make.
 
 The Jekyll [Feed][] plugin generates a single file so is a good simple plugin to look at for its source code.
 
