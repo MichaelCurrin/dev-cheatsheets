@@ -13,9 +13,23 @@ This page is generic - for guide specific to React, see the [React JSX][] page.
 
 Based on [React JSX Comments](https://wesbos.com/react-jsx-comments/) guide.
 
-```
+```jx
 {/* A JSX comment */}
 ```
+
+
+## Space
+
+```jx
+${" "}
+```
+
+Or
+
+```html
+&nbsp;
+```
+
 
 ## Pass values
 
@@ -70,7 +84,7 @@ Plain HTML:
 Set an attribute like `onClick` with a function.
 
 ```jsx
-EVENT={MY_FUNCTION}
+EVENT={ MY_FUNCTION }
 ```
 
 e.g.
