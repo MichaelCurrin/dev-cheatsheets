@@ -1,4 +1,8 @@
-# CommonJS
+---
+title: CommonJS
+description: |
+  Import modules using `require('MODULE');`
+---
 
 CommonJS is a way of exporting and import modules. It only works in Node.js as far as I know. i.e. It does **not** work in the browser.
 
