@@ -117,16 +117,18 @@ Run 'docker COMMAND --help' for more information on a command.
 
 From [source](https://www.mankier.com/1/docker#Examples_(TL;DR)).
 
--   List currently running docker containers: `docker ps`
--   List all docker containers (running and stopped): `docker ps -a`
--   Start a container from an image, with a random name: `docker run --rm IMAGE`
--   Start a container from an image, with a custom name: `docker run  --rm --name CONTAINER_NAME IMAGE`
--   Expose and publish ports of a server. `docker run --rm -p 80:8080 IMAGE`
--   Start or stop an existing container: `docker start|stop CONTAINER_NAME`
--   Pull an image from a docker registry: `docker pull IMAGE`
--   Open a shell inside of an already running container: `docker exec -it CONTAINER_NAME bash`
--   Remove a stopped container: `docker rm CONTAINER_NAME`
--   Fetch and follow the logs of a container: `docker logs -f CONTAINER_NAME`
+Command | Description
+--- | ---
+`docker ps` | List currently running docker containers: 
+`docker ps -a` | List all docker containers (running and stopped)
+`docker run --rm IMAGE` | Start a container from an image, with a random name
+`docker run  --rm --name CONTAINER_NAME IMAGE` |  Start a container from an image, with a custom name
+`docker run --rm -p 80:8080 IMAGE` | Expose and publish ports of a server
+`docker start|stop CONTAINER_NAME` | Start or stop an existing container
+`docker pull IMAGE` | Pull an image from a docker registry
+`docker exec -it CONTAINER_NAME bash` | Open a shell inside of an already running container
+`docker rm CONTAINER_NAME` |  Remove a stopped container: 
+`docker logs -f CONTAINER_NAME` |  Fetch and follow the logs of a container
 
 
 ## Summary of commands
@@ -222,7 +224,7 @@ $ docker run my-image
 $ docker run my-image bash
 ```
 
-Optioanally give the container name.
+Optionally give the container name.
 
 ```sh
 $ docker run --rm --name CONTAINER_NAME IMAGE
