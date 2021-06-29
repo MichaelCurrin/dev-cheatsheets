@@ -72,13 +72,7 @@ group :jekyll_plugins do
 end
 ```
 
-Install [ImageMagick](https://imagemagick.org/script/) using a source download or your package manager.
-
-Then you can run:
-
-```sh
-$ convert --version
-```
+Install [ImageMagick][].
 
 #### Usage
 
@@ -134,3 +128,7 @@ This is a fork of the above. It has some more advanced features but generally I 
 - GitHub: [ashmaroli/jekyll-manager](https://github.com/ashmaroli/jekyll-manager)
 
 {% endraw %}
+
+
+[ImageMagick]: {{ site.baseurl }}{% link cheatsheets/shell/image-magick %}
+
