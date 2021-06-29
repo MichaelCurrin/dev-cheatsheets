@@ -152,30 +152,37 @@ $ docker run node:12-slim cat /etc/issue
 ```
 
 ```sh
-# Show a specific container
+$ # Show a specific container
 $ docker ps -a --filter "name=my-app"
 
-# Show all running containers.
+$ # Show all running containers.
 $ docker ps
 
-# See containers logs (recommended)
+$ # See containers logs (recommended)
 $ docker logs -f my-app
 ```
 
 ```sh
-# Create a container with the tiny package, a name, and port
-$ docker create --init --name my-app -p 3000:3000 my-node-img
+$ # I don't think I've ever run `create`.
+$ docker create --init \
+    --name my-app \
+    -p 3000:3000 \
+    my-node-img
 
 $ docker start my-app
 
-# Attach to container (not recommended) 
+$ # Attach to container (not recommended) 
 $ docker attach my-app
 
-# Access container's system 
+$ # Access container's system.
 $ docker exec -it my-app bash
 
-# Use the run shortcut 
-$ docker run --name my-app -p 3000:3000 -d --init --rm my-node-img
+$ docker run --name my-app \
+    -p 3000:3000 \
+    -d \
+    --init \
+    --rm \
+    my-node-img
 ```
 
 ### Stop and remove container
@@ -239,8 +246,8 @@ $ docker run --rm --name my-app my-image
 Run a command in an **existing** and **running** container, given a tagged name or ID.
 
 ```sh
-$ docker start
-$ docker exec CONTAINER
+$ docker start CONTAINER_NAME
+$ docker exec CONTAINER_NAME
 ```
 
 That is useful if you want to tunnel in and use an interactive session with Bash, Python, etc.
@@ -249,14 +256,14 @@ That is useful if you want to tunnel in and use an interactive session with Bash
 $ docker exec -it CONTAINER bash
 ```
 
-If you container exits immediately when run, you'll struggle to `exec` into it.
+If you container exits immediately when it run, you'll struggle to `exec` into it.
 
-So then use `run` against a built image. Set a **new** container from a given image, passing a shell entry point. Use `/bin/sh` if you prefer.
+So then use `run` against a built image. Set a **new** container from a given image, deleting the container when done. Pass a shell entry point.
 
 ```sh
-$ docker run --rm -it --entrypoint IMAGE bash
-$ # OR
-$ docker run --rm -it IMAGE --entrypoint bash
+$ docker run --rm -it \
+    IMAGE \
+    --entrypoint bash
 ```
 
 In VS Code, under the Docker extension and "Images" you can select an image and "Run interactive" to achieve the same thing. Though, you might start with Node or something else, as you can't specify Bash.
@@ -273,14 +280,13 @@ $ docker run -it node bash
 #
 ```
 
-
 ### Open ports
 
 Expose and publish ports.
 
 Format:
 
-`--publish EXTERNAL:INTERNAL`
+- `--publish EXTERNAL:INTERNAL`
 
 With that flag, that you don't need `EXPOSE` in the `Dockerfile`. Also, using `EXPOSE` alone doesn't publish.
 
