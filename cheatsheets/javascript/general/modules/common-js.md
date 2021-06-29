@@ -1,14 +1,18 @@
 ---
 title: CommonJS
 description: |
-  Import modules using `require('MODULE');`
+  Import modules using `require('MODULE');` in Node
 ---
 
-CommonJS is a way of exporting and import modules. It only works in Node.js as far as I know. i.e. It does **not** work in the browser.
+CommonJS is a way of exporting and import modules. 
+
+It only works in Node.js as far as I know. i.e. It does **not** work in the browser or in Deno.
 
 The syntax uses `module.exports` to export and `require` to import a module.
 
-Note that The newer ES Modules syntax is **preferred** over this style.
+Note this is an old style the newer [ES Modules][] syntax is **preferred** over this style.
+
+[ES Modules]: {{ site.baseurl }}{% link cheatsheets/javascript/general/modules/es-modules.md %}
 
 
 ## Import installed package
@@ -20,28 +24,42 @@ const request = require('request');
 
 ## Local modules
 
-### Name exports
+### Named exports
 
-Create a variable or function or class, then at the end of the script typically you export it.
+Create a variable, function or class. Then at the end of the script typically you export it.
 
 - `foo.js`
     ```javascript
     function foo() {
-    console.log("Hello");
+      console.log("Hello");
     }
 
-    exports.foo = 'foo';
+    exports.foo = foo;
+    
     // Or
-    module.exports.foo = 'foo';
-    // Result:
-    // { foo: 'foo'}
+    module.exports.foo = foo;
+
+    // Shorthand.
+    module.exports = {
+      foo
+    }
     ```
 
-Select objects in the module.
+Now import objects by name.
 
 ```javascript
 const { bar } = require('./foo')
-// Or, less common.
+```
+
+For multiple objects.
+
+```javascript
+const { bar, bazz } = require('./foo')
+```
+
+Or, the less common form:
+
+```javascript
 const bar = require('./foo').bar;
 ```
 
@@ -50,13 +68,13 @@ const bar = require('./foo').bar;
 - `foo.js`
     ```javascript
     function foo() {
-    console.log("Hello");
+      console.log("Hello");
     }
 
     module.exports = 'foo';
     ```
 
-Import the default object from module with any name you want.
+Import the default object from a module with any name you want.
 
 ```javascript
 const foo = require('./foo');
