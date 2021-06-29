@@ -100,7 +100,7 @@ You can optionally use the brackets. It doesn't change the result but allows you
 
 - HTML DOM
     ```html
-    <div id="root"
+    <div id="root">
         <div>
             <h1>Hello, World!</h1>
             <h2>This is React</h2>
@@ -110,8 +110,8 @@ You can optionally use the brackets. It doesn't change the result but allows you
 - Compiled JS equivalent:
     ```javasript
     return React.createElement("div", null,
-            React.createElement("h1", null, "Hello, World!"),
-            React.createElement("h2", null, "This is React"));
+      React.createElement("h1", null, "Hello, World!"),
+      React.createElement("h2", null, "This is React"));
     };
     ```
 
@@ -134,7 +134,7 @@ Use `{ EXPRESSION }`.
 Substituting variables.
 
 ```jsx
-function App(props){
+function App(props) {
  const { name, age } = props
 
   const status = age >= 18 ? 'major' : 'minor'
@@ -151,7 +151,7 @@ function App(props){
 You can put an expression in like an arrow function call or ternary.
 
 ```jsx
-function App(props){
+function App(props) {
   const { age } = props
 
   return (
@@ -168,7 +168,7 @@ If your JSX gets long and complicated, consider rather making a variable first a
 Setting attributes.
 
 ```jsx
-function Image(props){
+function Image(props) {
   const { path } = props
 
   return <img src={ path } />
