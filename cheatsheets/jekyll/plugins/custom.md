@@ -198,14 +198,27 @@ new_page = Jekyll::Page.new(site, base, dir, name)
 site.pages << new_page
 ```
 
+And repeat with a _for_ loop for every page you want to add.
+
 The page must be an instance of [Jekyll::Page][], [Jekyll::StaticFile][], or a class that derives from one of those.
 
+From the Page class's initialize method in Jekyll codebase.
+
+```ruby
+    # Initialize a new Page.
+    #
+    # site - The Site object.
+    # base - The String path to the source.
+    # dir  - The String path between the source and the file.
+    # name - The String filename of the file.
+```
+
+In the docs, `base` can be `site.source`.
 
 
 [Jekyll::Page]: https://github.com/jekyll/jekyll/blob/master/lib/jekyll/page.rb
 [Jekyll::StaticFile]: https://github.com/jekyll/jekyll/blob/master/lib/jekyll/static_file.rb
 
-And repeat with a _for_ loop for every page you want to add.
 
 
 {% endraw %}
