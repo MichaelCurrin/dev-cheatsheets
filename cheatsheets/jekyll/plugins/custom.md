@@ -116,7 +116,11 @@ Based on [Generators](https://jekyllrb.com/docs/plugins/generators/) section of 
 
 > A generator is a subclass of Jekyll::Generator that defines a generate method, which receives an instance of Jekyll::Site. The return value of generate is ignored.
 
-Make sure to set a generate method. You only need to set `initialize` if you are overriding the class's `initialize` method.
+Here is the base structure of a generic plugin.
+
+Make sure to set a `generate` method. 
+
+You might want to set `initialize` if you are overriding the class's `initialize` method.
 
 ```ruby
 module MyModule
@@ -133,5 +137,26 @@ module MyModule
   end
 end
 ```
+
+### Read data
+
+If you want to read from a data file like `_data/foo.yml`, then in generate you can do:
+
+```ruby
+site.data.foo
+# or
+# site.data['foo']
+```
+
+### Create page
+
+If you want to set up a new page for Jekyll to render, add to pages like this:
+
+```ruby
+site.pages << new_page
+```
+
+And repeat with a for loop for every page you want to add.
+
 
 {% endraw %}
