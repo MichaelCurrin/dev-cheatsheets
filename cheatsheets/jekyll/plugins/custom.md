@@ -148,6 +148,30 @@ site.data.foo
 # site.data['foo']
 ```
 
+### Read API data
+
+Consider using a gem like Faraday to do a GET or a POST request against an API and then parse the JSON string to be data.
+
+```ruby
+require "json"
+require "faraday"
+
+# ...
+
+resp = Faraday.post(
+  @url,
+  @payload.to_json,
+  @headers,
+)
+
+if resp.status > 299
+  puts resp.body
+  raise "Request status: #{resp.status}"
+end
+
+json = JSON.parse resp.body
+```
+
 ### Create page
 
 If you want to set up a new page for Jekyll to render, add to pages like this:
