@@ -138,15 +138,32 @@ module MyModule
 end
 ```
 
-### Read data
+### Site variable 
 
-If you want to read from a data file like `_data/foo.yml`, then in generate you can do:
+The `site` variable available in the `generate` method is the same as `site` in a Jekyll Markdown or HTML page. 
+
+So you read and update attributes, such as:
+
+```ruby
+site.pages
+site.posts
+site.config.description
+
+See [Variables](https://jekyllrb.com/docs/variables/) in the docs.
+
+### Read data file
+
+If you want to read from a [Data File][] like `_data/foo.yml`, then in `generate` you can do:
+
+[Data File]: https://jekyllrb.com/docs/datafiles/
 
 ```ruby
 site.data.foo
 # or
 # site.data['foo']
 ```
+
+Remember, you can also put JSON or CSV files in `_data` too and access them the same way.
 
 ### Read API data
 
@@ -174,13 +191,21 @@ json = JSON.parse resp.body
 
 ### Create page
 
-If you want to set up a new page for Jekyll to render, add to pages like this:
+If you want to set up a new page for Jekyll to render, set u a page like this, then append it to existing pages array with `<<`.
 
 ```ruby
+new_page = Jekyll::Page.new(site, base, dir, name)
 site.pages << new_page
 ```
 
-And repeat with a for loop for every page you want to add.
+The page must be an instance of [Jekyll::Page][], [Jekyll::StaticFile][], or a class that derives from one of those.
+
+
+
+[Jekyll::Page]: https://github.com/jekyll/jekyll/blob/master/lib/jekyll/page.rb
+[Jekyll::StaticFile]: https://github.com/jekyll/jekyll/blob/master/lib/jekyll/static_file.rb
+
+And repeat with a _for_ loop for every page you want to add.
 
 
 {% endraw %}
