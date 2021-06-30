@@ -24,7 +24,7 @@ Bad - using empty lines will cause indented lines to become code block.
 ```html
 <div align="center">
 
-    <img src="{{ page.image }} />
+    <img src="{{ page.image }}" />
 
 </div>
 ```
