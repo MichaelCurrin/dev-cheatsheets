@@ -87,15 +87,21 @@ You can find a Jekyll plugins like [jekyll_picture_tag][] to do this for you.
 
 Code snippets and references to read more.
 
-See [The “Blur Up” Technique for Loading Background Images](https://css-tricks.com/the-blur-up-technique-for-loading-background-images/) on CSS tricks
+Note that a LightHouse report on [web.dev/measure/](https://web.dev/measure/) might give you a medium warning on image loading and suggest lazy image loading. So that the images only are fetched when they can actually be seen by the user.
 
 Resources:
 
+- [The “Blur Up” Technique for Loading Background Images](https://css-tricks.com/the-blur-up-technique-for-loading-background-images/) on CSS tricks
 - [The Complete Guide to Lazy Loading Images](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/) - using JS to lazy load main and background images
 - [A Native Lazy Load for the Web Platform](https://css-tricks.com/a-native-lazy-load-for-the-web-platform/)
 - [Tips for rolling your own lazy loading](https://css-tricks.com/tips-for-rolling-your-own-lazy-loading/) (2019 article)
+- [img loading attribute](https://www.w3schools.com/tags/att_img_loading.asp) on W3 Schools.
 
 Native lazy loading is new and already available in Chrome 76 from 2019 and is supported in Chromium-based and Firefox browsers from 2020. [source](https://web.dev/native-lazy-loading/)
+
+Add `loading="lazy"` to your `img`.
+
+e.g.
 
 ```html
 <img src="image.png" loading="lazy" alt="…" width="200" height="200">
