@@ -1,6 +1,9 @@
-# Common CLI usage
+---
+title: Common
+description: Some common CLI commands to know around Rust tools
+---
 
-Resources:
+## Resources:
 
 - [Getting started](https://www.rust-lang.org/learn/get-started) guide in the docs.
     > Quickly set up a Rust development environment and write a small app!
