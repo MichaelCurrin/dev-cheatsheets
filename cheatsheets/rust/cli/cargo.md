@@ -1,7 +1,4 @@
-# Commands
-
-
-## Cargo
+# Cargo
 
 Subcommands from `cargo --help`.
 
