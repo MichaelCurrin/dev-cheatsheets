@@ -183,3 +183,54 @@ For that specific user:
 Use a connection string that contains everything:
 
 [Connect](http://www.postgresql.org/docs/current/static/libpq-connect.html#AEN42532) in manual.
+
+
+## Dump and restore
+
+
+### Dump
+
+Create a dump from a DB:
+
+```sh
+$ pg_dump --format=custom db_name > db_name.dump
+```
+
+See [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) docs.
+
+> pg_dump — extract a PostgreSQL database into a script file or other archive file
+>
+> pg_dump is a utility for backing up a PostgreSQL database. It makes consistent backups even if the database is being used concurrently. pg_dump does not block other users accessing the database (readers or writers).
+
+```
+pg_dump [connection-option...] [option...] [dbname]
+```
+
+- `-f, --format FORMAT` - The default format is `p` or `plain` for plain text SQL. Use `c` or `custom` as a compressed archive which is the most flexible option. Also `d` or `directory` and `t` or `tar` are options.
+
+### Restore
+
+Drop the database and recreate it from a dump:
+
+```sh
+$ dropdb db_name
+$ pg_restore -C -d db_name db_name.dump
+```
+
+See [pg_restore](https://www.postgresql.org/docs/current/app-pgrestore.html) docs.
+
+> pg_restore — restore a PostgreSQL database from an archive file created by pg_dump
+>
+> pg_restore is a utility for restoring a PostgreSQL database from an archive created by pg_dump in one of the non-plain-text formats
+
+```
+pg_restore [connection-option...] [option...] [filename]
+```
+
+- `-C` - Create the database before restoring into it.
+
+Another option for restoring is using `psql` and a plain-text SQL file. Note that you might have to create the DB first before you first into it.
+
+```sh
+$ psql postgres://postgres:$POSTGRES_PASSWORD@$POSTGRES_HOST < db_name.sql
+```
