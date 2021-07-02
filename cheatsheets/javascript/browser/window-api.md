@@ -1,10 +1,13 @@
-# Window API
+---
+title: Window API
+description: Using Window object in the browser
+---
 
 
 ## Resources
 
 - [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) in the Mozilla docs.
-- [Window Object](https://www.w3schools.com/jsref/obj_window.asp) on W3 schools.
+- [Window Object](https://www.w3schools.com/jsref/obj_window.asp) on W3 Schools.
 
 
 ## Open
