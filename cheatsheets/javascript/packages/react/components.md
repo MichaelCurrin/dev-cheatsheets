@@ -31,9 +31,9 @@ Use `onInput` for text inputs and `onChange` for a checkbox or radio button.
 import { useState } from "react";
 
 function Welcome() {
-  const { value, setValue } = useState("my default value");
+  const [ value, setValue ] = useState("my default value");
   
-  const onChange = (event) => {
+  const onInput = (event) => {
     setValue(event.target.value);
   };
 
@@ -41,7 +41,7 @@ function Welcome() {
     <>
       <input
         id="value-input"
-        onChange={onChange}
+        onInput={onInput}
       />
       
       <br />
