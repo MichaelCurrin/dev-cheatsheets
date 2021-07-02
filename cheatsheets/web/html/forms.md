@@ -55,6 +55,8 @@ But in the case of [Radio buttons](#radios-buttons), the value must be repeated 
 
 See [Input tag](https://www.w3schools.com/tags/tag_input.asp) tutorial on W3 Schools. It covers all the available `type` values.
 
+The default value is `type="text"`, so you can actually omit that.
+
 {% capture text_input %}
 <label for="fname">First name:</label>
 <input type="text" id="fname" name="fname" size="50"><br>
