@@ -9,7 +9,7 @@ The modern, easier-to-test way that uses functions.
 
 ```jsx
 function Welcome(props) {
-  return <h1>Hello, { props.name }</h1>;
+  return <h1>Hello, {props.name}</h1>;
 }
 ```
 
@@ -19,11 +19,13 @@ Or with destructuring:
 function Welcome(props) {
   const { name } = props;
   
-  return <h1>Hello, { name }</h1>;
+  return <h1>Hello, {name}</h1>;
 }
 ```
 
 To handle state, you can use [React Hooks](https://reactjs.org/docs/hooks-intro.html) or a state library. This makes is easier think about and layer components.
+
+Use `onInput` for text inputs and `onChange` for a checkbox or radio button.
 
 ```jsx
 import { useState } from "react";
@@ -39,16 +41,29 @@ function Welcome() {
     <>
       <input
         id="value-input"
-        value={value}
         onChange={onChange}
       />
+      
       <br />
       <br />
+      
       <div>{ value }</div>
     </>
   );
 }
 ```
+
+Note - you should **avoid** adding the `value` variable as a value `input`.
+
+```jsx
+<input
+  id="value-input"
+  value={value}
+  onChange={onChange}
+/>
+```
+
+Setting the value as above does't matter so much when you use `onInput`, but if you use `onSubmit` to set the value then you'll find that you actually **cannot** edit the value in the text input because you have fixed it to match a variable.
 
 ### Class component
 
