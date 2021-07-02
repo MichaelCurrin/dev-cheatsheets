@@ -53,17 +53,26 @@ function Welcome() {
 }
 ```
 
-Note - you should **avoid** adding the `value` variable as a value `input`.
+You can also set `value` variable as the `input` tag's `value` attribute. So that when the page loads (or refreshes), you can fill the text box with user's value (persisted from state like maybe localStorage).
 
 ```jsx
 <input
   id="value-input"
   value={value}
-  onChange={onChange}
+  onInput={onInput}
 />
 ```
 
-Setting the value as above does't matter so much when you use `onInput`, but if you use `onSubmit` to set the value then you'll find that you actually **cannot** edit the value in the text input because you have fixed it to match a variable.
+Setting the value as above does't matter so much when you use `onInput`.
+
+If you use `onSubmit` to set the value then you'll find that you actually **cannot** edit the value in the text input because you have fixed it to match a variable. So then you'll want to **remove** the value bit.
+
+```jsx
+<input
+  id="value-input"
+  onSubmit={onSubmit}
+/>
+```
 
 ### Class component
 
