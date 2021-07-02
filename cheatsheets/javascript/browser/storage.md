@@ -1,4 +1,7 @@
-# Storage API
+---
+title: Storage API
+description: Using Local and Session storage in the browser
+---
 
 ## What are Local storage and Session storage?
 
