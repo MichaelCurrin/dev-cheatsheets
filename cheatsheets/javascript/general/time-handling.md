@@ -23,12 +23,12 @@ const datetime = new Date()
 
 Just a few of the methods available.
 
-```javacript
+```javascript
 datetime.getFullYear()
 // 2021
 ```
 
-```javacript
+```javascript
 datetime.getMonth()
 // 3
 ```
@@ -38,11 +38,11 @@ datetime.getDate()
 // 17
 ```
 
-Day of week.
+Day of week - 1 is Monday.
 
 ```javascript
 const datetime.getDay()
-1  // Monday
+// 1
 ```
 
 ### Represent datetime
