@@ -28,6 +28,6 @@ Example config with one rule in it:
 
 ### Flags
 
-Pass command line flags to change Prettier behavior. See the [Prettier CLI cheatsheet][] for more info.
+Pass command line flags to change Prettier behavior. See the [Prettier CLI][] section of the cheatsheets for more info.
 
 [Prettier CLI cheatsheet]: {{ site.baseurl }}{% link cheatsheets/javascript/format-and-lint/prettier/cli.md %}
