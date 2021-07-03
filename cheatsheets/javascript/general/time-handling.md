@@ -48,7 +48,7 @@ const datetime.getDay()
 ### Represent datetime
 
 ```javascript
-> const datetime = new Date()
+const datetime = new Date()
 ```
 
 Convert a `Date` instance to a string.
