@@ -30,3 +30,22 @@ The minimum config two params under `[build]` as below.
 
 - `command` - what shell command to run to build the app (dependencies are already installed by then)
 - `publish` - which output directory to serve as a site. This directory is usually unversioned in git.
+
+
+## Environment
+
+If you have environment variables that are sensitive, put them directly in Netlify.
+
+If they are safe to be visible in GitHub, add them like this:
+
+- Global
+    ```toml
+    [build]
+      environment = { FOO = "bar", NODE_VERSION = "14.15.3" }
+    ```
+- Prod only.
+    ```toml
+    [context.production]
+      environment = { FOO = "bar", NODE_VERSION = "14.15.3" }
+    ```
+    
