@@ -3,11 +3,16 @@ title: Netlify config
 description: About Netlify's config file
 ---
 
-See also [Configure](https://michaelcurrin.github.io/code-cookbook/recipes/ci-cd/netlify/configure/) in my Netlify recipes, for samples for site generators.
 
 Just push your main branch from your machine or edit on GitHub and a Netlify build will run using your config settings.
 
 If you want more control than setting values in the Netlify UI, create a config file in your repo.
+
+
+## Resources
+
+- [Configure](https://michaelcurrin.github.io/code-cookbook/recipes/ci-cd/netlify/configure/) in my Netlify recipes, for samples for site generators.
+- [File-based Configuration](https://docs.netlify.com/configure-builds/file-based-configuration/) in the Netlify docs.
 
 
 ## File
