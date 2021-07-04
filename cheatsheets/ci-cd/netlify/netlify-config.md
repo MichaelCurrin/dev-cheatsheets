@@ -34,18 +34,33 @@ The minimum config two params under `[build]` as below.
 
 ## Environment
 
-If you have environment variables that are sensitive, put them directly in Netlify.
+If you have environment variables that are sensitive, put them directly in Netlify, under _Build & Deploy_ then _Environment_.
 
-If they are safe to be visible in GitHub, add them like this:
+If they are safe to be visible in GitHub, add them like this, based on the docs.
 
-- Global
-    ```toml
-    [build]
-      environment = { FOO = "bar", NODE_VERSION = "14.15.3" }
-    ```
 - Prod only.
     ```toml
     [context.production]
       environment = { FOO = "bar", NODE_VERSION = "14.15.3" }
     ```
+
+I could not get this to work though. It might need an environment permission choice under Sensitive variable policy - see [docs](https://docs.netlify.com/configure-builds/environment-variables/).
     
+    
+## Functions
+
+Choose a directory to load serveless functions and background functions from.
+
+Defaults to `netlify/functions` if not set.
+  
+Override example:
+
+```toml
+[build]
+  functions = "functions"
+```
+
+I think the endpoint will be fixed.
+
+- `/netlify/functions/my-api`
+
