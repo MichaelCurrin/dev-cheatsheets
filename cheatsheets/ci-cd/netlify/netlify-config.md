@@ -28,8 +28,8 @@ It is a TOML file. Indentation should be two spaces.
 
 The minimum config two params under `[build]` as below.
 
-- `command` - what shell command to run to build the app (dependencies are already installed by then)
-- `publish` - which output directory to serve as a site. This directory is usually unversioned in git.
+- `command` - what shell command to run to build the app (dependencies are already installed when this runs).
+- `publish` - which output directory to serve as a site. This directory is usually unversioned in git, for static site generators.
 
 
 ## Environment
