@@ -53,7 +53,7 @@ Choose a directory to load serveless functions and background functions from.
 
 Defaults to `netlify/functions` if not set.
   
-Override example:
+Override example using `functions` directory at the root instead:
 
 ```toml
 [build]
