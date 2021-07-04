@@ -1,8 +1,9 @@
-
 ---
-title: Config
+title: Netlify config
 description: About Netlify's config file
 ---
+
+See also [Configure](https://michaelcurrin.github.io/code-cookbook/recipes/ci-cd/netlify/configure/) in my Netlify recipes, for samples for site generators.
 
 Just push your main branch from your machine or edit on GitHub and a Netlify build will run using your config settings.
 
