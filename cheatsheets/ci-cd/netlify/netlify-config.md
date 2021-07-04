@@ -11,7 +11,7 @@ If you want more control than setting values in the Netlify UI, create a config 
 
 ## Resources
 
-- [Configure](https://michaelcurrin.github.io/code-cookbook/recipes/ci-cd/netlify/configure/) in my Netlify recipes, for samples for site generators.
+- [Configure](https://michaelcurrin.github.io/code-cookbook/recipes/ci-cd/netlify/configure/) in my Netlify recipes, for samples for various tools like Jekyll and React.
 - [File-based Configuration](https://docs.netlify.com/configure-builds/file-based-configuration/) in the Netlify docs.
 
 
