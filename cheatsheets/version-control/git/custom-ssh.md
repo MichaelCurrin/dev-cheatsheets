@@ -18,8 +18,18 @@ Assuming a file:
 
 Steps below are based on [SO](https://stackoverflow.com/questions/6688655/select-private-key-to-use-with-git).
 
+You'll need to explicitly tell the SSH command to recognize that file.
 
-## Configure existing repo
+
+## Change Git config
+
+Two approaches. One sets the config value on an existing repo and another at the point you clone.
+
+Both work fine and will perist the config value in the local repo config.
+
+Your global config is not affected.
+
+#$# Configure an existing repo
 
 Set up a repo.
 
@@ -28,7 +38,7 @@ $ git init my-repo
 $ cd my-repo
 ```
 
-Configure the repo settings.
+Then configure the repo settings.
 
 ```sh
 $ git config --local core.sshCommand "/usr/bin/ssh -i PRIVATE_KEY_PATH"
@@ -37,20 +47,25 @@ $ git config --local core.sshCommand "/usr/bin/ssh -i PRIVATE_KEY_PATH"
 e.g.
 
 ```sh
-$ git config --local core.sshCommand "/usr/bin/ssh -i $HOME/.ssh/id_rsa_foo"
+$ git config --local core.sshCommand "/usr/bin/ssh -i ~/.ssh/id_rsa_foo"
 ```
 
 
-## Configure when cloning
+### Configure when cloning
+
+This provides the path to a ID RSA file at the time you clone repo.
 
 ```sh
-git clone -c cshore.sshCommand="/usr/bin/ssh -i PRIVATE_KEY_PATH" REPO_SSH_URL
+$ git clone REPO_SSH_URL \
+    --config core.sshCommand="/usr/bin/ssh -i PRIVATE_KEY_PATH" 
 ```
 
 e.g.
 
 ```sh
-git clone -c cshore.sshCommand="/usr/bin/ssh -i $HOME/.ssh/id_rsa_foo" git@github.com:MyUsername/my-repo.git
+$ git clone git@github.com:MyUsername/my-repo.git \
+    --config core.sshCommand="/usr/bin/ssh -i ~/.ssh/id_rsa_foo" 
+$ cd my-repo
 ```
 
 
