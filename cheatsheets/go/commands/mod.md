@@ -2,24 +2,19 @@
 
 ## Overview
 
-Use [init](#init) to set up `go.mod` file.
-
-```sh
-$ go mod init example.com/m
-$ go mod init github.com/username/repo-name
-```
-
-Use [download](#download) to download packages.
-
-```sh
-$ go mod download
-```
-
-Use [tidy](#tidy) to clean up `go.sum`, download packages and remove unused packages from `go.mod`.
-
-```sh
-$ go mod tidy
-```
+- Use [init](#init) to set up `go.mod` file.
+    ```sh
+    $ go mod init example.com/m
+    $ go mod init github.com/username/repo-name
+    ```
+- Use [download](#download) to download packages.
+    ```sh
+    $ go mod download
+    ```
+- Use [tidy](#tidy) to clean up `go.sum`, download packages and remove unused packages from `go.mod`.
+    ```sh
+    $ go mod tidy
+    ```
 
 
 ## Help
