@@ -30,7 +30,7 @@ Skip the first items and started at the Nth item.
 
 ```liquid
 {% for item in page.my_array offset: 2 %}
-  {{ item }}
+   {{ item }}
 {% endfor %}
 ```
 
@@ -53,7 +53,7 @@ Index of the current iteration. Use `.index` to start at one or `.index0` to sta
 {% for item in page.my_array %}
     {{ forloop.index }}  <!-- e.g. 1, 2, 3 -->
     {{ forloop.index0 }} <!-- e.g. 0, 1, 2 -->
-    {{ for.loop.last }}  <!-- e.g. false, false, true -->
+    {{ forloop.last }}  <!-- e.g. false, false, true -->
 {% endfor %}
 ```
 
@@ -61,7 +61,7 @@ Index of the current iteration. Use `.index` to start at one or `.index0` to sta
 
 ```liquid
 {% for item in page.my_array %}
-  {{ forloop.length }}
+    {{ forloop.length }}
 {% endfor %}
 ```
 
