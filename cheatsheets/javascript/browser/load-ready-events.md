@@ -8,6 +8,8 @@
 
 ## Summary of sequence
 
+Be careful - you'll override multiple events set up with the assignment approach - adding with `addEventListener` is better as it appends.
+
 ```javascript
 document.ready = () => console.log('document ready')
 
