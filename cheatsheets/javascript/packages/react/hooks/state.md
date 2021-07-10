@@ -1,7 +1,6 @@
+# State hook
 
 {% raw %}
-
-# State hook
 
 Get the state of a variable or fallback to default state.
 
@@ -9,17 +8,28 @@ See [Using the State Hook](https://reactjs.org/docs/hooks-state.html) in the Rea
 
 > `useState` is a Hook that lets you add React state to function components
 
+
+## Syntax
+
 Calling `useState` is a React hook to unpack a variable's value and its change handler to update it, like this:
 
 ```javascript
-const [ value, setValue ] = useState("my default value");
+const [ state, setState ] = useState(initialState);
+
+setState(newState);
 ```
 
-Or
+
+## Example
+
+### Simple
+
 
 ```javascript
 const [ name, setName ] = useState("Sam");
 ```
+
+### Multiple values
 
 An example from the docs with multiple variables.
 
@@ -31,7 +41,8 @@ function ExampleWithManyStates() {
 }
 ```
 
-### Comparison
+
+## Comparison
 
 Here are equivalent examples from the docs.
 

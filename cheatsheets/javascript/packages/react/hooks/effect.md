@@ -3,11 +3,29 @@
 
 {% raw %}
 
-Perform **side effects** in Function components.
+This performs **side effects** in Function components.
 
 See [Using the Effect Hook](https://reactjs.org/docs/hooks-effect.html) in the React docs.
 
-Here is an example where a function is run on state change, change the DOM outside of the component. Setting a value on `document` (or some element) uses the browser API.
+That hook will run when the component:
+
+- is mounted (once).
+- updates (multiple times).
+- unmounts (once).
+
+
+## Syntax
+
+```jsx
+useEffect(FUNCTION, [ARGUMENTS])
+```
+
+
+## Example
+
+### Click
+
+Here is an example where a callback function is run on state change, changing the DOM outside of the component, setting a value on `document` (or some element) uses the browser API.
 
 ```jsx
 const [count, setCount] = useState(0);
@@ -16,6 +34,18 @@ useEffect(() => {
   document.title = `You clicked ${count} times`;
 });
 ```
+
+### Mount and unmount only
+
+To prevent the function from running on updates, use an empty array s an extra parameter.
+
+useEffect(() => {
+  console.log("Mounted or unmounted")
+}, []);
+
+The docs say that this is close to the mental model of `componentDidMount` and `componentWillUnmount`, but that "there are usually [better solutions][] to avoid re-running effects too often".
+
+[better solutions]: https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies
 
 
 ## Comparison
