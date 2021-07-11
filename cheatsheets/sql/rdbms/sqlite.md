@@ -23,12 +23,20 @@ id INTEGER PRIMARY KEY
 location VARCHAR(50)
 ```
 
+
 ## Number
 
 ```
 foo INTEGER
 bar INTEGER(8)
 ```
+
+Cast to integer:
+
+```
+CAST(foo AS INTEGER)
+```
+
 
 ## Timestamp
 
@@ -37,6 +45,38 @@ Use current time if value is not set.
 ```
 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ```
+
+
+## Time
+
+See [Date and time functions](https://sqlite.org/lang_datefunc.html).
+
+Functions:
+
+- `DATE`
+- `TIME`
+- `DATETIME`
+- `JULIANDAY`
+- `STRFTIME`
+
+Now.
+
+```sql
+SELECT DATE('now')
+```
+
+String format. Pass in `'now'` for easy testing, or a timestamp column.
+
+```sql
+SELECT STRFTIME('%s','now')
+```
+
+Get just year.
+
+```sql
+SELECT STRFTIME('%Y', 'now')
+```
+
 
 
 ## Drop
