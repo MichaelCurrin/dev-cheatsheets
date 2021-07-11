@@ -8,7 +8,7 @@ string[]
 number[]
 ```
 
-Or the longer:
+Or the longer form:
 
 ```typescript
 Array<string>
@@ -40,10 +40,38 @@ interface Foo {
 ## Dictionary
 > aka a map or hash or associative array
 
-```typescript
-let foo: { [s: string]: string } = {}
-```
+### Key and value as strings
+
+Inline:
 
 ```typescript
-type Name = string | string[]
+let foo: { [key: string]: string } = {}
+
+foo['abc'] = '123'
+```
+
+With a type:
+
+```typescript
+type keyValuePairs =  { [key: string]: string }
+
+let foo: keyValuePairs = {}
+foo['abc'] = '123
+```
+
+### Value as number
+
+```javascript
+type CountResult = { [key: string]: number };
+```
+
+### Key from available keys
+
+You'll get an error if using a union as a key.
+
+From [#24220](https://github.com/Microsoft/TypeScript/issues/24220) in TS issues.
+
+```javascript
+type Foo = 'a' | 'b';
+type Bar = {[key in Foo]: any};
 ```
