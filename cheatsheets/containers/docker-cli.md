@@ -145,55 +145,62 @@ $ docker image ls
 
 ### Manage containers
 
-Check Linux version.
-
-```sh
-$ docker run node:12-slim cat /etc/issue
-```
-
-```sh
-$ # Show a specific container
-$ docker ps -a --filter "name=my-app"
-
-$ # Show all running containers.
-$ docker ps
-
-$ # See containers logs (recommended)
-$ docker logs -f my-app
-```
-
-```sh
-$ # I don't think I've ever run `create`.
-$ docker create --init \
-    --name my-app \
-    -p 3000:3000 \
-    my-node-img
-
-$ docker start my-app
-
-$ # Attach to container (not recommended) 
-$ docker attach my-app
-
-$ # Access container's system.
-$ docker exec -it my-app bash
-
-$ docker run --name my-app \
-    -p 3000:3000 \
-    -d \
-    --init \
-    --rm \
-    my-node-img
-```
+- Check Linux version.
+    ```sh
+    $ docker run node:12-slim \
+        cat /etc/issue
+    ```
+- Show a specific container
+    ```sh
+    $ docker ps -a \
+        --filter "name=my-app"
+    ```
+- Show all running containers.
+    ```sh
+    $ docker ps
+    ```
+- See containers logs (recommended).
+    ```sh
+    $ docker logs -f my-app
+    ```
+- Create - I don't think I've ever run `create`.
+    ```sh
+    $ docker create --init \
+        --name my-app \
+        -p 3000:3000 \
+        my-node-img
+    ```
+- Start
+    ```sh
+    $ docker start my-app
+    ```
+- Access container's system.
+    ```sh
+    $ docker exec -it my-app bash
+    ```
+- Run
+    ```sh
+    $ docker run --name my-app \
+        -p 3000:3000 \
+        -d \
+        --init \
+        --rm \
+        my-node-img
+    ```
+- Attach to a container (not recommended).
+    ```sh
+    $ docker attach my-app
+    ```
 
 ### Stop and remove container
 
-Stop a running container
+Stop a running container.
 
 ```sh
 $ docker stop my-app
 ```
 
-Stop all running containers
+Stop **all** running containers. This uses `--quiet` flag return only the container IDs.
 
 ```sh
 $ docker stop $(docker ps -q)
@@ -240,7 +247,9 @@ $ docker run --rm --name CONTAINER_NAME IMAGE
 e.g.
 
 ```sh
-$ docker run --rm --name my-app my-image
+$ docker run --rm \
+    --name my-app \
+    my-image
 ```
 
 Run a command in an **existing** and **running** container, given a tagged name or ID.
@@ -394,3 +403,4 @@ Copy contents of directory into a directory - using dot forwardlash in destinati
 $ docker cp foo my-app:/root/app/foo/.
 # => /root/app/foo
 ```
+
