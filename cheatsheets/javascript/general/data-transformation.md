@@ -73,27 +73,54 @@ myArray.forEach((value, index) => {
 
 ### Get key-value pairs with a for loop
 
-The order is not guaranteed.
+Warning - the order is not guaranteed.
 
 ```javascript
-var pairs = {
+const pairs = {
   foo: 'A',
   bar: 'B',
   baz: 'C'
 }
 
+Object.entries(pairs)
+// [ [ 'foo', 'A' ], [ 'bar', 'B' ], [ 'baz', 'C' ] ]
+
 for (const [ key, value ] of Object.entries(pairs)) {
-  console.log(key, value)
+  console.log(`${key} - ${value}`)
 }
+
+// foo - A
+// bar - B
+// baz - C
 ```
 
-To sort first:
+Or, instead of `for`, using `map`.
 
 ```javascript
-Object.entries(obj).sort((a, b) => b[0].localeCompare(a[0]));.
+Object.entries(pairs)
+  .map((x) => `${x[0]} - ${x[1]}`)
+// [
+//   'foo - A', 
+//   'bar - B', 
+//   'baz - C'
+// ]
 ```
 
-[source](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries)
+Note that `x` is a tuple.
+
+If you use two parameters, you'll end up with the key and value in the first and the index (like `0`) in the second.
+
+#### Sort
+
+To sort first, before using `for` or `map`.
+
+```javascript
+Object.entries(obj)
+  .sort((a, b) => b[0].localeCompare(a[0]));
+```
+
+From [Object.entries](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries) in MDN docs.
+
 
 ### Merge associative arrays
 
