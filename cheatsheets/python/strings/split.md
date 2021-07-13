@@ -1,20 +1,73 @@
 # Split
 
+Using the `str.split` method.
+
 
 ## Split by whitespace
+
+Note that an empty string will give an error but you can use no arguments for the default.
+
+That handles tabs, newlines and spaces.
 
 ```python
 my_string.split()
 ```
 
-## Split by delimeter
+e.g.
 
 ```python
-my_string.split(",")
+"abc def ghi klm".split()
+# ['abc', 'def', 'ghi', 'klm']
+```
+
+```python
+"abcdef".split()
+# ['abcdef']
+```
+
+```python
+"abc\tdef\nghi klm".split()
+# ['abc', 'def', 'ghi', 'klm']
 ```
 
 
-## Split by newlines
+## Split by delimeter
+
+### Simple
+
+```python
+my_string.split(":")
+```
+
+```python
+"abc:def:ghi".split(":")
+# ['abc', 'def', 'ghi']
+```
+
+### Remove whitespace
+
+Split by a sequence of a command _and_ a space.
+
+```python
+"abc, def, ghi, klm".split(", ")
+# ['abc', 'def', 'ghi', 'klm']
+```
+
+If items may or may not have space as in the next example, you can use `str.strip` on each items to remove whitespace if any.
+
+```python
+[x.strip() for x in "abc, def,ghi, klm".split(",")]
+# ['abc', 'def', 'ghi', 'klm']
+```
+
+Warning - here the whitespace is retained in each item, because we only split by a comma.
+
+```python
+"abc, def, ghi, klm".split(",")
+# ['abc', ' def', ' ghi', ' klm']
+```
+
+### Split by newline characters
 
 ```python
 my_string.split("\n")
@@ -23,11 +76,11 @@ my_string.split("\n")
 e.g.
 
 ```python
->>> """abc
+"""abc
 def
 ghi
 """.split("\n")
-['abc', 'def', 'ghi', '']
+# ['abc', 'def', 'ghi', '']
 ```
 
 If reading text from a file, you'll end up with a trailing newline in each string still. Then this more appropriate:
