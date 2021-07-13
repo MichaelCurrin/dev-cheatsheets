@@ -73,9 +73,11 @@ Numbers, ASCII, puncutation, and whitespace.
 ## String to list
 
 ```python
-letters_str = string.ascii_uppercase + string.digits
-# 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-
-letters_list = letters_str.split("")
-# [ "A", "B", ... ]
+>>> letters_str = string.ascii_uppercase + string.digits
+>>> letters_str
+'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+>>> letters_list = list(letters_str)
+>>> letters_list
+['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 
+ 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 ```
