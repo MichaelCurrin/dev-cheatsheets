@@ -85,3 +85,20 @@ Note this removes all whitespace and not just `\n`.
 ## Template literals
 
 See [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) on Mozilla docs.
+
+
+## Split
+
+### Split by delimeter
+
+```javascript
+'abc def ghi'.split(' ')
+// [ 'abc', 'def', 'ghi' ]
+```
+
+### String to array of characters
+
+```javascript
+'abcdef'.split('')
+// [ 'a', 'b', 'c', 'd', 'e', 'f' ]
+```
