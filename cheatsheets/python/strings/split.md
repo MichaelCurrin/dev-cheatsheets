@@ -1,6 +1,6 @@
 # Split
 
-Using the `str.split` method.
+Splitting strings in Python, mostly using the `str.split` method.
 
 
 ## Split by whitespace
@@ -108,3 +108,15 @@ ghi
 ```
 
 This will split by the **newline** characters and will also **remove** them by default. This is useful as you probably don't want to have `"\n"` at the end of each item in the list. 
+
+
+## String to list of characters
+
+You cannot use the `str.split` method here. No argument or a null strings returns the original string while an empty string gives an error.
+
+Use `list`.
+
+```python
+list("abcdef ghi")
+# ['a', 'b', 'c', 'd', 'e', 'f', ' ', 'g', 'h', 'i']
+```
