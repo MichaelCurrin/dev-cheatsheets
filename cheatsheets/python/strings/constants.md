@@ -3,6 +3,8 @@
 
 ## Setup
 
+This import is needed for the rest of this page. Load the built-in module.
+
 ```python
 import string
 ```
@@ -64,4 +66,15 @@ Numbers, ASCII, puncutation and whitespace.
 ```python
 >>> string.printable
 '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c'
+```
+
+
+## String to list
+
+```
+letters_str = string.ascii_uppercase + string.digits
+# 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+
+letters = letters_str.split("")
+# [ "A", "B", ... ]
 ```
