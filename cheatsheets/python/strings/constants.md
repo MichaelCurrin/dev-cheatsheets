@@ -1,5 +1,6 @@
 # String constants
 
+<!-- Dev tip - it is useful to keep the '>>>' approach here because then the syntax highlighting is used on the result and that makes escaped characters easier to read. -->
 
 ## Setup
 
