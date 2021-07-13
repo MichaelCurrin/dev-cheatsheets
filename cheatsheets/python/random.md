@@ -125,7 +125,9 @@ Generate random text.
 
 See [String Constants][] page for more info on the `string` module's values.
 
-[String constants]: {{ site.baseurl }}{% link cheatsheets/python/strings/constants.md %}
+[String Constants]: {{ site.baseurl }}{% link cheatsheets/python/strings/constants.md %}
+
+Note use of `.choices` to get multiple values.
 
 ```python
 import random
@@ -137,7 +139,14 @@ chars = string.ascii_lowercase
 length = 20
 
 ''.join(random.choices(chars, k=length))
-'sibuudijstpmozrmrfzp'
+# 'sibuudijstpmozrmrfzp'
+```
+
+Or use `.choice` for a more verbose and possibly inefficient way.
+
+```python
+''.join(random.choice(letters) for _ in range(k))
+# 'ohzeasftnbkvinijtkud'
 ```
 
 
