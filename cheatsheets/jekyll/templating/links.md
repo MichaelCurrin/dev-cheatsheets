@@ -42,7 +42,7 @@ Use a Jekyll Liquid tag `link` to link to page rather than by URL. This is great
 
 Use the `link` tag. The smart way to do links for local pages.
 
-No colon and no quotes. (A quotes path will rendered as escaped quote tags and possibly break the HTML)
+No colon and no quotes. A quoted path will rendered literally with escaped quote tags and breaks the HTML.
 
 ```liquid
 {% link PATH %}
@@ -77,10 +77,10 @@ Result:
 <a href="/my-base-url/about.html">Link text</a>
 ```
 
-You can pass a variable too (maybe only in Jekyll 4 as I got errors on this when testing).
+You can pass a variable too, such as when using a `for` loop.
 
 ```markdown
-[Link text]({% link {{ item }} %})
+[Link text]({% link {{ item.url }} %})
 ```
 
 ### The Post URL tag for posts
