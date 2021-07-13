@@ -30,12 +30,12 @@ $ grep -r PATTERN my_dir
 
 
 
-## Stdin
+## stdin
 
 If you omit the paths, then `grep` reads from stdin.
 
 ```sh
-echo 'hello world' | grep 'hello
+echo 'hello world' | grep 'hello'
 ```
 
 
