@@ -3,7 +3,7 @@
 
 ## Setup
 
-This import is needed for the rest of this page. Load the built-in module.
+This import is needed for the rest of this page. Load the built-in [string](https://docs.python.org/3/library/string.html) module.
 
 ```python
 import string
@@ -61,7 +61,7 @@ Mix like this:
 
 ## Printable
 
-Numbers, ASCII, puncutation and whitespace.
+Numbers, ASCII, puncutation, and whitespace.
 
 ```python
 >>> string.printable
@@ -71,10 +71,10 @@ Numbers, ASCII, puncutation and whitespace.
 
 ## String to list
 
-```
+```python
 letters_str = string.ascii_uppercase + string.digits
 # 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
-letters = letters_str.split("")
+letters_list = letters_str.split("")
 # [ "A", "B", ... ]
 ```
