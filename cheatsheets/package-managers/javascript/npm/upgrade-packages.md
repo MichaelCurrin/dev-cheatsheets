@@ -4,6 +4,57 @@ description: Guide to managing out NPM packages in your project
 # Upgrade packages
 
 
+## Overview
+
+### Upgrade one package
+
+This can be useful for example if `webpack` is blocking a subdependency like `glob-parent`.
+
+1. Upgrade package by name.
+    ```sh
+    npm update webpack
+    ```
+
+That will stay within the `^` or `~` bounds.
+
+For a more aggressive jump such as from `4.x` to `5.x`, do:
+
+1. Upgrade package by name.
+    ```sh
+    $ npm update webpack@5.6.7
+    ```
+    Or
+    ```sh
+    $ npm update webpack@latest
+    ```
+
+### Upgrade all upgradeable packages
+
+1. List outdated versions and latest available.
+    ```sh
+    $ npm outdated
+    ```
+2. Update all outdated packages.
+    ```sh
+    $ npm update
+    ```
+    Or
+    ```sh
+    $ npm install --upgrade
+    ``` 
+
+### Install latest
+
+Recreate lock file from scratch. Packages will still be limited by restrictions in `package.json` though, so this is relatively safe.
+
+1. Delete `package-lock.json`.
+2. Install dependencies.
+    ```sh
+    $ npm install
+    ```
+3. Commit the updated `package-lock.json` file.
+
+
 ## Find outdated packages
 
 From the [npm outdated](https://docs.npmjs.com/cli/outdated) command's docs.
