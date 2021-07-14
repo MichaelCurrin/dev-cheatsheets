@@ -1,5 +1,10 @@
-# audit
+---
+title: audit
+description: Use this NPM subcommand to find and fix vulnerabilities 
+---
 
+- [npm audit](https://docs.npmjs.com/cli/v6/commands/npm-audit) docs.
+    > Run a security audit
 
 ## Check
 
