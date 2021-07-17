@@ -48,7 +48,7 @@ enum COLOR {
 <details>
 <summary>Compiled JS result</summary>
 
-```javascript
+<pre><code>
 "use strict";
 var COLOR;
 (function (COLOR) {
@@ -56,7 +56,7 @@ var COLOR;
     COLOR[COLOR["Green"] = 1] = "Green";
     COLOR[COLOR["Blue"] = 4] = "Blue";
 })(COLOR || (COLOR = {}));
-```
+</code></pre>
 
 </details>
 
@@ -90,6 +90,18 @@ enum COLOR {
 > COLOR[0]
 "Red"
 ```
+
+Or, from the docs.
+
+```javascript
+enum Enum {
+  A,
+}
+
+let a = Enum.A;
+let nameOfA = Enum[a]; // "A"
+```
+
 
 ### Lookup value
 
@@ -129,12 +141,15 @@ enum StrangerThings {
   Power = "Telekenesis",
   Town = "Hawkins"
 }
+
+console.log(StrangerThings.Power)
+console.log(StrangerThings.Character)
 ```
 
 <details>
 <summary>Compiled JS result</summary>
 
-```javascript
+<pre><code>
 "use strict";
 var StrangerThings;
 (function (StrangerThings) {
@@ -143,18 +158,13 @@ var StrangerThings;
     StrangerThings["Power"] = "Telekenesis";
     StrangerThings["Town"] = "Hawkins";
 })(StrangerThings || (StrangerThings = {}));
-```
+</code></pre>
 
 </details>
 
-### Lookup key
-
-```typescript
-StrangerThings.Power
-// "Telekenesis"
-```
-
 ### Lookup value
+
+Note that lookup of key is not possible for string enums. See [Numeric enum](#numeric-enum) section.
 
 ```typescript
 StrangerThings.Character
