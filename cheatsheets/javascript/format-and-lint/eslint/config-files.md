@@ -16,9 +16,12 @@ From [Configuration file format](https://eslint.org/docs/2.0.0/user-guide/config
 
 ## ESLint ignore config
 
-See [Ignoring Files and Directories](https://eslint.org/docs/2.0.0/user-guide/configuring#ignoring-files-and-directories) in the docs.
+Resources:
 
-This is a plain text file with glob patterns.
+- [Ignoring Files and Directories](https://eslint.org/docs/2.0.0/user-guide/configuring#ignoring-files-and-directories) in the docs.
+- [Ignoring code](https://eslint.org/docs/user-guide/configuring/ignoring-code) - specifically the _The .eslintignore File_ section.
+
+This is a plain text file, with glob patterns.
 
 Samples from the docs:
 
@@ -38,7 +41,7 @@ Samples from the docs:
     !build/index.js
     ```
 
-Note that `node_modules` is ignored by default.
+Note that `node_modules` is always ignored.
 
 ### Logging ignored paths
 
