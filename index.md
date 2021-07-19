@@ -45,7 +45,7 @@ Contributions are welcome via PRs and issues.
     </a>
     <a href="{{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/index.md %}">
         <div>
-            {% include logo.html name="vue-dot-js" %}
+            {% include logo.html name="vuedotjs" %}
             <span>Vue</span>
         </div>
     </a>
