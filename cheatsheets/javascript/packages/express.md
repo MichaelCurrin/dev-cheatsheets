@@ -1,5 +1,6 @@
 # Express
 
+
 ## Static directory
 
 From [Static files](https://expressjs.com/en/starter/static-files.html) in the docs.
@@ -22,4 +23,19 @@ Using an absolute path is safer.
 const path = require('path')
 
 app.use('/static', express.static(path.join(__dirname, 'public')))
+```
+
+A fuller example:
+
+```javascript
+import express from "express";
+
+const PORT = 3000
+
+const app = express();
+
+app.use(express.static('public'));
+app.use(express.static('images'));
+
+app.listen(PORT);
 ```
