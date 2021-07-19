@@ -94,3 +94,20 @@ SELECT foo
 FROM bar
 WHERE NOW() - updated_at > 60 * INTERVAL '1 MINUTE'
 ```
+
+
+## Oldest and latest
+
+```sql
+SELECT
+  NOW() - MIN(created_at) AS oldest_session,
+  NOW() - MAX(created_at) AS latest_session
+FROM sessions
+;
+```
+
+e.g.
+
+| `oldest_session` | `latest_session` |
+|--- | ---|
+|166 days 15:59:09.156975 | 11 days 19:31:12.73919 |
