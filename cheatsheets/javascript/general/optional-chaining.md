@@ -114,21 +114,37 @@ foo && foo.badKey && foo.badKey.bazz
 
 ## Optional chaining for functions
 
+Safely call a method, only if the method exists.
+
 ```javascript
 VARIABLE.OPTIONAL_METHOD?.()
+```
+
+Where a standard call is:
+
+```javascript
+VARIABLE.OPTIONAL_METHOD()
 ```
 
 ### Examples
 
 ```javascript
-const foo = {}
+const myString = 'ABC'
+const myBool = true
 
-foo.toString?.()
-// '[object Object]'
+myString.toLowerCase?.()
+// 'abc'
 
-foo.badMethod?.()
+myBool.toLowerCase?.()
 // undefined
+```
 
-foo.badMethod()
-// Uncaught TypeError: foo.badMethod is not a function
+Standard approach:
+
+```javascript
+myString.toLowerCase()
+// 'abc'
+
+myBool.toLowerCase()
+// Uncaught TypeError: myBool.toLowerCase is not a function
 ```
