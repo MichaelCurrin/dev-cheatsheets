@@ -1,4 +1,4 @@
-# Advanced
+# Optional chaining
 
 Lesser-known features of JavaScript.
 
@@ -111,6 +111,7 @@ foo && foo.badKey && foo.badKey.bazz
 // undefined
 ```
 
+
 ## Optional chaining for functions
 
 ```javascript
@@ -131,50 +132,3 @@ foo.badMethod?.()
 foo.badMethod()
 // Uncaught TypeError: foo.badMethod is not a function
 ```
-
-
-## Object shorthand
-
-```javascript
-const x = 123
-
-const y = {
-  x
-}
-
-y
-// { x: 123 }
-```
-
-That is the equivalent of setting:
-
-```javascript
-const y = {
-  x: x
-}
-```
-
-
-## Styling console log
-
-Supply CSS styling to `console.log`. Note use of `%c`.
-
-### Single style
-
-```javascript
-console.log('%cMy red text', 'color: red')
-```
-
-### Combine styles
-
-```javascript
-console.log('%cMy bold and red text', 'font-weight: bold; color: red')
-```
-
-### Split styles
-
-```javascript
-console.log('%cMy bold text %cMy red text', 'font-weight: bold', 'color: red')
-```
-
-This only seems to work in the browser and not in Node. You'll need come control characters or an NPM package to handle colors in Node.
