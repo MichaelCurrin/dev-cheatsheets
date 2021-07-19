@@ -1,5 +1,5 @@
 ---
-logo: vue-dot-js
+logo: vuedotjs
 ---
 # Vue
 
