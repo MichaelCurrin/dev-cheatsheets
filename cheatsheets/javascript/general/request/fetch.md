@@ -106,6 +106,26 @@ const options = {
 await fetch('https://httpbin.org/post', options)
 ```
 
+A more complex example.
+
+```javascript
+const query = new URLSearchParams(query).toString();
+const url = `/myendpoint?${query}`;
+
+const body = JSON.stringify(body);
+
+const options = {
+  method:  'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body,
+}
+
+const resp = await fetch(
+  url, 
+  options
+);
+```
+
 #### Send form data
 
 ```javascript
@@ -116,5 +136,8 @@ const options = {
   body,  
 }
 
-await fetch('https://httpbin.org/post', options)
+await fetch(
+  'https://httpbin.org/post', 
+  options
+)
 ```
