@@ -65,13 +65,30 @@ const params = {
 axios.get('/user', { params })
 ```
 
-### POST
+### POST reqeuest
 
 ```javascript
 axios.post('/user', {
     firstName: 'Fred',
     lastName: 'Flintstone'
 })
+```
+
+More advanced. Note Axios includes automatic JSON and form-encoded serialization and parsing.
+
+```javascript
+const query = new URLSearchParams(query).toString();
+const url = '/myendpoint'
+
+const options = {
+  params: query, 
+  body
+};
+
+const resp = await axios.post(
+  url, 
+  options
+);
 ```
 
 ### Concurrent requests
@@ -85,9 +102,14 @@ function getUserPermissions() {
   return axios.get('/user/12345/permissions');
 }
 
-Promise.all([getUserAccount(), getUserPermissions()])
+const requests = [getUserAccount(), getUserPermissions()]
+
+Promise.all(requests)
   .then(function (results) {
-    const acct = results[0];
-    const perm = results[1];
+    const [account, permissions] = results;
+    
+    // OR
+    const account = results[0];
+    const permissions = results[1];
   });
 ```
