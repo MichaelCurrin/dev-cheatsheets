@@ -4,6 +4,6 @@ logo: netlify
 ---
 
 
-### Resources
+### Related
 
 - [Netlify](https://michaelcurrin.github.io/dev-resources/resources/ci-cd/netlify/) under Dev Resources.
