@@ -9,10 +9,15 @@ See the [HTML Image tag](https://www.w3schools.com/tags/tag_img.asp) on the W3 S
 
 Attributes of `img` tag:
 
-- `src` - Local or external image path. Can be JPG, PNG, SVG, etc.
-- `alt` - Optional text to describe the image. Use to show as a fallback if the image fails to load. Also used for screen readers.
-- `title` - Optional text used to show on hover over. If not set, nothing will be shown. This is useful to set as the action that an image will produce, such as clicking a screen to go "Go to homepage" if you link it to your homepage.
-- `width` and `height` - Optional attributes to set dimensions. These can be for example `40`, `40px` - not a percentage. Note these attributes. are similar but separate fro the CSS `width` and `height` attributes which are not specific to an `img` tag.
+- `src`
+    - Local or external image path. Can be JPG, PNG, SVG, etc.
+- `alt` 
+    - Optional text to describe the image. Use to show as a fallback if the image fails to load. Also used for screen readers.
+- `title` 
+    - Optional text used to show on hover over. If not set, nothing will be shown. This is useful to set as the action that an image will produce, such as clicking a screen to go "Go to homepage" if you link it to your homepage.
+    - Similarly, setting `title` on an `a` tag adds hover text.
+- `width` and `height`
+    - Optional attributes to set dimensions. These can be for example `40`, `40px` - not a percentage. Note these attributes. are similar but separate fro the CSS `width` and `height` attributes which are not specific to an `img` tag.
 
 Note that this is a self-closing tag.
 
