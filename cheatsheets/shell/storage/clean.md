@@ -1,6 +1,7 @@
-# Clean
-
-Common approaches to clearing space on your machine.
+---
+title: Clean
+description:  Common approaches to clearing space on your machine.
+---
 
 - [source](https://www.omgubuntu.co.uk/2016/08/5-ways-free-up-space-on-ubuntu)
 - [source](https://itsfoss.com/free-up-space-ubuntu-linux/)
@@ -14,7 +15,21 @@ Common approaches to clearing space on your machine.
 $ rm -rf /tmp/*
 ```
 
-### Thumbnails
+### Delete cache
+
+On macOS:
+
+```sh
+$ rm -rf ~/Library/Caches/*
+```
+
+On macOS and Linux:
+
+```sh
+$ rm -rf ~/.cache/*
+```
+
+### Remove thumbnails
 
 ```sh
 $ du -sh ~/.cache/thumbnails
@@ -33,7 +48,6 @@ For Debian/Ubuntu.
 ### Remove cache
 
 [Essential Guide: 5 Simple Ways To Free Up Space on Ubuntu](https://www.omgubuntu.co.uk/2016/08/5-ways-free-up-space-on-ubuntu)
-
 
 ```sh
 $ sudo apt-get clean
