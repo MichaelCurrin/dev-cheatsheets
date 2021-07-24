@@ -1,8 +1,7 @@
-
 ---
+title: Named tuple
 description: Create tuples with named fields
 ---
-# Named tuple
 
 Immutable, like a tuple.
 
