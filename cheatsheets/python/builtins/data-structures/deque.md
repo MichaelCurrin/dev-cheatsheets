@@ -1,5 +1,5 @@
 ---
-title: dequeue
+title: deque
 description: The double-ended queue in Python
 ---
 
