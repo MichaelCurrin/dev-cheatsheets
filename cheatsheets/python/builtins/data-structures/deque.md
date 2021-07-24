@@ -1,7 +1,8 @@
 ---
+title: dequeue
 description: The double-ended queue in Python
 ---
-# deque
+
 
 See [deque](https://docs.python.org/3/library/collections.html#collections.deque) in the docs.
 
