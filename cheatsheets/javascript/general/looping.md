@@ -55,17 +55,42 @@ Click a link to jump to that section of this guide.
 
 ## for
 
-### Using index
+### Using index in a C-style loop
 
 The old-fashioned index-based loop, based on the C and Java languages.
 
-Please don't use this in your JS unless you have a good reason to. The code is verbose. And it obscures getting a value. If you do need the key or index _and_ the value, there is a cleaner way. Jump to [for...of](#using-for...of) section.
+Please _don't_ use this style in your JS, unless you have a good reason to.
+
+- The code is verbose and unnecessarily complex.
+- If you _do_ need the value _and_ the array index (or hash key), then there is a cleaner way. See to [for...of](#using-for...of) section.
+- If you _do_ need to get the index only, then use [for...in](#using-for...in).
 
 Traditionally, this style was done using `var`, but `let` is the modern way for block scoping.
 
 ```javascript
-for (let index = 0; i < iterableLength; index++) { }
+for (let i = 0; i < 3; i++) {
+    console.log(i)
+}
+// 0
+// 1
+// 2
 ```
+
+Here we loop over an array using an index and the get the value on each iteration.
+
+```javascript
+const iterable = ["a", "b", "c"];
+
+for (let i = 0; i < iterableLength; i++) {
+    const item = iterable[i]
+    console.log(item)
+}
+// a
+// b
+// c
+```
+
+Example of building a new array. This would be more elegantly done with `map` or [for...of](#using-for...of), but, anyway here it is as a C-style loop.
 
 The value of `i` is `0` initially, then incremented to `1` and `2`. When it becomes `3`, it is then longer than the length of the array (`letters.length` is `3`) so stops.
 
@@ -90,7 +115,7 @@ upper
 
 Some prefer to use `++i` to `i++`. Some argue that this is faster but will give the same result (the increment still happens at the end of the iteration, just the returning and checking the value changes).
 
-If you need to count down:
+If you need to count _down_:
 
 ```javascript
 for (let i = letters.length; i > 0; i--) {
@@ -105,7 +130,7 @@ for (let i = letters.length; i > 0; i--) {
 
 Get the index using `in`.
 
-This is similar to using the C-based index style but shorter (no need for `i++` etc.).
+This gets the index much like the C-style approach, but this shorter i.e. no need for `i++` etc..
 
 ```javascript
 for (const index in iterable) { }
