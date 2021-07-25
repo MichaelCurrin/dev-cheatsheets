@@ -70,19 +70,63 @@ q.resolve()
 # => PosixPath('/etc/rc.d/init.d/halt')
 ```
 
-### Querying path properties
-
-```python
-q.exists()
-
-q.is_dir()
-```
-
 ### Opening a file
 
 ```python
 with q.open() as f_in:
     text = f_in.readline()
+```
+
+
+## Home
+
+```python
+h = Path.home()
+# PosixPath('/Users/mcurrin')
+```
+
+```python
+Path.home() / 'abc'
+# PosixPath('/Users/mcurrin/abc')
+```
+
+
+## Path properties
+
+```python
+p = Path("abc/def")  # Or Path("./abc/def")
+
+p
+# PosixPath('abc/def')
+
+p.name
+# 'def'
+
+p.parts
+('abc', 'def')
+```
+
+
+## Check path properties
+
+```python
+p.exists()
+# True | False
+
+p.is_dir()
+# True | False
+```
+
+
+## Resolve
+
+This adds an absolute path to the current working directory to the path.
+
+```python
+p = Path("abc/def")
+
+p.resolve()
+# PosixPath('/Users/mcurrin/repos/testing/abc/def'
 ```
 
 
