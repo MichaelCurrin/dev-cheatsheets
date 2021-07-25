@@ -38,7 +38,7 @@ Click a link to jump to that section of this guide.
 - [map](#map)
     ```javascript
     iterable.map(item => expression)
-    
+
     iterable.map(function (item) {
         expression
     })
@@ -46,7 +46,7 @@ Click a link to jump to that section of this guide.
 - [forEach](#forEach)
     ```javascript
     iterable.forEach(item => expression)
-    
+
     iterable.forEach(function (item) {
         expression
     })
@@ -57,11 +57,11 @@ Click a link to jump to that section of this guide.
 
 ### Using index
 
-The old-fashioned index-based loop, based on the C and Java languages. 
+The old-fashioned index-based loop, based on the C and Java languages.
 
 Please don't use this in your JS unless you have a good reason to. The code is verbose. And it obscures getting a value. If you do need the key or index _and_ the value, there is a cleaner way. Jump to [for...of](#using-for...of) section.
 
-Traditionally this style was done using `var`, but `let` is the modern way for block scoping.
+Traditionally, this style was done using `var`, but `let` is the modern way for block scoping.
 
 ```javascript
 for (let index = 0; i < iterableLength; index++) { }
@@ -73,9 +73,10 @@ The value of `i` is `0` initially, then incremented to `1` and `2`. When it beco
 const letters = ["a", "b", "c"]
 
 let upper = []
+
 for (let i = 0; i < letters.length; ++i) {
   console.log(i)
-  
+
   const u = letters[i].toUpperCase()
   upper.push(u)
 }
@@ -87,7 +88,7 @@ upper
 // [ "A", "B", "C" ]
 ```
 
-Some prefer to use `++i` to `i++`. Some argue that this is faster but will give the same result (the incremen still happens at the end of the iteration, just the returning and checking the value changes).
+Some prefer to use `++i` to `i++`. Some argue that this is faster but will give the same result (the increment still happens at the end of the iteration, just the returning and checking the value changes).
 
 If you need to count down:
 
@@ -274,7 +275,7 @@ for (const pair of foo) {
 
 ## map
 
-The modern way of doing loops. 
+The modern way of doing loops.
 
 This is based on `map` function in Functional Progamming languages like Haskell. See also `map` function and _list comprehensions_ in Python.
 

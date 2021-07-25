@@ -4,7 +4,7 @@ description: |
   `var`, `const` and `let` keywords
 ---
 
-## Keywords avaible
+## Keywords available
 
 ### var keyword
 
@@ -33,10 +33,10 @@ Using this approach scopes the variable to a block (such as `if`, `for` or `func
 var foo = "A";
 
 if (true) {
-  // Redeclared in outer scope, without error.  
-  var foo = "B"; 
+  // Redeclared in outer scope, without error.
+  var foo = "B";
 }
-    
+
 console.log(foo) // "B"
 ```
 
@@ -47,11 +47,11 @@ let foo = "A";
 
 if (true) {
   // Declared only in inner scope.
-  let foo = "B"; 
+  let foo = "B";
   console.log(foo)
   // B
 }
-    
+
 console.log(foo) // "A"
 ```
 
@@ -71,6 +71,7 @@ Here is why `var` is a bad idea for that.
 If you use `var`, then the variable gets gets added to the global scope with the `var` keyword, then the reference to the single variable is used for each function. But when you use `let` or `const`, the variable gets added to the block scope and set in the function, so when the variable is printed after a delay then the scoped variable is used.
 
 ```javascript
+// Using `var`.
 for (var i of [1, 2, 3]) {
   setTimeout(() => console.log(i), 1000)
 }
@@ -78,7 +79,8 @@ for (var i of [1, 2, 3]) {
 // 3
 // 3
 
-for (let i of [1, 2, 3]) {
+// Using `const` or `let`.
+for (const i of [1, 2, 3]) {
   setTimeout(() => console.log(i), 1000)
 }
 // 1

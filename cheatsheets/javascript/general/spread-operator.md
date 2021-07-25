@@ -1,4 +1,4 @@
-# Spread operator
+# Spread or rest operator
 
 This operator is known as "spread" or "rest". It is 3 dots.
 
@@ -6,6 +6,21 @@ This operator is known as "spread" or "rest". It is 3 dots.
 ...
 ```
 
+
+## Basic
+
+On the right side of assignment, it is a _spread_ operator.
+
+```javascript
+const x = [8, 9]
+const y = [4, 5, 6, ...x]
+```
+
+On the left side of assignment, it is a _rest_ operator. You get three variables here - `a`, `b` and `other`.
+
+```javascript
+const [a, b, ...other] = [1, 2, 3, 4, 5]
+```
 
 ## On a key-value pairs object
 
@@ -26,7 +41,7 @@ y
 
 ### Unpack
 
-Here using the spread operator in the variable names on the left. 
+Here using the spread operator in the variable names on the left.
 
 We unpack an array into multiple variables. The last variable is _always_ an array while the others are scalar items.
 
@@ -37,6 +52,8 @@ We unpack an array into multiple variables. The last variable is _always_ an arr
 - You can leave out the `const` bit, like if using the interactive console.
 
 #### Two variables
+
+Here we unpack multiple items into a flat array.
 
 ```javascript
 const myArray = ["abc", "def", "efg"]
@@ -79,7 +96,7 @@ const [a, b] = x
 
 #### Single variable
 
-You can use a single variable. But you probably shouldn't.
+You could use a single variable. But you probably shouldn't.
 
 ```javascript
 const [...a] = x
@@ -89,7 +106,7 @@ a
 
 That makes `a` as an independent copy of `x`.
 
-The preferred way to copy an array - see [Clone](#clone) section.
+Here is the preferred way to copy an array - see the [Clone](#clone) section.
 
 ```javascript
 const a = [...x]
@@ -167,4 +184,41 @@ const divs = document.getElementsByTagName('div')
 const divsArr = [...divs]
 // Array method.
 divsArray.map(myFunc)
+```
+
+
+## Function
+
+This is convenient as you can one or more values without having to make an array.
+
+```javascript
+function sum(...values) {
+    let total = 0;
+    for (const a of values) {
+        total += a;
+    }
+    return total;
+}
+
+sum(1);       // 1
+sum(1, 2, 3); // 6
+
+// In case you do have a array, you can spread the single array into arguments.
+const items = [1, 2, 3];
+sum(..items); // 6
+```
+
+Compared with a plain approach before ES6.
+
+```javascript
+function sum(values) {
+    let total = 0;
+    for (const a of values) {
+        total += a;
+    }
+    return total;
+}
+
+sum([1]);       // 6
+sum([1, 2, 3]); // 6
 ```
