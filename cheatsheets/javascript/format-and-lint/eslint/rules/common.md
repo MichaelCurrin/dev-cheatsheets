@@ -4,9 +4,7 @@ description: Some rules you are likely to need with configuring and running ESLi
 ---
 
 
-See [Rules](https://eslint.org/docs/rules/) in the docs. It provides descriptions and link to the rule's page.
-
-A reference for rules I typically like to know about or set, using my preferred values.
+Here is a reference for rules I typically like to know about or set, using my preferred values.
 
 See below rule names and some recommended values (not all values).
 
