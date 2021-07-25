@@ -1,7 +1,7 @@
 ---
-description: New builtin alternative to `os.path`
+title: Pathlib
+description: A new built-in alternative to using `os.path`
 ---
-# Pathlib
 
 
 
@@ -12,18 +12,43 @@ description: New builtin alternative to `os.path`
 - [Pathlib](https://realpython.com/python-pathlib/) on RealPython
 
 
-## Basics
-
-### Import
+## Setup
 
 ```python
 from pathlib import Path
+```
+
+## Basics
+
+### Working directory
+
+```python
+my_dir = Path('.')
+```
+
+### Path to current script
+
+```python
+my_dir = Path(__file__)
+```
+
+### Directory of current script
+
+```python
+my_dir = Path(__file__).parent
+```
+
+### Build a path
+
+```python
+my_path = my_dir / 'foo' / 'bar.txt'
 ```
 
 ### List subdirectories
 
 ```python
 p = Path('.')
+
 dir_paths = [x for x in p.iterdir() if x.is_dir()]
 ```
 
@@ -37,13 +62,15 @@ list(p.glob('**/*.py'))
 
 ```python
 p = Path('/etc')
+
 q = p / 'init.d' / 'reboot'
 # => PosixPath('/etc/init.d/reboot')
+
 q.resolve()
 # => PosixPath('/etc/rc.d/init.d/halt')
 ```
 
-### Querying path properties:
+### Querying path properties
 
 ```python
 q.exists()
@@ -58,22 +85,27 @@ with q.open() as f_in:
     text = f_in.readline()
 ```
 
-## Real projects
+
+## Practical examples
+
+From my projects.
 
 ### Absolute path to app directory
 
-If it dangerous to just use `Path('.')` as that is the current working directory, not the directory of the script.
+It is dangerous to just use `Path('.')` as that is the current working directory, not the directory of the script.
 
-The approach is useful when running the script from anywhere in or outside the repo and keeping paths relative to that app directory i.e. the top-level module inside the repo.
+So use `Path(__file__)` rather.
+
+Then `.resolve()` to make it absolute. This is useful when running the script from anywhere in or outside the repo and keeping paths relative to that app directory i.e. the top-level module inside the repo.
 
 ```
 my_repo/
-    my_app/
-        my_app.py
+    my_app/          # App directory.
+        my_app.py    # Current script
         constants.py
 ```
 
-After research, I found this to be effective. It resolves relative and symlinks (I think?) and the directory will get parent directory.
+After research, I found this to be effective. It resolves relative and symlinks (I think?).
 
 ```python
 APP_DIR = Path(__file__).resolve().parent
