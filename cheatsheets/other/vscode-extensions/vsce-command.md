@@ -14,6 +14,7 @@ It an NPM package which helps you package your VS Code extension as a [vsix] fil
 
 [vsix]: {{ site.baseurl }}{% link cheatsheets/other/vscode-extensions/vsix-format.md %}
 
+
 ## Install
 
 You can install it scoped to your project.
@@ -60,20 +61,22 @@ Usage: vsce <command> [options]
 
 Options:
   -V, --version                        output the version number
-  -h, --help                           output usage information
+  -h, --help                           display help for command
 
 Commands:
   ls [options]                         Lists all the files that will be published
-  package [options]                    Packages an extension
+  package [options] [<version>]        Packages an extension
   publish [options] [<version>]        Publishes an extension
   unpublish [options] [<extensionid>]  Unpublishes an extension. Example extension id: microsoft.csharp.
   ls-publishers                        List all known publishers
-  create-publisher <publisher>         Creates a new publisher
   delete-publisher <publisher>         Deletes a publisher
   login <publisher>                    Add a publisher to the known publishers list
   logout <publisher>                   Remove a publisher from the known publishers list
+  verify-pat [options] [<publisher>]   Verify if the Personal Access Token has publish rights for the
+                                       publisher.
   show [options] <extensionid>         Show extension metadata
   search [options] <text>              search extension gallery
+  help [command]                       display help for command
 ```
 
 
