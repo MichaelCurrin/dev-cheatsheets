@@ -151,7 +151,9 @@ Example:
 
 What actually needs to be included is:
 
-- `README.md`
+- Always included (even if you ignore everything)
+    - `README.md`
+    - `package.json`
 - `LICENSE`
 - assets like images.
 - `out` - built JS files, excluding tests. Note that `src` and TS files must be excluded.
@@ -159,13 +161,39 @@ You should exclude code in `src`.
 
 The `.vscodeignore` file determines what gets excluded from the package. 
 
-These are implied and not needed to be listed there:
+These are implied as ignored and not needed to be listed there:
 
 - `.vsix`
 - `package-lock.json`
 - `.vscode`
 
-A template project will give you a base for the ignore file.
-
 Note that you do need to explicitly igore dotfiles, such as `.github` or `.github`. 
 
+### Ignore rules
+
+A template project will give you a base for the ignore file.
+
+- [.vscodeignore](https://github.com/MichaelCurrin/vsc-extension-quickstart/blob/master/.vscodeignore) in `MichaelCurrin/vsc-extension-quickstart`.
+
+Unfortunately, that is rather verbose.
+
+I came up my own approach to ignore everything and then include certain files with `!`. 
+
+```
+# Ignore
+**
+
+# Keep
+!LICENSE
+!out/**/*.js
+```
+
+Unfortunately that keeps `out/test` files. Even if you ignore `out/test/**` or `*.test.*` fies. 
+
+Note use of `**/*.js` above. Using one of these below does _not_ handle subdirectories.
+
+```
+!out/*.js
+# OR
+!out/**.js
+```
