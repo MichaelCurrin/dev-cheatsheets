@@ -185,6 +185,7 @@ I came up my own approach to ignore everything and then include certain files wi
 
 # Keep
 !LICENSE
+!images/
 !out/**/*.js
 ```
 
