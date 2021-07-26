@@ -1,7 +1,7 @@
 ---
-description: About the vsce command and how to use it
+title: VSCE command
+description: About the `vsce` command and how to use it
 ---
-# VSCE command
 
 
 ## What is VSCE?
