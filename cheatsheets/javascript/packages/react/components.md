@@ -1,7 +1,7 @@
 # Components
 
 
-## Component approach
+## Component approaches
 
 ### Functional component
 
