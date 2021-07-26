@@ -147,6 +147,30 @@ Example:
 ```
 
 
+### Publish
+
+Package and upload to Marketplace. You will be asked for your Personal Access Token.
+
+```sh
+$ vsce publish
+```
+
+Presumably that doesn't using tagging.
+
+#### Increment version
+
+From the [docs](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#autoincrementing-the-extension-version).
+
+This will run `npm version` internally to increment the package number and make a tag and then
+
+```sh
+$ vsce publish major
+$ vsce publish minor
+$ vsce publish patch
+$ vsce publish 2.0.1
+```
+
+
 ## Including and ignoring
 
 What actually needs to be included is:
