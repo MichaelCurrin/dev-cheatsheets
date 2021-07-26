@@ -1,6 +1,6 @@
 # Create React app
 
-Recommended - see the [create-react-app.dev/](https://create-react-app.dev/) site.
+Recommended - see the [create-react-app.dev/](https://create-react-app.dev) site.
 
 
 ## Standard
