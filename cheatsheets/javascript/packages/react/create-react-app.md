@@ -14,7 +14,7 @@ $ npx create-react-app my-app
 
 ## TypeScript
 
-From [Adding TypeScript](https://create-react-app.dev/docs/adding-typescript/) doc.
+Create an app with TypeScript support. Based on the [Adding TypeScript](https://create-react-app.dev/docs/adding-typescript/) doc.
 
 ```sh
 $ npx create-react-app my-app --template typescript
