@@ -93,22 +93,6 @@ List all file that will be included in your package archive.
 ```sh
 $ vsce ls
 ```
-e.g.
-
-```
-...
-> auto-commit-msg@0.10.0 clean /Users/mcurrin/repos/auto-commit-msg
-> rm -rf ./out/*
-
-bin/reset_sandbox.sh
-docs/commit-philosophy.md
-docs/credit.md
-docs/deploy.md
-...
-shell/sample.sh
-shell/simple-hook.sh
- INFO
-```
 
 If there any unexpected or unnecessary files, be sure to list them in your project's `.vscodeignore` file.
 
@@ -130,22 +114,22 @@ Here is how I use it:
 }
 ```
 
+### Login
 
-## Prepublish
+Test your publisher's Personal Access Token. This also stores the token for you for reuse.
 
-Make sure to define your own prepublish step. This will be when running the `vsce package` command.
-
-
-Example: 
-
-```json
-{
-  "scripts": {
-    "vscode:prepublish": "npm run compile"
-  }
-}
+```sh
+$ vsce login PUBLISER_NAME
 ```
 
+e.g.
+
+```console
+$ npx vsce login MichaelCurrin
+Personal Access Token for publisher 'MichaelCurrin': ****************************************************
+
+The Personal Access Token verification succeeded for the publisher 'MichaelCurrin'.
+```
 
 ### Publish
 
@@ -168,6 +152,22 @@ $ vsce publish major
 $ vsce publish minor
 $ vsce publish patch
 $ vsce publish 2.0.1
+```
+
+
+## Prepublish
+
+Make sure to define your own prepublish step. This will be when running the `vsce package` command.
+
+
+Example: 
+
+```json
+{
+  "scripts": {
+    "vscode:prepublish": "npm run compile"
+  }
+}
 ```
 
 
