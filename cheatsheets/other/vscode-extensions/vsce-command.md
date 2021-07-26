@@ -32,6 +32,8 @@ $ npm install vsce -g
 
 ## CLI
 
+See [Export and Publish](https://michaelcurrin.github.io/dev-resources/resources/other/vscode-extensions/export-publish.html) in Dev Resources for more info on the CLI.
+
 ### How to run
 
 If installed in your project, run like this:
@@ -84,7 +86,7 @@ Commands:
 
 Run these from the project root.
 
-### List
+### List command
 
 List all file that will be included in your package archive.
 
@@ -112,11 +114,58 @@ If there any unexpected or unnecessary files, be sure to list them in your proje
 
 This runs through all the build/test/pre-publish step but just does not output a file, only printing output.
 
+### Package command
 
-## Notes
+```sh
+$ vsce package
+```
 
-The `.vscodeignore` file determines what gets excluded from the package. The `.vsix` file seems implied and not needed to be listed there. Same for `package-lock.json` and `.vscode` directory.
+Here is how I use it:
 
-But other dot paths like `.github` and `.gitignore` must be listed in the ignore file. You might want to keep the `docs` and `LICENSE` though.
+```json
+{
+  "scripts": {
+    "build": "mkdir -p build && vsce package --out build/",
+  }
+}
+```
 
-The `vscode:prepublish` step is set in `package.json`. This is run as part of `vsce package` command.
+
+## Prepublish
+
+Make sure to define your own prepublish step. This will be when running the `vsce package` command.
+
+
+Example: 
+
+```json
+{
+  "scripts": {
+    "vscode:prepublish": "npm run compile"
+  }
+}
+```
+
+
+## Including and ignoring
+
+What actually needs to be included is:
+
+- `README.md`
+- `LICENSE`
+- assets like images.
+- `out` - built JS files, excluding tests. Note that `src` and TS files must be excluded.
+You should exclude code in `src`.
+
+The `.vscodeignore` file determines what gets excluded from the package. 
+
+These are implied and not needed to be listed there:
+
+- `.vsix`
+- `package-lock.json`
+- `.vscode`
+
+A template project will give you a base for the ignore file.
+
+Note that you do need to explicitly igore dotfiles, such as `.github` or `.github`. 
+
