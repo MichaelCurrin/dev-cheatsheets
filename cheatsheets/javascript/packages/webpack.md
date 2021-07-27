@@ -24,7 +24,7 @@ You can choose to leave that out, like this. In this case, this is a TypeScript 
 module.exports = {
   extensions: [".ts", ".tsx"]
 
-  external: {
+  externals: {
     react: "React",
     "react-dom": "ReactDOM",
   },
@@ -77,7 +77,7 @@ module.exports = {
       },
     ],
   },
-  external: {
+  externals: {
     react: "React",
     "react-dom": "ReactDOM",
   },
