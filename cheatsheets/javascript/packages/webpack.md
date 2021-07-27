@@ -1,6 +1,52 @@
 # Webpack
 
 
+## Build output
+
+### Default
+
+- `package.json`
+    ```json
+    {
+      "scripts": {
+        "build": "webpack"
+      }
+    }
+    ```
+
+That implies:
+
+```
+src/index.js -o dist/main.js
+```
+
+And works for `.tsx` input too.
+
+### Custom input and output
+
+- `package.json`
+    ```json
+    {
+      "scripts": {
+        "build": "webpack src/index.js -o dist/bundle.js"
+      }
+    }
+    ```
+- `wepback.config.js`
+    ```javascript
+    const path = require("path");
+
+    module.exports = {
+      entry: "/src/index.ts",
+      // ...
+      output: {
+        filename: "bundle.js",
+        path: path.resolve(__dirname, "dist"),
+      },
+    };
+    ```
+
+
 ## TypeScript
 
 In the case of bundling your externap packages, you have to still add support for plain `.js` files which are in your dependencies.
