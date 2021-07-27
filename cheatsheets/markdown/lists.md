@@ -268,3 +268,39 @@ Not that you can't have a table span multiple bullet points. So these are bullet
 
 - abc | def
   def | ghj
+
+
+## Images in lists
+
+Note that HTML gives you more control like resizing the image, but you can use HTML or Markdown for the image.
+
+### Same line
+
+```markdown
+- My text <img src="abc.png">
+```
+
+### Indent
+
+Add 4 (or 2) spaces to indent an image under a bullet point, without making another bullet point.
+
+As HTML
+
+```markdown
+- My text
+    <img src="abc.png">
+```
+
+This works with text too. At least in a PR description. In GitHub directly, it wraps to one line.
+
+```markdown
+- My text
+    More text
+    Yet more text
+        Another level
+```
+
+- My text
+    More text
+    Yet more text
+        Another level
