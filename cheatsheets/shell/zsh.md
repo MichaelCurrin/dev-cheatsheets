@@ -50,3 +50,5 @@ You can override those in your own config.
 ```sh
 unsetopt share_history
 ```
+
+Warning - the `history.sh` file gets loaded _after_ your `~/.zshrc` file.
