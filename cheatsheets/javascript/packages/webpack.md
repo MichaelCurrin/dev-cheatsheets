@@ -17,18 +17,22 @@
 That implies:
 
 ```
-src/index.js -o dist/main.js
+./src/index.js -o dist
 ```
+
+Note the dot-slash is required in the first path or you'll ge an error.
 
 And works for `.tsx` input too.
 
 ### Custom input and output
 
+Note that the outpath option is a directory - if you give it a filename, you'll end up with a directory named `index.js/`.
+
 - `package.json`
     ```json
     {
       "scripts": {
-        "build": "webpack src/index.js -o dist/bundle.js"
+        "build": "webpack ./src/main.js -o out/"
       }
     }
     ```
@@ -38,7 +42,9 @@ And works for `.tsx` input too.
 
     module.exports = {
       entry: "/src/index.ts",
+      
       // ...
+      
       output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, "dist"),
