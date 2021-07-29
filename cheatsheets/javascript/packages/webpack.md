@@ -1,7 +1,55 @@
 # Webpack
 
+See [Webpack CLI](https://webpack.js.org/api/cli/) docs.
 
-## Build output
+
+## Usage
+
+### Help
+
+Using `webpack` or `webpack-cli` gives the result here.
+
+```sh
+$ npx webpack -h    
+```
+
+```
+Usage: webpack [entries...] [options]
+Alternative usage to run commands: webpack [command] [options]
+
+The build tool for modern web applications.
+
+Options:
+  -c, --config <value...>                Provide path to a webpack configuration file e.g.
+                                         ./webpack.config.js.
+  --config-name <value...>               Name of the configuration to use.
+  -m, --merge                            Merge two or more configurations using 'webpack-merge'.
+...
+```
+
+
+## Initialize a project
+
+```sh
+$ webpack init
+```
+
+Note you'll be prompted to install a Webpack generatore package if you don't have it installed.
+
+## Build
+
+```sh
+$ webpack
+```
+
+OR
+
+```sh
+$ webpack build
+$ webpack bundle
+```
+
+## Set build input and output
 
 ### Default
 
