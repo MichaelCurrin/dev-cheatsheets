@@ -40,7 +40,7 @@ $(window).load(() => 'window loaded')
     > A different event, `load`, should be used only to detect a fully-loaded page. It is a common mistake to use load where DOMContentLoaded would be more appropriate.
 
 
-e.g.
+e.g. Using an arrow functions.
 
 ```javascript
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 ```
 
-If you need access to `this`, then don't use an arrow function.
+If you need access to `this`, then use a plain `function` instead.
 
 ```javascript
 window.addEventListener('DOMContentLoaded', function(event) {
