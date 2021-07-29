@@ -13,7 +13,10 @@ Be careful - you'll override multiple events set up with the assignment approach
 ```javascript
 document.ready = () => console.log('document ready')
 
-window.addEventListener('DOMContentLoaded', () => console.log('DOM content loaded'))
+window.addEventListener(
+  'DOMContentLoaded', 
+  () => console.log('DOM content loaded')
+)
 
 window.onload = () => console.log('window loaded')
 ```
@@ -102,4 +105,21 @@ document.addEventListener('readystatechange', (event) => {
   console.log(event)
   console.log(document.readyState)
 });
+```
+
+## DOM ready
+
+Check if DOM is available. 
+
+- If it loaded already, you can't wait for DOM content loaded. So just wait 1 millsecond (I don't know why from the code snippet this is based on) and fire the function.
+- If it isn't, then it is still coming, so add  afunction to DOM content loaded event.
+
+```javascript
+function domReady(fn) {
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    setTimeout(fn, 1);
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
 ```
