@@ -13,6 +13,14 @@ el {
 }
 ```
 
+Or
+
+```css
+el {
+  flex: 25%;
+}
+```
+
 Values:
 
 - `flex-grow flex-shrink flex-basis|auto|initial|inherit`
@@ -40,6 +48,8 @@ Values:
 ```
 
 The media query is for a responsive layout - makes a one column layout (100%) instead of a two-column layout (50%).
+
+Though I think the idea with flexbox is that is responds to the device automatically so you don't have to set a breakpoint yourself.
 
 
 ## Align
