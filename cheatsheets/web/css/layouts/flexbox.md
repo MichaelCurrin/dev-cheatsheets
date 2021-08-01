@@ -36,13 +36,14 @@ Values:
   flex: 50%;
 }
 
-/* Responsive layout - makes a one column layout (100%) instead of a two-column layout (50%) */
 @media (max-width: 800px) {
   .flex-item-right, .flex-item-left {
     flex: 100%;
   }
 }
 ```
+
+The media query is for a responsive layout - makes a one column layout (100%) instead of a two-column layout (50%).
 
 
 ## Align
