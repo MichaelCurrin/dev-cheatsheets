@@ -73,7 +73,7 @@ Summary from [flexbox froggy](https://flexboxfroggy.com/).
 ```css
 #pond {
   display: flex;
-justify-content: flex-end
+  justify-content: flex-end;
 }
 ```
 
