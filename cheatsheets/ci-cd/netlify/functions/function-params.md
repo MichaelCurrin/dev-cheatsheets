@@ -3,21 +3,31 @@
 ## Event only
 
 ```javascript
-function handler(event) {
+exports.handler = function (event) {
   return {
     statusCode: 200,
     body: "Hello, World!",
   }
 }
-
-exports.handler = handler
 ```
 
 
-## Context and callback
+## Context
 
 ```javascript
-function handler (event, context, callback) {
+exports.handler = function (event) {
+  return {
+    statusCode: 200,
+    body: "Hello, World! ${JSON.stringify(context)}",
+  }
+}
+```
+
+
+## Callback
+
+```javascript
+exports.handler =  unction (event, context, callback) {
   callback(null, {
     statusCode: 200,
     body: "Hello, World!"
