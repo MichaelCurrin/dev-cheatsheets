@@ -28,16 +28,12 @@ Values:
   flex-wrap: wrap;
 }
 
-.flex-item-left {
-  flex: 50%;
-}
-
-.flex-item-right {
+.flex-item {
   flex: 50%;
 }
 
 @media (max-width: 800px) {
-  .flex-item-right, .flex-item-left {
+  .flex-item {
     flex: 100%;
   }
 }
