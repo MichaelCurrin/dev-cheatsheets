@@ -64,7 +64,7 @@ bar
 bar
 ```
 
-### Passas  environment variable
+### Pass as environment variable
 
 ```sh
 $ FOO=bar make foo
@@ -89,6 +89,43 @@ bar
 bar
 bar
 ```
+
+
+## Validate
+
+Check that a variable is set.
+
+Add an `if` statement with a help message and exit command.
+
+e.g. Here using [Python Docker container](https://michaelcurrin.github.io/code-cookbook/recipes/containers/python.html) as a drop-in placement for the `python` command.
+
+```Makefile
+python:
+	if [[ "$(SCRIPT_PATH)" == '' ]]; then echo 'required param: SCRIPT_PATH'; exit 1; fi
+
+	docker run -it --rm \
+		--name my-python-app \
+		-v "$(PWD):/usr/src/myapp" \
+		-w /usr/src/myapp \
+		python:3.9 \
+		python $(SCRIPT_PATH)
+        
+greet:
+    $(MAKE) python SCRIPT_PATH='hello.py'
+```
+
+Run as:
+
+```sh
+$ make python SCRIPT_PATH='hello.py
+```
+
+Or with a hardcoded value:
+
+```sh
+$ make greet
+```
+
 
 ## Rename variable
 
