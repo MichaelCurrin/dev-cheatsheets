@@ -5,7 +5,14 @@ Fields on the `event` object.
 - `event.path`
     - The request path. 
     - e.g. `/.netlify/functions/abc`.
-    - e.g. `/.netlify/functions/abc/def.json` if you want to extract `def.json` from the URL on the ABC Function.
+    - e.g. Requesting the ABC function with `/.netlify/functions/abc/def.json`
+        ```javascript
+        event.path
+        // "/.netlify/functions/abc/def.json"
+        
+        const name = event.path.split("/")[4];
+        // "def.json"
+        ```
 - `event.httpMethod` the request HTTP method e.g. `"GET"`.
 - `event.headers` the request headers
 - `event.queryStringParameters`
