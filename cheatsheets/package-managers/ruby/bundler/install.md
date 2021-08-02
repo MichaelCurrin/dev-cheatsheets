@@ -13,6 +13,12 @@ $ # Equivalent but less clear.
 $ bundle
 ```
 
+Install using parallel processing for faster performance.
+
+```sh
+$ bundle install --jobs=8
+```
+
 Check paths of installed gems.
 
 ```sh
@@ -121,3 +127,6 @@ group :jekyll_plugins do
   # Other plugins...
 end
 ```
+
+
+
