@@ -121,6 +121,18 @@ $ git commit themes/ananke
 ```
 
 
+## Reset
+
+```sh
+$ git submodule update --checkout
+```
+
+```sh
+$ git submodule update --force
+```
+
+I don't know how to delete 
+
 ## Get submodule content
 
 Assuming you have repo on GitHub that has at least one submodule, you want to clone it somewhere (maybe in another local location to test it) or on another machine or in CI.
