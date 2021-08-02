@@ -1,6 +1,6 @@
 ---
-title: Recover
-description: Bring back a branch you accidentally deleted and never pushed.
+title: Recover branch
+description: Bring back a branch you accidentally deleted and never pushed
 ---
 
 Git keeps a history of your actions and even keeps commits which you thought were deleted when a branch was deleted. Though, these can get cleaned up by Git automatically, or with `git gc` I think to run clean.
