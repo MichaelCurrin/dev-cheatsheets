@@ -1,6 +1,7 @@
 # Run containers
 > How to use `run`, `start` and `exec` subcommands against a container
 
+
 ## Links
 
 - Docker CLI reference:
@@ -8,6 +9,33 @@
 	- [exec](https://docs.docker.com/engine/reference/commandline/exec/)
 		> The `docker exec` command runs a new command in a running container.
 - [What is the different between “run” and “exec”](https://chankongching.wordpress.com/2017/03/17/docker-what-is-the-different-between-run-and-exec/)
+
+
+## Overview
+
+
+- Start an existing container.
+    ```sh
+    $ docker start my-app
+    ```
+- Access the container's system.
+    ```sh
+    $ docker exec -it my-app bash
+    ```
+- Run a container. Use `--rm` to delete it.
+    ```sh
+    $ docker run \
+        --rm \
+        --name my-app \
+        -p 3000:3000 \
+        -d \
+        --init \
+        my-node-img
+    ```
+- Attach to a container (not recommended).
+    ```sh
+    $ docker attach my-app
+    ```
 
 
 ## Run in new container
