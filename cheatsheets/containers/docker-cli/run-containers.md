@@ -32,10 +32,6 @@
         --init \
         my-node-img
     ```
-- Attach to a container (not recommended).
-    ```sh
-    $ docker attach my-app
-    ```
 
 
 ## Run in new container
@@ -145,3 +141,18 @@ Note that flags must come _before_ the app name.
 ```sh
 $ docker run -it --entrypoint bash my-app 
 ```
+
+
+## Avoid
+
+- Create - I don't think I've ever had to run `create`.
+    ```sh
+    $ docker create --init \
+        --name my-app \
+        -p 3000:3000 \
+        my-node-img
+    ```
+- Attach to a container (not recommended).
+    ```sh
+    $ docker attach my-app
+    ```
