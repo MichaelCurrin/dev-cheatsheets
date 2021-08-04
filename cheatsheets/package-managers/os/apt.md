@@ -1,7 +1,7 @@
 ---
+title: apt
 description: The OS package manager for Debian- and Ubuntu-based Linux systems
 ---
-# APT
 
 
 See [APT manpage](https://manpages.ubuntu.com/manpages/trusty/man8/apt.8.html) on Ubuntu docs.
