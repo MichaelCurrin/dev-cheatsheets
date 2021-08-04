@@ -31,6 +31,9 @@ You might install it globally and use it as:
 
 ```sh
 $ prettier -w .
+```
+
+```sh
 $ prettier -c .
 ```
 
@@ -38,6 +41,9 @@ Or you might install it in a project and set it up as an NPM script. So you can 
 
 ```sh
 $ npm run fmt:check
+```
+
+```sh
 $ npm run fmt:fix
 ```
 
