@@ -200,22 +200,28 @@ Set a peer dependency.
 
 Specify the version of Node that your code works on:
 
-e.g.
 
 ```json
 {
   "engines": {
-    "node": ">=0.10.3 <15"
+    "node": "VERSION"
   }
 }
 ```
+
+Example values:
+
+- Min `">=16"`
+- Min `>=0.10.3`
+- Range `">=0.10.3 <15"`
+- Compat `~=0.10.3`
 
 #### NPM version
 
 ```json
 {
   "engines": {
-    "npm": "~1.0.20"
+    "npm": "VERSION"
   }
 }
 ```
