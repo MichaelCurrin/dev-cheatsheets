@@ -46,3 +46,13 @@ See [/src/test/](https://github.com/MichaelCurrin/auto-commit-msg/tree/master/sr
 ### Jest
 
 See [/tests/unit/](https://github.com/MichaelCurrin/badge-generator/tree/master/tests/unit) in `badge-generator`, a Vue application.
+
+The default to run interactive test mode - you get prompted which tests you want to run.
+
+If use`--watchAll` flag, then the tests will rerun on changes and stay in interactive mode.
+
+For builds and CI, use the `--watchAll=false` flag. The `react-scripts` package uses Jest internally so this used as an example.
+
+```sh
+$ react-scripts test --env=jsdom --watchAll=false
+```
