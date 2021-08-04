@@ -37,7 +37,6 @@ The first half of the fields are useful for most projects.
         // ...
       },
 
-      // Even if not using NPM to publish, you'll get a warning if you omit this field so include it.
       "license": "MIT"
      }
     ```
@@ -222,6 +221,29 @@ Example values:
 {
   "engines": {
     "npm": "VERSION"
+  }
+}
+```
+
+### License
+
+Even if not using NPM to publish, you'll get a warning if you omit this field so include it.
+
+### Basic
+
+```json
+{
+  "license":  "MIT"
+}
+```
+
+### Link
+
+```json
+{
+  "license": {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/mit-license.php"
   }
 }
 ```
