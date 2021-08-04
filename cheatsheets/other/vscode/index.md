@@ -1,10 +1,10 @@
 ---
+title: VS Code
 logo: visualstudiocode
 ---
-# VS Code
 
 
-## Emmet
+### Emmet
 
 See [Emmet](https://docs.emmet.io/) homepage.
 
