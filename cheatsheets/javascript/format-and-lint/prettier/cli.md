@@ -30,13 +30,15 @@ I can't seem to override this behavior except just to just not run against Markd
 You might install it globally and use it as:
 
 ```sh
-$ prettier .
+$ prettier -w .
+$ prettier -c .
 ```
 
 Or you might install it in a project and set it up as an NPM script. So you can run it as:
 
 ```sh
-$ npm run fmt
+$ npm run fmt:check
+$ npm run fmt:fix
 ```
 
 
@@ -157,7 +159,6 @@ Flag | Description
 
 See [Examples](#examples) below for sample output for some of these.
 
-
 ### Options
 
 Change rules for how Prettier formats files.
@@ -191,9 +192,9 @@ $ prettier --no-semi --single-quote .
 
 ### Default
 
-The default behavior will recommended changes. 
+The default behavior will recommended formatting changes - printing them to the console only.
 
-This may be very long so is not recommended for CI flows. Especially since this prints the _whole_ file and not just the lines to change. Also you might want to run this on a file instead of a directory, to keep the output short.
+This may be _very long_ so is not good for CI flows. Especially since this prints the _whole_ file and not just the lines to change. Also you might want to run this on a file instead of a directory, to keep the output short.
 
 ```sh
 $ prettier main.js
@@ -223,6 +224,8 @@ Set log level to see only errors for example. In this case, there is no output.
 ```sh
 $ prettier -c --loglevel error .
 ```
+
+Make sure not to use `-c` and `-w` together!
 
 ### List
 
