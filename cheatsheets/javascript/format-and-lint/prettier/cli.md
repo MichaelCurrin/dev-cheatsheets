@@ -36,7 +36,7 @@ $ prettier .
 Or you might install it in a project and set it up as an NPM script. So you can run it as:
 
 ```sh
-$ npm run format
+$ npm run fmt
 ```
 
 
