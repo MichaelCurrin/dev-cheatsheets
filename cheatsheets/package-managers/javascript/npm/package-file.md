@@ -164,6 +164,20 @@ Either of these are fine as `"author"` values, according to the docs.
 }
 ```
 
+### Type
+
+If using ES Modules, set this:
+
+```json
+{
+  "type": "module"
+}
+```
+
+Or name your files `.mjs`.
+
+The default is `"commonjs"`.
+
 ### Dependencies
 
 **Sample**
