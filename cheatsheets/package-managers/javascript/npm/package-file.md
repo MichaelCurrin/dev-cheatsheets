@@ -102,7 +102,7 @@ Some suggested script commands.
 
 ```json
 {
-  "scripts" {
+  "scripts": {
     "lint:fix": "",
     "lint:check": "",
     "fmt:fix": "",
@@ -187,6 +187,35 @@ Set a peer dependency.
 {
   "peerDependencies": {
     // ...
+  }
+}
+```
+
+### Engines
+> Setting the `engines` field
+
+> Unless the user has set the `engine-strict` config flag, this field is **advisory** only. It will only produce **warnings** when your package is installed as a dependency.
+
+#### Node version
+
+Specify the version of Node that your code works on:
+
+e.g.
+
+```json
+{
+  "engines": {
+    "node": ">=0.10.3 <15"
+  }
+}
+```
+
+#### NPM version
+
+```json
+{
+  "engines": {
+    "npm": "~1.0.20"
   }
 }
 ```
