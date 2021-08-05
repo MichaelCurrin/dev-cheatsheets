@@ -34,3 +34,20 @@ error: Can't determine which types to install with no files to check (and no cac
 ```
 
 So it looks like you need to run Mypy first and then install missing types. I don't know how to work this into a CI flow.
+
+
+## Install by name
+
+
+```sh
+$ pip install types-requests
+```
+
+Based on:
+
+```
+Library stubs not installed for "requests" (or incompatible with Python 3.9)
+...:13: note: Hint: "python3 -m pip install types-requests"
+...:13: note: (or run "mypy --install-types" to install all missing stub packages)
+...:13: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+```
