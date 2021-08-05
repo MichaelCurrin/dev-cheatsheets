@@ -77,7 +77,7 @@ Result:
 <a href="/my-base-url/about.html">Link text</a>
 ```
 
-You can pass a variable too, such as when using a `for` loop.
+I think you can pass a variable too, such as when using a `for` loop. Maybe only in Jekyll 4?
 
 ```markdown
 [Link text]({% link {{ item.url }} %})
