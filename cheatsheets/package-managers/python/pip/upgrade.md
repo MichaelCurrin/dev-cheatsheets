@@ -33,6 +33,12 @@ $ pip install foo -U
 
 You might get a message that requirements are already satisfied, so use [Force](#force) below.
 
+### Virtual env note
+
+If you have a globally-installed version (e.g. `/usr/local/bin/mypy`) and upgrade the version in your virtual environment, the local one will be appear missing when you try to run it and the global one will be used. 
+
+So make sure to reactivate your virtual environment to pick up the local one again. I had this issue before.
+
 
 ## Force
 
