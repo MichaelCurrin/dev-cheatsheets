@@ -10,7 +10,7 @@ These can be installed like this.
 ## Interactive
 
 ```sh
-$	mypy --install-types --non-interactive
+$ mypy --install-types --non-interactive
 ```
 
 Then you have to enter <kbd>y</kbd> and press <kbd>Enter</kbd>.
@@ -21,5 +21,16 @@ Then you have to enter <kbd>y</kbd> and press <kbd>Enter</kbd>.
 Or simply do this:
 
 ```sh
-$	mypy --install-types --non-interactive
+$ mypy --install-types --non-interactive
 ```
+
+
+## Error
+
+You might get an error on the first run of the install.
+
+```
+error: Can't determine which types to install with no files to check (and no cache from previous mypy run)
+```
+
+So it looks like you need to run Mypy first and then install missing types. I don't know how to work this into a CI flow.
