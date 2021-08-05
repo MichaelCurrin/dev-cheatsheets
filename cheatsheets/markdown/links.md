@@ -194,3 +194,18 @@ Here is my [Homepage].
 And here is my [Homepage] again.
 
 [Homepage]: https://michaelcurrin.github.io/
+
+
+## HTML in links
+
+```md
+[<img src="abc.png" width="100px"/>](https://example.com)
+```
+
+Or
+
+```md
+[<img src="abc.png" width="100px"/>][hello-world]
+
+[hello-world]: https://example.com
+```
