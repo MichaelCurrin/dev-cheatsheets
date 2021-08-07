@@ -1,21 +1,32 @@
 # Conditional
 
 
-## if
+## Shell if
 
-Using `@if`. This can be used as a check used in other commands.
+Using `if`, identical to the Bash `if` except you have add backslash escapes across multiple lines.
+
+This can be used as a check used in other commands.
+
+Optionally use `@` to make it quiet.
 
 ```mk
 foo:
 	@if [ -z $(FOO) ]; then \
-		echo "FOOOOO must be set; export FOO=<foo>"; exit 10;
+		echo "FOO must be set. Use `export FOO=<foo>`"; \
+		exit 1;
 	fi
+```
+
+## One line if
+
+```mk
+BUZZ := $(if $(FOO), 'abc', $(FIZZ))
 ```
 
 
 ## ifneq
 
-Using `ifneq`. Note lack of indentation.
+If an expression match is false evaluate the block.
 
 ```makefile
 foo:
@@ -26,7 +37,7 @@ endif
 ```
 
 
-## ifdef and ifndef
+## If defined
 
 ```mk
 ifndef FOO
