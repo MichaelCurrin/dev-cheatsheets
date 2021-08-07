@@ -18,8 +18,21 @@ JS_DIR = assets/js
 
 You don't need quotes around multiple words.
 
+You can define a value referencing another variable, including user input.
+
+```mk
+FOO = abc
+BAR = $(FOO)
+```
+
+Evaluating works above without colon unlike next section.
+
 
 ## Evaluation
+
+Note colon and equals sign here.
+
+### shell
 
 Using `:= $(shell ...)` syntax:
 
@@ -28,11 +41,15 @@ hash := $(shell printf '\043')
 var := $(shell find . -name "*.c")
 ```
 
+### if 
+
 Using a Make `if` statement.
 
 ```mk
 BUZZ := $(if $(FOO), 'abc', $(FIZZ))
 ```
+
+### not equal 
 
 Using `!= ...` syntax:
 
