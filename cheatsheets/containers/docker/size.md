@@ -15,7 +15,9 @@ You get a summary of your Docker usage including things like:
 - And the cache.
 
 
-## Measuring image size
+## Measuring image size on disk
+
+Based on [article](https://semaphoreci.com/blog/2018/03/14/docker-image-size.html).
 
 An image might have a total size of 1GB.
 
