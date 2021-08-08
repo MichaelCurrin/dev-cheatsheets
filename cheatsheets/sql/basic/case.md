@@ -14,6 +14,23 @@ CASE
 END; 
 ```
 
+Your condition might be something like
+
+```
+quantity = 0
+```
+```
+quantity > 30
+```
+
+Or, for a boolean, simply the variable name.
+
+```
+enabled
+// i.e.
+enabled IS TRUE
+```
+
 
 ## Example
 
