@@ -11,6 +11,12 @@ From [Getting Started](https://create-react-app.dev/docs/getting-started) page.
 $ npx create-react-app my-app 
 ```
 
+Or 
+
+```sh
+$ yarn create react-app my-app
+```
+
 
 ## TypeScript
 
