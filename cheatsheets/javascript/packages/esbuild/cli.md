@@ -4,9 +4,54 @@ title: CLI
 description: Recommended commands to run for the CLI tool
 ---
 
-## Minify only
+How to minify, bundle, or do both.
 
-To minify an already bundled JS script.
+## Output
+
+The commands here just print to stdout, so you need to write to a file or use `--outfile` or `--outdir` flags.
+
+
+## Basic
+
+If you use no flags, you get the script exactly as is, without pulling in imports or minifying.
+
+```sh
+$ esbuild src/index.js
+```
+
+            
+## Bundle
+
+Load an entry-point and pull in dependencies from local imports and external modules.
+
+```sh
+$ esbuild --bundle \
+    main.js
+```
+
+Note `--bundle PATH` is the same as just using `PATH`. 
+
+Example NPM usage from the docs.
+
+You could set this as `build` command in `Makefile` or in `package.json` scripts.
+
+```sh
+$ esbuild --bundle \
+    --outfile=out.js \
+    app.jsx 
+```
+
+
+
+## Minify
+
+Minify some JS scripts.
+
+```sh
+$ esbuild --minify foo.js bar.js
+```
+
+Minify an already bundled JS script.
 
 ```sh
 $ esbuild --minify bundle.js
@@ -16,20 +61,24 @@ You could set this as `minify` command in `Makefile` or in `package.json` script
 
 Using `build` directory.
 
-### Without changing directory
+### Without changing directory first
 
 Note `--outfile` does actually need the equals sign.
 
 ```sh
-$ esbuild build/bundle.js --outfile=build/bundle.min.js --minify --sourcemap
+$ esbuild \
+    --outfile=build/bundle.min.js \
+    --minify \
+    --sourcemap \
+    build/bundle.js 
 ```
 
-### With changing directory
+### With changing directory first
 
 Read and write on given paths.
 
 ```sh    
-$ cd build && esbuild --minify bundle.js --outfile=bundle.min.js
+$ cd build && esbuild --minify --outfile=bundle.min.js bundle.js 
 ```
 
 Use `stdin` to read and `stdout` to write.
@@ -44,26 +93,6 @@ Wrapped on multiple lines.
 $ cat build/bundle.js \
   | npx esbuild --minify \
   > build/bundle.min.js
-```
-
-            
-## Bundle only
-
-```sh
-$ esbuild --bundle \
-    main.js
-```
-
-Note `--bundle PATH` is the same as just using `PATH`. And 
-
-Example NPM usage from the docs.
-
-You could set this as `build` command in `Makefile` or in `package.json` scripts.
-
-```sh
-$ esbuild --bundle \
-    --outfile=out.js \
-    app.jsx 
 ```
 
 
