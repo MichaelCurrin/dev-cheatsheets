@@ -6,7 +6,7 @@ description: How to use ESBuild in a Deno project
 
 ## Script
 
-From the [docs](https://esbuild.github.io/getting-started/#deno).
+From the [Deno](https://esbuild.github.io/getting-started/#deno) section of the Getting Started docs.
 
 - `build.ts`
     ```typescript
@@ -29,6 +29,6 @@ Note that the CLI tool is not available for use as a Deno package.
 
 But you can install a binary using cURL and then use the package in the CLI, without needing Node or NPM.
 
-See the [Download a binary][].
+See the [Install][] page's section on _Download a binary_.
 
-[Download a binary]: {{ site.baseurl }}{% cheatsheets/javascript/packages/esbuild/install.md#download-a-binary %}
+[Install]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/esbuild/install.md %}
