@@ -27,3 +27,8 @@ Then run your script in the CLI.
 
 Note that the CLI tool is not available for use as a Deno package.
 
+But you can install a binary using cURL and then use the package in the CLI, without needing Node or NPM.
+
+See the [Download a binary][].
+
+[Download a binary]: {{ site.baseurl }}{% cheatsheets/javascript/packages/esbuild/install.md#download-a-binary %}
