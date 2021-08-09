@@ -50,7 +50,8 @@ $ cat build/bundle.js \
 ## Bundle only
 
 ```sh
-$ esbuild --bundle main.js
+$ esbuild --bundle \
+    main.js
 ```
 
 Note `--bundle PATH` is the same as just using `PATH`. And 
@@ -60,7 +61,9 @@ Example NPM usage from the docs.
 You could set this as `build` command in `Makefile` or in `package.json` scripts.
 
 ```sh
-$ esbuild app.jsx --bundle --outfile=out.js
+$ esbuild --bundle \
+    --outfile=out.js \
+    app.jsx 
 ```
 
 
@@ -72,9 +75,9 @@ From the CLI help.
 
 ```sh
 $ esbuild --bundle \
-    entry_point.js \
     --outdir=dist \
-    --minify --sourcemap
+    --minify \ --sourcemap \
+     entry_point.js
 ```
 
 Produces:
@@ -85,7 +88,7 @@ Produces:
 You can easily a TSX file.
 
 ```sh
-$ esbuild src/index.tsx --outfile=dist/main.js
+$ esbuild --outfile=dist/main.js src/index.tsx 
 ```
 
 
