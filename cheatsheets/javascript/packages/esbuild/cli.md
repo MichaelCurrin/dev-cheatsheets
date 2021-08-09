@@ -24,6 +24,19 @@ If you use no flags, you get the script exactly as is, without pulling in import
 $ esbuild src/index.js
 ```
 
+
+## Source map
+
+The `.js.map` file includes content like this:
+
+```
+{
+  "version": 3,
+  "sources": ["../node_modules/lodash/lodash.js", "../src/external-imports.js", "../src/index.js"],
+  "sourcesContent": ["/**\n * @license\n * Lodash <https://lodash.com/>\n * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>\n * Released under MIT license <https://lodash.com/license>\n
+  ...
+```
+
             
 ## Bundle
 
@@ -56,10 +69,10 @@ Minify some JS scripts.
 $ esbuild --minify foo.js bar.js
 ```
 
-Minify an already bundled JS script.
+Minify an already-bundled JS script. You'll probably want to add `--sourcemap` here plus also when you generate the bundled file.
 
 ```sh
-$ esbuild --minify bundle.js
+$ esbuild --minify --outfile=bundle.min.js bundle.js
 ```
 
 You could set this as `minify` command in `Makefile` or in `package.json` scripts.
@@ -97,23 +110,23 @@ $ esbuild --minify < bundle.js > bundle.min.js
 
 ## Bundle and minify
 
-Taking multiple JS files into one bundled, minified file.
+Take multiple JS files into one bundled, minified file.
 
-From the CLI help.
+Based on the CLI help.
 
 ```sh
-$ esbuild --bundle \
+$ esbuild --minify --bundle \
+    --sourcemap \
     --outdir=dist \
-    --minify \ --sourcemap \
-     entry_point.js
+    main.js
 ```
 
-Produces:
+That produces:
 
-- `dist/entry_point.js`
-- `dist/entry_point.js.map`
+- `dist/main.js`
+- `dist/main.js.map`
 
-You can easily a TSX file.
+You can also use a TSX file.
 
 ```sh
 $ esbuild --outfile=dist/main.js src/index.tsx 
