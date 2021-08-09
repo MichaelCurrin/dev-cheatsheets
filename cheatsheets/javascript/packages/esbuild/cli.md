@@ -6,9 +6,14 @@ description: Recommended commands to run for the CLI tool
 
 How to minify, bundle, or do both.
 
+You can use the flags in any order, before or after a target path. But for consistency, I've put the path last.
+
+
 ## Output
 
-The commands here just print to stdout, so you need to write to a file or use `--outfile` or `--outdir` flags.
+The basic commands will just print to stdout.
+
+So you need to write to a file using `>`. Or use `--outfile` or `--outdir` flags.
 
 
 ## Basic
@@ -78,21 +83,15 @@ $ esbuild \
 Read and write on given paths.
 
 ```sh    
-$ cd build && esbuild --minify --outfile=bundle.min.js bundle.js 
+$ cd build
+$ esbuild --minify --outfile=bundle.min.js bundle.js 
 ```
 
 Use `stdin` to read and `stdout` to write.
 
 ```sh
-$ cd build && esbuild --minify < bundle.js > bundle.min.js
-```
-
-Wrapped on multiple lines.
-
-```sh
-$ cat build/bundle.js \
-  | npx esbuild --minify \
-  > build/bundle.min.js
+$ cd build
+$ esbuild --minify < bundle.js > bundle.min.js
 ```
 
 
@@ -118,6 +117,17 @@ You can easily a TSX file.
 
 ```sh
 $ esbuild --outfile=dist/main.js src/index.tsx 
+```
+
+
+## Read
+
+You can omit a target path if you use send text on stdin.
+
+```sh
+$ cat build/bundle.js \
+  | npx esbuild --minify \
+  > build/bundle.min.js
 ```
 
 
