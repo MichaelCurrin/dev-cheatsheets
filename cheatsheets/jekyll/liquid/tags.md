@@ -27,4 +27,16 @@ Use a variable instead:
 <img src="{% link {{ img_src }} %}" />
 ```
 
+Maybe not for link tag or Jekyll 3?
+
+It works at least for `include` tag. Based on Jekyll's own [tests](https://github.com/jekyll/jekyll/blob/master/test/source/_posts/2013-12-17-include-variable-filters.markdown).
+
+```liquid
+{% include {{ page.abc }} %}
+
+{% include {{ page.abc | append: '.html' }} %} 
+
+{% include {{ page.abc }}.html a='b' def=1 %} 
+```
+
 {% endraw %}
