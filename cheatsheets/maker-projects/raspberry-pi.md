@@ -20,3 +20,13 @@ For the IO, you can use any of the following GPIO numbers:
 - `16`
 - `18`
 - `22`
+
+
+## Go compile for Pi
+
+From [article](https://www.thepolyglotdeveloper.com/2017/04/cross-compiling-golang-applications-raspberry-pi/).
+
+```sh
+$ GOOS=linux GOARCH=arm GOARM=5 \
+  go build
+```
