@@ -126,12 +126,6 @@ That produces:
 - `dist/main.js`
 - `dist/main.js.map`
 
-You can also use a TSX file.
-
-```sh
-$ esbuild --outfile=dist/main.js src/index.tsx 
-```
-
 
 ## Read
 
