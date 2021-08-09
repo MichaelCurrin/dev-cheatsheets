@@ -146,8 +146,10 @@ $ cat build/bundle.js \
 
 ## Production build
 
-- [Getting Started](https://esbuild.github.io/getting-started/) docs recommend setting a production environment, to avoid errors when using `process.env` in the browser. It says this can happen in React.
+To avoid errors when using `process.env` in the browser. This is relevant in React.
 
 ```sh
 --define:'process.env.NODE_ENV="production"'
 ```
+
+Based on [Getting Started](https://esbuild.github.io/getting-started/) docs which recommend setting a production environment.
