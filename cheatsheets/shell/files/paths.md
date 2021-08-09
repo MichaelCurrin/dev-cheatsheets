@@ -95,28 +95,12 @@ Note that getting the current directory with [pwd](#working-directory) will give
 
 ### File path
 
-
 The path to a script from within a script. Note that `$0`is the relative path to current script and the working directory will be prepended to it.
 
 ```sh
 realpath $0
 
 SCRIPT_PATH=$(realpath $0)
-```
-
-
-#### Fallback
-
-If you can't use `realpath` for some reason, use this:
-
-```sh
-SCRIPT_FILEPATH="$(
-  cd "$(dirname "$0")" >/dev/null 2>&1
-  pwd -P
-)"
-
-# Equivalent - a shell linter wraps it over multiple lines.
-SCRIPT_FILEPATH="$(cd "$(dirname "$0")" >/dev/null 2>&1; pwd -P)"
 ```
 
 For script `~/foo/bar.sh`, printing that variable:
@@ -144,4 +128,13 @@ To resolve symlinks:
 dirname $(realpath $0)
 
 SCRIPT_DIR=$(dirname $(realpath $0))
+```
+
+Another approach to resolve symlinks, without `realpath`.
+
+```sh
+SCRIPT_DIR="$(
+  cd "$(dirname "$0")" >/dev/null 2>&1
+  pwd -P
+)"
 ```
