@@ -1,17 +1,5 @@
 # Help
 
-## Overview
-
-Summary of my typical use of this tool:
-
-- I point this a single JS entrypoint of my app. Then all imports (both my own modules and installed modules) will get used in the output.
-- I usually use `--minify` as I like the speed and ease of this as a minifier tool.
-- If I want to bundle, I'll use `--bundle` flag. For use with Deno, I prefer `deno bundle` (including TS etc. support) and then run `esbuild --minify` on that.
-- It's best to always make the [source map][] output file. If you serve this with your app, then it makes debugging easier as your browser will look for the source map - allow you to see what original code looked like.
-- If you omit the `--bundle` flag and rather use `--minify` flag and give multiple scripts as paths, then I think you'll created multiple separate minified files. And you can change where they go using `--outdir`.
-
-[source map]: https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map
-
 ## Usage
 
 ```
@@ -46,3 +34,27 @@ Flag | Description
 `--serve=...`         |  Start a local HTTP server on this host:port for outputs
 `--watch`             |  Watch mode: rebuild on file system changes
 
+
+## Examples
+
+From the CLI help.
+
+```
+# Produces dist/entry_point.js and dist/entry_point.js.map
+esbuild --bundle entry_point.js --outdir=dist --minify --sourcemap
+
+# Allow JSX syntax in .js files
+esbuild --bundle entry_point.js --outfile=out.js --loader:.js=jsx
+
+# Substitute the identifier RELEASE for the literal true
+esbuild example.js --outfile=out.js --define:RELEASE=true
+
+# Provide input via stdin, get output via stdout
+esbuild --minify --loader=ts < input.ts > output.js
+
+# Automatically rebuild when input files are changed
+esbuild app.ts --bundle --watch
+
+# Start a local HTTP server for everything in "www"
+esbuild app.ts --bundle --servedir=www --outdir=www/js
+```
