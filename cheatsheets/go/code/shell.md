@@ -5,9 +5,9 @@ description: Execute a shell command within a Go script
 
 Set up a shell command as a string and run it. You could run a shell command like `date` or even access programming language CLI tool like `python` or `node`.
 
-This is using the `exec` builtin module. Similar using the `subprocess` module in Python.
+This is using the `exec` builtin module. Similar to using the `subprocess` module in Python.
 
-- [exec](https://golang.org/pkg/os/exec/) in Go standard packages.
+See [exec](https://golang.org/pkg/os/exec/) package in Go's standard packages.
 
 
 ## Syntax
