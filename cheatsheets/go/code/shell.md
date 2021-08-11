@@ -15,17 +15,20 @@ See [exec](https://golang.org/pkg/os/exec/) package in Go's standard packages.
 You could pass something simple like `"ls"` or with arguments like `"ls -l"`.
 
 ```go
-out, err := exec.Command("COMMAND").Output()
+output, err := exec.Command("COMMAND").Output()
 ```
+
+## Examples
+
+### Summary
 
 ```go
 exec.Command("ls")
 exec.Command("ls -l")
+
 exec.Command("bash greet.sh")
+exec.Command("bash", "greet.sh")
 ```
-
-
-## Examples
 
 ### Run scripts
 
@@ -83,11 +86,11 @@ The date is: Thu 25 Feb 2021 17:42:46 SAST
 ## Handle errors and output
 
 ```go
-out, err := exec.Command("COMMAND".Output()
+output, err := exec.Command("COMMAND".Output()
 
 if err != nil {
     log.Fatal(err)
 }
 
-fmt.Printf("Output is %s\n", out)
+fmt.Printf("Output is %s\n", output)
 ```
