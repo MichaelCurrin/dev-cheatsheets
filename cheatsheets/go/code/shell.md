@@ -12,11 +12,48 @@ See [exec](https://golang.org/pkg/os/exec/) package in Go's standard packages.
 
 ## Syntax
 
+### Import
+
+```go
+import (
+  "os/exec"
+)
+```
+
+### Command
+
 You could pass something simple like `"ls"` or with arguments like `"ls -l"`.
+
+```go
+exec.Command("COMMAND")
+```
+
+### Run
+
+If you don't care about the output.
+
+```go
+exec.Command("COMMAND").Run()
+```
+
+Or
+
+```go
+cmd := exec.Command("COMMAND").
+cmd.Run()
+```
+
+
+### Output
 
 ```go
 output, err := exec.Command("COMMAND").Output()
 ```
+
+Use `.Output()` to get stdout.
+
+Use `.CombinedOutput()` to get stdout and stderr.
+
 
 ## Examples
 
@@ -28,6 +65,18 @@ exec.Command("ls -l")
 
 exec.Command("bash greet.sh")
 exec.Command("bash", "greet.sh")
+```
+
+### Run without checking output
+
+```go
+cmd := exec.Command("firefox")
+
+err := cmd.Run()
+
+if err != nil {
+    log.Fatal(err)
+}
 ```
 
 ### Run scripts
