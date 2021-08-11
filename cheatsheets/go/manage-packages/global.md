@@ -4,17 +4,11 @@ description: Install a Go package globally so that it can be run anywhere as a C
 ---
 
 
-Use the `go get` command a URL - such as a GitHub repo, excluding the protocol.
+## The URL
+
+Use the `go get` command and pass a URL without protocol.
 
 The URL should point to directory containing a `main.go`. file.
-
-If using GitHub, the URL will be like one of:
-
-```
-github.com/USERNAME/REPO_NAME
-github.com/USERNAME/REPO_NAME/PATH
-```
-
 
 ## Install package from root directory
 
