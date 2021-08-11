@@ -313,8 +313,19 @@ if command -v node >/dev/null 2>&1; then
 fi
 ```
 
+Show an error and exit if a command is not available.
+
+```sh
+if ! command -v curl > /dev/null 2>&1;; then
+  echo 'Please install `curl` and try again'
+  exit 1
+fi
+```
+
 
 ## Status check
+
+Check the exit status of a previous command.
 
 ### If
 
