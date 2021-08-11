@@ -29,25 +29,31 @@ $ go-project-template -h
 
 ## Install package from a subdirectory
 
-If there was a CLI command, it will typically in the `cmd` directory.
+```sh
+$ go get URL
+```
 
-e.g. `cmd/myapp/main.go`
+Typically, the URL will be a GitHub repo and include a path to a package in the `cmd` directory.
 
-### Generic example
+### Examples
+
+#### Generic example
+
+Give script `cmd/myapp/main.go` in `MichaelCurrin/my-app`.
 
 ```sh
 $ go get github.com/MichaelCurrin/my-app/cmd/myapp
 ```
 
-If `GOBIN` is in your `PATH`, you can run from anywhere:
+If `GOBIN` is in your `PATH`, you can run the CLI tool from anywhere:
 
 ```sh
 $ myapp -h
 ```
 
-### ESBuild example
+#### ESBuild example
 
-Download the ESBuild CLI.
+Download the ESBuild CLI package.
 
 ```sh
 $ go get github.com/evanw/esbuild/cmd/esbuild
@@ -73,7 +79,7 @@ $ esbuild -h
 
 ## Upgrade
 
-You can't use an upgrade flag with `install`, but you can use it with `get` as below.
+You can't use an upgrade flag with `install`, but you can use the flag with `get` as below.
 
 ```sh
 $ go get -u URL
