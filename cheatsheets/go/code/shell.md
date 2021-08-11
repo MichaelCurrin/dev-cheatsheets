@@ -25,7 +25,17 @@ import (
 You could pass something simple like `"ls"` or with arguments like `"ls -l"`.
 
 ```go
-exec.Command("COMMAND")
+cmd := exec.Command("COMMAND")
+```
+
+The result will be of type `exec.Cmd`.
+
+You will get an error on invalid command if you have spaces in your command. So use spaces:
+
+```go
+exec.Command("ls")
+exec.Command("ls", "-l")
+exec.Command("bash", "greet.sh")
 ```
 
 ### Run
@@ -56,16 +66,6 @@ Use `.CombinedOutput()` to get stdout and stderr.
 
 
 ## Examples
-
-### Summary
-
-```go
-exec.Command("ls")
-exec.Command("ls -l")
-
-exec.Command("bash greet.sh")
-exec.Command("bash", "greet.sh")
-```
 
 ### Run without checking output
 
