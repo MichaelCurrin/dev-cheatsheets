@@ -37,6 +37,12 @@ Contributions are welcome via PRs and issues.
             <span>Python</span>
         </div>
     </a>
+    <a href="{{ site.baseurl }}{% link cheatsheets/go/index.md %}">
+        <div>
+            {% include logo.html name="go" %}
+            <span>Go</span>
+        </div>
+    </a>
     <a href="{{ site.baseurl }}{% link cheatsheets/javascript/index.md %}">
         <div>
             {% include logo.html name="javascript" %}
@@ -86,23 +92,6 @@ Contributions are welcome via PRs and issues.
     </a>
 
 </div>
-
-
-## Quick reference
-
-A few commands or code snippets that I want to keep all in one place, instead of within each category like Shell or Grep.
-
-```sh
-grep -r TERM .
-# find alias
-fn TERM
-```
-
-```ruby
-group :jekyll_plugins do
-  # ...
-end
-```
 
 
 ## About
