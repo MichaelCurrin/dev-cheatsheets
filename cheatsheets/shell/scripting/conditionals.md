@@ -1,11 +1,13 @@
 # Conditionals
 
-See also [Control flow][] section for more info on how to do tests and if statements.
+This does not cover `if` statements but rather just checks to be used inside conditions like `if` statements.
+
+See also [Control flow][] section for more info on how to do tests and `if` statements.
 
 [Control flow]: {% link cheatsheets/shell/scripting/control-flow.md %}
 
 
-## String condtions
+## String conditions
 
 ### Empty
 
