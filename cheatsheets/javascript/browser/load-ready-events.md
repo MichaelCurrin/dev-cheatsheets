@@ -6,9 +6,19 @@
 - [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document) - specifically see [Load and unload events](https://developer.mozilla.org/en-US/docs/Web/API/Document#load_unload_events)
 
 
-## Summary of sequence
+## Order of events
 
-Be careful - you'll override multiple events set up with the assignment approach - adding with `addEventListener` is better as it appends.
+1. Start
+1. Document ready
+1. DOM content loaded
+1. Window loaded
+
+
+## Add logs to sequence
+
+Set up log messages. The lines of code are set up here in the order they are expected to fire.
+
+### Plain JS
 
 ```javascript
 document.ready = () => console.log('document ready')
@@ -21,7 +31,9 @@ window.addEventListener(
 window.onload = () => console.log('window loaded')
 ```
 
-jQuery:
+Be careful - you'll override multiple events set up with the assignment approach - adding with `addEventListener` is better as it appends.
+
+### jQuery
 
 ```javascript
 $(document).ready(() => 'document ready')
@@ -111,7 +123,6 @@ function domReady(fn) {
 ```
 
 
-
 ## Ready state change
 
 Rather than a specific state or event, this event fires each time when moving between states.
@@ -140,5 +151,3 @@ document.addEventListener('readystatechange', (event) => {
 ```
 
 This can be useful to undertand exactly when your page moves through each state, while also logging other messages.
-
-Reminder to look at the browser's dev tools for a visual representation of when the ready events are hit, though it will be outside of your console.
