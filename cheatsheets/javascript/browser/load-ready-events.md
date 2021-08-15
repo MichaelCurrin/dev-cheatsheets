@@ -104,7 +104,7 @@ e.g. Set this up early on your page.
 <head>
     <script>
         document.addEventListener('readystatechange', (event) => {
-          console.log(event, document.readyState)
+            console.debug('readystatechange', document.readyState, event)
         });
     </script>
 </head>
@@ -123,8 +123,10 @@ Check if DOM is available.
 - If it isn't, then it is still coming, so add a function to the DOM content loaded event.
 
 ```javascript
+const READY_STATES = ['complete', 'interactive']
+
 function domReady(fn) {
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  if (READY_STATES.includes(document.readyState) {
     setTimeout(fn, 1);
   } else {
     document.addEventListener('DOMContentLoaded', fn);
