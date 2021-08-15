@@ -1,17 +1,34 @@
 # Load and ready events
 
 
+## Related
+
+See also [Performance][] cheatsheet.
+
+[Performance]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/performance.md %}
+
+
 ## Resources
 
-- [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document) - specifically see [Load and unload events](https://developer.mozilla.org/en-US/docs/Web/API/Document#load_unload_events)
+- [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document)
+     - [Load and unload events](https://developer.mozilla.org/en-US/docs/Web/API/Document#load_unload_events) section.
 
 
 ## Order of events
 
-1. Start
-1. Document ready
-1. DOM content loaded
-1. Window loaded
+1. Page load start aka navigation start.
+1. Document ready.
+    - `ready` event.
+1. DOM content loaded. 
+    - `DOMContentLoaded` event.
+    – the browser fully loaded HTML, and the DOM tree is built, but external resources like pictures <img> and stylesheets may not yet have loaded.
+1. Window loaded. 
+    - `load` event.
+    - Both HTML and all the external resources: images, styles etc.
+1. Leave the page. 
+    - `beforeunload` event when starting to leave.
+    - `unload` event when the user has nearly left.
+
 
 
 ## Add logs to sequence
