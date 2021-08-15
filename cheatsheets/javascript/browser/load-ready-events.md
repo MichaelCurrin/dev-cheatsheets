@@ -93,26 +93,34 @@ window.onload = function() {
 
 ## Ready state change
 
-Not a specific state or event, but fires each time when moving between states.
+Rather than a specific state or event, this event fires each time when moving between states.
 
 - [readystatechange](https://developer.mozilla.org/en-US/docs/Web/API/Document/readystatechange_event)
     > Fired when the readyState attribute of a document has changed. Also available via the `onreadystatechange` property. 
 
-e.g.
+e.g. Set this up early on your page.
 
 ```javascript
-document.addEventListener('readystatechange', (event) => {
-  console.log(event)
-  console.log(document.readyState)
-});
+<head>
+    <script>
+        document.addEventListener('readystatechange', (event) => {
+          console.log(event, document.readyState)
+        });
+    </script>
+</head>
 ```
 
-## DOM ready
+This can be useful to undertand exactly when your page moves through each state, while also logging other messages.
+
+Reminder to look at the browser's dev tools for a visual representation of when the ready events are hit, though it will be outside of your console.
+
+
+## Check DOM ready
 
 Check if DOM is available. 
 
 - If it loaded already, you can't wait for DOM content loaded. So just wait 1 millsecond (I don't know why from the code snippet this is based on) and fire the function.
-- If it isn't, then it is still coming, so add  afunction to DOM content loaded event.
+- If it isn't, then it is still coming, so add a function to the DOM content loaded event.
 
 ```javascript
 function domReady(fn) {
