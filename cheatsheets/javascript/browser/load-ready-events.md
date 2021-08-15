@@ -91,30 +91,6 @@ window.onload = function() {
 ```
 
 
-## Ready state change
-
-Rather than a specific state or event, this event fires each time when moving between states.
-
-- [readystatechange](https://developer.mozilla.org/en-US/docs/Web/API/Document/readystatechange_event)
-    > Fired when the readyState attribute of a document has changed. Also available via the `onreadystatechange` property. 
-
-e.g. Set this up early on your page.
-
-```javascript
-<head>
-    <script>
-        document.addEventListener('readystatechange', (event) => {
-            console.debug('readystatechange', document.readyState, event)
-        });
-    </script>
-</head>
-```
-
-This can be useful to undertand exactly when your page moves through each state, while also logging other messages.
-
-Reminder to look at the browser's dev tools for a visual representation of when the ready events are hit, though it will be outside of your console.
-
-
 ## Check DOM ready
 
 Check if DOM is available. 
@@ -133,3 +109,36 @@ function domReady(fn) {
   }
 }
 ```
+
+
+
+## Ready state change
+
+Rather than a specific state or event, this event fires each time when moving between states.
+
+- [readystatechange](https://developer.mozilla.org/en-US/docs/Web/API/Document/readystatechange_event)
+    > Fired when the readyState attribute of a document has changed. Also available via the `onreadystatechange` property. 
+
+e.g. Set this up early on your page.
+
+```html
+<head>
+    <script>
+        document.addEventListener('readystatechange', () => {
+          console.debug('readystatechange', document.readyState)
+        });
+    </script>
+</head>
+```
+
+If you to log the event, to see the fields on it.
+
+```javascript
+document.addEventListener('readystatechange', (event) => {
+  console.debug('readystatechange', document.readyState, event)
+});
+```
+
+This can be useful to undertand exactly when your page moves through each state, while also logging other messages.
+
+Reminder to look at the browser's dev tools for a visual representation of when the ready events are hit, though it will be outside of your console.
