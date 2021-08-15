@@ -1,21 +1,32 @@
 # Performance
 
 
+## Related
+
+See also [Load and ready events][] cheatsheet.
+
+[Load and ready events]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/load-ready-events.md %}
+
+
+## Resources
+
+- [Page performance metrics](https://gist.github.com/MichaelCurrin/74f7147658da5f24fc6f6cc66c07009a) - my gist.
+- [Window.performance](https://developer.mozilla.org/en-US/docs/Web/API/Window/performance) in Mozilla dev docs.
+
+
 ## Browser performance timings
 
 Browsers have a built-in JS object which contains performance-related timings, which you can use to calculate performance metrics.
 
-See [Window.performance](https://developer.mozilla.org/en-US/docs/Web/API/Window/performance) in Mozilla dev docs.
-
 > The Window interface's `performance` property returns a Performance object, which can be used to gather performance information about the current document. It serves as the point of exposure for the Performance Timeline API, the High Resolution Time API, the [Navigation Timing API][], the [User Timing API][], and the [Resource Timing API][].
-
-[Navigation Timing API]: https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API
-[User Timing API]: https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API
-[Resource Timing API]: https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API
 
 ```javascript
 window.performance
 ```
+
+[Navigation Timing API]: https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API
+[User Timing API]: https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API
+[Resource Timing API]: https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API
 
 ### How to calculate metrics
 
@@ -47,4 +58,28 @@ const connectTime = perfData.responseEnd - perfData.requestStart;
 
 ```javascript
 const renderTime = perfData.domComplete - perfData.domLoading;
+```
+
+
+## Log events
+
+Reminder to look at the browser's dev tools for a visual representation of when the ready events are hit, though it will be outside of your console.
+
+Time in seconds since the page started loading.
+
+```javascript
+(new Date() - window.performance.timing.navigationStart) / 1000
+```
+
+Use it:
+
+```javascript
+function logWithDuration(msg) {
+  const elapsed = (new Date() - window.performance.timing.navigationStart) / 1000;
+  console.debug(elapsed, msg)
+}
+
+document.addEventListener('readystatechange', () => {
+  logWithDuration(document.readyState)
+});
 ```
