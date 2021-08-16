@@ -149,3 +149,31 @@ Set log level
 ```sh
 $ npm install --loglevel warn
 ```
+
+
+## Downgrade
+
+Note quotes to avoid a syntax error.
+
+```sh
+$ npm install 'PACKAGE<UPPER'
+```
+
+If you have say version 2 of a package but you need 1, you would do this. 
+
+e.g.
+
+```sh
+$ npm install '@automattic/vip@<2'
+```
+
+In this case, the result as `package.json` said I have version set at `^1.12.1`.
+
+If you simply do one of these:
+
+```sh
+$ npm install '@automattic/vip@1'
+$ npm install '@automattic/vip@^1'
+```
+
+You'll end up with `1` or `^1` version only and that lacks the other pieces.
