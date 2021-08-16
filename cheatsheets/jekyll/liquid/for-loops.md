@@ -57,12 +57,21 @@ Index of the current iteration. Use `.index` to start at one or `.index0` to sta
 {% endfor %}
 ```
 
+Using `last` is useful if you are rendering a separator. Like a comma between JSON values or a pipe symbol `|` beween items in a menu.
+
+```liquid
+{
+{% for key_value in page.my_array %}
+    {{ key_value[0] | jsonify }}: {{ key_value[1] | jsonify }}
+    {% unless forloop.last %},{% endunless %}
+{% endfor %}
+}
+```
+
 ### Length
 
 ```liquid
-{% for item in page.my_array %}
-    {{ forloop.length }}
-{% endfor %}
+{{ forloop.length }}
 ```
 
 {% endraw %}
