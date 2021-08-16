@@ -97,6 +97,29 @@ Check that a variable is set.
 
 Add an `if` statement with a help message and exit command.
 
+```make
+SITE_URL = $(url)
+
+check:
+	@if [[ -z "$(SITE_URL)" ]]; then \
+		echo "'url' must be set"; \
+		exit 1; \
+	fi
+	@echo "URL: $(SITE_URL)"
+```
+
+Usage:
+
+```console
+$ make check          
+'url' must be set
+make: *** [check] Error 1
+$ make check url='https://example.com'   
+URL: https://example.com
+```
+
+### Python
+
 e.g. Here using [Python Docker container](https://michaelcurrin.github.io/code-cookbook/recipes/containers/python.html) as a drop-in placement for the `python` command.
 
 ```Makefile
