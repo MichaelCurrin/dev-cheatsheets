@@ -1,18 +1,33 @@
 # Conditionals
 
-This does not cover `if` statements but rather just checks to be used inside conditions like `if` statements.
+This does not cover `if` statements but rather just flag checks to be used inside conditions like `if` statements.
 
 See also [Control flow][] section for more info on how to do tests and `if` statements.
 
 [Control flow]: {% link cheatsheets/shell/scripting/control-flow.md %}
 
 
+
 ## String conditions
+
+Examples are not show for all, since the patter is the same.
 
 ### Empty
 
 ```sh
 -z STRING
+```
+
+e.g.
+
+```sh
+[[ -z "$MY_VAR" ]]
+```
+
+Same as:
+
+```sh
+[[ "$MY_VAR" = '' ]]
 ```
 
 ### Not empty
@@ -29,10 +44,22 @@ Or
 
 ### Equal
 
-Double is newer and close to other languages. Single equals sign is also supported.
+Double is newer and close to other languages.
 
 ```sh
 STRING == STRING
+```
+
+Single equals sign is old and still supported.
+
+```sh
+STRING = STRING
+```
+
+e.g.
+
+```sh
+[[ "$MY_VAR" == 'abc' ]]
 ```
 
 ### Not equal
@@ -90,7 +117,7 @@ These are all done as:
 ```
 
 Operator | Description
---- | ---
+---  | ---
 `-e` | Exists
 `-s` | Size is non-zero
 `-f` | File
@@ -100,7 +127,7 @@ Operator | Description
 `-w` | Writable
 `-x` | Executable
 
-### Compared modified dates
+### Compare modified dates
 
 These are all done as:
 
@@ -130,3 +157,33 @@ touch file1.txt file2.txt
 [[ file1.txt -ef file2.txt ]]
 # TRUE
 ```
+
+
+## Warning on quotes
+
+It is recommended to always quote values. If you don't, you could get a syntax error.
+
+This will break:
+
+```sh
+-z $NOT_A_VAR
+```
+
+As it could become
+
+```sh
+-z
+```
+
+This is fine:
+
+```sh
+-z "$NOT_A_VAR"
+```
+
+As it will become:
+
+```sh
+-z ""
+```
+
