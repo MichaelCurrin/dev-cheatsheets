@@ -27,7 +27,7 @@ Adding Google Analytics to your site.
 
 Here is a variation from [HTML5 boilerplate](https://github.com/h5bp/html5-boilerplate/blob/master/dist/index.html) which might be the old style which uses GA directly rather than GTM as above.
 
-- `snippet.html
+- `snippet.html`
     ```html
     <script>
         window.ga = function () { ga.q.push(arguments) };
@@ -44,6 +44,6 @@ Here is a variation from [HTML5 boilerplate](https://github.com/h5bp/html5-boile
 
 ## Jekyll
 
-For approaches to adding analytics to a Jekyll site, see the [Jekyll Analytics][] section of this site.
+For approaches to adding analytics to a Jekyll site, see the [Jekyll Analytics][] cheatsheet.
 
 [Jekyll Analytics]: {{ site.baseurl }}{% link cheatsheets/jekyll/templating/analytics.md %}
