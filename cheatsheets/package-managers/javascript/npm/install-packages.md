@@ -2,6 +2,9 @@
 
 You must create a `package.json` file with `npm init` before you can run installs in a project.
 
+
+## Install
+
 See cheatsheets for:
 
 - [npm install][] command.
