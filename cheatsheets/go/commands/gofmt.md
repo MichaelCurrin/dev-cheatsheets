@@ -1,8 +1,12 @@
 # gofmt
 
-Docs: [gofmt](https://golang.org/cmd/gofmt/) command.
+For general use, use should probably use [go fmt][]. If you need more control, use `gofmt`.
 
-For general, use should probably use `go fmt`. Unless you need the control of `gofmt`.
+See [gofmt command][] docs.
+
+
+[go fmt]: {{ site.baseurl }}{% link cheatsheets/go/commands/fmt.md %}
+[gofmt command]: https://golang.org/cmd/gofmt/
 
 
 ## Usage
@@ -14,7 +18,7 @@ gofmt [flags] [path ...]
 For path:
 
 - Supply a module name like `hello.go`.
-- Use current directory as `.` - this works recursively.
+- Use current directory as `.` - this works _recursively_.
 - If you omit path, then it reads on stdin.
 
 
@@ -43,10 +47,22 @@ Update file in place without listing them.
 $ gofmt -w hello.go
 ```
 
-Dry-run, or check, by omitting `-w`. Using `-d` shows a diff as `-` and `+` to make the output more readable.
+Multiple files:
+```sh
+$ gofmt -w .
+```
+
+Dry-run, or check, by omitting `-w`. 
+
 
 ```sh
-$ gofmt -d .
+$ gofmt hello.go
+```
+
+To see a patch of changes, add this flag:
+
+```sh
+$ gofmt -d hello.go
 ```
 
 Sample result:
