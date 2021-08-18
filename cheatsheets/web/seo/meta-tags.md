@@ -9,10 +9,10 @@ The description also shows on the results page.
 
 - [W3 Schools - Meta tags](https://www.w3schools.com/tags/tag_meta.asp)
 - [Special tags that Google understands](https://support.google.com/webmasters/answer/79812?hl=en) on Google support docs.
+- [Standard metadata names](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name) on MDN docs.
 
 
 ## Title
-
 
 Length: 20 to 70 characters
 
@@ -22,7 +22,6 @@ From Woorank:
 
 
 ### Style guide
-
 
 [15 Title Tag Optimization Guidelines For Usability And SEO](https://www.woorank.com/en/blog/15-title-tag-optimization-guidelines-for-usability-and-seo)
 
@@ -57,3 +56,23 @@ Note that Google **ignores** this tag and only uses content.
 Source: [Google does not use the keywords meta tag in web ranking](https://webmasters.googleblog.com/2009/09/google-does-not-use-keywords-meta-tag.html) post on Google Blog site.
 
 Google does also give more weighting to bold and italics words.
+
+
+## Robots
+
+From [docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name#other_metadata_names).
+
+> `robots`: the behavior that cooperative crawlers, or "robots", should use with the page.
+> 
+> It is a comma-separated list of the values below: 
+
+- `index`
+- `noindex`
+- `follow`
+- ...
+
+e.g.
+
+```html
+<meta name="robots" content="index, follow">
+```
