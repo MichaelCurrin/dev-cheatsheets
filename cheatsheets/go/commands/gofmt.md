@@ -20,11 +20,8 @@ For path:
 
 ## Help
 
-```sh
+```console
 $ gofmt -h
-```
-
-```
 usage: gofmt [flags] [path ...]
   -cpuprofile string
         write cpu profile to this file
