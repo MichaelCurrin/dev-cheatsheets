@@ -5,20 +5,17 @@ For general use, use should probably use [go fmt][]. If you need more control, u
 See [gofmt command][] docs.
 
 
-[go fmt]: {{ site.baseurl }}{% link cheatsheets/go/commands/fmt.md %}
-[gofmt command]: https://golang.org/cmd/gofmt/
-
-
 ## Usage
 
 ```
-gofmt [flags] [path ...]
+gofmt FLAGS PATHS
 ```
 
-For path:
+### Path:
 
 - Supply a module name like `hello.go`.
 - Use current directory as `.` - this works _recursively_.
+- You cannot use `./...` here, but you can for [go fmt][].
 - If you omit path, then it reads on stdin.
 
 
@@ -38,28 +35,22 @@ usage: gofmt [flags] [path ...]
   -w    write result to (source) file instead of stdout
 ```
 
+Flags must come before paths.
+
 
 ## Examples
 
-Update file in place without listing them.
+### Check
 
-```sh
-$ gofmt -w hello.go
-```
-
-Multiple files:
-```sh
-$ gofmt -w .
-```
-
-Dry-run, or check, by omitting `-w`. 
-
+Check what changes would be applied by using no flags. Output is printed to stdout - the _entire_ file will be printed so this will be noisy.
 
 ```sh
 $ gofmt hello.go
 ```
 
-To see a patch of changes, add this flag:
+### Patch
+
+To see a patch of changes with `+` and `-` signs, add this flag:
 
 ```sh
 $ gofmt -d hello.go
@@ -86,3 +77,35 @@ diff -u main.go.orig main.go
 +                       Name:        "GitHub GQL Tool",
 ...
 ```
+
+### List
+
+List names of files to fix, without updating them.
+
+```console
+$ gofmt -l .
+internal/greetings.go
+main.go
+```
+
+Returns a success message even if changes are needed.
+
+If there are no fixes needed, output will be empty.
+
+### Update
+
+Fix a file in place.
+
+```sh
+$ gofmt -w hello.go
+```
+
+Fix multiple files:
+
+```sh
+$ gofmt -w .
+```
+
+
+[go fmt]: {{ site.baseurl }}{% link cheatsheets/go/commands/fmt.md %}
+[gofmt command]: https://golang.org/cmd/gofmt/
