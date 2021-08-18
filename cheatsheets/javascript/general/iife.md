@@ -154,15 +154,26 @@ Using document:
 
 e.g.
 
-```javascript
-!function (window) {
-  const ABC = 123
-  
-  function x() {
-    // ...
-  }
-  
-  window.x = x
-  window.ABC = ABC
-}(window);
-```
+- `main.js`
+    ```javascript
+    !function (window) {
+      const MY_GLOBAL_VAR = 123
+      const MY_SCOPED_VAR = 456
+
+      function myFunc() {
+        // ...
+      }
+
+      window.myFunc = myFunc
+      window.MY_GLOBAL_VAR = MY_GLOBAL_VAR
+    }(window);
+    ```
+- `index.html`
+    ```html
+    <script>
+        window.myFunc(1, 2, 3);
+        
+        console.log(window.MY_GLOBAL_VAR)
+    </script>
+    ```
+    
