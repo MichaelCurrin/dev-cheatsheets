@@ -3,7 +3,7 @@
 Stashes are numbered where index `0` is the most recent. New stashes are added to the front of the list to become the new index `0`.
 
 
-## Stash reference
+## Stash references
 
 A stash can be referenced like this:
 
@@ -31,23 +31,30 @@ $ git stash show
 $ git stash show -p
 ```
 
+### List
+
 Look at all the stashes.
 
 ```sh
 $ git stash list
 ```
 
+### View
 Look at the stash before it at stash `1`. Or whatever index.
 
 ```sh
 $ git stash show 1
 ```
 
+### Drop
+
 Drop that stash:
 
 ```sh
 $ git stash drop 1
 ```
+
+### Apply
 
 Then view and apply the stash which was at `2` and which is now shifed to be at `1`.
 
@@ -59,13 +66,17 @@ $ git apply 1
 
 ## Create
 
-Note you cannot stash on a repo with no commits.
+Note you cannot stash on a repo with zero commits.
+
+### Basic
 
 Create stash.
 
 ```sh
 $ git stash
 ```
+
+### Untracked
 
 Stash everything, tracked or not.
 
@@ -80,24 +91,35 @@ $ git add .
 $ git stash
 ```
 
+### Message
+
+Give the stash a message.
+
 ```sh
-$ git stash save 'Name of stash'
+$ git stash save MESSAGE
+$ # e.g.
+$ git stash save 'Description of stash'
 ```
 
 
 ## Show
 
-List stashes. Note the most recent one at the top of the output will have index `0`.
+### Basic
 
-```sh
+List stashes. 
+
+```console
 $ git stash list
-```
-e.g.
-```
-stash@{0}: On foo-bar: stash name
-stash@{1}: On master: another stash name
+stash@{0}: On foo-bar: My stash name
+stash@{1}: On master: Another stash name
 stash@{3}: WIP on master: a5a067af Commit message
 ```
+
+Note the most recent one at the top of the output will have index `0`.
+
+The mesesage of the stash will be shown if possible, or the commit message.
+
+### File names
 
 Show files names in a stash.
 
@@ -105,39 +127,41 @@ Show files names in a stash.
 $ git stash show [STASH_REF]
 ```
 
-Show the diff of a stash.
+### Diff
+
+Show the diff or "patch" of a stash.
 
 ```sh
 $ git stash show [STASH_REF] -p
 ```
 
 
-## Unstash
+## Apply
 
-### Pop
+### Apply and drop
 
-Apply and remove from the stashes.
+Apply the stash, then _remove_ from the stashes.
 
 ```sh
 $ git stash pop [STASH_REF]
 ```
 
-### Apply
+### Apply and keep
 
-Apply the stash, but also keep it on the stash pile.
+Apply the stash, but _keep_ it on the stash pile.
 
 ```sh
 $ git stash apply [STASH_REF]
 ```
 
-Then you can get rid of your changes to get back to a clean state, then apply your stash again.
+If you need to, you can get rid of your changes to get back to a clean state, then apply your stash again.
 
 ```sh
 $ git reset --hard
 $ git stash apply
 ```
 
-Or you can commit your changes and drop the stash, since you no longer need it.
+Or you can commit your changes and drop the stash, if you no longer need it.
 
 ```sh
 $ git commit .
