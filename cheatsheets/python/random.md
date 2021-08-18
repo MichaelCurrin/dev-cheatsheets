@@ -13,6 +13,7 @@ See Examples and Recipes in those docs.
 ```python
 import random
 
+
 random.random()
 ```
 
@@ -20,6 +21,7 @@ Or
 
 ```python
 from random import random
+
 
 random()
 ```
@@ -30,21 +32,21 @@ random()
 Random float:  0.0 <= x < 1.0
 
 ```python
->>> random()
+>>> random.random()
 0.37444887175646646
 ```
 
 Random float:  2.5 <= x < 10.0
 
 ```python
->>> uniform(2.5, 10.0)
+>>> random.uniform(2.5, 10.0)
 3.1800146073117523
 ```
 
 Interval between arrivals averaging 5 seconds
 
 ```python
->>> expovariate(1 / 5)
+>>> random.expovariate(1 / 5)
 5.148957571865031
 ```
 
@@ -54,14 +56,14 @@ Interval between arrivals averaging 5 seconds
 Integer from 0 to 9 inclusive
 
 ```python
->>> randrange(10)
+>>> random.randrange(10)
 7
 ```
 
 Even integer from 0 to 100 inclusive
 
 ```python
->>> randrange(0, 101, 2)
+>>> random.randrange(0, 101, 2)
 26
 ```
 
@@ -73,10 +75,10 @@ Even integer from 0 to 100 inclusive
 Single random element from a sequence.
 
 ```python
->>> choice(['win', 'lose', 'draw'])
+>>> random.choice(['win', 'lose', 'draw'])
 'lose'
 
->>> choice('abcdef')
+>>> random.choice('abcdef')
 'f'
 ```
 
@@ -85,7 +87,7 @@ Single random element from a sequence.
 Similar to `choice` but accepts an optional count to return.
 
 ```python
->>> choices(['win', 'lose', 'draw'])
+>>> random.choices(['win', 'lose', 'draw'])
 ['draw']
 
 >>> random.choices(['win', 'lose', 'draw'], k=2)
