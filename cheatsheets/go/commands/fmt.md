@@ -12,19 +12,50 @@ $ gofmt -l -w
 Any packages listed are passed on to.
 
 
+
+## Help
+
+- [gofmt]({{ site.baseurl }}{% link cheatsheets/go/commands/gofmt.md %}) cheatsheet.
+- `fmt` help:
+    ```sh
+    $ go help fmt
+    ```
+- `gofmt` help:
+    ```sh
+    $ go doc cmd/gofmt
+    ```
+
+
 ## Usage
 
 ```
 usage: go fmt [-n] [-x] [packages]
 ```
 
+
 ## Flags
 
 The flags on `go fmt` are limited.
 
-- `-n` - Dry-run. Pprints commands that would be executed.
-- `-x` - Trace. Prints commands as they are executed.
+Flag | Description
+---  | ---
+`-n` | Dry-run. Prints commands that would be executed.
+`-x` | Trace. Prints commands as they are executed.
 
 For more control, use the standalone `gofmt` command directly.
 
-See more info on [gofmt]({{ site.baseurl }}{% link cheatsheets/go/commands/gofmt.md %}) guide.
+
+## Examples
+
+### Dry run
+
+```console
+$ go fmt -n main.go 
+/Users/mcurrin/.local/go/bin/gofmt -l -w main.go
+```
+
+```console
+$ go fmt -n ./... 
+/Users/mcurrin/.local/go/bin/gofmt -l -w internal/greetings.go
+/Users/mcurrin/.local/go/bin/gofmt -l -w main.go
+```
