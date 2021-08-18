@@ -6,16 +6,13 @@
 From the docs, running `go fmt` runs this:
 
 ```sh
-$ gofmt -l -w
+$ gofmt -l -w PACKAGEES
 ```
-
-Any packages listed are passed on to.
-
 
 
 ## Help
 
-- [gofmt]({{ site.baseurl }}{% link cheatsheets/go/commands/gofmt.md %}) cheatsheet.
+- [gofmt][] cheatsheet.
 - `fmt` help:
     ```sh
     $ go help fmt
@@ -27,7 +24,6 @@ Any packages listed are passed on to.
 
 
 ## Usage
-
 ```
 usage: go fmt [-n] [-x] [packages]
 ```
@@ -35,7 +31,7 @@ usage: go fmt [-n] [-x] [packages]
 
 ## Flags
 
-The flags on `go fmt` are limited.
+The flags on `go fmt` are limited to two. Use [gofmt][] if you want more control.
 
 Flag | Description
 ---  | ---
@@ -59,3 +55,6 @@ $ go fmt -n ./...
 /Users/mcurrin/.local/go/bin/gofmt -l -w internal/greetings.go
 /Users/mcurrin/.local/go/bin/gofmt -l -w main.go
 ```
+
+
+[gofmt]: {{ site.baseurl }}{% link cheatsheets/go/commands/gofmt.md %}
