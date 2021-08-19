@@ -10,6 +10,7 @@ Use the `go get` command and pass a URL without protocol.
 
 The URL should point to directory containing a `main.go`. file.
 
+
 ## Install package from root directory
 
 Point as to a GitHub repo with `main.go` at the root. 
@@ -24,6 +25,16 @@ Run the command which now exists in `GOBIN`.
 
 ```sh
 $ go-project-template -h
+```
+
+
+## Install package version
+
+e.g.
+
+```sh
+$ go get URL@TAG
+$ go install honnef.co/go/tools/cmd/staticcheck@latest
 ```
 
 
