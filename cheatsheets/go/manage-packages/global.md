@@ -4,9 +4,10 @@ description: Install a Go package globally so that it can be run anywhere as a C
 ---
 
 
-## The URL
+Use the `go get` subcommand and pass a URL without protocol. 
 
-Use the `go get` command and pass a URL without protocol.
+
+## URL
 
 The URL should point to directory containing a `main.go` file.
 
