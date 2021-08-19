@@ -38,9 +38,16 @@ $ go-project-template -h
 
 ```sh
 $ go get URL@TAG
+$ go install URL@TAG
 ```
 
-Note this doesn't not work in the repo root as you'll get an error. Here using [staticcheck.go](https://github.com/dominikh/go-tools/blob/master/cmd/staticcheck/staticcheck.go).
+Note this doesn't not work in the repo root as you'll get an error. 
+
+Here using [staticcheck.go](https://github.com/dominikh/go-tools/blob/master/cmd/staticcheck/staticcheck.go).
+
+```sh
+$ go install honnef.co/go/tools/cmd/staticcheck@v0.2.0
+```
 
 ```console
 $ go install honnef.co/go/tools/cmd/staticcheck@v0.2.0
@@ -52,6 +59,28 @@ $ staticcheck --version
 staticcheck 2021.1.1 (v0.2.1)
 ```
 
+In a module, you can omit the version.
+
+```sh
+$ cd my-go-repo
+$ go get honnef.co/go/tools/cmd/staticcheck
+```
+
+But you'll get an error outside a module if you use `install`.
+
+```console
+$ cd ~
+$ go install honnef.co/go/tools/cmd/staticcheck
+go install: version is required when current directory is not in a module
+	Try 'go install honnef.co/go/tools/cmd/staticcheck@latest' to install the latest version
+```  
+ 
+But no issue if you use `get`.
+
+```sh
+$ cd ~
+$ go get honnef.co/go/tools/cmd/staticcheck
+```
 
 
 ## Install package from a subdirectory
