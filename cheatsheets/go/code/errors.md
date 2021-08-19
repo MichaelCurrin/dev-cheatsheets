@@ -67,3 +67,34 @@ func safelyDo(work *Work) {
 ```
 
 > In this example, if `do(work)` panics, the result will be logged and the goroutine will exit cleanly without disturbing the others. There's no need to do anything else in the deferred closure; calling recover handles the condition completely.
+
+
+## Printing errors
+
+Based on StackCheck tool's message.
+
+```sh
+$ staticcheck -explain ST1005
+```
+
+> Error strings should not be capitalized (unless beginning with
+> proper nouns or acronyms) or end with punctuation, since they are
+> usually printed following other context...
+
+So use this:
+
+```go
+fmt.Errorf("something bad")
+```
+
+Not this:
+
+```go
+fmt.Errorf("Something bad")
+```
+
+Such that this formats without a spurious capital letter mid-message.
+
+```go
+log.Printf("Reading %s: %v", filename, err)
+```
