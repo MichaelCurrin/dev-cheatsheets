@@ -30,10 +30,15 @@ $ go-project-template -h
 
 ## Install package version
 
-e.g.
+Works with `get` or `install`.
 
 ```sh
 $ go get URL@TAG
+```
+
+e.g. From StaticCheck docs:
+
+```sh
 $ go install honnef.co/go/tools/cmd/staticcheck@latest
 ```
 
