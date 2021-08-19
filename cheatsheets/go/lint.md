@@ -16,6 +16,13 @@ The golint docs recommend the following:
 - [dominikh/go-tools](https://github.com/dominikh/go-tools) repo
     > Staticcheck - The advanced Go linter
 - [Run](https://staticcheck.io/docs/run) in docs
+- [Checks](https://staticcheck.io/docs/checks)
+
+Install:
+
+```sh
+$ go install honnef.co/go/tools/cmd/staticcheck@latest
+```
 
 Check current package.
 
@@ -28,6 +35,19 @@ Check all packages.
 ```sh
 $ staticcheck ./...
 ```
+
+Explain:
+
+```sh
+$ staticcheck -explain <check>
+```
+
+e.g. after seeing `foo.go:1248:4: unnecessary use of fmt.Sprintf (S1039)`, you would run:
+
+```sh
+$ staticcheck -explain S1039
+```
+
 
 ### Go vet
 
