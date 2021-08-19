@@ -8,12 +8,18 @@ description: Install a Go package globally so that it can be run anywhere as a C
 
 Use the `go get` command and pass a URL without protocol.
 
-The URL should point to directory containing a `main.go`. file.
+The URL should point to directory containing a `main.go` file.
+
+This also works if there is a single Go file of another name e.g. [cmd/staticcheck/staticcheck.go](https://github.com/dominikh/go-tools/blob/master/cmd/staticcheck/staticcheck.go).
 
 
 ## Install package from root directory
 
-Point as to a GitHub repo with `main.go` at the root. 
+Point a repo with `main.go` at the root.
+
+```sh
+$ go get REPO_URL
+```
 
 Here using [MichaelCurrin/go-project-template](https://github.com/MichaelCurrin/go-project-template).
 
@@ -28,28 +34,33 @@ $ go-project-template -h
 ```
 
 
-## Install package version
-
-Works with `get` or `install`.
+## Install target version
 
 ```sh
 $ go get URL@TAG
 ```
 
-e.g. From StaticCheck docs:
+Note this doesn't not work in the repo root as you'll get an error. Here using [staticcheck.go](https://github.com/dominikh/go-tools/blob/master/cmd/staticcheck/staticcheck.go).
 
-```sh
-$ go install honnef.co/go/tools/cmd/staticcheck@latest
+```console
+$ go install honnef.co/go/tools/cmd/staticcheck@v0.2.0
+$ staticcheck --version
+staticcheck 2021.1 (v0.2.0)
+
+$ go install honnef.co/go/tools/cmd/staticcheck@v0.2.1
+$ staticcheck --version
+staticcheck 2021.1.1 (v0.2.1)
 ```
+
 
 
 ## Install package from a subdirectory
 
 ```sh
-$ go get URL
+$ go get REPO_URL/APP_PATH
 ```
 
-Typically, the URL will be a GitHub repo and include a path to a package in the `cmd` directory.
+Typically, the package will bee on GitHub repo URL and include a path to a package in the `cmd` directory.
 
 ### Examples
 
@@ -91,6 +102,12 @@ $ esbuild -h
 
 - GitHub repo: [evanw/esbuild](https://github.com/evanw/esbuild)
 - GitHub module path: [cmd/esbuild](https://github.com/evanw/esbuild/tree/master/cmd/esbuild)
+
+### Custom domain
+
+```sh
+$ go get honnef.co/go/tools/cmd/staticcheck
+```
 
 
 ## Upgrade
