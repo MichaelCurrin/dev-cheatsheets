@@ -7,9 +7,14 @@ See help on the [go get][] subcommand.
 
 ## Install package in your project
 
+
 ```sh
 $ go get GITHUB_INSTALL_REF
 ```
+
+Tht will install the package to your `GOBIN`.
+
+It will alos update `go.mod` and `go.sum` to reflect - usin `go install` will **not** do that.
 
 e.g.
 
@@ -19,10 +24,16 @@ $ go get github.com/lib/pq
 $ go get github.com/isacikgoz/gitbatch/cmd/gitbatch
 ```
 
-Exact version:
+Pinned exact version:
 
 ```sh
 $ go get github.com/lib/pq@v1.8.0
+```
+
+Latest:
+
+```sh
+$ go get honnef.co/go/tools/cmd/staticcheck@latest
 ```
 
 
