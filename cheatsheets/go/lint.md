@@ -18,11 +18,20 @@ The golint docs recommend the following:
 - [Run](https://staticcheck.io/docs/run) in docs
 - [Checks](https://staticcheck.io/docs/checks)
 
-Install:
+Install globally:
 
 ```sh
 $ go install honnef.co/go/tools/cmd/staticcheck@latest
 ```
+
+Or in a project:
+
+```sh
+$ go go honnef.co/go/tools/cmd/staticcheck@latest
+```
+
+The downside for the second approach is that you'll get a warning in `go.mod` from your IDE that the package is unused. And running `go mod tidy` remove it. I don't know how to add it to dev dependencies or stop it getting removed. Maybe just have it as a global dependency in a project. See my [Makefile](https://github.com/MichaelCurrin/go-project-template/blob/main/Makefile) of `go-project-template.`
+
 
 Check current package.
 
