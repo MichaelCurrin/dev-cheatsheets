@@ -126,27 +126,27 @@ td pre {
 
 ## Bullet or numbered points
 
-Using code indented 4 spaces inside a point.
+Using code indented 3 spaces inside a point just for YAML. Otherwise use 4.
 
 Code:
 
 ```markdown
 1. Create a new logical volume group 
-    ```yaml
-    - name: Create a volume group on top of /dev/sdb
+   ```yaml
+   - name: Create a volume group on top of /dev/sdb
   community.general.lvg:
-      vg: vg.storage
-      pvs: /dev/sdb1
-      pesize: 32
+     vg: vg.storage
+     pvs: /dev/sdb1
+     pesize: 32
     ```
 2. Create a logical volume in your logical volume group
-    ```yaml
-    - name: create logical volume
-      community.general.lvol:
-        vg: vg.storage
-        lv: data
-        size: 10g
-    ```
+   ```yaml
+   - name: create logical volume
+     community.general.lvol:
+       vg: vg.storage
+       lv: data
+       size: 10g
+   ```
 ```
 
 ---
@@ -154,21 +154,21 @@ Code:
 Result:
 
 1. Create a new logical volume group 
-    ```yaml
-    - name: Create a volume group on top of /dev/sdb
+   ```yaml
+   - name: Create a volume group on top of /dev/sdb
   community.general.lvg:
-      vg: vg.storage
-      pvs: /dev/sdb1
-      pesize: 32
-    ```
+     vg: vg.storage
+     pvs: /dev/sdb1
+     pesize: 32
+   ```
 2. Create a logical volume in your logical volume group
-    ```yaml
-    - name: create logical volume
-      community.general.lvol:
-        vg: vg.storage
-        lv: data
-        size: 10g
-    ```
+   ```yaml
+   - name: create logical volume
+     community.general.lvol:
+       vg: vg.storage
+       lv: data
+       size: 10g
+   ```
 
 
 ## Escape
