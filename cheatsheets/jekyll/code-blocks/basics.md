@@ -122,3 +122,76 @@ td pre {
 	border: none;
 }
 </style>
+
+
+## Bullet or numbered points
+
+Using code indented 4 spaces inside a point.
+
+Code:
+
+```markdown
+1. Create a new logical volume group 
+    ```yaml
+    - name: Create a volume group on top of /dev/sdb
+  community.general.lvg:
+      vg: vg.storage
+      pvs: /dev/sdb1
+      pesize: 32
+    ```
+2. Create a logical volume in your logical volume group
+    ```yaml
+    - name: create logical volume
+      community.general.lvol:
+        vg: vg.storage
+        lv: data
+        size: 10g
+    ```
+
+Result:
+
+1. Create a new logical volume group 
+    ```yaml
+    - name: Create a volume group on top of /dev/sdb
+  community.general.lvg:
+      vg: vg.storage
+      pvs: /dev/sdb1
+      pesize: 32
+    ```
+2. Create a logical volume in your logical volume group
+    ```yaml
+    - name: create logical volume
+      community.general.lvol:
+        vg: vg.storage
+        lv: data
+        size: 10g
+    ```
+
+
+## Escape
+
+Add backslash before backticks.
+
+Code:
+
+   \`\`\`
+
+Result:
+
+\`\`\`
+
+Or indent 4 spaces.
+
+Code:
+
+```markdown 
+     ```sh
+     $ echo 'Hello'
+     ```
+```
+
+Result:
+
+     ```sh
+     $ echo 'Hello'
+     ```
