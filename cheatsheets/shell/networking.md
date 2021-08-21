@@ -1,4 +1,8 @@
-# Networking
+---
+title: Networking
+description: How to connect your machine to a network and find your IP address
+
+---
 
 
 ## Get current IP address
