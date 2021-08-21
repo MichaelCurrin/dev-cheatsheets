@@ -177,11 +177,15 @@ Add backslash before backticks.
 
 Code:
 
-   \`\`\`
+```
+\`\`\`
+```
 
 Result:
 
 \`\`\`
+
+---
 
 Or indent 4 spaces.
 
