@@ -57,7 +57,23 @@ cheatsheet:
             help: Convert `\n` to two `br` tags
 
           - cmd: escape
-          - cmd: escape_once
+            help: Escape HTML so that tags appear as ampersand charactes that aren't evaluated
+            usage: |
+                {{ "<p>Jekyll</p>" | escape }}
+
+                Result:
+
+                &amp;lt;p&amp;gt;Jekyll&amp;lt;/p&amp;gt;
+
+          - cmd: uri_escape
+            help: Escape a URI with percent coding
+            usage: | 
+                {{ "foo, bar \baz?" | uri_escape }}
+                
+                Result:
+
+                foo,%20bar%20%5Cbaz?
+
           - cmd: url_decode
           - cmd: url_encode
           
@@ -213,6 +229,17 @@ Grouped by functionality.
 This is a based info on the [CloudCannon Jekyll cheatsheet][]. See also [Liquid filters][] on Jekyll docs.
 
 The items here are grouped and ordered by use, rather than alpabetically.
+
+For escaping a URI:
+
+- `url_escape`
+- `cgi_escape`
+
+For escaping HTML tags:
+
+- `xml_escape`
+- `escape` 
+- `escape_once` 
 
 See also the [Arrays][] cheatsheet.
 
