@@ -3,40 +3,53 @@ title: curl
 
 cli:
   usage: |
-     curl [options...] <url>
+    curl [OPTIONS...] URL
+
   flags:
-    - flag: '-I, --head'
+    - flag: |
+        `-I, --head`
       description: |
         Show headers only
 
         "Show document info only"
-    - flag: '-v'
+      example:
+    - flag: |
+        `-v`
       description: Verbose
-    - flag: '-L'
+    - flag: |
+        `-L`
       description: Follow redirects.
-    - flag: '-H, --header HEADER'
+    - flag: |
+        `-H, --header HEADER`
       description: Request headers.
       example: |
-        -H 'Content-Type: application/json'
-    - flag: '-X, --request TYPE'
+        `-H 'Content-Type: application/json'`
+    - flag: |
+        `-X, --request TYPE`
       description: Request type. Note that passing data with `-d` automatically generates a POST.
       example: |
-        -X POST
-    - flag: '-d, --data DATA'
+        `-X POST`
+    - flag: |
+        `-d, --data DATA`
       description: Pass data in a request. Typically JSON or form data in a POST.
       example: |
-        --data 'foo=bar;bazz=123
+        `--data 'foo=bar;bazz=123`
 
-        --data '{"foo": "bar", "bazz": 123}' -H 'Content-Type: application/json'
-    - flag: '-F FIELD=VALUE'
+        `--data '{"foo": "bar", "bazz": 123}' -H 'Content-Type: application/json'`
+    - flag: |
+        `-F FIELD=VALUE`
       description: Send field
       example: |
-        -F 'foo=bar' 'bazz=123'
-    - flag: '-u, --user USER:PASSWORD'
+        `-F 'foo=bar' 'bazz=123'`
+    - flag: |
+        `-u, --user USER:PASSWORD`
       description: Server user and password
-    - flag: '-A, --user-agent NAME'
-      description: Send User-Agent
-      example: curl -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" https://example.com/"
+    - flag: |
+        `-A, --user-agent NAME`
+      description: Send User-Agent value
+      example: |
+        `curl -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" https://example.com/"`
+
 ---
 
 
@@ -76,20 +89,79 @@ DESCRIPTION
 ```
 
 
-## Usage
+## CLI
 
-```
-{{ page.cli.usage }}
-```
+{% include cli.html cli=page.cli %}
 
 
-## Upload file
+## Files
 
-```sh
-curl -F 'upload=@./my_file.txt' URL
-```
+Provide a path to a file.
 
+### Basic upload
 
 ```sh
-curl -F 'image=@./my_image.png' URL
+curl -F 'upload=@my_file.txt' URL
+```
+
+### Image
+
+```sh
+curl -F 'image=@my_image.png' URL
+```
+
+## Headers
+
+Protocol response headers.
+
+### Head
+
+Using `-I` flag, _only_ the headers will be shown. No content.
+
+This can be useful for debugging an API or a server-rendered page, where you don't get about the content (which can be long).
+
+e.g.
+
+```console
+$ curl -I https://google.com
+HTTP/2 301
+location: https://www.google.com/
+content-type: text/html; charset=UTF-8
+date: Sat, 21 Aug 2021 12:24:24 GMT
+expires: Mon, 20 Sep 2021 12:24:24 GMT
+cache-control: public, max-age=2592000
+server: gws
+content-length: 220
+x-xss-protection: 0
+x-frame-options: SAMEORIGIN
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+```
+
+### Add headers
+
+Using `-i` flag, you'll see the headers added like date and content type.
+
+Any other content like HTMl will be shown after it.
+
+e.g.
+
+```console
+$ curl -i https://google.com
+location: https://www.google.com/
+content-type: text/html; charset=UTF-8
+date: Sat, 21 Aug 2021 12:22:33 GMT
+expires: Mon, 20 Sep 2021 12:22:33 GMT
+cache-control: public, max-age=2592000
+server: gws
+content-length: 220
+x-xss-protection: 0
+x-frame-options: SAMEORIGIN
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="https://www.google.com/">here</A>.
+</BODY></HTML>
 ```
