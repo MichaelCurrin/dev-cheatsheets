@@ -3,36 +3,36 @@ title: curl
 
 cli:
   usage: |
-     curl [options...] <url> 
+     curl [options...] <url>
   flags:
     - flag: '-I, --head'
       description: |
         Show headers only
-    
+
         "Show document info only"
     - flag: '-v'
       description: Verbose
     - flag: '-L'
       description: Follow redirects.
     - flag: '-H, --header HEADER'
-      description: Request headers. 
+      description: Request headers.
       example: |
         -H 'Content-Type: application/json'
     - flag: '-X, --request TYPE'
       description: Request type. Note that passing data with `-d` automatically generates a POST.
       example: |
-        -X POST 
+        -X POST
     - flag: '-d, --data DATA'
       description: Pass data in a request. Typically JSON or form data in a POST.
       example: |
         --data 'foo=bar;bazz=123
-  
+
         --data '{"foo": "bar", "bazz": 123}' -H 'Content-Type: application/json'
     - flag: '-F FIELD=VALUE'
       description: Send field
       example: |
         -F 'foo=bar' 'bazz=123'
-    - flag: '-u, --user USER:PASSWORD
+    - flag: '-u, --user USER:PASSWORD'
       description: Server user and password
     - flag: '-A, --user-agent NAME'
       description: Send User-Agent
@@ -47,7 +47,6 @@ cli:
 
 ## Help
 
-  
 ```console
 $ curl --help
   Usage: curl [options...] <url>
@@ -55,7 +54,7 @@ $ curl --help
      --alt-svc <file name> Enable alt-svc with this cache file
      ...
 ```
-  
+
 ```console
 $ man curl
 NAME
@@ -75,24 +74,22 @@ DESCRIPTION
        curl is powered by libcurl for all transfer-related features. See libcurl(3) for details.
 ...
 ```
-  
+
 
 ## Usage
-  
+
 ```
 {{ page.cli.usage }}
 ```
-  
-  
+
+
 ## Upload file
-  
-  ```sh
+
+```sh
 curl -F 'upload=@./my_file.txt' URL
 ```
-  
-  
+
+
 ```sh
 curl -F 'image=@./my_image.png' URL
 ```
-  
-  
