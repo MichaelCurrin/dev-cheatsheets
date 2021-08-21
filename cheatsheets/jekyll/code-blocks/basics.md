@@ -138,7 +138,7 @@ Code:
      vg: vg.storage
      pvs: /dev/sdb1
      pesize: 32
-    ```
+   ```
 2. Create a logical volume in your logical volume group
    ```yaml
    - name: create logical volume
