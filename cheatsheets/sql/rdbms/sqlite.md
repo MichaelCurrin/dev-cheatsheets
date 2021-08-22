@@ -87,6 +87,13 @@ Get just year.
 SELECT STRFTIME('%Y', 'now')
 ```
 
+Symbol | Description | Range
+--- | --- | ---
+`%d` | day of month | DD
+`%m` | month | MM
+`%H` | hour | MM
+`%M` | minute | SS
+`%Y` | year | YYYY
 
 
 ## Drop
