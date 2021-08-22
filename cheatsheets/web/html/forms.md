@@ -1,4 +1,4 @@
-# Forms
+# Forms and inputs
 > Guide to input elements for forms
 
 Note that these do not render on GitHub's markdown, but can be viewed on a static site or an IDE's Markdown preview.
