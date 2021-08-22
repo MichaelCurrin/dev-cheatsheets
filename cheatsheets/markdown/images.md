@@ -168,9 +168,9 @@ Notes:
 
 ### Add elements
 
-You can other elements in the outer tag.
+You can use other elements in the outer tag.
 
-In the of a badge as a second element, that will only be centered if the outer element is a `div` and not a `p`.
+In the case of a badge image as a second element, that will only be centered if the outer element is a `div` and not a `p`. I don't know why.
 
 Example:
 
@@ -228,9 +228,9 @@ Example
 
 #### Using raw.githubusercontent.com
 
-If you reference an image on GitHub through the _Raw_ button, you get a link on `raw.githubusercontent.com`. You must add this to the URL to avoid getting an error: `?sanitize=true`.
+If you reference an image on GitHub through the _Raw_ button, you get a link for `raw.githubusercontent.com`. You must add this to the URL to avoid getting an error: `?sanitize=true`.
 
-Example of the above. This could be markdown too, but is HTML to set the width.
+Example of the above. This could be Markdown too, but with HTML to set the width.
 
 ```html
 <img width="100px"
@@ -253,13 +253,3 @@ An asset hosted on a GitHub Pages site.
 ```
 
 ![Alt text](https://potherca-blog.github.io/StackOverflow/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
-
-### Using rawgithub.com
-
-Raw content on GitHub. This could use reference a branch, tag, or commit hash reference.
-
-```md
-![Alt text](https://rawgithub.com/potherca-blog/StackOverflow/master/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
-```
-
-![Alt text](https://rawgithub.com/potherca-blog/StackOverflow/master/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
