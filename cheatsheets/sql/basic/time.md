@@ -24,6 +24,12 @@ SELECT NOW();
 2021-04-13 11:38:04.06661+00
 ```
 
+At least in SQLite.
+
+```sql
+SELECT DATE('NOW');
+```
+
 
 ## Use in string
 
@@ -46,6 +52,23 @@ SELECT CAST(NOW() AS TEXT);
 
 ```
 2021-04-13 11:40:48.899882+00
+```
+
+
+## Format
+
+At least in SQLite.
+
+String format. Pass in 'NOW' for easy testing, or pass a timestamp column.
+
+```sql
+SELECT STRFTIME('%s', 'NOW')
+```
+
+Get just year.
+
+```sql
+SELECT STRFTIME('%Y', 'NOW')
 ```
 
 
