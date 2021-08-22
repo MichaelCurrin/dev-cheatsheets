@@ -41,7 +41,7 @@ The time is 2021-04-13 11:40:00.064024+00
 Note you cannot convert to integer or float like this, at least in PG.
 
 ```sql
-SELECT CAST(NOW() AS  TEXT);
+SELECT CAST(NOW() AS TEXT);
 ```
 
 ```
