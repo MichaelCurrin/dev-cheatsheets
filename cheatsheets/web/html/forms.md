@@ -202,13 +202,26 @@ As with radio buttons, use `for` and `id` for combining inputs and `name` for su
 
 {% capture checkboxes %}
 <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-<label for="vehicle1">I have a bike</label><br>
+<label for="vehicle1">
+    I have a bike
+</label>
+
+<br>
 
 <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-<label for="vehicle2">I have a car</label><br>
+<label for="vehicle2">
+    I have a car
+</label>
+
+<br>
 
 <input type="checkbox" id="vehicle2" name="vehicle3" value="Boat" checked>
-<label for="vehicle3">I have a boat</label><br><br>
+<label for="vehicle3">
+    I have a boat
+</label>
+
+<br>
+<br>
 
 <input type="submit" value="Submit">
 {% endcapture %}
@@ -222,6 +235,127 @@ As with radio buttons, use `for` and `id` for combining inputs and `name` for su
 **Result**
 
 {{ checkboxes }}
+
+
+## Toggle
+
+This is the same as a [Checkbox](#checkbox) but uses extra styling.
+
+Based on [CSS How to switch](https://www.w3schools.com/howto/howto_css_switch.asp) on W3 Schools.
+
+For some reason the label has to wrap the checkbox, otherwise it does nothing. Using a `div` instead of `label` doesn't work.
+
+{% capture switch_html %}
+Rectangular
+
+<label class="switch">
+  <input type="checkbox">
+  <span class="slider"></span>
+</label>
+
+Rounded
+
+<label class="switch">
+  <input type="checkbox">
+  <span class="slider"></span>
+</label>
+{% endcapture %}
+
+
+{% capture switch_css %}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+{% endcapture %}
+
+**Code**
+
+`index.html`
+```html
+{{ switch_html }}
+```
+
+`styles.css`
+```css
+{{ switch_css }}
+```
+
+**Result**
+
+{{ switch_html }}
+
+<style>
+{{ switch_css }}
+</style>
+
+For text label, I found this worked.
+
+```html
+<label class="switch">
+  <input type="checkbox">
+  <span class="slider"></span>
+  <p>High quality</p>
+</label>
+```
 
 
 ## Form sections
