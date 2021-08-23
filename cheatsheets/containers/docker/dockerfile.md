@@ -9,6 +9,8 @@ See [Dockerfile reference](https://docs.docker.com/engine/reference/builder/) do
 
 ## Overview
 
+<!-- Syntax highlighting breaks in Jekyll if indenting Dockerfile codeblock -->
+
 `Dockerfile`
 ```Dockerfile
 FROM image-name
@@ -292,15 +294,15 @@ FROM IMAGE AS ALIAS
 
 Example:
 
-- `Dockerfile`
-    ```Dockerfile
-    FROM python:alpine AS base
-    
-    FROM base AS dev
-    CMD ["mkdocs", "serve", "-a", "0.0.0.0:8000"]
+`Dockerfile`
+```Dockerfile
+FROM python:alpine AS base
 
-    FROM base AS build
-    COPY . .
-    RUN mkdocs build
-    ```
+FROM base AS dev
+CMD ["mkdocs", "serve", "-a", "0.0.0.0:8000"]
+
+FROM base AS build
+COPY . .
+RUN mkdocs build
+```
 
