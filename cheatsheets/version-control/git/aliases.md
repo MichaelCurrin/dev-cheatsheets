@@ -6,7 +6,11 @@ description: Configure aliases for git
 
 Set up aliases in your global  `~/.gitconfig` file.
 
-I did a blog post [here](https://dev.to/michaelcurrin/dotfiles-git-config-348o) on git aliases.
+
+## Related
+
+- [MichaelCurrin/dotfiles](https://github.com/MichaelCurrin/dotfiles) repo I set up, including my Git config.
+- [Dotfiles - Git Config with Aliases](https://dev.to/michaelcurrin/dotfiles-git-config-348o) blog post.
 
 
 ## Basic
@@ -127,3 +131,18 @@ I am world I am world
 ```
 
 I think the reason this behavior exists is so you that `git my-alias my-arg -a -b` will be called as the expand the alias and still pass on on the positional and keyword params. 
+
+
+## Multi-line
+
+See [TOML strings][] cheatsheet for more info.
+
+```toml
+[alias]
+	undo = """! [ -z \"$(git status --porcelain)\" ] \
+		&& git reset --hard HEAD~ \
+		|| echo 'Unstaged changes! Stash and try again' \
+	"""
+```
+
+[TOML strings]: {{ site.baseurl }}{% link cheatsheets/data/toml/strings.md %}
