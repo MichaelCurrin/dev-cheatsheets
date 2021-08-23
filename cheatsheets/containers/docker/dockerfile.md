@@ -66,9 +66,13 @@ You can copy a file or a directory.
 COPY SRC DEST
 ```
 
-Examples - note we leave working directory as `/root/` here so copying to relative path will use that.
+## Examples
 
-<!-- TODO research and experiment to check I got these right -->
+Note we leave working directory as `/root/` here so copying to relative path will use that.
+
+#### Copy file
+
+<!-- TODO: research and experiment to check I got these right -->
 
 ```Dockerfile
 # Copy file to working directory.
@@ -82,15 +86,27 @@ COPY foo /bar/
 # cp foo /bar/foo
 ```
 
-```Dockerfile
-# Copy files and directories
-COPY . .
-# cp -r . /root/
+#### Copy files
 
+```Dockerfile
+COPY package*.json .
+# i.e.
+# cp package.json /root/package.json
+# cp package-lock.json /root/package-lock.json
+
+# OR
+COPY package.json package-lock.json .
+```
+
+#### Copy directories
+
+```Dockerfile
 # Copy whole directory.
 COPY src .
 # cp -r src /root/src
+```
 
+```Dockerfile
 # Warning.
 # If the destination is a directory, the whole directory will be copied INTO the directory.
 COPY src fuzz
@@ -107,16 +123,15 @@ COPY src/* fuzz
 # cp -r src/* /root/fuzz
 ```
 
-```Dockerfile
-# Copy files
-COPY package*.json .
-# i.e.
-# cp package.json /root/package.json
-# cp package-lock.json /root/package-lock.json
+#### Copy files and directories
 
-# OR
-COPY package.json package-lock.json .
+```Dockerfile
+# Copy files and directories
+COPY . .
+# cp -r . /root/
 ```
+
+### Subdirectories
 
 Subdirectories will be created. For example, if `fizz` does not exist.
 
@@ -130,6 +145,8 @@ Then that is equivalent to:
 mkdir -p /root/fizz/buzz/
 cp foo /root/fizz/buzz/foo
 ```
+
+### Absolute path
 
 Using absolute destinations is preferred. So avoid using `~/bar`, though it can actually work to point to the root user's home.
 
@@ -145,6 +162,8 @@ COPY . .
 Note that this works differently to the plain `cp` command - the contents of the source directory are copied, not the directory itself.
 
 So to keep the destination as `lib`, why you would use `COPY lib lib` rather than `COPY lib .`
+
+## COPY vs ADD
 
 See also the older `ADD` command which is not used as much. It allows referencing a zip file on a URL, but the preferred way in the docs is to use `curl` and `tar` in a `RUN` command.
 
