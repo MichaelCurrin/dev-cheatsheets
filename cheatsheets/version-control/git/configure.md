@@ -3,13 +3,23 @@ description: How to configure git
 ---
 # Configure
 
+## Related
+
+- [Git aliases]({{ site.baseurl }}{% link cheatsheets/version-control/git/aliases.md %})
+
 
 ## Edit directly
 
 Open `~/.gitconfig` in you IDE.
 
+e.g.
 
-## Edit in terminal
+```sh
+$ code ~/.gitconfig
+```
+
+
+## Edit in shell editor
 
 View or edit the config using `-e` for edit.
 
