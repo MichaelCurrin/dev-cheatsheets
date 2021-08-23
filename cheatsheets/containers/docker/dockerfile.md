@@ -9,18 +9,18 @@ See [Dockerfile reference](https://docs.docker.com/engine/reference/builder/) do
 
 ## Overview
 
-- `Dockerfile`
-    ```Dockerfile
-    FROM image-name
+`Dockerfile`
+```Dockerfile
+FROM image-name
 
-    ENV foo=bar
-    ARG fizz=buzz
+ENV foo=bar
+ARG fizz=buzz
 
-    RUN apt-get update
-    RUN apt install -q -y foo
+RUN apt-get update
+RUN apt install -q -y foo
 
-    RUN echo "Hello"
-    ```
+RUN echo "Hello"
+```
 
 
 ## Set working directory
@@ -29,26 +29,27 @@ This is useful to a working directory for subsequent commands in the image build
 
 If the directory does not exist, you must create it using `mkdir.
 
-- `Dockerfile`
-    ```Dockerfile
-    RUN mkdir /root/foo
-    WORKDIR /root/foo
-    ```
-- `Dockerfile`
-    ```Dockerfile
-    RUN mkdir /usr/src/app
-    WORKDIR /usr/src/app
-    ```
+`Dockerfile`
+```Dockerfile
+RUN mkdir /root/foo
+WORKDIR /root/foo
+```
+
+`Dockerfile`
+```Dockerfile
+RUN mkdir /usr/src/app
+WORKDIR /usr/src/app
+```
 
 Though, you can set up working directory and then use `COPY` to add something there and the directory will be created, without the need for `mkdir`.
 
 Given `app` in the current directory, the `app` directory will be copied to where the working directory expects it to be.
 
-- `Dockerfile`
-    ```Dockerfile
-    WORKDIR /usr/src/app
-    COPY . .
-    ```
+`Dockerfile`
+```Dockerfile
+WORKDIR /usr/src/app
+COPY . .
+```
 
 I read that using absolute paths is preferred in a container over a path like `~/foo`.
 
