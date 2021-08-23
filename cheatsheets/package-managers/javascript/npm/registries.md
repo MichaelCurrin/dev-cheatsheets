@@ -161,7 +161,7 @@ latest: 4.5.11       next: 5.0.0-alpha.4
 
 [npm.pkg.github.com](https://npm.pkg.github.com)
 
-Set up a config to tell your NPM command to look at GitHub.
+Set up a config to tell your NPM command to look at GitHub instead of NPM.
 
 - `.npmrc`
     ```
@@ -170,7 +170,7 @@ Set up a config to tell your NPM command to look at GitHub.
 
 Note:
 
-> By default, you can only use GitHub Packages packages from one organization.
+> By default, you can only use GitHub Packages packages from **one** organization.
 
 See the doc linked below for info on to use multiple orgs.
 
@@ -190,7 +190,7 @@ $ npm install @octo-org/octo-app
 
 ### Install from NPM
 
-With GitHub setup, you can still install NPM registry.
+With GitHub setup, you can still install from the NPM registry.
 
 ```sh
 $ npm install @babel/core
@@ -244,7 +244,7 @@ Assuming you have your SSH keys set up locally and on GitHub, for access to priv
 $ npm install git+ssh://git@github.com:USERNAME/REPO_NAME.git
 ```
 
-This does something like this internally.
+This does something like this internally:
 
 ```sh
 $ git clone git@github.com:USERNAME/REPO_NAME.git
