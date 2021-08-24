@@ -1,11 +1,30 @@
 # Strings
 
 
-## Quote strings
+## About
 
-### Evaluation
+Everything is Unix systems is either a string (text stream) or binary data (like an image).
 
-Use **single quotes** for a literal string one that is not evaluated. 
+In Bash, there is no integer or boolean. Just strings. See also [Arrays][] and [Associative arrays][] cheatsheets.
+
+Also if you want a special character to be a plain string, you must quote it. e.g. Using `>` vs `'>'`.
+
+```console
+$ echo >
+zsh: parse error near `\n'
+$ echo '>'
+>
+```
+
+[Arrays]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/arrays.md %}
+[Associative arrays]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/associative-arrays.md %}
+
+
+## Quoting strings
+
+### Single quotes
+
+Use **single quotes** for a literal string that is not evaluated. 
 
 ```sh
 X='Hello, $(whoami) / $USER'
@@ -15,6 +34,8 @@ echo "$X"
 ```
 Hello, Hello, $(whoami) / $USER'
 ```
+
+### Double equotes
 
 Use **double quotes** to evaluate.
 
@@ -26,6 +47,115 @@ echo "$X"
 ```
 Hello, mcurrin / mcurrin!
 ```
+
+
+### No quotes
+
+The expression will be evaluated.
+
+```console
+$ echo Hello
+Hello
+```
+
+```console
+$ echo Hello $USER / $(whoami)
+Hello mcurrin / mcurrin
+```
+If the value is multiple words (separated by space or newline), then the value will be spread out.
+
+
+## When to quote
+
+Quotes are usually optional. 
+
+Sometimes they make a difference.
+
+### Empty values
+
+Such as if a variable is empty.
+
+This will cause a syntax error if `FOO` is not set or empty.
+
+```sh
+[ -z $FOO ]
+```
+
+This will be safe.
+
+```sh
+[ -z "$FOO" ]
+```
+
+
+### Words
+
+If a variable multiple words, with a space or newlinws, but you want a single string.
+
+Important for a file path with spaces.
+
+OK:
+
+```sh
+$ cd "My Projects"
+```
+
+Error:
+
+```sh
+$ cd My Projects
+```
+
+The same goes for passing arguments using a variable.
+
+```sh
+$ TARGET="My Projects"
+$ # OK
+$ cd "$TARGET"
+
+$ # Error because it sees `My` and `Projects` as two arguments.
+$ cd $TARGET
+```
+
+
+Or a URL that has spaces in it. You can also use `%20` in place of spaces.
+
+
+OK:
+
+```sh
+$ curl "https://example.com/My Projects"
+$ curl "https://example.com/My%20Projects"
+```
+
+Error - this would pass two arguments.
+
+```sh
+$ curl https://example.com/My Projects
+```
+
+### Expanding paths
+
+If you using a glob like `*` or the user directory like `~`, you probably want those outside of any quotes to avoid literal evaluate.
+
+OK:
+
+```sh
+$ cd ~/Documents
+```
+
+Will give an error.
+
+```sh
+$ cd "~/Documents"
+```
+
+If you need quotes, use `$HOME`.
+
+```sh
+$ cd "$HOME/Documents"
+```
+
 
 ### Multi-line strings
 
