@@ -63,6 +63,29 @@ Remember to explicitly set `path` to `/` so the cookie is not restricted to the 
 document.cookie = "abc=def 123;secure=true;path=/;"
 ```
 
+
+## Site sharing
+
+
+- [SameSite](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) on MDN docs
+
+
+Restrict to first-party access.
+
+```
+samesite=strict
+```
+
+Or thiry-party.
+
+```
+samesite=none
+```
+
+WHy set `secure`?
+
+> If SameSite=None is set, the cookie Secure attribute must also be set (or the cookie will be blocked).
+
  
 ## Example
 
