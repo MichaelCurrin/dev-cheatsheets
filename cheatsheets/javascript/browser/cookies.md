@@ -57,15 +57,19 @@ Or just check presence of your key, at the risk that your key exists in another 
 document.cookie = "abc=123"
 ```
 
-Remember to explicitly set `path` to `/` so the cookie is not restricted to the current page, which is default.
+Remember to explicitly set `Path` to `/` so the cookie is not restricted to the current page, which is default.
 
 ```javascript
-document.cookie = "abc=def 123;secure=true;path=/;"
+document.cookie = "abc=def 123;Secure=true;Path=/;"
 ```
+
+The attributes are case-insensitive. So `Path`, `path`, and `PATH` all work.
+
+If you set the same cookie name with different path, you'll get a different cookie.
+
 
 
 ## Site sharing
-
 
 - [SameSite](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) on MDN docs
 
@@ -98,5 +102,5 @@ value = JSON.stringify(my_interests)
 const expiry = new Date();
 const currYear = expiry.getFullYear();
 expiry.setYear(currYear + 5);
-document.cookie = `my_interests=${value};secure=true;samesite=None;path=/;expires=${expiry.toGMTString()}`;
+document.cookie = `my_interests=${value};Secure=true;SameSite=None;Path=/;expires=${expiry.toGMTString()}`;
 ```
