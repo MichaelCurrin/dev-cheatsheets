@@ -23,3 +23,57 @@ In Mozilla docs.
 See also [Storage][] cheatsheet.
 
 [Storage]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/storage.md %}
+
+
+## Usage
+
+### Get
+
+See existing cookies as a string. You won't see details like path or expiry unless you go to the _Storage_ tab of DevTools.
+
+```javascript
+document.cookie
+```
+
+e.g.
+
+```
+"_octo=GH1.1.621127999.1603358123; tz=Africa%2FJohannesburg; abc=123"
+```
+
+Split string into an array.
+
+```javascript
+document.cookie.split("; ")
+```
+
+You'll then need to split by `=` and find the one you need by key.
+
+Or just check presence of your key, at the risk that your key exists in another cookie's value.
+
+### Set
+
+```javascript
+document.cookie = "abc=123"
+```
+
+Remember to explicitly set `path` to `/` so the cookie is not restricted to the current page, which is default.
+
+```javascript
+document.cookie = "abc=def 123;secure=true;path=/;"
+```
+
+ 
+## Example
+
+How to set an get an array in a cookie.
+
+```javascript
+const my_interests = ["abc", "def", "xyz"]
+value = JSON.stringify(my_interests)
+
+const expiry = new Date();
+const currYear = expiry.getFullYear();
+expiry.setYear(currYear + 5);
+document.cookie = `my_interests=${value};secure=true;samesite=None;path=/;expires=${expiry.toGMTString()}`;
+```
