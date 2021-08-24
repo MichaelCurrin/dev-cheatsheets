@@ -8,10 +8,14 @@ i.e. preserve whitespace
 
 No `br` tags needed.
 
+**Code**
+
 ```html
 <pre>Hello
 World!</pre>
 ```
+
+**Result**
 
 <pre>Hello
 World!</pre>
@@ -21,11 +25,15 @@ World!</pre>
 
 Display code, using monospace. No syntax highlighting will be used. 
 
+**Code**
+
 ```html
 <code>
   console.log("Hello, World!");
 </code>
 ```
+
+**Result**
 
 <code>
   console.log("Hello, World!");
@@ -33,6 +41,10 @@ Display code, using monospace. No syntax highlighting will be used.
 
 You probably want to use `pre` as well to preserve whitespace. Just remember to take out the whitespace around the `code` tags to avoid rendering those.
 
+---
+
+**Code**
+
 ```html
 <pre><code>console.log("Hello, World!");</code></pre>
 
@@ -40,12 +52,16 @@ You probably want to use `pre` as well to preserve whitespace. Just remember to 
 console.log("Line 2")</code></pre>
 ```
 
+**Result**
+
 <pre><code>console.log("Hello, World!");</code></pre>
 
 <pre><code>console.log("Hello, World!");
 console.log("Line 2")</code></pre>
 
-You can use a library for syntax highlighting, or use GitHub Markdown with backtick codeblocks
+You can use a library for syntax highlighting, or use Markdown with backtick codeblocks.
+
+**Code**
 
     ```html
     <p>Hello, World!</p>
@@ -56,11 +72,15 @@ You can use a library for syntax highlighting, or use GitHub Markdown with backt
 
 Sample output from a computer. It will be using monospace.
 
+**Code**
+
 ```html
 <samp>
   Hello, World!
 </samp>
 ```
+
+**Result**
 
 <samp>
   Hello, World!
