@@ -146,23 +146,21 @@ Rather than a specific state or event, this event fires each time when moving be
 - [readystatechange](https://developer.mozilla.org/en-US/docs/Web/API/Document/readystatechange_event)
     > Fired when the readyState attribute of a document has changed. Also available via the `onreadystatechange` property. 
 
-e.g. Set this up early on your page.
+e.g. 
 
-```html
-<head>
-    <script>
-        document.addEventListener('readystatechange', () => {
-          console.debug('readystatechange', document.readyState)
-        });
-    </script>
-</head>
+Set this up early on your page, such as in a `script` tag in `head`.
+
+```javascript
+document.addEventListener('readystatechange', () => {
+  console.debug('readystatechange', document.readyState)
+});
 ```
 
 If you to want log the `event` too, to see the fields on it.
 
 ```javascript
 document.addEventListener('readystatechange', (event) => {
-  console.debug('readystatechange', document.readyState, event)
+  console.debug('readystatechange', document.readyState, event);
 });
 ```
 
