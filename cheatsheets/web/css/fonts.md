@@ -14,25 +14,46 @@ p.italic {
 }
 ```
 
-```css
-p {
-    font-size: 40px;
-}
-
-p {
-    font-size: 100%;
-}
-
-p {
-    font-size: 2.5em;
-}
-```
+## Weight
 
 ```css
 p.thick {
     font-weight: bold;
 }
 ```
+
+
+## Size
+
+### Font size
+
+```css
+p {
+    font-size: 40px;
+}
+```
+
+e.g.
+
+- `40px`
+- `100%`
+- `larger`
+-  `2.5em`
+
+### Font size adjust
+
+```css
+p {
+    font-size-adjust: 1;
+}
+```
+
+e.g.
+
+- `0.5` - this seemeded close to default with no styling set.
+- `1`
+- `2`
+
 
 ## Web font
 
