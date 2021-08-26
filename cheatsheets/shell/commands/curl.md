@@ -50,6 +50,19 @@ cli:
       example: |
         `curl -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" https://example.com/"`
 
+    - flag: |
+         `-O`
+      description: Output file with resource's name. No argument required. The name will be inferred from the URL - useful for when downloading a zip file for example.
+      example: |
+        `curl -O https://example.com/abc/def.zip`
+        
+        Now available as `def.zip`.
+        
+    - flag: |
+         `-o OUTPUT_PATH`
+      description: Save resource with desired name
+      example: |
+        `curl URL -o foo.txt`
 ---
 
 
