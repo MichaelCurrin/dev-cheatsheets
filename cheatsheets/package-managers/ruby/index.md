@@ -1,7 +1,8 @@
 ---
+title: Ruby
 logo: ruby
 ---
-# Ruby
+
 
 
 ### Related
