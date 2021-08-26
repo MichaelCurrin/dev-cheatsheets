@@ -31,21 +31,21 @@ See also [Performance][] cheatsheet.
 
 
 
-## Add logs to sequence
+## Add log message to events
 
-Set up log messages. The lines of code are set up here in the order they are expected to fire.
+The lines of code are set up here in the order they are expected to fire.
 
 ### Plain JS
 
 ```javascript
-document.ready = () => console.log('document ready')
+document.ready = () => console.log("Document ready")
 
 window.addEventListener(
   'DOMContentLoaded', 
-  () => console.log('DOM content loaded')
+  () => console.log("DOM content loaded")
 )
 
-window.onload = () => console.log('window loaded')
+window.onload = () => console.log("Window loaded")
 ```
 
 Be careful - you'll override multiple events set up with the assignment approach - adding with `addEventListener` is better as it appends.
@@ -53,9 +53,9 @@ Be careful - you'll override multiple events set up with the assignment approach
 ### jQuery
 
 ```javascript
-$(document).ready(() => 'document ready')
+$(document).ready(() => "Document ready")
 
-$(window).load(() => 'window loaded')
+$(window).load(() => 'Window loaded')
 ```
 
 
@@ -67,7 +67,6 @@ $(window).load(() => 'window loaded')
     > The `DOMContentLoaded` event fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
     > 
     > A different event, `load`, should be used only to detect a fully-loaded page. It is a common mistake to use load where DOMContentLoaded would be more appropriate.
-
 
 e.g. Using an arrow functions.
 
@@ -159,7 +158,7 @@ e.g. Set this up early on your page.
 </head>
 ```
 
-If you to log the event, to see the fields on it.
+If you to want log the `event` too, to see the fields on it.
 
 ```javascript
 document.addEventListener('readystatechange', (event) => {
@@ -167,4 +166,4 @@ document.addEventListener('readystatechange', (event) => {
 });
 ```
 
-This can be useful to undertand exactly when your page moves through each state, while also logging other messages.
+This can be useful to understand exactly when your page moves through each state, while also logging other messages.
