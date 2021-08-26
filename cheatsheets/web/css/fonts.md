@@ -40,6 +40,15 @@ e.g.
 - `larger`
 -  `2.5em`
 
+
+For a button:
+
+```css
+button.btn-large {
+  font-size: larger;
+}
+```
+
 ### Font size adjust
 
 ```css
