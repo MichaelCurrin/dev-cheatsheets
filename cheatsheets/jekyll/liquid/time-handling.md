@@ -30,22 +30,19 @@ You can `'now'` as pass it to a date-related filter.
 2021-04-18T20:27:23+02:00
 ```
 
-### Old approach
+```liquid
+<!-- This page was last updated on {{ "now" | date: "%Y-%m-%d %H:%M" }} -->
+```
+
+### Deprecated approach
+
+This was how `now` used to be done.
 
 ```liquid
 {{ site.time }}
 ```
 ```
 2021-04-18 20:28:58 +0200
-```
-
-Or pass that to `date`, `date_to_xmlschema`, or similar.
-
-```liquid
-{{ site.time | date_to_xmlschema }}
-```
-```
-2021-04-18T20:28:58+02:00
 ```
 
 
@@ -69,7 +66,7 @@ Note that if you give a value as:
 date: 2020-04-01
 ```
 
-Then Jekyll will convert it to a time.
+Then Jekyll will convert it to a time at midnight.
 
 ```liquid
 {{ page.date }}
@@ -81,7 +78,7 @@ Then Jekyll will convert it to a time.
 
 ## Conversion
 
-### Basic
+### Day month year
 
 Code:
 
@@ -93,6 +90,12 @@ Result:
 
 ```
 23 Mar 2016
+```
+
+Equivalent to:
+
+```liquid
+{{ page.date | date: "%-d %b %Y" }}
 ```
 
 ### Long string
@@ -111,6 +114,8 @@ Result:
 
 ### ISO format
 
+Date and time with day of week and timezone.
+
 ```liquid
 {{ page.date | date_to_rfc822 }}
 ```
@@ -119,7 +124,7 @@ Result:
 Wed, 23 Mar 2016 23:20:00 +1300
 ```
 
-### Date and time
+### Date, time, and timezone
 
 ```liquid
 {{ page.date | date_to_xmlschema }}
@@ -140,14 +145,6 @@ Wed, 23 Mar 2016 23:20:00 +1300
 
 ### Custom
 
-```liquid
-{{ page.date | date: "%-d %b %Y" }}
-```
-
-```
-1 Feb 2020
-```
-
 Just year:
 
 ```liquid
@@ -158,6 +155,13 @@ Just year:
 2020
 ```
 
+Date and time.
+
+```liquid
+{{ page.date | date: "%Y-%m-%d %H:%M:%S" }}
+```
+
+
 ## Ordinal
 
 > One notable exclusion from this list getting the ordinal date. For example we couldn’t output “May 23rd” because there’s no placeholder for the “rd”.
@@ -166,12 +170,14 @@ Just year:
 
 ```liquid
 {% assign day = page.date | date: "%-d" %}
+
 {% case day %}
     {% when '1' or '21' or '31' %}{{ day }}st
     {% when '2' or '22' %}{{ day }}nd
     {% when '3' or '23' %}{{ day }}rd
     {% else %}{{ day }}th
 {% endcase %}
+
 {{ page.date | date: "of %B, %Y" }}
 ```
 ```
