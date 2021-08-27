@@ -7,7 +7,7 @@ description: How to get data using `fetch`
 ## About
 
 - Browser
-    - The `fetch` function is builtin for modern browsers.
+    - The `fetch` function is built-in for modern browsers.
 - NPM
     - [node-fetch](https://www.npmjs.com/package/node-fetch)
         - The browser `fetch` function brought to Noded.js.
@@ -17,9 +17,11 @@ description: How to get data using `fetch`
 - [JavaScript.info](https://javascript.info/fetch) site
 - [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
-Using `fetch`. Builtin for modern browsers and you can use `node-fetch` on the server side.
+Using `fetch`. Built-in for modern browsers. Available as a polyfill from NPm for older browsers.
 
-Warning - an error will **not** be thrown on a non-200 status so you must handle this yourself. Other libraries tend to handle errors for.
+You can use `node-fetch` or alternatives in Node on the server side.
+
+Warning - an error will **not** be thrown on a non-200 status, so you must handle this yourself. Other libraries tend to handle errors for you.
 
 
 ## Samples
@@ -31,7 +33,7 @@ There are async and promise-based examples below. Both can be adapted to follow 
 Using the modern `async` and `await` syntax.
 
 ```javascript
-const url = 'https://api.github.com/users/github'
+const url = "https://api.github.com/users/github"
 const resp = await fetch(url);
 ```
 
@@ -51,26 +53,22 @@ const body = await resp.text()
 
 Use `resp.ok` to check for a success message.
 
-Based on _JS.info_ example. I don't know if `alert` will actually break the flow or code after will still get executed.
-
-```javascript
-const resp = await fetch(url);
-
-if (resp.ok) {
-  let json = await resp.json();
-} else {
-  alert(`HTTP-Error: ${resp.status}`);
-}
-```
-
-My own variation.
-
 ```javascript
 const resp = await fetch(url);
 if (!resp.ok) {
-  throw new Error(`${resp.status} - ${resp.statusText}`);
+  throw new Error(`${url} HTTP error: ${resp.status} - ${resp.statusText}`);
 }
 const data = await resp.json();
+```
+
+Based on _JS.info_ example. I don't know if `alert` will actually break the flow or code after it will still get executed.
+
+```javascript
+const resp = await fetch(url);
+
+if (!resp.ok) {
+  alert(`HTTP-Error: ${resp.status}`);
+}
 ```
 
 ### Promises approach
@@ -98,7 +96,7 @@ Note that method is case-insensitive.
 const body = { a: 1 };
 
 const options = {
-  method: 'POST',
+  method:  'POST',
   body:    JSON.stringify(body),
   headers: { 'Content-Type': 'application/json' },
 }
