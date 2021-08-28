@@ -32,19 +32,25 @@ See also [Performance][] cheatsheet.
 
 ## Add log message to events
 
+Warning - if you run these lines _after_ the event has already happened, then the log will never happen.
+
 The lines of code are set up here in the order they are expected to fire.
 
 ### Plain JS
 
 ```javascript
-document.ready = () => console.log("Document ready")
+document.ready = function () {
+  console.log("Document ready")
+}
 
 window.addEventListener(
   'DOMContentLoaded', 
-  () => console.log("DOM content loaded")
+  function() { console.log("DOM content loaded") }
 )
 
-window.onload = () => console.log("Window loaded")
+window.onload = function() {
+  console.log("Window loaded")
+}
 ```
 
 Be careful - you'll override multiple events set up with the assignment approach - adding with `addEventListener` is better as it appends.
@@ -52,10 +58,21 @@ Be careful - you'll override multiple events set up with the assignment approach
 ### jQuery
 
 ```javascript
-$(document).ready(() => "Document ready")
+// Marked as deprecated by jQuery.
+$(document).ready(
+  function() {
+    "Document ready"
+  }
+)
 
-$(window).load(() => 'Window loaded')
+$(window).load(
+  function() {
+    "Window loaded"
+  }
+)
 ```
+
+I think jQuery might be smart enough to append to array of existing ready or load events, but not sure.
 
 
 ## DOM content loaded event
