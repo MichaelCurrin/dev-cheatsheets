@@ -16,7 +16,7 @@ See also [Performance][] cheatsheet.
 
 ## Order of events
 
-1. Page load start aka navigation start.
+1. Page load start aka "navigation start".
 1. Document ready.
     - `ready` event.
 1. DOM content loaded. 
@@ -28,7 +28,6 @@ See also [Performance][] cheatsheet.
 1. Leave the page. 
     - `beforeunload` event when starting to leave.
     - `unload` event when the user has nearly left.
-
 
 
 ## Add log message to events
