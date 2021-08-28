@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS foo (
 id INTEGER PRIMARY KEY
 ```
 
+
 ## Data types
 
 From [Data types](https://www.sqlite.org/datatype3.html) in the docs.
@@ -96,14 +97,12 @@ Symbol | Description | Range
 `%Y` | year | YYYY
 
 
-## Drop
+## Core functions
 
-```
-DROP TABLE IF EXISTS foo
-```
+- [Built-In Scalar SQL Functions](https://sqlite.org/lang_corefunc.html)
 
 
-## Help
+## CLI help
 
 ### Man page
 
