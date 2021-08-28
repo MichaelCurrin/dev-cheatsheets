@@ -94,10 +94,17 @@ END AS name
 
 ## Repeat
 
-From [SO](https://stackoverflow.com/questions/11568496/how-to-emulate-repeat-in-sqlite).
+From [SO](https://stackoverflow.com/questions/11568496/how-to-emulate-repeat-in-sqlite) for SQLite.
 
 ```sql
 SELECT REPLACE(PRINTF('%.' || 5 || 'c', '/'), '/', 'My string ');
 // My string My string My string My string My string 
 ```
 
+Or this, which didn't work for me but had higher votes.
+
+```sql
+replace(substr(quote(zeroblob((Y + 1) / 2)), 3, Y), '0', X)
+```
+
+In other languages, try `REPEAT`.
