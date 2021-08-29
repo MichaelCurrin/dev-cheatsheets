@@ -104,7 +104,7 @@ Similar to `choice` but accepts an optional count to return.
 Four samples without replacement.
 
 ```python
->>> sample([10, 20, 30, 40, 50], k=4)
+>>> random.sample([10, 20, 30, 40, 50], k=4)
 [40, 10, 50, 30]
 ```
 
@@ -115,7 +115,7 @@ Shuffle a list.
 
 ```python
 >>> deck = 'ace two three four'.split()
->>> shuffle(deck)
+>>> random.shuffle(deck)
 >>> deck
 ['four', 'two', 'ace', 'three']
 ```
