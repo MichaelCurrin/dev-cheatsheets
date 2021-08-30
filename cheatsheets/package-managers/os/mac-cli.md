@@ -1,20 +1,20 @@
-# Command-line tools on macOS
+# macOS dev tools
 
 
-### Xcode
+## Xcode
 
 macOS developer tool.
 
 - [Download Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12) from Apple store.
 - [Downloads and resources](https://developer.apple.com/xcode/resources/) section within Xcode on Apple developers site.
 
-CLI:
+### Usage
 
 ```sh
 $ xcode-select OPTIONS
 ```
 
-Help:
+### Help
 
 ```
 Usage: xcode-select [options]
