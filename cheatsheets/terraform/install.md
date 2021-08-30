@@ -1,37 +1,60 @@
 # Install
 
-From the TF docs [Install page](https://learn.hashicorp.com/tutorials/terraform/install-cli). That covers multiple languages.
+From the TF docs [Install](https://learn.hashicorp.com/tutorials/terraform/install-cli) page.
 
+## System
 
-## macOS
+### Homebrew on macOS
+
+#### Plain
+
+This approach seems no longer covered by the doc.
 
 ```sh
-brew install terraform
+$ brew install terraform
 ```
 
-Or
+Upgrade:
+
+```sh
+$ brew upgrade terraform
+```
+
+#### Tap
+
+An alternative.
 
 ```sh
 $ brew tap hashicorp/tap
 $ brew install hashicorp/tap/terraform
 ```
 
-## Linux
-
-Add the HashiCorp GPG key.
+Update:
 
 ```sh
-$ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-``
-
-Add the official HashiCorp Linux repository.
-
-```sh
-$ sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+$ brew update # Maybe not needed since update is always done, at least not for taps.
+$ brew upgrade hashicorp/tap/terraform
 ```
 
-Update and install.
+
+## Ubuntu/Debian on Linux
+
+1. Add the HashiCorp GPG key:
+    ```sh
+    $ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+    ```
+1. Add the official HashiCorp Linux repository:
+    ```sh
+    $ sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+    ```
+1. Update and install.
+    ```sh
+    $ sudo apt-get update && sudo apt-get install terraform
+    ```
+
+
+## Verify
 
 ```sh
-$ sudo apt-get update && sudo apt-get install terraform
+$ terraform -help
 ```
