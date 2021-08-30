@@ -1,9 +1,13 @@
 ---
-title: Edit commits
-description: Workflow to edit various details of a commit
+title: Edit
+description: Workflows to edit various details of an existing commit
 ---
 
-You're about to edit commits locally. This changes the git history, rather than adding on top of it with new commits. A `git revert` commit is a good way of undoing work without changing the history.
+You are about to edit commits locally. This changes the Git **history**.
+
+Rather than adding on top of it with new commits. 
+
+A `git revert` commit is a good way of undoing work _without_ changing the history.
 
 See also: [git rebase](https://git-scm.com/docs/git-rebase) docs.
 
