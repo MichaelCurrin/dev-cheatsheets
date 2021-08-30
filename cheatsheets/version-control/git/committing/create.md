@@ -1,4 +1,7 @@
-# Commit a change 
+---
+title: Create
+description: Commit changes
+---
 
 
 ## New files
@@ -9,6 +12,7 @@ For a new file or directory.
 $ git add PATH
 $ git commit PATH
 ```
+
 
 ## Changes in a directory
 
