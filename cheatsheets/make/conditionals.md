@@ -1,4 +1,4 @@
-# Conditional
+# Conditionals
 
 
 ## Shell if
@@ -9,11 +9,11 @@ This can be used as a check used in other commands.
 
 Optionally use `@` to make it quiet.
 
-```mk
+```make
 foo:
 	@if [ -z $(FOO) ]; then \
 		echo "FOO must be set. Use `export FOO=<foo>`"; \
-		exit 1;
+		exit 1; \
 	fi
 ```
 
@@ -33,11 +33,12 @@ foo:
 ifneq ($(wildcard ./fizz/$(BUZZ)),)
 	$(eval NAME=$(shell sh -c "grep ..."))
 endif
-	...
+	# ...
+    
 ```
 
 
-## If defined
+## If value defined
 
 ```mk
 ifndef FOO
