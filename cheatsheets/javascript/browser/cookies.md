@@ -53,42 +53,69 @@ Or just check presence of your key, at the risk that your key exists in another 
 
 ### Set
 
+Set the key and value.
+
 ```javascript
-document.cookie = "abc=123"
+document.cookie = "my_key=my_value"
 ```
 
-Remember to explicitly set `Path` to `/` so the cookie is not restricted to the current page, which is default.
+If using HTTP headers:
 
-```javascript
-document.cookie = "abc=def 123;Secure=true;Path=/;"
+```
+Set-Cookie: my_key=my_value`
 ```
 
 The attributes are case-insensitive. So `Path`, `path`, and `PATH` all work.
 
-If you set the same cookie name with different path, you'll get a different cookie.
+### Path sharing
 
+By default, the cookie is set _only_ for the current path, which you can see in DevTools for the stored cookie.
+
+If you set a value for the same cookie name but with different paths, you'll get two different cookies set.
+
+So you probably want to set the cookie to be on the root like `/`, or maybe some protected area like `/app/`.
+
+e.g.
+
+```javascript
+document.cookie = "abc=def 123; Path=/;"
+```
 
 
 ## Site sharing
 
 - [SameSite](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) on MDN docs
 
+### Lax
+
+The default
+
+> Cookies are not sent on normal cross-site subrequests (for example to load images or frames into a third party site), but are sent when a user is navigating to the origin site (i.e., when following a link).
+
+```
+SameSite=lax
+```
+
+### Strict
 
 Restrict to first-party access.
 
 ```
-samesite=strict
+SameSite=strict; Secure
 ```
 
-Or thiry-party.
+Why set `Secure`?
+
+> If `SameSite=None` is set, the cookie Secure attribute must also be set (or the cookie will be blocked).
+
+
+### Cross-site
+
+Allow thiry-party access
 
 ```
-samesite=none
+Samesite=None
 ```
-
-WHy set `secure`?
-
-> If SameSite=None is set, the cookie Secure attribute must also be set (or the cookie will be blocked).
 
  
 ## Example
@@ -102,5 +129,6 @@ value = JSON.stringify(my_interests)
 const expiry = new Date();
 const currYear = expiry.getFullYear();
 expiry.setYear(currYear + 5);
-document.cookie = `my_interests=${value};Secure=true;SameSite=None;Path=/;expires=${expiry.toGMTString()}`;
+
+document.cookie = `my_interests=${value}; Secure=true; SameSite=None; Path=/;expires=${expiry.toGMTString()}`;
 ```
