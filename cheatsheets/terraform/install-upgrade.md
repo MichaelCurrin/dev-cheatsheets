@@ -33,6 +33,13 @@ $ tar czvf terraform_1.0.5_darwin_amd64.zip
 $ mv terraform /usr/local/bin
 ```
 
+Or, if you want to keep it separate from any existing Terraform versions intalled.
+
+```sh
+$ mv terraform /usr/local/bin/terraform1.0
+$ terraform1.0 -v
+```
+
 ### Homebrew on macOS
 
 #### Plain
@@ -83,6 +90,21 @@ You can use `apt` / `apt-get` to manage Terraform. But first you hav to add to y
     $ sudo apt-get update
     $ sudo apt-get install terraform
     ```
+    
+
+## TFEnv
+
+If you want to have multiple versions of Terraform installed, use this tool.
+
+- [tfenv](https://github.com/tfutils/tfenv)
+
+```sh
+$ brew install tfenv
+```
+
+```sh
+$ tfenv install 0.7.0
+```
 
 
 ## Verify
