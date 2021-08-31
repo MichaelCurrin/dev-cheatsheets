@@ -24,7 +24,7 @@ BUZZ := $(if $(FOO), 'abc', $(FIZZ))
 ```
 
 
-## ifneq
+## If not equal
 
 If an expression match is false evaluate the block.
 
@@ -69,4 +69,33 @@ Presumably these can be provided optionally by the user in the CLI.
 
 ```sh
 $ make SHELL_PATH=/bin/bash install
+```
+
+
+## Not defined
+
+My own code to abort if a value is not defined:
+
+```makefile
+.check-env:
+ifndef DEPLOYMENT_ENVIRONMENT
+	echo "Must set DEPLOYMENT_ENVIRONMENT"; \
+	exit 1
+endif
+	echo "DEPLOYMENT_ENVIRONMENT: $(DEPLOYMENT_ENVIRONMENT)"
+    
+deploy: .check-env
+	# do stuff
+```
+
+Cause an error:
+
+```sh
+$ make .check-env
+```
+
+Print environment:
+
+```sh
+$ DEPLOYMENT_ENVIRONMENT=development make .check-env
 ```
