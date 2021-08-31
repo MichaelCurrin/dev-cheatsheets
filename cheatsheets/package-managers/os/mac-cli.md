@@ -5,6 +5,8 @@
 
 macOS developer tool.
 
+### Installation
+
 - [Download Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12) from Apple store.
 - [Downloads and resources](https://developer.apple.com/xcode/resources/) section within Xcode on Apple developers site.
 
@@ -37,6 +39,21 @@ Options:
 
 How to update your Command Line Tools (CLT), which work with a version of Xcode.
 
+## Installation
+
+```console
+$ softwareupdate --all --install --force
+Software Update Tool
+
+Finding available software
+
+Downloading Command Line Tools for Xcode
+```
+
+Alternatively, manually download from [here](https://developer.apple.com/download/more/).
+
+### Update
+
 Update from Software Update in System Preferences.
 
 Or run:
@@ -45,12 +62,11 @@ Or run:
 $ softwareupdate --all --install --force
 ```
 
-If that doesn't show you any updates, run:
+If that doesn't show you any updates, run this to install CommandLineTools.
 
 ```sh
 $ sudo rm -rf /Library/Developer/CommandLineTools
 $ sudo xcode-select --install
 ```
 
-Alternatively, manually download from [here](https://developer.apple.com/download/more/).
-  
+I found the last bit didn't do anything, but running the `softwareupdate...` command after that worked.
