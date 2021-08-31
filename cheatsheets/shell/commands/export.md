@@ -127,3 +127,38 @@ Foo ./docs/README.md
 Foo ./README.md
 Foo ./vendor/bundle/ruby/2.7.0/gems/sass-3.7.4/README.md
 ```
+
+
+## Export config file
+
+If you had values to set by hand, you could do:
+
+```sh
+$ export FOO=bar FIZZ=buzz
+```
+
+But what those in are a file?
+
+- `.env`
+    ```sh
+    FOO=bar
+    FIZZ=buzz
+    ```
+    
+Then you can do this, which reads the contents of the `.env` shell file and passes the contents to `export` to evaluate.
+
+```sh
+$ export (< .env)
+```
+
+Using `< file.txt` is a more efficient form of `cat file.txt`. See [Useless use of cat award][].
+
+[Useless use of cat award]: https://porkmail.org/era/unix/award.html#cat
+
+Check the `export` variables to see that it worked.
+
+```sh
+$ export | egrep '(FOO)|(FIZZ)'
+FIZZ=buzz
+FOO=bar
+```
