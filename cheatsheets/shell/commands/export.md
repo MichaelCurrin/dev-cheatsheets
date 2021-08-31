@@ -148,7 +148,7 @@ But what those in are a file?
 Then you can do this, which reads the contents of the `.env` shell file and passes the contents to `export` to evaluate.
 
 ```sh
-$ export (< .env)
+$ export (xargs< .env)
 ```
 
 Using `< file.txt` is a more efficient form of `cat file.txt`. See [Useless use of cat award][].
@@ -162,3 +162,25 @@ $ export | egrep '(FOO)|(FIZZ)'
 FIZZ=buzz
 FOO=bar
 ```
+
+Break it down:
+
+```console
+$ echo $(< .env) 
+FOO=bar FIZZ=buzz
+```
+
+```console
+$ xargs < .env
+FOO=bar FIZZ=buzz
+```
+
+Evaluate:
+
+```sh
+$ export (xargs< .env)
+```
+
+I find it works without `xargs` sometimes but it is safer with.
+
+Warning - make sure to not have any comments in your file, as `xargs` makes the output all on one line and you'll lose anything after the comment.
