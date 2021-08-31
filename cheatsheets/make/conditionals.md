@@ -105,14 +105,14 @@ $ make SHELL_PATH=/bin/bash install
 ```
 
 
-## Not defined
+## Error on value not defined
 
 My own code to abort if a value is not defined:
 
 ```makefile
 .check-env:
 ifndef DEPLOYMENT_ENVIRONMENT
-	echo "Must set DEPLOYMENT_ENVIRONMENT"; \
+	echo "Must set DEPLOYMENT_ENVIRONMENT"
 	exit 1
 endif
 	echo "DEPLOYMENT_ENVIRONMENT: $(DEPLOYMENT_ENVIRONMENT)"
