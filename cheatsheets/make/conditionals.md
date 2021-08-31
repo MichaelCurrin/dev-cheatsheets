@@ -24,9 +24,42 @@ BUZZ := $(if $(FOO), 'abc', $(FIZZ))
 ```
 
 
-## If not equal
+## Equal and not equal
 
-If an expression match is false evaluate the block.
+Use an `ifeq` expression. Or `ifneq` to negate.
+
+It looks like the conditions have to be something like `$(MY_VALUE), $(MY_OTHER_VALUE)`. I found that this never matched so was not helpful - `$(MY_VALUE), MY_TEXT`.
+
+```
+TARGET:
+ifeq (CONDITION1, CONDITION2)
+  EXPRESSION
+endif
+
+TARGET:
+ifeq (CONDITION1, CONDITION2)
+  EXPRESSION
+else
+  EXPESSION
+endif
+```
+
+An example:
+
+```makefile
+DEV = development
+
+deploy:
+ifeq ($(DEPLOYMENT_ENVIRONMENT), $(DEV))
+	cd widget && \
+		npm run build:dev
+else
+	cd widget && \
+		npm run build:prod
+endif
+```
+
+If an expression match is false, evaluate the block.
 
 ```makefile
 foo:
