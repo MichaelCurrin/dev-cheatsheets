@@ -20,7 +20,7 @@ IDEs like VS Code support synax highlightin to help write the docstrings.
 
 Generate HTML documentation using the NPM package.
 
-```sg
+```sh
 $ jsdoc book.js
 ```
 
@@ -98,7 +98,7 @@ function sayHello(author) {
 
 ### Primitives
 
-Note use of lowercase.
+Note use of _lowercase_.
 
 ```
 {string}
@@ -108,9 +108,11 @@ Note use of lowercase.
 {(number|boolean)}
 ```
 
-### Key-value pairs
+### Hashes
 
-Note use of titlecase.
+Aka key-value pair objects.
+
+Note use of _titlecase_.
 
 ```
 {Object}
@@ -120,15 +122,15 @@ e.g.
 
 ```javascipt
 /**
- * @param {Object[]} employee - The employees who is responsible for the project.
+ * @param {Object} employee - The employees who is responsible for the project.
  */
 ```
 
-If you want to break out the attributes with the type, key name and description:
+You cn break out the attributes using the name of the key.
 
 ```javascipt
 /**
- * @param {Object[]} employee - The employees who is responsible for the project.
+ * @param {Object} employee - The employees who is responsible for the project.
  * @param {string} employee.name - The name of the employee.
  * @param {string} employee.department - The employee's department.
  */
@@ -140,7 +142,8 @@ Array of strings.
 
 ```
 {string[]}
-// or:
+
+// Or, less common:
 {Array.<string>}
 ```
 
@@ -148,11 +151,12 @@ An array of `MyClass` instances.
 
 ```
 {MyClass[]}
-// or:
+
+// Or, less common:
 {Array.<MyClass>}
 ```
 
-An array of key-value pair objects:
+An array of hashes (key-value pair objects), with keys described for the items.
 
 ```javascript
 /**
@@ -166,15 +170,15 @@ An array of key-value pair objects:
 
 ### Nullable
 
-Either number or null.
+Value may be null, undefined, or set.
 
 ```
 {?number}
 ```
 
-### Non-nullable
+### Required
 
-A number that is required never null (or undefined).
+Value is "non-nullable" i.e. must be set and never `null` or `undefined`.
 
 ```
 {!number}
