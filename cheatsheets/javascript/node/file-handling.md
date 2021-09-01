@@ -1,4 +1,4 @@
-# Files
+# File handling
 > Working with paths, files and directories
 
 
