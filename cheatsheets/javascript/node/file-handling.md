@@ -10,14 +10,32 @@ See the standard lib docs:
 - [path](https://nodejs.org/api/path.html)
 
 
+## Imports
+
+ES Modules:
+
+```javascript
+import * as fs from 'fs';
+import * as path from 'path';
+```
+
+CommonJS imports, or if you get an error that you can't use `import` outside a module.
+
+```javascript
+const fs = require('fs');
+const path = require('path');
+```
+
+
 ## Paths
+
+### Current module's directory vs working directory
 
 The `__dirname` value is the full path for the current file.
 
 ```javascript
 __dirname
 ```
-
 
 Compare with the working directory.
 
@@ -26,6 +44,28 @@ process.cwd()
 ```
 
 From article: [How to use dirname](https://alligator.io/nodejs/how-to-use__dirname/)
+
+### Full path
+
+Absolute path to the file.
+
+There are a few approaches on StackOverflow and not clear best approach.
+
+```javascript
+path.join(__dirname, 'foo');
+```
+
+Or
+
+```javascript
+path.resolve('foo');
+```
+
+Or
+
+```javascript
+path.resolve(__dirname, 'foo');
+```
 
 
 ## Read text file
@@ -37,15 +77,21 @@ From article: [How to use dirname](https://alligator.io/nodejs/how-to-use__dirna
 - For `fs.readFileSync()` method:
     - `fs.readFileSync(path[, options])`
     - [docs](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options)
-    - We can read files in a **synchronous** way, i.e. we are telling node.js to block other parallel process and do the current file reading process. 
+    - We can read files in a **synchronous** way, i.e. we are telling Node.js to block other parallel process and do the current file reading process. 
+
+That will open and close the file you. 
 
 ### Options
 
 Options can be:
 
-- omitted 
-- encoding e.g. `utf8` 
-- an object e.g. `{ encoding: 'utf8', flag: 'r' }`
+- omitted - but then you'll get binary data and a text file will look garbled: `<Buffer 7b 0a 20 6e ... 205 more bytes>`
+- encoding e.g. `utf-8` is common. The flag will default to `'r'`.
+- an object of encoding and flags like mode. e.g. `{ encoding: 'utf8', flag: 'r' }`
+
+### Callback
+
+The `callback` function is required for `readFile`.
 
 ### Examples
 
@@ -55,16 +101,33 @@ Using the async way with `readFile`.
 import fs from 'fs';
 
 const filePath = 'file.txt'
-const file = await fs.readFile(
+await fs.readFile(
   filePath, 
   'utf-8', 
   (err, data) => {
     if (err) {
-      console.log(err); 
+      throw err; 
     }
-    else {
-      console.log(data); 
+    console.log(data); 
+});
+```
+
+It looks like it always returns `undefined`, even if y ou use `return data` in the callback. So I guess you could set an object outside `readFileSync` and maybe use `await`, or just use `readFileSync` to keep it simple.
+
+Using an absolute path.
+
+```javascript
+import * as fs from 'fs';
+import * as path from 'path';
+
+const p = path.join(__dirname, 'foo');
+
+fs.readFile(p, 'utf-8', 
+  (err, data) => {
+    if (err) {
+      throw err; 
     }
+    console.log(data); 
 });
 ```
 
@@ -74,32 +137,43 @@ Using the synchronous way with `readFileSync`. If there is a problem, an error w
 import fs from 'fs';
 
 const filePath = 'file.txt'
-fs.readFileSync(filePath, 'utf-8')
-console.log(data); 
+const contents = fs.readFileSync(filePath, 'utf-8')
+console.log(contents); 
 ```
 
-Above we used path as `file.txt`.
+Here is as script you can use as a standalone file, using CommonJS imports and an enclosing async function.
 
-For example. Using a fullpath.
+- `index.js`
+    ```javascript
+    const fs = require('fs');
+    const path = require('path');
 
-```javascript
-const fs = require('fs');
-const path = require('path');
+    (async function () {
+      const myPath = 'foo.txt'
+      const p = path.join(__dirname, myPath);
 
-const p = path.join(__dirname, 'foo');
+      const value = fs.readFileSync(p, "utf-8")
+      console.log(value)
 
-fs.readFile(p, 'utf-8', 
-    (err, data) => {
-        if (err) {
-            console.log(err); 
+      await fs.readFile(p, "utf-8",
+        (err, data) => {
+          if (err) {
+            throw err;
+          }
+          console.log(data);
         }
-        else {
-            console.log(data); 
-        }
-});
+      )
+    })()
+    ```
+    
+```sh
+$ node index.js
 ```
 
-Using `open` and `close` explicitly.
+
+### Open and close
+
+Use `open` and `close` explicitly:
 
 ```javascript
 import { open } from 'fs/promises';
@@ -138,16 +212,16 @@ Write content to a file.
     - [docs](https://nodejs.org/api/fs.html#fs_fs_writefilesync_file_data_options)
 
 ```javascript
-var data = "New File Contents";
+const data = "New File Contents";
 
 fs.writeFile("temp.txt", data, 
   (err) => {
-      if (err) {
-        console.log(err);
-      }
-      else {
-        console.log("Done.");
-      }
+    if (err) {
+      console.log(err);
+    }
+    else {
+      console.log("Done.");
+    }
 });
 ```
 
@@ -166,25 +240,3 @@ myStream.write('line');
 myStream.end();
 ```
 
-
-## Full path
-
-Absolute path to the file.
-
-There are a few approaches on StackOverflow and not clear best approach.
-
-```javascript
-path.join(__dirname, 'foo');
-```
-
-Or
-
-```javascript
-path.resolve('foo');
-```
-
-Or
-
-```javascript
-path.resolve(__dirname, 'foo');
-```
