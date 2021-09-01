@@ -30,8 +30,6 @@ From article: [How to use dirname](https://alligator.io/nodejs/how-to-use__dirna
 
 ## Read text file
 
-Options can be omitted, or encoding (e.g. `utf8`) or an object (e.g. `{ encoding: 'utf8', flag: 'r' }`)
-
 - For `fs.readFile()` method:
     - `fs.readFile(path[, options], callback)`
     - [docs](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
@@ -41,13 +39,24 @@ Options can be omitted, or encoding (e.g. `utf8`) or an object (e.g. `{ encoding
     - [docs](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options)
     - We can read files in a **synchronous** way, i.e. we are telling node.js to block other parallel process and do the current file reading process. 
 
-Using async way with `readFile`.
+### Options
+
+Options can be:
+
+- omitted 
+- encoding e.g. `utf8` 
+- an object e.g. `{ encoding: 'utf8', flag: 'r' }`
+
+### Examples
+
+Using the async way with `readFile`.
 
 ```javascript
 import fs from 'fs';
 
+const filePath = 'file.txt'
 const file = await fs.readFile(
-  'file.txt', 
+  filePath, 
   'utf-8', 
   (err, data) => {
     if (err) {
@@ -64,19 +73,14 @@ Using the synchronous way with `readFileSync`. If there is a problem, an error w
 ```javascript
 import fs from 'fs';
 
-fs.readFileSync('file.txt', 'utf-8')
+const filePath = 'file.txt'
+fs.readFileSync(filePath, 'utf-8')
 console.log(data); 
 ```
 
 Above we used path as `file.txt`.
 
-Or get the full path.
-
-```javascript
-path.join(__dirname, 'foo');
-```
-
-For example:
+For example. Using a fullpath.
 
 ```javascript
 const fs = require('fs');
@@ -160,4 +164,27 @@ myStream.pipe(writeStream);
 
 myStream.write('line');
 myStream.end();
+```
+
+
+## Full path
+
+Absolute path to the file.
+
+There are a few approaches on StackOverflow and not clear best approach.
+
+```javascript
+path.join(__dirname, 'foo');
+```
+
+Or
+
+```javascript
+path.resolve('foo');
+```
+
+Or
+
+```javascript
+path.resolve(__dirname, 'foo');
 ```
