@@ -14,8 +14,8 @@ See also GitHub's docs - [Events that trigger workflows](https://docs.github.com
 
 Some advice:
 
-- In general, if you have test, lint, and build steps, you will probably want to run them on all pushes to the main branch and on all PRs. 
-- If there is anything related to a deploy like building a GitHub Pages site or a JS/Python/Ruby package, you probably only want to run against the main branch and exclude other branches. And maybe even restrict to only run against a tag or release created, and not just any commit to the main branch. Otherwise any feature branch with a PR would accidentally deploy to production when the work is not ready yet.
+- In general, if you have test, lint, and build steps, you will probably want to run them _everytime_. i.e. On all pushes to the main branch and on all PRs. 
+- If there is anything related to a _deploy_ (like building a site) or a release (like bundling and uploading a JS/Python/Ruby package), you probably only want to run against the _main_ branch (for production) and no other branches (as those are for development). And you could even restrict to only run against a _tag_ or _release_ created on the main branch, and not just any commit to the main branch.
 
 
 ## Trigger on a commit
@@ -69,7 +69,7 @@ on:
     types: [assigned, opened, synchronize, reopened]
 ```
 
-Limit to when a PR against the main branch is merged. There is no `merged` option, so use `closed`. This closed event I think might be triggered when you close without merging.
+Restrict to when a PR against the main branch is merged. There is no `merged` option, so use `closed`. This closed event I think might be triggered when you close without merging.
 
 This is similar to listening to `push` event on `master`, but it requires a PR to exist and does not pick up on just any commit to `master`.
 
@@ -102,9 +102,9 @@ on:
   pull_request:
 ```
 
-### On push to master or Pull Request to master
+### On push to main or Pull Request to main
 
-This won't run on a PR between two branches which aren't the `master` branch.
+Runs on a PR again main but won't run on a PR between two branches that both aren't the _main_ branch.
 
 ```yaml
 on:
