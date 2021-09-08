@@ -183,17 +183,19 @@ Multi-line:
 
 ### Modifiers
 
-There are a few characters to modify how a block scalar is handled. See sections below or or see [yaml-multiline.info](https://yaml-multiline.info/) for more info and an updating demo.
+There are a few characters to modify how a block scalar is handled. See sections below. 
+
+Or see [yaml-multiline.info](https://yaml-multiline.info/) for more info and an updating demo.
 
 Quick reference:
 
 - Block Scalar Style
-    - Replace newlines with spaces (folded)
-    - Keep newlines (literal)
+    - _Replace_ newlines with spaces (folded)
+    - _Keep_ newlines (literal)
 - Block Chomping
-    - Single newline at end (clip)
-    - No newline at end (strip)
-    - All newlines from end (keep)
+    - _Single_ newline at end (clip)
+    - _No_ newline at end (strip)
+    - _All_ newlines from end (keep)
  
 See formatting examples below.
 
@@ -225,7 +227,9 @@ Use a pipe (`|`) to interpret newlines literally.
 
 ##### Fold newlines
 
-Use an arrow (`>`) to fold newlines throughout the string, so they become spaces. To force a newline, use an empty line i.e. two newlines.
+Use an arrow (`>`) to fold newlines throughout the string, so they become spaces. 
+
+To force a newline, use an empty line i.e. two newlines.
 
 - YAML
     ```yaml
@@ -250,7 +254,9 @@ You can use literal or folded block style here.
 
 ##### Clip
 
-This is the default. It adds a newline at the end.
+This is the default. It keeps a _single_ newline at the end, removing any extras.
+
+This can give unexpected results though, such as if you are inserting a word into a sentence with templating and it has a newline in it (less important in HTML, unless you also replace newlines with `br` tags).
 
 - YAML
     ```yaml
@@ -264,7 +270,7 @@ This is the default. It adds a newline at the end.
     
 ##### Strip
 
-Remove newlines with minus sign (`-`).
+Remove _all_ newlines, using a minus sign (`-`).
 
 - YAML
     ```yaml
@@ -278,7 +284,7 @@ Remove newlines with minus sign (`-`).
 
 ##### Keep
 
-Both of the above ignore existing newlines. To keep them, use a plus sign (`+`).
+Keep _all_ newlines. Use a plus sign (`+`).
 
 - YAML
     ```yaml
