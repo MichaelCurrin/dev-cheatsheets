@@ -9,6 +9,11 @@ You can also use an IDE formatter or the CLI (`eslint . --fix`) to change files 
 For more detail than below, you can set level as 0, 1 or 2 - [Configuring rules](https://eslint.org/docs/user-guide/configuring.html#configuring-rules).
 
 
+## Related
+
+- [ESLint ignore config]({{ site.baseurl }}{% link cheatsheets/javascript/format-and-lint/eslint/config-files/ignore.md %}) - ignore a path, rather than a rule.
+
+
 ## Ignore entire file
 
 Place at the top of the file:
