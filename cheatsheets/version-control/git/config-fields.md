@@ -13,7 +13,7 @@ e.g.
 
 ```toml
 [commit]
-        template = _COMMIT_MESSAGE
+        template = "_COMMIT_MESSAGE"
 ```
 
 For `_COMMIT_MESSAGE` file in your repo.
