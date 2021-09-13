@@ -189,11 +189,11 @@ Date.parse('2021-02-03 04:05:01')
 NB. Use of `1000` because JS uses milliseconds not seconds.
 
 ```javascript
-var fiveYears = 1000 * 60 * 60 * 24 * 365 * 5
+const fiveYears = 1000 * 60 * 60 * 24 * 365 * 5
 fiveYears
 // 157680000000
 
-var expiry = Date.now() + fiveYears;
+const expiry = Date.now() + fiveYears;
 expiry
 // 1776618462014
 
@@ -203,14 +203,14 @@ new Date(expiry)
 
 Remember the `new` keyword or you'll just get the current time even with an argument passes.
 
-Or using `.setYear`
+Here using `.setYear` to set an expiry date in 5 years time.
 
 ```javascript
-var expiry = new Date() // Now
+const expiry = new Date() // Now
 expiry
 // Date Tue Apr 20 2021 19:28:52 GMT+0200 (South Africa Standard Time)
 
-var currYear = expiry.getFullYear()
+const currYear = expiry.getFullYear()
 currYear
 // 2021
 
@@ -223,3 +223,19 @@ expiry.toGMTString() // now 2026!
 // "Mon, 20 Apr 2026 17:28:52 GMT"
 ```
 
+Here setting an expiry date in seconds time. Note that setting a seconds value of 60 or higher makes minutes increase.
+
+```javascript
+const a = new Date()
+
+a
+// Date Mon Sep 13 2021 12:09:40 GMT+0200 (South Africa Standard Time)
+
+const currSeconds = a.getSeconds()
+// 40
+
+a.setSeconds(currSeconds + 60)
+
+a
+// Date Mon Sep 13 2021 12:10:40 GMT+0200 (South Africa Standard Time)
+```
