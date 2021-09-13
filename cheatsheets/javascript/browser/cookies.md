@@ -1,11 +1,22 @@
 # Cookies
 
 
+## About
+
 Cookies can store data up to 4kb - a small amount, unlike Storage.
 
 They can be used for authentication, tracking (which sites you've visited before) and personalization (based on your choices like color theme or GDPR cookie opt-in).
 
 Cookies are sent back forth on all HTTP requests, unlike Storage. This makes the requests larger.
+
+
+## Related
+
+- [Cookie recipes][] in Code Cookbook.
+- [Time handing][] in JavaScript cheatsheet.
+
+[Cookie recipes]: https://michaelcurrin.github.io/code-cookbook/recipes/javascript/browser/cookies.html
+[Time handling]: {{ site.baseurl }}{% link cheatsheets/javascript/general/time-handling.md %}
 
 
 ## Types
@@ -117,18 +128,42 @@ Allow thiry-party access
 Samesite=None
 ```
 
- 
-## Example
+## Stringify
 
-How to set an get an array in a cookie.
+How to set an array value in a cookie by stringifying it first.
 
 ```javascript
-const my_interests = ["abc", "def", "xyz"]
-value = JSON.stringify(my_interests)
+const myValues = ["abc", "def", "xyz"]
+const myValuesStr = JSON.stringify(my_interests)
 
+document.cookie = `my_cookie=${myValuesStr}; SameSite=None; Secure; Path=/;`;
+```
+
+Then use `JSON.parse` to get it out - after getting just your cookie by name. See [Cookie recipes][]. 
+
+
+## Expiry
+
+Set a value as:
+
+```
+Expires=GMT_TIMESTAMP
+```
+
+e.g. Using `(new Date).toGMTString()`
+
+```
+Expires=Mon, 13 Sep 2021 10:22:50 GMT
+```
+
+You can use max age, but this is not supported on old browsers like Internet Explorer - [source](https://stackoverflow.com/questions/23197106/what-is-the-difference-between-cookies-maxage-and-expiry#37495774).
+
+```javascript
 const expiry = new Date();
-const currYear = expiry.getFullYear();
-expiry.setYear(currYear + 5);
+const currSeconds = expiry.getSeconds();
+expiry.setSeconds(currSeconds + 30);
 
-document.cookie = `my_interests=${value}; Secure=true; SameSite=None; Path=/;expires=${expiry.toGMTString()}`;
+const alue = "abcdef 123"
+
+document.cookie = `my_cookie=${value}; SameSite=None; Secure; Path=/; Expires=${expiry.toGMTString()}`;
 ```
