@@ -163,7 +163,7 @@ const expiry = new Date();
 const currSeconds = expiry.getSeconds();
 expiry.setSeconds(currSeconds + 30);
 
-const alue = "abcdef 123"
+const value = "abcdef 123"
 
 document.cookie = `my_cookie=${value}; SameSite=None; Secure; Path=/; Expires=${expiry.toGMTString()}`;
 ```
