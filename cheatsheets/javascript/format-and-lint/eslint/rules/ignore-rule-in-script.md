@@ -26,11 +26,30 @@ COMMAND
 
 e.g.
 
+Ignore all.
+
+```javascript
+// eslint-disable
+console.log("Hello");
+console.log("World");
+```
+
+Ignore one rule.
+
 ```javascript
 // eslint-disable no-console
 console.log("Hello");
 console.log("World");
 ```
+
+Ignore multiple rules.
+
+```javascript
+// eslint-disable no-console,no-unused-vars
+console.log("Hello");
+console.log("World");
+```
+
 
 ## Ignore a section
 
