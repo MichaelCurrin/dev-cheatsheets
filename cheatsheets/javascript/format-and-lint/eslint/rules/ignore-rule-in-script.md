@@ -24,6 +24,13 @@ COMMAND
 COMMAND
 ```
 
+e.g.
+
+```javascript
+// eslint-disable no-console
+console.log("Hello");
+console.log("World");
+```
 
 ## Ignore a section
 
@@ -46,9 +53,21 @@ COMMAND
 COMMAND
 ```
 
+e.g.
+
+```javascript
+// eslint-disable-next-line no-console
+console.log("Hello, World"); 
+```
 
 ## Ignore current line
 
 ```javascript
 COMMAND // eslint-disable-line [RULE, ]
+```
+
+e.g.
+
+```javascript
+console.log("Hello, World"); // eslint-disable-line no-console
 ```
