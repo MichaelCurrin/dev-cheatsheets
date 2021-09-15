@@ -38,7 +38,7 @@ el.append(...)
 el.appendChild(...)
 ```
 
-Based on [source](https://stackoverflow.com/questions/494143/creating-a-new-dom-element-from-an-html-string-using-built-in-dom-methods-or-pro).
+Based on [source](https://stackoverflow.com/questions/4793604/how-to-insert-an-element-after-another-element-in-javascript-without-using-a-lib).
 
 To insert before an element.
 
