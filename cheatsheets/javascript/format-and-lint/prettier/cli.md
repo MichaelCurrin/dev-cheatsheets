@@ -110,18 +110,40 @@ $ prettier src tests
 
 ### Glob
 
-Recommended - use quotes. You can actually leave out the quotes in some shells, but you might get inconsistent behavior depending on if your shell supports `**` for example (older Bash doesn't).
+Recommended - always use quotes for glob patterns, so that Prettier expands it internally, instead of your shell. You can actually leave out the quotes in some shells, but you might get inconsistent behavior depending on if your shell supports double globstar `**` for example (older Bash doesn't).
 
-JS files only.
+Match files in current directory only. Note that this will not try to process directories the
+
+```console
+$ prettier -w "*"
+foo.js 4ms
+```
+
+Match current directory and below, for any extension. Note that additional paths that were ignored above. You'll probably want to narrow this but this is a good starting point of understanding.
+
+```console
+$ prettier "**"
+css/styles.css 63ms
+foo.js 1ms
+js/main.js 74ms
+```
+
+JS files only, at any level.
 
 ```sh
 $ prettier "**/*.js"
 ```
 
-JS and CSS files only.
+JS and CSS files only, at any level.
 
 ```sh
 $ prettier "**/*.{js,css}"
+```
+
+In `assets`.
+
+```sh
+$ prettier "assets/**/*.{js,css}"
 ```
 
 TS and CSS files only.
@@ -130,7 +152,7 @@ TS and CSS files only.
 $ prettier "**/*.{ts,css}"
 ```
 
-Test JS files in multiple directories.
+Test JS files in multiple directories - `app`, `__tests__` and `__mocks__`.
 
 ```sh
 $ prettier "{app,__{tests,mocks}__}/**/*.js"
