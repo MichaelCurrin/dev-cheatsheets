@@ -30,6 +30,18 @@ Example config with one rule in it:
       "arrowParens": "avoid"
     }
     ```
+    
+Some more rules.
+
+- `.prettierrc.json`
+    ```json
+    {
+      "trailingComma": "es5",
+      "tabWidth": 4,
+      "semi": false,
+      "singleQuote": true
+    }
+    ```
 
 ### Ignore config
 
