@@ -1,5 +1,7 @@
 # Configure
 
+See [Configuration file](https://prettier.io/docs/en/configuration.html) in the docs.
+
 
 ## How to configure
 
