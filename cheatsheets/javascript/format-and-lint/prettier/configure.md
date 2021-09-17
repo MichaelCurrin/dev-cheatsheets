@@ -1,11 +1,9 @@
-# Configure
+# Config files
 
 See [Configuration file](https://prettier.io/docs/en/configuration.html) in the docs.
 
 
-## How to configure
-
-### Config file
+## Filenames
 
 Set up a config file:
 
@@ -19,6 +17,11 @@ Set up a config file:
     
 You might want to edit VS Code settings too if you use a Prettier extension.
 
+
+## Format
+
+### Main config
+
 Example config with one rule in it:
 
 - `.prettierrc.json`
@@ -28,8 +31,15 @@ Example config with one rule in it:
     }
     ```
 
-### Flags
+### Ignore config
 
-Pass command line flags to change Prettier behavior. See the [Prettier CLI][] section of the cheatsheets for more info.
+See the [Ignoring rules][] cheatsheet for more info.
+
+[Ignoring rules]: {{ site.baseurl }}{% link cheatsheets/javascript/format-and-lint/prettier/ignoring-rules.md %}
+
+
+## Alternative
+
+You can also pass command line flags to change Prettier behavior. See the [Prettier CLI][] section of the cheatsheets for more info.
 
 [Prettier CLI cheatsheet]: {{ site.baseurl }}{% link cheatsheets/javascript/format-and-lint/prettier/cli.md %}
