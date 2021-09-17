@@ -13,7 +13,7 @@ Cookies are sent back forth on all HTTP requests, unlike Storage. This makes the
 ## Related
 
 - [Cookie recipes][] in Code Cookbook.
-- [Time handing][] in JavaScript cheatsheet.
+- [Time handling][] in JavaScript cheatsheet.
 
 [Cookie recipes]: https://michaelcurrin.github.io/code-cookbook/recipes/javascript/browser/cookies.html
 [Time handling]: {{ site.baseurl }}{% link cheatsheets/javascript/general/time-handling.md %}
@@ -144,19 +144,29 @@ Then use `JSON.parse` to get it out - after getting just your cookie by name. Se
 
 ## Expiry
 
+### Expires field
+
+From [Set-Cookie][] docs.
+
+> `Expires=<date>` Optional
+>
+> The maximum lifetime of the cookie as an HTTP-date timestamp. See Date for the required formatting.
+>
+> If unspecified, the cookie becomes a session cookie. A session finishes when the client shuts down, and session cookies will be removed. 
+
 Set a value as:
 
 ```
 Expires=GMT_TIMESTAMP
 ```
 
-e.g. Using `(new Date).toGMTString()`
+e.g. Use `(new Date).toGMTString()` to get this:
 
 ```
 Expires=Mon, 13 Sep 2021 10:22:50 GMT
 ```
 
-You can use max age, but this is not supported on old browsers like Internet Explorer - [source](https://stackoverflow.com/questions/23197106/what-is-the-difference-between-cookies-maxage-and-expiry#37495774).
+e.g.
 
 ```javascript
 const expiry = new Date();
@@ -167,3 +177,22 @@ const value = "abcdef 123"
 
 document.cookie = `my_cookie=${value}; SameSite=None; Secure; Path=/; Expires=${expiry.toGMTString()}`;
 ```
+
+### Max-age field
+
+Or set max age in seconds.
+
+> `Max-Age=<number>` Optional
+>
+> Number of seconds until the cookie expires. A zero or negative number will expire the cookie immediately. If both `Expires` and `Max-Age` are set, `Max-Age` has precedence.
+
+e.g.
+
+```
+Max-Age=30
+```
+
+And this is decent support as covered on [CanIUse][].
+
+[Set-Cookie]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
+[CanIUse]: https://caniuse.com/?search=max-age
