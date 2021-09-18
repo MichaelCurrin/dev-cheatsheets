@@ -1,5 +1,8 @@
 # apt-get
 
+
+## Help
+
 ```sh
 $ sudo apt-get -h
 ```
@@ -35,3 +38,53 @@ Most used commands:
 ...
 ```
 
+## Manage packages
+
+### Install package
+
+```sh
+$ sudo apt-get update
+$ sudo apt-get install PACKAGE
+```
+
+### Upgrade all
+
+```sh
+$ sudo apt-get update
+$ sudo apt-get upgrade 
+```
+
+### Remove package
+
+Uninstall package.
+
+```sh
+$ sudo apt-get remove PACKAGE
+```
+
+Uninstall and remove configs.
+
+```sh
+$ sudo apt-get purge PACKAGE
+```
+
+Remove all packages which were subdependencies before and are no longer needed.
+
+```sh
+$ sudo apt-get autoremove
+```
+
+
+## Cache
+
+Delete cached archive files.
+
+```sh
+$ sudo apt-get clean
+```
+
+Only delete archive files which cannot be downloaded anymore.
+
+```sh
+$ sudo apt-get autoclean
+```
