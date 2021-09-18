@@ -75,15 +75,8 @@ $ sudo apt upgrade
 
 Note that `apt upgrade PACKAGE` will **not** target a single package.
 
-## Clean 
 
-```sh
-$ sudo apt clean
-```
-
-```sh
-$ sudo apt autoclean
-```
+## Autoremove
 
 Uninstall packages no longer needed.
 
@@ -103,6 +96,5 @@ apt update
 apt install -y foo
 
 apt autoremove \
-  && apt autoclean \
   && apt clean
 ```
