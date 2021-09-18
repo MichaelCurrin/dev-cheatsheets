@@ -77,7 +77,7 @@ $ sudo apt-get autoremove
 
 ## Cache
 
-Delete cached archive files.
+Delete cached archive files. You can also use `--dry-run` to see paths that would be deleted.
 
 ```sh
 $ sudo apt-get clean
