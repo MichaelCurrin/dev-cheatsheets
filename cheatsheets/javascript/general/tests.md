@@ -13,19 +13,27 @@ For links around the frameworks and using them, see [Test Frameworks](https://mi
 
 In a script `foo.spec.js` or `foo.test.js`. 
 
-There are difference places to put tests: in `spec`, `tests`, `__tests__` or in the same directory as script it tests.
+There are difference places to put tests: 
 
-```javascript
-import foo from "../foo.js"
+- `spec`
+- `tests`
+- `__tests__` 
+- the same directory as script it tests.
 
-describe('#foo', () => {
-  it('returns a correct foo when given a number', () => {
-    const result = foo(12)
+Sample:
 
-    expect(result).toEqual({ 'a': 12 })
-  })
-})
-```
+- `foo.spec.js`
+    ```javascript
+    import foo from "../foo.js"
+
+    describe('#foo', () => {
+      it('returns a correct foo when given a number', () => {
+        const result = foo(12)
+
+        expect(result).toEqual({ 'a': 12 })
+      })
+    })
+    ```
 
 
 ## Methods
@@ -44,6 +52,18 @@ See example of tests in my projects, to get an idea of syntax in larger scripts.
 See [/src/test/](https://github.com/MichaelCurrin/auto-commit-msg/tree/master/src/test) directory in `auto-commit-msg`, a TypeScript application.
 
 ### Jest
+
+The default view is short, so you might want to see a list of all tests that ran.
+
+```sh
+jest --verbose
+```
+
+Get test coverage report.
+
+```sh
+jest --coverage
+```
 
 See [/tests/unit/](https://github.com/MichaelCurrin/badge-generator/tree/master/tests/unit) in `badge-generator`, a Vue application.
 
