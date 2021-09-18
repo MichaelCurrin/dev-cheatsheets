@@ -24,8 +24,6 @@ Product |	Storage	| Minutes (per month)
 GitHub Free	| 500 MB	| 2,000
 GitHub Pro	| 1 GB	| 3,000
 
-That lines up with the GitHub [Pricing][] page.
-
-> 2,000 automation minutes/month
+From the GitHub [Pricing][] page - if you go from Team to Enterprise, the automatioj minutes goes up to 50,000.
 
 [Pricing]: https://github.com/pricing
