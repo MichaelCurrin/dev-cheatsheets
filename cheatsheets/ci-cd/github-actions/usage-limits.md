@@ -16,9 +16,16 @@ From [About billing for GitHub Actions](https://docs.github.com/en/billing/manag
 
 > GitHub Actions usage is free for both public repositories and self-hosted runners. For private repositories, each GitHub account receives a certain amount of free minutes and storage, depending on the product used with the account. Any usage beyond the included amounts is controlled by spending limits.
 
-Here are the free limits:
+
+## Limits
 
 Product |	Storage	| Minutes (per month)
 --- | --- | ---
 GitHub Free	| 500 MB	| 2,000
 GitHub Pro	| 1 GB	| 3,000
+
+That lines up with the GitHub [Pricing][] page.
+
+> 2,000 automation minutes/month
+
+[Pricing]: https://github.com/pricing
