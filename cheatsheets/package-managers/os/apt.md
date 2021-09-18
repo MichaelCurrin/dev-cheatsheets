@@ -42,7 +42,7 @@ Most used commands:
 ```
 
 
-## Manage package
+## Manage packages
 
 Specify one or more packages by name (separated by spaces).
 
@@ -74,3 +74,35 @@ $ sudo apt upgrade
 ```
 
 Note that `apt upgrade PACKAGE` will **not** target a single package.
+
+## Clean 
+
+```sh
+$ sudo apt clean
+```
+
+```sh
+$ sudo apt autoclean
+```
+
+Uninstall packages no longer needed.
+
+```sh
+$ sudo apt autoremove
+```
+
+
+## All
+
+This is useful for a Dockerfile.
+
+```ah
+apt update 
+  && apt -y upgrade
+
+apt install -y foo
+
+apt autoremove \
+  && apt autoclean \
+  && apt clean
+```
