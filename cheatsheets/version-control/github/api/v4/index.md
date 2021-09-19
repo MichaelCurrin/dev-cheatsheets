@@ -1,5 +1,7 @@
 ---
 title: V4 GraphQL
+logo: graphql
+
 description: About the GitHub V4 GraphQL API
 ---
 
