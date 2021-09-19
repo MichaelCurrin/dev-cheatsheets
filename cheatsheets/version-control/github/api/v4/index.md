@@ -1,7 +1,8 @@
 ---
+title: V4 GraphQL
 description: About the GitHub V4 GraphQL API
 ---
-# V4
+
 
 ## Resources
 
