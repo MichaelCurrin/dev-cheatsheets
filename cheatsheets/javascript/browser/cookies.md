@@ -1,22 +1,26 @@
-# Cookies
+---
+title: Cookies
+description: Working with browser cookies using JavaScript 
 
 
 ## About
 
-Cookies can store data up to 4kb - a small amount, unlike Storage.
+Cookies can store data up to 4KB only. Unlike with [Storage API][] at 5MB.
 
 They can be used for authentication, tracking (which sites you've visited before) and personalization (based on your choices like color theme or GDPR cookie opt-in).
 
-Cookies are sent back forth on all HTTP requests, unlike Storage. This makes the requests larger.
+Cookies are sent back and forth on all HTTP requests, unlike Storage. This makes the requests larger and slower. And is a possible security risk. Make sure to restrict cookies to the same domain.
 
 
 ## Related
 
 - [Cookie recipes][] in Code Cookbook.
-- [Time handling][] in JavaScript cheatsheet.
+- [Time handling][] JavaScript cheatsheet.
+- [Storage API][] JavaScript cheatsheet.
 
 [Cookie recipes]: https://michaelcurrin.github.io/code-cookbook/recipes/javascript/browser/cookies.html
 [Time handling]: {{ site.baseurl }}{% link cheatsheets/javascript/general/time-handling.md %}
+[Storage API]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/storage.md %}
 
 
 ## Types
@@ -73,7 +77,7 @@ document.cookie = "my_key=my_value"
 If using HTTP headers:
 
 ```
-Set-Cookie: my_key=my_value`
+Set-Cookie: my_key=my_value
 ```
 
 The attributes are case-insensitive. So `Path`, `path`, and `PATH` all work.
