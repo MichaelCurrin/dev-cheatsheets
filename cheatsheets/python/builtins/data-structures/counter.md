@@ -91,6 +91,23 @@ Request `n` elements, or all if omitted.
 c = Counter('abracadabra')
 c.most_common(3)
 # [('a', 5), ('b', 2), ('r', 2)]
+````
+
+### Dict properties
+
+Use `keys`, `values`, and `items` as methods, as usually done on a `dict` object.
+
+```python
+c = Counter(a=1, b=2)
+
+c.keys()
+# dict_keys(['a', 'b'])
+
+c.values()
+# dict_values([1, 2])
+
+c.items()
+# dict_items([('a', 1), ('b', 2)])
 ```
 
 
@@ -109,6 +126,11 @@ c
 
 c.most_common()
 # [('a', 2), ('b', 1)]
+
+for k, v in c.items(): 
+    print(k, v)
+# a 2
+# b 1
 ```
 
 
