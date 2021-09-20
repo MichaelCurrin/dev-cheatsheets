@@ -53,17 +53,25 @@ f"{x:10,}"
 
 ## Modifiers
 
+The default behavior is to call `.__format__()` internally. Here we use `repr` and `str`.
+
 If you omit the zero below, it might work or might give an error `IndexError: Replacement index 1 out of range for positional args tuple`.
 
 ### repr
 
-Use `repr` call. This is similar but different to using `str`.
+Using `__repr__()`. This is similar but different to using `str`.
 
 ```python
 '{0!r}'
 ```
 
-e.g.
+Use ASCII modifier, since Python 3.
+
+```python
+'{0!a}'
+```
+
+### Example
 
 ```python
 class Data:
@@ -77,14 +85,6 @@ class Data:
         
 '{0!s} {0!r}'.format(Data())
 # 'str repr'
-```
-
-### ASCII
-
-Use ASCII modifier, since Python 3.
-
-```python
-'{0!a}'
 ```
 
 e.g.
@@ -103,37 +103,71 @@ class Data:
 # Printing.
 print('{0!r} {0!a}'.format(Data()))
 # räpr r\xe4pr
-```        
+```      
+
+With an integer, the value will appear the same.
+
+```python
+i = 2021
+
+f"{i} {i!r} {i!a}"
+# "2021 '2021' '2021'"
+```
+
+But with a string, you'll get quotes for `r` and `a`.
+
+```python
+s = '2021'
+
+f"{s} {s!r} {s!a}"
+# "2021 '2021' '2021'"
+```
 
 ### Alignment
 
 With no direction set, the default for strings it to align left. Number alignment is covered in [Numbers](#numbers).
 
 ```python
-'{:10}'
+'{:CHARS}'
 ```
 
 Align left.
 
 ```python
-'{:<10}'
+'{:<CHARS}'
 ```
 
 Align right with padding.
 
 ```python
-'{:>10}'
+'{:>CHARS}'
 ```
 
 Align center.
 
 ```python
-'{:^10}'
+'{:^CHARS}'
+```
+
+e.g.
+
+```python
+"{:<4}".format("ab")
+'ab  '
+
+"{:>4}".format("ab")
+'  ab'
+
+"{:^4}".format("ab")
+' ab '
+# Odd number for even characters mean extra space on the right.
+"{:^5}".format("ab")
+' ab  '
 ```
 
 ### Numbers
 
-#### Format integer
+#### Align
 
 With no spacing set, Python can't know how to align right, so there will be no padding.
 
@@ -170,12 +204,7 @@ e.g. Use `"{:,}"` or `"{:,d}".
 # 12,345,678,910
 ```
 
-I don't know to add a space separator. This just adds a leading space:
-
-```python
-"{: }".format(12345678910)
-' 12345678910'
-```
+I don't know to other characters. Using `;` gives an error. And a space just adds leading space:
 
 #### Round a float
 
@@ -213,19 +242,37 @@ Custom format - 3 digits, 2 after the decimal point.
 
 ## Add padding
 
-Add leading zeroes instead of whitespace.
+For numbers, the [Alignment](#alignment) here defaults to right with `>` implied.
 
 ### Integer
 
+Leading zeroes padding.
+
 ```python
+"{:04d}".format(4)
+# '0004'
+
 '{:04d}'.format(42)
 # '0042'
+```
 
+Out of interest, align left.
+
+```python
+'{:<04d}'.format(42)
+'4200'
+```
+
+Use white space padding and align to right.
+
+```python
 '{:4d}'.format(42)
 # '  42'
 ```
 
 ### Float
+
+Leading zeroes.
 
 ```python
 "{:06.2f}".format(math.pi)
