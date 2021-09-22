@@ -131,3 +131,71 @@ c(1, {foo: 2, bar: 3})
 // 1 2 3
 ```
 
+
+## Standard vs arrow functions 
+
+JS now supports arrow functions.
+
+You could already use `function()` syntax to make an anonymous function declared and use immediately.
+
+```js
+myArray.map(function(x) { return x * 2 })
+```
+Arrow functions makes this lighter:
+
+```js
+myArray.map(function(x) { return x * 2 })
+```
+
+Some people like to use arrow functions with a variable name. Though it makes it harder to separate plain variables from function variables.
+
+```js
+// Traditional 
+function foo(x) {   
+  return x * 2
+}
+
+// Anonymous variation.
+const foo = function (x) {   
+  return x * 2
+}
+```
+
+```js
+// Arrow function.
+const foo = (x) => x * 2;
+
+// Or multi-line.
+const foo = (x) => {
+  return x * 2
+};
+```
+
+A major difference is that `this` behaves differently. An arrow function does not come with `this` in scope, at the least when used outside a class
+
+Another difference is that while standard functions are _hoisted_ so you can declare and use them in any order in your code, using arrow functions to make a variable instead actually means you _have_ to declare and call functions in order.
+
+But the code is actually _longer_ with arrow functions, because we have to use `const`.
+
+```
+                               |  |
+function getCookie(cookieName) {   
+const getCookie = (cookieName) => {
+```
+
+Methods on classes can also be set like this:
+
+```js
+class foo () {
+  fizz(x) {
+    return x * 2
+  }
+
+  fizz(x) => x * 2
+
+  // More verbose. Using function or arrow.
+  fizz: function(x) {
+    return x * 2
+  }
+}
+```
