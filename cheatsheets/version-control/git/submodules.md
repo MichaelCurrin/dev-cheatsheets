@@ -123,6 +123,18 @@ $ git commit themes/ananke
 
 ## Reset
 
+After updating a submodule but not committing, I wanted to go back the old submodule reference. Using `git checkout` doesn't help here, even though the reference shows up as modified.
+
+This works though:
+
+```sh
+$ git submodule update
+```
+
+Then `git status` was clean.
+
+You may need one of these flags:
+
 ```sh
 $ git submodule update --checkout
 ```
@@ -131,7 +143,6 @@ $ git submodule update --checkout
 $ git submodule update --force
 ```
 
-I don't know how to delete 
 
 ## Get submodule content
 
@@ -168,19 +179,6 @@ The docs recommend this as a solution, presumably with a branch name passed too.
 ```sh
 $ git checkout --recurse-submodules
 ```
-
-
-## Restore
-
-After updating a submodule but not committing, I wanted to go back the old submodule reference. Using `git checkout` doesn't help here, even though the reference shows up as modified.
-
-This worked though:
-
-```sh
-$ git submodule update
-```
-
-Then `git status` was clean.
 
 
 ## About
