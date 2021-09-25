@@ -1,6 +1,15 @@
-# Counter
+---
+title: Counter
+description: |
+  "dict subclass for counting hashable objects"
+---
 
-See the [docs](https://docs.python.org/3/library/collections.html#collections.Counter).
+A convenient way for counting. In dictionary terms, a counter will store your objects keys and a count of occurrence as the value. It will update the count for you as a objects are added and removed.
+ 
+
+## Resources 
+
+- [counter](https://docs.python.org/3/library/collections.html#collections.Counter) in Collections in Python docs
 
 
 ## Create
