@@ -2,22 +2,36 @@
 
 An unordered collection of elements without any duplicates.
 
+A frozen set is immutable.
+
+### Resources 
+
 - [Python reference](https://python-reference.readthedocs.io/en/latest/docs/sets/)
-- [Python docs](https://docs.python.org/3/tutorial/datastructures.html#sets)
+
+Python docs:
+
+- [Sets](https://docs.python.org/3/tutorial/datastructures.html#sets) in data structures 
+- [set](https://docs.python.org/3/library/stdtypes.html#set) in standard types
+- [frozenset](https://docs.python.org/3/library/stdtypes.html#frozenset) in standard types
 
 
 ## Create
 
-New empty set.
+### Using keyword 
 
 ```python 
 x = set()
+x = set(["abc", 123, True])
+
+x = frozenset()
+x = frozenset(["abc", 123, True])
 ```
+
+### Using braces 
 
 Note that `{}` would create a dict, so you need the `set` keyword as above.
 
 Set with values.
-
 
 ```python
 my_set = {VALUE, VALUE, VALUE}
