@@ -2,6 +2,9 @@
 
 An unordered collection of elements without any duplicates.
 
+- [Python reference](https://python-reference.readthedocs.io/en/latest/docs/sets/)
+- [Python docs](https://docs.python.org/3/tutorial/datastructures.html#sets)
+
 
 ## Create
 
@@ -25,14 +28,27 @@ x = {"abc", "abc", 123, True, False, False}
 ```
 
 
-## Add
+## Membership testing 
+
+The values in a set are hashed, like dictionary keys, so it is very efficient to check if a value is in a set - O(1) time. While checking membership for a value in a set is O(n) time. So you should consider storing a list as a set if order doesn't matter and lookup time needs to be fast.
+
+```python
+"abc" in x
+# True
+
+"def" in x
+# False 
+```
+
+
+## Add element
 
 ```python 
 my_set.add(VALUE)
 ```
 
 
-## Update 
+## Add elements 
 
 Pass an iterable, such an list or another set.
 
