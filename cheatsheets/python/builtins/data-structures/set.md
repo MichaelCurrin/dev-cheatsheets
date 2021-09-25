@@ -20,10 +20,26 @@ Python docs:
 ### Using keyword 
 
 ```python 
+# empty 
 x = set()
+
+# list
 x = set(["abc", 123, True])
 
+# Pass a single string inside a list.
+x = set(["abbc"])
+# { "abbc" }
+
+# Warning - this will split a string.
+x = set("abbc")
+# { "a", "b", "c" }
+```
+
+Some examples with frozenset. Any methods covered later on this page which modify the frozen set will given an error.
+
+```python 
 x = frozenset()
+
 x = frozenset(["abc", 123, True])
 ```
 
@@ -35,10 +51,15 @@ Set with values.
 
 ```python
 my_set = {VALUE, VALUE, VALUE}
+```
+e.g.
 
-# e.g.
+```python
 x = {"abc", "abc", 123, True, False, False}
 # {"abc", 123, True, False}
+
+x = {"abc"}
+# {"abc"}
 ```
 
 
@@ -144,3 +165,13 @@ x ^ y
 # or
 x.symmetric_difference(y)
 ```
+
+
+## Set comprehension 
+
+Similarly to list comprehensions, set comprehensions are also supported:
+
+```python 
+a = {x for x in 'abracadabra' if x not in 'abc'}
+a
+# {'r', 'd'}
