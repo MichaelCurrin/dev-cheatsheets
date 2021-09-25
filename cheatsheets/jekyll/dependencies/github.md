@@ -10,18 +10,18 @@ Based on [How to install gems from git repositories](https://bundler.io/guides/g
 The repo must have a `.gemspec` file at the root.
 
 
-## Setup
+## Set up
 
-Add it to your `Gemfile`:
+Add the gem to your `Gemfile`:
 
 ```ruby
-gem 'GEMNAME', git: 'https://github.com/USERNAME/REPO_NAME'
+gem "GEMNAME", git: "GITHUB_URL"
 ```
 
 Example:
 
 ```ruby
-gem 'rack', git: 'https://github.com/rack/rack
+gem "rack", git: "https://github.com/rack/rack"
 ```
 
 Install it.
