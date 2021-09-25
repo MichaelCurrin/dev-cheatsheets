@@ -297,12 +297,16 @@ for (const pair of foo) {
 // ['c', 3]
 ```
 
-### for wait of
+### for await of
 
-A variation `for` loop for async code.
+A variation of a `for` loop, for async code.
 
 - [for await...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of)
     > loop iterating over async iterable objects as well as on sync iterables
+
+I guess this is useful if you have an array of Promises. 
+
+I think the for await approach runs them independently and carries on the when they are all done, like using `Promise.all`.
 
 #### Syntax
 
@@ -317,7 +321,7 @@ for await (variable of iterable) {
 Use either:
 
 - `myAsyncIterable` - some object that explicitly implements async iterable protocol.
-- `myAsyncGenerator()` - somee async generator function, which already conforms to the async iterable protocol.
+- `myAsyncGenerator()` - some async generator function, which already conforms to the async iterable protocol.
 
 ```javascript
 (async function() {
