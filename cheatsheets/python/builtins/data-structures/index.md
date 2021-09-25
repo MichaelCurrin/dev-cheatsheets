@@ -3,18 +3,16 @@ description: A comparison of data structure syntax and usage in Python
 ---
 # Data structures
 
+See [Data structures](https://docs.python.org/3/tutorial/datastructures.html) in the docs.
+
 See [Collections](https://docs.python.org/3/library/collections.html) in the docs.
 
-
-If you are interested in key-value pairs, see:
+If you are interested in key-value pairs, see these cheatsheets.
 
 - [Dictionary]({{ site.baseurl }}{% link cheatsheets/python/builtins/data-structures/dictionary.md %})
 - [Named tuple]({{ site.baseurl }}{% link cheatsheets/python/builtins/data-structures/named-tuple.md %})
 - [Typed dictionary]({{ site.baseurl }}{% link cheatsheets/python/type-checks/index.md %}) in the Type Checks section.
 
+See also
 
-See external docs for:
-
-- [set](https://docs.python.org/3/library/stdtypes.html#set)
-- [frozenset](https://docs.python.org/3/library/stdtypes.html#frozenset)
 - [counter](https://docs.python.org/3/library/collections.html#collections.Counter) - "dict subclass for counting hashable objects"
