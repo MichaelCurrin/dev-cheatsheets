@@ -12,7 +12,3 @@ If you are interested in key-value pairs, see these cheatsheets.
 - [Dictionary]({{ site.baseurl }}{% link cheatsheets/python/builtins/data-structures/dictionary.md %})
 - [Named tuple]({{ site.baseurl }}{% link cheatsheets/python/builtins/data-structures/named-tuple.md %})
 - [Typed dictionary]({{ site.baseurl }}{% link cheatsheets/python/type-checks/index.md %}) in the Type Checks section.
-
-See also
-
-- [counter](https://docs.python.org/3/library/collections.html#collections.Counter) - "dict subclass for counting hashable objects"
