@@ -1,8 +1,10 @@
 # Top results
 
+Get the top X results within each category.
+
 While a plain row number just adds a number for each row, here we assign a row number with a category. 
 
-Set up a rank value.
+Set up a rank value:
 
 ```
 ROW_NUMBER() OVER (
@@ -11,16 +13,17 @@ ROW_NUMBER() OVER (
     ) AS rank
 ```
 
+So within each value for `my_category`, you'd have numbering from 1 to the last item.
 
-And then use that in a condition.
-
-```
-WHERE rank <= 10
-```
-
-Note that you'll get an error about using `ROW_NUMBER` outside of a window function, so use a window as below.
+Then filter to only the top items in that category.
 
 ```
+WHERE rank <= X
+```
+
+Note that you will get an error if using `ROW_NUMBER` outside of a window function, so use a _window function_ as below. i.e. Do a select on the inner select and apply the `WHERE` cluse on the outside.
+
+```sql
 SELECT
   my_category, 
   my_category_2,
