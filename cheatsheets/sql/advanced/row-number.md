@@ -18,7 +18,7 @@ The ordering inside the `OVER` part is required.
 
 ### Customers basic
 
-Here we order by country, within the `OVER` clause and not needed on the outside of the query.
+Here we order by country within the `OVER` clause. Note that `country` doesn't have to be used in outer part of the `SELECT`.
 
 ```sql
 SELECT
@@ -45,7 +45,7 @@ row_number | first_name | last_name | country
 
 Show a max number of items on each page results.
 
-Add a condition.
+Add a condition:
 
 ```sql
 WHERE row_num > 20 
@@ -76,13 +76,15 @@ row_number | first_name | last_name | country
 
 ### Aggregate
 
+Order results and then give them each a row number _after_ ordering.
+
 ```sql
 SELECT
-  ROW_NUMBER() OVER(ORDER BY COUNT(*) DESC) AS `no.`,
+  ROW_NUMBER() OVER(ORDER BY COUNT(*) DESC) AS `Row number`,
   name,
   COUNT(*) AS `count`
 FROM records
 GROUP BY name
 ORDER BY COUNT(*) DESC
-LIMIT 10;
 ```
+
