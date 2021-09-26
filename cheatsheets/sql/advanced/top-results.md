@@ -45,6 +45,22 @@ FROM (
 WHERE rank <= 10
 ```
 
+Or use aggregation, like here with `GROUP BY`.
+
+```sql
+SELECT
+    `Department`,
+    `Year`,
+    COUNT(*) AS `Count`,
+    ROW_NUMBER() OVER (
+    PARTITION BY `Year`
+        ORDER BY COUNT(*) DESC
+    ) AS rank
+FROM my_table
+GROUP BY
+    `Department`,
+    `Year`
+```
 
 ## Examples
 
