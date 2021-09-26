@@ -8,9 +8,9 @@ Set up a rank value:
 
 ```
 ROW_NUMBER() OVER (
-      PARTITION BY my_category
-      ORDER BY my_metric DESC
-    ) AS rank
+    PARTITION BY my_category
+    ORDER BY my_metric DESC
+) AS rank
 ```
 
 So within each value for `my_category`, you'd have numbering from 1 to the last item.
@@ -21,24 +21,26 @@ Then filter to only the top items in that category.
 WHERE rank <= X
 ```
 
-Note that you will get an error if using `ROW_NUMBER` outside of a window function, so use a _window function_ as below. i.e. Do a select on the inner select and apply the `WHERE` cluse on the outside.
+Here `my_category` is the grouping variable.
+
+Note that you will get an error if using `ROW_NUMBER` outside of a window function, so use a _window function_ as below. i.e. Do a select on the inner select and apply the `WHERE` clause on the outside.
 
 ```sql
 SELECT
-  my_category, 
-  my_category_2,
-  my_metric
+    my_category, 
+    my_label,
+    my_metric
 FROM (
-  SELECT
-    my_category,
-    my_category_2,
-    my_metric,
-    ROW_NUMBER() OVER (
-      PARTITION BY
-        my_category
-      ORDER BY my_metric DESC
-    ) AS rank
-  FROM aggregated
+    SELECT
+        my_category,
+        my_label,
+        my_metric,
+        ROW_NUMBER() OVER (
+            PARTITION BY
+                my_category
+            ORDER BY my_metric DESC
+        ) AS rank
+    FROM my_table
 )
 WHERE rank <= 10
 ```
@@ -64,6 +66,8 @@ DEF | def | 0.2M | 3
 Here we add up the spending by each department per year and then get the top 10 values (and names) in each year.
 
 Using `*` here means that the rank column is in the output, but you can remove that if you want.
+
+Note the partition is just on `year`, so we get the top 10 values for each year and their corresponding name.
 
 ```sql
 WITH by_dept_year AS (
@@ -105,3 +109,4 @@ FROM (
 )
 WHERE rank <= 10
 ```
+
