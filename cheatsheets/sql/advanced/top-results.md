@@ -62,6 +62,17 @@ GROUP BY
     `Year`
 ```
 
+But, if you try and get top 10 for each, you'll have to add one of these, you'll get an error - "misuse of aliased window function rank"
+
+```
+WHERE rank <= 10
+
+HAVING rank <= 10
+```
+
+So then you'll have to use a window function approach like in the earlier example above, just with `GROUP BY` added.
+
+
 ## Examples
 
 ### Geo
