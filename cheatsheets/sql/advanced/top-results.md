@@ -50,12 +50,12 @@ WHERE rank <= 10
 
 If you wanted the top 5 biggest cities in each country, you'd get output like:
 
-Country, City, Population, Rank
+Country | City | Population | Rank
 --- | --- | --- | ---
 ABC | abc | 1.6M | 1
 ABC | xyz | 1.3M | 2
 ABC | def | 1.1M | 3
-DEF | ghi | 2M | 1
+DEF | ghi | 2M   | 1
 DEF | mno | 0.5M | 2
 DEF | def | 0.2M | 3
 
