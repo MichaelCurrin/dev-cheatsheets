@@ -72,7 +72,7 @@ Note the partition is just on `year`, so we get the top 10 values for each year 
 ```sql
 WITH by_dept_year AS (
   SELECT
-    STRFTIME('%Y', `date) AS year,
+    STRFTIME('%Y', `date`) AS year,
     `Department` AS name,
     CAST(
       REPLACE(`Spending`, ",", "")
