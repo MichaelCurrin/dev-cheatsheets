@@ -96,5 +96,5 @@ LIMIT 10
 
 If you want to get the top 10 results within a category and each numbered 1 to 10, see the [Top results][] cheatsheet.
 
-[Top results]: {{ site.baseurl }}{% link cheatsheets/sql/advanced/row-number.md %}
+[Top results]: {{ site.baseurl }}{% link cheatsheets/sql/advanced/top-results.md %}
 
