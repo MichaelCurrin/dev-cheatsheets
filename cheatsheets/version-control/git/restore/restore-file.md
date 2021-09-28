@@ -43,13 +43,13 @@ $ git reset --hard master foo.txt
 $ git checkout master foo.txt
 ```
 
-When using `reset`, if you leave out `--hard` then you need to remove the unstaged portion of the file liek this:
+Note - when using `reset`, if you leave out `--hard` then you need to remove the unstaged portion of the file like this:
 
 ```sh
 $ git checkout .
 ```
 
-Then commit the file that is staged.
+Then commit the file that will be staged for you.
 
 Either way, if you bring back a file, you get to keep the history of the file, which you can see:
 
