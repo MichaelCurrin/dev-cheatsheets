@@ -60,6 +60,12 @@ Contributions are welcome via PRs and issues.
 ### Static sites and docs
 
 <div class="flex-container">
+    <a href="{{ site.baseurl }}{% link cheatsheets/ci-cd/github-actions/index.md %}">
+        <div>
+            {% include logo.html name="githubactions" %}
+            <span>GitHub Actions</span>
+        </div>
+    </a>
     <a href="{{ site.baseurl }}{% link cheatsheets/markdown/index.md %}">
         <div>
             {% include logo.html name="markdown" %}
@@ -72,7 +78,6 @@ Contributions are welcome via PRs and issues.
             <span>Jekyll</span>
         </div>
     </a>
-
 </div>
 
 ### Command-line
