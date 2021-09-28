@@ -1,17 +1,15 @@
 # Install and upgrade
 
-From the TF docs [Install](https://learn.hashicorp.com/tutorials/terraform/install-cli) page.
+
+## Resources
+
+See more info here in the docs:
+
+- [Download Terraform](https://www.terraform.io/downloads.html) - on Terraform website. Choose your OS and click a URL for a zipped binary.
+- [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) in the Hashicorp docs for detailed instructions.
 
 
-## Verify installation
-
-```console
-$ terraform -v
-Terraform v1.0.5
-on darwin_amd64
-```
-
-## Approaches
+## Approaches to install
 
 The downside of the binary approach is requires manually checking for a version in the browser on an initial install and on every upgrade. 
 
@@ -19,7 +17,7 @@ The approaches using a package manager are more convenient to install and upgrad
 
 ### Download binary
 
-1. Go to [Download Terraform](https://www.terraform.io/downloads.html) page.
+1. Go to [Download Terraform](https://www.terraform.io/downloads.html) page on Terraform website.
 1. Download a binary.
 1. Unzip it.
 1. Move `terraform` to your executables directory in your `PATH`.
@@ -92,23 +90,10 @@ You can use `apt` / `apt-get` to manage Terraform. But first you hav to add to y
     ```
     
 
-## TFEnv
+## Verify installation
 
-If you want to have multiple versions of Terraform installed, use this tool.
-
-- [tfenv](https://github.com/tfutils/tfenv)
-
-```sh
-$ brew install tfenv
-```
-
-```sh
-$ tfenv install 0.7.0
-```
-
-
-## Verify
-
-```sh
-$ terraform -help
+```console
+$ terraform -v
+Terraform v1.0.5
+on darwin_amd64
 ```
