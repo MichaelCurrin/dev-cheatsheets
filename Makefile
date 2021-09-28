@@ -15,6 +15,7 @@ install:
 	bundle install
 
 upgrade:
+	bundle clean
 	bundle update
 
 
