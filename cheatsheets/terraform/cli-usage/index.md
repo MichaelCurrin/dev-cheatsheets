@@ -4,7 +4,7 @@ description: How to run Terraform commands in the terminal
 # CLI
 
 
-## Basics
+### Basics
 
 Follow these three commands in order as a started for using Terraform.
 
@@ -22,7 +22,7 @@ Follow these three commands in order as a started for using Terraform.
     ```
 
 
-## Development
+### Development
 
 Format the Terraform code.
 
@@ -37,7 +37,7 @@ $ terraform validate
 ```
 
 
-## Alias
+### Alias
 
 Recommended for your shell config:
 
