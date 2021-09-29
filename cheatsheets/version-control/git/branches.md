@@ -90,66 +90,14 @@ $ git branch -D BRANCH_NAME
 
 You can supply multiple branch names if you want.
 
-### Restore deleted branch
-
-Even often a branch is deleted, you can still create it from the local remote reference.
 
 ```sh
-$ git branch -d foo
-$ git checkout foo
-Branch 'foo' set up to track remote branch 'foo' from 'origin'.
-Switched to a new branch 'foo'
+$ git branch -d foo bar
 ```
 
-From the `git checkout` manpage:
+#### Using -d or -D flag
 
-> If `<branch>` is not found but there does exist a tracking branch in exactly one remote (call it <remote>) with a matching name, treat as equivalent to
-
-```sh
-$ git checkout -b <branch> --track <remote>/<branch>
-```
-
-e.g.
-
-```sh
-$ git checkout -b foo --track origin/foo
-```
-
-### Delete unneeded branches
-
-Based on the ZSH alias `gbda`. Which probably stands for "git branch delete all".
-
-Select all _merged_ branches, excluding `master` and `develop`, then delete each.
-
-```sh
-$ git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(main|master|develop)\s*$)" | command xargs -n 1 git branch -d
-```
-
-Using `xargs` will take each branch name and run the delete branch command against it, using a functional programming approach.
-
-You could also get the branch names as one long string, remove line breaks, then pass that all to the command. Like this, based on another source I found.
-
-```sh
-$ git branch -d $(git branch --merged | grep -v '^*' | grep -v 'main|master|develop' | tr -d '\n')
-```
-
-The regex is also shorter.
-
-Note on accuracy:
-
-- Run `git fetch` (or `git pull`) first to make sure you are up to date with the remote.
-- A branch might be merged but might not known to `git` if it was a **squash** merge.
-
-Here is a more aggressive approach (best to run this on `master` or `develop` and push your feature branches first, so you can recreate them from the remote references).
-
-```sh
-$ git checkout master
-$ git branch --no-color | command grep -vE "^(\+|\*|\s*(master|develop)\s*$)" | command xargs -n 1 git branch -D
-Deleted branch foo (was 06e07e7).
-Deleted branch foo (was 125f0d2).
-```
-
-If you use `-d` you'll get warnings on unmerged branches and `-D` will delete it anyway.
+If you use `-d` , you'll get warnings on unmerged branches. Using `-D` will delete it anyway.
 
 Here with `-d`:
 
@@ -168,6 +116,82 @@ bar
 baz' | xargs git branch -D
 ```
 
+
+### Restore deleted branch
+
+Even often a branch is deleted, you can still create it from the local remote reference.
+
+```sh
+$ git branch -d foo
+$ git checkout foo
+Branch 'foo' set up to track remote branch 'foo' from 'origin'.
+Switched to a new branch 'foo'
+```
+
+From the `git checkout` manpage:
+
+> If `<branch>` is not found but there does exist a tracking branch in exactly one remote (call it `<remote>`) with a matching name, treat as equivalent to
+
+```sh
+$ git checkout -b <branch> --track <remote>/<branch>
+```
+
+e.g.
+
+```sh
+$ git checkout -b foo --track origin/foo
+```
+
+### Delete multiple branches
+
+Here I assume you've got all your Pull Requests merged or closed.
+    
+This will delete all your **merged** local branches, aside from `main`, `master` and `develop`.
+        
+Note on accuracy:
+
+- Run `git fetch` (or `git pull`) first to make sure you are up to date with the remote.
+- Push any in-progress work in case you need to recover a branch from the remote.
+- A branch might actually be merged (such as using a PR merge button), but might not known to `git` as merged if it was a **squash** merge. In that case, omit the `--merged` flag in the commands below.
+    
+#### Double grep and xargs
+    
+Based on the ZSH alias `gbda`. Which probably stands for "git branch delete all".
+
+Using `xargs` will take each branch name  one at a time and run the delete branch command against it.
+    
+```sh
+$ git branch --no-color --merged \
+    | command grep -vE "^(\+|\*|\s*(main|master|develop)\s*$)" \
+    | command xargs -n 1 git branch -d
+```
+    
+### Single grep
+    
+Here we get the branch names as one long string, remove line breaks, then pass that all to the delete branch command.
+    
+Based on another source I found.
+
+```sh
+$ git branch -d $(git branch --merged \
+    | grep -v '^*' \
+    | grep -v 'main|master|develop' \
+    | tr -d '\n')
+```
+    
+Sample output:
+    
+``` 
+Deleted branch foo (was 06e07e7).
+Deleted branch bar (was 125f0d2).
+```
+    
+Equivalent to:
+    
+```sh
+$ git branch -d abc def xyz
+```
+   
 
 ## Delete local references to remote branches
 
@@ -193,7 +217,7 @@ origin/master
 ```
 
 
-## Delete branch on GitHub
+## Delete branch on GitHub remote
 
 How to delete the actual branch on GitHub, using the command-line rather than clicking delete the Branches tab.
 
@@ -210,7 +234,7 @@ $ git push -d origin foo
 $ git push -d origin v1.2.3
 ```
 
-This has no effect on a local branch or tag.
+This has _no_ effect on a local branch or tag.
 
 
 ## Set upstream
