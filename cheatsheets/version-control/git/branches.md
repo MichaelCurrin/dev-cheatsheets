@@ -146,19 +146,28 @@ $ git checkout -b foo --track origin/foo
 
 Here I assume you've got all your Pull Requests merged or closed.
     
-This will delete all your **merged** local branches, aside from `main`, `master` and `develop`.
+This will delete all your **merged** local branches, aside from the current or special branches (`main`, `master` and `develop`).
         
+Note the significance of the star for the current branch, as it will be used below in the regex.
+
+```console
+$ git branch
+  abc
+* foo
+  main
+  xyz
+```
+
 Note on accuracy:
 
 - Run `git fetch` (or `git pull`) first to make sure you are up to date with the remote.
 - Push any in-progress work in case you need to recover a branch from the remote.
-- A branch might actually be merged (such as using a PR merge button), but might not known to `git` as merged if it was a **squash** merge. In that case, omit the `--merged` flag in the commands below.
     
-#### Double grep and xargs
+#### Single grep and xargs
     
 Based on the ZSH alias `gbda`. Which probably stands for "git branch delete all".
 
-Using `xargs` will take each branch name  one at a time and run the delete branch command against it.
+This will use `xargs` to take each branch name and run the delete branch command against it one at a time.
     
 ```sh
 $ git branch --no-color --merged \
@@ -166,12 +175,16 @@ $ git branch --no-color --merged \
     | command xargs -n 1 git branch -d
 ```
     
-### Single grep
-    
-Here we get the branch names as one long string, remove line breaks, then pass that all to the delete branch command.
+### Double grep
     
 Based on another source I found.
+    
+Here we get the branch names as one long string, excluding the current branch (starting with `*` and the special branches.
 
+Then remove line breaks with `tr`. 
+
+And pass the output all the delete branch command as multiple arguments.
+    
 ```sh
 $ git branch -d $(git branch --merged \
     | grep -v '^*' \
@@ -192,6 +205,25 @@ Equivalent to:
 $ git branch -d abc def xyz
 ```
    
+   
+### Aggressive
+
+A branch might actually be merged (such as using a PR merge button), but might not known to `git` as merged if it was a **squash** merge. 
+
+In that case:
+
+- Omit the `--merged` flag in the commands below.
+- Use `-D` to force a delete instead of a warning.
+
+Instead of using `tr`, here using `xargs` as a more elegant way to put all the arguments on one line i.e. remove line breaks.
+
+```sh
+$ git branch -D $(git branch \
+    | grep -v '^*' \
+    | grep -v 'main|master|develop' \
+    | xargs)
+```
+    
 
 ## Delete local references to remote branches
 
