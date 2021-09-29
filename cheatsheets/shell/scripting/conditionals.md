@@ -111,14 +111,26 @@ These are all done as:
 
 ```sh
 [[ OPERATOR PATH ]]
+```
 
-# e.g.
-[[ -e file.txt ]]
+e.g. Check if file exists.
+
+```sh
+[[ -f file.txt ]]
+```
+
+e.g. Check if file is missing.
+
+```sh
+if [[ ! -f file.txt ]]; then
+  echo 'ERROR: file.txt missing'
+  exit 1
+fi
 ```
 
 Operator | Description
 ---  | ---
-`-e` | Exists
+`-e` | Exists - file or directory.
 `-s` | Size is non-zero
 `-f` | File
 `-d ` | Directory
