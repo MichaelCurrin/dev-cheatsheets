@@ -49,7 +49,32 @@ $ webpack build
 $ webpack bundle
 ```
 
-## Set build name
+## Set build input and output
+
+### Default
+
+- `package.json`
+    ```json
+    {
+      "scripts": {
+        "build": "webpack"
+      }
+    }
+    ```
+
+That implies:
+
+```
+./src/index.js -o dist
+```
+
+Note the dot-slash is required in the first path or you'll ge an error.
+
+And works for `.tsx` input too.
+
+
+
+### Output filename
 
 See in the docs:
 
@@ -94,28 +119,15 @@ module.exports = {
 };
 ```
 
-## Set build input and output
+### Output directory
 
-### Default
-
-- `package.json`
-    ```json
-    {
-      "scripts": {
-        "build": "webpack"
-      }
-    }
-    ```
-
-That implies:
-
+```javascript
+module.exports = {
+  output: {
+    path: path.resolve(__dirname, 'dist')
+  }
+}
 ```
-./src/index.js -o dist
-```
-
-Note the dot-slash is required in the first path or you'll ge an error.
-
-And works for `.tsx` input too.
 
 ### Custom input and output
 
