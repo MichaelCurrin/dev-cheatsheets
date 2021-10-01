@@ -49,6 +49,51 @@ $ webpack build
 $ webpack bundle
 ```
 
+## Set build name
+
+See in the docs:
+
+- [outputfilename](https://webpack.js.org/configuration/output/#outputfilename)
+- [outputchunkfilename](https://webpack.js.org/configuration/output/#outputchunkfilename)
+
+Sample for filename:
+
+```javascript
+module.exports = {
+  //...
+  output: {
+    filename: 'bundle.js',
+    // Using internal chunk id.
+    filename: '[id].bundle.js', 
+    // Using fiel hash.
+    filename: '[contenthash].bundle.js', 
+    // Multiple rules.
+    filename: '[name].[contenthash].bundle.js',
+    
+    // Function.
+    filename: (pathData) => {
+      return pathData.chunk.name === 'main' ? '[name].js' : '[name]/[name].js';
+    },
+  },
+};
+
+module.exports = {
+  //...
+  output: {
+  },
+};
+```
+
+Sample for chunk name:
+
+```javascript
+module.exports = {
+  output: {
+    chunkFilename: '[id].js',
+  },
+};
+```
+
 ## Set build input and output
 
 ### Default
@@ -183,3 +228,4 @@ module.exports = {
   },
 };
 ```
+
