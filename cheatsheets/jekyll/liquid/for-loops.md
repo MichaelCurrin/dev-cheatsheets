@@ -47,7 +47,18 @@ Skip the first items and started at the Nth item.
 
 ### Index
 
-Index of the current iteration. Use `.index` to start at one or `.index0` to start at zero.
+Index of the current iteration. 
+
+Use `.index` to start at one or `.index0` to start at zero. And first and last for whether at the start or end of the loop.
+
+```
+forloop.index
+forloop.index0
+forloop.first
+forloop.last 
+```
+
+e.g.
 
 ```liquid
 {% for item in page.my_array %}
@@ -65,6 +76,15 @@ Using `last` is useful if you are rendering a separator. Like a comma between JS
     {{ key_value[0] | jsonify }}: {{ key_value[1] | jsonify }}
     {% unless forloop.last %},{% endunless %}
 {% endfor %}
+}
+```
+
+To get:
+
+```json
+{
+  "abc": "123",
+  "def": "xyz"
 }
 ```
 
