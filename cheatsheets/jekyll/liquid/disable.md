@@ -21,8 +21,21 @@ render_with_liquid: false
 
 Use the `raw` tag around a text, a line, multiple lines, or most of the file.
 
-Note shown here as it is not practical to get the `raw` tag to appear literally.
+Here is an example. Remember to close it with `endraw`.
 
-If you want the `raw` tag to appear literally, you can use `render_with_liquid` (Jekyll 4.X) for the file. Nesting `raw` tags might not work as the inner `endraw` will close the outer `raw`.
+{% raw %}
+```liquid 
+{% raw %}
+{{ my_variable %}
+```
+{% endraw %}
 
-An example can't be shown here, because you can't nest raw tags. The inner closing tag for display purposes will end the outer opening tag.
+
+### Using raw tag in a code snippet 
+
+If you want the `raw` tag to appear literally, you can use `render_with_liquid` (Jekyll 4.X) for the file. 
+
+Nesting `raw` tags might not work as the inner `endraw` will close the outer `raw`.
+
+An example can't be shown here easily, because you can't nest raw tags. The inner closing tag for display purposes will end the outer opening tag.
+
