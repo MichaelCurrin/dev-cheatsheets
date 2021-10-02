@@ -14,10 +14,12 @@ How to pin packages at version or range.
 
 For Python, Ruby and NPM.
 
-- `1.2.3` - exact match. All support.
-- `>=1.2.3, <2` - range. All support.
-- `~1.2.3` -  using tilde - compatible patch increments. Supported by all.
-    - `~= 1.2.3` - using tilde and equals - Python only.
-    - `~> 1.2.3` - using tilde and greater than - Ruby only.
-- `^1.2.3` - using caret - minor versions. Supported by NPM only.
-- Note that NPM versions work differently above and below the first major release - `1.0.0`.
+- `1.2.3` - exact match. All support. Uncommon in JS.
+- `>=1.2.3, <2` - range. All support. Uncommon in JS.
+- `~1.2.3` -  using tilde - compatible patch increments i.e. `X.Y.*` with minimum `Z`. Supported by all. Very common in JS as it gets automatically set in package.json file. 
+- Tilde variations. I've never seen these in JS/NPM and they might not even be valid.
+    - `~= 1.2.3` - using tilde and equals - Python only. Common.
+    - `~> 1.2.3` - using tilde and greater than - Ruby only. Common.
+- `^1.2.3` - using caret - minor versions i.e. `X.*.*` with minimum `Y` and `Z`. Supported by NPM/JS only. Sometimes set manually in package.json file. 
+
+Note that NPM versions work differently above and below the first major release - `1.0.0`.
