@@ -114,3 +114,12 @@ e.g.
 ```sh
 $ chmod -R VALUE PATH
 ```
+
+Using `find`.
+
+```sh
+$ find PATH -exec chmod VALUE {} +
+```
+
+This can be useful to filter to say just directories with `find -type d`.
+
