@@ -1,79 +1,64 @@
 # Remote
 
+## Related
+
+- [Remote](https://michaelcurrin.github.io/code-cookbook/recipes/version-control/git/rebase.html) in Code Cookbook.
+
+
+## View
+
+```console
+$ git remote
+origin
+```
+
+```console
+$ git remote -v
+origin  git@github.com:MichaelCurrin/foo.git (fetch)
+origin  git@github.com:MichaelCurrin/foor.git (push)
+```
+
+
 ## Change remote
 
+For example, you might switch from HTTPS to SSH, or GitHub to BitBucket.
+
 ```sh
-$ git remote set-url origin git@github.com:MichaelCurrin/cheatsheets.git
+$ git remote set-url REMOTE_NAME URL
 ```
 
-## Add remote to a new repo
-
-When you set up a repo like this, you won't have any remotes.
+e.g.
 
 ```sh
-$ git init
+$ git remote set-url origin git@github.com:MichaelCurrin/foo.git
 ```
 
-This should give nothing.
+
+## Add remote
 
 ```sh
-$ git remote -v
+$ git remote add REMOTE_NAME URL
 ```
 
-Add a remote.
+e.g.
 
 ```sh
-$ git remote add origin git@github.com:MichaelCurrin/dev-cheatsheets.git
+$ git remote set-url upstream git@github.com:AbcDef/foo.git
 ```
 
-You can commit and push now.
 
-You need to include the remote name and branch the first time you pull. Note you'll get an error doing a pull on an empty remote.
-
-```sh
-$ git pull origin master
-```
-
-Then just:
+## Sync fork with original repo
 
 ```sh
-$ git pull
-```
-
-Note that if you use VS Code to push, it will create the repo for you on GitHub without having to go through the GitHub UI.
-
-### Add remote for a fork
-
-Given you have forked a repo and cloned it and it has this remote setup:
-
-- `origin git@github.com:MyUsername/dev-cheatsheets.git`
-
-And the the original repo is at `MichaelCurrin/dev-cheatsheets`.
-
-So to pull in changes from the original repo into your fork, you can do this. The name `upstream` is a common name to use.
-
-```sh
-$ git remote add upstream git@github.com:MichaelCurrin/dev-cheatsheets.git
-```
-
-```sh
-$ git checkout master
-```
-
-```sh
-$ git pull upstream master
-$ # Or
-$ git reset --hard upstream master
-```
-
-Push your local commits to your fork.
-
-```sh
+$ git checkout main
+$ git pull upstream main
 $ git push
 ```
 
-That implies:
+Or reset origin to point to upstream - useful if you made commits on `origin` that you want to undo.
 
 ```sh
-$ git push origin master
+$ git checkout main
+$ git fetch upstream
+$ git reset --hard upstream main
 ```
