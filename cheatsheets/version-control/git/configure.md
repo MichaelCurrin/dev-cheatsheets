@@ -3,6 +3,8 @@ description: How to configure git
 ---
 # Configure
 
+This is a general guide for _how_ to configure, not _what_ to configure. See link below for some fields.
+
 
 ## Related
 
