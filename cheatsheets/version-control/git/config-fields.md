@@ -9,14 +9,32 @@
 
 ## Commit template
 
-e.g.
+```sh
+$ git config --global commit.template _COMMIT_MESSAGE
+```
 
 ```toml
 [commit]
         template = "_COMMIT_MESSAGE"
 ```
 
-For `_COMMIT_MESSAGE` file in your repo.
+Make sure you have `_COMMIT_MESSAGE` as a text file in your repo.
+
+
+## Default branch
+
+Git still uses `master` as the default, while GitHub uses `main`.
+
+Set this up so `git init` for a new repo will start you out with `main`.
+
+```sh
+$ git config --global init.defaultBranch main
+```
+
+```toml
+[init]
+	defaultBranch = "main"
+```
 
 
 ## Configure merge strategy for pull
@@ -30,8 +48,6 @@ In some situations, you do want a merge commit such as pulling a feature branch 
 The `git pull` default behavior is with `--ff`.
 
 You can set `--no-ff` or `--ff-only` using flags to config options.
-
-The
 
 ### Warning
 
@@ -54,7 +70,6 @@ If your pull strategy is not configured, newer versions of `git` will now give t
     invocation.
 
 </details>
-
 
 So here are your options for `.gitconfig` under `[pull]` heading.
 
