@@ -1,7 +1,7 @@
 ---
 title: Cookies
 description: Working with browser cookies using JavaScript 
-
+---
 
 ## About
 
