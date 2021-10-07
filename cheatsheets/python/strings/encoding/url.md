@@ -60,7 +60,7 @@ urllib.parse.unquote('Hello%2C%20world%21')
 
 ```python
 urllib.parse.unquote_plus('Hello%2C+world%21')
-'Hello, world!'
+# 'Hello, world!'
 ```
 
 ```python
@@ -78,7 +78,7 @@ urllib.parse.urlparse('q=Python+URL+encoding&abc=134')
 # ParseResult(scheme='', netloc='', path='q=Python+URL+encoding&abc=134', params='', query='', fragment='')
 
 urllib.parse.urlparse('https://example.com?q=Python+URL+encoding&abc=134')
-ParseResult(scheme='https', netloc='example.com', path='', params='', query='q=Python+URL+encoding&abc=134', fragment='')
+# ParseResult(scheme='https', netloc='example.com', path='', params='', query='q=Python+URL+encoding&abc=134', fragment='')
 ```
 
 
