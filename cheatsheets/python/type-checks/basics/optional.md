@@ -6,6 +6,7 @@ e.g.
 
 ```python
 Union(float, None)
+# Python 3.10
 float | None
 ```
 
