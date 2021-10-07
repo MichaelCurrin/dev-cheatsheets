@@ -15,6 +15,13 @@ The docs say that prefered way is `Optional[float]` - see [page](https://mypy.re
 Or just set `height=0.0` as a default as then it is never None type and the float type will be inferred.
 
 
+## Import
+
+```python
+from typing import Optional
+```
+
+
 ## Using Optional
 
 Allow a variable to be `None`.
