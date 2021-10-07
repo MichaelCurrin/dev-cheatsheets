@@ -1,5 +1,5 @@
 ---
-title: Encoding and decoding
+title: Unicode
 description: Handing Unicode and bytes/ASCII
 ---
 
