@@ -1,4 +1,7 @@
-# Encoding and decoding
+---
+title: Encoding and decoding
+description: Handing Unicode and bytes/ASCII
+---
 
 All the examples here are in Python 3.
 
