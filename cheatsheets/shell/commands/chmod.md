@@ -169,31 +169,39 @@ Permissions | Description
 `644` | Only owner can execute (but not wite)
 `766` | Writable for everyone. But only owner can execute.
 `755` | Executable for everyone. But only owner can write.
-```
 
 
 ## Examples
 
 ### Executable file
 
-Add permissions:
+Add permissions, for all users.
 
 ```sh
-$ chmod +x script.sh
+$ chmod +x PATH
 ```
 
 Remove permissions:
 
 ```sh
-$ chmod -x script.sh
+$ chmod -x PATH
 ```
+
+### Target
+
+Prevent group from reading.
+
+```sh
+$ chmod g-r PATH
+```
+
 
 ### Allow non-owners to write to directory
 
 Give "other" users who are not owners access to write to a directory.
 
 ```sh
-$ chmod o+w /some/dir
+$ chmod o+w PATH
 ```
 
 ### Restore
@@ -203,7 +211,7 @@ Reset to the permissions set when making a new item.
 ### Reset file
 
 ```sh
-$ chmod 544 file
+$ chmod 544 PATH
 ```
 
 Resulting bits:
