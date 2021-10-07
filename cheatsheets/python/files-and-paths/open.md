@@ -83,3 +83,12 @@ Allow writing to a file but appending only - do not overwrite existing lines.
 ```python
 open(path, 'a')
 ```
+
+
+## Encoding
+
+Linting warns me if I don't specify an encoding explicitly.
+
+```python
+open(path, 'r', encoding="utf-8")
+```
