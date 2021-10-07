@@ -3,6 +3,13 @@
 This is all for Python 3.
 
 
+## Related
+
+- [URL encoding][] cheatsheet
+
+[URL encoding]: {{ site.baseurl }}{% link cheatsheets/web/html/encode-and-escape/url-encoding.md %}
+
+
 ## Encode
 
 ### Quote
