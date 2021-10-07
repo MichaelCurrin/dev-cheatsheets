@@ -187,7 +187,7 @@ Remove permissions:
 $ chmod -x PATH
 ```
 
-### Target
+### Protect visiblity
 
 Prevent group from reading.
 
@@ -195,6 +195,17 @@ Prevent group from reading.
 $ chmod g-r PATH
 ```
 
+Prevent all from reading.
+
+```sh
+$ chmod -r PATH
+```
+
+Make only current user able to read and write, others and groups can do nothing.
+
+```sh
+$ chmod 600 PATH
+```
 
 ### Allow non-owners to write to directory
 
