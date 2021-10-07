@@ -1,4 +1,7 @@
-# URL
+---
+title: URL
+description: Percent encoding values for a URL
+---
 
 This is all for Python 3.
 
@@ -14,7 +17,7 @@ This is all for Python 3.
 
 ### Quote
 
-- [urllib.parse.quote](https://docs.python.org/3/library/urllib.parse.html#urllib.parse.quote
+- [urllib.parse.quote](https://docs.python.org/3/library/urllib.parse.html#urllib.parse.quote)
 - [urllib.parse.quote_plus](https://docs.python.org/3/library/urllib.parse.html#urllib.parse.quote_plus)
     > Like `quote()`, but also replace spaces with plus signs, as required for quoting HTML form values when building up a query string to go into a URL. 
     > 
