@@ -25,7 +25,7 @@ from .foo import greet
 
 Unfortunately, any dot imports will break unless you use this approach for your CLI:
 
-```python
+```sh
 $ python -m my_app.my_module
 ```
 
@@ -46,7 +46,7 @@ But since it not clearly local, Mypy will think it is external (installed) and c
 
 You would run that as:
 
-```python
+```sh
 $ cd my_app
 $ python my_module.py
 ```
