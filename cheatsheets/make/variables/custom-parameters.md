@@ -159,18 +159,39 @@ Perhaps you want to pass a variable name with a short name or different case on 
 Here we rename a variable from `v` to `VERSION` using shell evaluation.
 
 - `Makefile`
-    ```sh
+    ```make
     VERSION := $(v)
 
     show-vsn:
         @echo "Target version: $(VERSION)"
     ```
 
-Example use:
+In the shell:
 
-```sh
+```console
 $ export v=1.2.3
 $ make show-version
+Target version: 1.2.3
+```
+
+
+## Rename variable and set a default
+
+If you want to pass your value as an argument to `make` as lowercase but convert it to uppercase and also give a default value.
+
+- `Makefile`
+    ```make
+    version ?= 13
+    VERSION = $(version)
+
+    show-vsn:
+        @echo "Target version: $(VERSION)"
+    ```
+    
+In the shell:
+
+```console
+$ make show-version version=1.2.3
 Target version: 1.2.3
 ```
 
