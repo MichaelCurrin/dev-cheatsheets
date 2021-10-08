@@ -69,6 +69,8 @@ Here are two equivalent ways to set a variable if it is not defined.
 FOO ?= bar
 ```
 
+Or
+
 ```mk
 ifeq ($(origin FOO), undefined)
 FOO = bar
@@ -102,7 +104,9 @@ Hello, dev!
 
 Note that variable names are case-sensitive - so make sure what you pass in on the shell matches what is in the `Makefile`.
 
-See [Parameters]({{ site.baseurl }}{% link cheatsheets/make/variables/custom-parameters.md %}) section on passing variables.
+See [Parameters][] section on passing variables.
+
+[Parameters]: {{ site.baseurl }}{% link cheatsheets/make/variables/custom-parameters.md %}
 
 
 ## Export variables
