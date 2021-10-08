@@ -1,7 +1,17 @@
-# Missing imports
+---
+title: Missing imports
+
+description: What to do when Mypy gives an error that it cannot find types for imports
+---
 
 
 See [Missing imports](https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports) in the docs.
+
+## Related
+
+- [Install types][] cheatsheet
+
+[Install types]: {{ site.baseurl }}{% link cheatsheets/python/type-checks/install-types.md %}
 
 
 ## Refactor imports
@@ -54,27 +64,67 @@ $ python my_module.py
 
 ## Ignore
 
-There are multiple ways to ignore untyped libraries.
+If you can't find types for a library updating coding or installing packages, you can silence the Mypy errors.
 
+Here are ways to ignore untyped libraries.
 
-## Ignore by name in config
+See also `ignore_errors` option.
 
-- `setup.cfg` - ignore `foobar` imports.
-    ```toml
-    [mypy-foobar.*]
-    ignore_missing_imports = true
-    ```
-
-## Ignore all in config
-
-- `setup.cfg`
-    ```toml
-    [mypy-]
-    ignore_missing_imports = true
-    ```
 
 ### Ignore line in file
 
 ```python
 import foo  # type: ignore
 ```
+
+### Ignore whole file
+
+```python
+# type: ignore
+
+import foo
+```
+
+### Ignore by name in config
+
+Ignore `foobar` imports. This is equivalent to adding `# type: ignore` to every import of `foobar`.
+
+- `setup.cfg` 
+    ```cfg
+    [mypy-foobar.*]
+    ignore_missing_imports = True
+    ```
+
+OR
+
+- `mypy.ini`
+    ```ini
+    [mypy-foobar.*]
+    ignore_missing_imports = True
+    ```
+    
+Or without the star.
+
+```ini
+[mypy-foobar]
+ignore_missing_imports = True
+```
+
+### Ignore imports globally in config
+
+Ignore all missing imports across libraries.
+
+- `setup.cfg`
+    ```cfg
+    [mypy]
+    ignore_missing_imports = True
+    ```
+
+### Ignore from CLI
+
+```sh
+$ mypy --ignore-missing-imports
+```
+
+See also Mypy issue [#10660](https://github.com/python/mypy/issues/10660).
+
