@@ -97,18 +97,15 @@ Ignore `foobar` imports. This is equivalent to adding `# type: ignore` to every 
 
 OR
 
-- `mypy.ini`
+- `mypy.ini` - first heading is to avoid a warning.
     ```ini
+    [mypy]
+
     [mypy-foobar.*]
     ignore_missing_imports = True
     ```
-    
-Or without the star.
-
-```ini
-[mypy-foobar]
-ignore_missing_imports = True
-```
+  
+I found only the `mypy.ini` file was recognized for me. And it seemed cache by `mypy` so even once I emptied or the deleting the file, the options were remembered in the terminal session.
 
 ### Ignore imports globally in config
 
