@@ -23,6 +23,12 @@ To import an object directly:
 from .foo import greet
 ```
 
+Unfortunately, any dot imports will break unless you use this approach for your CLI:
+
+```python
+$ python -m my_app.my_module
+```
+
 ### Bad
 
 This code is also valid to run.
@@ -37,6 +43,13 @@ foo.greet()
 But since it not clearly local, Mypy will think it is external (installed) and complain that it can't be found.
 
 > error: Cannot find implementation or library stub for module named "foo"
+
+You would run that as:
+
+```python
+$ cd my_app
+$ python my_module.py
+```
 
 
 ## Ignore
