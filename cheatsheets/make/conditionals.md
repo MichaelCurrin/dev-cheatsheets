@@ -1,5 +1,11 @@
 # Conditionals
 
+## Related
+
+- [Definition][] page, including default values for variables.
+
+[Definition]: {{ site.baseurl }}{% link cheatsheets/make/variables/definition.html %}
+
 
 ## Shell if
 
