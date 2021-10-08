@@ -12,7 +12,7 @@ description: A new built-in alternative to using `os.path`
 - [Pathlib](https://realpython.com/python-pathlib/) on RealPython
 
 
-## Setup
+## Set up
 
 ```python
 from pathlib import Path
@@ -75,6 +75,14 @@ q.resolve()
 ```python
 with q.open() as f_in:
     text = f_in.readline()
+```
+
+## Path relative to current script
+
+Get the path to the current script, the directory of the module, then add the path to that base.
+
+```python
+CSV_PATH = Path(__file__).parent / "var" / "my-data.csv"
 ```
 
 
