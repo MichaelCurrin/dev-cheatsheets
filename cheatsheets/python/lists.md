@@ -10,7 +10,8 @@
 []
 ```
 
-## Null list 
+
+## Null list
 
 This is only safe for primitive types.
 
@@ -22,7 +23,7 @@ This is only safe for primitive types.
 ['abc', None, None, None, None, None, None, None, None, None]
 ```
 
-For data structures, this gives unexpected reuslts as each element points to the same variable.
+For data structures, this gives unexpected results as each element points to the same variable.
 
 ```python
 >>> x = [[]]*10
@@ -54,6 +55,7 @@ Or list comprehension. With `[]` or `list()` inside.
 ```
 
 
+
 ## Initialize with values
 
 ```python
@@ -62,7 +64,7 @@ Or list comprehension. With `[]` or `list()` inside.
 ```
 
 ```python
->>> list([10, 13])  
+>>> list([10, 13])
 [10, 13]
 ```
 
@@ -78,7 +80,8 @@ TypeError: 'int' object is not iterable
 
 ## Copy a list
 
-Use either:
+Use either of these:
+
 ```python
 list(my_list)
 my_list[:]
@@ -88,7 +91,7 @@ Example:
 
 ```python
 >>> x = [10, 13]
->>> y = list(x)  
+>>> y = list(x)
 [10, 13]
 >>> y.append(14)
 >>> x
@@ -97,19 +100,20 @@ Example:
 [10, 13, 14]
 ```
 
-### Cast to list
+
+## Cast to list
 
 Tuple to list.
 
 ```python
 >>> x = (10, 13)
->>> list(x)  
+>>> list(x)
 [10, 13]
 ```
 
 Set to list.
 
-```
+```python
 >>> x = {1, 1, 2}  # Or set((1, 1, 2))
 {1, 2}
 >>> x
@@ -118,7 +122,7 @@ Set to list.
 [1, 2]
 ```
 
-String to list
+String to list.
 
 ```python
 >>> list('abc')
