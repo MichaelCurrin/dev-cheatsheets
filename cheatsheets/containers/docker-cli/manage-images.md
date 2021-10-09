@@ -18,12 +18,27 @@ $ docker images
 Filter by name.
 
 ```sh
-$ docker image ls my-node-img
+$ docker image ls my-app
 ```
 
 
 ## Build
 
+No name. This can hard to use then when `docker run`.
+
 ```sh
-$ docker build -t my-node-img .
+$ docker build .
+```
+
+Give the image a name.
+
+```sh
+$ docker build -t my-app .
+```
+
+Ignore cache.
+
+
+```sh
+$ docker build -t my-app . --no-cache 
 ```
