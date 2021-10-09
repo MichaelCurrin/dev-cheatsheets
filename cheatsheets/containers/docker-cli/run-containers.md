@@ -43,17 +43,32 @@ $ docker run IMAGE
 $ docker run IMAGE COMMAND
 ```
 
+The container will get a different random name on each run and you'll end up with a lot of containers unless you use `rm` to delete it each time.
+
 e.g.
 
+This will do nothing and then exit.
+
 ```sh
-$ docker run my-image
-$ docker run my-image bash
+$ docker run python:3.9
 ```
 
-Optionally give the container name.
+Use default entry-point (in this case Python terminal) and use interactive mode.
 
 ```sh
-$ docker run --rm --name CONTAINER_NAME IMAGE
+$ docker run -it -rm python:3.9
+```
+
+Specify shell as entry-point and interactive mode. 
+
+```sh
+$ docker run -it -rm python:3.9 bash
+```
+
+Give the container name if you want. This can be useful if you have long-running container like a server. You'll want to use the `rm` flag otherwise you'll get an error on the 2nd run that the container name already is used.
+
+```sh
+$ docker run -rm --name CONTAINER_NAME IMAGE
 ```
 
 e.g.
@@ -61,8 +76,9 @@ e.g.
 ```sh
 $ docker run --rm \
     --name my-app \
-    my-image
+    python:3.9
 ```
+
 
 ## Run in existing
 
