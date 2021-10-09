@@ -3,6 +3,8 @@
 
 ## Resources
 
+- [datetime](https://docs.python.org/3/library/datetime.html) module in Python.
+- [strftime](https://strftime.org/) cheatsheet
 - [unixtimestamp.com](https://www.unixtimestamp.com/) converter.
 - [Unix time](https://en.wikipedia.org/wiki/Unix_time) on Wikipedia.
 - [ISO 8061](https://en.wikipedia.org/wiki/ISO_8601)
@@ -114,7 +116,48 @@ n.second
 
 ## Format
 
-Using `.strf` where `f` is for format. Supply a custom format.
+### Format codes
+
+- [strftime() and strptime() Format Codes](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes)
+
+Some useful combinations:
+
+- 12-hour time
+    ```
+    %I:%M %p
+    11:01 AM
+    11:01 PM
+    ```
+- 24-hour time
+    ```
+    %H:%M:%Ss
+    11:01:01s
+    23:01:01s
+    ```
+- Time zone.
+    ```
+    %z
+    +0000
+    -0400
+    ```
+- Long day.
+    ```
+    %A, %-d %B %Y
+    Sunday, 1 January 2021
+    ```
+- Short day.
+    ```
+    %Y-%M-%d
+    2021-01-01
+    ```
+
+### String to datetime
+
+Convert from date or datetime object to a sring.
+
+Using `.strftime` where  the `f` is for "format". 
+
+Supply a custom format.
 
 ```python
 MY_DATETIME.strftime(MY_FORMAT)
@@ -125,18 +168,27 @@ e.g.
 ```python
 n = datetime.datetime.now()
 # datetime.datetime(2021, 5, 8, 11, 30, 51, 733268)
+```
 
+Standard:
+
+```python
 str(n)
 '2021-05-08 11:30:51.733268'
+```
 
+Custom:
+
+```python
 n.strftime('%Y_%m_%d - %b %y - %H:%m:%S')
 '2021_05_08 - May 21 - 11:05:51'
 ```
 
+## String to datetime
 
-## Parse
+Parse from a string to datetime object. 
 
-Convert from string to datetime. The `p` stands for "parse". Only available on `datetime`.
+Using `strptime`, where the `p` stands for "parse".
 
 ```python
 datetime.datetime.strptime(DATETIME_STRING, CUSTOM_FORMAT)
@@ -144,19 +196,30 @@ datetime.datetime.strptime(DATETIME_STRING, CUSTOM_FORMAT)
 
 e.g.
 
-```python
-x = datetime.datetime.strptime('2021-01-02', '%Y-%m-%d')
-# datetime.datetime(2021, 1, 2, 0, 0)
-str(x)
-'2021-01-02 00:00:00'
-```
+Set the time.
 
 ```python
-x = datetime.datetime.strptime('12/05/19', '%M/%d/%y')
-# datetime.datetime(2019, 1, 5, 0, 12)
-str(datetime.datetime.strptime('12/05/19', '%M/%d/%y'))
-# '2019-01-05 00:12:00'
+dt = datetime.datetime.strptime("21/11/06 16:30", "%d/%m/%y %H:%M")
+# datetime.datetime(2006, 11, 21, 16, 30)
+str(dt)
+# '2006-11-21 16:30:00'
 ```
+
+Omit time and it will be midnight.
+
+```python
+dt = datetime.datetime.strptime('2021-01-02', '%Y-%m-%d')
+# datetime.datetime(2021, 1, 2, 0, 0)
+str(dt)
+# '2021-01-02 00:00:00'
+
+dt = datetime.datetime.strptime('12/05/19', '%m/%d/%y')
+# datetime.datetime(2019, 12, 5, 0, 0)
+str(dt)
+'2019-12-05 00:00:00'
+```
+
+There is no `strptime` method on `datetime.date`, but you can convert a datetime to date. See the next section.
 
 
 ## Conversion
@@ -166,16 +229,25 @@ Move between date formats.
 ### Convert from date from datetime
 
 ```python
-d = datetime.datetime.now()
-d.date()
-# => datetime.date(2020, 5, 3)
+dt = datetime.datetime.now()
+d = dt.date()
+# datetime.date(2020, 5, 3)
 ```
+
+```python
+dt = datetime.datetime.strptime('12/05/19', '%m/%d/%y')
+d = dt.date()
+# datetime.date(2019, 12, 5)
+str(d)
+'2019-12-05'
+```
+
 
 ### Convert from unix timestamp to datetime
 
 ```python
 datetime.datetime.fromtimestamp(1403602426.0)
-# => datetime.datetime(2014, 6, 24, 11, 33, 46)
+# datetime.datetime(2014, 6, 24, 11, 33, 46)
 ```
 
 The input be an integer or float.
