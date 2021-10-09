@@ -22,7 +22,6 @@ $ ln -s my-symlink ../my-target.txt
 $ ln -s ~/.local/virtualenvs/daylio-csv-parser venv
 ```
 
-
 ### Use cat
 
 This will show the contents of the target of the symlink.
@@ -46,13 +45,18 @@ $ ls -l
 
 ### Use realpath
 
-Use on a normal object but especially useful for evaluatin where a symlink points to.
+Get the absolute path. Use on a normal object but especially useful for evaluatin where a symlink points to.
 
 ```sh
 $ realpath PATH
 ```
 
 e.g.
+
+```console
+$ realpath venv
+/Users/mcurrin/.local/virtualenvs/daylio-csv-parser
+```
 
 ```console
 $ mkdir my-dir
