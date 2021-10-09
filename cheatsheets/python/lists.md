@@ -1,7 +1,8 @@
 # Lists
 
+## Create
 
-## Empty array
+### Empty array
 
 ```python
 >>> []
@@ -10,8 +11,7 @@
 []
 ```
 
-
-## Null list
+### Null list
 
 This is only safe for primitive types.
 
@@ -54,9 +54,7 @@ Or list comprehension. With `[]` or `list()` inside.
 [['abc'], [], [], [], [], [], [], [], [], []]
 ```
 
-
-
-## Initialize with values
+### With values
 
 ```python
 >>> [10, 13]
@@ -78,27 +76,11 @@ TypeError: 'int' object is not iterable
 ```
 
 
-## Copy a list
+## Copy
 
-Use either of these:
+See [Copy][] cheatsheet.
 
-```python
-list(my_list)
-my_list[:]
-```
-
-Example:
-
-```python
->>> x = [10, 13]
->>> y = list(x)
-[10, 13]
->>> y.append(14)
->>> x
-[10, 13]
->>> y
-[10, 13, 14]
-```
+[Copy]: {{ site.baseurl }}{% link cheatsheets/python/copy.md %}
 
 
 ## Cast to list
