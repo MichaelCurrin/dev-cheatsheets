@@ -1,6 +1,13 @@
 # ln
 
 
+## Related
+
+- [Links][] cheatsheet.
+
+[Links]: {{ site.baseurl }}{% link cheatsheets/shell/links.md %}
+
+
 ## Help
 
 ```
