@@ -140,6 +140,26 @@ This uses a feature of _Kramdown_, which is used by Jekyll by default. So you do
 
 This as adds `target="_blank"` to the `a` tag.
 
+
+## Build revision
+
+Add build revision number to a URL. This allows an asset to be kept in the browser cache and then a new one requested when the build revision changes i.e. when the the HTML is deployed with a new version number in it.
+
+This is part of a cache busting technique.
+
+There is still just one  CSS file available though.
+
+```liquid
+<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+```
+
+```css
+<link rel="stylesheet" href="/coding-blog/assets/css/style.css?v=1283d21174f64150a302c80eca82d47bb5bdeb06">
+```
+
+Based on the Midnight theme.
+
+
 {% endraw %}
 
 [Markdown Links]: {{ site.baseurl }}{% link cheatsheets/markdown/links.md %}
