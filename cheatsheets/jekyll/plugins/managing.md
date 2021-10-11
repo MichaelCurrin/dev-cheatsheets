@@ -32,7 +32,7 @@ plugins:
 
 ## Submodule
 
-See more info in the [Git Submodule][] section.
+See more info in the [Git Submodules][] section.
 
 Add the submodule.
 
@@ -46,5 +46,5 @@ Update for the latest content.
 $ git submodule update --rebase --remote
 ```
 
-[Git Submodule]: {{ site.baseurl }}{% link cheatsheets/version-control/git/submodules.md %}
+[Git Submodules]: {{ site.baseurl }}{% link cheatsheets/version-control/git/submodules/index.md %}
 
