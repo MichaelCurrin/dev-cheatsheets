@@ -1,6 +1,15 @@
-# Prune
+---
+title: Prune
+description: Remove unused data
+---
 
-Remove all unused data.
+## Related
+
+- [Delete][] cheatsheet
+
+[Delete]: {{ site.baseurl }}{% link cheatsheets/containers/docker-cli/delete.md %}
+
+
 
 ## Help
 
