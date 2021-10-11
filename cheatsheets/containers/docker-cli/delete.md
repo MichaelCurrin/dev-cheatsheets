@@ -3,6 +3,13 @@
 If you have Docker Desktop, you can also use that - see the "Clean up" section.
 
 
+## Related
+
+- [Prune][] cheatsheet
+
+[Prune]: {{ site.baseurl }}{% link cheatsheets/containers/docker-cli/prune.md %}
+
+
 ## Resources
 
 - [rm](https://docs.docker.com/engine/reference/commandline/rm/)
