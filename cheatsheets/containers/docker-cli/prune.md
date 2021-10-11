@@ -45,7 +45,7 @@ With no options, you will get a confirmation prompt and told that these will be 
 $ docker container prune
 ```
 
-Or based on docs for [rm][].
+Or based on docs for [rm][]. Remove stopped containers.
 
 ``` sh
 $ docker rm $(docker ps --filter status=exited -q)
@@ -58,6 +58,12 @@ $ docker rm $(docker ps --filter status=exited -q)
 
 ```sh
 $ docker image prune
+```
+
+Or
+
+```sh
+$ docker rmi $(docker images -a -q)
 ```
 
 
