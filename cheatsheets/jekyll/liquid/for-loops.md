@@ -42,6 +42,8 @@ Combine offset and limit e.g. start at 2nd item and get 2 items.
 {% endfor %}
 ```
 
+See also All Filters page for `slice` filter.
+
 ### Reversed
 
 ```liquid
