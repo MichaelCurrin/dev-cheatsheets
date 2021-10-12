@@ -42,12 +42,14 @@ Unpack a hash where `c[0]` is the key (the category name) and `c[1]` is the valu
 <ul>
     {% for c in site.categories %}
         <li>
-            {{ c[0] }}
+            <h3>
+                {{ c[0] }}
+            </h3>
             <ul>
                 {% for p in c[1] %}
                     <li>
                         <a href="{{ p.url | relative_url }}">
-                            {{ p.title}}
+                            {{ p.title }}
                         </a>
                     </li>
                 {% endfor %}
