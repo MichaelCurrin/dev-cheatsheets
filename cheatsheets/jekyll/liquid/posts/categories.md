@@ -53,9 +53,17 @@ Unpack a hash where `c[0]` is the key (the category name) and `c[1]` is the valu
                 {% endfor %}
             </ul>
         </li>
-        {% endfor %}
+    {% endfor %}
 </ul>
 ```
+
+Result:
+
+- abc
+    - My title
+    - My next title
+- def
+    - Another title
 
 
 ## Get posts in target category
