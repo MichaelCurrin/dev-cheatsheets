@@ -26,10 +26,18 @@ Get the first N items.
 {% endfor %}
 ```
 
-Skip the first items and started at the Nth item.
+Skip the first items and start at the Nth item.
 
 ```liquid
 {% for item in page.my_array offset: 2 %}
+   {{ item }}
+{% endfor %}
+```
+
+Combine offset and limit e.g. start at 2nd item and get 2 items.
+
+```liquid
+{% for item in page.my_array offset: 2 limit: 2 %}
    {{ item }}
 {% endfor %}
 ```
