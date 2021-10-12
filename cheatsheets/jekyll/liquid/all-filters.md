@@ -12,13 +12,11 @@ cheatsheet:
 
           - cmd: slice
             usage: |
-                <!-- String -->
-                {{ "hello" | slice: 0 }}
-                {{ "hello" | slice: 1, 3 }} <!-- 2nd and 3rd items at index 1 and index 2 -->
+                {{ "hello" | slice: 0 }} <!-- h -->
+                {{ "hello" | slice: 1 }} <!-- e -->
+                {{ "hello" | slice: 2, 3 }} <!-- ell -->
                 
-                <!-- Array -->
-                {{ site.posts | slice: 1, 3 }}
-            help: Get items in an iterable between a start index (inclusive) and an end index (exclusive). Note that index starts at `0`. See also `offset` and `limit` in the For loop page.
+            help: Get items in an iterable from start index (inclusive) for a limit of items. See also `slice` in Array section and below `offset` and `limit` in the _For loops_ page.
 
           - cmd: markdownify
           - cmd: jsonify
@@ -115,13 +113,14 @@ cheatsheet:
           - cmd: slice
             usage: |
               ---
-              foo: ['abc', 'def', 'ghi', 'jkl' ]
+              foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
               ---
-              {{ page.foo | slice: 0 | inspect }} <!-- 1st element -->
-              {{ page.foo | slice: 3 | inspect }} <!-- 4th element -->
-              {{ page.foo | slice: 1, 3 | inspect }} <!-- Elements 1 and 2 -->
-              {{ page.foo | slice: 0, 3 | inspect }} <!-- First three elements -->
-            help: There is no `limit` filter (aside for the `for` loop modifier), but you can use slice to get the first N elements.
+              {{ page.foo | slice: 0 }} <!-- 1st element -->
+              {{ page.foo | slice: 3 }} <!-- 4th element -->
+              {{ page.foo | slice: 0, 3 }} <!-- First three elements -->
+              {{ page.foo | slice: 1, 3 }} <!-- First 3 elements starting at 2nd element -->
+            help: Get an item by index. Or with two values as a range, set a start index and a count of elements. See also `offset` and `limit` on the _For loops_ page.
+          
           - cmd: map
             usage: |
               {{ my_array | map: "some_attribute" }}
