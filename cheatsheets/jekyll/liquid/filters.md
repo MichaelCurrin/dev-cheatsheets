@@ -89,11 +89,14 @@ Warning - this will not raise an error if the page is not found.
 ```
 
 ```liquid
-{% assign posts = site.posts | where: "categories", "Foo" %}
+{% assign posts = site.posts | where: "categories", "foo" %}
+
 {% for post in posts limit: 5 %}
-    <li>{{ post.title}} </li>
+- {{ post.title }} 
 {% endfor %}
 ```
+
+In the above case, using `site.categories.foo` would be more convenient.
 
 ### group_by
 
