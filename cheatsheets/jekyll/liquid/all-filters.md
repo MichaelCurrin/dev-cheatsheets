@@ -12,8 +12,13 @@ cheatsheet:
 
           - cmd: slice
             usage: |
+                <!-- String -->
                 {{ "hello" | slice: 0 }}
-                {{ "hello" | slice: 1, 3 }}
+                {{ "hello" | slice: 1, 3 }} <!-- 2nd and 3rd items at index 1 and index 2 -->
+                
+                <!-- Array -->
+                {{ site.posts | slice: 1, 3 }}
+            help: Get items in an iterable between a start index (inclusive) and an end index (exclusive). Note that index starts at `0`. See also `offset` and `limit` in the For loop page.
 
           - cmd: markdownify
           - cmd: jsonify
