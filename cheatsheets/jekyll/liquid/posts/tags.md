@@ -25,7 +25,24 @@ The result will be:
 ```
 
 
-## List tags and posts
+## List tags on a post page
+
+```liquid
+<div>
+    <span>
+        <b>Tags:</b>
+    </span>
+
+    {% for tag in page.tags %}
+        <span>
+            <b>#{{ tag }}</b>
+        </span>
+    {% endfor %}
+</div>
+```
+
+
+## List all tags and posts
 
 Example based on Jekyll docs.
 
