@@ -2,8 +2,28 @@
 
 {% raw %}
 
+## Define
 
- 
+Set frontmatter.
+
+```yaml
+---
+title: My post
+categories: abc
+---
+```
+
+Use spaces not commas. Use a hyphen if you want multiple words.
+
+```yaml
+categories: abc def-ghi xyz
+```
+
+Or use the path instead.
+
+- `_posts/foo/2021-01-01-my-title.html`
+
+
 
 ## Get categories
 
