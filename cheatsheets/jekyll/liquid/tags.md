@@ -21,13 +21,18 @@ Note no quotes or colon.
 <img src="{% link assets/img/foo bar.jpg %}" />
 ```
 
-Use a variable instead:
+Use a variable instead.
+
+<!--
 
 ```liquid
 <img src="{% link {{ img_src }} %}" />
 ```
 
-Maybe not for link tag or Jekyll 3?
+Maybe not for link tag or Jekyll 3? Or maybe just because `link` is a special less flexible one.
+
+-->
+
 
 It works at least for `include` tag. Based on Jekyll's own [tests](https://github.com/jekyll/jekyll/blob/master/test/source/_posts/2013-12-17-include-variable-filters.markdown).
 
