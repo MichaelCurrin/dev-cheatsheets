@@ -42,9 +42,7 @@ Unpack a hash where `c[0]` is the key (the category name) and `c[1]` is the valu
 <ul>
     {% for c in site.categories %}
         <li>
-            <h3>
-                {{ c[0] }}
-            </h3>
+            {{ c[0] }}
             <ul>
                 {% for p in c[1] %}
                     <li>
@@ -67,6 +65,8 @@ Result:
 - def
     - Another title
 
+
+Or leave out the other bullet list and make the category and H3 heading.
 
 ## Get posts in target category
 
