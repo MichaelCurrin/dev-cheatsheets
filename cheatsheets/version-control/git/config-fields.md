@@ -18,7 +18,7 @@ $ git config --global commit.template _COMMIT_MESSAGE
         template = "_COMMIT_MESSAGE"
 ```
 
-Make sure you have `_COMMIT_MESSAGE` as a text file in your repo.
+Make sure you have `_COMMIT_MESSAGE` as a text file in your repo. I also recommend making a global ignore file that ignores `_COMMIT_MESSAGE` and have your git config aware of that `~/.gitignore` file.
 
 
 ## Default branch
