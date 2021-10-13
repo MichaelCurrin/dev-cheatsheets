@@ -281,17 +281,17 @@ e.g.
 
 No default - empty string.
 
-```sh
-$ Hello, ${NAME}!"'
+```console
+$ echo "Hello, ${NAME}!"
 Hello, !
 ```
 
 With default fallback:
 
-```sh
-$ Hello, ${NAME:-World}!"'
+```console
+$ echo "Hello, ${NAME:-World}!"
 Hello, World!
-$ NAME=developer Hello, ${NAME:-World}!"'
+$ NAME=developer echo "Hello, ${NAME:-World}!"
 Hello, developer!
 ```
 
