@@ -1,9 +1,22 @@
 # Config files
 
 
+See also my [Git config](https://github.com/MichaelCurrin/dotfiles/blob/master/.gitconfig.toml) in my dotfiles repo.
+
+
+## Editor
+
+If you prefer to use `nano` rather than `vim` when doing `git commit`.
+
+```yoml
+[core]
+	editor = "nano"
+```
+
+
 ## Aliases
 
-- [Git aliases]({{ site.baseurl }}{% link cheatsheets/version-control/git/aliases.md %})
+- [Git aliases]({{ site.baseurl }}{% link cheatsheets/version-control/git/aliases.md %}) cheatsheet.
 
 
 
