@@ -20,6 +20,8 @@ $ git config --global commit.template _COMMIT_MESSAGE
 
 Make sure you have `_COMMIT_MESSAGE` as a text file in your repo. I also recommend making a global ignore file that ignores `_COMMIT_MESSAGE` and have your git config aware of that `~/.gitignore` file.
 
+See my [Tutorial](https://github.com/MichaelCurrin/learn-to-code/blob/master/en/topics/version_control/Git/configure/commit_message_template.md) on this for more details steps.
+
 
 ## Default branch
 
