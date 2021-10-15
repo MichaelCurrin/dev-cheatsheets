@@ -1,8 +1,9 @@
 # Functions
 
-## Builtin
 
-[Builtin functions](https://www.terraform.io/docs/configuration/functions.html) from the docs
+## Built-in
+
+[Built-in functions](https://www.terraform.io/docs/configuration/functions.html) from the docs
 
 
 Using the `regex` function in the console.
