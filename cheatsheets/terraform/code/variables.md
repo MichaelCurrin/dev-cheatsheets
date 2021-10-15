@@ -5,23 +5,6 @@ See [Variables](https://www.terraform.io/docs/configuration/variables.html) in t
 Note you can't define variables in the REPL as per [issue](https://github.com/hashicorp/terraform/issues/19034) you can access existing variables and you can run functions on a literal.
 
 
-## Types
-
-### Basic
-
-- `string`
-- `number`
-- `bool`
-
-### Structures
-
-- `list(<TYPE>)`
-- `set(<TYPE>)`
-- `map(<TYPE>)`
-- `object({<ATTR NAME> = <TYPE>, ... })`
-- `tuple([<TYPE>, ...])`
-
-
 ## Definition
 
 ```terraform
@@ -42,6 +25,7 @@ variable "image_id" {
   }
 }
 ```
+
 
 ## Maps
 
@@ -76,7 +60,7 @@ foo = bar.value["foo"]
 
 ## Dynamic blocks
 
-Before of external modules, you might have to deprecate using an array.
+Before use of external modules, you might have to use an array.
 
 ```terraform
 foo = [
