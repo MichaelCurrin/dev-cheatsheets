@@ -1,5 +1,5 @@
 ---
-title; Code
+title: Code
 description: How to write code for Terraform files
 ---
 
