@@ -265,19 +265,31 @@ on:
 
 You can make a advanced rule that only triggers on `v1` and up or excludes `-alpha` releases, if that matters to you.
 
-You can add `branches` rules - if for some reason you are making a tag that is _not_ your on main branch and you don't want that to trigger your workflow.
+Trigger on a push to `main` _or_ a tag.
 
 ```yaml
 on:
   push:
-    branches: [ main ]
+    branches: 
+      - main
     tags:
 ```
 
-You can also use a conditional statement on a step.
+Trigger on a push to `main` _and_ a tag.
 
 ```yaml
-if: startsWith(github.ref, 'refs/tags/')
+on:
+  push:
+    branches: 
+      - main
+    tags:
+
+jobs:
+  build-deploy:
+    if: startsWith(github.ref, 'refs/tags/')
+   
+    steps:
+      # ...
 ```
 
 There is no `on.tag` or `on.tags` option, but there is `on.release` - see below.
