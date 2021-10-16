@@ -1,13 +1,18 @@
 ---
-description: Running shell commands through Python
+description: Run shell commands using Python
 ---
 # Shell
 
 
-Read more in [Python shell](https://github.com/MichaelCurrin/learn-to-code/tree/master/en/topics/scripting_languages/Python/shell) guide.
+Read more in my [Python shell](https://github.com/MichaelCurrin/learn-to-code/tree/master/en/topics/scripting_languages/Python/shell) guide.
 
 ```python
-result = subprocess.run(cmd, capture_output=True, text=True, shell=True)
+result = subprocess.run(
+    cmd, 
+    capture_output=True, 
+    text=True, 
+    shell=True
+)
 ```
 
 ```python
