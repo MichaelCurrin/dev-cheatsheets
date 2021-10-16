@@ -1,7 +1,7 @@
 ---
+title: Conditional
 description: How to skip some or all of the build steps
 ---
-# Skip
 
 {% raw %}
 
@@ -55,7 +55,7 @@ on:
 ```
 
 
-## Skip a job
+## Skip a whole job
 
 Place an `if` condition on the job.
 
@@ -67,12 +67,16 @@ jobs:
     if: CONDITION
 ```
 
-Example:
+### Not Pull Requests
+
+Here is an example where the entire job is skipped on a pull request so therefore runs only directly on the `main` branch.
 
 ```yaml
 on:
   push:
+    - main
   pull_request:
+    - main
 
 jobs:
   build-deploy:
@@ -86,12 +90,27 @@ jobs:
       - name: Deploy
 ```
 
+#### Skip on CI commit message
+
+Add a condition to skip if the commit message containts a phrase - here we use `[ci skip]`.
+
+```yaml
+jobs:
+  deploy-docs:
+    if: "!contains(github.event.commits[0].message, '[ci skip]')"
+
+    steps:
+      # ...
+```
+
+In general I like to use an exclusion rule to exclude changes in `docs/` for example from causing an app rebuild. I don't why you would this CI skip example above as you have to remember to use. But I found it somewhere so added here.
+
 
 ## Skip a step
 
 Add a check for a given step.
 
-### Event type
+### Event name
 
 Here we run the workflow on both a Push and a Pull Request, but we only perform the deploy step when the event is **not** a pull request i.e. when doing a push to `master` (or `main` or `latest` etc.). 
 
@@ -101,14 +120,17 @@ on:
   pull_request:
 
 jobs:
-  build_and_deploy:
+  build-deploy:
     steps:
       - name: Build
-
-      - name: Deploy   # Run conditionally
+        # ...
+        
+      - name: Deploy 
         if: ${{ github.event_name != 'pull_request' }}
+        # ...
       
-      - name: Clean-up # This step will always run
+      - name: Clean-up # This step will ALWAYS run
+        # ...
 ```
 
 Note we don't have to specify a branch name. 
@@ -117,23 +139,33 @@ You might like using `!= 'pull_request'` as it is flexible - it will include a s
 
 Or with a boolean - no quotes.
 
-```
+```yaml
 if: github.event.pull_request.merged == true
 ```
 
-### Commit message
+#### Tags
 
-Add a condition to skip if the commit message containts a phrase - here we use `[ci skip]`.
+Or maybe you want the job to run on `main` and on a Pull Request, but only deploy if there is a tag.
 
 ```yaml
+on:
+  push:
+    - main
+  pull_request:
+    - main
+    
 jobs:
-  deploy_docs:
-    if: "!contains(github.event.commits[0].message, '[ci skip]')"
-
+  build-deploy:
     steps:
-      # ...
+      - name: Build
+        # ...
+        
+      - name: Deploy 
+        if: startsWith(github.ref, 'refs/tags/')
+        # ...
+      
+      - name: Clean-up # This step will ALWAYS run
+        # ...
 ```
-
-In general I like to use an exclusion rule to exclude changes in `docs/` for example from causing an app rebuild. I don't why you would this CI skip example above as you have to remember to use. But I found it somewhere so added here.
 
 {% endraw %}
