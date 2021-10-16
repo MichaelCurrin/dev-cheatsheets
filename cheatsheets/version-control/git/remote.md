@@ -7,10 +7,22 @@
 
 ## View
 
+Basic:
+
 ```console
 $ git remote
 origin
 ```
+
+
+Get URL:
+
+```console
+$ git remote set-url origin
+git@github.com:MichaelCurrin/foo.git
+```
+
+Verbose:
 
 ```console
 $ git remote -v
@@ -19,7 +31,7 @@ origin  git@github.com:MichaelCurrin/foor.git (push)
 ```
 
 
-## Change remote
+## Change remote URL
 
 For example, you might switch from HTTPS to SSH, or GitHub to BitBucket.
 
@@ -43,7 +55,7 @@ $ git remote add REMOTE_NAME URL
 e.g.
 
 ```sh
-$ git remote set-url upstream git@github.com:AbcDef/foo.git
+$ git remote add upstream git@github.com:AbcDef/foo.git
 ```
 
 
