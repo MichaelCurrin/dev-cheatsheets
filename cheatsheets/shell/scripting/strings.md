@@ -12,6 +12,8 @@ Also if you want a special character to be a plain string, you must quote it. e.
 ```console
 $ echo >
 zsh: parse error near `\n'
+```
+```console
 $ echo '>'
 >
 ```
@@ -279,20 +281,30 @@ The syntax here is within `${}` substitution, as `${VARIABLE:-DEFAULT}`.
 
 e.g.
 
-No default - empty string.
+No default supplied - result is empty string.
 
 ```console
-$ echo "Hello, ${NAME}!"
-Hello, !
+$ echo "Hello, ${NAME}"
+Hello,
 ```
 
-With default fallback:
+With default/fallback set from string literal.
 
 ```console
-$ echo "Hello, ${NAME:-World}!"
-Hello, World!
-$ NAME=developer echo "Hello, ${NAME:-World}!"
-Hello, developer!
+$ echo "Hello, ${NAME:-World}"
+Hello, World
+$ NAME=developer echo "Hello, ${NAME:-World}"
+Hello, developer
+```
+
+With default/fallback set from a variable.
+
+```console
+$ DEFAULT_NAME='World'
+$ echo "Hello, ${NAME:-$DEFAULT_NAME}"
+Hello, World
+$ NAME=developer echo "Hello, ${NAME:-$DEFAULT_NAME}"
+Hello, developer
 ```
 
 
@@ -446,7 +458,9 @@ if true; then
 	EOF
 fi
 ```
+
 Output:
+
 ```
 Line 1
 Line 2
