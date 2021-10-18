@@ -1,6 +1,13 @@
 # Variables
 
 
+## Related
+
+- [Strings][] cheatsheet for substituting values in strings.
+
+[Strings]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/strings.md %}
+
+
 ## Assign
 
 ```sh
@@ -13,6 +20,8 @@ $ X="abc $USER"
 
 ## Reference
 
+### Basic
+
 ```sh
 Y=$X
 
@@ -20,17 +29,27 @@ Y=$X
 Y="$X" 
 ```
 
-Curly braces.
+### Curly braces
 
 ```sh
 Y="${X}"
+```
 
-# Useful to avoid `Xbar` being varible name.
+This can be useful to stop the variable name from being evaulated correctly or looking confusing.
+
+```sh
+# Compare with "$Xbar" which would reference Xbar variable unexpectedly. 
 Y="${X}bar"
 
-# For positional parameters.
+# Compare with "$X_Z" which would reference X_Z variable unexpectedly.
+Y="${X}_Z"
+```
+
+It can be used for positional parameters.
+
+```sh
 echo $8 $9 ${10} ${11}
 ```
 
-Also useful for parameter expansion.
+Also useful for parameter expansion for more advanced use as in the linked strings cheatsheet.
 
