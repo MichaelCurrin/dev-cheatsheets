@@ -1,8 +1,9 @@
-# Ignore
+---
+title: Ignore
+description: Specify paths that should not get added to the image.
+---
 
-Specify paths that should not get added to the image.
-
-add a `.dockerignore` file to the context directory. That will exclude files and directories.
+Add a `.dockerignore` file to the context directory. That will exclude files and directories.
 
 
 ## Reference
