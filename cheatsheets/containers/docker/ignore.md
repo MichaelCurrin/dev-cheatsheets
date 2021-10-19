@@ -31,12 +31,20 @@ Paths can be like in `.gitignore`. Note that a directory name is sufficient - yo
     
 ### Packages
 
-For a Python project, add virtual environment:
+For a Python project, ignore your virtual environment:
 
 ```
 # ...
 
 venv
+```
+
+For a JS project, ignore the NPM packages. Rather install these from inside the image so the state of the packages outside the image won't affect it.
+
+```
+# ...
+
+node_modules/
 ```
 
 ### Configs
