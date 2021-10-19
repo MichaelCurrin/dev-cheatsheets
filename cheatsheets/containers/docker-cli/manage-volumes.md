@@ -1,17 +1,29 @@
 # Manage volumes
 
 
-## Show all
+## Related
+
+- [Prune][] for deleting volumes.
+
+[Prune]: {{ site.baseurl }}{% link cheatsheets/containers/docker-cli/prune.md %}
+
+
+## List
+
+### Show all
+
+```sh
+$ docker volume ls
+```
+
+Just the IDs - using quiet.
 
 ```sh
 $ docker volume ls -q
 ```
 
-
-## Delete all
-
-Use quiet mode for `ls` to get just the volume ID.
+### Dangling volumes
 
 ```sh
-$ docker volume rm $(docker volume ls -q)
+$ docker volume ls -qf dangling=true
 ```
