@@ -25,7 +25,7 @@ $ docker system prune [OPTIONS]
 [source](https://docs.docker.com/engine/reference/commandline/system_prune/)
 
 
-## Remove all
+## Remove all unused - containers, networks, images, and cache
 
 ```sh
 $ docker system prune 
@@ -67,7 +67,17 @@ $ docker rmi $(docker images -a -q)
 ```
 
 
-## Remove all volumes
+## Remove volumes
+
+### Remove dangling
+
+```sh
+$ docker volume rm $(docker volume ls -qf dangling=true)
+```
+
+### Remove all volumes
+
+Use quiet mode for `ls` to get just the volume ID.
 
 ```sh
 $ docker volume rm $(docker volume ls -q)
