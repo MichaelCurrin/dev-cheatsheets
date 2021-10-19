@@ -30,17 +30,17 @@ input(prompt=None, /)
 
 ### Examples
 
-Example in the CLI:
+Example in the console:
 
 ```python
->>> answer = input()
-Hello, World!
+>> answer = input()
+Hello, World
+
 >>> answer
-'Hello, World!'
+'Hello, World'
 ```
 
 Or as a script:
-
 
 ```python
 answer = input()
@@ -100,12 +100,15 @@ Now there is just `input`. This is safe and will _not_ run an evaluation as Pyth
 
 ## Get password
 
+Get the user to enter a password in the console.
+
+The character will be masked as asterisks.
 
 ### Help
 
 Note the prompt is included. And the characters entered will get masked as invisible text.
 
-```
+```python
 getpass.getpass(prompt='Password: ', stream=None) 
 ```
 
@@ -123,7 +126,7 @@ else:
     print('Password entered:', p) 
 ```
 
-Running it. Using `****` to show characters that will be entered but invisible.
+Run it.
 
 ```sh
 $ python3 app.py
