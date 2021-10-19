@@ -63,8 +63,13 @@ Use the `COPY` command directories into an image.
 You can copy a file or a directory.
 
 ```Dockerfile
-COPY SRC DEST
+COPY SOURCE DESTINATION
 ```
+
+Note that using `.` or `./` seems to make no difference, when in source or destination.
+
+But sometimes Dockerfile commands are not like the shell - I think a trailing forward slash behaves differently and maying copying directory to a path.
+
 
 ## Examples
 
@@ -162,6 +167,14 @@ COPY . .
 Note that this works differently to the plain `cp` command - the contents of the source directory are copied, not the directory itself.
 
 So to keep the destination as `lib`, why you would use `COPY lib lib` rather than `COPY lib .`
+
+### Glob
+
+This won't just copy the directories in `foo`, it will copy the _contents_ of the directories in  `foo`, which is probably not what you want.
+
+```Dockerfile
+COPY foo/* .
+```
 
 ## COPY vs ADD
 
