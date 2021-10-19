@@ -22,22 +22,48 @@ Add a `.dockerignore` file to the context directory. That will exclude files and
 
 Add paths `.dockerignore` in the root of the build context (such as you repo root).
 
-Paths can be like in `.gitignore`. Note that a directory name is sufficient - you don't need `**` after a directory name. Use leading forward slash if for someone tha level of precision matters.
+### Basics
+
+- Paths can be mostly like in globs `.gitignore`. 
+- Note that a directory name is sufficient. A trailing slash is useful to indicate a directory but doesn't changing meaning.
+- You don't need `**` after a directory name. 
+- Note that a leading forward slash is _implied_. i.e. `node_modules/` translates to `/node_modules`.
+
+### Advanced
+
+Keep
+
+```
+!temp
+```
+
+Comment
+```
+# My comment
+```
+
+If you have `abc/node_modules` and maybe also your build context is at the root, then you need to add a glob as `*/node_modules/` to get the rule to work.
+
+You can also add a glob at the end.
+
+```
+*/temp*
+```
+
+And add more levels.
+
+```
+*/*/temp
+```
+
+An optional character with `?`.
+
+```
+temp?
+```
 
 
 ## Examples
-
-### From the docs
-
-Use comments, globs, and `?` for matching a single character.
-
-- `.dockerignore`
-    ```
-    # comment
-    */temp*
-    */*/temp*
-    temp?
-    ```
 
 ### Base
 
