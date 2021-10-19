@@ -16,7 +16,7 @@ See cheatsheets for:
 
 ## View
 
-Get info on a package before installing it.
+You can get info on a package about it from the NPM registry.
 
 ```sh
 $ npm view @vue/cli
