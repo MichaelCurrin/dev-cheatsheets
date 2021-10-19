@@ -26,6 +26,18 @@ Paths can be like in `.gitignore`. Note that a directory name is sufficient - yo
 
 ## Examples
 
+### From the docs
+
+Use comments, globs, and `?` for matching a single character.
+
+- `.dockerignore`
+    ```
+    # comment
+    */temp*
+    */*/temp*
+    temp?
+    ```
+
 ### Base
 
 - `.dockerignore`
