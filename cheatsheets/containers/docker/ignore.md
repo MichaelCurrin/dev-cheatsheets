@@ -2,10 +2,17 @@
 
 Specify paths that should not get added to the image.
 
+add a `.dockerignore` file to the context directory. That will exclude files and directories.
+
+
+## Reference
+
+- [.dockerignore file](https://docs.docker.com/engine/reference/builder/#dockerignore-file) in Builder docs.
+
 
 ## Benefits
 
-- Keeps the image size down and free of clutter like docs and dev files.
+- Keeps the image size down and free of clutter like docs, the Git repo, cache files, pacakages, and dev files like tests.
 - Improves security - stop local configs with credentials from getting added to the image.
 - Improves build time. Whenever you make a change to a file in the repo recognized by `COPY . .`, then the entire layer for that has to be rebuilt. So if you have any irrevelant (docs) or frequently changing files (build cache), then ignore those.
 
