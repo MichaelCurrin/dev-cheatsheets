@@ -1,20 +1,49 @@
 # Volumes
 
-Mount `./foo` in same directory as docker-compose file as `/root/bar/foo`.
+
+## Mount
+
+Here we have directory in the repo at root as `foo`.
+This is mounted in the container as `/root/bar/foo`.
 
 ```yaml
 volumes:
   - "./foo:/root/bar"
 ```
 
-Be sure to use `./` before a directory name, otherwise is assumed to be a named volume and given an error. If you just do `"foo"` it will be mounted as `/root/foo` but empty.
+### Relative paths
 
-You can also `~/foo` or `/foo`.
+Be sure to use dotslash before a directory name.
+
+```
+./foo
+```
+
+Note that setting directory as:
+
+```
+foo
+```
+
+That will be assumed to be a _named volume_.
+
+It will expand to be this path on your host. Which will probably not exist and will give an error.
+
+```
+/root/foo
+```
+
+### Relative paths
+
+- `~/foo`
+- `/foo`
+
+
+## Examples
 
 Samples from [compose file](https://docs.docker.com/compose/compose-file/) docs.
 
-
-## Short syntax
+### Short syntax
 
 - `docker-compose.yml`
     ```yaml
@@ -35,7 +64,7 @@ Samples from [compose file](https://docs.docker.com/compose/compose-file/) docs.
       - datavolume:/var/lib/mysql
     ```
 
-## Named volumes
+### Named volumes
 
 - `docker-compose.yml`
     ```yaml
