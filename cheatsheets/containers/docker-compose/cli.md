@@ -18,7 +18,7 @@ You need the following:
 When you run this, it will use the two files above.
 
 ```sh
-$ docker-compose SUBCOMMAND
+$ docker compose SUBCOMMAND
 ```
 
 
@@ -55,13 +55,13 @@ $ dc up
 Build images.
 
 ```sh
-$ docker-compose build
+$ docker compose build
 ```
 
 Start containers. If the above step was skipped, the image build will happen now.
 
 ```sh
-$ docker-compose up
+$ docker compose up
 ```
 
 If the container has a long-running task like a server, it will stay up. Stop it with <kbd>CTRL</kbd>+<kbd>C</kbd>.
@@ -69,7 +69,7 @@ If the container has a long-running task like a server, it will stay up. Stop it
 Or it will exit immediately.
 
 ```sh
-$ docker-compose up
+$ docker compose up
 Starting foo_bar_1 ... done
 Attaching to foo_bar_1
 ```
@@ -77,7 +77,7 @@ Attaching to foo_bar_1
 Start containers again.
 
 ```sh
-$ docker-compose up
+$ docker compose up
 ```
 
 That will **not** rebuild the image but use already built image. If you copied your codebase into the image using `COPY` in `Dockerfile`, then the image will have stale code.
@@ -91,14 +91,14 @@ Add the latest code to the image by forcing a build.
 This is necessary as `up` alone will not rebuild, even if you delete the containers.
 
 ```sh
-$ docker-compose build
-$ docker-compose up
+$ docker compose build
+$ docker compose up
 ```
 
 Or in one command:
 
 ```sh
-$ docker-compose up --build
+$ docker compose up --build
 ```
 
 ### Scale
@@ -117,7 +117,7 @@ $ docker-compose up --build --remove-orphans --scale my-app=3
 ### As the main process
 
 ```sh
-$ docker-compose up
+$ docker compose up
 ```
 
 Stop it with <kbd>CTRL</kbd>+<kbd>C</kbd>.
@@ -128,13 +128,13 @@ Stop it with <kbd>CTRL</kbd>+<kbd>C</kbd>.
 Start with `-d` for daemon:
 
 ```sh
-$ docker-compose up -d
+$ docker compose up -d
 ```
 
 Stop the containers - this can be done from another terminal tab if needed.
 
 ```sh
-$ docker-compose stop
+$ docker compose stop
 ```
 
 ### Using run command
@@ -142,9 +142,9 @@ $ docker-compose stop
 If you container exited immediately when using `up`, you could use `run` instead, against the name of a service listed in `docker-compose.yml`.
 
 ```sh
-$ docker-compose run SERVICE
+$ docker compose run SERVICE
 $ # e.g.
-$ docker-compose run foo
+$ docker compose run foo
 ```
 
 If you have no commands specified in the `Dockerfile`, this will start an interactive shell session in teh container.
@@ -158,7 +158,7 @@ When you use `run` again using the command aboeb, it will spin up a **new** cont
 You can add `--rm` command to delete the container each time. Note you will **lose** data in the container unless you persist in a volume.
 
 ```sh
-$ docker-compose run --rm SERVICE
+$ docker compose run --rm SERVICE
 ```
 
 See [docker-compose run](https://docs.docker.com/compose/reference/run/) docs.
@@ -190,7 +190,7 @@ $ docker-compose exec SERVICE COMMAND
 Example of using `web` service with interactive prompt, as recommended in docs:
 
 ```sh
-$ docker-compose exec web sh
+$ docker compose exec web sh
 ```
 
 
@@ -199,20 +199,20 @@ $ docker-compose exec web sh
 Stop and then delete containers. Warning - you will **lose** any data in the container.
 
 ```sh
-$ docker-compose down
+$ docker compose down
 ```
 
 To delete volumes too:
 
 ```sh
-$ docker-compose down --volumes
+$ docker compose down --volumes
 ```
 
 
 ## Choose config
 
 ```sh
-$ docker-compose -f "docker-compose.yml" ARGS
+$ docker compose -f "docker-compose.yml" ARGS
 ```
 
 
