@@ -110,12 +110,18 @@ In VS Code, under the Docker extension and "Images" you can select an image and 
 
 ## Interactive
 
-Start an interactive Node console in a downloaded `node` image.
+Start an interactive Node console in a target image.
+
+e.g. 
+
+Node image, with `node` as default entrypoint.
 
 ```sh
 $ docker run -it node
 >
 ```
+
+Node image, with `bash` as custom entrypoint.
 
 ```sh
 $ docker run -it node bash
