@@ -20,26 +20,25 @@ A `package.json` file, based partially on the default one you get fron `npm init
 
 The first half of the fields are useful for most projects. 
 
-- `package.json`
-    ```json5
-    {
-      "name": "my-package",
-      "version": "1.2.3",
+```json5
+{
+  "name": "my-package",
+  "version": "1.2.3",
 
-      "scripts": {
-        // ...
-      },
-      
-      "dependencies": {
-        // ...
-      },
-      "devDependencies": {
-        // ...
-      },
+  "scripts": {
+    // ...
+  },
 
-      "license": "MIT"
-     }
-    ```
+  "dependencies": {
+    // ...
+  },
+  "devDependencies": {
+    // ...
+  },
+
+  "license": "MIT"
+ }
+```
 
 Notes:
 
