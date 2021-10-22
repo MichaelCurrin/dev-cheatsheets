@@ -15,10 +15,16 @@ origin
 ```
 
 
-Get URL:
+Get the URL:
 
 ```console
-$ git remote set-url origin
+$ git remote get-url origin
+git@github.com:MichaelCurrin/foo.git
+```
+
+Alternatively:
+
+```console
 git@github.com:MichaelCurrin/foo.git
 ```
 
