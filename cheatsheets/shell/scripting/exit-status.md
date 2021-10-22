@@ -1,6 +1,10 @@
 # Exit status
 
-## Success
+## Exit command
+
+See Exit in the commands.
+
+### Success
 
 ```sh
 exit
@@ -8,7 +12,7 @@ exit
 exit 0
 ```
 
-## Error
+### Error
 
 ```sh
 exit 1
