@@ -36,21 +36,34 @@ Here the first job ID is `my_first_job`. This example from the docs and YAML in 
 
 Use `runs-on` to specify the operating system. Using `ubuntu-latest` as below is the most common approach.
 
+```yaml
+jobs:
+  my-job:
+    name: My job
+    runs-on: ubuntu-latest
+```
+
+For a list of available systems, see [GitHub Hosted Runners][] in the docs.
+
+[GitHub Hosted Runners]: https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners
+
+Here is an example with two jobs - they each need operating systems set.
+
 - `main.yml`
     ```yaml
     jobs:
-      my_first_job:
+      my-first-job:
         name: My first job
 
         runs-on: ubuntu-latest
 
-      my_second_job:
+      my-second-job:
         name: My second job
 
         runs-on: ubuntu-latest
     ```
 
-Two test on multiple operating systems.
+You can run one job multiple times across a range of operating systems.
 
 - `main.yml`
     ```yaml
@@ -64,29 +77,30 @@ Two test on multiple operating systems.
 
 Support multiple jobs - one for each OS. Based on [OBS Studio](https://github.com/obsproject/obs-studio/blob/master/.github/workflows/main.yml) workflow.
 
-```yaml
-jobs:
-  macos64:
-    name: 'macOS 64-bit'
-    runs-on: [ macos-latest ]
+- `main.yml`
+    ```yaml
+    jobs:
+      macos64:
+        name: 'macOS 64-bit'
+        runs-on: [ macos-latest ]
 
-    steps:
-    # ...
+        steps:
+        # ...
 
-  ubuntu64:
-    name: 'Linux/Ubuntu 64-bit'
-    runs-on: [ ubuntu-18.04 ]
+      ubuntu64:
+        name: 'Linux/Ubuntu 64-bit'
+        runs-on: [ ubuntu-latest ]
 
-    steps:
-    # ...
+        steps:
+        # ...
 
-  win64:
-    name: 'Windows 64-bit'
-    runs-on: [ windows-latest ]
+      win64:
+        name: 'Windows 64-bit'
+        runs-on: [ windows-latest ]
 
-    steps:
-    # ...
-```
+        steps:
+        # ...
+    ```
 
 
 ## Package version matrix
