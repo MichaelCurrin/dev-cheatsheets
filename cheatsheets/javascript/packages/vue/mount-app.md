@@ -1,4 +1,4 @@
-# Mounting
+# Mount app
 
 {% raw %}
 
@@ -8,7 +8,7 @@ When Vue mounts a target element, it actually _replaces_ it. So therefore if you
 
 If instead of using `'#app'` as your mount point, you selected `document.body`, then your `body` element of the DOM will be removed and replaced by your app div. This is a bad idea. Though I have seen targeting `body` in other non-Vue apps.
 
-This applies to using Vue in a Node app only and only Vue 2. 
+This applies to using Vue in a Node app only and only Vue 2.
 
 For adding Vue to your frontend without Node, as in [vue-frontend-quickstart](https://michaelcurrin.github.io/vue-frontend-quickstart/), you can leave out the app div from your top-level component's template tag.
 
@@ -19,8 +19,8 @@ Add a `div` element with `app` ID as your mount point. Leave this `div` element 
 
 Note that leaving `div` empty can leave your app looking empty to SEO crawlers, so you might to put some content there. Human users might see the content but it will get overwritten within a second as your app mounts.
 
-- `index.html
-    ```javascript
+- `index.html`
+    ```html
     <body>
         <noscript>
             <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without
@@ -42,7 +42,7 @@ Between Vue and Webpack, you'll get CSS added so you don't have to add it yourse
     ```vue
     <template>
       <div id="app">
-        <h1>Hello, {{ world }}</h1>
+        <h1>Hello, {{ name }}</h1>
       </div>
     </template>
     ```
