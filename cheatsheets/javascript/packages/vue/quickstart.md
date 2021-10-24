@@ -35,20 +35,20 @@ $ # select vue template
 Scaffold via `vue-cli`:
 
 ```sh
-$ npm install -g @vue/cli 
-$ # OR 
+$ npm install -g @vue/cli
+$ # OR
 $ yarn global add @vue/cli
 
 $ vue create hello-vue3
 ```
 
 Select Vue 3 preset using the tool.
-    
+
 See more info in the [Install][] cheatsheet.
 
 
 [Vue 3 repo]: https://github.com/vuejs/vue-next
-[Codepen]: https://codepen.io/yyx990803/pen/OJNoaZL 
+[Codepen]: https://codepen.io/yyx990803/pen/OJNoaZL
 [vite]: https://github.com/vitejs/vite
 [vue-frontend-quickstart]: https://github.com/MichaelCurrin/vue-frontend-quickstart
-[Install]: {{ site.baseurl }}{% linkcheatsheets/javascript/packages/vue/install.md %}
+[Install]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/install.md %}

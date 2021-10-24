@@ -10,7 +10,7 @@ description: How to install the Vue CLI
 - [Quickstart][]
 
 [CLI]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/cli.md %}
-[Quickstart]: {{ site.baseurl }}{% linkcheatsheets/javascript/packages/vue/quickstart.md %}
+[Quickstart]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/quickstart.md %}
 
 
 ## Install globally
@@ -67,4 +67,3 @@ Then run as:
 ```sh
 $ npm run serve
 ```
-
