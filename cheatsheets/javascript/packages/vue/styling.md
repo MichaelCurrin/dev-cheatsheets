@@ -14,7 +14,7 @@ Set a plain `style` tag.
 
 The CSS will be accessible across your components. This is useful in the top-level `App.vue` component, as you might set styling for `p` and `h1` tags for example and you want that to be applied on lower-level components too.
 
-Demostration using both ID and class styles.
+Demnostration using both ID and class styles.
 
 - `App.vue`
     ```vue
@@ -23,7 +23,7 @@ Demostration using both ID and class styles.
         <h1>Hello world</h1>
       </div>
     </template>
-    
+
     <script>
     export default {
       name: 'App',
@@ -71,7 +71,7 @@ e.g.
         <h1>Hello world</h1>
       </div>
     </template>
-    
+
     <script>
     export default {
       name: 'App',
@@ -142,14 +142,14 @@ e.g. From the Neutrino quickstart:
       },
     };
     </script>
-    
+
     <style module>
     .App {
       padding: 20px;
     }
     </style>
     ```
-    
+
 
 You'll get a predictable hashed value for your class.
 
