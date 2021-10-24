@@ -1,6 +1,6 @@
 # Component registration
 
-The basics of defining a component without caring about the contents here except for name. 
+The basics of defining a component without caring about the contents here except for name.
 
 Note that components actually work fine without `name`. The `name` doesn't actually get used in the output element so I don't know of its use.
 
@@ -13,7 +13,7 @@ See also the [Single-file components][] section.
 
 Vue 3 docs
 
-- [Compontent Registration](https://v3.vuejs.org/guide/component-registration.html#component-names)
+- [Component Registration](https://v3.vuejs.org/guide/component-registration.html#component-names)
 - [Style Guide](https://v3.vuejs.org/style-guide/)
 
 
