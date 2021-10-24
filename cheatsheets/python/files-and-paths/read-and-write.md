@@ -12,13 +12,14 @@ Such as a `.txt` file, though this will work on any file that is text (i.e. not 
 
 Given file with contents:
 
-```
-Line 1
-Line 2
-Line 3
-```
+- `foo.txt`
+    ```
+    Line 1
+    Line 2
+    Line 3
+    ```
 
-### Process as needed
+#### Process as needed
 
 Instead of reading the whole file into memory, process lines as they are needed. Such as to print them or add to a database.
 
@@ -30,7 +31,7 @@ with open(path) as f_in:
 
 Result:
 
-```
+```python
 'Line 1\n'
 'Line 2\n'
 'Line 3\n'
