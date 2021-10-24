@@ -9,7 +9,7 @@ See the [Looping][] section for more details on styles of for loops and how to a
 
 See also [Object.entries][] in MDN docs.
 
-[Looping]: {{ site.baseurl }}{% link cheatsheets/javascript/general/looping.md %}
+[Looping]: {{ site.baseurl }}{% link cheatsheets/javascript/general/data-structures/looping.md %}
 [Object.entries]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
 
 

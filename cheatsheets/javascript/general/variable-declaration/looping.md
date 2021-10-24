@@ -7,9 +7,9 @@ It is a good idea to use `const` for your for loops.
 
 Unless you need to change a variable deliberately, or you are using a C-style loop where your counter variable is defined initially and then incremented on each iteration.
 
-See [Looping][] page for more info.
+See the more general [Looping][] cheatsheet for more info.
 
-[Looping]: {{ site.baseurl }}{% link cheatsheets/javascript/general/looping.md %}
+[Looping]: {{ site.baseurl }}{% link cheatsheets/javascript/general/data-structures/looping.md %}
 
 
 ## Immutable for-of
@@ -24,6 +24,7 @@ for (const a of myArray) {
 // 2
 // 3
 ```
+
 
 ## Mutable for-of
 
