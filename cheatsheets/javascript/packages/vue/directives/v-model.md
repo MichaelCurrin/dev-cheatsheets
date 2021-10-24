@@ -3,6 +3,11 @@
 Use variable which are on the `data` method or in `props`.
 
 
+## Resources
+
+- [v-model - Vue 3 syntax](https://v3.vuejs.org/guide/migration/v-model.html#_3-x-syntax)
+
+
 ## Single basic
 
 ```html
