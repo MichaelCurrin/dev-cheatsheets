@@ -2,6 +2,15 @@
 
 Check for a string in another string.
 
+Remember that methods usually case-sensitive.
+
+
+## Related
+
+- [String methods cheatsheet][]
+
+[String methods cheatsheet]: {{ site.baseurl }}{% link cheatsheets/javascript/general/strings/methods.md %}
+
 
 ## Get index of a value
 
@@ -33,6 +42,13 @@ A boolean of whether there is match or not.
 
 'Blue Whale'.indexOf('Bloe') !== -1 
 // false
+```
+
+Do a case-insensitive search.
+
+```javascript
+'Blue Whale'.toLowerCase().indexOf('blue') !== -1
+// true
 ```
 
 
