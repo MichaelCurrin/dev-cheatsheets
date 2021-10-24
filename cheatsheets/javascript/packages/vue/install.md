@@ -4,7 +4,13 @@ description: How to install the Vue CLI
 ---
 
 
-For more info on running Vue commands, see the [CLI]({{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/cli.md %}) cheatsheet.
+## Related
+
+- [CLI][] cheatsheet - For more info on running Vue commands.
+- [Quickstart][]
+
+[CLI]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/cli.md %}
+[Quickstart]: {{ site.baseurl }}{% linkcheatsheets/javascript/packages/vue/quickstart.md %}
 
 
 ## Install globally
@@ -26,7 +32,7 @@ $ vue COMMAND
 ```
 
 
-## Add to project
+## Install as project package
 
 ```sh
 $ npm install @vue/cli
@@ -61,3 +67,4 @@ Then run as:
 ```sh
 $ npm run serve
 ```
+
