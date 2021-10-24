@@ -1,7 +1,7 @@
-# CLI
+# Vue command
 
 
-## Vue command
+## Usage
 
 If you have Vue installed globally, you can run as:
 
@@ -9,13 +9,14 @@ If you have Vue installed globally, you can run as:
 $ vue COMMAND [OPTIONS]
 ```
 
-Otherwise, run as:
+Otherwise, run with `npx` as as:
 
 ```sh
 $ npx @vue/cli COMMAND [OPTIONS]
 ```
 
-### Help
+
+## Help
 
 ```sh
 $ vue -h
@@ -45,7 +46,8 @@ Commands:
   Run vue <command> --help for detailed usage of given command.
 ```
 
-### Create
+
+## Create
 
 See [Creating a project](https://cli.vuejs.org/guide/creating-a-project.html) in the docs. That covers the `create` and `ui` commands.
 
@@ -70,68 +72,11 @@ Use the default flag if you want to skip prompts and use defaults.
 $ npx @vue/cli create my-app --default
 ```
 
-### UI
+
+## UI
 
 Start the Vue GUI tool. To create or manage a Vue project, such as adding dependencies.
 
 ```sh
 $ npx @vue/cli ui
-```
-
-
-## CLI Service
-
-See [CLI Service](https://cli.vuejs.org/guide/cli-service.html) command docs.
-
-Available by installing `@vue/cli-service`. But I think installing `vue` is sufficient.
-
-Run it as an NPM script.
-
-Or as:
-
-```sh
-$ npx vue-cli-service COMMAND
-```
-
-### Help
-
-```
-Usage: vue-cli-service serve [options] [entry]
-
-Options:
-
-  --open         open browser on server start
-  --copy         copy url to clipboard on server start
-  --mode         specify env mode (default: development)
-  --host         specify host (default: 0.0.0.0)
-  --port         specify port (default: 8080)
-  --https        use https (default: false)
-  --public       specify the public network URL for the HMR client
-  --skip-plugins comma-separated list of plugin names to skip for this run
-```
-
-### Start dev server
-
-```sh
-$ vue-cli-service serve
-```
-
-### Build
-
-```sh
-$ # Clean.
-$ vue-cli-service build
-
-$ # Don't clean.
-$ vue-cli-service build --no-clean
-```
-
-### Lint
-
-```sh
-$ # Fix
-$ vue-cli-service lint
-
-$ # Don't fix.
-$ vue-cli-service lint --no-fix
 ```
