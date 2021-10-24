@@ -7,7 +7,7 @@ A Single-File Component is also known as a "SFC".
 
 See also [Component registration][] section.
 
-[Component registration]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/component-registration.md %}
+[Component registration]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/components/component-registration.md %}
 
 
 {% raw %}
@@ -74,11 +74,11 @@ Vue uses methods on a component in the script section which map to the above.
 
 For info on `template` attribute and `render` method, see [DOM](https://v3.vuejs.org/api/options-dom.html) in the docs.
 
-### Data and methods 
+### Data and methods
 
 Most components will just need data and methods.
 
-Here we have a view such as `About.vue`, which calculates and renders results. It might use further components in its template section. 
+Here we have a view such as `About.vue`, which calculates and renders results. It might use further components in its template section.
 
 - `About.vue`
     ```vue
@@ -168,10 +168,10 @@ Notes on props:
     ```
     foo: { type: String, required: true }
     ```
-    
+
 Note on computed section:
 
-- The `computed` values are cached, for efficiency. This computed variable will appear to change immediately based on user input, but in some cases it won't (I had issues before using a computed variable as a `slot` which was frozen, but passing it as a binding parameter was fine). 
+- The `computed` values are cached, for efficiency. This computed variable will appear to change immediately based on user input, but in some cases it won't (I had issues before using a computed variable as a `slot` which was frozen, but passing it as a binding parameter was fine).
 - Computed variables can be reference in a script tag or template tag but without brackets and without arguments i.e. without brackets. They are useful if you have a value to generate based on other use choices.
 - Methods need brackets to be called and are more interactive behavior or events.
 
