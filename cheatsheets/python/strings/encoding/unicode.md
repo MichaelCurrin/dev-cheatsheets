@@ -102,14 +102,23 @@ The default behavior implies `errors='strict'` and can raise an error.
 We can choose to replace or ignore unicode characters.
 
 ```python
->>> 'Hello 😀'.encode('ascii', errors='replace')
-b'Hello ?'
+>>> 'Hello 😀 хелло world'.encode('ascii', errors='replace')
+b'Hello ? ????? world'
+>>> plain_text = 
 ```
 
 ```python
->>> 'Hello 😀'.encode('ascii', errors='ignore')
-b'Hello '
+>>> 'Hello 😀 хелло world'.encode('ascii', errors='ignore')
+b'Hello   world'
 ```
+
+Note you'll get bytes above, so you should convert back to string with `.decode()`, so you can work with it as a string.
+
+```python
+'Hello 😀 хелло world'.encode('ascii', errors='replace').decode()
+```
+
+That is useful for stripping out non-ascii characters.
 
 
 ## Codecs
