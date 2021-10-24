@@ -3,6 +3,11 @@
 See [vue-quickstart](https://github.com/MichaelCurrin/vue-quickstart) repo as an example. It uses the Vue CLI quickstart app. The `App.vue` file uses a global style and the `HelloWorld.vue` component uses a scoped style.
 
 
+## CSS Modules
+
+- [CSS Modules](https://vue-loader.vuejs.org/guide/css-modules.html) in Vue Loader docs.
+
+
 ## Global styles
 
 Set a plain `style` tag.
