@@ -30,9 +30,13 @@ const y = 123
 ### Basic
 
 ```javascript
-myFunction`Some string here`
-// Same as:
-myFunction( ['Some string here'] )
+myFunction`My string here`
+```
+
+Equivalent to:
+
+```javascript
+myFunction( ['My string here'] )
 ```
 
 ### Pass a variable
@@ -41,8 +45,12 @@ myFunction( ['Some string here'] )
 const x = 'Joe';
 
 myFunction`They call me ${x} around here`
-// Same as:
-myFunction(['They call me ', ' around here'], x)
+```
+
+Equivalent to:
+
+```javascript
+myFunction( ['They call me ', ' around here'], x)
 ```
 
 ### Styled components example
