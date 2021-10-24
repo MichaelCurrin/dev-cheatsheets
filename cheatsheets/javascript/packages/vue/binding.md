@@ -5,7 +5,7 @@
 
 - [v-bind][]
 
-[v-bind]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/directives %}
+[v-bind]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/directives.md %}
 
 
 ## Text
