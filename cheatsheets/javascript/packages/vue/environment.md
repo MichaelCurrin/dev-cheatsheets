@@ -1,5 +1,7 @@
-# Environment
-
+---
+title: Environment
+description: How to choose the environment for your Vue app
+---
 
 ## Serve
 
@@ -41,4 +43,3 @@ On a dev setup (build or serve), you'll use the root and on a production setup y
       publicPath: process.env.NODE_ENV === "production" ? "/my-repo/" : "/",
     };
   ```
-  
