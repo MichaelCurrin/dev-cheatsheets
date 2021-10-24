@@ -1,10 +1,19 @@
-# Static dev servers
+# Static web servers
+
+A selection of JS packages which can be used to serve static assets.
+
+These are typically for local dev servers including static HTML or built output for Single-Page Apps like React.
+
+These could be used in production too, but you should probably add something like Ngninx on top as a load balancer.
+
+See also this [gist](https://gist.github.com/MichaelCurrin/1a6116a4e0918c8468dc7e1a701a5f95) which links here and shows options outside of Node.
 
 
 ## Notes
 
 - Single-Page App mode like React, some support a flag like `-s,--single`, that is for . All not-found requests will go to `index.html`.
 - CORS mode - enable CORS to set `Access-Control-Allow-Origin` to `*`.
+- The base functionality will mostly be the same across packages. Some will have additional functionality like having a build command for production build, or features to enable with flags.
 
 
 ## Packages and instructions
@@ -57,14 +66,19 @@ In alphabetical order.
         $ simple-server public 3000
         ```
 - [sirv](https://www.npmjs.com/package/sirv) and [sirv-cli](https://github.com/lukeed/sirv/tree/master/packages/sirv-cli)
-    - > You may use sirv as a very fast and lightweight alternative to `serve-static`.
+    - > You may use `sirv` as a very fast and lightweight alternative to `serve-static`.
     - Run with `npx`:
         ```sh
-        $ npx sirv
+        $ npx sirv-cli
         ```
     - Install and run:
         ```sh
         $ npm i -g sirv
+        $ # Serve.
         $ sirv
-        $ sirv build --port 8080 --cors --single
+        $ # Open access to requests on the network.
+        $ sirv --host
+        $ serve  --port 8080 --cors --single
+        $ # Build
+        $ sirv build
         ```
