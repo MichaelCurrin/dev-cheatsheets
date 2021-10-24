@@ -19,7 +19,7 @@ Set a plain `style` tag.
 
 The CSS will be accessible across your components. This is useful in the top-level `App.vue` component, as you might set styling for `p` and `h1` tags for example and you want that to be applied on lower-level components too.
 
-Demnostration using both ID and class styles.
+Demonstration using both ID and class styles.
 
 - `App.vue`
     ```vue
@@ -105,13 +105,20 @@ e.g.
 </div>
 ```
 
+
 ## Inline styles
 
-Pass JS attributes as your styling. Note use of colon in `:style` and passing a JS object which uses `margineLeft` and not `margin-left` like in normal CSS.
+Pass JS attributes as your styling.
+
+Note use of colon in `:style` and passing a JS object which uses `margineLeft` and not `margin-left` like in normal CSS.
 
 ```html
 <span :style="{ marginLeft: '.5em' }">{{ value2 }}</span>
 ```
+
+See also [Binding][] cheatsheet.
+
+[Binding]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/components/binding.md %}
 
 
 ## Module styles
