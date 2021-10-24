@@ -155,7 +155,7 @@ Here we have a script for a component that accepts props and has some computed v
 Use it as:
 
 ```html
-<MyComponent :foo="my_expression"></MyComponent>
+<MyComponent :foo="myExpression"></MyComponent>
 ```
 
 Notes on props:
@@ -195,11 +195,13 @@ If you prefer, you can leave out the `template` tag and specify that content in 
 
 ```javascript
 export default {
-   name: "MyFoo",
-   props: {
-     message: { type: String, required: true },
-   },
-   template: "<span>{{ message }}</span>",
+  name: "MyFoo",
+  props: {
+      message: { type: String, required: true },
+  },
+  template: `
+      <span>{{ message }}</span>
+  `
 };
 ```
 
