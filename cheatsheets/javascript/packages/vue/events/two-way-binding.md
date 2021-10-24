@@ -7,6 +7,18 @@ description: Pass data from a child component to a parent component
 
 Using events is the safe way to let multiple child components change a variable in the parent level.
 
+## Resources
+
+- [Form input bindings](https://v3.vuejs.org/guide/forms.html) in the docs
+    > You can use the `v-model` directive to create two-way data bindings on form input, textarea, and select elements. It automatically picks the correct way to update the element based on the input type.
+
+
+## Related
+
+- [v-model cheatsheet][]
+
+[v-model cheatsheet]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/directives/v-model.md %}
+
 
 ## Syntax
 
