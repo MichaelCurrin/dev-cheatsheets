@@ -4,7 +4,7 @@
 
 ```html
 <p v-if="foo">
-  {{ Bazz }}
+  {{ bazz }}
 </p>
 <p v-else-if="bar">
   ...
