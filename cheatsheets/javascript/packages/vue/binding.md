@@ -1,6 +1,12 @@
 # Binding
 
-See [v-bind](https://vuejs.org/v2/api/#v-bind) in the docs.
+
+## Related
+
+- [v-bind][]
+
+[v-bind]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/directives %}
+
 
 ## Text
 
@@ -76,7 +82,29 @@ Note that plain HTML already supports booleans. Like either of these. But the va
 ```
 
 
-## Style
+## Class and style
+
+See [Class and style bindings][] in the docs.
+
+[Class and style bindings]: https://v3.vuejs.org/guide/class-and-style.html#object-syntax
+
+### Class
+
+Referenced:
+
+```html
+<div :class="classObject"></div>
+```
+
+Inline:
+
+```html
+<div class="static" :class="{ active: isActive, 'text-danger': hasError }"></div>
+```
+
+Where `isActive` and `hasError` are booleans in `data`.
+
+### Style
 
 ```html
 <span :style="{ marginLeft: '.5em' }"></span>
