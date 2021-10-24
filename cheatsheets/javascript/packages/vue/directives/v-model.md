@@ -35,7 +35,7 @@ Based on [Multiple v-model bindings](https://v3.vuejs.org/guide/component-custom
 
 - [Modifiers](https://v3.vuejs.org/guide/forms.html#modifiers) in the Vue 3 docs.
 
-`v-model` has built-in modifiers - `.trim`, `.number` and `.lazy`
+`v-model` has built-in modifiers:
 
 ### Lazy
 
@@ -45,13 +45,17 @@ Sync on `change` event rather than `input`.
 <input v-model.lazy="msg" />
 ```
 
-### Cast to number
+### Number
+
+Cast a value to a number
 
 ```html
 <input v-model.number="age" type="number" />
 ```
 
-### Trim whitespace
+### Trim 
+
+Remove whitespace on both ends.
 
 ```html
 <input v-model.trim="msg" />
@@ -64,11 +68,13 @@ From [v-model migration](https://v3.vuejs.org/guide/migration/v-model.html#_3-x-
 
 ### Vue 3
 
+Using this:
+
 ```html
 <ChildComponent v-model:title="pageTitle" />
 ```
 
-Would be shorthand for:
+Is equivalent to the long form:
 
 ```html
 <ChildComponent :title="pageTitle" @update:title="pageTitle = $event" />
@@ -76,11 +82,13 @@ Would be shorthand for:
 
 ### Vue 2
 
+Use this:
+
 ```html
 <ChildComponent v-model="pageTitle" />
 ```
 
-Would be shorthand for:
+Is equivalent to the long form:
 
 ```html
 <ChildComponent :value="pageTitle" @input="pageTitle = $event" />
