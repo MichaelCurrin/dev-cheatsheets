@@ -1,6 +1,11 @@
-# Looping
+---
+title: Looping
+description: Declaring variables in loops
+---
 
-It is a good idea to `const` for looping. Unless need to change a variable deliberately or you are using a C-style loop where your counter variable is defined once and then changes on each iteration.
+It is a good idea to use `const` for your for loops.
+
+Unless you need to change a variable deliberately, or you are using a C-style loop where your counter variable is defined initially and then incremented on each iteration.
 
 See [Looping][] page for more info.
 
