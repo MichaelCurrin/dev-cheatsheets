@@ -8,10 +8,32 @@ Use variable which are on the `data` method or in `props`.
 - [v-model - Vue 3 syntax](https://v3.vuejs.org/guide/migration/v-model.html#_3-x-syntax)
 
 
-## Single basic
+## Single
+
+See [Using v-model on Components](https://v3.vuejs.org/guide/component-basics.html#using-v-model-on-components) in the docs.
+
+### HTML tags
 
 ```html
-<MyComponent v-model="firstName" />
+<input v-model="searchText" />
+```
+
+Equivalent to:
+
+```html
+<input :value="searchText" @input="searchText = $event.target.value" />
+```
+
+### Custom component
+
+```html
+<CustomInput v-model="searchText" />
+```
+
+Equivalent to:
+
+```html
+<CustomInput :model-value="searchText" @update:model-value="searchText = $event" />
 ```
 
 
@@ -24,9 +46,7 @@ This is for Vue 3 only, according to [migration](https://v3.vuejs.org/guide/migr
 Based on [Multiple v-model bindings](https://v3.vuejs.org/guide/component-custom-events.html#multiple-v-model-bindings) in the Vue 3 docs:
 
 ```html
-<MyComponent
-  v-model:first-name="firstName"
-  v-model:last-name="lastName"
+<MyComponent v-model:first-name="firstName" v-model:last-name="lastName"
 />
 ```
 
@@ -53,7 +73,7 @@ Cast a value to a number
 <input v-model.number="age" type="number" />
 ```
 
-### Trim 
+### Trim
 
 Remove whitespace on both ends.
 
