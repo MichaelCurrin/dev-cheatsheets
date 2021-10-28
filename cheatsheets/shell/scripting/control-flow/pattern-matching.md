@@ -1,6 +1,6 @@
 ---
 title: Pattern matching
-description: Check if a string matchs a pattern
+description: Check if a string matches a pattern
 ---
 
 ## Related
@@ -10,29 +10,64 @@ description: Check if a string matchs a pattern
 [Globbing]: {{ site.baseurl }}{% link cheatsheets/shell/files/globbing.md %}
 
 
+
 ## Plain text matching
 
-Test using `==` and a pattern with a `*` globstar and **no** quotes.
+### Equality
+
+Use single or double equals sign - the same in newer shells.
+
+```sh
+[[ VARIABLE == VALUE ]]
+```
+
+e.g.
+
+```sh
+[[ "$NAME" == "Joe" ]]
+```
 
 ### Starts with
 
-Given:
+Test using `==` and a pattern with a `*` globstar and **no** quotes.
 
 ```sh
+# macOS
 OSTYPE=darwin19.0
-```
 
-```sh
 [[ "$OSTYPE" == darwin* ]] && echo 'Yes' || echo 'No'
 # Yes
 ```
 
 ### Contains
 
+A more specific case of pattern matching. Use `=` or `==`.
+
+```sh
+[[ VALUE == *NEEDLE* ]]
+```
+
+e.g.
+
 ```sh
 MSG="I like dogs, don't you?"
 [[ MSG == *dog* ]] && echo 'Yes' || echo 'No'
 Yes
+```
+
+Note lack of quotes so that `*` gets expanded for the check. In this case `*` does not have to do with paths like it usually does.
+
+```sh
+GREETING='Hello, world'
+
+[[ "$GREETING" = *lo* ]] && echo 'Match' || echo 'No match'
+Match
+```
+
+Check if a string is in your OS type.
+
+```sh
+[[ "$OSTYPE" = *darwin* ]] && echo 'I'm a mac' || echo 'I'm not a mac'
 ```
 
 
@@ -57,12 +92,22 @@ No special functionality. Just string contains.
 ### Starts with
 
 ```sh
-[[ "$PATH" =~ ^/ ]] && echo 'Yes' || echo 'No'
+FIRST=abc
+SECOND=def
+
+[[ "$FIRST" =~ '^d' ]] && echo 'Match' || echo 'No match'
+# No match
+[[ "$SECOND" =~ '^d' ]] && echo 'Match' || echo 'No match'
+# Match
 ```
 
 ```sh
 [[ "main" =~ ^m ]] && echo 'Yes' || echo 'No'
 # Yes
+```
+
+```sh
+[[ "$PATH" =~ ^/ ]] && echo 'Yes' || echo 'No'
 ```
 
 ### List
@@ -77,7 +122,7 @@ Negate:
 
 ```sh
 if [[ ! "$FRUIT" =~ banana|apple|orange ]]; then
-  echo 'Your fruit is not one of the allowed fruit
+  echo 'Your fruit is not one of the allowed fruit'
   exit 1
 fi
 ```
