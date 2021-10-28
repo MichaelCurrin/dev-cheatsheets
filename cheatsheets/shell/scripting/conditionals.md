@@ -7,7 +7,6 @@ See also [Control flow][] section for more info on how to do tests and `if` stat
 [Control flow]: {% link cheatsheets/shell/scripting/control-flow.md %}
 
 
-
 ## String conditions
 
 Examples are not show for all, since the patter is the same.
@@ -77,14 +76,14 @@ These all follow the pattern of:
 NUMBER OPERATOR NUMBER
 ```
 
-Operator | Description
---- | ---
-`-eq` | equal
-`-nq` | not equal
-`-lt` | less than
-`-le` | less than or equal to
-`-gt` | greater than
-`-ge` | greater than or equal to
+| Operator | Description              |
+| -------- | ------------------------ |
+| `-eq`    | equal                    |
+| `-nq`    | not equal                |
+| `-lt`    | less than                |
+| `-le`    | less than or equal to    |
+| `-gt`    | greater than             |
+| `-ge`    | greater than or equal to |
 
 You can also do:
 
@@ -128,16 +127,16 @@ if [[ ! -f file.txt ]]; then
 fi
 ```
 
-Operator | Description
----  | ---
-`-e` | Exists - file or directory.
-`-s` | Size is non-zero
-`-f` | File
-`-d ` | Directory
-`-h ` | Symlink
-`-r` | Readable
-`-w` | Writable
-`-x` | Executable
+| Operator | Description                 |
+| -------- | --------------------------- |
+| `-e`     | Exists - file or directory. |
+| `-s`     | Size is non-zero            |
+| `-f`     | File                        |
+| `-d `    | Directory                   |
+| `-h `    | Symlink                     |
+| `-r`     | Readable                    |
+| `-w`     | Writable                    |
+| `-x`     | Executable                  |
 
 ### Compare modified dates
 
@@ -147,11 +146,11 @@ These are all done as:
 [[ PATH OPERATOR PATH ]]
 ```
 
-Operator | Description
---- | ---
-`-nt` | Newer than
-`-ot` | Older than
-`-ef` | Equal times
+| Operator | Description |
+| -------- | ----------- |
+| `-nt`    | Newer than  |
+| `-ot`    | Older than  |
+| `-ef`    | Equal times |
 
 If you update one file, it appear newer than the other. Using `touch` is sufficient, without changing the file contents. This will also create the file if it does not exist.
 
@@ -198,4 +197,3 @@ As it will become:
 ```sh
 -z ""
 ```
-
