@@ -3,7 +3,9 @@ title: Pattern matching
 description: Check if a string matchs a pattern
 ---
 
-See also ]Globbing][] section.
+## Related
+
+- [Globbing][]
 
 [Globbing]: {{ site.baseurl }}{% link cheatsheets/shell/files/globbing.md %}
 
@@ -28,7 +30,7 @@ OSTYPE=darwin19.0
 ### Contains
 
 ```sh
-MSG="I like dogs, don't you?" 
+MSG="I like dogs, don't you?"
 [[ MSG == *dog* ]] && echo 'Yes' || echo 'No'
 Yes
 ```
@@ -39,7 +41,7 @@ Yes
 Use `=~` and a regex pattern.
 
 ```sh
-[[ STRING =~ PATTERN ]]	
+[[ STRING =~ PATTERN ]]
 ```
 
 Be sure to **not** use quotes on the pattern or you'll get unexpected behavior.
