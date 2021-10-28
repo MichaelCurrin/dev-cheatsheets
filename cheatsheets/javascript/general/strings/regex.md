@@ -29,15 +29,23 @@ new RegExp(/ab+c/, 'i')  // regular expression literal as first argument - from 
 /ab+c/i
 ```
 
-e.g. 
+Use with string methods:
 
 ```javascript
 // inline
-text.search(/my pattern/i);
+text.match(/my pattern/i);
 
 // with object
-const patt = /my pattern/i;
-text.search(patt);
+const pattern = /my pattern/i;
+text.match(pattern);
+```
+
+e.g.
+
+```javascript
+const text = 'Rain and Spain'
+text.match(/ai/gi)
+// [ 'ai', 'ai' ]
 ```
 
 ### Flags
@@ -53,7 +61,9 @@ new RegExp('\\w+')
 
 A method on a string.
 
-This method searches a string for a specified value and returns the **position** of the match. This is done with a **case-insensitive** search.
+This method searches a string for a specified value and returns the **position** of the match.
+
+This is done with a **case-insensitive** search.
 
 ```javascript
 text.search(pattern)
@@ -80,13 +90,13 @@ See what is at character with index `6` in the text:
 
 A method on a string.
 
-Find matches in text and get an object back.
+Find matches in text and get an object back containing matches.
 
 ```javascript
-const patt = new RegExp("e");
+const pattern = new RegExp("e");
 const text = "The best things in life are free";
 
-const matches = text.match(patt);
+const matches = text.match(pattern);
 // ["e", index: 2, input: "The best things in life are free", groups: undefined]
 ```
 
@@ -150,7 +160,7 @@ A method on a string.
 
 In a string, replace a matched pattern with another value.
 
-The pattern can be a string or a regex pattern. 
+The pattern can be a string or a regex pattern.
 
 From [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace).
 
@@ -185,7 +195,7 @@ text.replace(pattern, 'ferret')
 ```
 
 ### Replace all method
- 
+
 From [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll).
 
 > The replaceAll() method returns a new string with all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match.
@@ -196,7 +206,7 @@ Syntax:
 str.replaceAll(regexp|substr, newSubstr|function)
 ```
 
-Note that as per linked docs, this only replaces **all** occurrences for a string pattern. 
+Note that as per linked docs, this only replaces **all** occurrences for a string pattern.
 
 While if you use a **regex** pattern, it will still only replace the **one** occurence unless you use `g` flag as before. Which is annoying. So for regex you might as well use the place `.replace`.
 
@@ -229,7 +239,7 @@ text.replaceAll(/Dog/gi, 'monkey')
 
 - [Groups and ranges](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges) in Mozilla docs.
 
-A match will return positional values in an array. The first is the matched string, then at index `1` is the first matched group, index `2` the second and so on. The match object has also has some key-value attributes - `index`, `input` and `groups`. 
+A match will return positional values in an array. The first is the matched string, then at index `1` is the first matched group, index `2` the second and so on. The match object has also has some key-value attributes - `index`, `input` and `groups`.
 
 Examples copied from link above.
 
@@ -295,9 +305,9 @@ Using `g` for a global matches to get more than one match. But made the attribut
 pat = /#(\w+)/g
 m = 'abc #python #def'.match(pat)
 m
-// [ 
-//   '#python', 
-//   '#def' 
+// [
+//   '#python',
+//   '#def'
 // ] 
 ```
 
