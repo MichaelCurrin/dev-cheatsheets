@@ -2,9 +2,9 @@
 
 This does not cover `if` statements but rather just flag checks to be used inside conditions like `if` statements.
 
-See also [Control flow][] section for more info on how to do tests and `if` statements.
+See also [if else][] section for more info on how to do tests and `if` statements.
 
-[Control flow]: {% link cheatsheets/shell/scripting/control-flow.md %}
+[if else]: {% link cheatsheets/shell/scripting/control-flow/if-else.md %}
 
 
 ## String conditions
