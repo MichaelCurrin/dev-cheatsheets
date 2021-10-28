@@ -111,7 +111,7 @@ fi
 # Yes!
 ```
 
-### Check numberic condition
+### Check numeric condition
 
 ```sh
 AGE=20
@@ -124,7 +124,7 @@ fi
 
 ### Check maths condition
 
-Use double brackets `$((CALC))` to evaluate a mathemetical expression.
+Use double brackets `$((CALC))` to evaluate a mathematical expression.
 
 ```sh
 [[ "$(($a))" -eq "$(($b))" ]]
@@ -278,7 +278,6 @@ Use `-n` for not empty.
 Note the brackets are needed, otherwise on a `true` evaluation of the first condition, the exit will still run.
 
 Using `exit` is good for a script and not for direct terminal use otherwise you will close the terminal tab.
-
 
 Or in multiple lines.
 
