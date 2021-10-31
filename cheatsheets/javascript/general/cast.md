@@ -45,10 +45,20 @@ parseInt("123.45")
 // 123
 ```
 
-No change on integer input.
+No effect if already an integer.
 
 ```javascript
-parseFloat(123)
+parseInt(123)
+// 123
+```
+
+Recommended - pass the `radix` argument as the base, to avoid linting errors. The base can be inferred, but in some cases will be incorrect so it is better to always set it. See [Other number systems](#other-number-systems) section below for other uses of this argument.
+
+```javascript
+parseInt("123", 10)
+// 123
+
+parseInt("123.45", 10)
 // 123
 ```
 
@@ -68,7 +78,6 @@ No change on float input.
 parseFloat(123.45)
 // 123.45
 ```
-
 
 
 ## Other number systems
