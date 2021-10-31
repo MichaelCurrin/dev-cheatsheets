@@ -1,6 +1,6 @@
 ---
 title: Cast
-description: Converting between data types
+description: Convert between data types
 ---
 
 
