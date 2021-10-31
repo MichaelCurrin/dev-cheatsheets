@@ -47,7 +47,7 @@ $ brew upgrade yarn
 
 ### Manual
 
-If you installed using `curl`, then use the install command again to upgrade Yarn. That is recommended on the Yarn docs.
+If you installed using `curl`, then use the same install command again to upgrade Yarn. This method is recommended on the Yarn docs and in the help when the CLI tells you it is out of date.
 
 ```sh
 $ curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
