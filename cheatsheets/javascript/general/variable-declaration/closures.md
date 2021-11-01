@@ -53,5 +53,5 @@ console.log(x)
 
 
 [Control flow]: {{ site.baseurl }}{% link cheatsheets/javascript/general/control-flow/index.md %}
-[Functions]: {{ site.baseurl }}{% link cheatsheets/javascript/general/functions.md %}
+[Functions]: {{ site.baseurl }}{% link cheatsheets/javascript/general/functions/index.md %}
 [Looping]: {{ site.baseurl }}{% link cheatsheets/javascript/general/data-structures/looping.md %}
