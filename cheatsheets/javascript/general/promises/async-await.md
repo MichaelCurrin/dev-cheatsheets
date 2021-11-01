@@ -1,4 +1,4 @@
-# Async-await syntax
+# Async-await
 
 See [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) in Mozilla docs.
 
@@ -138,3 +138,27 @@ resolved at 16:31:51 GMT+0200 (South Africa Standard Time)
   'resolved at 16:31:53 GMT+0200 (South Africa Standard Time)'
 ]
 ```
+
+Here is a similar example, having two actions depend on the same promise.
+
+We set up function call for `resolveAfter2Seconds`, but without using `await`.
+
+Then we set up two actions that log when the promise resolves. But the calls are not blocking so they both happen at the same time.
+
+```javascript
+(async function () {
+  console.log((new Date()).toTimeString())
+
+  const x = resolveAfter2Seconds()
+  x.then((v) => console.log('done A', v))
+  x.then((v) => console.log('done B', v))
+})()
+```
+
+```
+17:30:30 GMT+0200 (South Africa Standard Time)
+done A resolved at 17:30:32 GMT+0200 (South Africa Standard Time)
+done B resolved at 17:30:32 GMT+0200 (South Africa Standard Time)
+```
+
+I could not find a way to do this with `await`.
