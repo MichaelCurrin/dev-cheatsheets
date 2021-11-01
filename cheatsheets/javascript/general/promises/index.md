@@ -16,18 +16,22 @@ foo('bar', function (bazz) {
 #### Promise
 
 ```javascript
-// Promises.
 foo('bar')
   .then(function (bazz) {
     console.log(bazz.toUpperCase());
   });
+  .catch(function(err) {
+    console.log(err.toString())
+  })
 ```
 
 #### Async-await
 
 ```javascript
-const bazz = await foo('bar')
-console.log(bazz.toUpperCase());
+try:
+  const bazz = await foo('bar')
+  console.log(bazz.toUpperCase());
+catch(err) {
+  console.log(err.toString())
+}
 ```
-
-Note the last case must be used inside an `async` function only in older versions of Node. From around end of 2020 this is not a restriction in Node. Note that Deno does not have this restriction either.
