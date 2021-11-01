@@ -49,86 +49,147 @@ If you don't pass an array, you won't get an error, but you'll get unexpected ou
 
 ## How to pass arguments to functions
 
-### Keyword arg style
-
-How to pass key-value pairs to a function.
-
-Use destructuring in the definition of the function's parameters.
-
-```javascript
-function b({ foo, bar }) {
-  console.log(foo, bar)
-}
-```
-
-Call it using an associative array, either inline or as an object reference. The order doesn't matter.
-
-```javascript
-> b({ foo: 1, bar: 2 })
-1 2
-> b({ bar: 2, foo: 1 })
-1 2
-> const x = { foo: 1, bar: 2 }
-> b(x)
-1 2
-```
-
-If you omit arguments, they are `undefined`.
-
-```javascript
-> b()
-undefined undefined
-
-> b({bar:2})
-undefined 2
-```
-
 ### List style
 
 The weakness if that is you change order of the parameters or add a parameter between existing parameters, then calls to the function will behave unexpectedly.
 
 ```javascript
 function a(foo, bar) {
-  console.log(foo, bar)
+  console.log('foo', foo)
+  console.log('bar', bar)
 }
 ```
 
 Call it using a list of arguments.
 
 ```javascript
-> a(1, 2)
-1 2
+a(1, 2)
+// foo 1
+// bar 2
 ```
 
 Order matters. Leaving out a parameter leaves it as undefined. So you need to pass a value in a position as `undefined` to skip it.
 
 ```javascript
-> a()
-undefined undefined
+a()
+// foo undefined
+// bar undefined
 
-> a(1)
-1 undefined
+a(1)
+// foo 1
+// bar undefined
 
-> a(undefined, 2)
-undefined 2
+a(undefined, 2)
+// foo undefined
+// bar 2
 ```
 
-Warning - if you try and pass key-value pairs, you will only pass an associative array to the first parameter, which is not what we want.
+If you define positional arguments, you cannot pass key-value pairs instead.
+
+You can pass associative array if you want, but it will be used for the value of the first parameter, it will _not_ be split up, and `undefined` will be implied for the second parameter.
 
 ```javascript
-> a( { foo: 1, bar: 2 } )
-{ foo: 1, bar: 2 } undefined
+a( { foo: 1, bar: 2 } )
+// foo { foo: 1, bar: 2 }
+// bar undefined
+```
+
+
+### Keyword arg style
+
+How to pass key-value pairs to a function.
+
+Use destructuring in the _definition_ of the function's parameters.
+
+```javascript
+function b({ foo, bar }) {
+  console.log('foo', foo)
+  console.log('bar', bar)
+}
+```
+
+Then call it using an associative array. The order doesn't matter, which is a strength of this style.
+
+Inline:
+
+```javascript
+b( { foo: 1, bar: 2 } )
+// foo 1
+// bar 2
+b( { bar: 2, foo: 1 } )
+// foo 1
+// bar 2
+```
+
+Define an object then pass it. No need to use rest operator (i.e. `...`).
+
+```javascript
+const x = { foo: 1, bar: 2 }
+b(x)
+// foo 1
+// bar 2
+```
+
+A downside of defining a function with keyword arguments is that you cannot pass the arguments using position arguments.
+
+i.e. This will not work. Two positional arguments are passed, where none are expected, and the keyword arguments remain `undefined`.
+
+```javascript
+b(1, 2)
+// foo undefined
+// bar undefined
+```
+
+If you omit arguments, this is fine, they will be `undefined`.
+
+```javascript
+b()
+// foo undefined
+// bar undefined
+
+b( { bar: 2 } )
+// foo undefined
+// bar 2
 ```
 
 ### Mixed
 
+You can define positional arguments followed by keyword arguments.
+
 ```javascript
 function c(bazz, { foo, bar }) {
-  console.log(bazz, foo, bar)
+  console.log('bazz', bazz)
+  console.log('foo', foo)
+  console.log('bar', bar)
 }
 
 c(1, {foo: 2, bar: 3})
-// 1 2 3
+// bazz 1
+// foo 2
+// bar 3
+
+// OR
+const x = { foo: 2, bar: 3 }
+c(1, x)
+// bazz 1
+// foo 2
+// bar 3
+```
+
+Note if you want to _only_ pass keyword parameters, you need to make each of the positional arguments `undefined`.
+
+```javascript
+c(undefined, { foo: 2, bar: 3 })
+// bazz undefined
+// foo 2
+// bar 3
+```
+
+Otherwise you will get avoid an error.
+
+```javascript
+c({ foo: 2, bar: 3 })
+// TypeError: Cannot destructure property 'foo' of 'undefined' as it is undefined.
 ```
 
 
