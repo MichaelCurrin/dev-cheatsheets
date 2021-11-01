@@ -3,7 +3,9 @@
 See [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) in Mozilla docs.
 
 
-Here we have `asyncCall` defined as an `async` function.
+## Basic examples
+
+Here we have `asyncCall` defined as an `async` function. It calls a promise that resolves after 2 seconds, to imitate doing a request to an API.
 
 ```javascript
 function resolveAfter2Seconds() {
@@ -17,14 +19,17 @@ function resolveAfter2Seconds() {
 async function asyncCall() {
   console.log('calling');
   const result = await resolveAfter2Seconds();
+  
   console.log(result);
-  // expected output: "resolved"
+  // "resolved"
 }
 
 asyncCall();
 ```
 
-It uses `await` to call a function that returns a promise, so you don't have to use `.then()` chains. Here is another example showing how `await` approach reads much more naturally.
+It uses `await` to call a function that returns a promise, so you don't have to use `.then()` chains.
+
+Here is another example showing how `await` approach reads much more naturally.
 
 ```javascript
 async function foo() {
@@ -36,24 +41,25 @@ async function foo() {
   const response = await fetch('/user.json');
   const user = await response.json();
 }
+
 foo()
 ```
-
-Use the `async` keyword before function so you can use await on it.
 
 
 ## Top-level code vs functions
 
-In older version of Node, you could not use `await` in the main body, but this has changed.
+In older version of Node, you could not use `await` in the main body - you must use a wrapping async fucntion.
 
-Top-level (example from [Async/await](https://javascript.info/async-await) on JavaScript Info).
+From around end of 2020 this is not a restriction in Node. Note that Deno does not have this restriction either.
+
+Top-level - example from [Async/await](https://javascript.info/async-await) on JavaScript Info:
 
 ```javascript
 const response = await fetch('/article/promise-chaining/user.json');
 const user = await response.json();
 ```
 
-If you get an error with the above, you can place inside an [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE).
+The old approach using [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE).
 
 ```javascript
 (async () => {
@@ -63,7 +69,8 @@ If you get an error with the above, you can place inside an [IIFE](https://devel
 })();
 ```
 
-## Try catch
+
+## try-catch
 
 Unlike with callback functions or `.then` promise chains, you can now use `try` and `catch` syntax.
 
