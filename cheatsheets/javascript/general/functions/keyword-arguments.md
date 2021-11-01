@@ -1,6 +1,8 @@
 # Keyword arguments
 
-How to pass key-value pairs to a function.
+How to use keyword destructuring in a function.
+
+## Definition
 
 Use destructuring in the _definition_ of the function's parameters.
 
@@ -11,7 +13,21 @@ function b({ foo, bar }) {
 }
 ```
 
-Then call it using an associative array. The order doesn't matter, which is a strength of this style.
+That is equivalent to this:
+
+```javascript
+function b(myObject) {
+  const { foo, bar } = myObject
+  console.log('foo', foo)
+  console.log('bar', bar)
+}
+```
+
+## Call with values
+
+Then call the function (either one above) using an associative array.
+
+The order of keys here doesn't matter, which is a strength of this style.
 
 Inline:
 
@@ -24,7 +40,7 @@ b( { bar: 2, foo: 1 } )
 // bar 2
 ```
 
-Define an object then pass it. No need to use rest operator (i.e. `...`).
+Or, define an object then pass it. No need to use rest operator (i.e. `...`).
 
 ```javascript
 const x = { foo: 1, bar: 2 }
@@ -33,15 +49,8 @@ b(x)
 // bar 2
 ```
 
-A downside of defining a function with keyword arguments is that you cannot pass the arguments using position arguments.
 
-i.e. This will not work. Two positional arguments are passed, where none are expected, and the keyword arguments remain `undefined`.
-
-```javascript
-b(1, 2)
-// foo undefined
-// bar undefined
-```
+## Call without setting all values
 
 If you omit arguments, this is fine, they will be `undefined`.
 
@@ -53,4 +62,19 @@ b()
 b( { bar: 2 } )
 // foo undefined
 // bar 2
+```
+
+
+## Restriction
+
+A downside of defining a function with keyword arguments is that you can only pass that way.
+
+You cannot pass the arguments using positional arguments.
+
+This will not work. Two positional arguments are passed, where none are expected, and the keyword arguments remain `undefined`.
+
+```javascript
+b(1, 2)
+// foo undefined
+// bar undefined
 ```
