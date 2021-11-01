@@ -11,21 +11,42 @@ See also [TypeScript Classes][] cheatsheet.
 - [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor) in Mozilla docs.
 
 
-## Example class
+## Basic
 
 ```javascript
 class Greeter {
+  abc = 123
+
   constructor(message) {
-    this.greeting = message;
+    this.message = message;
   }
 
   greet() {
-    return `Hello, ${this.greeting}`;
+    return `Hello, ${this.message}`;
   }
 }
 
-let greeter = new Greeter("world");
+const greeter = new Greeter("World");
+greet.greet()
+// Hello, World!
 ```
+
+
+## Extending
+
+```javascript
+class MyClass extends ParentClass {
+  constructor() {
+    super();
+    // ...
+  }
+
+  foo(x) {
+    // ...
+  }
+}
+```
+
 
 
 ## Object accessors
@@ -39,11 +60,11 @@ class Person {
   constructor() {
     this.language = 'n/a'
   }
-  
+
   get lang() {
-    return this.language 
+    return this.language
   }
-  
+
   set lang(lang) {
     this.language = lang
   }
