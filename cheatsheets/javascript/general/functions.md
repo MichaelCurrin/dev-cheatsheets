@@ -25,7 +25,7 @@ function c(foo, bar, ...bazz) {
 
 
 Useful for example when joining a list of values, but with cleaner syntax with cleaner syntax. Here is the traditional approach:
- 
+
 ```javascript
 function d(foo, bar, bazz) {
   console.log( foo, bar, bazz )
@@ -132,71 +132,85 @@ c(1, {foo: 2, bar: 3})
 ```
 
 
-## Standard vs arrow functions 
+## Standard vs arrow functions
 
-JS now supports arrow functions.
+JS now supports "arrow" functions using `=>` syntax.
 
-You could already use `function()` syntax to make an anonymous function declared and use immediately.
+You could _already_ use `function(){}` syntax to make an anonymous function declared and use immediately, but arrow functions are shorter, and also work differently in some cases.
 
-```js
+```javascript
 myArray.map(function(x) { return x * 2 })
 ```
+
 Arrow functions makes this lighter:
 
-```js
-myArray.map(function(x) { return x * 2 })
+```javascript
+myArray.map((x) => x * 2)
 ```
 
-Some people like to use arrow functions with a variable name. Though it makes it harder to separate plain variables from function variables.
+Compare with `->` in Java.
 
-```js
-// Traditional 
-function foo(x) {   
-  return x * 2
-}
+Some people like to use arrow functions to create an anonymous function and then assign it a variable name.
 
-// Anonymous variation.
-const foo = function (x) {   
-  return x * 2
-}
-```
+- Traditional
+    ```javascript
+    function foo(x) {
+      return x * 2
+    }
+    ```
+- Anonymous variation.
+    ```javascript
+    const foo = function (x) {
+      return x * 2
+    }
+    ```
+- Arrow function.
+    ```javascript
+    // One line.
+    const foo = (x) => x * 2;
 
-```js
-// Arrow function.
-const foo = (x) => x * 2;
+    // Or multi-line.
+    const foo = (x) => {
+      return x * 2
+    };
 
-// Or multi-line.
-const foo = (x) => {
-  return x * 2
-};
-```
+    // Returning an object - use brackets.
+    const foo = (x) => ( { myKey: x * 2} );
+    ```
 
 A major difference is that `this` behaves differently. An arrow function does not come with `this` in scope, at the least when used outside a class
 
 Another difference is that while standard functions are _hoisted_ so you can declare and use them in any order in your code, using arrow functions to make a variable instead actually means you _have_ to declare and call functions in order.
 
-But the code is actually _longer_ with arrow functions, because we have to use `const`.
+Arrow functions have lighter syntax, but in cases where use more than one line and assign a function to variable, the code is actually _longer_ with arrow functions.
 
+Compare these two:
+
+```diff
+-function getCookie(cookieName) {
++const getCookie = (cookieName) => {
 ```
-                               |  |
-function getCookie(cookieName) {   
-const getCookie = (cookieName) => {
-```
+
+Arrow functions also makes it harder to separate plain variables from function variables when scanning the code visually, as the `function` keyword is gone.
 
 Methods on classes can also be set like this:
 
-```js
+```javascript
 class foo () {
+  // Standard.
   fizz(x) {
     return x * 2
   }
 
+  // Arrow.
   fizz(x) => x * 2
 
-  // More verbose. Using function or arrow.
-  fizz: function(x) {
+  // Verbose - assign a function to key. Using function or arrow.
+  fizz: function (x) {
     return x * 2
   }
+  // OR
+  fizz: (x) => x * 2
 }
 ```
 
