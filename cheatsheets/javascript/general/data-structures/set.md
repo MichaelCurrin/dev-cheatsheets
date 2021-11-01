@@ -70,7 +70,4 @@ const mySet = new Set([ 'a', 'b', 'a'])
 
 [...mySet]
 // [ 'a', 'b' ]
-
-Array.from(mySet)
-// [ 'a', 'b' ]
 ```
