@@ -249,9 +249,36 @@ for (const [index, value] of Object.entries(myArray)) {
 ```
 
 
-## Convert iterable to an array
+## Array and spread operator
 
-Use the `...` spread operator to make a copy of an array. Or if you need to convert a document selection to an array, so you can use array methods on it like `.map`.
+### Duplicate an array
+
+```javascript
+const myArray = [ 'a', 'b', 'a']
+
+[...myArray]
+// [ 'a', 'b', 'a' ]
+
+Array.from(myArray)
+// [ 'a', 'b', 'a' ]
+```
+
+### Convert iterable to an array
+
+```javascript
+const mySet = new Set([ 'a', 'b', 'a'])
+
+[...mySet]
+// [ 'a', 'b' ]
+
+// More verbose, older syntax, used internally by spread.
+Array.from(mySet)
+// [ 'a', 'b' ]
+```
+
+### Treat iterable as an array
+
+If you need to convert a document selection to an array, so you can use array methods on it like `.map`.
 
 ```javascript
 const divs = document.getElementsByTagName('div')
@@ -259,10 +286,12 @@ const divs = document.getElementsByTagName('div')
 //   divs.map
 //   divs.forEach
 
+// Convert to an array.
 const divsArr = [...divs]
 
 divsArr[0]
 // <div class="position-relative js-header-wrapper ">...</div>
 
+// Now use `.map`.
 divsArr.map(i => i.innerText)
 ```
