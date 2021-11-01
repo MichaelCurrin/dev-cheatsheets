@@ -1,4 +1,4 @@
-# Then syntax
+# then-catch syntax
 
 
 ## Overview
@@ -16,14 +16,14 @@ You can create an immediately resolved promise using:
 
 ```javascript
 const foo = new Promise()
-foo.then(bar)
+foo.then(value => console.log(value))
 ```
 
-Or resolve after a time.
+Or:
 
 ```javascript
 const foo = Promise.resolve(3);
-foo.then(x => console.log(x))
+foo.then(value => console.log(value))
 // 3
 ```
 
@@ -62,8 +62,6 @@ doSomething()
   })
   .catch(failureCallback);
 ```
-
-
 
 
 ## Catch
