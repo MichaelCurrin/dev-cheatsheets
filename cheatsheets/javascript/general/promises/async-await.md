@@ -34,8 +34,8 @@ Here is another example showing how `await` approach reads much more naturally.
 ```javascript
 async function foo() {
   // Two independent await statements.
-  const result1 = await new Promise((resolve) => setTimeout(() => resolve('1')))
-  const result2 = await new Promise((resolve) => setTimeout(() => resolve('2')))
+  const result1 = await new Promise((resolve) => setTimeout(() => resolve('abc')))
+  const result2 = await new Promise((resolve) => setTimeout(() => resolve('def')))
 
   // Use result of one await call in another.
   const response = await fetch('/user.json');
@@ -93,4 +93,48 @@ async function foo() {
     failureCallback(error);
   }
 }
+```
+
+
+## Series vs parallel
+
+Give a function that resolves after 2 seconds and prints the current time.
+
+```javascript
+function resolveAfter2Seconds() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(`resolved at ${(new Date()).toTimeString()}`);
+    }, 2000);
+  });
+}
+```
+
+```javascript
+(async function () {
+  console.log((new Date()).toTimeString())
+
+  // Here we resolve the function twice in series, taking a total of 2 seconds.
+
+  const x = await resolveAfter2Seconds()
+  console.log(x)
+
+  const y = await resolveAfter2Seconds()
+  console.log(y)
+  
+  // Here we resolve the promises in parallel.
+  const promises = [resolveAfter2Seconds(), resolveAfter2Seconds()]
+  const resolvedPromises = await Promise.all(promises)
+  console.log(resolvedPromises)
+})()
+```
+
+```
+16:31:47 GMT+0200 (South Africa Standard Time)
+resolved at 16:31:49 GMT+0200 (South Africa Standard Time)
+resolved at 16:31:51 GMT+0200 (South Africa Standard Time)
+[
+  'resolved at 16:31:53 GMT+0200 (South Africa Standard Time)',
+  'resolved at 16:31:53 GMT+0200 (South Africa Standard Time)'
+]
 ```
