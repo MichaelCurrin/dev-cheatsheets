@@ -1,6 +1,6 @@
 # setInterval
 
-Repeat a function call at given intervals.
+Repeat a function call at given interval.
 
 - [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/setInterval) on MDN.
 
