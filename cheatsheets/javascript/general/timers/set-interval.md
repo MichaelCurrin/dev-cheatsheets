@@ -2,7 +2,10 @@
 
 Repeat a function call at given interval.
 
+It's like using `setTimer` on an indefinite loop.
+
 - [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/setInterval) on MDN.
+
 
 ## Syntax
 
@@ -28,6 +31,14 @@ function myCallback(a, b) {
 
 const intervalID = setInterval(myCallback, 500, 'Parameter 1', 'Parameter 2');
 ```
+
+Cancel:
+
+```javascript
+cancelTimer(intervalID)
+```
+
+Start and stop:
 
 ```javascript
 var timer;
