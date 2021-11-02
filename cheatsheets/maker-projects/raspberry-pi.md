@@ -40,6 +40,23 @@ If you aren't sure of the values, you can also check your Go environment set up 
 
 ## Camera
 
+### Script 
+
+This will open a window to view the feed. 
+
+```python
+from time import sleep
+
+from picamera import PiCamera
+
+
+camera = PiCamera()
+
+camera.start_preview()
+sleep(10)
+camera.stop_preview()
+```
+
 ### CLI
 
 Still image:
