@@ -36,3 +36,21 @@ $ GOOS=linux GOARCH=arm GOARM=5 \
 Or simply run the command without options on the actual Pi. Defaults will be used.
 
 If you aren't sure of the values, you can also check your Go environment set up on the Pi and then use that other your other machine for compiling.
+
+
+## Camera
+
+### CLI
+
+Still image:
+
+```sh
+$ raspistill -o test.jpg
+```
+
+Video:
+
+```sh
+$ raspivid -o testv.h264 # five seconds
+$ raspivid -o testv.h264 -t 1000 # one second
+```
