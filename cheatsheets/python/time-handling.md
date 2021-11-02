@@ -10,34 +10,46 @@
 - [ISO 8061](https://en.wikipedia.org/wiki/ISO_8601)
 
 
-## Date and time
+## Current time
 
 ### Today
 
-Get a `date` object.
+Get a `date` object using `date.today` method.
 
 ```python
 datetime.date.today()
-# => datetime.date(2021, 5, 8)
+# datetime.date(2021, 5, 8)
 ```
 
 ### Now
 
-Get a float.
-
-```python
-time.time()
-# => 1620464710.3691561
-```
-
-Get a `datetime` object. Both `today` and `now` give the same result, but only `now` can accept a [time zone](#time-zone).
+Get a `datetime` object using `datetime.today` or `datetime.now` methods:
 
 ```python
 datetime.datetime.today()
-# => datetime.datetime(2021, 5, 8, 11, 4, 58, 331706)
+# datetime.datetime(2021, 11, 2, 20, 21, 10, 742033)
 
 datetime.datetime.now()
-# => datetime.datetime(2021, 5, 8, 11, 9, 39, 197198)
+# datetime.datetime(2021, 11, 2, 20, 21, 10, 753648)
+
+datetime.datetime.utcnow()
+# datetime.datetime(2021, 11, 2, 18, 21, 10, 760241)
+```
+
+Note - both `today` and `now` give the same result, but only `now` can accept a [time zone](#time-zone). In the examples above, the code was run at GMT+0200. So when `datetime.utcnow` method is run, that gives the time at GMT+0000, which is the UTC time and is 2 hours before the others.
+
+Get a float for the current time, using `time` module.
+
+```python
+time.time()
+# 1635876799.357939
+```
+
+The long way using `datetime`.
+
+```python
+datetime.datetime.today().timestamp()
+# 1635876799.357939
 ```
 
 
@@ -46,7 +58,7 @@ datetime.datetime.now()
 ### Date
 
 ```python
-x= datetime.date(2021, 1, 2)
+x = datetime.date(2021, 1, 2)
 # datetime.date(2021, 1, 2)
 str(x)
 # '2021-01-02'
@@ -63,7 +75,7 @@ str(datetime.datetime(2021, 1, 2))
 '2021-01-02 00:00:00'
 ```
 
-Create a datetime.
+Create a datetime object.
 
 ```python
 x = datetime.datetime(2021, 1, 2, 3, 40)
@@ -114,46 +126,30 @@ n.second
 ```
 
 
-## Format
+## Format and parse
 
-### Format codes
+Format a datetime value as a string or parse a string as a datetime object.
 
-- [strftime() and strptime() Format Codes](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes)
+See [Format codes](#format-codes) for what symbols to use when formatting or parsing.
 
-Some useful combinations:
+### Format datetime as built-in string
 
-- 12-hour time
-    ```
-    %I:%M %p
-    11:01 AM
-    11:01 PM
-    ```
-- 24-hour time
-    ```
-    %H:%M:%Ss
-    11:01:01s
-    23:01:01s
-    ```
-- Time zone.
-    ```
-    %z
-    +0000
-    -0400
-    ```
-- Long day.
-    ```
-    %A, %-d %B %Y
-    Sunday, 1 January 2021
-    ```
-- Short day.
-    ```
-    %Y-%M-%d
-    2021-01-01
-    ```
+```python
+x = datetime.datetime.now()
+```
 
-### String to datetime
+```python
+x.isoformat()
+# '2021-11-02T20:19:57.928643'
 
-Convert from date or datetime object to a sring.
+# Or simply:
+str(x)
+# '2021-11-02T20:19:57.928643'
+```
+
+### Format datetime as custom string
+
+Convert from date or datetime object to a custom string.
 
 Using `.strftime` where  the `f` is for "format". 
 
@@ -166,25 +162,25 @@ MY_DATETIME.strftime(MY_FORMAT)
 e.g.
 
 ```python
-n = datetime.datetime.now()
+x = datetime.datetime.now()
 # datetime.datetime(2021, 5, 8, 11, 30, 51, 733268)
 ```
 
-Standard:
+Showing functionality of a few areas:
 
 ```python
-str(n)
-'2021-05-08 11:30:51.733268'
+x.strftime('%Y/%m/%d - %b %y - %H:%m:%S')
+# '2021/05/08 - May 21 - 11:05:51'
 ```
 
-Custom:
+Short date and 24-hour time:
 
 ```python
-n.strftime('%Y_%m_%d - %b %y - %H:%m:%S')
-'2021_05_08 - May 21 - 11:05:51'
+x.strftime('%Y-%m-%d %H:%m')
+'2021-11-02 20:11'
 ```
 
-## String to datetime
+### Parse string as datetime
 
 Parse from a string to datetime object. 
 
@@ -221,6 +217,41 @@ str(dt)
 
 There is no `strptime` method on `datetime.date`, but you can convert a datetime to date. See the next section.
 
+### Format codes
+
+- [strftime() and strptime() Format Codes](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes)
+
+Some useful combinations:
+
+- Long day.
+    ```
+    %A, %-d %B %Y
+    Sunday, 1 January 2021
+    ```
+- Short day.
+    ```
+    %Y-%M-%d
+    2021-01-01
+    ```
+- 12-hour time
+    ```
+    %I:%M %p
+    11:01 AM
+    11:01 PM
+    ```
+- 24-hour time
+    ```
+    %H:%M:%Ss
+    11:01:01s
+    23:01:01s
+    ```
+- Time zone.
+    ```
+    %z
+    +0000
+    -0400
+    ```
+
 
 ## Conversion
 
@@ -242,7 +273,6 @@ str(d)
 '2019-12-05'
 ```
 
-
 ### Convert from unix timestamp to datetime
 
 ```python
@@ -252,7 +282,7 @@ datetime.datetime.fromtimestamp(1403602426.0)
 
 The input be an integer or float.
 
-### Convert from ISO 8061
+### Parse ISO 8061 string
 
 The Twitter API often provides a datetime value in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format and Tweepy returns this to you as a string still.
 
@@ -260,28 +290,29 @@ e.g. `"2020-05-03T18:01:41+00:00"`.
 
 This section covers how to parse a datetime string to a timezone-aware datetime object, to make it more useful for calculations and representations.
 
-```python
-import datetime
+- `main.py`
+    ```python
+    import datetime
 
 
-TIME_FORMAT_IN = r"%Y-%m-%dT%H:%M%z"
+    TIME_FORMAT_IN = r"%Y-%m-%dT%H:%M%z"
 
 
-def parse_datetime(value):
-    """
-    Convert from Twitter datetime string to a datetime object.
+    def parse_datetime(value):
+        """
+        Convert from Twitter datetime string to a datetime object.
 
-    >>> parse_datetime("2020-01-24T08:37:37+00:00")
-    datetime.datetime(2020, 1, 24, 8, 37, tzinfo=datetime.timezone.utc)
-    """
-    dt = ":".join(value.split(":", 2)[:2])
-    tz = value[-6:]
-    clean_value = f"{dt}{tz}"
+        >>> parse_datetime("2020-01-24T08:37:37+00:00")
+        datetime.datetime(2020, 1, 24, 8, 37, tzinfo=datetime.timezone.utc)
+        """
+        dt = ":".join(value.split(":", 2)[:2])
+        tz = value[-6:]
+        clean_value = f"{dt}{tz}"
 
-    return datetime.datetime.strptime(clean_value, TIME_FORMAT_IN)
-```
+        return datetime.datetime.strptime(clean_value, TIME_FORMAT_IN)
+    ```
 
-### Unix timestamp to date and time
+### Convert unix timestamp to date and time
 
 Convert duration in seconds to equivalent value in days, hours, minutes or seconds. Using maths and without using `datetime`.
 
