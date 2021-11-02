@@ -64,21 +64,17 @@ puts 'Expanded message'
 
 {% endraw %}
 
-**Sample rendered HTML as codesult**
+**Sample rendered HTML**
 
-_Using the code above in a Jekyll site, here is the result after building to plain HTML._ndered result.
+_Using the code above in a Jekyll site, here is the result after building to plain HTML._
 
 <details>
 <summary>Preview</summary>
-
 <figure class="highlight">
-    <pre>
-        <code class="language-ruby" data-lang="ruby">
-        <span class="nb">puts</span> <span class="s1">'Expanded message'</span>
-        </code>
-    </pre>
+<pre><code class="language-ruby" data-lang="ruby">
+<span class="nb">puts</span> <span class="s1">'Expanded message'</span>
+</code></pre>
 </figure>
-
 </details>
 
 <br>
