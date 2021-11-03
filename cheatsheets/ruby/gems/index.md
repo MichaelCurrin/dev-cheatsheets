@@ -8,4 +8,4 @@
 
 
 [Jekyll]: {{ site.baseurl }}{% link cheatsheets/jekyll/index.md %}
-[Ruby package managers]: {% link cheatsheets/package-managers/ruby/index.md %}
+[Ruby package managers]: {{ site.baseurl }}{% link cheatsheets/package-managers/ruby/index.md %}
