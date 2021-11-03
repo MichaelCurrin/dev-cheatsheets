@@ -1,6 +1,7 @@
-# Install from GitHub
-
-How to install a gem from GitHub URL rather than RubyGems.
+---
+title: Install from GitHub
+description: How to install a gem from GitHub URL rather than RubyGems.
+---
 
 Based on [How to install gems from git repositories](https://bundler.io/guides/git.html) doc.
 
