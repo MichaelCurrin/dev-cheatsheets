@@ -1,7 +1,7 @@
 ---
+title: Dependencies
+description: Managing gems in a Jekyll site
 ---
-# Dependencies
-
 
 ## Related
 
