@@ -1,4 +1,7 @@
-# GitHub Pages
+---
+title: GitHub Pages
+description: Understanding the locked gem environment GH Pages uses 
+---
 
 ## Gems on GH Pages
 > Environment for standard GH Pages set up (without GH Actions)
@@ -29,7 +32,7 @@ But GH Pages will ignore your `Gemfile` so you can't add other gems or to change
 - `4.X`
     - Jekyll 4 is available through GH Actions and Netlify, if you configure your build and choose your Jekyll version. See [Jekyll 3 to 4][] in the docs.
     - Note that [kramdown-parser-gfm][] is already included in the lockfile for a build of Jekyll `4.1` at least so you don't have to add this to your `Gemfile`. The Kramdown version is also _already_ higher, so the vulnerability from above is not relevant.
-    - Sample
+    - Sample:
         ```ruby
         gem 'jekyll', '~> 4.1'
         ```
