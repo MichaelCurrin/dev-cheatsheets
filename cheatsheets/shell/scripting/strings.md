@@ -330,7 +330,7 @@ The last occurence should be on a line of its own, without indentation and witho
 
 In one situation, I found `EOF)` as the last line was actually valid in my shell, but in a CI flow I got a linting error.
 
-### Evaluate
+### Evaluated string heredoc
 
 ```sh
 cat << EOF
@@ -389,9 +389,21 @@ Unquoted
 
 Note double quotes on `echo` to keep newlines.
 
-### Literal
+Example - note escaped backticks to prevent executation.
 
-Prevent evaluation by using quotes - single or double. 
+```sh
+cat << EOF > README.md
+## My heading
+
+\`\`\`
+$ git clone $REMOTE_URL --branch mybranch && ./$REPO_NAME/script
+\`\`\`
+EOF
+```
+
+### Literal heredoc
+
+Prevent evaluation by using quotes (single or double).
 
 ```sh
 cat << "EOF"
@@ -408,38 +420,40 @@ Line 2
 You are $USER
 EOF
 ```
+
 Output:
+
 ```
 Line 1
 Line 2
 You are $USE
 ```
 
-Storing as a variable and formatting as a JSON string.
+Here, we store a value as a JSON string.
 
 ```sh
-MY_VAR=$(cat << 'EOF'
+MY_VAR=$(cat << EOF
 {
-    "user": "$USER"
+  "user": "$USER"
 }
 EOF
 )
-
-echo "Quoted"
-echo "$MY_VAR"
-echo "Unquoted"
-echo $MY_VAR
 ```
 
-Result:
+Printing quoted:
 
-```
-Quoted
+```console
+$ echo "$MY_VAR"
 {
-    "user": "$(whoami)"
+  "user": "my-name"
 }
-Unquoted
-{ "user": "$(whoami)" }
+```
+
+Printing unquoted.
+
+```console
+$ echo $MY_VAR
+{ "user": "my-name" }
 ```
 
 ### Indent
@@ -468,7 +482,7 @@ Line 2
 
 Note that `EOF` must not be indented.
 
-Or with a variable.
+Or, with a variable.
 
 ```sh
 VAR=$(cat <<- EOF
@@ -481,11 +495,10 @@ EOF
 echo "$VAR"
 ```
 
-
 ### Piping
 
 ```sh
-cat <<'EOF' |  sed 's/l/e/g'
+cat << 'EOF' | sed 's/l/e/g'
 Hello
 world
 EOF
@@ -499,13 +512,13 @@ wored
 Write to file.
 
 ```sh
-cat <<'EOF' |  sed 's/l/e/g' > file.txt
+cat << 'EOF' |  sed 's/l/e/g' > file.txt
 Hello
 world
 EOF
 ```
 
-### Other languages
+### Heredoc in other languages
 
 #### PHP
 
