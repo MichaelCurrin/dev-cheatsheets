@@ -33,11 +33,13 @@ The commands in the section below were done from within the [my_package](my_pack
 
 ## Create
 
+See [Rust Project Template](https://github.com/MichaelCurrin/rust-project-template) for a complete example.
+
 ### Syntax
 
-To create a crate at a given path.
+To create a crate at a given path:
 
-```bash
+```sh
 $ # Create binary. (Default)
 $ cargo new PATH # --bin
 
@@ -47,7 +49,7 @@ $ cargo new PATH --lib
 
 Or, initialize an existing directory.
 
-```bash
+```sh
 $ mkdir my_dir
 $ cd my_dir
 $ cargo --init
@@ -57,9 +59,9 @@ Using `new` initializes with a `.git` directory and `.gitignore` file, while `--
 
 ### Example
 
-Create a new package, which is a git repo with an ignore file. The implied default `--bin` option is to create a _binary_ package with a hello world binary executable.
+Create a new package, which is a Git repo with an ignore file. The implied default `--bin` option is to create a _binary_ package with a hello world binary executable.
 
-```bash
+```console
 $ cargo new my_package
      Created binary (application) `my_package` package
 $ cd my_package
@@ -68,13 +70,11 @@ $ cd my_package
 Structure of the new `my_package` directory:
 
 ```
-.git
+.git/
 src/main.rs
 Cargo.toml
 .gitignore
 ```
-
-(After creating the directory, I deleted the `.git` directory in this case since this is part of a larger repo.)
 
 The `.gitignore` excludes the `target` directory (used for output) and `*.rs.bk` files.
 
@@ -112,9 +112,9 @@ Compiling my_package v0.1.0 (.../my_package)
 
 ## Run
 
-Build and run a package.
+Build and run a package:
 
-```bash
+```console 
 $ cargo run
    Compiling my_package v0.1.0 (.../my_package)
     Finished dev [unoptimized + debuginfo] target(s) in 3.63s
