@@ -1,5 +1,27 @@
 # Cargo
 
+## Install
+
+Rust programs and Cargo plugins can be installed to Cargo's _bin_ directory with:
+
+```sh
+$ cargo install
+```
+
+The directory includes standard tools and will be added to your `.profile` and `.bash_profile` files on installation. On Unix this path is `$HOME/.cargo/bin` and Windows is `%USERPROFILE%\.cargo\bin`.
+
+## Version 
+
+Check you Cargo version:
+
+```sh
+$ cargo -V
+cargo 1.32.0-beta (1b6702f22 2018-12-06)
+```
+
+
+## Help
+
 Subcommands from `cargo --help`.
 
 ```
