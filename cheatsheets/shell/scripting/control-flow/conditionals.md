@@ -1,6 +1,44 @@
 # Conditionals
 
-This does not cover `if` statements but rather just flag checks to be used inside conditions like `if` statements.
+How to use flags when doing a test.
+
+
+## How to use
+
+These work
+
+
+### Bracket
+
+with new sytanx with left hard bracket built-in command:
+
+```sh
+[[ -f my-file.txt ]]
+
+# OR
+[ -f my-file.txt ]
+```
+
+
+### test command
+
+And old syntax with `test` command:
+
+```sh
+test -f my-file.txt
+```
+
+The brackets syntax looks weird on its own as a flag apparently by itself, but if you look at the old style then the flag was actually for the `test` command and makes more sense.
+
+### if statement
+
+Use `test` or `[` with an `if` statement.
+
+```sh
+if [[ -f my-file.txt ]]; then
+  echo 'File exists'
+fi
+```
 
 See also [if else][] section for more info on how to do tests and `if` statements.
 
