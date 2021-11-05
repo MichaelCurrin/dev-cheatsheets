@@ -3,11 +3,45 @@ title: Common commands
 description: Some common CLI commands to know around Rust tools
 ---
 
-## Resources:
+## Resources
 
 - [Getting started](https://www.rust-lang.org/learn/get-started) guide in the docs.
     > Quickly set up a Rust development environment and write a small app!
 - [Cargo commands](https://doc.rust-lang.org/cargo/commands/index.html) in the docs.
+
+
+## Update Rust with Rustup
+
+```sh
+$ rustup update
+```
+
+## Compile and run apps with Rustc
+
+Compile:
+
+```sh
+$ rustc file.rs
+```
+
+Execute the binary output file:
+
+```sh
+$ # On Unix.
+$ ./file
+```
+
+```console
+> # On Windows.
+> file.exe
+```
+
+Or compile and run - in one line:
+
+```sh
+$ # On Unix.
+$ rustc file.rs && ./file
+```
 
 
 ## Formatting
