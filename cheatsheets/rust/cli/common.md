@@ -1,5 +1,5 @@
 ---
-title: Common
+title: Common commands
 description: Some common CLI commands to know around Rust tools
 ---
 
