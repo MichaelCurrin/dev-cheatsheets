@@ -1,11 +1,14 @@
 # Regex
 
-See [Regex101](https://regex101.com/) for trying patterns and a searchable guide to syntax.
 
-## Resources
+### Resources
 
 - [Regex](https://michaelcurrin.github.io/dev-resources/resources/other/regex/) resources.
-- [JavaScript Regex][] section.
+- [Regex Cheatsheet](https://www.keycdn.com/support/regex-cheatsheet) on Key CDN
+
+### Related
+
+- [JavaScript Regex][] cheatsheet.
 - [Regex][] in Code Cookbook.
 
 [JavaScript Regex]: {{ site.baseurl }}{% link cheatsheets/javascript/general/strings/regex.md %}
