@@ -13,8 +13,18 @@
 | `\S`          | Not whitespace                           |
 | `\b`          | Word boundary, like space or punctuation |
 | `.`           | Any character, except a newline          |
-| `\.`          | A literal dot                            |
-| `\n`          | A newline character                      |
 | `:alpha:`     | Letter                                   |
 | `:digit:`     | Digit                                    |
 | `:space:`     | Space                                    |
+
+Escaped literal characters:
+
+| Symbol | Description             |
+| ------ | ----------------------- |
+| `\.`   | A literal dot           |
+| `\n`   | A newline character     |
+| `\\`   | A literal backspace     |
+| `\$`   | A literal dollar sign   |
+| `\?`   | A literal question mark |
+| `\(`   | A literal bracket       |
+| `\[`   | A literal bracket       |
