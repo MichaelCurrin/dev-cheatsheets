@@ -4,28 +4,46 @@ description: Guide to managing out NPM packages in your project
 # Upgrade packages
 
 
+See also [npm-check][], which is a 3rd party package which can give more control/convenience over checking for outdated dependencies and upgrading them.
+
+[npm-check]: https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/npm-check/
+
+
 ## Overview
 
 ### Upgrade one package
 
 This can be useful for example if `webpack` is blocking a subdependency like `glob-parent`.
 
-1. Upgrade package by name.
-    ```sh
-    npm update webpack
-    ```
+#### Name
+
+Upgrade package by name:
+
+```sh
+$ npm update webpack
+```
 
 That will stay within the `^` or `~` bounds.
 
+#### Name and version
+
 For a more aggressive jump such as from `4.x` to `5.x`, do:
 
-1. Upgrade package by name.
-    ```sh
-    $ npm update webpack@5.6.7
-    ```
-    Or
+```sh
+$ npm update webpack@5.6.7
+```
+
+#### Name and alias
+
+Or use an aliased version, if one exists on NPM registry.
+
+- Latest version:
     ```sh
     $ npm update webpack@latest
+    ```
+- More bleeding-edge and unstable than latest.
+    ```sh
+    $ npm update webpack@next
     ```
 
 ### Upgrade all upgradeable packages
@@ -34,7 +52,7 @@ For a more aggressive jump such as from `4.x` to `5.x`, do:
     ```sh
     $ npm outdated
     ```
-2. Update all outdated packages.
+1. Update all outdated packages.
     ```sh
     $ npm update
     ```
@@ -45,17 +63,21 @@ For a more aggressive jump such as from `4.x` to `5.x`, do:
 
 ### Install latest
 
-Recreate lock file from scratch. Packages will still be limited by restrictions in `package.json` though, so this is relatively safe.
+Install the latest versions of all packages, by recreating the lock file from scratch.
+
+This is more aggresive than using the update steps above - you'll lose locks at all levels.
+
+Packages will still be limited by restrictions in `package.json` though, so this is relatively safe.
 
 1. Delete `package-lock.json`.
-2. Install dependencies.
+1. Install dependencies.
     ```sh
     $ npm install
     ```
-3. Commit the updated `package-lock.json` file.
+1. Commit the updated `package-lock.json` file.
 
 
-## Find outdated packages
+## Check for outdated packages
 
 From the [npm outdated](https://docs.npmjs.com/cli/outdated) command's docs.
 
@@ -188,13 +210,13 @@ $ npx npm-upgrade
 ```
 
 
-## Fix security vulnernabities
+## Fix security vulnernabilities
 
 Use the `audit` command.
 
 ### CLI usage
 
-```
+```sh
 npm audit [--json] [--production]
 npm audit fix [--force|--package-lock-only|--dry-run|--production|--only=(dev|prod)]
 ```
@@ -266,6 +288,7 @@ found 3 vulnerabilities (1 moderate, 2 high) in 1649 scanned packages
 ### Fix
 
 Use the fix subcommand.
+    
 ```sh
 $ npm audit fix
 ```
