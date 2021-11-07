@@ -1,5 +1,6 @@
 # Regex
 
+See [Regex101](https://regex101.com/) for trying patterns and a searchable guide to syntax.
 
 ## Resources
 
