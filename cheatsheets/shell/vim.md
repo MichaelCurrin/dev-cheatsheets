@@ -1,5 +1,5 @@
-# Vim
 ---
+title: Vim
 description: Guide to using the `vim` editor
 ---
 
@@ -40,7 +40,19 @@ See Vim config files [here](https://github.com/amix/vimrc/tree/master/vimrcs) fo
 set number
 ```
 
-## Run
+Or
+
+```
+:setnumber
+```
+
+### Enable syntax highlighting 
+
+```
+:syntax on
+```
+
+## Execute code
 
 ### Python
 
