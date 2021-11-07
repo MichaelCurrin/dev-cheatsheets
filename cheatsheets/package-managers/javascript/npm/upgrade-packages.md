@@ -126,7 +126,7 @@ Optionally supply package names as arguments.
 
 For example, this might change as follows:
 
-```
+```diff
 - "foo": "^1.0.0"
 + "foo": "^1.2.3"
 ```
