@@ -112,9 +112,11 @@ These are usually based on the file extension.
 - `ruby` or `rb`
 - `html`
 - `javascript` or `js`
-- `sh` or `shell`
-- `bash`
-- `powershell`
+- Shell
+    - `sh` or `shell`
+    - `bash` for 
+    - `powershell` for Windows.
+    - `console` - for 
 - `diff`
 - `liquid`
 - `yaml` or `yml`
@@ -130,6 +132,12 @@ These are usually based on the file extension.
 #### Shell
 
 Content from [MDBook](https://github.com/rust-lang/mdBook/blob/master/README.md).
+
+I like to use `sh` a lot. I seem to get the same results as using `shell` and also the same as when using `bash` (except in rare cases like DocsifyJS where the Bash plugin doesn't recognize `sh`).
+
+You don't have to use a dollar sign, but it helps indicate you are in a shell console.
+
+Note the output is colored here, unlike in [console](#console) below.
 
 **sh**
 
