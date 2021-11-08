@@ -22,10 +22,14 @@ Example of `code` in a sentence.
 
 Indent the code by 4 spaces.
 
+Code:
+
 ```markdown
     # Indenting this line in markdown turned it into preformatted mono-spaced text, without any particular code syntax.
     print('Hello world'!)
 ```
+
+Result:
 
     # Indenting this line in markdown turned it into preformatted mono-spaced text, without any particular code syntax.
     print('Hello world'!)
@@ -186,7 +190,29 @@ $ mdbook build
 
 **console**
 
-Note unlike the shell styles above, everything after a `$` entry is all one color (not trying to apply shell highlighting to something that could be plain text or _any_ program language). And it also separates output nicely in a different color to the input.
+Note unlike the shell styles above, everything after a `$` or `>` entry is all _one color_ (which is nice if you don't want t apply shell highlighting to something that is probably be plain text). 
+
+And it also separates output nicely in a different color to the input.
+
+```console
+$ ncu
+Checking package.json
+[====================] 5/5 100%
+
+ express           4.12.x  →   4.13.x
+ multer            ^0.1.8  →   ^1.0.1
+```
+ 
+```console
+> ncu
+Checking package.json
+[====================] 5/5 100%
+
+ express           4.12.x  →   4.13.x
+ multer            ^0.1.8  →   ^1.0.1
+```
+ 
+This also works well if you have multiple commands and you want to alternative between input and output clearly.
 
 ```console
 $ cargo install mdbook-linkcheck
