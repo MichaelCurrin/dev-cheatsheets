@@ -9,6 +9,21 @@
 This will also install missing packages.
 
 
+## Related
+
+- [install][] command
+- [outdated][] command
+- [Install packages][]
+- [Maintain packages][]
+- [Upgrade packages][]
+
+[install]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/commands/install.md %}
+[outdated]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/commands/outdated.md %}
+[Install packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/install-packages.md %}
+[Maintain packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/maintain-packages.md %}
+[Upgrade packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/upgrade-packages.md %}
+
+
 ## Upgrade all
 
 ```sh
