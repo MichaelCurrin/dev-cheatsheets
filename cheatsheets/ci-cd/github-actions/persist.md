@@ -1,6 +1,6 @@
 ---
 title: Persist
-description: How to reuse a value from one step in a later step or job
+description: Capture output - how to reuse a value from one step in a later step or job
 ---
 
 {% raw %}
@@ -54,6 +54,28 @@ steps:
 
 ### Syntax
 
+Plain text:
+
+```sh
+echo "::set-output name=my_value::hello"
+```
+
+Varible:
+
+```sh
+echo "::set-output name=my_value::$MY_VAR"
+```
+
+Expression:
+
+```sh
+echo "::set-output name=my_value::$(grep ...)"
+
+# OR
+MY_VAR="$(grep ...)"
+echo "::set-output name=my_value::$MY_VAR"
+```
+
 Reuse across steps. My trimmed down example from the docs example.
 
 ```yaml
@@ -72,14 +94,14 @@ steps:
 
 ### Examples
 
-Note use of the display in the first step, to check the value which was set in the same step.
+A subshell is used `$(...)` to get a value, then that is stored with `set-output`.
 
 ```yaml
 steps:
   - name: Get Go version
     id: vars
     run: |
-      echo ::set-output name=go_version::$(grep ...)
+      echo "::set-output name=go_version::$(grep '^go' go.mod | egrep -o '(\d\.\d+)')"
       echo "Using Go version ${{ steps.vars.outputs.go_version }}"
 
   - name: Set up go
