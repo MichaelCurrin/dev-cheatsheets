@@ -3,23 +3,38 @@ title: Output only matching
 description: Return show the portion of the line that matches.
 ---
 
+This is useful:
+
+- when you want to exclude text on a line which does not match
+- when there are multiple matches on a line and you want to show each match on a separate line, or
+
 See also [thread](https://unix.stackexchange.com/questions/13466/can-grep-output-only-specified-groupings-that-match).
 
-Flag:
+### Help
 
 ```
-     -o, --only-matching
-             Prints only the matching part of the lines.
+ -o, --only-matching
 ```
 
-Usage:
+macOS:
+
+> Prints only the matching part of the lines.
+
+Linux:
+
+> Show only nonempty parts of lines that match
+
+
+## Usage
 
 ```sh
 $ grep -o FILE PATTERN
 ```
 
 
-## Example
+## Examples
+
+### Partial
 
 Given file:
 
@@ -55,4 +70,21 @@ But you can chain grep commands together.
 ```console
 $ grep '^go' go.mod | egrep -o '(\d\.\d+)'
 1.16
+```
+
+### Multiple matches
+
+With the flag:
+
+```console
+$ echo 'abcd abcdef' | grep -o bc
+bc
+bc
+```
+
+Without:
+
+```console
+$ echo 'abcd abcdef' | grep bc
+abcd abcdef
 ```
