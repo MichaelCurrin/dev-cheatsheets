@@ -3,6 +3,19 @@
 - [npm-outdated](https://docs.npmjs.com/cli/v7/commands/npm-outdated) docs
 
 
+## Related
+
+- [update][] command
+- [Install packages][]
+- [Maintain packages][]
+- [Upgrade packages][]
+
+[update]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/commands/update.md %}
+[Install packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/install-packages.md %}
+[Maintain packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/maintain-packages.md %}
+[Upgrade packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/upgrade-packages.md %}
+
+
 ## Basic
 
 ```console
