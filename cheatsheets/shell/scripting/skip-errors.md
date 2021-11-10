@@ -31,6 +31,16 @@ CMD || true
 
 If you run `echo $?` you'll see `0` for success, as it uses the exit code for the entire line above it (which will come from the last executed piece).
 
+It works for variables and subshells too. Here using `npm outdated` which gives an error if there are packages to update, and capturing the output in a variable without aborting.
+
+```console
+$ OUTDATED=$(npm outdated)
+$ echo $?
+1
+$ OUTDATED=$(npm outdated) || true
+$ echo $?
+0
+```
 
 ## Run quietly
 
@@ -39,6 +49,7 @@ Silence stderr, but keep stdout.
 ```sh
 CMD &> /dev/null
 ```
+
 
 ## Continue without aborting and fail silently
 
@@ -57,7 +68,7 @@ You could check if file exists and is readable and is executable. Or just pick o
 
 ```sh
 # Optional command
-if [ -f foo.txt ]; then
+if [[ -f foo.txt ]]; then
   rm foo.txt
 fi
 
@@ -68,7 +79,7 @@ Here is a directory check in one line.
 
 ```sh
 # Optional command.
-[ -d foo ] && rm -rf foo
+[[ -d foo ]] && rm -rf foo
 
 # More commands
 ```
@@ -76,8 +87,8 @@ Here is a directory check in one line.
 
 Maybe you want to check it is empty.
 
-```
-[ -z foo.txt ]
+```sh
+[[ -z foo.txt ]]
 ```
 
 There could be multiple reasons for the command to fail and you'd have to catch them all.
