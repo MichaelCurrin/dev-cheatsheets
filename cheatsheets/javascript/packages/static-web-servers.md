@@ -23,7 +23,9 @@ The instructions are for global install but also work at the project level.
 
 Or use `npx` to run without installing (useful if you want to try out a few and get the latest version but slow to call each time).
 
-In alphabetical order.
+You can also add the run commands to `package.json`. e.g. for `start` you can put `serve -p 8080`.
+
+In alphabetical order:
 
 - [glance](https://www.npmjs.org/package/glance)
 - [harp](http://harpjs.com/)
@@ -75,11 +77,18 @@ In alphabetical order.
     - Install and run:
         ```sh
         $ npm i -g sirv
+        
         $ # Serve.
         $ sirv
+        
+        $ # Dev mode
+        $ sirv --dev
+        
         $ # Open access to requests on the network.
         $ sirv --host
-        $ serve  --port 8080 --cors --single
-        $ # Build
+        $ sirv --port 8080 --cors --single
+        
+        $ # Target a directory.
         $ sirv build
+        $ sirv public
         ```
