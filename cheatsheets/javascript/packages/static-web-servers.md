@@ -1,6 +1,7 @@
-# Static web servers
-
-A selection of JS packages which can be used to serve static assets.
+---
+title: Static web servers
+description: A selection of Node packages which can be used to serve static assets
+---
 
 These are typically for local dev servers including static HTML or built output for Single-Page Apps like React.
 
