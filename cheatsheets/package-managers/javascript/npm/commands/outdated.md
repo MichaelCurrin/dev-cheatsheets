@@ -1,6 +1,11 @@
 # outdated
 
 - [npm-outdated](https://docs.npmjs.com/cli/v7/commands/npm-outdated) docs
+    > This command will check the registry to see if any (or, specific) installed packages are currently outdated.
+
+```sh
+$ npm outdated
+```
 
 
 ## Related
@@ -18,6 +23,22 @@
 
 ## Basic
 
+```sh
+$ npm outdated
+```
+
+If there is nothing to update, you'll get a success exit code and no output.
+
+```console
+$ npm outdated
+$ echo $?
+0
+```
+
+But if there _are_ outdated packages, you'll get an error exit code and some output:
+
+e.g.
+
 ```console
 $ npm outdated
 Package   Current    Wanted    Latest  Location
@@ -26,13 +47,46 @@ dd-trace   0.33.2    0.33.2     1.5.1  myrepo-lib-utils
 pg          8.5.1     8.7.1     8.7.1  myrepo-lib-utils
 ```
 
-If a package is not yet installed, it will appear as missing. Here, Vue 2 is the "latest" on NPM even though Vue 3 has been out for a long time, so the `Latest` value is not accurate.
+e.g.
+
+```console
+$ npm outdated
+Package             Current  Wanted  Latest  Location
+eslint                6.8.0   6.8.0   7.7.0  preact-quickstart
+jest                 24.9.0  24.9.0  26.4.0  preact-quickstart
+jest-preset-preact    1.0.0   1.0.0   4.0.2  preact-quickstart
+sirv-cli              1.0.3   1.0.3   1.0.6  preact-quickstart
+```
+
+### Missing
+
+If a package is not yet installed, it will appear as **MISSING**.
 
 ```console
 $ npm outdated
 Package  Current  Wanted  Latest  Location
 vue      MISSING  3.2.21  2.6.14  vue-quickstart
+echo $?
+1
 ```
+
+### Warning on latest
+
+Here after `npm install` or `npm install vue@next`:
+
+```console
+$ npm outdated
+Package  Current  Wanted  Latest  Location
+vue       3.2.21  3.2.21  2.6.14  vue-quickstart
+$ echo $?
+1
+```
+
+Notes:
+
+- Here, Vue 2 is the "latest" on NPM even though Vue 3 has been out for a long time. So the `Latest` value is not accurate above and that also means that the command appears as a failure as there is something to uppgrade, even though there isn't/
+- But the `Wanted` column still follows the `^3.0.0` setting in `package.json` and give the highest within that.
+
 
 ## Global
 
