@@ -15,6 +15,13 @@ To use GH Actions, you must create a workflow YAML file with appropriate fields 
 Here are some other areas to start with:
 
 - Workflow syntax and samples / use-cases around them
-    - [Jobs](jobs.md)
-    - [Triggers](triggers.md)
-- [Resources](https://michaelcurrin.github.io/dev-resources/ci-cd/github-actions/) for external links such as to docs, to help you get into how Actions work and the syntax
+    - [Jobs][]
+    - [Triggers][]
+
+[Jobs]: {{ site.baseurl }}{% link cheatsheets/ci-cd/github-actions/jobs.md %}
+[Triggers]: {{ site.baseurl }}{% link cheatsheets/ci-cd/github-actions/triggers.md %}
+
+### Related
+
+- [GH Actions](https://michaelcurrin.github.io/dev-resources/resources/ci-cd/github-actions/) in Dev Resources. For external links such as to docs, to help you get into how Actions work and the syntax.
+- [GH Actions](https://michaelcurrin.github.io/dev-resources/resources/ci-cd/github-actions/) recipes in Code Cookbook.
