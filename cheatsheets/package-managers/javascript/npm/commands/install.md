@@ -5,12 +5,12 @@ description: The `npm install` command
 
 ## Related
 
-- [upgrade][] command
+- [update][] command
 - [Install packages][]
 - [Maintain packages][]
 - [Upgrade packages][]
 
-[upgrade]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/commands/upgrade.md %}
+[upgrade]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/commands/update.md %}
 [Install packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/install-packages.md %}
 [Maintain packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/maintain-packages.md %}
 [Upgrade packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/upgrade-packages.md %}
