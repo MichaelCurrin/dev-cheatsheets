@@ -34,9 +34,9 @@ You can `'now'` as pass it to a date-related filter.
 <!-- This page was last updated on {{ "now" | date: "%Y-%m-%d %H:%M" }} -->
 ```
 
-### Deprecated approach
+### Alternate approach
 
-This was how `now` used to be done.
+Get the current time.
 
 ```liquid
 {{ site.time }}
