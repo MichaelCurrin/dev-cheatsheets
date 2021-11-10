@@ -1,10 +1,12 @@
-# update
+---
+title: update
+description: update all the packages listed to the latest version (specified by the tag config), respecting semver.
+---
 
 - [npm-update](https://docs.npmjs.com/cli/v7/commands/npm-update) docs
-
-> update all the packages listed to the latest version (specified by the tag config),
-> 
-> respecting the semver constraints of both your package and its dependencies (if they also require the same package).
+    > update all the packages listed to the latest version (specified by the tag config),
+    > 
+    > respecting the semver constraints of both your package and its dependencies (if they also require the same package).
 
 This will also install missing packages.
 
@@ -24,6 +26,7 @@ This will also install missing packages.
 [Upgrade packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/upgrade-packages.md %}
 
 
+
 ## Upgrade all
 
 ```sh
@@ -33,11 +36,25 @@ $ npm update
 
 ## Upgrade one
 
+
+Optionally supply package names as arguments.
+
 ```sh
 $ npm update PACKAGE_NAME
 ```
 
-Or
+For example, this might change as follows:
+
+```diff
+- "foo": "^1.0.0"
++ "foo": "^1.2.3"
+```
+
+But, the package will **remain** within the initial bounds. So the command here would not upgrade from `1` to `2`. See the sections below for that.
+
+
+
+Or use `install` with a falag.
 
 ```sh
 $ npm install --upgrade PACKAGE_NAME
@@ -57,5 +74,6 @@ $ npm update --ignore-scripts
 
 ```sh
 $ npm update --global
+$ npm update -g
 ```
 
