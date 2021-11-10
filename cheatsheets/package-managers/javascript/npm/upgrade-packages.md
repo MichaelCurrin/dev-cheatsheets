@@ -4,8 +4,6 @@ description: Guide to managing out NPM packages in your project
 # Upgrade packages
 
 
-
-
 ## Overview
 
 ### Upgrade one package
@@ -82,6 +80,23 @@ See [outdated][] command cheatsheet.
 
 ```sh
 $ npm outdated
+```
+
+If you want to use that in a shell script or CI, you need to force it to succeed (it will give an error if there are packages to update).
+
+```sh
+OUTDATED=$(npm outdated) || true
+
+if [[ -z "$OUTDATED" ]]; then
+  echo 'Packages are up to date'
+  exit 0
+fi
+
+echo 'Outdate summary:'
+echo "$OUTDATED"
+
+echo 'Upgrading'
+npm update
 ```
 
 
