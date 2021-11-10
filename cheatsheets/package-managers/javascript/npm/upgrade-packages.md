@@ -4,9 +4,6 @@ description: Guide to managing out NPM packages in your project
 # Upgrade packages
 
 
-See also [npm-check][], which is a 3rd party package which can give more control/convenience over checking for outdated dependencies and upgrading them.
-
-[npm-check]: https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/npm-check/
 
 
 ## Overview
@@ -79,59 +76,26 @@ Packages will still be limited by restrictions in `package.json` though, so this
 
 ## Check for outdated packages
 
-From the [npm outdated](https://docs.npmjs.com/cli/outdated) command's docs.
+See [outdated][] command cheatsheet.
 
-> This command will check the registry to see if any (or, specific) installed packages are currently outdated.
+[outdated]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/commands/outdated.md %}
 
 ```sh
 $ npm outdated
 ```
 
-<details>
-<summary>Sample output using NPM 6.14.7</summary>
-
-```
-Package             Current  Wanted  Latest  Location
-eslint                6.8.0   6.8.0   7.7.0  preact-quickstart
-jest                 24.9.0  24.9.0  26.4.0  preact-quickstart
-jest-preset-preact    1.0.0   1.0.0   4.0.2  preact-quickstart
-sirv-cli              1.0.3   1.0.3   1.0.6  preact-quickstart
-```
-
-</details>
-
 
 ## Upgrade packages
 
-### Upgrade within bounds
+See [update][] command cheatsheet.
 
-From the [npm update](https://docs.npmjs.com/cli/update) command's docs.
+[update]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/commands/update.md %}
 
-> This command will update all the packages listed to the latest version (specified by the tag config), respecting semver.
+### Upgrade all within bounds
 
 ```sh
 $ npm update
-$ # aliases: up, upgrade, udpate
 ```
-
-Or the longer.
-
-```sh
-$ npm install --upgrade
-```
-
-For global packages, add `-g`.
-
-Optionally supply package names as arguments.
-
-For example, this might change as follows:
-
-```diff
-- "foo": "^1.0.0"
-+ "foo": "^1.2.3"
-```
-
-But, the package will **remain** within the initial bounds. So the command here would not upgrade from `1` to `2`. See the sections below for that.
 
 ### Upgrade package
 
@@ -195,18 +159,6 @@ Repeat for all your outdated packages as separate commands or all in one. e.g.
 
 ```sh
 $ npm install react react-dom
-```
-
-### Use the npm-upgrade package
-
-If you use this 3rd-party package, you can upgrade multiple packages and once and use the interactive view.
-
-See [npm-upgrade](https://www.npmjs.com/package/npm-upgrade) homepage and docs.
-
-> Interactive CLI utility to easily update outdated NPM dependencies with changelogs inspection support.
-
-```sh
-$ npx npm-upgrade
 ```
 
 
@@ -292,3 +244,15 @@ Use the fix subcommand.
 ```sh
 $ npm audit fix
 ```
+
+    
+## Alternatives to NPM CLI
+    
+- [npm-upgrade][]
+    > Interactive CLI utility to easily update outdated NPM dependencies with changelogs inspection support.
+- [npm-check][]
+    > Check for outdated, incorrect, and unused dependencies
+
+
+[npm-upgrade]: https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/package-versions/npm-check.html
+[npm-check]: https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/npm-check/
