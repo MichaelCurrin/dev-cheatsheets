@@ -29,6 +29,8 @@ Abort the script if a check evaluates to false. Here we see if a variable is set
 Using `-z` for empty. 
 
 ```sh
+MY_VAR="$1"
+
 if [[ -z "$MY_VAR" ]]; then
   echo 'MY_VAR must be set'
   exit 1
