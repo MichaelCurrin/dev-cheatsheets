@@ -26,6 +26,13 @@ dd-trace   0.33.2    0.33.2     1.5.1  myrepo-lib-utils
 pg          8.5.1     8.7.1     8.7.1  myrepo-lib-utils
 ```
 
+If a package is not yet installed, it will appear as missing. Here, Vue 2 is the "latest" on NPM even though Vue 3 has been out for a long time, so the `Latest` value is not accurate.
+
+```console
+$ npm outdated
+Package  Current  Wanted  Latest  Location
+vue      MISSING  3.2.21  2.6.14  vue-quickstart
+```
 
 ## Global
 
@@ -34,7 +41,7 @@ $ npm outdated --global
 ```
 
 
-## Output
+## Output formats
 
 ### JSON
 
@@ -64,12 +71,28 @@ $ npm outdated --json
 
 ### Long output
 
+Add `Package Type` column and `Homepage` column (using `homepage` field from `package.json` of installed packages.
+
+```sh
+$ npm outdated --long
+```
+
+e.g.
+
 ```console
 $ npm outdated --long
 Package   Current    Wanted    Latest  Location             Package Type  Homepage
 aws-sdk   2.882.0  2.1024.0  2.1024.0  myrepo-lib-utils  dependencies  https://github.com/aws/aws-sdk-js
 dd-trace   0.33.2    0.33.2     1.5.1  myrepo-lib-utils  dependencies  https://github.com/DataDog/dd-trace-js#readme
 pg          8.5.1     8.7.1     8.7.1  myrepo-lib-utils  dependencies  https://github.com/brianc/node-postgres
+```
+
+e.g. Here, nothing in installed yet.
+
+```console
+$ npm outdated --long
+Package  Current  Wanted  Latest  Location        Package Type  Homepage
+vue      MISSING  3.2.21  2.6.14  vue-quickstart  dependencies
 ```
 
 ### Parseable
