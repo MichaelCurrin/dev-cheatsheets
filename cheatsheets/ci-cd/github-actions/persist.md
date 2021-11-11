@@ -60,7 +60,7 @@ Plain text:
 echo "::set-output name=my_value::hello"
 ```
 
-Varible:
+Variable:
 
 ```sh
 echo "::set-output name=my_value::$MY_VAR"
@@ -70,8 +70,11 @@ Expression:
 
 ```sh
 echo "::set-output name=my_value::$(grep ...)"
+```
 
-# OR
+Or
+
+```sh
 MY_VAR="$(grep ...)"
 echo "::set-output name=my_value::$MY_VAR"
 ```
