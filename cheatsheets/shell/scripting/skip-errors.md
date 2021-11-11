@@ -57,7 +57,7 @@ Note, you could use `;` instead, but then the second bit will always run, which 
 
 ### If statement
 
-Here we check if packages are up to date (code `0`) or outdated (code `1`). I don't know how to capture the output in a variable here, but you can do something to have it printed or write to `/dev/null` to make it silent.
+Here we check if packages are up to date (code `0`) or outdated (code `1`). Also output is silenced.
 
 ```sh
 if npm outdated > /dev/null; then
@@ -69,6 +69,23 @@ echo 'Upgrading'
 npm update
 ```
 
+Here capturing the output. And assuming `set -e` _not_ set, so that a command can fail and its exit status can be used.
+
+```sh
+OUTDATED=$(npm outdated)
+
+if [[ "$?" -eq 0 ]] > /dev/null; then
+  echo 'Nothing to update'
+  exit 0
+fi
+
+echo 'Outdated packages:'
+echo "$OUTDATED"
+echo
+
+echo 'Upgrading'
+npm update
+```
 
 ## Hide error output
 
