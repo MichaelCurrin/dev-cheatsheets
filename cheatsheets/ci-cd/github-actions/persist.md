@@ -1,6 +1,6 @@
 ---
-title: Persist
-description: Capture output - how to reuse a value from one step in a later step or job
+title: Persist output
+description: How to capture output from one stp and reuse in a later step or another job
 ---
 
 {% raw %}
