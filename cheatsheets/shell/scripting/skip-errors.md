@@ -8,6 +8,13 @@ The assumption is this set as start of the script such that any errors would cau
 set -e
 ```
 
+## Related
+
+- [Status check][] cheatsheet
+
+[Status check]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/control-flow/status-check.md %}
+
+
 ## Default
 
 Assume that `CMD` references a failing command such as running copy, move or remove on a file or folder that is not valid to operate on. e.g. `rm foo.txt` when `foo.txt` does not exist.
@@ -23,6 +30,8 @@ You'll also have any error messages logged on stderr.
 
 ## Continue without aborting
 
+### OR and true to force success
+
 If a step is optional or will only be needed sometimes (like deleting a temporary file which won't exist on the very first run).
 
 ```sh
@@ -31,7 +40,9 @@ CMD || true
 
 If you run `echo $?` you'll see `0` for success, as it uses the exit code for the entire line above it (which will come from the last executed piece).
 
-It works for variables and subshells too. Here using `npm outdated` which gives an error if there are packages to update, and capturing the output in a variable without aborting.
+This works for variables and subshells too. 
+
+Example - here using `npm outdated` which gives an error if there are packages to update, and capturing the output in a variable without aborting.
 
 ```console
 $ OUTDATED=$(npm outdated)
@@ -42,9 +53,26 @@ $ echo $?
 0
 ```
 
-## Run quietly
+Note, you could use `;` instead, but then the second bit will always run, which is unnecessary.
 
-Silence stderr, but keep stdout.
+### If statement
+
+Here we check if packages are up to date (code `0`) or outdated (code `1`). I don't know how to capture the output in a variable here, but you can do something to have it printed or write to `/dev/null` to make it silent.
+
+```sh
+if npm outdated > /dev/null; then
+  echo 'Nothing to update'
+  exit 0
+fi
+
+echo 'Upgrading'
+npm update
+```
+
+
+## Hide error output
+
+Silence stderr. Keep stdout.
 
 ```sh
 CMD &> /dev/null
