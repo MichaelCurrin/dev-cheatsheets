@@ -66,13 +66,13 @@ Variable:
 echo "::set-output name=my_value::$MY_VAR"
 ```
 
-Expression:
+Expression - use a subshell.
 
 ```sh
 echo "::set-output name=my_value::$(grep ...)"
 ```
 
-Or
+Or in two steps:
 
 ```sh
 MY_VAR="$(grep ...)"
@@ -97,7 +97,21 @@ steps:
 
 ### Examples
 
-A subshell is used `$(...)` to get a value, then that is stored with `set-output`.
+Get output from `npm outdated` command, if any.
+
+```yaml
+steps:
+ - name: Check for outdated packages
+    run: |
+      OUTDATED=$(npm outdated) || true
+      echo "::set-output name=outdated::$OUTDATED"
+      
+ - name: Upgrade
+   if: ${{ steps.vars.outputs.outdated != '' }}
+   run: npm upgrade
+```
+
+Get Go version from `go.mod`.
 
 ```yaml
 steps:
@@ -113,9 +127,7 @@ steps:
       go-version: ${{ steps.vars.outputs.go_version }}
 ```
 
-From [Yarn](https://michaelcurrin.github.io/code-cookbook/recipes/ci-cd/github-actions/workflows/node/yarn.html) guide.
-
-We run `yarn cache dir` command and store and retrieve the value.
+Handle Yarn cache directory path. We run `yarn cache dir` command and store and retrieve the value. From [Yarn](https://michaelcurrin.github.io/code-cookbook/recipes/ci-cd/github-actions/workflows/node/yarn.html) guide.
 
 ```yaml
 steps:
