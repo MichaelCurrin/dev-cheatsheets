@@ -75,8 +75,12 @@ npm update
 Silence stderr. Keep stdout.
 
 ```sh
-CMD &> /dev/null
+CMD 2> /dev/null
 ```
+
+See [Redirection][] cheatsheet.
+
+[Redirection]: {{ site.baseurl }}{% link cheatsheets/shell/files/redirection.md %}
 
 
 ## Continue without aborting and fail silently
@@ -84,7 +88,7 @@ CMD &> /dev/null
 Combine the sections above:
 
 ```sh
-CMD &> /dev/null || true
+CMD 2> /dev/null || true
 ```
 
 
