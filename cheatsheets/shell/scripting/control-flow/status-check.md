@@ -3,7 +3,14 @@
 Check the exit status of a previous command.
 
 
-## If
+## Related
+
+- [Skip errors][] cheatsheet.
+
+[Skip errors]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/skip-errors.md %}
+
+
+## Check exit status value with if statement
 
 This is a multi-line `if` statement, which is useful for more complex statements or if readability is important.
 
@@ -27,6 +34,23 @@ if [[ "$?" -ne 0 ]]; then
   echo 'Failed!';
   exit 1
 fi
+```
+
+
+## Check exit status of command directly
+
+An `if` statement is used. But we don't check `$?` but rather the command directly.
+
+Here we check if packages are up to date (code `0`) or outdated (code `1`).
+
+```sh
+if npm outdated > /dev/null; then
+  echo 'Nothing to update'
+  exit 0
+fi
+
+echo 'Upgrading'
+npm update
 ```
 
 
