@@ -10,15 +10,17 @@ $ npm outdated
 
 ## Related
 
-- [update][] command
-- [Install packages][]
-- [Maintain packages][]
-- [Upgrade packages][]
+- [update][] command cheatsheet
+- [Install packages][] cheatsheet
+- [Maintain packages][] cheatsheet
+- [Upgrade packages][] cheatsheet
+- [Skip errors][] cheatsheet in the Shell section, for how to use this command in scripts and CI.
 
 [update]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/commands/update.md %}
 [Install packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/install-packages.md %}
 [Maintain packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/maintain-packages.md %}
 [Upgrade packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/upgrade-packages.md %}
+[Skip errors]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/skip-errors.md %}
 
 
 ## Basic
@@ -152,7 +154,6 @@ vue      MISSING  3.2.21  2.6.14  vue-quickstart  dependencies
 ### Parseable
 
 > Output parseable results from commands that write to standard output. For npm search, this will be tab-separated table format.
-
 
 ```console
 $ npm outdated --parseable
