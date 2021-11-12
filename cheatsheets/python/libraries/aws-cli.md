@@ -40,13 +40,12 @@ $ source ~/.local/virtualenvs/aws/bin/activate
 $ pip install awscli
 ```
 
-### Usage
+### Usage in virtual environment
 
 Note that even though the package is `awscli` on PyPI and your `pip list` output, you must invoke using `aws` command.
 
 ```sh
 $ source ~/.local/virtualenvs/aws/bin/activate
-
 $ aws --version
 ```
 
@@ -76,4 +75,34 @@ SYNOPSIS
        each command shows its parameters and their usage. Optional  parameters
        are shown in square brackets.
 ...
+```
+
+
+## Usage
+
+Some sample commands.
+
+### S3
+
+Upload file:
+
+```sh
+$ aws s3 cp my_file.txt s3://my-bucket/
+$ # Note forward slash, otherwise you'll create a file called `my_path`.
+$ aws s3 cp my_file.txt s3://my-bucket/my_path/
+$ aws s3 cp my_file.txt s3://my-bucket/my_path/my_new_name.txt
+```
+
+Upload directory:
+
+```sh
+$ aws s3 cp my_dir s3://my-bucket/ --recursive
+```
+
+List contents:
+
+```sh
+$ aws s3 ls s3://my-bucket/
+$ # Use forward slash to show contents rather than dir itself.
+$ aws s3 ls s3://my-bucket/my-dir/
 ```
