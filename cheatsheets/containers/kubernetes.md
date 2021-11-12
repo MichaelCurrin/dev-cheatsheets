@@ -193,12 +193,19 @@ For example
 
 ### Get secret
 
+Summary:
+
 ```sh
 $ kubectl get secrets
 ```
 
+Detailed:
+
 ```sh
 $ kubectl get secret SECRET_NAME -o yaml
+```
+```sh
+$ kubectl get secret SECRET_NAME -o json
 ```
 
 ### Create secret
