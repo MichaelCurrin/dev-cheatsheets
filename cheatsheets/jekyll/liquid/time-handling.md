@@ -34,6 +34,24 @@ You can `'now'` as pass it to a date-related filter.
 <!-- This page was last updated on {{ "now" | date: "%Y-%m-%d %H:%M" }} -->
 ```
 
+### Unix timestamp
+
+Get a value as a string, or as an integer if you add zero.
+
+```liquid
+{{ 'now' | date: '%s' }}
+
+{{ 'now' | date: '%s' | plus: 0 }}
+```
+
+Result (using `| inspect` to show format):
+
+```
+"1636922679"
+
+1636922679
+```
+
 ### Alternate approach
 
 Get the current time.
