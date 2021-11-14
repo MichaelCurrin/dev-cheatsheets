@@ -18,13 +18,13 @@ $ bundle config set --local path vendor/bundle
 $ bundle install
 ```
 
-## Location of gem
+## Install gem from location
 
 Always start by setting `source` at the top as below.
 
 Set up your `Gemfile` and run this to install with Bundler.
 
-### Install gem from RubyGms
+### Install from RubyGems
 
 - `Gemfile`
     ```ruby
@@ -37,29 +37,39 @@ Set up your `Gemfile` and run this to install with Bundler.
     
 ### Install from GitHub
 
-```ruby
-source "https://rubygems.org"
+- `Gemfile`
+    ```ruby
+    source "https://rubygems.org"
 
-gem "bar", git: "https://github.com/foo/bar"
-```
+    gem "bar", git: "https://github.com/foo/bar"
+    ```
 
+### Install from local path
+
+- `Gemfile`
+    ```ruby
+    source 'https://rubygems.org'
+    
+    gem 'foo', :path => './vendor/foo'
+    ```
 
 
 ## Groups
 
 See the [Groups][] cheatsheet.
 
-
 [Groups]: {{ site.baseurl }}{% link cheatsheets/package-managers/ruby/bundler/groups.md %}
 
 
-## Mixed example
+## Example
+
+### Mixed
 
 Using a mix of RubyGems and GitHub, group and ungrouped, and different locking levels.
 
+```ruby
 source "https://rubygems.org"
 
-```ruby
 gem "jekyll", "~> 4.1"
 
 gem "minima", "~> 2.5.1"
@@ -70,9 +80,10 @@ group :jekyll_plugins do
 end
 ```
 
-## Locking
 
-### Why lock dependencies?
+## Locking gems
+
+### Why lock dependency versions?
 
 I would highly recommend **against** always pointing against the absolute **latest** version of a gem, especially a theme.
 
