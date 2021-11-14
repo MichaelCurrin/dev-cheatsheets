@@ -1,4 +1,4 @@
-# Installing gems
+# Install gems
 
 
 ## install subcommand
