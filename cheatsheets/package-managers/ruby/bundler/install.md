@@ -19,12 +19,10 @@ Install using parallel processing for faster performance.
 $ bundle install --jobs=8
 ```
 
-Check paths of installed gems.
+Check paths of installed gems:
 
-```sh
+```console
 $ ls vendor/bundle/ruby/2.7.0/gems
-```
-```
 addressable-2.7.0           jekyll-feed-0.15.1          minima-2.5.1
 colorator-1.1.0             jekyll-sass-converter-1.5.2 pathutil-0.16.2
 ...
