@@ -36,13 +36,25 @@ $ cp ~/foo.txt .
 
 ### Copy directories
 
-Use `-r` for recursive. If you omit the flag then an error message will suggest it. Note that `-R` is similar but not the same.
+Use the `-r` flag for recursive. If you omit the flag then an **error** message will suggest it. Note that `-R` is similar but not the same.
+
+```sh
+$ cp -r SOURCE DEST
+```
+
+Copy `foo` itself into `bazz`.
 
 ```sh
 $ cp -r foo bazz
 ```
 
-Copy contents of directory, not the directory itself. If the contents includes directories, you'll need the `-r` flag.
+Copy contents of `foo` into `bazz`.
+
+```sh
+$ cp -r foo/ bazz
+```
+
+Copy paths with a directory. You will see `-r` flag if there are directories in `foo` and not just files.
 
 ```sh
 $ cp foo/* bazz
