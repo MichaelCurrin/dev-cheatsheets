@@ -38,24 +38,23 @@ gem install foo -v x.y.z
 
 Install a Jekyll plugin.
 
-Single-line approach.
+- Single-line approach.
 
-```ruby
-gem 'foo', group: :jekyll_plugins
-```
+    ```ruby
+    gem 'foo', group: :jekyll_plugins
+    ```
+- Or multi-line approach, good for multiple plugins.
 
-Or multi-line approach, good for multiple plugins.
+    ```ruby
+    group :jekyll_plugins do
+      gem 'foo'
+      # Add more plugins here. Do NOT separate each line with comma.
+    end
+    ```
 
-```ruby
-group :jekyll_plugins do
-  gem 'foo'
-  # Add more plugins here. Do NOT separate each line with comma.
-end
-```
+Example of `Gemfile` for a Jekyll project. See more info at [Gemfile recipe][].
 
-Example of `Gemfile` for a Jekyll project below.
-
-<!-- TODO add links to these plugins, using my other quick start repos -->
+[Gemfile recipe](https://michaelcurrin.github.io/code-cookbook/recipes/jekyll/project-files/gemfile.html)
 
 Note the Jekyll and a theme are alone and any Jekyll plugins go inside a group - this ensures they load at the correct order at build time.
 
@@ -78,7 +77,9 @@ Notes on the above:
 - Jekyll restriction will prevent getting Jekyll `4.0.0`.
 - The group helps plugins to be loaded at the correct point when building the site.
 
-See also [Recommended Jekyll plugins]({{ site.baseurl }}{% link cheatsheets/jekyll/plugins/recommended.md %}) page.
+See also [Recommended Jekyll plugins][] page.
+
+[Recommended Jekyll plugins]: {{ site.baseurl }}{% link cheatsheets/jekyll/plugins/recommended.md %}
 
 
 ## Resources
