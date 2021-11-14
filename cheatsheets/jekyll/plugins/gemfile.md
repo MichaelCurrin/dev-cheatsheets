@@ -1,26 +1,12 @@
 # Gemfile
 
-How to set up a _Gemfile_ as a file to manage dependencies.
+How to set up a _Gemfile_ as a file to plugins as gem dependencies.
 
+## Related
 
-## Install gems
+- [Bundler][] cheatsheet - see _Gemfile_ and _Install_.
 
-If you using `Bundler`, you then run this at the top level of your project. This will read from the _Gemfile_.
-
-My [gist](https://gist.github.com/MichaelCurrin/5c8c45a86bcf53d7b49a7763c02943b1) of install instructions.
-
-```sh
-$ bundle config set --local path vendor/bundle
-$ bundle install
-```
-
-Old style - just for reference. Don't use this. Bundler docs mark this as **deprecated**.
-
-```sh
-$ bundle install --path vendor/bundle
-$ # On later runs you can just run:
-$ bundle install
-```
+[Bundler]: {{ site.baseurl }}{% link cheatsheets/package-managers/ruby/bundler/install.md %}
 
 
 ## Samples
