@@ -1,19 +1,28 @@
 # Gemfile
 
 
-See [Gemfile](https://bundler.io/gemfile.html) in Bundler docs.
+See also:
 
-Always start by setting `source` at the top as below.
+- [Gemfile](https://bundler.io/gemfile.html) in Bundler docs.
+- [gems][] cheatsheet in the Ruby section
 
-Set up your `Gemfile` and run this to install with Bundler.
+[gems]: {{ site.baseurl }}{% link cheatsheets/ruby/gems/index.md %}
+
+
+## Install with Bundler
+
+Once you have you Gemfile set up based on sections below, use this to install gems:
 
 ```sh
 $ bundle config set --local path vendor/bundle
 $ bundle install
 ```
 
-
 ## Location of gem
+
+Always start by setting `source` at the top as below.
+
+Set up your `Gemfile` and run this to install with Bundler.
 
 ### Install gem from RubyGms
 
