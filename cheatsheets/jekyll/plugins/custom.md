@@ -76,6 +76,25 @@ Usage:
 ```
 
 
+If you need access to `site`, such as for making a static file.
+
+```ruby
+module Jekyll
+  module Foo
+    def foo(source, options)
+      site = @contextension.registers[:site]
+      
+      # ...
+  
+      'my value'
+    end
+  end
+end
+
+Liquid::Template.register_filter(Jekyll::Resize)
+```
+
+
 ## Converter
 > Change a markup language into another format
 
