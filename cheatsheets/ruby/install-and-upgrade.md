@@ -23,6 +23,24 @@ When installing with `gem install GEM`.
 /usr/local/opt/ruby/bin/
 ```
 
+Or
+
+```
+/var/lib/gems/2.7.0
+```
+
+Get it dynamically with:
+
+```sh
+$ ruby -e -puts Gem.user_dir'
+```
+
+Or
+
+```sh
+$ gem environment gemdir 
+```
+
 ### User gems
 
 When installing with `gem install GEM --user-install`.
@@ -37,6 +55,12 @@ When installing with `gem install GEM --user-install`.
     ```
 
 If you install Bundler at the user level, it will be in there too.
+
+Get it dynamically with:
+
+```sh
+$ ruby -e -puts Gem.user_dir'
+```
 
 
 ## Install
