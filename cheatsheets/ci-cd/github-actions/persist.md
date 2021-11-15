@@ -79,7 +79,7 @@ MY_VAR="$(grep ...)"
 echo "::set-output name=my_value::$MY_VAR"
 ```
 
-Reuse across steps. My trimmed down example from the docs example.
+Reuse across steps. My trimmed down example from the docs example. Don't forget to set and use the `id` attributes.
 
 ```yaml
 steps:
