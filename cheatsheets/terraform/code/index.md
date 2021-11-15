@@ -3,6 +3,8 @@ title: Code
 description: How to write code for Terraform files
 ---
 
+The native language of Terraform is HCL - Hashicorp Configuration Language.
+
 
 Recommended - use this command to start interactive mode.
 
