@@ -61,7 +61,7 @@ Note on accuracy:
 - Run `git fetch` (or `git pull`) first to make sure you are up to date with the remote.
 - Push any in-progress work in case you need to recover a branch from the remote.
     
-### Single grep and xargs
+### Use single grep and xargs
     
 Based on the ZSH alias `gbda`. Which probably stands for "git branch delete all".
 
@@ -73,7 +73,7 @@ $ git branch --no-color --merged \
     | command xargs -n 1 git branch -d
 ```
     
-### Double grep
+### Use double grep
     
 Based on another source I found.
     
@@ -126,26 +126,35 @@ $ git branch -D $(git branch \
 
 ## Delete local references to remote branches
 
-How to delete local remote references with no branch on GitHub
+How to delete local remote references with no branch on GitHub.
 
 Even though you've deleted a branch locally as covered above, your git repo will have a local reference to that remote branch. And also the branch might still exist on GH itself.
 
-Use this to remove local references to remote branches which have been deleted on GitHub.
+List your local references to remote branches:
+
+```console
+$ git branch -r
+origin/foo
+origin/bar
+origin/master
+```
+
+Use this to remove local references to remote branches which have been _deleted_ on GitHub.
 
 ```sh
 $ git remote prune origin
 ```
 
-This will not delete your local branch. Just the origin references you see with:
+Then your output might be shorter like:
 
-```sh
+```console
 $ git branch -r
-```
-```
-origin/foo
-origin/bar
 origin/master
 ```
+
+You do not have to use any other delete commands from this page to take care of those.
+
+This will only delete remote branches e.g. those starting with `origin/` and see with `-r` above.
 
 
 ## Delete branch on GitHub remote
