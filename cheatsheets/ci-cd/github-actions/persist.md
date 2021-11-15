@@ -79,7 +79,7 @@ MY_VAR="$(grep ...)"
 echo "::set-output name=my_value::$MY_VAR"
 ```
 
-Reuse across steps. My trimmed down example from the docs example. Don't forget to set and use the `id` attributes.
+Reuse across steps. My trimmed down example from the docs example.
 
 ```yaml
 steps:
@@ -95,6 +95,8 @@ steps:
       echo "Step 2 test: ${{ steps.step1.outputs.test }}"
 ```
 
+Don't forget to set and use the `id` attributes. If you only have _one_ step with variables set, that typically has the `id` of `vars`. See below.
+
 ### Examples
 
 Get output from `npm outdated` command, if any.
@@ -102,9 +104,11 @@ Get output from `npm outdated` command, if any.
 ```yaml
 steps:
  - name: Check for outdated packages
-    run: |
-      OUTDATED=$(npm outdated) || true
-      echo "::set-output name=outdated::$OUTDATED"
+   id: vars
+   run: |
+     OUTDATED=$(npm outdated) || true
+     
+     echo "::set-output name=outdated::$OUTDATED"
       
  - name: Upgrade
    if: ${{ steps.vars.outputs.outdated != '' }}
