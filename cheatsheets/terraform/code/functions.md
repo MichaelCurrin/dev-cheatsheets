@@ -17,7 +17,7 @@ See [Built-in functions](https://www.terraform.io/docs/configuration/functions.h
 - `pow`
 - `signum`
 
-```terraform
+```console
 > max(5, 12, 9)
 12
 ```
@@ -45,7 +45,7 @@ See [Built-in functions](https://www.terraform.io/docs/configuration/functions.h
 
 Using the `regex` function in the console.
 
-```
+```console
 > regex("www.(.+)", "www.foo.com")
 [
   "foo.com",
