@@ -125,11 +125,8 @@ Michael Currin (2):
 
 Use the last 5 commits only.
 
-```sh
+```console
 $ git log -n 5 --pretty=short | git shortlog
-```
-
-```
 Michael Currin (5):
       Update list.md
       Update arg-parse.md
