@@ -154,7 +154,7 @@ origin/master
 
 You do not have to use any other delete commands from this page to take care of those.
 
-This will only delete remote branches e.g. those starting with `origin/` and see with `-r` above.
+This will only delete remote branch references e.g. those starting with `origin/` and see with `-r` above.
 
 
 ## Delete branch on GitHub remote
