@@ -3,10 +3,8 @@
 
 ## Help
 
-```sh
+```console
 $ git shortlog -h
-```
-```
 usage: git shortlog [<options>] [<revision-range>] [[--] <path>...]
    or: git log --pretty=short | git shortlog [<options>]
 
@@ -26,10 +24,8 @@ The author name field is used here in some cases. If I commit locally my name is
 
 ### Default output
 
-```sh
+```console
 $ git shortlog
-```
-```
 Michael Currin (1122):
       docs: Update README.md
       feat: Add content
@@ -50,10 +46,8 @@ michaelcurrin (1205):
 
 ### Group by name
 
-```sh
+```console
 $ git shortlog -n -s
-```
-```
   1122  Michael Currin
   1205  michaelcurrin
 ```
@@ -64,10 +58,8 @@ The committer is who create the commit. The author wrote the commit.
 
 Here, `GitHub` gets uses, for the same commits as used above.
 
-```sh
+```console
 $ git shortlog -c -s
-```
-```
   1254  GitHub
    499  Michael Currin
    574  michaelcurrin
@@ -75,10 +67,8 @@ $ git shortlog -c -s
 
 ### Group by email
 
-```sh
+```console
 $ git shortlog  -e -s
-```
-```
    872  Michael Currin <...@users.noreply.github.com>
    250  Michael Currin <...@gmail.com>
    1205  michaelcurrin <...@gmail.com>
