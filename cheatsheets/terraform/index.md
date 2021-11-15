@@ -1,7 +1,8 @@
 ---
+title: Terraform
 logo: terraform
 ---
-# Terraform
+
 
 ### Resources
 
