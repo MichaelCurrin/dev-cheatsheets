@@ -22,6 +22,7 @@ See [Built-in functions](https://www.terraform.io/docs/configuration/functions.h
 12
 ```
 
+
 ## String functions
 
 - `chomp`
@@ -43,7 +44,7 @@ See [Built-in functions](https://www.terraform.io/docs/configuration/functions.h
 - `trimspace`
 - `upper`
 
-Using the `regex` function in the console.
+Using the `regex` function in the console:
 
 ```console
 > regex("www.(.+)", "www.foo.com")
@@ -51,6 +52,14 @@ Using the `regex` function in the console.
   "foo.com",
 ]
 ```
+
+Using join:
+
+```console
+> join(", ", ["ABC", "DEF", "GHI" ])
+"ABC, DEF, GHI"
+```
+
 
 ## Timestamp
 
