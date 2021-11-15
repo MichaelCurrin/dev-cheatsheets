@@ -143,6 +143,9 @@ Use this to remove local references to remote branches which have been _deleted_
 
 ```sh
 $ git remote prune origin
+#  ...
+#  * [pruned] origin/foo
+#  * [pruned] origin/bar
 ```
 
 Then your output might be shorter like:
