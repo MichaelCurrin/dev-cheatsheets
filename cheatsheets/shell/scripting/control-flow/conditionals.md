@@ -1,12 +1,10 @@
-# Conditionals
-
-How to use flags when doing a test.
+---
+title: Conditionals
+description: How to use flags when doing a test with `[` or `test`
+--
 
 
 ## How to use
-
-These work
-
 
 ### Bracket
 
@@ -18,7 +16,6 @@ with new sytanx with left hard bracket built-in command:
 # OR
 [ -f my-file.txt ]
 ```
-
 
 ### test command
 
