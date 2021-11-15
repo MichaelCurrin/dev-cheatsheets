@@ -5,4 +5,4 @@ logo: terraform
 
 ### Resources
 
-- [terraform.io](https://www.terraform.io/) homepage. See links at the bottom to Getting Started or the docs.
+- [Terraform](https://michaelcurrin.github.io/dev-resources/resources/) in Dev Resources.
