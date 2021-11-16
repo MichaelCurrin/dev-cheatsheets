@@ -6,7 +6,7 @@ How to set up a _Gemfile_ as a file to plugins as gem dependencies.
 
 - [Bundler][] cheatsheet - see _Gemfile_ and _Install_.
 
-[Bundler]: {{ site.baseurl }}{% link cheatsheets/package-managers/ruby/bundler/install.md %}
+[Bundler]: {{ site.baseurl }}{% link cheatsheets/package-managers/ruby/bundler/index.md %}
 
 
 ## Samples
