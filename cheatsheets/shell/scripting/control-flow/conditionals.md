@@ -58,7 +58,7 @@ e.g.
 [[ -z "$MY_VAR" ]]
 ```
 
-Same as:
+Equivalent to:
 
 ```sh
 [[ "$MY_VAR" = '' ]]
@@ -70,7 +70,7 @@ Same as:
 -n STRING
 ```
 
-Or
+Or negate `-z`.
 
 ```sh
 ! -z STRING
