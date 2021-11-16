@@ -2,7 +2,7 @@
 
 See [Subcommands][].
 
-[Subcommands]: {{ site.baseurl }}{% cheatsheets/package-managers/ruby/bundler/subcommands/index.md %}
+[Subcommands]: {{ site.baseurl }}{% link cheatsheets/package-managers/ruby/bundler/subcommands/index.md %}
 
 
 ## Install from Gemfile
@@ -56,6 +56,3 @@ group :jekyll_plugins do
   # Other plugins...
 end
 ```
-
-
-
