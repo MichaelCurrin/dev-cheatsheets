@@ -91,7 +91,7 @@ Mon 22 Feb 2021 17:58:01 SAST
 
 Use a built-in variable for current time in seconds.
 
-```consoe
+```console
 $ echo $EPOCHSECONDS
 1614012035
 ```
