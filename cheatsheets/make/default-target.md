@@ -66,3 +66,45 @@ build: deps site
 ```
 
 See the [docs](https://www.gnu.org/software/make/manual/html_node/Special-Variables.html)
+
+
+## Multiple files
+
+If you have two files for `make` commands, in the imported file becomes the _first_ and its first target will be the default.
+
+So either add a default to the second:
+
+- `Makefile`
+    ```make
+    include release.mk
+    
+    default: install
+    
+    install:
+    	# ...
+    ```
+- `release.mk`
+    ```make
+    default: install
+    
+    tag:
+    	# ...
+    ```
+    
+Or make sure the import is _after_ the default:
+
+- `Makefile`
+    ```make
+    default: install
+    
+    include release.mk
+    
+    install:
+    	# ...
+    ```
+- `release.mk`
+    ```make
+    tag:
+    	# ...
+    ```
+    
