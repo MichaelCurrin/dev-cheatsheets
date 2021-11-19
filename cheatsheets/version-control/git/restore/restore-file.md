@@ -4,7 +4,7 @@ description: Restore a file to an earlier state
 # Restore file
 
 
-## Using checkout
+## Use checkout
 
 Restore a target. Path is required, otherwise nothing will change.
 
@@ -25,56 +25,52 @@ $ git checkout COMMIT_REF PATH
 ```
 
 
-## Use reset or checkout
+## Use checkout
 
 Restore a file to an earlier state. This includes bringing back a file that was deleted.
 
-If you are on a _feature branch_ and the file is still on `master`, you can reset to the `master` (note targeting just the file path). Either of these will work:
+If you are on a _feature branch_ and the file is still on `main`, you can reset to the `main` (note targeting just the file path). 
 
 ```sh
-$ git reset --hard COMMIT_REF PATH
-$ git checkout COMMIT_REF PATH
+$ git checkout COMMIT_REF -- PATH
 ```
 
 e.g.
 
 ```sh
-$ git reset --hard master foo.txt
-$ git checkout master foo.txt
+$ git checkout main -- foo.txt
 ```
 
-Note - when using `reset`, if you leave out `--hard` then you need to remove the unstaged portion of the file like this:
-
-```sh
-$ git checkout .
-```
-
-Then commit the file that will be staged for you.
-
-Either way, if you bring back a file, you get to keep the history of the file, which you can see:
+You get to keep the history of the file, which you can see:
 
 ```sh
 $ git log PATH
 ```
 
 e.g.
+
 ```sh
 $ git log foo.txt
 ```
 
-The approach works great on a directory too, to restore multiple deleted or changed files to what is on `master`. Use of these:
+The approach works great on a directory too, to restore multiple deleted or changed files to what is on `main`.
 
 ```sh
-$ git reset --hard .
 $ git checkout .
+```
+
+If you working tree is not clean, run this first:
+
+```sh
+$ git reset --hard
 ```
 
 
 ## Restore file deleted file
 
-If you are are a feature branch, you can use the `reset` or `checkout` approaches above against `master` to bring a file back. But, if you are already on `master` and pushed, you can't use target `master` or `origin/master` to bring a file back. 
+If you are are a feature branch, you can use the approach above against `main` to bring a file back. But, if you are already on `main` and pushed already, you can't use target `main` or `origin/main` to bring a file back. 
 
-So now you have to use the last-known commit - you have to find the commit on `master` _before_ that file was deleted.
+So now you have to use the last-known commit. And to get that, you must find the commit on `main` _before_ that file was deleted.
 
 From [StackOverflow](https://stackoverflow.com/questions/953481/find-and-restore-a-deleted-file-in-a-git-repository?rq=1), find the last commit that affected the given path and restore the given path to the commit just before it. Hence use carat - `^`.
 
@@ -84,10 +80,4 @@ $ git checkout $(git rev-list -n 1 HEAD -- PATH)^ -- PATH
 
 As the file isn't in the `HEAD` commit, this commit must have deleted it. 
 
-Note that `HEAD` is literal and `PATH` will be your file or directory.
-
-I've also seen a recommendation for this but don't know if it works.
-
-```sh
-$ git checkout -- PATH
-```
+Note that `HEAD` is literal text here. Replace `PATH` with be your file or directory path.
