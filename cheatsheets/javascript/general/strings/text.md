@@ -66,17 +66,41 @@ Or pass regex, but without `g`:
 > myText.replace(/^\n/gm, '');
 ```
 
+The Regex pattern finds lines which start with a newline.
+
 The `m` modified is recommended for multi-line search
 
-https://www.w3schools.com/jsref/jsref_regexp_m.asp
+[Source](https://www.w3schools.com/jsref/jsref_regexp_m.asp)
+
+If you wanted to just replace a value, you could do:
+
+```javascript
+> myText.replace(/^$/g, 'new value');
+```
 
 
-## Remove empty line from start and end
+## Remove whitespace at start and end
+
+- [trim](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim) method in MDN docs
+    > The `trim()` method removes whitespace from both ends of a string. Whitespace in this context is all the whitespace characters (space, tab, no-break space, etc.) and all the line terminator characters (LF, CR, etc.). 
+
+```javascript
+myText.trim();
+```
+
+e.g.
+
+```javascript
+> '   foo  '.trim()
+'foo'
+```
+
+## Remove only newlines from start and end
 
 [source](https://stackoverflow.com/questions/14572413/remove-line-breaks-from-start-and-end-of-string/48080903)
 
 ```javascript
-> myText.replace(/^\s+|\s+$/g, '');
+> myText.replace(/^\n|\n$/g, '');
 ```
 
 Note this removes all whitespace and not just `\n`.
