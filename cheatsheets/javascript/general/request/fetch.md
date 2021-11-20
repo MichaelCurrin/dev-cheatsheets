@@ -1,6 +1,6 @@
 ---
 title: fetch
-description: How to get data using `fetch`
+description: How to get data using the built-in `fetch` function
 ---
 
 
@@ -29,7 +29,7 @@ In Node, you can use `node-fetch` or alternatives for the server side.
 Warning - an error will **not** be thrown on a non-200 status, so you must handle this yourself. Other libraries tend to handle errors for you.
 
 
-## Samples
+## Approaches
 
 There are async and promise-based examples below. Both can be adapted to follow the other style.
 
@@ -76,6 +76,36 @@ if (!resp.ok) {
 }
 ```
 
+### Get response and set it on an element.
+
+```html
+<div id="result"></div>
+
+<script>
+    const URL = 'https://example.com/my-data.csv'
+    const TARGET_ID = 'result'
+    
+    async function request(url) {
+      const resp = await fetch(url);
+      if (!resp.ok) {
+        throw new Error(`${url} HTTP error: ${resp.status} - ${resp.statusText}`);
+      }
+    
+      return resp.text();
+    }
+
+    // You have to wrap your main logic in `async` for it to work.
+    (async function() {
+
+      const text = await request(URL)
+      const tableHtml = tbl(text)
+
+      const el = document.getElementById(TARGET_ID)
+      el.innerHtml = tableHtml
+    })
+</script>
+```
+
 ### Promises approach
 
 Based on Mozilla docs and `node-fetch` docs.
@@ -91,9 +121,9 @@ fetch(url)
   .catch(err => console.error(err));
 ```
 
-### POST requests
+### Send data using POST request
 
-Note that method is case-insensitive.
+Note that the method not case-iensitive.
 
 #### Send JSON data
 
