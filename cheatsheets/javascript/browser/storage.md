@@ -34,32 +34,44 @@ See also [Cookies][] cheatsheet.
 These work on both `localStorage` and `sessionStorage`.
 
 - `Storage.key(n)` - return name of the Nth key.
-- `Storage.getItem(keyName)` - get value.
+- `Storage.getItem(keyName)` - get value by name. Returns `null` if key does not exit.
 - `Storage.setItem(keyName, value)` - create or update value.
 - `Storage.removeItem(keyName)` - remove key and its value.
 - `Storage.clear()` - empty all keys out of the storage.
     
     
-## Example
+## Examples
+
+### Scalar
 
 Write then read a value in local storage. 
 
 ```javascript
-Storage.setItem('foo', 'abc')
-const foo = Storage.getItem('foo')
+localStorage.getItem('foo')
+// null
+
+localStorage.setItem('foo', 'abc')
+localStorage.getItem('foo')
+// 'abc'
 ```
 
-This must be a **string**. If you set an object, the value becomes `'[object Object]'` and unusable.
+The value must be a **string**. If you set an object, the value becomes `'[object Object]'` and unusable.
 
-Here we are converting to a string and then back from a string to an object.
+### Data structures
+
+Here we are convert an object to a string.
 
 ```javascript
 const bar = { abc: 123 }
-Storage.setItem('bar', JSON.stringify(bar))
+localStorage.setItem('bar', JSON.stringify(bar))
 ```
 
+Then back from a string to an object.
+
 ```javascript 
-const barStr = Storage.getItem('bar')
+const barStr = localStorage.getItem('bar')
+// '{ "abc": 123 }'
+
 const bar = JSON.parse(barStr)
 // { abc: 123 }
 ```
