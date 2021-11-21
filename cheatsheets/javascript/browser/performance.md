@@ -5,7 +5,7 @@
 
 See also [Load and ready events][] cheatsheet.
 
-[Load and ready events]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/load-ready-events.md %}
+[Load and ready events]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/events/load-ready.md %}
 
 
 ## Resources
