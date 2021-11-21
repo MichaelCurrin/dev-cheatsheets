@@ -2,12 +2,12 @@ name: GH Pages Deploy
 
 on:
   push:
-    branches: main
+    branches: master
     paths-ignore:
       - README.md
 
   pull_request:
-    branches: main
+    branches: master
     paths-ignore:
       - README.md
 
