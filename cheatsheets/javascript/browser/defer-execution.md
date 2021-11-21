@@ -3,7 +3,7 @@
 
 ## Defer attribute
 
-Add the `defer` attribute to your `script` tag in the `head` tag. 
+Add the `defer` attribute to your `script` tag in the `head` tag.
 
 The JS will be fetched early on but will only execute when the body is finished loading. Useful if you are targeting elements in the body which will not exist when only `head` has loaded.
 
@@ -29,7 +29,7 @@ Old style, which is slower as the JS is only fetched once the body content is fi
 <body>
   <div id="app">
   </div>
-  
+
   <script src="main.js"></script>
 </body>
 ```
@@ -44,7 +44,7 @@ The unsafe way - it will cause JS errors because the body cannot be found.
 <body>
   <div id="app">
   </div>
-  
+
 </body>
 ```
 
@@ -57,7 +57,7 @@ The unsafe way - it will cause JS errors because the body cannot be found.
 <body onload="foo()">
   <div id="app">
   </div>
-  
+
 </body>
 
 
@@ -69,7 +69,7 @@ This works great as you can put it anywhere on the page and as an inline or exte
 
 Related section - [Load and ready events][].
 
-Load and ready events]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/load-ready-events.md %}
+Load and ready events]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/events/load-ready.md %}
 
 ### Set onload
 
@@ -94,4 +94,3 @@ window.addEventListener('load', function () {
   bar();
 }
 ```
-
