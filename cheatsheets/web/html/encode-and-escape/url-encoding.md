@@ -12,7 +12,6 @@ e.g. `#` becomes `%23`.
 - [urlencoder.org](https://www.urlencoder.org/) - Conversion tool
 
 
-
 ## Languages
 
 - [Python][]
