@@ -94,15 +94,13 @@ if (!resp.ok) {
       return resp.text();
     }
 
-    // You have to wrap your main logic in `async` for it to work.
     (async function() {
-
       const text = await request(URL)
       const tableHtml = tbl(text)
 
       const el = document.getElementById(TARGET_ID)
       el.innerHtml = tableHtml
-    })
+    })()
 </script>
 ```
 
@@ -128,6 +126,8 @@ Note that the method not case-iensitive.
 #### Send JSON data
 
 ```javascript
+const url = 'https://httpbin.org/post'
+
 const body = { a: 1 };
 
 const options = {
@@ -136,27 +136,52 @@ const options = {
   headers: { 'Content-Type': 'application/json' },
 }
 
-await fetch('https://httpbin.org/post', options)
+(async function() {
+  await fetch(url, options)
+)()
 ```
 
-A more complex example.
+Building a URL from query params.
 
 ```javascript
-const query = new URLSearchParams(query).toString();
-const url = `/myendpoint?${query}`;
+(async function() {
+  const query = new URLSearchParams(query).toString();
+  const url = `/myendpoint?${query}`;
 
-const body = JSON.stringify(body);
+  const options = {
+    method:  'POST',
+    body = JSON.stringify(body);
+    headers: { 'Content-Type': 'application/json' },
+  }
 
-const options = {
-  method:  'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body,
+  const resp = await fetch(url, options);
+  console.log(resp)
+)()
+```
+
+A function, with error handling.
+
+```javascript
+async function request(url, body) {
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(body),
+    headers: { 'Content-Type': 'application/json' },
+  }
+
+  const resp = await fetch(url, options);
+  if (!resp.ok) {
+    throw new Error(`${url} HTTP error: ${resp.status} - ${resp.statusText}`);
+  }
+
+  return resp.json()
 }
 
-const resp = await fetch(
-  url, 
-  options
-);
+(async function() {
+  const url = 'https://httpbin.org/post'
+  const respData = await request(url, options)
+  console.log(respData)
+)()
 ```
 
 #### Send form data
@@ -168,9 +193,10 @@ const options = {
   method: 'POST', 
   body,  
 }
+const url = 'https://httpbin.org/post'
 
-await fetch(
-  'https://httpbin.org/post', 
-  options
-)
+(async function() {
+  const resp = await fetch(url, options)
+  console.log(respData)
+)()
 ```
