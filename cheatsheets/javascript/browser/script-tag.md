@@ -17,7 +17,7 @@ Defer execution until content has loaded.
       const target = document.getElementById("app")
       target.innerText = "Hello, World")
       console.log("Hello, World")
-  }
+    }
   </script>
 </head>
 
@@ -93,15 +93,22 @@ Then serve the `public` directory and load from it as:
 
 That can be error-prone, as you have to go an identify the exact script that you need from each package and you need to add a line for it in your HTML. Plus, if you make a mistake on the frontend, you won't know until you've loaded the page yourself.
 
-### Bundler
+### Use a bundler
 
 An improvement on the above approach is using a bundler like Webpack, Vite, or ES Build. You'll get a single optimized JS file containing all your own code and all the 3rd-party packages you need. And there is only one line to add in the HTML.
 
+```sh
+$ npm run build
+```
+
 ```html
 <head>
-  <script defer src="/assets/bundle.js"></script>
+  <script defer src="/assets/bundle.min.js"></script>
 </head>
 ```
+
+See my [Bundling quickstarts](https://github.com/MichaelCurrin/javascript-bundling-quickstarts/tree/master/quickstarts)
+
 
 ## ES Modules 
 
