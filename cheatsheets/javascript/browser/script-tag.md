@@ -1,6 +1,21 @@
-# Script tag
+---
+title: Script tag
+description: Various ways to load and run JS in the browser using `script` tags
+```
 
-## Inline 
+
+## Related
+
+- [Modules][] in JS.
+- [Defer execution][] of JS.
+
+[Modules]: {{ site.baseurl }}{% link cheatsheets/javascript/general/modules/index.md %}
+[Defer execution]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/defer-execution.md %}
+
+
+## Basic
+
+### Inline 
 
 ```html
 <script>
@@ -26,14 +41,13 @@ Defer execution until content has loaded.
 </body>
 ```
 
-
-## Load script
+### Load module 
 
 Defer execution until content has loaded. Use defer attitude, or put the script tag at the bottom or the page.
 
 ```html
 <head>
-  <script defer src="main.js"></script>
+  <script defer src="/main.js"></script>
 </head>
 
 <body>
