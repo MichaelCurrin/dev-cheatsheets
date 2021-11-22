@@ -1,4 +1,4 @@
-# Script mode
+# Strict mode
 
 ## Resources
 
