@@ -1,0 +1,109 @@
+# Script tag
+
+## Inline 
+
+```html
+<script>
+  console.log("Hello, World")
+</script>
+```
+
+Defer execution until content has loaded.
+
+```html
+<head>
+  <script>
+    window.onload = function () {
+      const target = document.getElementById("app")
+      target.innerText = "Hello, World")
+      console.log("Hello, World")
+  }
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+```
+
+
+## Load script
+
+Defer execution until content has loaded. Use defer attitude, or put the script tag at the bottom or the page.
+
+```html
+<head>
+  <script defer src="main.js"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+```
+
+```javascript 
+// main.js
+const target = document.getElementById("app")
+target.innerText = "Hello, World")
+console.log("Hello, World")
+```
+
+
+## Library 
+
+### CDN
+
+Load an external 3rd-party script from a CDN.
+
+Such as [React](https://reactjs.org/docs/cdn-links.html)
+
+```html
+<head>
+  <script defer src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+
+  <script defer src="main.js"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+```
+
+### Load installed package 
+
+How to load a 3rd party library if installed using `npm install`.
+
+You will have a `node_modules` directory and you need to copy the contents out of there at build time of your site.
+
+e.g.
+
+```sh
+$ cp node_modules/package-name/module-name.js public/assets/
+```
+
+Then serve the `public` directory and load from it as:
+
+```html
+<head>
+  <script defer src="/assets/module-name.js"></script>
+  
+  <script defer src="/assets/main.js"></script>
+</head>
+```
+
+That can be error-prone, as you have to go an identify the exact script that you need from each package and you need to add a line for it in your HTML. Plus, if you make a mistake on the frontend, you won't know until you've loaded the page yourself.
+
+### Bundler
+
+An improvement on the above approach is using a bundler like Webpack, Vite, or ES Build. You'll get a single optimized JS file containing all your own code and all the 3rd-party packages you need. And there is only one line to add in the HTML.
+
+```html
+<head>
+  <script defer src="/assets/bundle.js"></script>
+</head>
+```
+
+## ES Modules 
+
+If you want to use the `import` keyword to load a module by URL, then switch to ES Modules.
+
