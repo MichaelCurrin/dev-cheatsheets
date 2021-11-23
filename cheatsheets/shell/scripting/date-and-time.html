@@ -144,26 +144,6 @@
 
 <p>See <a href="https://www.shell-tips.com/linux/how-to-format-date-and-time-in-linux-macos-and-bash/">How To Format Date And Time In Linux, MacOS, And Bash?</a>.</p>
 
-<h2 id="unix-timestamp">Unix timestamp</h2>
-
-<p>Use a built-in variable for current time in seconds.</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="nv">$EPOCHSECONDS</span>
-<span class="go">1614012035
-</span></code></pre></div></div>
-
-<p>Or as a float.</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="nv">$EPOCHREALTIME</span>
-<span class="go">1614012035.3449261189
-</span></code></pre></div></div>
-
-<p>Or use the <code class="language-plaintext highlighter-rouge">date</code> command with a format.</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">date</span> <span class="s1">'+%s'</span>
-<span class="go">1614012035
-</span></code></pre></div></div>
-
         
     </div>
 </article>
