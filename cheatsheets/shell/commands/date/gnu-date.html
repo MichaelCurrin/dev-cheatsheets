@@ -169,18 +169,40 @@
 </code></pre></div>    </div>
   </li>
   <li>Date.
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">date</span> +%Y%m%d
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">date</span> <span class="s1">'+%Y%m%d'</span>
   20200826
-  <span class="nv">$ </span><span class="nb">date</span> +%Y-%m-%d
+  <span class="nv">$ </span><span class="nb">date</span> <span class="s1">'+%Y-%m-%d'</span>
   2020-08-27
 </code></pre></div>    </div>
   </li>
   <li>Unix Timestamp.
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">date</span> <span class="nt">-d</span> <span class="s2">"Oct 21 1973"</span> +%s
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">date</span> <span class="nt">-d</span> <span class="s1">'Oct 21 1973'</span> +%s
   120002400
 </code></pre></div>    </div>
   </li>
 </ul>
+
+<h3 id="date-string">Date string</h3>
+
+<blockquote>
+  <p>The <code class="language-plaintext highlighter-rouge">--date=STRING</code> is a mostly free format human readable date string.</p>
+</blockquote>
+
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">date</span> <span class="nt">--date</span> <span class="s1">'Sun, 29 Feb 2004 16:21:42 -0800'</span>
+<span class="nv">$ </span><span class="nb">date</span> <span class="nt">--date</span> <span class="s1">'2004-02-29 16:21:42'</span>
+<span class="nv">$ </span><span class="nb">date</span> <span class="nt">--date</span> <span class="s1">'next day'</span>
+<span class="nv">$ </span><span class="nb">date</span> <span class="nt">--date</span> <span class="s1">'next Thursday'</span>
+<span class="nv">$ </span><span class="nb">date</span> <span class="nt">--date</span> <span class="s1">'09:00 next Fri'</span>
+<span class="nv">$ </span><span class="nb">date</span> <span class="nt">--date</span> <span class="s1">''</span>  <span class="c"># midnight of today</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>A date string may contain items indicating calendar date, time of day, time zone, day of week, relative time, relative date, and numbers.</p>
+
+  <p>An empty string indicates the beginning of the day. The date string format is more complex than is easily documented here but is fully described in the info documentation.</p>
+</blockquote>
 
 <p>A target Unix Timestamp date.</p>
 
@@ -194,11 +216,13 @@ Sun Oct 21 06:00:00 SAST 1973
 2020-08-27
 </code></pre></div></div>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">date</span> <span class="nt">--date</span><span class="o">=</span><span class="s1">'5 minutes ago'</span><span class="p">;</span> <span class="nv">$date</span><span class="p">;</span> <span class="nb">date</span> <span class="nt">--date</span><span class="o">=</span><span class="s1">'5 minutes'</span>
-Wed Aug 26 19:44:48 SAST 2020
-Wed Aug 26 19:49:48 SAST 2020
-Wed Aug 26 19:54:48 SAST 2020
-</code></pre></div></div>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">date</span> <span class="nt">--date</span><span class="o">=</span><span class="s1">'5 minutes ago'</span>
+<span class="go">Wed Aug 26 19:44:48 SAST 2020
+</span><span class="gp">$</span><span class="w"> </span><span class="nb">date</span>
+<span class="go">Wed Aug 26 19:49:48 SAST 2020
+</span><span class="gp">$</span><span class="w"> </span><span class="nb">date</span> <span class="nt">--date</span><span class="o">=</span><span class="s1">'5 minutes'</span>
+<span class="go">Wed Aug 26 19:54:48 SAST 2020
+</span></code></pre></div></div>
 
 <h3 id="advanced">Advanced</h3>
 
