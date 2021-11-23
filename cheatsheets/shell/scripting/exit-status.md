@@ -93,6 +93,47 @@ How do I get the output and exit value of a subshell when using `bash -e`?  Usin
 OUTPUT=$(INNER)
 ```
 
+
+## Exit on error
+
+### Basic
+
+```sh
+my-cmd || exit $?
+
+# This will only run if `my-cmd` succeeded.
+# ...
+```
+
+Or
+
+```sh
+my-cmd
+
+if [[ $? -ne 0 ]]; then
+  echo 'Error running my-cmd`'
+  
+  exit 1
+fi
+
+# This will only run if `my-cmd` succeeded.
+# ...
+```
+
+
+Or simply set an attribute to make any errors cause an exit.
+
+```sh
+set -e
+
+my-cmd
+
+# This will only run if `my-cmd` succeeded.
+# ...
+```
+
+### Subshell
+
 ```sh
 OUTPUT=$(INNER) || exit $?
 echo $OUTPUT
@@ -102,7 +143,22 @@ Or
 
 ```sh
 if ! OUTPUT=$(INNER); then
-    exit $?
+  exit $?
 fi
 echo $OUTPUT
+```
+
+In a function:
+
+```sh
+whicha () {
+  RESULT=$(which "$1")
+
+  if [[ $? -ne 0 ]]; then
+   echo "$RESULT"
+   return 1
+  fi
+  
+  # ...
+}
 ```
