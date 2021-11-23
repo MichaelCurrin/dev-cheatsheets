@@ -1,5 +1,8 @@
 # GNU Date
 
+## Help
+
+- [Man page](https://linux.die.net/man/1/date)
 
 ## Samples
 
@@ -55,6 +58,7 @@ Copied from `date --help`. Show the local time for 9AM next Friday on the West c
 $ date --date='TZ="America/Los_Angeles" 09:00 next Fri'
 Fri Aug 28 18:00:00 SAST 2020
 ```
+
 
 ## Set up on macOS
 
