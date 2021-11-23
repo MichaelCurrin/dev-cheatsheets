@@ -5,7 +5,7 @@ description: Guide to writing rules for ESLint with fields and levels
 
 See also [Common rules][] page.
 
-[Common Rules]: {{ site.baseurl }}{% link cheatsheets/javascript/format-and-lint/eslint/rules/common.md %}
+[Common Rules]: {% link cheatsheets/javascript/format-and-lint/eslint/rules/common.md %}
 
 Each rule has its own allowed fields.
 

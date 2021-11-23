@@ -12,7 +12,7 @@ description: |
 
 See [var is bad][] page for comparisons on `var` and `let` or `const`.
 
-[var is bad]: {{ site.baseurl }}{% link cheatsheets/javascript/general/variable-declaration/var-bad.md %}
+[var is bad]: {% link cheatsheets/javascript/general/variable-declaration/var-bad.md %}
 
 ### let keyword
 

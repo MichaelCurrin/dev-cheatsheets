@@ -109,4 +109,4 @@ console.log(foo) // A
 
 See [Context][] page.
 
-[Context]: {{ site.baseurl }}{% link cheatsheets/javascript/general/variable-declaration/context.md %}
+[Context]: {% link cheatsheets/javascript/general/variable-declaration/context.md %}

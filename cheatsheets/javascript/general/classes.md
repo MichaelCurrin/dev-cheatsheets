@@ -3,7 +3,7 @@
 
 See also [TypeScript Classes][] cheatsheet.
 
-[TypeScript Classes]: {{ site.baseurl }}{% link cheatsheets/typescript/classes.md %}
+[TypeScript Classes]: {% link cheatsheets/typescript/classes.md %}
 
 
 ## Resources

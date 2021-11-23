@@ -2,7 +2,7 @@
 
 See also [JavaScript Classes][] cheatsheet.
 
-[JavaScript Classes]: {{ site.baseurl }}{% link cheatsheets/javascript/general/classes.md %}
+[JavaScript Classes]: {% link cheatsheets/javascript/general/classes.md %}
 
 
 ## Class syntax
@@ -99,11 +99,11 @@ var Greeter = /** @class */ (function () {
     function Greeter(message) {
         this.greeting = message;
     }
-    
+
     Greeter.prototype.greet = function () {
         return `Hello, ${this.greeting}`;
     };
-    
+
     return Greeter;
 }());
 

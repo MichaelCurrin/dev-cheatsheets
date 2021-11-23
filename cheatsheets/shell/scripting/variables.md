@@ -5,7 +5,7 @@
 
 - [Strings][] cheatsheet for substituting values in strings.
 
-[Strings]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/strings.md %}
+[Strings]: {% link cheatsheets/shell/scripting/strings.md %}
 
 
 ## Assign
@@ -26,7 +26,7 @@ $ X="abc $USER"
 Y=$X
 
 # Preferred esp for multi-word and multi-line values.
-Y="$X" 
+Y="$X"
 ```
 
 ### Curly braces
@@ -38,7 +38,7 @@ Y="${X}"
 This can be useful to stop the variable name from being evaulated correctly or looking confusing.
 
 ```sh
-# Compare with "$Xbar" which would reference Xbar variable unexpectedly. 
+# Compare with "$Xbar" which would reference Xbar variable unexpectedly.
 Y="${X}bar"
 
 # Compare with "$X_Z" which would reference X_Z variable unexpectedly.
@@ -52,4 +52,3 @@ echo $8 $9 ${10} ${11}
 ```
 
 Also useful for parameter expansion for more advanced use as in the linked strings cheatsheet.
-

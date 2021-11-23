@@ -17,7 +17,7 @@ Using events is the safe way to let multiple child components change a variable 
 
 - [v-model cheatsheet][]
 
-[v-model cheatsheet]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/directives/v-model.md %}
+[v-model cheatsheet]: {% link cheatsheets/javascript/packages/vue/directives/v-model.md %}
 
 
 ## Syntax
@@ -105,7 +105,7 @@ Vue 3 - `modelValue`. Vue 2 - `value`.
       },
     };
     </script>
-    ```  
+    ```
 
 
 ## Custom event example
@@ -140,7 +140,7 @@ In `App.vue`, set up the value to be displayed and add some components.
       <h2>Components</h2>
       <MyComponent v-on:enlarge-text="postFontSize += 0.1" />
       <!-- Add more components if you want. -->
-      <MyComponent v-on:enlarge-text="postFontSize += 0.1" />  
+      <MyComponent v-on:enlarge-text="postFontSize += 0.1" />
     </template>
     ```
 
@@ -155,7 +155,7 @@ export default Vue.extend({
   },
 });
 ```
-    
+
 If you are using **Vue Router**, you can add it to the router like this using `v-on` property:
 
 ```html

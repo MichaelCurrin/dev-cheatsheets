@@ -4,7 +4,7 @@ Use Babel to transpile your TypeScript or JSX to plain JS, or modern JS (e.g. ES
 
 If you want to bundle your scripts and other assets, use [Webpack][], which uses Babel internally.
 
-[Webpack]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/webpack/index.md %}
+[Webpack]: {% link cheatsheets/javascript/packages/webpack/index.md %}
 
 
 ## Setup
@@ -44,4 +44,3 @@ $ babel src --out-file dist/bundle.js
 ```
 
 Even if you target `src/index.js` and that script imports others, the bundle output will still just be the same as the input file, not including code from the other modules.
-

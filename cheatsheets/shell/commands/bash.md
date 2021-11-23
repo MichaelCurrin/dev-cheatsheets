@@ -2,7 +2,7 @@
 
 See more info in the [Options][] cheatsheet.
 
-[Options]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/options.md %}
+[Options]: {% link cheatsheets/shell/scripting/options.md %}
 
 
 ## Help

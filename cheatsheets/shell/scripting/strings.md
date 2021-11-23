@@ -18,15 +18,15 @@ $ echo '>'
 >
 ```
 
-[Arrays]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/arrays.md %}
-[Associative arrays]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/associative-arrays.md %}
+[Arrays]: {% link cheatsheets/shell/scripting/arrays.md %}
+[Associative arrays]: {% link cheatsheets/shell/scripting/associative-arrays.md %}
 
 
 ## Quoting strings
 
 ### Single quotes
 
-Use **single quotes** for a literal string that is not evaluated. 
+Use **single quotes** for a literal string that is not evaluated.
 
 ```sh
 X='Hello, $(whoami) / $USER'
@@ -69,7 +69,7 @@ If the value is multiple words (separated by space or newline), then the value w
 
 ## When to quote
 
-Quotes are usually optional. 
+Quotes are usually optional.
 
 Sometimes they make a difference.
 
@@ -314,7 +314,7 @@ See [guide](https://linuxize.com/post/bash-heredoc/).
 
 Bash supports a _heredoc_:
 
-- This lets you create a string which implicitly escapes all single and double quotes, letting you write a clean string. 
+- This lets you create a string which implicitly escapes all single and double quotes, letting you write a clean string.
 - Typically, a heredoc is used for writing multi-line strings, but you don't have it.
 - You might use it for a literal string or evaluate expressions.
 
@@ -558,7 +558,7 @@ Note use of escaped newline at the start, to prevent first line from appearing a
 #### Python
 
 In Python you would use three quotes. You could use double quotes (`"`) usually, just for convention. You would use an `f` string as below for evaluation.
- 
+
 - `app.py` for Python.
     ```python
     x = f"""\

@@ -46,5 +46,4 @@ Update for the latest content.
 $ git submodule update --rebase --remote
 ```
 
-[Git Submodules]: {{ site.baseurl }}{% link cheatsheets/version-control/git/submodules/index.md %}
-
+[Git Submodules]: {% link cheatsheets/version-control/git/submodules/index.md %}

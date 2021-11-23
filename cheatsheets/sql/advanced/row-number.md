@@ -22,12 +22,12 @@ Here we order by country within the `OVER` clause. Note that `country` doesn't h
 
 ```sql
 SELECT
-    ROW_NUMBER () OVER ( 
-        ORDER BY country 
+    ROW_NUMBER () OVER (
+        ORDER BY country
     ) row_number,
     first_name,
     last_name,
-    country 
+    country
 FROM customers;
 ```
 
@@ -35,11 +35,11 @@ A country name might be repeated.
 
 The row number is unique and starts at 1.
 
-row_number | first_name | last_name | country
---- | --- | --- | ---
-1 | John | Smith | America
-2 | Jane | Doe | America
-3 | James | Green | Ireland
+| row_number | first_name | last_name | country |
+| ---------- | ---------- | --------- | ------- |
+| 1          | John       | Smith     | America |
+| 2          | Jane       | Doe       | America |
+| 3          | James      | Green     | Ireland |
 
 ### Customers paginated
 
@@ -48,7 +48,7 @@ Show a max number of items on each page results.
 Add a condition:
 
 ```sql
-WHERE row_num > 20 
+WHERE row_num > 20
   AND row_num <= 30
 ```
 
@@ -58,21 +58,21 @@ Here we reset the count to 1 at each change in country.
 
 ```sql
 SELECT
-    ROW_NUMBER () OVER ( 
+    ROW_NUMBER () OVER (
         PARTITION BY country
-        ORDER BY first_name 
+        ORDER BY first_name
     ) row_number,
     first_name,
     last_name,
-    country 
+    country
 FROM customers;
 ```
 
-row_number | first_name | last_name | country
---- | --- | --- | ---
-1 | John | Smith | America
-2 | Jane | Doe | America
-1 | James | Green | Ireland
+| row_number | first_name | last_name | country |
+| ---------- | ---------- | --------- | ------- |
+| 1          | John       | Smith     | America |
+| 2          | Jane       | Doe       | America |
+| 1          | James      | Green     | Ireland |
 
 ### Aggregate
 
@@ -96,5 +96,4 @@ LIMIT 10
 
 If you want to get the top 10 results within a category and each numbered 1 to 10, see the [Top results][] cheatsheet.
 
-[Top results]: {{ site.baseurl }}{% link cheatsheets/sql/advanced/top-results.md %}
-
+[Top results]: {% link cheatsheets/sql/advanced/top-results.md %}

@@ -7,7 +7,7 @@ Check the exit status of a previous command.
 
 - [Skip errors][] cheatsheet.
 
-[Skip errors]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/skip-errors.md %}
+[Skip errors]: {% link cheatsheets/shell/scripting/skip-errors.md %}
 
 
 ## Check exit status value with if statement

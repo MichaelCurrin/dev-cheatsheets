@@ -63,7 +63,7 @@ diff -u main.go.orig main.go
 --- main.go.orig        2021-02-15 12:00:26.000000000 +0200
 +++ main.go     2021-02-15 12:00:26.000000000 +0200
 @@ -17,28 +17,28 @@
- 
+
  func main() {
         app :=
 -       &cli.App{
@@ -107,5 +107,5 @@ $ gofmt -w .
 ```
 
 
-[go fmt]: {{ site.baseurl }}{% link cheatsheets/go/commands/fmt.md %}
+[go fmt]: {% link cheatsheets/go/commands/fmt.md %}
 [gofmt command]: https://golang.org/cmd/gofmt/

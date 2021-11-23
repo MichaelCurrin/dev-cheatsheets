@@ -69,7 +69,7 @@ This works great as you can put it anywhere on the page and as an inline or exte
 
 Related section - [Load and ready events][].
 
-Load and ready events]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/events/load-ready.md %}
+Load and ready events]: {% link cheatsheets/javascript/browser/events/load-ready.md %}
 
 ### Set onload
 

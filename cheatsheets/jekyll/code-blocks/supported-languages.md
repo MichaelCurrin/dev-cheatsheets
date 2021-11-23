@@ -2,7 +2,7 @@
 
 See also [Code blocks][] page.
 
-[Code blocks]: {{ site.baseurl }}{% link cheatsheets/markdown/code-blocks.md %}
+[Code blocks]: {% link cheatsheets/markdown/code-blocks.md %}
 
 From the [docs](https://jekyllrb.com/docs/liquid/tags/):
 

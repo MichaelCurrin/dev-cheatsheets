@@ -2,7 +2,7 @@
 
 See also the [Run containers][] cheatsheet.
 
-[Run containers]: {{ site.baseurl }}{% link cheatsheets/containers/docker-cli/run-containers.md %}
+[Run containers]: {% link cheatsheets/containers/docker-cli/run-containers.md %}
 
 
 ## List
@@ -55,4 +55,3 @@ Remove a stopped container.
 ```sh
 $ docker rm my-app
 ```
-

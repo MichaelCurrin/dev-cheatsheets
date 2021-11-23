@@ -2,7 +2,7 @@
 
 See also the [Upgrade][] page.
 
-[Upgrade]: {{ site.baseurl }}{% link cheatsheets/package-managers/ruby/gem/upgrade.md %}
+[Upgrade]: {% link cheatsheets/package-managers/ruby/gem/upgrade.md %}
 
 
 ## Shared install
@@ -19,7 +19,7 @@ $ # e.g.
 
 I found I needed root access for `/var/lib/gems/2.7.0` directory. i.e. run with `sudo`.
 
-### Change permissions 
+### Change permissions
 
 To avoid using `sudo`, you can also change the permissions to allow anyone to write to it so `sudo` is not needed later.
 
@@ -73,4 +73,4 @@ See this for more info:
 
 - [User directory][]
 
-[User directory]: {{ site.baseurl }}{% link cheatsheets/ruby/gems/user-directory.md %}
+[User directory]: {% link cheatsheets/ruby/gems/user-directory.md %}

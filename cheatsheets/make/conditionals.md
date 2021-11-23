@@ -4,7 +4,7 @@
 
 - [Definition][] page, including default values for variables.
 
-[Definition]: {{ site.baseurl }}{% link cheatsheets/make/variables/definition.md %}
+[Definition]: {% link cheatsheets/make/variables/definition.md %}
 
 
 ## Shell if
@@ -73,7 +73,7 @@ ifneq ($(wildcard ./fizz/$(BUZZ)),)
 	$(eval NAME=$(shell sh -c "grep ..."))
 endif
 	# ...
-    
+
 ```
 
 
@@ -85,7 +85,7 @@ ifndef FOO
 endif
 ```
 
-Sample from Git's Makefile. 
+Sample from Git's Makefile.
 
 ```mk
 ifndef SHELL_PATH
@@ -122,7 +122,7 @@ ifndef DEPLOYMENT_ENVIRONMENT
 	exit 1
 endif
 	echo "DEPLOYMENT_ENVIRONMENT: $(DEPLOYMENT_ENVIRONMENT)"
-    
+
 deploy: .check-env
 	# do stuff
 ```

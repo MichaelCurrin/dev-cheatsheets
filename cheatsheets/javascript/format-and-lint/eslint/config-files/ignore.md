@@ -10,7 +10,7 @@ This config is a plain text file, with glob patterns.
 
 ## Related
 
-- [ESLint ignore rule in a script]({{ site.baseurl }}{% link cheatsheets/javascript/format-and-lint/eslint/rules/ignore-rule-in-script.md %}) - ignore a rule, rather than a path.
+- [ESLint ignore rule in a script]({% link cheatsheets/javascript/format-and-lint/eslint/rules/ignore-rule-in-script.md %}) - ignore a rule, rather than a path.
 
 
 ## Resources

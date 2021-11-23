@@ -118,7 +118,7 @@ Note use of colon in `:style` and passing a JS object which uses `margineLeft` a
 
 See also [Binding][] cheatsheet.
 
-[Binding]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/components/binding.md %}
+[Binding]: {% link cheatsheets/javascript/packages/vue/components/binding.md %}
 
 
 ## Module styles

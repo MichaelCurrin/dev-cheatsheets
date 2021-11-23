@@ -9,8 +9,8 @@ description: How to install the Vue CLI
 - [CLI][] cheatsheet - For more info on running Vue commands.
 - [Quickstart][] cheatsheet
 
-[CLI]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/cli/index.md %}
-[Quickstart]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/quickstart.md %}
+[CLI]: {% link cheatsheets/javascript/packages/vue/cli/index.md %}
+[Quickstart]: {% link cheatsheets/javascript/packages/vue/quickstart.md %}
 
 
 ## Install globally

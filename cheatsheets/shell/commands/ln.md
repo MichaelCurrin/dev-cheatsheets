@@ -5,7 +5,7 @@
 
 - [Links][] cheatsheet.
 
-[Links]: {{ site.baseurl }}{% link cheatsheets/shell/links.md %}
+[Links]: {% link cheatsheets/shell/links.md %}
 
 
 ## Help

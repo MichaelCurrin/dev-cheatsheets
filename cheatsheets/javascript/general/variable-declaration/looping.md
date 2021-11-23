@@ -9,7 +9,7 @@ Unless you need to change a variable deliberately, or you are using a C-style lo
 
 See the more general [Looping][] cheatsheet for more info.
 
-[Looping]: {{ site.baseurl }}{% link cheatsheets/javascript/general/data-structures/looping.md %}
+[Looping]: {% link cheatsheets/javascript/general/data-structures/looping.md %}
 
 
 ## Immutable for-of

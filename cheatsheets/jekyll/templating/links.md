@@ -64,7 +64,7 @@ Since Jekyll 4.0, you don’t need to prepend the `link` or `post_url` tags with
 
 - Jekyll 3
     ```md
-    [Link text]({{ site.baseurl }}{% link about.md %})
+    [Link text]({% link about.md %})
     ```
 - Jekyll 4
     ```md
@@ -162,4 +162,4 @@ Based on the Midnight theme.
 
 {% endraw %}
 
-[Markdown Links]: {{ site.baseurl }}{% link cheatsheets/markdown/links.md %}
+[Markdown Links]: {% link cheatsheets/markdown/links.md %}

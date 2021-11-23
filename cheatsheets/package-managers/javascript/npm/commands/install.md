@@ -10,10 +10,10 @@ description: The `npm install` command
 - [Maintain packages][]
 - [Upgrade packages][]
 
-[upgrade]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/commands/update.md %}
-[Install packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/install-packages.md %}
-[Maintain packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/maintain-packages.md %}
-[Upgrade packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/upgrade-packages.md %}
+[upgrade]: {% link cheatsheets/package-managers/javascript/npm/commands/update.md %}
+[Install packages]: {% link cheatsheets/package-managers/javascript/npm/install-packages.md %}
+[Maintain packages]: {% link cheatsheets/package-managers/javascript/npm/maintain-packages.md %}
+[Upgrade packages]: {% link cheatsheets/package-managers/javascript/npm/upgrade-packages.md %}
 
 
 ## Resources
@@ -46,12 +46,12 @@ common options: [--save-prod|--save-dev|--save-optional] [--save-exact] [--no-sa
 
 Some common or useful flags.
 
-Flag | Description
----  | ---
-`-D, --save-dev` | Save to dev dependencies. By default, installs are saved to prod dependencies without any flag (at least on newer NPM versions).
-`-G, -g, --global` | Install as a global dependency.
-`--production, --only=prod, --only=production` | Install only prod dependecies from `package.json` file.
-`-E, --save-exact` | Saved dependencies will be configured with an exact version rather than using npm's default semver range operator. e.g. `1.2.3` instead of `^1.2.3` if doing `npm install foo`.
+| Flag                                           | Description                                                                                                                                                                     |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-D, --save-dev`                               | Save to dev dependencies. By default, installs are saved to prod dependencies without any flag (at least on newer NPM versions).                                                |
+| `-G, -g, --global`                             | Install as a global dependency.                                                                                                                                                 |
+| `--production, --only=prod, --only=production` | Install only prod dependecies from `package.json` file.                                                                                                                         |
+| `-E, --save-exact`                             | Saved dependencies will be configured with an exact version rather than using npm's default semver range operator. e.g. `1.2.3` instead of `^1.2.3` if doing `npm install foo`. |
 
 
 ## Install by package name
@@ -172,7 +172,7 @@ Note quotes to avoid a syntax error.
 $ npm install 'PACKAGE<UPPER'
 ```
 
-If you have say version 2 of a package but you need 1, you would do this. 
+If you have say version 2 of a package but you need 1, you would do this.
 
 e.g.
 

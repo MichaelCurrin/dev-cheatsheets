@@ -51,5 +51,4 @@ The CLI also warns not to use `--with GROUP` for install groups.
 
 See the [Groups][] cheatsheet,
 
-[Groups]: {{ site.baseurl }}{% link cheatsheets/package-managers/ruby/bundler/groups.md %}
-
+[Groups]: {% link cheatsheets/package-managers/ruby/bundler/groups.md %}

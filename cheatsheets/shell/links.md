@@ -5,7 +5,7 @@
 
 - [ln][] command cheatsheet.
 
-[ln]: {{ site.baseurl }}{% link cheatsheets/shell/commands/ln.md %}
+[ln]: {% link cheatsheets/shell/commands/ln.md %}
 
 
 ## View
@@ -63,7 +63,7 @@ $ mkdir my-dir
 $ cd my-dir
 $ ln -s ../test.txt my-symlink
 $ cd ..
-$ realpath my-dir/my-symlink 
+$ realpath my-dir/my-symlink
 /home/test.txt
 ```
 
@@ -73,10 +73,10 @@ Use `-n` to remove trailing newline.
 
 ```
      readlink, stat -- display file status
-     
+
      readlink [-n] [file ...]
 ```
- 
+
 ```sh
 $ readlink SYMLINK
 ```

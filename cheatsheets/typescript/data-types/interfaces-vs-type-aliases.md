@@ -6,8 +6,8 @@
 - [Type Aliases][] cheatsheet.
 - [Interfaces][] cheatsheet.
 
-[Type Aliases]: {{ site.baseurl }}{% link cheatsheets/typescript/data-types/type-aliases.md %}
-[Inferfaces]: {{ site.baseurl }}{% link cheatsheets/typescript/data-types/interfaces.md %}
+[Type Aliases]: {% link cheatsheets/typescript/data-types/type-aliases.md %}
+[Inferfaces]: {% link cheatsheets/typescript/data-types/interfaces.md %}
 
 
 ## Resources

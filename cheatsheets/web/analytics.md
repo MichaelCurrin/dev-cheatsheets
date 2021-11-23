@@ -46,4 +46,4 @@ Here is a variation from [HTML5 boilerplate](https://github.com/h5bp/html5-boile
 
 For approaches to adding analytics to a Jekyll site, see the [Jekyll Analytics][] cheatsheet.
 
-[Jekyll Analytics]: {{ site.baseurl }}{% link cheatsheets/jekyll/templating/analytics.md %}
+[Jekyll Analytics]: {% link cheatsheets/jekyll/templating/analytics.md %}

@@ -52,6 +52,6 @@ console.log(x)
 ## Scoping a variable
 
 
-[Control flow]: {{ site.baseurl }}{% link cheatsheets/javascript/general/control-flow/index.md %}
-[Functions]: {{ site.baseurl }}{% link cheatsheets/javascript/general/functions/index.md %}
-[Looping]: {{ site.baseurl }}{% link cheatsheets/javascript/general/data-structures/looping.md %}
+[Control flow]: {% link cheatsheets/javascript/general/control-flow/index.md %}
+[Functions]: {% link cheatsheets/javascript/general/functions/index.md %}
+[Looping]: {% link cheatsheets/javascript/general/data-structures/looping.md %}

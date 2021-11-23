@@ -128,7 +128,7 @@ Use the `return` built-in to return a number as the exit status for a function, 
 
 See [return][] command for using `return` inside a function.
 
-[return]: {{ site.baseurl }}{% link cheatsheets/shell/commands/return.md %}
+[return]: {% link cheatsheets/shell/commands/return.md %}
 
 Example for conditional exiting:
 

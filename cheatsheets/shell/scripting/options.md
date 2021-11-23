@@ -180,7 +180,7 @@ From the man page:
 
 See more info in [Piping][] cheatsheet.
 
-[Piping]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/input-output.md %}
+[Piping]: {% link cheatsheets/shell/scripting/input-output.md %}
 
 ```
 -o pipefail

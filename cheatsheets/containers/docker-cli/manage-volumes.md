@@ -5,7 +5,7 @@
 
 - [Prune][] for deleting volumes.
 
-[Prune]: {{ site.baseurl }}{% link cheatsheets/containers/docker-cli/prune.md %}
+[Prune]: {% link cheatsheets/containers/docker-cli/prune.md %}
 
 
 ## List

@@ -11,7 +11,7 @@ For more detail than below, you can set level as 0, 1 or 2 - [Configuring rules]
 
 ## Related
 
-- [ESLint ignore config]({{ site.baseurl }}{% link cheatsheets/javascript/format-and-lint/eslint/config-files/ignore.md %}) - ignore a path, rather than a rule.
+- [ESLint ignore config]({% link cheatsheets/javascript/format-and-lint/eslint/config-files/ignore.md %}) - ignore a path, rather than a rule.
 
 
 ## Ignore entire file
@@ -76,7 +76,7 @@ e.g.
 
 ```javascript
 // eslint-disable-next-line no-console
-console.log("Hello, World"); 
+console.log("Hello, World");
 ```
 
 ## Ignore current line

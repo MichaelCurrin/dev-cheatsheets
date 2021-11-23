@@ -8,8 +8,8 @@ See [map, reduce and filter][] page for how to apply `map` to an array.
 
 See the [Unpack][] page for unpacking variables without necessarily using a for loop.
 
-[map, reduce and filter]: {{ site.baseurl }}{% link cheatsheets/javascript/general/map-reduce-filter.md %}
-[Unpack]: {{ site.baseurl }}{% link cheatsheets/javascript/general/data-structures/unpack.md %}
+[map, reduce and filter]: {% link cheatsheets/javascript/general/map-reduce-filter.md %}
+[Unpack]: {% link cheatsheets/javascript/general/data-structures/unpack.md %}
 
 
 ## Overview
@@ -304,7 +304,7 @@ A variation of a `for` loop, for async code.
 - [for await...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of)
     > loop iterating over async iterable objects as well as on sync iterables
 
-I guess this is useful if you have an array of Promises. 
+I guess this is useful if you have an array of Promises.
 
 I think the for await approach runs them independently and carries on the when they are all done, like using `Promise.all`.
 

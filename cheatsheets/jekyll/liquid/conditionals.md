@@ -20,7 +20,7 @@ Example using [Google Analytics][]
      {%- include google-analytics.html -%}
  {%- endif -%}
  ```
- 
+
 
 ## else statement
 
@@ -77,4 +77,4 @@ Consider also using the `join` filter which will do something similar for joinin
 {% endraw %}
 
 
-[Google Analytics]: {{ site.baseurl }}{% link cheatsheets/jekyll/templating/analytics.md %}
+[Google Analytics]: {% link cheatsheets/jekyll/templating/analytics.md %}

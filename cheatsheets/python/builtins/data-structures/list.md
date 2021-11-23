@@ -203,7 +203,7 @@ Insert elements between elements. Here inserting at the start.
 
 See [Copy][] cheatsheet.
 
-[Copy]: {{ site.baseurl }}{% link cheatsheets/python/copy.md %}
+[Copy]: {% link cheatsheets/python/copy.md %}
 
 
 ## Cast to list

@@ -17,5 +17,5 @@ e.g. `#` becomes `%23`.
 - [Python][]
 - [JavaScript][]
 
-[Python]: {{ site.baseurl }}{% link cheatsheets/python/strings/encoding/url.md %}
-[JavaScript]: {{ site.baseurl }}{% link cheatsheets/javascript/general/strings/encoding/url.md %}
+[Python]: {% link cheatsheets/python/strings/encoding/url.md %}
+[JavaScript]: {% link cheatsheets/javascript/general/strings/encoding/url.md %}

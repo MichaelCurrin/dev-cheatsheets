@@ -25,4 +25,4 @@ $ git diff --name-status COMMIT [COMMIT]
 $ git diff --name-status HEAD~2
 ```
 
-For sample output see [Diff command]({{ site.baseurl }}{% link cheatsheets/version-control/git/commands/diff.md %}) page.
+For sample output see [Diff command]({% link cheatsheets/version-control/git/commands/diff.md %}) page.

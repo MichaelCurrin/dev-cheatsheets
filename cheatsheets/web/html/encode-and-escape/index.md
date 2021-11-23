@@ -10,5 +10,5 @@ This deals with these areas:
 - [URL Encoding][] - For text in a website **URL**.
 - [HTML entity escaping][] - For the HTML **contents of a webpage**.
 
-[URL Encoding]: {{ site.baseurl }}{% link cheatsheets/web/html/encode-and-escape/url-encoding.md %}
-[HTML entity escaping]: {{ site.baseurl }}{% link cheatsheets/web/html/encode-and-escape/html-entity-escaping.md %}
+[URL Encoding]: {% link cheatsheets/web/html/encode-and-escape/url-encoding.md %}
+[HTML entity escaping]: {% link cheatsheets/web/html/encode-and-escape/html-entity-escaping.md %}

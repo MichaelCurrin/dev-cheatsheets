@@ -44,4 +44,4 @@ my_string: |
   abc def
 ```
 
-See more info in the [Strings]({{ site.baseurl }}{% link cheatsheets/data/yaml/strings.md %}) page.
+See more info in the [Strings]({% link cheatsheets/data/yaml/strings.md %}) page.

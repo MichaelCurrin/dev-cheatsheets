@@ -14,5 +14,5 @@ See cheatsheets here:
 - [Docker CLI Volumes][]
 
 
-[Docker Compose Volumes]: {{ site.baseurl }}{% link cheatsheets/containers/docker-compose/volumes.md %}
-[Docker CLI Volumes]: {{ site.baseurl }}{% link cheatsheets/containers/docker-cli/volumes.md %}
+[Docker Compose Volumes]: {% link cheatsheets/containers/docker-compose/volumes.md %}
+[Docker CLI Volumes]: {% link cheatsheets/containers/docker-cli/volumes.md %}

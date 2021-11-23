@@ -67,11 +67,11 @@ defaults            : []
 
 See the [Strict rendering][] and [Markdown Options][] pages in this guide for info on the `liquid` and `kramdown` sections of the config.
 
-[Strict rendering]: {{ site.baseurl }}{% link cheatsheets/jekyll/configuration/strict-rendering.md %}
-[Markdown Options]: {{ site.baseurl }}{% link cheatsheets/jekyll/configuration/markdown-options.md %}
+[Strict rendering]: {% link cheatsheets/jekyll/configuration/strict-rendering.md %}
+[Markdown Options]: {% link cheatsheets/jekyll/configuration/markdown-options.md %}
 
 See the [Permalink][] page for more info on `permalink` field.
 
-[Permalink]: {{ site.baseurl }}{% link cheatsheets/jekyll/templating/permalinks.md %}
- 
+[Permalink]: {% link cheatsheets/jekyll/templating/permalinks.md %}
+
 Set show directory listing to true if you want Jekyll server to list files and directories if an index file is absent. This is not so useful, as normally you'd have an index page otherwise the page is not styled. Also this only applies to local Jekyll. A use for this field would be when you are developing and you don't yet have a menu to access all your pages, so then you can explore all your pages in a directory view.

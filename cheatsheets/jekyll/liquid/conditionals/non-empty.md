@@ -7,7 +7,7 @@ description: Use an `if` statement to check if a variable has a non-null value
 
 How to handle `if` statements to check that a value is defined and has a non-null value.
 
-The [Truthy Falsy]({{ site.baseurl }}{% link cheatsheets/jekyll/liquid/truthy-falsy.md %}) page for a list of what is truth and falsy. The _Truthy_ section will probably surprise you. As Jekyll doesn't behave like other languages like Python or JavaScript.
+The [Truthy Falsy]({% link cheatsheets/jekyll/liquid/truthy-falsy.md %}) page for a list of what is truth and falsy. The _Truthy_ section will probably surprise you. As Jekyll doesn't behave like other languages like Python or JavaScript.
 
 
 ## Check variable is defined and not null

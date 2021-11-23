@@ -5,10 +5,10 @@ A built-in function to exit early and return an exit status.
 
 ## Where to run
 
-This can be used 
+This can be used
 
 - in the CLI
-- in a function. 
+- in a function.
 - in a script outside a function, but only if run with `source SCRIPT`. This is similar to running as `exit`.
 
 Otherwise you get this error:
@@ -18,7 +18,7 @@ Otherwise you get this error:
 
 If you want to return output from a function, use `echo` rather - see [Functions][].
 
-[Functions]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/functions.md %}
+[Functions]: {% link cheatsheets/shell/scripting/functions.md %}
 
 
 ## Usage
@@ -98,7 +98,7 @@ line 3
     echo 'line 2'
     echo 'line 3'
     ```
-    
+
 Run in the CLI:
 
 ```console
@@ -108,6 +108,5 @@ line 1
 
 Note the exit status now will be the return value. So these are similar:
 
-- `return 0` - `exit 0` 
+- `return 0` - `exit 0`
 - `return 1` - `exit 1`
-

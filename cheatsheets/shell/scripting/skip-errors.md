@@ -12,7 +12,7 @@ set -e
 
 - [Status check][] cheatsheet
 
-[Status check]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/control-flow/status-check.md %}
+[Status check]: {% link cheatsheets/shell/scripting/control-flow/status-check.md %}
 
 
 ## Default
@@ -40,7 +40,7 @@ CMD || true
 
 If you run `echo $?` you'll see `0` for success, as it uses the exit code for the entire line above it (which will come from the last executed piece).
 
-This works for variables and subshells too. 
+This works for variables and subshells too.
 
 Example - here using `npm outdated` which gives an error if there are packages to update, and capturing the output in a variable without aborting.
 
@@ -97,7 +97,7 @@ CMD 2> /dev/null
 
 See [Redirection][] cheatsheet.
 
-[Redirection]: {{ site.baseurl }}{% link cheatsheets/shell/files/redirection.md %}
+[Redirection]: {% link cheatsheets/shell/files/redirection.md %}
 
 
 ## Continue without aborting and fail silently

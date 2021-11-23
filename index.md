@@ -6,7 +6,7 @@ layout: home
 
 > {{ site.description }}
 
-Welcome to **Dev Cheatsheets**. 
+Welcome to **Dev Cheatsheets**.
 
 Coding ingredients or building blocks. This is about having a central eference for languge syntax or CLI features, without having to wade through docs and tutorials and StackOverflow.
 
@@ -15,7 +15,7 @@ A reference for how to use a CLI tool, language or library. It's mean to be a qu
 Including syntax but emphasizing real world examples. While trying to keep explanation paragraphs to a minimum.
 
 <div align="center" style="padding-bottom: 1em;">
-    <a href="{{ site.baseurl }}{% link cheatsheets/index.md %}">
+    <a href="{% link cheatsheets/index.md %}">
         <img src="https://img.shields.io/badge/all_cheatsheet_topics-blue?style=for-the-badge"
             alt="Go to cheatsheets"/>
     </a>
@@ -31,25 +31,25 @@ Contributions are welcome via PRs and issues.
 ### Scripting
 
 <div class="flex-container">
-    <a href="{{ site.baseurl }}{% link cheatsheets/python/index.md %}">
+    <a href="{% link cheatsheets/python/index.md %}">
         <div>
             {% include logo.html name="python" %}
             <span>Python</span>
         </div>
     </a>
-    <a href="{{ site.baseurl }}{% link cheatsheets/go/index.md %}">
+    <a href="{% link cheatsheets/go/index.md %}">
         <div>
             {% include logo.html name="go" %}
             <span>Go</span>
         </div>
     </a>
-    <a href="{{ site.baseurl }}{% link cheatsheets/javascript/index.md %}">
+    <a href="{% link cheatsheets/javascript/index.md %}">
         <div>
             {% include logo.html name="javascript" %}
             <span>JavaScript</span>
         </div>
     </a>
-    <a href="{{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/index.md %}">
+    <a href="{% link cheatsheets/javascript/packages/vue/index.md %}">
         <div>
             {% include logo.html name="vuedotjs" %}
             <span>Vue</span>
@@ -60,19 +60,19 @@ Contributions are welcome via PRs and issues.
 ### Static sites and docs
 
 <div class="flex-container">
-    <a href="{{ site.baseurl }}{% link cheatsheets/ci-cd/github-actions/index.md %}">
+    <a href="{% link cheatsheets/ci-cd/github-actions/index.md %}">
         <div>
             {% include logo.html name="githubactions" %}
             <span>GitHub Actions</span>
         </div>
     </a>
-    <a href="{{ site.baseurl }}{% link cheatsheets/markdown/index.md %}">
+    <a href="{% link cheatsheets/markdown/index.md %}">
         <div>
             {% include logo.html name="markdown" %}
             <span>Markdown</span>
         </div>
     </a>
-    <a href="{{ site.baseurl }}{% link cheatsheets/jekyll/index.md %}">
+    <a href="{% link cheatsheets/jekyll/index.md %}">
         <div>
             {% include logo.html name="jekyll" %}
             <span>Jekyll</span>
@@ -83,13 +83,13 @@ Contributions are welcome via PRs and issues.
 ### Command-line
 
 <div class="flex-container">
-    <a href="{{ site.baseurl }}{% link cheatsheets/version-control/git/index.md %}">
+    <a href="{% link cheatsheets/version-control/git/index.md %}">
         <div>
             {% include logo.html name="git" %}
             <span>Git</span>
         </div>
     </a>
-    <a href="{{ site.baseurl }}{% link cheatsheets/shell/index.md %}">
+    <a href="{% link cheatsheets/shell/index.md %}">
         <div>
             {% include logo.html name="gnubash" %}
             <span>Shell</span>

@@ -4,7 +4,7 @@
 
 - [URL encoding][] cheatsheet
 
-[URL encoding]: {{ site.baseurl }}{% link cheatsheets/web/html/encode-and-escape/url-encoding.md %}
+[URL encoding]: {% link cheatsheets/web/html/encode-and-escape/url-encoding.md %}
 
 
 ## Fuctions

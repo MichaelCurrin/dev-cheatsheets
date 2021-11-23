@@ -8,7 +8,7 @@ This is a general guide for _how_ to configure, not _what_ to configure. See lin
 
 ## Related
 
-- [Config fields]({{ site.baseurl }}{% link cheatsheets/version-control/git/config-fields.md %})
+- [Config fields]({% link cheatsheets/version-control/git/config-fields.md %})
 
 
 ## Edit config directly

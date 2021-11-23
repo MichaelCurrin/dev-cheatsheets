@@ -17,7 +17,7 @@ If you need the value of variable to be pushed back up outside a component, then
 - Vue 2 docs
     - [Events](https://vuejs.org/v2/guide/events.html) docs
 
-[v-model cheatsheet]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/directives/v-model.md %}
+[v-model cheatsheet]: {% link cheatsheets/javascript/packages/vue/directives/v-model.md %}
 
 
 ### Why

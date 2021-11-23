@@ -32,12 +32,12 @@ Links to get you to the Package Managers section easily, outside of this JS sect
 - [JS in Code Cookbook][]
 
 
-[Browser]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/index.md %}
-[Node]: {{ site.baseurl }}{% link cheatsheets/javascript/node/index.md %}
-[Deno]: {{ site.baseurl }}{% link cheatsheets/javascript/deno/index.md %}
+[Browser]: {% link cheatsheets/javascript/browser/index.md %}
+[Node]: {% link cheatsheets/javascript/node/index.md %}
+[Deno]: {% link cheatsheets/javascript/deno/index.md %}
 
-[NPM]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/index.md %}
-[Yarn]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/yarn/index.md %}
+[NPM]: {% link cheatsheets/package-managers/javascript/npm/index.md %}
+[Yarn]: {% link cheatsheets/package-managers/javascript/yarn/index.md %}
 
 [JS in Learn to Code]: https://github.com/MichaelCurrin/learn-to-code/blob/master/en/topics/scripting_languages/JavaScript/README.md
 [JS in Code Cookbook]: https://michaelcurrin.github.io/code-cookbook/recipes/javascript/

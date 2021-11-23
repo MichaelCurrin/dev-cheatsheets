@@ -2,7 +2,7 @@
 
 See also [Shell requests][] for doing requests from the command-line.
 
-[Shell requests]: {{ site.baseurl }}{% link cheatsheets/shell/requests.md %}
+[Shell requests]: {% link cheatsheets/shell/requests.md %}
 
 
 ## Request bins

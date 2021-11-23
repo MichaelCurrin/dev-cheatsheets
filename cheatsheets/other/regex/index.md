@@ -11,5 +11,5 @@
 - [JavaScript Regex][] cheatsheet.
 - [Regex][] in Code Cookbook.
 
-[JavaScript Regex]: {{ site.baseurl }}{% link cheatsheets/javascript/general/strings/regex.md %}
+[JavaScript Regex]: {% link cheatsheets/javascript/general/strings/regex.md %}
 [Regex]: https://michaelcurrin.github.io/code-cookbook/recipes/other/regex/

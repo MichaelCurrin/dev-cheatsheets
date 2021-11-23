@@ -7,7 +7,7 @@ description: Remove unused data
 
 - [Delete][] cheatsheet
 
-[Delete]: {{ site.baseurl }}{% link cheatsheets/containers/docker-cli/delete.md %}
+[Delete]: {% link cheatsheets/containers/docker-cli/delete.md %}
 
 
 
@@ -17,8 +17,8 @@ description: Remove unused data
 $ docker system prune [OPTIONS]
 ```
 
-| Options      | Description                                      |
-| ------------ | ------------------------------------------------ |
+| Options         | Description                                      |
+| --------------- | ------------------------------------------------ |
 | `--all`, `-a`   | Remove all unused images not just dangling ones. |
 | `--force`, `-f` | Do not prompt for confirmation                   |
 
@@ -28,7 +28,7 @@ $ docker system prune [OPTIONS]
 ## Remove all unused - containers, networks, images, and cache
 
 ```sh
-$ docker system prune 
+$ docker system prune
 ```
 
 With no options, you will get a confirmation prompt and told that these will be removed:

@@ -9,13 +9,13 @@ description: Various ways to load and run JS in the browser using `script` tags
 - [Modules][] in JS.
 - [Defer execution][] of JS.
 
-[Modules]: {{ site.baseurl }}{% link cheatsheets/javascript/general/modules/index.md %}
-[Defer execution]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/defer-execution.md %}
+[Modules]: {% link cheatsheets/javascript/general/modules/index.md %}
+[Defer execution]: {% link cheatsheets/javascript/browser/defer-execution.md %}
 
 
 ## Basic
 
-### Inline 
+### Inline
 
 ```html
 <script>
@@ -41,7 +41,7 @@ Defer execution until content has loaded.
 </body>
 ```
 
-### Load module 
+### Load module
 
 Defer execution until content has loaded. Use defer attitude, or put the script tag at the bottom or the page.
 
@@ -55,7 +55,7 @@ Defer execution until content has loaded. Use defer attitude, or put the script 
 </body>
 ```
 
-```javascript 
+```javascript
 // main.js
 const target = document.getElementById("app")
 target.innerText = "Hello, World")
@@ -63,7 +63,7 @@ console.log("Hello, World")
 ```
 
 
-## Library 
+## Library
 
 ### CDN
 
@@ -83,7 +83,7 @@ Such as [React](https://reactjs.org/docs/cdn-links.html)
 </body>
 ```
 
-### Load installed package 
+### Load installed package
 
 How to load a 3rd party library if installed using `npm install`.
 
@@ -100,7 +100,7 @@ Then serve the `public` directory and load from it as:
 ```html
 <head>
   <script defer src="/assets/module-name.js"></script>
-  
+
   <script defer src="/assets/main.js"></script>
 </head>
 ```
@@ -124,7 +124,7 @@ $ npm run build
 See my [Bundling quickstarts](https://github.com/MichaelCurrin/javascript-bundling-quickstarts/tree/master/quickstarts)
 
 
-## ES Modules 
+## ES Modules
 
 If you want to use the `import` keyword to load a module by URL, then switch to ES Modules.
 
@@ -175,4 +175,3 @@ You can also run that inline. The downside is you can't use `defer` here on an i
 ```
 
 Bundlers like Vite and ES Build also support use of `import`.
-

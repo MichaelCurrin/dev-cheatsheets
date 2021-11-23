@@ -10,8 +10,8 @@ See cheatsheets for:
 - [npm install][] command.
 - [npm ci][] command for production and automated deploys.
 
-[npm install]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/commands/install.md %}
-[npm ci]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/commands/ci.md %}
+[npm install]: {% link cheatsheets/package-managers/javascript/npm/commands/install.md %}
+[npm ci]: {% link cheatsheets/package-managers/javascript/npm/commands/ci.md %}
 
 
 ## View

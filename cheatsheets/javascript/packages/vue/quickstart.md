@@ -51,4 +51,4 @@ See more info in the [Install][] cheatsheet.
 [Codepen]: https://codepen.io/yyx990803/pen/OJNoaZL
 [vite]: https://github.com/vitejs/vite
 [vue-frontend-quickstart]: https://github.com/MichaelCurrin/vue-frontend-quickstart
-[Install]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/install.md %}
+[Install]: {% link cheatsheets/javascript/packages/vue/install.md %}
