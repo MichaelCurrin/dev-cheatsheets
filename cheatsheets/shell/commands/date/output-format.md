@@ -1,6 +1,9 @@
-# Formats
+# Output format
 
 Examples here use the current time.
+
+See the GNU Date and BSD Date cheatsheets for more info on formats.
+
 
 ## Default format
 
@@ -52,29 +55,6 @@ And to store it:
 $ DATE=$(date '+%Y-%m-%dT%H:%M:%SZ')
 ```
 
-
-## Unix timestamp
-
-Use a built-in variable for current time in seconds.
-
-```console
-$ echo $EPOCHSECONDS
-1614012035
-```
-
-Or as a float.
-
-```console
-$ echo $EPOCHREALTIME
-1614012035.3449261189
-```
-
-Or use the `date` command with a format.
-
-```console
-$ date '+%s'
-1614012035
-```
 
 
 
