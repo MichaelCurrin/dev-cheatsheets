@@ -8,11 +8,10 @@ For local development and use outside of GH Pages, it is sufficient to add a plu
 ```ruby
 group :jekyll_plugins do
   gem "jekyll-feed"
-  gem "jekyll-sitemap"
+  gem "jekyll-sitemap", "~> 1.4"
+  gem "jekyll-seo-tag, "~> 2.7.1"
 end
 ```
-
-For example, you can see the `sitemap.xml` file and `feed.xml` file get outputted in `_site` on a build.
 
 
 ## GitHub Pages
