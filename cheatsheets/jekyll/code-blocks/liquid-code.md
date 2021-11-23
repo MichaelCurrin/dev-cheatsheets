@@ -18,7 +18,7 @@ e.g.
 
 Make sure you understand [Basics][] first.
 
-[Basics]: {{ site.baseurl }}{% link cheatsheets/jekyll/code-blocks/basics.md %}
+[Basics]: {% link cheatsheets/jekyll/code-blocks/basics.md %}
 
 
 ## Code block approach

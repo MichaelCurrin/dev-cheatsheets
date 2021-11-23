@@ -15,7 +15,7 @@ cheatsheet:
                 {{ "hello" | slice: 0 }} <!-- h -->
                 {{ "hello" | slice: 1 }} <!-- e -->
                 {{ "hello" | slice: 2, 3 }} <!-- ell -->
-                
+
             help: Get items in an iterable from start index (inclusive) for a limit of items. See also `slice` in Array section and below `offset` and `limit` in the _For loops_ page.
 
           - cmd: markdownify
@@ -70,20 +70,20 @@ cheatsheet:
 
           - cmd: uri_escape
             help: Escape a URI with percent coding
-            usage: | 
+            usage: |
                 {{ "foo, bar \baz?" | uri_escape }}
-                
+
                 Result:
 
                 foo,%20bar%20%5Cbaz?
 
           - cmd: url_decode
           - cmd: url_encode
-          
+
           - cmd: slugify
             usage: |
                 {{ "The _config.yml file" | slugify }} <!-- the-config-yml-file -->
-                
+
     - title: Array filters
       items:
           - cmd: join
@@ -120,7 +120,7 @@ cheatsheet:
               {{ page.foo | slice: 0, 3 }} <!-- First three elements -->
               {{ page.foo | slice: 1, 3 }} <!-- First 3 elements starting at 2nd element -->
             help: Get an item by index. Or with two values as a range, set a start index and a count of elements. See also `offset` and `limit` on the _For loops_ page.
-          
+
           - cmd: map
             usage: |
               {{ my_array | map: "some_attribute" }}
@@ -129,7 +129,7 @@ cheatsheet:
             usage: |
               {{ site.posts | where: "category", "foo" }}
               {{ page.people | where: "school", "Stanford" }}
-            help: A simple filter where an attribute value matches a given value. 
+            help: A simple filter where an attribute value matches a given value.
           - cmd: where_exp
             usage: |
                 {{ page.people | where_exp: "item", "item.name contains 'Jo'" }}
@@ -139,7 +139,7 @@ cheatsheet:
           - cmd: group_by
             usage: |
               {{ page.people | group_by: country }}
-              <!-- 
+              <!--
                 Source:
                     [ [name: 'Joe', country: 'England'], [name: 'Sally', country: 'England']
                 Result:
@@ -153,7 +153,7 @@ cheatsheet:
                 {{ page.people | group_by_exp: "item", "item.year | modulo: 2" }}
                 {{ page.people | group_by_exp: "item", "item.country | replace: 'rd', 'ry' " }}
             description: Group an array's items using a Liquid expression.
-            
+
           - cmd: size
             usage: |
                 {{ my_array | size }}
@@ -224,7 +224,7 @@ cheatsheet:
             help: Limits a number to a minimum value. Same as `min(a, b)` in other languages.
           - cmd: at_most
             help: Limits a number to a maximum value. Same as `max(a, b)` in other languages.
-         
+
 ---
 # All filters
 
@@ -242,8 +242,8 @@ For escaping a URI:
 For escaping HTML tags:
 
 - `xml_escape`
-- `escape` 
-- `escape_once` 
+- `escape`
+- `escape_once`
 
 See also the [Arrays][] cheatsheet.
 
@@ -270,4 +270,4 @@ See also the [Arrays][] cheatsheet.
 
 [CloudCannon Jekyll cheatsheet]: https://cloudcannon.com/community/jekyll-cheat-sheet/
 [Liquid filters]: https://jekyllrb.com/docs/liquid/filters/
-[Arrays]: {{ site.baseurl }}{% link cheatsheets/jekyll/liquid/arrays.md %}
+[Arrays]: {% link cheatsheets/jekyll/liquid/arrays.md %}

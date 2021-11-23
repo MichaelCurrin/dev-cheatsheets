@@ -11,7 +11,7 @@ From the help:
 
 If you want to know how clean-up references to **remote-tracking** branches, see the [Prune branches][] page.
 
-[Prune branches]: {{ site.baseurl }}{% link cheatsheets/version-control/git/prune-branches.md %}
+[Prune branches]: {% link cheatsheets/version-control/git/prune-branches.md %}
 
 
 ## Tutorial

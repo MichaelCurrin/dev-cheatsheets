@@ -10,7 +10,7 @@ The browser lets you a store value against a key in an in-browser database.
 Up to 5MB.
 
 
-## Expiration 
+## Expiration
 
 Local storage data has **no** expiration time. It applies across tabs/windows of the same site / origin.
 
@@ -21,12 +21,12 @@ While session storage data gets cleared when the page session ends — that is, 
 
 In Mozilla docs.
 
-- [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) 
+- [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 - [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
 
 See also [Cookies][] cheatsheet.
 
-[Cookies]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/cookies.md %}
+[Cookies]: {% link cheatsheets/javascript/browser/cookies.md %}
 
 
 ## Methods
@@ -38,13 +38,13 @@ These work on both `localStorage` and `sessionStorage`.
 - `Storage.setItem(keyName, value)` - create or update value.
 - `Storage.removeItem(keyName)` - remove key and its value.
 - `Storage.clear()` - empty all keys out of the storage.
-    
-    
+
+
 ## Examples
 
 ### Scalar
 
-Write then read a value in local storage. 
+Write then read a value in local storage.
 
 ```javascript
 localStorage.getItem('foo')
@@ -68,7 +68,7 @@ localStorage.setItem('bar', JSON.stringify(bar))
 
 Then back from a string to an object.
 
-```javascript 
+```javascript
 const barStr = localStorage.getItem('bar')
 // '{ "abc": 123 }'
 

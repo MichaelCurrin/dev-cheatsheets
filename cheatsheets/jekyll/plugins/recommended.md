@@ -130,4 +130,4 @@ This is a fork of the above. It has some more advanced features but generally I 
 {% endraw %}
 
 
-[ImageMagick]: {{ site.baseurl }}{% link cheatsheets/shell/image-magick.md %}
+[ImageMagick]: {% link cheatsheets/shell/image-magick.md %}

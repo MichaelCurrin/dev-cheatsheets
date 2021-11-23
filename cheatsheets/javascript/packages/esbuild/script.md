@@ -5,7 +5,7 @@ description: Use in a script
 
 See also the [CLI][] section.
 
-[CLI]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/esbuild/cli.md %}
+[CLI]: {% link cheatsheets/javascript/packages/esbuild/cli.md %}
 
 Using ES Modules, import from CDN URL.
 
@@ -19,4 +19,3 @@ Using ES Modules, import from CDN URL.
       outfile: 'out.js',
     })
     ```
-

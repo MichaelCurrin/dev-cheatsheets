@@ -7,7 +7,7 @@ If you have Docker Desktop, you can also use that - see the "Clean up" section.
 
 - [Prune][] cheatsheet
 
-[Prune]: {{ site.baseurl }}{% link cheatsheets/containers/docker-cli/prune.md %}
+[Prune]: {% link cheatsheets/containers/docker-cli/prune.md %}
 
 
 ## Resources
@@ -55,5 +55,3 @@ Get the details from:
 ```sh
 $ docker images
 ```
-
-

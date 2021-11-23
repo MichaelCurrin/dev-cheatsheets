@@ -9,7 +9,7 @@ Remember that methods usually case-sensitive.
 
 - [String methods cheatsheet][]
 
-[String methods cheatsheet]: {{ site.baseurl }}{% link cheatsheets/javascript/general/strings/methods.md %}
+[String methods cheatsheet]: {% link cheatsheets/javascript/general/strings/methods.md %}
 
 
 ## Get index of a value
@@ -40,7 +40,7 @@ A boolean of whether there is match or not.
 'Blue Whale'.indexOf('Blue') !== -1
 // true
 
-'Blue Whale'.indexOf('Bloe') !== -1 
+'Blue Whale'.indexOf('Bloe') !== -1
 // false
 ```
 

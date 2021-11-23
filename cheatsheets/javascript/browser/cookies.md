@@ -1,6 +1,6 @@
 ---
 title: Cookies
-description: Working with browser cookies using JavaScript 
+description: Working with browser cookies using JavaScript
 ---
 
 ## About
@@ -19,8 +19,8 @@ Cookies are sent back and forth on all HTTP requests, unlike Storage. This makes
 - [Storage API][] JavaScript cheatsheet.
 
 [Cookie recipes]: https://michaelcurrin.github.io/code-cookbook/recipes/javascript/browser/cookies.html
-[Time handling]: {{ site.baseurl }}{% link cheatsheets/javascript/general/time-handling.md %}
-[Storage API]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/storage.md %}
+[Time handling]: {% link cheatsheets/javascript/general/time-handling.md %}
+[Storage API]: {% link cheatsheets/javascript/browser/storage.md %}
 
 
 ## Types
@@ -33,11 +33,11 @@ Cookies are sent back and forth on all HTTP requests, unlike Storage. This makes
 
 In Mozilla docs.
 
-- [HTTP cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) 
+- [HTTP cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 
 See also [Storage][] cheatsheet.
 
-[Storage]: {{ site.baseurl }}{% link cheatsheets/javascript/browser/storage.md %}
+[Storage]: {% link cheatsheets/javascript/browser/storage.md %}
 
 
 ## Usage
@@ -143,7 +143,7 @@ const myValuesStr = JSON.stringify(my_interests)
 document.cookie = `my_cookie=${myValuesStr}; SameSite=None; Secure; Path=/;`;
 ```
 
-Then use `JSON.parse` to get it out - after getting just your cookie by name. See [Cookie recipes][]. 
+Then use `JSON.parse` to get it out - after getting just your cookie by name. See [Cookie recipes][].
 
 
 ## Expiry
@@ -156,7 +156,7 @@ From [Set-Cookie][] docs.
 >
 > The maximum lifetime of the cookie as an HTTP-date timestamp. See Date for the required formatting.
 >
-> If unspecified, the cookie becomes a session cookie. A session finishes when the client shuts down, and session cookies will be removed. 
+> If unspecified, the cookie becomes a session cookie. A session finishes when the client shuts down, and session cookies will be removed.
 
 Set a value as:
 

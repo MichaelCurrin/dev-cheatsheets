@@ -14,4 +14,4 @@ $ git shortlog -n -s
 
 For more info, see the [shortlog][] command.
 
-[shortlog]: {{ site.baseurl }}{% link cheatsheets/version-control/git/commands/shortlog.md %}
+[shortlog]: {% link cheatsheets/version-control/git/commands/shortlog.md %}

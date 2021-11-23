@@ -7,7 +7,7 @@ They will a **new** object after the applying transformation. The old array will
 
 ## Map
 
-Apply a function to each element. 
+Apply a function to each element.
 
 Here we multiply all elements by 2. The result will have the same number of elements as before.
 
@@ -18,7 +18,7 @@ myArray.map(x => x*2)
 
 ## Filter
 
-Select matching elements. 
+Select matching elements.
 
 The result will have at most the same number of elements as before, but it could have as few as zero elements if none matched.
 
@@ -98,11 +98,11 @@ This calculations can be explained as follows, with `0` as the default initial v
 // total: 1
 
 // total is 1 and item is 10
-1 + 10 
+1 + 10
 // total: 11
 
 // total is 11 and item is 100
-11 + 100 
+11 + 100
 // total: 111
 
 // total is 111 and item is 1000
@@ -139,7 +139,7 @@ Using `reduce` is also an easy way to do recursion, without having to write a re
 Here, checking if all items in an array are equal to each other. Note this is different to checking if all values are equal to a given value.
 
 ```javascript
-const equal = (acc, item) => acc === item ? item : null) 
+const equal = (acc, item) => acc === item ? item : null)
 ```
 
 ```javascript
@@ -151,12 +151,12 @@ const equal = (acc, item) => acc === item ? item : null)
 ```
 
 If the first two items in the array are equal, return the first item, otherwise `null`. Then compare that value to the third item.
- 
+
 Note you could also do this using `filter` - we don't care about an accumulator like a sum, so we could just check if all values in the array are equal to the first item at `myArray[0]`.
- 
+
 Using `every` could be more efficient, as it can return as `false` with the first value that is different, instead of evaluating every single item. See [every][] page.
 
-[every]: {{ site.baseurl }}{% link cheatsheets/javascript/general/control-flow/every.md %}
+[every]: {% link cheatsheets/javascript/general/control-flow/every.md %}
 
 
 ## Chaining

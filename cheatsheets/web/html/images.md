@@ -11,9 +11,9 @@ Attributes of `img` tag:
 
 - `src`
     - Local or external image path. Can be JPG, PNG, SVG, etc.
-- `alt` 
+- `alt`
     - Optional text to describe the image. Use to show as a fallback if the image fails to load. Also used for screen readers.
-- `title` 
+- `title`
     - Optional text used to show on hover over. If not set, nothing will be shown. This is useful to set as the action that an image will produce, such as clicking a screen to go "Go to homepage" if you link it to your homepage.
     - Similarly, setting `title` on an `a` tag adds hover text.
 - `width` and `height`
@@ -89,7 +89,7 @@ e.g.
 
 You can find a Jekyll plugins like [jekyll_picture_tag][] to do this for you.
 
-[jekyll_picture_tag]: {{ site.baseurl }}{% link cheatsheets/jekyll/plugins/recommended.md %}
+[jekyll_picture_tag]: {% link cheatsheets/jekyll/plugins/recommended.md %}
 
 
 ## Optimize image loading

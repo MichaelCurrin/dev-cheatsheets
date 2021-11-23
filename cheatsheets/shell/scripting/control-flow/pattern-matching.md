@@ -7,7 +7,7 @@ description: Check if a string matches a pattern
 
 - [Globbing][]
 
-[Globbing]: {{ site.baseurl }}{% link cheatsheets/shell/files/globbing.md %}
+[Globbing]: {% link cheatsheets/shell/files/globbing.md %}
 
 
 

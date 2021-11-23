@@ -56,9 +56,12 @@ There may be missing context or explanations and obvious things are excluded. As
 - [Cheatsheet Factory](https://cheatsheetfactory.geekyhacker.com/)
 - [Jekyll cheatsheet](https://learn.cloudcannon.com/jekyll-cheat-sheet/) on CloudCannon site
 
-### My projects
+### Similar sites to Dev Cheatsheets
 
-- [MichaelCurrin.github.io](https://michaelcurrin.github.io/)
 - [Learn to Code](https://github.com/MichaelCurrin/learn-to-code)
 - [Code Cookbook](https://github.com/MichaelCurrin/code-cookbook)
+
+### My other websites
+
+- [MichaelCurrin.github.io](https://michaelcurrin.github.io/)
 - [Badge Generator](https://michaelcurrin.github.io/badge-generator)

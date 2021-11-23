@@ -18,8 +18,8 @@ Here are some other areas to start with:
     - [Jobs][]
     - [Triggers][]
 
-[Jobs]: {{ site.baseurl }}{% link cheatsheets/ci-cd/github-actions/jobs.md %}
-[Triggers]: {{ site.baseurl }}{% link cheatsheets/ci-cd/github-actions/triggers.md %}
+[Jobs]: {% link cheatsheets/ci-cd/github-actions/jobs.md %}
+[Triggers]: {% link cheatsheets/ci-cd/github-actions/triggers.md %}
 
 ### Related
 

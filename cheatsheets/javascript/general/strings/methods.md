@@ -5,8 +5,8 @@
 - [Contains cheatsheet][]
 - [Regex cheatsheet][]
 
-[Contains cheatsheet]: {{ site.baseurl }}{% link cheatsheets/javascript/general/strings/contains.md %}
-[Regex cheatsheet] {{ site.baseurl }}{% link cheatsheets/javascript/general/strings/regex.md %}
+[Contains cheatsheet]: {% link cheatsheets/javascript/general/strings/contains.md %}
+[Regex cheatsheet] {% link cheatsheets/javascript/general/strings/regex.md %}
 
 
 ## indexOf method
@@ -22,7 +22,7 @@ STRING.indexOf(SEARCH_VALUE, FROM_INDEX)
 
 - [search](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search) in MDN docs
 
-A search for a match between a **regular expression** and a string object. 
+A search for a match between a **regular expression** and a string object.
 
 ```javascript
 const paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
@@ -41,4 +41,4 @@ paragraph[paragraph.search(regex)]
 
 - [match](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match) in MDN docs
 
-Retrieve the result of matching a string against a regular expression. 
+Retrieve the result of matching a string against a regular expression.

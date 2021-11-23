@@ -9,6 +9,6 @@ See [Collections](https://docs.python.org/3/library/collections.html) in the doc
 
 If you are interested in key-value pairs, see these cheatsheets.
 
-- [Dictionary]({{ site.baseurl }}{% link cheatsheets/python/builtins/data-structures/dictionary.md %})
-- [Named tuple]({{ site.baseurl }}{% link cheatsheets/python/builtins/data-structures/named-tuple.md %})
-- [Typed dictionary]({{ site.baseurl }}{% link cheatsheets/python/type-checks/index.md %}) in the Type Checks section.
+- [Dictionary]({% link cheatsheets/python/builtins/data-structures/dictionary.md %})
+- [Named tuple]({% link cheatsheets/python/builtins/data-structures/named-tuple.md %})
+- [Typed dictionary]({% link cheatsheets/python/type-checks/index.md %}) in the Type Checks section.

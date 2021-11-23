@@ -7,7 +7,7 @@ Listening to child component events
 
 - [v-model cheatsheet][]
 
-[v-model cheatsheet]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/directives/v-model.md %}
+[v-model cheatsheet]: {% link cheatsheets/javascript/packages/vue/directives/v-model.md %}
 
 
 ## Custom component

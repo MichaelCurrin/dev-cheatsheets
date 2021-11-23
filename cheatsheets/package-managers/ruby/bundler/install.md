@@ -2,7 +2,7 @@
 
 See [Subcommands][].
 
-[Subcommands]: {{ site.baseurl }}{% link cheatsheets/package-managers/ruby/bundler/subcommands/index.md %}
+[Subcommands]: {% link cheatsheets/package-managers/ruby/bundler/subcommands/index.md %}
 
 
 ## Install from Gemfile

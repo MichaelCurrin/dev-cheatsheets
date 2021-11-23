@@ -130,7 +130,7 @@ $ git greet I am world
 I am world I am world
 ```
 
-I think the reason this behavior exists is so you that `git my-alias my-arg -a -b` will be called as the expand the alias and still pass on on the positional and keyword params. 
+I think the reason this behavior exists is so you that `git my-alias my-arg -a -b` will be called as the expand the alias and still pass on on the positional and keyword params.
 
 
 ## Multi-line
@@ -145,4 +145,4 @@ See [TOML strings][] cheatsheet for more info.
 	"""
 ```
 
-[TOML strings]: {{ site.baseurl }}{% link cheatsheets/data/toml/strings.md %}
+[TOML strings]: {% link cheatsheets/data/toml/strings.md %}

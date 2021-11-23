@@ -14,7 +14,7 @@ Set up a config file:
     - `.prettierignore`
 - Editor config
     - Prettier uses `.editorconfig` by default. You can ignore this with `--no-editorconfig` if you need it.
-    
+
 You might want to edit VS Code settings too if you use a Prettier extension.
 
 
@@ -30,7 +30,7 @@ Example config with one rule in it:
       "arrowParens": "avoid"
     }
     ```
-    
+
 Some more rules.
 
 - `.prettierrc.json`
@@ -47,11 +47,11 @@ Some more rules.
 
 See the [Ignoring rules][] cheatsheet for more info.
 
-[Ignoring rules]: {{ site.baseurl }}{% link cheatsheets/javascript/format-and-lint/prettier/ignoring-rules.md %}
+[Ignoring rules]: {% link cheatsheets/javascript/format-and-lint/prettier/ignoring-rules.md %}
 
 
 ## Alternative
 
 You can also pass command line flags to change Prettier behavior. See the [Prettier CLI][] section of the cheatsheets for more info.
 
-[Prettier CLI cheatsheet]: {{ site.baseurl }}{% link cheatsheets/javascript/format-and-lint/prettier/cli.md %}
+[Prettier CLI cheatsheet]: {% link cheatsheets/javascript/format-and-lint/prettier/cli.md %}

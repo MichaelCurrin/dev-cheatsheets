@@ -34,7 +34,7 @@ strict_front_matter: true
 
 ### Theme boilerplate ###
 
-remote_theme: MichaelCurrin/fractal
+theme: fractal
 
 titles_from_headings:
   strip_title: true

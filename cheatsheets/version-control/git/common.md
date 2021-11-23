@@ -32,7 +32,7 @@ $ git branch -a
 
 ## Compare commits
 
-See [Compare]({{ site.baseurl }}{% link cheatsheets/version-control/git/compare.md %}) page.
+See [Compare]({% link cheatsheets/version-control/git/compare.md %}) page.
 
 
 ## Stash
@@ -48,7 +48,7 @@ Flags:
 
 ## Diff
 
-See [diff command]({{ site.baseurl }}{% link cheatsheets/version-control/git/commands/diff.md %}) page.
+See [diff command]({% link cheatsheets/version-control/git/commands/diff.md %}) page.
 
 ```sh
 $ git checkout feature

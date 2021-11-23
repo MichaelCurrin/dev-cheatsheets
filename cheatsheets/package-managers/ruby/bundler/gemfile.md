@@ -6,7 +6,7 @@ See also:
 - [Gemfile](https://bundler.io/gemfile.html) in Bundler docs.
 - [gems][] cheatsheet in the Ruby section
 
-[gems]: {{ site.baseurl }}{% link cheatsheets/ruby/gems/index.md %}
+[gems]: {% link cheatsheets/ruby/gems/index.md %}
 
 
 ## Install with Bundler
@@ -29,12 +29,12 @@ Set up your `Gemfile` and run this to install with Bundler.
 - `Gemfile`
     ```ruby
     source "https://rubygems.org"
-    
+
     gem "foo"
 
     gem "bar", "~> 2.5"
     ```
-    
+
 ### Install from GitHub
 
 - `Gemfile`
@@ -49,7 +49,7 @@ Set up your `Gemfile` and run this to install with Bundler.
 - `Gemfile`
     ```ruby
     source 'https://rubygems.org'
-    
+
     gem 'foo', :path => './vendor/foo'
     ```
 
@@ -58,7 +58,7 @@ Set up your `Gemfile` and run this to install with Bundler.
 
 See the [Groups][] cheatsheet.
 
-[Groups]: {{ site.baseurl }}{% link cheatsheets/package-managers/ruby/bundler/groups.md %}
+[Groups]: {% link cheatsheets/package-managers/ruby/bundler/groups.md %}
 
 
 ## Example

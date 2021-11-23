@@ -7,7 +7,7 @@ A Single-File Component is also known as a "SFC".
 
 See also [Component registration][] section.
 
-[Component registration]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/components/component-registration.md %}
+[Component registration]: {% link cheatsheets/javascript/packages/vue/components/component-registration.md %}
 
 
 {% raw %}

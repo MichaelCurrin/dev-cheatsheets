@@ -6,7 +6,7 @@ Convert text to a slug.
 
 - [Unicode cheatsheet][] for Python encoding.
 
-[Unicode cheatsheet]: {{ site.baseurl }}{% link cheatsheets/python/strings/encoding/unicode.md %}
+[Unicode cheatsheet]: {% link cheatsheets/python/strings/encoding/unicode.md %}
 
 
 ## Basic

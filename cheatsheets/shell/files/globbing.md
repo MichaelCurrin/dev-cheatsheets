@@ -89,4 +89,4 @@ setopt dotglob
 
 See the [Globstar][] section.
 
-[globstar]: {{ site.baseurl }}{% link cheatsheets/shell/files/globstar.md %}
+[globstar]: {% link cheatsheets/shell/files/globstar.md %}

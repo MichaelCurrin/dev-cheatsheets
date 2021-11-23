@@ -127,7 +127,7 @@ Generate random text.
 
 See [String Constants][] page for more info on the `string` module's values.
 
-[String Constants]: {{ site.baseurl }}{% link cheatsheets/python/strings/constants.md %}
+[String Constants]: {% link cheatsheets/python/strings/constants.md %}
 
 Note use of `.choices` to get multiple values.
 

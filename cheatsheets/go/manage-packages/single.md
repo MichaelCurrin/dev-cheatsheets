@@ -2,7 +2,7 @@
 
 See help on the [go get][] subcommand.
 
-[go get]: {{ site.baseurl }}{% link cheatsheets/go/commands/get.md %}
+[go get]: {% link cheatsheets/go/commands/get.md %}
 
 
 ## Install package in your project

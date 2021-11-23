@@ -1,8 +1,8 @@
 # Permalinks
 
-See [Default values][] to see the Jekyll default value. 
+See [Default values][] to see the Jekyll default value.
 
-[Default values]: {{ site.baseurl }}{% link cheatsheets/jekyll/configuration/default-values.md %}
+[Default values]: {% link cheatsheets/jekyll/configuration/default-values.md %}
 
 {% raw %}
 
@@ -65,7 +65,7 @@ Set permalink for plain pages and posts, but not collections.
 
 Set permalink for collections only.
 
-Normally I don't bother setting this at this level. 
+Normally I don't bother setting this at this level.
 
 The default value is `/:collection/:name` and that produces a URL like `/products/shirt.html`.
 

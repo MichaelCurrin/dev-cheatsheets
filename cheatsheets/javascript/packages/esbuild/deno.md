@@ -31,4 +31,4 @@ But you can install a binary using cURL and then use the package in the CLI, wit
 
 See the [Install][] page's section on _Download a binary_.
 
-[Install]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/esbuild/install.md %}
+[Install]: {% link cheatsheets/javascript/packages/esbuild/install.md %}

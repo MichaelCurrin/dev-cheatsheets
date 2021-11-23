@@ -13,7 +13,7 @@ From [Groups](https://bundler.io/guides/groups.html) doc.
 
 The examples are for setting up a `Gemfile`. You can also do this from the CLI - see [install][] cheatsheet.
 
-[install]: {{ site.baseurl }}{% link cheatsheets/package-managers/ruby/bundler/install.md %}
+[install]: {% link cheatsheets/package-managers/ruby/bundler/install.md %}
 
 ### Set up development and test gems
 

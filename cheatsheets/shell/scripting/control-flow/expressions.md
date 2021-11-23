@@ -4,7 +4,7 @@
 
 - [Pattern matching][]
 
-[Pattern matching]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/control-flow/pattern-matching.md %}
+[Pattern matching]: {% link cheatsheets/shell/scripting/control-flow/pattern-matching.md %}
 
 
 ## Match string

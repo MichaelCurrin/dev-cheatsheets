@@ -16,7 +16,7 @@ If you prefer to use `nano` rather than `vim` when doing `git commit`.
 
 ## Aliases
 
-- [Git aliases]({{ site.baseurl }}{% link cheatsheets/version-control/git/aliases.md %}) cheatsheet.
+- [Git aliases]({% link cheatsheets/version-control/git/aliases.md %}) cheatsheet.
 
 
 

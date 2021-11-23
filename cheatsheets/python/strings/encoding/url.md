@@ -10,7 +10,7 @@ This is all for Python 3.
 
 - [URL encoding][] cheatsheet
 
-[URL encoding]: {{ site.baseurl }}{% link cheatsheets/web/html/encode-and-escape/url-encoding.md %}
+[URL encoding]: {% link cheatsheets/web/html/encode-and-escape/url-encoding.md %}
 
 
 ## Encode
@@ -19,8 +19,8 @@ This is all for Python 3.
 
 - [urllib.parse.quote](https://docs.python.org/3/library/urllib.parse.html#urllib.parse.quote)
 - [urllib.parse.quote_plus](https://docs.python.org/3/library/urllib.parse.html#urllib.parse.quote_plus)
-    > Like `quote()`, but also replace spaces with plus signs, as required for quoting HTML form values when building up a query string to go into a URL. 
-    > 
+    > Like `quote()`, but also replace spaces with plus signs, as required for quoting HTML form values when building up a query string to go into a URL.
+    >
     > Plus signs in the original string are escaped unless they are included in safe. It also does not have safe default to '/'.
 - [urllib.parse.urlencode](https://docs.python.org/3/library/urllib.parse.html#urllib.parse.urlencode)
     - Pass key-value pairs to encode for query params in a URL. Uses `quote_plus` internally.
@@ -48,7 +48,7 @@ urllib.parse.urlencode(params)
 
 ```python
 params_str = urllib.parse.urlencode({'spam': 1, 'eggs': 2, 'bacon': 0})
-url = f"http://www.musi-cal.com/cgi-bin/query?{params_str}" 
+url = f"http://www.musi-cal.com/cgi-bin/query?{params_str}"
 ```
 
 ### Decode

@@ -54,7 +54,7 @@ Or use an aliased version, if one exists on NPM registry.
     Or
     ```sh
     $ npm install --upgrade
-    ``` 
+    ```
 
 ### Install latest
 
@@ -76,7 +76,7 @@ Packages will still be limited by restrictions in `package.json` though, so this
 
 See [outdated][] command cheatsheet.
 
-[outdated]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/commands/outdated.md %}
+[outdated]: {% link cheatsheets/package-managers/javascript/npm/commands/outdated.md %}
 
 ```sh
 $ npm outdated
@@ -104,7 +104,7 @@ npm update
 
 See [update][] command cheatsheet.
 
-[update]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/commands/update.md %}
+[update]: {% link cheatsheets/package-managers/javascript/npm/commands/update.md %}
 
 ### Upgrade all within bounds
 
@@ -142,7 +142,7 @@ $ npm install react
 
 This will upgrade the package, but it will not upgrade it to a point where peer dependencies are broken.
 
-This will follow any existng any bounds for the package (such as `^1.0.0`). 
+This will follow any existng any bounds for the package (such as `^1.0.0`).
 
 But it will still honor other packages which have a peer dependency on certain versions of this package. In one case, I actually ended up downgrading from Vue 3 to Vue 2 instead of getting the latest Vue 3, because of another dependency needing Vue 2.
 
@@ -255,14 +255,14 @@ found 3 vulnerabilities (1 moderate, 2 high) in 1649 scanned packages
 ### Fix
 
 Use the fix subcommand.
-    
+
 ```sh
 $ npm audit fix
 ```
 
-    
+
 ## Alternatives to NPM CLI
-    
+
 - [npm-upgrade][]
     > Interactive CLI utility to easily update outdated NPM dependencies with changelogs inspection support.
 - [npm-check][]

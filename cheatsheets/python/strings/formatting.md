@@ -29,7 +29,7 @@ bar = 123
 
 See more info in the [String Format][] section.
 
-[String Format]: {{ site.baseurl }}{% link cheatsheets/python/strings/string-format.md %}
+[String Format]: {% link cheatsheets/python/strings/string-format.md %}
 
 
 ## Old format style

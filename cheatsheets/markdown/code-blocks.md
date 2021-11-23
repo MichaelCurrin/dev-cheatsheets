@@ -55,7 +55,7 @@ print('Hello world'!)
 
 Triple backtickcs also works well under bullet points - see [Code snippets in lists][].
 
-[Code snippets in lists]: {{ site.baseurl }}{% link cheatsheets/markdown/lists.md %}#code-snippets-in-lists)
+[Code snippets in lists]: {% link cheatsheets/markdown/lists.md %}#code-snippets-in-lists)
 
 The short name works too. Note that outside of GitHub, other editing tools like an IDE or StackEdit might only support the long or the short form of a language.
 
@@ -91,15 +91,15 @@ You can even nest them, provided you have a bullet point.
     echo 'Hello'
     ```
 ```
-    
-    
+
+
 ## Supported languages
 
 Some valid references for language-specific styling, focusing on the ones I use. There are many more available.
 
 See also the [Jekyll Supported Languages][] page.
 
-[Jekyll Supported Languages]: {{ site.baseurl }}{% link cheatsheets/jekyll/code-blocks/supported-languages.md %}
+[Jekyll Supported Languages]: {% link cheatsheets/jekyll/code-blocks/supported-languages.md %}
 
 These are usually based on the file extension.
 
@@ -114,9 +114,9 @@ These are usually based on the file extension.
 - `javascript` or `js`
 - Shell
     - `sh` or `shell`
-    - `bash` for 
+    - `bash` for
     - `powershell` for Windows.
-    - `console` - for 
+    - `console` - for
 - `diff`
 - `liquid`
 - `yaml` or `yml`
@@ -198,7 +198,7 @@ $ mdbook build
 
 **console**
 
-Note unlike the shell styles above, everything after a `$` or `>` entry is all _one color_ (which is nice if you don't want t apply shell highlighting to something that is probably be plain text). 
+Note unlike the shell styles above, everything after a `$` or `>` entry is all _one color_ (which is nice if you don't want t apply shell highlighting to something that is probably be plain text).
 
 And it also separates output nicely in a different color to the input.
 
@@ -210,7 +210,7 @@ Checking package.json
  express           4.12.x  →   4.13.x
  multer            ^0.1.8  →   ^1.0.1
 ```
- 
+
 ```console
 > ncu
 Checking package.json
@@ -219,7 +219,7 @@ Checking package.json
  express           4.12.x  →   4.13.x
  multer            ^0.1.8  →   ^1.0.1
 ```
- 
+
 This also works well if you have multiple commands and you want to alternative between input and output clearly.
 
 ```console

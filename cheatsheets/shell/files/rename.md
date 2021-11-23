@@ -64,7 +64,7 @@ $ find . -name '*.foo' -exec rename 's/\.foo$/.bar/' '{}' \;
 
 #### Preview
 
-Print only. Use `echo` instead of moving. 
+Print only. Use `echo` instead of moving.
 
 You need `$0` instead of `$1`. And the hyphen at the end can be removed.
 
@@ -151,4 +151,4 @@ Rename file extension for a batch of files.
 rename 's/.foo/.bar/' *.foo
 ```
 
-[globstar]: {{ site.baseurl }}{% link cheatsheets/shell/files/globstar.md %}
+[globstar]: {% link cheatsheets/shell/files/globstar.md %}

@@ -4,7 +4,7 @@ See [Array cheatsheet](https://www.shortcutfoo.com/app/dojos/javascript-arrays/c
 
 See [map reduce filter][] page for how to apply those to an array.
 
-[map reduce filter]: {{ site.baseurl }}{% link cheatsheets/javascript/general/map-reduce-filter.md %}
+[map reduce filter]: {% link cheatsheets/javascript/general/map-reduce-filter.md %}
 
 
 ## View
@@ -50,7 +50,7 @@ myArray.slice(START_INDEX, END_INDEX)
 
 e.g.
 
-Start from a given index and go to the end.  
+Start from a given index and go to the end.
 
 ```javascript
 myArray.slice(1)
@@ -230,8 +230,8 @@ myArray.map(value=> value.toUpperCase())
 const myArray = ['a', 'b', 'c']
 
 myArray.map((value, index) => [index, value.toUpperCase() ])
-// [ 
-//   [ 0, 'A' ], 
+// [
+//   [ 0, 'A' ],
 //   [ 1, 'B' ],
 //   [ 2, 'C' ]
 // ]

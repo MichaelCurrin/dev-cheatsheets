@@ -9,8 +9,8 @@ description: How to zip and unzip with a few shell utilities
 
 Command-line tools available for Unix-like systems (Linux and macOS):
 
-- [zip utility]({{ site.baseurl }}{% link cheatsheets/shell/compression/zip.md %})
-- [tar utility]({{ site.baseurl }}{% link cheatsheets/shell/compression/tar.md %})
+- [zip utility]({% link cheatsheets/shell/compression/zip.md %})
+- [tar utility]({% link cheatsheets/shell/compression/tar.md %})
 - `gzip`
 - `bzip2`
 

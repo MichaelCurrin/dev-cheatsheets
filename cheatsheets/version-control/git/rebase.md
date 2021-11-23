@@ -5,7 +5,7 @@
 
 See [rebase][] page in Git section for more help on handling rebases.
 
-[rebase]: {{ site.baseurl }}{% link cheatsheets/version-control/git/commands/rebase.md %}
+[rebase]: {% link cheatsheets/version-control/git/commands/rebase.md %}
 
 
 ## Perform a rebase
@@ -65,7 +65,7 @@ git checkout my-feat
 git rebase master
 ```
 
-### rebase on origin 
+### rebase on origin
 
 You can also do it this way, without updating local main or leaving your feature branch.
 
@@ -87,7 +87,7 @@ git pull --rebase origin main
 Then do:
 
 ```sh
-git push 
+git push
 ```
 
 Implied to be:

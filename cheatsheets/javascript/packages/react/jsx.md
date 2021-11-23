@@ -2,7 +2,7 @@
 
 This page is specific to React. For a more general guide, see the [JSX][] general page. Including various ways to process JSX.
 
-[JSX]: {{ site.baseurl }}{% link cheatsheets/javascript/general/jsx.md %}
+[JSX]: {% link cheatsheets/javascript/general/jsx.md %}
 
 
 {% raw %}
@@ -25,7 +25,7 @@ This page is specific to React. For a more general guide, see the [JSX][] genera
     ```javascript
     return React.createElement("h1", null, "Hello, World!");
     ```
-    
+
 ### Group elements without a parent element
 
 Use a parent element that doesn't get rendered.
@@ -145,7 +145,7 @@ function App(props) {
       <p>{ status }</p>
     </>
   )
-} 
+}
 ```
 
 You can put an expression in like an arrow function call or ternary.
@@ -160,7 +160,7 @@ function App(props) {
       <p>{age >= 18 ? 'major' : 'minor'}</p>
     </>
   )
-} 
+}
 ```
 
 If your JSX gets long and complicated, consider rather making a variable first and then inserting that.
@@ -172,7 +172,7 @@ function Image(props) {
   const { path } = props
 
   return <img src={ path } />
-} 
+}
 ```
 
 Setting a function as an event.
@@ -223,7 +223,7 @@ export default function Counter() {
 }
 ```
 
-### Custom components 
+### Custom components
 
 Insert a component as a element in JSX.
 

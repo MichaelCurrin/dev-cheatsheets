@@ -24,7 +24,7 @@ $ make hooks
 
 ## Install project dependencies
 
-Install gems - this includes Jekyll 3.
+Install gems - this includes Jekyll 4.
 
 ```sh
 $ make install

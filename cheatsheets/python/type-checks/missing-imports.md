@@ -11,7 +11,7 @@ See [Missing imports](https://mypy.readthedocs.io/en/stable/running_mypy.html#mi
 
 - [Install types][] cheatsheet
 
-[Install types]: {{ site.baseurl }}{% link cheatsheets/python/type-checks/install-types.md %}
+[Install types]: {% link cheatsheets/python/type-checks/install-types.md %}
 
 
 ## Refactor imports
@@ -67,5 +67,4 @@ $ python my_module.py
 If you can't find types for a library updating coding or installing packages, you can silence the Mypy errors.
 
 
-[Ignore]: {{ site.baseurl }}{% link cheatsheets/python/type-checks/ignore.md %}
-
+[Ignore]: {% link cheatsheets/python/type-checks/ignore.md %}

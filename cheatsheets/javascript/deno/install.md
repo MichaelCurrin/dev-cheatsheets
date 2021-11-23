@@ -30,7 +30,7 @@ See [GitHub Releases](https://github.com/denoland/deno/releases) and pick a vali
 
 ## Upgrade Deno package
 
-If not locked, the use of [std lib](https://deno.land/std) packages can break after running a command above. 
+If not locked, the use of [std lib](https://deno.land/std) packages can break after running a command above.
 
 Upgrade your stdlib and other installed packages with the reload command:
 
@@ -83,4 +83,4 @@ So then you know what to delete. e.g.
 $ rm -rf ~/Library/Caches/deno
 ```
 
-[Managing packages]: {{ site.baseurl }}{% link cheatsheets/javascript/deno/cli/managing-packages.md %}
+[Managing packages]: {% link cheatsheets/javascript/deno/cli/managing-packages.md %}

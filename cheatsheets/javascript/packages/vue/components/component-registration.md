@@ -6,7 +6,7 @@ Note that components actually work fine without `name`. The `name` doesn't actua
 
 See also the [Single-file components][] section.
 
-[Single-file components]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/vue/components/single-file-components.md %}
+[Single-file components]: {% link cheatsheets/javascript/packages/vue/components/single-file-components.md %}
 
 
 ## Resources

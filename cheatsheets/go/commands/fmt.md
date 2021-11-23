@@ -33,10 +33,10 @@ usage: go fmt [-n] [-x] [packages]
 
 The flags on `go fmt` are limited to two. Use [gofmt][] if you want more control.
 
-Flag | Description
----  | ---
-`-n` | Dry-run. Prints commands that would be executed.
-`-x` | Trace. Prints commands as they are executed.
+| Flag | Description                                      |
+| ---- | ------------------------------------------------ |
+| `-n` | Dry-run. Prints commands that would be executed. |
+| `-x` | Trace. Prints commands as they are executed.     |
 
 For more control, use the standalone `gofmt` command directly.
 
@@ -46,15 +46,15 @@ For more control, use the standalone `gofmt` command directly.
 ### Dry run
 
 ```console
-$ go fmt -n main.go 
+$ go fmt -n main.go
 /Users/mcurrin/.local/go/bin/gofmt -l -w main.go
 ```
 
 ```console
-$ go fmt -n ./... 
+$ go fmt -n ./...
 /Users/mcurrin/.local/go/bin/gofmt -l -w internal/greetings.go
 /Users/mcurrin/.local/go/bin/gofmt -l -w main.go
 ```
 
 
-[gofmt]: {{ site.baseurl }}{% link cheatsheets/go/commands/gofmt.md %}
+[gofmt]: {% link cheatsheets/go/commands/gofmt.md %}

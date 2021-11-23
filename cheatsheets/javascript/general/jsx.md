@@ -106,5 +106,4 @@ e.g.
 {% endraw %}
 
 
-[React JSX]: {{ site.baseurl }}{% link cheatsheets/javascript/packages/react/jsx.md %}
-
+[React JSX]: {% link cheatsheets/javascript/packages/react/jsx.md %}

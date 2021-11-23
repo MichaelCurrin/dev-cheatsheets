@@ -19,5 +19,5 @@ That file can be used as follows:
 - Publish to the VS Code marketplace to share publicly
     - See the [Publish][] guide.
 
-[Install]: {{ site.baseurl }}{% link cheatsheets/other/vscode-extensions/workflows/install.md %}
-[Publish]: {{ site.baseurl }}{% link cheatsheets/other/vscode-extensions/workflows/publish.md %}
+[Install]: {% link cheatsheets/other/vscode-extensions/workflows/install.md %}
+[Publish]: {% link cheatsheets/other/vscode-extensions/workflows/publish.md %}

@@ -16,11 +16,11 @@ $ npm outdated
 - [Upgrade packages][] cheatsheet
 - [Skip errors][] cheatsheet in the Shell section, for how to use this command in scripts and CI.
 
-[update]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/commands/update.md %}
-[Install packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/install-packages.md %}
-[Maintain packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/maintain-packages.md %}
-[Upgrade packages]: {{ site.baseurl }}{% link cheatsheets/package-managers/javascript/npm/upgrade-packages.md %}
-[Skip errors]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/skip-errors.md %}
+[update]: {% link cheatsheets/package-managers/javascript/npm/commands/update.md %}
+[Install packages]: {% link cheatsheets/package-managers/javascript/npm/install-packages.md %}
+[Maintain packages]: {% link cheatsheets/package-managers/javascript/npm/maintain-packages.md %}
+[Upgrade packages]: {% link cheatsheets/package-managers/javascript/npm/upgrade-packages.md %}
+[Skip errors]: {% link cheatsheets/shell/scripting/skip-errors.md %}
 
 
 ## Basic

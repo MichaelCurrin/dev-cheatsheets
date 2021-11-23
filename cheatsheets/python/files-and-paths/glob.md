@@ -2,7 +2,7 @@
 
 See also the [globbing][] in the Shell section of this guide.
 
-[globbing]: {{ site.baseurl }}{% link cheatsheets/shell/files/globbing.md %}
+[globbing]: {% link cheatsheets/shell/files/globbing.md %}
 
 
 ## Resources

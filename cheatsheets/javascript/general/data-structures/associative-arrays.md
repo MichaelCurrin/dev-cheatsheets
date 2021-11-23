@@ -9,7 +9,7 @@ In JavaScript, the common way of storing key-values pairs is an associative arra
 
 If you want more control, use the [Map][] type instead.
 
-[Map]: {{ site.baseurl }}{% link cheatsheets/javascript/general/data-structures/map.md %}
+[Map]: {% link cheatsheets/javascript/general/data-structures/map.md %}
 
 
 ## Create
@@ -90,7 +90,7 @@ Object.values(x)
 Object.entries(x)
 ```
 
-[Looping]: {{ site.baseurl }}{% link cheatsheets/javascript/general/data-structures/looping.md %}
+[Looping]: {% link cheatsheets/javascript/general/data-structures/looping.md %}
 
 
 ## Modify
@@ -127,7 +127,7 @@ const y = {def: 456}
 
 const z = {
   foo: true,
-  ...x, 
+  ...x,
   ...y
 }
 
@@ -198,6 +198,3 @@ Note that only _strings_ are allowed for keys and other types will be converted 
 ```
 
 If you want other types, use a `Map` instead
-
-
-

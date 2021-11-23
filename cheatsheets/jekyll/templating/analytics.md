@@ -148,11 +148,10 @@ The check `if site.google_analytics` checks if the key is set, even if the value
 and if site.google_analytics and if site.google_analytics != ''
 ```
 
-This will not do tracking on local dev or staging environments. 
+This will not do tracking on local dev or staging environments.
 
 To force a production build for local testing, see [Enable production build](#enable-production-build).
 
 {% endraw %}
 
-[Analytics]: {{ site.baseurl }}{% link cheatsheets/web/analytics.md %}
-
+[Analytics]: {% link cheatsheets/web/analytics.md %}

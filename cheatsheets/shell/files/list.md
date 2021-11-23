@@ -7,7 +7,7 @@ description: Using commands like ls, find and du to show files
 
 ## Using List command
 
-See also the [ls]({{ site.baseurl }}{% link cheatsheets/shell/commands/ls.md %}) command cheatsheet page.
+See also the [ls]({% link cheatsheets/shell/commands/ls.md %}) command cheatsheet page.
 
 ### List files
 
@@ -83,7 +83,7 @@ $ ls -a -l -d ~/.*
 
 See [globstar][] page.
 
-[globstar]: {{ site.baseurl }}{% link cheatsheets/shell/files/globstar.md %}
+[globstar]: {% link cheatsheets/shell/files/globstar.md %}
 
 
 ## Using the find command

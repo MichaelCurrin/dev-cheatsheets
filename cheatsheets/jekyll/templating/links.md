@@ -1,5 +1,6 @@
 # Links
 
+
 {% raw %}
 
 ## Local paths
@@ -162,4 +163,4 @@ Based on the Midnight theme.
 
 {% endraw %}
 
-[Markdown Links]: {{ site.baseurl }}{% link cheatsheets/markdown/links.md %}
+[Markdown Links]: {% link cheatsheets/markdown/links.md %}

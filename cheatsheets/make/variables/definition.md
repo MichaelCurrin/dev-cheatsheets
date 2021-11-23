@@ -41,7 +41,7 @@ hash := $(shell printf '\043')
 var := $(shell find . -name "*.c")
 ```
 
-### if 
+### if
 
 Using a Make `if` statement.
 
@@ -49,7 +49,7 @@ Using a Make `if` statement.
 BUZZ := $(if $(FOO), 'abc', $(FIZZ))
 ```
 
-### not equal 
+### not equal
 
 Using `!= ...` syntax:
 
@@ -106,7 +106,7 @@ Note that variable names are case-sensitive - so make sure what you pass in on t
 
 See [Parameters][] section on passing variables.
 
-[Parameters]: {{ site.baseurl }}{% link cheatsheets/make/variables/custom-parameters.md %}
+[Parameters]: {% link cheatsheets/make/variables/custom-parameters.md %}
 
 
 ## Export variables

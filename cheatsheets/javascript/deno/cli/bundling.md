@@ -10,7 +10,7 @@ This includes imported modules - both your scripts and external packages.
 
 See my [deno bundle][] page.
 
-[deno bundle]: {{ site.baseurl }}{% link cheatsheets/javascript/deno/cli/commands/bundle.md %}
+[deno bundle]: {% link cheatsheets/javascript/deno/cli/commands/bundle.md %}
 
 
 ## How to run the bundled file
@@ -49,10 +49,10 @@ For example, from the docs:
 - `main.js`
     ```js
     import { bar, foo } from "./lib.bundle.js";
-    
+
     foo()
     ```
-    
+
 Though, the idea is that the bundle is a single JS file, so perhaps the `foo.js` use above would actually (once compiled) be bundled inside the lib script instead of as a separate file.
 
 ### Browser

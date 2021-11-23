@@ -2,7 +2,7 @@
 
 See also [Redirection][] cheatsheet under Files.
 
-[Redirection]: {{ site.baseurl }}{% link cheatsheets/shell/files/redirection.md %}
+[Redirection]: {% link cheatsheets/shell/files/redirection.md %}
 
 
 ## Piping
@@ -47,7 +47,7 @@ head $(find . -type f) | less
 ### Default
 
 > The shell does not exit if the command that fails is: (…)
-> 
+>
 > any command in a pipeline but the last, or if the command’s return status is being inverted with !.
 >
 > The exit status of a pipeline is the exit status of the last command in the pipeline.
@@ -75,7 +75,7 @@ If the `pipefail` is enabled, the pipeline;s return status is the value of the l
 
 See more info in the [Options][] cheatsheet.
 
-[Options]: {{ site.baseurl }}{% link cheatsheets/shell/scripting/options.md %}
+[Options]: {% link cheatsheets/shell/scripting/options.md %}
 
 ```sh
 set -o pipefail

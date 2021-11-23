@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 [![Hosted with - GitHub Pages](https://img.shields.io/badge/Hosted_with-GitHub_Pages-blue?logo=github&logoColor=white)](https://pages.github.com/)
-[![Made with Jekyll](https://img.shields.io/badge/Jekyll-3.9-blue.svg?logo=jekyll)](https://jekyllrb.com)
+[![Made with Jekyll](https://img.shields.io/badge/Jekyll-4-blue.svg?logo=jekyll)](https://jekyllrb.com)
 
 
 ## Preview

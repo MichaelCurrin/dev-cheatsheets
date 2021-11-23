@@ -4,7 +4,7 @@
 
 See [Rebase][] cheatsheet for more help on handling rebases.
 
-[Rebase]: {{ site.baseurl }}{% link cheatsheets/version-control/git/rebase.md %}
+[Rebase]: {% link cheatsheets/version-control/git/rebase.md %}
 
 
 ## Resources
