@@ -17,17 +17,35 @@ On Linux, just use as `date`. On macOS, you'll need to [setup](#setup-on-macos) 
     ```
 - Date.
     ```sh
-    $ date +%Y%m%d
+    $ date '+%Y%m%d'
     20200826
-    $ date +%Y-%m-%d
+    $ date '+%Y-%m-%d'
     2020-08-27
     ```
 - Unix Timestamp.
     ```sh
-    $ date -d "Oct 21 1973" +%s
+    $ date -d 'Oct 21 1973' +%s
     120002400
     ```
 
+### Date string
+
+> The `--date=STRING` is a mostly free format human readable date string.
+
+e.g.
+
+```sh
+$ date --date 'Sun, 29 Feb 2004 16:21:42 -0800'
+$ date --date '2004-02-29 16:21:42'
+$ date --date 'next day'
+$ date --date 'next Thursday'
+$ date --date '09:00 next Fri'
+$ date --date ''  # midnight of today
+```
+
+> A date string may contain items indicating calendar date, time of day, time zone, day of week, relative time, relative date, and numbers.
+>
+> An empty string indicates the beginning of the day. The date string format is more complex than is easily documented here but is fully described in the info documentation.
 
 A target Unix Timestamp date.
 
@@ -43,10 +61,12 @@ $ date --date="next day" +%Y-%m-%d
 2020-08-27
 ```
 
-```sh
-$ date --date='5 minutes ago'; $date; date --date='5 minutes'
+```console
+$ date --date='5 minutes ago'
 Wed Aug 26 19:44:48 SAST 2020
+$ date
 Wed Aug 26 19:49:48 SAST 2020
+$ date --date='5 minutes'
 Wed Aug 26 19:54:48 SAST 2020
 ```
 
