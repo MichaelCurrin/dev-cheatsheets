@@ -19,13 +19,14 @@ header_pages:
 
 exclude:
   - docs/
+  - hooks/
   - vendor/
   - CONTRIBUTING.md
   - Gemfile
-  - Gemfile.lock
   - LICENSE
   - Makefile
   - README.md
+  - sample*.png
 
 liquid:
   error_mode: strict
