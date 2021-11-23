@@ -143,7 +143,7 @@ sed -i '' 's/foo/bar/g' file.txt
 
 See more info in my [sed][] guide.
 
-[sed]: {{ site.baseurl }}{% link cheatsheets/shell/commands/sed.md %}
+[sed]: {{ site.baseurl }}{% link cheatsheets/shell/commands/read-write/sed.md %}
 
 
 ## Replace word in file
