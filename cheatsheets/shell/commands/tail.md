@@ -29,3 +29,12 @@ Or
 ```sh
 $ tail -f > /dev/null
 ```
+
+
+## Selection
+
+Get lines 300 to 450 of a file.
+
+```sh
+$ head -n 450 file.txt | tail -n 150
+```
