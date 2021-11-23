@@ -3,12 +3,14 @@ title: Non-empty checks
 description: Use an `if` statement to check if a variable has a non-null value
 ---
 
+## Related
+
+See [Truthy Falsy][] page for a list of what is truth and falsy. The _Truthy_ section will probably surprise you. As Jekyll doesn't behave like other languages like Python or JavaScript.
+
+[Truthy Falsy]: {{ site.baseurl }}{% link cheatsheets/jekyll/liquid/truthy-falsy.md %}
+
+
 {% raw %}
-
-How to handle `if` statements to check that a value is defined and has a non-null value.
-
-The [Truthy Falsy]({% link cheatsheets/jekyll/liquid/truthy-falsy.md %}) page for a list of what is truth and falsy. The _Truthy_ section will probably surprise you. As Jekyll doesn't behave like other languages like Python or JavaScript.
-
 
 ## Check variable is defined and not null
 
@@ -37,15 +39,14 @@ Warning - this check will return `true` even for a value that is a zero number, 
 
 ## Check that string is not empty
 
-
 ```liquid
-{% if my_str and my_str.size != 0 %}
+{% if my_str and my_str != '' %}
     {{ my_str }}
 {% endif %}
 ```
 
 
-## Check that array has items in it
+## Check that array is not empty
 
 Here we check an array is defined and that it has at least one element.
 
@@ -76,7 +77,7 @@ Example case:
 If you just had a `for` loop, that wouldn't matter. But if you might want to know an array has values in it so you can render a heading before it.
 
 
-## Detecting nil values with where filter
+## Detecting nil values with `where` filter
 
 From the [docs](https://jekyllrb.com/docs/liquid/filters/).
 
