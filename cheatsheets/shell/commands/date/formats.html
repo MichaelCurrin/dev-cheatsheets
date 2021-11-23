@@ -150,9 +150,11 @@
 
     <div class="post-content">
         
-            <h2 id="full-time">Full time</h2>
+            <p>Examples here use the current time.</p>
 
-<p>Get a standardized ISO date.</p>
+<h2 id="default-format">Default format</h2>
+
+<p>Get a standardized ISO date by default.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">date</span>
 </code></pre></div></div>
@@ -186,10 +188,15 @@
 </span></code></pre></div>    </div>
   </li>
   <li>Date and time.
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">date</span> <span class="nt">-u</span> +<span class="s2">"%Y-%m-%dT%H:%M:%SZ"</span><span class="o">)</span>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">date</span> <span class="s1">'+%Y-%m-%dT%H:%M:%SZ'</span>
 </code></pre></div>    </div>
   </li>
 </ul>
+
+<p>And to store it:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ DATE</span><span class="o">=</span><span class="si">$(</span><span class="nb">date</span> <span class="s1">'+%Y-%m-%dT%H:%M:%SZ'</span><span class="si">)</span>
+</code></pre></div></div>
 
 <h2 id="unix-timestamp">Unix timestamp</h2>
 
@@ -199,28 +206,16 @@
 <span class="go">1614012035
 </span></code></pre></div></div>
 
-<p>Same as above, but as a float.</p>
+<p>Or as a float.</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="nv">$EPOCHREALTIME</span>
 <span class="go">1614012035.3449261189
 </span></code></pre></div></div>
 
-<p>Or use the <code class="language-plaintext highlighter-rouge">date</code> command.</p>
+<p>Or use the <code class="language-plaintext highlighter-rouge">date</code> command with a format.</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">date</span> <span class="s1">'+%s'</span>
 <span class="go">1614012035
-</span></code></pre></div></div>
-
-<h2 id="convert-unix-timestamp-to-date-and-time">Convert unix timestamp to date and time</h2>
-
-<p>Given seconds as a number.</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">date</span> <span class="nt">-r</span> 0
-<span class="go">Thu  1 Jan 1970 02:00:00 SAST
-</span></code></pre></div></div>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">date</span> <span class="nt">-r</span> 1000000000
-<span class="go">Sun  9 Sep 2001 03:46:40 SAST
 </span></code></pre></div></div>
 
         
