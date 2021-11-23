@@ -27,6 +27,10 @@ On Linux, just use as `date`. On macOS, you'll need to [setup](#setup-on-macos) 
     $ date -d 'Oct 21 1973' +%s
     120002400
     ```
+- UTC
+    ```sh
+    $ date -u
+    ```
 
 ### Date string
 
@@ -54,12 +58,14 @@ $ date --date @120024000
 Sun Oct 21 06:00:00 SAST 1973
 ```
 
-### Difference
+Specify a date string and an output format.
 
 ```sh
 $ date --date="next day" +%Y-%m-%d
 2020-08-27
 ```
+
+Minutes:
 
 ```console
 $ date --date='5 minutes ago'

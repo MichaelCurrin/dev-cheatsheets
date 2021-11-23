@@ -180,6 +180,10 @@
   120002400
 </code></pre></div>    </div>
   </li>
+  <li>UTC
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">date</span> <span class="nt">-u</span>
+</code></pre></div>    </div>
+  </li>
 </ul>
 
 <h3 id="date-string">Date string</h3>
@@ -210,11 +214,13 @@
 Sun Oct 21 06:00:00 SAST 1973
 </code></pre></div></div>
 
-<h3 id="difference">Difference</h3>
+<p>Specify a date string and an output format.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">date</span> <span class="nt">--date</span><span class="o">=</span><span class="s2">"next day"</span> +%Y-%m-%d
 2020-08-27
 </code></pre></div></div>
+
+<p>Minutes:</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">date</span> <span class="nt">--date</span><span class="o">=</span><span class="s1">'5 minutes ago'</span>
 <span class="go">Wed Aug 26 19:44:48 SAST 2020
