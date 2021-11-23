@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Formats | Dev Cheatsheets</title>
+<title>Output format | Dev Cheatsheets</title>
 <meta name="generator" content="Jekyll v4.2.1" />
-<meta property="og:title" content="Formats" />
+<meta property="og:title" content="Output format" />
 <meta name="author" content="Michael Currin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
 <meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/date/formats.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/date/formats.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/date/output-format.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/date/output-format.html" />
 <meta property="og:site_name" content="Dev Cheatsheets" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Formats" />
+<meta property="twitter:title" content="Output format" />
 <script type="application/ld+json">
-{"headline":"Formats","description":"A collection of code snippets and CLI guides for quick and easy reference while coding","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/date/formats.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+{"headline":"Output format","description":"A collection of code snippets and CLI guides for quick and easy reference while coding","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/date/output-format.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
     <script>
@@ -57,7 +57,7 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/shell/commands/date/formats.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/shell/commands/date/output-format.md">
     📝 <span>Edit page</span>
 </a>
 
@@ -74,7 +74,7 @@
             
 
 
-            <span>Formats</span>
+            <span>Output format</span>
         </h1>
 
         
@@ -137,8 +137,8 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/shell/commands/date/formats.html" class="underline">
-                Formats
+            <a href="/dev-cheatsheets/cheatsheets/shell/commands/date/output-format.html" class="underline">
+                Output format
             </a>
         
      
@@ -151,6 +151,8 @@
     <div class="post-content">
         
             <p>Examples here use the current time.</p>
+
+<p>See the GNU Date and BSD Date cheatsheets for more info on formats.</p>
 
 <h2 id="default-format">Default format</h2>
 
@@ -197,26 +199,6 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ DATE</span><span class="o">=</span><span class="si">$(</span><span class="nb">date</span> <span class="s1">'+%Y-%m-%dT%H:%M:%SZ'</span><span class="si">)</span>
 </code></pre></div></div>
-
-<h2 id="unix-timestamp">Unix timestamp</h2>
-
-<p>Use a built-in variable for current time in seconds.</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="nv">$EPOCHSECONDS</span>
-<span class="go">1614012035
-</span></code></pre></div></div>
-
-<p>Or as a float.</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="nv">$EPOCHREALTIME</span>
-<span class="go">1614012035.3449261189
-</span></code></pre></div></div>
-
-<p>Or use the <code class="language-plaintext highlighter-rouge">date</code> command with a format.</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">date</span> <span class="s1">'+%s'</span>
-<span class="go">1614012035
-</span></code></pre></div></div>
 
         
     </div>
