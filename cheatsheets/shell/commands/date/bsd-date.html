@@ -163,17 +163,17 @@
 </code></pre></div>    </div>
   </li>
   <li>Unix timestamp.
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">date</span> +%s
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">date</span> <span class="s1">'+%s'</span>
   1598463660
 </code></pre></div>    </div>
   </li>
   <li>Date.
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">date</span>+%Y-%m-%d
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">date</span> <span class="s1">'+%Y-%m-%d'</span>
   2020-08-26
 </code></pre></div>    </div>
   </li>
   <li>Date and time.
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">date</span> <span class="nt">-v</span> <span class="s1">'+%Y-%m-%d %T'</span>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">date</span> <span class="s1">'+%Y-%m-%d %T'</span>
   2020-08-26 19:42:40
 </code></pre></div>    </div>
   </li>
@@ -190,7 +190,7 @@
 </code></pre></div>    </div>
   </li>
   <li>Unix timestamp.
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">date</span> <span class="nt">-v</span>+1d +%s
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">date</span> <span class="nt">-v</span>+1d <span class="s1">'+%s'</span>
   1578085208
 </code></pre></div>    </div>
   </li>
@@ -213,6 +213,8 @@ Sun Sep  9 03:46:40 SAST 2001
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usage: date [-jnRu] [-d dst] [-r seconds] [-t west] [-v[+|-]val[ymwdHMS]] ...
             [-f fmt date | [[[mm]dd]HH]MM[[cc]yy][.ss]] [+format]
 </code></pre></div></div>
+
+<h3 id="man-page">Man page</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>man <span class="nb">date</span>
 </code></pre></div></div>
