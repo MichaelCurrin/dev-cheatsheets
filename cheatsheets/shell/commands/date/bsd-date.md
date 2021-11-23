@@ -14,17 +14,17 @@ The `date` command on macOS.
     ```
 - Unix timestamp.
     ```sh
-    $ date +%s
+    $ date '+%s'
     1598463660
     ```
 - Date.
     ```sh
-    $ date+%Y-%m-%d
+    $ date '+%Y-%m-%d'
     2020-08-26
     ```
 - Date and time.
     ```sh
-    $ date -v '+%Y-%m-%d %T'
+    $ date '+%Y-%m-%d %T'
     2020-08-26 19:42:40
     ```
 
@@ -39,7 +39,7 @@ Get tomorrow's time - use `-v` to adjust value. See formats.
     ```
 - Unix timestamp.
     ```sh
-    $ date -v+1d +%s
+    $ date -v+1d '+%s'
     1578085208
     ```
 
@@ -64,6 +64,8 @@ There is no `--help` command but trying it still gives usage.
 usage: date [-jnRu] [-d dst] [-r seconds] [-t west] [-v[+|-]val[ymwdHMS]] ...
             [-f fmt date | [[[mm]dd]HH]MM[[cc]yy][.ss]] [+format]
 ```
+
+### Man page
 
 ```sh
 $ man date
