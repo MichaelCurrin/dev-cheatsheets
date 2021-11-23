@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Install | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Install" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/python/pip/install.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/python/pip/install.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Install" />
+<script type="application/ld+json">
+{"headline":"Install","description":"A collection of code snippets and CLI guides for quick and easy reference while coding","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/python/pip/install.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/package-managers/python/pip/install.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/package-managers/python/pip/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>Install</span>
+        </h1>
+
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/package-managers/">
+    Package managers
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/package-managers/python/">
+    Python
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/package-managers/python/pip/">
+    pip
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/package-managers/python/pip/install.html" class="underline">
+                Install
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <h2 id="help">Help</h2>
+
+<p>See also online docs, for example how to use <code class="language-plaintext highlighter-rouge">-e</code> is covered under <a href="https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs">Editable installs</a>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install</span> <span class="nt">--help</span>
+</code></pre></div></div>
+
+<details>
+<summary>Output</summary>
+
+```
+Usage:
+  pip install [options] <requirement specifier=""> [package-index-options] ...
+  pip install [options] -r <requirements file=""> [package-index-options] ...
+  pip install [options] [-e] <vcs project="" url=""> ...
+  pip install [options] [-e] <local project="" path=""> ...
+  pip install [options] &lt;archive url/path&gt; ...
+```
+```
+Description:
+  Install packages from:
+
+  - PyPI (and other indexes) using requirement specifiers.
+  - VCS project urls.
+  - Local project directories.
+  - Local or remote source archives.
+
+  pip also supports installing from "requirements files", which provide
+  an easy way to specify a whole environment to be installed.
+
+```
+```
+Install Options:
+  --no-clean                  Don't clean up build directories.
+  -r, --requirement <file>    Install from the given requirements file. This
+                              option can be used multiple times.
+  -c, --constraint <file>     Constrain versions using the given constraints
+                              file. This option can be used multiple times.
+  --no-deps                   Don't install package dependencies.
+  --pre                       Include pre-release and development versions. By
+                              default, pip only finds stable versions.
+  -e, --editable &lt;path/url&gt;   Install a project in editable mode (i.e.
+                              setuptools "develop mode") from a local project
+                              path or a VCS url.
+  -t, --target <dir>          Install packages into <dir>. By default this
+                              will not replace existing files/folders in
+                              <dir>. Use --upgrade to replace existing
+                              packages in <dir> with new versions.
+  --platform <platform>       Only use wheels compatible with <platform>.
+                              Defaults to the platform of the running system.
+  --python-version <python_version>
+                              The Python interpreter version to use for wheel
+                              and "Requires-Python" compatibility checks.
+                              Defaults to a version derived from the running
+                              interpreter. The version can be specified using
+                              up to three dot-separated integers (e.g. "3" for
+                              3.0.0, "3.7" for 3.7.0, or "3.7.3"). A major-
+                              minor version can also be given as a string
+                              without dots (e.g. "37" for 3.7.0).
+  --implementation <implementation>
+                              Only use wheels compatible with Python
+                              implementation <implementation>, e.g. 'pp',
+                              'jy', 'cp',  or 'ip'. If not specified, then the
+                              current interpreter implementation is used.  Use
+                              'py' to force implementation-agnostic wheels.
+  --abi <abi>                 Only use wheels compatible with Python abi
+                              <abi>, e.g. 'pypy_41'.  If not specified, then
+                              the current interpreter abi tag is used.
+                              Generally you will need to specify
+                              --implementation, --platform, and --python-
+                              version when using this option.
+  --user                      Install to the Python user install directory for
+                              your platform. Typically ~/.local/, or
+                              %APPDATA%\Python on Windows. (See the Python
+                              documentation for site.USER_BASE for full
+                              details.)
+  --root <dir>                Install everything relative to this alternate
+                              root directory.
+  --prefix <dir>              Installation prefix where lib, bin and other
+                              top-level folders are placed
+  -b, --build <dir>           Directory to unpack packages into and build in.
+                              Note that an initial build still takes place in
+                              a temporary directory. The location of temporary
+                              directories can be controlled by setting the
+                              TMPDIR environment variable (TEMP on Windows)
+                              appropriately. When passed, build directories
+                              are not cleaned in case of failures.
+  --src <dir>                 Directory to check out editable projects into.
+                              The default in a virtualenv is "<venv path="">/src". The default for global installs is
+                              "<current dir="">/src".
+  -U, --upgrade               Upgrade all specified packages to the newest
+                              available version. The handling of dependencies
+                              depends on the upgrade-strategy used.
+  --upgrade-strategy <upgrade_strategy>
+                              Determines how dependency upgrading should be
+                              handled [default: only-if-needed]. "eager" -
+                              dependencies are upgraded regardless of whether
+                              the currently installed version satisfies the
+                              requirements of the upgraded package(s). "only-
+                              if-needed" -  are upgraded only when they do not
+                              satisfy the requirements of the upgraded
+                              package(s).
+  --force-reinstall           Reinstall all packages even if they are already
+                              up-to-date.
+  -I, --ignore-installed      Ignore the installed packages, overwriting them.
+                              This can break your system if the existing
+                              package is of a different version or was
+                              installed with a different package manager!
+  --ignore-requires-python    Ignore the Requires-Python information.
+  --no-build-isolation        Disable isolation when building a modern source
+                              distribution. Build dependencies specified by
+                              PEP 518 must be already installed if this option
+                              is used.
+  --use-pep517                Use PEP 517 for building source distributions
+                              (use --no-use-pep517 to force legacy behaviour).
+  --install-option <options>  Extra arguments to be supplied to the setup.py
+                              install command (use like --install-option="--
+                              install-scripts=/usr/local/bin"). Use multiple
+                              --install-option options to pass multiple
+                              options to setup.py install. If you are using an
+                              option with a directory path, be sure to use
+                              absolute path.
+  --global-option <options>   Extra global options to be supplied to the
+                              setup.py call before the install command.
+  --compile                   Compile Python source files to bytecode
+  --no-compile                Do not compile Python source files to bytecode
+  --no-warn-script-location   Do not warn when installing scripts outside PATH
+  --no-warn-conflicts         Do not warn about broken dependencies
+  --no-binary <format_control>
+                              Do not use binary packages. Can be supplied
+                              multiple times, and each time adds to the
+                              existing value. Accepts either ":all:" to
+                              disable all binary packages, ":none:" to empty
+                              the set (notice the colons), or one or more
+                              package names with commas between them (no
+                              colons). Note that some packages are tricky to
+                              compile and may fail to install when this option
+                              is used on them.
+  --only-binary <format_control>
+                              Do not use source packages. Can be supplied
+                              multiple times, and each time adds to the
+                              existing value. Accepts either ":all:" to
+                              disable all source packages, ":none:" to empty
+                              the set, or one or more package names with
+                              commas between them. Packages without binary
+                              distributions will fail to install when this
+                              option is used on them.
+  --prefer-binary             Prefer older binary packages over newer source
+                              packages.
+  --require-hashes            Require a hash to check each requirement
+                              against, for repeatable installs. This option is
+                              implied when any package in a requirements file
+                              has a --hash option.
+  --progress-bar <progress_bar>
+                              Specify type of progress to be displayed
+                              [off|on|ascii|pretty|emoji] (default: on)
+
+Package Index Options:
+  -i, --index-url <url>       Base URL of the Python Package Index (default
+                              https://pypi.org/simple). This should point to a
+                              repository compliant with PEP 503 (the simple
+                              repository API) or a local directory laid out in
+                              the same format.
+  --extra-index-url <url>     Extra URLs of package indexes to use in addition
+                              to --index-url. Should follow the same rules as
+                              --index-url.
+  --no-index                  Ignore package index (only looking at --find-
+                              links URLs instead).
+  -f, --find-links <url>      If a URL or path to an html file, then parse for
+                              links to archives such as sdist (.tar.gz) or
+                              wheel (.whl) files. If a local path or file://
+                              URL that's a directory,  then look for archives
+                              in the directory listing. Links to VCS project
+                              URLs are not supported.
+```
+```
+General Options:
+  -h, --help                  Show help.
+  --isolated                  Run pip in an isolated mode, ignoring
+                              environment variables and user configuration.
+  -v, --verbose               Give more output. Option is additive, and can be
+                              used up to 3 times.
+  -V, --version               Show version and exit.
+  -q, --quiet                 Give less output. Option is additive, and can be
+                              used up to 3 times (corresponding to WARNING,
+                              ERROR, and CRITICAL logging levels).
+  --log <path>                Path to a verbose appending log.
+  --proxy <proxy>             Specify a proxy in the form
+                              [user:passwd@]proxy.server:port.
+  --retries <retries>         Maximum number of retries each connection should
+                              attempt (default 5 times).
+  --timeout <sec>             Set the socket timeout (default 15 seconds).
+  --exists-action <action>    Default action when a path already exists:
+                              (s)witch, (i)gnore, (w)ipe, (b)ackup, (a)bort.
+  --trusted-host <hostname>   Mark this host or host:port pair as trusted,
+                              even though it does not have valid or any HTTPS.
+  --cert <path>               Path to alternate CA bundle.
+  --client-cert <path>        Path to SSL client certificate, a single file
+                              containing the private key and the certificate
+                              in PEM format.
+  --cache-dir <dir>           Store the cache data in <dir>.
+  --no-cache-dir              Disable the cache.
+  --disable-pip-version-check
+                              Don't periodically check PyPI to determine
+                              whether a new version of pip is available for
+                              download. Implied with --no-index.
+  --no-color                  Suppress colored output
+  --no-python-version-warning
+                              Silence deprecation warnings for upcoming
+                              unsupported Pythons.
+```
+
+&lt;/details&gt;
+
+
+## Install from requirements file
+
+Set the version.
+
+- `requirements.txt` for PyPI:
+    ```
+    foo&gt;=0.2
+    ```
+- `requirement.txt` for GitHub:
+    ```
+    -e git+https://github.com/FooBar/baz.git@master
+    ```
+
+Then install from the file.
+
+```sh
+$ pip install -r requirements.txt
+```
+
+
+## Install using CLI
+
+Or install the version directly. Note the quotes help to escape characters.
+
+- Install from PyPI:
+    ```sh
+    $ pip install 'foo&gt;=0.2'
+    ```
+- Install from GitHub:
+    ```
+    $ pip install -e git+https://github.com/FooBar/baz.git@master
+    ```
+
+You omit a version, though this can be dangerous for upgrading or setting up environments for import projects. If you omit a version, you'll get the latest.
+
+```sh
+$ pip install foo
+```
+
+But note that command has no version number requested. So if you run the command repeatedly, you won't ever get a new version, except on a fresh install.
+</dir></dir></path></path></hostname></action></sec></retries></proxy></path></url></url></url></progress_bar></format_control></format_control></options></options></upgrade_strategy></current></venv></dir></dir></dir></dir></abi></abi></implementation></implementation></python_version></platform></platform></dir></dir></dir></dir></file></file></local></vcs></requirements></requirement></details>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Load and ready | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Load and ready" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/browser/events/load-ready.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/browser/events/load-ready.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Load and ready" />
+<script type="application/ld+json">
+{"headline":"Load and ready","description":"A collection of code snippets and CLI guides for quick and easy reference while coding","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/browser/events/load-ready.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/javascript/browser/events/load-ready.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/javascript/browser/events/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>Load and ready</span>
+        </h1>
+
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/">
+    JavaScript
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/browser/">
+    Browser
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/browser/events/">
+    Events
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/javascript/browser/events/load-ready.html" class="underline">
+                Load and ready
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <h2 id="related">Related</h2>
+
+<p>See also <a href="/dev-cheatsheets/cheatsheets/javascript/browser/performance.html">Performance</a> cheatsheet.</p>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Document</a>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document#load_unload_events">Load and unload events</a> section.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="order-of-events">Order of events</h2>
+
+<ol>
+  <li>Page load start aka “navigation start”.</li>
+  <li>Document ready.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">ready</code> event.</li>
+    </ul>
+  </li>
+  <li>DOM content loaded.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">DOMContentLoaded</code> event.
+ – the browser fully loaded HTML, and the DOM tree is built, but external resources like pictures <img /> and stylesheets may not yet have loaded.</li>
+    </ul>
+  </li>
+  <li>Window loaded.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">load</code> event.</li>
+      <li>Both HTML and all the external resources: images, styles etc.</li>
+    </ul>
+  </li>
+  <li>Leave the page.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">beforeunload</code> event when starting to leave.</li>
+      <li><code class="language-plaintext highlighter-rouge">unload</code> event when the user has nearly left.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="add-log-message-to-events">Add log message to events</h2>
+
+<p>Warning - if you run these lines <em>after</em> the event has already happened, then the log will never happen.</p>
+
+<p>The lines of code are set up here in the order they are expected to fire.</p>
+
+<h3 id="plain-js">Plain JS</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">ready</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Document ready</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span>
+  <span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span>
+  <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">DOM content loaded</span><span class="dl">"</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Window loaded</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Be careful - you’ll override multiple events set up with the assignment approach - adding with <code class="language-plaintext highlighter-rouge">addEventListener</code> is better as it appends.</p>
+
+<h3 id="jquery">jQuery</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Marked as deprecated by jQuery.</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span>
+  <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">Document ready</span><span class="dl">"</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span>
+  <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">Window loaded</span><span class="dl">"</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>I think jQuery might be smart enough to append to array of existing ready or load events, but not sure.</p>
+
+<h2 id="dom-content-loaded-event">DOM content loaded event</h2>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event">Window: DOMContentLoaded event</a>
+    <blockquote>
+      <p>The <code class="language-plaintext highlighter-rouge">DOMContentLoaded</code> event fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.</p>
+    </blockquote>
+  </li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event">Document : DOMContentLoaded</a>
+    <blockquote>
+      <p>The <code class="language-plaintext highlighter-rouge">DOMContentLoaded</code> event fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.</p>
+
+      <p>A different event, <code class="language-plaintext highlighter-rouge">load</code>, should be used only to detect a fully-loaded page. It is a common mistake to use load where DOMContentLoaded would be more appropriate.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>e.g. Using an arrow functions.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOM fully loaded and parsed</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>If you need access to <code class="language-plaintext highlighter-rouge">this</code>, then use a plain <code class="language-plaintext highlighter-rouge">function</code> instead.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOM fully loaded and parsed</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>I tried doing that on <code class="language-plaintext highlighter-rouge">document</code> and got an error if using <code class="language-plaintext highlighter-rouge">this</code>:</p>
+
+<blockquote>
+  <p>Error: Promised response from onMessage listener went out of scope</p>
+</blockquote>
+
+<p>It looks like <code class="language-plaintext highlighter-rouge">window.DOMContentLoaded</code> is <em>not</em> valid but you can add a event listener as above.</p>
+
+<h2 id="load-event">Load event</h2>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event">load</a> event
+    <blockquote>
+      <p>The load event is fired when the whole page has loaded, including all dependent resources such as stylesheets and images. This is in contrast to <code class="language-plaintext highlighter-rouge">DOMContentLoaded</code>, which is fired as soon as the page DOM has been loaded, without waiting for resources to finish loading.</p>
+    </blockquote>
+  </li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload">onload</a>
+    <blockquote>
+      <p>The onload property of the GlobalEventHandlers mixin is an EventHandler that processes load events on a Window, XMLHttpRequest, <img /> element, etc.</p>
+
+      <p>The <code class="language-plaintext highlighter-rouge">load</code> event fires when a given resource has loaded.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">TARGET</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="nx">FUNCTION</span><span class="p">;</span>
+
+<span class="c1">// OR</span>
+<span class="nx">TARGET</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="nx">FUNCTION</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">init</span><span class="p">();</span>
+  <span class="nx">doSomethingElse</span><span class="p">();</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="check-dom-ready">Check DOM ready</h2>
+
+<p>Check if DOM is available.</p>
+
+<ul>
+  <li>If it loaded already, you can’t wait for DOM content loaded. So just wait 1 millsecond (I don’t know why from the code snippet this is based on) and fire the function.</li>
+  <li>If it isn’t, then it is still coming, so add a function to the DOM content loaded event.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">READY_STATES</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">complete</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">interactive</span><span class="dl">'</span><span class="p">]</span>
+
+<span class="kd">function</span> <span class="nx">domReady</span><span class="p">(</span><span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">READY_STATES</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="nx">fn</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="ready-state-change">Ready state change</h2>
+
+<p>Rather than a specific state or event, this event fires each time when moving between states.</p>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/readystatechange_event">readystatechange</a>
+    <blockquote>
+      <p>Fired when the readyState attribute of a document has changed. Also available via the <code class="language-plaintext highlighter-rouge">onreadystatechange</code> property.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>e.g.</p>
+
+<p>Set this up early on your page, such as in a <code class="language-plaintext highlighter-rouge">script</code> tag in <code class="language-plaintext highlighter-rouge">head</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">readystatechange</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="dl">'</span><span class="s1">readystatechange</span><span class="dl">'</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span><span class="p">)</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>If you to want log the <code class="language-plaintext highlighter-rouge">event</code> too, to see the fields on it.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">readystatechange</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="dl">'</span><span class="s1">readystatechange</span><span class="dl">'</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span><span class="p">,</span> <span class="nx">event</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>This can be useful to understand exactly when your page moves through each state, while also logging other messages.</p>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

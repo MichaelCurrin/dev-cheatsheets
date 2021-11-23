@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Jekyll | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Jekyll" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/jekyll/" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/jekyll/" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Jekyll" />
+<script type="application/ld+json">
+{"headline":"Jekyll","description":"A collection of code snippets and CLI guides for quick and easy reference while coding","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/jekyll/","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/jekyll/index.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/jekyll/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+<span class="logo-medium"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Jekyll</title><path fill="currentColor" d="M8.073 24c-.348 0-.689-.063-1.02-.189-1.375-.525-2.104-2.02-1.726-3.402l-.015-.006.09-.226L12.399 2.01c.105-.27.057-.91.006-1.267-.016-.085-.016-.161.008-.24l.008-.023.006-.015V.458l.009-.019c.108-.292.45-.439 1.008-.439.673 0 1.602.21 2.551.573.797.307 1.523.689 2.033 1.075.602.45.842.854.707 1.2l-.031.045-.016.015c-.045.061-.09.12-.15.165-.314.271-.764.735-.84.945l-7.063 18.421-.016-.006c-.494.948-1.457 1.557-2.543 1.561H8.07l.003.006zm-2.187-3.718l-.02.05c-.447 1.201.162 2.557 1.364 3.018.271.105.551.154.837.154.971 0 1.83-.585 2.188-1.5l.027-.061 6.959-18.09c.146-.39.84-1.02.979-1.14l.016-.016c.012-.015.02-.015.02-.03 0-.06-.061-.27-.557-.645-.479-.36-1.154-.72-1.904-1.005-.868-.328-1.768-.539-2.368-.539-.39 0-.524.082-.545.126v.04c.016.104.147 1.035-.034 1.515l-6.962 18.12v.003zm8.95-11.507s-.964 1.109-1.843 1.509c-.88.398-1.529.293-2.32.756-.789.461-1.188 1.103-1.188 1.103L6.27 20.505c-.348.944.168 2.05 1.125 2.42.96.369 2.04-.12 2.412-1.056l5.029-13.094zM9.905 18.76c.104-.041.225 0 .266.105.042.104 0 .222-.105.264-.104.043-.225 0-.266-.104-.042-.097 0-.216.105-.265zm-1.014-1.802c-.152.068-.334 0-.397-.155-.07-.152 0-.334.154-.397.154-.07.335 0 .398.153.074.15.008.314-.155.39v.009zm.286-1.096c-.123-.288 0-.623.287-.758.285-.124.615 0 .75.285.121.289 0 .624-.285.757-.3.126-.629 0-.765-.285l.013.001zm2.426-2.258c.153-.074.335 0 .398.15.07.154 0 .336-.153.399-.155.07-.337 0-.399-.155-.074-.152 0-.334.154-.397v.003zm-1.293-1.379c.105-.042.226 0 .266.105.043.104 0 .226-.104.266-.104.042-.226 0-.265-.104-.044-.106.006-.227.103-.267zM13.681 1.14c.1-.261.993-.162 1.995.226.999.384 1.729.909 1.63 1.17-.104.264-.997.164-1.996-.221-1.005-.385-1.734-.91-1.632-1.176h.003z"/></svg></span>
+
+
+
+            <span>Jekyll</span>
+        </h1>
+
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/jekyll/" class="underline">
+                Jekyll
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <h2>Topics</h2>
+
+<div class="flex-container">
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            <a href="/dev-cheatsheets/cheatsheets/jekyll/cli/">
+                <div>
+                    
+
+
+                    <span>CLI</span>
+                </div>
+            </a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            <a href="/dev-cheatsheets/cheatsheets/jekyll/code-blocks/">
+                <div>
+                    
+
+
+                    <span>Code blocks</span>
+                </div>
+            </a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            <a href="/dev-cheatsheets/cheatsheets/jekyll/configuration/">
+                <div>
+                    
+
+
+                    <span>Configuration</span>
+                </div>
+            </a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            <a href="/dev-cheatsheets/cheatsheets/jekyll/dependencies/">
+                <div>
+                    
+
+
+                    <span>Dependencies</span>
+                </div>
+            </a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            <a href="/dev-cheatsheets/cheatsheets/jekyll/liquid/">
+                <div>
+                    
+
+
+                    <span>Liquid</span>
+                </div>
+            </a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            <a href="/dev-cheatsheets/cheatsheets/jekyll/plugins/">
+                <div>
+                    
+
+
+                    <span>Plugins</span>
+                </div>
+            </a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            <a href="/dev-cheatsheets/cheatsheets/jekyll/templating/">
+                <div>
+                    
+
+
+                    <span>Templating</span>
+                </div>
+            </a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            <a href="/dev-cheatsheets/cheatsheets/jekyll/themes/">
+                <div>
+                    
+
+
+                    <span>Themes</span>
+                </div>
+            </a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </div>
+
+<br>
+
+
+    <h2>Pages</h2>
+
+    
+
+<ul class="page-list">
+    
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/jekyll/dashes.html">
+                    
+
+
+                    <span>Dashes</span>
+                </a></li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/jekyll/environment.html">
+                    
+
+
+                    <span>Environment</span>
+                </a></li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/jekyll/install.html">
+                    
+
+
+                    <span>Install</span>
+                </a></li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/jekyll/overview.html">
+                    
+
+
+                    <span>Overview</span>
+                </a></li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/jekyll/structure.html">
+                    
+
+
+                    <span>Structure</span>
+                </a></li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/jekyll/test-servers.html">
+                    
+
+
+                    <span>Test servers</span>
+                </a></li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/jekyll/windows.html">
+                    
+
+
+                    <span>Windows compatibility</span>
+                </a></li>
+        </ul>
+
+    <br>
+
+    
+    
+        <h2>Content</h2>
+
+        <p>See <a href="https://michaelcurrin.github.io/code-cookbook/recipes/ci-cd/">CI/CD</a> in my Code Cookbook project for how to build, deploy and serve a Jekyll site using Netlify or GitHub Actions.</p>
+
+<h3 id="external-cheatsheets">External cheatsheets</h3>
+
+<ul>
+  <li><a href="https://learn.cloudcannon.com/jekyll-cheat-sheet/">Jekyll cheatsheet</a> on CloudCannon.</li>
+  <li><a href="https://devhints.io/jekyll">Jekyll cheatsheet</a> on DevHints.</li>
+</ul>
+
+<h3 id="related">Related</h3>
+
+<ul>
+  <li><a href="https://michaelcurrin.github.io/code-cookbook/recipes/jekyll/">Jekyll</a> cookbook.</li>
+</ul>
+
+<!-- See also [help](https://github.com/MichaelCurrin/static-sites-generator-resources/blob/master/Jekyll/help.md) page in _MichaelCurrin/static-sites-generator-resources_. -->
+    
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

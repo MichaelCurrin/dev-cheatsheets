@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>diff-index | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="diff-index" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/diff-index.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/diff-index.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="diff-index" />
+<script type="application/ld+json">
+{"headline":"diff-index","description":"A collection of code snippets and CLI guides for quick and easy reference while coding","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/diff-index.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/version-control/git/commands/diff-index.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/version-control/git/commands/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>diff-index</span>
+        </h1>
+
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/version-control/">
+    Version control
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/version-control/git/">
+    Git
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/version-control/git/commands/">
+    Commands
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/version-control/git/commands/diff-index.html" class="underline">
+                diff-index
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <h2 id="docs">Docs</h2>
+
+<p>On Git docs - <a href="https://www.git-scm.com/docs/git-diff-index">git-diff-index</a>.</p>
+
+<h2 id="usage">Usage</h2>
+
+<h3 id="short-help">Short help</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">-h</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usage: git diff-index [-m] [--cached] [&lt;common-diff-options&gt;] &lt;tree-ish&gt; [&lt;path&gt;...]
+common diff options:
+  -z            output diff-raw with lines terminated with NUL.
+  -p            output patch format.
+  -u            synonym for -p.
+  --patch-with-raw
+                output both a patch and the diff-raw format.
+  --stat        show diffstat instead of patch.
+  --numstat     show numeric diffstat instead of patch.
+  --patch-with-stat
+                output a patch and prepend its diffstat.
+  --name-only   show only names of changed files.
+  --name-status show names and status of changed files.
+  --full-index  show full object name on index lines.
+  --abbrev=&lt;n&gt;  abbreviate object names in diff-tree header and diff-raw.
+  -R            swap input file pairs.
+  -B            detect complete rewrites.
+  -M            detect renames.
+  -C            detect copies.
+  --find-copies-harder
+                try unchanged files as candidate for copy detection.
+  -l&lt;n&gt;         limit rename attempts up to &lt;n&gt; paths.
+  -O&lt;file&gt;      reorder diffs according to the &lt;file&gt;.
+  -S&lt;string&gt;    find filepair whose only one side contains the string.
+  --pickaxe-all
+                show all files diff when -S is used and hit is found.
+  -a  --text    treat all files as text.
+</code></pre></div></div>
+
+<h3 id="long-help">Long help</h3>
+
+<p>This is same as <code class="language-plaintext highlighter-rouge">man git-diff-index</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--help</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME
+       git-diff-index - Compare a tree to the working tree or index
+
+SYNOPSIS
+       git diff-index [-m] [--cached] [&lt;common diff options&gt;] &lt;tree-ish&gt; [&lt;path&gt;...]
+
+DESCRIPTION
+       Compares the content and mode of the blobs found in a tree object with the corresponding tracked files in the working tree,
+       or with the corresponding paths in the index. When &lt;path&gt; arguments are present, compares only paths matching those
+       patterns. Otherwise all tracked files are compared.
+</code></pre></div></div>
+
+<h3 id="cached-mode">Cached mode</h3>
+
+<p>Copied from a docs example:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff-index <span class="nt">--cached</span> HEAD
+</code></pre></div></div>
+
+<h2 id="flags">Flags</h2>
+
+<p>Note the examples below are usually based on this state (output shown from <code class="language-plaintext highlighter-rouge">git status -s</code>)</p>
+
+<ul>
+  <li>Given 3 files, two untracked and one of the untracked is staged:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   M src/extension.ts
+  A  src/workspace.ts   # this was ?? but git add made it A
+  ?? src/my-git.ts
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="staged">Staged</h3>
+
+<p>Note that an argument is required, even if it is just <code class="language-plaintext highlighter-rouge">HEAD</code>.</p>
+
+<p>Using <code class="language-plaintext highlighter-rouge">--cached</code> works but <code class="language-plaintext highlighter-rouge">--staged</code> does not, while these both work on <code class="language-plaintext highlighter-rouge">git diff</code>.</p>
+
+<p>See below.</p>
+
+<h3 id="default-view">Default view</h3>
+
+<p>Detailed</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index HEAD
+:100644 100644 c8a49f4b29c16d6989a5053d7338ac827e4587d9 0000000000000000000000000000000000000000 M      src/extension.ts
+:000000 100644 0000000000000000000000000000000000000000 1d0872b88eb13128aed9c82ab2bc58d312d15802 A      src/workspace.ts
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--cached</span>  HEAD
+:000000 100644 0000000000000000000000000000000000000000 1d0872b88eb13128aed9c82ab2bc58d312d15802 A      src/workspace.ts
+</code></pre></div></div>
+
+<h3 id="name-status">Name status</h3>
+
+<p><code class="language-plaintext highlighter-rouge">--name-status</code></p>
+
+<blockquote>
+  <p>Show only names and status of changed files. See the description of the –diff-filter option on what the status letters mean.</p>
+</blockquote>
+
+<p>Jump to <a href="#diff-filter">Diff filter</a> section.</p>
+
+<p>Summary view, close to <code class="language-plaintext highlighter-rouge">git status -s</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--cached</span> <span class="nt">--name-status</span> HEAD
+A       src/workspace.ts
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--name-status</span> HEAD
+M       src/extension.ts
+A       src/workspace.ts
+</code></pre></div></div>
+
+<h3 id="stat">Stat</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--stat</span>  <span class="nt">--cached</span>  HEAD
+ src/workspace.ts | 8 ++++++++
+ 1 file changed, 8 insertions<span class="o">(</span>+<span class="o">)</span>
+</code></pre></div></div>
+
+<h3 id="num-stat">Num stat</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--numstat</span>  <span class="nt">--cached</span>  HEAD
+8       0       src/workspace.ts
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--numstat</span>   HEAD
+82      55      src/extension.ts
+8       0       src/workspace.ts
+</code></pre></div></div>
+
+<h3 id="diff-filter">Diff filter</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       --diff-filter=[(A|C|D|M|R|T|U|X|B)...[*]]
+           Select only files that are Added (A), Copied (C), Deleted (D), Modified (M), Renamed (R), have their type (i.e. regular
+           file, symlink, submodule, ...) changed (T), are Unmerged (U), are Unknown (X), or have had their pairing Broken (B).
+           Any combination of the filter characters (including none) can be used. When * (All-or-none) is added to the
+           combination, all paths are selected if there is any file that matches other criteria in the comparison; if there is no
+           file that matches other criteria, nothing is selected.
+
+           Also, these upper-case letters can be downcased to exclude. E.g.  --diff-filter=ad excludes added and deleted paths.
+
+           Note that not all diffs can feature all types. For instance, diffs from the index to the working tree can never have
+           Added entries (because the set of paths included in the diff is limited by what is in the index). Similarly, copied and
+           renamed entries cannot appear if detection for those types is disabled.
+</code></pre></div></div>
+
+<h3 id="include">Include</h3>
+
+<p>As per <a href="#flags">Flags</a> at the top, you can include renames and copies.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-M, --find-renames</code> - detect renames.</li>
+  <li><code class="language-plaintext highlighter-rouge">-C, --find-copies</code> - detect copies.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       -M[&lt;n&gt;], --find-renames[=&lt;n&gt;]
+           Detect renames. If n is specified, it is a threshold on the similarity index (i.e. amount of addition/deletions
+           compared to the file’s size). For example, -M90% means Git should consider a delete/add pair to be a rename if more
+           than 90% of the file hasn’t changed. Without a % sign, the number is to be read as a fraction, with a decimal point
+           before it. I.e., -M5 becomes 0.5, and is thus the same as -M50%. Similarly, -M05 is the same as -M5%. To limit
+           detection to exact renames, use -M100%. The default similarity index is 50%.
+
+       -C[&lt;n&gt;], --find-copies[=&lt;n&gt;]
+           Detect copies as well as renames. See also --find-copies-harder. If n is specified, it has the same meaning as for
+           -M&lt;n&gt;.
+</code></pre></div></div>
+
+<p>Given status output:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status <span class="nt">-s</span>
+R  README.md -&gt; FEEDME
+ M src/extension.ts
+A  src/workspace.ts
+?? src/my-git.ts
+</code></pre></div></div>
+
+<p>Plain:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--name-status</span> HEAD
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A       FEEDME
+D       README.md
+M       src/extension.ts
+A       src/workspace.ts
+</code></pre></div></div>
+
+<p>With flags:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--name-status</span> <span class="nt">-M</span> <span class="nt">-C</span> HEAD
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>R100    README.md       FEEDME
+M       src/extension.ts
+A       src/workspace.ts
+</code></pre></div></div>
+<p>Note 100% for unchanged file.</p>
+
+<p>And here for a slightly changed file:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>R096    README.md       FEEDME
+M       src/extension.ts
+A       src/workspace.ts
+</code></pre></div></div>
+
+<p>And longer line with a rename:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>R096    README.md       FEEDME
+R100    vsc-extension-quickstart.md     src/vsc-extension-quickstart.md
+</code></pre></div></div>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

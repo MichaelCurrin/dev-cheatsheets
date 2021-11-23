@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Images | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Images" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/markdown/images.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/markdown/images.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Images" />
+<script type="application/ld+json">
+{"headline":"Images","description":"A collection of code snippets and CLI guides for quick and easy reference while coding","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/markdown/images.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/markdown/images.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/markdown/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>Images</span>
+        </h1>
+
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/markdown/">
+    Markdown
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/markdown/images.html" class="underline">
+                Images
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <p>Images in markdown as similar to a hyperlink, except it starts with an <strong>exclamation mark</strong>.</p>
+
+<p>The following apply, as with standard links:</p>
+
+<ul>
+  <li>The target can point to a <strong>local</strong> file in the repo or a <strong>remote</strong> URL, as with standard links.</li>
+  <li>The text in the first part is alternative text shown while the image is loading (or if fails to load).</li>
+  <li>Optional text can be included at the end, to show on hover over.</li>
+</ul>
+
+<h2 id="general-format">General format</h2>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">ALT_TEXT</span><span class="p">](</span><span class="sx">IMG_SRC</span><span class="p">)</span>
+
+<span class="p">![</span><span class="nv">ALT_TEXT</span><span class="p">](</span><span class="sx">IMG_SRC</span> <span class="nn">"HOVER TEXT"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Example code:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">My foo</span><span class="p">](</span><span class="sx">foo.jpg</span><span class="p">)</span>
+
+<span class="p">![</span><span class="nv">My foo</span><span class="p">](</span><span class="sx">foo.jpg</span> <span class="nn">"A message about foo"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="notes">Notes</h3>
+
+<ul>
+  <li>For local paths, the target is <strong>case sensitive</strong>. GitHub will show an error otherwise. Some IDE extensions are case-insensitive and so hide errors that will appear on GitHub.</li>
+  <li>You can include multiple images on one line.
+    <div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  !<span class="p">[</span><span class="nv">foo</span><span class="p">](</span><span class="sx">foo.png</span><span class="p">)</span> <span class="p">![</span><span class="nv">bar</span><span class="p">](</span><span class="sx">bar.png</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="linked-images">Linked images</h2>
+
+<p>Wrap an image a link so you navigate somewhere by clicking the image.</p>
+
+<p>By default, an image tag alone will lead to a large version of the image (maybe not on static sites). But you can add a link around an image so clicking it goes somewhere.</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">![ALT_TEXT</span><span class="p">](</span><span class="sx">IMG_SRC</span><span class="p">)</span>](CLICK_TARGET)
+
+With whitespace for demonstration:
+
+<span class="p">[</span><span class="nv"> ![ALT_TEXT</span><span class="p">](</span><span class="sx">IMG_SRC</span><span class="p">)</span> ](CLICK_TARGET)
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">![Photo of me</span><span class="p">](</span><span class="sx">/photo.png</span><span class="p">)</span>](/about.html)
+</code></pre></div></div>
+
+<h3 id="building-it-up">Building it up</h3>
+
+<p>Image:</p>
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">Alt text for broken image link</span><span class="p">](</span><span class="sx">assets/logo.png</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Link:</p>
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">Alt text for broken link</span><span class="p">](</span><span class="sx">httsp://example.com</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Image with link:</p>
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">![Alt text for broken image link</span><span class="p">](</span><span class="sx">assets/logo.png</span><span class="p">)</span>](https://example.com)
+</code></pre></div></div>
+
+<p>Note the link on the outside doesn’t have alt text anymore but the link still wraps the image.</p>
+
+<p>Yes it is hard to read and edit but you get used to it as a pattern in Markdown.</p>
+
+<h2 id="example-of-inline-vs-reference-style">Example of inline vs reference style</h2>
+
+<h3 id="inline-style">Inline-style</h3>
+
+<p>Example:</p>
+
+<p><strong>Code</strong>:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">Alt text</span><span class="p">](</span><span class="sx">https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png</span> <span class="nn">"This text shows on hover"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<p>Code:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">Alt text</span><span class="p">](</span><span class="sx">https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png</span> <span class="nn">"This text shows on hover"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="reference-style">Reference-style</h3>
+
+<p><strong>Code</strong>:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">Alt text</span><span class="p">][</span><span class="ss">logo</span><span class="p">]</span>
+
+Some more text.
+
+<span class="p">[</span><span class="ss">logo</span><span class="p">]:</span> <span class="sx">https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png</span> <span class="nn">"This text shows on hover"</span>
+
+There is a logo above but this element but it is not visible in the rendered HTML.
+</code></pre></div></div>
+
+<p><strong>Result</strong>:</p>
+
+<p><img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="Alt text" title="This text shows on hover" /></p>
+
+<p>Some more text.</p>
+
+<p>There is a logo above but this element but it is not visible in the rendered HTML.</p>
+
+<h2 id="plain-html">Plain HTML</h2>
+
+<p>For more control, you can use HTML for your images.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"foo.jpg"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>Here we make the image clickable, to emulate what a markdown image does.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://example.com/foo/"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://example.com/bar.png"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<h2 id="styled-html">Styled HTML</h2>
+
+<p>Resize and center an image using HTML attributes.</p>
+
+<p>GitHub also sets max-width to <code class="language-plaintext highlighter-rouge">100%</code> on the CSS when rendering the page, so that means your image can take up a lot of space.</p>
+
+<p>A good way to do this is set the exact height - letting the pixel width change based on desktop or mobile. Fine-tune the value per image.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p</span> <span class="na">align=</span><span class="s">"center"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">height=</span><span class="s">"300px"</span> <span class="na">src=</span><span class="s">"foo.png"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<p>Or use a relative width value:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">width="80%"</code></li>
+</ul>
+
+<!-- Does that work ^ ? -->
+
+<p>Notes:</p>
+
+<ul>
+  <li>Centering and resizing as above <strong>cannot</strong> be achieved by setting CSS (inline or in a style tag) on GitHub, so you must update attributes of the tags. The <code class="language-plaintext highlighter-rouge">align</code> attribute works for now in HTML5 but will eventually stop as it is deprecated.</li>
+  <li>The resizing above works for <em>HTML</em> tags in markdown, but resizing cannot be done for <em>markdown</em> image. At least in GitHub-flavored implementation of markdown - some other systems support resizing e.g. <code class="language-plaintext highlighter-rouge">![Alt](img.jpg =60x50)</code>.</li>
+  <li>The image will be hyperlinked to the full size version of the image, unless you add an anchor tag.</li>
+</ul>
+
+<h3 id="add-elements">Add elements</h3>
+
+<p>You can use other elements in the outer tag.</p>
+
+<p>In the case of a badge image as a second element, that will only be centered if the outer element is a <code class="language-plaintext highlighter-rouge">div</code> and not a <code class="language-plaintext highlighter-rouge">p</code>. I don’t know why.</p>
+
+<p>Example:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">align=</span><span class="s">"center"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://michaelcurrin.github.io/unicron/"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">width=</span><span class="s">"250"</span> <span class="na">src=</span><span class="s">"docs/_media/logo.png"</span> <span class="na">alt=</span><span class="s">"Unicron logo"</span> <span class="nt">/&gt;</span>
+
+![GitHub Pages site](https://img.shields.io/badge/docs-GitHub_Pages-f967f9?style=for-the-badge)
+    <span class="nt">&lt;/a&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>Note the lack of a space before the closing <code class="language-plaintext highlighter-rouge">a</code> tag otherwise that is just indented text. Or it has to have no indentation.</p>
+
+<p>The badge could also be converted to an <code class="language-plaintext highlighter-rouge">img</code> tag for consistency. Then a line break is needed to keep the images on separate lines.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">align=</span><span class="s">"center"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://michaelcurrin.github.io/unicron/"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">width=</span><span class="s">"250"</span> <span class="na">src=</span><span class="s">"docs/_media/logo.png"</span> <span class="na">alt=</span><span class="s">"Unicron logo"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;br&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://img.shields.io/badge/docs-GitHub_Pages-f967f9?style=for-the-badge"</span> <span class="na">alt=</span><span class="s">"GitHub Pages site"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h2 id="svgs">SVGs</h2>
+
+<p>Format:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">Alt text</span><span class="p">](</span><span class="sx">foo.svg</span><span class="p">)</span>
+
+<span class="p">![</span><span class="nv">Alt text</span><span class="p">](</span><span class="sx">https://example.com/foo.svg</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Example</p>
+
+<p><strong>Code:</strong>:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">Alt text</span><span class="p">](</span><span class="sx">https://placeholder.pics/svg/200x60/DEDEDE/555555/Sample%20SVG</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Result</strong></p>
+
+<p><img src="https://placeholder.pics/svg/200x60/DEDEDE/555555/Sample%20SVG" alt="Alt text" /></p>
+
+<h3 id="github-links">GitHub links</h3>
+
+<h4 id="using-rawgithubusercontentcom">Using raw.githubusercontent.com</h4>
+
+<p>If you reference an image on GitHub through the <em>Raw</em> button, you get a link for <code class="language-plaintext highlighter-rouge">raw.githubusercontent.com</code>. You must add this to the URL to avoid getting an error: <code class="language-plaintext highlighter-rouge">?sanitize=true</code>.</p>
+
+<p>Example of the above. This could be Markdown too, but with HTML to set the width.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">width=</span><span class="s">"100px"</span>
+     <span class="na">src=</span><span class="s">"https://raw.githubusercontent.com/graphql/graphql-spec/master/resources/GraphQL%20Logo.svg?sanitize=true"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p><img width="100px" src="https://raw.githubusercontent.com/graphql/graphql-spec/master/resources/GraphQL%20Logo.svg?sanitize=true" /></p>
+
+<p>Image link from Wikipedia icon <a href="https://en.wikipedia.org/wiki/GraphQL">here</a>.</p>
+
+<p>If you use a different domains below, though you do <strong>not</strong> need the <code class="language-plaintext highlighter-rouge">sanitize</code> parameter.</p>
+
+<h3 id="using-githubio">Using github.io</h3>
+
+<p>An asset hosted on a GitHub Pages site.</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">Alt text</span><span class="p">](</span><span class="sx">https://potherca-blog.github.io/StackOverflow/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://potherca-blog.github.io/StackOverflow/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg" alt="Alt text" /></p>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

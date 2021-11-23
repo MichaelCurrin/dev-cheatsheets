@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Shell requests | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Shell requests" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/requests.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/requests.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Shell requests" />
+<script type="application/ld+json">
+{"headline":"Shell requests","description":"A collection of code snippets and CLI guides for quick and easy reference while coding","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/requests.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/shell/requests.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/shell/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>Shell requests</span>
+        </h1>
+
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/shell/">
+    Shell
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/shell/requests.html" class="underline">
+                Shell requests
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <p>How to download or upload content at a URL using terminal tools.</p>
+
+<p><strong>Table of contents</strong></p>
+
+<!-- TODO break out into separate files -->
+
+<ul>
+  <li><a href="#curl">curl</a></li>
+  <li><a href="#httpie">httpie</a></li>
+  <li><a href="#wget">wget</a></li>
+</ul>
+
+<h2 id="curl">Curl</h2>
+
+<p>When formatting a URL to request, ensure you escape it. For example <code class="language-plaintext highlighter-rouge">#</code> would turn the rest of the line into a comment.</p>
+
+<h3 id="ignore-invalid-cert">Ignore invalid cert</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="nt">-k</span> URL
+</code></pre></div></div>
+
+<h3 id="request-multiple-files">Request multiple files</h3>
+
+<p>Example below with braces expansion supported by curl - more succinct than writing a <code class="language-plaintext highlighter-rouge">for</code> loop. Note characters are escaped (some shells like ZSH will do this for you).</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="s1">'http:example.com/{foo,bar}#baz'</span>
+
+<span class="nv">$ </span><span class="c"># OR</span>
+<span class="nv">$ </span>curl http:example.com/<span class="se">\{</span>foo,bar<span class="se">\}\#</span>baz
+</code></pre></div></div>
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+  <li><a href="https://curl.haxx.se/">Curl homepage</a>
+    <blockquote>
+      <p>command line tool and library for transferring data with URLs</p>
+    </blockquote>
+  </li>
+  <li><a href="https://devhints.io/curl">Curl cheatsheet</a> on DevHints.</li>
+  <li><a href="https://gist.github.com/subfuzion/08c5d85437d5d4f00e58">Curl POST examples</a> gist.</li>
+  <li><a href="https://curl.haxx.se/docs/manual.html">Curl manual</a> on <a href="https://curl.haxx.se">curl.haxx.se</a>.</li>
+  <li><a href="https://curl.haxx.se/docs/manpage.html">Curl manpage</a> on <a href="https://curl.haxx.se">curl.haxx.se</a>.</li>
+  <li><a href="https://linux.die.net/man/1/curl">Curl manpage</a> on <a href="https://Linux.die.net">Linux.die.net</a>.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Flag</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-L</code></td>
+      <td>Follow redirect.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-o --output FILEPATH</code></td>
+      <td>Write to named filepath. <a href="https://curl.haxx.se/docs/manpage.html#-o">manpage</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-O, --remote-name</code></td>
+      <td>Write to a file in the current directory using the remote’s filename. This will use ‘%20’ for spaces. <a href="https://curl.haxx.se/docs/manpage.html#-O">manpage</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-u user:pass</code></td>
+      <td>User authentication.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="verbosity">Verbosity</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Flag</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-v --verbose</code></td>
+      <td>Verbose</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-vv</code></td>
+      <td>More verbose.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-s</code></td>
+      <td>Silent</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="saving-output">Saving output</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http <span class="o">&gt;</span> <span class="nb">dir</span>/file.txt
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl URL <span class="nt">-o</span> <span class="nb">dir</span>/file.txt
+
+<span class="c"># Multiple files and use the variable input in the output.</span>
+curl <span class="s2">"http://{one,two}.example.com"</span> <span class="nt">-o</span> <span class="s2">"file_#1.txt"</span>
+</code></pre></div></div>
+
+<p>Use the remote resource’s name.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http://example.com/foo.html <span class="nt">-O</span>
+<span class="c"># foo.html</span>
+
+<span class="c"># Download multiple files.</span>
+curl <span class="s1">'http://example.com/{foo.html,bar.html}'</span> <span class="nt">-O</span>
+</code></pre></div></div>
+
+<h3 id="post-reuqest">POST reuqest</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">-X POST</code> flag is implied if you add data.</p>
+
+<h4 id="send-form-data">Send form data</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-d &lt;key&gt;=&lt;value&gt;[&lt;key&gt;=&lt;value&gt;...]
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http://example.com <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'foo=bar,fizz=buzz'</span>
+</code></pre></div></div>
+
+<p>Use <code class="language-plaintext highlighter-rouge">-G</code> to send data via get.</p>
+
+<h4 id="send-json-data">Send JSON data</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-d &lt;json-string&gt;
+</code></pre></div></div>
+
+<p>Example:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http://example.com <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{"foo": "bar", "fizz": "buzz"}'</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+</code></pre></div></div>
+
+<h4 id="upload-a-file">Upload a file</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-d @&lt;path-to-file&gt;
+</code></pre></div></div>
+
+<p>Example</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http:example.com <span class="se">\</span>
+    <span class="nt">-d</span> @file.txt
+</code></pre></div></div>
+
+<h4 id="headers">Headers</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-H "Content-Type: application/x-www-form-urlencoded"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">-H "Content-Type: application/json"</code></li>
+</ul>
+
+<h4 id="show-just-header">Show just header</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-I</code> <code class="language-plaintext highlighter-rouge">--head</code></li>
+</ul>
+
+<h2 id="httpie">HTTPie</h2>
+
+<p>Simpler to use than curl and it prettifies JSON and HTML output with colors and wrapping.</p>
+
+<h2 id="resources-1">Resources</h2>
+
+<ul>
+  <li><a href="https://httpie.org/">httpie.org</a> - homepage. There are great usage examples there.
+    <blockquote>
+      <p>HTTPie is a command line HTTP client that will make you smile.</p>
+    </blockquote>
+  </li>
+  <li><a href="https://httpie.org/doc">HTTPie docs</a></li>
+  <li><a href="https://httpie.org/run">HTTPie demo</a></li>
+  <li><a href="https://github.com/jakubroztocil/httpie/">jakubroztocil/httpie</a> repo on GitHub.</li>
+  <li><a href="https://devhints.io/httpie">HTTpie cheatsheet</a> on DevHints.</li>
+</ul>
+
+<h3 id="install">Install</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;tool&gt; install httpie
+</code></pre></div></div>
+
+<p>Note you install using <code class="language-plaintext highlighter-rouge">httpie</code> but the command you use is <code class="language-plaintext highlighter-rouge">http</code>.</p>
+
+<h3 id="get">GET</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http httpbin.org/get
+</code></pre></div></div>
+
+<h3 id="post">POST</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http <span class="nt">-f</span> POST httpbin.org/post <span class="nv">hello</span><span class="o">=</span>World
+</code></pre></div></div>
+
+<h2 id="wget">Wget</h2>
+
+<ul>
+  <li><a href="https://www.gnu.org/software/wget/">GNU Wget homepage</a></li>
+  <li><a href="http://www.gnu.org/software/wget/manual/wget.html">Manual</a></li>
+  <li><a href="https://www.computerhope.com/unix/wget.htm">Tutorial</a></li>
+  <li><a href="https://gist.github.com/Dammmien/4af98e05f9c51c2da007cc70d62bf562">Cheatsheet</a> gist.</li>
+</ul>
+
+<h3 id="install-1">Install</h3>
+
+<p>Debian/Ubuntu:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>wget
+</code></pre></div></div>
+
+<p>macOS:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>wget
+</code></pre></div></div>
+
+<h3 id="usage">Usage</h3>
+
+<h3 id="help">Help</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget --help
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GNU Wget 1.20.3, a non-interactive network retriever.
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage: wget [OPTION]... [URL]...
+</code></pre></div></div>
+
+<p>Some useful options.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  -o,  --output-file=FILE          log messages to FILE
+  -a,  --append-output=FILE        append messages to FILE
+  -q,  --quiet                     quiet (no output)
+  -v,  --verbose                   be verbose (this is the default)
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  -O,  --output-document=FILE      write documents to FILE
+
+  -nc, --no-clobber                skip downloads that would download to
+                                     existing files (overwriting them)
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  -i,  --input-file=FILE           download URLs found in local or external FILE
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       --spider                    don't download anything
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Recursive download:
+  -r,  --recursive                 specify recursive download
+  -l,  --level=NUMBER              maximum recursion depth (inf or 0 for infinite)
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  -D,  --domains=LIST              comma-separated list of accepted domains
+       --exclude-domains=LIST      comma-separated list of rejected domains
+</code></pre></div></div>
+
+<h4 id="download-a-file">Download a file</h4>
+
+<p>With no flags, you’ll get the file downloaded.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget http://website.com/files/file.zip
+</code></pre></div></div>
+
+<p>Change the output path or filename.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget http://website.com/files/file.zip <span class="nt">-O</span> myfile.zip
+</code></pre></div></div>
+
+<h4 id="print-output">Print output</h4>
+
+<p>Specify no output file. This behaves like the default behavior of <code class="language-plaintext highlighter-rouge">curl</code>.</p>
+
+<p>This can be useful for piping text at endpoint to another tool.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-q</span> <span class="nt">-O</span> - <span class="s2">"https://api.github.com/repos/MichaelCurrin/badge-generator/releases/latest"</span>
+</code></pre></div></div>
+
+<h3 id="spider">Spider</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-r</span> <span class="nt">-l4</span> –spider <span class="nt">-D</span> example.com https://example.com
+</code></pre></div></div>
+
+<p>From the manual:</p>
+
+<blockquote>
+  <p>When invoked with this option, Wget will behave as a Web spider, which means that it will not download the pages, just check that they are there. For example, you can use Wget to check your bookmarks:</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">--spider</span> <span class="nt">--force-html</span> <span class="nt">-i</span> bookmarks.html
+</code></pre></div></div>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

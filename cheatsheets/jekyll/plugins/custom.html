@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Custom | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Custom" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to write and use a Jekyll plugin within a repo" />
+<meta property="og:description" content="How to write and use a Jekyll plugin within a repo" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/jekyll/plugins/custom.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/jekyll/plugins/custom.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Custom" />
+<script type="application/ld+json">
+{"headline":"Custom","description":"How to write and use a Jekyll plugin within a repo","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/jekyll/plugins/custom.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/jekyll/plugins/custom.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/jekyll/plugins/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>Custom</span>
+        </h1>
+
+        
+            <blockquote>
+                <p>How to write and use a Jekyll plugin within a repo</p>
+
+            </blockquote>
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/jekyll/">
+    Jekyll
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/jekyll/plugins/">
+    Plugins
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/jekyll/plugins/custom.html" class="underline">
+                Custom
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            
+<p>This page covers generic syntax. See <a href="https://michaelcurrin.github.io/code-cookbook/recipes/jekyll/plugins/">Plugin</a> recipes for more practical cases.</p>
+
+<p>See <a href="https://jekyllrb.com/docs/plugins/">Plugins</a> in the Jekyll docs for getting started writing an installing a plugin.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>To set up a plugin from below, copy the Ruby code to a <code class="language-plaintext highlighter-rouge">.rb</code> file in the <code class="language-plaintext highlighter-rouge">_plugins</code> directory. Then build or serve your site.</p>
+
+<p>If you want to manage your plugin so you can share it across your projects and make it easy for others to install, then you can make a repo which is a gem that can be installed with <code class="language-plaintext highlighter-rouge">gem</code> or <code class="language-plaintext highlighter-rouge">bundle</code>. But this is not necessary.</p>
+
+<h2 id="tag">Tag</h2>
+<blockquote>
+  <p>Create custom Liquid tags</p>
+</blockquote>
+
+<p>See <a href="https://jekyllrb.com/docs/plugins/tags/">Tags</a> in the Jekyll docs.</p>
+
+<p>This tag will output the time that the page was rendered, taking text and showing it.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Jekyll</span>
+  <span class="k">class</span> <span class="nc">MyFooTag</span> <span class="o">&lt;</span> <span class="no">Liquid</span><span class="o">::</span><span class="no">Tag</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">tag_name</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">tokens</span><span class="p">)</span>
+      <span class="k">super</span>
+      <span class="vi">@text</span> <span class="o">=</span> <span class="n">text</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+      <span class="s2">"</span><span class="si">#{</span><span class="vi">@text</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Liquid</span><span class="o">::</span><span class="no">Template</span><span class="p">.</span><span class="nf">register_tag</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">,</span> <span class="no">Jekyll</span><span class="o">::</span><span class="no">MyFooTag</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Usage. Note lack of quotes.</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">foo</span><span class="w"> </span>Page<span class="w"> </span>rendered<span class="w"> </span>at<span class="w"> </span><span class="p">%}</span>
+
+&lt;!-- Possibly also? --&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">foo</span><span class="w"> </span><span class="na">text</span><span class="o">=</span><span class="s1">'Page rendered at'</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<h2 id="filter">Filter</h2>
+<blockquote>
+  <p>Create custom Liquid filters</p>
+</blockquote>
+
+<p>See <a href="https://jekyllrb.com/docs/plugins/filters/">Filters</a> in the Jekyll docs.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Jekyll</span>
+  <span class="k">module</span> <span class="nn">MyFooFilter</span>
+    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">input</span><span class="p">)</span>
+      <span class="nb">puts</span> <span class="n">input</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Liquid</span><span class="o">::</span><span class="no">Template</span><span class="p">.</span><span class="nf">register_filter</span><span class="p">(</span><span class="no">Jekyll</span><span class="o">::</span><span class="no">MyFooFilter</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Usage:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="s1">'hello'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">foo</span><span class="w"> </span><span class="p">}}</span>
+</code></pre></div></div>
+
+<p>If you need access to <code class="language-plaintext highlighter-rouge">site</code>, such as for making a static file.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Jekyll</span>
+  <span class="k">module</span> <span class="nn">Foo</span>
+    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+      <span class="n">site</span> <span class="o">=</span> <span class="vi">@contextension</span><span class="p">.</span><span class="nf">registers</span><span class="p">[</span><span class="ss">:site</span><span class="p">]</span>
+      
+      <span class="c1"># ...</span>
+  
+      <span class="s1">'my value'</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Liquid</span><span class="o">::</span><span class="no">Template</span><span class="p">.</span><span class="nf">register_filter</span><span class="p">(</span><span class="no">Jekyll</span><span class="o">::</span><span class="no">Resize</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="converter">Converter</h2>
+<blockquote>
+  <p>Change a markup language into another format</p>
+</blockquote>
+
+<p>Jekyll uses a converter internally to process Markdown as HTML. You can support additional formats with your own converter.</p>
+
+<p>See also <a href="https://jekyllrb.com/docs/configuration/markdown/">Markown Processors</a> in the docs.</p>
+
+<p>Based on <a href="https://jekyllrb.com/docs/plugins/converters/">Converters</a> section of the Jekyll docs. This will process all files ending with <code class="language-plaintext highlighter-rouge">.myext</code>. In the <code class="language-plaintext highlighter-rouge">convert</code> method, we make all the text uppercase.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Jekyll</span>
+  <span class="k">class</span> <span class="nc">MyConverter</span> <span class="o">&lt;</span> <span class="no">Converter</span>
+    <span class="n">safe</span> <span class="kp">true</span>
+    <span class="n">priority</span> <span class="ss">:low</span>
+
+    <span class="k">def</span> <span class="nf">matches</span><span class="p">(</span><span class="n">ext</span><span class="p">)</span>
+      <span class="n">ext</span> <span class="o">=~</span> <span class="sr">/^\.myext$/i</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">output_ext</span><span class="p">(</span><span class="n">ext</span><span class="p">)</span>
+      <span class="s2">".html"</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+      <span class="n">content</span><span class="p">.</span><span class="nf">upcase</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h2 id="generator">Generator</h2>
+<blockquote>
+  <p>Create additional content on your site</p>
+</blockquote>
+
+<p>Create pages, such as from YAML data files or fetched API data, rather than from markdown files.</p>
+
+<p>Based on <a href="https://jekyllrb.com/docs/plugins/generators/">Generators</a> section of the Jekyll docs.</p>
+
+<blockquote>
+  <p>A generator is a subclass of Jekyll::Generator that defines a generate method, which receives an instance of Jekyll::Site. The return value of generate is ignored.</p>
+</blockquote>
+
+<p>Here is the base structure of a generic plugin.</p>
+
+<p>Make sure to set a <code class="language-plaintext highlighter-rouge">generate</code> method.</p>
+
+<p>You might want to set <code class="language-plaintext highlighter-rouge">initialize</code> if you are overriding the class’s <code class="language-plaintext highlighter-rouge">initialize</code> method.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">MyModule</span>
+  <span class="k">class</span> <span class="nc">MyGenerator</span> <span class="o">&lt;</span> <span class="no">Jekyll</span><span class="o">::</span><span class="no">Generator</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">foo</span><span class="p">)</span>
+      <span class="k">super</span>
+      <span class="c1"># Your logic</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+      <span class="c1"># Your logic</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h3 id="site-variable">Site variable</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">site</code> variable available in the <code class="language-plaintext highlighter-rouge">generate</code> method is the same as <code class="language-plaintext highlighter-rouge">site</code> in a Jekyll Markdown or HTML page.</p>
+
+<p>So you read and update attributes, such as:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">site</span><span class="p">.</span><span class="nf">pages</span>
+<span class="n">site</span><span class="p">.</span><span class="nf">posts</span>
+<span class="n">site</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">description</span>
+
+<span class="no">See</span> <span class="p">[</span><span class="no">Variables</span><span class="p">](</span><span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">jekyllrb</span><span class="p">.</span><span class="nf">com</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">variables</span><span class="o">/</span><span class="p">)</span> <span class="k">in</span> <span class="n">the</span> <span class="n">docs</span><span class="o">.</span>
+
+<span class="c1">### Read data file</span>
+
+<span class="no">If</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">read</span> <span class="n">from</span> <span class="n">a</span> <span class="p">[</span><span class="no">Data</span> <span class="no">File</span><span class="p">][]</span> <span class="n">like</span> <span class="sb">`_data/foo.yml`</span><span class="p">,</span> <span class="k">then</span> <span class="k">in</span> <span class="sb">`generate`</span> <span class="n">you</span> <span class="n">can</span> <span class="ss">do:
+
+</span><span class="p">[</span><span class="no">Data</span> <span class="no">File</span><span class="p">]:</span> <span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">jekyllrb</span><span class="p">.</span><span class="nf">com</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">datafiles</span><span class="o">/</span>
+
+<span class="sb">```ruby
+site.data.foo
+# or
+# site.data['foo']
+</span></code></pre></div></div>
+
+<p>Remember, you can also put JSON or CSV files in <code class="language-plaintext highlighter-rouge">_data</code> too and access them the same way.</p>
+
+<h3 id="read-api-data">Read API data</h3>
+
+<p>Consider using a gem like Faraday to do a GET or a POST request against an API and then parse the JSON string to be data.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"json"</span>
+<span class="nb">require</span> <span class="s2">"faraday"</span>
+
+<span class="c1"># ...</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="no">Faraday</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span>
+  <span class="vi">@url</span><span class="p">,</span>
+  <span class="vi">@payload</span><span class="p">.</span><span class="nf">to_json</span><span class="p">,</span>
+  <span class="vi">@headers</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="k">if</span> <span class="n">resp</span><span class="p">.</span><span class="nf">status</span> <span class="o">&gt;</span> <span class="mi">299</span>
+  <span class="nb">puts</span> <span class="n">resp</span><span class="p">.</span><span class="nf">body</span>
+  <span class="k">raise</span> <span class="s2">"Request status: </span><span class="si">#{</span><span class="n">resp</span><span class="p">.</span><span class="nf">status</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+
+<span class="n">json</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span> <span class="n">resp</span><span class="p">.</span><span class="nf">body</span>
+</code></pre></div></div>
+
+<h3 id="create-page">Create page</h3>
+
+<p>If you want to set up a new page for Jekyll to render, set u a page like this, then append it to existing pages array with <code class="language-plaintext highlighter-rouge">&lt;&lt;</code>.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">new_page</span> <span class="o">=</span> <span class="no">Jekyll</span><span class="o">::</span><span class="no">Page</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">dir</span><span class="p">,</span> <span class="nb">name</span><span class="p">)</span>
+<span class="n">site</span><span class="p">.</span><span class="nf">pages</span> <span class="o">&lt;&lt;</span> <span class="n">new_page</span>
+</code></pre></div></div>
+
+<p>And repeat with a <em>for</em> loop for every page you want to add.</p>
+
+<p>The page must be an instance of <a href="https://github.com/jekyll/jekyll/blob/master/lib/jekyll/page.rb">Jekyll::Page</a>, <a href="https://github.com/jekyll/jekyll/blob/master/lib/jekyll/static_file.rb">Jekyll::StaticFile</a>, or a class that derives from one of those.</p>
+
+<p>What the docs <em>don’t</em> tell you is that you’ll get an error if the page does <em>not</em> yet exist. So for a <em>new</em> page you’ll want to use <code class="language-plaintext highlighter-rouge">PageWithoutAFile</code>.</p>
+
+<p>From the Jekyll unit tests, you can use it like this:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Jekyll</span><span class="o">::</span><span class="no">PageWithoutAFile</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">site</span><span class="p">.</span><span class="nf">source</span><span class="p">,</span> <span class="n">dir</span><span class="p">,</span> <span class="nb">name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Based on the Page class’s initialize method in Jekyll codebase, here are the parameters for Page, with my own notes.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">site</code> - Pass in <code class="language-plaintext highlighter-rouge">site</code> as is.</li>
+  <li><code class="language-plaintext highlighter-rouge">base</code> -  From the docs, <code class="language-plaintext highlighter-rouge">base</code> can be <code class="language-plaintext highlighter-rouge">site.source</code>. Using <code class="language-plaintext highlighter-rouge">__dir__</code> can also work.</li>
+  <li><code class="language-plaintext highlighter-rouge">dir</code> - Output directory within the <code class="language-plaintext highlighter-rouge">_site</code> build. Use <code class="language-plaintext highlighter-rouge">"."</code> for top-level.</li>
+  <li><code class="language-plaintext highlighter-rouge">name</code> - Output filename. Set as <code class="language-plaintext highlighter-rouge">index.html</code> or whatever HTML, JSON or XML file you want to make.</li>
+</ul>
+
+<p>The Jekyll <a href="https://github.com/jekyll/jekyll-feed">Feed</a> plugin generates a single file so is a good simple plugin to look at for its source code.</p>
+
+<p>Example from the plugin’s <a href="https://github.com/jekyll/jekyll-feed/blob/master/lib/jekyll-feed/generator.rb">generator.rb</a> module:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">PageWithoutAFile</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="vi">@site</span><span class="p">,</span> <span class="n">__dir__</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Here is a more specific example based on my answer I submitted in <a href="https://talk.jekyllrb.com/t/how-to-create-a-page-from-a-generator-plugin/6053/4">Jekyll Forums</a>.</p>
+
+<p>It generates a file <code class="language-plaintext highlighter-rouge">my-file.xml</code> with one row as <code class="language-plaintext highlighter-rouge">abcdef</code>.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">SamplePlugin</span>
+  <span class="k">class</span> <span class="nc">MyPageGenerator</span> <span class="o">&lt;</span> <span class="no">Jekyll</span><span class="o">::</span><span class="no">Generator</span>
+    <span class="n">safe</span> <span class="kp">true</span>
+
+    <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+      <span class="n">dir</span> <span class="o">=</span> <span class="s1">'.'</span>
+      <span class="nb">name</span> <span class="o">=</span> <span class="s1">'my-file.xml'</span>
+
+      <span class="n">new_page</span> <span class="o">=</span> <span class="no">Jekyll</span><span class="o">::</span><span class="no">PageWithoutAFile</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">site</span><span class="p">.</span><span class="nf">source</span><span class="p">,</span> <span class="n">dir</span><span class="p">,</span> <span class="nb">name</span><span class="p">).</span><span class="nf">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">file</span><span class="o">|</span>
+        <span class="n">file</span><span class="p">.</span><span class="nf">content</span> <span class="o">=</span> <span class="s1">'abcdef'</span>
+        <span class="n">file</span><span class="p">.</span><span class="nf">data</span><span class="p">.</span><span class="nf">merge!</span><span class="p">(</span>
+          <span class="s2">"layout"</span>     <span class="o">=&gt;</span> <span class="kp">nil</span><span class="p">,</span>
+          <span class="s2">"sitemap"</span>    <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">file</span><span class="p">.</span><span class="nf">output</span>
+      <span class="k">end</span>
+
+      <span class="n">site</span><span class="p">.</span><span class="nf">pages</span> <span class="o">&lt;&lt;</span> <span class="n">new_page</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>This worked fine for me. I don’t know what <code class="language-plaintext highlighter-rouge">.tap</code> is about. Perhaps this will work instead.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">new_page</span><span class="p">.</span><span class="nf">content</span> <span class="o">=</span> <span class="s2">"Hello, World!"</span>
+</code></pre></div></div>
+
+<p>I made layout <code class="language-plaintext highlighter-rouge">nil</code> so there is nothing else on this XML page. Or you can use a layout like <code class="language-plaintext highlighter-rouge">"page"</code> or <code class="language-plaintext highlighter-rouge">"default"</code>. - the <code class="language-plaintext highlighter-rouge">'abcdef'</code> content gets inserted as <code class="language-plaintext highlighter-rouge">{{ content }}</code> of the layout.</p>
+
+<p>To do that, replace <code class="language-plaintext highlighter-rouge">nil</code> above, or take out the merge and in the config then set layouts for all pages to be <code class="language-plaintext highlighter-rouge">page</code>.</p>
+
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

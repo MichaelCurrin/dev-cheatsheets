@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>status | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="status" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/status.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/status.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="status" />
+<script type="application/ld+json">
+{"headline":"status","description":"A collection of code snippets and CLI guides for quick and easy reference while coding","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/status.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/version-control/git/commands/status.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/version-control/git/commands/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>status</span>
+        </h1>
+
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/version-control/">
+    Version control
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/version-control/git/">
+    Git
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/version-control/git/commands/">
+    Commands
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/version-control/git/commands/status.html" class="underline">
+                status
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <h2 id="usage">Usage</h2>
+
+<p>Short help:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status <span class="nt">-h</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usage: git status [&lt;options&gt;] [--] &lt;pathspec&gt;...
+
+    -v, --verbose         be verbose
+    -s, --short           show status concisely
+    -b, --branch          show branch information
+    --show-stash          show stash information
+    --ahead-behind        compute full ahead/behind values
+    --porcelain[=&lt;version&gt;]
+                          machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    -u, --untracked-files[=&lt;mode&gt;]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --ignored[=&lt;mode&gt;]    show ignored files, optional modes: traditional, matching, no. (Default: traditional)
+    --ignore-submodules[=&lt;when&gt;]
+                          ignore changes to submodules, optional when: all, dirty, untracked. (Default: all)
+    --column[=&lt;style&gt;]    list untracked files in columns
+    --no-renames          do not detect renames
+    -M, --find-renames[=&lt;n&gt;]
+                          detect renames, optionally set similarity index
+</code></pre></div></div>
+
+<h2 id="flags">Flags</h2>
+
+<p>Some flags I am interested in. From the long help.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       -s, --short
+           Give the output in the short-format.
+           (Default is --long)
+
+       -b, --branch
+           Show the branch and tracking info even in short-format.
+
+       --show-stash
+           Show the number of entries currently stashed away.
+
+       --porcelain[=&lt;version&gt;]
+           Give the output in an easy-to-parse format for scripts. This is similar to the short output, but
+           will remain stable across Git versions and regardless of user configuration. See below for details.
+
+           The version parameter is used to specify the format version. This is optional and defaults to the
+           original version v1 format.
+
+           ...
+
+           (This makes output without color for safety. Using with no arguments is OK.)
+
+       -v, --verbose
+           In addition to the names of files that have been changed, also show the textual changes that are
+           staged to be committed (i.e., like the output of git diff --cached). If -v is specified twice, then
+           also show the changes in the working tree that have not yet been staged (i.e., like the output of
+           git diff).
+
+      --find-renames[=&lt;n&gt;]
+           Turn on rename detection, optionally setting the similarity threshold. See also git-diff(1)
+           --find-renames.
+</code></pre></div></div>
+
+<p>Using verbose will show the lines changed including of lines of staged files (even if new at the bottom.</p>
+
+<h2 id="short-format">Short format</h2>
+
+<p>From <a href="https://git-scm.com/docs/git-status#_short_format">Short format</a> in the docs.</p>
+
+<blockquote>
+  <p>In the short-format, the status of each path is shown as one of these forms</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>XY PATH
+XY ORIG_PATH -&gt; PATH
+</code></pre></div></div>
+
+<p>There are rules for merge conflicts in the doc.</p>
+
+<p>Untracked files are:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>?? PATH
+</code></pre></div></div>
+
+<p>Here are the rules for remaining cases:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ' ' = unmodified
+
+    M = modified
+
+    A = added
+
+    D = deleted
+
+    R = renamed
+
+    C = copied
+
+    U = updated but unmerged
+</code></pre></div></div>
+
+<blockquote>
+  <p>Ignored files are not listed, unless –ignored option is in effect, in which case XY are !!.</p>
+</blockquote>
+
+<p>Further details:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>X          Y     Meaning
+-------------------------------------------------
+	     [AMD]   not updated
+M        [ MD]   updated in index
+A        [ MD]   added to index
+D                deleted from index
+R        [ MD]   renamed in index
+C        [ MD]   copied in index
+[MARC]           index and work tree matches
+[ MARC]     M    work tree changed since index
+[ MARC]     D    deleted in work tree
+[ D]        R    renamed in work tree
+[ D]        C    copied in work tree
+-------------------------------------------------
+D           D    unmerged, both deleted
+A           U    unmerged, added by us
+U           D    unmerged, deleted by them
+U           A    unmerged, added by them
+D           U    unmerged, deleted by us
+A           A    unmerged, both added
+U           U    unmerged, both modified
+-------------------------------------------------
+?           ?    untracked
+!           !    ignored
+-------------------------------------------------
+</code></pre></div></div>
+
+<h2 id="parse-output">Parse output</h2>
+
+<p>Use for scripting and git hooks.</p>
+
+<p>This will show a short summary (<code class="language-plaintext highlighter-rouge">-s</code>), ignore untracked (using <code class="language-plaintext highlighter-rouge">untracked=no</code> but note equals sign won’t work) and porcelain for clean, parseable output without colors.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status <span class="nt">-s</span> <span class="nt">-uno</span> <span class="nt">--porcelain</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-s --short
+
+-u[&lt;mode&gt;], --untracked-files[=&lt;mode&gt;]
+    Show untracked files.
+    ...
+        The possible options are:
+    •   no - Show no untracked files.
+    •   normal - Shows untracked files and directories.
+    •   all - Also shows individual files in untracked directories.
+
+--porcelain
+  Give the output in an easy-to-parse format for scripts. This is similar to the short
+  output, but will remain stable across Git versions and regardless of user
+  configuration.
+</code></pre></div></div>
+
+<h2 id="z-format">Z format</h2>
+
+<p>As an alternative to porcelain.</p>
+
+<p>This means that <code class="language-plaintext highlighter-rouge">R  foo -&gt; bar</code> becomes <code class="language-plaintext highlighter-rouge">R  bar\0foo\0</code>.</p>
+
+<p>From the man page:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       There is also an alternate -z format recommended for machine parsing. In that format, the status field is the same, but
+       some other things change. First, the -&gt; is omitted from rename entries and the field order is reversed (e.g from -&gt; to
+       becomes to from). Second, a NUL (ASCII 0) follows each filename, replacing space as a field separator and the terminating
+       newline (but a space still separates the status field from the first filename). Third, filenames containing special
+       characters are not specially formatted; no quoting or backslash-escaping is performed.
+</code></pre></div></div>
+
+<h2 id="conditional-logic">Conditional logic</h2>
+<blockquote>
+  <p>Check for unstaged modified files</p>
+</blockquote>
+
+<p>Check if repo is clean or dirty (unstaged changes to be committed still).</p>
+
+<h3 id="using-porcelain">Using porcelain</h3>
+
+<p>Check if there are unstaged changes.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="si">$(</span>git status <span class="nt">--porcelain</span><span class="si">)</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+    </span><span class="nb">echo</span> <span class="s1">'No changes to commit'</span>
+<span class="k">fi</span>
+</code></pre></div></div>
+
+<h3 id="using-grep">Using grep</h3>
+
+<p>The ZSH way of doing it - <a href="https://coderwall.com/p/e-tsng/ziraga-oh-my-zsh-theme">article</a>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">INDEX</span><span class="o">=</span><span class="si">$(</span>git status 2&gt; /dev/null<span class="si">)</span>
+
+<span class="k">if</span> <span class="si">$(</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$INDEX</span><span class="s2">"</span> | <span class="nb">grep</span> <span class="s1">'Untracked files'</span> &amp;&gt; /dev/null<span class="si">)</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s1">'There are untracked files'</span>
+<span class="k">fi
+
+if</span> <span class="si">$(</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$INDEX</span><span class="s2">"</span> | <span class="nb">grep</span> <span class="nt">-E</span> <span class="nt">-e</span> <span class="s1">'Changes not staged'</span> &amp;&gt; /dev/null<span class="si">)</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s1">'Unstaged changes'</span>
+<span class="k">fi</span>
+</code></pre></div></div>
+
+<p>This is then used conditionally to determine when these should be used.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
+</code></pre></div></div>
+
+<h2 id="format-length-style">Format length style</h2>
+
+<h3 id="long-format">Long format</h3>
+
+<p>The default.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+	deleted:    Makefile
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+	test.text
+
+no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre></div></div>
+
+<h3 id="short-output">Short output</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status <span class="nt">-s</span>
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> D Makefile
+?? test.text
+</code></pre></div></div>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

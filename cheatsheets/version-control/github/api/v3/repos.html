@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Repos | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Repos" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/github/api/v3/repos.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/github/api/v3/repos.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Repos" />
+<script type="application/ld+json">
+{"headline":"Repos","description":"A collection of code snippets and CLI guides for quick and easy reference while coding","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/github/api/v3/repos.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/version-control/github/api/v3/repos.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/version-control/github/api/v3/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>Repos</span>
+        </h1>
+
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/version-control/">
+    Version control
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/version-control/github/">
+    GitHub
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/version-control/github/api/">
+    API
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/version-control/github/api/v3/">
+    V3 REST
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/version-control/github/api/v3/repos.html" class="underline">
+                Repos
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            
+<h2 id="endpoints">Endpoints</h2>
+
+<h3 id="single-repo">Single repo</h3>
+
+<p>Get a single repo. There will be more URLs in the response to you navigate or automate request.</p>
+
+<p>Example for Badge Generator single repo URL.</p>
+
+<ul>
+  <li><a href="https://api.github.com/repos/MichaelCurrin/badge-generator">/repos/MichaelCurrin/badge-generator</a></li>
+</ul>
+
+<p>Summarized below as the most interesting fields - commenting out or deleting the less interesting ones.</p>
+
+<details>
+<summary>Expand output</summary>
+    
+```json5
+{
+  "name": "badge-generator",
+  "full_name": "MichaelCurrin/badge-generator",
+  "private": false,
+  "owner": {
+    "login": "MichaelCurrin",
+    "id": 18750745,
+    // ...
+  },
+  "html_url": "https://github.com/MichaelCurrin/badge-generator",
+  "description": "Online tool to help you quickly generate tailor-made badges/shields for your repo docs and learn to work with badges",
+  "fork": false,
+  "url": "https://api.github.com/repos/MichaelCurrin/badge-generator",
+  "forks_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/forks",
+  
+  // "keys_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/keys{/key_id}",
+  // "collaborators_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/collaborators{/collaborator}",
+  // "teams_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/teams",
+  //"hooks_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/hooks",
+  //"issue_events_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/issues/events{/number}",
+  //"events_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/events",
+  //"assignees_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/assignees{/user}",
+  
+  "branches_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/branches{/branch}",
+  "tags_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/tags",
+  "blobs_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/git/blobs{/sha}",
+  "git_tags_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/git/tags{/sha}",
+  //"git_refs_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/git/refs{/sha}",
+  "trees_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/git/trees{/sha}",
+  "statuses_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/statuses/{sha}",
+  "languages_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/languages",
+  "stargazers_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/stargazers",
+  "contributors_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/contributors",
+
+  //"subscribers_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/subscribers",
+  //"subscription_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/subscription",
+  "commits_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/commits{/sha}",
+  "git_commits_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/git/commits{/sha}",
+
+  //"comments_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/comments{/number}",
+  //"issue_comment_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/issues/comments{/number}",
+  "contents_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/contents/{+path}",
+  //"compare_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/compare/{base}...{head}",
+  //"merges_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/merges",
+  "archive_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/{archive_format}{/ref}",
+  "downloads_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/downloads",
+  "issues_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/issues{/number}",
+  "pulls_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/pulls{/number}",
+
+  //"milestones_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/milestones{/number}",
+  //"notifications_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/notifications{?since,all,participating}",
+  //"labels_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/labels{/name}",
+  
+  "releases_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/releases{/id}",
+  "deployments_url": "https://api.github.com/repos/MichaelCurrin/badge-generator/deployments",
+
+  "created_at": "2020-01-26T11:27:02Z",
+  "updated_at": "2020-06-01T09:21:51Z",
+  "pushed_at": "2020-06-01T09:21:48Z",
+
+  "git_url": "git://github.com/MichaelCurrin/badge-generator.git",
+  "ssh_url": "git@github.com:MichaelCurrin/badge-generator.git",
+  "clone_url": "https://github.com/MichaelCurrin/badge-generator.git",
+  "svn_url": "https://github.com/MichaelCurrin/badge-generator",
+  "homepage": "https://michaelcurrin.github.io/badge-generator/",
+  "size": 134,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "language": "JavaScript",
+  "has_issues": true,
+  "has_projects": false,
+  "has_downloads": true,
+  "has_wiki": false,
+  "has_pages": true,
+
+  "forks_count": 0,
+  //"mirror_url": null,
+  "archived": false,
+  "disabled": false,
+  "open_issues_count": 23,
+  "license": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "forks": 0,
+  "open_issues": 23,
+  "watchers": 0,
+  "default_branch": "master",
+  //"temp_clone_token": null,
+  //"network_count": 0,
+  //"subscribers_count": 1
+}
+```
+
+</details>
+
+<h3 id="multiple-repos">Multiple repos</h3>
+
+<p>Get multiple repos for a user.</p>
+
+<ul>
+  <li><a href="https://api.github.com/users/MichaelCurrin/repos">/users/MichaelCurrin/repos</a></li>
+</ul>
+
+<p>Note that there are also parameters like <code class="language-plaintext highlighter-rouge">limit</code> and <code class="language-plaintext highlighter-rouge">page</code> to set on repos, but these are not covered here.</p>
+
+<details>
+<summary>Expand output</summary>
+
+```json5
+{
+    "id": 147400032,
+    "node_id": "MDEwOlJlcG9zaXRvcnkxNDc0MDAwMzI=",
+    "name": "aggre-git",
+    "full_name": "MichaelCurrin/aggre-git",
+    "private": false,
+    
+    "owner": {
+      "login": "MichaelCurrin",
+      "id": 18750745,
+      "node_id": "MDQ6VXNlcjE4NzUwNzQ1",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/18750745?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/MichaelCurrin",
+      "html_url": "https://github.com/MichaelCurrin",
+      "followers_url": "https://api.github.com/users/MichaelCurrin/followers",
+      "following_url": "https://api.github.com/users/MichaelCurrin/following{/other_user}",
+      "gists_url": "https://api.github.com/users/MichaelCurrin/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/MichaelCurrin/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/MichaelCurrin/subscriptions",
+      "organizations_url": "https://api.github.com/users/MichaelCurrin/orgs",
+      "repos_url": "https://api.github.com/users/MichaelCurrin/repos",
+      "events_url": "https://api.github.com/users/MichaelCurrin/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/MichaelCurrin/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    
+    "html_url": "https://github.com/MichaelCurrin/aggre-git",
+    "description": "Report on aggregated GitHub activity data, based around PRs and users within your organization",
+    "fork": false,
+    "url": "https://api.github.com/repos/MichaelCurrin/aggre-git",
+    "forks_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/forks",
+    "keys_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/keys{/key_id}",
+    "collaborators_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/collaborators{/collaborator}",
+    "teams_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/teams",
+    "hooks_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/hooks",
+    "issue_events_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/issues/events{/number}",
+    "events_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/events",
+    "assignees_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/assignees{/user}",
+    "branches_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/branches{/branch}",
+    "tags_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/tags",
+    "blobs_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/git/blobs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/git/tags{/sha}",
+    "git_refs_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/git/refs{/sha}",
+    "trees_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/git/trees{/sha}",
+    "statuses_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/statuses/{sha}",
+    "languages_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/languages",
+    "stargazers_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/stargazers",
+    "contributors_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/contributors",
+    "subscribers_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/subscribers",
+    "subscription_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/subscription",
+    "commits_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/commits{/sha}",
+    "git_commits_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/git/commits{/sha}",
+    "comments_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/comments{/number}",
+    "issue_comment_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/issues/comments{/number}",
+    "contents_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/contents/{+path}",
+    "compare_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/compare/{base}...{head}",
+    "merges_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/merges",
+    "archive_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/{archive_format}{/ref}",
+    "downloads_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/downloads",
+    "issues_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/issues{/number}",
+    "pulls_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/pulls{/number}",
+    "milestones_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/milestones{/number}",
+    "notifications_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/notifications{?since,all,participating}",
+    "labels_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/labels{/name}",
+    "releases_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/releases{/id}",
+    "deployments_url": "https://api.github.com/repos/MichaelCurrin/aggre-git/deployments",
+    "created_at": "2018-09-04T19:16:24Z",
+    "updated_at": "2020-03-08T12:59:46Z",
+    "pushed_at": "2019-12-30T19:47:57Z",
+    "git_url": "git://github.com/MichaelCurrin/aggre-git.git",
+    "ssh_url": "git@github.com:MichaelCurrin/aggre-git.git",
+    "clone_url": "https://github.com/MichaelCurrin/aggre-git.git",
+    "svn_url": "https://github.com/MichaelCurrin/aggre-git",
+    "homepage": "",
+    "size": 151,
+    "stargazers_count": 0,
+    "watchers_count": 0,
+    "language": "Python",
+    "has_issues": true,
+    "has_projects": true,
+    "has_downloads": true,
+    "has_wiki": false,
+    "has_pages": false,
+    "forks_count": 1,
+    "mirror_url": null,
+    "archived": false,
+    "disabled": false,
+    "open_issues_count": 3,
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "forks": 1,
+    "open_issues": 3,
+    "watchers": 0,
+    "default_branch": "master"
+  },
+  
+  {
+    // ...
+  }
+]
+```
+
+</details>
+
+<h2 id="fields">Fields</h2>
+
+<p>Here are notes on fields of interest found on a repo.</p>
+
+<h3 id="tags">Tags</h3>
+
+<p>All tags:</p>
+
+<ul>
+  <li><a href="https://api.github.com/repos/MichaelCurrin/badge-generator/tags">/repos/MichaelCurrin/badge-generator/tags</a></li>
+</ul>
+
+<p>You’ll see a field like <code class="language-plaintext highlighter-rouge">"tag_name": "v2.0.0"</code>.</p>
+
+<p>You can extract this with:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>wget <span class="nt">-qO-</span> <span class="s2">"https://api.github.com/repos/MichaelCurrin/badge-generator/releases/latest"</span> | <span class="nb">grep</span> <span class="s1">'"tag_name":'</span> | <span class="nb">sed</span> <span class="nt">-E</span> <span class="s1">'s/.*"([^"]+)".*/\1/'</span><span class="p">;</span>
+v2.0.0
+
+<span class="c"># Testing.</span>
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'"tag_name": "v2.0.0"'</span> | <span class="nb">grep</span> <span class="s1">'"tag_name":'</span> | <span class="nb">sed</span> <span class="nt">-E</span> <span class="s1">'s/.*"([^"]+)".*/\1/'</span>
+v2.0.0
+</code></pre></div></div>
+
+<p>Though you might as well use <code class="language-plaintext highlighter-rouge">curl</code> instead of <code class="language-plaintext highlighter-rouge">wget</code> if you aren’t saving a file.</p>
+
+<h3 id="releases">Releases</h3>
+
+<p>You can’t see all releases I don’t think, but you can get target releases.</p>
+
+<p>Latest release (doesn’t include those marked as “pre-release”):</p>
+
+<ul>
+  <li><a href="https://api.github.com/repos/MichaelCurrin/badge-generator/releases/latest">/repos/MichaelCurrin/badge-generator/releases/latest</a></li>
+</ul>
+
+<p>Look up by ID. e.g. <code class="language-plaintext highlighter-rouge">34552316</code></p>
+
+<ul>
+  <li><a href="https://api.github.com/repos/MichaelCurrin/badge-generator/releases/34552316">/repos/MichaelCurrin/badge-generator/releases/34552316</a></li>
+</ul>
+
+<h3 id="homepage-url">Homepage URL</h3>
+
+<p>Note that homepage field will use whatever is in the repo’s URL section, not necessarily a GitHub Pages URL.</p>
+
+<p>e.g.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://artists-portfolio.netlify.app/"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Read <code class="language-plaintext highlighter-rouge">has_pages</code> to determine if GitHub Pages is active. Then you can figure out the URL programmatically.</p>
+
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

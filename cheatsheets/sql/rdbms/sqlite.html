@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>SQLite | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="SQLite" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/sql/rdbms/sqlite.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/sql/rdbms/sqlite.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SQLite" />
+<script type="application/ld+json">
+{"headline":"SQLite","description":"A collection of code snippets and CLI guides for quick and easy reference while coding","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/sql/rdbms/sqlite.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/sql/rdbms/sqlite.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/sql/rdbms/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>SQLite</span>
+        </h1>
+
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/sql/">
+    SQL
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/sql/rdbms/">
+    RDBMS flavors
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/sql/rdbms/sqlite.html" class="underline">
+                SQLite
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <h2 id="create">Create</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">foo</span> <span class="p">(</span>
+    <span class="cm">/* ... */</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="id">ID</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>id INTEGER PRIMARY KEY
+</code></pre></div></div>
+
+<h2 id="data-types">Data types</h2>
+
+<p>From <a href="https://www.sqlite.org/datatype3.html">Data types</a> in the docs.</p>
+
+<h3 id="available">Available</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">NULL</code></td>
+      <td>The value is a NULL value.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">INTEGER</code></td>
+      <td>The value is a signed integer, stored in 1, 2, 3, 4, 6, or 8 bytes depending on the magnitude of the value.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">REAL</code></td>
+      <td>The value is a floating point value, stored as an 8-byte IEEE floating point number.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">TEXT</code></td>
+      <td>The value is a text string, stored using the database encoding (UTF-8, UTF-16BE or UTF-16LE).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">BLOB</code></td>
+      <td>The value is a blob of data, stored exactly as it was input.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="text">Text</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>location VARCHAR(50)
+</code></pre></div></div>
+
+<h3 id="number">Number</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foo INTEGER
+bar INTEGER(8)
+</code></pre></div></div>
+
+<p>Cast to integer:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CAST(foo AS INTEGER)
+</code></pre></div></div>
+
+<h3 id="timestamp">Timestamp</h3>
+
+<p>Use current time if value is not set.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+</code></pre></div></div>
+
+<h3 id="time">Time</h3>
+
+<p>See <a href="https://sqlite.org/lang_datefunc.html">Date and time functions</a>.</p>
+
+<p>Functions:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">DATE</code></li>
+  <li><code class="language-plaintext highlighter-rouge">TIME</code></li>
+  <li><code class="language-plaintext highlighter-rouge">DATETIME</code></li>
+  <li><code class="language-plaintext highlighter-rouge">JULIANDAY</code></li>
+  <li><code class="language-plaintext highlighter-rouge">STRFTIME</code></li>
+</ul>
+
+<p>Now.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="nb">DATE</span><span class="p">(</span><span class="s1">'now'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>String format. Pass in <code class="language-plaintext highlighter-rouge">'now'</code> for easy testing, or a timestamp column.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">STRFTIME</span><span class="p">(</span><span class="s1">'%s'</span><span class="p">,</span><span class="s1">'now'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Get just year.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">STRFTIME</span><span class="p">(</span><span class="s1">'%Y'</span><span class="p">,</span> <span class="s1">'now'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>Description</th>
+      <th>Range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">%d</code></td>
+      <td>day of month</td>
+      <td>DD</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">%m</code></td>
+      <td>month</td>
+      <td>MM</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">%H</code></td>
+      <td>hour</td>
+      <td>MM</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">%M</code></td>
+      <td>minute</td>
+      <td>SS</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">%Y</code></td>
+      <td>year</td>
+      <td>YYYY</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="core-functions">Core functions</h2>
+
+<ul>
+  <li><a href="https://sqlite.org/lang_corefunc.html">Built-In Scalar SQL Functions</a></li>
+</ul>
+
+<h2 id="cli-help">CLI help</h2>
+
+<h3 id="man-page">Man page</h3>
+
+<ul>
+  <li><a href="https://linux.die.net/man/1/sqlite3">Linus Die</a></li>
+  <li><a href="https://ss64.com/osx/sqlite3.html">OSX</a></li>
+</ul>
+
+<h3 id="example">Example</h3>
+
+<p>Query:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlite db.sqlite <span class="s1">'SELECT COUNT(*) FROM foo;'</span>
+</code></pre></div></div>
+
+<p>Interactive:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlite db.sqlite
+</code></pre></div></div>
+
+<p>Run a command. Quotes are needed.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlite db.sqlite <span class="nt">-csv</span> <span class="s2">".import file.csv my_table"</span>
+</code></pre></div></div>
+
+<p>You can also use <code class="language-plaintext highlighter-rouge">-cmd ".import file.csv my_table"</code> but then you go into interactive mode because there is no file input.</p>
+
+<p>In the console:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlite&gt; -help
+sqlite&gt; .mode csv
+sqlite&gt; import file.csv my_table
+</code></pre></div></div>
+
+<h3 id="usage">Usage</h3>
+
+<p>For version on macOS:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlite3 <span class="nt">-version</span>
+<span class="c"># 3.28.0 2019-04-15 14:49:49 378230ae7f4b721c8b8d83c8ceb891449685cd23b1702a57841f1be40b5daapl</span>
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlite3 <span class="nt">-help</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlite3 -help
+Usage: sqlite3 [OPTIONS] FILENAME [SQL]
+FILENAME is the name of an SQLite database. A new database is created
+if the file does not previously exist.
+OPTIONS include:
+   -append              append the database to the end of the file
+   -ascii               set output mode to 'ascii'
+   -bail                stop after hitting an error
+   -batch               force batch I/O
+   -column              set output mode to 'column'
+   -cmd COMMAND         run "COMMAND" before reading stdin
+   -csv                 set output mode to 'csv'
+   -deserialize         open the database using sqlite3_deserialize()
+   -echo                print commands before execution
+   -init FILENAME       read/process named file
+   -[no]header          turn headers on or off
+   -help                show this message
+   -html                set output mode to HTML
+   -interactive         force interactive I/O
+   -line                set output mode to 'line'
+   -list                set output mode to 'list'
+   -lookaside SIZE N    use N entries of SZ bytes for lookaside memory
+   -maxsize N           maximum size for a --deserialize database
+   -memtrace            trace all memory allocations and deallocations
+   -newline SEP         set output row separator. Default: '\n'
+   -nullvalue TEXT      set text string for NULL values. Default ''
+   -pagecache SIZE N    use N slots of SZ bytes each for page cache memory
+   -quote               set output mode to 'quote'
+   -readonly            open the database read-only
+   -separator SEP       set output column separator. Default: '|'
+   -stats               print memory stats before each finalize
+   -version             show SQLite version
+   -vfs NAME            use NAME as the default VFS
+</code></pre></div></div>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>CLI | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="CLI" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/format-and-lint/prettier/cli.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/format-and-lint/prettier/cli.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="CLI" />
+<script type="application/ld+json">
+{"headline":"CLI","description":"A collection of code snippets and CLI guides for quick and easy reference while coding","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/format-and-lint/prettier/cli.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/javascript/format-and-lint/prettier/cli.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/javascript/format-and-lint/prettier/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>CLI</span>
+        </h1>
+
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/">
+    JavaScript
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/format-and-lint/">
+    Format and lint
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/format-and-lint/prettier/">
+    Prettier
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/javascript/format-and-lint/prettier/cli.html" class="underline">
+                CLI
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <p>Once installed, Prettier can be used as a CLI tool.</p>
+
+<p>See the <a href="https://prettier.io/docs/en/cli.html">Prettier CLI</a> page of the Prettier docs for more info.</p>
+
+<h2 id="file-types">File types</h2>
+
+<p>It can be used to format these and other supported file types.</p>
+
+<ul>
+  <li>JS</li>
+  <li>TS</li>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>Markdown</li>
+</ul>
+
+<p>I don’t like this though on Markdown for these reasons.</p>
+
+<ul>
+  <li>It adds whitespace after headings which is not nice after <code class="language-plaintext highlighter-rouge">#</code> for <code class="language-plaintext highlighter-rouge">h1</code>.</li>
+  <li>It takes out double empty lines.</li>
+  <li>It wraps long lines.</li>
+</ul>
+
+<p>I can’t seem to override this behavior except just to just not run against Markdown.</p>
+
+<h2 id="usage">Usage</h2>
+
+<p>You might install it globally and use it as:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier <span class="nt">-w</span> <span class="nb">.</span>
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier <span class="nt">-c</span> <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>Or you might install it in a project and set it up as an NPM script. So you can run it as:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm run <span class="nb">fmt</span>:check
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm run <span class="nb">fmt</span>:fix
+</code></pre></div></div>
+
+<h2 id="help">Help</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier <span class="nt">-h</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage: prettier [options] [file/dir/glob ...]
+
+By default, output is written to stdout.
+Stdin is read if it is piped to Prettier and no files are given.
+
+Output options:
+
+  -c, --check              Check if the given files are formatted, print a human-friendly summary
+                           message and paths to unformatted files (see also --list-different).
+  -l, --list-different     Print the names of files that are different from Prettier's formatting (see also --check).
+  -w, --write              Edit files in-place. (Beware!)
+...
+</code></pre></div></div>
+
+<h2 id="file-pattern">File pattern</h2>
+
+<p>Pass a file path, directory path or glob as a pattern.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier PATTERN
+</code></pre></div></div>
+
+<h3 id="file">File</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier foo.js
+</code></pre></div></div>
+
+<p>Multiple files.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier foo.js index.html
+</code></pre></div></div>
+
+<h3 id="directory">Directory</h3>
+
+<p>Apply for supported file names.</p>
+
+<p>Running at the root would run on everything including <code class="language-plaintext highlighter-rouge">package.json</code> and configs - you may prefer to target directories.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier <span class="nb">.</span>
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier src
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier src tests
+</code></pre></div></div>
+
+<h3 id="glob">Glob</h3>
+
+<p>Recommended - always use quotes for glob patterns, so that Prettier expands it internally, instead of your shell. You can actually leave out the quotes in some shells, but you might get inconsistent behavior depending on if your shell supports double globstar <code class="language-plaintext highlighter-rouge">**</code> for example (older Bash doesn’t).</p>
+
+<p>Match files in current directory only. Note that this will not try to process directories the</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>prettier <span class="nt">-w</span> <span class="s2">"*"</span>
+<span class="go">foo.js 4ms
+</span></code></pre></div></div>
+
+<p>Match current directory and below, for any extension. Note that additional paths that were ignored above. You’ll probably want to narrow this but this is a good starting point of understanding.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>prettier <span class="s2">"**"</span>
+<span class="go">css/styles.css 63ms
+foo.js 1ms
+js/main.js 74ms
+</span></code></pre></div></div>
+
+<p>JS files only, at any level.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier <span class="s2">"**/*.js"</span>
+</code></pre></div></div>
+
+<p>JS and CSS files only, at any level.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier <span class="s2">"**/*.{js,css}"</span>
+</code></pre></div></div>
+
+<p>In <code class="language-plaintext highlighter-rouge">assets</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier <span class="s2">"assets/**/*.{js,css}"</span>
+</code></pre></div></div>
+
+<p>TS and CSS files only.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier <span class="s2">"**/*.{ts,css}"</span>
+</code></pre></div></div>
+
+<p>Test JS files in multiple directories - <code class="language-plaintext highlighter-rouge">app</code>, <code class="language-plaintext highlighter-rouge">__tests__</code> and <code class="language-plaintext highlighter-rouge">__mocks__</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier <span class="s2">"{app,__{tests,mocks}__}/**/*.js"</span>
+</code></pre></div></div>
+
+<h3 id="mixed">Mixed</h3>
+
+<p>File, directory and glob together.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier main.js src docs/<span class="k">**</span>/<span class="k">*</span>.md<span class="s2">"
+</span></code></pre></div></div>
+
+<h2 id="flags">Flags</h2>
+
+<h3 id="operational-flags">Operational flags</h3>
+
+<p>These change how Prettier behaves.</p>
+
+<p>See the <a href="https://prettier.io/docs/en/cli.html">Prettier CLI</a> docs or the run the CLI help yourself for more details.</p>
+
+<p>Here is a highlight list.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Flag</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--check</code></td>
+      <td>This will output a human-friendly message and a list of unformatted files, if any. Exits with error status if formatting is needed.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--list-different</code>, <code class="language-plaintext highlighter-rouge">-l</code></td>
+      <td>Prints the <strong>filenames</strong> of files that are different from Prettier formatting. Exits with error status if formatting is needed.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--write</code>, <code class="language-plaintext highlighter-rouge">-w</code></td>
+      <td>This rewrites all processed files in place.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--loglevel</code></td>
+      <td>Change the level of logging for the CLI. Valid options are: <code class="language-plaintext highlighter-rouge">error</code>, <code class="language-plaintext highlighter-rouge">warn</code>, <code class="language-plaintext highlighter-rouge">log</code> (default), <code class="language-plaintext highlighter-rouge">debug</code>, and <code class="language-plaintext highlighter-rouge">silent</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--ignore-unknown</code>, <code class="language-plaintext highlighter-rouge">-u</code></td>
+      <td>Ignore unknown files matched by patterns.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>See <a href="#examples">Examples</a> below for sample output for some of these.</p>
+
+<h3 id="options">Options</h3>
+
+<p>Change rules for how Prettier formats files.</p>
+
+<p>See <a href="https://prettier.io/docs/en/options.html">Options</a> in the docs. That shows you what you can set and what the default values are.</p>
+
+<p>These can be set in a config file or in the CLI.</p>
+
+<p>I recommende using the default options unless you have good reason for choosing a non-default option.</p>
+
+<p>Here is a highlight list.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Flag</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--no-semi</code></td>
+      <td>Turn off semi-colons, instead of default of on.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--single-quote</code></td>
+      <td>Use single quotes instead of default of double.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--print-width WIDTH</code></td>
+      <td>Defaults to <code class="language-plaintext highlighter-rouge">80</code>, but <code class="language-plaintext highlighter-rouge">100</code> or <code class="language-plaintext highlighter-rouge">120</code> are okay too.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--tab-width CHARS</code></td>
+      <td>How many spaces to indent by. Defaults to <code class="language-plaintext highlighter-rouge">2</code> characters.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--use-tabs</code></td>
+      <td>Use tabs instead of spaces.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--html-whitespace-sensitivity MODE</code></td>
+      <td>Valide modes are <code class="language-plaintext highlighter-rouge">css</code> (default), <code class="language-plaintext highlighter-rouge">strict</code> and <code class="language-plaintext highlighter-rouge">ignore</code>. See the docs for more info.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--arrow-parens MODE</code></td>
+      <td>Include parentheses around a sole arrow function parameter. Use either <code class="language-plaintext highlighter-rouge">always</code> to include or <code class="language-plaintext highlighter-rouge">avoid</code> for never. e.g. <code class="language-plaintext highlighter-rouge">i =&gt; console.log(i)</code> vs <code class="language-plaintext highlighter-rouge">(i) =&gt; console.log(i)</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier <span class="nt">--no-semi</span> <span class="nt">--single-quote</span> <span class="nb">.</span>
+</code></pre></div></div>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="default">Default</h3>
+
+<p>The default behavior will recommended formatting changes - printing them to the console only.</p>
+
+<p>This may be <em>very long</em> so is not good for CI flows. Especially since this prints the <em>whole</em> file and not just the lines to change. Also you might want to run this on a file instead of a directory, to keep the output short.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier main.js
+</code></pre></div></div>
+
+<p>This is useful to see what Prettier would do, without actually applying changes - for example if you are experimenting with different rules.</p>
+
+<h3 id="check">Check</h3>
+
+<p>Get a summary with <code class="language-plaintext highlighter-rouge">--check</code>.</p>
+
+<p>This can be useful in a CI or git hooks flow, where you want to automate a check and abort if at least one file needs changing (which you would then do locally).</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier <span class="nt">-c</span> <span class="nb">.</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Checking formatting...
+[warn] index.js
+[warn] foo/bar.js
+...
+[warn] Code style issues found in the above file(s). Forgot to run Prettier?
+</code></pre></div></div>
+
+<p>Set log level to see only errors for example. In this case, there is no output.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier <span class="nt">-c</span> <span class="nt">--loglevel</span> error <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>Make sure not to use <code class="language-plaintext highlighter-rouge">-c</code> and <code class="language-plaintext highlighter-rouge">-w</code> together!</p>
+
+<h3 id="list">List</h3>
+
+<p>List files that need changing, if any. Good for CI.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier <span class="nt">-l</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>index.js
+foo/bar.js
+</code></pre></div></div>
+
+<h3 id="edit">Edit</h3>
+
+<p>Format files and <strong>save</strong> the changes.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier <span class="nt">-w</span> <span class="nb">.</span>
+</code></pre></div></div>
+
+<h3 id="long-example">Long example</h3>
+
+<p>Detailed example from the docs.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>prettier <span class="se">\</span>
+  <span class="nt">--single-quote</span> <span class="se">\</span>
+  <span class="nt">--trailing-comma</span> all <span class="se">\</span>
+  <span class="nt">--write</span> <span class="se">\</span>
+  docs package.json <span class="s2">"{app,__{tests,mocks}__}/**/*.js"</span>
+</code></pre></div></div>
+
+<h2 id="default-behavior">Default behavior</h2>
+
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">.editorconfig</code>.</li>
+  <li>Ignore <code class="language-plaintext highlighter-rouge">node_modules</code>.</li>
+  <li>Find ignore config.</li>
+  <li>Find Prettier config.</li>
+</ul>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Glossary | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Glossary" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/other/glossary.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/other/glossary.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Glossary" />
+<script type="application/ld+json">
+{"headline":"Glossary","description":"A collection of code snippets and CLI guides for quick and easy reference while coding","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/other/glossary.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/other/glossary.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/other/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>Glossary</span>
+        </h1>
+
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/other/">
+    Other
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/other/glossary.html" class="underline">
+                Glossary
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <p>I’ve collected terms from programming which I see or use regularly. I’ve given explanations from my experience and research to make the differences clear, so you know which term to use.</p>
+
+<p>Note that some people may use these terms in a different way or treat two terms as the same thing. And some terms change over time. I have mentioned this as far as possible here.</p>
+
+<h2 id="levels-of-software-complexity">Levels of software complexity</h2>
+
+<p>From small and low-level to high-level software.</p>
+
+<ol>
+  <li>Character. A letter, stored as a byte.</li>
+  <li>Line of code.</li>
+  <li>Script.
+    <ul>
+      <li>Code to run directly by a user through an entrypoint. It might be a standalone script or it might reply on importing modules. Such as run a Python script in shell or JavaScript file in browser.</li>
+    </ul>
+  </li>
+  <li>Module.
+    <ul>
+      <li>A unit of code for reuse. A script that can be imported by another script. A standalone script can also count a module, but usually a module is imported and can be reused by other scripts or modules.</li>
+    </ul>
+  </li>
+  <li>Application or library (as a choice on how the code can be run) and package (if the code can be installed).
+    <ul>
+      <li>Application.
+        <ul>
+          <li>A script that might import modules and external libraries. It can be <strong>run</strong> directly, such as through the shell, or started via a menu and run as a desktop or mobile application.</li>
+          <li><a href="https://rapidapi.com/blog/application-vs-program/">Rapid API post</a>.
+            <blockquote>
+              <p>An application (app) is a program or a collection of programs that have been designed for the end-users.</p>
+
+              <p>They help you to perform a set of coordinated tasks, functions, or activities.</p>
+            </blockquote>
+          </li>
+        </ul>
+      </li>
+      <li>Library.
+        <ul>
+          <li>A library is intended to be imported as a module and used inside another application or library. It contains a collection or “library” of functions or classes to use. A library might do nothing of you run it directly. Unless it is set up to also run as an application.</li>
+        </ul>
+      </li>
+      <li>Package.
+        <ul>
+          <li>A project that can be bundled or “packaged” as a single unit containing other files, then installed when needed. The bundle package can be moved around on a machine and is often published (uploaded to a public location) so other can download and install it. A package could be for running code as an, application, as a a library, letting you do both. A patckagenusually includes some metadata like author, license, version number and entrypoint (which script to execute when starting running the package). Usually a package manager will have an install step that will unzip a package if needed and <em>copy</em> the contents of the package to a location where it can be run widely. Such as installing a Python package from a git repo, a zip file or a URL, and then running that package as a standalone app in the shell or importing and using in other Python applications. A package is often made available publically in a packages repository (like for Debian and Ubuntu) or package registry (NPM or Pypi)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>Note that a package makes an application or library able to be installed. You might get a package using the command-line like <code class="language-plaintext highlighter-rouge">pip install</code> or <code class="language-plaintext highlighter-rouge">npm install</code> or <code class="language-plaintext highlighter-rouge">apt install</code>. Or you might download an installer from a website. Or you might install a package at a higher level, like browsing apps in a desktop or mobile app store or using a disc.</p>
+
+<p>All libraries are also packages - otherwise you can’t install and use them.</p>
+
+<p>More terms which don’t fit into the above structure neatly.</p>
+
+<ul>
+  <li>Code.
+    <ul>
+      <li><a href="https://simple.m.wikipedia.org/wiki/Code">Code - Simple English Wikipedia</a></li>
+      <li><a href="https://en.m.wikipedia.org/wiki/Code">Code - Wikipedia</a></li>
+      <li>A method for changing information into something else.</li>
+      <li>Code is used for humans to write instructions that computers understand. At the low level, computers deal with zeroes and ones as code for off and on. Then there are higher levels like byte code and machine code (both are compiled output and are mostly unreadable for humans), assembly language (obscure but human-readable) and then more human-friendly programming languages.</li>
+      <li>Code is usually thought of as commands, expressions or instructions for a computer, usually stored in a file as a script or module in an application.</li>
+      <li>Code can also include a configuration files, HTML files or CSS files. You cannot “run” those as a sequence like you can a script, but they are still instructions for a machine to follow and are used to build applications.</li>
+    </ul>
+  </li>
+  <li>Program.
+    <ul>
+      <li>A set of instructions that can be executed on a computer or machine. Using the structure above, a script and all the levels which build on scripts are all programs.</li>
+      <li>From <a href="https://rapidapi.com/blog/application-vs-program/">Rapid API post</a>.
+        <blockquote>
+          <p>Programs are a collection or sequence of executable instructions that aid in the automatic performance of targeted tasks on a computer.</p>
+
+          <p>It refers to a set of coded instructions that a computer can recognize to solve a problem or yield the desired result.</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+  <li>Web app.
+    <ul>
+      <li>A website is usually not considered an application. In runs inside your browser, which an application.</li>
+      <li>With the rise of JS, websites have become more complex and interactive. A website built on Python or JavaScript is usually</li>
+    </ul>
+  </li>
+  <li>Software
+    <ul>
+      <li>A collection of data (including config files and a database) and instructions (scripts to applications) which tell a machine what to do. Software needs to run on physical hardware.</li>
+      <li>From <a href="https://en.m.wikipedia.org/wiki/Software">Software - Wikipedia</a>
+        <blockquote>
+          <p>Software is a collection of data or computer instructions that tell the computer how to work.</p>
+
+          <p>This is in contrast to physical hardware, from which the system is built and actually performs the work</p>
+
+          <p>In computer science and software engineering, computer software is all <strong>information</strong> processed by computer systems, including <strong>programs</strong> and <strong>data</strong>.</p>
+
+          <p>Computer software includes computer programs, libraries and related non-executable data, such as online documentation or digital media. Computer hardware and software require each other and neither can be realistically used on its own.</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="title">Title</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Coder</td>
+      <td>This most literally writing code. Coder doesn’t appear as a title of job. It is also a broad term, including people who like to code but aren’t IT professionals.</td>
+    </tr>
+    <tr>
+      <td>Programmer or developer</td>
+      <td>A broad term for someone who writes uses code to build something. From a script or program to a larger application or website. More old-fashioned - “computer programmer”.</td>
+    </tr>
+    <tr>
+      <td>Web developer</td>
+      <td>This kind of person likely knows HTML, CSS and JS. They might just do the frontend. Or they might also do backend like APIs and databases, which are integral for many websites even though users don’t seem these parts directly.</td>
+    </tr>
+    <tr>
+      <td>Software engineer</td>
+      <td>In some cases, developer and engineer are used interchangeably. But “engineer” does have a different meaning. While a programmer or developer executes a design to build something, an engineer designs a solution and considers the architecture and then builds the solution.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="industry">Industry</h2>
+
+<p>I’d say these are same. They are used to describe the industry, career and a subject on school or university.</p>
+
+<ul>
+  <li>Information Systems or IS.</li>
+  <li>Information Technology or IT.</li>
+  <li>Computer Science
+    <ul>
+      <li><a href="https://en.m.wikipedia.org/wiki/Computer_science">Computer Science - Wikipedia</a>
+        <blockquote>
+          <p>Computer science is the study of algorithmic processes, computational machines and computation itself.</p>
+
+          <p>As a discipline, computer science spans a range of topics from <strong>theoretical studies</strong> of algorithms, computation and information to the <strong>practical issues</strong> of implementing computational systems in hardware and software.</p>
+        </blockquote>
+      </li>
+      <li>In the early days, someone who made software or hardware was a “computer scientist”, but I’ve not seen that used more recently.</li>
+      <li>Computer Science, Comm Sci or CS are all terms I’ve seen a lot when someone is recruiting for a programmer with a relevant degree.</li>
+    </ul>
+  </li>
+  <li>Software Engineering
+    <ul>
+      <li>Building software using engineering approaches.</li>
+      <li>There are various definitions which cover design, testing, implementing, reliability, maintenance, documenting, economics and producing of software. Imagine an engineer working on a car in a factory or building a structure that has to have a sound design and be sold to customer and kept in good working condition, then these make sense.</li>
+      <li><a href="https://en.m.wikipedia.org/wiki/Software_engineering">Software engineering - Wikipedia</a>
+        <blockquote>
+          <p>Software engineering is the systematic application of engineering approaches to the development of software</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>The job posts don’t really mention IS or IT. But those are used to describe a study path, a subject or course to study, or a department in a business.</p>
+
+<h2 id="code-interfaces">Code interfaces</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Command-line</td>
+      <td>An interactive way on a machine to run commands in the shell. e.g. Create a file or run a Python script using the command-line.</td>
+    </tr>
+    <tr>
+      <td>Command-line Interface or CLI</td>
+      <td>This can mean the mean the same as “command-line”, where the generic interface is application where you run command-line commands inside of. e.g. Run a shell command in the CLI. Or this can be an application-specfic way to run command-line commands e.g. Python has a CLI so you can run <code class="language-plaintext highlighter-rouge">python</code> with various arguments in the command-line and you can use that to check your Python version (<code class="language-plaintext highlighter-rouge">python -V</code>), run a script (<code class="language-plaintext highlighter-rouge">python app.py</code>) and many other tasks.</td>
+    </tr>
+    <tr>
+      <td>Console</td>
+      <td>A way to run commands and view output. While Command-line mostly is for shell commands, a Console is more generic. e.g. If you run <code class="language-plaintext highlighter-rouge">python</code> or <code class="language-plaintext highlighter-rouge">node</code> without a script name, you’ll start the <em>interactive console</em> where you can run Python or JavaScript statements and see the result printed. The browser also has a developer console where you can run JavaScript commands and see logs of scripts that ran and succeeded or failed.</td>
+    </tr>
+    <tr>
+      <td>Terminal</td>
+      <td>Same as command-line. e.g. Open your terminal and run the shell command there.</td>
+    </tr>
+    <tr>
+      <td>Terminal emulator</td>
+      <td>Originally a terminal was a dumb keyboard and screen that did no processing alone but allowed you to interface with a larger machine, which had many terminals for people to use. On modern day machines, you will use a terminal emulator (or terminal applications) which feels like the old terminal and lets you run shell commands. You’ll download and use a terminal emulator like Konsole, iTerm2, or Yakuake.</td>
+    </tr>
+    <tr>
+      <td>Command-prompt</td>
+      <td>A way to interact with an application or the shell. e.g. Open the command-prompt application on Windows to run shell commands. Or use the command-prompt on your IDE to type or select commands to run like to format a file.</td>
+    </tr>
+    <tr>
+      <td>REPL</td>
+      <td>Read Evaluate Print Loop. An interactive program that takes a command (read), processes it (evaluate), displays output (print) and then waits to read more input (loop). Unlike a program that runs or stops but without asking for more input, a REPL is a text-based interactive way to repeatedly send ad hoc instructions. A Bash shell and Python interactive console are good examples of a REPL. But you can also build your own REPL within say your Python program. Rather than expecting code as input, you expect text. Like asking a user for their name on one line, asking for their age on the next and doing something with those. Typically a REPL has a help command to see available commands you can give, including an exit command to break out the loop with <code class="language-plaintext highlighter-rouge">exit</code>, <code class="language-plaintext highlighter-rouge">quit</code> or <code class="language-plaintext highlighter-rouge">q</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="visual-interfaces">Visual interfaces</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>UI</td>
+      <td>User Interface. General way to describe what the user sees and <strong>interacts</strong> with in an application. Such as using a shell CLI, a REPL, a desktop application or a browser. Usually, one talks about the UI as the theme, layout and components (buttons, images) of a webpage or mobile app view.</td>
+    </tr>
+    <tr>
+      <td>GUI</td>
+      <td>Graphical User Interface. Often the acronym is said as “gooey”. A GUI is a general term for interacting with an application using a <strong>visual</strong> interface rather than a text interface. For example, viewing buttons, images and colors in a window and you can click on items with mouse. A text interface is usually linear (top to bottom) while a GUI lets you follow different paths. The font and color are mostly fixed in a text UI, while a visual UI uses these and other elements to make a more user-friendly application.</td>
+    </tr>
+    <tr>
+      <td>UX</td>
+      <td>User Experience. While the UI is more literally what the user sees, the user experience is <strong>how</strong> the application feels and changes as the user <strong>moves</strong> or transitions between say pages, or steps on a form. One might describe an application’s UX as clunky and hard to use or understand, or as smooth, natural and intuitive. If clicking a button does something unexpected or takes unreasonably long to load, that is bad user experience. What the button or loading bar looks like as images or animations is more related to the UI.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A GUI is great for inexperienced users or non-coders to use. However, it takes more work to make and is more complex to design.</p>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

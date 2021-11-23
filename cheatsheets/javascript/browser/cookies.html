@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Cookies | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Cookies" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Working with browser cookies using JavaScript" />
+<meta property="og:description" content="Working with browser cookies using JavaScript" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/browser/cookies.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/browser/cookies.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Cookies" />
+<script type="application/ld+json">
+{"headline":"Cookies","description":"Working with browser cookies using JavaScript","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/browser/cookies.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/javascript/browser/cookies.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/javascript/browser/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>Cookies</span>
+        </h1>
+
+        
+            <blockquote>
+                <p>Working with browser cookies using JavaScript</p>
+
+            </blockquote>
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/">
+    JavaScript
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/browser/">
+    Browser
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/javascript/browser/cookies.html" class="underline">
+                Cookies
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <h2 id="about">About</h2>
+
+<p>Cookies can store data up to 4KB only. Unlike with <a href="/dev-cheatsheets/cheatsheets/javascript/browser/storage.html">Storage API</a> at 5MB.</p>
+
+<p>They can be used for authentication, tracking (which sites you’ve visited before) and personalization (based on your choices like color theme or GDPR cookie opt-in).</p>
+
+<p>Cookies are sent back and forth on all HTTP requests, unlike Storage. This makes the requests larger and slower. And is a possible security risk. Make sure to restrict cookies to the same domain.</p>
+
+<h2 id="related">Related</h2>
+
+<ul>
+  <li><a href="https://michaelcurrin.github.io/code-cookbook/recipes/javascript/browser/cookies.html">Cookie recipes</a> in Code Cookbook.</li>
+  <li><a href="/dev-cheatsheets/cheatsheets/javascript/general/time-handling.html">Time handling</a> JavaScript cheatsheet.</li>
+  <li><a href="/dev-cheatsheets/cheatsheets/javascript/browser/storage.html">Storage API</a> JavaScript cheatsheet.</li>
+</ul>
+
+<h2 id="types">Types</h2>
+
+<ul>
+  <li>Persistent cookie - persists after the browser is closed. Has an expiration date.</li>
+  <li>Session cookie - cleared when the browser is closed. Does not have an expiration date.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<p>In Mozilla docs.</p>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies">HTTP cookies</a></li>
+</ul>
+
+<p>See also <a href="/dev-cheatsheets/cheatsheets/javascript/browser/storage.html">Storage</a> cheatsheet.</p>
+
+<h2 id="usage">Usage</h2>
+
+<h3 id="get">Get</h3>
+
+<p>See existing cookies as a string. You won’t see details like path or expiry unless you go to the <em>Storage</em> tab of DevTools.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span>
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"_octo=GH1.1.621127999.1603358123; tz=Africa%2FJohannesburg; abc=123"
+</code></pre></div></div>
+
+<p>Split string into an array.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">; </span><span class="dl">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>You’ll then need to split by <code class="language-plaintext highlighter-rouge">=</code> and find the one you need by key.</p>
+
+<p>Or just check presence of your key, at the risk that your key exists in another cookie’s value.</p>
+
+<h3 id="set">Set</h3>
+
+<p>Set the key and value.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">my_key=my_value</span><span class="dl">"</span>
+</code></pre></div></div>
+
+<p>If using HTTP headers:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Set-Cookie: my_key=my_value
+</code></pre></div></div>
+
+<p>The attributes are case-insensitive. So <code class="language-plaintext highlighter-rouge">Path</code>, <code class="language-plaintext highlighter-rouge">path</code>, and <code class="language-plaintext highlighter-rouge">PATH</code> all work.</p>
+
+<h3 id="path-sharing">Path sharing</h3>
+
+<p>By default, the cookie is set <em>only</em> for the current path, which you can see in DevTools for the stored cookie.</p>
+
+<p>If you set a value for the same cookie name but with different paths, you’ll get two different cookies set.</p>
+
+<p>So you probably want to set the cookie to be on the root like <code class="language-plaintext highlighter-rouge">/</code>, or maybe some protected area like <code class="language-plaintext highlighter-rouge">/app/</code>.</p>
+
+<p>e.g.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">abc=def 123; Path=/;</span><span class="dl">"</span>
+</code></pre></div></div>
+
+<h2 id="site-sharing">Site sharing</h2>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite">SameSite</a> on MDN docs</li>
+</ul>
+
+<h3 id="lax">Lax</h3>
+
+<p>The default</p>
+
+<blockquote>
+  <p>Cookies are not sent on normal cross-site subrequests (for example to load images or frames into a third party site), but are sent when a user is navigating to the origin site (i.e., when following a link).</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SameSite=lax
+</code></pre></div></div>
+
+<h3 id="strict">Strict</h3>
+
+<p>Restrict to first-party access.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SameSite=strict; Secure
+</code></pre></div></div>
+
+<p>Why set <code class="language-plaintext highlighter-rouge">Secure</code>?</p>
+
+<blockquote>
+  <p>If <code class="language-plaintext highlighter-rouge">SameSite=None</code> is set, the cookie Secure attribute must also be set (or the cookie will be blocked).</p>
+</blockquote>
+
+<h3 id="cross-site">Cross-site</h3>
+
+<p>Allow thiry-party access</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Samesite=None
+</code></pre></div></div>
+
+<h2 id="stringify">Stringify</h2>
+
+<p>How to set an array value in a cookie by stringifying it first.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myValues</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">def</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">xyz</span><span class="dl">"</span><span class="p">]</span>
+<span class="kd">const</span> <span class="nx">myValuesStr</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">my_interests</span><span class="p">)</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="s2">`my_cookie=</span><span class="p">${</span><span class="nx">myValuesStr</span><span class="p">}</span><span class="s2">; SameSite=None; Secure; Path=/;`</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Then use <code class="language-plaintext highlighter-rouge">JSON.parse</code> to get it out - after getting just your cookie by name. See <a href="https://michaelcurrin.github.io/code-cookbook/recipes/javascript/browser/cookies.html">Cookie recipes</a>.</p>
+
+<h2 id="expiry">Expiry</h2>
+
+<h3 id="expires-field">Expires field</h3>
+
+<p>From <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie">Set-Cookie</a> docs.</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">Expires=&lt;date&gt;</code> Optional</p>
+
+  <p>The maximum lifetime of the cookie as an HTTP-date timestamp. See Date for the required formatting.</p>
+
+  <p>If unspecified, the cookie becomes a session cookie. A session finishes when the client shuts down, and session cookies will be removed.</p>
+</blockquote>
+
+<p>Set a value as:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Expires=GMT_TIMESTAMP
+</code></pre></div></div>
+
+<p>e.g. Use <code class="language-plaintext highlighter-rouge">(new Date).toGMTString()</code> to get this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Expires=Mon, 13 Sep 2021 10:22:50 GMT
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">expiry</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">currSeconds</span> <span class="o">=</span> <span class="nx">expiry</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span>
+<span class="nx">expiry</span><span class="p">.</span><span class="nx">setSeconds</span><span class="p">(</span><span class="nx">currSeconds</span> <span class="o">+</span> <span class="mi">30</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">abcdef 123</span><span class="dl">"</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="s2">`my_cookie=</span><span class="p">${</span><span class="nx">value</span><span class="p">}</span><span class="s2">; SameSite=None; Secure; Path=/; Expires=</span><span class="p">${</span><span class="nx">expiry</span><span class="p">.</span><span class="nx">toGMTString</span><span class="p">()}</span><span class="s2">`</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="max-age-field">Max-age field</h3>
+
+<p>Or set max age in seconds.</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">Max-Age=&lt;number&gt;</code> Optional</p>
+
+  <p>Number of seconds until the cookie expires. A zero or negative number will expire the cookie immediately. If both <code class="language-plaintext highlighter-rouge">Expires</code> and <code class="language-plaintext highlighter-rouge">Max-Age</code> are set, <code class="language-plaintext highlighter-rouge">Max-Age</code> has precedence.</p>
+</blockquote>
+
+<p>e.g.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Max-Age=30
+</code></pre></div></div>
+
+<p>And this is decent support as covered on <a href="https://caniuse.com/?search=max-age">CanIUse</a>.</p>
+
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

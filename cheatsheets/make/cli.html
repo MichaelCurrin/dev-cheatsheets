@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>CLI | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="CLI" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="About the make command" />
+<meta property="og:description" content="About the make command" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/make/cli.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/make/cli.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="CLI" />
+<script type="application/ld+json">
+{"headline":"CLI","description":"About the make command","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/make/cli.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/make/cli.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/make/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>CLI</span>
+        </h1>
+
+        
+            <blockquote>
+                <p>About the <code class="language-plaintext highlighter-rouge">make</code> command</p>
+
+            </blockquote>
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/make/">
+    Make
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/make/cli.html" class="underline">
+                CLI
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <h2 id="usage">Usage</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage: make [options] [target] ...
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make foo
+<span class="nv">$ </span>make f  <span class="c"># alias</span>
+<span class="nv">$ </span>make <span class="nt">-n</span> foo
+<span class="nv">$ </span>make foo bar  <span class="c"># Two targets</span>
+<span class="nv">$ FOO</span><span class="o">=</span>1 make foo  <span class="c"># Pass env variable.</span>
+<span class="nv">$ </span>make foo <span class="nv">FOO</span><span class="o">=</span>1  <span class="c"># Pass env variable alternative.</span>
+</code></pre></div></div>
+
+<h2 id="flags-summary">Flags summary</h2>
+
+<h3 id="dry-run">Dry run</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  -n, --just-print, --dry-run, --recon
+                              Don't actually run any commands; just print them.
+</code></pre></div></div>
+
+<p>Given <code class="language-plaintext highlighter-rouge">install:</code> as the default target and <code class="language-plaintext highlighter-rouge">h help:</code> as another target.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make <span class="nt">-n</span>
+pip <span class="nb">install </span>pip <span class="nt">--upgrade</span>
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements-dev.txt <span class="nt">--upgrade</span>
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make <span class="nt">-n</span> <span class="nb">help
+</span>egrep <span class="s1">'(^\S)|^$'</span> Makefile
+</code></pre></div></div>
+
+<p>You can use the alias and you can move the option to the end.</p>
+
+<h3 id="verbosity">Verbosity</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  -d                          Print lots of debugging information.
+  --debug[=FLAGS]             Print various types of debugging information.
+  -s, --silent, --quiet       Don't echo commands.
+
+</code></pre></div></div>
+
+<h3 id="warnings">Warnings</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  --warn-undefined-variables  Warn when an undefined variable is referenced.
+</code></pre></div></div>
+
+<h3 id="input">Input</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  -f FILE, --file=FILE, --makefile=FILE
+                              Read FILE as a makefile.
+  -I DIRECTORY, --include-dir=DIRECTORY
+                              Search DIRECTORY for included makefiles.
+</code></pre></div></div>
+
+<h2 id="help">Help</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make <span class="nt">--help</span>
+</code></pre></div></div>
+
+<p>Output on macOS:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage: make [options] [target] ...
+Options:
+  -b, -m                      Ignored for compatibility.
+  -B, --always-make           Unconditionally make all targets.
+  -C DIRECTORY, --directory=DIRECTORY
+                              Change to DIRECTORY before doing anything.
+  -d                          Print lots of debugging information.
+  --debug[=FLAGS]             Print various types of debugging information.
+  -e, --environment-overrides
+                              Environment variables override makefiles.
+  -f FILE, --file=FILE, --makefile=FILE
+                              Read FILE as a makefile.
+  -h, --help                  Print this message and exit.
+  -i, --ignore-errors         Ignore errors from commands.
+  -I DIRECTORY, --include-dir=DIRECTORY
+                              Search DIRECTORY for included makefiles.
+  -j [N], --jobs[=N]          Allow N jobs at once; infinite jobs with no arg.
+  -k, --keep-going            Keep going when some targets can't be made.
+  -l [N], --load-average[=N], --max-load[=N]
+                              Don't start multiple jobs unless load is below N.
+  -L, --check-symlink-times   Use the latest mtime between symlinks and target.
+  -n, --just-print, --dry-run, --recon
+                              Don't actually run any commands; just print them.
+  -o FILE, --old-file=FILE, --assume-old=FILE
+                              Consider FILE to be very old and don't remake it.
+  -p, --print-data-base       Print make's internal database.
+  -q, --question              Run no commands; exit status says if up to date.
+  -r, --no-builtin-rules      Disable the built-in implicit rules.
+  -R, --no-builtin-variables  Disable the built-in variable settings.
+  -s, --silent, --quiet       Don't echo commands.
+  -S, --no-keep-going, --stop
+                              Turns off -k.
+  -t, --touch                 Touch targets instead of remaking them.
+  -v, --version               Print the version number of make and exit.
+  -w, --print-directory       Print the current directory.
+  --no-print-directory        Turn off -w, even if it was turned on implicitly.
+  -W FILE, --what-if=FILE, --new-file=FILE, --assume-new=FILE
+                              Consider FILE to be infinitely new.
+  --warn-undefined-variables  Warn when an undefined variable is referenced.
+  -N OPTION, --NeXT-option=OPTION
+                              Turn on value of NeXT OPTION.
+
+This program built for i386-apple-darwin11.3.0
+Report bugs to &lt;bug-make@gnu.org&gt;
+</code></pre></div></div>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

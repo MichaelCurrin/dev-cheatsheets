@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Regex | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Regex" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/strings/regex.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/strings/regex.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Regex" />
+<script type="application/ld+json">
+{"headline":"Regex","description":"A collection of code snippets and CLI guides for quick and easy reference while coding","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/strings/regex.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/javascript/general/strings/regex.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/javascript/general/strings/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>Regex</span>
+        </h1>
+
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/">
+    JavaScript
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/general/">
+    General
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/general/strings/">
+    Strings
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/javascript/general/strings/regex.html" class="underline">
+                Regex
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp">RegExp</a> on Mozilla docs.</li>
+  <li><a href="https://www.w3schools.com/js/js_regexp.asp">JavaScript Regular Expressions</a></li>
+  <li><a href="https://www.w3schools.com/jsref/jsref_obj_regexp.asp">JavaScript RegExp Reference</a> - that has a long list on the list for more info.</li>
+</ul>
+
+<h2 id="regex-object">Regex object</h2>
+
+<p>How to create a <code class="language-plaintext highlighter-rouge">RegExp</code> instance.</p>
+
+<h3 id="with-a-constructor">With a constructor</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">"</span><span class="s2">e</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">'</span><span class="s1">ab+c</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">i</span><span class="dl">'</span><span class="p">)</span>  <span class="c1">// string pattern as argument</span>
+<span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="sr">/ab+c/</span><span class="p">,</span> <span class="dl">'</span><span class="s1">i</span><span class="dl">'</span><span class="p">)</span>  <span class="c1">// regular expression literal as first argument - from ES6</span>
+</code></pre></div></div>
+
+<h3 id="literal-notation">Literal notation</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/e/
+
+/ab+c/i
+</code></pre></div></div>
+
+<p>Use with string methods:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// inline</span>
+<span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/my pattern/i</span><span class="p">);</span>
+
+<span class="c1">// with object</span>
+<span class="kd">const</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="sr">/my pattern/i</span><span class="p">;</span>
+<span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">pattern</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Rain and Spain</span><span class="dl">'</span>
+<span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/ai/gi</span><span class="p">)</span>
+<span class="c1">// [ 'ai', 'ai' ]</span>
+</code></pre></div></div>
+
+<h3 id="flags">Flags</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">/</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="sr">/</span><span class="err">
+
+</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">'</span><span class="se">\\</span><span class="s1">w+</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="search-method">Search method</h2>
+
+<p>A method on a string.</p>
+
+<p>This method searches a string for a specified value and returns the <strong>position</strong> of the match.</p>
+
+<p>This is done with a <strong>case-insensitive</strong> search.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">text</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="nx">pattern</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="examples">Examples</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Visit W3Schools</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nx">text</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="sr">/w3schools/i</span><span class="p">);</span>
+<span class="c1">// 6</span>
+</code></pre></div></div>
+
+<p>See what is at character with index <code class="language-plaintext highlighter-rouge">6</code> in the text:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 0123456
+  "Visit W3Schools"
+</code></pre></div></div>
+
+<h2 id="match-method">Match method</h2>
+
+<p>A method on a string.</p>
+
+<p>Find matches in text and get an object back containing matches.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">"</span><span class="s2">e</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">The best things in life are free</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">matches</span> <span class="o">=</span> <span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">pattern</span><span class="p">);</span>
+<span class="c1">// ["e", index: 2, input: "The best things in life are free", groups: undefined]</span>
+</code></pre></div></div>
+
+<h2 id="test-method">Test method</h2>
+
+<p>A method on a regex object.</p>
+
+<p>Check a string matches a regex pattern and return <code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">patt</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This is equivalent to using <code class="language-plaintext highlighter-rouge">match</code> and use <code class="language-plaintext highlighter-rouge">!!</code> to convert to a boolean.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!!</span><span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">patt</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="examples-1">Examples</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">/</span><span class="nx">Hello</span><span class="o">/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello world!</span><span class="dl">"</span><span class="p">)</span>
+<span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>From <a href="https://www.w3schools.com/jsref/jsref_regexp_test.asp">W3 Schools</a>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">patt</span> <span class="o">=</span> <span class="sr">/e/</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">The best things in life are free</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">patt</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+<span class="c1">// true</span>
+</code></pre></div></div>
+
+<h2 id="replace">Replace</h2>
+
+<h3 id="replace-method-vs-replace-all-method">Replace method vs replace all method</h3>
+
+<p>Here using both to replace every occurence, using <code class="language-plaintext highlighter-rouge">replaceAll</code> and a string and then <code class="language-plaintext highlighter-rouge">replace</code> with multiline regex.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="dl">'</span><span class="s1">ABC ABC ABC</span><span class="dl">'</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">ABC</span><span class="dl">'</span><span class="p">,</span> <span class="dl">"</span><span class="s2">X</span><span class="dl">"</span><span class="p">)</span>
+<span class="dl">'</span><span class="s1">X X X</span><span class="dl">'</span>
+<span class="o">&gt;</span> <span class="dl">'</span><span class="s1">ABC ABC ABC</span><span class="dl">'</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/ABC/g</span><span class="p">,</span> <span class="dl">"</span><span class="s2">X</span><span class="dl">"</span><span class="p">)</span>
+<span class="dl">'</span><span class="s1">X X X</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<p>Replace one.</p>
+
+<pre><code class="language-javacript">'ABC ABC ABC'.replace('ABC', "X")
+'X ABC ABC'
+</code></pre>
+
+<h3 id="replace-method">Replace method</h3>
+
+<p>A method on a string.</p>
+
+<p>In a string, replace a matched pattern with another value.</p>
+
+<p>The pattern can be a string or a regex pattern.</p>
+
+<p>From <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace">Mozilla docs</a>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span> <span class="nx">replaceStr</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><em>Warning - the default behavior is to only replace the <strong>first occurrence</strong>. So make sure to use <code class="language-plaintext highlighter-rouge">g</code> global flag in your regex, even if you have to convert your plain string or regex. You can use the <a href="#replace-all-method">replaceAll</a> method to replace all values for a string pattern, but you still need global flag for regex pattern.</em></p>
+
+<h4 id="examples-2">Examples</h4>
+
+<p>Use <code class="language-plaintext highlighter-rouge">'dog'</code> string or <code class="language-plaintext highlighter-rouge">/Dog/i</code> regex as the pattern. Either way, it will only replace replace <strong>once</strong>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="sr">/Dog/i</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ferret</span><span class="dl">'</span><span class="p">)</span>
+<span class="c1">//                                            | NB.         | NB.</span>
+<span class="c1">// "The quick brown fox jumps over the lazy ferret. If the dog reacted, was it really lazy?"</span>
+</code></pre></div></div>
+
+<p>Regex pattern - replace <strong>all</strong> occurences using global and case-insensitive flags.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="sr">/Dog/gi</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ferret</span><span class="dl">'</span><span class="p">)</span>
+<span class="c1">//                                            | NB.         | NB.</span>
+<span class="c1">// "The quick brown fox jumps over the lazy ferret. If the ferret reacted, was it really lazy?"</span>
+</code></pre></div></div>
+
+<h3 id="replace-all-method">Replace all method</h3>
+
+<p>From <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll">Mozilla docs</a>.</p>
+
+<blockquote>
+  <p>The replaceAll() method returns a new string with all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match.</p>
+</blockquote>
+
+<p>Syntax:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">str</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="nx">regexp</span><span class="o">|</span><span class="nx">substr</span><span class="p">,</span> <span class="nx">newSubstr</span><span class="o">|</span><span class="kd">function</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Note that as per linked docs, this only replaces <strong>all</strong> occurrences for a string pattern.</p>
+
+<p>While if you use a <strong>regex</strong> pattern, it will still only replace the <strong>one</strong> occurence unless you use <code class="language-plaintext highlighter-rouge">g</code> flag as before. Which is annoying. So for regex you might as well use the place <code class="language-plaintext highlighter-rouge">.replace</code>.</p>
+
+<p>This is a newer method so not supported on all browsers - see <a href="https://caniuse.com/mdn-javascript_builtins_string_replaceall">Can I Use?</a> page.</p>
+
+<h4 id="examples-3">Examples</h4>
+
+<p>String pattern to replace all.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">text</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">dog</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">monkey</span><span class="dl">'</span><span class="p">));</span>
+<span class="c1">//                                            | NB.         | NB.</span>
+<span class="c1">// "The quick brown fox jumps over the lazy monkey. If the monkey reacted, was it really lazy?"</span>
+</code></pre></div></div>
+
+<p>Regex pattern - global flag still requird to replace all.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">text</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="sr">/Dog/gi</span><span class="p">,</span> <span class="dl">'</span><span class="s1">monkey</span><span class="dl">'</span><span class="p">)</span>
+<span class="c1">//                                            | NB.         | NB.</span>
+<span class="c1">// "The quick brown fox jumps over the lazy monkey. If the monkey reacted, was it really lazy?"</span>
+</code></pre></div></div>
+
+<h2 id="groups-and-ranges">Groups and ranges</h2>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges">Groups and ranges</a> in Mozilla docs.</li>
+</ul>
+
+<p>A match will return positional values in an array. The first is the matched string, then at index <code class="language-plaintext highlighter-rouge">1</code> is the first matched group, index <code class="language-plaintext highlighter-rouge">2</code> the second and so on. The match object has also has some key-value attributes - <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">input</code> and <code class="language-plaintext highlighter-rouge">groups</code>.</p>
+
+<p>Examples copied from link above.</p>
+
+<h3 id="basic">Basic</h3>
+
+<p>Get as many groups as matched. Here these are words without the letter <code class="language-plaintext highlighter-rouge">e</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">aliceExcerpt</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">The Caterpillar and Alice looked at each other</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">regexpWithoutE</span> <span class="o">=</span> <span class="sr">/</span><span class="se">\b[</span><span class="sr">a-df-z</span><span class="se">]</span><span class="sr">+</span><span class="se">\b</span><span class="sr">/ig</span><span class="p">;</span>
+
+<span class="nx">aliceExcerpt</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">regexpWithoutE</span><span class="p">)</span>
+<span class="c1">// ["and", "at"]</span>
+</code></pre></div></div>
+
+<h3 id="groups">Groups</h3>
+
+<p>Match groups created with brackets.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">imageDescription</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">This image has a resolution of 1440×900 pixels.</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">regexpSize</span> <span class="o">=</span> <span class="sr">/</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">×</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">/</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">match</span> <span class="o">=</span> <span class="nx">imageDescription</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">regexpSize</span><span class="p">);</span>
+<span class="s2">`Width: </span><span class="p">${</span><span class="nx">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span><span class="s2"> / Height: </span><span class="p">${</span><span class="nx">match</span><span class="p">[</span><span class="mi">2</span><span class="p">]}</span><span class="s2">.`</span>
+<span class="c1">// "Width: 1440 / Height: 900."</span>
+</code></pre></div></div>
+
+<p>Note index starts at <code class="language-plaintext highlighter-rouge">1</code>.</p>
+
+<h3 id="non-capturing-group">Non-capturing group</h3>
+
+<p>Here we need the protocol to match on the value but we drop it in the result.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">patt</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">'</span><span class="s1">(?:https?)://([^/</span><span class="se">\r\n</span><span class="s1">]+)(/[^</span><span class="se">\r\n</span><span class="s1">]*)?</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">cont</span> <span class="nx">matches</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">http://stackoverflow.com/</span><span class="dl">'</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">patt</span><span class="p">)</span>
+<span class="nx">matches</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1">// stackoverflow.com</span>
+</code></pre></div></div>
+
+<h3 id="topic-example">Topic example</h3>
+
+<p>Get hashtag keywords.</p>
+
+<p>This only matches <em>once</em>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">pat</span> <span class="o">=</span> <span class="sr">/#</span><span class="se">(\w</span><span class="sr">+</span><span class="se">)</span><span class="sr">/</span>
+<span class="nx">m</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">abc #python #def</span><span class="dl">'</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">pat</span><span class="p">)</span>
+<span class="nx">m</span>
+<span class="c1">// [ '#python', </span>
+<span class="c1">//   'python', </span>
+<span class="c1">//   index: 4, </span>
+<span class="c1">//   input: 'abc #python #def', </span>
+<span class="c1">//   groups: undefined ] </span>
+</code></pre></div></div>
+
+<p>Using <code class="language-plaintext highlighter-rouge">g</code> for a global matches to get more than one match. But made the attributes disappear. Maybe I don’t understand this area properly and what the best practice is.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">pat</span> <span class="o">=</span> <span class="sr">/#</span><span class="se">(\w</span><span class="sr">+</span><span class="se">)</span><span class="sr">/g</span>
+<span class="nx">m</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">abc #python #def</span><span class="dl">'</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">pat</span><span class="p">)</span>
+<span class="nx">m</span>
+<span class="c1">// [</span>
+<span class="c1">//   '#python',</span>
+<span class="c1">//   '#def'</span>
+<span class="c1">// ] </span>
+</code></pre></div></div>
+
+<p>Extending the pattern to capture hyphens (not valid hashtags on Twitter but useful on other platforms for keyword topics).</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">pat</span> <span class="o">=</span> <span class="sr">/#</span><span class="se">([\w</span><span class="sr">-</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">/g</span>
+<span class="nx">m</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">abc #ruby #data-science</span><span class="dl">'</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">pat</span><span class="p">)</span>
+<span class="nx">m</span>
+<span class="c1">// [ '#ruby', '#data-science' ] </span>
+</code></pre></div></div>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

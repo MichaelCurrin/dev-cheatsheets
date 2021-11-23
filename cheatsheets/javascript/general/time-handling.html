@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Time handling | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Time handling" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Working with dates, times and current time in JS" />
+<meta property="og:description" content="Working with dates, times and current time in JS" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/time-handling.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/time-handling.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Time handling" />
+<script type="application/ld+json">
+{"headline":"Time handling","description":"Working with dates, times and current time in JS","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/time-handling.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/javascript/general/time-handling.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/javascript/general/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>Time handling</span>
+        </h1>
+
+        
+            <blockquote>
+                <p>Working with dates, times and current time in JS</p>
+
+            </blockquote>
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/">
+    JavaScript
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/general/">
+    General
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/javascript/general/time-handling.html" class="underline">
+                Time handling
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <h2 id="date-constructor">Date constructor</h2>
+
+<p>See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> object and methods in the Mozilla docs.</p>
+
+<blockquote>
+  <p>A JavaScript date is fundamentally specified as the number of <strong>milliseconds</strong> that have elapsed since midnight on January 1, 1970, UTC.</p>
+
+  <p>This date and time are <strong>not the same</strong> as the UNIX epoch (the number of seconds that have elapsed since midnight on January 1, 1970, UTC), which is the predominant base value for computer-recorded date and time values.</p>
+</blockquote>
+
+<!-- Note this page's snippets are not setup with '>' and result, because the results for timing are hard to read with highlighting. -->
+
+<h3 id="get-attribute-from-datetime">Get attribute from datetime</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Just a few of the methods available.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">()</span>
+<span class="c1">// 2021</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span>
+<span class="c1">// 3</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span>
+<span class="c1">// 17</span>
+</code></pre></div></div>
+
+<p>Day of week - 1 is Monday.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span><span class="p">.</span><span class="nx">getDay</span><span class="p">()</span>
+<span class="c1">// 1</span>
+</code></pre></div></div>
+
+<h3 id="represent-datetime">Represent datetime</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Convert a <code class="language-plaintext highlighter-rouge">Date</code> instance to a string.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">()</span>
+<span class="c1">// '2001-09-09T01:46:40.000Z'</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+<span class="c1">// 'Tue Mar 02 2021 13:47:43 GMT+0200 (South Africa Standard Time)'</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">toUTCString</span><span class="p">()</span>
+<span class="c1">// 'Sun, 09 Sep 2001 01:46:40 GMT'</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">toDateString</span><span class="p">()</span>
+<span class="c1">// 'Sun Sep 09 2001'</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">toTimeString</span><span class="p">()</span>
+<span class="c1">// '03:46:40 GMT+0200 (South Africa Standard Time)'</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">()</span>
+<span class="c1">// '09/09/2001, 03:46:40'</span>
+</code></pre></div></div>
+
+<h2 id="get-current-date-and-time">Get current date and time</h2>
+
+<h3 id="using-date">Using Date</h3>
+
+<p>Create an <code class="language-plaintext highlighter-rouge">Date</code> object with type `object. If you don’t pass a value to the constructor, you get the current date and time.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Then use methods on it.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">()</span>
+<span class="c1">// 2021-03-02T11:47:43.759Z</span>
+</code></pre></div></div>
+
+<p>If you omit <code class="language-plaintext highlighter-rouge">new</code> keyword, you get a string. This is not so useful to work with.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Date</span><span class="p">()</span>
+<span class="c1">// "Mon Apr 19 2021 10:43:22 GMT+0200 (South Africa Standard Time)"</span>
+</code></pre></div></div>
+
+<p>It is a shortcut for calling <code class="language-plaintext highlighter-rouge">new Date().toString()</code>.</p>
+
+<h3 id="using-datenow">Using Date.now</h3>
+
+<p>Create unix timestamp for current time.</p>
+
+<p>Passing a param doesn’t seem to make a difference.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+<span class="c1">// 1618822230513</span>
+</code></pre></div></div>
+
+<p>That is the same as using <code class="language-plaintext highlighter-rouge">Date</code> constructor but shorter and cleaner.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">===</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">()</span>
+<span class="c1">// true</span>
+</code></pre></div></div>
+
+<h2 id="utc-constructor">UTC constructor</h2>
+
+<p>From <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC">Mozilla docs</a></p>
+
+<blockquote>
+  <p>The Date.UTC() method accepts parameters similar to the Date constructor, but treats them as UTC. It returns the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+</blockquote>
+
+<p>Syntax:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Date.UTC(year[, month[, day[, hour[, minute[, second[, millisecond]]]]]])
+</code></pre></div></div>
+
+<p>Example:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="c1">// 1580612645000</span>
+</code></pre></div></div>
+
+<p>Example use with <code class="language-plaintext highlighter-rouge">Date</code> constructor:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="c1">// Date Sun Feb 02 2020 05:04:05 GMT+0200 (South Africa Standard Time)</span>
+</code></pre></div></div>
+
+<h2 id="timestamp">Timestamp</h2>
+
+<p>Convert timestamp to datetime.</p>
+
+<p>Timestamp is in milliseconds, otherewise it is like unix timestamp (which is in seconds).</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">1000000000000</span><span class="p">)</span>
+<span class="c1">// Sun Sep 09 2001 03:46:40 GMT+0200 (South Africa Standard Time)</span>
+</code></pre></div></div>
+
+<p>Create unix timestamp from string.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">1970-01-02</span><span class="dl">'</span><span class="p">)</span>
+<span class="c1">// 86400000</span>
+
+<span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">1970-01-01 02:00</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// Currently at GMT+2</span>
+<span class="c1">// 0</span>
+
+<span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">1970-01-01 03:00</span><span class="dl">'</span><span class="p">)</span>
+<span class="c1">// 3600000</span>
+
+<span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">2021-02-03 04:05:01</span><span class="dl">'</span><span class="p">)</span>
+<span class="c1">// 1612317901000</span>
+</code></pre></div></div>
+
+<h2 id="calculate-time-relative-to-now">Calculate time relative to now</h2>
+
+<p>NB. Use of <code class="language-plaintext highlighter-rouge">1000</code> because JS uses milliseconds not seconds.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fiveYears</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">365</span> <span class="o">*</span> <span class="mi">5</span>
+<span class="nx">fiveYears</span>
+<span class="c1">// 157680000000</span>
+
+<span class="kd">const</span> <span class="nx">expiry</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">+</span> <span class="nx">fiveYears</span><span class="p">;</span>
+<span class="nx">expiry</span>
+<span class="c1">// 1776618462014</span>
+
+<span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">expiry</span><span class="p">)</span>
+<span class="c1">// Sun Apr 19 2026 19:07:42 GMT+0200 (South Africa Standard Time)</span>
+</code></pre></div></div>
+
+<p>Remember the <code class="language-plaintext highlighter-rouge">new</code> keyword or you’ll just get the current time even with an argument passes.</p>
+
+<p>Here using <code class="language-plaintext highlighter-rouge">.setYear</code> to set an expiry date in 5 years time.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">expiry</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span> <span class="c1">// Now</span>
+<span class="nx">expiry</span>
+<span class="c1">// Date Tue Apr 20 2021 19:28:52 GMT+0200 (South Africa Standard Time)</span>
+
+<span class="kd">const</span> <span class="nx">currYear</span> <span class="o">=</span> <span class="nx">expiry</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">()</span>
+<span class="nx">currYear</span>
+<span class="c1">// 2021</span>
+
+<span class="nx">expiry</span><span class="p">.</span><span class="nx">setYear</span><span class="p">(</span><span class="nx">currYear</span> <span class="o">+</span> <span class="mi">5</span><span class="p">);</span>
+
+<span class="nx">expiry</span>
+<span class="c1">// Date Mon Apr 20 2026 19:28:52 GMT+0200 (South Africa Standard Time) </span>
+
+<span class="nx">expiry</span><span class="p">.</span><span class="nx">toGMTString</span><span class="p">()</span> <span class="c1">// now 2026!</span>
+<span class="c1">// "Mon, 20 Apr 2026 17:28:52 GMT"</span>
+</code></pre></div></div>
+
+<p>Here setting an expiry date in seconds time. Note that setting a seconds value of 60 or higher makes minutes increase.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
+
+<span class="nx">a</span>
+<span class="c1">// Date Mon Sep 13 2021 12:09:40 GMT+0200 (South Africa Standard Time)</span>
+
+<span class="kd">const</span> <span class="nx">currSeconds</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">()</span>
+<span class="c1">// 40</span>
+
+<span class="nx">a</span><span class="p">.</span><span class="nx">setSeconds</span><span class="p">(</span><span class="nx">currSeconds</span> <span class="o">+</span> <span class="mi">60</span><span class="p">)</span>
+
+<span class="nx">a</span>
+<span class="c1">// Date Mon Sep 13 2021 12:10:40 GMT+0200 (South Africa Standard Time)</span>
+</code></pre></div></div>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>pull | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="pull" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The git pull command" />
+<meta property="og:description" content="The git pull command" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/pull.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/pull.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="pull" />
+<script type="application/ld+json">
+{"headline":"pull","description":"The git pull command","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/pull.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/version-control/git/commands/pull.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/version-control/git/commands/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>pull</span>
+        </h1>
+
+        
+            <blockquote>
+                <p>The <code class="language-plaintext highlighter-rouge">git pull</code> command</p>
+
+            </blockquote>
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/version-control/">
+    Version control
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/version-control/git/">
+    Git
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/version-control/git/commands/">
+    Commands
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/version-control/git/commands/pull.html" class="underline">
+                pull
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <h2 id="remove-an-unnecessary-merge-commit">Remove an unnecessary merge commit</h2>
+
+<p>Say you have committed and no pushed and there are also changes on the remote.</p>
+
+<p>You should ideally do rebase of your local commits on the remote. This is <strong>safe</strong>, as it does <strong>not</strong> change the history of commits on other machines or GitHub - it only rewrites your local unpushed commits.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git pull <span class="nt">--rebase</span>
+
+<span class="nv">$ </span><span class="c"># If you need to specify a branch:</span>
+<span class="nv">$ </span>git pull <span class="nt">--rebase</span> origin master
+</code></pre></div></div>
+
+<p>If you run into errors, you can abort and revert to where you were.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git rebase <span class="nt">--abort</span>
+</code></pre></div></div>
+
+<p>If you do a plain pull, you’ll get prompted to make a merge commit.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git pull
+</code></pre></div></div>
+
+<p>This can make your history look weird and non-linear. One way to solve this to follow with a rebase.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git pull <span class="nt">--rebase</span>
+</code></pre></div></div>
+
+<p>Then you’ll get a linear histoy.</p>
+
+<p>This will <strong>remove</strong> any merge commits, like the one you created earlier. This will rebase your local commits on the remote commits at the point where they differ, so the rebase only affects your unpushed commits and won’t go back and rebase everything (this would miss with older commits already on the remote).</p>
+
+<h2 id="abort-a-pull">Abort a pull</h2>
+
+<p>If you ever accidentally do run <code class="language-plaintext highlighter-rouge">git pull</code> when you meant to do <code class="language-plaintext highlighter-rouge">git pull --rebase</code>.</p>
+
+<p>Then you’ll be prompted to for a message. If you leave it blank and save, then the commit will be aborted.</p>
+
+<p>But you might have a files appearing as changed. And you can’t do <code class="language-plaintext highlighter-rouge">git pull</code> again. As you’re in an inbetween state.</p>
+
+<p>So do this:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git merge <span class="nt">--abort</span>
+</code></pre></div></div>
+
+<p>Then you can carry on.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git pull <span class="nt">--rebase</span>
+</code></pre></div></div>
+
+<h2 id="get-all-branches-in-sync">Get all branches in sync</h2>
+
+<p>This will do a fetch and then merge changes into all local branches.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git pull <span class="nt">--all</span>
+</code></pre></div></div>
+
+<p>Leaving out the <code class="language-plaintext highlighter-rouge">--all</code> flag would do a merge for the <em>current</em> branch only.</p>
+
+<h2 id="help">Help</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git pull <span class="nt">--help</span>
+</code></pre></div></div>
+
+<h3 id="intro">Intro</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME
+       git-pull - Fetch from and integrate with another repository or a local branch
+
+SYNOPSIS
+       git pull [&lt;options&gt;] [&lt;repository&gt; [&lt;refspec&gt;...]]
+
+
+DESCRIPTION
+       Incorporates changes from a remote repository into the current branch. In its default mode, git pull is shorthand for git
+       fetch followed by git merge FETCH_HEAD.
+
+       More precisely, git pull runs git fetch with the given parameters and calls git merge to merge the retrieved branch heads
+       into the current branch. With --rebase, it runs git rebase instead of git merge.
+
+...
+</code></pre></div></div>
+
+<h3 id="verbosity">Verbosity</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       -q, --quiet
+           This is passed to both underlying git-fetch to squelch reporting of during transfer, and underlying git-merge to
+           squelch output during merging.
+
+       -v, --verbose
+           Pass --verbose to git-fetch and git-merge.
+</code></pre></div></div>
+
+<h3 id="submodules">Submodules</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       --[no-]recurse-submodules[=yes|on-demand|no]
+           This option controls if new commits of populated submodules should be fetched, and if the working trees of active
+           submodules should be updated, too (see git-fetch(1), git-config(1) and gitmodules(5)).
+
+           If the checkout is done via rebase, local submodule commits are rebased as well.
+
+           If the update is done via merge, the submodule conflicts are resolved and checked out.
+</code></pre></div></div>
+
+<h3 id="options-relating-to-merging">Options relating to merging</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       --commit, --no-commit
+           Perform the merge and commit the result. This option can be used to override --no-commit.
+
+           With --no-commit perform the merge and stop just before creating a merge commit, to give the user a chance to inspect
+           and further tweak the merge result before committing.
+
+           Note that fast-forward updates do not create a merge commit and therefore there is no way to stop those merges with
+           --no-commit.
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        --ff, --no-ff, --ff-only
+           Specifies how a merge is handled when the merged-in history is already a descendant of the current history.  --ff is
+           the default unless merging an annotated (and possibly signed) tag that is not stored in its natural place in the
+           refs/tags/ hierarchy, in which case --no-ff is assumed.
+
+           With --ff, when possible resolve the merge as a fast-forward (only update the branch pointer to match the merged
+           branch; do not create a merge commit). When not possible (when the merged-in history is not a descendant of the
+           current history), create a merge commit.
+
+           With --no-ff, create a merge commit in all cases, even when the merge could instead be resolved as a fast-forward.
+
+           With --ff-only, resolve the merge as a fast-forward when possible. When not possible, refuse to merge and exit with a
+           non-zero status.
+</code></pre></div></div>
+
+<p>Skip editing message of merge commit.</p>
+
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git pull origin my-feat <span class="nt">--no-edit</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       --edit, -e, --no-edit
+           Invoke an editor before committing successful mechanical merge to further edit the auto-generated merge message, so
+           that the user can explain and justify the merge. The --no-edit option can be used to accept the auto-generated message
+           (this is generally discouraged).
+
+           Older scripts may depend on the historical behaviour of not allowing the user to edit the merge log message. They will
+           see an editor opened when they run git merge. To make it easier to adjust such scripts to the updated behaviour, the
+           environment variable GIT_MERGE_AUTOEDIT can be set to no at the beginning of them.
+</code></pre></div></div>
+
+<p>Note to self - don’t worry about creating an alias for that as it is rare that I do a pull merge commit on the command-line and it easy to step through.</p>
+
+<h3 id="rebase">Rebase</h3>
+
+<p>Example:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git pull <span class="nt">--rebase</span>
+<span class="nv">$ </span>git pull <span class="nt">--no-rebase</span>
+</code></pre></div></div>
+
+<p>Help:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       -r, --rebase[=false|true|merges|preserve|interactive]
+           When true, rebase the current branch on top of the upstream branch after fetching. If there is a remote-tracking
+           branch corresponding to the upstream branch and the upstream branch was rebased since last fetched, the rebase uses
+           that information to avoid rebasing non-local changes.
+
+           When set to merges, rebase using git rebase --rebase-merges so that the local merge commits are included in the rebase
+           (see git-rebase(1) for details).
+
+           When set to preserve (deprecated in favor of merges), rebase with the --preserve-merges option passed to git rebase so
+           that locally created merge commits will not be flattened.
+
+           When false, merge the current branch into the upstream branch.
+
+           When interactive, enable the interactive mode of rebase.
+
+           See pull.rebase, branch.&lt;name&gt;.rebase and branch.autoSetupRebase in git-config(1) if you want to make git pull always
+           use --rebase instead of merging.
+
+               Note
+               This is a potentially dangerous mode of operation. It rewrites history, which does not bode well when you
+               published that history already. Do not use this option unless you have read git-rebase(1) carefully.
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       --no-rebase
+           Override earlier --rebase.
+
+</code></pre></div></div>
+
+<h3 id="short-help">Short help</h3>
+
+<p>Using <code class="language-plaintext highlighter-rouge">-h</code> rather than <code class="language-plaintext highlighter-rouge">--help</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git pull <span class="nt">-h</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usage: git pull [&lt;options&gt;] [&lt;repository&gt; [&lt;refspec&gt;...]]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --progress            force progress reporting
+    --recurse-submodules[=&lt;on-demand&gt;]
+                          control for recursive fetching of submodules
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Options related to merging
+    -r, --rebase[=(false|true|merges|preserve|interactive)]
+                          incorporate changes by rebasing rather than merging
+    -n                    do not show a diffstat at the end of the merge
+    --stat                show a diffstat at the end of the merge
+    --log[=&lt;n&gt;]           add (at most &lt;n&gt;) entries from shortlog to merge commit message
+    --signoff[=...]       add Signed-off-by:
+    --squash              create a single commit instead of doing a merge
+    --commit              perform a commit if the merge succeeds (default)
+    --edit                edit message before committing
+    --cleanup &lt;mode&gt;      how to strip spaces and #comments from message
+    --ff                  allow fast-forward
+    --ff-only             abort if fast-forward is not possible
+    --verify-signatures   verify that the named commit has a valid GPG signature
+    --autostash           automatically stash/stash pop before and after
+    -s, --strategy &lt;strategy&gt;
+                          merge strategy to use
+    -X, --strategy-option &lt;option=value&gt;
+                          option for selected merge strategy
+    -S, --gpg-sign[=&lt;key-id&gt;]
+                          GPG sign commit
+    --allow-unrelated-histories
+                          allow merging unrelated histories
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Options related to fetching
+    --all                 fetch from all remotes
+    -a, --append          append to .git/FETCH_HEAD instead of overwriting
+    --upload-pack &lt;path&gt;  path to upload pack on remote end
+    -f, --force           force overwrite of local branch
+    -t, --tags            fetch all tags and associated objects
+    -p, --prune           prune remote-tracking branches no longer on remote
+    -j, --jobs[=&lt;n&gt;]      number of submodules pulled in parallel
+    --dry-run             dry run
+    -k, --keep            keep downloaded pack
+    --depth &lt;depth&gt;       deepen history of shallow clone
+    --shallow-since &lt;time&gt;
+                          deepen history of shallow repository based on time
+    --shallow-exclude &lt;revision&gt;
+                          deepen history of shallow clone, excluding rev
+    --deepen &lt;n&gt;          deepen history of shallow clone
+    --unshallow           convert to a complete repository
+    --update-shallow      accept refs that update .git/shallow
+    --refmap &lt;refmap&gt;     specify fetch refmap
+    -o, --server-option &lt;server-specific&gt;
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+    --negotiation-tip &lt;revision&gt;
+                          report that we have only objects reachable from this object
+    --show-forced-updates
+                          check for forced-updates on all updated branches
+    --set-upstream        set upstream for git pull/fetch
+</code></pre></div></div>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

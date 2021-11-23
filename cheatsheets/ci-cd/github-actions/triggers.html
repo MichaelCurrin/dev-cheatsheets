@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Triggers | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Triggers" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Choose and configure events to trigger your GitHub Actions workflow" />
+<meta property="og:description" content="Choose and configure events to trigger your GitHub Actions workflow" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/ci-cd/github-actions/triggers.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/ci-cd/github-actions/triggers.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Triggers" />
+<script type="application/ld+json">
+{"headline":"Triggers","description":"Choose and configure events to trigger your GitHub Actions workflow","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/ci-cd/github-actions/triggers.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/ci-cd/github-actions/triggers.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/ci-cd/github-actions/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>Triggers</span>
+        </h1>
+
+        
+            <blockquote>
+                <p>Choose and configure events to trigger your GitHub Actions workflow</p>
+
+            </blockquote>
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/ci-cd/">
+    CI/CD
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/ci-cd/github-actions/">
+    GitHub Actions
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/ci-cd/github-actions/triggers.html" class="underline">
+                Triggers
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            
+<p>To set up a trigger for an event, we use the <code class="language-plaintext highlighter-rouge">on</code> field and one or more events.</p>
+
+<p>See also GitHub’s docs - <a href="https://docs.github.com/en/actions/reference/events-that-trigger-workflows">Events that trigger workflows</a>.</p>
+
+<h2 id="ordinary-commits-vs-releases">Ordinary commits vs releases</h2>
+
+<p>Some advice:</p>
+
+<ul>
+  <li>In general, if you have test, lint, and build steps, you will probably want to run them <em>everytime</em>. i.e. On all pushes to the main branch and on all PRs.</li>
+  <li>If there is anything related to a <em>deploy</em> (like building a site) or a release (like bundling and uploading a JS/Python/Ruby package), you probably only want to run against the <em>main</em> branch (for production) and no other branches (as those are for development). And you could even restrict to only run against a <em>tag</em> or <em>release</em> created on the main branch, and not just any commit to the main branch.</li>
+</ul>
+
+<h2 id="trigger-on-a-commit">Trigger on a commit</h2>
+
+<h3 id="on-push-to-any-branch">On push to any branch</h3>
+
+<p>This will build on the main branch and <em>any</em> feature branch, even without a PR.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span> <span class="s">push</span>
+</code></pre></div></div>
+
+<h3 id="on-pull-request">On pull request</h3>
+
+<p>Trigger only with pull requests. See <a href="https://docs.github.com/en/actions/reference/events-that-trigger-workflows#pull_request">docs</a>.</p>
+
+<p>This will build on a feature branch, only if it has PR. So this gives more control, so you if a branch is work-in-progress and not ready for a PR, no runs happen.</p>
+
+<h4 id="commits">Commits</h4>
+
+<p>This triggers <strong>every time</strong> you either push a commit to the feature branch or edit it on GitHub UI.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span> <span class="s">pull_request</span>
+</code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+    <span class="na">pull_request</span><span class="pi">:</span>
+</code></pre></div></div>
+
+<p>Limit to Pull Requests which target <code class="language-plaintext highlighter-rouge">main</code> branch. This is safer and recommended, as you avoid triggering on PRs <em>between</em> feature branches other than the main one (in case you ever do that in a minority of cases).</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">pull_request</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span> <span class="s">main</span>
+</code></pre></div></div>
+
+<h4 id="pr-events">PR events</h4>
+
+<p>Available event types are listed in the doc linked above.</p>
+
+<blockquote>
+  <p>Note: By default, a workflow only runs when a pull_request’s activity type is <code class="language-plaintext highlighter-rouge">opened</code>, <code class="language-plaintext highlighter-rouge">synchronize</code>, or <code class="language-plaintext highlighter-rouge">reopened</code>. To trigger workflows for more activity types, use the types keyword.</p>
+</blockquote>
+
+<p>Add a trigger for when a PR is assigned.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">pull_request</span><span class="pi">:</span>
+    <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">assigned</span><span class="pi">,</span> <span class="nv">opened</span><span class="pi">,</span> <span class="nv">synchronize</span><span class="pi">,</span> <span class="nv">reopened</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<p>Restrict to when a PR against the main branch is merged. There is no <code class="language-plaintext highlighter-rouge">merged</code> option, so use <code class="language-plaintext highlighter-rouge">closed</code>. This closed event I think might be triggered when you close without merging.</p>
+
+<p>This is similar to listening to <code class="language-plaintext highlighter-rouge">push</code> event on <code class="language-plaintext highlighter-rouge">master</code>, but it requires a PR to exist and does not pick up on just any commit to <code class="language-plaintext highlighter-rouge">master</code>.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">pull_request</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span> <span class="s">main</span>
+    <span class="na">types</span><span class="pi">:</span> <span class="s">closed</span>
+</code></pre></div></div>
+
+<h3 id="on-push-or-pull-request-to-any-branch">On push or Pull Request to any branch</h3>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">push</span><span class="pi">,</span> <span class="nv">pull_request</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<p>Or</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">push</span>
+  <span class="pi">-</span> <span class="s">pull_request</span>
+</code></pre></div></div>
+
+<p>Or</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+  <span class="na">pull_request</span><span class="pi">:</span>
+</code></pre></div></div>
+
+<h3 id="on-push-to-main-or-pull-request-to-main">On push to main or Pull Request to main</h3>
+
+<p>Runs on a PR again main but won’t run on a PR between two branches that both aren’t the <em>main</em> branch.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span> <span class="s">main</span>
+    
+  <span class="na">pull_request</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span> <span class="s">main</span>
+</code></pre></div></div>
+
+<p>Or, more verbose:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">main</span> <span class="pi">]</span>
+    
+  <span class="na">pull_request</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">main</span> <span class="pi">]</span>
+</code></pre></div></div>
+
+<p>Or</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">main</span>
+      
+  <span class="na">pull_request</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">main</span>
+</code></pre></div></div>
+
+<h2 id="trigger-on-a-schedule">Trigger on a schedule</h2>
+
+<p>Use the <a href="https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#onschedule">on.schedule</a> parameter.</p>
+
+<p>Check your syntax using <a href="https://crontab.guru/">crontab.guru</a> site.</p>
+
+<p>Here with a sample value to run at midnight daily.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">schedule</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">cron</span><span class="pi">:</span>  <span class="s2">"</span><span class="s">0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
+</code></pre></div></div>
+
+<p>Be sure to <strong>quote</strong> the value, in to prevent YAML expansion of globstars which would cause an error.</p>
+
+<h2 id="include-or-ignore">Include or ignore</h2>
+
+<p>From <a href="https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onpushpull_requestpaths">On push pull request paths</a> in the docs.</p>
+
+<h3 id="ignore-a-branch-or-tag">Ignore a branch or tag</h3>
+
+<p>Note that if you use a rule from another section to include pushes to master and PRs to master, you won’t have to ignore automated commits to <code class="language-plaintext highlighter-rouge">gh-pages</code>.</p>
+
+<p><a href="https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#example-ignoring-branches-and-tags">docs</a></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">branches-ignore</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">foo</span>
+</code></pre></div></div>
+
+<h3 id="ignore-path">Ignore path</h3>
+
+<p>Trigger on any path <strong>except</strong> the ignored paths.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">paths-ignore</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">dir-name/**"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">file.txt"</span>
+</code></pre></div></div>
+
+<p>Or maybe just <code class="language-plaintext highlighter-rouge">dir0name</code> without the stars?</p>
+
+<h3 id="include-path">Include path</h3>
+
+<p>Trigger <strong>only</strong> on changes in given paths. Note you don’t need <code class="language-plaintext highlighter-rouge">**</code> - a single <code class="language-plaintext highlighter-rouge">*</code> is enough to work at multiple levels.</p>
+
+<p>Examples:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">paths</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">*.js"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">*.css"</span>
+</code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">paths</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">src</span>
+</code></pre></div></div>
+
+<h3 id="ignore-markdown-changes">Ignore markdown changes</h3>
+
+<p>Triggered on a commit or push to your main branch or any branch with a Pull Request. Ignore changes to markdown files at all levels (such as <code class="language-plaintext highlighter-rouge">README.md</code> and in <code class="language-plaintext highlighter-rouge">docs</code>).</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">main.yml</code>
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">on</span><span class="pi">:</span>
+    <span class="na">push</span><span class="pi">:</span>
+      <span class="na">branches</span><span class="pi">:</span> <span class="s">main</span>
+      <span class="na">paths-ignore</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">*.md"</span>
+
+    <span class="na">pull_request</span><span class="pi">:</span>
+      <span class="na">branches</span><span class="pi">:</span> <span class="s">main</span>
+      <span class="na">paths-ignore</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">*.md"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="ignore-doc-changes">Ignore doc changes</h3>
+
+<p>More explicit - trigger on markdown changes but not doc-related changes.</p>
+
+<p>Similar to above but still watches for changes in markdown files outside the docs directory. Such as if you have a static site with markdown content in the root of the repo.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">main.yml</code>
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">on</span><span class="pi">:</span>
+    <span class="na">push</span><span class="pi">:</span>
+      <span class="na">branches</span><span class="pi">:</span> <span class="s">main</span>
+      <span class="na">paths-ignore</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">docs/**"</span>
+        <span class="pi">-</span> <span class="s">README.md</span>
+
+    <span class="na">pull_request</span><span class="pi">:</span>
+      <span class="na">branches</span><span class="pi">:</span> <span class="s">main</span>
+      <span class="na">paths-ignore</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">docs/**"</span>
+        <span class="pi">-</span> <span class="s">README.md</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="trigger-on-tag">Trigger on tag</h2>
+
+<p>Specify a tag rule under <code class="language-plaintext highlighter-rouge">on.push.tags</code>.</p>
+
+<p>Use a regex pattern - this must be set.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">tags</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">v*'</span>
+</code></pre></div></div>
+
+<p>You can make a advanced rule that only triggers on <code class="language-plaintext highlighter-rouge">v1</code> and up or excludes <code class="language-plaintext highlighter-rouge">-alpha</code> releases, if that matters to you.</p>
+
+<p>Trigger on a push to <code class="language-plaintext highlighter-rouge">main</code> <em>or</em> a tag.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span> 
+      <span class="pi">-</span> <span class="s">main</span>
+    <span class="na">tags</span><span class="pi">:</span>
+</code></pre></div></div>
+
+<p>Trigger on a push to <code class="language-plaintext highlighter-rouge">main</code> <em>and</em> a tag.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span> 
+      <span class="pi">-</span> <span class="s">main</span>
+    <span class="na">tags</span><span class="pi">:</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">build-deploy</span><span class="pi">:</span>
+    <span class="na">if</span><span class="pi">:</span> <span class="s">startsWith(github.ref, 'refs/tags/')</span>
+   
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="c1"># ...</span>
+</code></pre></div></div>
+
+<p>There is no <code class="language-plaintext highlighter-rouge">on.tag</code> or <code class="language-plaintext highlighter-rouge">on.tags</code> option, but there is <code class="language-plaintext highlighter-rouge">on.release</code> - see below.</p>
+
+<h2 id="trigger-on-a-release">Trigger on a release</h2>
+
+<p>Trigger your workflow when you create a release under Releases section of your repo - note that a release is not the same as a tag.</p>
+
+<p>From the docs:</p>
+
+<blockquote>
+  <p>Note: The release event is not triggered for draft releases.</p>
+</blockquote>
+
+<p>So presumably it is safe to use <code class="language-plaintext highlighter-rouge">created</code>. Perhaps that only runs once, while a release could be published, unpublished and published (I’ve seen a release unpublished, i.e. moved to drafts, by deleting its tag).</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">release</span><span class="pi">:</span>
+    <span class="na">types</span><span class="pi">:</span> <span class="s">created</span>
+</code></pre></div></div>
+
+<p>Here is one I found which covers more events.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">release</span><span class="pi">:</span>
+    <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">published</span><span class="pi">,</span> <span class="nv">created</span><span class="pi">,</span> <span class="nv">edited</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<p>Types available:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">published</code></li>
+  <li><code class="language-plaintext highlighter-rouge">unpublished</code></li>
+  <li><code class="language-plaintext highlighter-rouge">created</code></li>
+  <li><code class="language-plaintext highlighter-rouge">edited</code></li>
+  <li><code class="language-plaintext highlighter-rouge">deleted</code></li>
+  <li><code class="language-plaintext highlighter-rouge">prereleased</code></li>
+  <li><code class="language-plaintext highlighter-rouge">released</code></li>
+</ul>
+
+<h2 id="trigger-on-a-gh-pages-build">Trigger on a GH Pages build</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">page_build</span><span class="pi">:</span>
+</code></pre></div></div>
+
+<p>Note that even if you use GA to build your static site to the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch, if GH Pages is enabled then GH will also do an additional build of that branch. But since it just contains assets and HTML and no Jekyll config, the build will be super simple. This flow of Jekyll doing two builds is seamless and so you won’t even notice it but the point here is that the page build trigger can still be useful.</p>
+
+<h2 id="multiple-triggers-in-one-workflow">Multiple triggers in one workflow</h2>
+
+<p>Add multiple triggers. Here we run on push to master, PR to master and on a nightly cron job.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">main</span>
+
+  <span class="na">pull_request</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">main</span>
+
+  <span class="na">schedule</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">cron</span><span class="pi">:</span>  <span class="s2">"</span><span class="s">0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
+</code></pre></div></div>
+
+<p>Depending on how you set up the jobs section, you can have them depend on each other or run in parallel.</p>
+
+<p>You can add “checks” in your branch rules so that a PR can <em>only</em> merge to master after all checks pass</p>
+
+<h2 id="multiple-workflow-files">Multiple workflow files</h2>
+
+<p>You might split out to two workflow files such as one with a push trigger and app testing job and another with a release trigger and page build job, as below.
+To only build the site when creating a tag. This means you build less frequently but more <em>safely</em> and deliberately from a tag. This is especially useful if there are multiple people working on your project and comitting merging to master.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">build.yml</code>
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">on</span><span class="pi">:</span>
+    <span class="na">push</span><span class="pi">:</span>
+      <span class="na">branches</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">master</span>
+
+    <span class="na">pull_request</span><span class="pi">:</span>
+      <span class="na">branches</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">master</span>
+
+  <span class="na">jobs</span><span class="pi">:</span>
+    <span class="na">build</span><span class="pi">:</span>
+      <span class="c1"># Installs</span>
+
+      <span class="c1"># Linting and unit tests.</span>
+
+      <span class="c1"># Build the app or static site so any errors come up, but don't persist the result.</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">deploy.yml</code>
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">release</span><span class="pi">:</span>
+      <span class="na">types</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">created</span>
+
+  <span class="na">jobs</span><span class="pi">:</span>
+    <span class="na">deploy</span><span class="pi">:</span>
+      <span class="c1"># Build static site or docs site or publish to NPM etc.</span>
+      <span class="c1"># ...</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="manual-triggers">Manual triggers</h2>
+
+<p>See <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#manual-events">Manual events</a> in the docs.</p>
+
+<p>There are two formats available.</p>
+
+<h3 id="workflow-dispatch">Workflow dispatch</h3>
+
+<p>Trigger a workflow on a button click.</p>
+
+<blockquote>
+  <p>To trigger specific workflows in a repository, use the <code class="language-plaintext highlighter-rouge">workflow_dispatch event</code>.</p>
+</blockquote>
+
+<p>If you set up this option, then you’ll get a button on the Actions tab to click and so run the workflow directly. Without a commit needed and without having to wait for a cron trigger.</p>
+
+<p>You can even specify text <strong>inputs</strong> so that you get prompted to fill those in and have them used in the job.</p>
+
+<p>Syntax:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span> <span class="s">workflow_dispatch</span>
+</code></pre></div></div>
+
+<p>Or</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">workflow_dispatch</span><span class="pi">:</span>
+    <span class="na">inputs</span><span class="pi">:</span>
+      <span class="na">my-title</span><span class="pi">:</span>
+        <span class="na">description</span><span class="pi">:</span> <span class="c1"># ...</span>
+        <span class="na">required</span><span class="pi">:</span> <span class="c1"># true or false</span>
+        <span class="na">default</span><span class="pi">:</span> <span class="c1"># ...</span>
+
+      <span class="c1"># ...</span>
+</code></pre></div></div>
+
+<p>The default is the value that is shown in the pop-up.</p>
+
+<p>Basic trigger and job example:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">main.yml</code>
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">name</span><span class="pi">:</span> <span class="s">Manually triggered workflow</span>
+
+  <span class="na">on</span><span class="pi">:</span>
+    <span class="na">workflow_dispatch</span><span class="pi">:</span>
+      <span class="na">inputs</span><span class="pi">:</span>
+        <span class="na">name</span><span class="pi">:</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Person</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">greet'</span>
+          <span class="na">required</span><span class="pi">:</span> <span class="no">true</span>
+          <span class="na">default</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Mona</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Octocat'</span>
+
+        <span class="na">home</span><span class="pi">:</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">location'</span>
+          <span class="na">required</span><span class="pi">:</span> <span class="no">false</span>
+          <span class="na">default</span><span class="pi">:</span> <span class="s1">'</span><span class="s">The</span><span class="nv"> </span><span class="s">Octoverse'</span>
+
+  <span class="na">jobs</span><span class="pi">:</span>
+    <span class="na">say-hello</span><span class="pi">:</span>
+      <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+
+      <span class="na">steps</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">echo "Hello, ${{ github.event.inputs.name }}!"</span>
+          <span class="s">echo "- in ${{ github.event.inputs.home }}!"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>An example suggested by GH Actions, when making new workflow file.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">main.yml</code>
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">name</span><span class="pi">:</span> <span class="s">Manual workflow</span>
+
+  <span class="na">on</span><span class="pi">:</span>
+    <span class="na">workflow_dispatch</span><span class="pi">:</span>
+      <span class="na">inputs</span><span class="pi">:</span>
+        <span class="na">name</span><span class="pi">:</span>
+          <span class="c1"># Friendly description to show in the UI instead of 'name'</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Person</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">greet'</span>
+          <span class="na">required</span><span class="pi">:</span> <span class="no">true</span>
+          <span class="na">default</span><span class="pi">:</span> <span class="s1">'</span><span class="s">World'</span>
+
+  <span class="na">jobs</span><span class="pi">:</span>
+    <span class="na">greet</span><span class="pi">:</span>
+      <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+
+      <span class="na">steps</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send greeting</span>
+          <span class="na">run</span><span class="pi">:</span> <span class="s">echo "Hello ${{ github.event.inputs.name }}"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="repo-dispatch">Repo dispatch</h3>
+
+<blockquote>
+  <p>To trigger more than one workflow in a repository and create custom events and event types, use the <code class="language-plaintext highlighter-rouge">repository_dispatch</code> event.</p>
+</blockquote>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
+  <span class="na">repository_dispatch</span><span class="pi">:</span>
+    <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">opened</span><span class="pi">,</span> <span class="nv">deleted</span><span class="pi">]</span>
+</code></pre></div></div>
+
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

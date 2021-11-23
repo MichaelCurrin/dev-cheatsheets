@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Deno | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Deno" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/deno/" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/deno/" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Deno" />
+<script type="application/ld+json">
+{"headline":"Deno","description":"A collection of code snippets and CLI guides for quick and easy reference while coding","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/deno/","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/javascript/deno/index.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/javascript/deno/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+<span class="logo-medium"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Deno</title><path fill="currentColor" d="M11.055.008c-.056.006-.236.027-.398.041C8.349.291 6.076 1.27 4.223 2.82a15.658 15.654 0 00-1.405 1.405C1.283 6.058.386 8.115.056 10.549c-.074.54-.074 2.364 0 2.904.33 2.435 1.228 4.492 2.762 6.325a15.658 15.654 0 001.405 1.405c1.833 1.535 3.89 2.432 6.325 2.762.54.073 2.364.073 2.904 0 2.435-.331 4.492-1.228 6.325-2.762a15.658 15.654 0 001.405-1.405c1.535-1.833 2.432-3.89 2.762-6.325.074-.54.074-2.364 0-2.904-.33-2.433-1.228-4.49-2.762-6.323a15.658 15.654 0 00-1.405-1.405C17.95 1.291 15.872.382 13.47.061c-.26-.036-.637-.05-1.337-.057a25.795 25.788 0 00-1.077.003zm.147 1.275c0 .345.024 1.095.056 1.806.018.348.038.847.047 1.107.032.92.13 3.338.145 3.553l.015.215-.133-.015a.504.504 0 01-.153-.032 3.247 3.247 0 01-.041-.455 702.86 702.682 0 01-.245-5.723l-.018-.655.083-.012c.044-.006.118-.015.165-.018l.08-.003v.23zm2.825-.07c.003.002.012.893.021 1.98.012 1.088.027 2.065.035 2.17.01.11.006.205-.009.21a.433.433 0 01-.159 0l-.136-.011-.02-.86-.033-1.17c-.024-.523-.044-2.297-.027-2.34.012-.033.044-.036.168-.016.086.018.156.032.16.035zM7.2 2.2c.018.027.156 1.653.328 3.78.056.724.112 1.385.12 1.468.016.15.013.156-.082.215a.519.519 0 01-.118.059c-.01 0-.027-.077-.035-.171-.041-.384-.201-2.237-.313-3.577a173.64 173.628 0 00-.133-1.57c-.015-.13-.012-.142.065-.183.094-.05.148-.059.168-.02zm8.125.593c.083.03.091.044.11.213.03.295.02 1.706-.013 1.706-.086 0-.263-.1-.277-.156a14.379 14.375 0 01-.018-.93c0-.959-.012-.903.198-.832zm-5.451.14c0 .08.02.518.044.982L9.98 5.22c.02.514.027.496-.171.508-.097.003-.097.003-.103-.145-.006-.083-.021-.34-.038-.576-.015-.236-.05-.747-.074-1.136a32.49 32.486 0 00-.062-.859c-.018-.148-.015-.153.065-.183a.617.617 0 01.183-.032c.094-.003.094-.003.094.136zm8.187.403l.1.041.021.395c.01.215.015.682.01 1.033l-.01.643-.124-.062-.124-.06-.009-.98a21.73 21.728 0 01.003-1.017c.012-.044.012-.044.133.006zm-5.389.387c.018.018.059 1.45.062 2.175l.003.437-.139-.021a1.3 1.3 0 01-.148-.021c-.009-.006-.097-2.193-.097-2.405V3.67l.151.018a.743.743 0 01.168.035zm6.797.21c.035.04.041.687.05 4.252.01 4.092.01 4.2-.044 4.2a.197.197 0 01-.103-.04c-.044-.032-.05-.39-.065-3.885a475.465 475.342 0 00-.035-4.277l-.018-.425.086.062c.05.035.106.086.13.112zm-2.647.605c.015.012.03.18.032.372.015.652.018 4.65.003 4.663-.006.006-.059-.01-.118-.032l-.106-.044v-5.02l.083.018c.044.012.092.03.106.044zm-8.146.165c.009.08.024.26.032.407l.047.732c.035.519.03.552-.14.552-.088 0-.1-.01-.111-.097-.03-.174-.133-1.626-.118-1.65a.654.654 0 01.239-.08c.018-.003.04.06.05.136zm-4.882.752l.145 1.455c.05.487.092.9.092.918 0 .035-.227.148-.251.124a96.061 96.036 0 01-.31-2.745c0-.07.227-.37.257-.336a6.6 6.6 0 01.068.584zm11.572.31l.086.05.003.638c.003.348.01.738.01.865.005.266-.028.31-.187.254l-.09-.032v-.254c0-.142-.01-.552-.022-.915l-.018-.655h.068a.41.41 0 01.151.05zM5.09 6.91l.195 2.125.1 1.09-.115.115-.112.115-.021-.233c-.012-.13-.071-.73-.133-1.34-.062-.606-.151-1.49-.195-1.96l-.083-.85.115-.104c.103-.097.115-.1.136-.047.012.03.062.519.112 1.089zm-2.211.358c.065.58.236 2.128.384 3.433.148 1.307.286 2.568.313 2.804.024.236.065.593.089.797.04.345.04.37-.006.404-.071.053-.1.047-.1-.015 0-.027-.027-.25-.06-.493l-.338-2.627c-.041-.31-.121-.927-.177-1.372a466.6 466.482 0 01-.37-2.87c-.052-.401-.085-.76-.076-.797.02-.08.195-.357.213-.34.006.01.065.49.13 1.075zM1.976 8.54l.183 1.44c.056.435.127.981.159 1.21l.056.411-.062.053c-.035.03-.071.04-.083.03a1.17 1.17 0 01-.053-.26c-.018-.13-.127-.888-.245-1.68l-.21-1.446.068-.201a.724.724 0 01.083-.198c.012 0 .056.289.103.64zm16.203-.387c.041.04.047.224.047 1.579v1.53h-.083c-.18 0-.177.044-.189-1.63l-.009-1.526h.094c.05 0 .115.02.14.047zm-6.46.528c.667.1 1.248.286 1.824.58.372.193.55.326.962.72.614.586.992 1.1 1.346 1.826.516 1.057.717 1.992.971 4.5.115 1.125.266 3.165.298 4 .01.242.03.64.047.885.032.519.071.449-.387.67-.635.307-1.245.519-2.05.717-.987.242-1.624.319-2.598.322l-.708.003.006-.34c0-.185.018-.62.035-.958.089-1.644.071-3.72-.044-4.87-.065-.66-.192-1.464-.263-1.64-.015-.04.053-.072.345-.172.534-.186.998-.42 1.068-.534.127-.218-.1-.53-.39-.53-.05 0-.201.052-.339.114-.661.304-1.986.66-2.751.74a7.794 7.792 0 01-1.918-.08c-.31-.055-.865-.265-1.328-.504-.534-.277-.862-.646-.96-1.083-.052-.236-.037-.708.03-.974a3.15 3.15 0 01.47-.965c.84-1.105 2.577-2.064 4.356-2.4a6.632 6.632 0 011.977-.027zm9.105.092c.106.044.118.056.118.156.006.806-.012 2.645-.027 2.722-.003.027-.156.03-.22.006-.042-.015-.048-.174-.048-1.476 0-.931.012-1.456.03-1.456.015 0 .083.02.148.047zm1.29 1.62l.105.042-.02 2.444c-.025 3.114-.028 3.205-.14 3.474-.183.44-.174.528-.156-1.402.006-.965.021-1.942.027-2.17.006-.226.012-.867.015-1.425 0-.673.01-1.01.03-1.01.018 0 .08.022.14.045zm-17.75.733c.018.24.012.263-.074.452l-.094.2-.035-.294c-.056-.472-.056-.493.056-.564.05-.035.103-.06.112-.053.009.006.027.124.035.26zm-1.824 1.78c.027.242.233 1.848.339 2.636.159 1.219.17 1.393.1 1.319a14.7 14.696 0 01-.148-.912c-.46-3.182-.457-3.16-.42-3.185.08-.053.107-.024.128.142zm2.125 1.35c.018.075.103.875.103.972 0 .083-.106.16-.153.112-.015-.015-.053-.266-.083-.555l-.074-.676-.018-.148.103.118a.656.656 0 01.12.177zm2.382 1.114c.032.03.053.148.08.466.044.576.05.53-.071.53-.124 0-.121.01-.162-.51-.041-.528-.041-.522.038-.522.038 0 .089.018.115.035zm2.337.044c.006.03.02.207.032.393.009.186.035.605.059.93.083 1.192.086 1.343.035 1.343-.056 0-.062-.044-.127-.885a70.726 70.708 0 00-.097-1.22c-.027-.32-.044-.59-.035-.595.032-.035.118-.01.133.035zm-5.548.567c.018.027.13.97.269 2.26.04.39.083.765.09.836l.016.127-.074-.047a.153.153 0 01-.077-.145c0-.186-.127-1.411-.224-2.16-.056-.425-.1-.8-.1-.835 0-.062.07-.086.1-.035zm17.032 1.234l-.02 1.234-.075.109c-.168.248-.159.295-.15-1.086l.005-1.266.11-.112a.574.574 0 01.13-.11c.008 0 .008.556 0 1.232zm-2.73 1.956c.015 1.715.012 1.848-.035 1.9-.03.033-.056.054-.065.045-.02-.024-.05-3.763-.027-3.784.012-.012.041-.018.068-.015.038.009.047.218.06 1.853zm-9.64-1.174c.022.183.095 1.06.125 1.473.018.277.018.286-.047.307-.035.012-.077.009-.09-.006-.02-.021-.085-.676-.164-1.685l-.021-.242h.09c.087 0 .092.006.107.153zm-2.32 1.033c.022.02.036.094.036.168 0 .077.035.475.074.888.112 1.13.12 1.284.07 1.254-.076-.044-.144-.112-.13-.13a2.02 2.02 0 00-.03-.328 14.43 14.429 0 01-.058-.62 19.044 19.04 0 00-.062-.694c-.056-.516-.053-.576.012-.576.03 0 .068.015.089.035zm1.397 1.986c.009.065.027.307.038.537.02.443.012.475-.11.384-.034-.027-.058-.14-.093-.475-.062-.608-.065-.584.05-.573.086.009.097.02.115.127zM6.52 10.094c-.307.133-.331.55-.041.697.21.106.422.056.53-.127a.392.392 0 00-.49-.57zm2 .283a.453.453 0 000 .767c.28.168.644-.053.644-.39 0-.325-.372-.543-.643-.378z"/></svg></span>
+
+
+
+            <span>Deno</span>
+        </h1>
+
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/">
+    JavaScript
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/javascript/deno/" class="underline">
+                Deno
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <h2>Topics</h2>
+
+<div class="flex-container">
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            <a href="/dev-cheatsheets/cheatsheets/javascript/deno/cli/">
+                <div>
+                    
+
+
+                    <span>CLI</span>
+                </div>
+            </a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            <a href="/dev-cheatsheets/cheatsheets/javascript/deno/modules/">
+                <div>
+                    
+
+
+                    <span>Modules</span>
+                </div>
+            </a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            <a href="/dev-cheatsheets/cheatsheets/javascript/deno/package-list/">
+                <div>
+                    
+
+
+                    <span>Package list</span>
+                </div>
+            </a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </div>
+
+<br>
+
+
+    <h2>Pages</h2>
+
+    
+
+<ul class="page-list">
+    
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/javascript/deno/built-in.html">
+                    
+
+
+                    <span>Built-in</span>
+                </a></li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/javascript/deno/code.html">
+                    
+
+
+                    <span>Code</span>
+                </a></li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/javascript/deno/features.html">
+                    
+
+
+                    <span>Features</span>
+                </a></li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/javascript/deno/files.html">
+                    
+
+
+                    <span>Files</span>
+                </a></li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/javascript/deno/ignoring-rules.html">
+                    
+
+
+                    <span>Ignoring rules</span>
+                </a></li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/javascript/deno/install.html">
+                    
+
+
+                    <span>Install and upgrade Deno</span>
+                </a></li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/javascript/deno/migrating-from-node.html">
+                    
+
+
+                    <span>Migrating from Node</span>
+                </a></li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/javascript/deno/structure.html">
+                    
+
+
+                    <span>Structure</span>
+                </a></li>
+        </ul>
+
+    <br>
+
+    
+    
+        <h2>Content</h2>
+
+        <h3 id="what-is-deno">What is Deno?</h3>
+
+<p>Deno is a JavaScript runtime which is a replacement to Node.js and with a few enhancements.</p>
+
+<ul>
+  <li><a href="https://deno.land/">deno.land</a> - Deno homepage
+    <blockquote>
+      <p>A secure runtime for JavaScript and TypeScript.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="why-deno">Why Deno?</h3>
+
+<p>Are you tired of choosing and managing separate dependencies which do all these tasks? The typical NPM packages used to solve the tasks are shown in brackets.</p>
+
+<ul>
+  <li>Lint JS (ESlint)</li>
+  <li>Format JS (Prettier)</li>
+  <li>Bundle JS (Webpack, Bundler)</li>
+  <li>Transpile to older JS (Webpack, Babel)</li>
+  <li>Transpile JSX to plain JS (Webpack, Babel)</li>
+  <li>Transpile TypeScript to plain JS (TypeScript)</li>
+  <li>Run tests (Jasmine, Jest, Mocha …)</li>
+</ul>
+
+<p>Then consider using Deno. It is a modern alternative to Node.ks by the same author and it provides all the functionality just mentioned above - without installing dependencies. Deno actually used packages like ESLint and Prettier internally, you just know don’t have to care.</p>
+
+<p>Packages are managed using URLs in your code, which can be centralized in one if you prefer.</p>
+
+<p>Running Deno with the explicit permissions it needs can be cumbersone. Insteading using <code class="language-plaintext highlighter-rouge">npm</code> and <code class="language-plaintext highlighter-rouge">package.json</code> to run commands, I find that <code class="language-plaintext highlighter-rouge">make</code> and <code class="language-plaintext highlighter-rouge">Makefile</code> work well. At least for Linux and macOS where <code class="language-plaintext highlighter-rouge">make</code> is standard.</p>
+
+<h3 id="template-project">Template project</h3>
+
+<p>Get started with Deno easily by using my template project.</p>
+
+<p><a href="https://github.com/MichaelCurrin/deno-project-template"><img src="https://img.shields.io/static/v1?label=MichaelCurrin&amp;message=deno-project-template&amp;color=blue&amp;logo=github" alt="MichaelCurrin - deno-project-template" /></a></p>
+    
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

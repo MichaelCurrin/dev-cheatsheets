@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Kubernetes | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Kubernetes" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The tool that lets you manage and deploy pods of containers at scale" />
+<meta property="og:description" content="The tool that lets you manage and deploy pods of containers at scale" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Kubernetes" />
+<script type="application/ld+json">
+{"headline":"Kubernetes","description":"The tool that lets you manage and deploy pods of containers at scale","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/containers/kubernetes.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/containers/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+<span class="logo-medium"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Kubernetes</title><path fill="currentColor" d="M10.204 14.35l.007.01-.999 2.413a5.171 5.171 0 0 1-2.075-2.597l2.578-.437.004.005a.44.44 0 0 1 .484.606zm-.833-2.129a.44.44 0 0 0 .173-.756l.002-.011L7.585 9.7a5.143 5.143 0 0 0-.73 3.255l2.514-.725.002-.009zm1.145-1.98a.44.44 0 0 0 .699-.337l.01-.005.15-2.62a5.144 5.144 0 0 0-3.01 1.442l2.147 1.523.004-.002zm.76 2.75l.723.349.722-.347.18-.78-.5-.623h-.804l-.5.623.179.779zm1.5-3.095a.44.44 0 0 0 .7.336l.008.003 2.134-1.513a5.188 5.188 0 0 0-2.992-1.442l.148 2.615.002.001zm10.876 5.97l-5.773 7.181a1.6 1.6 0 0 1-1.248.594l-9.261.003a1.6 1.6 0 0 1-1.247-.596l-5.776-7.18a1.583 1.583 0 0 1-.307-1.34L2.1 5.573c.108-.47.425-.864.863-1.073L11.305.513a1.606 1.606 0 0 1 1.385 0l8.345 3.985c.438.209.755.604.863 1.073l2.062 8.955c.108.47-.005.963-.308 1.34zm-3.289-2.057c-.042-.01-.103-.026-.145-.034-.174-.033-.315-.025-.479-.038-.35-.037-.638-.067-.895-.148-.105-.04-.18-.165-.216-.216l-.201-.059a6.45 6.45 0 0 0-.105-2.332 6.465 6.465 0 0 0-.936-2.163c.052-.047.15-.133.177-.159.008-.09.001-.183.094-.282.197-.185.444-.338.743-.522.142-.084.273-.137.415-.242.032-.024.076-.062.11-.089.24-.191.295-.52.123-.736-.172-.216-.506-.236-.745-.045-.034.027-.08.062-.111.088-.134.116-.217.23-.33.35-.246.25-.45.458-.673.609-.097.056-.239.037-.303.033l-.19.135a6.545 6.545 0 0 0-4.146-2.003l-.012-.223c-.065-.062-.143-.115-.163-.25-.022-.268.015-.557.057-.905.023-.163.061-.298.068-.475.001-.04-.001-.099-.001-.142 0-.306-.224-.555-.5-.555-.275 0-.499.249-.499.555l.001.014c0 .041-.002.092 0 .128.006.177.044.312.067.475.042.348.078.637.056.906a.545.545 0 0 1-.162.258l-.012.211a6.424 6.424 0 0 0-4.166 2.003 8.373 8.373 0 0 1-.18-.128c-.09.012-.18.04-.297-.029-.223-.15-.427-.358-.673-.608-.113-.12-.195-.234-.329-.349-.03-.026-.077-.062-.111-.088a.594.594 0 0 0-.348-.132.481.481 0 0 0-.398.176c-.172.216-.117.546.123.737l.007.005.104.083c.142.105.272.159.414.242.299.185.546.338.743.522.076.082.09.226.1.288l.16.143a6.462 6.462 0 0 0-1.02 4.506l-.208.06c-.055.072-.133.184-.215.217-.257.081-.546.11-.895.147-.164.014-.305.006-.48.039-.037.007-.09.02-.133.03l-.004.002-.007.002c-.295.071-.484.342-.423.608.061.267.349.429.645.365l.007-.001.01-.003.129-.029c.17-.046.294-.113.448-.172.33-.118.604-.217.87-.256.112-.009.23.069.288.101l.217-.037a6.5 6.5 0 0 0 2.88 3.596l-.09.218c.033.084.069.199.044.282-.097.252-.263.517-.452.813-.091.136-.185.242-.268.399-.02.037-.045.095-.064.134-.128.275-.034.591.213.71.248.12.556-.007.69-.282v-.002c.02-.039.046-.09.062-.127.07-.162.094-.301.144-.458.132-.332.205-.68.387-.897.05-.06.13-.082.215-.105l.113-.205a6.453 6.453 0 0 0 4.609.012l.106.192c.086.028.18.042.256.155.136.232.229.507.342.84.05.156.074.295.145.457.016.037.043.09.062.129.133.276.442.402.69.282.247-.118.341-.435.213-.71-.02-.039-.045-.096-.065-.134-.083-.156-.177-.261-.268-.398-.19-.296-.346-.541-.443-.793-.04-.13.007-.21.038-.294-.018-.022-.059-.144-.083-.202a6.499 6.499 0 0 0 2.88-3.622c.064.01.176.03.213.038.075-.05.144-.114.28-.104.266.039.54.138.87.256.154.06.277.128.448.173.036.01.088.019.13.028l.009.003.007.001c.297.064.584-.098.645-.365.06-.266-.128-.537-.423-.608zM16.4 9.701l-1.95 1.746v.005a.44.44 0 0 0 .173.757l.003.01 2.526.728a5.199 5.199 0 0 0-.108-1.674A5.208 5.208 0 0 0 16.4 9.7zm-4.013 5.325a.437.437 0 0 0-.404-.232.44.44 0 0 0-.372.233h-.002l-1.268 2.292a5.164 5.164 0 0 0 3.326.003l-1.27-2.296h-.01zm1.888-1.293a.44.44 0 0 0-.27.036.44.44 0 0 0-.214.572l-.003.004 1.01 2.438a5.15 5.15 0 0 0 2.081-2.615l-2.6-.44-.004.005z"/></svg></span>
+
+
+
+            <span>Kubernetes</span>
+        </h1>
+
+        
+            <blockquote>
+                <p>The tool that lets you manage and deploy pods of containers at scale</p>
+
+            </blockquote>
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/containers/">
+    Containers
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/containers/kubernetes.html" class="underline">
+                Kubernetes
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <p>Also known as “k8s” for short (since the name is 8 letters long).</p>
+
+<p>Example values for commands below.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">SERVICE_NAME</code> and <code class="language-plaintext highlighter-rouge">DEPLOYMENT_NAME</code> -  <code class="language-plaintext highlighter-rouge">foobarb</code></li>
+  <li><code class="language-plaintext highlighter-rouge">PODNAME</code> - <code class="language-plaintext highlighter-rouge">foo-0f4988689-l5hfa</code></li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://michaelcurrin.github.io/dev-resources/resources/containers/kubernetes.html">Kubernetes</a> on Dev Resources.</li>
+  <li><a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/">Cheatsheet</a> on Kubernetes site.</li>
+</ul>
+
+<h2 id="services">Services</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl get services
+<span class="nv">$ </span>kubectl get svc
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME                    TYPE           CLUSTER-IP       EXTERNAL-IP            PORT(S)                      AGE
+foobarb-backend-dev      ClusterIP      10.100.104.121   &lt;none&gt;                5000/TCP                     164d
+foobarb-backend-stg      ClusterIP      10.100.218.0     &lt;none&gt;                5000/TCP                     164d
+...
+</code></pre></div></div>
+
+<p>Get external IP for a service.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl get service SERVICE_NAME
+</code></pre></div></div>
+<p>Fields:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME               TYPE           CLUSTER-IP     EXTERNAL-IP                                                               PORT(S)         AGE
+</code></pre></div></div>
+
+<p>Or use <code class="language-plaintext highlighter-rouge">svc</code> for <code class="language-plaintext highlighter-rouge">service</code> above.</p>
+
+<p>Create service</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl apply <span class="nt">-f</span> SERVICE_YAML_FILE
+</code></pre></div></div>
+
+<h2 id="pods">Pods</h2>
+
+<p>List posts.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl get pods
+<span class="nv">$ </span>kubectl get pods <span class="nt">--all-namespaces</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME                                     READY   STATUS    RESTARTS   AGE
+foobarb-backend-dev-abcdc7fdb5-wdhl4      1/1     Running   0          46h
+foobarb-backend-stg-abcd549c97-d8jn6      1/1     Running   0          14d
+...
+</code></pre></div></div>
+
+<p>Describe in long detail. Using <code class="language-plaintext highlighter-rouge">pods</code> for <code class="language-plaintext highlighter-rouge">pod</code> also works.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl describe pod POD_NAME
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Name:         foobarb-backend-stg-abcd549c97-d8jn6
+Namespace:    ...
+Priority:     0
+Node:         ip-...
+Start Time:   Thu, 21 Jan 2021 21:16:30 +0200
+Labels:       ...
+...
+</code></pre></div></div>
+
+<p>View logs in a pod. Use <code class="language-plaintext highlighter-rouge">-f</code> to update continuously. Like using <code class="language-plaintext highlighter-rouge">tail -f</code> locally on a log file.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl logs <span class="nt">-f</span> foobarb-backend-stg-abcd549c97-d8jn6
+</code></pre></div></div>
+
+<p>Start tunnel in a pod. Pass a command use <code class="language-plaintext highlighter-rouge">sh</code>, <code class="language-plaintext highlighter-rouge">/bin/sh</code>, <code class="language-plaintext highlighter-rouge">/bin/bash</code>, <code class="language-plaintext highlighter-rouge">postgresql</code> or <code class="language-plaintext highlighter-rouge">python3</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl <span class="nb">exec</span> <span class="nt">-it</span> POD <span class="nt">--</span> COMMAND
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl <span class="nb">exec</span> <span class="nt">-it</span> foobarb-backend-stg-abcd549c97-d8jn6 <span class="nt">--</span> sh
+</code></pre></div></div>
+
+<p>Note:</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">kubectl exec [POD] [COMMAND]</code> is DEPRECATED and will be removed in a future version. Use <code class="language-plaintext highlighter-rouge">kubectl exec [POD] -- [COMMAND]</code> instead.</p>
+</blockquote>
+
+<h2 id="deployment">Deployment</h2>
+
+<h3 id="list-deployments">List deployments</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl get deployments
+</code></pre></div></div>
+
+<h3 id="get-a-deployment">Get a deployment</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl get deployment DEPLOYMENT_NAME
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+foobarb-backend-stg     2/2     2            2           2d18h
+</code></pre></div></div>
+
+<p>Optionally get as long YAML output as below. Optionally write to a local YAML file.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl get deployment DEPLOYMENT_NAME <span class="nt">-o</span> yaml  <span class="c"># &gt; foo.yaml</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "12"
+    meta.helm.sh/release-name: foobarb-backend-stg
+    meta.helm.sh/release-namespace: marketing
+  creationTimestamp: "2021-01-19T18:14:59Z"
+  generation: 12
+  ...
+....
+</code></pre></div></div>
+
+<h3 id="scale">Scale</h3>
+
+<p>Scale the number of pods up or down using <code class="language-plaintext highlighter-rouge">scale</code> subcommand.</p>
+
+<p>Use a name from <code class="language-plaintext highlighter-rouge">kubectl get deployments</code> here and add a prefix.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl scale deployments/NAME <span class="nt">--replicas</span> 2
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl scale deployments/helloworld-dev <span class="nt">--replicas</span> 2
+</code></pre></div></div>
+<p>Output:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deployment.apps/helloworld-dev scaled
+</code></pre></div></div>
+
+<p>Or updating your config’s replica count and apply the config.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl apply <span class="nt">-f</span> myapp.yaml
+</code></pre></div></div>
+
+<h2 id="logs">Logs</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl get logs POD_ID
+</code></pre></div></div>
+
+<p>For example</p>
+
+<ol>
+  <li>Use <code class="language-plaintext highlighter-rouge">k get pods</code> to get a pod’s ID (which changes on running a deploy).</li>
+  <li>Then run:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>kubectl get logs foobarb-backend-stg-abcd55cdc4-7qqxz
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="secrets">Secrets</h2>
+
+<ul>
+  <li><a href="https://kubernetes.io/docs/concepts/configuration/secret/">Secrets</a> docs</li>
+</ul>
+
+<h3 id="get-secret">Get secret</h3>
+
+<p>Summary:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl get secrets
+</code></pre></div></div>
+
+<p>Detailed:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl get secret SECRET_NAME <span class="nt">-o</span> yaml
+</code></pre></div></div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl get secret SECRET_NAME <span class="nt">-o</span> json
+</code></pre></div></div>
+
+<h3 id="create-secret">Create secret</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl create secret generic SECRET_NAME <span class="nt">--from-file</span><span class="o">=</span>username.txt <span class="nt">--from-file</span><span class="o">=</span>password.txt
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl create secret generic SECRET_NAME <span class="nt">--from-literal</span><span class="o">=</span><span class="nv">username</span><span class="o">=</span>foo <span class="nt">--from-literal</span><span class="o">=</span><span class="nv">password</span><span class="o">=</span><span class="s1">'S!B\*d$zDsb'</span>
+</code></pre></div></div>
+
+<h3 id="edit">Edit</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl edit secrets SECRET_NAME
+</code></pre></div></div>
+
+<h3 id="dump-secrets">Dump secrets</h3>
+
+<p>Create a YAML file for each secret available.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl get <span class="nt">--no-headers</span> secret | <span class="se">\</span>
+    <span class="nb">awk</span> <span class="s1">'{print $1}'</span> | <span class="se">\</span>
+    xargs <span class="nt">-I</span><span class="o">{}</span> sh <span class="nt">-c</span> <span class="s1">'kubectl get secret -o yaml "$1" &gt; "$1.yaml"'</span> - <span class="o">{}</span>
+</code></pre></div></div>
+
+<h2 id="man-page">Man page</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl <span class="nt">--help</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl controls the Kubernetes cluster manager.
+
+ Find more information at: https://kubernetes.io/docs/reference/kubectl/overview/
+
+Basic Commands (Beginner):
+  create         Create a resource from a file or from stdin.
+  expose         Take a replication controller, service, deployment or pod and expose it as a new Kubernetes Service
+  run            Run a particular image on the cluster
+  set            Set specific features on objects
+
+Basic Commands (Intermediate):
+  explain        Documentation of resources
+  get            Display one or many resources
+  edit           Edit a resource on the server
+  delete         Delete resources by filenames, stdin, resources and names, or by resources and label selector
+
+Deploy Commands:
+  rollout        Manage the rollout of a resource
+  scale          Set a new size for a Deployment, ReplicaSet, Replication Controller, or Job
+  autoscale      Auto-scale a Deployment, ReplicaSet, or ReplicationController
+
+Cluster Management Commands:
+  certificate    Modify certificate resources.
+  cluster-info   Display cluster info
+  top            Display Resource (CPU/Memory/Storage) usage.
+  cordon         Mark node as unschedulable
+  uncordon       Mark node as schedulable
+  drain          Drain node in preparation for maintenance
+  taint          Update the taints on one or more nodes
+
+Troubleshooting and Debugging Commands:
+  describe       Show details of a specific resource or group of resources
+  logs           Print the logs for a container in a pod
+  attach         Attach to a running container
+  exec           Execute a command in a container
+  port-forward   Forward one or more local ports to a pod
+  proxy          Run a proxy to the Kubernetes API server
+  cp             Copy files and directories to and from containers.
+  auth           Inspect authorization
+
+Advanced Commands:
+  diff           Diff live version against would-be applied version
+  apply          Apply a configuration to a resource by filename or stdin
+  patch          Update field(s) of a resource using strategic merge patch
+  replace        Replace a resource by filename or stdin
+  wait           Experimental: Wait for a specific condition on one or many resources.
+  convert        Convert config files between different API versions
+  kustomize      Build a kustomization target from a directory or a remote url.
+
+Settings Commands:
+  label          Update the labels on a resource
+  annotate       Update the annotations on a resource
+  completion     Output shell completion code for the specified shell (bash or zsh)
+
+Other Commands:
+  api-resources  Print the supported API resources on the server
+  api-versions   Print the supported API versions on the server, in the form of "group/version"
+  config         Modify kubeconfig files
+  plugin         Provides utilities for interacting with plugins.
+  version        Print the client and server version information
+
+Usage:
+  kubectl [flags] [options]
+
+Use "kubectl &lt;command&gt; --help" for more information about a given command.
+Use "kubectl options" for a list of global command-line options (applies to all commands).
+</code></pre></div></div>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

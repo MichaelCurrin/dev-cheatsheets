@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Edit | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Edit" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Workflows to edit various details of an existing commit" />
+<meta property="og:description" content="Workflows to edit various details of an existing commit" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commiting/edit.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commiting/edit.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Edit" />
+<script type="application/ld+json">
+{"headline":"Edit","description":"Workflows to edit various details of an existing commit","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commiting/edit.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/version-control/git/commiting/edit.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/version-control/git/commiting/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>Edit</span>
+        </h1>
+
+        
+            <blockquote>
+                <p>Workflows to edit various details of an existing commit</p>
+
+            </blockquote>
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/version-control/">
+    Version control
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/version-control/git/">
+    Git
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="">
+    
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/version-control/git/commiting/edit.html" class="underline">
+                Edit
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <p>You are about to edit commits locally. This changes the Git <strong>history</strong>.</p>
+
+<p>Rather than adding on top of it with new commits.</p>
+
+<p>A <code class="language-plaintext highlighter-rouge">git revert</code> commit is a good way of undoing work <em>without</em> changing the history.</p>
+
+<p>See also: <a href="https://git-scm.com/docs/git-rebase">git rebase</a> docs.</p>
+
+<h2 id="changing-history">Changing history</h2>
+
+<h3 id="a-warning-about-editing">A warning about editing</h3>
+
+<p>Before deciding to edit commit locally (whether the message, contents, whatever).</p>
+
+<p>Check if you have <strong>already pushed</strong> the commit.</p>
+
+<p>If you have <strong>not pushed</strong> yet, then nothing to worry about.</p>
+
+<p>But if you <strong>have pushed</strong> already, then after your edit, you are going to need to do a <strong>force push</strong> to replace the existing commits on GitHub with your altered commits. This is usually fine if you are the <strong>only</strong> one working on a feature branch. And sometimes it might be okay to do it on <strong>master</strong> or **main.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git push <span class="nt">--force</span>
+<span class="nv">$ </span><span class="c"># Or preferably the safer option.</span>
+<span class="nv">$ </span>git push <span class="nt">--force-with-lease</span>
+</code></pre></div></div>
+
+<p>If there are other machines (your own or someone elses which have the old commits and you push your new ones, they may get surprised and will have to resolve conflicts.</p>
+
+<h3 id="pulling-in-forced-pushed-commits-on-another-machine">Pulling in forced-pushed commits on another machine</h3>
+
+<p>Here are two ways to drop the old history and use the new ones. Note if there are any unpushed changes on the old history, these will be lost.</p>
+
+<ul>
+  <li>Delete and recreate branch.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>git branch <span class="nt">-D</span> my-feature
+  <span class="nv">$ </span>git fetch
+  <span class="nv">$ </span>git checkout <span class="nt">-b</span> my-feature
+</code></pre></div>    </div>
+  </li>
+  <li>Point a local branch and the latest force-pushed commit on GitHub.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout my-feature
+<span class="nv">$ </span>git fetch
+<span class="nv">$ </span>git reset <span class="nt">--hard</span> origin/my-feature
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="edit-latest-commit">Edit latest commit</h2>
+
+<p>This is an easy approach but only works for the <strong>most recent commit</strong>.</p>
+
+<p>Here we get the chance to edit the commit message of the commit in the prompt that comes up.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit
+
+<span class="nv">$ </span>git commit <span class="nt">--amend</span>
+</code></pre></div></div>
+
+<p>If you committed some files but accidentally left some out, you can add them to the last commit.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit
+
+<span class="nv">$ </span><span class="c"># Edit foo.txt and bar.sh</span>
+<span class="nv">$ </span><span class="c"># ...</span>
+
+<span class="nv">$ </span><span class="c"># Commit both changed files.</span>
+<span class="nv">$ </span>git commit <span class="nb">.</span> <span class="nt">--amend</span>
+</code></pre></div></div>
+
+<p>If you prefer more precision, add just the one changed file:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit foo.txt <span class="nt">--amend</span>
+</code></pre></div></div>
+
+<p>If you prefer to stage first or made a new file:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git add foo.txt bar.sh
+<span class="nv">$ </span>git commit <span class="nt">--amend</span>
+</code></pre></div></div>
+
+<h2 id="edit-multiple-commits">Edit multiple commits</h2>
+
+<p>Edit any number of commits in your history. A certain commit in your history, multiple commits, or even all commits (like if you want to change the email).</p>
+
+<h3 id="interactive-rebase">Interactive rebase</h3>
+
+<p>Start an interactive rebase with a reference to a commit to rebase on top of.</p>
+
+<p>If you want to change the last 3 commits, then would do this:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git rebase <span class="nt">-i</span> HEAD~3
+</code></pre></div></div>
+
+<p>This describes the following:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">HEAD</code> - current commit.</li>
+  <li><code class="language-plaintext highlighter-rouge">HEAD~</code> - one commit before current.</li>
+  <li><code class="language-plaintext highlighter-rouge">HEAD~2</code> - two commits before current.</li>
+  <li><code class="language-plaintext highlighter-rouge">HEAD~</code> - three commits back. This will <strong>not</strong> be edited, but we will rebase on <strong>top</strong> of this commit.</li>
+</ul>
+
+<p>You’ll get an editor prompt like this, showing the 3 commits we are editing.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pick 2d2bf05 Latest message
+pick e624deb One back message
+pick f6f2295 Two back message
+
+# Rebase 69e697c..f6f2295 onto 69e697c (3 commands)
+</code></pre></div></div>
+
+<p>At the bottom, you’ll see a commented section with options available.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Commands:
+#  p, pick = use commit
+#  r, reword = use commit, but edit the commit message
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#  f, fixup = like "squash", but discard this commit's log message
+#  x, exec = run command (the rest of the line) using shell
+</code></pre></div></div>
+
+<p>You’ll have to change at least one <code class="language-plaintext highlighter-rouge">pick</code> keyword to another option, then save, so you get to edit some commits.</p>
+
+<p>All options described in the <a href="https://docs.github.com/en/github/using-git/about-git-rebase">GitHub docs</a>.</p>
+
+<p>Some are covered next in more detail.</p>
+
+<h3 id="pick-commit">Pick commit</h3>
+
+<p>The word <code class="language-plaintext highlighter-rouge">pick</code> means you want to <strong>keep</strong> the commit in your commit history (i.e. don’t drop it), but that you <strong>don’t</strong> want to edit it.</p>
+
+<h3 id="edit-commit-message">Edit commit message</h3>
+
+<p>Using the interactive mode above, we can edit the wording of a commit message without changing the diff.</p>
+
+<p>Change one or more of the <code class="language-plaintext highlighter-rouge">pick</code> keywords to either <code class="language-plaintext highlighter-rouge">r</code> or <code class="language-plaintext highlighter-rouge">reword</code>.</p>
+
+<p>e.g.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reword 2d2bf05 Latest message
+pick e624deb One back message
+reword f6f2295 Two back message
+</code></pre></div></div>
+
+<p>Then save that message.</p>
+
+<p>You will then get prompted <strong>one commit at a time</strong> to write a new commit message and save it. You can over course save without changing.</p>
+
+<p>After the last one is done, you’ll see that the rebase is done.</p>
+
+<p>Then you can check like this:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git log
+</code></pre></div></div>
+
+<p>You’ll see the commit messages changes. And the commit hashes will be different - starting from the earliest commit you changed and then affecting every commit after that too (a commit hash depends on the hash of the commit before it).</p>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

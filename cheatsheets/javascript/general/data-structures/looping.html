@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Looping | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Looping" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Guide to iterating over iterables in JavaScript" />
+<meta property="og:description" content="Guide to iterating over iterables in JavaScript" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/data-structures/looping.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/data-structures/looping.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Looping" />
+<script type="application/ld+json">
+{"headline":"Looping","description":"Guide to iterating over iterables in JavaScript","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/data-structures/looping.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/javascript/general/data-structures/looping.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/javascript/general/data-structures/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>Looping</span>
+        </h1>
+
+        
+            <blockquote>
+                <p>Guide to iterating over iterables in JavaScript</p>
+
+            </blockquote>
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/">
+    JavaScript
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/general/">
+    General
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/general/data-structures/">
+    Data structures
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/javascript/general/data-structures/looping.html" class="underline">
+                Looping
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <p>See <a href="/dev-cheatsheets/cheatsheets/javascript/general/map-reduce-filter.html">map, reduce and filter</a> page for how to apply <code class="language-plaintext highlighter-rouge">map</code> to an array.</p>
+
+<p>See the <a href="/dev-cheatsheets/cheatsheets/javascript/general/data-structures/unpack.html">Unpack</a> page for unpacking variables without necessarily using a for loop.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>Nothing is simple in JavaScript. How do I iterate over an object? Well there are a few days, more than usual in a programming language.</p>
+
+<p>Click a link to jump to that section of this guide.</p>
+
+<ul>
+  <li><a href="#for">for</a>
+    <ul>
+      <li><a href="#using-index">Using index</a>
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">iterableLength</span><span class="p">;</span> <span class="nx">index</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+      <li><a href="#using-for...in">Using for…in</a>
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+      <li><a href="#using-for...of">Using for…of</a>
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">item</span> <span class="k">of</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">myArray</span><span class="p">))</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">myAssociativeArray</span><span class="p">))</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#map">map</a>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">iterable</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">expression</span><span class="p">)</span>
+
+  <span class="nx">iterable</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">expression</span>
+  <span class="p">})</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="#forEach">forEach</a>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">iterable</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">expression</span><span class="p">)</span>
+
+  <span class="nx">iterable</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">expression</span>
+  <span class="p">})</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="for">for</h2>
+
+<h3 id="using-index-in-a-c-style-loop">Using index in a C-style loop</h3>
+
+<p>The old-fashioned index-based loop, based on the C and Java languages.</p>
+
+<p>Please <em>don’t</em> use this style in your JS, unless you have a good reason to.</p>
+
+<ul>
+  <li>The code is verbose and unnecessarily complex.</li>
+  <li>If you <em>do</em> need the value <em>and</em> the array index (or hash key), then there is a cleaner way. See to <a href="#using-for...of">for…of</a> section.</li>
+  <li>If you <em>do</em> need to get the index only, then use <a href="#using-for...in">for…in</a>.</li>
+</ul>
+
+<p>Traditionally, this style was done using <code class="language-plaintext highlighter-rouge">var</code>, but <code class="language-plaintext highlighter-rouge">let</code> is the modern way for block scoping.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// 0</span>
+<span class="c1">// 1</span>
+<span class="c1">// 2</span>
+</code></pre></div></div>
+
+<p>Here we loop over an array using an index and the get the value on each iteration.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">iterable</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">iterableLength</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">iterable</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// a</span>
+<span class="c1">// b</span>
+<span class="c1">// c</span>
+</code></pre></div></div>
+
+<p>Example of building a new array. This would be more elegantly done with <code class="language-plaintext highlighter-rouge">map</code> or <a href="#using-for...of">for…of</a>, but, anyway here it is as a C-style loop.</p>
+
+<p>The value of <code class="language-plaintext highlighter-rouge">i</code> is <code class="language-plaintext highlighter-rouge">0</code> initially, then incremented to <code class="language-plaintext highlighter-rouge">1</code> and <code class="language-plaintext highlighter-rouge">2</code>. When it becomes <code class="language-plaintext highlighter-rouge">3</code>, it is then longer than the length of the array (<code class="language-plaintext highlighter-rouge">letters.length</code> is <code class="language-plaintext highlighter-rouge">3</code>) so stops.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">letters</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">]</span>
+
+<span class="kd">let</span> <span class="nx">upper</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">letters</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+
+  <span class="kd">const</span> <span class="nx">u</span> <span class="o">=</span> <span class="nx">letters</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">toUpperCase</span><span class="p">()</span>
+  <span class="nx">upper</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">u</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// 0</span>
+<span class="c1">// 1</span>
+<span class="c1">// 2</span>
+
+<span class="nx">upper</span>
+<span class="c1">// [ "A", "B", "C" ]</span>
+</code></pre></div></div>
+
+<p>Some prefer to use <code class="language-plaintext highlighter-rouge">++i</code> to <code class="language-plaintext highlighter-rouge">i++</code>. Some argue that this is faster but will give the same result (the increment still happens at the end of the iteration, just the returning and checking the value changes).</p>
+
+<p>If you need to count <em>down</em>:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">letters</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// 3</span>
+<span class="c1">// 2</span>
+<span class="c1">// 1</span>
+</code></pre></div></div>
+
+<h3 id="using-forin">Using for…in</h3>
+
+<p>Get the index using <code class="language-plaintext highlighter-rouge">in</code>.</p>
+
+<p>This gets the index much like the C-style approach, but this shorter i.e. no need for <code class="language-plaintext highlighter-rouge">i++</code> etc..</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>What if you want an array index or associative array key, as well as the value?
+It is possible as shown with the examples below, but is it verbose and inefficient. See the <a href="#using-for...of">for…of</a> section for a more elegant way rather.</p>
+
+<p>Example using an array.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">letters</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">letters</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">letters</span><span class="p">[</span><span class="nx">index</span><span class="p">])</span>
+<span class="p">}</span>
+<span class="c1">// 0 a</span>
+<span class="c1">// 1 b</span>
+<span class="c1">// 2 c</span>
+</code></pre></div></div>
+
+<p>Get a key and value. Based on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in">for…in</a> docs.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span> <span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">foo</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">foo</span><span class="p">[</span><span class="nx">key</span><span class="p">])</span>
+<span class="p">}</span>
+<span class="c1">// a 1</span>
+<span class="c1">// b 2</span>
+<span class="c1">// c 3</span>
+</code></pre></div></div>
+
+<h3 id="using-forof">Using for…of</h3>
+
+<p>Get the items using <code class="language-plaintext highlighter-rouge">of</code>, without having to deal with the index.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">item</span> <span class="k">of</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>In Python:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+    <span class="c1"># expression
+</span></code></pre></div></div>
+
+<p>See examples below for how to get the index or key and value at once - no need for a C style loop.</p>
+
+<h4 id="array">Array</h4>
+
+<p>Based on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">for…of</a> docs.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">letters</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">letter</span> <span class="k">of</span> <span class="nx">letters</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">letter</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// a</span>
+<span class="c1">// b</span>
+<span class="c1">// c</span>
+</code></pre></div></div>
+
+<p>Get the index <em>and</em> the value, using <code class="language-plaintext highlighter-rouge">Object.entries</code>. Compare wih <code class="language-plaintext highlighter-rouge">enumerate</code> in Python.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">letters</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">letter</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">letters</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">letter</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// 0 a</span>
+<span class="c1">// 1 b</span>
+<span class="c1">// 2 c</span>
+</code></pre></div></div>
+
+<h4 id="string">String</h4>
+
+<p>Iterate over a string.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">letters</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">letter</span> <span class="k">of</span> <span class="nx">letters</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">letter</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// a</span>
+<span class="c1">// b</span>
+<span class="c1">// c</span>
+</code></pre></div></div>
+
+<h4 id="associative-array">Associative array</h4>
+
+<p>Iterate over an <code class="language-plaintext highlighter-rouge">Object</code> of key-value pairs. Note that <code class="language-plaintext highlighter-rouge">foo</code> is <strong>not</strong> an iterable, so you have to pass it to something to avoid an error.</p>
+
+<h5 id="keys">Keys</h5>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span> <span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">key</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">foo</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// a</span>
+<span class="c1">// b</span>
+<span class="c1">// c</span>
+</code></pre></div></div>
+
+<h5 id="values">Values</h5>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span> <span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">key</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">foo</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// 1</span>
+<span class="c1">// 2</span>
+<span class="c1">// 3</span>
+</code></pre></div></div>
+
+<h5 id="keys-and-values">Keys and values</h5>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span> <span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">foo</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// a 1</span>
+<span class="c1">// b 2</span>
+<span class="c1">// c 3</span>
+</code></pre></div></div>
+
+<h4 id="map">Map</h4>
+
+<p>Iterate over a <code class="language-plaintext highlighter-rouge">Map</code> object.</p>
+
+<p>Keys and values.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">]</span> <span class="p">);</span>
+<span class="c1">// Map(3) { a → 1, b → 2, c → 3 }</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nx">foo</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// a 1</span>
+<span class="c1">// b 2</span>
+<span class="c1">// c 3</span>
+</code></pre></div></div>
+
+<p>To understanding the unpacking, see use with tuples.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">pair</span> <span class="k">of</span> <span class="nx">foo</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pair</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// ['a', 1]</span>
+<span class="c1">// ['b', 2]</span>
+<span class="c1">// ['c', 3]</span>
+</code></pre></div></div>
+
+<h3 id="for-await-of">for await of</h3>
+
+<p>A variation of a <code class="language-plaintext highlighter-rouge">for</code> loop, for async code.</p>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of">for await…of</a>
+    <blockquote>
+      <p>loop iterating over async iterable objects as well as on sync iterables</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>I guess this is useful if you have an array of Promises.</p>
+
+<p>I think the for await approach runs them independently and carries on the when they are all done, like using <code class="language-plaintext highlighter-rouge">Promise.all</code>.</p>
+
+<h4 id="syntax">Syntax</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="k">await</span> <span class="p">(</span><span class="nx">variable</span> <span class="k">of</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">statement</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="example">Example</h3>
+
+<p>Use either:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">myAsyncIterable</code> - some object that explicitly implements async iterable protocol.</li>
+  <li><code class="language-plaintext highlighter-rouge">myAsyncGenerator()</code> - some async generator function, which already conforms to the async iterable protocol.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">async</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">for</span> <span class="k">await</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">value</span> <span class="k">of</span> <span class="nx">myAsyncIterable</span><span class="p">)</span> <span class="p">{</span>
+     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">})();</span>
+
+<span class="c1">// 0</span>
+<span class="c1">// 1</span>
+<span class="c1">// 2</span>
+</code></pre></div></div>
+
+<h2 id="map-1">map</h2>
+
+<p>The modern way of doing loops.</p>
+
+<p>This is based on <code class="language-plaintext highlighter-rouge">map</code> function in Functional Progamming languages like Haskell. See also <code class="language-plaintext highlighter-rouge">map</code> function and <em>list comprehensions</em> in Python.</p>
+
+<p>It is useful for performing a transformation on an array without side effects (while a <code class="language-plaintext highlighter-rouge">for</code> or <code class="language-plaintext highlighter-rouge">.forEach</code> loop accesses a variable outsides its scope block normally). You can also chain multiple <code class="language-plaintext highlighter-rouge">.map</code> calls together and use them with <code class="language-plaintext highlighter-rouge">.filter</code> and <code class="language-plaintext highlighter-rouge">.reduce</code>.</p>
+
+<h3 id="syntax-1">Syntax</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">iterable</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">expression</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="example-1">Example</h3>
+
+<p>Here we create a new array with the new values in it, passing an arrow function with no side effects. This makes for cleaner and more efficient and reliable code. As we don’t have initialize an array and push values to it.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">letters</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">]</span>
+
+<span class="kd">const</span> <span class="nx">upper</span> <span class="o">=</span> <span class="nx">letters</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">())</span>
+<span class="nx">upper</span>
+<span class="c1">// [ "A", "B", "C" ]</span>
+
+<span class="c1">// Log without storing a result.</span>
+<span class="nx">letters</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()))</span>
+<span class="c1">// A</span>
+<span class="c1">// B</span>
+<span class="c1">// C</span>
+</code></pre></div></div>
+
+<h2 id="foreach">forEach</h2>
+
+<p>Unlike <code class="language-plaintext highlighter-rouge">.map</code>, this returns <code class="language-plaintext highlighter-rouge">undefined</code> so can’t be used for chaining expressions or returning an array. Rather use <code class="language-plaintext highlighter-rouge">.map</code> as a drop-in replacement wherever you see <code class="language-plaintext highlighter-rouge">.forEach</code>.</p>
+
+<p>The performance of <code class="language-plaintext highlighter-rouge">.map</code> is supposed to be faster than <code class="language-plaintext highlighter-rouge">.forEach</code>, though speed tests show mixed results.</p>
+
+<h3 id="syntax-2">Syntax</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">iterable</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">expression</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="examples">Examples</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">letters</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">]</span>
+
+<span class="nx">letters</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()))</span>
+<span class="c1">// A</span>
+<span class="c1">// B</span>
+<span class="c1">// C</span>
+</code></pre></div></div>
+
+<p>It also returns <code class="language-plaintext highlighter-rouge">undefined</code>, so if you want to persist values you need to initalize an array and push to it.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">letters</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">]</span>
+
+<span class="kd">let</span> <span class="nx">upper</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nx">letters</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">u</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span>
+    <span class="nx">upper</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">u</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="nx">upper</span>
+<span class="c1">// [ "A", "B", "C" ]</span>
+</code></pre></div></div>
+
+<p>See also <code class="language-plaintext highlighter-rouge">.each</code> in Ruby:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="nb">puts</span> <span class="s2">"Number: </span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2">"</span> <span class="p">}</span>
+</code></pre></div></div>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Strings | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Strings" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/scripting/strings.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/scripting/strings.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Strings" />
+<script type="application/ld+json">
+{"headline":"Strings","description":"A collection of code snippets and CLI guides for quick and easy reference while coding","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/scripting/strings.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/shell/scripting/strings.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/shell/scripting/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>Strings</span>
+        </h1>
+
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/shell/">
+    Shell
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/shell/scripting/">
+    Scripting
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/shell/scripting/strings.html" class="underline">
+                Strings
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <h2 id="about">About</h2>
+
+<p>Everything is Unix systems is either a string (text stream) or binary data (like an image).</p>
+
+<p>In Bash, there is no integer or boolean. Just strings. See also <a href="/dev-cheatsheets/cheatsheets/shell/scripting/arrays.html">Arrays</a> and <a href="/dev-cheatsheets/cheatsheets/shell/scripting/associative-arrays.html">Associative arrays</a> cheatsheets.</p>
+
+<p>Also if you want a special character to be a plain string, you must quote it. e.g. Using <code class="language-plaintext highlighter-rouge">&gt;</code> vs <code class="language-plaintext highlighter-rouge">'&gt;'</code>.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="o">&gt;</span>
+<span class="go">zsh: parse error near `\n'
+</span></code></pre></div></div>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s1">'&gt;'</span>
+<span class="gp">&gt;</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="quoting-strings">Quoting strings</h2>
+
+<h3 id="single-quotes">Single quotes</h3>
+
+<p>Use <strong>single quotes</strong> for a literal string that is not evaluated.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">X</span><span class="o">=</span><span class="s1">'Hello, $(whoami) / $USER'</span>
+
+<span class="nb">echo</span> <span class="s2">"</span><span class="nv">$X</span><span class="s2">"</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, Hello, $(whoami) / $USER'
+</code></pre></div></div>
+
+<h3 id="double-equotes">Double equotes</h3>
+
+<p>Use <strong>double quotes</strong> to evaluate.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">X</span><span class="o">=</span><span class="s2">"Hello, </span><span class="si">$(</span><span class="nb">whoami</span><span class="si">)</span><span class="s2"> / </span><span class="nv">$USER</span><span class="s2">!"</span>
+
+<span class="nb">echo</span> <span class="s2">"</span><span class="nv">$X</span><span class="s2">"</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, mcurrin / mcurrin!
+</code></pre></div></div>
+
+<h3 id="no-quotes">No quotes</h3>
+
+<p>The expression will be evaluated.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo </span>Hello
+<span class="go">Hello
+</span></code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo </span>Hello <span class="nv">$USER</span> / <span class="si">$(</span><span class="nb">whoami</span><span class="si">)</span>
+<span class="go">Hello mcurrin / mcurrin
+</span></code></pre></div></div>
+<p>If the value is multiple words (separated by space or newline), then the value will be spread out.</p>
+
+<h2 id="when-to-quote">When to quote</h2>
+
+<p>Quotes are usually optional.</p>
+
+<p>Sometimes they make a difference.</p>
+
+<h3 id="empty-values">Empty values</h3>
+
+<p>Such as if a variable is empty.</p>
+
+<p>This will cause a syntax error if <code class="language-plaintext highlighter-rouge">FOO</code> is not set or empty.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span> <span class="nt">-z</span> <span class="nv">$FOO</span> <span class="o">]</span>
+</code></pre></div></div>
+
+<p>This will be safe.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$FOO</span><span class="s2">"</span> <span class="o">]</span>
+</code></pre></div></div>
+
+<h3 id="words">Words</h3>
+
+<p>If a variable multiple words, with a space or newlinws, but you want a single string.</p>
+
+<p>Important for a file path with spaces.</p>
+
+<p>OK:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> <span class="s2">"My Projects"</span>
+</code></pre></div></div>
+
+<p>Error:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>My Projects
+</code></pre></div></div>
+
+<p>The same goes for passing arguments using a variable.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ TARGET</span><span class="o">=</span><span class="s2">"My Projects"</span>
+<span class="nv">$ </span><span class="c"># OK</span>
+<span class="nv">$ </span><span class="nb">cd</span> <span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">"</span>
+
+<span class="nv">$ </span><span class="c"># Error because it sees `My` and `Projects` as two arguments.</span>
+<span class="nv">$ </span><span class="nb">cd</span> <span class="nv">$TARGET</span>
+</code></pre></div></div>
+
+<p>Or a URL that has spaces in it. You can also use <code class="language-plaintext highlighter-rouge">%20</code> in place of spaces.</p>
+
+<p>OK:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="s2">"https://example.com/My Projects"</span>
+<span class="nv">$ </span>curl <span class="s2">"https://example.com/My%20Projects"</span>
+</code></pre></div></div>
+
+<p>Error - this would pass two arguments.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl https://example.com/My Projects
+</code></pre></div></div>
+
+<h3 id="expanding-paths">Expanding paths</h3>
+
+<p>If you using a glob like <code class="language-plaintext highlighter-rouge">*</code> or the user directory like <code class="language-plaintext highlighter-rouge">~</code>, you probably want those outside of any quotes to avoid literal evaluate.</p>
+
+<p>OK:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/Documents
+</code></pre></div></div>
+
+<p>Will give an error.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> <span class="s2">"~/Documents"</span>
+</code></pre></div></div>
+
+<p>If you need quotes, use <code class="language-plaintext highlighter-rouge">$HOME</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> <span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/Documents"</span>
+</code></pre></div></div>
+
+<h3 id="multi-line-strings">Multi-line strings</h3>
+
+<h4 id="using-enter">Using enter</h4>
+
+<p>Just press enter for a newline, in single or double quotes.</p>
+
+<p>Nothing special is needed like in other languages to include multiple lines.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">X</span><span class="o">=</span><span class="s1">'Hello,
+world'</span>
+
+<span class="nb">echo</span> <span class="s2">"</span><span class="nv">$X</span><span class="s2">"</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello,
+world
+</code></pre></div></div>
+
+<h4 id="using-escaped-newline-character">Using escaped newline character</h4>
+
+<p>You can also use <code class="language-plaintext highlighter-rouge">\n</code> for a newline. But you need to use <code class="language-plaintext highlighter-rouge">-e</code> flag to evaulate newlines (need in Bash but ZSH doesn’t need the flag).</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">X</span><span class="o">=</span><span class="s2">"A</span><span class="se">\n</span><span class="s2">B</span><span class="se">\n</span><span class="s2">C"</span>
+<span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="nv">$X</span><span class="s2">"</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A
+B
+C
+</code></pre></div></div>
+
+<p>Or using <code class="language-plaintext highlighter-rouge">echo</code> directly:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"ABC</span><span class="se">\n</span><span class="s2">DEF</span><span class="se">\n</span><span class="s2">GHI"</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ABC\nDEF\nGHI
+</code></pre></div></div>
+
+<p>With <code class="language-plaintext highlighter-rouge">-e</code> flag.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"ABC</span><span class="se">\n</span><span class="s2">DEF</span><span class="se">\n</span><span class="s2">GHI"</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ABC
+DEF
+GHI
+</code></pre></div></div>
+
+<p>Using <code class="language-plaintext highlighter-rouge">printf</code>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">printf</span> <span class="s1">'ABC\nDEF\nGHI\n'</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ABC
+DEF
+GHI
+</code></pre></div></div>
+
+<p>Or <code class="language-plaintext highlighter-rouge">print</code>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print <span class="s1">'ABC\nDEF\nGHI'</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ABC
+DEF
+GHI
+</code></pre></div></div>
+
+<h4 id="skip-first-line">Skip first line.</h4>
+
+<p>For indentation reason, you might want to leave text off of the first line. Use the <code class="language-plaintext highlighter-rouge">\</code> symbol to split your command so you start the string on the next line.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="se">\</span>
+<span class="s1">'First line
+Second line'</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>First line
+second line
+</code></pre></div></div>
+
+<p>Note that this does <strong>not</strong> work. It adds a literal backslash. But in JavaScript or Python, this approach works.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'\
+First line
+Second line'</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\
+First line
+Second line
+</code></pre></div></div>
+
+<h3 id="escaping-quotes">Escaping quotes</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"With 'single' quotes"</span>
+<span class="nb">echo</span> <span class="s1">'With "double" quotes'</span>
+
+<span class="nb">echo</span> <span class="s1">'With \'</span>escaped single<span class="se">\'</span> quotes<span class="s1">'
+echo "With \"escaped single\" quotes"
+</span></code></pre></div></div>
+
+<p>If you need to use single and double quotes in the same string and don’t want to use <code class="language-plaintext highlighter-rouge">\</code> to escape them, then read on for the heredoc belo.</p>
+
+<h3 id="defaults">Defaults</h3>
+
+<p>Set a default value in case a variable is not set.</p>
+
+<p>The syntax here is within <code class="language-plaintext highlighter-rouge">${}</code> substitution, as <code class="language-plaintext highlighter-rouge">${VARIABLE:-DEFAULT}</code>.</p>
+
+<p>e.g.</p>
+
+<p>No default supplied - result is empty string.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"Hello, </span><span class="k">${</span><span class="nv">NAME</span><span class="k">}</span><span class="s2">"</span>
+<span class="go">Hello,
+</span></code></pre></div></div>
+
+<p>With default/fallback set from string literal.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"Hello, </span><span class="k">${</span><span class="nv">NAME</span><span class="k">:-</span><span class="nv">World</span><span class="k">}</span><span class="s2">"</span>
+<span class="go">Hello, World
+</span><span class="gp">$</span><span class="w"> </span><span class="nv">NAME</span><span class="o">=</span>developer <span class="nb">echo</span> <span class="s2">"Hello, </span><span class="k">${</span><span class="nv">NAME</span><span class="k">:-</span><span class="nv">World</span><span class="k">}</span><span class="s2">"</span>
+<span class="go">Hello, developer
+</span></code></pre></div></div>
+
+<p>With default/fallback set from a variable.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nv">DEFAULT_NAME</span><span class="o">=</span><span class="s1">'World'</span>
+<span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"Hello, </span><span class="k">${</span><span class="nv">NAME</span><span class="k">:-</span><span class="nv">$DEFAULT_NAME</span><span class="k">}</span><span class="s2">"</span>
+<span class="go">Hello, World
+</span><span class="gp">$</span><span class="w"> </span><span class="nv">NAME</span><span class="o">=</span>developer <span class="nb">echo</span> <span class="s2">"Hello, </span><span class="k">${</span><span class="nv">NAME</span><span class="k">:-</span><span class="nv">$DEFAULT_NAME</span><span class="k">}</span><span class="s2">"</span>
+<span class="go">Hello, developer
+</span></code></pre></div></div>
+
+<h2 id="heredoc-strings">Heredoc strings</h2>
+
+<p>See <a href="https://linuxize.com/post/bash-heredoc/">guide</a>.</p>
+
+<p>Bash supports a <em>heredoc</em>:</p>
+
+<ul>
+  <li>This lets you create a string which implicitly escapes all single and double quotes, letting you write a clean string.</li>
+  <li>Typically, a heredoc is used for writing multi-line strings, but you don’t have it.</li>
+  <li>You might use it for a literal string or evaluate expressions.</li>
+</ul>
+
+<p>For most cases, I don’t need a heredoc. A standard single or double-quoted string works well - including for multiple lines.</p>
+
+<p>But, the heredoc does have the advantage that you can use single and double quotes inside the string without escaping them, as your string terminator will be <code class="language-plaintext highlighter-rouge">EOF</code> for example.</p>
+
+<h3 id="syntax">Syntax</h3>
+
+<p>Note you can use anything, but <code class="language-plaintext highlighter-rouge">EOF</code> is the common term to start and end the shell heredoc.</p>
+
+<p>The last occurence should be on a line of its own, without indentation and without characters after it.</p>
+
+<p>In one situation, I found <code class="language-plaintext highlighter-rouge">EOF)</code> as the last line was actually valid in my shell, but in a CI flow I got a linting error.</p>
+
+<h3 id="evaluated-string-heredoc">Evaluated string heredoc</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+CONTENT
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<p>Example:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+Line 1
+Line 2
+You are </span><span class="si">$(</span><span class="nb">whoami</span><span class="si">)</span><span class="sh">
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Line 1
+Line 2
+You are mcurrin
+</code></pre></div></div>
+
+<p>Works with <code class="language-plaintext highlighter-rouge">cat</code> but not <code class="language-plaintext highlighter-rouge">echo</code>.</p>
+
+<p>You can use anything at the start and end, but <code class="language-plaintext highlighter-rouge">EOF</code> for “end of file” is the convention.</p>
+
+<p>A heredoc allows a multi-line string with evaluation. Without having to explicitly escape quotes as <code class="language-plaintext highlighter-rouge">"\"user\": \"$(whoami)\""</code>.</p>
+
+<p>Storing as a variable and formatting as a JSON string.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">MY_VAR</span><span class="o">=</span><span class="si">$(</span><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+{
+    "user": "</span><span class="nv">$USER</span><span class="sh">"
+}
+</span><span class="no">EOF
+</span><span class="si">)</span>
+
+<span class="nb">echo</span> <span class="s2">"Quoted"</span>
+<span class="nb">echo</span> <span class="s2">"</span><span class="nv">$MY_VAR</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="s2">"Unquoted"</span>
+<span class="nb">echo</span> <span class="nv">$MY_VAR</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Quoted
+{
+    "user": "mcurrin"
+}
+Unquoted
+{ "user": "mcurrin" }
+</code></pre></div></div>
+
+<p>Note double quotes on <code class="language-plaintext highlighter-rouge">echo</code> to keep newlines.</p>
+
+<p>Example - note escaped backticks to prevent executation.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt; README.md
+## My heading
+
+</span><span class="se">\`\`\`</span><span class="sh">
+</span><span class="nv">$ </span><span class="sh">git clone </span><span class="nv">$REMOTE_URL</span><span class="sh"> --branch mybranch &amp;&amp; ./</span><span class="nv">$REPO_NAME</span><span class="sh">/script
+</span><span class="se">\`\`\`</span><span class="sh">
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<h3 id="literal-heredoc">Literal heredoc</h3>
+
+<p>Prevent evaluation by using quotes (single or double).</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="sh">"</span><span class="no">EOF</span><span class="sh">"
+CONTENT
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<p>Example:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="sh">"</span><span class="no">EOF</span><span class="sh">"
+Line 1
+Line 2
+You are </span><span class="nv">$USER</span><span class="sh">
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Line 1
+Line 2
+You are $USE
+</code></pre></div></div>
+
+<p>Here, we store a value as a JSON string.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">MY_VAR</span><span class="o">=</span><span class="si">$(</span><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+{
+  "user": "</span><span class="nv">$USER</span><span class="sh">"
+}
+</span><span class="no">EOF
+</span><span class="si">)</span>
+</code></pre></div></div>
+
+<p>Printing quoted:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$MY_VAR</span><span class="s2">"</span>
+<span class="go">{
+  "user": "my-name"
+}
+</span></code></pre></div></div>
+
+<p>Printing unquoted.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="nv">$MY_VAR</span>
+<span class="go">{ "user": "my-name" }
+</span></code></pre></div></div>
+
+<h3 id="indent">Indent</h3>
+
+<p>From <a href="https://www.oreilly.com/library/view/bash-cookbook/0596526784/ch03s04.html">guide</a></p>
+
+<p>The heredoc becomes more useful than a plain string when you use remove common indentation.</p>
+
+<p>Here we indent the text with <strong>tab</strong> (not spaces) and then use <code class="language-plaintext highlighter-rouge">&lt;&lt;-</code> to remove tabs (does not remove spaces.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if </span><span class="nb">true</span><span class="p">;</span> <span class="k">then
+	</span><span class="nb">cat</span> <span class="o">&lt;&lt;-</span> <span class="no">EOF</span><span class="sh">
+	Line 1
+	Line 2
+</span><span class="no">	EOF
+</span><span class="k">fi</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Line 1
+Line 2
+</code></pre></div></div>
+
+<p>Note that <code class="language-plaintext highlighter-rouge">EOF</code> must not be indented.</p>
+
+<p>Or, with a variable.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">VAR</span><span class="o">=</span><span class="si">$(</span><span class="nb">cat</span> <span class="o">&lt;&lt;-</span> <span class="no">EOF</span><span class="sh">
+	{
+		"user": "</span><span class="si">$(</span><span class="nb">whoami</span><span class="si">)</span><span class="sh">",
+	}
+</span><span class="no">EOF
+</span><span class="si">)</span>
+
+<span class="nb">echo</span> <span class="s2">"</span><span class="nv">$VAR</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<h3 id="piping">Piping</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="sh">'</span><span class="no">EOF</span><span class="sh">' | sed 's/l/e/g'
+Hello
+world
+</span><span class="no">EOF
+</span></code></pre></div></div>
+<p>Output:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Heeeo
+wored
+</code></pre></div></div>
+
+<p>Write to file.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="sh">'</span><span class="no">EOF</span><span class="sh">' |  sed 's/l/e/g' &gt; file.txt
+Hello
+world
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<h3 id="heredoc-in-other-languages">Heredoc in other languages</h3>
+
+<h4 id="php">PHP</h4>
+
+<p>Using a heredoc in PHP - from the <a href="https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc">PHP manual</a>.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$foo</span> <span class="o">=</span> <span class="s1">'abc;
+$x = &lt;&lt;&lt;EOT
+Line 1
+Line 2
+'</span><span class="nc">Single</span> <span class="n">quotes</span><span class="err">'</span> <span class="n">line</span><span class="mf">.</span>
+<span class="s2">"Double quotes"</span> <span class="n">line</span><span class="mf">.</span>
+<span class="nv">$foo</span>
+<span class="no">EOT</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<h4 id="javascript">JavaScript</h4>
+
+<p>In JavaScript, you would do use backticks. This will evaulate expressions though.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">index.js</code> for JavaScript.
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">foo</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="s2">`\
+  Line 1
+  Line 2
+  'Single quotes' line.
+  "Double quotes" line.
+  </span><span class="p">${</span><span class="nx">foo</span><span class="p">}</span><span class="s2">
+  `</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Note use of escaped newline at the start, to prevent first line from appearing as empty.</p>
+
+<h4 id="python">Python</h4>
+
+<p>In Python you would use three quotes. You could use double quotes (<code class="language-plaintext highlighter-rouge">"</code>) usually, just for convention. You would use an <code class="language-plaintext highlighter-rouge">f</code> string as below for evaluation.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">app.py</code> for Python.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">x</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"""</span><span class="se">\
+</span><span class="s">  Line 1
+  Line 2
+  'Single quotes' line.
+  "Double quotes" line.
+  </span><span class="si">{</span><span class="n">foo</span><span class="si">}</span><span class="s">
+  """</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Note use of escaped newline at the start, to prevent first line from appearing as empty.</p>
+
+<h2 id="case">Case</h2>
+
+<p>From <a href="https://linuxhint.com/bash_lowercase_uppercase_strings/">article</a>.</p>
+
+<p>For Bash 4 and up only. Not Bash 3 or ZSH.</p>
+
+<h3 id="titlecase">Titlecase</h3>
+
+<div class="language-s highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">$</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="s1">'abc'</span><span class="w">
+
+</span><span class="o">$</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="err">"</span><span class="o">$</span><span class="p">{</span><span class="n">x</span><span class="o">^</span><span class="p">}</span><span class="w">
+</span><span class="n">Abc</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="uppercase">Uppercase</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ x</span><span class="o">=</span><span class="s1">'abc'</span>
+
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="nv">x</span><span class="p">^^</span><span class="k">}</span><span class="s2">
+ABC
+</span></code></pre></div></div>
+
+<p>For Bash 3 - from <a href="https://unix.stackexchange.com/questions/51983/how-to-uppercase-the-command-line-argument">answer</a>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ MY_VALUE</span><span class="o">=</span><span class="s2">"Some string"</span>
+<span class="nv">$ </span><span class="nb">printf</span> <span class="s1">'%s\n'</span> <span class="s2">"</span><span class="nv">$MY_VALUE</span><span class="s2">"</span> | <span class="nb">awk</span> <span class="s1">'{ print toupper($0) }'</span>
+SOME STRING
+</code></pre></div></div>
+
+<h3 id="selective-uppercase">Selective uppercase</h3>
+
+<p>Here we uppercase only <code class="language-plaintext highlighter-rouge">p</code> and <code class="language-plaintext highlighter-rouge">j</code> letters.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ LANGUAGES</span><span class="o">=</span><span class="s1">'python perl java php c#'</span>
+<span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">LANGUAGES</span><span class="p">^^[p,j]</span><span class="k">}</span>
+</code></pre></div></div>
+
+<h3 id="handle-inputs">Handle inputs</h3>
+
+<p>Apply titlecase to an input. e.g. <code class="language-plaintext highlighter-rouge">yes</code> becomes <code class="language-plaintext highlighter-rouge">Yes</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>read -p "Do you like music? " ans
+answer=${ans^}
+echo "Your answer is $answer."
+</code></pre></div></div>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

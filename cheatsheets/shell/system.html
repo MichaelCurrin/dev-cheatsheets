@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>System | Dev Cheatsheets</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="System" />
+<meta name="author" content="Michael Currin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Get info on the running state of your machine" />
+<meta property="og:description" content="Get info on the running state of your machine" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/system.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/system.html" />
+<meta property="og:site_name" content="Dev Cheatsheets" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="System" />
+<script type="application/ld+json">
+{"headline":"System","description":"Get info on the running state of your machine","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/system.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                                Home
+                            </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                                Cheatsheets
+                            </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                                About
+                            </a></div>
+            </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/shell/system.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/shell/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>System</span>
+        </h1>
+
+        
+            <blockquote>
+                <p>Get info on the running state of your machine</p>
+
+            </blockquote>
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/shell/">
+    Shell
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/shell/system.html" class="underline">
+                System
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <h2 id="current-time">Current time</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">date</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Sun Feb 28 17:07:19 SAST 2021
+</code></pre></div></div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">date</span> <span class="s2">"+%A %d %B %Y, %T"</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Sunday 28 February 2021, 17:07:27
+</code></pre></div></div>
+
+<p>welcome() {</p>
+
+<h2 id="memory-usage">Memory usage</h2>
+
+<p>Linux only.  Based on Linux Lite 5 welcome message.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>free <span class="nt">-m</span> | <span class="nb">awk</span> <span class="s1">'NR==2{printf "Memory usage: %s / %s MB (%.2f%%)\n", $3,$2,$3*100/$2 }'</span>
+</code></pre></div></div>
+
+<h2 id="uptime">Uptime</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">uptime</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>19:47  up  7:55, 3 users, load averages: 3.32 3.82 4.10
+</code></pre></div></div>
+
+<h2 id="disk-usage">Disk usage</h2>
+
+<p>Linux and macOS.</p>
+
+<p>Get a summary of disk usage used out of available space. Based on Linux Lite 5 welcome message. Using the <code class="language-plaintext highlighter-rouge">df</code> utility which will “display free disk space”.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">df</span> <span class="nt">-h</span> | <span class="nb">awk</span> <span class="s1">'$NF=="/"{printf "Disk usage: %d / %d GB (%s)\n", $3,$2,$5}'</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Disk usage: 11 / 233 GB (23%)
+</code></pre></div></div>
+
+<p>Without filtering:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">df</span> <span class="nt">-h</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>df -h  
+Filesystem      Size   Used  Avail Capacity iused      ifree %iused  Mounted on
+/dev/disk1s5   233Gi   11Gi   36Gi    23%  488327 2447612993    0%   /
+devfs          253Ki  253Ki    0Bi   100%     876          0  100%   /dev
+</code></pre></div></div>
+
+<p>Or</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">df</span> <span class="nt">-h</span> ~
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Filesystem     Size   Used  Avail Capacity iused      ifree %iused  Mounted on
+/dev/disk1s1  233Gi  183Gi   36Gi    84% 4116299 2443985021    0%   /System/Volumes/Data
+</code></pre></div></div>
+
+<h2 id="overview-of-files-and-folders">Overview of files and folders</h2>
+
+<p>Get breakdown of sorted sizes of files and directories for the <strong>current level</strong> and below. Sorted by human-readable sizes and reversed.</p>
+
+<p>Using the <code class="language-plaintext highlighter-rouge">du</code> utility which will “display disk usage statistics”.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">du</span> <span class="nt">-hsc</span> <span class="k">*</span> | <span class="nb">sort</span> <span class="nt">-hr</span>
+</code></pre></div></div>
+
+<p>Example run in <code class="language-plaintext highlighter-rouge">~/Documents</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>799M    total
+464M    Download archive
+138M    Zoom
+ 88M    PythonAnywhere data
+ 71M    Dev Projects
+...
+</code></pre></div></div>
+
+<p>You can run this at <code class="language-plaintext highlighter-rouge">/</code> or <code class="language-plaintext highlighter-rouge">~</code>. It will just take longer than in a subdirectory and you might get permissions warnings where you don’t have access.</p>
+
+<h2 id="processes">Processes</h2>
+
+<h3 id="process-status">Process status</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     ps -- process status
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ps
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PID TTY           TIME CMD
+1031 ttys004    0:00.04 ...
+1033 ttys004    0:00.19 -zsh
+...
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ps aux
+</code></pre></div></div>
+
+<h3 id="process-status-tree">Process status tree</h3>
+
+<p><a href="https://linux.die.net/man/1/pstree">man page</a></p>
+
+<p><a href="https://en.wikipedia.org/wiki/Pstree">Wikipedia</a></p>
+<blockquote>
+  <p>pstree is a Linux command that shows the running processes as a tree. It is used as a more visual alternative to the ps command. The root of the tree is either init or the process with the given pid. It can also be installed in other Unix systems.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pstree [options] [pid or username]
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pstree
+</code></pre></div></div>
+
+<p>Note your OS may have GUI for this. Like macOS Activity Manager.</p>
+
+<h3 id="processes-list">Processes list</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     top -- display and update sorted information about processes
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>top
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Processes: 445 total, 3 running, 442 sleeping, 2434 threads                                                                                                              19:57:10
+Load Avg: 5.39, 5.14, 4.64  CPU usage: 24.94% user, 18.35% sys, 56.70% idle  SharedLibs: 209M resident, 57M data, 22M linkedit.
+MemRegions: 131547 total, 3448M resident, 106M private, 3790M shared. PhysMem: 16G used (3558M wired), 97M unused.
+VM: 2193G vsize, 1882M framework vsize, 0(0) swapins, 0(0) swapouts. Networks: packets: 3646305/2277M in, 2200838/1228M out. Disks: 1305417/11G read, 945445/8111M written.
+
+PID    COMMAND      %CPU TIME     #TH   #WQ  #PORT MEM    PURG   CMPRS  PGRP  PPID  STATE    BOOSTS        %CPU_ME %CPU_OTHRS UID        FAULTS    COW      MSGSENT    MSGRECV
+20854  zoom.us      50.0 33:28.26 63    7    1393+ 312M-  15M-   68M    20854 1     sleeping *0[422]       1.06707 0.23404    1523680666 31247352+ 1416     10628072+  5334433+
+956    iTerm2       33.3 00:27.45 12    9    387+  449M+  108M-  32M-   956   1     sleeping *0[1039]      0.01776 2.43655    1523680666 1201646+  1803     144076+    41923+
+</code></pre></div></div>
+
+<p>More colorful and sortable and lets you action on items.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       htop - interactive process viewer
+</code></pre></div></div>
+
+<p>Install first.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>htop
+</code></pre></div></div>
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+            <a href="https://github.com/MichaelCurrin"><svg class="svg-icon">
+                    <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github"></use>
+                </svg> <span class="username">MichaelCurrin</span></a>
+        </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>
