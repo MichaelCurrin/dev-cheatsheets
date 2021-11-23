@@ -5,9 +5,9 @@ description: Use an `if` statement to check if a variable has a non-null value
 
 ## Related
 
-See [Truthy Falsy][] page for a list of what is truth and falsy. The _Truthy_ section will probably surprise you. As Jekyll doesn't behave like other languages like Python or JavaScript.
+See [Truthy][] page for a list of what is truth and falsy. The _Truthy_ section will probably surprise you. As Jekyll doesn't behave like other languages like Python or JavaScript.
 
-[Truthy Falsy]: {{ site.baseurl }}{% link cheatsheets/jekyll/liquid/truthy-falsy.md %}
+[Truthy]: {% link cheatsheets/jekyll/liquid/conditionals/truthy.md %}
 
 
 {% raw %}
