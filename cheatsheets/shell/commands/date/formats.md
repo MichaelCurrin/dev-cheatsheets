@@ -1,8 +1,10 @@
 # Formats
 
-## Full time
+Examples here use the current time.
 
-Get a standardized ISO date.
+## Default format
+
+Get a standardized ISO date by default.
 
 ```sh
 $ date
@@ -41,9 +43,15 @@ Mon 22 Feb 2021 17:58:01 SAST
     ```
 - Date and time.
     ```sh
-    $ date -u +"%Y-%m-%dT%H:%M:%SZ")
+    $ date '+%Y-%m-%dT%H:%M:%SZ'
     ```
     
+And to store it:
+
+```sh
+$ DATE=$(date '+%Y-%m-%dT%H:%M:%SZ')
+```
+
 
 ## Unix timestamp
 
@@ -54,14 +62,14 @@ $ echo $EPOCHSECONDS
 1614012035
 ```
 
-Same as above, but as a float.
+Or as a float.
 
 ```console
 $ echo $EPOCHREALTIME
 1614012035.3449261189
 ```
 
-Or use the `date` command.
+Or use the `date` command with a format.
 
 ```console
 $ date '+%s'
@@ -69,18 +77,5 @@ $ date '+%s'
 ```
 
 
-## Convert unix timestamp to date and time
-
-Given seconds as a number.
-
-```console
-$ date -r 0
-Thu  1 Jan 1970 02:00:00 SAST
-```
-
-```console
-$ date -r 1000000000
-Sun  9 Sep 2001 03:46:40 SAST
-```
 
 
