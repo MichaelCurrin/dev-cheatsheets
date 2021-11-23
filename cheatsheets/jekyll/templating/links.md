@@ -1,5 +1,6 @@
 # Links
 
+
 {% raw %}
 
 ## Local paths
@@ -64,7 +65,7 @@ Since Jekyll 4.0, you don’t need to prepend the `link` or `post_url` tags with
 
 - Jekyll 3
     ```md
-    [Link text]({% link about.md %})
+    [Link text]({{ site.baseurl }}{% link about.md %})
     ```
 - Jekyll 4
     ```md
