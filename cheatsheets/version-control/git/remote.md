@@ -7,33 +7,28 @@
 
 ## View
 
-Basic:
+### List remotes
 
 ```console
 $ git remote
 origin
 ```
 
+### List remotes - verbose
 
-Get the URL:
-
-```console
-$ git remote get-url origin
-git@github.com:MichaelCurrin/foo.git
-```
-
-Alternatively:
-
-```console
-git@github.com:MichaelCurrin/foo.git
-```
-
-Verbose:
+Use list all remotes and their URLs (two for each).
 
 ```console
 $ git remote -v
 origin  git@github.com:MichaelCurrin/foo.git (fetch)
 origin  git@github.com:MichaelCurrin/foor.git (push)
+```
+
+### URL for remote
+
+```console
+$ git remote get-url origin
+git@github.com:MichaelCurrin/foo.git
 ```
 
 
@@ -60,8 +55,18 @@ $ git remote add REMOTE_NAME URL
 
 e.g.
 
+When creating a repo, you need to create `origin`.
+
 ```sh
-$ git remote add upstream git@github.com:AbcDef/foo.git
+$ git init
+$ git remote add origin git@github.com:MyUsername/foo.git
+```
+
+If you are working creating across forks, it can be useful to add a second remote.
+
+```sh
+$ git remote add upstream git@github.com:AnotherUsername/foo.git
+$ git fetch upstream
 ```
 
 
@@ -70,13 +75,14 @@ $ git remote add upstream git@github.com:AbcDef/foo.git
 ```sh
 $ git checkout main
 $ git pull upstream main
-$ git push
+$ git push  # Implied as `git push origin main`
 ```
 
-Or reset origin to point to upstream - useful if you made commits on `origin` that you want to undo.
+Or, reset your origin to point to upstream without doing a merge or pull. Useful if you made commits on `origin` that you want to undo, or have conflicts.
 
 ```sh
 $ git checkout main
 $ git fetch upstream
-$ git reset --hard upstream main
+$ git reset --hard upstream/main
+$ git push  # Implied as `git push origin main`
 ```
