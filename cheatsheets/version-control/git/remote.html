@@ -146,28 +146,25 @@
 
 <h2 id="view">View</h2>
 
-<p>Basic:</p>
+<h3 id="list-remotes">List remotes</h3>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git remote
 <span class="go">origin
 </span></code></pre></div></div>
 
-<p>Get the URL:</p>
+<h3 id="list-remotes---verbose">List remotes - verbose</h3>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git remote get-url origin
-<span class="go">git@github.com:MichaelCurrin/foo.git
-</span></code></pre></div></div>
-
-<p>Alternatively:</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git@github.com:MichaelCurrin/foo.git
-</span></code></pre></div></div>
-
-<p>Verbose:</p>
+<p>Use list all remotes and their URLs (two for each).</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git remote <span class="nt">-v</span>
 <span class="go">origin  git@github.com:MichaelCurrin/foo.git (fetch)
 origin  git@github.com:MichaelCurrin/foor.git (push)
+</span></code></pre></div></div>
+
+<h3 id="url-for-remote">URL for remote</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git remote get-url origin
+<span class="go">git@github.com:MichaelCurrin/foo.git
 </span></code></pre></div></div>
 
 <h2 id="change-remote-url">Change remote URL</h2>
@@ -189,21 +186,31 @@ origin  git@github.com:MichaelCurrin/foor.git (push)
 
 <p>e.g.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git remote add upstream git@github.com:AbcDef/foo.git
+<p>When creating a repo, you need to create <code class="language-plaintext highlighter-rouge">origin</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git init
+<span class="nv">$ </span>git remote add origin git@github.com:MyUsername/foo.git
+</code></pre></div></div>
+
+<p>If you are working creating across forks, it can be useful to add a second remote.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git remote add upstream git@github.com:AnotherUsername/foo.git
+<span class="nv">$ </span>git fetch upstream
 </code></pre></div></div>
 
 <h2 id="sync-fork-with-original-repo">Sync fork with original repo</h2>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout main
 <span class="nv">$ </span>git pull upstream main
-<span class="nv">$ </span>git push
+<span class="nv">$ </span>git push  <span class="c"># Implied as `git push origin main`</span>
 </code></pre></div></div>
 
-<p>Or reset origin to point to upstream - useful if you made commits on <code class="language-plaintext highlighter-rouge">origin</code> that you want to undo.</p>
+<p>Or, reset your origin to point to upstream without doing a merge or pull. Useful if you made commits on <code class="language-plaintext highlighter-rouge">origin</code> that you want to undo, or have conflicts.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout main
 <span class="nv">$ </span>git fetch upstream
-<span class="nv">$ </span>git reset <span class="nt">--hard</span> upstream main
+<span class="nv">$ </span>git reset <span class="nt">--hard</span> upstream/main
+<span class="nv">$ </span>git push  <span class="c"># Implied as `git push origin main`</span>
 </code></pre></div></div>
 
         

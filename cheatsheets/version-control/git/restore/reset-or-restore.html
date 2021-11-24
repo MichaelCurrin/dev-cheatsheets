@@ -168,17 +168,31 @@ git reset <span class="nt">--hard</span> origin/master
 <p>This can be useful if you have a feature branch you want to throw away but you want to keep the name.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout feature-branch
-git reset <span class="nt">--hard</span> origin/master
+git reset <span class="nt">--hard</span> origin/main
 </code></pre></div></div>
 
 <h2 id="clean-directory">Clean directory</h2>
 
-<p>If you have some changes staged, you need to unstage them otherwise <code class="language-plaintext highlighter-rouge">checkout</code> won’t affect them.</p>
+<p>Unstage changes and revert files to version control state.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset <span class="o">&amp;&amp;</span> git co <span class="nb">.</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git reset <span class="nt">--hard</span>
+</code></pre></div></div>
+
+<p>Or unstage changes and then revert files to version control state.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset
+git checkout <span class="nb">.</span>
 </code></pre></div></div>
 
 <p>Note <code class="language-plaintext highlighter-rouge">reset HEAD</code> is implied.</p>
+
+<p>You can also target a branch or commit.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git reset <span class="nt">--hard</span> HEAD~
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git reset <span class="nt">--hard</span> origin/main
+</code></pre></div></div>
 
         
     </div>
