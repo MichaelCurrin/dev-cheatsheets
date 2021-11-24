@@ -31,14 +31,26 @@ $ jsdoc book.js
 
 ```javascript
 /**
+ * Generate a book description.
+ *
  * @param {string} title - The title of the book.
  * @param {string} author - The author of the book.
+ *
+ * @returns {string} Description of the book.
+ * @throws An error if values are not set.
  */
 function Book(title, author) {
+  if (!title || !author) {
+    throw new Error('title and author must be set');
+  }
+  
+  return `${title} by ${author}`;
 }
 ```
 
 ### Parameter name only
+
+The type is omitted. You could also use `{*}` for any type.
 
 ```javascript
 /**
@@ -126,7 +138,7 @@ e.g.
  */
 ```
 
-You cn break out the attributes using the name of the key.
+You can break out the attributes using the name of the key.
 
 ```javascipt
 /**
@@ -140,16 +152,16 @@ You cn break out the attributes using the name of the key.
 
 Array of strings.
 
-```
+```javascript
 {string[]}
 
-// Or, less common:
+// Or, less common form:
 {Array.<string>}
 ```
 
 An array of `MyClass` instances.
 
-```
+```javascript
 {MyClass[]}
 
 // Or, less common:
