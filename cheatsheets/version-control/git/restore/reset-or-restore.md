@@ -23,34 +23,16 @@ This can be useful if you have a feature branch you want to throw away but you w
 
 ```sh
 git checkout feature-branch
-git reset --hard origin/main
+git reset --hard origin/master
 ```
 
 
 ## Clean directory
 
-Unstage changes and revert files to version control state.
+If you have some changes staged, you need to unstage them otherwise `checkout` won't affect them.
 
 ```sh
-$ git reset --hard
-```
-
-Or unstage changes and then revert files to version control state.
-
-```sh
-git reset
-git checkout .
+git reset && git co .
 ```
 
 Note `reset HEAD` is implied.
-
-You can also target a branch or commit.
-
-```sh
-$ git reset --hard HEAD~
-```
-
-```sh
-$ git reset --hard origin/main
-```
-
