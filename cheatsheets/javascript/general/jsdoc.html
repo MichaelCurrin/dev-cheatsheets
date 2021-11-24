@@ -168,14 +168,26 @@
 <h3 id="overview">Overview</h3>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Generate a book description.
+ *
  * @param {string} title - The title of the book.
  * @param {string} author - The author of the book.
+ *
+ * @returns {string} Description of the book.
+ * @throws An error if values are not set.
  */</span>
 <span class="kd">function</span> <span class="nx">Book</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span> <span class="nx">author</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">title</span> <span class="o">||</span> <span class="o">!</span><span class="nx">author</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">title and author must be set</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+  
+  <span class="k">return</span> <span class="s2">`</span><span class="p">${</span><span class="nx">title</span><span class="p">}</span><span class="s2"> by </span><span class="p">${</span><span class="nx">author</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h3 id="parameter-name-only">Parameter name only</h3>
+
+<p>The type is omitted. You could also use <code class="language-plaintext highlighter-rouge">{*}</code> for any type.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
  * @param author
@@ -253,7 +265,7 @@
  */
 </code></pre>
 
-<p>You cn break out the attributes using the name of the key.</p>
+<p>You can break out the attributes using the name of the key.</p>
 
 <pre><code class="language-javascipt">/**
  * @param {Object} employee - The employees who is responsible for the project.
@@ -266,18 +278,18 @@
 
 <p>Array of strings.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{string[]}
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="nx">string</span><span class="p">[]}</span>
 
-// Or, less common:
-{Array.&lt;string&gt;}
+<span class="c1">// Or, less common form:</span>
+<span class="p">{</span><span class="nb">Array</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">}</span>
 </code></pre></div></div>
 
 <p>An array of <code class="language-plaintext highlighter-rouge">MyClass</code> instances.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{MyClass[]}
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="nx">MyClass</span><span class="p">[]}</span>
 
-// Or, less common:
-{Array.&lt;MyClass&gt;}
+<span class="c1">// Or, less common:</span>
+<span class="p">{</span><span class="nb">Array</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">MyClass</span><span class="o">&gt;</span><span class="p">}</span>
 </code></pre></div></div>
 
 <p>An array of hashes (key-value pair objects), with keys described for the items.</p>
