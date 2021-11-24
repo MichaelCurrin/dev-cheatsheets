@@ -40,7 +40,7 @@ Install a Jekyll plugin.
 
 Example of `Gemfile` for a Jekyll project. See more info at [Gemfile recipe][].
 
-[Gemfile recipe](https://michaelcurrin.github.io/code-cookbook/recipes/jekyll/project-files/gemfile.html)
+[Gemfile recipe]: https://michaelcurrin.github.io/code-cookbook/recipes/jekyll/project-files/gemfile.html
 
 Note the Jekyll and a theme are alone and any Jekyll plugins go inside a group - this ensures they load at the correct order at build time.
 
