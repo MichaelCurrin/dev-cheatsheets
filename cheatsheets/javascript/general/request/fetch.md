@@ -38,7 +38,7 @@ There are async and promise-based examples below. Both can be adapted to follow 
 Using the modern `async` and `await` syntax.
 
 ```javascript
-const url = "https://api.github.com/users/github"
+const url = 'https://httpbin.org/get'
 const resp = await fetch(url);
 ```
 
@@ -58,17 +58,20 @@ const body = await resp.text()
 
 Use `resp.ok` to check for a success message.
 
+const url = 'https://httpbin.org/get'
 ```javascript
 const resp = await fetch(url);
 if (!resp.ok) {
-  throw new Error(`${url} HTTP error: ${resp.status} - ${resp.statusText}`);
+  throw new Error(`HTTP error: ${resp.status} - ${resp.statusText} URL: ${url}`);
 }
-const data = await resp.json();
+
+const respData = await resp.json();
 ```
 
 Based on _JS.info_ example. I don't know if `alert` will actually break the flow or code after it will still get executed.
 
 ```javascript
+const url = 'https://httpbin.org/get'
 const resp = await fetch(url);
 
 if (!resp.ok) {
@@ -76,7 +79,27 @@ if (!resp.ok) {
 }
 ```
 
-### Get response and set it on an element.
+### Function
+
+With error handling.
+
+```javascript
+async function requestJson(url) {
+  const resp = await fetch(url);
+  if (!resp.ok) {
+    throw new Error(
+      throw new Error(`HTTP error: ${resp.status} - ${resp.statusText} URL: ${url}`);
+    );
+  }
+
+  return resp.json();
+}
+
+const url = 'https://httpbin.org/get'
+const respData = await requestJson(url)
+```
+
+### Get response and set it on an element
 
 ```html
 <div id="result"></div>
