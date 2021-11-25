@@ -203,7 +203,7 @@
 
 <p>Using the modern <code class="language-plaintext highlighter-rouge">async</code> and <code class="language-plaintext highlighter-rouge">await</code> syntax.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://api.github.com/users/github</span><span class="dl">"</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://httpbin.org/get</span><span class="dl">'</span>
 <span class="kd">const</span> <span class="nx">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
 </code></pre></div></div>
 
@@ -221,23 +221,45 @@
 
 <p>Use <code class="language-plaintext highlighter-rouge">resp.ok</code> to check for a success message.</p>
 
+<p>const url = ‘https://httpbin.org/get’</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">resp</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">url</span><span class="p">}</span><span class="s2"> HTTP error: </span><span class="p">${</span><span class="nx">resp</span><span class="p">.</span><span class="nx">status</span><span class="p">}</span><span class="s2"> - </span><span class="p">${</span><span class="nx">resp</span><span class="p">.</span><span class="nx">statusText</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">`HTTP error: </span><span class="p">${</span><span class="nx">resp</span><span class="p">.</span><span class="nx">status</span><span class="p">}</span><span class="s2"> - </span><span class="p">${</span><span class="nx">resp</span><span class="p">.</span><span class="nx">statusText</span><span class="p">}</span><span class="s2"> URL: </span><span class="p">${</span><span class="nx">url</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+<span class="kd">const</span> <span class="nx">respData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p>Based on <em>JS.info</em> example. I don’t know if <code class="language-plaintext highlighter-rouge">alert</code> will actually break the flow or code after it will still get executed.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://httpbin.org/get</span><span class="dl">'</span>
+<span class="kd">const</span> <span class="nx">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">resp</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="s2">`HTTP-Error: </span><span class="p">${</span><span class="nx">resp</span><span class="p">.</span><span class="nx">status</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="get-response-and-set-it-on-an-element">Get response and set it on an element.</h3>
+<h3 id="function">Function</h3>
+
+<p>With error handling.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">requestJson</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">resp</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">`HTTP error: </span><span class="p">${</span><span class="nx">resp</span><span class="p">.</span><span class="nx">status</span><span class="p">}</span><span class="s2"> - </span><span class="p">${</span><span class="nx">resp</span><span class="p">.</span><span class="nx">statusText</span><span class="p">}</span><span class="s2"> URL: </span><span class="p">${</span><span class="nx">url</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://httpbin.org/get</span><span class="dl">'</span>
+<span class="kd">const</span> <span class="nx">respData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">requestJson</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="get-response-and-set-it-on-an-element">Get response and set it on an element</h3>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"result"</span><span class="nt">&gt;&lt;/div&gt;</span>
 
