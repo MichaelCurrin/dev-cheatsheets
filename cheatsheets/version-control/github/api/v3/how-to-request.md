@@ -32,6 +32,10 @@ $ curl https://api.github.com/repos/octokit/core.js/releases/latest \
 
 ## JavaScript
 
+See more info in [JS request][] cheatsheet.
+
+Note that you don't need to add any headers to request JSON data - using the `.json` method on the response will get JSON data for you.
+
 No auth - this code is safe for the backend and frontend.
 
 ```javascript
@@ -61,3 +65,5 @@ I have a site which does something similar and adds the response to the page her
 
 - [https://michaelcurrin.github.io/gist-viewer](https://michaelcurrin.github.io/gist-viewer)
 - [Gists.js](https://github.com/MichaelCurrin/gist-viewer/blob/master/assets/js/Gists.js)
+
+[JS request]: {% link cheatsheets/javascript/general/request/index.md %}
