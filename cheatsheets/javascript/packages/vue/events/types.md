@@ -1,7 +1,9 @@
 # Types
 
+Use like `@click`. Or chain events and modifiers as in other cheatsheet pages.
 
-## Event types
+
+## Common event types
 
 Event name | Description
 ---        | ---
@@ -10,4 +12,5 @@ Event name | Description
 `change` | Fires when user changes the value and unfocusses input (for example, clicked somewhere outside)
 `keyup` | listen for keyboard events.
 
-Use like `@click`. Or chain events and modifiers as in other cheatsheet pages.
+There are a lot more. Use VS Code and a Vue extension and it will suggest all values when adding `@` to an element.
+
