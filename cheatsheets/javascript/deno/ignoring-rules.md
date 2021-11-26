@@ -12,30 +12,22 @@ document.getElementById('root')
 
 ## Ignore TypeScript rule
 
-Ignore on the next line.
+See [Ignoring rules][] in the TypeScript section of Dev Cheatsheets.
 
-```typescript
-// @ts-ignore
-```
-
-Also ignore on the next line but require an error to exist.
-
-```typescript
-// @ts-expect-error
-```
+[Ignoring rules]: {% link cheatsheets/typescript/ignoring-rules.md %}
 
 
 ## Semantic checking
 
 Must be at the top of a file.
 
-Enable.
+Enable:
 
 ```typescript
 // @ts-check
 ```
 
-Disable.
+Disable:
 
 ```typescript
 // @ts-no-check
