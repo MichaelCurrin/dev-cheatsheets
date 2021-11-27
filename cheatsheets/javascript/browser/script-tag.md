@@ -1,7 +1,7 @@
 ---
 title: Script tag
 description: Various ways to load and run JS in the browser using `script` tags
-```
+---
 
 
 ## Related
