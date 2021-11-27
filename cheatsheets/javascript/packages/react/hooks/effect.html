@@ -9,15 +9,15 @@
 <meta property="og:title" content="Effect hook" />
 <meta name="author" content="Michael Currin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
-<meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+<meta name="description" content="Oerforms side effects in Function components" />
+<meta property="og:description" content="Oerforms side effects in Function components" />
 <link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/hooks/effect.html" />
 <meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/hooks/effect.html" />
 <meta property="og:site_name" content="Dev Cheatsheets" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Effect hook" />
 <script type="application/ld+json">
-{"description":"A collection of code snippets and CLI guides for quick and easy reference while coding","headline":"Effect hook","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/hooks/effect.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Oerforms side effects in Function components","headline":"Effect hook","url":"https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/hooks/effect.html","author":{"@type":"Person","name":"Michael Currin"},"@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
     <script>
@@ -77,6 +77,11 @@
             <span>Effect hook</span>
         </h1>
 
+        
+            <blockquote>
+                <p>Oerforms <strong>side effects</strong> in Function components</p>
+
+            </blockquote>
         
     </header>
 
@@ -163,11 +168,13 @@
     <div class="post-content">
         
             
-<p>This performs <strong>side effects</strong> in Function components.</p>
+<h2 id="resources">Resources</h2>
 
 <p>See <a href="https://reactjs.org/docs/hooks-effect.html">Using the Effect Hook</a> in the React docs.</p>
 
-<p>That hook will run when the component:</p>
+<h2 id="triggers">Triggers</h2>
+
+<p>The Effect hook will run when the component:</p>
 
 <ul>
   <li>is mounted (once).</li>
@@ -177,7 +184,8 @@
 
 <h2 id="syntax">Syntax</h2>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(</span><span class="nx">FUNCTION</span><span class="p">,</span> <span class="p">[</span><span class="nx">ARGUMENTS</span><span class="p">])</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(</span><span class="nx">FUNCTION</span><span class="p">)</span>
+<span class="nx">useEffect</span><span class="p">(</span><span class="nx">FUNCTION</span><span class="p">,</span> <span class="nx">ARGUMENTS</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="example">Example</h2>
@@ -197,9 +205,10 @@
 
 <p>To prevent the function from running on updates, use an empty array s an extra parameter.</p>
 
-<p>useEffect(() =&gt; {
-  console.log(“Mounted or unmounted”)
-}, []);</p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mounted or unmounted</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">},</span> <span class="p">[]);</span>
+</code></pre></div></div>
 
 <p>The docs say that this is close to the mental model of <code class="language-plaintext highlighter-rouge">componentDidMount</code> and <code class="language-plaintext highlighter-rouge">componentWillUnmount</code>, but that “there are usually <a href="https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies">better solutions</a> to avoid re-running effects too often”.</p>
 

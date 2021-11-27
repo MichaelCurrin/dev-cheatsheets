@@ -232,6 +232,9 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/editions.html</loc>
 </url>
 <url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/hooks/effect.html</loc>
+</url>
+<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/ci-cd/github-actions/environment-variables.html</loc>
 </url>
 <url>
@@ -1688,9 +1691,6 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/download.html</loc>
-</url>
-<url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/hooks/effect.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/hooks/importing.html</loc>
