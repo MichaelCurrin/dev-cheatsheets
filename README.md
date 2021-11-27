@@ -1,8 +1,9 @@
 # Dev Cheatsheets
 > A collection of code snippets and CLI guides for quick and easy reference while coding
 
-[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/dev-cheatsheets?include_prereleases&sort=semver)](https://github.com/MichaelCurrin/dev-cheatsheets/releases/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
+[![GH Pages Deploy](https://github.com/MichaelCurrin/dev-cheatsheets/workflows/GH%20Pages%20Deploy/badge.svg)](https://github.com/MichaelCurrin/dev-cheatsheets/actions?query=workflow:"GH+Pages+Deploy")
+[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/dev-cheatsheets?include_prereleases=&sort=semver&color=blue)](https://github.com/MichaelCurrin/dev-cheatsheets/releases/)
+[![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 [![Hosted with - GitHub Pages](https://img.shields.io/badge/Hosted_with-GitHub_Pages-blue?logo=github&logoColor=white)](https://pages.github.com/)
 [![Made with Jekyll](https://img.shields.io/badge/Jekyll-4-blue.svg?logo=jekyll)](https://jekyllrb.com)
@@ -14,12 +15,14 @@ Screenshots of the website:
 
 <div align="center">
     <a href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/">
-        <img src="/sample-cheatsheets.png" height="300" alt="sample cheatsheets"
-            title="Cheatsheets homepage"/>
+        <img src="/sample-cheatsheets.png" height="300" 
+            alt="sample cheatsheets"
+            title="Go to Cheatsheets homepage"/>
     </a>
     <a href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/">
-        <img src="/sample-shell.png" height="300" alt="sample cheatsheets shell"
-            title="Shell cheatsheet"/>
+        <img src="/sample-shell.png" height="300" 
+            alt="sample cheatsheets shell"
+            title="Go to Shell cheatsheet"/>
     </a>
 </div>
 
