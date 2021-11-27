@@ -188,7 +188,7 @@
 <span class="nx">useEffect</span><span class="p">(</span><span class="nx">FUNCTION</span><span class="p">,</span> <span class="nx">ARGUMENTS</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="example">Example</h2>
+<h2 id="examples">Examples</h2>
 
 <h3 id="click">Click</h3>
 
@@ -212,7 +212,34 @@
 
 <p>The docs say that this is close to the mental model of <code class="language-plaintext highlighter-rouge">componentDidMount</code> and <code class="language-plaintext highlighter-rouge">componentWillUnmount</code>, but that “there are usually <a href="https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies">better solutions</a> to avoid re-running effects too often”.</p>
 
-<h2 id="comparison">Comparison</h2>
+<h3 id="tip-use-multiple-effects-to-separate-concerns">Tip: Use Multiple Effects to Separate Concerns</h3>
+
+<p>Example from the docs.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">FriendStatusWithCounter</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">_setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">`You clicked </span><span class="p">${</span><span class="nx">count</span><span class="p">}</span><span class="s2"> times`</span><span class="p">;</span>
+  <span class="p">});</span>
+
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">_isOnline</span><span class="p">,</span> <span class="nx">setIsOnline</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">handleStatusChange</span><span class="p">(</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">setIsOnline</span><span class="p">(</span><span class="nx">status</span><span class="p">.</span><span class="nx">isOnline</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">ChatAPI</span><span class="p">.</span><span class="nx">subscribeToFriendStatus</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">friend</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">handleStatusChange</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">ChatAPI</span><span class="p">.</span><span class="nx">unsubscribeFromFriendStatus</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">friend</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">handleStatusChange</span><span class="p">);</span>
+    <span class="p">};</span>
+  <span class="p">});</span>
+
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="comparison-of-effect-hook-vs-class-component">Comparison of Effect hook vs Class component</h3>
 
 <p>Use of <code class="language-plaintext highlighter-rouge">useEffect</code> is similar to <code class="language-plaintext highlighter-rouge">componentDidMount</code> and <code class="language-plaintext highlighter-rouge">componentDidUpdate</code> in a Class component.</p>
 
@@ -230,6 +257,7 @@
     <span class="k">return</span> <span class="p">(</span>
       <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>You clicked <span class="si">{</span><span class="nx">count</span><span class="si">}</span> times<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+          
         <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>
           Click me
         <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
