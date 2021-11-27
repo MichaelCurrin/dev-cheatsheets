@@ -9,6 +9,26 @@ Use cached page with false or full reload with true.
 window.location.reload(false)
 ```
 
+e.g. in React
+
+```jsx
+function refreshPage() {
+  window.location.reload(false);
+}
+
+function App() { 
+  return (
+    <div>
+      <button onClick={refreshPage}>
+        Click to reload!
+      </button>
+    </div>
+  );
+}
+
+export default App;
+```
+
 
 ## Redirect 
 
