@@ -27,7 +27,7 @@ useEffect(FUNCTION, ARGUMENTS)
 ```
 
 
-## Example
+## Examples
 
 ### Click
 
@@ -55,8 +55,35 @@ The docs say that this is close to the mental model of `componentDidMount` and `
 
 [better solutions]: https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies
 
+### Tip: Use Multiple Effects to Separate Concerns 
 
-## Comparison
+Example from the docs.
+
+```jsx
+function FriendStatusWithCounter(props) {
+  const [count, _setCount] = useState(0);
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  });
+
+  const [_isOnline, setIsOnline] = useState(null);
+  useEffect(() => {
+    function handleStatusChange(status) {
+      setIsOnline(status.isOnline);
+    }
+
+    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+
+    return () => {
+      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+    };
+  });
+
+  // ...
+}
+```
+
+### Comparison of Effect hook vs Class component
 
 Use of `useEffect` is similar to `componentDidMount` and `componentDidUpdate` in a Class component.
 
@@ -74,6 +101,7 @@ Use of `useEffect` is similar to `componentDidMount` and `componentDidUpdate` in
       return (
         <div>
           <p>You clicked {count} times</p>
+          
           <button onClick={() => setCount(count + 1)}>
             Click me
           </button>
@@ -111,5 +139,6 @@ Use of `useEffect` is similar to `componentDidMount` and `componentDidUpdate` in
       }
     }
     ```
+
 
 {% endraw %}
