@@ -817,6 +817,9 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/jekyll/overview.html</loc>
 </url>
 <url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/hooks/overview.html</loc>
+</url>
+<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/javascript/npm/package-file.html</loc>
 </url>
 <url>
@@ -1691,9 +1694,6 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/hooks/importing.html</loc>
-</url>
-<url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/hooks/overview.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/hooks/state.html</loc>
