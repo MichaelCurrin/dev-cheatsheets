@@ -1,13 +1,18 @@
-
-# Effect hook
+---
+title: Effect hook
+description: Oerforms **side effects** in Function components
+---
 
 {% raw %}
 
-This performs **side effects** in Function components.
+## Resources
 
 See [Using the Effect Hook](https://reactjs.org/docs/hooks-effect.html) in the React docs.
 
-That hook will run when the component:
+
+## Triggers
+
+The Effect hook will run when the component:
 
 - is mounted (once).
 - updates (multiple times).
@@ -17,7 +22,8 @@ That hook will run when the component:
 ## Syntax
 
 ```jsx
-useEffect(FUNCTION, [ARGUMENTS])
+useEffect(FUNCTION)
+useEffect(FUNCTION, ARGUMENTS)
 ```
 
 
@@ -39,9 +45,11 @@ useEffect(() => {
 
 To prevent the function from running on updates, use an empty array s an extra parameter.
 
+```jsx
 useEffect(() => {
   console.log("Mounted or unmounted")
 }, []);
+```
 
 The docs say that this is close to the mental model of `componentDidMount` and `componentWillUnmount`, but that "there are usually [better solutions][] to avoid re-running effects too often".
 
