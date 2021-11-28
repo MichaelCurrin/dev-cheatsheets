@@ -40,10 +40,12 @@ bar.txt:This is another match for the foobar pattern
 
 Find URLs in a JSON which is only one line.
 
+### Linux
+
 This uses a pattern I came up with - note it doesn't cover `?` or trailing `/`.
 
 ```sh
-$ grep -Po "https:\/\/[\w./#-]*" file.txt
+$ grep -P -o 'https:\/\/[\w./#?_-]*' file.txt
 ```
 
 ```
@@ -64,6 +66,13 @@ https://
 
 Without `-o` flag, you see the entire line, but with the match patterns highlighted (assuming colors are enabled).
 
+### macOS
+
+Not fully tested. Using alphanumeric explicitly, to avoid matching on literal `w` when doing `[\w]` without `-P`.
+
+```sh
+$ grep -o 'https:\/\/[a-z0-9./#?_-]*' file.txt
+```
 
 ## Advanced path matching
 
