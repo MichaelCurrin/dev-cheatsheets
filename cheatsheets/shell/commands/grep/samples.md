@@ -52,7 +52,7 @@ https://www.oreilly.com/library/view/50-tips-and/9781449306779/ch01.html
 https://leetcode.com/
 ```
 
-Use `-P` for non-greedy support. Pattern must be in Perl regex syntax.
+Use `-P` for non-greedy support (available in Linux only). Pattern must be in Perl regex syntax.
 
 Without `-P` flag:
 
