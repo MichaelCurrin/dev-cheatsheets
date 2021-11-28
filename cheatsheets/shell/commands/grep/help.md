@@ -4,7 +4,11 @@
 $ grep --help
 ```
 
-Output on macOS (this is all is shows):
+## macOS
+
+See [grep for macOS](https://ss64.com/osx/grep.html) on SS64 site.
+
+Help output on macOS (this is all it shows):
 
 ```
 usage: grep [-abcDEFGHhIiJLlmnOoqRSsUVvwxZ] [-A num] [-B num] [-C[num]]
@@ -13,7 +17,12 @@ usage: grep [-abcDEFGHhIiJLlmnOoqRSsUVvwxZ] [-A num] [-B num] [-C[num]]
         [--null] [pattern] [file ...]
 ```
 
-Output on Linux:
+
+## Linux
+
+See [grep for Linux](https://ss64.com/bash/grep.html) on SS64 site.
+
+Help output on Linux:
 
 <details>
 <summary>Help output</summary>
