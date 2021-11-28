@@ -26,15 +26,15 @@
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/grep/inputs.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/grep/inputs.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/grep/inputs-methods.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/grep/inputs-methods.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/grep/inputs.html",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/grep/inputs-methods.html",
     "headline":    "Input methods",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
@@ -82,7 +82,7 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/shell/commands/grep/inputs.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/shell/commands/grep/inputs-methods.md">
     📝 <span>Edit page</span>
 </a>
 
@@ -162,7 +162,7 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/shell/commands/grep/inputs.html" class="underline">
+            <a href="/dev-cheatsheets/cheatsheets/shell/commands/grep/inputs-methods.html" class="underline">
                 Input methods
             </a>
         
@@ -175,29 +175,92 @@
 
     <div class="post-content">
         
-            <p>General</p>
+            <h2 id="overview">Overview</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grep PATTERN PATH
+<p>General</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">grep </span>PATTERN PATH
 </code></pre></div></div>
 
 <p>From file</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat PATH | grep PATTERN
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat </span>PATH | <span class="nb">grep </span>PATTERN
 </code></pre></div></div>
 
 <p>From string</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo 'TEXT' | grep PATTERN
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'TEXT'</span> | <span class="nb">grep </span>PATTERN
 </code></pre></div></div>
 
 <p>In a directory such as <code class="language-plaintext highlighter-rouge">.</code>, <code class="language-plaintext highlighter-rouge">*</code> or a directory name.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grep PATTERN DIR
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">grep </span>PATTERN DIR
 
-grep -r PATTERN DIR
+<span class="nb">grep</span> <span class="nt">-r</span> PATTERN DIR
 </code></pre></div></div>
 
-<p>Or <code class="language-plaintext highlighter-rouge">-ir</code>.</p>
+<p>Use <code class="language-plaintext highlighter-rouge">-i</code> or <code class="language-plaintext highlighter-rouge">-ir</code> for case insensitive.</p>
+
+<h2 id="file">File</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">grep </span>PATTERN foo.txt
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">grep </span>PATTERN <span class="k">*</span>.txt
+</code></pre></div></div>
+
+<h2 id="directory">Directory</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">grep</span> <span class="nt">-r</span> PATTERN <span class="nb">.</span>
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">grep</span> <span class="nt">-r</span> PATTERN my_dir
+</code></pre></div></div>
+
+<h2 id="stdin">stdin</h2>
+
+<p>If you omit the paths, then <code class="language-plaintext highlighter-rouge">grep</code> reads from stdin.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'hello world'</span> | <span class="nb">grep</span> <span class="s1">'hello'</span>
+</code></pre></div></div>
+
+<h2 id="heredoc">Heredoc</h2>
+
+<p>Use a heredoc or herestring to pass a multiline string.</p>
+
+<p>See <a href="https://en.wikipedia.org/wiki/Here_document#Here_strings">Here strings</a> on Wikipeida.</p>
+
+<h3 id="inline">Inline</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">grep </span>PATTERN <span class="o">&lt;&lt;&lt;</span> STRING
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<p>One line.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">grep</span> <span class="s1">'hello'</span> <span class="o">&lt;&lt;&lt;</span> <span class="s1">'hello world'</span>
+hello world
+</code></pre></div></div>
+
+<p>Multiple lines.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">grep</span> <span class="s1">'hello'</span> <span class="o">&lt;&lt;&lt;</span> <span class="s1">'hello world
+and hello devs
+greetings'</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello world
+and hello devs
+</code></pre></div></div>
+
+<h2 id="using-multi-line-variable">Using multi-line variable</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">MY_VAR</span><span class="o">=</span><span class="s1">'hello world'</span>
+
+<span class="nb">grep</span> <span class="s1">'hello'</span> <span class="o">&lt;&lt;&lt;</span> <span class="nv">$MY_VAR</span>
+</code></pre></div></div>
+
+<p>Maybe quotes is safer on the variable, but might not make a difference for heredocs.</p>
 
         
     </div>
