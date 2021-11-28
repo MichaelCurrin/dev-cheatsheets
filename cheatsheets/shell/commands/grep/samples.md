@@ -45,7 +45,7 @@ Find URLs in a JSON which is only one line.
 This uses a pattern I came up with - note it doesn't cover `?` or trailing `/`.
 
 ```sh
-$ grep -P -o 'https:\/\/[\w./#?_-]*' file.txt
+$ grep -P -o 'https:\/\/[\w./?&=_#-]*' file.txt
 ```
 
 ```
@@ -54,7 +54,9 @@ https://www.oreilly.com/library/view/50-tips-and/9781449306779/ch01.html
 https://leetcode.com/
 ```
 
-Use `-P` for non-greedy support (available in Linux only). Pattern must be in Perl regex syntax.
+Use `-P` for Perl regex (available in Linux only) so `\w` is treated as alphanumeric and not literal `\w`. Pattern must be in Perl regex syntax.
+
+Using `[[:alpha:]]` might work too.
 
 Without `-P` flag:
 
@@ -68,11 +70,14 @@ Without `-o` flag, you see the entire line, but with the match patterns highligh
 
 ### macOS
 
-Not fully tested. Using alphanumeric explicitly, to avoid matching on literal `w` when doing `[\w]` without `-P`.
+Using alphanumeric explicitly.
 
 ```sh
-$ grep -o 'https:\/\/[a-z0-9./#?_-]*' file.txt
+$ grep -o 'https:\/\/[a-zA-Z0-9./?&=_#-]*' file.txt
 ```
+
+I could not get `s?` to work as optional for `http` / `https`.
+
 
 ## Advanced path matching
 
