@@ -207,9 +207,11 @@ bar.txt:This is another match <span class="k">for </span>the foobar pattern
 
 <p>Find URLs in a JSON which is only one line.</p>
 
+<h3 id="linux">Linux</h3>
+
 <p>This uses a pattern I came up with - note it doesn’t cover <code class="language-plaintext highlighter-rouge">?</code> or trailing <code class="language-plaintext highlighter-rouge">/</code>.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">grep</span> <span class="nt">-Po</span> <span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">[</span><span class="se">\w</span><span class="s2">./#-]*"</span> file.txt
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">grep</span> <span class="nt">-P</span> <span class="nt">-o</span> <span class="s1">'https:\/\/[\w./#?_-]*'</span> file.txt
 </code></pre></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://docs.mongodb.com/manual/core/data-model-design/
@@ -227,6 +229,13 @@ https://
 </code></pre></div></div>
 
 <p>Without <code class="language-plaintext highlighter-rouge">-o</code> flag, you see the entire line, but with the match patterns highlighted (assuming colors are enabled).</p>
+
+<h3 id="macos">macOS</h3>
+
+<p>Not fully tested. Using alphanumeric explicitly, to avoid matching on literal <code class="language-plaintext highlighter-rouge">w</code> when doing <code class="language-plaintext highlighter-rouge">[\w]</code> without <code class="language-plaintext highlighter-rouge">-P</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">grep</span> <span class="nt">-o</span> <span class="s1">'https:\/\/[a-z0-9./#?_-]*'</span> file.txt
+</code></pre></div></div>
 
 <h2 id="advanced-path-matching">Advanced path matching</h2>
 
