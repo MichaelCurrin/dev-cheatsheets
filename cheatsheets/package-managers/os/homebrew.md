@@ -11,9 +11,19 @@ description: A commonly-used macOS package manager
 - [Homebrew Tips N' Tricks](https://docs.brew.sh/Tips-N%27-Tricks) in the docs
 
 
-## Install brew
+## Install Homebrew
 
 See the [brew.sh](https://brew.sh) homepage.
+
+This will request your password as it needs _root_ permissions.
+
+```sh
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+See [install.sh](https://github.com/Homebrew/install/blob/master/install.sh) on GitHub.
+
+If upgrading Homebrew, it is recommended to then [upgrade all packages](#upgrade-all-packages).
 
 
 ## Update list
@@ -27,7 +37,7 @@ $ brew update
 ```
 
 
-## Install
+## Install packages
 
 If a package is _already_ installed and you install it again, you'll get an error message telling you to upgrade it instead.
 
