@@ -176,9 +176,18 @@
   <li><a href="https://docs.brew.sh/Tips-N%27-Tricks">Homebrew Tips N’ Tricks</a> in the docs</li>
 </ul>
 
-<h2 id="install-brew">Install brew</h2>
+<h2 id="install-homebrew">Install Homebrew</h2>
 
 <p>See the <a href="https://brew.sh">brew.sh</a> homepage.</p>
+
+<p>This will request your password as it needs <em>root</em> permissions.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>/bin/bash <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="si">)</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<p>See <a href="https://github.com/Homebrew/install/blob/master/install.sh">install.sh</a> on GitHub.</p>
+
+<p>If upgrading Homebrew, it is recommended to then <a href="#upgrade-all-packages">upgrade all packages</a>.</p>
 
 <h2 id="update-list">Update list</h2>
 
@@ -189,7 +198,7 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew update
 </code></pre></div></div>
 
-<h2 id="install">Install</h2>
+<h2 id="install-packages">Install packages</h2>
 
 <p>If a package is <em>already</em> installed and you install it again, you’ll get an error message telling you to upgrade it instead.</p>
 
