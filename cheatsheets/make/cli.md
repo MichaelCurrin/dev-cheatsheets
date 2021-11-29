@@ -69,6 +69,54 @@ You can use the alias and you can move the option to the end.
                               Search DIRECTORY for included makefiles.
 ```
 
+### Concurrent jobs
+
+You can pass multiple targets to `make`. They will be run in a _sequence_.
+
+```sh
+$ make abc def
+```
+
+But if you want to run them concurrently, using the jobs flag. This can be useful for independent tasks, such as some install commands, or starting multiple servers. This saves having to have two terminal tabs open and makes it easy to stop and start everything at once from one terminal with one comamnd.
+
+The output will be intervleaved from the two commands so it may look confusing.
+
+Allow infinite jobs:
+
+```sh
+$ make -j abc def
+```
+
+Allow max of N jobs - here using N of `2`.
+
+```sh
+$ make -j=2 abc def ghi xyz
+```
+
+```sh
+$ make -j=4 abc def ghi xyz
+```
+
+A more practical example, using the `make` command inside a `Makefile`.
+
+```Makefile
+s serve:
+	$(MAKE) -j backend frontend
+```
+
+Call the target in the shell:
+
+```sh
+$ make serve 
+```
+
+```console
+$ make --dry-run serve 
+/Library/Developer/CommandLineTools/usr/bin/make backend frontend
+server/gradlew run -t
+cd client && yarn serve
+```
+
 
 ## Help
 
