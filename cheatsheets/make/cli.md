@@ -100,6 +100,12 @@ $ make -j=4 abc def ghi xyz
 A more practical example, using the `make` command inside a `Makefile`.
 
 ```Makefile
+backend:
+	server/gradlew run -t
+
+frontend:
+	cd client && yarn serve
+
 s serve:
 	$(MAKE) -j backend frontend
 ```
@@ -109,6 +115,8 @@ Call the target in the shell:
 ```sh
 $ make serve 
 ```
+
+Output from a dry run:
 
 ```console
 $ make --dry-run serve 
