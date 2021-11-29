@@ -237,7 +237,7 @@ pip <span class="nb">install</span> <span class="nt">-r</span> requirements-dev.
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make <span class="nt">-j</span><span class="o">=</span>4 abc def ghi xyz
 </code></pre></div></div>
 
-<p>A more practical example, using the <code class="language-plaintext highlighter-rouge">make</code> command inside a <code class="language-plaintext highlighter-rouge">Makefile</code>.</p>
+<p>A more practical example, using the <code class="language-plaintext highlighter-rouge">make</code> command inside a <code class="language-plaintext highlighter-rouge">Makefile</code>. We start the backend and frontend and also open the web browser.</p>
 
 <pre><code class="language-Makefile">backend:
 	server/gradlew run -t
@@ -245,8 +245,11 @@ pip <span class="nb">install</span> <span class="nt">-r</span> requirements-dev.
 frontend:
 	cd client &amp;&amp; yarn serve
 
+open:
+	open http://localhost:8081
+
 s serve:
-	$(MAKE) -j backend frontend
+	$(MAKE) -j backend frontend open
 </code></pre>
 
 <p>Call the target in the shell:</p>
