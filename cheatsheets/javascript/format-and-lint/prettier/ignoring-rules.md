@@ -5,7 +5,7 @@
 
 ```javascript
 // prettier-ignore
-console.log('foo')
+console.log("Hello, World")
 ```
 
 If using ESLint:
