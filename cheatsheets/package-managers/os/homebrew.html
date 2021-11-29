@@ -305,11 +305,11 @@ the upgraded formulae or, every 30 days, for all formulae.
 <span class="nv">$ </span>brew <span class="nb">install </span>gitbatch
 </code></pre></div></div>
 
-<h2 id="link">Link</h2>
+<h2 id="links">Links</h2>
 
 <p>You can run <code class="language-plaintext highlighter-rouge">brew link</code> directly but it also runs as part of install or upgrade.</p>
 
-<p>If a symlink cannot be created, you will get an error message with instructions as below.</p>
+<p>If a symlink cannot be created, you will get an error message with instructions, added here as well for convenience.</p>
 
 <p>To force the link and overwrite all conflicting files:</p>
 
@@ -319,6 +319,26 @@ the upgraded formulae or, every 30 days, for all formulae.
 <p>To list all files that would be deleted:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">link</span> <span class="nt">--overwrite</span> <span class="nt">--dry-run</span> PACKAGE
+</code></pre></div></div>
+
+<p>Sample of a full message:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>==&gt; Pouring six--1.16.0_2.all.bottle.1.tar.gz
+Error: The `brew link` step did not complete successfully
+The formula built, but is not symlinked into /usr/local
+Could not symlink lib/python3.9/site-packages/six.py
+Target /usr/local/lib/python3.9/site-packages/six.py
+already exists. You may want to remove it:
+  rm '/usr/local/lib/python3.9/site-packages/six.py'
+
+To force the link and overwrite all conflicting files:
+  brew link --overwrite six
+
+To list all files that would be deleted:
+  brew link --overwrite --dry-run six
+
+Possible conflicting files are:
+/usr/local/lib/python3.9/site-packages/six.py
 </code></pre></div></div>
 
 <h2 id="services">Services</h2>
