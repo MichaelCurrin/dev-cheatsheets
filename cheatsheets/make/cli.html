@@ -239,7 +239,13 @@ pip <span class="nb">install</span> <span class="nt">-r</span> requirements-dev.
 
 <p>A more practical example, using the <code class="language-plaintext highlighter-rouge">make</code> command inside a <code class="language-plaintext highlighter-rouge">Makefile</code>.</p>
 
-<pre><code class="language-Makefile">s serve:
+<pre><code class="language-Makefile">backend:
+	server/gradlew run -t
+
+frontend:
+	cd client &amp;&amp; yarn serve
+
+s serve:
 	$(MAKE) -j backend frontend
 </code></pre>
 
@@ -247,6 +253,8 @@ pip <span class="nb">install</span> <span class="nt">-r</span> requirements-dev.
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make serve 
 </code></pre></div></div>
+
+<p>Output from a dry run:</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>make <span class="nt">--dry-run</span> serve 
 <span class="go">/Library/Developer/CommandLineTools/usr/bin/make backend frontend
