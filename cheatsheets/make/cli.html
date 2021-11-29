@@ -213,6 +213,47 @@ pip <span class="nb">install</span> <span class="nt">-r</span> requirements-dev.
                               Search DIRECTORY for included makefiles.
 </code></pre></div></div>
 
+<h3 id="concurrent-jobs">Concurrent jobs</h3>
+
+<p>You can pass multiple targets to <code class="language-plaintext highlighter-rouge">make</code>. They will be run in a <em>sequence</em>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make abc def
+</code></pre></div></div>
+
+<p>But if you want to run them concurrently, using the jobs flag. This can be useful for independent tasks, such as some install commands, or starting multiple servers. This saves having to have two terminal tabs open and makes it easy to stop and start everything at once from one terminal with one comamnd.</p>
+
+<p>The output will be intervleaved from the two commands so it may look confusing.</p>
+
+<p>Allow infinite jobs:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make <span class="nt">-j</span> abc def
+</code></pre></div></div>
+
+<p>Allow max of N jobs - here using N of <code class="language-plaintext highlighter-rouge">2</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make <span class="nt">-j</span><span class="o">=</span>2 abc def ghi xyz
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make <span class="nt">-j</span><span class="o">=</span>4 abc def ghi xyz
+</code></pre></div></div>
+
+<p>A more practical example, using the <code class="language-plaintext highlighter-rouge">make</code> command inside a <code class="language-plaintext highlighter-rouge">Makefile</code>.</p>
+
+<pre><code class="language-Makefile">s serve:
+	$(MAKE) -j backend frontend
+</code></pre>
+
+<p>Call the target in the shell:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make serve 
+</code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>make <span class="nt">--dry-run</span> serve 
+<span class="go">/Library/Developer/CommandLineTools/usr/bin/make backend frontend
+server/gradlew run -t
+cd client &amp;&amp; yarn serve
+</span></code></pre></div></div>
+
 <h2 id="help">Help</h2>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make <span class="nt">--help</span>
