@@ -163,11 +163,11 @@ $ brew install gitbatch
 ```
 
 
-## Link
+## Links
 
 You can run `brew link` directly but it also runs as part of install or upgrade.
 
-If a symlink cannot be created, you will get an error message with instructions as below.
+If a symlink cannot be created, you will get an error message with instructions, added here as well for convenience.
 
 To force the link and overwrite all conflicting files:
 
@@ -179,6 +179,27 @@ To list all files that would be deleted:
 
 ```sh
 $ brew link --overwrite --dry-run PACKAGE
+```
+
+Sample of a full message:
+
+```
+==> Pouring six--1.16.0_2.all.bottle.1.tar.gz
+Error: The `brew link` step did not complete successfully
+The formula built, but is not symlinked into /usr/local
+Could not symlink lib/python3.9/site-packages/six.py
+Target /usr/local/lib/python3.9/site-packages/six.py
+already exists. You may want to remove it:
+  rm '/usr/local/lib/python3.9/site-packages/six.py'
+
+To force the link and overwrite all conflicting files:
+  brew link --overwrite six
+
+To list all files that would be deleted:
+  brew link --overwrite --dry-run six
+
+Possible conflicting files are:
+/usr/local/lib/python3.9/site-packages/six.py
 ```
   
 
