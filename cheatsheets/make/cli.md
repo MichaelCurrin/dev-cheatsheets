@@ -97,7 +97,7 @@ $ make -j=2 abc def ghi xyz
 $ make -j=4 abc def ghi xyz
 ```
 
-A more practical example, using the `make` command inside a `Makefile`.
+A more practical example, using the `make` command inside a `Makefile`. We start the backend and frontend and also open the web browser.
 
 ```Makefile
 backend:
@@ -106,8 +106,11 @@ backend:
 frontend:
 	cd client && yarn serve
 
+open:
+	open http://localhost:8081
+
 s serve:
-	$(MAKE) -j backend frontend
+	$(MAKE) -j backend frontend open
 ```
 
 Call the target in the shell:
