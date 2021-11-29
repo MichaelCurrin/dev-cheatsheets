@@ -1,5 +1,7 @@
 # composer
 
+> Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you. 
+
 - [https://getcomposer.org/](https://getcomposer.org/)
 - [Download](https://getcomposer.org/download/)
 
