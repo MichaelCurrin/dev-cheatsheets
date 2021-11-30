@@ -1,4 +1,7 @@
-# ln
+---
+title: ln
+description: Command to make links
+---
 
 
 ## Related
@@ -26,7 +29,7 @@ SYNOPSIS
 
 ### Symbolic link
 
-A one-way pointer.
+A one-way pointer:
 
 ```sh
 $ ln -s TARGET DEST
@@ -62,25 +65,35 @@ $ ln -s -r TARGET DEST
 
 e.g.
 
-```sh
+```console
 $ ln -s -r my-target.txt my-dir/my-symlink
+$ # Check it.
 $ ls -l my-dir
 my-symlink -> ../my-target.txt
 ```
 
-Without the flag, your link would be **invalid**. The symlink would point to a file as `./my-target.txt` in its own directory rather than one level up.
+Note how the reuslt using `../`.
+
+Without the `-r` flag, the created link would be **invalid** - tThe symlink would point to a file as `./my-target.txt` in its _own_ directory rather than one level up.
+
+e.g.
 
 ```console
 $ ln -s my-target.txt my-dir/my-symlink
+$ # Check it.
 $ ls -l my-dir
 my-symlink -> my-target.txt
 ```
 
-Here is a workaround to get the same behavior without using the flag, by using `cd`.
+Here is a workaround to get the same behavior, without using the `-r` flag, by using `cd`.
 
-```sh
+```console
 $ cd my-dir
 $ ln -s ../my-target my-dest
+$ cd ..
+$ # Check it.
+$ ls -l my-dir
+my-symlink -> ../my-target.txt
 ```
 
 ### Force
@@ -90,3 +103,13 @@ You'll get a warning if the destination already exists, so use the force flag.
 ```sh
 $ ln -s -f TARGET DEST
 ```
+
+
+## Examples
+
+### Git hooks
+
+See [Add symlink][] in the Git hooks cheatsheet.
+
+[Add symlink]: {{ link cheatsheets/version-control/git/hooks.md#add-symlink %}
+
