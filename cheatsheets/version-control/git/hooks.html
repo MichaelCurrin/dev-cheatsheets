@@ -252,12 +252,12 @@
 
 <ul>
   <li>Linux and macOS.
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> <span class="nt">-r</span> hooks/pre-commit-msg .git/hooks/pre-commit-msg
-</code></pre></div>    </div>
-  </li>
-  <li>macOS (as <code class="language-plaintext highlighter-rouge">-r</code> relative flag is not supported).
     <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">cd</span> .git/hooks
   <span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> ../../hooks/pre-push pre-push
+</code></pre></div>    </div>
+  </li>
+  <li>Linux - using GNU <code class="language-plaintext highlighter-rouge">ls</code> which supports <code class="language-plaintext highlighter-rouge">-r</code>.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> <span class="nt">-r</span> hooks/pre-commit-msg .git/hooks/pre-commit-msg
 </code></pre></div>    </div>
   </li>
 </ul>
