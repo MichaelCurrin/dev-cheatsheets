@@ -3,6 +3,11 @@ title: CLI
 ---
 
 
+## Resources
+
+- [up](https://docs.docker.com/compose/reference/up/) in the docs.
+- [build](https://docs.docker.com/compose/reference/build/) in docs.
+
 
 ## Requirements
 
@@ -110,6 +115,26 @@ Use the `--scale` flag.
 ```sh
 $ docker-compose up --build --remove-orphans --scale my-app=3
 ```
+
+### Build images and containers
+
+Using `docker compose  build` will build the images but _not_ the containers.
+
+So you can use this to build the images.
+
+```sh
+$ docker compose up --build
+```
+
+And then to avoid actually starting the containers, like for CI, you can do this:
+
+```sh
+$ docker compose up --build --no-start
+```
+
+From flag:
+
+> `-no-start Don't start the services after creating them.`
 
 
 ## Start
