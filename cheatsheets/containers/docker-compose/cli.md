@@ -126,7 +126,7 @@ So you can use this to build the images.
 $ docker compose up --build
 ```
 
-And then to avoid actually starting the containers, like for CI, you can do this:
+And then to avoid actually starting the containers, you can do this:
 
 ```sh
 $ docker compose up --build --no-start
@@ -135,6 +135,8 @@ $ docker compose up --build --no-start
 From flag:
 
 > `-no-start Don't start the services after creating them.`
+
+That is useful in CI or for a pre-push hook.
 
 
 ## Start
