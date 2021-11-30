@@ -44,30 +44,58 @@ Note that if you store hooks in a directory like `hooks`, you'll need a manual s
 
 See also my [Jekyll Hooks](https://michaelcurrin.github.io/code-cookbook/recipes/jekyll/hooks.html) recipe.
 
-Here we use a file from version control in `hooks/` directory and add it to `.git/hooks`.
+### Copy
+
+Here we use a file from version control in `hooks/` directory with the name and copy it to Git's hooks directory of `.git/hooks`.
 
 ```sh
 $ cp hooks/pre-commit-msg .git/hooks/pre-commit-msg
 ```
 
-If it wasn't executable, you'll need to change it now.
+You should make the file executable in version control for ease.
+
+If it wasn't executable, you'll need to change it now:
+
 ```sh
 $ chmod +x .git/hooks/pre-commit-msg
 ```
 
-Or sym-link from git hooks to the versioned hooks - if the file is executable.
+### Add symlink
 
-```sh
-$ ln -s -r hooks/pre-commit-msg .git/hooks/pre-commit-msg
+An alternative which keeps the Git hooks in sync with the file in version control, so you never have to remmeber to copy after a change.
+
+We'll get this in `.git/hooks`, when viewed with `ls -l`.
+
+```
+pre-push -> ../../hooks/pre-push
 ```
 
-You can also _reset_ the git hooks (I think) using this in an existing repo:
+Make sure the file is executable in version control.
+
+Then add a link inside the Git hooks using either approach:
+
+- Linux and macOS.
+    ```sh
+    $ ln -s -r hooks/pre-commit-msg .git/hooks/pre-commit-msg
+    ```
+- macOS (as `-r` relative flag is not supported). 
+    ```sh
+    $ cd .git/hooks
+    $ ln -s ../../hooks/pre-push pre-push
+    ```
+
+See my [Badge Generator Makefile](https://github.com/MichaelCurrin/badge-generator/blob/master/Makefile) to see this in use.
+
+### Reset
+
+You can also _reset_ the Git hooks directory to remove any of your changes, using this in an existing repo.
 
 ```sh
 $ git init
 ```
 
 > It’s important to note that client-side hooks are not copied when you clone a repository. If your intent with these scripts is to enforce a policy, you’ll probably want to do that on the server side; see the example in [An Example Git-Enforced Policy](https://git-scm.com/book/en/v2/Customizing-Git-An-Example-Git-Enforced-Policy#_an_example_git_enforced_policy).
+
 
 
 ## Hook samples
