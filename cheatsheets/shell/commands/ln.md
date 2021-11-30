@@ -6,7 +6,7 @@ description: Command to make links
 
 ## Related
 
-- [Links][] cheatsheet.
+- [Links][] shell cheatsheet.
 
 [Links]: {% link cheatsheets/shell/links.md %}
 
@@ -111,5 +111,5 @@ $ ln -s -f TARGET DEST
 
 See [Add symlink][] in the Git hooks cheatsheet.
 
-[Add symlink]: {{ link cheatsheets/version-control/git/hooks.md#add-symlink %}
+[Add symlink]: {{ link cheatsheets/version-control/git/hooks.md %}#add-symlink
 
