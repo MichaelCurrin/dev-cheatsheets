@@ -17,6 +17,13 @@ e.g.
 (a|b)?
 ```
 
+e.g. match number of 1 or 2 digits. Using either pattern.
+
+```re
+\d?\d
+\d{1,2}
+```
+
 e.g. JS comments over 80 characters long
 
 ```re
