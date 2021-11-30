@@ -163,7 +163,14 @@
 
     <div class="post-content">
         
-            <h2 id="requirements">Requirements</h2>
+            <h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://docs.docker.com/compose/reference/up/">up</a> in the docs.</li>
+  <li><a href="https://docs.docker.com/compose/reference/build/">build</a> in docs.</li>
+</ul>
+
+<h2 id="requirements">Requirements</h2>
 
 <p>You need the following:</p>
 
@@ -266,6 +273,28 @@ Starting foo_bar_1 ... <span class="k">done
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose up <span class="nt">--build</span> <span class="nt">--remove-orphans</span> <span class="nt">--scale</span> my-app<span class="o">=</span>3
 </code></pre></div></div>
+
+<h3 id="build-images-and-containers">Build images and containers</h3>
+
+<p>Using <code class="language-plaintext highlighter-rouge">docker compose  build</code> will build the images but <em>not</em> the containers.</p>
+
+<p>So you can use this to build the images.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker compose up <span class="nt">--build</span>
+</code></pre></div></div>
+
+<p>And then to avoid actually starting the containers, you can do this:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker compose up <span class="nt">--build</span> <span class="nt">--no-start</span>
+</code></pre></div></div>
+
+<p>From flag:</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">-no-start Don't start the services after creating them.</code></p>
+</blockquote>
+
+<p>That is useful in CI or for a pre-push hook.</p>
 
 <h2 id="start">Start</h2>
 

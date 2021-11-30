@@ -20,8 +20,8 @@
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
-    <meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+    <meta name="description" content="Command to make links" />
+    <meta property="og:description" content="Command to make links" />
 <meta name="author" content="Michael Currin" />
 
 
@@ -33,7 +33,7 @@
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
+    "description": "Command to make links",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/ln.html",
     "headline":    "ln",
     "@type":       "WebSite",
@@ -103,6 +103,11 @@
         </h1>
 
         
+            <blockquote>
+                <p>Command to make links</p>
+
+            </blockquote>
+        
     </header>
 
     
@@ -166,7 +171,7 @@
             <h2 id="related">Related</h2>
 
 <ul>
-  <li><a href="/dev-cheatsheets/cheatsheets/shell/links.html">Links</a> cheatsheet.</li>
+  <li><a href="/dev-cheatsheets/cheatsheets/shell/links.html">Links</a> shell cheatsheet.</li>
 </ul>
 
 <h2 id="help">Help</h2>
@@ -185,7 +190,7 @@ SYNOPSIS
 
 <h3 id="symbolic-link">Symbolic link</h3>
 
-<p>A one-way pointer.</p>
+<p>A one-way pointer:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> TARGET DEST
 </code></pre></div></div>
@@ -216,22 +221,32 @@ SYNOPSIS
 
 <p>e.g.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> <span class="nt">-r</span> my-target.txt my-dir/my-symlink
-<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> my-dir
-my-symlink -&gt; ../my-target.txt
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">ln</span> <span class="nt">-s</span> <span class="nt">-r</span> my-target.txt my-dir/my-symlink
+<span class="gp">$</span><span class="w"> </span><span class="c"># Check it.</span>
+<span class="gp">$</span><span class="w"> </span><span class="nb">ls</span> <span class="nt">-l</span> my-dir
+<span class="gp">my-symlink -&gt;</span><span class="w"> </span>../my-target.txt
 </code></pre></div></div>
 
-<p>Without the flag, your link would be <strong>invalid</strong>. The symlink would point to a file as <code class="language-plaintext highlighter-rouge">./my-target.txt</code> in its own directory rather than one level up.</p>
+<p>Note how the reuslt using <code class="language-plaintext highlighter-rouge">../</code>.</p>
+
+<p>Without the <code class="language-plaintext highlighter-rouge">-r</code> flag, the created link would be <strong>invalid</strong> - tThe symlink would point to a file as <code class="language-plaintext highlighter-rouge">./my-target.txt</code> in its <em>own</em> directory rather than one level up.</p>
+
+<p>e.g.</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">ln</span> <span class="nt">-s</span> my-target.txt my-dir/my-symlink
+<span class="gp">$</span><span class="w"> </span><span class="c"># Check it.</span>
 <span class="gp">$</span><span class="w"> </span><span class="nb">ls</span> <span class="nt">-l</span> my-dir
 <span class="gp">my-symlink -&gt;</span><span class="w"> </span>my-target.txt
 </code></pre></div></div>
 
-<p>Here is a workaround to get the same behavior without using the flag, by using <code class="language-plaintext highlighter-rouge">cd</code>.</p>
+<p>Here is a workaround to get the same behavior, without using the <code class="language-plaintext highlighter-rouge">-r</code> flag, by using <code class="language-plaintext highlighter-rouge">cd</code>.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>my-dir
-<span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> ../my-target my-dest
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">cd </span>my-dir
+<span class="gp">$</span><span class="w"> </span><span class="nb">ln</span> <span class="nt">-s</span> ../my-target my-dest
+<span class="gp">$</span><span class="w"> </span><span class="nb">cd</span> ..
+<span class="gp">$</span><span class="w"> </span><span class="c"># Check it.</span>
+<span class="gp">$</span><span class="w"> </span><span class="nb">ls</span> <span class="nt">-l</span> my-dir
+<span class="gp">my-symlink -&gt;</span><span class="w"> </span>../my-target.txt
 </code></pre></div></div>
 
 <h3 id="force">Force</h3>
@@ -240,6 +255,13 @@ my-symlink -&gt; ../my-target.txt
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> <span class="nt">-f</span> TARGET DEST
 </code></pre></div></div>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="git-hooks">Git hooks</h3>
+
+<p>See <a href="/dev-cheatsheets/cheatsheets/version-control/git/hooks.html#add-symlink">Add symlink</a> in the Git hooks cheatsheet.</p>
+
 
         
     </div>

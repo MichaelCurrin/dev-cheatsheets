@@ -751,6 +751,9 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/markdown/lists.html</loc>
 </url>
 <url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/ln.html</loc>
+</url>
+<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/locate.html</loc>
 </url>
 <url>
@@ -1505,6 +1508,9 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/data-structures/unpack.html</loc>
+</url>
+<url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/errors.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/es6.html</loc>
@@ -2666,9 +2672,6 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/iconv.html</loc>
-</url>
-<url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/ln.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/ls.html</loc>
