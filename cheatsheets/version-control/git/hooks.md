@@ -76,14 +76,14 @@ Then add a link inside the Git hooks using either approach:
 
 - Linux and macOS.
     ```sh
-    $ ln -s -r hooks/pre-commit-msg .git/hooks/pre-commit-msg
-    ```
-- macOS (as `-r` relative flag is not supported). 
-    ```sh
     $ cd .git/hooks
     $ ln -s ../../hooks/pre-push pre-push
     ```
-
+- Linux - using GNU `ls` which supports `-r`.
+    ```sh
+    $ ln -s -r hooks/pre-commit-msg .git/hooks/pre-commit-msg
+    ```
+    
 See my [Badge Generator Makefile](https://github.com/MichaelCurrin/badge-generator/blob/master/Makefile) to see this in use.
 
 ### Reset
