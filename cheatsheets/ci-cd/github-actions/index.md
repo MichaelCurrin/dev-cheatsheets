@@ -25,3 +25,6 @@ Here are some other areas to start with:
 
 - [GH Actions](https://michaelcurrin.github.io/dev-resources/resources/ci-cd/github-actions/) in Dev Resources. For external links such as to docs, to help you get into how Actions work and the syntax.
 - [GH Actions](https://michaelcurrin.github.io/dev-resources/resources/ci-cd/github-actions/) recipes in Code Cookbook.
+- [GH Actions Jekyll Quickstart](https://github.com/MichaelCurrin/jekyll-gh-actions-quickstart) - deployed with GH Actions and GH Pages.
+- [React Quickstart](https://github.com/MichaelCurrin/react-quickstart) - deployed with GH Actions and GH Pages.
+- [Vue Quickstart](https://github.com/MichaelCurrin/vue-quickstart) - deployed with GH Actions and GH Pages.
