@@ -223,21 +223,50 @@
 
 <p>See also my <a href="https://michaelcurrin.github.io/code-cookbook/recipes/jekyll/hooks.html">Jekyll Hooks</a> recipe.</p>
 
-<p>Here we use a file from version control in <code class="language-plaintext highlighter-rouge">hooks/</code> directory and add it to <code class="language-plaintext highlighter-rouge">.git/hooks</code>.</p>
+<h3 id="copy">Copy</h3>
+
+<p>Here we use a file from version control in <code class="language-plaintext highlighter-rouge">hooks/</code> directory with the name and copy it to Git’s hooks directory of <code class="language-plaintext highlighter-rouge">.git/hooks</code>.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cp </span>hooks/pre-commit-msg .git/hooks/pre-commit-msg
 </code></pre></div></div>
 
-<p>If it wasn’t executable, you’ll need to change it now.</p>
+<p>You should make the file executable in version control for ease.</p>
+
+<p>If it wasn’t executable, you’ll need to change it now:</p>
+
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod</span> +x .git/hooks/pre-commit-msg
 </code></pre></div></div>
 
-<p>Or sym-link from git hooks to the versioned hooks - if the file is executable.</p>
+<h3 id="add-symlink">Add symlink</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> <span class="nt">-r</span> hooks/pre-commit-msg .git/hooks/pre-commit-msg
+<p>An alternative which keeps the Git hooks in sync with the file in version control, so you never have to remmeber to copy after a change.</p>
+
+<p>We’ll get this in <code class="language-plaintext highlighter-rouge">.git/hooks</code>, when viewed with <code class="language-plaintext highlighter-rouge">ls -l</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pre-push -&gt; ../../hooks/pre-push
 </code></pre></div></div>
 
-<p>You can also <em>reset</em> the git hooks (I think) using this in an existing repo:</p>
+<p>Make sure the file is executable in version control.</p>
+
+<p>Then add a link inside the Git hooks using either approach:</p>
+
+<ul>
+  <li>Linux and macOS.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> <span class="nt">-r</span> hooks/pre-commit-msg .git/hooks/pre-commit-msg
+</code></pre></div>    </div>
+  </li>
+  <li>macOS (as <code class="language-plaintext highlighter-rouge">-r</code> relative flag is not supported).
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">cd</span> .git/hooks
+  <span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> ../../hooks/pre-push pre-push
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>See my <a href="https://github.com/MichaelCurrin/badge-generator/blob/master/Makefile">Badge Generator Makefile</a> to see this in use.</p>
+
+<h3 id="reset">Reset</h3>
+
+<p>You can also <em>reset</em> the Git hooks directory to remove any of your changes, using this in an existing repo.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git init
 </code></pre></div></div>
