@@ -202,16 +202,17 @@
   </li>
 </ul>
 
-<p>This will also install missing packages.</p>
+<p>This will also install any <em>missing</em> packages. i.e. if you deleted anything from <code class="language-plaintext highlighter-rouge">node_modules</code> or if you added to <code class="language-plaintext highlighter-rouge">package.json</code> without doing <code class="language-plaintext highlighter-rouge">npm install</code>.</p>
 
 <h2 id="related">Related</h2>
 
 <ul>
-  <li><a href="/dev-cheatsheets/cheatsheets/package-managers/javascript/npm/commands/install.html">install</a> command</li>
-  <li><a href="/dev-cheatsheets/cheatsheets/package-managers/javascript/npm/commands/outdated.html">outdated</a> command</li>
-  <li><a href="/dev-cheatsheets/cheatsheets/package-managers/javascript/npm/install-packages.html">Install packages</a></li>
-  <li><a href="/dev-cheatsheets/cheatsheets/package-managers/javascript/npm/maintain-packages.html">Maintain packages</a></li>
-  <li><a href="/dev-cheatsheets/cheatsheets/package-managers/javascript/npm/upgrade-packages.html">Upgrade packages</a></li>
+  <li><a href="/dev-cheatsheets/cheatsheets/package-managers/javascript/npm/commands/install.html">install</a> command cheatsheet</li>
+  <li><a href="/dev-cheatsheets/cheatsheets/package-managers/javascript/npm/commands/outdated.html">outdated</a> command cheatsheet</li>
+  <li><a href="/dev-cheatsheets/cheatsheets/package-managers/javascript/npm/install-packages.html">Install packages</a> cheatsheet</li>
+  <li><a href="/dev-cheatsheets/cheatsheets/package-managers/javascript/npm/maintain-packages.html">Maintain packages</a> cheatsheet</li>
+  <li><a href="/dev-cheatsheets/cheatsheets/package-managers/javascript/npm/upgrade-packages.html">Upgrade packages</a> cheatsheet</li>
+  <li><a href="https://michaelcurrin.github.io/code-cookbook/recipes/ci-cd/github-actions/workflows/node/upgrade-packages.html">Upgrade packages with GH Actions</a> recipe in Code Cookbook.</li>
 </ul>
 
 <h2 id="upgrade-all">Upgrade all</h2>
@@ -219,14 +220,23 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm update
 </code></pre></div></div>
 
+<p>This will give as success exit status, even if nothing was upgraded.</p>
+
 <h2 id="upgrade-one">Upgrade one</h2>
 
-<p>Optionally supply package names as arguments.</p>
+<h3 id="update-command">update command</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm update PACKAGE_NAME
 </code></pre></div></div>
 
-<p>For example, this might change as follows:</p>
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm update foo
+<span class="nv">$ </span><span class="c"># Multiple</span>
+<span class="nv">$ </span>npm update foo bar bazz
+</code></pre></div></div>
+
+<p>Which could result in change in <code class="language-plaintext highlighter-rouge">package.json</code>:</p>
 
 <div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">- "foo": "^1.0.0"
 </span><span class="gi">+ "foo": "^1.2.3"
@@ -234,7 +244,9 @@
 
 <p>But, the package will <strong>remain</strong> within the initial bounds. So the command here would not upgrade from <code class="language-plaintext highlighter-rouge">1</code> to <code class="language-plaintext highlighter-rouge">2</code>. See the sections below for that.</p>
 
-<p>Or use <code class="language-plaintext highlighter-rouge">install</code> with a falag.</p>
+<h3 id="install-and-ugprade">install and ugprade</h3>
+
+<p>To get the same result, you can use <code class="language-plaintext highlighter-rouge">install</code> with an upgrade flag.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">--upgrade</span> PACKAGE_NAME
 </code></pre></div></div>
