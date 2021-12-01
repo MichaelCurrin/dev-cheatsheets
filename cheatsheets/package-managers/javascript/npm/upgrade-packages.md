@@ -8,9 +8,11 @@ description: Guide to managing out NPM packages in your project
 
 - [upgrade][] command cheatsheet
 - [outdated][] command cheatsheet.
+- [Upgrade packages with GH Actions][] recipe in Code Cookbook.
 
 [upgrade]: {% link cheatsheets/package-managers/javascript/npm/commands/update.md %}
 [outdated]: {% link cheatsheets/package-managers/javascript/npm/commands/outdated.md %}
+[Upgrade packages with GH Actions]: https://michaelcurrin.github.io/code-cookbook/recipes/ci-cd/github-actions/workflows/node/upgrade-packages.html
 
 
 ## Overview
