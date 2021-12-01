@@ -4,6 +4,15 @@ description: Guide to managing out NPM packages in your project
 # Upgrade packages
 
 
+## Related
+
+- [upgrade][] command cheatsheet
+- [outdated][] command cheatsheet.
+
+[upgrade]: {% link cheatsheets/package-managers/javascript/npm/commands/update.md %}
+[outdated]: {% link cheatsheets/package-managers/javascript/npm/commands/outdated.md %}
+
+
 ## Overview
 
 ### Upgrade one package
@@ -75,8 +84,6 @@ Packages will still be limited by restrictions in `package.json` though, so this
 ## Check for outdated packages
 
 See [outdated][] command cheatsheet.
-
-[outdated]: {% link cheatsheets/package-managers/javascript/npm/commands/outdated.md %}
 
 ```sh
 $ npm outdated
