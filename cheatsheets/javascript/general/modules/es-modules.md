@@ -21,7 +21,7 @@ This approach is widely supported:
 
 For browsers which don't support it, you can use a fallback:
 
-```javascript
+```html
 <script type="module" src="main.js"></script>
 <script nomodule src="fallback.js"></script>
 ```
@@ -136,7 +136,7 @@ Load a image as an object so you can use it as a URL in your content.
 
 Based on [React Quickstart](https://github.com/MichaelCurrin/react-quickstart/blob/main/src/App.jsx).
 
-```javascript
+```react
 import logo from './logo.svg';
 
 export default function App() {
@@ -259,22 +259,35 @@ import foo from './foo';
 
 ### Combine multiple defaults
 
-Normally:
+Normally you could export another module as default, but this will be invalid for two modules.
 
 ```javascript
 export React from "https://dev.jspm.io/react";
-// And.
 export ReactDOMServer from "https://dev.jspm.io/react-dom/server";
+
+// Equivalent to:
+import React from "https://dev.jspm.io/react";
+import ReactDOMServer from "https://dev.jspm.io/react-dom/server";
+export default React
+export default ReactDOMServer
 ```
 
-Combined:
+Here is an alternative. So instead of assigning a name directly, import as unpacking the `default` object and then assign it a name.
 
 ```javascript
 export { default as React } from "https://dev.jspm.io/react";
 export { default as ReactDOMServer } from "https://dev.jspm.io/react-dom/server";
+
+// Equivalent to:
+import React from "https://dev.jspm.io/react";
+import ReactDOMServer from "https://dev.jspm.io/react-dom/server";
+export {
+  React
+  ReactDOMServer
+}
 ```
 
-Now you can import from that module.
+Now you can import one or both modules from your module.
 
 ```javascript
 import { React, ReactDOMServer } from "./deps.ts";
@@ -287,6 +300,7 @@ Intended:
 ```javascript
 // Default.
 import React from "./deps.ts"
+
 // Named.
 import { Application } from "./deps.ts";
 ```
@@ -300,7 +314,7 @@ import React, { Application } from "./deps.ts";
 
 ## Nomodule
 
-In case a browser does not support ES Modules, you can prompt the user to upgrade.
+In case a browser does **not** support _ES Modules_, you can prompt the user to upgrade.
 
 Example - based on [esm.sh](https://esm.sh/) homepage source.
 
@@ -308,6 +322,7 @@ Example - based on [esm.sh](https://esm.sh/) homepage source.
 <script module>
     // ...
 </script>
+
 <script nomodule>
     const mainEl = document.querySelector('main');
     mainEl.innerHTML = '<p><em style="color: #999;">nomodule, please upgrade your browser...</em></p>'
