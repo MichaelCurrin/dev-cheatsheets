@@ -20,9 +20,9 @@
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="Import modules using `import IMPORTS from "MODULE"` - in Node, Deno or the browser.
+    <meta name="description" content="Import modules using 'import' keyword - in Node, Deno or the browser
 " />
-    <meta property="og:description" content="Import modules using `import IMPORTS from "MODULE"` - in Node, Deno or the browser.
+    <meta property="og:description" content="Import modules using 'import' keyword - in Node, Deno or the browser
 " />
 <meta name="author" content="Michael Currin" />
 
@@ -35,7 +35,7 @@
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "Import modules using `import IMPORTS from "MODULE"` - in Node, Deno or the browser.
+    "description": "Import modules using 'import' keyword - in Node, Deno or the browser
 ",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/modules/es-modules.html",
     "headline":    "ES Modules",
@@ -107,7 +107,7 @@
 
         
             <blockquote>
-                <p>Import modules using <code class="language-plaintext highlighter-rouge">import IMPORTS from &amp;quot;MODULE&amp;quot;</code> - in Node, Deno or the browser.</p>
+                <p>Import modules using 'import' keyword - in Node, Deno or the browser</p>
 
             </blockquote>
         
@@ -191,15 +191,19 @@
 
 <h2 id="support">Support</h2>
 
+<h3 id="runtimes">Runtimes</h3>
+
 <p>This approach is widely supported:</p>
 
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Browsers (including Chrome, Firefox and Safari since at least 2018).</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Node.js</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Node.js - available from Node 12</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Deno</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Browsers - including Chrome, Firefox and Safari since at least 2018.</li>
 </ul>
 
-<p>For browsers which don’t support it, you can use a fallback:</p>
+<h3 id="fallback">Fallback</h3>
+
+<p>For browsers which don’t support it, you can use specify your own fallback script:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span> <span class="na">src=</span><span class="s">"main.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">nomodule</span> <span class="na">src=</span><span class="s">"fallback.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -214,7 +218,7 @@
   <li><a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">ES modules: A cartoon deep-dive</a> blog post.</li>
 </ul>
 
-<h2 id="enable-esmodules">Enable ESModules</h2>
+<h2 id="enable-es-modules">Enable ES Modules</h2>
 
 <h3 id="set-script-tag-type">Set script tag type</h3>
 
@@ -229,9 +233,9 @@
 <ul>
   <li><code class="language-plaintext highlighter-rouge">index.html</code>
     <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
-  <span class="k">import</span> <span class="p">{</span> <span class="nx">bar</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://dev.jspm.io/some-library</span><span class="dl">"</span><span class="p">;</span>
+    <span class="k">import</span> <span class="p">{</span> <span class="nx">bar</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://dev.jspm.io/some-library</span><span class="dl">"</span><span class="p">;</span>
 
-  <span class="k">import</span> <span class="p">{</span> <span class="nx">foo</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./foo</span><span class="dl">"</span><span class="p">;</span>
+    <span class="k">import</span> <span class="p">{</span> <span class="nx">foo</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./foo</span><span class="dl">"</span><span class="p">;</span>
   <span class="nt">&lt;/script&gt;</span>
 </code></pre></div>    </div>
   </li>
