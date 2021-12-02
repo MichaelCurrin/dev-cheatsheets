@@ -1,7 +1,7 @@
 ---
 title: ES Modules
 description: |
-  Import modules using `import IMPORTS from "MODULE"` - in Node, Deno or the browser.
+  Import modules using 'import' keyword - in Node, Deno or the browser
 ---
 
 As of ES6 (ES2015), JavaScript supports a native module format called ES Modules, or ECMAScript Modules. This is modern way to do modules in JavaScript.
@@ -13,13 +13,17 @@ This page covers more details on the syntax and examples of loading modules in d
 
 ## Support
 
+### Runtimes
+
 This approach is widely supported:
 
-- [x] Browsers (including Chrome, Firefox and Safari since at least 2018).
-- [x] Node.js
+- [x] Node.js - available from Node 12
 - [x] Deno
+- [x] Browsers - including Chrome, Firefox and Safari since at least 2018.
 
-For browsers which don't support it, you can use a fallback:
+### Fallback
+
+For browsers which don't support it, you can use specify your own fallback script:
 
 ```html
 <script type="module" src="main.js"></script>
@@ -35,7 +39,7 @@ For browsers which don't support it, you can use a fallback:
 - [ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/) blog post.
 
 
-## Enable ESModules
+## Enable ES Modules
 
 ### Set script tag type
 
@@ -50,9 +54,9 @@ Keep in mind for the sections later on this page that you can use either approac
 - `index.html`
     ```html
     <script type="module">
-    import { bar } from "https://dev.jspm.io/some-library";
+      import { bar } from "https://dev.jspm.io/some-library";
 
-    import { foo } from "./foo";
+      import { foo } from "./foo";
     </script>
     ```
 
