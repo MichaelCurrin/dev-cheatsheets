@@ -201,9 +201,9 @@
 
 <p>For browsers which don’t support it, you can use a fallback:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">module</span><span class="dl">"</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">main.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">nomodule</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">fallback.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre></div></div>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span> <span class="na">src=</span><span class="s">"main.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">nomodule</span> <span class="na">src=</span><span class="s">"fallback.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
 
 <h2 id="resources">Resources</h2>
 
@@ -316,14 +316,14 @@
 
 <p>Based on <a href="https://github.com/MichaelCurrin/react-quickstart/blob/main/src/App.jsx">React Quickstart</a>.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">logo</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./logo.svg</span><span class="dl">'</span><span class="p">;</span>
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">logo</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./logo.svg</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">logo</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"App"</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="p">=</span><span class="si">{</span><span class="nx">logo</span><span class="si">}</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -440,20 +440,33 @@
 
 <h3 id="combine-multiple-defaults">Combine multiple defaults</h3>
 
-<p>Normally:</p>
+<p>Normally you could export another module as default, but this will be invalid for two modules.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://dev.jspm.io/react</span><span class="dl">"</span><span class="p">;</span>
-<span class="c1">// And.</span>
 <span class="k">export</span> <span class="nx">ReactDOMServer</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://dev.jspm.io/react-dom/server</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// Equivalent to:</span>
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://dev.jspm.io/react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">ReactDOMServer</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://dev.jspm.io/react-dom/server</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">React</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">ReactDOMServer</span>
 </code></pre></div></div>
 
-<p>Combined:</p>
+<p>Here is an alternative. So instead of assigning a name directly, import as unpacking the <code class="language-plaintext highlighter-rouge">default</code> object and then assign it a name.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="p">{</span> <span class="k">default</span> <span class="k">as</span> <span class="nx">React</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://dev.jspm.io/react</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">export</span> <span class="p">{</span> <span class="k">default</span> <span class="k">as</span> <span class="nx">ReactDOMServer</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://dev.jspm.io/react-dom/server</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// Equivalent to:</span>
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://dev.jspm.io/react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">ReactDOMServer</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://dev.jspm.io/react-dom/server</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">export</span> <span class="p">{</span>
+  <span class="nx">React</span>
+  <span class="nx">ReactDOMServer</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<p>Now you can import from that module.</p>
+<p>Now you can import one or both modules from your module.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">React</span><span class="p">,</span> <span class="nx">ReactDOMServer</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./deps.ts</span><span class="dl">"</span><span class="p">;</span>
 </code></pre></div></div>
@@ -464,6 +477,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Default.</span>
 <span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./deps.ts</span><span class="dl">"</span>
+
 <span class="c1">// Named.</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">Application</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./deps.ts</span><span class="dl">"</span><span class="p">;</span>
 </code></pre></div></div>
@@ -475,13 +489,14 @@
 
 <h2 id="nomodule">Nomodule</h2>
 
-<p>In case a browser does not support ES Modules, you can prompt the user to upgrade.</p>
+<p>In case a browser does <strong>not</strong> support <em>ES Modules</em>, you can prompt the user to upgrade.</p>
 
 <p>Example - based on <a href="https://esm.sh/">esm.sh</a> homepage source.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">module</span><span class="nt">&gt;</span>
     <span class="c1">// ...</span>
 <span class="nt">&lt;/script&gt;</span>
+
 <span class="nt">&lt;script </span><span class="na">nomodule</span><span class="nt">&gt;</span>
     <span class="kd">const</span> <span class="nx">mainEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">main</span><span class="dl">'</span><span class="p">);</span>
     <span class="nx">mainEl</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">&lt;p&gt;&lt;em style="color: #999;"&gt;nomodule, please upgrade your browser...&lt;/em&gt;&lt;/p&gt;</span><span class="dl">'</span>
