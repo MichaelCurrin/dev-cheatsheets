@@ -46,6 +46,10 @@ if (typeof MY_VAR === 'undefined') {
 
 ## Use a fallback 
 
+See more info in [Optional chaining][].
+
+[Optional chaining]: {% link cheatsheets/javascript/general/optional-chaining.md %}
+
 In newer JS you can use `??` to replace null and undefined with a default.
 
 ```js
