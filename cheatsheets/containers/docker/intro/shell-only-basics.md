@@ -57,7 +57,7 @@ $ docker run -d centos
 ```
 
 ```
-  -d, --detach                         Run container in background and print container ID
+  -d, --detach   Run container in background and print container ID
 ```
 
 #### Clean up
@@ -69,7 +69,7 @@ $ docker run --rm -d centos
 Use this flag to remove the container when it is finished.
 
 ```
-      --rm                             Automatically remove the container when it exits
+      --rm      Automatically remove the container when it exits
 ```
 
 #### Name
@@ -123,9 +123,9 @@ $ docker ps
 Example output:
 
 ```
-CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS              PORTS                      NAMES
-8332318ac5b5        centos                  "/bin/bash"              8 seconds ago       Up 6 seconds                                   my-container
-
+CONTAINER ID   IMAGE       COMMAND       CREATED        STATUS        PORTS   NAMES
+8332318ac5b5   centos      "/bin/bash"   8 seconds ago  Up 6 seconds          my-container
+...
 ```
 
 ### Start terminal
