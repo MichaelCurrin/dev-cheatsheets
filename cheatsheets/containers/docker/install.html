@@ -176,7 +176,7 @@
   <li><a href="https://docs.docker.com/get-started/#download-and-install-docker">Download and install Docker</a></li>
 </ul>
 
-<p>Or continue to the <a href="#docker-desktop">Docker Desktop</a> or <a href="#docker-engine">Docker Engine</a> instructions below.</p>
+<p>Or continue to either the <a href="#docker-desktop">Docker Desktop</a> or <a href="#docker-engine">Docker Engine</a> instructions below.</p>
 
 <h2 id="docker-desktop">Docker Desktop</h2>
 
@@ -196,16 +196,37 @@
   <li><a href="https://docs.docker.com/desktop/">Docker Desktop</a> docs</li>
 </ul>
 
+<h3 id="macos">macOS</h3>
+
+<p>Go to this page:</p>
+
+<ul>
+  <li><a href="https://docs.docker.com/docker-for-mac/install/">Install Docker Desktop on Mac</a></li>
+</ul>
+
+<p>There is a file to download from the browser. Drag the downloaded <code class="language-plaintext highlighter-rouge">Docker.app</code> to your <em>Applications</em> as per the install instuctions and you’ll get Docker app.</p>
+
+<p>This install includes both Docker CLI and the Docker Desktop app. The latter docks as an icon at the top of the screen and allows functionality like signing into Docker hub, changing Kubernetes environment.</p>
+
 <h2 id="docker-engine">Docker Engine</h2>
 
 <p>Windows, macOS and Linux.</p>
 
+<p>Documentation:</p>
+
 <ul>
-  <li><a href="https://docs.docker.com/engine/install/">Install Docker Engine</a> docs.</li>
   <li><a href="https://docs.docker.com/engine/">Docker Engine</a> docs.</li>
+  <li><a href="https://docs.docker.com/engine/install/">Install Docker Engine</a> docs.</li>
 </ul>
 
-<p>Install instructions from the <a href="https://docs.docker.com/engine/install/debian/">Debian install guide</a>:</p>
+<h3 id="linux">Linux</h3>
+
+<ul>
+  <li><a href="https://docs.docker.com/engine/install/ubuntu/">Ubuntu install guide</a></li>
+  <li><a href="https://docs.docker.com/engine/install/debian/">Debian install guide</a></li>
+</ul>
+
+<p>Below are instructions from the Debian install guide.</p>
 
 <ol>
   <li>Remove old Docker packages in case they exist.
@@ -230,6 +251,7 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>docker run hello-world
 </code></pre></div></div>
+
 
         
     </div>
