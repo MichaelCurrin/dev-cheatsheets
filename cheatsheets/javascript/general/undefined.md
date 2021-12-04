@@ -1,6 +1,9 @@
 # undefined
 
-There are common encounters of `undefined`.
+Some common cases of `undefined` in JS.
+
+Note that TypeScript can avoid undefined/missing values for you so you don't have to throw errors or use a fallback.
+
 
 ## Intilialize
 
