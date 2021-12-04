@@ -3,11 +3,12 @@ title: Install
 description: How to install Docker and related tools
 ---
 
-## Quick reference
+## Resources
 
-See this guide in the Docker docs and choose your OS:
+See one of tehse in the Docker docs and choose your OS there:
 
-- [Download and install Docker](https://docs.docker.com/get-started/#download-and-install-docker)
+- [Get Docker](https://docs.docker.com/get-docker/)
+- [Orientation and setup - Download and install Docker](https://docs.docker.com/get-started/#download-and-install-docker)
 
 Or continue to either the [Docker Desktop](#docker-desktop) or [Docker Engine](#docker-engine) instructions below.
 
