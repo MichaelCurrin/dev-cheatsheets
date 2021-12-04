@@ -176,7 +176,7 @@
     <div class="post-content">
         
             <blockquote>
-  <p>How to create and manage containers from the shell - without using creating any files like <code class="language-plaintext highlighter-rouge">Dockefile</code></p>
+  <p>How to create and manage containers with Docker CLI - without creating a <code class="language-plaintext highlighter-rouge">Dockerfile</code></p>
 </blockquote>
 
 <h2 id="create-a-linux-container">Create a Linux container</h2>
@@ -187,15 +187,13 @@
 
 <p>All containers need a base image. First figure out what OS you want and then find an appropriate image.</p>
 
-<p>We use <code class="language-plaintext highlighter-rouge">centos</code> for the example below, but you can use <code class="language-plaintext highlighter-rouge">ubuntu</code> or something else of course.</p>
-
 <p>Here are some flavors of Linux:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">centos</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ubuntu</code></li>
   <li><code class="language-plaintext highlighter-rouge">alpine</code> (Debian)</li>
   <li><code class="language-plaintext highlighter-rouge">archlinux</code></li>
-  <li><code class="language-plaintext highlighter-rouge">ubuntu</code></li>
+  <li><code class="language-plaintext highlighter-rouge">centos</code></li>
 </ul>
 
 <p>If you want to specify a version, you can do something like this:</p>
@@ -203,6 +201,7 @@
 <ul>
   <li><code class="language-plaintext highlighter-rouge">ubuntu:latest</code> (same as just using <code class="language-plaintext highlighter-rouge">ubuntu</code>)</li>
   <li><code class="language-plaintext highlighter-rouge">ubuntu:20.04</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ubuntu:focus</code></li>
 </ul>
 
 <p>The <a href="https://hub.docker.com/">Docker hub</a> site is a good place to look for more options. You don’t have to download from the site, as you just need a valid name to reference on the command-line. If you want, you can choose something more specialized like a Node.js, Python or Go container (which internally probably uses Ubuntu.</p>
@@ -211,7 +210,7 @@
 
 <h3 id="download-image">Download image</h3>
 
-<p>This will use the latest tag by default.</p>
+<p>We use <code class="language-plaintext highlighter-rouge">centos</code> for the examples below, but you can use any image name you want.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker pull centos
 </code></pre></div></div>

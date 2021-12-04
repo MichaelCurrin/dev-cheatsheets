@@ -1,5 +1,5 @@
 # Shell-only basics
-> How to create and manage containers from the shell - without using creating any files like `Dockefile`
+> How to create and manage containers with Docker CLI - without creating a `Dockerfile`
 
 
 ## Create a Linux container
@@ -10,19 +10,18 @@ You can run the commands in this guide without a copy of this `docker-quickstart
 
 All containers need a base image. First figure out what OS you want and then find an appropriate image.
 
-We use `centos` for the example below, but you can use `ubuntu` or something else of course.
-
 Here are some flavors of Linux:
 
-- `centos`
+- `ubuntu`
 - `alpine` (Debian)
 - `archlinux`
-- `ubuntu`
+- `centos`
 
 If you want to specify a version, you can do something like this:
 
 - `ubuntu:latest` (same as just using `ubuntu`)
 - `ubuntu:20.04`
+- `ubuntu:focus`
 
 The [Docker hub](https://hub.docker.com/) site is a good place to look for more options. You don't have to download from the site, as you just need a valid name to reference on the command-line. If you want, you can choose something more specialized like a Node.js, Python or Go container (which internally probably uses Ubuntu.
 
@@ -30,7 +29,7 @@ Note that you can run Linux containers on a Linux, Windows or macOS system. Howe
 
 ### Download image
 
-This will use the latest tag by default.
+We use `centos` for the examples below, but you can use any image name you want.
 
 ```sh
 $ docker pull centos
@@ -112,7 +111,6 @@ Flags used:
   -i, --interactive                    Keep STDIN open even if not attached
   -t, --tty                            Allocate a pseudo-TTY
 ```
-
 
 ### Check running containers
 
