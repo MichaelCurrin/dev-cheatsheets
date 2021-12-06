@@ -8,7 +8,7 @@ Also known as "k8s" for short (since the name is 8 letters long).
 
 Example values for commands below.
 
-- `SERVICE_NAME` and `DEPLOYMENT_NAME` -  `foobarb`
+- `SERVICE_NAME` and `DEPLOYMENT_NAME` -  `foobar`
 - `PODNAME` - `foo-0f4988689-l5hfa`
 
 
@@ -16,6 +16,7 @@ Example values for commands below.
 
 - [Kubernetes](https://michaelcurrin.github.io/dev-resources/resources/containers/kubernetes.html) on Dev Resources.
 - [Cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) on Kubernetes site.
+
 
 ## Services
 
@@ -307,4 +308,13 @@ Usage:
 
 Use "kubectl <command> --help" for more information about a given command.
 Use "kubectl options" for a list of global command-line options (applies to all commands).
+```
+
+
+## Replica set
+
+A new replicaset is created with each deploy and a history is saved. You’ll see 10 or so for each deployment:
+
+```sh
+$ kubectl get rs
 ```
