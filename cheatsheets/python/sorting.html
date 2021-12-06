@@ -272,13 +272,25 @@ This can be used to get keys and values together though.</p>
 
 <h2 id="sort-functions">Sort functions</h2>
 
+<p>Specify a function for logic to sort by.,</p>
+
 <h3 id="key-functions">Key functions</h3>
 
 <p>This works with both <code class="language-plaintext highlighter-rouge">sorted</code> and <code class="language-plaintext highlighter-rouge">list.sort</code>.</p>
 
-<p>Supply a function to apply. Usually as an anonymous function, but you can reference an existing function if you like.</p>
+<p>Supply a function to apply.</p>
 
-<p>Here we sort a <code class="language-plaintext highlighter-rouge">list</code> as if all the elements were lowercase, but we keep the original values.</p>
+<p>You can reference an existing function if you like.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">str</span><span class="p">.</span><span class="n">lower</span>
+</code></pre></div></div>
+
+<p>Or a Lambda anonymous function, such as to reference a class attribute or dictionary key or to compare a value numerically.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Here we sort a <code class="language-plaintext highlighter-rouge">list</code> as if all the elements were lowercase, but we keep the original values without actually storing any value as lowercase.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_list</span> <span class="o">=</span> <span class="s">"This is a test string from Andrew"</span><span class="p">.</span><span class="n">split</span><span class="p">()</span>
 
