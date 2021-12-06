@@ -282,11 +282,11 @@ This can be used to get keys and values together though.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_list</span> <span class="o">=</span> <span class="s">"This is a test string from Andrew"</span><span class="p">.</span><span class="n">split</span><span class="p">()</span>
 
-<span class="nb">sorted</span><span class="p">(,</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="p">.</span><span class="n">lower</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="p">.</span><span class="n">lower</span><span class="p">)</span>
 <span class="c1"># ['a', 'Andrew', 'from', 'is', 'string', 'test', 'This']
 </span></code></pre></div></div>
 
-<p>Sort a list of class instances by the age attribute.</p>
+<p>Sort a list of class instances by the age attribute:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
 
@@ -297,6 +297,7 @@ This can be used to get keys and values together though.</p>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">repr</span><span class="p">((</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">grade</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">age</span><span class="p">))</span>
+
 
 <span class="n">student_objects</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">Student</span><span class="p">(</span><span class="s">'john'</span><span class="p">,</span> <span class="s">'A'</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
