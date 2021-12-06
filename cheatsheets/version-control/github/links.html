@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Clone and download links | Dev Cheatsheets</title>
+    <title>Links | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Clone and download links" />
+    <meta property="og:title" content="Links" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Clone and download links" />
+    <meta property="twitter:title" content="Links" />
 <meta name="generator" content="Jekyll v4.2.1" />
 
 <meta property="og:locale" content="en_US" />
@@ -26,16 +26,16 @@
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/github/clone-and-download-links.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/github/clone-and-download-links.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/github/links.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/github/links.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/github/clone-and-download-links.html",
-    "headline":    "Clone and download links",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/github/links.html",
+    "headline":    "Links",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -82,7 +82,7 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/version-control/github/clone-and-download-links.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/version-control/github/links.md">
     📝 <span>Edit page</span>
 </a>
 
@@ -99,7 +99,7 @@
             
 
 
-            <span>Clone and download links</span>
+            <span>Links</span>
         </h1>
 
         
@@ -150,8 +150,8 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/version-control/github/clone-and-download-links.html" class="underline">
-                Clone and download links
+            <a href="/dev-cheatsheets/cheatsheets/version-control/github/links.html" class="underline">
+                Links
             </a>
         
      
@@ -163,24 +163,147 @@
 
     <div class="post-content">
         
-            <h2 id="clone-https">Clone HTTPS</h2>
+            <h2 id="related">Related</h2>
 
-<p>https://github.com/MichaelCurrin/cheatsheets.git</p>
+<ul>
+  <li><a href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/github/api/v3/repos.html">Repo API response</a> for the REST API, including URLs and in some cases how to filter them using shell commands.</li>
+</ul>
 
-<h2 id="clone-ssh">Clone SSH</h2>
+<h2 id="clone">Clone</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone CLONE_URL
+</code></pre></div></div>
+
+<h3 id="clone-https">Clone HTTPS</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://github.com/MichaelCurrin/cheatsheets.git
+</code></pre></div></div>
+
+<h3 id="clone-ssh">Clone SSH</h3>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git@github.com:MichaelCurrin/cheatsheets.git
 </code></pre></div></div>
 
-<h2 id="download">Download</h2>
+<h2 id="download-urls">Download URLs</h2>
 
-<p>https://github.com/MichaelCurrin/cheatsheets/archive/master.zip</p>
+<h3 id="source-code">Source code</h3>
 
-<p>Replace <code class="language-plaintext highlighter-rouge">master</code>:</p>
+<p>e.g.</p>
 
-<p>https://github.com/MichaelCurrin/cheatsheets/archive/feat-branch.zip</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="nt">-O</span> DOWNLOAD_URL
+</code></pre></div></div>
 
-<p>https://github.com/MichaelCurrin/cheatsheets/archive/v1.0.0.zip</p>
+<h4 id="master">master</h4>
+
+<ul>
+  <li><a href="https://github.com/MichaelCurrin/cheatsheets/archive/master.zip">https://github.com/MichaelCurrin/cheatsheets/archive/master.zip</a></li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="nt">-O</span> https://github.com/MichaelCurrin/cheatsheets/archive/master.zip
+</code></pre></div></div>
+
+<p>Then you have a file <code class="language-plaintext highlighter-rouge">master.zip</code>.</p>
+
+<h3 id="feature-branch">Feature branch</h3>
+
+<p>Note this link will not work in this case.</p>
+
+<ul>
+  <li><a href="https://github.com/MichaelCurrin/cheatsheets/archive/feat-branch.zip">https://github.com/MichaelCurrin/cheatsheets/archive/feat-branch.zip</a></li>
+</ul>
+
+<h3 id="specific-tag">Specific tag</h3>
+
+<ul>
+  <li><a href="https://github.com/MichaelCurrin/cheatsheets/archive/v1.0.0.zip">https://github.com/MichaelCurrin/cheatsheets/archive/v1.0.0.zip</a></li>
+</ul>
+
+<p>Note you need <code class="language-plaintext highlighter-rouge">-L</code> to follow a redirect.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="nt">-L</span> <span class="nt">-O</span> https://github.com/MichaelCurrin/cheatsheets/archive/v1.0.0.zip
+</code></pre></div></div>
+
+<h3 id="assets">Assets</h3>
+
+<h3 id="latest-release">Latest release</h3>
+
+<p>Based on <a href="https://docs.github.com/en/repositories/releasing-projects-on-github/linking-to-releases">GH docs - Linking to a Release</a>.</p>
+
+<p>Download the latest release’s assets:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/owner/name/releases/latest/download/asset-name.zip
+</code></pre></div></div>
+
+<p>I find that doesn’t work for me.</p>
+
+<p>e.g. this is invalid:</p>
+
+<ul>
+  <li><a href="https://github.com/trashhalo/imgcat/releases/download/latest/checksums.txt">https://github.com/trashhalo/imgcat/releases/download/latest/checksums.txt</a></li>
+</ul>
+
+<p>But this works:</p>
+
+<ul>
+  <li><a href="https://github.com/trashhalo/imgcat/releases/download/v1.2.0/checksums.txt">https://github.com/trashhalo/imgcat/releases/download/v1.2.0/checksums.txt</a></li>
+</ul>
+
+<p>Also the other assets on there have the tag name in filename, so you can’t just do a generic way.</p>
+
+<p>See assets here:</p>
+
+<ul>
+  <li><a href="https://github.com/trashhalo/imgcat/releases/tag/v1.2.0">https://github.com/trashhalo/imgcat/releases/tag/v1.2.0</a></li>
+</ul>
+
+<h2 id="github-ui-urls">GitHub UI URLs</h2>
+
+<p>The examples here are using Go Project Template repo.</p>
+
+<p>This has releases which contain both</p>
+
+<ul>
+  <li>source code of the repo at that tag point, as an archive (<code class="language-plaintext highlighter-rouge">.zip</code> and <code class="language-plaintext highlighter-rouge">.tar.gz</code>).</li>
+  <li>assets generated by CI or attached manually. (<code class="language-plaintext highlighter-rouge">.tar.gz</code> containing binary executables)</li>
+</ul>
+
+<h3 id="all-releases">All releases</h3>
+
+<ul>
+  <li><a href="https://github.com/MichaelCurrin/go-project-template/releases/">https://github.com/MichaelCurrin/go-project-template/releases/</a></li>
+</ul>
+
+<h3 id="target-release">Target release</h3>
+
+<ul>
+  <li><a href="https://github.com/MichaelCurrin/go-project-template/releases/tag/v0.4.0">https://github.com/MichaelCurrin/go-project-template/releases/tag/v0.4.0</a></li>
+</ul>
+
+<p>Download binary:</p>
+
+<ul>
+  <li><a href="https://github.com/MichaelCurrin/go-project-template/releases/download/v0.4.0/go_project_template_0.4.0_darwin.tar.gz">https://github.com/MichaelCurrin/go-project-template/releases/download/v0.4.0/go_project_template_0.4.0_darwin.tar.gz</a></li>
+</ul>
+
+<p>Download tarball:</p>
+
+<ul>
+  <li><a href="https://github.com/MichaelCurrin/go-project-template/archive/refs/tags/v0.4.0.tar.gz">https://github.com/MichaelCurrin/go-project-template/archive/refs/tags/v0.4.0.tar.gz</a></li>
+</ul>
+
+<h3 id="latest-release-1">Latest release</h3>
+
+<p>This only works if your have a release, not just pre-releases.</p>
+
+<ul>
+  <li><a href="https://github.com/MichaelCurrin/code-cookbook/releases/latest">https://github.com/MichaelCurrin/code-cookbook/releases/latest</a></li>
+</ul>
+
+<p>That redirects you to a page like:</p>
+
+<ul>
+  <li><a href="https://github.com/MichaelCurrin/code-cookbook/releases/tag/v4.0.0">https://github.com/MichaelCurrin/code-cookbook/releases/tag/v4.0.0</a></li>
+</ul>
 
         
     </div>
