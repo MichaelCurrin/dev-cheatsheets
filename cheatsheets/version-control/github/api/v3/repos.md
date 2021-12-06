@@ -16,19 +16,18 @@ Example for Badge Generator single repo URL.
 
 Summarized below as the most interesting fields - commenting out or deleting the less interesting ones.
 
-<details>
-<summary>Expand output</summary>
-    
 ```json5
 {
   "name": "badge-generator",
   "full_name": "MichaelCurrin/badge-generator",
   "private": false,
+  
   "owner": {
     "login": "MichaelCurrin",
     "id": 18750745,
     // ...
   },
+  
   "html_url": "https://github.com/MichaelCurrin/badge-generator",
   "description": "Online tool to help you quickly generate tailor-made badges/shields for your repo docs and learn to work with badges",
   "fork": false,
@@ -116,8 +115,6 @@ Summarized below as the most interesting fields - commenting out or deleting the
   //"subscribers_count": 1
 }
 ```
-
-</details>
    
 
 ### Multiple repos
@@ -128,9 +125,6 @@ Get multiple repos for a user.
 
 Note that there are also parameters like `limit` and `page` to set on repos, but these are not covered here.
 
-
-<details>
-<summary>Expand output</summary>
 
 ```json5
 {
@@ -241,8 +235,6 @@ Note that there are also parameters like `limit` and `page` to set on repos, but
   }
 ]
 ```
-
-</details>
 
 
 ## Fields

@@ -3,11 +3,11 @@
 	"file": "main.css",
 	"sources": [
 		"main.scss",
-		"vendor/bundle/ruby/3.0.0/bundler/gems/fractal-41e66a90f8e8/_sass/fractal.scss",
-		"vendor/bundle/ruby/3.0.0/bundler/gems/fractal-41e66a90f8e8/_sass/fractal/_base.scss",
-		"vendor/bundle/ruby/3.0.0/bundler/gems/fractal-41e66a90f8e8/_sass/fractal/_layout.scss",
-		"vendor/bundle/ruby/3.0.0/bundler/gems/fractal-41e66a90f8e8/_sass/fractal/_syntax-highlighting.scss",
-		"vendor/bundle/ruby/3.0.0/bundler/gems/fractal-41e66a90f8e8/_sass/custom.scss"
+		"vendor/bundle/ruby/3.0.0/bundler/gems/fractal-8d0e544774e9/_sass/fractal.scss",
+		"vendor/bundle/ruby/3.0.0/bundler/gems/fractal-8d0e544774e9/_sass/fractal/_base.scss",
+		"vendor/bundle/ruby/3.0.0/bundler/gems/fractal-8d0e544774e9/_sass/fractal/_layout.scss",
+		"vendor/bundle/ruby/3.0.0/bundler/gems/fractal-8d0e544774e9/_sass/fractal/_syntax-highlighting.scss",
+		"vendor/bundle/ruby/3.0.0/bundler/gems/fractal-8d0e544774e9/_sass/custom.scss"
 	],
 	"sourcesContent": [
 		"@import \"fractal\";\n@import \"custom\";\n",
