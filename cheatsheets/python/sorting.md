@@ -137,13 +137,27 @@ for k in sorted(my_dict):
 
 ## Sort functions
 
+Specify a function for logic to sort by.,
+
 ### Key functions
 
 This works with both `sorted` and `list.sort`.
 
-Supply a function to apply. Usually as an anonymous function, but you can reference an existing function if you like.
+Supply a function to apply. 
 
-Here we sort a `list` as if all the elements were lowercase, but we keep the original values.
+You can reference an existing function if you like.
+
+```python
+str.lower
+```
+
+Or a Lambda anonymous function, such as to reference a class attribute or dictionary key or to compare a value numerically.
+
+```python
+lambda x: x['name']
+```
+
+Here we sort a `list` as if all the elements were lowercase, but we keep the original values without actually storing any value as lowercase.
 
 ```python
 my_list = "This is a test string from Andrew".split()
