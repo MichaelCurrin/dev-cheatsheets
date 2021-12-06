@@ -142,6 +142,16 @@ Note that there are also parameters like `limit` and `page` to set on repos, but
 ]
 ```
 
+### Downloads
+
+Docs: 
+
+- [Download a repository archive (tar)](https://docs.github.com/en/rest/reference/repos#download-a-repository-archive-tar)
+
+```
+get /repos/{owner}/{repo}/tarball/{ref}
+```
+
 
 ## Fields
 
