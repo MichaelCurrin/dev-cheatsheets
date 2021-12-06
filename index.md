@@ -3,7 +3,6 @@ layout: home
 ---
 # Home
 
-
 > {{ site.description }}
 
 Welcome to **Dev Cheatsheets**.
