@@ -148,11 +148,11 @@ Here we sort a `list` as if all the elements were lowercase, but we keep the ori
 ```python
 my_list = "This is a test string from Andrew".split()
 
-sorted(, key=str.lower)
+sorted(my_list, key=str.lower)
 # ['a', 'Andrew', 'from', 'is', 'string', 'test', 'This']
 ```
 
-Sort a list of class instances by the age attribute.
+Sort a list of class instances by the age attribute:
 
 ```python
 class Student:
@@ -164,6 +164,7 @@ class Student:
 
     def __repr__(self):
         return repr((self.name, self.grade, self.age))
+
 
 student_objects = [
     Student('john', 'A', 15),
