@@ -44,7 +44,7 @@
     }
 }
 </script>
-<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+<link rel="stylesheet" href="/dev-cheatsheets/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
     <script>
         window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
         window.dataLayer = window.dataLayer || [];
@@ -151,7 +151,9 @@
 
     <div class="post-content">
         
-            <ol>
+            <h2 id="percentage-evaluation">Percentage evaluation</h2>
+
+<ol>
   <li>Set up a target like <code class="language-plaintext highlighter-rouge">PRE.%</code> where the <code class="language-plaintext highlighter-rouge">%</code> can be matched dynamically.</li>
   <li>Then call it using <code class="language-plaintext highlighter-rouge">PRE.VALUE</code> e.g. <code class="language-plaintext highlighter-rouge">echo.deps</code>.</li>
   <li>Use the value in the <code class="language-plaintext highlighter-rouge">PRE.%</code> target as <code class="language-plaintext highlighter-rouge">$*</code>.</li>
@@ -159,25 +161,45 @@
 
 <p>Example:</p>
 
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">Makefile</code>
-    <div class="language-make highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">cyan</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\\</span><span class="s2">033[1</span><span class="se">\;</span><span class="s2">96m"</span>
-  <span class="nv">off</span>  <span class="o">=</span> <span class="s2">"</span><span class="se">\\</span><span class="s2">033[0m"</span>
+<div class="language-make highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">cyan</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\\</span><span class="s2">033[1</span><span class="se">\;</span><span class="s2">96m"</span>
+<span class="nv">off</span>  <span class="o">=</span> <span class="s2">"</span><span class="se">\\</span><span class="s2">033[0m"</span>
 
-  <span class="nl">echo.%</span><span class="o">:</span>
-    <span class="err">@echo</span> <span class="s2">"\n$(cyan)Building $*$(off)"</span>
+<span class="nl">echo.%</span><span class="o">:</span>
+	<span class="p">@</span><span class="nb">echo</span> <span class="s2">"</span><span class="se">\n</span><span class="nv">$(cyan)</span><span class="s2">Building </span><span class="nv">$*$(off)</span><span class="s2">"</span>
 
-  <span class="nl">deps</span><span class="o">:</span> <span class="nf">echo.deps</span>
-    <span class="err">pip</span> <span class="err">install</span> <span class="err">--upgrade</span> <span class="err">pip</span>
-    <span class="err">pip</span> <span class="err">install</span> <span class="err">-r</span> <span class="err">requirements.txt</span>
+<span class="nl">deps</span><span class="o">:</span> <span class="nf">echo.deps</span>
+	pip <span class="nb">install</span> <span class="nt">--upgrade</span> pip
+	pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
 
-  <span class="nl">site</span><span class="o">:</span> <span class="nf">echo.site</span>
-    <span class="err">rm</span> <span class="err">-rf</span> <span class="err">site</span>
+<span class="nl">site</span><span class="o">:</span> <span class="nf">echo.site</span>
+	<span class="nb">rm</span> <span class="nt">-rf</span> site
     <span class="err">mkdir</span> <span class="err">site</span>
     <span class="err">mkdocs</span> <span class="err">build</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
+</code></pre></div></div>
+
+<h2 id="variable-name-target">Variable name target</h2>
+
+<p>From <a href="https://github.com/edx/auth-backends/blob/master/Makefile">edx/auth-backend</a>.</p>
+
+<div class="language-make highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">MY_VAR</span><span class="o">=</span>abc.txt
+<span class="nl">.PHONY</span><span class="o">:</span> <span class="nf">$(MY_VAR)</span>
+<span class="nl">$(MY_VAR)</span><span class="o">:</span>
+	<span class="c"># ...</span>
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-make highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">COMMON_CONSTRAINTS_TXT</span><span class="o">=</span>requirements/common_constraints.txt
+<span class="nl">.PHONY</span><span class="o">:</span> <span class="nf">$(COMMON_CONSTRAINTS_TXT)</span>
+<span class="nl">$(COMMON_CONSTRAINTS_TXT)</span><span class="o">:</span>
+	wget <span class="nt">-O</span> <span class="s2">"</span><span class="err">$</span><span class="s2">(@)"</span> https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt <span class="o">||</span> <span class="nb">touch</span> <span class="s2">"</span><span class="err">$</span><span class="s2">(@)"</span>
+</code></pre></div></div>
+
+<p>In this case it was followed by two <code class="language-plaintext highlighter-rouge">upgrade</code> targets.</p>
+
+<div class="language-make highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">upgrade</span><span class="o">:</span> <span class="nf">export CUSTOM_COMPILE_COMMAND=make upgrade</span>
+<span class="nl">upgrade</span><span class="o">:</span> <span class="nf">$(COMMON_CONSTRAINTS_TXT)  </span><span class="c">##</span><span class="nf"> update the requirements/*.txt files with the latest packages satisfying requirements/*.in</span>
+</code></pre></div></div>
 
         
     </div>
