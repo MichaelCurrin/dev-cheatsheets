@@ -165,7 +165,7 @@
 <p>Example values for commands below.</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">SERVICE_NAME</code> and <code class="language-plaintext highlighter-rouge">DEPLOYMENT_NAME</code> -  <code class="language-plaintext highlighter-rouge">foobarb</code></li>
+  <li><code class="language-plaintext highlighter-rouge">SERVICE_NAME</code> and <code class="language-plaintext highlighter-rouge">DEPLOYMENT_NAME</code> -  <code class="language-plaintext highlighter-rouge">foobar</code></li>
   <li><code class="language-plaintext highlighter-rouge">PODNAME</code> - <code class="language-plaintext highlighter-rouge">foo-0f4988689-l5hfa</code></li>
 </ul>
 
@@ -435,6 +435,13 @@ Usage:
 
 Use "kubectl &lt;command&gt; --help" for more information about a given command.
 Use "kubectl options" for a list of global command-line options (applies to all commands).
+</code></pre></div></div>
+
+<h2 id="replica-set">Replica set</h2>
+
+<p>A new replicaset is created with each deploy and a history is saved. You’ll see 10 or so for each deployment:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl get rs
 </code></pre></div></div>
 
         
