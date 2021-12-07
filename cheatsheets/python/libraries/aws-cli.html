@@ -183,10 +183,15 @@
 
 <p>From <a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html#cliv2-linux-install">Installing, updating, and uninstalling the AWS CLI version 2 on Linux</a> doc.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="s2">"https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip"</span> <span class="nt">-o</span> <span class="s2">"awscliv2.zip"</span>
-<span class="nv">$ </span>unzip awscliv2.zip
-<span class="nv">$ </span><span class="nb">sudo</span> ./aws/install
-</code></pre></div></div>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>curl <span class="s1">'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip'</span> <span class="nt">-o</span> awscliv2.zip
+<span class="gp">$</span><span class="w"> </span>unzip awscliv2.zip
+<span class="gp">$</span><span class="w"> </span><span class="nb">sudo</span> ./aws/install
+<span class="go">You can now run: /usr/local/bin/aws --version
+</span></code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>aws <span class="nt">--version</span>
+<span class="go">aws-cli/2.4.5 Python/3.8.8 Linux/5.4.117-58.216.amzn2.x86_64 exe/x86_64.debian.9 prompt/off
+</span></code></pre></div></div>
 
 <h2 id="install-in-a-virtual-environment">Install in a virtual environment</h2>
 
