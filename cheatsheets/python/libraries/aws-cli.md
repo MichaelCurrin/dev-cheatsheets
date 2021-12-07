@@ -20,10 +20,16 @@ $ brew install awscli
 
 From [Installing, updating, and uninstalling the AWS CLI version 2 on Linux](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html#cliv2-linux-install) doc.
 
-```sh
-$ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+```console
+$ curl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o awscliv2.zip
 $ unzip awscliv2.zip
 $ sudo ./aws/install
+You can now run: /usr/local/bin/aws --version
+```
+
+```console
+$ aws --version
+aws-cli/2.4.5 Python/3.8.8 Linux/5.4.117-58.216.amzn2.x86_64 exe/x86_64.debian.9 prompt/off
 ```
 
 
