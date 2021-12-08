@@ -49,25 +49,34 @@ See example of tests in my projects, to get an idea of syntax in larger scripts.
 
 ### Mocha
 
-See [/src/test/](https://github.com/MichaelCurrin/auto-commit-msg/tree/master/src/test) directory in `auto-commit-msg`, a TypeScript application.
+See [src/test/](https://github.com/MichaelCurrin/auto-commit-msg/tree/master/src/test) directory in `auto-commit-msg`, a TypeScript application.
 
 ### Jest
 
-The default view is short, so you might want to see a list of all tests that ran.
+The default view is short, so you might want to see a list of all tests that ran:
 
 ```sh
-jest --verbose
+$ jest --verbose
 ```
 
-Get test coverage report.
+Get a test coverage report:
 
 ```sh
-jest --coverage
+$ jest --coverage
 ```
 
-See [/tests/unit/](https://github.com/MichaelCurrin/badge-generator/tree/master/tests/unit) in `badge-generator`, a Vue application.
+Target specific module or directory:
 
-The default to run interactive test mode - you get prompted which tests you want to run.
+```sh
+$ jest tests/foo.spec.js
+$ jest tests/buzz
+```
+
+#### Watch
+
+See also [tests/unit/](https://github.com/MichaelCurrin/badge-generator/tree/master/tests/unit) in my `badge-generator repo`, a Vue application.
+
+In that project at least, the default is to run _interactive_ test mode - you get prompted which tests you want to run.
 
 If use`--watchAll` flag, then the tests will rerun on changes and stay in interactive mode.
 
