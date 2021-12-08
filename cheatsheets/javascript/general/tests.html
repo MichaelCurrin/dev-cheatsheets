@@ -216,23 +216,31 @@
 
 <h3 id="mocha">Mocha</h3>
 
-<p>See <a href="https://github.com/MichaelCurrin/auto-commit-msg/tree/master/src/test">/src/test/</a> directory in <code class="language-plaintext highlighter-rouge">auto-commit-msg</code>, a TypeScript application.</p>
+<p>See <a href="https://github.com/MichaelCurrin/auto-commit-msg/tree/master/src/test">src/test/</a> directory in <code class="language-plaintext highlighter-rouge">auto-commit-msg</code>, a TypeScript application.</p>
 
 <h3 id="jest">Jest</h3>
 
-<p>The default view is short, so you might want to see a list of all tests that ran.</p>
+<p>The default view is short, so you might want to see a list of all tests that ran:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jest <span class="nt">--verbose</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>jest <span class="nt">--verbose</span>
 </code></pre></div></div>
 
-<p>Get test coverage report.</p>
+<p>Get a test coverage report:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jest <span class="nt">--coverage</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>jest <span class="nt">--coverage</span>
 </code></pre></div></div>
 
-<p>See <a href="https://github.com/MichaelCurrin/badge-generator/tree/master/tests/unit">/tests/unit/</a> in <code class="language-plaintext highlighter-rouge">badge-generator</code>, a Vue application.</p>
+<p>Target specific module or directory:</p>
 
-<p>The default to run interactive test mode - you get prompted which tests you want to run.</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>jest tests/foo.spec.js
+<span class="nv">$ </span>jest tests/buzz
+</code></pre></div></div>
+
+<h4 id="watch">Watch</h4>
+
+<p>See also <a href="https://github.com/MichaelCurrin/badge-generator/tree/master/tests/unit">tests/unit/</a> in my <code class="language-plaintext highlighter-rouge">badge-generator repo</code>, a Vue application.</p>
+
+<p>In that project at least, the default is to run <em>interactive</em> test mode - you get prompted which tests you want to run.</p>
 
 <p>If use<code class="language-plaintext highlighter-rouge">--watchAll</code> flag, then the tests will rerun on changes and stay in interactive mode.</p>
 
