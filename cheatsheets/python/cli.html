@@ -156,11 +156,69 @@
 
     <div class="post-content">
         
-            <ul>
-  <li><a href="https://docs.python.org/3/using/cmdline.html">Command line and environment</a> on Python 3 docs - how to use the <code class="language-plaintext highlighter-rouge">python</code> command.</li>
+            <h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://docs.python.org/3/using/cmdline.html">Command line and environment</a> on the Python 3 docs - how to use the <code class="language-plaintext highlighter-rouge">python</code> command.</li>
 </ul>
 
-<h2 id="unbuffered">Unbuffered</h2>
+<h2 id="entry-point">Entry-point</h2>
+
+<h3 id="interactive-console">Interactive console</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python FLAGS
+</code></pre></div></div>
+
+<h3 id="script">Script</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python FLAGS SCRIPT_PATH
+</code></pre></div></div>
+
+<h3 id="module">Module</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python FLAGS <span class="nt">-m</span> MODULE
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<p>Use a built-in module.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s1">'[1, 2, 3'</span><span class="o">]</span> | python3 <span class="nt">-m</span> json.tool
+<span class="go">[
+    1,
+    2,
+    3
+]
+</span></code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>python3 <span class="nt">-m</span> http.server
+<span class="go">Serving HTTP on :: port 8000 (http://[::]:8000/) ...
+</span></code></pre></div></div>
+
+<p>Or a globally installed module.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>pip3 <span class="nb">install </span>black <span class="nt">--upgrade</span>
+<span class="gp">$</span><span class="w"> </span>python3 <span class="nt">-m</span> black <span class="nt">--version</span>
+<span class="go">__main__.py, 21.12b0 (compiled: no)
+</span></code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python3 <span class="nt">-m</span> venv my-venv
+</code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>python3 <span class="nt">-m</span> pip <span class="nb">install </span>PACKAGE
+</code></pre></div></div>
+
+<h2 id="flags">Flags</h2>
+
+<p>Use these flags either when starting the interactive console or when running a module or script.
+Interactive console:</p>
+
+<h3 id="verbose">Verbose</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python <span class="nt">-v</span>
+</code></pre></div></div>
+
+<h3 id="unbuffered">Unbuffered</h3>
 
 <p>Run in unbuffered mode, so that output is printed immediately rather than when the buffer reaches a certain size.</p>
 
@@ -176,7 +234,7 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/python -u
 </span></code></pre></div></div>
 
-<p>Set <code class="language-plaintext highlighter-rouge">PYTHONUNBUFFERED</code> in the shell or within your script on <code class="language-plaintext highlighter-rouge">os</code> module.</p>
+<p>Set <code class="language-plaintext highlighter-rouge">PYTHONUNBUFFERED</code> in the shell or within your script with <code class="language-plaintext highlighter-rouge">os.env</code>.</p>
 
 <p>Or within a script on print.</p>
 
