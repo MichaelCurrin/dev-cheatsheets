@@ -184,6 +184,8 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git submodule update <span class="nt">--rebase</span> <span class="nt">--remote</span>
 </code></pre></div></div>
 
+<p>I found that recommended in <a href="https://gohugo.io/hosting-and-deployment/hosting-on-netlify/">Hugo docs</a> for themes.</p>
+
 <p>That is effectively the same as this, but I wouldn’t recommend this. Also note that <code class="language-plaintext highlighter-rouge">git pull</code> alone will warn that you are not on a branch.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>themes/ananke
@@ -191,18 +193,24 @@
 <span class="nv">$ </span><span class="nb">cd</span> ..
 </code></pre></div></div>
 
+<p>If you want to use tag instead. See <a href="/dev-cheatsheets/cheatsheets/version-control/git/tags.html">Tags</a> cheatsheet.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>themes/ananke
+git checkout <span class="si">$(</span>git describe <span class="nt">--abbrev</span><span class="o">=</span>0 <span class="nt">--tags</span><span class="si">)</span>
+<span class="nb">cd</span> ..
+</code></pre></div></div>
+
 <p>Check for changes. You should see that the submodule object appears to change from one commit to another, without showing the full details (because you repo doesn’t care about the all commits and the files, just the commit reference).</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff
-</code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
---- a/themes/ananke
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git diff
+<span class="c">...
+</span><span class="go">--- a/themes/ananke
 +++ b/themes/ananke
 @@ -1 +1 @@
 -Subproject commit 0cc2c6cb62bbe86dbafc3e4e3b083d2654934aa3
 +Subproject commit 988c731a5762a6e0a1aad4fd2023caa2dc1e082d
-...
-</code></pre></div></div>
+</span><span class="c">...
+</span></code></pre></div></div>
 
 <h3 id="2-commit">2. Commit</h3>
 
