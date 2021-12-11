@@ -186,9 +186,47 @@
   <p>git-describe - Give an object a human readable name based on an available ref</p>
 
   <p>The command finds the most recent tag that is reachable from a commit….</p>
+</blockquote>
 
+<h2 id="basic">Basic</h2>
+
+<p>Shows tag number found, the number of commits back as a number and then a short commit hash.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git describe
+v0.19.0-1-gdc17e80
+</code></pre></div></div>
+
+<p>Another case for 32 commits back. The hash is <code class="language-plaintext highlighter-rouge">9641372</code>. The <code class="language-plaintext highlighter-rouge">-g</code> always seems to appear as a prefix.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git describe
+v1.0.2-32-g9641372
+</code></pre></div></div>
+
+<p>If the current commit already has a tag, only the tag will be shown.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout gdc17e80
+<span class="nv">$ </span>git describe
+v0.19.0
+</code></pre></div></div>
+
+<h2 id="abbreviate">Abbreviate</h2>
+
+<p>Show just commit reference by setting the hash length to zero.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git describe <span class="nt">--abbrev</span><span class="o">=</span>0
+v0.19.0
+</code></pre></div></div>
+
+<h2 id="show-all-tags-not-just-annotated">Show all tags not just annotated</h2>
+
+<blockquote>
   <p>By default (without <code class="language-plaintext highlighter-rouge">--all</code> or <code class="language-plaintext highlighter-rouge">--tags</code>) git describe only shows <strong>annotated</strong> tags</p>
 </blockquote>
+
+<p>Including tags that are not annotated.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git describe <span class="nt">--tags</span>
+</code></pre></div></div>
 
         
     </div>
