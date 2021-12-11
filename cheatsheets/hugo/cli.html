@@ -151,7 +151,13 @@
 
     <div class="post-content">
         
-            <h2 id="start-dev-server">Start dev server</h2>
+            <h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://gohugo.io/commands/">Commands</a> in Hugo docs.</li>
+</ul>
+
+<h2 id="start-dev-server">Start dev server</h2>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>hugo server
 </code></pre></div></div>
@@ -160,6 +166,23 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>hugo
 </code></pre></div></div>
+
+<p>Recommended in the Hugo docs for a deploy:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>hugo <span class="nt">--gc</span> <span class="nt">--minify</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">--minify</code> minify any supported output format (HTML, XML etc.)</li>
+  <li><code class="language-plaintext highlighter-rouge">--gc</code> enable to run some cleanup tasks (remove unused cache files) after the build</li>
+</ul>
+
+<p>Debug with:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">v, --verbose</code> verbose output</li>
+  <li><code class="language-plaintext highlighter-rouge">--verboseLog</code> verbose logging</li>
+</ul>
 
 <h2 id="import-jekyll">Import Jekyll</h2>
 
