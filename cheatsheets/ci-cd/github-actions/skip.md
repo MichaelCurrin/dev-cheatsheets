@@ -143,6 +143,12 @@ Or with a boolean - no quotes.
 if: github.event.pull_request.merged == true
 ```
 
+You can also check you are on `main` using this, from [Hugo docs](https://gohugo.io/hosting-and-deployment/hosting-on-github/):
+
+```yaml
+if: github.ref == 'refs/heads/main'
+```
+
 #### Tags
 
 Or maybe you want the job to run on `main` and on a Pull Request, but only deploy if there is a tag.
