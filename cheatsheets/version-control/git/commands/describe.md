@@ -34,7 +34,9 @@ v0.19.0
 ```
 
 
-## Abbreviate
+## Flags
+
+### Abbreviate
 
 Show just commit reference by setting the hash length to zero.
 
@@ -43,10 +45,17 @@ $ git describe --abbrev=0
 v0.19.0
 ```
 
+### All
 
-## Show all tags not just annotated
+> `--all` Instead of using only the annotated tags, use any ref found in `refs/` namespace. This option enables matching any known branch, remote-tracking branch, or lightweight tag.
+
+
+### Tags
 
 > By default (without `--all` or `--tags`) git describe only shows **annotated** tags
+
+> `--tags` Instead of using only the annotated tags, use any tag found in refs/tags namespace. This option enables matching a lightweight (non-annotated) tag.
+
 
 Including tags that are not annotated.
 
