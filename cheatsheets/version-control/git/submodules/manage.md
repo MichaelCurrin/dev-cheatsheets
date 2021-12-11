@@ -2,7 +2,6 @@
 
 
 
-
 ## Update submodule
 
 ### 1. Pull in changes
@@ -13,6 +12,7 @@ Pull in changes. Note that without `--remote`, nothing will happen.
 $ git submodule update --rebase --remote
 ```
 
+I found that recommended in [Hugo docs](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/) for themes.
 
 That is effectively the same as this, but I wouldn't recommend this. Also note that `git pull` alone will warn that you are not on a branch.
 
@@ -22,12 +22,20 @@ $ git pull origin master
 $ cd ..
 ```
 
-Check for changes. You should see that the submodule object appears to change from one commit to another, without showing the full details (because you repo doesn't care about the all commits and the files, just the commit reference).
+If you want to use tag instead. See [Tags][] cheatsheet.
 
 ```sh
+cd themes/ananke
+git checkout $(git describe --abbrev=0 --tags)
+cd ..
+```
+
+[Tags]: {% link cheatsheets/version-control/git/tags.md %}
+
+Check for changes. You should see that the submodule object appears to change from one commit to another, without showing the full details (because you repo doesn't care about the all commits and the files, just the commit reference).
+
+```console
 $ git diff
-```
-```
 ...
 --- a/themes/ananke
 +++ b/themes/ananke
