@@ -296,6 +296,11 @@
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">if</span><span class="pi">:</span> <span class="s">github.event.pull_request.merged == </span><span class="no">true</span>
 </code></pre></div></div>
 
+<p>You can also check you are on <code class="language-plaintext highlighter-rouge">main</code> using this, from <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Hugo docs</a>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">if</span><span class="pi">:</span> <span class="s">github.ref == 'refs/heads/main'</span>
+</code></pre></div></div>
+
 <h4 id="tags">Tags</h4>
 
 <p>Or maybe you want the job to run on <code class="language-plaintext highlighter-rouge">main</code> and on a Pull Request, but only deploy if there is a tag.</p>
