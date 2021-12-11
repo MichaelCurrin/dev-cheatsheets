@@ -209,7 +209,9 @@ v1.0.2-32-g9641372
 v0.19.0
 </code></pre></div></div>
 
-<h2 id="abbreviate">Abbreviate</h2>
+<h2 id="flags">Flags</h2>
+
+<h3 id="abbreviate">Abbreviate</h3>
 
 <p>Show just commit reference by setting the hash length to zero.</p>
 
@@ -217,10 +219,20 @@ v0.19.0
 v0.19.0
 </code></pre></div></div>
 
-<h2 id="show-all-tags-not-just-annotated">Show all tags not just annotated</h2>
+<h3 id="all">All</h3>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">--all</code> Instead of using only the annotated tags, use any ref found in <code class="language-plaintext highlighter-rouge">refs/</code> namespace. This option enables matching any known branch, remote-tracking branch, or lightweight tag.</p>
+</blockquote>
+
+<h3 id="tags">Tags</h3>
 
 <blockquote>
   <p>By default (without <code class="language-plaintext highlighter-rouge">--all</code> or <code class="language-plaintext highlighter-rouge">--tags</code>) git describe only shows <strong>annotated</strong> tags</p>
+</blockquote>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">--tags</code> Instead of using only the annotated tags, use any tag found in refs/tags namespace. This option enables matching a lightweight (non-annotated) tag.</p>
 </blockquote>
 
 <p>Including tags that are not annotated.</p>
