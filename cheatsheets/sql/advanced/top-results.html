@@ -196,7 +196,7 @@
         <span class="n">my_label</span><span class="p">,</span>
         <span class="n">my_metric</span><span class="p">,</span>
         <span class="n">ROW_NUMBER</span><span class="p">()</span> <span class="n">OVER</span> <span class="p">(</span>
-            <span class="n">PARTITION</span> <span class="k">BY</span>
+            <span class="k">PARTITION</span> <span class="k">BY</span>
                 <span class="n">my_category</span>
             <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">my_metric</span> <span class="k">DESC</span>
         <span class="p">)</span> <span class="k">AS</span> <span class="n">rank</span>
@@ -212,7 +212,7 @@
     <span class="nv">`Year`</span><span class="p">,</span>
     <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="nv">`Count`</span><span class="p">,</span>
     <span class="n">ROW_NUMBER</span><span class="p">()</span> <span class="n">OVER</span> <span class="p">(</span>
-    <span class="n">PARTITION</span> <span class="k">BY</span> <span class="nv">`Year`</span>
+    <span class="k">PARTITION</span> <span class="k">BY</span> <span class="nv">`Year`</span>
         <span class="k">ORDER</span> <span class="k">BY</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">DESC</span>
     <span class="p">)</span> <span class="k">AS</span> <span class="n">rank</span>
 <span class="k">FROM</span> <span class="n">my_table</span>
@@ -325,7 +325,7 @@ HAVING rank &lt;= 10
     <span class="n">name</span><span class="p">,</span>
     <span class="n">value</span><span class="p">,</span>
     <span class="n">ROW_NUMBER</span><span class="p">()</span> <span class="n">OVER</span> <span class="p">(</span>
-      <span class="n">PARTITION</span> <span class="k">BY</span> <span class="nb">year</span>
+      <span class="k">PARTITION</span> <span class="k">BY</span> <span class="nb">year</span>
       <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">value</span> <span class="k">DESC</span>
     <span class="p">)</span> <span class="k">AS</span> <span class="n">rank</span>
   <span class="k">FROM</span> <span class="n">aggregated</span>

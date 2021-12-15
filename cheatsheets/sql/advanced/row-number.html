@@ -166,7 +166,7 @@
             <p>From <a href="https://www.sqlitetutorial.net/sqlite-window-functions/sqlite-row_number/">SQLite Tutorial</a>.</p>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ROW_NUMBER</span><span class="p">()</span> <span class="n">OVER</span> <span class="p">(</span>
-    <span class="p">[</span><span class="n">PARTITION</span> <span class="k">BY</span> <span class="n">expression1</span><span class="p">,</span> <span class="n">expression2</span><span class="p">,...]</span>
+    <span class="p">[</span><span class="k">PARTITION</span> <span class="k">BY</span> <span class="n">expression1</span><span class="p">,</span> <span class="n">expression2</span><span class="p">,...]</span>
     <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">expression1</span> <span class="p">[</span><span class="k">ASC</span> <span class="o">|</span> <span class="k">DESC</span><span class="p">],</span> <span class="n">expression2</span><span class="p">,...</span>
 <span class="p">)</span>
 </code></pre></div></div>
@@ -242,7 +242,7 @@
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span>
     <span class="n">ROW_NUMBER</span> <span class="p">()</span> <span class="n">OVER</span> <span class="p">(</span>
-        <span class="n">PARTITION</span> <span class="k">BY</span> <span class="n">country</span>
+        <span class="k">PARTITION</span> <span class="k">BY</span> <span class="n">country</span>
         <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">first_name</span>
     <span class="p">)</span> <span class="n">row_number</span><span class="p">,</span>
     <span class="n">first_name</span><span class="p">,</span>
