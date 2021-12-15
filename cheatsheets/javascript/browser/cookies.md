@@ -82,6 +82,12 @@ Set-Cookie: my_key=my_value
 
 The attributes are case-insensitive. So `Path`, `path`, and `PATH` all work.
 
+### Delete
+
+See the [Expiry](#expiry) section to make a cookie expire immediately and this will delete it.
+
+You can also keep the cookie around but set the whole cookie or one of the keys to be an empty string.
+
 ### Path sharing
 
 By default, the cookie is set _only_ for the current path, which you can see in DevTools for the stored cookie.
