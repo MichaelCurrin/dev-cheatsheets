@@ -403,6 +403,22 @@
 <span class="p">)()</span>
 </code></pre></div></div>
 
+<h2 id="cors">CORS</h2>
+
+<p>For cross-origin request to your own or an external API, you might have to allow the requests with CORS settings.</p>
+
+<p>This might not be enough - the backend API will also have to allow requests from all domains or your domain.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cors</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">Access-Control-Allow-Origin</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">*</span><span class="dl">'</span>
+  <span class="p">},</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</code></pre></div></div>
+
         
     </div>
 </article>
