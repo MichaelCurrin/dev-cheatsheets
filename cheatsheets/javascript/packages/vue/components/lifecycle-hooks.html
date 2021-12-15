@@ -199,10 +199,27 @@
 <h2 id="common">Common</h2>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">updated</code></li>
-  <li><code class="language-plaintext highlighter-rouge">mounted</code></li>
   <li><code class="language-plaintext highlighter-rouge">created</code></li>
+  <li><code class="language-plaintext highlighter-rouge">mounted</code></li>
+  <li><code class="language-plaintext highlighter-rouge">updated</code></li>
 </ul>
+
+<p>Sample usage on a component or view:</p>
+
+<div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">created</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Created component</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="nx">mounted</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mounted component</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="nx">updated</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Updated component</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+</code></pre></div></div>
 
         
     </div>

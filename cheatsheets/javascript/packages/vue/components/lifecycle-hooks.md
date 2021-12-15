@@ -10,6 +10,25 @@ In the docs
 
 ## Common
 
-- `updated`
-- `mounted`
 - `created`
+- `mounted`
+- `updated`
+
+
+Sample usage on a component or view:
+
+```vue
+<script>
+export default {
+  created() {
+    console.log("Created component");
+  },
+  mounted() {
+    console.log("Mounted component");
+  },
+  updated() {
+    console.log("Updated component");
+  },
+};
+</script>
+```
