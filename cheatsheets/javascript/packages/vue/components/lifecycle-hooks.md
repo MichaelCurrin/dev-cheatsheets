@@ -10,9 +10,9 @@ In the docs
 
 ## Common
 
-- `created`
-- `mounted`
-- `updated`
+- `created` - called after instance is created but before it is mounted.
+- `mounted` - Called after the instance has been mounted
+- `updated` - "Called after a data change causes the virtual DOM to be re-rendered and patched."
 
 
 Sample usage on a component or view:
