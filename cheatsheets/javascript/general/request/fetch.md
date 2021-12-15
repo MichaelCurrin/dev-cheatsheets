@@ -223,3 +223,21 @@ const url = 'https://httpbin.org/post'
   console.log(respData)
 )()
 ```
+
+
+## CORS
+
+For cross-origin request to your own or an external API, you might have to allow the requests with CORS settings.
+
+This might not be enough - the backend API will also have to allow requests from all domains or your domain.
+
+```javascript
+const options = {
+  mode: 'cors',
+  headers: {
+    'Access-Control-Allow-Origin': '*'
+  },
+}
+
+const resp = await fetch(url, options);
+```
