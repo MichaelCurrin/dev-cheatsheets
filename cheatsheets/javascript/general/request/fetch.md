@@ -58,8 +58,9 @@ const body = await resp.text()
 
 Use `resp.ok` to check for a success message.
 
-const url = 'https://httpbin.org/get'
 ```javascript
+const url = 'https://httpbin.org/get'
+
 const resp = await fetch(url);
 if (!resp.ok) {
   throw new Error(`HTTP error: ${resp.status} - ${resp.statusText} URL: ${url}`);
@@ -222,6 +223,34 @@ const url = 'https://httpbin.org/post'
   const resp = await fetch(url, options)
   console.log(respData)
 )()
+```
+
+
+## Headers
+
+Create an object.
+
+```javascript
+const url = 'http://localhost:8080/clients/'
+
+const headers = {
+  'Content-Type': 'application/json'
+  'Authorization': '1234abcd'
+}
+
+fetch(url, { headers })
+```
+
+Or create a `Headers` instance - based on [SO](https://stackoverflow.com/questions/48458116/fetch-request-with-token-in-header).
+
+```javascript
+const url = 'http://localhost:8080/clients/'
+const headers = new Headers();
+
+headers.append('Content-Type', 'application/json');
+headers.append('Authorization', '1234abcd');
+
+fetch(url, { headers })
 ```
 
 
