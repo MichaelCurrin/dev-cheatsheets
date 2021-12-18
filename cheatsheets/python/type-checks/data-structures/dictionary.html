@@ -192,12 +192,14 @@
   <li>Fields are only null when allowed to be.</li>
 </ul>
 
-<h2 id="basic">Basic</h2>
+<h2 id="using-plain-dict">Using plain Dict</h2>
 
 <p>Here we create a type using a dictionary.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">dict</span><span class="p">[</span><span class="n">KEY_TYPE</span><span class="p">,</span> <span class="n">VALUE_TYPE</span><span class="p">]</span>
 </code></pre></div></div>
+
+<h3 id="type-comment">Type comment</h3>
 
 <p>From the Mypy <a href="http://mypy-lang.org/examples.html">Examples</a> page:</p>
 
@@ -218,10 +220,14 @@
 <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># type: MyType
 </span></code></pre></div></div>
 
-<p>This should also work:</p>
+<h3 id="type-annotation">Type annotation</h3>
+
+<p>This also works:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
 </code></pre></div></div>
+
+<p>Based on <a href="https://mypy.readthedocs.io/en/stable/error_code_list.html#check-dict-items-dict-item">Check dict items</a>.</p>
 
 <h2 id="using-typeddict">Using TypedDict</h2>
 
@@ -251,7 +257,7 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Movie</span> <span class="o">=</span> <span class="n">TypedDict</span><span class="p">(</span><span class="s">'Movie'</span><span class="p">,</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="s">'year'</span><span class="p">:</span> <span class="nb">int</span><span class="p">})</span>
 </code></pre></div></div>
 
-<p>The 3 approaches are:</p>
+<p>The 4 approaches are:</p>
 
 <h4 id="annotation">Annotation</h4>
 
@@ -273,6 +279,25 @@
     <span class="n">name</span> <span class="o">=</span> <span class="n">movie</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span>
     <span class="k">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </code></pre></div></div>
+
+<h3 id="class-inheritance">Class inheritance</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">typing_extensions</span> <span class="kn">import</span> <span class="n">TypedDict</span>
+
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span>
+
+
+<span class="n">p</span><span class="p">:</span> <span class="n">Point</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'y'</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+
+<span class="c1"># Error: Incompatible types (expression has type "float",
+#        TypedDict item "x" has type "int")
+</span><span class="n">p</span><span class="p">:</span> <span class="n">Point</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x'</span><span class="p">:</span> <span class="mf">1.2</span><span class="p">,</span> <span class="s">'y'</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>From <a href="https://mypy.readthedocs.io/en/stable/error_code_list.html#check-dict-items-dict-item">Check TypedDict items</a>.</p>
 
 <h2 id="errors">Errors</h2>
 
