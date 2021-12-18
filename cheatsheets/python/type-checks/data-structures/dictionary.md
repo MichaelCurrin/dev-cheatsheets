@@ -47,6 +47,12 @@ MyType = dict[str, int]
 d = {}  # type: MyType
 ```
 
+This should also work:
+
+```python
+d: dict[str, int] = {}
+```
+
 
 ## Using TypedDict
 
