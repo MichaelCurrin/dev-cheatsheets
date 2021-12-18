@@ -1,11 +1,13 @@
-# Typed dict
+# Dictionary
+
+In this cheatsheet, we use a dictionary with types assigned for the keys and the values.
 
 A typed dictionary is useful for defining a type to represent a recurring object structure or an object with many fields. Then your functions can be lighter to define.
 
 
 ## Benefits 
 
-A dictionary but with structure and types enforced to give you safety. 
+A dictionary, but with structure and types enforced to give you safety. 
 
 So you can validate that a dictionary passed around meets the following:
 
@@ -15,9 +17,40 @@ So you can validate that a dictionary passed around meets the following:
 - Fields are only null when allowed to be.
 
 
-## Syntax 
+## Basic
 
-Here we define and use a `TypeDict` type. This is resuable, unlike a plain `Dict[TYPE, TYPE]` setup.
+Here we create a type using a dictionary.
+
+```python
+dict[KEY_TYPE, VALUE_TYPE]
+```
+
+From the Mypy [Examples](http://mypy-lang.org/examples.html) page:
+
+```python
+from typing import Dict
+
+d = {}  # type: Dict[str, int]
+```
+
+Or, in newer Python:
+
+```python
+d = {}  # type: dict[str, int]
+```
+
+You could make an alias, for reuse:
+
+```python
+MyType = dict[str, int]
+
+d = {}  # type: MyType
+```
+
+
+## Using TypedDict
+
+Here we define and use the `TypeDict` type. 
 
 Example from [TypedDict](https://mypy.readthedocs.io/en/stable/more_types.html#typeddict) section of Mypy docs.
 
@@ -39,7 +72,7 @@ MyType = TypedDict(
 ```
 
 
-## Ways to use the type
+### Ways to use the type
 
 Here are using a `Movie` type, defined as follows:
 
@@ -49,7 +82,7 @@ Movie = TypedDict('Movie', {'name': str, 'year': int})
 
 The 3 approaches are:
 
-### Annotation
+#### Annotation
 
 Annotate the type with comment explicitly.
 
@@ -57,7 +90,7 @@ Annotate the type with comment explicitly.
 movie = {'name': 'Toy Story', 'year': 1995}  # type: Movie
 ```
 
-### Constructor
+#### Constructor
 
 Use the type as a constructor. Similar to a class.
 
@@ -65,7 +98,7 @@ Use the type as a constructor. Similar to a class.
 movie = Movie(name='Toy Story', year=1995)
 ```
 
-### Function parameter
+#### Function parameter
 
 ```python
 def foo(movie: Movie) -> None:

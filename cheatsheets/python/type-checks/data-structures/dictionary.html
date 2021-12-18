@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Typed dict | Dev Cheatsheets</title>
+    <title>Dictionary | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Typed dict" />
+    <meta property="og:title" content="Dictionary" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Typed dict" />
+    <meta property="twitter:title" content="Dictionary" />
 <meta name="generator" content="Jekyll v4.2.1" />
 
 <meta property="og:locale" content="en_US" />
@@ -26,16 +26,16 @@
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/type-checks/data-structures/typed-dict.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/type-checks/data-structures/typed-dict.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/type-checks/data-structures/dictionary.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/type-checks/data-structures/dictionary.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/type-checks/data-structures/typed-dict.html",
-    "headline":    "Typed dict",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/type-checks/data-structures/dictionary.html",
+    "headline":    "Dictionary",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -82,7 +82,7 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/python/type-checks/data-structures/typed-dict.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/python/type-checks/data-structures/dictionary.md">
     📝 <span>Edit page</span>
 </a>
 
@@ -99,7 +99,7 @@
             
 
 
-            <span>Typed dict</span>
+            <span>Dictionary</span>
         </h1>
 
         
@@ -162,8 +162,8 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/python/type-checks/data-structures/typed-dict.html" class="underline">
-                Typed dict
+            <a href="/dev-cheatsheets/cheatsheets/python/type-checks/data-structures/dictionary.html" class="underline">
+                Dictionary
             </a>
         
      
@@ -175,11 +175,13 @@
 
     <div class="post-content">
         
-            <p>A typed dictionary is useful for defining a type to represent a recurring object structure or an object with many fields. Then your functions can be lighter to define.</p>
+            <p>In this cheatsheet, we use a dictionary with types assigned for the keys and the values.</p>
+
+<p>A typed dictionary is useful for defining a type to represent a recurring object structure or an object with many fields. Then your functions can be lighter to define.</p>
 
 <h2 id="benefits">Benefits</h2>
 
-<p>A dictionary but with structure and types enforced to give you safety.</p>
+<p>A dictionary, but with structure and types enforced to give you safety.</p>
 
 <p>So you can validate that a dictionary passed around meets the following:</p>
 
@@ -190,9 +192,35 @@
   <li>Fields are only null when allowed to be.</li>
 </ul>
 
-<h2 id="syntax">Syntax</h2>
+<h2 id="basic">Basic</h2>
 
-<p>Here we define and use a <code class="language-plaintext highlighter-rouge">TypeDict</code> type. This is resuable, unlike a plain <code class="language-plaintext highlighter-rouge">Dict[TYPE, TYPE]</code> setup.</p>
+<p>Here we create a type using a dictionary.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">dict</span><span class="p">[</span><span class="n">KEY_TYPE</span><span class="p">,</span> <span class="n">VALUE_TYPE</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>From the Mypy <a href="http://mypy-lang.org/examples.html">Examples</a> page:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># type: Dict[str, int]
+</span></code></pre></div></div>
+
+<p>Or, in newer Python:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># type: dict[str, int]
+</span></code></pre></div></div>
+
+<p>You could make an alias, for reuse:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MyType</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># type: MyType
+</span></code></pre></div></div>
+
+<h2 id="using-typeddict">Using TypedDict</h2>
+
+<p>Here we define and use the <code class="language-plaintext highlighter-rouge">TypeDict</code> type.</p>
 
 <p>Example from <a href="https://mypy.readthedocs.io/en/stable/more_types.html#typeddict">TypedDict</a> section of Mypy docs.</p>
 
@@ -211,7 +239,7 @@
 <span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="ways-to-use-the-type">Ways to use the type</h2>
+<h3 id="ways-to-use-the-type">Ways to use the type</h3>
 
 <p>Here are using a <code class="language-plaintext highlighter-rouge">Movie</code> type, defined as follows:</p>
 
@@ -220,21 +248,21 @@
 
 <p>The 3 approaches are:</p>
 
-<h3 id="annotation">Annotation</h3>
+<h4 id="annotation">Annotation</h4>
 
 <p>Annotate the type with comment explicitly.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movie</span> <span class="o">=</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'Toy Story'</span><span class="p">,</span> <span class="s">'year'</span><span class="p">:</span> <span class="mi">1995</span><span class="p">}</span>  <span class="c1"># type: Movie
 </span></code></pre></div></div>
 
-<h3 id="constructor">Constructor</h3>
+<h4 id="constructor">Constructor</h4>
 
 <p>Use the type as a constructor. Similar to a class.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'Toy Story'</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">1995</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="function-parameter">Function parameter</h3>
+<h4 id="function-parameter">Function parameter</h4>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span> <span class="n">Movie</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">movie</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span>
