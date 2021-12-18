@@ -125,6 +125,16 @@ There are multiple names and places for a config, but the common choice is:
 
 - `.pylintrc` at the repo root.
 
+
+### Sample
+
+```ini
+[MESSAGES CONTROL]
+disable=
+  fixme,
+  invalid-name
+```
+
 ### Generate
 
 ```sh
