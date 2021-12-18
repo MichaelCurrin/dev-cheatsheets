@@ -192,7 +192,7 @@
 
 <h2 id="syntax">Syntax</h2>
 
-<p>Here we define and used a <code class="language-plaintext highlighter-rouge">TypeDict</code> type. This is resuable, unlike a plain <code class="language-plaintext highlighter-rouge">Dict[TYPE, TYPE]</code> setup.</p>
+<p>Here we define and use a <code class="language-plaintext highlighter-rouge">TypeDict</code> type. This is resuable, unlike a plain <code class="language-plaintext highlighter-rouge">Dict[TYPE, TYPE]</code> setup.</p>
 
 <p>Example from <a href="https://mypy.readthedocs.io/en/stable/more_types.html#typeddict">TypedDict</a> section of Mypy docs.</p>
 
@@ -213,29 +213,32 @@
 
 <h2 id="ways-to-use-the-type">Ways to use the type</h2>
 
-<p>Here specifically using a <code class="language-plaintext highlighter-rouge">Movie</code> type, defined as follows.</p>
+<p>Here are using a <code class="language-plaintext highlighter-rouge">Movie</code> type, defined as follows:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Movie</span> <span class="o">=</span> <span class="n">TypedDict</span><span class="p">(</span><span class="s">'Movie'</span><span class="p">,</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="s">'year'</span><span class="p">:</span> <span class="nb">int</span><span class="p">})</span>
 </code></pre></div></div>
 
+<p>The 3 approaches are:</p>
+
 <h3 id="annotation">Annotation</h3>
 
-<p>Here we annotate the type with comment explicitly.</p>
+<p>Annotate the type with comment explicitly.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movie</span> <span class="o">=</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'Toy Story'</span><span class="p">,</span> <span class="s">'year'</span><span class="p">:</span> <span class="mi">1995</span><span class="p">}</span>  <span class="c1"># type: Movie
 </span></code></pre></div></div>
 
 <h3 id="constructor">Constructor</h3>
 
-<p>Use it as a constructor. Similar to a class.</p>
+<p>Use the type as a constructor. Similar to a class.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'Toy Story'</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">1995</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="function-parameter">Function parameter</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span> <span class="n">Movie</span><span class="p">):</span> <span class="o">-&gt;</span> <span class="bp">None</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">movie</span><span class="p">[</span><span class="s">'name'</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span> <span class="n">Movie</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">movie</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="errors">Errors</h2>
