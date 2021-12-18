@@ -17,7 +17,7 @@ So you can validate that a dictionary passed around meets the following:
 
 ## Syntax 
 
-Here we define and used a `TypeDict` type. This is resuable, unlike a plain `Dict[TYPE, TYPE]` setup.
+Here we define and use a `TypeDict` type. This is resuable, unlike a plain `Dict[TYPE, TYPE]` setup.
 
 Example from [TypedDict](https://mypy.readthedocs.io/en/stable/more_types.html#typeddict) section of Mypy docs.
 
@@ -41,15 +41,17 @@ MyType = TypedDict(
 
 ## Ways to use the type
 
-Here specifically using a `Movie` type, defined as follows.
+Here are using a `Movie` type, defined as follows:
 
 ```python
 Movie = TypedDict('Movie', {'name': str, 'year': int})
 ```
 
+The 3 approaches are:
+
 ### Annotation
 
-Here we annotate the type with comment explicitly.
+Annotate the type with comment explicitly.
 
 ```python
 movie = {'name': 'Toy Story', 'year': 1995}  # type: Movie
@@ -57,7 +59,7 @@ movie = {'name': 'Toy Story', 'year': 1995}  # type: Movie
 
 ### Constructor
 
-Use it as a constructor. Similar to a class.
+Use the type as a constructor. Similar to a class.
 
 ```python
 movie = Movie(name='Toy Story', year=1995)
@@ -66,8 +68,9 @@ movie = Movie(name='Toy Story', year=1995)
 ### Function parameter
 
 ```python
-def foo(movie: Movie): -> None
-    print(movie['name'])
+def foo(movie: Movie) -> None:
+    name = movie['name']
+    print(name)
 ```
 
 
