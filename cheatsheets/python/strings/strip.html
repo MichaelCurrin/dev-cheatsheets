@@ -168,7 +168,38 @@
 
     <div class="post-content">
         
-            <h2 id="remove-whitespace">Remove whitespace</h2>
+            <h2 id="strip-methods">Strip methods</h2>
+
+<h3 id="strip-from-both-ends">Strip from both ends</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">.strip</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>str.strip([chars])
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">chars</code> - Optional. The set of characters to be removed (order is ignored). If omitted or <code class="language-plaintext highlighter-rouge">None</code>, the argument defaults to removing whitespace.</li>
+</ul>
+
+<h2 id="strip-from-one-side">Strip from one side</h2>
+
+<p>Use <code class="language-plaintext highlighter-rouge">.lstring</code> for left and <code class="language-plaintext highlighter-rouge">.rstrip</code> for right.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">' abc '</span><span class="p">.</span><span class="n">lstrip</span><span class="p">()</span>
+<span class="c1"># 'abc '
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">' abc '</span><span class="p">.</span><span class="n">rstrip</span><span class="p">()</span>
+<span class="c1"># ' abc'
+</span></code></pre></div></div>
+
+<p>You can pass a character set too:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">' abc '</span><span class="p">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s">'bc '</span><span class="p">)</span>
+<span class="c1"># ' a'
+</span></code></pre></div></div>
+
+<h2 id="remove-whitespace">Remove whitespace</h2>
 
 <p>The default.</p>
 
@@ -214,23 +245,6 @@
 <span class="s">'%ab'</span>
 </code></pre></div></div>
 
-<h2 id="strip-from-one-side">Strip from one side</h2>
-
-<p>Use <code class="language-plaintext highlighter-rouge">lstring</code> for left and <code class="language-plaintext highlighter-rouge">rstrip</code> for right.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">' abc '</span><span class="p">.</span><span class="n">lstrip</span><span class="p">()</span>
-<span class="c1"># 'abc '
-</span></code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">' abc '</span><span class="p">.</span><span class="n">rstrip</span><span class="p">()</span>
-<span class="c1"># ' abc'
-</span></code></pre></div></div>
-
-<p>You can pass a character set too:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">' abc '</span><span class="p">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s">'bc '</span><span class="p">)</span>
-<span class="c1"># ' a'
-</span></code></pre></div></div>
 
         
     </div>
