@@ -317,11 +317,16 @@
 
 <h3 id="sample">Sample</h3>
 
+<p>Here ignoring <code class="language-plaintext highlighter-rouge">FIXME</code> comments, <code class="language-plaintext highlighter-rouge">except Exception</code> lines, and naming (such as when you do want a single-character variable name).</p>
+
 <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[MESSAGES CONTROL]</span>
 <span class="py">disable</span><span class="p">=</span>
   <span class="err">fixme,</span>
+  <span class="err">broad-except,</span>
   <span class="err">invalid-name</span>
 </code></pre></div></div>
+
+<p>Also look at disabling <code class="language-plaintext highlighter-rouge">global-statement</code> to avoid error on use of <code class="language-plaintext highlighter-rouge">global</code>.</p>
 
 <h3 id="generate">Generate</h3>
 

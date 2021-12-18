@@ -128,12 +128,17 @@ There are multiple names and places for a config, but the common choice is:
 
 ### Sample
 
+Here ignoring `FIXME` comments, `except Exception` lines, and naming (such as when you do want a single-character variable name).
+
 ```ini
 [MESSAGES CONTROL]
 disable=
   fixme,
+  broad-except,
   invalid-name
 ```
+
+Also look at disabling `global-statement` to avoid error on use of `global`.
 
 ### Generate
 
