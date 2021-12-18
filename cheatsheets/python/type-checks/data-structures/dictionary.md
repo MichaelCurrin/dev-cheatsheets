@@ -17,13 +17,15 @@ So you can validate that a dictionary passed around meets the following:
 - Fields are only null when allowed to be.
 
 
-## Basic
+## Using plain Dict
 
 Here we create a type using a dictionary.
 
 ```python
 dict[KEY_TYPE, VALUE_TYPE]
 ```
+
+### Type comment
 
 From the Mypy [Examples](http://mypy-lang.org/examples.html) page:
 
@@ -47,11 +49,15 @@ MyType = dict[str, int]
 d = {}  # type: MyType
 ```
 
-This should also work:
+### Type annotation
+
+This also works:
 
 ```python
 d: dict[str, int] = {}
 ```
+
+Based on [Check dict items](https://mypy.readthedocs.io/en/stable/error_code_list.html#check-dict-items-dict-item).
 
 
 ## Using TypedDict
@@ -86,7 +92,7 @@ Here are using a `Movie` type, defined as follows:
 Movie = TypedDict('Movie', {'name': str, 'year': int})
 ```
 
-The 3 approaches are:
+The 4 approaches are:
 
 #### Annotation
 
@@ -111,6 +117,26 @@ def foo(movie: Movie) -> None:
     name = movie['name']
     print(name)
 ```
+
+### Class inheritance
+
+```python
+from typing_extensions import TypedDict
+
+
+class Point(TypedDict):
+    x: int
+    y: int
+
+
+p: Point = {'x': 1, 'y': 4}
+
+# Error: Incompatible types (expression has type "float",
+#        TypedDict item "x" has type "int")
+p: Point = {'x': 1.2, 'y': 4}
+```
+
+From [Check TypedDict items](https://mypy.readthedocs.io/en/stable/error_code_list.html#check-dict-items-dict-item).
 
 
 ## Errors
