@@ -163,8 +163,21 @@
 
     <div class="post-content">
         
-            <ul>
-  <li>Homepage: <a href="https://pylint.org/">pylint.org</a></li>
+            <h2 id="what-is-pylint">What is Pylint?</h2>
+
+<p>From the FAQ:</p>
+
+<blockquote>
+  <p>Pylint is a static code checker, meaning it can analyse your code without actually running it.</p>
+
+  <p>Pylint checks for errors, tries to enforce a coding standard, and tries to enforce a coding style.</p>
+</blockquote>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://pylint.org/">pylint.org</a></li>
+  <li><a href="https://pylint.pycqa.org/en/latest/faq.html">FAQ</a> - in particular, see sections of message control and on working with other linters.</li>
 </ul>
 
 <h2 id="cli">CLI</h2>
@@ -301,6 +314,73 @@
 <ul>
   <li><code class="language-plaintext highlighter-rouge">.pylintrc</code> at the repo root.</li>
 </ul>
+
+<h3 id="generate">Generate</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pylint <span class="nt">--disable</span><span class="o">=</span>bare-except,invalid-name <span class="nt">--class-rgx</span><span class="o">=</span><span class="s1">'[A-Z][a-z]+'</span> <span class="nt">--generate-rcfile</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>You can generate a sample pylintrc file with <code class="language-plaintext highlighter-rouge">--generate-rcfile</code>.</p>
+
+  <p>Every option present on the command line before this will be included in the rc file</p>
+</blockquote>
+
+<blockquote>
+  <p>For example:</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">pylint</span> <span class="o">--</span><span class="n">disable</span><span class="o">=</span><span class="n">bare</span><span class="o">-</span><span class="k">except</span><span class="p">,</span><span class="n">invalid</span><span class="o">-</span><span class="n">name</span> <span class="o">--</span><span class="n">class</span><span class="o">-</span><span class="n">rgx</span><span class="o">=</span><span class="s">'[A-Z][a-z]+'</span> <span class="o">--</span><span class="n">generate</span><span class="o">-</span><span class="n">rcfile</span>
+</code></pre></div></div>
+
+<h2 id="ignore">Ignore</h2>
+
+<p>Disable rules for a scope.</p>
+
+<p>The rules are comma-separated and you can also add a space after the comma.</p>
+
+<h3 id="disable-current-line">Disable current line</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># pylint: disable=RULES
+</span></code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">global</span> <span class="n">VAR</span> <span class="c1"># pylint: disable=global-statement
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># pylint: disable=fixme,line-too-long
+</span></code></pre></div></div>
+
+<h3 id="disable-next-line">Disable next line</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># pylint: disable-next=...
+</span></code></pre></div></div>
+
+<h3 id="disable-for-a-block">Disable for a block</h3>
+
+<blockquote>
+  <p>A block is either a scope (say a function, a module), or a multiline statement (try, finally, if statements, for loops).</p>
+
+  <p>It’s currently impossible to disable inside an else block</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+    <span class="c1"># pylint: disable=some-rule
+</span></code></pre></div></div>
+
+<h3 id="disable-for-module">Disable for module</h3>
+
+<p>Place at the top of the file:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># pylint: disable=wildcard-import, method-hidden
+# pylint: enable=too-many-lines
+</span></code></pre></div></div>
+
+<p>Or ignore the whole file:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># pylint: skip-file
+</span></code></pre></div></div>
 
         
     </div>
