@@ -3,6 +3,39 @@ title: Strip
 description: Remove characters from the start or end of a string
 ---
 
+## Strip methods
+
+### Strip from both ends
+
+Use `.strip`.
+
+```
+str.strip([chars])
+```
+
+- `chars` - Optional. The set of characters to be removed (order is ignored). If omitted or `None`, the argument defaults to removing whitespace.
+
+## Strip from one side
+
+Use `.lstring` for left and `.rstrip` for right.
+
+```python
+' abc '.lstrip()
+# 'abc '
+```
+
+```python
+' abc '.rstrip()
+# ' abc'
+```
+
+You can pass a character set too:
+
+```python
+' abc '.rstrip('bc ')
+# ' a'
+```
+
 
 ## Remove whitespace
 
@@ -59,24 +92,3 @@ Here, we specify `#`, `$`, and `c` will get removed.
 '%ab'
 ```
 
-
-## Strip from one side
-
-Use `lstring` for left and `rstrip` for right.
-
-```python
-' abc '.lstrip()
-# 'abc '
-```
-
-```python
-' abc '.rstrip()
-# ' abc'
-```
-
-You can pass a character set too:
-
-```python
-' abc '.rstrip('bc ')
-# ' a'
-```
