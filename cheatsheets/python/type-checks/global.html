@@ -190,7 +190,42 @@
     <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="p">.</span><span class="n">Firefox</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>Though, this presents challenges with types, which is what this page is about. Or at least partially solves.</p>
+<p>Though, this presents challenges with types, which is what this page is about.</p>
+
+<h2 id="no-value">No value</h2>
+
+<p>This is the only approach I found that works.</p>
+
+<p>Initialize without a value. This forces the typechecking to see it as initialized with a type and never has a <code class="language-plaintext highlighter-rouge">None</code> value.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">VARIABLE</span><span class="p">:</span> <span class="n">TYPE</span>
+</code></pre></div></div>
+
+<p>I had errors initially from the linter about the variable not set in the functions, but that went away.</p>
+
+<p>e.g.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># pylint: disable=global-statement,global-variable-not-assigned
+</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.firefox.webdriver</span> <span class="kn">import</span> <span class="n">WebDriver</span>
+
+<span class="n">driver</span><span class="p">:</span> <span class="n">WebDriver</span>
+
+
+<span class="k">def</span> <span class="nf">close</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">global</span> <span class="n">driver</span>
+    <span class="n">driver</span><span class="p">.</span><span class="n">quit</span><span class="p">()</span>
+    
+    
+<span class="k">def</span> <span class="nf">setup_driver</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">global</span> <span class="n">driver</span>
+    <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="p">.</span><span class="n">Firefox</span><span class="p">()</span>
+    
+<span class="n">setup_driver</span><span class="p">()</span>
+<span class="n">close</span><span class="p">()</span>
+</code></pre></div></div>
 
 <h2 id="optional">Optional</h2>
 
@@ -199,11 +234,21 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">VARIABLE</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">TYPE</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
 </code></pre></div></div>
 
-<p>Or try <code class="language-plaintext highlighter-rouge">TYPE | None</code> in Python 3.10 syntax.</p>
+<p>Or with implied <code class="language-plaintext highlighter-rouge">None</code> initial value:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">VARIABLE</span><span class="p">:</span> <span class="n">Optiona</span><span class="p">[</span><span class="n">TYPE</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Or in Python 3.10 syntax.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">VARIABLE</span><span class="p">:</span> <span class="n">TYPE</span> <span class="o">|</span> <span class="bp">None</span>
+</code></pre></div></div>
 
 <p>Here is an example:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
 <span class="kn">from</span> <span class="nn">selenium.webdriver.firefox.webdriver</span> <span class="kn">import</span> <span class="n">WebDriver</span>
 
 
@@ -225,49 +270,7 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Item "None" of "Optional[WebDriver]" has no attribute "quit"
 </code></pre></div></div>
 
-<h2 id="no-value">No value</h2>
-
-<p>Or initialize without a value.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">VARIABLE</span><span class="p">:</span> <span class="n">TYPE</span>
-</code></pre></div></div>
-
-<p>This doesn’t work so well, as then the variable will appear undefined in function scopes.</p>
-
-<p>You rather give it value. You don’t even need the type.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">VARIABLE</span> <span class="o">=</span> <span class="n">INITIALIZE</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>Here is an example anyway.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
-<span class="kn">from</span> <span class="nn">selenium.webdriver.firefox.webdriver</span> <span class="kn">import</span> <span class="n">WebDriver</span>
-
-<span class="n">driver</span><span class="p">:</span> <span class="n">WebDriver</span>
-
-
-<span class="k">def</span> <span class="nf">close</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="n">driver</span><span class="p">.</span><span class="n">quit</span><span class="p">()</span>
-    
-    
-<span class="k">def</span> <span class="nf">setup_driver</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="p">.</span><span class="n">Firefox</span><span class="p">()</span>
-    
-<span class="n">setup_driver</span><span class="p">()</span>
-<span class="n">close</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>Though, you’ll get an error from the linter that the variable is undefined in the <code class="language-plaintext highlighter-rouge">close</code> function, because it can’t tell if or when the variable will be set</p>
-
-<p>Even this doesn’t solve it:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">close</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="k">global</span> <span class="n">driver</span>
-    <span class="n">driver</span><span class="p">.</span><span class="n">quit</span><span class="p">()</span>
-</code></pre></div></div>
-
-<h2 id="set-as-none-does-not-work">Set as None does not work</h2>
+<h2 id="note-on-setting-as-none">Note on setting as None</h2>
 
 <p>Note that you cannot set a value to be <code class="language-plaintext highlighter-rouge">None</code> and also another type.</p>
 
