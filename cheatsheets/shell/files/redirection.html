@@ -189,16 +189,14 @@
 
 <p>This is not so useful in itself when just running in the console alone. But more useful when using crontab, <code class="language-plaintext highlighter-rouge">tee</code> or writing to a file.</p>
 
-<h2 id="send-stderr-and-stdout-to-the-same-file">Send stderr and stdout to the same file</h2>
-
-<p>Send <code class="language-plaintext highlighter-rouge">stdout</code> to a file and then send <code class="language-plaintext highlighter-rouge">stderr</code> there too.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>COMMAND <span class="o">&gt;</span> stdout_and_sterr.txt 2&gt; &amp;1
-</code></pre></div></div>
-
-<p>Or, shorthand for the above.</p>
+<h2 id="write-stderr-and-stdout-to-the-same-file">Write stderr and stdout to the same file</h2>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>COMMAND &amp;&gt; stdout_and_sterr.txt
+</code></pre></div></div>
+
+<p>Or more verbosely. Send <code class="language-plaintext highlighter-rouge">stdout</code> to a file and then send <code class="language-plaintext highlighter-rouge">stderr</code> there too.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>COMMAND <span class="o">&gt;</span> stdout_and_sterr.txt 2&gt; &amp;1
 </code></pre></div></div>
 
 <p>Apparently supported in all shells.</p>
@@ -207,12 +205,12 @@
 
 <h2 id="append-output">Append output</h2>
 
-<p>Append <code class="language-plaintext highlighter-rouge">stdout</code> to a file.</p>
+<p>Append just <code class="language-plaintext highlighter-rouge">stdout</code> to a file.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>COMMAND <span class="o">&gt;&gt;</span> stdout_and_sterr.txt
 </code></pre></div></div>
 
-<p>Also append <code class="language-plaintext highlighter-rouge">stderr</code> to that file.</p>
+<p>Append <code class="language-plaintext highlighter-rouge">stdout</code> and <code class="language-plaintext highlighter-rouge">stderr</code> to a file.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>COMMAND <span class="o">&gt;&gt;</span> stdout_and_sterr.txt 2&gt; &amp;1
 </code></pre></div></div>
@@ -221,22 +219,43 @@
 
 <h2 id="hide-all-output-from-a-command">Hide all output from a command</h2>
 
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>COMMAND &amp;&gt; /dev/null
+</code></pre></div></div>
+
+<p>Or</p>
+
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>COMMAND <span class="o">&gt;</span> /dev/null 2&gt; &amp;1
 </code></pre></div></div>
 
 <p>e.g.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if </span><span class="nb">command</span> <span class="nt">-v</span> node /dev/null <span class="o">&gt;</span> 2&gt; &amp;1<span class="p">;</span> <span class="k">then
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if </span><span class="nb">command</span> <span class="nt">-v</span> node &amp;&gt; /dev/null<span class="p">;</span> <span class="k">then
   </span><span class="nb">echo</span> <span class="s1">'Node is installed!'</span>
 <span class="k">else
   </span><span class="nb">echo</span> <span class="s1">'Node is not installed :('</span>
 <span class="k">fi</span>
 </code></pre></div></div>
 
-<h2 id="store-file-as-a-variable">Store file as a variable</h2>
+<h2 id="store-file-contents-as-a-variable">Store file contents as a variable</h2>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ CONTENT</span><span class="o">=</span><span class="si">$(</span>&lt; file.txt<span class="si">)</span>
 </code></pre></div></div>
+
+<h2 id="write-multi-line-content-to-file">Write multi-line content to file</h2>
+
+<p>This is useful for adding instructions in docs to copy and paste a comamnd.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt; hello.c
+#include &lt;stdio.h&gt;
+
+int main(int argc, char ** argv) {
+  printf("Hello, world!</span><span class="se">\n</span><span class="sh">");
+}
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<p>See the <a href="/dev-cheatsheets/cheatsheets/shell/scripting/strings.html">Strings</a> Shell cheatsheet for more info on a Heredoc.</p>
+
 
         
     </div>
