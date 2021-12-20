@@ -28,19 +28,18 @@ $ COMMAND 2> &1
 This is not so useful in itself when just running in the console alone. But more useful when using crontab, `tee` or writing to a file. 
 
 
-## Send stderr and stdout to the same file
+## Write stderr and stdout to the same file
 
-Send `stdout` to a file and then send `stderr` there too.
+```sh
+$ COMMAND &> stdout_and_sterr.txt
+```
+
+Or more verbosely. Send `stdout` to a file and then send `stderr` there too.
 
 ```sh
 $ COMMAND > stdout_and_sterr.txt 2> &1
 ```
 
-Or, shorthand for the above.
-
-```sh
-$ COMMAND &> stdout_and_sterr.txt
-```
 
 Apparently supported in all shells.
 
@@ -49,13 +48,13 @@ From [askubuntu.com question](https://askubuntu.com/questions/625224/how-to-redi
 
 ## Append output
 
-Append `stdout` to a file.
+Append just `stdout` to a file.
 
 ```sh
 $ COMMAND >> stdout_and_sterr.txt
 ```
 
-Also append `stderr` to that file.
+Append `stdout` and `stderr` to a file.
 
 ```sh
 $ COMMAND >> stdout_and_sterr.txt 2> &1
@@ -66,6 +65,13 @@ From [SO question](https://stackoverflow.com/questions/876239/how-can-i-redirect
 
 ## Hide all output from a command
 
+
+```sh
+$ COMMAND &> /dev/null
+```
+
+Or
+
 ```sh
 $ COMMAND > /dev/null 2> &1
 ```
@@ -73,7 +79,7 @@ $ COMMAND > /dev/null 2> &1
 e.g.
 
 ```sh
-if command -v node /dev/null > 2> &1; then
+if command -v node &> /dev/null; then
   echo 'Node is installed!'
 else
   echo 'Node is not installed :('
@@ -81,8 +87,27 @@ fi
 ```
 
 
-## Store file as a variable
+## Store file contents as a variable
 
 ```sh
 $ CONTENT=$(< file.txt)
 ```
+
+
+## Write multi-line content to file 
+
+This is useful for adding instructions in docs to copy and paste a comamnd.
+
+```sh
+$ cat << EOF > hello.c
+#include <stdio.h>
+
+int main(int argc, char ** argv) {
+  printf("Hello, world!\n");
+}
+EOF
+```
+
+See the [Strings][] Shell cheatsheet for more info on a Heredoc.
+
+[Strings]: {% link cheatsheets/shell/scripting/strings.md %}
