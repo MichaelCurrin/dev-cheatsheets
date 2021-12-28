@@ -7,6 +7,7 @@ This page is specific to React. For a more general guide, see the [JSX][] genera
 
 {% raw %}
 
+
 ## Structuring JSX
 
 ### Single element
@@ -39,7 +40,7 @@ That is JSX fragment - formatted as  `<>...</>`
         <h2>This is React</h2>
       </>
     ```
-    Or with brackets.
+    Add brackets if you want to start the tag on its own line after `return`.
     ```jsx
     return (
       <>
@@ -48,9 +49,9 @@ That is JSX fragment - formatted as  `<>...</>`
       </>
     )
     ```
-- HTML DOM
+- HTML DOM result:
     ```html
-    <div id="root"
+    <div id="root">
         <h1>Hello, World!</h1>
         <h2>This is React</h2>
     </div>
@@ -88,7 +89,7 @@ You can optionally use the brackets. It doesn't change the result but allows you
         <h2>This is React</h2>
       </div>
     ```
-    Or with brackets.
+    With brackets:
     ```jsx
     return (
       <div>
@@ -98,7 +99,7 @@ You can optionally use the brackets. It doesn't change the result but allows you
     )
     ```
 
-- HTML DOM
+- HTML DOM result:
     ```html
     <div id="root">
         <div>
@@ -118,6 +119,8 @@ You can optionally use the brackets. It doesn't change the result but allows you
 ### CSS
 
 Use `{{ EXPRESSION }}`.
+
+e.g.
 
 ```jsx
 function App() {
