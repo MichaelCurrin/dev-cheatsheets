@@ -16,21 +16,49 @@ See also [JSX][] in my Code Cookbook.
 
 Based on [React JSX Comments](https://wesbos.com/react-jsx-comments/) guide.
 
-```jx
+```jsx
 {/* A JSX comment */}
 ```
 
 
 ## Space
 
-```jx
-${" "}
+```jsx
+{" "}
 ```
 
-Or
+e.g.
+
+```jsx
+<button>Hello</button>
+{" "}
+<button>Goodbye</button>
+```
+
+This can be useful when you need to add space around another tag like a link. If you had in a plain space, that can get stripped out when a formatter is applied. So we explicitly add a space using the JS expression syntax.
+
+```jsx
+<p>
+  We increment a numeric counter here, based on the{' '}
+  <a href="https://reactjs.org/docs/hooks-state.html">
+    Using the State Hook
+  </a>{' '}
+  tutorial in the React docs.
+</p>
+```
+
+Or just add a non-breaking space in plain HTML. This gives the same result.
 
 ```html
 &nbsp;
+```
+
+e.g.
+
+```jsx
+<button>Hello</button>
+&nbsp;
+<button>Goodbye</button>
 ```
 
 
@@ -41,26 +69,28 @@ See [React JSX][] cheatsheet for more complete examples in functions.
 
 ### Basic
 
+Here we use a variable inside a JS expression within the inner HTML.
+
 Use a variable name.
 
 ```jsx
-name = "World"
+const name = "World"
 
-return <p>Hello, {name}!</p>
+return <p>Hello, { name }!</p>
 ```
 
 Or some other JS expression.
 
 ```jsx
-name = "World"
+const name = "World"
 
-return <p>Hello, {name.toUpperCase()}!</p>
+return <p>Hello, { name.toUpperCase() }!</p>
 ```
 
-A value directly on function props.
+Using value directly on a function's properties:
 
 ```jsx
-return <p>Hello, {props.name}!</p>
+return <p>Hello, { props.name }!</p>
 ```
 
 ### Attributes
@@ -70,7 +100,7 @@ EVENT={EXPRESSION}
 ```
 
 ```jsx
-path = "abc.png"
+const path = "abc.png"
 
 return <img src={ path } />
 ```
