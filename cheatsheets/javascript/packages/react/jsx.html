@@ -211,7 +211,7 @@
       <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>This is React<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
     <span class="p">&lt;/&gt;</span>
 </code></pre></div>    </div>
-    <p>Or with brackets.</p>
+    <p>Add brackets if you want to start the tag on its own line after <code class="language-plaintext highlighter-rouge">return</code>.</p>
     <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">return</span> <span class="p">(</span>
     <span class="p">&lt;&gt;</span>
       <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
@@ -220,9 +220,9 @@
   <span class="p">)</span>
 </code></pre></div>    </div>
   </li>
-  <li>HTML DOM
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"root"</span>
-      <span class="err">&lt;</span><span class="na">h1</span><span class="nt">&gt;</span>Hello, World!<span class="nt">&lt;/h1&gt;</span>
+  <li>HTML DOM result:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"root"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h1&gt;</span>Hello, World!<span class="nt">&lt;/h1&gt;</span>
       <span class="nt">&lt;h2&gt;</span>This is React<span class="nt">&lt;/h2&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 </code></pre></div>    </div>
@@ -262,7 +262,7 @@
       <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>This is React<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>    </div>
-    <p>Or with brackets.</p>
+    <p>With brackets:</p>
     <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">return</span> <span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
@@ -271,7 +271,7 @@
   <span class="p">)</span>
 </code></pre></div>    </div>
   </li>
-  <li>HTML DOM
+  <li>HTML DOM result:
     <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"root"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;div&gt;</span>
           <span class="nt">&lt;h1&gt;</span>Hello, World!<span class="nt">&lt;/h1&gt;</span>
@@ -292,6 +292,8 @@
 <h3 id="css">CSS</h3>
 
 <p>Use <code class="language-plaintext highlighter-rouge">{{ EXPRESSION }}</code>.</p>
+
+<p>e.g.</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="p">=</span><span class="si">{</span><span class="p">{</span> <span class="na">color</span><span class="p">:</span> <span class="dl">'</span><span class="s1">red</span><span class="dl">'</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
