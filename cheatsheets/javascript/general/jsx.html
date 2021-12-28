@@ -171,17 +171,42 @@
 
 <p>Based on <a href="https://wesbos.com/react-jsx-comments/">React JSX Comments</a> guide.</p>
 
-<pre><code class="language-jx">{/* A JSX comment */}
-</code></pre>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="cm">/* A JSX comment */</span><span class="p">}</span>
+</code></pre></div></div>
 
 <h2 id="space">Space</h2>
 
-<pre><code class="language-jx">${" "}
-</code></pre>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">}</span>
+</code></pre></div></div>
 
-<p>Or</p>
+<p>e.g.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Hello<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">{</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">}</span>
+<span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Goodbye<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p>This can be useful when you need to add space around another tag like a link. If you had in a plain space, that can get stripped out when a formatter is applied. So we explicitly add a space using the JS expression syntax.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+  We increment a numeric counter here, based on the<span class="si">{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="p">=</span><span class="s">"https://reactjs.org/docs/hooks-state.html"</span><span class="p">&gt;</span>
+    Using the State Hook
+  <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span><span class="si">{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}</span>
+  tutorial in the React docs.
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p>Or just add a non-breaking space in plain HTML. This gives the same result.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="ni">&amp;nbsp;</span>
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Hello<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="o">&amp;</span><span class="nx">nbsp</span><span class="p">;</span>
+<span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Goodbye<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></div></div>
 
 <h2 id="pass-values">Pass values</h2>
@@ -190,23 +215,25 @@
 
 <h3 id="basic">Basic</h3>
 
+<p>Here we use a variable inside a JS expression within the inner HTML.</p>
+
 <p>Use a variable name.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">World</span><span class="dl">"</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">World</span><span class="dl">"</span>
 
-<span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, <span class="si">{</span><span class="nx">name</span><span class="si">}</span>!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, <span class="si">{</span> <span class="nx">name</span> <span class="si">}</span>!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </code></pre></div></div>
 
 <p>Or some other JS expression.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">World</span><span class="dl">"</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">World</span><span class="dl">"</span>
 
-<span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, <span class="si">{</span><span class="nx">name</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="si">}</span>!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, <span class="si">{</span> <span class="nx">name</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="si">}</span>!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </code></pre></div></div>
 
-<p>A value directly on function props.</p>
+<p>Using value directly on a function’s properties:</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span>!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">name</span> <span class="si">}</span>!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </code></pre></div></div>
 
 <h3 id="attributes">Attributes</h3>
@@ -214,7 +241,7 @@
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">EVENT</span><span class="o">=</span><span class="p">{</span><span class="nx">EXPRESSION</span><span class="p">}</span>
 </code></pre></div></div>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">path</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">abc.png</span><span class="dl">"</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">abc.png</span><span class="dl">"</span>
 
 <span class="k">return</span> <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="p">=</span><span class="si">{</span> <span class="nx">path</span> <span class="si">}</span> <span class="p">/&gt;</span>
 </code></pre></div></div>
