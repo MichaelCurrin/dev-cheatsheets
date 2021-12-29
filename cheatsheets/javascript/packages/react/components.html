@@ -177,7 +177,7 @@
         
             <h2 id="element">Element</h2>
 
-<p>From <a href="https://reactjs.org/docs/rendering-elements.html">tutorial</a>.</p>
+<p>From <a href="https://reactjs.org/docs/rendering-elements.html">Rendering Elements</a> tutorial.</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, world<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
 
@@ -195,21 +195,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Or with destructuring:</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Welcome</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">{</span> <span class="nx">name</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
-  
-  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="si">{</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Or with destructured parameters:</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Welcome</span><span class="p">({</span> <span class="nx">name</span> <span class="p">})</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="si">{</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p>See the <a href="/dev-cheatsheets/cheatsheets/javascript/packages/react/props.html">Props</a> cheatsheet for alternative ways of handling properties.</p>
 
 <p>To handle state, you can use <a href="https://reactjs.org/docs/hooks-intro.html">React Hooks</a> or a state library. This makes is easier think about and layer components.</p>
 

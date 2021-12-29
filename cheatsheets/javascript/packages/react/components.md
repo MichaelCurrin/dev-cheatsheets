@@ -2,7 +2,7 @@
 
 ## Element
 
-From [tutorial](https://reactjs.org/docs/rendering-elements.html).
+From [Rendering Elements](https://reactjs.org/docs/rendering-elements.html) tutorial.
 
 ```jsx
 const element = <h1>Hello, world</h1>;
@@ -23,25 +23,9 @@ function Welcome(props) {
 }
 ```
 
-Or with destructuring:
+See the [Props][] cheatsheet for alternative ways of handling properties.
 
-```jsx
-function Welcome(props) {
-  const { name } = props;
-  
-  return <h1>Hello, {name}</h1>;
-}
-```
-
-Or with destructured parameters:
-
-```jsx
-function Welcome({ name }) {
-  return <h1>Hello, {name}</h1>;
-}
-```
-
-To handle state, you can use [React Hooks](https://reactjs.org/docs/hooks-intro.html) or a state library. This makes is easier think about and layer components.
+To handle state, you can use [React Hooks][] or a state library. This makes is easier think about and layer components.
 
 Use `onInput` for text inputs and `onChange` for a checkbox or radio button.
 
@@ -91,6 +75,9 @@ If you use `onSubmit` to set the value then you'll find that you actually **cann
   onSubmit={onSubmit}
 />
 ```
+
+[Props]: {% link cheatsheets/javascript/packages/react/props.md %}
+[React Hooks]: https://reactjs.org/docs/hooks-intro.html
 
 ### Class component
 
