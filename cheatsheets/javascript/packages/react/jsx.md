@@ -10,13 +10,28 @@ This page is specific to React. For a more general guide, see the [JSX][] genera
 
 ## Structuring JSX
 
+### Variable
+
+Without using a function, you can make some static JSX.
+
+```jsx
+const el = h1>Hello, World!</h1>
+```
+
+```jsx
+const name = 'World'
+const greet = h1>Hello, {name}!</h1>
+```
+
 ### Single element
 
 - JSX:
     ```jsx
-    return <h1>Hello, World!</h1>
+    function Greet() {
+      return <h1>Hello, World!</h1>
+    }
     ```
-- HTML DOM
+- HTML DOM result:
     ```html
     <div id="root">
         <h1>Hello, World!</h1>
@@ -24,7 +39,9 @@ This page is specific to React. For a more general guide, see the [JSX][] genera
     ```
 - Compiled JS:
     ```javascript
-    return React.createElement("h1", null, "Hello, World!");
+    function Greet() {
+      return React.createElement("h1", null, "Hello, World!");
+    }
     ```
 
 ### Group elements without a parent element
@@ -42,12 +59,14 @@ That is JSX fragment - formatted as  `<>...</>`
     ```
     Add brackets if you want to start the tag on its own line after `return`.
     ```jsx
-    return (
-      <>
-        <h1>Hello, World!</h1>
-        <h2>This is React</h2>
-      </>
-    )
+    function Greet() {
+      return (
+        <>
+          <h1>Hello, World!</h1>
+          <h2>This is React</h2>
+        </>
+      )
+    }
     ```
 - HTML DOM result:
     ```html
@@ -58,21 +77,24 @@ That is JSX fragment - formatted as  `<>...</>`
     ```
 - Compiled JS:
     ```javascript
-    return React.createElement(React.Fragment, null,
+    function Greet() {
+      return React.createElement(React.Fragment, null,
         React.createElement("h1", null, "Hello, World!"),
         React.createElement("h2", null, "This is React"));
-    };
+      }
     ```
 
-Be careful - without bracket, this would return `undefined`.
+Be careful of this. Without brackets, this would return `undefined`.
 
 - JSX:
     ```jsx
-    return
-      <>
-        <h1>Hello, World!</h1>
-        <h2>This is React</h2>
-      </>
+    function Greet() {
+      return
+        <>
+          <h1>Hello, World!</h1>
+          <h2>This is React</h2>
+        </>
+    }
     ```
 
 ### Group elements under a parent element
@@ -84,10 +106,12 @@ You can optionally use the brackets. It doesn't change the result but allows you
 
 - JSX:
     ```jsx
-    return <div>
-        <h1>Hello, World!</h1>
-        <h2>This is React</h2>
-      </div>
+    function Greeting() {
+      return <div>
+          <h1>Hello, World!</h1>
+          <h2>This is React</h2>
+        </div>
+    }
     ```
     With brackets:
     ```jsx
@@ -123,7 +147,7 @@ Use `{{ EXPRESSION }}`.
 e.g.
 
 ```jsx
-function App() {
+function Greet() {
   return <h1 style={{ color: 'red' }}>
     Hello, World!
   </h1>
@@ -137,7 +161,7 @@ Use `{ EXPRESSION }`.
 Substituting variables.
 
 ```jsx
-function App(props) {
+function Greet(props) {
  const { name, age } = props
 
   const status = age >= 18 ? 'major' : 'minor'
@@ -154,7 +178,7 @@ function App(props) {
 You can put an expression in like an arrow function call or ternary.
 
 ```jsx
-function App(props) {
+function Greet(props) {
   const { age } = props
 
   return (
@@ -178,7 +202,7 @@ function Image(props) {
 }
 ```
 
-Setting a function as an event.
+Setting a function as an event:
 
 ```jsx
 function Greet() {
@@ -298,12 +322,14 @@ For example:
     ```jsx
     const element = <h1>Hello, world!</h1>;
     const container = document.getElementById('root');
+    
     ReactDOM.render(element, container);
     ```
 - Result
     ```jsx
     const element = /*#__PURE__*/React.createElement("h1", null, "Hello, world!");
     const container = document.getElementById('root');
+    
     ReactDOM.render(element, container);
     ```
 
