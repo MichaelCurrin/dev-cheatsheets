@@ -177,11 +177,35 @@
         
             <p>This page is specific to React. For a more general guide, see the <a href="/dev-cheatsheets/cheatsheets/javascript/general/jsx.html">JSX</a> general page. Including various ways to process JSX.</p>
 
-<h2 id="structuring-jsx">Structuring JSX</h2>
+<p>Creating elements or components (which are made of elements) using JSX syntax.</p>
+
+<h2 id="function-vs-variable">Function vs variable</h2>
+
+<h3 id="function">Function</h3>
+
+<ul>
+  <li>JSX:
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="nx">Greet</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>With parameters:</p>
+
+<ul>
+  <li>JSX:
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="nx">Greet</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">name</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+      
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="si">{</span> <span class="nx">name</span> <span class="si">}</span>!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
 
 <h3 id="variable">Variable</h3>
-
-<p>Without using a function, you can make some static JSX.</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">el</span> <span class="o">=</span> <span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="nx">World</span><span class="o">!</span><span class="p">&lt;</span><span class="err">/</span><span class="na">h1</span><span class="p">&gt;</span>
 </code></pre></div></div>
@@ -190,7 +214,13 @@
 <span class="kd">const</span> <span class="nx">greet</span> <span class="o">=</span> <span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="p">{</span><span class="nx">name</span><span class="p">}</span><span class="o">!</span><span class="p">&lt;</span><span class="err">/</span><span class="na">h1</span><span class="p">&gt;</span>
 </code></pre></div></div>
 
+<h2 id="structuring-jsx">Structuring JSX</h2>
+
+<p>Using approaches like outer elements or not for writing JSX.</p>
+
 <h3 id="single-element">Single element</h3>
+
+<p>This is a simple case. Just return a single flat element.</p>
 
 <ul>
   <li>JSX:
@@ -215,9 +245,7 @@
 
 <h3 id="group-elements-without-a-parent-element">Group elements without a parent element</h3>
 
-<p>Use a parent element that doesn’t get rendered.</p>
-
-<p>That is JSX fragment - formatted as  <code class="language-plaintext highlighter-rouge">&lt;&gt;...&lt;/&gt;</code></p>
+<p>Here we use an empty JSX fragment to group our elements together, but it won’t get rendered.</p>
 
 <ul>
   <li>JSX:
@@ -278,24 +306,25 @@
 <ul>
   <li>JSX:
     <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="nx">Greeting</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"my-class"</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>This is React<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
       <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">}</span>
 </code></pre></div>    </div>
     <p>With brackets:</p>
-    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>This is React<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">)</span>
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="nx">Greeting</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"my-class"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>This is React<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
 </code></pre></div>    </div>
   </li>
   <li>HTML DOM result:
     <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"root"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"my-class"</span><span class="nt">&gt;</span>
           <span class="nt">&lt;h1&gt;</span>Hello, World!<span class="nt">&lt;/h1&gt;</span>
           <span class="nt">&lt;h2&gt;</span>This is React<span class="nt">&lt;/h2&gt;</span>
       <span class="nt">&lt;/div&gt;</span>
@@ -303,26 +332,17 @@
 </code></pre></div>    </div>
   </li>
   <li>Compiled JS equivalent:
-    <pre><code class="language-javasript">  return React.createElement("div", null,
-    React.createElement("h1", null, "Hello, World!"),
-    React.createElement("h2", null, "This is React"));
-  };
+    <pre><code class="language-javasript">  function Greeting() {
+    return React.createElement(
+      "div",
+      { className="my-class" },
+      React.createElement("h1", null, "Hello, World!"),
+      React.createElement("h2", null, "This is React");
+      );
+  }
 </code></pre>
   </li>
 </ul>
-
-<h3 id="css">CSS</h3>
-
-<p>Use <code class="language-plaintext highlighter-rouge">{{ EXPRESSION }}</code>.</p>
-
-<p>e.g.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Greet</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="p">=</span><span class="si">{</span><span class="p">{</span> <span class="na">color</span><span class="p">:</span> <span class="dl">'</span><span class="s1">red</span><span class="dl">'</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
-    Hello, World!
-  <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="p">}</span>
-</code></pre></div></div>
 
 <h3 id="js-expressions-in-jsx">JS expressions in JSX</h3>
 
@@ -411,6 +431,21 @@
       <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">increment</span><span class="si">}</span><span class="p">&gt;</span>Click me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="css">CSS</h3>
+
+<p>Put a key-value pair object inside your JS expression.</p>
+
+<p>i.e. <code class="language-plaintext highlighter-rouge">{{ MY_CSS }}</code>.</p>
+
+<p>e.g.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Greet</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="p">=</span><span class="si">{</span><span class="p">{</span> <span class="na">color</span><span class="p">:</span> <span class="dl">'</span><span class="s1">red</span><span class="dl">'</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
+    Hello, World!
+  <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
