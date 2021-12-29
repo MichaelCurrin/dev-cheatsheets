@@ -1,5 +1,15 @@
 # Components
 
+## Element
+
+From [tutorial](https://reactjs.org/docs/rendering-elements.html).
+
+```jsx
+const element = <h1>Hello, world</h1>;
+
+ReactDOM.render(element, document.getElementById('root'));
+```
+
 
 ## Component approaches
 
@@ -19,6 +29,14 @@ Or with destructuring:
 function Welcome(props) {
   const { name } = props;
   
+  return <h1>Hello, {name}</h1>;
+}
+```
+
+Or with destructured parameters:
+
+```jsx
+function Welcome({ name }) {
   return <h1>Hello, {name}</h1>;
 }
 ```
