@@ -7,12 +7,32 @@ This page is specific to React. For a more general guide, see the [JSX][] genera
 
 {% raw %}
 
+Creating elements or components (which are made of elements) using JSX syntax.
 
-## Structuring JSX
+## Function vs variable
 
+### Function
+
+- JSX:
+    ```jsx
+    function Greet() {
+      return <h1>Hello, World!</h1>
+    }
+    ```
+    
+    
+With parameters:
+
+- JSX:
+    ```jsx
+    function Greet(props) {
+      const { name } = props;
+      
+      return <h1>Hello, { name }!</h1>
+    }
+    ```
+    
 ### Variable
-
-Without using a function, you can make some static JSX.
 
 ```jsx
 const el = h1>Hello, World!</h1>
@@ -23,7 +43,14 @@ const name = 'World'
 const greet = h1>Hello, {name}!</h1>
 ```
 
+
+## Structuring JSX
+
+Using approaches like outer elements or not for writing JSX.
+
 ### Single element
+
+This is a simple case. Just return a single flat element.
 
 - JSX:
     ```jsx
@@ -46,9 +73,7 @@ const greet = h1>Hello, {name}!</h1>
 
 ### Group elements without a parent element
 
-Use a parent element that doesn't get rendered.
-
-That is JSX fragment - formatted as  `<>...</>`
+Here we use an empty JSX fragment to group our elements together, but it won't get rendered.
 
 - JSX:
     ```jsx
@@ -107,7 +132,7 @@ You can optionally use the brackets. It doesn't change the result but allows you
 - JSX:
     ```jsx
     function Greeting() {
-      return <div>
+      return <div className="my-class">
           <h1>Hello, World!</h1>
           <h2>This is React</h2>
         </div>
@@ -115,18 +140,19 @@ You can optionally use the brackets. It doesn't change the result but allows you
     ```
     With brackets:
     ```jsx
-    return (
-      <div>
-        <h1>Hello, World!</h1>
-        <h2>This is React</h2>
-      </div>
-    )
+    function Greeting() {
+      return (
+        <div className="my-class">
+          <h1>Hello, World!</h1>
+          <h2>This is React</h2>
+        </div>
+      )
     ```
 
 - HTML DOM result:
     ```html
     <div id="root">
-        <div>
+        <div class="my-class">
             <h1>Hello, World!</h1>
             <h2>This is React</h2>
         </div>
@@ -134,25 +160,15 @@ You can optionally use the brackets. It doesn't change the result but allows you
     ```
 - Compiled JS equivalent:
     ```javasript
-    return React.createElement("div", null,
-      React.createElement("h1", null, "Hello, World!"),
-      React.createElement("h2", null, "This is React"));
-    };
+    function Greeting() {
+      return React.createElement(
+        "div",
+        { className="my-class" },
+        React.createElement("h1", null, "Hello, World!"),
+        React.createElement("h2", null, "This is React");
+        );
+    }
     ```
-
-### CSS
-
-Use `{{ EXPRESSION }}`.
-
-e.g.
-
-```jsx
-function Greet() {
-  return <h1 style={{ color: 'red' }}>
-    Hello, World!
-  </h1>
-}
-```
 
 ### JS expressions in JSX
 
@@ -247,6 +263,22 @@ export default function Counter() {
       <button onClick={increment}>Click me</button>
     </div>
   );
+}
+```
+
+### CSS
+
+Put a key-value pair object inside your JS expression.
+
+i.e. `{{ MY_CSS }}`.
+
+e.g.
+
+```jsx
+function Greet() {
+  return <h1 style={{ color: 'red' }}>
+    Hello, World!
+  </h1>
 }
 ```
 
