@@ -90,6 +90,27 @@ ReactDOM.render(
 );
 ```
 
+Each instance of `Clock` has its own independent state.
+
+Sample:
+
+```jsx
+function App() {
+  return (
+    <>
+      <Clock />      
+      <Clock />     
+      <Clock />    
+    </>
+  );
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
+```
+
 ### 3. Add lifecycle methods
 
 Here free up resources taken by the components when they are destroyed.
@@ -157,7 +178,7 @@ this.setState((state, props) => {
 })
 ```
 
-### 5. Multiple variables on the state
+### 5. Set multiple variables on the state
 
 When you call `this.setState`, values are merged in so only the relevant keys are updated and the rest are left intact.
 
@@ -184,8 +205,12 @@ class Clock extends React.Component {
 
 State should be local or encapsulated. Other components should not be able to see the state of a component.
 
-You can however pass a component's state down to a child component.
+You can however pass a component's state down to a child component, which doesn't care where the data comes from but just finds it on the props.
 
 ```jsx
+function FormattedDate(props) {
+  return <h2>It is {props.date.toLocaleTimeString()}.</h2>;
+}
+
 <FormattedDate date={this.state.date} />
 ```

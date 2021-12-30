@@ -262,6 +262,26 @@
 <span class="p">);</span>
 </code></pre></div></div>
 
+<p>Each instance of <code class="language-plaintext highlighter-rouge">Clock</code> has its own independent state.</p>
+
+<p>Sample:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Clock</span> <span class="p">/&gt;</span>      
+      <span class="p">&lt;</span><span class="nc">Clock</span> <span class="p">/&gt;</span>     
+      <span class="p">&lt;</span><span class="nc">Clock</span> <span class="p">/&gt;</span>    
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="p">&lt;</span><span class="nc">App</span> <span class="p">/&gt;,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
 <h3 id="3-add-lifecycle-methods">3. Add lifecycle methods</h3>
 
 <p>Here free up resources taken by the components when they are destroyed.</p>
@@ -326,7 +346,7 @@
 <span class="p">})</span>
 </code></pre></div></div>
 
-<h3 id="5-multiple-variables-on-the-state">5. Multiple variables on the state</h3>
+<h3 id="5-set-multiple-variables-on-the-state">5. Set multiple variables on the state</h3>
 
 <p>When you call <code class="language-plaintext highlighter-rouge">this.setState</code>, values are merged in so only the relevant keys are updated and the rest are left intact.</p>
 
@@ -352,9 +372,13 @@
 
 <p>State should be local or encapsulated. Other components should not be able to see the state of a component.</p>
 
-<p>You can however pass a component’s state down to a child component.</p>
+<p>You can however pass a component’s state down to a child component, which doesn’t care where the data comes from but just finds it on the props.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">FormattedDate</span> <span class="na">date</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">date</span><span class="si">}</span> <span class="p">/&gt;</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">FormattedDate</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>It is <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">date</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">()</span><span class="si">}</span>.<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+
+<span class="p">&lt;</span><span class="nc">FormattedDate</span> <span class="na">date</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">date</span><span class="si">}</span> <span class="p">/&gt;</span>
 </code></pre></div></div>
 
         
