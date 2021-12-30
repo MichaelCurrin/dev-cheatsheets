@@ -1741,10 +1741,13 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/presite/</loc>
 </url>
 <url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/components.html</loc>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/basics/components.html</loc>
 </url>
 <url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/conditional-rendering.html</loc>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/basics/conditional-rendering.html</loc>
+</url>
+<url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/basics/state-and-lifecycle.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/create-react-app.html</loc>
@@ -1772,9 +1775,6 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/setup.html</loc>
-</url>
-<url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/state-and-lifecycle.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/subpath.html</loc>
