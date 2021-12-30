@@ -151,20 +151,27 @@
 
     <div class="post-content">
         
-            <p>Set type initially then change value.</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">foo</span><span class="p">:</span> <span class="nx">boolean</span>
-<span class="nx">foo</span> <span class="o">=</span> <span class="kc">true</span>
-</code></pre></div></div>
-
-<p>Or:</p>
+            <h2 id="inferred-type">Inferred type</h2>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kc">true</span>
 </code></pre></div></div>
 
-<p>Types can be inferred but you can also do:</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<h2 id="explicit">Explicit</h2>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">foo</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="kc">false</span>
+</code></pre></div></div>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">bar</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span>
+</code></pre></div></div>
+
+<p>Set type initially and initialized with a null value then change value.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">foo</span><span class="p">:</span> <span class="nx">boolean</span>
+<span class="nx">foo</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="nx">foo</span> <span class="o">=</span> <span class="kc">false</span>
 </code></pre></div></div>
 
         
