@@ -147,28 +147,6 @@ Reasons to use functional components:
 Another reasons against class components is that [Classes confuse both people and machines](https://reactjs.org/docs/hooks-intro.html#classes-confuse-both-people-and-machines) (React docs section on Hooks release).
 
 
-## Component lifecycle
-
-See this [Lifecycle diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) which the React docs recommend as a cheatsheet.
-
-The methods below make sense for class component - I don't know about for a functional component.
-
-### Mounting
-
-1. `constructor()`
-2. `static getDerivedStateFromProps()`
-3. `render()`
-4. `componentDidMount()`
-
-### Updating
-
-1. `static getDerivedStateFromProps()`
-2. `shouldComponentUpdate()`
-3. `render()`
-4. `getSnapshotBeforeUpdate()`
-5. `componentDidUpdate()`
-
-
 ## Resources
 
 - [React.Component](https://reactjs.org/docs/react-component.html) in the React docs.
