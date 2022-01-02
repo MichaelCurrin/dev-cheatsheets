@@ -18,6 +18,8 @@
 | `:space:`     | Space                                    |
 | `:blank:`     | Space or tab, but not a newline.         |
 
+You can also use word boundary to pick up letters. e.g. `\b\s+\b` can be used to find spaces surrounded by letters, i.e. ignoring part of a line starting with spaces.
+
 Escaped literal characters:
 
 | Symbol | Description             |
