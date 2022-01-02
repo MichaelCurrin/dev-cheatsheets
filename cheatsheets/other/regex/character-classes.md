@@ -16,6 +16,7 @@
 | `:alpha:`     | Letter                                   |
 | `:digit:`     | Digit                                    |
 | `:space:`     | Space                                    |
+| `:blank:`     | Space or tab, but not a newline.         |
 
 Escaped literal characters:
 
@@ -23,8 +24,10 @@ Escaped literal characters:
 | ------ | ----------------------- |
 | `\.`   | A literal dot           |
 | `\n`   | A newline character     |
+| `\t`  | A tab character         |
 | `\\`   | A literal backspace     |
 | `\$`   | A literal dollar sign   |
 | `\?`   | A literal question mark |
 | `\(`   | A literal bracket       |
 | `\[`   | A literal bracket       |
+
