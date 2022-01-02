@@ -1,21 +1,26 @@
-# Set up index
+# Set up index script
 
 
-How to set up the index module of your React app. This is the entrypoing which loads your `App.jsx` file.
+How to set up the index module of your React app. This is the entrypoint which loads your `App.jsx` file.
+
+With `render` method and strict mode:
 
 - `index.jsx`
     ```jsx
     ReactDOM.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>,
-    document.getElementById("root"),
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>,
+      document.getElementById("root"),
     );
     ```
+    
+Or with `hydrate` method:
+
 - `index.jsx`
     ```jsx
     ReactDOM.hydrate(
-       <App />,
-       document.getElementById('root')
+      <App />,
+      document.getElementById('root')
     );
     ```
