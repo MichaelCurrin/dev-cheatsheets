@@ -20,8 +20,8 @@
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
-    <meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+    <meta name="description" content="Reload a page or redirect to another page" />
+    <meta property="og:description" content="Reload a page or redirect to another page" />
 <meta name="author" content="Michael Currin" />
 
 
@@ -33,7 +33,7 @@
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
+    "description": "Reload a page or redirect to another page",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/browser/navigation.html",
     "headline":    "Navigation",
     "@type":       "WebSite",
@@ -103,6 +103,11 @@
         </h1>
 
         
+            <blockquote>
+                <p>Reload a page or redirect to another page</p>
+
+            </blockquote>
+        
     </header>
 
     
@@ -163,47 +168,193 @@
 
     <div class="post-content">
         
-            <h2 id="reload">Reload</h2>
+            <h2 id="related">Related</h2>
 
-<p>Use cached page with false or full reload with true.</p>
+<ul>
+  <li><a href="/dev-cheatsheets/cheatsheets/javascript/browser/window-api.html">Window API</a> cheatsheet</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Location/assign">Assign</a> in Mozilla docs</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/open">Window.open</a> in Mozilla docs.</li>
+</ul>
+
+<h2 id="reload">Reload</h2>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>e.g. in React</p>
+<p>The argument is for a full reload:</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">refreshPage</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span> 
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">refreshPage</span><span class="si">}</span><span class="p">&gt;</span>
-        Click to reload!
-      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</code></pre></div></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">false</code> - use cached HTML page</li>
+  <li><code class="language-plaintext highlighter-rouge">true</code> -  full reload (hard refresh).</li>
+</ul>
 
 <h2 id="redirect">Redirect</h2>
 
-<p>Simulate a mouse click:</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://example.com</span><span class="dl">"</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>Simulate an HTTP redirect:</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://example.com</span><span class="dl">"</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>Using replace also removes the old URL from the history so you cannot click Back.</p>
-
 <p>Source <a href="https://www.w3schools.com/howto/howto_js_redirect_webpage.asp">W3 Schools</a></p>
+
+<h3 id="mouse-click">Mouse click</h3>
+
+<p>Simulate a mouse click that was driven by a user.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://example.com</span><span class="dl">"</span><span class="p">;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">url</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="assign">Assign</h3>
+
+<p>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/Location/assign">Assign</a> docs.</p>
+
+<p>This method will load and display the document at the URL specified.</p>
+
+<p>The user can then still navigate back by pressing the “back” button.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://example.com</span><span class="dl">"</span><span class="p">;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="http-redirect">HTTP redirect</h3>
+
+<p>Simulate an HTTP redirect that was driven by the page such as a 301 redirect.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://example.com</span><span class="dl">"</span><span class="p">;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Using <code class="language-plaintext highlighter-rouge">replace</code> also removes the old URL from the history, so you <em>cannot</em> click the Back btton.</p>
+
+<h2 id="open">Open</h2>
+
+<p>Open a new tab or window. Or navigate within a tab that was opened using this method.</p>
+
+<p>The MDN <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/open">Window.open</a> doc also recommends using a new tab link icon next to a standard link, so you can give the user the option between the same or different window. There are even icons provided (very old-fashioned). Though, that is standard <code class="language-plaintext highlighter-rouge">a</code> tag behavior and unrelated to <code class="language-plaintext highlighter-rouge">open</code>.</p>
+
+<h3 id="syntax">Syntax</h3>
+
+<p>This will open a new tab in the same window - first going to <code class="language-plaintext highlighter-rouge">about:blank</code> and then to the target URL. The window will be autofocused (it is also confusing to the user if the window is opened and not focused.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">,</span> <span class="p">[</span><span class="nx">windowFeatures</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">windowObjectRef</span>
+<span class="nx">windowObjectRef</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://michaelcurrin.github.io/dev-cheatsheets/</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">myWindow</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Pass features like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">,</span> <span class="dl">"</span><span class="s2">resizable,scrollbars,status</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">windowFeatures</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes</span><span class="dl">"</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">,</span> <span class="nx">windowFeatures</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="example">Example</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">windowObjectRefs</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="kd">function</span> <span class="nx">nav</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">ref</span> <span class="o">=</span> <span class="nx">windowObjectRefs</span><span class="p">[</span><span class="nx">windowName</span><span class="p">];</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">ref</span> <span class="o">||</span> <span class="nx">ref</span><span class="p">.</span><span class="nx">closed</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ref</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">);</span>
+    <span class="nx">windowObjectRefs</span><span class="p">[</span><span class="nx">windowName</span><span class="p">]</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">ref</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">""</span><span class="nx">https</span><span class="p">:</span><span class="c1">//michaelcurrin.github.io/dev-cheatsheets/""</span>
+<span class="kd">const</span> <span class="nx">windowName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">DevCheatsheets</span><span class="dl">"</span>
+
+<span class="nx">nav</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Use it in HTML. Note using the standard <code class="language-plaintext highlighter-rouge">target</code> field.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.google.com/search?q=dragon"</span> <span class="na">target=</span><span class="s">"GoogleSearch"</span>
+    <span class="na">onclick=</span><span class="s">"nav(this.href, this.target); return false;"</span><span class="nt">&gt;</span>
+    Google
+<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<h3 id="reference-details">Reference details</h3>
+
+<p>When you run <code class="language-plaintext highlighter-rouge">open</code>, you get a reference to the window.</p>
+
+<p>You can focus it with</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ref</span><span class="p">.</span><span class="nx">focus</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Close it and check closed status.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ref</span><span class="p">.</span><span class="nx">close</span><span class="p">()</span>
+<span class="nx">ref</span><span class="p">.</span><span class="nx">closed</span><span class="p">()</span>
+<span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>If the URL is on the <em>same</em> domain, you can do standard actions on it.</p>
+
+<p>e.g.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ref</span><span class="p">.</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>If not, you’ll get permissions error.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DOMException: Permission denied to access property "console" on cross-origin object
+</code></pre></div></div>
+
+<p>This limitation is covered in the docs.</p>
+
+<p><em>A script loaded in a window (or frame) from a distinct origin (domain name) cannot get nor set properties of another window (or frame) or the properties of any of its HTML objects coming from another distinct origin (domain name).</em></p>
+
+<h2 id="examples-with-click-triggers">Examples with click triggers</h2>
+
+<p>How to use reload, assign, etc. on a page with a click trigger.</p>
+
+<h3 id="plain-html">Plain HTML</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+      <span class="kd">function</span> <span class="nx">load</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://example.com</span><span class="dl">"</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">value=</span><span class="s">"Load new document"</span> <span class="na">onclick=</span><span class="s">"load()"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span> 
+</code></pre></div></div>
+
+<h3 id="react">React</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">load</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://example.com</span><span class="dl">"</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">Button</span><span class="p">()</span> <span class="p">{</span> 
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">load</span><span class="si">}</span><span class="p">&gt;</span>
+        Load new document
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Button</span><span class="p">;</span>
+</code></pre></div></div>
 
         
     </div>
