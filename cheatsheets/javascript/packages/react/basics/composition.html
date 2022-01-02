@@ -9,33 +9,33 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Component containment | Dev Cheatsheets</title>
+    <title>Composition | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Component containment" />
+    <meta property="og:title" content="Composition" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Component containment" />
+    <meta property="twitter:title" content="Composition" />
 <meta name="generator" content="Jekyll v4.2.1" />
 
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="Passing components to be nested in a component" />
-    <meta property="og:description" content="Passing components to be nested in a component" />
+    <meta name="description" content="Using components in other components" />
+    <meta property="og:description" content="Using components in other components" />
 <meta name="author" content="Michael Currin" />
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/basics/component-containment.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/basics/component-containment.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/basics/composition.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/basics/composition.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "Passing components to be nested in a component",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/basics/component-containment.html",
-    "headline":    "Component containment",
+    "description": "Using components in other components",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/basics/composition.html",
+    "headline":    "Composition",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -82,7 +82,7 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/javascript/packages/react/basics/component-containment.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/javascript/packages/react/basics/composition.md">
     📝 <span>Edit page</span>
 </a>
 
@@ -99,12 +99,12 @@
             
 
 
-            <span>Component containment</span>
+            <span>Composition</span>
         </h1>
 
         
             <blockquote>
-                <p>Passing components to be nested in a component</p>
+                <p>Using components in other components</p>
 
             </blockquote>
         
@@ -179,8 +179,8 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/javascript/packages/react/basics/component-containment.html" class="underline">
-                Component containment
+            <a href="/dev-cheatsheets/cheatsheets/javascript/packages/react/basics/composition.html" class="underline">
+                Composition
             </a>
         
      
@@ -192,20 +192,22 @@
 
     <div class="post-content">
         
-            <p>Here we let a component render any number of child components dynamically, without known what they are.</p>
+            <h2 id="component-containtment">Component containtment</h2>
+
+<p>Here we let a component render any number of child components dynamically, without known what they are.</p>
 
 <p>This is common for a sidebar or a dialog as generic boxes of other components.</p>
 
 <p>This similar to <em>slots</em> in other libraries, like Vue.</p>
 
-<h2 id="use-the-childen-property">Use the childen property</h2>
+<h3 id="use-the-childen-property">Use the childen property</h3>
 
 <p>Get the components within the box with the special <code class="language-plaintext highlighter-rouge">children</code> property:</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">FancyBorder</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span> <span class="dl">'</span><span class="s1">FancyBorder FancyBorder-</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">props</span><span class="p">.</span><span class="nx">color</span> <span class="si">}</span><span class="p">&gt;</span>
-      <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="si">}</span>    
+      <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">children</span> <span class="si">}</span>    
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">);</span>
 <span class="p">}</span>
@@ -228,7 +230,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h2 id="use-custom-childen">Use custom childen</h2>
+<h3 id="use-custom-childen">Use custom childen</h3>
 
 <p>Here is an alternative approach from the docs, using custom <em>left</em> and <em>right</em> components.</p>
 
@@ -236,11 +238,11 @@
   <span class="k">return</span> <span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"SplitPane"</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"SplitPane-left"</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">left</span><span class="si">}</span>     
+        <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">left</span> <span class="si">}</span>     
       <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
       
       <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"SplitPane-right"</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">right</span><span class="si">}</span>     
+        <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">right</span> <span class="si">}</span>     
       <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">);</span>
@@ -250,10 +252,50 @@
   <span class="k">return</span> <span class="p">(</span>
     <span class="p">&lt;</span><span class="nc">SplitPane</span>
       <span class="na">left</span><span class="p">=</span><span class="si">{</span> <span class="p">&lt;</span><span class="nc">Contacts</span> <span class="p">/&gt;</span> <span class="si">}</span>
-      
       <span class="na">right</span><span class="p">=</span><span class="si">{</span> <span class="p">&lt;</span><span class="nc">Chat</span> <span class="p">/&gt;</span> <span class="si">}</span> 
     <span class="p">/&gt;</span>
   <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="component-specialization">Component specialization</h2>
+
+<p>See <a href="https://reactjs.org/docs/composition-vs-inheritance.html">Composition vs Inheritance tutorial</a>.</p>
+
+<blockquote>
+  <p>Sometimes we think about components as being “special cases” of other components.</p>
+
+  <p>For example, we might say that a <code class="language-plaintext highlighter-rouge">WelcomeDialog</code> is a special case of <code class="language-plaintext highlighter-rouge">Dialog</code>.</p>
+</blockquote>
+
+<p>We achieve this with composition, where a specific component passes props to a generic one and renders it. This is preferred over using inheritance.</p>
+
+<p>If you have common non-UI logic to be used across components, that is probably best in a plain JS module which exports functions for use in components.</p>
+
+<p>Generic component:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Dialog</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">FancyBorder</span> <span class="na">color</span><span class="p">=</span><span class="s">"blue"</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">className</span><span class="p">=</span><span class="s">"Dialog-title"</span><span class="p">&gt;</span>
+        <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">title</span> <span class="si">}</span>    
+      <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        
+      <span class="p">&lt;</span><span class="nt">p</span> <span class="na">className</span><span class="p">=</span><span class="s">"Dialog-message"</span><span class="p">&gt;</span>
+        <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">message</span> <span class="si">}</span>    
+      <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">FancyBorder</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Specialized component with values set and passed down.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">WelcomeDialog</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">title</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Welcome</span><span class="dl">"</span>
+  <span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello, React developer</span><span class="dl">"</span>
+  
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nc">Dialog</span> <span class="na">title</span><span class="p">=</span><span class="na">title</span> <span class="na">message</span><span class="p">=</span><span class="na">message</span> <span class="p">/&gt;;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
