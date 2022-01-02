@@ -4,6 +4,11 @@ title: State
 description: Lifting state up so to a parent so it can be used in two child components
 ---
 
+See [CodePen demo][] and [Lifting state up][] tutorial.
+
+[CodePen demo]: https://codepen.io/gaearon/pen/WZpxpz?editors=0010
+[Lifting state up]: https://reactjs.org/docs/lifting-state-up.html
+
 In this example we have a form for inputting temperature in two inputs and then allow the values to change across both of them as well as an output component. Instead of storing two temperatue values, we just store one value and the current scale in use (Celcius or Fahrenheit).
 
 Set up your global variable and conversion functions.
