@@ -1,6 +1,13 @@
 # Regex
 
 
+## Related
+
+- [Character classes][] cheathsheet in the general Regex section.
+
+[Character classes]: {% link cheatsheets/other/regex/character-classes.md %}
+
+
 ## Resources
 
 - [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) on Mozilla docs.
@@ -46,6 +53,26 @@ e.g.
 const text = 'Rain and Spain'
 text.match(/ai/gi)
 // [ 'ai', 'ai' ]
+```
+
+Using a character class:
+
+```javascript
+/[[:blank:]]/g
+```
+
+```javascript
+const y = "R096  bar.txt    fizz/foo.txt"
+y.split(/\s+/)
+// [ 'R096', 'bar.txt', 'fizz/foo.txt' ]
+
+// These won't work so well:
+y.split(" ")
+// [ 'R096', '', 'bar.txt', '', '', '', 'fizz/foo.txt' ]
+y.split(/" "/)
+[ 'R096  bar.txt    fizz/foo.txt' ]
+y.split(/\s/)
+// [ 'R096', '', 'bar.txt', '', '', '', 'fizz/foo.txt' ]
 ```
 
 ### Flags

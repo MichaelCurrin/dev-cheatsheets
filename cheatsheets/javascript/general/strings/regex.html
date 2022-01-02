@@ -175,7 +175,13 @@
 
     <div class="post-content">
         
-            <h2 id="resources">Resources</h2>
+            <h2 id="related">Related</h2>
+
+<ul>
+  <li><a href="/dev-cheatsheets/cheatsheets/other/regex/character-classes.html">Character classes</a> cheathsheet in the general Regex section.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
 
 <ul>
   <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp">RegExp</a> on Mozilla docs.</li>
@@ -217,6 +223,24 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Rain and Spain</span><span class="dl">'</span>
 <span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/ai/gi</span><span class="p">)</span>
 <span class="c1">// [ 'ai', 'ai' ]</span>
+</code></pre></div></div>
+
+<p>Using a character class:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">/</span><span class="p">[[:</span><span class="nx">blank</span><span class="p">:]]</span><span class="o">/</span><span class="nx">g</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">R096  bar.txt    fizz/foo.txt</span><span class="dl">"</span>
+<span class="nx">y</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/</span><span class="se">\s</span><span class="sr">+/</span><span class="p">)</span>
+<span class="c1">// [ 'R096', 'bar.txt', 'fizz/foo.txt' ]</span>
+
+<span class="c1">// These won't work so well:</span>
+<span class="nx">y</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span>
+<span class="c1">// [ 'R096', '', 'bar.txt', '', '', '', 'fizz/foo.txt' ]</span>
+<span class="nx">y</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/" "/</span><span class="p">)</span>
+<span class="p">[</span> <span class="dl">'</span><span class="s1">R096  bar.txt    fizz/foo.txt</span><span class="dl">'</span> <span class="p">]</span>
+<span class="nx">y</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/</span><span class="se">\s</span><span class="sr">/</span><span class="p">)</span>
+<span class="c1">// [ 'R096', '', 'bar.txt', '', '', '', 'fizz/foo.txt' ]</span>
 </code></pre></div></div>
 
 <h3 id="flags">Flags</h3>
