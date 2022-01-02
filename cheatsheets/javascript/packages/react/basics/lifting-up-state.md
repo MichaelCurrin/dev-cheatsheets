@@ -1,5 +1,5 @@
 ---
-title: State
+title: Lifting up state
 
 description: Lifting state up so to a parent so it can be used in two child components
 ---
