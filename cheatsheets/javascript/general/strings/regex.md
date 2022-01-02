@@ -4,8 +4,8 @@
 ## Resources
 
 - [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) on Mozilla docs.
-- [JavaScript Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)
-- [JavaScript RegExp Reference](https://www.w3schools.com/jsref/jsref_obj_regexp.asp) - that has a long list on the list for more info.
+- [JavaScript Regular Expressions](https://www.w3schools.com/js/js_regexp.asp) on W3 Schools.
+- [JavaScript RegExp Reference](https://www.w3schools.com/jsref/jsref_obj_regexp.asp) on W3 Schools - that has a long list on the list for more info.
 
 
 ## Regex object
