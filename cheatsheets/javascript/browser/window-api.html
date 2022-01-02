@@ -168,34 +168,100 @@
 
     <div class="post-content">
         
-            <h2 id="related">Related</h2>
-
-<ul>
-  <li><a href="/dev-cheatsheets/cheatsheets/javascript/browser/navigation.html">Navigation</a> cheatsheet</li>
-</ul>
-
-<h2 id="resources">Resources</h2>
+            <h2 id="resources">Resources</h2>
 
 <ul>
   <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window">Window</a> in the Mozilla docs.</li>
   <li><a href="https://www.w3schools.com/jsref/obj_window.asp">Window Object</a> on W3 Schools.</li>
-  <li><a href="https://www.w3schools.com/js/js_window_location.asp">Window location</a> on W3 Schools</li>
 </ul>
 
-<h2 id="location">Location</h2>
+<h2 id="open">Open</h2>
 
-<p><code class="language-plaintext highlighter-rouge">window.location</code></p>
+<p>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/open">Window.open</a> in Mozilla docs.</p>
 
-<p>This object can be used to get the current page URL or load page.</p>
+<p>That doc also recommends using a new tab link icon next to a standard link, so you can give the user the option between the same or different window. There are even icons provided (very old-fashioned). Though, that is standard <code class="language-plaintext highlighter-rouge">a</code> tag behavior and unrelated to <code class="language-plaintext highlighter-rouge">open</code>.</p>
 
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">window.location.href</code> - get or set the current page URL.</li>
-  <li><code class="language-plaintext highlighter-rouge">window.location.protocol</code> - get the web protocol used - <code class="language-plaintext highlighter-rouge">http:</code> or <code class="language-plaintext highlighter-rouge">https:</code>.</li>
-  <li><code class="language-plaintext highlighter-rouge">window.location.hostname</code> - get domain name.</li>
-  <li><code class="language-plaintext highlighter-rouge">window.location.pathname</code> - get the path and filename of the current page.</li>
-  <li><code class="language-plaintext highlighter-rouge">window.location.port</code> - get the port number.</li>
-  <li><code class="language-plaintext highlighter-rouge">window.location.assign()</code> - load a new document.</li>
-</ul>
+<h3 id="syntax">Syntax</h3>
+
+<p>This will open a new tab in the same window - first going to <code class="language-plaintext highlighter-rouge">about:blank</code> and then to the target URL. The window will be autofocused (it is also confusing to the user if the window is opened and not focused.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">,</span> <span class="p">[</span><span class="nx">windowFeatures</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">windowObjectRef</span>
+<span class="nx">windowObjectRef</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://michaelcurrin.github.io/dev-cheatsheets/</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">myWindow</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Pass features like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">,</span> <span class="dl">"</span><span class="s2">resizable,scrollbars,status</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">windowFeatures</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes</span><span class="dl">"</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">,</span> <span class="nx">windowFeatures</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="example">Example</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">windowObjectRefs</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="kd">function</span> <span class="nx">nav</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">ref</span> <span class="o">=</span> <span class="nx">windowObjectRefs</span><span class="p">[</span><span class="nx">windowName</span><span class="p">];</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">ref</span> <span class="o">||</span> <span class="nx">ref</span><span class="p">.</span><span class="nx">closed</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ref</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">);</span>
+    <span class="nx">windowObjectRefs</span><span class="p">[</span><span class="nx">windowName</span><span class="p">]</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">ref</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">""</span><span class="nx">https</span><span class="p">:</span><span class="c1">//michaelcurrin.github.io/dev-cheatsheets/""</span>
+<span class="kd">const</span> <span class="nx">windowName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">DevCheatsheets</span><span class="dl">"</span>
+
+<span class="nx">nav</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Use it in HTML. Note using the standard <code class="language-plaintext highlighter-rouge">target</code> field.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.google.com/search?q=dragon"</span> <span class="na">target=</span><span class="s">"GoogleSearch"</span>
+    <span class="na">onclick=</span><span class="s">"nav(this.href, this.target); return false;"</span><span class="nt">&gt;</span>
+    Google
+<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<h2 id="reference-details">Reference details</h2>
+
+<p>When you run <code class="language-plaintext highlighter-rouge">open</code>, you get a reference to the window.</p>
+
+<p>You can focus it with</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ref</span><span class="p">.</span><span class="nx">focus</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Close it and check closed status.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ref</span><span class="p">.</span><span class="nx">close</span><span class="p">()</span>
+<span class="nx">ref</span><span class="p">.</span><span class="nx">closed</span><span class="p">()</span>
+<span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>If the URL is on the <em>same</em> domain, you can do standard actions on it.</p>
+
+<p>e.g.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ref</span><span class="p">.</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>If not, you’ll get permissions error.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DOMException: Permission denied to access property "console" on cross-origin object
+</code></pre></div></div>
+
+<p>This limitation is covered in the docs.</p>
+
+<p><em>A script loaded in a window (or frame) from a distinct origin (domain name) cannot get nor set properties of another window (or frame) or the properties of any of its HTML objects coming from another distinct origin (domain name).</em></p>
 
         
     </div>
