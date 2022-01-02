@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Set up index | Dev Cheatsheets</title>
+    <title>Set up index script | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Set up index" />
+    <meta property="og:title" content="Set up index script" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Set up index" />
+    <meta property="twitter:title" content="Set up index script" />
 <meta name="generator" content="Jekyll v4.2.1" />
 
 <meta property="og:locale" content="en_US" />
@@ -35,7 +35,7 @@
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/setup.html",
-    "headline":    "Set up index",
+    "headline":    "Set up index script",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -99,7 +99,7 @@
             
 
 
-            <span>Set up index</span>
+            <span>Set up index script</span>
         </h1>
 
         
@@ -163,7 +163,7 @@
 
         
             <a href="/dev-cheatsheets/cheatsheets/javascript/packages/react/setup.html" class="underline">
-                Set up index
+                Set up index script
             </a>
         
      
@@ -175,22 +175,29 @@
 
     <div class="post-content">
         
-            <p>How to set up the index module of your React app. This is the entrypoing which loads your <code class="language-plaintext highlighter-rouge">App.jsx</code> file.</p>
+            <p>How to set up the index module of your React app. This is the entrypoint which loads your <code class="language-plaintext highlighter-rouge">App.jsx</code> file.</p>
+
+<p>With <code class="language-plaintext highlighter-rouge">render</code> method and strict mode:</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">index.jsx</code>
     <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
-  <span class="p">&lt;</span><span class="nc">React</span><span class="p">.</span><span class="nc">StrictMode</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nc">App</span> <span class="p">/&gt;</span>
-  <span class="p">&lt;/</span><span class="nc">React</span><span class="p">.</span><span class="nc">StrictMode</span><span class="p">&gt;,</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">root</span><span class="dl">"</span><span class="p">),</span>
+    <span class="p">&lt;</span><span class="nc">React</span><span class="p">.</span><span class="nc">StrictMode</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">App</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">React</span><span class="p">.</span><span class="nc">StrictMode</span><span class="p">&gt;,</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">root</span><span class="dl">"</span><span class="p">),</span>
   <span class="p">);</span>
 </code></pre></div>    </div>
   </li>
+</ul>
+
+<p>Or with <code class="language-plaintext highlighter-rouge">hydrate</code> method:</p>
+
+<ul>
   <li><code class="language-plaintext highlighter-rouge">index.jsx</code>
     <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">hydrate</span><span class="p">(</span>
-     <span class="p">&lt;</span><span class="nc">App</span> <span class="p">/&gt;,</span>
-     <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">&lt;</span><span class="nc">App</span> <span class="p">/&gt;,</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">)</span>
   <span class="p">);</span>
 </code></pre></div>    </div>
   </li>
