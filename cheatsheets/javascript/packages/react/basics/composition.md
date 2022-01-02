@@ -112,6 +112,9 @@ function WelcomeDialog() {
   const title = "Welcome"
   const message = "Hello, React developer"
   
-  return <Dialog title=title message=message />;
+  return <Dialog title={ title } message={ message } />;
+  
+  // OR
+  return <Dialog title="Welcome" message="Hello, React developer" />;
 }
 ```
