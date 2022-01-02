@@ -8,7 +8,7 @@ description: Guide to JavaScript packages aka libraries
 
 - [Package managers][] cheatsheet for JS.
 - [NPM versions][] cheatsheet.
-- [JS Packages](https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/) in Dev Resources
+- [JS Packages](https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/) in my Dev Resources.
 
 
 [Package managers]: {% link cheatsheets/package-managers/javascript/index.md %}
