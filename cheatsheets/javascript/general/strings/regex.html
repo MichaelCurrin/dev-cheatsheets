@@ -221,9 +221,12 @@
 
 <h3 id="flags">Flags</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">/</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="sr">/</span><span class="err">
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/\w+/
+</code></pre></div></div>
 
-</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">'</span><span class="se">\\</span><span class="s1">w+</span><span class="dl">'</span><span class="p">)</span>
+<p>Or</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">'</span><span class="se">\\</span><span class="s1">w+</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="search-method">Search method</h2>
@@ -239,17 +242,13 @@
 
 <h3 id="examples">Examples</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Visit W3Schools</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">My Example</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="nx">text</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="sr">/w3schools/i</span><span class="p">);</span>
-<span class="c1">// 6</span>
+<span class="nx">text</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="sr">/example/i</span><span class="p">);</span>
+<span class="c1">// 3</span>
 </code></pre></div></div>
 
-<p>See what is at character with index <code class="language-plaintext highlighter-rouge">6</code> in the text:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 0123456
-  "Visit W3Schools"
-</code></pre></div></div>
+<p>The match starts at index <code class="language-plaintext highlighter-rouge">3</code>.</p>
 
 <h2 id="match-method">Match method</h2>
 
