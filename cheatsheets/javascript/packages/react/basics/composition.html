@@ -295,7 +295,10 @@
   <span class="kd">const</span> <span class="nx">title</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Welcome</span><span class="dl">"</span>
   <span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello, React developer</span><span class="dl">"</span>
   
-  <span class="k">return</span> <span class="p">&lt;</span><span class="nc">Dialog</span> <span class="na">title</span><span class="p">=</span><span class="na">title</span> <span class="na">message</span><span class="p">=</span><span class="na">message</span> <span class="p">/&gt;;</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nc">Dialog</span> <span class="na">title</span><span class="p">=</span><span class="si">{</span> <span class="nx">title</span> <span class="si">}</span> <span class="na">message</span><span class="p">=</span><span class="si">{</span> <span class="nx">message</span> <span class="si">}</span> <span class="p">/&gt;;</span>
+  
+  <span class="c1">// OR</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nc">Dialog</span> <span class="na">title</span><span class="p">=</span><span class="s">"Welcome"</span> <span class="na">message</span><span class="p">=</span><span class="s">"Hello, React developer"</span> <span class="p">/&gt;;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
