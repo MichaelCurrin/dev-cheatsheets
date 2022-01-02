@@ -50,9 +50,13 @@ text.match(/ai/gi)
 
 ### Flags
 
-```javascript
+```
 /\w+/
+```
 
+Or
+
+```javascript
 new RegExp('\\w+')
 ```
 
@@ -72,18 +76,13 @@ text.search(pattern)
 ### Examples
 
 ```javascript
-const text = "Visit W3Schools";
+const text = "My Example";
 
-text.search(/w3schools/i);
-// 6
+text.search(/example/i);
+// 3
 ```
 
-See what is at character with index `6` in the text:
-
-```
-// 0123456
-  "Visit W3Schools"
-```
+The match starts at index `3`.
 
 
 ## Match method
