@@ -76,7 +76,7 @@ If you use `onSubmit` to set the value then you'll find that you actually **cann
 />
 ```
 
-[Props]: {% link cheatsheets/javascript/packages/react/basic/props.md %}
+[Props]: {% link cheatsheets/javascript/packages/react/basics/props.md %}
 [React Hooks]: https://reactjs.org/docs/hooks-intro.html
 
 ### Class component
