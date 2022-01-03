@@ -216,6 +216,19 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
+<h2 id="destructure-object-1">Destructure object</h2>
+
+<p>This is clear as all the props are unpacked at the start of the function. So you know what it expects.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">foo</span><span class="p">,</span> <span class="nx">bar</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="nx">bar</span><span class="p">)</span>
+
+  <span class="c1">// return ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
 <h2 id="destructured-params">Destructured params</h2>
 
 <p>I have not seen this syntax so much. It allows the props variable so be left out and saves a line of code.</p>

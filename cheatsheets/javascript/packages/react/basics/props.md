@@ -34,6 +34,20 @@ function App(props) {
 ```
 
 
+## Destructure object
+
+This is clear as all the props are unpacked at the start of the function. So you know what it expects.
+
+```jsx
+function App(props) {
+  const { foo, bar } = props
+
+  console.log(foo, bar)
+
+  // return ...
+}
+```
+
 ## Destructured params 
 
 I have not seen this syntax so much. It allows the props variable so be left out and saves a line of code.
