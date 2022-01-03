@@ -1,6 +1,6 @@
 ---
-title: Deno
-description: How to use ESBuild in a Deno project
+title: Use with Deno
+description: How to use ES Build in a Deno project
 ---
 
 
