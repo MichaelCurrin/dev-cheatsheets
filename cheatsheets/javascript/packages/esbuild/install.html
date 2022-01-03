@@ -175,48 +175,53 @@
 
     <div class="post-content">
         
-            <p>Install globally or in your project packages.</p>
+            <h2 id="install-with-npm">Install with NPM</h2>
+
+<p>Install in your project packages or globally.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install </span>esbuild 
 <span class="nv">$ </span>npm <span class="nb">install </span>esbuild <span class="nt">--global</span>
 </code></pre></div></div>
+
+<h2 id="use-npx">Use NPX</h2>
 
 <p>Or invoke with <code class="language-plaintext highlighter-rouge">npx</code> - which will do a fresh download for you each time. It goes quickly and allows you to leave esbuild out of dev dependencies list.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npx esbuild <span class="nt">--help</span>
 </code></pre></div></div>
 
-<p>The website also supplies instructions for building from source with Go.</p>
-
-<p>Or you can download a pre-built binary from NPM. See <a href="https://esbuild.github.io/getting-started/#download-a-build">Download a build</a>. This is useful is you don’t have Node installed but still have JS files to process like for a frontend-based focused tool or a Deno app.</p>
-
 <h2 id="download-a-binary">Download a binary</h2>
 
 <p>Without using Node or Go (which ES Build it made with), you can download a pre-compiled binary.</p>
 
+<p>You can download a pre-built binary easily from NPM using cURL. This is useful is you don’t have Node installed but still have JS files to process like for a frontend-based focused tool or a Deno app.</p>
+
 <p>From <a href="https://esbuild.github.io/getting-started/#download-a-build">docs</a>.</p>
 
-<p>Install binary with <code class="language-plaintext highlighter-rouge">curl</code> and unzip it.</p>
+<p>Install binary with <code class="language-plaintext highlighter-rouge">curl</code> and unzip it:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="nt">-O</span> https://registry.npmjs.org/esbuild-darwin-64/-/esbuild-darwin-64-0.11.17.tgz
-
 <span class="nv">$ </span><span class="nb">tar </span>xf esbuild-darwin-64-0.11.17.tgz
 </code></pre></div></div>
 
-<p>Test it.</p>
+<p>Test it:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>package/bin/esbuild <span class="nt">--help</span>
 </code></pre></div></div>
 
-<p>Move it to a bin directory.</p>
+<p>Move it to a bin directory:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mv </span>package/bin/esbuild /usr/local/bin
 </code></pre></div></div>
 
-<p>Run from anywhere.</p>
+<p>Run from anywhere:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>esbuild <span class="nt">--help</span>
 </code></pre></div></div>
+
+<h2 id="build-from-source">Build from source</h2>
+
+<p>The website also supplies instructions for building from source with Go. But this is probably only needed if you’re developing changes to ES Build or have an unsupported architecture when looking for a downloadable binary file.</p>
 
         
     </div>
