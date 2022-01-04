@@ -261,10 +261,10 @@
     
     <span class="k">return</span> <span class="p">(</span>
       <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Enter temperature in <span class="si">{</span><span class="nx">scaleNames</span><span class="p">[</span><span class="nx">scale</span><span class="p">]</span><span class="si">}</span>:<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Enter temperature in <span class="si">{</span> <span class="nx">scaleNames</span><span class="p">[</span><span class="nx">scale</span><span class="p">]</span> <span class="si">}</span>:<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
         
-        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">temperature</span><span class="si">}</span>
-          <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="si">}</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span> <span class="nx">temperature</span> <span class="si">}</span>
+          <span class="na">onChange</span><span class="p">=</span><span class="si">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span> <span class="si">}</span> <span class="p">/&gt;</span>
       <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
     <span class="p">);</span>
   <span class="p">}</span>
@@ -307,12 +307,12 @@
       <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nc">TemperatureInput</span>
           <span class="na">scale</span><span class="p">=</span><span class="s">"c"</span>
-          <span class="na">temperature</span><span class="p">=</span><span class="si">{</span><span class="nx">celsius</span><span class="si">}</span>          
+          <span class="na">temperature</span><span class="p">=</span><span class="si">{</span> <span class="nx">celsius</span> <span class="si">}</span>          
           <span class="na">onTemperatureChange</span><span class="p">=</span><span class="si">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleCelsiusChange</span> <span class="si">}</span> <span class="p">/&gt;</span>        
           
         <span class="p">&lt;</span><span class="nc">TemperatureInput</span>
           <span class="na">scale</span><span class="p">=</span><span class="s">"f"</span>
-          <span class="na">temperature</span><span class="p">=</span><span class="si">{</span><span class="nx">fahrenheit</span><span class="si">}</span>          
+          <span class="na">temperature</span><span class="p">=</span><span class="si">{</span> <span class="nx">fahrenheit</span> <span class="si">}</span>          
           <span class="na">onTemperatureChange</span><span class="p">=</span><span class="si">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleFahrenheitChange</span> <span class="si">}</span> <span class="p">/&gt;</span>    
           
         <span class="p">&lt;</span><span class="nc">BoilingVerdict</span>
