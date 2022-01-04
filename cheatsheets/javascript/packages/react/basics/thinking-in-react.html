@@ -189,54 +189,140 @@
         
             <p>See <a href="https://reactjs.org/docs/thinking-in-react.html">Thinking in React</a> doc.</p>
 
+<h2 id="steps">Steps</h2>
+
+<p>Follow this when setting up a React app.</p>
+
 <ol>
-  <li>Break the UI into a component hierarchy
+  <li>Break the UI into a component hierarchy.
     <ul>
-      <li>Draw boxes around every component in the visual mock.</li>
+      <li>Draw boxes around every component in the visual mock. The design of the UI might even have name for the components which you can use in your model.</li>
       <li>A component should do one thing. If it does more, break it up into subcomponents.</li>
       <li>The data and UI should adhere to the same <em>information architecture</em>. One component for each piece of the data model.</li>
-      <li>Set up a hierarchy. e.g.
-        <ul>
-          <li><code class="language-plaintext highlighter-rouge">FilterableProductTable</code>
-            <ul>
-              <li><code class="language-plaintext highlighter-rouge">SearchBar</code></li>
-              <li><code class="language-plaintext highlighter-rouge">ProductTable</code>
-                <ul>
-                  <li><code class="language-plaintext highlighter-rouge">ProductCategoryRow</code></li>
-                  <li><code class="language-plaintext highlighter-rouge">ProductRow</code></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+      <li>Set up a hierarchy of your components, based on the UI.</li>
     </ul>
   </li>
   <li>Build a static version in React.
     <ul>
       <li>Render the data as UI. But no state - all static (does not change over time), no interactivity.</li>
-      <li>This requires a lot of code but no thinking, while the later step is the opposite.</li>
-      <li>Build components top-down (useful in simple apps). Or bottom-up, with low-level components and tests first (useful in larger projects).</li>
+      <li>This requires a lot of code but no thinking, while the later around UI state is a lot of thinking and little code changes.</li>
+      <li>Don’t use any methods to add events or state, for now just render.</li>
+      <li>What order to build components?
+        <ul>
+          <li>Build components top-down (useful in simple apps).</li>
+          <li>Or bottom-up, with low-level components and tests first (useful in larger projects).</li>
+        </ul>
+      </li>
       <li>Data flows one way, which is fast and modular. Change your data model and render again such as with page refresh to see the UI changes.</li>
     </ul>
   </li>
+  <li>Identify the minimal (but complete) representation of UI state.
+    <ul>
+      <li>Avoid duplication. Use the DRY principle.</li>
+      <li>Think of the minimal set of mutable state. And compute everything else.</li>
+      <li>e.g. Don’t keep the length of the array in a variable as a separate count in state, just compute it from the array.</li>
+      <li>The following apply to state and if one does not apply then it probably is not state.
+        <ul>
+          <li>Set intenerally (data passed in externally from a parent via <code class="language-plaintext highlighter-rouge">props</code> is not state)</li>
+          <li>Changes over time</li>
+          <li>Cannot be computed (state is original data. If you can compute a filtered list from original data, that has some unnecessary duplication if you were to make the filtered data state)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Identify where the state should live</li>
+  <li>Add inverse data flow</li>
 </ol>
 
-<h2 id="code">Code</h2>
+<h2 id="applying-steps-to-an-example">Applying steps to an example</h2>
 
 <h3 id="source-data">Source data</h3>
+
+<p>Here we use some data from the tutorial linked at the top and this will be used to render the UI.</p>
 
 <p>This could come from an API but can just be a plain JS variable.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span>
-  <span class="p">{</span><span class="na">category</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Sporting Goods</span><span class="dl">"</span><span class="p">,</span> <span class="na">price</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$49.99</span><span class="dl">"</span><span class="p">,</span> <span class="na">stocked</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Football</span><span class="dl">"</span><span class="p">},</span>
-  <span class="p">{</span><span class="na">category</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Sporting Goods</span><span class="dl">"</span><span class="p">,</span> <span class="na">price</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$9.99</span><span class="dl">"</span><span class="p">,</span> <span class="na">stocked</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Baseball</span><span class="dl">"</span><span class="p">},</span>
-  <span class="p">{</span><span class="na">category</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Sporting Goods</span><span class="dl">"</span><span class="p">,</span> <span class="na">price</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$29.99</span><span class="dl">"</span><span class="p">,</span> <span class="na">stocked</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Basketball</span><span class="dl">"</span><span class="p">},</span>
-  <span class="p">{</span><span class="na">category</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Electronics</span><span class="dl">"</span><span class="p">,</span> <span class="na">price</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$99.99</span><span class="dl">"</span><span class="p">,</span> <span class="na">stocked</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">iPod Touch</span><span class="dl">"</span><span class="p">},</span>
-  <span class="p">{</span><span class="na">category</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Electronics</span><span class="dl">"</span><span class="p">,</span> <span class="na">price</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$399.99</span><span class="dl">"</span><span class="p">,</span> <span class="na">stocked</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">iPhone 5</span><span class="dl">"</span><span class="p">},</span>
-  <span class="p">{</span><span class="na">category</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Electronics</span><span class="dl">"</span><span class="p">,</span> <span class="na">price</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$199.99</span><span class="dl">"</span><span class="p">,</span> <span class="na">stocked</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Nexus 7</span><span class="dl">"</span><span class="p">}</span>
+  <span class="p">{</span> <span class="na">category</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Sporting Goods</span><span class="dl">"</span><span class="p">,</span> <span class="na">price</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$49.99</span><span class="dl">"</span><span class="p">,</span>  <span class="na">stocked</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Football</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">category</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Sporting Goods</span><span class="dl">"</span><span class="p">,</span> <span class="na">price</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$9.99</span><span class="dl">"</span><span class="p">,</span>   <span class="na">stocked</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Baseball</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">category</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Sporting Goods</span><span class="dl">"</span><span class="p">,</span> <span class="na">price</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$29.99</span><span class="dl">"</span><span class="p">,</span>  <span class="na">stocked</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Basketball</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">category</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Electronics</span><span class="dl">"</span><span class="p">,</span>    <span class="na">price</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$99.99</span><span class="dl">"</span><span class="p">,</span>  <span class="na">stocked</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">iPod Touch</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">category</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Electronics</span><span class="dl">"</span><span class="p">,</span>    <span class="na">price</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$399.99</span><span class="dl">"</span><span class="p">,</span> <span class="na">stocked</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">iPhone 5</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">category</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Electronics</span><span class="dl">"</span><span class="p">,</span>    <span class="na">price</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$199.99</span><span class="dl">"</span><span class="p">,</span> <span class="na">stocked</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Nexus 7</span><span class="dl">"</span> <span class="p">}</span>
 <span class="p">];</span>
 </code></pre></div></div>
+
+<h3 id="design">Design</h3>
+
+<p>Here the given design is:</p>
+
+<p><img src="https://reactjs.org/static/9381f09e609723a8bb6e4ba1a7713b46/90cbd/thinking-in-react-components.png" alt="Diagram" /></p>
+
+<h3 id="figure-out-components-and-hierarchy">Figure out components and hierarchy</h3>
+
+<p>Components:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">FilterableProductTable</code> (orange): container</li>
+  <li><code class="language-plaintext highlighter-rouge">SearchBar</code> (blue): receive all user input</li>
+  <li><code class="language-plaintext highlighter-rouge">ProductTable</code> (green): display and filter the data collection based on user input</li>
+  <li><code class="language-plaintext highlighter-rouge">ProductCategoryRow</code> (turquoise): display a heading for each category</li>
+  <li><code class="language-plaintext highlighter-rouge">ProductRow</code> (red): displays a row for each product</li>
+</ul>
+
+<p>The docs say, you could make the table heading a separate component as well as <code class="language-plaintext highlighter-rouge">ProductTableHeader</code> if your situation was complex enough, like if you had sorting.</p>
+
+<p>And the hierarchy:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">FilterableProductTable</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">SearchBar</code></li>
+      <li><code class="language-plaintext highlighter-rouge">ProductTable</code>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">ProductCategoryRow</code></li>
+          <li><code class="language-plaintext highlighter-rouge">ProductRow</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="figure-out-what-is-state">Figure out what is state</h3>
+
+<p>Here are the pieces of data:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>State</th>
+      <th>Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Original product list</td>
+      <td>No</td>
+      <td>Passed in via <code class="language-plaintext highlighter-rouge">props</code></td>
+    </tr>
+    <tr>
+      <td>User’s search text.</td>
+      <td>Yes</td>
+      <td>Change over time and cannot be computed</td>
+    </tr>
+    <tr>
+      <td>Checkbox value.</td>
+      <td>Yes</td>
+      <td>Same as above</td>
+    </tr>
+    <tr>
+      <td>Filtered product list.</td>
+      <td>No</td>
+      <td>It can be computed by combining the three pieces above</td>
+    </tr>
+  </tbody>
+</table>
 
         
     </div>
