@@ -187,7 +187,8 @@
 
     <div class="post-content">
         
-            <p>See <a href="https://reactjs.org/docs/thinking-in-react.html">Thinking in React</a> doc.</p>
+            
+<p>See <a href="https://reactjs.org/docs/thinking-in-react.html">Thinking in React</a> doc.</p>
 
 <h2 id="steps">Steps</h2>
 
@@ -247,7 +248,13 @@
 
 <h3 id="add-inverse-data-flow">Add inverse data flow</h3>
 
-<h2 id="applying-steps-to-an-example">Applying steps to an example</h2>
+<p>So far we change can props and state values which are passed down.</p>
+
+<p>Now we need add interactivity for nested components to change the higher component state.</p>
+
+<h2 id="apply-steps-to-an-example">Apply steps to an example</h2>
+
+<p>See my <a href="https://codesandbox.io/s/thinking-in-react-0l67k">Thinking in React pen</a>.</p>
 
 <h3 id="source-data">Source data</h3>
 
@@ -344,10 +351,129 @@
 <ul>
   <li>The <code class="language-plaintext highlighter-rouge">SearchBar</code> needs to display the search text state and checked state.</li>
   <li>The <code class="language-plaintext highlighter-rouge">ProductTable</code> needs to filter the product list based on state set in <code class="language-plaintext highlighter-rouge">SearchBar</code>.</li>
-  <li>The common owner component is <code class="language-plaintext highlighter-rouge">FilterableProductTable</code>. Conceptually it makes sens for the search text and checked state to live there.</li>
+  <li>The common owner component is <code class="language-plaintext highlighter-rouge">FilterableProductTable</code>. Conceptually it makes sense for the search text and checked state to live there.</li>
 </ul>
 
-<p>e.g. Set up some initial values as state then change them to other hardcoded values to see how the app appears.</p>
+<p>Set up some initial values as state. e.g.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">filterText</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="na">inStockOnly</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Then change them to other hardcoded values to see how the app appears.</p>
+
+<p>Here focusing on the user inputs with read-only values:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">SearchBar</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"SearchBar-component"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span>
+            <span class="na">type</span><span class="p">=</span><span class="s">"text"</span>
+            <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">filterText</span><span class="si">}</span>
+            <span class="na">placeholder</span><span class="p">=</span><span class="s">"Search..."</span>
+            <span class="na">readOnly</span><span class="p">=</span><span class="si">{</span><span class="kc">true</span><span class="si">}</span>
+          <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span>
+            <span class="na">type</span><span class="p">=</span><span class="s">"checkbox"</span>
+            <span class="na">checked</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">inStockOnly</span><span class="si">}</span>
+            <span class="na">readOnly</span><span class="p">=</span><span class="si">{</span><span class="kc">true</span><span class="si">}</span>
+          <span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Only show products in stock<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here passing down state and modified state values to test with:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">FilterableProductTable</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">filterText</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ball</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">inStockOnly</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"FilterableProductTable-component"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">SearchBar</span>
+          <span class="na">filterText</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">filterText</span><span class="si">}</span>
+          <span class="na">inStockOnly</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">inStockOnly</span><span class="si">}</span>
+        <span class="p">/&gt;</span>
+        
+        <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+        
+        <span class="p">&lt;</span><span class="nc">ProductTable</span>
+          <span class="na">filterText</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">filterText</span><span class="si">}</span>
+          <span class="na">inStockOnly</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">inStockOnly</span><span class="si">}</span>
+          <span class="na">products</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">products</span><span class="si">}</span>
+        <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="add-inverse-data-flow-1">Add inverse data flow</h3>
+
+<p>Change the inputs to be mutable and to pass values back up with events.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">FilterableProductTable</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">filterText</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+      <span class="na">inStockOnly</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">};</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">onFilterTextChange</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">onFilterTextChange</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>   <span class="c1">// &lt;--</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">onInStockOnlyChange</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">onInStockOnlyChange</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span> <span class="c1">// &lt;--</span>
+  <span class="p">}</span>
+
+  <span class="nx">onFilterTextChange</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>              <span class="c1">// &lt;--</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">filterText</span><span class="p">:</span> <span class="nx">value</span> <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="nx">onInStockOnlyChange</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>             <span class="c1">// &lt;--</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">inStockOnly</span><span class="p">:</span> <span class="nx">value</span> <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"FilterableProductTable-component"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">SearchBar</span>
+          <span class="na">filterText</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">filterText</span><span class="si">}</span>
+          <span class="na">inStockOnly</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">inStockOnly</span><span class="si">}</span>
+          <span class="na">onFilterTextChange</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">onFilterTextChange</span><span class="si">}</span>   <span class="c1">// &lt;--</span>
+          <span class="na">onInStockOnlyChange</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">onInStockOnlyChange</span><span class="si">}</span> <span class="c1">// &lt;--</span>
+        <span class="p">/&gt;</span>
+        
+        <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+        
+        <span class="p">&lt;</span><span class="nc">ProductTable</span>
+          <span class="na">filterText</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">filterText</span><span class="si">}</span>
+          <span class="na">inStockOnly</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">inStockOnly</span><span class="si">}</span>
+          <span class="na">products</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">products</span><span class="si">}</span>
+        <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
 
         
     </div>
