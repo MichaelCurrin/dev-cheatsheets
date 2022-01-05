@@ -2,7 +2,7 @@
 
 Check for a string in another string.
 
-Remember that methods usually case-sensitive.
+Remember that methods are usually case-sensitive.
 
 
 ## Related
