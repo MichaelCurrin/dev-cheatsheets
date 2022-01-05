@@ -190,16 +190,17 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">abcdef</span><span class="dl">'</span>
 
 <span class="nx">x</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">cd</span><span class="dl">'</span><span class="p">)</span>
-<span class="mi">2</span>
+<span class="c1">// 2</span>
 <span class="nx">x</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">z</span><span class="dl">'</span><span class="p">)</span>
-<span class="o">-</span><span class="mi">1</span>
+<span class="c1">// -1</span>
 </code></pre></div></div>
 
-<p>You’ll get the same result with <code class="language-plaintext highlighter-rouge">.search()</code>.</p>
+<p>You’ll get the same result with <code class="language-plaintext highlighter-rouge">.search()</code>:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">x</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="dl">'</span><span class="s1">cd</span><span class="dl">'</span><span class="p">)</span>
+<span class="c1">// 2</span>
 <span class="nx">x</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="dl">'</span><span class="s1">z</span><span class="dl">'</span><span class="p">)</span>
-<span class="o">-</span><span class="mi">1</span>
+<span class="c1">// -1</span>
 </code></pre></div></div>
 
 <h2 id="check-if-string-contains-a-value">Check if string contains a value</h2>
@@ -213,7 +214,7 @@
 <span class="c1">// false</span>
 </code></pre></div></div>
 
-<p>Do a case-insensitive search.</p>
+<p>Do a case-insensitive search:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">Blue Whale</span><span class="dl">'</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">blue</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span>
 <span class="c1">// true</span>
