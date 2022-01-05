@@ -1,7 +1,7 @@
 ---
+title: Home
 layout: home
 ---
-# Home
 
 > {{ site.description }}
 
@@ -46,6 +46,12 @@ Contributions are welcome via PRs and issues.
         <div>
             {% include logo.html name="javascript" %}
             <span>JavaScript</span>
+        </div>
+    </a>
+    <a href="{% link cheatsheets/javascript/packages/react/index.md %}">
+        <div>
+            {% include logo.html name="react" %}
+            <span>React</span>
         </div>
     </a>
     <a href="{% link cheatsheets/javascript/packages/vue/index.md %}">
