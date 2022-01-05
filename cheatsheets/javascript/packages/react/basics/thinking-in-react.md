@@ -1,5 +1,7 @@
 # Thinking in React
 
+{% raw %}
+
 See [Thinking in React](https://reactjs.org/docs/thinking-in-react.html) doc.
 
 
@@ -33,8 +35,7 @@ Follow this when setting up a React app.
     - Set intenerally (data passed in externally from a parent via `props` is not state)
     - Changes over time
     - Cannot be computed (state is original data. If you can compute a filtered list from original data, that has some unnecessary duplication if you were to make the filtered data state)
-
-        
+      
 ### Identify where the state should live
 
 Now wee need to identify which component mutates, or owns, the state we decided on in the previous step.
@@ -46,11 +47,16 @@ For each piece of state:
 - Identify components which render using that state
 - Find a common owner component. If you can't find one that makes sense, you can make a new component just for holdign state and add it above the common owner component.
 
-
 ### Add inverse data flow
     
+So far we change can props and state values which are passed down.
+
+Now we need add interactivity for nested components to change the higher component state.
+
     
-## Applying steps to an example
+## Apply steps to an example
+
+See my [Thinking in React pen](https://codesandbox.io/s/thinking-in-react-0l67k).
 
 ### Source data
 
@@ -112,7 +118,130 @@ Filtered product list. | No | It can be computed by combining the three pieces a
 
 - The `SearchBar` needs to display the search text state and checked state.
 - The `ProductTable` needs to filter the product list based on state set in `SearchBar`.
-- The common owner component is `FilterableProductTable`. Conceptually it makes sens for the search text and checked state to live there.
+- The common owner component is `FilterableProductTable`. Conceptually it makes sense for the search text and checked state to live there.
 
-e.g. Set up some initial values as state then change them to other hardcoded values to see how the app appears.
+Set up some initial values as state. e.g.
 
+```javascript
+this.state = {
+  filterText: "",
+  inStockOnly: false
+};
+```
+
+Then change them to other hardcoded values to see how the app appears.
+
+Here focusing on the user inputs with read-only values:
+
+```jsx
+class SearchBar extends React.Component {
+  render() {
+    return (
+      <div className="SearchBar-component">
+        <p>
+          <input
+            type="text"
+            value={this.props.filterText}
+            placeholder="Search..."
+            readOnly={true}
+          />
+        </p>
+        
+        <p>
+          <input
+            type="checkbox"
+            checked={this.props.inStockOnly}
+            readOnly={true}
+          />
+          <label>Only show products in stock</label>
+        </p>
+      </div>
+    );
+  }
+}
+```
+
+Here passing down state and modified state values to test with:
+
+```jsx
+class FilterableProductTable extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      filterText: "ball",
+      inStockOnly: true
+    };
+  }
+
+  render() {
+    return (
+      <div className="FilterableProductTable-component">
+        <SearchBar
+          filterText={this.state.filterText}
+          inStockOnly={this.state.inStockOnly}
+        />
+        
+        <br />
+        
+        <ProductTable
+          filterText={this.state.filterText}
+          inStockOnly={this.state.inStockOnly}
+          products={this.props.products}
+        />
+      </div>
+    );
+  }
+}
+```
+
+### Add inverse data flow
+
+Change the inputs to be mutable and to pass values back up with events.
+
+```jsx
+class FilterableProductTable extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      filterText: "",
+      inStockOnly: false
+    };
+
+    this.onFilterTextChange = this.onFilterTextChange.bind(this);   // <--
+    this.onInStockOnlyChange = this.onInStockOnlyChange.bind(this); // <--
+  }
+
+  onFilterTextChange(value) {              // <--
+    this.setState({ filterText: value });
+  }
+
+  onInStockOnlyChange(value) {             // <--
+    this.setState({ inStockOnly: value });
+  }
+
+  render() {
+    return (
+      <div className="FilterableProductTable-component">
+        <SearchBar
+          filterText={this.state.filterText}
+          inStockOnly={this.state.inStockOnly}
+          onFilterTextChange={this.onFilterTextChange}   // <--
+          onInStockOnlyChange={this.onInStockOnlyChange} // <--
+        />
+        
+        <br />
+        
+        <ProductTable
+          filterText={this.state.filterText}
+          inStockOnly={this.state.inStockOnly}
+          products={this.props.products}
+        />
+      </div>
+    );
+  }
+}
+```
+
+{% endraw %}
