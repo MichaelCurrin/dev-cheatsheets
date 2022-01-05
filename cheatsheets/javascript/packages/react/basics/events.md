@@ -1,4 +1,8 @@
-# Events
+---
+title: Events
+description: Use events to add interactivity and change state
+---
+
 
 ## HTML vs React
 
@@ -11,16 +15,89 @@ Compare:
 
 - HTML
     ```html
-    <button onclick="activateLasers()">
-      Activate Lasers
+    <button onclick="myFunc()">
+      Click me
     </button>
     ```
-- React JSX:
+- React JSX - note `onClick` vs `onclick` and not calling `onClick={ myFunc() }` as that would run on every render rather than on click.
     ```jsx
-    <button onClick={ activateLasers }>
-      Activate Lasers
+    <button onClick={ myFunc }>
+      Click me
     </button>
     ```
+    Or like this:
+    ```jsx
+    <button onClick={ () => myFunc(myParam) }>
+      Click me
+    </button>
+    ```
+
+
+## Basic
+
+### Function component
+
+Here we add a click event that logs to the console.
+
+Inline:
+
+```jsx
+function Square{
+  return (
+    <button className="square" onClick={ () => console.log('click') }>
+      {this.props.value}
+    </button>
+  );
+}
+```
+
+Named function:
+
+```jsx
+function Square{
+  const handleClick = () => console.log('click')
+
+  return (
+    <button className="square" onClick={ handleClick }>
+      {this.props.value}
+    </button>
+  );
+}
+```
+
+### Class component
+
+Inline:
+
+```jsx
+class Square extends React.Component {
+  render() {
+    return (
+      <button className="square" onClick={ () => console.log('click') }> 
+        {this.props.value}
+      </button>
+    );
+  }
+}
+```
+
+Named function:
+
+```jsx
+class Square extends React.Component {
+  handleClick() {
+    console.log('click')
+  }
+  
+  render() {
+    return (
+      <button className="square" onClick={ this.handleClick }> 
+        {this.props.value}
+      </button>
+    );
+  }
+}
+```
 
 
 ## Prevent default behavior
@@ -47,13 +124,58 @@ function Form() {
 [Synthetic event]: https://reactjs.org/docs/events.html
 
 
+## Change state
+
+Use `this.setState` to set a value in state on a click:
+
+```jsx
+class Square extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      value: null,
+    };
+  }
+
+  render() {
+    return (
+      <button className="square" onClick={ () => this.setState({ value: 'X' }) }>
+        { this.state.value }     
+      </button>
+    );
+  }
+}
+```
+
+
+## Call a function given as a property
+
+This is useful if you want to change state in a level higher than the current component.
+
+```jsx
+class Square extends React.Component {  
+  render() {  
+    return (
+      <button className="square" onClick={ () => this.props.onClick() }>
+        {this.props.value}     
+      </button>
+    );
+  }
+}
+
+// Usage:
+<Square onClick={ myClickFunction } />
+```
+
+
 ## Add event listener
 
-> When using React, you generally don’t need to call addEventListener to add listeners to a DOM element after it is created. 
+> When using React, you generally don’t need to call `addEventListener` to add listeners to a DOM element after it is created. 
 >
 > Instead, just provide a listener when the element is initially rendered.
 
-Here we add `handleClick` as a method attach it to `onClick` in the `render` method.
+Here we add `handleClick` as a method attach it to `onClick` in the `render` method:
 
 ```jsx
 class Toggle extends React.Component {
