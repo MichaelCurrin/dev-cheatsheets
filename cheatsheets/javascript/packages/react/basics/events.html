@@ -20,8 +20,8 @@
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
-    <meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+    <meta name="description" content="Use events to add interactivity and change state" />
+    <meta property="og:description" content="Use events to add interactivity and change state" />
 <meta name="author" content="Michael Currin" />
 
 
@@ -33,7 +33,7 @@
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
+    "description": "Use events to add interactivity and change state",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/basics/events.html",
     "headline":    "Events",
     "@type":       "WebSite",
@@ -102,6 +102,11 @@
             <span>Events</span>
         </h1>
 
+        
+            <blockquote>
+                <p>Use events to add interactivity and change state</p>
+
+            </blockquote>
         
     </header>
 
@@ -200,18 +205,85 @@
 
 <ul>
   <li>HTML
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"activateLasers()"</span><span class="nt">&gt;</span>
-    Activate Lasers
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"myFunc()"</span><span class="nt">&gt;</span>
+    Click me
   <span class="nt">&lt;/button&gt;</span>
 </code></pre></div>    </div>
   </li>
-  <li>React JSX:
-    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span> <span class="nx">activateLasers</span> <span class="si">}</span><span class="p">&gt;</span>
-    Activate Lasers
+  <li>React JSX - note <code class="language-plaintext highlighter-rouge">onClick</code> vs <code class="language-plaintext highlighter-rouge">onclick</code> and not calling <code class="language-plaintext highlighter-rouge">onClick={ myFunc() }</code> as that would run on every render rather than on click.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span> <span class="nx">myFunc</span> <span class="si">}</span><span class="p">&gt;</span>
+    Click me
+  <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>    </div>
+    <p>Or like this:</p>
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">myFunc</span><span class="p">(</span><span class="nx">myParam</span><span class="p">)</span> <span class="si">}</span><span class="p">&gt;</span>
+    Click me
   <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></div>    </div>
   </li>
 </ul>
+
+<h2 id="basic">Basic</h2>
+
+<h3 id="function-component">Function component</h3>
+
+<p>Here we add a click event that logs to the console.</p>
+
+<p>Inline:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Square</span><span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="s">"square"</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">)</span> <span class="si">}</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Named function:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Square</span><span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">handleClick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="s">"square"</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span> <span class="nx">handleClick</span> <span class="si">}</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="class-component">Class component</h3>
+
+<p>Inline:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Square</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="s">"square"</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">)</span> <span class="si">}</span><span class="p">&gt;</span> 
+        <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span>
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Named function:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Square</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">handleClick</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">}</span>
+  
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="s">"square"</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleClick</span> <span class="si">}</span><span class="p">&gt;</span> 
+        <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span>
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h2 id="prevent-default-behavior">Prevent default behavior</h2>
 
@@ -233,15 +305,56 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
+<h2 id="change-state">Change state</h2>
+
+<p>Use <code class="language-plaintext highlighter-rouge">this.setState</code> to set a value in state on a click:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Square</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">value</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="s">"square"</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">X</span><span class="dl">'</span> <span class="p">})</span> <span class="si">}</span><span class="p">&gt;</span>
+        <span class="si">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">value</span> <span class="si">}</span>     
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="call-a-function-given-as-a-property">Call a function given as a property</h2>
+
+<p>This is useful if you want to change state in a level higher than the current component.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Square</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>  
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>  
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="s">"square"</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onClick</span><span class="p">()</span> <span class="si">}</span><span class="p">&gt;</span>
+        <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span>     
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Usage:</span>
+<span class="p">&lt;</span><span class="nc">Square</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span> <span class="nx">myClickFunction</span> <span class="si">}</span> <span class="p">/&gt;</span>
+</code></pre></div></div>
+
 <h2 id="add-event-listener">Add event listener</h2>
 
 <blockquote>
-  <p>When using React, you generally don’t need to call addEventListener to add listeners to a DOM element after it is created.</p>
+  <p>When using React, you generally don’t need to call <code class="language-plaintext highlighter-rouge">addEventListener</code> to add listeners to a DOM element after it is created.</p>
 
   <p>Instead, just provide a listener when the element is initially rendered.</p>
 </blockquote>
 
-<p>Here we add <code class="language-plaintext highlighter-rouge">handleClick</code> as a method attach it to <code class="language-plaintext highlighter-rouge">onClick</code> in the <code class="language-plaintext highlighter-rouge">render</code> method.</p>
+<p>Here we add <code class="language-plaintext highlighter-rouge">handleClick</code> as a method attach it to <code class="language-plaintext highlighter-rouge">onClick</code> in the <code class="language-plaintext highlighter-rouge">render</code> method:</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Toggle</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
   <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
