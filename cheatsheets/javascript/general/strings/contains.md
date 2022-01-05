@@ -18,17 +18,18 @@ Remember that methods are usually case-sensitive.
 const x = 'abcdef'
 
 x.indexOf('cd')
-2
+// 2
 x.indexOf('z')
--1
+// -1
 ```
 
-You'll get the same result with `.search()`.
+You'll get the same result with `.search()`:
 
 ```javascript
 x.search('cd')
+// 2
 x.search('z')
--1
+// -1
 ```
 
 
@@ -44,7 +45,7 @@ A boolean of whether there is match or not.
 // false
 ```
 
-Do a case-insensitive search.
+Do a case-insensitive search:
 
 ```javascript
 'Blue Whale'.toLowerCase().indexOf('blue') !== -1
