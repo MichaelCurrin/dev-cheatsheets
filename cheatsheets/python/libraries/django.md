@@ -5,6 +5,8 @@ title: Django
 
 See Django [Documentation](https://docs.djangoproject.com/).
 
+See [django-quickstart](https://github.com/MichaelCurrin/django-quickstart) repo.
+
 
 ## Install
 
@@ -15,14 +17,28 @@ $ pip install django
 
 ## Django Admin usage
 
-### Create
+### Create project
 
 ```sh
 $ django-admin startproject NEW_PROJECT
 ```
 
+### Create app in project
+
+Recommended to first navigate:
+
+```sh
+$ cd NEW_PROJECT
+```
+
 ```sh
 $ django-admin startapp NEW_APP
+```
+
+Or
+
+```sh
+$ python manage.py startapp NEW_APP
 ```
 
 ### Shell
