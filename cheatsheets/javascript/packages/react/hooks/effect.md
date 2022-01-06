@@ -55,18 +55,20 @@ The docs say that this is close to the mental model of `componentDidMount` and `
 
 [better solutions]: https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies
 
-### Tip: Use Multiple Effects to Separate Concerns 
+### Use multiple effects to separate concerns 
 
 Example from the docs.
 
 ```jsx
 function FriendStatusWithCounter(props) {
   const [count, _setCount] = useState(0);
-  useEffect(() => {
-    document.title = `You clicked ${count} times`;
-  });
+  
+  useEffect(() => { 
+    document.title = `You clicked ${count} times` }
+  );
 
   const [_isOnline, setIsOnline] = useState(null);
+  
   useEffect(() => {
     function handleStatusChange(status) {
       setIsOnline(status.isOnline);
@@ -100,7 +102,7 @@ Use of `useEffect` is similar to `componentDidMount` and `componentDidUpdate` in
 
       return (
         <div>
-          <p>You clicked {count} times</p>
+          <p>You clicked { count } times</p>
           
           <button onClick={() => setCount(count + 1)}>
             Click me
@@ -114,6 +116,7 @@ Use of `useEffect` is similar to `componentDidMount` and `componentDidUpdate` in
     class Example extends React.Component {
       constructor(props) {
         super(props);
+        
         this.state = {
           count: 0
         };
@@ -130,7 +133,8 @@ Use of `useEffect` is similar to `componentDidMount` and `componentDidUpdate` in
       render() {
         return (
           <div>
-            <p>You clicked {this.state.count} times</p>
+            <p>You clicked { this.state.count } times</p>
+            
             <button onClick={() => this.setState({ count: this.state.count + 1 })}>
               Click me
             </button>
