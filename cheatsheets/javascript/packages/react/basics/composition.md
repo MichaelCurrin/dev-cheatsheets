@@ -5,7 +5,7 @@ description: Using components in other components
 
 ## Component containtment
 
-Here we let a component render any number of child components dynamically, without known what they are.
+Here we let a component render any number of child components dynamically, without knowing what they are in advance.
 
 This is common for a sidebar or a dialog as generic boxes of other components.
 
