@@ -22,7 +22,7 @@ $ django-admin startproject NEW_PROJECT
 ```
 
 ```sh
-$ django-admin startappt NEW_APP
+$ django-admin startapp NEW_APP
 ```
 
 ### Shell
