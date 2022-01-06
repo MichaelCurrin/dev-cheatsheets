@@ -3,7 +3,7 @@ title: Django
 
 ---
 
-[Documentation](https://docs.djangoproject.com/)
+See Django [Documentation](https://docs.djangoproject.com/).
 
 
 ## Install
