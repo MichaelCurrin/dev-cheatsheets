@@ -20,8 +20,8 @@
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="Oerforms **side effects** in Function components" />
-    <meta property="og:description" content="Oerforms **side effects** in Function components" />
+    <meta name="description" content="Perform **side effects** in Function components" />
+    <meta property="og:description" content="Perform **side effects** in Function components" />
 <meta name="author" content="Michael Currin" />
 
 
@@ -33,7 +33,7 @@
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "Oerforms **side effects** in Function components",
+    "description": "Perform **side effects** in Function components",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/hooks/effect.html",
     "headline":    "Effect hook",
     "@type":       "WebSite",
@@ -104,7 +104,7 @@
 
         
             <blockquote>
-                <p>Oerforms <strong>side effects</strong> in Function components</p>
+                <p>Perform <strong>side effects</strong> in Function components</p>
 
             </blockquote>
         
@@ -192,7 +192,10 @@
 
     <div class="post-content">
         
-            
+            <p>You’re likely fetching data or changing the DOM. These are <em>side effects</em> as they happen outside the component and are called <em>effects</em> for short.</p>
+
+<p>After React flushes the DOM, it runs your effect. This is done after every render including the initial render.</p>
+
 <h2 id="resources">Resources</h2>
 
 <p>See <a href="https://reactjs.org/docs/hooks-effect.html">Using the Effect Hook</a> in the React docs.</p>
@@ -202,14 +205,14 @@
 <p>The Effect hook will run when the component:</p>
 
 <ul>
-  <li>is mounted (once).</li>
-  <li>updates (multiple times).</li>
-  <li>unmounts (once).</li>
+  <li>is mounted (once) like using <code class="language-plaintext highlighter-rouge">componentDidMount</code> method.</li>
+  <li>updates (multiple times) like using <code class="language-plaintext highlighter-rouge">componentDidUpdate</code> method.</li>
+  <li>unmounts (once) like using <code class="language-plaintext highlighter-rouge">componentWillUnmount</code> method.</li>
 </ul>
 
 <h2 id="syntax">Syntax</h2>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(</span><span class="nx">FUNCTION</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(</span><span class="nx">FUNCTION</span><span class="p">)</span>
 <span class="nx">useEffect</span><span class="p">(</span><span class="nx">FUNCTION</span><span class="p">,</span> <span class="nx">ARGUMENTS</span><span class="p">)</span>
 </code></pre></div></div>
 
@@ -236,6 +239,33 @@
 </code></pre></div></div>
 
 <p>The docs say that this is close to the mental model of <code class="language-plaintext highlighter-rouge">componentDidMount</code> and <code class="language-plaintext highlighter-rouge">componentWillUnmount</code>, but that “there are usually <a href="https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies">better solutions</a> to avoid re-running effects too often”.</p>
+
+<p>From <a href="https://reactjs.org/docs/hooks-overview.html">Hooks Overview</a> doc, here we subscribe to the chat notifications when the component mounts and then unsubscribe when unmounting (since there is no point to pull in data if the widget is not on the page anymore).</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">FriendStatus</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">isOnline</span><span class="p">,</span> <span class="nx">setIsOnline</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+  <span class="kd">function</span> <span class="nx">handleStatusChange</span><span class="p">(</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setIsOnline</span><span class="p">(</span><span class="nx">status</span><span class="p">.</span><span class="nx">isOnline</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>    
+    <span class="nx">ChatAPI</span><span class="p">.</span><span class="nx">subscribeToFriendStatus</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">friend</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">handleStatusChange</span><span class="p">);</span>    
+    
+    <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>   
+      <span class="nx">ChatAPI</span><span class="p">.</span><span class="nx">unsubscribeFromFriendStatus</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">friend</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">handleStatusChange</span><span class="p">);</span> 
+    <span class="p">};</span>
+  <span class="p">});</span>
+  
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isOnline</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">Loading...</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="k">return</span> <span class="nx">isOnline</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">Online</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Offline</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h3 id="use-multiple-effects-to-separate-concerns">Use multiple effects to separate concerns</h3>
 
@@ -266,12 +296,10 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="comparison-of-effect-hook-vs-class-component">Comparison of Effect hook vs Class component</h3>
-
-<p>Use of <code class="language-plaintext highlighter-rouge">useEffect</code> is similar to <code class="language-plaintext highlighter-rouge">componentDidMount</code> and <code class="language-plaintext highlighter-rouge">componentDidUpdate</code> in a Class component.</p>
+<h2 id="comparison-of-effect-hook-vs-class-component">Comparison of Effect hook vs Class component</h2>
 
 <ul>
-  <li>Functional component with hooks.
+  <li>Functional component with effects to run on mount and update by just using <code class="language-plaintext highlighter-rouge">useEffect</code>.
     <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
 
   <span class="kd">function</span> <span class="nx">Example</span><span class="p">()</span> <span class="p">{</span>
@@ -293,7 +321,7 @@
   <span class="p">}</span>
 </code></pre></div>    </div>
   </li>
-  <li>Class component
+  <li>Class component with logic to run on mount and update in separate methods.
     <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">class</span> <span class="nx">Example</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
     <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
