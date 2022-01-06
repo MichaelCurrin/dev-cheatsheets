@@ -202,18 +202,7 @@
 
 <h3 id="use-the-children-property">Use the children property</h3>
 
-<p>Get the components within the box with the special <code class="language-plaintext highlighter-rouge">children</code> property:</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">FancyBorder</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span> <span class="s2">`FancyBorder FancyBorder-</span><span class="p">${</span><span class="nx">props</span><span class="p">.</span><span class="nx">color</span><span class="p">}</span><span class="s2">`</span> <span class="si">}</span><span class="p">&gt;</span>
-      <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">children</span> <span class="si">}</span>    
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Pass child components as the content of an element, such as in <code class="language-plaintext highlighter-rouge">FancyBorder</code>:</p>
+<p>Pass child components as the content of an element, such as <code class="language-plaintext highlighter-rouge">h1</code> and <code class="language-plaintext highlighter-rouge">p</code> below in <code class="language-plaintext highlighter-rouge">FancyBorder</code>:</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">WelcomeDialog</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(</span>
@@ -230,9 +219,20 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
+<p>Then insert those components within the component with the special <code class="language-plaintext highlighter-rouge">children</code> property:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">FancyBorder</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span> <span class="s2">`FancyBorder FancyBorder-</span><span class="p">${</span><span class="nx">props</span><span class="p">.</span><span class="nx">color</span><span class="p">}</span><span class="s2">`</span> <span class="si">}</span><span class="p">&gt;</span>
+      <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">children</span> <span class="si">}</span>    
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
 <h3 id="use-custom-childen">Use custom childen</h3>
 
-<p>Here is an alternative approach from the docs, using custom <em>left</em> and <em>right</em> components.</p>
+<p>Here is an alternative approach from the docs, using custom names for <em>left</em> and <em>right</em> components.</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">SplitPane</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(</span>
