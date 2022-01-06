@@ -57,7 +57,7 @@ Setting up `count` and `setCount` comes as a pair and is similar to using `this.
 
       return (
         <div>
-          <p>You clicked { count } times</p>
+          <p>You clicked {count} times</p>
           <button onClick={() => setCount(count + 1)}>
             Click me
           </button>
@@ -70,7 +70,6 @@ Setting up `count` and `setCount` comes as a pair and is similar to using `this.
     class Example extends React.Component {
       constructor(props) {
         super(props);
-        
         this.state = {
           count: 0
         };
