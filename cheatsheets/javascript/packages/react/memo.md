@@ -20,7 +20,35 @@ const MyComponent = React.memo(function MyComponent(props) {
 Wrap an existing component:
 
 ```jsx
-const RocketComponent = props => <div>my rocket component. {props.fuel}!</div>;
+import React from "react"
+
+function RocketComponent() {
+  return <div>my rocket component. { props.fuel }!</div>;
+}
 
 const MemoizedRocketComponent = React.memo(RocketComponent);
+```
+
+Or
+
+```jsx
+import React from "react";
+
+const Todos = ({ todos }) => {
+  console.log("child render");
+  
+  return (
+    <>
+      <h2>My Todos</h2>
+      
+      {todos.map((todo, index) => {
+        return <p key={ index }>
+          {todo}
+        </p>;
+      })}
+    </>
+  );
+};
+
+export default React.memo(Todos);
 ```
