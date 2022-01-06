@@ -192,7 +192,7 @@
 
     <div class="post-content">
         
-            <h2 id="component-containtment">Component containtment</h2>
+            <h2 id="component-containment">Component containment</h2>
 
 <p>Here we let a component render any number of child components dynamically, without knowing what they are in advance.</p>
 
@@ -200,20 +200,20 @@
 
 <p>This similar to <em>slots</em> in other libraries, like Vue.</p>
 
-<h3 id="use-the-childen-property">Use the childen property</h3>
+<h3 id="use-the-children-property">Use the children property</h3>
 
 <p>Get the components within the box with the special <code class="language-plaintext highlighter-rouge">children</code> property:</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">FancyBorder</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span> <span class="dl">'</span><span class="s1">FancyBorder FancyBorder-</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">props</span><span class="p">.</span><span class="nx">color</span> <span class="si">}</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span> <span class="s2">`FancyBorder FancyBorder-</span><span class="p">${</span><span class="nx">props</span><span class="p">.</span><span class="nx">color</span><span class="p">}</span><span class="s2">`</span> <span class="si">}</span><span class="p">&gt;</span>
       <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">children</span> <span class="si">}</span>    
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Pass child components as the content of an element, such as in <code class="language-plaintext highlighter-rouge">FancyBorder</code>.</p>
+<p>Pass child components as the content of an element, such as in <code class="language-plaintext highlighter-rouge">FancyBorder</code>:</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">WelcomeDialog</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(</span>
