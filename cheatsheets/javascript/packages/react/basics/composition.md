@@ -13,19 +13,7 @@ This similar to _slots_ in other libraries, like Vue.
 
 ### Use the children property
 
-Get the components within the box with the special `children` property:
-
-```jsx
-function FancyBorder(props) {
-  return (
-    <div className={ `FancyBorder FancyBorder-${props.color}` }>
-      { props.children }    
-    </div>
-  );
-}
-```
-
-Pass child components as the content of an element, such as in `FancyBorder`:
+Pass child components as the content of an element, such as `h1` and `p` below in `FancyBorder`:
 
 ```jsx
 function WelcomeDialog() {
@@ -43,9 +31,21 @@ function WelcomeDialog() {
 }
 ```
 
+Then insert those components within the component with the special `children` property:
+
+```jsx
+function FancyBorder(props) {
+  return (
+    <div className={ `FancyBorder FancyBorder-${props.color}` }>
+      { props.children }    
+    </div>
+  );
+}
+```
+
 ### Use custom childen
 
-Here is an alternative approach from the docs, using custom _left_ and _right_ components.
+Here is an alternative approach from the docs, using custom names for _left_ and _right_ components.
 
 ```jsx
 function SplitPane(props) {
