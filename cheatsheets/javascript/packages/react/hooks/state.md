@@ -37,7 +37,7 @@ An example from the docs with multiple variables.
 function ExampleWithManyStates() {
   const [age, setAge] = useState(42);
   const [fruit, setFruit] = useState('banana');
-  const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
+  const [todos, setTodos] = useState( [ { text: 'Learn Hooks' } ] );
 }
 ```
 
@@ -79,6 +79,7 @@ Setting up `count` and `setCount` comes as a pair and is similar to using `this.
         return (
           <div>
             <p>You clicked {this.state.count} times</p>
+            
             <button onClick={() => this.setState({ count: this.state.count + 1 })}>
               Click me
             </button>
