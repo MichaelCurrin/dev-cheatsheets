@@ -1,5 +1,17 @@
 # Components
 
+
+## Resources
+
+- [React.Component](https://reactjs.org/docs/react-component.html) in the React docs.
+
+Tutorials:
+
+- [W3 Schools - React components](https://www.w3schools.com/react/react_components.asp)
+- [Class Component Overview in React](https://www.digitalocean.com/community/tutorials/react-class-components)
+- [ReactJS \| Class Based Components](https://www.geeksforgeeks.org/reactjs-class-based-components/)
+
+
 ## Element
 
 From [Rendering Elements](https://reactjs.org/docs/rendering-elements.html) tutorial.
@@ -19,7 +31,7 @@ The modern, easier-to-test way that uses functions.
 
 ```jsx
 function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
+  return <h1>Hello, { props.name }</h1>;
 }
 ```
 
@@ -27,7 +39,9 @@ See the [Props][] cheatsheet for alternative ways of handling properties.
 
 To handle state, you can use [React Hooks][] or a state library. This makes is easier think about and layer components.
 
-Use `onInput` for text inputs and `onChange` for a checkbox or radio button.
+Use `onInput` for text inputs.
+
+Use `onChange` for a checkbox or radio button.
 
 ```jsx
 import { useState } from "react";
@@ -43,7 +57,7 @@ function Welcome() {
     <>
       <input
         id="value-input"
-        onInput={onInput}
+        onInput={ onInput }
       />
       
       <br />
@@ -55,13 +69,13 @@ function Welcome() {
 }
 ```
 
-You can also set `value` variable as the `input` tag's `value` attribute. So that when the page loads (or refreshes), you can fill the text box with user's value (persisted from state like maybe localStorage).
+You can also set `value` variable as the `input` tag's `value` attribute. So that when the page loads (or refreshes), you can fill the text box with the user's value (persisted from state like maybe localStorage).
 
 ```jsx
 <input
   id="value-input"
-  value={value}
-  onInput={onInput}
+  value={ value }
+  onInput={ onInput }
 />
 ```
 
@@ -72,7 +86,7 @@ If you use `onSubmit` to set the value then you'll find that you actually **cann
 ```jsx
 <input
   id="value-input"
-  onSubmit={onSubmit}
+  onSubmit={ onSubmit }
 />
 ```
 
@@ -86,7 +100,7 @@ The older, more verbose way. Using a class and `this` (which can be confusing an
 ```jsx
 class Welcome extends React.Component {
   render() {
-    return <h1>Hello, {this.props.name}</h1>;
+    return <h1>Hello, { this.props.name }</h1>;
   }
 }
 ```
@@ -108,7 +122,7 @@ export default class Foo extends React.Component {
   }
 
   onClick() {
-    this.setState((currentState) => ({
+    this.setState(currentState => ({
       // ...
     }));
   }
@@ -118,8 +132,8 @@ export default class Foo extends React.Component {
       <>
         <input
           id="value-input"
-          value={value}
-          onChange={onChange}
+          value={ value }
+          onChange={ onChange }
         />
         <br />
         <br />
@@ -137,22 +151,14 @@ See blog post [Functional vs Class-Components in React](https://medium.com/@Zwen
 
 > If you need a **state** in your component you will either need to create a **class** component or you lift the state up to the **parent** component and **pass** it down the functional component via props.
 
+Though that advice may be outdated, since with React Hooks you can add state to a functional component.
+
 Reasons to use functional components:
 
 > 1. Functional component are much easier to read and test because they are plain JavaScript functions without state or lifecycle-hooks.
 > 2. You end up with less code.
-> 3. They help you to use best practices. It will get easier to separate container and presentational components because you need to think more about your component’s state if you don’t have access to `setState()` in your component.
+> 3. They help you to use best practices. It will get easier to separate container and presentational components because you need to think more about your component's state if you don’t have access to `setState()` in your component.
 > 4. The React team mentioned that there may be a performance boost for functional component in future React versions.
 
-Another reasons against class components is that [Classes confuse both people and machines](https://reactjs.org/docs/hooks-intro.html#classes-confuse-both-people-and-machines) (React docs section on Hooks release).
+Another reason against class components is that [Classes confuse both people and machines](https://reactjs.org/docs/hooks-intro.html#classes-confuse-both-people-and-machines) (React docs section on Hooks release).
 
-
-## Resources
-
-- [React.Component](https://reactjs.org/docs/react-component.html) in the React docs.
-
-Tutorials:
-
-- [W3 Schools - React components](https://www.w3schools.com/react/react_components.asp)
-- [Class Component Overview in React](https://www.digitalocean.com/community/tutorials/react-class-components)
-- [ReactJS \| Class Based Components](https://www.geeksforgeeks.org/reactjs-class-based-components/)
