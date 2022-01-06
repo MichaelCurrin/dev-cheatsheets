@@ -208,6 +208,29 @@
   <p>don’t use Redux until you have problems with vanilla React.</p>
 </blockquote>
 
+<h2 id="basic-state-examples">Basic state examples</h2>
+
+<p>See <a href="/dev-cheatsheets/cheatsheets/javascript/packages/react/hooks/state.html">State hook</a> cheatsheet for more info.</p>
+
+<p>Here is how you use create an incrementing value based on a timer.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Timer</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span> <span class="na">seconds</span><span class="p">:</span> <span class="mi">0</span> <span class="p">};</span>
+  <span class="p">}</span>
+
+  <span class="nx">tick</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">({</span>
+      <span class="na">seconds</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">seconds</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="p">}));</span>
+  <span class="p">}</span>
+
+  <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">interval</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">tick</span><span class="p">(),</span> <span class="mi">1000</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
         
     </div>
 </article>
