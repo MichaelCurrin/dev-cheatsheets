@@ -187,7 +187,21 @@
 
     <div class="post-content">
         
-            <h2 id="element">Element</h2>
+            <h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://reactjs.org/docs/react-component.html">React.Component</a> in the React docs.</li>
+</ul>
+
+<p>Tutorials:</p>
+
+<ul>
+  <li><a href="https://www.w3schools.com/react/react_components.asp">W3 Schools - React components</a></li>
+  <li><a href="https://www.digitalocean.com/community/tutorials/react-class-components">Class Component Overview in React</a></li>
+  <li><a href="https://www.geeksforgeeks.org/reactjs-class-based-components/">ReactJS | Class Based Components</a></li>
+</ul>
+
+<h2 id="element">Element</h2>
 
 <p>From <a href="https://reactjs.org/docs/rendering-elements.html">Rendering Elements</a> tutorial.</p>
 
@@ -203,7 +217,7 @@
 <p>The modern, easier-to-test way that uses functions.</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Welcome</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">name</span> <span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -211,7 +225,9 @@
 
 <p>To handle state, you can use <a href="https://reactjs.org/docs/hooks-intro.html">React Hooks</a> or a state library. This makes is easier think about and layer components.</p>
 
-<p>Use <code class="language-plaintext highlighter-rouge">onInput</code> for text inputs and <code class="language-plaintext highlighter-rouge">onChange</code> for a checkbox or radio button.</p>
+<p>Use <code class="language-plaintext highlighter-rouge">onInput</code> for text inputs.</p>
+
+<p>Use <code class="language-plaintext highlighter-rouge">onChange</code> for a checkbox or radio button.</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
 
@@ -226,7 +242,7 @@
     <span class="p">&lt;&gt;</span>
       <span class="p">&lt;</span><span class="nt">input</span>
         <span class="na">id</span><span class="p">=</span><span class="s">"value-input"</span>
-        <span class="na">onInput</span><span class="p">=</span><span class="si">{</span><span class="nx">onInput</span><span class="si">}</span>
+        <span class="na">onInput</span><span class="p">=</span><span class="si">{</span> <span class="nx">onInput</span> <span class="si">}</span>
       <span class="p">/&gt;</span>
       
       <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
@@ -238,12 +254,12 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>You can also set <code class="language-plaintext highlighter-rouge">value</code> variable as the <code class="language-plaintext highlighter-rouge">input</code> tag’s <code class="language-plaintext highlighter-rouge">value</code> attribute. So that when the page loads (or refreshes), you can fill the text box with user’s value (persisted from state like maybe localStorage).</p>
+<p>You can also set <code class="language-plaintext highlighter-rouge">value</code> variable as the <code class="language-plaintext highlighter-rouge">input</code> tag’s <code class="language-plaintext highlighter-rouge">value</code> attribute. So that when the page loads (or refreshes), you can fill the text box with the user’s value (persisted from state like maybe localStorage).</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">input</span>
   <span class="na">id</span><span class="p">=</span><span class="s">"value-input"</span>
-  <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">value</span><span class="si">}</span>
-  <span class="na">onInput</span><span class="p">=</span><span class="si">{</span><span class="nx">onInput</span><span class="si">}</span>
+  <span class="na">value</span><span class="p">=</span><span class="si">{</span> <span class="nx">value</span> <span class="si">}</span>
+  <span class="na">onInput</span><span class="p">=</span><span class="si">{</span> <span class="nx">onInput</span> <span class="si">}</span>
 <span class="p">/&gt;</span>
 </code></pre></div></div>
 
@@ -253,7 +269,7 @@
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">input</span>
   <span class="na">id</span><span class="p">=</span><span class="s">"value-input"</span>
-  <span class="na">onSubmit</span><span class="p">=</span><span class="si">{</span><span class="nx">onSubmit</span><span class="si">}</span>
+  <span class="na">onSubmit</span><span class="p">=</span><span class="si">{</span> <span class="nx">onSubmit</span> <span class="si">}</span>
 <span class="p">/&gt;</span>
 </code></pre></div></div>
 
@@ -263,7 +279,7 @@
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Welcome</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="si">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span> <span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -284,7 +300,7 @@
   <span class="p">}</span>
 
   <span class="nx">onClick</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">((</span><span class="nx">currentState</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span><span class="nx">currentState</span> <span class="o">=&gt;</span> <span class="p">({</span>
       <span class="c1">// ...</span>
     <span class="p">}));</span>
   <span class="p">}</span>
@@ -294,8 +310,8 @@
       <span class="p">&lt;&gt;</span>
         <span class="p">&lt;</span><span class="nt">input</span>
           <span class="na">id</span><span class="p">=</span><span class="s">"value-input"</span>
-          <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">value</span><span class="si">}</span>
-          <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="nx">onChange</span><span class="si">}</span>
+          <span class="na">value</span><span class="p">=</span><span class="si">{</span> <span class="nx">value</span> <span class="si">}</span>
+          <span class="na">onChange</span><span class="p">=</span><span class="si">{</span> <span class="nx">onChange</span> <span class="si">}</span>
         <span class="p">/&gt;</span>
         <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
         <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
@@ -314,6 +330,8 @@
   <p>If you need a <strong>state</strong> in your component you will either need to create a <strong>class</strong> component or you lift the state up to the <strong>parent</strong> component and <strong>pass</strong> it down the functional component via props.</p>
 </blockquote>
 
+<p>Though that advice may be outdated, since with React Hooks you can add state to a functional component.</p>
+
 <p>Reasons to use functional components:</p>
 
 <blockquote>
@@ -325,21 +343,7 @@
   </ol>
 </blockquote>
 
-<p>Another reasons against class components is that <a href="https://reactjs.org/docs/hooks-intro.html#classes-confuse-both-people-and-machines">Classes confuse both people and machines</a> (React docs section on Hooks release).</p>
-
-<h2 id="resources">Resources</h2>
-
-<ul>
-  <li><a href="https://reactjs.org/docs/react-component.html">React.Component</a> in the React docs.</li>
-</ul>
-
-<p>Tutorials:</p>
-
-<ul>
-  <li><a href="https://www.w3schools.com/react/react_components.asp">W3 Schools - React components</a></li>
-  <li><a href="https://www.digitalocean.com/community/tutorials/react-class-components">Class Component Overview in React</a></li>
-  <li><a href="https://www.geeksforgeeks.org/reactjs-class-based-components/">ReactJS | Class Based Components</a></li>
-</ul>
+<p>Another reason against class components is that <a href="https://reactjs.org/docs/hooks-intro.html#classes-confuse-both-people-and-machines">Classes confuse both people and machines</a> (React docs section on Hooks release).</p>
 
         
     </div>
