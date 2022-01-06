@@ -3,7 +3,7 @@ title: Composition
 description: Using components in other components
 ---
 
-## Component containtment
+## Component containment
 
 Here we let a component render any number of child components dynamically, without knowing what they are in advance.
 
@@ -11,21 +11,21 @@ This is common for a sidebar or a dialog as generic boxes of other components.
 
 This similar to _slots_ in other libraries, like Vue.
 
-### Use the childen property
+### Use the children property
 
 Get the components within the box with the special `children` property:
 
 ```jsx
 function FancyBorder(props) {
   return (
-    <div className={ 'FancyBorder FancyBorder-' + props.color }>
+    <div className={ `FancyBorder FancyBorder-${props.color}` }>
       { props.children }    
     </div>
   );
 }
 ```
 
-Pass child components as the content of an element, such as in `FancyBorder`.
+Pass child components as the content of an element, such as in `FancyBorder`:
 
 ```jsx
 function WelcomeDialog() {
