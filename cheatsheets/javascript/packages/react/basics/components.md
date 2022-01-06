@@ -122,7 +122,7 @@ export default class Foo extends React.Component {
   }
 
   onClick() {
-    this.setState(currentState => ({
+    this.setState(state => ({
       // ...
     }));
   }
