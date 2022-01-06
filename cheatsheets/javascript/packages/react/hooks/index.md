@@ -7,4 +7,7 @@ description: Manage state in React components
 
 Note that hooks must be used in functions and not nested within. e.g. You cannot add a `useState` hook within a `useEffect` hook.
 
-See [Intro to Hooks](https://reactjs.org/docs/hooks-intro.html) in the docs.
+## Resources
+
+- [Intro to Hooks](https://reactjs.org/docs/hooks-intro.html) in the docs.
+- [Hooks at a glance](https://reactjs.org/docs/hooks-overview.html)
