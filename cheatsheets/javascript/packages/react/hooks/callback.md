@@ -1,4 +1,4 @@
-# useCallback hook
+# Callback hook
 
 > Returns a memoized callback.
 
