@@ -180,6 +180,8 @@ this.setState((state, props) => {
 
 When you call `this.setState`, values are merged in so only the relevant keys are updated and the rest are left intact.
 
+Here we make two asynchronous (non-blocking) API requests and then set the values in the state whenever they resolve.
+
 ```js
 class Clock extends React.Component {
   constructor() {
