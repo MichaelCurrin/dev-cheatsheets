@@ -432,6 +432,31 @@
   </li>
 </ul>
 
+<h2 id="form">Form</h2>
+
+<p>Using submit and click events:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="p">&lt;</span><span class="nt">form</span> <span class="na">onSubmit</span><span class="p">=</span><span class="si">{</span> <span class="nx">handleSubmit</span> <span class="si">}</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="p">=</span><span class="s">"postName"</span> <span class="na">onChange</span><span class="p">=</span><span class="si">{</span> <span class="nx">handleChange</span> <span class="si">}</span> <span class="na">required</span> <span class="p">/&gt;</span>
+  
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="p">=</span><span class="s">"submit"</span><span class="p">&gt;</span>
+    Add post
+  <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<h2 id="dynamic-event-names">Dynamic event names</h2>
+
+<p>Capture any event and use it.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">handleChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="nx">setNewPost</span><span class="p">({</span> 
+   <span class="p">...</span><span class="nx">newPost</span><span class="p">,</span> 
+  <span class="p">[</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">name</span><span class="p">]:</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span> 
+  <span class="p">})</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
         
     </div>
 </article>
