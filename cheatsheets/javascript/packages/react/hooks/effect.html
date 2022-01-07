@@ -198,22 +198,45 @@
 
 <h2 id="resources">Resources</h2>
 
-<p>See <a href="https://reactjs.org/docs/hooks-effect.html">Using the Effect Hook</a> in the React docs.</p>
+<ul>
+  <li><a href="https://reactjs.org/docs/hooks-effect.html">Using the Effect Hook</a> in the React docs.</li>
+  <li><a href="https://reactjs.org/docs/hooks-reference.html#useeffect">Effect Hook</a> in the Hooks reference of the React docs.</li>
+</ul>
 
 <h2 id="triggers">Triggers</h2>
 
 <p>The Effect hook will run when the component:</p>
 
 <ul>
-  <li>is mounted (once) like using <code class="language-plaintext highlighter-rouge">componentDidMount</code> method.</li>
-  <li>updates (multiple times) like using <code class="language-plaintext highlighter-rouge">componentDidUpdate</code> method.</li>
-  <li>unmounts (once) like using <code class="language-plaintext highlighter-rouge">componentWillUnmount</code> method.</li>
+  <li>Is mounted (once) like using <code class="language-plaintext highlighter-rouge">componentDidMount</code> method.</li>
+  <li>Updates i.e. rerender (which can happen multiple times) like using <code class="language-plaintext highlighter-rouge">componentDidUpdate</code> method.</li>
+  <li>Unmounts (once) like using <code class="language-plaintext highlighter-rouge">componentWillUnmount</code> method.</li>
 </ul>
 
 <h2 id="syntax">Syntax</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(</span><span class="nx">FUNCTION</span><span class="p">)</span>
-<span class="nx">useEffect</span><span class="p">(</span><span class="nx">FUNCTION</span><span class="p">,</span> <span class="nx">ARGUMENTS</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(</span><span class="nx">effect</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Or</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(</span><span class="nx">effect</span><span class="p">,</span> <span class="nx">deps</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Docs:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@param effect — Imperative function that can return a cleanup function
+@param deps — If present, effect will only activate if the values in the list change.
+</code></pre></div></div>
+
+<p>Pass <code class="language-plaintext highlighter-rouge">deps</code> as an empty array to only run on mount and unmount.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(</span><span class="nx">effect</span><span class="p">,</span> <span class="p">[])</span>
+</code></pre></div></div>
+
+<p>Or so the effect only runs when that changes, pass your an array with your variable s</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(</span><span class="nx">effect</span><span class="p">,</span> <span class="p">[</span><span class="nx">myValue</span><span class="p">])</span>
 </code></pre></div></div>
 
 <h2 id="examples">Examples</h2>
