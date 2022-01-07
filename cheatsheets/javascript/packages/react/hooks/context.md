@@ -1,4 +1,4 @@
-# useContext hook
+# Context hook
 
 
 ```javascript
