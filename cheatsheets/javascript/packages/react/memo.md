@@ -52,3 +52,6 @@ const Todos = ({ todos }) => {
 
 export default React.memo(Todos);
 ```
+
+
+See also `useMemo` under Hooks.
