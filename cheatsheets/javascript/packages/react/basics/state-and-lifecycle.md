@@ -160,9 +160,7 @@ ReactDOM.render(
 
 React might batch `setState` requests for performance.
 
-This values of `this.props` and `this.state` may be updated asychronously.
-
-This may fail to update correctly:
+The values of `this.props` and `this.state` may be updated asychronously. So this may **fail** to update correctly.
 
 ```js
 this.setState({
@@ -170,7 +168,7 @@ this.setState({
 });
 ```
 
-So rather pass a function to `setState` which has `state` and `props` as parameters.
+So instead of using those, rather pass a function to `setState`. Set `state` and `props` as parameters then use those.
 
 ```js
 this.setState((state, props) => {

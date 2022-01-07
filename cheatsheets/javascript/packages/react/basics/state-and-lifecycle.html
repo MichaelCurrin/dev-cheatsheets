@@ -342,16 +342,14 @@
 
 <p>React might batch <code class="language-plaintext highlighter-rouge">setState</code> requests for performance.</p>
 
-<p>This values of <code class="language-plaintext highlighter-rouge">this.props</code> and <code class="language-plaintext highlighter-rouge">this.state</code> may be updated asychronously.</p>
-
-<p>This may fail to update correctly:</p>
+<p>The values of <code class="language-plaintext highlighter-rouge">this.props</code> and <code class="language-plaintext highlighter-rouge">this.state</code> may be updated asychronously. So this may <strong>fail</strong> to update correctly.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
   <span class="na">counter</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">counter</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">increment</span><span class="p">,</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>So rather pass a function to <code class="language-plaintext highlighter-rouge">setState</code> which has <code class="language-plaintext highlighter-rouge">state</code> and <code class="language-plaintext highlighter-rouge">props</code> as parameters.</p>
+<p>So instead of using those, rather pass a function to <code class="language-plaintext highlighter-rouge">setState</code>. Set <code class="language-plaintext highlighter-rouge">state</code> and <code class="language-plaintext highlighter-rouge">props</code> as parameters then use those.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">((</span><span class="nx">state</span><span class="p">,</span> <span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="na">counter</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">counter</span> <span class="o">+</span> <span class="nx">props</span><span class="p">.</span><span class="nx">increment</span>
