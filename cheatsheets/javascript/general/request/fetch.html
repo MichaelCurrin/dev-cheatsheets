@@ -20,8 +20,8 @@
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="How to get data using the built-in `fetch` function" />
-    <meta property="og:description" content="How to get data using the built-in `fetch` function" />
+    <meta name="description" content="How to get data using the `fetch` function" />
+    <meta property="og:description" content="How to get data using the `fetch` function" />
 <meta name="author" content="Michael Currin" />
 
 
@@ -33,7 +33,7 @@
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "How to get data using the built-in `fetch` function",
+    "description": "How to get data using the `fetch` function",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/request/fetch.html",
     "headline":    "fetch",
     "@type":       "WebSite",
@@ -104,7 +104,7 @@
 
         
             <blockquote>
-                <p>How to get data using the built-in <code class="language-plaintext highlighter-rouge">fetch</code> function</p>
+                <p>How to get data using the <code class="language-plaintext highlighter-rouge">fetch</code> function</p>
 
             </blockquote>
         
@@ -180,12 +180,25 @@
 
     <div class="post-content">
         
-            <h2 id="about">About</h2>
+            <h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://javascript.info/fetch">JavaScript.info</a> site</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">Mozilla docs</a></li>
+</ul>
+
+<h2 id="about">About</h2>
 
 <ul>
   <li>Browser
     <ul>
       <li>The <code class="language-plaintext highlighter-rouge">fetch</code> function is built-in for modern browsers.</li>
+      <li>Available as a polyfill from NPM for older browsers:
+        <ul>
+          <li><a href="https://github.com/github/fetch">whatwg-fetch</a> on GitHub.</li>
+          <li><a href="https://www.npmjs.com/package/fetch-polyfill">fetch-polyfill</a> on NPM. Or <a href="https://www.jsdelivr.com/package/npm/fetch-polyfill">CDN</a>.</li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li>NPM
@@ -203,22 +216,11 @@
       </li>
     </ul>
   </li>
-  <li><a href="https://javascript.info/fetch">JavaScript.info</a> site</li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">Mozilla docs</a></li>
-</ul>
-
-<p>Using <code class="language-plaintext highlighter-rouge">fetch</code>. Built-in for modern browsers.</p>
-
-<p>Available as a polyfill from NPM for older browsers:</p>
-
-<ul>
-  <li><a href="https://github.com/github/fetch">whatwg-fetch</a> on GitHub.</li>
-  <li><a href="https://www.npmjs.com/package/fetch-polyfill">fetch-polyfill</a> on NPM. Or <a href="https://www.jsdelivr.com/package/npm/fetch-polyfill">CDN</a>.</li>
 </ul>
 
 <p>In Node, you can use <code class="language-plaintext highlighter-rouge">node-fetch</code> or alternatives for the server side.</p>
 
-<p>Warning - an error will <strong>not</strong> be thrown on a non-200 status, so you must handle this yourself. Other libraries tend to handle errors for you.</p>
+<p>Warning - an error will <strong>not</strong> be thrown for you on a non-200 status, so you must handle this yourself. Other libraries tend to handle errors for you.</p>
 
 <h2 id="approaches">Approaches</h2>
 
