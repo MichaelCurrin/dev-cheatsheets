@@ -193,17 +193,10 @@
 
 <h2 id="rules">Rules</h2>
 
-<h3 id="only-call-hoosk-at-the-top-level">Only call hoosk at the top level</h3>
-
-<p>Not inside loops, conditions, or nested functons.</p>
-
-<p>This allows React to preserve the state between mutlipel <code class="language-plaintext highlighter-rouge">useState</code> and <code class="language-plaintext highlighter-rouge">useEffect</code> calls.</p>
-
-<h3 id="only-call-hooks-from-react-functions">Only call hooks from React functions</h3>
-
-<p>Don’t call from regular JS functions.</p>
-
-<p>Call from functional component or a custom hook.</p>
+<ul>
+  <li>Only use hooks within a function. A functional component or a custom hook. Not in plain JS or a class component.</li>
+  <li>Only use hooks at the top level of a component. Not inside loops, conditions (hooks cannot be conditional), or nested functons. This allows React to preserve the state between mutliple <code class="language-plaintext highlighter-rouge">useState</code> and <code class="language-plaintext highlighter-rouge">useEffect</code> calls.</li>
+</ul>
 
         
     </div>

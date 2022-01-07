@@ -8,14 +8,5 @@ You can use the [eslint-plugin-react-hooks][] package to enforce this, as covere
 
 ## Rules
 
-### Only call hoosk at the top level
-
-Not inside loops, conditions, or nested functons.
-
-This allows React to preserve the state between mutlipel `useState` and `useEffect` calls.
-
-### Only call hooks from React functions
-
-Don't call from regular JS functions.
-
-Call from functional component or a custom hook.
+- Only use hooks within a function. A functional component or a custom hook. Not in plain JS or a class component.
+- Only use hooks at the top level of a component. Not inside loops, conditions (hooks cannot be conditional), or nested functons. This allows React to preserve the state between mutliple `useState` and `useEffect` calls.
