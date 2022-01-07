@@ -237,12 +237,16 @@
 @param deps — If present, effect will only activate if the values in the list change.
 </code></pre></div></div>
 
+<h3 id="basic">Basic</h3>
+
 <p>Pass <code class="language-plaintext highlighter-rouge">deps</code> as an empty array to only run on mount and unmount.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(</span><span class="nx">effect</span><span class="p">,</span> <span class="p">[])</span>
 </code></pre></div></div>
 
-<p>Or so the effect only runs when that changes, pass your an array with your variable s</p>
+<p>Or so the effect only runs when that changes, pass your an array with your variable.</p>
+
+<p>e.g.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(</span><span class="nx">effect</span><span class="p">,</span> <span class="p">[</span><span class="nx">myValue</span><span class="p">])</span>
 </code></pre></div></div>
@@ -340,6 +344,25 @@
 
   <span class="c1">// ...</span>
 <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="add-and-display-post">Add and display post</h3>
+
+<p>The second parameter can be useful if you let the user save content to your database like create a post and you want to pull the latest posts immediately to display it.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">getPosts</span><span class="p">()</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">posts</span><span class="p">])</span> 
+</code></pre></div></div>
+
+<p>However, this can result in an infinite loop - if you add a log statement inside you’ll the effect run continously.</p>
+
+<p>An <a href="https://techwizerd.com/posts/how-to-use-react-use-effect-to-post-data-and-refresh-without-infinite-callback/">article</a> recommended using the count instead.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">postLength</span><span class="p">,</span> <span class="nx">setPostLength</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> 
+<span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">getPosts</span><span class="p">()</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">postLength</span><span class="p">])</span> 
 </code></pre></div></div>
 
 <h2 id="comparison-of-effect-hook-vs-class-component">Comparison of Effect hook vs Class component</h2>
