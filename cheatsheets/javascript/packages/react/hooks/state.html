@@ -198,11 +198,27 @@
 
 <h2 id="syntax">Syntax</h2>
 
-<p>Calling <code class="language-plaintext highlighter-rouge">useState</code> is a React hook to unpack a variable’s value and its change handler to update it, like this:</p>
+<p>Calling <code class="language-plaintext highlighter-rouge">useState</code> is a React hook to unpack a variable’s value and its change handler to update it.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useState</span><span class="p">(</span><span class="nx">initialStateValue</span><span class="p">);</span>
+
+<span class="nx">useState</span><span class="p">(</span><span class="nx">initialStateFunction</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Typical use:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span> <span class="nx">state</span><span class="p">,</span> <span class="nx">setState</span> <span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">initialState</span><span class="p">);</span>
 
 <span class="nx">setState</span><span class="p">(</span><span class="nx">newState</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>If you have an expensive computation, then you can pass this in a function to <code class="language-plaintext highlighter-rouge">useState</code>. Example from the <a href="https://reactjs.org/docs/hooks-reference.html">Hooks API Reference</a> docs:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setState</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="nx">someExpensiveComputation</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  
+  <span class="k">return</span> <span class="nx">initialState</span><span class="p">;</span>
+<span class="p">});</span>
 </code></pre></div></div>
 
 <h2 id="example">Example</h2>
