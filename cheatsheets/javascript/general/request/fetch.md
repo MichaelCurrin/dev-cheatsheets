@@ -1,32 +1,32 @@
 ---
 title: fetch
-description: How to get data using the built-in `fetch` function
+description: How to get data using the `fetch` function
 ---
+
+
+## Resources
+
+- [JavaScript.info](https://javascript.info/fetch) site
+- [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
 
 ## About
 
 - Browser
-    - The `fetch` function is built-in for modern browsers.
+    - The `fetch` function is built-in for modern browsers. 
+    - Available as a polyfill from NPM for older browsers:
+        - [whatwg-fetch](https://github.com/github/fetch) on GitHub.
+        - [fetch-polyfill](https://www.npmjs.com/package/fetch-polyfill) on NPM. Or [CDN](https://www.jsdelivr.com/package/npm/fetch-polyfill).
 - NPM
     - [node-fetch](https://www.npmjs.com/package/node-fetch)
         - The browser `fetch` function brought to Noded.js.
         - The docs show how to use it.
     - [fetch](https://www.npmjs.com/package/fetch)
         - Unrelated to `fetch` function but shown for interest.
-- [JavaScript.info](https://javascript.info/fetch) site
-- [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-
-Using `fetch`. Built-in for modern browsers. 
-
-Available as a polyfill from NPM for older browsers:
-
-- [whatwg-fetch](https://github.com/github/fetch) on GitHub.
-- [fetch-polyfill](https://www.npmjs.com/package/fetch-polyfill) on NPM. Or [CDN](https://www.jsdelivr.com/package/npm/fetch-polyfill).
 
 In Node, you can use `node-fetch` or alternatives for the server side.
 
-Warning - an error will **not** be thrown on a non-200 status, so you must handle this yourself. Other libraries tend to handle errors for you.
+Warning - an error will **not** be thrown for you on a non-200 status, so you must handle this yourself. Other libraries tend to handle errors for you.
 
 
 ## Approaches
