@@ -47,7 +47,7 @@ useEffect(() => {
 
 ### Mount and unmount only
 
-To prevent the function from running on updates, use an empty array s an extra parameter.
+To prevent the function from running on updates and only on mount/unmount, specify an empty array as the second parameter.
 
 ```jsx
 useEffect(() => {
@@ -56,7 +56,6 @@ useEffect(() => {
 ```
 
 The docs say that this is close to the mental model of `componentDidMount` and `componentWillUnmount`, but that "there are usually [better solutions][] to avoid re-running effects too often".
-
 
 From [Hooks Overview][] doc, here we subscribe to the chat notifications when the component mounts and then unsubscribe when unmounting (since there is no point to pull in data if the widget is not on the page anymore).
 
@@ -96,13 +95,13 @@ Example from the docs.
 ```jsx
 function FriendStatusWithCounter(props) {
   const [count, _setCount] = useState(0);
-  
-  useEffect(() => { 
-    document.title = `You clicked ${count} times` }
-  );
-
   const [_isOnline, setIsOnline] = useState(null);
   
+  useEffect(() => { 
+      document.title = `You clicked ${count} times` 
+    }
+  );
+
   useEffect(() => {
     function handleStatusChange(status) {
       setIsOnline(status.isOnline);
