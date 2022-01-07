@@ -11,23 +11,48 @@ After React flushes the DOM, it runs your effect. This is done after every rende
 
 ## Resources
 
-See [Using the Effect Hook](https://reactjs.org/docs/hooks-effect.html) in the React docs.
+- [Using the Effect Hook](https://reactjs.org/docs/hooks-effect.html) in the React docs.
+- [Effect Hook](https://reactjs.org/docs/hooks-reference.html#useeffect) in the Hooks reference of the React docs.
 
 
 ## Triggers
 
 The Effect hook will run when the component:
 
-- is mounted (once) like using `componentDidMount` method.
-- updates (multiple times) like using `componentDidUpdate` method.
-- unmounts (once) like using `componentWillUnmount` method.
+- Is mounted (once) like using `componentDidMount` method.
+- Updates i.e. rerender (which can happen multiple times) like using `componentDidUpdate` method.
+- Unmounts (once) like using `componentWillUnmount` method.
 
 
 ## Syntax
 
 ```javascript
-useEffect(FUNCTION)
-useEffect(FUNCTION, ARGUMENTS)
+useEffect(effect)
+```
+
+Or
+
+```javascript
+useEffect(effect, deps)
+```
+
+Docs:
+
+```
+@param effect — Imperative function that can return a cleanup function
+@param deps — If present, effect will only activate if the values in the list change.
+```
+
+Pass `deps` as an empty array to only run on mount and unmount.
+
+```javascript
+useEffect(effect, [])
+```
+
+Or so the effect only runs when that changes, pass your an array with your variable s
+
+```javascript
+useEffect(effect, [myValue])
 ```
 
 
