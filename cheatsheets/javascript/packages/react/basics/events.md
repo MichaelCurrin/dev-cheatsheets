@@ -249,3 +249,32 @@ Here we pass the `id` of a row.
       Delete Row
     </button>
     ```
+
+
+## Form
+
+Using submit and click events:
+
+```jsx
+ <form onSubmit={ handleSubmit }>
+  <input name="postName" onChange={ handleChange } required />
+  
+  <button type="submit">
+    Add post
+  </button>
+</form>
+```
+
+
+## Dynamic event names
+
+Capture any event and use it.
+
+```javascript
+const handleChange = (event) => {
+setNewPost({ 
+   ...newPost, 
+  [event.target.name]: event.target.value 
+  })
+}
+```
