@@ -3,9 +3,10 @@ title: Hooks
 description: Manage state in React components
 ---
 
-> Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.
+Hooks were added in React 16.8 and let you use state and lifecycle methods in a functional component, where before you had to use a class component.
 
-Note that hooks must be used in functions and not nested within. e.g. You cannot add a `useState` hook within a `useEffect` hook.
+Note that hooks must be used in functions and not nested within each other. You cannot add a `useState` hook within a `useEffect` hook.
+
 
 ## Resources
 
