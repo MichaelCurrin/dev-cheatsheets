@@ -3,9 +3,15 @@ title: Effect hook
 description: Perform **side effects** in Function components
 ---
 
-You're likely fetching data or changing the DOM. These are _side effects_ as they happen outside the component and are called _effects_ for short.
+This hooks lets use _side effects_ - things that happen outside the component and are called _effects_ for short.
 
-After React flushes the DOM, it runs your effect. This is done after every render including the initial render.
+e.g.
+
+- fetching data
+- updating the DOM
+- timers
+
+After React flushes the DOM, React runs your effect. This is done after every render including the initial render.
 
 {% raw %}
 
@@ -81,6 +87,22 @@ useEffect(() => {
 ```
 
 The docs say that this is close to the mental model of `componentDidMount` and `componentWillUnmount`, but that "there are usually [better solutions][] to avoid re-running effects too often".
+
+If you need to perform an action based on user-interaction in addition to the page load, you can do that outside the hook with an event.
+
+```jsx
+// On mount.
+useEffect(() => {
+  loadPosts()
+}, [])
+
+// User-driven.
+<button onClick={ () => loadPosts() }
+  Fetch posts
+</button>
+```
+
+#### Chat example
 
 From [Hooks Overview][] doc, here we subscribe to the chat notifications when the component mounts and then unsubscribe when unmounting (since there is no point to pull in data if the widget is not on the page anymore).
 
