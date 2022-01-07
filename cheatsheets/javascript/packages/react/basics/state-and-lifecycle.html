@@ -360,6 +360,8 @@
 
 <p>When you call <code class="language-plaintext highlighter-rouge">this.setState</code>, values are merged in so only the relevant keys are updated and the rest are left intact.</p>
 
+<p>Here we make two asynchronous (non-blocking) API requests and then set the values in the state whenever they resolve.</p>
+
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Clock</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
