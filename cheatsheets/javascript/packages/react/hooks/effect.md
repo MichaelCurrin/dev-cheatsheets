@@ -49,13 +49,17 @@ Docs:
 @param deps — If present, effect will only activate if the values in the list change.
 ```
 
+### Basic
+
 Pass `deps` as an empty array to only run on mount and unmount.
 
 ```javascript
 useEffect(effect, [])
 ```
 
-Or so the effect only runs when that changes, pass your an array with your variable s
+Or so the effect only runs when that changes, pass your an array with your variable.
+
+e.g.
 
 ```javascript
 useEffect(effect, [myValue])
@@ -164,6 +168,29 @@ function FriendStatusWithCounter(props) {
   // ...
 }
 ```
+
+### Add and display post
+
+The second parameter can be useful if you let the user save content to your database like create a post and you want to pull the latest posts immediately to display it.
+
+```javascript
+useEffect(() => {
+  getPosts()
+}, [posts]) 
+```
+
+However, this can result in an infinite loop - if you add a log statement inside you'll the effect run continously.
+
+An [article][] recommended using the count instead.
+
+```javascript
+const [postLength, setPostLength] = useState(0) 
+useEffect(() => {
+    getPosts()
+}, [postLength]) 
+```
+
+[article]: https://techwizerd.com/posts/how-to-use-react-use-effect-to-post-data-and-refresh-without-infinite-callback/
 
 
 ## Comparison of Effect hook vs Class component
