@@ -192,9 +192,17 @@
 
     <div class="post-content">
         
-            <p>You’re likely fetching data or changing the DOM. These are <em>side effects</em> as they happen outside the component and are called <em>effects</em> for short.</p>
+            <p>This hooks lets use <em>side effects</em> - things that happen outside the component and are called <em>effects</em> for short.</p>
 
-<p>After React flushes the DOM, it runs your effect. This is done after every render including the initial render.</p>
+<p>e.g.</p>
+
+<ul>
+  <li>fetching data</li>
+  <li>updating the DOM</li>
+  <li>timers</li>
+</ul>
+
+<p>After React flushes the DOM, React runs your effect. This is done after every render including the initial render.</p>
 
 <h2 id="resources">Resources</h2>
 
@@ -262,6 +270,21 @@
 </code></pre></div></div>
 
 <p>The docs say that this is close to the mental model of <code class="language-plaintext highlighter-rouge">componentDidMount</code> and <code class="language-plaintext highlighter-rouge">componentWillUnmount</code>, but that “there are usually <a href="https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies">better solutions</a> to avoid re-running effects too often”.</p>
+
+<p>If you need to perform an action based on user-interaction in addition to the page load, you can do that outside the hook with an event.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// On mount.</span>
+<span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">loadPosts</span><span class="p">()</span>
+<span class="p">},</span> <span class="p">[])</span>
+
+<span class="c1">// User-driven.</span>
+<span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">loadPosts</span><span class="p">()</span> <span class="p">}</span>
+  <span class="nx">Fetch</span> <span class="nx">posts</span>
+<span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<h4 id="chat-example">Chat example</h4>
 
 <p>From <a href="https://reactjs.org/docs/hooks-overview.html">Hooks Overview</a> doc, here we subscribe to the chat notifications when the component mounts and then unsubscribe when unmounting (since there is no point to pull in data if the widget is not on the page anymore).</p>
 
