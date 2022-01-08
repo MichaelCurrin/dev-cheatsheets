@@ -7,7 +7,7 @@
 - [strftime](https://strftime.org/) cheatsheet
 - [unixtimestamp.com](https://www.unixtimestamp.com/) converter.
 - [Unix time](https://en.wikipedia.org/wiki/Unix_time) on Wikipedia.
-- [ISO 8061](https://en.wikipedia.org/wiki/ISO_8601)
+- [ISO 8061](https://en.wikipedia.org/wiki/ISO_8601) standard on Wikipedia - date, time, and datetime.
 
 
 ## Current time
