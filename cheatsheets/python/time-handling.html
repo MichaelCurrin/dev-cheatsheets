@@ -180,7 +180,7 @@
 
 <h3 id="today">Today</h3>
 
-<p>Get a <code class="language-plaintext highlighter-rouge">date</code> object using <code class="language-plaintext highlighter-rouge">date.today</code> method.</p>
+<p>Get a <code class="language-plaintext highlighter-rouge">date</code> object for today’s date - using <code class="language-plaintext highlighter-rouge">date.today</code> method.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">date</span><span class="p">.</span><span class="n">today</span><span class="p">()</span>
 <span class="c1"># datetime.date(2021, 5, 8)
@@ -188,7 +188,7 @@
 
 <h3 id="now">Now</h3>
 
-<p>Get a <code class="language-plaintext highlighter-rouge">datetime</code> object using <code class="language-plaintext highlighter-rouge">datetime.today</code> or <code class="language-plaintext highlighter-rouge">datetime.now</code> methods:</p>
+<p>Get a <code class="language-plaintext highlighter-rouge">datetime</code> object for the current date and time - using <code class="language-plaintext highlighter-rouge">datetime.today</code> or <code class="language-plaintext highlighter-rouge">datetime.now</code> methods:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">today</span><span class="p">()</span>
 <span class="c1"># datetime.datetime(2021, 11, 2, 20, 21, 10, 742033)
@@ -234,7 +234,7 @@
 <span class="s">'2021-01-02 00:00:00'</span>
 </code></pre></div></div>
 
-<p>Create a datetime object.</p>
+<p>Create a datetime object:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 <span class="c1"># datetime.datetime(2021, 1, 2, 3, 40)
@@ -464,12 +464,21 @@
 
 <p>Move between date formats. For converting to and from strings, see section above.</p>
 
-<h3 id="convert-from-date-from-datetime">Convert from date from datetime</h3>
+<h3 id="convert-from-date-to-datetime">Convert from date to datetime</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
+<p>Get a date object from datetime object.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span><span class="p">.</span><span class="n">date</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>e.g. Current date.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">214702</span><span class="p">)</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">dt</span><span class="p">.</span><span class="n">date</span><span class="p">()</span>
-<span class="c1"># datetime.date(2020, 5, 3)
+<span class="c1"># datetime.date(2022, 1, 8)
 </span></code></pre></div></div>
+
+<p>Parse a string of a date (just omit the time) then convert from datetime to date.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">strptime</span><span class="p">(</span><span class="s">'12/05/19'</span><span class="p">,</span> <span class="s">'%m/%d/%y'</span><span class="p">)</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">dt</span><span class="p">.</span><span class="n">date</span><span class="p">()</span>
