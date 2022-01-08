@@ -8,6 +8,12 @@
 - [unixtimestamp.com](https://www.unixtimestamp.com/) converter.
 - [Unix time](https://en.wikipedia.org/wiki/Unix_time) on Wikipedia.
 - [ISO 8061](https://en.wikipedia.org/wiki/ISO_8601) standard on Wikipedia - date, time, and datetime.
+    - Date
+        - `2022-01-08`
+    - Date and time in UTC
+        - `2022-01-08T08:18:20+00:00`
+        - `2022-01-08T08:18:20Z`
+        - `20220108T081820Z`
 
 
 ## Current time
