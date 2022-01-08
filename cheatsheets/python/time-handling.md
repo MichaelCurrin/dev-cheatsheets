@@ -126,9 +126,9 @@ n.second
 ```
 
 
-## Format and parse
+## Format
 
-Format a datetime value as a string or parse a string as a datetime object.
+Format a datetime value as a string.
 
 See [Format codes](#format-codes) for what symbols to use when formatting or parsing.
 
@@ -138,11 +138,16 @@ See [Format codes](#format-codes) for what symbols to use when formatting or par
 x = datetime.datetime.now()
 ```
 
+Use [ISO-8601](#resources) format:
+
 ```python
 x.isoformat()
 # '2021-11-02T20:19:57.928643'
+```
 
-# Or simply:
+You can also stringify the object:
+
+```python
 str(x)
 # '2021-11-02T20:19:57.928643'
 ```
@@ -180,6 +185,13 @@ x.strftime('%Y-%m-%d %H:%m')
 '2021-11-02 20:11'
 ```
 
+
+## Parse
+
+Parse a string as a datetime object.
+
+See [Format codes](#format-codes) for what symbols to use when formatting or parsing.
+ 
 ### Parse string as datetime
 
 Parse from a string to datetime object. 
@@ -217,7 +229,63 @@ str(dt)
 
 There is no `strptime` method on `datetime.date`, but you can convert a datetime to date. See the next section.
 
-### Format codes
+
+### Parse ISO 8061 datetime string
+
+Parse [ISO 8061](#resources) format date and time with timezone.
+
+e.g.
+
+```
+2020-01-24T08:37:37+00:00
+```
+
+The response is a timezone-aware datetime object.
+
+```python
+v = "2020-01-24T08:37:37+00:00"
+datetime.datetime.fromisoformat(v)
+# datetime.datetime(2020, 1, 24, 8, 37, 37, tzinfo=datetime.timezone.utc)
+```
+
+### Parse long format
+
+e.g.
+
+```
+Thu, 30 Aug 2018 13:14:09 GMT
+```
+
+From my [aggregit](https://github.com/MichaelCurrin/aggre-git/blob/master/aggregit/lib/__init__.py) repo.
+
+See [SO](https://stackoverflow.com/questions/7703865/going-from-twitter-date-to-python-datetime-date) answers.
+
+```python
+import datetime
+from email.utils import mktime_tz, parsedate_tz
+
+
+def parse_datetime(standard_datetime):
+    """
+    Parse a standardised datetime string to a datetime object.
+    
+    :param standard_datetime: datetime value as a string.
+        e.g. 'Thu, 30 Aug 2018 13:14:09 GMT'
+        
+    :return: timezone-aware datetime object in UTC time. 
+        Printing this out will reflect in the system's timezone. 
+        e.g. entering time 12:00 for +0000 timezone shows as 14:00 
+        if printing in a system set to +0200 timezone,
+        whether doing `str(obj)` or `str(obj.hour)`.
+    """
+    time_tuple = parsedate_tz(standard_datetime)
+    timestamp = mktime_tz(time_tuple)
+
+    return datetime.datetime.fromtimestamp(timestamp)
+```
+
+
+## Format codes
 
 - [strftime() and strptime() Format Codes](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes)
 
@@ -255,7 +323,7 @@ Some useful combinations:
 
 ## Conversion
 
-Move between date formats.
+Move between date formats. For converting to and from strings, see section above.
 
 ### Convert from date from datetime
 
@@ -281,36 +349,6 @@ datetime.datetime.fromtimestamp(1403602426.0)
 ```
 
 The input be an integer or float.
-
-### Parse ISO 8061 string
-
-The Twitter API often provides a datetime value in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format and Tweepy returns this to you as a string still.
-
-e.g. `"2020-05-03T18:01:41+00:00"`.
-
-This section covers how to parse a datetime string to a timezone-aware datetime object, to make it more useful for calculations and representations.
-
-- `main.py`
-    ```python
-    import datetime
-
-
-    TIME_FORMAT_IN = r"%Y-%m-%dT%H:%M%z"
-
-
-    def parse_datetime(value):
-        """
-        Convert from Twitter datetime string to a datetime object.
-
-        >>> parse_datetime("2020-01-24T08:37:37+00:00")
-        datetime.datetime(2020, 1, 24, 8, 37, tzinfo=datetime.timezone.utc)
-        """
-        dt = ":".join(value.split(":", 2)[:2])
-        tz = value[-6:]
-        clean_value = f"{dt}{tz}"
-
-        return datetime.datetime.strptime(clean_value, TIME_FORMAT_IN)
-    ```
 
 ### Convert unix timestamp to date and time
 

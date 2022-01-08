@@ -264,9 +264,9 @@
 <span class="c1"># 51
 </span></code></pre></div></div>
 
-<h2 id="format-and-parse">Format and parse</h2>
+<h2 id="format">Format</h2>
 
-<p>Format a datetime value as a string or parse a string as a datetime object.</p>
+<p>Format a datetime value as a string.</p>
 
 <p>See <a href="#format-codes">Format codes</a> for what symbols to use when formatting or parsing.</p>
 
@@ -275,11 +275,15 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
 </code></pre></div></div>
 
+<p>Use <a href="#resources">ISO-8601</a> format:</p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">.</span><span class="n">isoformat</span><span class="p">()</span>
 <span class="c1"># '2021-11-02T20:19:57.928643'
-</span>
-<span class="c1"># Or simply:
-</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></code></pre></div></div>
+
+<p>You can also stringify the object:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="c1"># '2021-11-02T20:19:57.928643'
 </span></code></pre></div></div>
 
@@ -311,6 +315,12 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%Y-%m-%d %H:%m'</span><span class="p">)</span>
 <span class="s">'2021-11-02 20:11'</span>
 </code></pre></div></div>
+
+<h2 id="parse">Parse</h2>
+
+<p>Parse a string as a datetime object.</p>
+
+<p>See <a href="#format-codes">Format codes</a> for what symbols to use when formatting or parsing.</p>
 
 <h3 id="parse-string-as-datetime">Parse string as datetime</h3>
 
@@ -346,7 +356,57 @@
 
 <p>There is no <code class="language-plaintext highlighter-rouge">strptime</code> method on <code class="language-plaintext highlighter-rouge">datetime.date</code>, but you can convert a datetime to date. See the next section.</p>
 
-<h3 id="format-codes">Format codes</h3>
+<h3 id="parse-iso-8061-datetime-string">Parse ISO 8061 datetime string</h3>
+
+<p>Parse <a href="#resources">ISO 8061</a> format date and time with timezone.</p>
+
+<p>e.g.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2020-01-24T08:37:37+00:00
+</code></pre></div></div>
+
+<p>The response is a timezone-aware datetime object.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v</span> <span class="o">=</span> <span class="s">"2020-01-24T08:37:37+00:00"</span>
+<span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="c1"># datetime.datetime(2020, 1, 24, 8, 37, 37, tzinfo=datetime.timezone.utc)
+</span></code></pre></div></div>
+
+<h3 id="parse-long-format">Parse long format</h3>
+
+<p>e.g.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Thu, 30 Aug 2018 13:14:09 GMT
+</code></pre></div></div>
+
+<p>From my <a href="https://github.com/MichaelCurrin/aggre-git/blob/master/aggregit/lib/__init__.py">aggregit</a> repo.</p>
+
+<p>See <a href="https://stackoverflow.com/questions/7703865/going-from-twitter-date-to-python-datetime-date">SO</a> answers.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">email.utils</span> <span class="kn">import</span> <span class="n">mktime_tz</span><span class="p">,</span> <span class="n">parsedate_tz</span>
+
+
+<span class="k">def</span> <span class="nf">parse_datetime</span><span class="p">(</span><span class="n">standard_datetime</span><span class="p">):</span>
+    <span class="s">"""
+    Parse a standardised datetime string to a datetime object.
+    
+    :param standard_datetime: datetime value as a string.
+        e.g. 'Thu, 30 Aug 2018 13:14:09 GMT'
+        
+    :return: timezone-aware datetime object in UTC time. 
+        Printing this out will reflect in the system's timezone. 
+        e.g. entering time 12:00 for +0000 timezone shows as 14:00 
+        if printing in a system set to +0200 timezone,
+        whether doing `str(obj)` or `str(obj.hour)`.
+    """</span>
+    <span class="n">time_tuple</span> <span class="o">=</span> <span class="n">parsedate_tz</span><span class="p">(</span><span class="n">standard_datetime</span><span class="p">)</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">mktime_tz</span><span class="p">(</span><span class="n">time_tuple</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="format-codes">Format codes</h2>
 
 <ul>
   <li><a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes">strftime() and strptime() Format Codes</a></li>
@@ -387,7 +447,7 @@
 
 <h2 id="conversion">Conversion</h2>
 
-<p>Move between date formats.</p>
+<p>Move between date formats. For converting to and from strings, see section above.</p>
 
 <h3 id="convert-from-date-from-datetime">Convert from date from datetime</h3>
 
@@ -410,38 +470,6 @@
 </span></code></pre></div></div>
 
 <p>The input be an integer or float.</p>
-
-<h3 id="parse-iso-8061-string">Parse ISO 8061 string</h3>
-
-<p>The Twitter API often provides a datetime value in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format and Tweepy returns this to you as a string still.</p>
-
-<p>e.g. <code class="language-plaintext highlighter-rouge">"2020-05-03T18:01:41+00:00"</code>.</p>
-
-<p>This section covers how to parse a datetime string to a timezone-aware datetime object, to make it more useful for calculations and representations.</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">main.py</code>
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kn">import</span> <span class="nn">datetime</span>
-
-
-  <span class="n">TIME_FORMAT_IN</span> <span class="o">=</span> <span class="sa">r</span><span class="s">"%Y-%m-%dT%H:%M%z"</span>
-
-
-  <span class="k">def</span> <span class="nf">parse_datetime</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-      <span class="s">"""
-      Convert from Twitter datetime string to a datetime object.
-
-      &gt;&gt;&gt; parse_datetime("2020-01-24T08:37:37+00:00")
-      datetime.datetime(2020, 1, 24, 8, 37, tzinfo=datetime.timezone.utc)
-      """</span>
-      <span class="n">dt</span> <span class="o">=</span> <span class="s">":"</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">value</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">":"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[:</span><span class="mi">2</span><span class="p">])</span>
-      <span class="n">tz</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">:]</span>
-      <span class="n">clean_value</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">dt</span><span class="si">}{</span><span class="n">tz</span><span class="si">}</span><span class="s">"</span>
-
-      <span class="k">return</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">clean_value</span><span class="p">,</span> <span class="n">TIME_FORMAT_IN</span><span class="p">)</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
 
 <h3 id="convert-unix-timestamp-to-date-and-time">Convert unix timestamp to date and time</h3>
 
