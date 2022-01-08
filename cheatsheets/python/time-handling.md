@@ -20,7 +20,7 @@
 
 ### Today
 
-Get a `date` object using `date.today` method.
+Get a `date` object for today's date - using `date.today` method.
 
 ```python
 datetime.date.today()
@@ -29,7 +29,7 @@ datetime.date.today()
 
 ### Now
 
-Get a `datetime` object using `datetime.today` or `datetime.now` methods:
+Get a `datetime` object for the current date and time - using `datetime.today` or `datetime.now` methods:
 
 ```python
 datetime.datetime.today()
@@ -81,7 +81,7 @@ str(datetime.datetime(2021, 1, 2))
 '2021-01-02 00:00:00'
 ```
 
-Create a datetime object.
+Create a datetime object:
 
 ```python
 x = datetime.datetime(2021, 1, 2, 3, 40)
@@ -331,13 +331,23 @@ Some useful combinations:
 
 Move between date formats. For converting to and from strings, see section above.
 
-### Convert from date from datetime
+### Convert from date to datetime
+
+Get a date object from datetime object.
 
 ```python
-dt = datetime.datetime.now()
-d = dt.date()
-# datetime.date(2020, 5, 3)
+dt.date()
 ```
+
+e.g. Current date.
+
+```python
+dt = datetime.datetime(2022, 1, 8, 12, 34, 14, 214702)
+d = dt.date()
+# datetime.date(2022, 1, 8)
+```
+
+Parse a string of a date (just omit the time) then convert from datetime to date.
 
 ```python
 dt = datetime.datetime.strptime('12/05/19', '%m/%d/%y')
