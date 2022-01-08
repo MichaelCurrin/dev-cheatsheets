@@ -214,6 +214,20 @@
 <span class="c1"># 1635876799.357939
 </span></code></pre></div></div>
 
+<h3 id="time">Time</h3>
+
+<p>Unix timestamp:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+<span class="c1"># 1641638542.2153149
+</span></code></pre></div></div>
+
+<p>C time:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">time</span><span class="p">.</span><span class="n">ctime</span><span class="p">()</span>
+<span class="s">'Sat Jan  8 12:42:28 2022'</span>
+</code></pre></div></div>
+
 <h2 id="create">Create</h2>
 
 <h3 id="date">Date</h3>
@@ -247,6 +261,15 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2021</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="c1"># datetime.datetime(2021, 1, 2, 0, 0)
 </span></code></pre></div></div>
+
+<p>From the docs:</p>
+
+<blockquote>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>datetime(year, month, day[, hour[, minute[, second[, microsecond[,tzinfo]]]]])
+</code></pre></div>  </div>
+
+  <p>The year, month and day arguments are required. tzinfo may be None, or an instance of a tzinfo subclass. The remaining arguments may be ints.</p>
+</blockquote>
 
 <h2 id="attributes">Attributes</h2>
 
@@ -296,10 +319,17 @@
 <span class="c1"># '2021-11-02T20:19:57.928643'
 </span></code></pre></div></div>
 
-<p>You can also stringify the object:</p>
+<p>You can also stringify the object for the same result:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="c1"># '2021-11-02T20:19:57.928643'
+</span></code></pre></div></div>
+
+<p>Use C time:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">dt</span><span class="p">.</span><span class="n">ctime</span><span class="p">()</span>
+<span class="c1"># 'Sat Jan  8 12:41:22 2022'
 </span></code></pre></div></div>
 
 <h3 id="format-datetime-as-custom-string">Format datetime as custom string</h3>
@@ -486,6 +516,49 @@
 </span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="s">'2019-12-05'</span>
 </code></pre></div></div>
+
+<h3 id="convert-from-date-to-datetime-1">Convert from date to datetime</h3>
+
+<p>There aren’t anything methods on a <code class="language-plaintext highlighter-rouge">date</code> object we can use.</p>
+
+<p>So you need to make a new <code class="language-plaintext highlighter-rouge">datetime</code> object from the <code class="language-plaintext highlighter-rouge">date</code> object’s properties.</p>
+
+<p>Omit the time:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">d</span><span class="p">.</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="n">d</span><span class="p">.</span><span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="n">d</span><span class="p">.</span><span class="n">day</span><span class="p">)</span>
+<span class="c1"># datetime.datetime(2022, 1, 8, 0, 0)
+</span></code></pre></div></div>
+
+<p>Then set it after if you need to:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">34</span><span class="p">)</span>
+<span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">34</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Specify a time at creation:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">day</span><span class="p">,</span> 
+                  <span class="n">hour</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">34</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">56</span><span class="p">)</span>
+<span class="c1"># datetime.datetime(2022, 1, 8, 12, 34, 56)
+</span>
+<span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">day</span><span class="p">,</span> 
+                  <span class="n">hour</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">34</span><span class="p">)</span>
+<span class="c1"># datetime.datetime(2022, 1, 8, 12, 34)
+</span></code></pre></div></div>
+
+<h3 id="convert-from-datetime-to-time">Convert from datetime to time</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
+<span class="c1"># datetime.datetime(2022, 1, 8, 13, 8, 1, 493063)
+</span><span class="n">dt</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+<span class="c1"># datetime.time(13, 8, 1, 493063)
+</span></code></pre></div></div>
 
 <h3 id="convert-from-unix-timestamp-to-datetime">Convert from unix timestamp to datetime</h3>
 

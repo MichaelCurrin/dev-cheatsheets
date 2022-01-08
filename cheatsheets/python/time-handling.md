@@ -58,6 +58,22 @@ datetime.datetime.today().timestamp()
 # 1635876799.357939
 ```
 
+### Time
+
+Unix timestamp:
+
+```python
+time.time()
+# 1641638542.2153149
+```
+
+C time:
+
+```python
+time.ctime()
+'Sat Jan  8 12:42:28 2022'
+```
+
 
 ## Create
 
@@ -96,6 +112,14 @@ If you want to be more explicit:
 datetime.datetime(year=2021, month=1, day=2)
 # datetime.datetime(2021, 1, 2, 0, 0)
 ```
+
+From the docs:
+
+> ```
+> datetime(year, month, day[, hour[, minute[, second[, microsecond[,tzinfo]]]]])
+> ```
+>
+> The year, month and day arguments are required. tzinfo may be None, or an instance of a tzinfo subclass. The remaining arguments may be ints.
 
 
 ## Attributes
@@ -151,11 +175,19 @@ x.isoformat()
 # '2021-11-02T20:19:57.928643'
 ```
 
-You can also stringify the object:
+You can also stringify the object for the same result:
 
 ```python
 str(x)
 # '2021-11-02T20:19:57.928643'
+```
+
+Use C time:
+
+```python
+dt = datetime.datetime.now()
+dt.ctime()
+# 'Sat Jan  8 12:41:22 2022'
 ```
 
 ### Format datetime as custom string
@@ -355,6 +387,54 @@ d = dt.date()
 # datetime.date(2019, 12, 5)
 str(d)
 '2019-12-05'
+```
+
+### Convert from date to datetime
+
+There aren't anything methods on a `date` object we can use.
+
+So you need to make a new `datetime` object from the `date` object's properties.
+
+Omit the time:
+
+```python
+d = datetime.date(2022, 1, 8)
+dt = datetime.datetime(year=d.year, month=d.month, day=d.day)
+# datetime.datetime(2022, 1, 8, 0, 0)
+```
+
+Then set it after if you need to:
+
+```python
+dt.replace(hour=12, minute=34)
+datetime.datetime(2022, 1, 8, 12, 34)
+```
+
+Specify a time at creation:
+
+```python
+datetime.datetime(year=y.year, month=y.month, day=y.day, 
+                  hour=12, minute=34, second=56)
+# datetime.datetime(2022, 1, 8, 12, 34, 56)
+
+datetime.datetime(year=y.year, month=y.month, day=y.day, 
+                  hour=12, minute=34)
+# datetime.datetime(2022, 1, 8, 12, 34)
+```
+
+### Convert from datetime to time
+
+```python
+dt.time()
+```
+
+e.g.
+
+```python
+dt = datetime.datetime.now()
+# datetime.datetime(2022, 1, 8, 13, 8, 1, 493063)
+dt.time()
+# datetime.time(13, 8, 1, 493063)
 ```
 
 ### Convert from unix timestamp to datetime
