@@ -44,7 +44,17 @@ If they are safe to be visible in GitHub, add them like this, based on the docs.
       environment = { FOO = "bar", NODE_VERSION = "14.15.3" }
     ```
 
-I could not get this to work though. It might need an environment permission choice under Sensitive variable policy - see [docs](https://docs.netlify.com/configure-builds/environment-variables/).
+Here setting in Production and Deploy Preview, since it is _not_ enough to set it in only Production when I tested on a deploy preview.
+
+```toml
+[context.production]
+  environment = { RUBY_VERSION = "2.7.0" }
+
+[context.deploy-preview]
+  environment = { RUBY_VERSION = "2.7.0" }
+```
+
+For sensitive environment variables, you might have to make an environment permission choice under _Sensitive variable policy_ - see [docs](https://docs.netlify.com/configure-builds/environment-variables/).
     
     
 ## Functions
