@@ -2,11 +2,11 @@
 
 ## Related
 
-- [read][] shell command cheatsheet
+- [read command][] shell cheatsheet
 - [Input][] Python cheatsheet
 
 [read]: {% link cheatsheets/shell/commands/read-write/read.md %}
-[Input]: {% cheatsheets/python/input.md %}
+[Input]: {% link cheatsheets/python/input.md %}
 
 
 ## Get value
@@ -21,6 +21,8 @@ echo $USER_VALUE
 
 
 ## Get password
+
+This hides the input from the terminal.
 
 Based on [SO](https://stackoverflow.com/questions/3980668/how-to-get-a-password-from-a-shell-script-without-echoing) discussion.
 
