@@ -19,11 +19,12 @@ echo
 echo $USER_VALUE
 ```
 
+
 ## Get password
 
+Based on [SO](https://stackoverflow.com/questions/3980668/how-to-get-a-password-from-a-shell-script-without-echoing) discussion.
 
 Some shells can do this in one line:
-
 
 ```sh
 read -s -p "Password:" USER_PASSWORD
@@ -41,4 +42,3 @@ echo $USER_PASSWORD
 ```
 
 Some shells won't do `echo -n` so then use `printf`.
-
