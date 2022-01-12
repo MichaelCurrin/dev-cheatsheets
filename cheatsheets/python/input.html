@@ -245,14 +245,38 @@ Squared: 16
 
 <p>Get the user to enter a password in the console.</p>
 
-<p>The character will be masked as asterisks.</p>
+<p>The characters will be masked as invisible.</p>
 
-<h3 id="help-1">Help</h3>
+<h3 id="usage">Usage</h3>
 
-<p>Note the prompt is included. And the characters entered will get masked as invisible text.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">getpass</span><span class="p">.</span><span class="n">getpass</span><span class="p">()</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">getpass</span><span class="p">.</span><span class="n">getpass</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="s">'Password: '</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span> 
+<span class="n">getpass</span><span class="p">.</span><span class="n">getpass</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="n">CUSTOM_PROMPT</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="n">OUTPUT_STREAM</span><span class="p">)</span> 
 </code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">getpass</span>
+
+<span class="n">pword</span> <span class="o">=</span> <span class="n">getpass</span><span class="p">.</span><span class="n">getpass</span><span class="p">()</span> 
+<span class="c1"># Password: 
+</span>
+<span class="n">pword</span>
+<span class="c1"># 'my password'
+</span></code></pre></div></div>
+
+<p>In Unix, this uses this function:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="o">&gt;&gt;</span> <span class="nb">help</span><span class="o">(</span>getpass.getpass<span class="o">)</span>
+<span class="go">unix_getpass(prompt='Password: ', stream=None)
+    Prompt for a password, with echo turned off.
+    
+    Args:
+      prompt: Written on stream to ask for the input.  Default: 'Password: '
+      stream: A writable file object to display the prompt.  Defaults to
+              the tty.  If no tty is available defaults to sys.stderr.
+</span><span class="c">    ...
+</span></code></pre></div></div>
 
 <h3 id="examples-1">Examples</h3>
 
