@@ -212,7 +212,16 @@
   </li>
 </ul>
 
-<p>I could not get this to work though. It might need an environment permission choice under Sensitive variable policy - see <a href="https://docs.netlify.com/configure-builds/environment-variables/">docs</a>.</p>
+<p>Here setting in Production and Deploy Preview, since it is <em>not</em> enough to set it in only Production when I tested on a deploy preview.</p>
+
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[context.production]</span>
+  <span class="nn">environment</span> <span class="o">=</span> <span class="p">{</span> <span class="py">RUBY_VERSION</span> <span class="p">=</span> <span class="s">"2.7.0"</span> <span class="p">}</span>
+
+<span class="nn">[context.deploy-preview]</span>
+  <span class="nn">environment</span> <span class="o">=</span> <span class="p">{</span> <span class="py">RUBY_VERSION</span> <span class="p">=</span> <span class="s">"2.7.0"</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>For sensitive environment variables, you might have to make an environment permission choice under <em>Sensitive variable policy</em> - see <a href="https://docs.netlify.com/configure-builds/environment-variables/">docs</a>.</p>
 
 <h2 id="functions">Functions</h2>
 
