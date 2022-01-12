@@ -102,14 +102,40 @@ Now there is just `input`. This is safe and will _not_ run an evaluation as Pyth
 
 Get the user to enter a password in the console.
 
-The character will be masked as asterisks.
+The characters will be masked as invisible.
 
-### Help
-
-Note the prompt is included. And the characters entered will get masked as invisible text.
+### Usage
 
 ```python
-getpass.getpass(prompt='Password: ', stream=None) 
+getpass.getpass()
+
+getpass.getpass(prompt=CUSTOM_PROMPT, stream=OUTPUT_STREAM) 
+```
+
+e.g.
+
+```python
+import getpass
+
+pword = getpass.getpass() 
+# Password: 
+
+pword
+# 'my password'
+```
+
+In Unix, this uses this function:
+
+```console
+>>> help(getpass.getpass)
+unix_getpass(prompt='Password: ', stream=None)
+    Prompt for a password, with echo turned off.
+    
+    Args:
+      prompt: Written on stream to ask for the input.  Default: 'Password: '
+      stream: A writable file object to display the prompt.  Defaults to
+              the tty.  If no tty is available defaults to sys.stderr.
+    ...
 ```
 
 ### Examples
