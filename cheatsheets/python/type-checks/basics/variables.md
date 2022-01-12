@@ -1,18 +1,52 @@
 # Variables with types
 
-You can specify a type on a variable, but this is optional. Also you can get the type checking benefit without adding it yourself, if the type can be inferred.
+
+## Explicit
+
+You can add a explicit type for a variable with a value.
 
 ```python
-# With type. This doesn't add much.
 x: int = 1
-# Without type specified. This will be inferred as int.
-y = 2
+```
 
-# Initialize with type but no value. This will be the null value e.g. `0`.
-z: int
+But this gives no benefit. See next section.
 
-# Example of initializing a null value.
+
+## Implicit
+
+Here Mypy will infer as an `int`.
+
+```python
+x = 2
+```
+
+You can assign as another value of the same type.
+
+```python
+x = 123
+x = "abc"
+# error: Incompatible types in assignment (expression has type "str", variable has type "int")
+```
+
+
+## Initialize with null value
+
+Here `x` starts as `0`. We can assign it to other `int` values but other types like `None` or `str`.
+
+```python
+x: int
+
+x = 123
+x = 'abc'
+# Incompatible types in assignment (expression has type "str", variable has type "int")
+```
+
+
+Example of initializing a null value:
+
+```python
 child: bool
+
 if age < 18:
     child = True
 else:
