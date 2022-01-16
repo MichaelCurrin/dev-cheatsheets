@@ -5,6 +5,24 @@
 
 ## Endpoints
 
+### Trees
+
+List paths in a repo. Blobs as files and trees as directories.
+
+```
+api.github.com/repos/OWNER/REPO/git/trees/REFERENCE?recursive=1
+```
+
+e.g. This gets over 1000 paths in [Dev Cheatsheets](https://github.com/MichaelCurrin/dev-cheatsheets) without paging needed.
+
+[api.github.com/repos/MichaelCurrin/dev-cheatsheets/git/trees/master?recursive=1](https://api.github.com/repos/MichaelCurrin/dev-cheatsheets/git/trees/master?recursive=1)
+
+If you omit recursive, you get the top, which is just 17 paths in this case.
+
+I have a [Gist][] on how to do something similar with GQL, but the REST solution seems better.
+
+[Gist]: https://gist.github.com/MichaelCurrin/6777b91e6374cdb5662b64b8249070ea
+
 ### Single repo 
 
 Get a single repo. There will be more URLs in the response to you navigate or automate request.
@@ -149,8 +167,18 @@ Docs:
 - [Download a repository archive (tar)](https://docs.github.com/en/rest/reference/repos#download-a-repository-archive-tar)
 
 ```
-get /repos/{owner}/{repo}/tarball/{ref}
+https://api.github.com/repos/OWNER/REPO/tarball/REFERENCE
 ```
+
+e.g.
+
+[api.github.com/repos/MichaelCurrin/dev-cheatsheets/tarball/master](https://api.github.com/repos/MichaelCurrin/dev-cheatsheets/tarball/696ed154d5d59c4d33ac82fcf6f0326bc4fbaafc)
+
+
+Without the API, from zip download button:
+
+- [github.com/MichaelCurrin/dev-cheatsheets/archive/master.zip](https://github.com/MichaelCurrin/dev-cheatsheets/archive/master.zip)
+
 
 
 ## Fields

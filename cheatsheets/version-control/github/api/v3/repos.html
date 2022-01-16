@@ -190,6 +190,21 @@
             
 <h2 id="endpoints">Endpoints</h2>
 
+<h3 id="trees">Trees</h3>
+
+<p>List paths in a repo. Blobs as files and trees as directories.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>api.github.com/repos/OWNER/REPO/git/trees/REFERENCE?recursive=1
+</code></pre></div></div>
+
+<p>e.g. This gets over 1000 paths in <a href="https://github.com/MichaelCurrin/dev-cheatsheets">Dev Cheatsheets</a> without paging needed.</p>
+
+<p><a href="https://api.github.com/repos/MichaelCurrin/dev-cheatsheets/git/trees/master?recursive=1">api.github.com/repos/MichaelCurrin/dev-cheatsheets/git/trees/master?recursive=1</a></p>
+
+<p>If you omit recursive, you get the top, which is just 17 paths in this case.</p>
+
+<p>I have a <a href="https://gist.github.com/MichaelCurrin/6777b91e6374cdb5662b64b8249070ea">Gist</a> on how to do something similar with GQL, but the REST solution seems better.</p>
+
 <h3 id="single-repo">Single repo</h3>
 
 <p>Get a single repo. There will be more URLs in the response to you navigate or automate request.</p>
@@ -335,8 +350,18 @@
   <li><a href="https://docs.github.com/en/rest/reference/repos#download-a-repository-archive-tar">Download a repository archive (tar)</a></li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>get /repos/{owner}/{repo}/tarball/{ref}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://api.github.com/repos/OWNER/REPO/tarball/REFERENCE
 </code></pre></div></div>
+
+<p>e.g.</p>
+
+<p><a href="https://api.github.com/repos/MichaelCurrin/dev-cheatsheets/tarball/696ed154d5d59c4d33ac82fcf6f0326bc4fbaafc">api.github.com/repos/MichaelCurrin/dev-cheatsheets/tarball/master</a></p>
+
+<p>Without the API, from zip download button:</p>
+
+<ul>
+  <li><a href="https://github.com/MichaelCurrin/dev-cheatsheets/archive/master.zip">github.com/MichaelCurrin/dev-cheatsheets/archive/master.zip</a></li>
+</ul>
 
 <h2 id="fields">Fields</h2>
 
