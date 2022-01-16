@@ -25,3 +25,10 @@ Unix shell guide.
 
 
 See also [shellcheck](https://github.com/koalaman/shellcheck/) - as shell script static analysis tool.
+
+
+## Related
+
+- [Git][] cheatsheet section
+
+[Git]: {% link cheatsheets/version-control/git/index.md %}
