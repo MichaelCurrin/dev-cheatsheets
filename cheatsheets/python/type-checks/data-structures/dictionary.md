@@ -27,7 +27,9 @@ dict[KEY_TYPE, VALUE_TYPE]
 
 ### Type comment
 
-From the Mypy [Examples](http://mypy-lang.org/examples.html) page:
+From the Mypy [Examples](http://mypy-lang.org/examples.html) page. 
+
+_I've only see this comment approach used for a dictionary, I don't know why it is used here and not so much for others, but it seems like the preferred style._
 
 ```python
 from typing import Dict
@@ -35,7 +37,7 @@ from typing import Dict
 d = {}  # type: Dict[str, int]
 ```
 
-Or, in newer Python:
+Or, in newer Python without the import:
 
 ```python
 d = {}  # type: dict[str, int]
@@ -51,13 +53,20 @@ d = {}  # type: MyType
 
 ### Type annotation
 
-This also works:
+Based on [Check dict items](https://mypy.readthedocs.io/en/stable/error_code_list.html#check-dict-items-dict-item).
+
+You can add the type like for other data types.
 
 ```python
 d: dict[str, int] = {}
 ```
 
-Based on [Check dict items](https://mypy.readthedocs.io/en/stable/error_code_list.html#check-dict-items-dict-item).
+Or
+
+```python
+d: MyType = {}
+```
+
 
 
 ## Using TypedDict
