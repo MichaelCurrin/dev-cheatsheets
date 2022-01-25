@@ -175,19 +175,21 @@
 
     <div class="post-content">
         
-            <p>A promise.</p>
+            <h2 id="create-promise">Create promise</h2>
+
+<p>A promise.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Promise</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>An immediately-resoving promise:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">My value</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>An immediately-failing promise:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">My error message</span><span class="dl">'</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>A promise that resolves after a delay, to match waiting on a network request. We pass a function</p>

@@ -35,20 +35,37 @@ const promise = doSomething();
 const promise2 = promise.then(successCallback, failureCallback);
 
 // Or
-const promise2 = doSomething().then(successCallback, failureCallback);
+const promise2 = doSomething()
+  .then(successCallback, failureCallback);
+```
+
+A more concrete example. Functions could of course be anonymouse and inline.
+
+```javascript
+function resolved(result) {
+  console.log('Resolved');
+}
+
+function rejected(result) {
+  console.error(result);
+}
+
+Promise.reject(new Error('fail'))
+  .then(resolved, rejected);
 ```
 
 Often you'll use a call to package which handles a promise so you just to `.then()` to chain promises. 
 
-Small example, using fat-arrow functions for readability.
+Small example, using arrow functions for readability.
 
 ```javascript
 foo('bar')
-  .then((resp) => resp.json())
+  .then(resp => resp.json())
   .then(data => console.log(data))
 ```
 
 Longer chain, using `function` syntax and `.catch` at the end.
+
 ```javascript
 doSomething()
   .then(function(result) {
@@ -67,22 +84,22 @@ doSomething()
 ## Catch
 
 ```javascript
-Promise.reject()
+Promise.reject(new Error("My error message")
   .catch(failureCallback)
 ```
 
 Or you can define the function in place.
 
 ```javascript
-Promise.reject()
+Promise.reject(new Error("My error message"))
   .catch(e => console.error("Critical failure: " + e.message))
 ```
-
 
 This is similar to synchronous code approach:
 
 ```javascript
 try {
+  // ...
 } catch(error) {
   failureCallback(error);
 }
@@ -98,13 +115,14 @@ in the iterable argument have resolved or when the iterable argument contains no
 rejects with the reason of the first promise that rejects.
 
 ```javascript
-var promise1 = Promise.resolve(3);
-var promise2 = 42;
-var promise3 = new Promise(function(resolve, reject) {
+const promise1 = Promise.resolve(3);
+const promise2 = 42;
+const promise3 = new Promise(function(resolve, reject) {
     setTimeout(resolve, 100, 'foo');
 });
 
-Promise.all([ promise1, promise2, promise3 ]).then(function(values) {
+Promise.all([ promise1, promise2, promise3 ])
+  .then(function(values) {
     console.log(values);
 });
 // expected output: Array [3, 42, "foo"]
@@ -113,12 +131,12 @@ Promise.all([ promise1, promise2, promise3 ]).then(function(values) {
 Take two arrays such as lists retrieved from two endpoints, then combine them into single array.
 
 ```javascript
-var a = Promise.resolve([ 10, 20, 30 ]);
-var b = Promise.resolve([ 5, 15, 40 ]);
+const a = Promise.resolve([ 10, 20, 30 ]);
+const b = Promise.resolve([ 5, 15, 40 ]);
 
 Promise.all([ a, b ])
   .then(function(values) {
-    var flat = [].concat.apply([], values);
+    const flat = [].concat.apply([], values);
     flat.sort((a, b) => a - b);
     console.log(flat);
 });

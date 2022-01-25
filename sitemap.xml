@@ -997,6 +997,9 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/data-structures/sort.html</loc>
 </url>
 <url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/database/sqlalchemy.html</loc>
+</url>
+<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/database/sqlite.html</loc>
 </url>
 <url>
@@ -2498,9 +2501,6 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/database/peewee.html</loc>
-</url>
-<url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/database/sqlalchemy.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/livereload.html</loc>
