@@ -20,8 +20,8 @@
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
-    <meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+    <meta name="description" content="Builtin Python package for interacting with a SQLite database" />
+    <meta property="og:description" content="Builtin Python package for interacting with a SQLite database" />
 <meta name="author" content="Michael Currin" />
 
 
@@ -33,7 +33,7 @@
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
+    "description": "Builtin Python package for interacting with a SQLite database",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/database/sqlite.html",
     "headline":    "SQLite",
     "@type":       "WebSite",
@@ -102,6 +102,11 @@
             <span>SQLite</span>
         </h1>
 
+        
+            <blockquote>
+                <p>Builtin Python package for interacting with a SQLite database</p>
+
+            </blockquote>
         
     </header>
 
@@ -175,16 +180,20 @@
 
     <div class="post-content">
         
-            <h2 id="set-up-cursor">Set up cursor</h2>
+            <h2 id="usage">Usage</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sqlite3</span>
+<h3 id="import">Import</h3>
 
+<pre><code class="language-pyhton">import sqlite3
+</code></pre>
 
-<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'trends.db'</span><span class="p">)</span>
+<h3 id="set-up-cursor">Set up cursor</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'trends.db'</span><span class="p">)</span>
 <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="n">cursor</span><span class="p">()</span>
 </code></pre></div></div>
 
-<h2 id="create-table">Create table</h2>
+<h3 id="create-table">Create table</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">drop_query</span> <span class="o">=</span> <span class="s">'DROP TABLE IF EXISTS foo;'</span>
 <span class="n">cur</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">drop_query</span><span class="p">)</span>
@@ -200,7 +209,7 @@
 <span class="n">cur</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">create_query</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="insert">Insert</h2>
+<h3 id="insert">Insert</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">insert_sql</span> <span class="o">=</span> <span class="s">"""
     INSERT INTO foo (bar, baz, updated_at)
@@ -209,15 +218,15 @@
 <span class="n">cur</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">insert_sql</span><span class="p">,</span> <span class="s">"Fizz"</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="select">Select</h2>
+<h3 id="select">Select</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">select_sql</span> <span class="o">=</span> <span class="s">"""
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">select_sql</span> <span class="o">=</span> <span class="s">"""
     SELECT *
     FROM foo;
 """</span>
 
 <span class="n">cur</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">select_sql</span><span class="p">)</span>
+
 <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cur</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
 </code></pre></div></div>
