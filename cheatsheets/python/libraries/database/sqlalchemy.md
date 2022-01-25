@@ -1,4 +1,7 @@
-# SQLAlchemy
+---
+title: SQLAlchemy
+description: | SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL.
+---
 
 - [Homepage](https://www.sqlalchemy.org/)
 - [Docs](https://docs.sqlalchemy.org/en/20/) for V2
