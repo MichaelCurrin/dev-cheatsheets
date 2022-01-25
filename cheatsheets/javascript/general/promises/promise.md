@@ -1,5 +1,7 @@
 # Promise
 
+## Create promise
+
 A promise.
 
 ```javascript
@@ -9,13 +11,13 @@ new Promise()
 An immediately-resoving promise:
 
 ```javascript
-Promise.resolve('abc')
+Promise.resolve('My value')
 ```
 
 An immediately-failing promise:
 
 ```javascript
-Promise.reject('abc')
+Promise.reject(new Error('My error message'))
 ```
 
 A promise that resolves after a delay, to match waiting on a network request. We pass a function
@@ -39,6 +41,7 @@ function resolveAfter2Seconds() {
   });
 }
 ```
+
 
 ## Promise.all
 
