@@ -1,17 +1,27 @@
-# SQLite
+---
+title: SQLite
+description: Builtin Python package for interacting with a SQLite database
+---
 
 
-## Set up cursor
+## Usage
+
+### Import
+
+```pyhton
+import sqlite3
+```
+
+
+### Set up cursor
 
 ```python
-import sqlite3
-
-
 conn = sqlite3.connect('trends.db')
 cur = conn.cursor()
 ```
 
-## Create table
+
+### Create table
 
 ```python
 drop_query = 'DROP TABLE IF EXISTS foo;'
@@ -29,7 +39,7 @@ cur.execute(create_query)
 ```
 
 
-## Insert
+### Insert
 
 ```python
 insert_sql = """
@@ -40,16 +50,16 @@ cur.execute(insert_sql, "Fizz", 123)
 ```
 
 
-## Select
+### Select
 
 ```python
-
 select_sql = """
     SELECT *
     FROM foo;
 """
 
 cur.execute(select_sql)
+
 for row in cur:
     print(row)
 ```
