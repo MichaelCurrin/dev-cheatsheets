@@ -1,7 +1,10 @@
 # Peewee
 
-[Homepage](https://docs.peewee-orm.com/en/latest/index.html)
+- [Homepage](https://docs.peewee-orm.com/en/latest/index.html)
 
+A small, expressive ORM, with built-in support for SQLite, MySQL and PostgresQL and special extensions like HStore.
+
+Features:
 
 > Peewee is a simple and small ORM. It has few (but expressive) concepts, making it easy to learn and intuitive to use.
 
