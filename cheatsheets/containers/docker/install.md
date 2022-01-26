@@ -13,21 +13,31 @@ See one of tehse in the Docker docs and choose your OS there:
 Or continue to either the [Docker Desktop](#docker-desktop) or [Docker Engine](#docker-engine) instructions below.
 
 
-## Docker Desktop
+## Install Docker Desktop
 
 **Windows** and **macOS** only. For Linux, see [Docker Engine](#docker-engine) below.
 
-Recommended - install the Docker Desktop app. It also covers Docker CLI, so you don't have to install that separately.
+Recommended - install the Docker Desktop app. This also covers Docker CLI, so you don't have to install that separately.
 
-Installing the app sets up a desktop app which handles updates and shortcut on the taskbar for quick access to a few things. Including switching between Kubernetes namespaces (like prod and dev).
-
-> Docker Desktop includes Docker Engine, Docker CLI client, Docker Compose, Notary, Kubernetes, and Credential Helper.
+Warning - please see the license details as this can be used for personal projects fine but needs a paid license if used in your org.
 
 For info and links to download and install, see:
 
 - [Docker Desktop](https://docs.docker.com/desktop/) docs
 
-### macOS
+> Docker Desktop helps you build, share, and run containers easily on Mac and Windows as you do on Linux. Docker handles the complex setup and allows you to focus on writing the code
+
+### What you get
+
+Installing the app sets up a desktop app which handles updates and shortcut on the taskbar for quick access to a few things. Including switching between Kubernetes namespaces (like prod and dev).
+
+> Docker Desktop includes Docker Engine, Docker CLI client, Docker Compose, Notary, Kubernetes, and Credential Helper.
+
+### Install on your OS
+
+Linux solution is in development still.
+
+#### macOS
 
 Go to this page:
 
@@ -37,17 +47,57 @@ There is a file to download from the browser. Drag the downloaded `Docker.app` t
 
 This install includes both Docker CLI and the Docker Desktop app. The latter docks as an icon at the top of the screen and allows functionality like signing into Docker hub, changing Kubernetes environment.
 
+### Windows
 
-## Docker Engine
+Go to this page:
 
-Windows, macOS and Linux.
+- [Install Docker Desktop on Windows](https://docs.docker.com/desktop/windows/install/)
 
-Documentation:
+## Install Docker Engine
+
+### What you get
+
+This allows you to run Docker CLI and the Docker daemon (which needs to be started to get containers to run and the CLI interfaces with this daemon).
+
+> - A server with a long-running daemon process dockerd.
+> - APIs which specify interfaces that programs can use to talk to and instruct the Docker daemon.
+> - A command line interface (CLI) client docker.
+
+### Documentation
 
 - [Docker Engine](https://docs.docker.com/engine/) docs.
 - [Install Docker Engine](https://docs.docker.com/engine/install/) docs.
 
-### Linux
+### Install on your OS
+
+Windows, macOS and Linux.
+
+I can't see instructions for Windows and macOS though - just the desktop instructions.
+
+### macOS
+
+- [docker](https://formulae.brew.sh/formula/docker) Brew formula
+- [docker-compose](https://formulae.brew.sh/formula/docker-compose#default)
+
+```sh
+$ brew install docker
+$ brew install docker-compose
+```
+
+> Compose is now a Docker plugin. For Docker to find this plugin, symlink it:
+>
+> ```sh
+> $ mkdir -p ~/.docker/cli-plugins
+> $ ln -sfn $(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
+> ```
+
+You might need to install and run `docker-machine` too as per [article](https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3).
+
+```sh
+$ brew install docker-machine
+```
+
+#### Linux
 
 - [Ubuntu install guide](https://docs.docker.com/engine/install/ubuntu/)
 - [Debian install guide](https://docs.docker.com/engine/install/debian/) 
