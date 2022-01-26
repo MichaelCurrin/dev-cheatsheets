@@ -179,17 +179,13 @@
 
 <p>Or continue to either the <a href="#docker-desktop">Docker Desktop</a> or <a href="#docker-engine">Docker Engine</a> instructions below.</p>
 
-<h2 id="docker-desktop">Docker Desktop</h2>
+<h2 id="install-docker-desktop">Install Docker Desktop</h2>
 
 <p><strong>Windows</strong> and <strong>macOS</strong> only. For Linux, see <a href="#docker-engine">Docker Engine</a> below.</p>
 
-<p>Recommended - install the Docker Desktop app. It also covers Docker CLI, so you don’t have to install that separately.</p>
+<p>Recommended - install the Docker Desktop app. This also covers Docker CLI, so you don’t have to install that separately.</p>
 
-<p>Installing the app sets up a desktop app which handles updates and shortcut on the taskbar for quick access to a few things. Including switching between Kubernetes namespaces (like prod and dev).</p>
-
-<blockquote>
-  <p>Docker Desktop includes Docker Engine, Docker CLI client, Docker Compose, Notary, Kubernetes, and Credential Helper.</p>
-</blockquote>
+<p>Warning - please see the license details as this can be used for personal projects fine but needs a paid license if used in your org.</p>
 
 <p>For info and links to download and install, see:</p>
 
@@ -197,7 +193,23 @@
   <li><a href="https://docs.docker.com/desktop/">Docker Desktop</a> docs</li>
 </ul>
 
-<h3 id="macos">macOS</h3>
+<blockquote>
+  <p>Docker Desktop helps you build, share, and run containers easily on Mac and Windows as you do on Linux. Docker handles the complex setup and allows you to focus on writing the code</p>
+</blockquote>
+
+<h3 id="what-you-get">What you get</h3>
+
+<p>Installing the app sets up a desktop app which handles updates and shortcut on the taskbar for quick access to a few things. Including switching between Kubernetes namespaces (like prod and dev).</p>
+
+<blockquote>
+  <p>Docker Desktop includes Docker Engine, Docker CLI client, Docker Compose, Notary, Kubernetes, and Credential Helper.</p>
+</blockquote>
+
+<h3 id="install-on-your-os">Install on your OS</h3>
+
+<p>Linux solution is in development still.</p>
+
+<h4 id="macos">macOS</h4>
 
 <p>Go to this page:</p>
 
@@ -209,18 +221,66 @@
 
 <p>This install includes both Docker CLI and the Docker Desktop app. The latter docks as an icon at the top of the screen and allows functionality like signing into Docker hub, changing Kubernetes environment.</p>
 
-<h2 id="docker-engine">Docker Engine</h2>
+<h3 id="windows">Windows</h3>
 
-<p>Windows, macOS and Linux.</p>
+<p>Go to this page:</p>
 
-<p>Documentation:</p>
+<ul>
+  <li><a href="https://docs.docker.com/desktop/windows/install/">Install Docker Desktop on Windows</a></li>
+</ul>
+
+<h2 id="install-docker-engine">Install Docker Engine</h2>
+
+<h3 id="what-you-get-1">What you get</h3>
+
+<p>This allows you to run Docker CLI and the Docker daemon (which needs to be started to get containers to run and the CLI interfaces with this daemon).</p>
+
+<blockquote>
+  <ul>
+    <li>A server with a long-running daemon process dockerd.</li>
+    <li>APIs which specify interfaces that programs can use to talk to and instruct the Docker daemon.</li>
+    <li>A command line interface (CLI) client docker.</li>
+  </ul>
+</blockquote>
+
+<h3 id="documentation">Documentation</h3>
 
 <ul>
   <li><a href="https://docs.docker.com/engine/">Docker Engine</a> docs.</li>
   <li><a href="https://docs.docker.com/engine/install/">Install Docker Engine</a> docs.</li>
 </ul>
 
-<h3 id="linux">Linux</h3>
+<h3 id="install-on-your-os-1">Install on your OS</h3>
+
+<p>Windows, macOS and Linux.</p>
+
+<p>I can’t see instructions for Windows and macOS though - just the desktop instructions.</p>
+
+<h3 id="macos-1">macOS</h3>
+
+<ul>
+  <li><a href="https://formulae.brew.sh/formula/docker">docker</a> Brew formula</li>
+  <li><a href="https://formulae.brew.sh/formula/docker-compose#default">docker-compose</a></li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>docker
+<span class="nv">$ </span>brew <span class="nb">install </span>docker-compose
+</code></pre></div></div>
+
+<blockquote>
+  <p>Compose is now a Docker plugin. For Docker to find this plugin, symlink it:</p>
+
+  <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> ~/.docker/cli-plugins
+<span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-sfn</span> <span class="si">$(</span>brew <span class="nt">--prefix</span><span class="si">)</span>/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
+</code></pre></div>  </div>
+</blockquote>
+
+<p>You might need to install and run <code class="language-plaintext highlighter-rouge">docker-machine</code> too as per <a href="https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3">article</a>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>docker-machine
+</code></pre></div></div>
+
+<h4 id="linux">Linux</h4>
 
 <ul>
   <li><a href="https://docs.docker.com/engine/install/ubuntu/">Ubuntu install guide</a></li>
