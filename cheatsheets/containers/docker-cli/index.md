@@ -4,9 +4,15 @@ description: Guide to running CLI commands with `docker` - the container managem
 logo: docker
 ---
 
-<!-- TODO: Move this to docker directory. -->
+<!-- TODO: Move this dir to docker directory. -->
 
-## Resources
+### Related
+
+See [Docker Compose CLI][] cheatsheet.
+
+[Docker Compose CLI]: {% link cheatsheets/containers/docker-compose/cli.md %}
+
+### Resources
 
 - Cheatsheets
     - [Docker.com](https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf) homepage.
