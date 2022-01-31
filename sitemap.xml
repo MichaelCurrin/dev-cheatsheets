@@ -538,6 +538,9 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/docker-compose/</loc>
 </url>
 <url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes/</loc>
+</url>
+<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/docker/dockerfile/</loc>
 </url>
 <url>
@@ -740,9 +743,6 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/variable-declaration/keywords.html</loc>
-</url>
-<url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/permissions/level.html</loc>
