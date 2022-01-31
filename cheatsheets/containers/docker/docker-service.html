@@ -20,8 +20,8 @@
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="Handling the Docker background process" />
-    <meta property="og:description" content="Handling the Docker background process" />
+    <meta name="description" content="Handling the Docker daemon background process" />
+    <meta property="og:description" content="Handling the Docker daemon background process" />
 <meta name="author" content="Michael Currin" />
 
 
@@ -33,7 +33,7 @@
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "Handling the Docker background process",
+    "description": "Handling the Docker daemon background process",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/docker/docker-service.html",
     "headline":    "Docker service",
     "@type":       "WebSite",
@@ -104,7 +104,7 @@
 
         
             <blockquote>
-                <p>Handling the Docker background process</p>
+                <p>Handling the Docker daemon background process</p>
 
             </blockquote>
         
@@ -168,31 +168,56 @@
 
     <div class="post-content">
         
-            <h2 id="why-stop-and-start-it">Why stop and start it</h2>
+            <h2 id="resources">Resources</h2>
 
-<p>Docker daemon or “dockerd” must be running before you run <code class="language-plaintext highlighter-rouge">docker</code> commands, otherwise you’ll get an error that the process is not running.</p>
+<ul>
+  <li><a href="https://docs.docker.com/config/daemon/">Configure and troubleshoot the Docker daemon</a> in the docs
+    <ul>
+      <li><a href="https://docs.docker.com/config/daemon/#read-the-logs">Read the logs</a></li>
+    </ul>
+  </li>
+  <li><a href="https://docs.docker.com/engine/install/linux-postinstall/#configure-docker-to-start-on-boot">Post install for Linux</a> - start on boot.</li>
+</ul>
+
+<h2 id="why-stop-and-start-it">Why stop and start it</h2>
+
+<p>Start Docker daemon or “dockerd”. And only then run <code class="language-plaintext highlighter-rouge">docker</code> commands. Otherwise you’ll get an error that the process is not running.</p>
 
 <p>You may decide to not start docker on system start or to stop when it you don’t need it, in order to reduce load on the machine. Stopping it especially useful if Docker takes up a lot of memory (it takes up a few gigs of RAM on my Mac, even with zero containers running), or if you have a few containers that auto-start when Docker starts.</p>
 
-<p>If you use Docker Desktop, then you should start and stop that as a desktop application. You don’t have to worry about the CLI commands here.</p>
+<h2 id="how-to-manage">How to manage</h2>
 
-<h2 id="manage-directly">Manage directly</h2>
+<h3 id="docker-desktop-app">Docker Desktop app</h3>
 
-<p>Start the daemon - note trailing <code class="language-plaintext highlighter-rouge">d</code>.</p>
+<p>If you use Docker Desktop, then you should start and stop that as a desktop application and that will take care of the daemon.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dockerd
-INFO[2021-04-05T21:35:09.363593571+02:00] Starting up                                  
-...
-</code></pre></div></div>
+<p>You don’t have to worry about the commands below.</p>
+
+<h3 id="dockerd-cli">Dockerd CLI</h3>
+
+<p><em>You may need root access with <code class="language-plaintext highlighter-rouge">sudo</code> for this</em>.</p>
+
+<p>Start the daemon.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>dockerd
+<span class="go">INFO[2021-04-05T21:35:09.363593571+02:00] Starting up                                  
+</span><span class="c">...
+</span></code></pre></div></div>
+
 <p>You’ll see the log in the CLI.</p>
 
 <p>If you press <kbd>CTRL</kbd>+<kbd>C</kbd> then you’ll stop it.</p>
 
 <p>Then, in another tab, you can run <code class="language-plaintext highlighter-rouge">docker</code> commands.</p>
 
-<h2 id="use-system-manager">Use system manager</h2>
+<p>Or start in the background and keep using the same tab, if you don’t care about the logs or stopping it easily.</p>
 
-<p>On Linux, you can use Systemctl/Systemd to manage Docker as a background process. Note the service here is <code class="language-plaintext highlighter-rouge">docker</code>, while internally <code class="language-plaintext highlighter-rouge">dockerd</code> will be used.</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dockerd &amp;
+</code></pre></div></div>
+
+<h3 id="use-system-manager">Use system manager</h3>
+
+<p>On Linux, you can use <em>Systemctl</em> / <em>Systemd</em> to manage Docker as a background process. Note the service here is <code class="language-plaintext highlighter-rouge">docker</code>, while internally <code class="language-plaintext highlighter-rouge">dockerd</code> will be used.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>systemctl start docker
 </code></pre></div></div>
