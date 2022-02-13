@@ -3,6 +3,8 @@
 
 ## Instance variable
 
+Use single `@`.
+
 ```ruby
 class Foo
   def initialize(my_foo)
@@ -22,6 +24,8 @@ f.bar
 
 ## Method calls
 
+Call a method within a method using `self`.
+
 ```ruby
 class Foo
   def foo
@@ -39,6 +43,8 @@ f.bar
 
 
 ## Static class variable
+
+Use double `@`.
 
 ```ruby
 class Foo
@@ -123,11 +129,11 @@ If you use `attr_accessor :protein` you can do sets/gets on the field `@protein`
 ```ruby
 api = Foo.new(debug: true)
 
-puts(api.debug)
+puts api.debug
 # true
 
 api.debug = false
-puts(api.debug)
+puts api.debug
 # false
 ```
 

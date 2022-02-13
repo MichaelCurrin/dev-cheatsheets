@@ -261,8 +261,8 @@
 <p>This can be set as a Bash alias.</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">alias </span><span class="nv">urlencode</span><span class="o">=</span><span class="s1">'python3 -c \
-"import sys, urllib.parse
-</span><span class="go">print(urllib.parse.quote_plus(sys.argv[1]))"
+</span><span class="go">"import sys, urllib.parse
+print(urllib.parse.quote_plus(sys.argv[1]))"
 '
 
 </span><span class="gp">$</span><span class="w"> </span>urlencode <span class="s1">'Hello, world!'</span>

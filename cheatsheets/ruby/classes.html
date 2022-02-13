@@ -153,6 +153,8 @@
         
             <h2 id="instance-variable">Instance variable</h2>
 
+<p>Use single <code class="language-plaintext highlighter-rouge">@</code>.</p>
+
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Foo</span>
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">my_foo</span><span class="p">)</span>
     <span class="vi">@my_foo</span> <span class="o">=</span> <span class="n">my_foo</span>
@@ -170,6 +172,8 @@
 
 <h2 id="method-calls">Method calls</h2>
 
+<p>Call a method within a method using <code class="language-plaintext highlighter-rouge">self</code>.</p>
+
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Foo</span>
   <span class="k">def</span> <span class="nf">foo</span>
     <span class="nb">puts</span> <span class="s1">'Hello'</span>
@@ -185,6 +189,8 @@
 </code></pre></div></div>
 
 <h2 id="static-class-variable">Static class variable</h2>
+
+<p>Use double <code class="language-plaintext highlighter-rouge">@</code>.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Foo</span>
   <span class="vc">@@FOO</span> <span class="o">=</span> <span class="s1">'abc'</span>
@@ -264,11 +270,11 @@
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">api</span> <span class="o">=</span> <span class="no">Foo</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">debug: </span><span class="kp">true</span><span class="p">)</span>
 
-<span class="nb">puts</span><span class="p">(</span><span class="n">api</span><span class="p">.</span><span class="nf">debug</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">api</span><span class="p">.</span><span class="nf">debug</span>
 <span class="c1"># true</span>
 
 <span class="n">api</span><span class="p">.</span><span class="nf">debug</span> <span class="o">=</span> <span class="kp">false</span>
-<span class="nb">puts</span><span class="p">(</span><span class="n">api</span><span class="p">.</span><span class="nf">debug</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">api</span><span class="p">.</span><span class="nf">debug</span>
 <span class="c1"># false</span>
 </code></pre></div></div>
 
