@@ -1,3 +1,3 @@
 # Requests
 
-[Docs](https://docs.python-requests.org/en/master/)
+See the [Docs](https://docs.python-requests.org/en/master/)
