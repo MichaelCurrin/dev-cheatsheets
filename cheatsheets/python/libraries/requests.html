@@ -165,12 +165,25 @@
         
             <p>See the <a href="https://docs.python-requests.org/en/master/">Docs</a></p>
 
+<h2 id="basic">Basic</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://httpbin.org/get"</span><span class="p">)</span>
+<span class="n">resp</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
+<span class="c1"># { ... }
+</span></code></pre></div></div>
+
+<h2 id="auth">Auth</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.github.com/user'</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="s">'my-username'</span><span class="p">,</span> <span class="s">'my-password'</span><span class="p">)</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">)</span>
+</code></pre></div></div>
+
 <h2 id="sample">Sample</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.github.com/user'</span>
-<span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="s">'user'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
-
-<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
 <span class="n">resp</span><span class="p">.</span><span class="n">status_code</span>
 <span class="c1"># 200
