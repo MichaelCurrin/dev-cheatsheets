@@ -12,3 +12,8 @@ Some useful commands, boilerplate code from my existing projects or things to us
 - [Python recipes][] in my Code Cookbook.
 
 [Python recipes]: https://michaelcurrin.github.io/code-cookbook/recipes/python/
+
+
+### Other cheatsheets
+
+- [Python Cheatsheet](https://www.pythoncheatsheet.org/) website
