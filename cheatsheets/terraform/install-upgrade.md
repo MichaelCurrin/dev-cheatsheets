@@ -22,12 +22,12 @@ The approaches using a package manager are more convenient to install and upgrad
 1. Unzip it.
 1. Move `terraform` to your executables directory in your `PATH`.
 
-e.g. macOS/Darwin:
+e.g. for macOS/Darwin:
 
 ```sh
 $ cd ~/Downloads
 $ wget https://releases.hashicorp.com/terraform/1.0.5/terraform_1.0.5_darwin_amd64.zip
-$ tar czvf terraform_1.0.5_darwin_amd64.zip
+$ tar xzvf terraform_1.0.5_darwin_amd64.zip
 $ mv terraform /usr/local/bin
 ```
 
