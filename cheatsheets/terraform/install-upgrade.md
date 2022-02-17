@@ -17,8 +17,8 @@ The approaches using a package manager are more convenient to install and upgrad
 
 ### Download binary
 
-1. Go to [Download Terraform](https://www.terraform.io/downloads.html) page on Terraform website.
-1. Download a binary.
+1. Go to [Download Terraform](https://www.terraform.io/downloads.html) page on Terraform website or see the list [releases](https://releases.hashicorp.com/terraform/) if you need an older version.
+1. Download an archived binary.
 1. Unzip it.
 1. Move `terraform` to your executables directory in your `PATH`.
 
