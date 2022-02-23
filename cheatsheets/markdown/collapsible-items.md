@@ -1,10 +1,11 @@
 # Collapsible items
 
-How to create sections which can expand and collapse again. i.e. an accordion.
+In Markdown, how to create _sections_ which can expand and collapse again like an accordion.
 
-Use the `details` and `summary` HTML tags in markdown on GitHub, without any additional CSS.
 
-Format:
+## Format
+
+Here we use the `details` and `summary` HTML5 tags as HTML in Markdown, which works GitHub. No JavaScript or CSS needed.
 
 ```html
 <details>
@@ -16,9 +17,9 @@ BODY CONTENT
 ```
 
 
-## Basic
+## Markdown and HTML
 
-See example below, which uses the bold tag in the title.
+Here we use HTML in the title and Markdown in the body.
 
 **HTML code:**
 
@@ -41,9 +42,11 @@ See example below, which uses the bold tag in the title.
 <!-- Result omitted here as Jekyll can't handle it right. Though I can force it to HTML without Jekjyll and then add the result as HTML. -->
 
 
-## Jekyll
+## Jekyll site
 
-Example using Jekyll templating. In particular, putting a codeblock inside the expandable section.
+Example using [Jekyll][] templating. In particular, putting a codeblock inside the expandable section.
+
+[Jekyll]: {% link cheatsheets/jekyll/index.md %}
 
 **Sample Jekyll/Liquid code**
 
