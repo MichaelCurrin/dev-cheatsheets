@@ -163,11 +163,24 @@
 
     <div class="post-content">
         
-            <h2 id="split-by-whitespace">Split by whitespace</h2>
+            <h2 id="related">Related</h2>
+
+<ul>
+  <li><a href="/dev-cheatsheets/cheatsheets/go/packages/strings.html">Strings packages</a> cheatsheet for packages for basic processing and conversion of strings.</li>
+</ul>
+
+<h2 id="split">Split</h2>
+
+<h3 id="split-by-whitespace">Split by whitespace</h3>
 
 <p>From <a href="https://www.golangprograms.com/how-to-split-a-string-on-white-space.html">tutorial</a>.</p>
 
 <p>Using <code class="language-plaintext highlighter-rouge">strings.Fields</code> will split by spaces.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">strings</span><span class="o">.</span><span class="n">Fields</span><span class="p">(</span><span class="n">myString</span><span class="p">)</span>  
+</code></pre></div></div>
+
+<p>e.g.</p>
 
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
  
@@ -178,7 +191,7 @@
  
 <span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">myString</span> <span class="o">:=</span> <span class="s">"Foo bar bazz"</span>
-  <span class="n">myArray</span> <span class="o">:=</span> <span class="n">strings</span><span class="o">.</span><span class="n">Fields</span><span class="p">(</span><span class="n">myArray</span><span class="p">)</span>  
+  <span class="n">myArray</span> <span class="o">:=</span> <span class="n">strings</span><span class="o">.</span><span class="n">Fields</span><span class="p">(</span><span class="n">myString</span><span class="p">)</span>  
   
   <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">myArray</span><span class="p">)</span>
   
@@ -193,7 +206,7 @@
 
 <p>If you just print <code class="language-plaintext highlighter-rouge">myArray</code>, it appears to only have on element but that’s just a representation issue because of lack of commas.</p>
 
-<h2 id="split-by-character">Split by character</h2>
+<h3 id="split-by-character">Split by character</h3>
 
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">command</span> <span class="o">:=</span> <span class="s">`ffprobe : -i "/media/Name of File.mp3" : -show_entries format=duration : -v quiet : -of csv=p=0`</span>
 <span class="n">parts</span> <span class="o">:=</span> <span class="n">strings</span><span class="o">.</span><span class="n">Split</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="s">":"</span><span class="p">)</span>
