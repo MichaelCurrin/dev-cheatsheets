@@ -212,13 +212,39 @@
 <span class="n">strings</span><span class="o">.</span><span class="n">ToTitle</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="split">Split</h2>
+<h2 id="manipulation">Manipulation</h2>
 
-<h3 id="split-by-whitespace">Split by whitespace</h3>
+<h3 id="split">Split</h3>
+
+<h4 id="split-by-string">Split by string</h4>
+
+<p>e.g.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">strings</span><span class="o">.</span><span class="n">Split</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s">" "</span><span class="p">)</span>
+<span class="n">strings</span><span class="o">.</span><span class="n">Split</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s">","</span><span class="p">)</span>
+<span class="n">strings</span><span class="o">.</span><span class="n">Split</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s">"the"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Recommended - use quoting of output for readability.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+	<span class="s">"fmt"</span>
+	<span class="s">"strings"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">s</span> <span class="o">:=</span> <span class="s">"my string"</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%q</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">strings</span><span class="o">.</span><span class="n">Split</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s">" "</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="split-by-whitespace">Split by whitespace</h4>
 
 <p>From <a href="https://www.golangprograms.com/how-to-split-a-string-on-white-space.html">tutorial</a>.</p>
 
-<p>Using <code class="language-plaintext highlighter-rouge">strings.Fields</code> will split by spaces.</p>
+<p>Using <code class="language-plaintext highlighter-rouge">strings.Fields</code> will split by whitespace.</p>
 
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">strings</span><span class="o">.</span><span class="n">Fields</span><span class="p">(</span><span class="n">myString</span><span class="p">)</span>  
 </code></pre></div></div>
@@ -249,10 +275,22 @@
 
 <p>If you just print <code class="language-plaintext highlighter-rouge">myArray</code>, it appears to only have on element but that’s just a representation issue because of lack of commas.</p>
 
-<h3 id="split-by-character">Split by character</h3>
+<h3 id="join">Join</h3>
 
-<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">command</span> <span class="o">:=</span> <span class="s">`ffprobe : -i "/media/Name of File.mp3" : -show_entries format=duration : -v quiet : -of csv=p=0`</span>
-<span class="n">parts</span> <span class="o">:=</span> <span class="n">strings</span><span class="o">.</span><span class="n">Split</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="s">":"</span><span class="p">)</span>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">strings</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="n">myValues</span><span class="p">,</span> <span class="s">" - "</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="replace">Replace</h3>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rep</span> <span class="o">:=</span> <span class="n">strings</span><span class="o">.</span><span class="n">NewReplacer</span><span class="p">(</span><span class="s">"."</span><span class="p">,</span> <span class="s">"|"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Or supply multiple pairs.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rep</span> <span class="o">:=</span> <span class="n">strings</span><span class="o">.</span><span class="n">NewReplacer</span><span class="p">(</span><span class="s">"."</span><span class="p">,</span> <span class="s">"|"</span><span class="p">,</span> <span class="s">","</span><span class="p">,</span> <span class="s">"|"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rep</span><span class="o">.</span><span class="n">Replace</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="search">Search</h2>
