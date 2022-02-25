@@ -1,10 +1,16 @@
 # Strings packages
 
+## Related
+
+- [Strings][] cheatsheet.
+
+[Strings]: {% link cheatsheets/go/code/strings.md %}
+
+
 ## strings
 
 String processing and manipulation.
 
-- Basic - length, comparions
 - Searching
 - Manipulation - replacment, splitting, joining
 - Mapping - string content transformation
