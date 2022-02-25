@@ -57,13 +57,41 @@ strings.ToTitle(s)
 ```
 
 
-## Split
+## Manipulation
 
-### Split by whitespace
+### Split
+
+#### Split by string
+
+e.g.
+
+```go
+strings.Split(s, " ")
+strings.Split(s, ",")
+strings.Split(s, "the")
+```
+
+Recommended - use quoting of output for readability.
+
+```go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	s := "my string"
+	fmt.Printf("%q\n", strings.Split(s, " "))
+}
+```
+
+#### Split by whitespace
 
 From [tutorial](https://www.golangprograms.com/how-to-split-a-string-on-white-space.html).
 
-Using `strings.Fields` will split by spaces.
+Using `strings.Fields` will split by whitespace.
 
 ```go
 strings.Fields(myString)  
@@ -96,13 +124,29 @@ func main() {
 
 If you just print `myArray`, it appears to only have on element but that's just a representation issue because of lack of commas.
 
-
-### Split by character
+### Join
 
 ```go
-command := `ffprobe : -i "/media/Name of File.mp3" : -show_entries format=duration : -v quiet : -of csv=p=0`
-parts := strings.Split(command, ":")
+strings.Join(myValues, " - ")
 ```
+
+### Replace
+
+```go
+rep := strings.NewReplacer(".", "|")
+```
+
+Or supply multiple pairs.
+
+
+```go
+rep := strings.NewReplacer(".", "|", ",", "|")
+```
+
+```go
+rep.Replace(s)
+```
+
 
 
 ## Search
