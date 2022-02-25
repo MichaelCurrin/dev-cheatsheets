@@ -107,5 +107,3 @@ math.Abs(value)
 math.Power(value, 2.0)
 ```
 
-
-
