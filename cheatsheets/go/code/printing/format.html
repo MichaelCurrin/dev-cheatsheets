@@ -180,13 +180,13 @@
 
     <div class="post-content">
         
-            <h2 id="print-verbs">Print verbs</h2>
+            <h2 id="general">General</h2>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">%v</code> - the value in a default format</li>
-  <li><code class="language-plaintext highlighter-rouge">%+v</code> - when printing structs, the plus flag adds field names</li>
-  <li><code class="language-plaintext highlighter-rouge">%#v</code>	- a Go-syntax representation of the value</li>
-  <li><code class="language-plaintext highlighter-rouge">%T</code> - a Go-syntax representation of the type of the value</li>
+  <li><code class="language-plaintext highlighter-rouge">%v</code> - the value in a default format.</li>
+  <li><code class="language-plaintext highlighter-rouge">%+v</code> - when printing structs, the plus flag adds <em>field</em> names.</li>
+  <li><code class="language-plaintext highlighter-rouge">%#v</code>	- a Go-syntax representation of the value.</li>
+  <li><code class="language-plaintext highlighter-rouge">%T</code> - a Go-syntax representation of the <em>type</em> of the value.</li>
 </ul>
 
 <h2 id="string-variable">String variable</h2>
@@ -196,7 +196,7 @@
 <p>Use <code class="language-plaintext highlighter-rouge">%s</code> specifically for strings or slices of bytes.</p>
 
 <blockquote>
-  <p>%s	the uninterpreted bytes of the string or slice</p>
+  <p><code class="language-plaintext highlighter-rouge">%s</code>	the uninterpreted bytes of the string or slice</p>
 </blockquote>
 
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">name</span> <span class="o">=</span> <span class="s">"World!"</span>
@@ -207,12 +207,77 @@
 <h2 id="quote">Quote</h2>
 
 <blockquote>
-  <p>%q	a single-quoted character literal safely escaped with Go syntax.</p>
+  <p><code class="language-plaintext highlighter-rouge">%q</code>	a single-quoted character literal safely escaped with Go syntax.</p>
 </blockquote>
 
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">name</span> <span class="o">=</span> <span class="s">"World"</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%q"</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 <span class="c">// Hello, "World"!</span>
+</code></pre></div></div>
+
+<h2 id="numeric">Numeric</h2>
+
+<ul>
+  <li>Decimal <code class="language-plaintext highlighter-rouge">%d</code></li>
+  <li>Floating point <code class="language-plaintext highlighter-rouge">%f</code></li>
+  <li>Scientific notation <code class="language-plaintext highlighter-rouge">%e</code></li>
+</ul>
+
+<h2 id="boolean">Boolean</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">%t</code> - the world true or false</li>
+</ul>
+
+<h2 id="indexes">Indexes</h2>
+
+<p>Basic:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%d %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">45</span><span class="s">")
+</span></code></pre></div></div>
+
+<p>Explicit indices - starting at one.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%[2]d %[1]d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">45</span><span class="s">")
+</span></code></pre></div></div>
+
+<p>Reuse a value and adding octal and hexidecimal:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%d %#[1]o %#[1]x</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="m">12</span><span class="s">")
+// 12 014 0xc
+</span></code></pre></div></div>
+
+<p>Without the hash it still works but doesn’t look as good:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%d %[1]o %[1]x</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="m">12</span><span class="p">)</span>
+<span class="c">// 12 14 c</span>
+</code></pre></div></div>
+
+<h2 id="structs">Structs</h2>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">type</span> <span class="n">circle</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">radius</span> <span class="kt">int</span>
+	<span class="n">border</span> <span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">c</span> <span class="o">:=</span> <span class="n">circle</span><span class="p">{</span>
+		<span class="n">radius</span><span class="o">:</span> <span class="m">20</span><span class="p">,</span>
+		<span class="n">border</span><span class="o">:</span> <span class="m">5</span><span class="p">,</span>
+	<span class="p">}</span>
+    
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%v</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%+v</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%T</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c">// {20 5}</span>
+<span class="c">// {radius:20 border:5}</span>
+<span class="c">// main.circle</span>
 </code></pre></div></div>
 
         
