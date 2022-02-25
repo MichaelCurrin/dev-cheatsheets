@@ -255,6 +255,45 @@
 <span class="n">parts</span> <span class="o">:=</span> <span class="n">strings</span><span class="o">.</span><span class="n">Split</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="s">":"</span><span class="p">)</span>
 </code></pre></div></div>
 
+<h2 id="search">Search</h2>
+
+<h3 id="term">Term</h3>
+
+<p>Check for entire string.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">strings</span><span class="o">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s">"search term"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="character">Character</h3>
+
+<p>Check if any of the characters appears.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">strings</span><span class="o">.</span><span class="n">ContainsAny</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s">"abcd"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="index">Index</h3>
+
+<p>Find the first instance of a substring. e.g. 0 for start or -1 for not found.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">strings</span><span class="o">.</span><span class="n">Index</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s">"fox"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Or <code class="language-plaintext highlighter-rouge">IndexAny</code> for characters.</p>
+
+<h3 id="starts-and-ends-with">Starts and ends with</h3>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">strings</span><span class="o">.</span><span class="n">HasPrefix</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s">"my prefix"</span><span class="p">)</span>
+
+<span class="n">strings</span><span class="o">.</span><span class="n">HasSuffix</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s">"my suffix"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="count">Count</h3>
+
+<p>Number of non-overlapping substrings occurring.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">strings</span><span class="o">.</span><span class="n">Count</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s">"my term"</span><span class="p">)</span>
+</code></pre></div></div>
+
         
     </div>
 </article>

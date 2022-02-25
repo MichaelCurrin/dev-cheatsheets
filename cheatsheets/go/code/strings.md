@@ -103,3 +103,49 @@ If you just print `myArray`, it appears to only have on element but that's just 
 command := `ffprobe : -i "/media/Name of File.mp3" : -show_entries format=duration : -v quiet : -of csv=p=0`
 parts := strings.Split(command, ":")
 ```
+
+
+## Search
+
+### Term
+
+Check for entire string.
+
+```go
+strings.Contains(s, "search term")
+```
+
+### Character
+
+Check if any of the characters appears.
+
+```go
+strings.ContainsAny(s, "abcd")
+```
+
+### Index
+
+Find the first instance of a substring. e.g. 0 for start or -1 for not found.
+
+```go
+strings.Index(s, "fox")
+```
+
+Or `IndexAny` for characters.
+
+
+### Starts and ends with
+
+```go
+strings.HasPrefix(s, "my prefix")
+
+strings.HasSuffix(s, "my suffix")
+```
+
+### Count
+
+Number of non-overlapping substrings occurring.
+
+```go
+strings.Count(s, "my term")
+```
