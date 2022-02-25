@@ -1,6 +1,15 @@
 # fmt
 
-Docs: [fmt](https://golang.org/pkg/fmt/) in standard lib.
+## Resources
+
+- [fmt](https://golang.org/pkg/fmt/) in the standard lib documentation
+
+
+## Related
+
+- [Printing][] cheatsheets
+
+[Printing]: {% link cheatsheets/go/code/printing/index.md %}
 
 
 ## Basic
