@@ -12,42 +12,26 @@ for x := 0; x < 3; x++ {
 }
 ```
 
-### Iterate over an object
+### Unpack object with range
 
 You can use `range` to iterate over an array, a slice, a string, a map, or a channel.
 
 `range` returns one (channel) or two values (array, slice, string and map).
 
-### Map of key-values pairs.
+For each pair in the map, print key and value.
 
 ```go
-my_map := map[string]int{"one": 1, "two": 2, "three": 3}
-
-for key, value := range my_map {
+for key, value := range map[string]int{"one": 1, "two": 2, "three": 3} {
     fmt.Printf("key=%s, value=%d\n", key, value)
 }
 ```
 
-### Slice
-
-Unpack as index and value. Or use an underscore for index if you don't need it.
+If you only need the value, use the underscore as the key.
 
 ```go
-my_slice = []string{"Bob", "Bill", "Joe"}
-
-for _, name := range my_slice {
+for _, name := range []string{"Bob", "Bill", "Joe"} {
     fmt.Printf("Hello, %s\n", name)
 }
-// Bob
-// Bill
-// Joe
-
-for i, v := range my_slice {
-    fmt.Println(i, v)
-}
-// 0 Bob
-// 1 Bill
-// 2 Joe
 ```
 
 
