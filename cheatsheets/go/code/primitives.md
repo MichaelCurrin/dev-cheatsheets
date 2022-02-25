@@ -39,11 +39,23 @@ my_float3 := 1.
 
 ## Strings
 
+Basic:
+
 ```go
-str = "My string"
-raw_str = `My raw
+s := "My string"
+```
+
+Raw string - useful for multi-line or when containing quotes.
+```go
+raw_str := `My raw
 string`
 
+s := `ffprobe : -i "/media/Name of File.mp3" : -show_entries format=duration : -v quiet : -of csv=p=0`
+```
+
+Unicode:
+
+```
 unicode_utf8_str = 'Σ'
 ```
 
