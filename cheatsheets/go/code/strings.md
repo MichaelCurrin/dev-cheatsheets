@@ -193,3 +193,69 @@ Number of non-overlapping substrings occurring.
 ```go
 strings.Count(s, "my term")
 ```
+
+
+## Conversion
+
+The most common numeric conversions are Atoi (string to int) and Itoa (int to string).
+
+```go
+i, err := strconv.Atoi("-42")
+s := strconv.Itoa(-42)
+```
+
+### Parse
+
+Convert string to other types.
+
+Using 64-bit and base 10 (for integers).
+
+```go
+b, err := strconv.ParseBool("true")
+f, err := strconv.ParseFloat("3.1415", 64)
+i, err := strconv.ParseInt("-42", 10, 64)
+u, err := strconv.ParseUint("42", 10, 64)
+```
+
+e.g.
+
+```go
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func main() {
+	x := "123"
+	y, _ := strconv.ParseInt(x, 10, 32)
+	fmt.Printf("%v\n", y)
+}
+```
+
+### Format
+
+Convert other types to strings.
+
+```go
+s := strconv.FormatBool(true)
+s := strconv.FormatFloat(3.1415, 'E', -1, 64)
+s := strconv.FormatInt(-42, 16)
+s := strconv.FormatUint(42, 16)
+```
+
+### Quote
+
+Add quotes.
+Unicode characters are escaped with `\u`.
+
+```go
+q := strconv.Quote("Hello, 世界")
+fmt.Println("Result", q)
+// Result "Hello, 世界"
+
+q = strconv.QuoteToASCII("Hello, 世界")
+fmt.Println("Result", q)
+// Result "Hello, \u4e16\u754c"
+```

@@ -20,8 +20,8 @@
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
-    <meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+    <meta name="description" content="Mathemetical operations" />
+    <meta property="og:description" content="Mathemetical operations" />
 <meta name="author" content="Michael Currin" />
 
 
@@ -33,7 +33,7 @@
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
+    "description": "Mathemetical operations",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/go/code/math.html",
     "headline":    "Math",
     "@type":       "WebSite",
@@ -103,6 +103,11 @@
         </h1>
 
         
+            <blockquote>
+                <p>Mathemetical operations</p>
+
+            </blockquote>
+        
     </header>
 
     
@@ -163,7 +168,13 @@
 
     <div class="post-content">
         
-            <h2 id="square-root">Square root</h2>
+            <h2 id="constants">Constants</h2>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">math</span><span class="o">.</span><span class="n">Pi</span>
+<span class="n">math</span><span class="o">.</span><span class="n">E</span>
+</code></pre></div></div>
+
+<h2 id="square-root">Square root</h2>
 
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">math</span><span class="o">.</span><span class="n">Sqrt</span><span class="p">(</span><span class="n">my_float</span><span class="p">)</span>
 </code></pre></div></div>
@@ -180,7 +191,6 @@
 <span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
 	<span class="n">n</span> <span class="o">:=</span> <span class="m">2.0</span>
 	<span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Number %v Square root %v"</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">Sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-	
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -197,6 +207,52 @@
 	<span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Number 2 Square root %v"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">Sqrt</span><span class="p">(</span><span class="m">2</span><span class="p">))</span>
 <span class="p">}</span>
 </code></pre></div></div>
+
+<h2 id="cube-root">Cube root</h2>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">math</span><span class="o">.</span><span class="n">Cbrt</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="round">Round</h2>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">math</span><span class="o">.</span><span class="n">Round</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="n">math</span><span class="o">.</span><span class="n">Ceil</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="n">math</span><span class="o">.</span><span class="n">Floor</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Remove decimal places.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">math</span><span class="o">.</span><span class="n">Trunc</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="max-and-min">Max and min</h2>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">math</span><span class="o">.</span><span class="n">Max</span><span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">)</span>
+<span class="n">math</span><span class="o">.</span><span class="n">Min</span><span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="modulus">Modulus</h2>
+
+<p>For integers:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">17</span> <span class="o">%</span> <span class="m">5</span>
+</code></pre></div></div>
+
+<p>For floats:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">math</span><span class="o">.</span><span class="n">Mod</span><span class="p">(</span><span class="m">17.0</span><span class="p">,</span> <span class="m">5.0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="absolute">Absolute</h2>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">math</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="raise-to-the-power">Raise to the power</h2>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">math</span><span class="o">.</span><span class="n">Power</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="m">2.0</span><span class="p">)</span>
+</code></pre></div></div>
+
 
         
     </div>
