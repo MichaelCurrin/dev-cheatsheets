@@ -9,6 +9,8 @@
 
 ## strings
 
+- [strings](https://pkg.go.dev/strings) docs
+
 String processing and manipulation.
 
 - Searching
@@ -18,6 +20,8 @@ String processing and manipulation.
 
 
 ## strconv
+
+- [strconv](https://pkg.go.dev/strconv) docs
 
 Convert to and from basic types.
 
@@ -30,6 +34,8 @@ Convert to and from basic types.
 
 
 ## unicode
+
+- [unicode](https://pkg.go.dev/unicode) docs
 
 Test properties of Unicode code points.
 
