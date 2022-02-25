@@ -45,6 +45,46 @@ fmt.Printf("%q", name)
 - Floating point `%f`
 - Scientific notation `%e`
 
+### Precision
+
+Decimal precision - here two decimal places.
+
+```go
+"%.2f"
+// 123.46
+```
+
+Total width - here 10.
+
+```go
+"%10f"
+// 123.456700
+```
+
+Padding (total length here is always at least 10 and will have spaces) and precision (2 decimal places again)
+
+```go
+"%10.2f"
+//     123.46
+// ^^^^
+```
+
+Always add a plus sign.
+
+```go
+"%+10.2f"
+//    +1234.567891
+// ^^^^
+```
+
+Padding with zeroes.
+
+```go
+"%010.2f"
+// 00001234.56
+// ^^^^
+```
+
 
 ## Boolean
 
