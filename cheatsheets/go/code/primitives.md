@@ -94,3 +94,11 @@ Type       | Description
 ---        | ---
 byte       | alias for uint8
 rune       | alias for int32
+
+A `byte` is the type of a character, unless it is a unicode character then it is `rune`.
+
+e.g.
+
+```go
+x := 'Σ'
+```
