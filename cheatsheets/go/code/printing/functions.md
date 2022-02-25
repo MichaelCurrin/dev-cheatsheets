@@ -46,14 +46,15 @@ e.g.
 
 ```go
 name := "World"
-fmt.Println("Hello", name)
-// Hello Gopher
+fmt.Print("Hello", name)
+fmt.Print("Goodbye", name)
+// Hello GopherGoodbye Gopher
 ```
 
 
 ## Printf
 
-Print with formatting specifier.
+Print with formatting specifier. See more info in [Format][].
 
 Note use of `%v` to substitute variable inside the string.
 
@@ -88,6 +89,8 @@ You can use `Printf` _without_ any variables, but you have to remember to add th
 fmt.Printf("Hello\n")
 // Hello
 ```
+
+[Format]: {% link cheatsheets/go/code/printing/format.md %}
 
 
 ## Sprintf
