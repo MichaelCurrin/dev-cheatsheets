@@ -223,6 +223,41 @@
   <li>Scientific notation <code class="language-plaintext highlighter-rouge">%e</code></li>
 </ul>
 
+<h3 id="precision">Precision</h3>
+
+<p>Decimal precision - here two decimal places.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"%.2f"</span>
+<span class="c">// 123.46</span>
+</code></pre></div></div>
+
+<p>Total width - here 10.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"%10f"</span>
+<span class="c">// 123.456700</span>
+</code></pre></div></div>
+
+<p>Padding (total length here is always at least 10 and will have spaces) and precision (2 decimal places again)</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"%10.2f"</span>
+<span class="c">//     123.46</span>
+<span class="c">// ^^^^</span>
+</code></pre></div></div>
+
+<p>Always add a plus sign.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"%+10.2f"</span>
+<span class="c">//    +1234.567891</span>
+<span class="c">// ^^^^</span>
+</code></pre></div></div>
+
+<p>Padding with zeroes.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"%010.2f"</span>
+<span class="c">// 00001234.56</span>
+<span class="c">// ^^^^</span>
+</code></pre></div></div>
+
 <h2 id="boolean">Boolean</h2>
 
 <ul>
