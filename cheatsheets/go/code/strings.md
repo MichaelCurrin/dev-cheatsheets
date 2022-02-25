@@ -6,6 +6,56 @@
 
 [Strings packages]: {% link cheatsheets/go/packages/strings.md %}
 
+## Basic
+
+```go
+s := "My string"
+```
+
+### Length
+
+```go
+len(s)
+```
+
+### Iterate over characters
+
+```go
+for _, ch := range s {
+    fmt.Print(string(ch), ",")
+}
+fmt.PrintLn()
+```  
+
+### Comparison
+
+Use `<`, `>`, `==`, `!=` operators and get `true` or `false`.
+
+```go
+"dog" < "cat"
+```
+
+Use the compare function to get `-1`, `0`, or `1` as result.
+
+```go
+result := strings.Compare("dog", "cat")
+```
+
+Case-insensitive comparsion.
+
+```go
+strings.EqualFold("Hello", "hello")
+// true
+```
+
+### Change case
+
+```go
+strings.ToUpper(s)
+strings.ToLower(s)
+strings.ToTitle(s)
+```
+
 
 ## Split
 

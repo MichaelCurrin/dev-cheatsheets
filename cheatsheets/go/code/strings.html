@@ -169,6 +169,49 @@
   <li><a href="/dev-cheatsheets/cheatsheets/go/packages/strings.html">Strings packages</a> cheatsheet for packages for basic processing and conversion of strings.</li>
 </ul>
 
+<h2 id="basic">Basic</h2>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">:=</span> <span class="s">"My string"</span>
+</code></pre></div></div>
+
+<h3 id="length">Length</h3>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="iterate-over-characters">Iterate over characters</h3>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">ch</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">s</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Print</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">ch</span><span class="p">),</span> <span class="s">","</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">PrintLn</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="comparison">Comparison</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;</code>, <code class="language-plaintext highlighter-rouge">&gt;</code>, <code class="language-plaintext highlighter-rouge">==</code>, <code class="language-plaintext highlighter-rouge">!=</code> operators and get <code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code>.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"dog"</span> <span class="o">&lt;</span> <span class="s">"cat"</span>
+</code></pre></div></div>
+
+<p>Use the compare function to get <code class="language-plaintext highlighter-rouge">-1</code>, <code class="language-plaintext highlighter-rouge">0</code>, or <code class="language-plaintext highlighter-rouge">1</code> as result.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">:=</span> <span class="n">strings</span><span class="o">.</span><span class="n">Compare</span><span class="p">(</span><span class="s">"dog"</span><span class="p">,</span> <span class="s">"cat"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Case-insensitive comparsion.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">strings</span><span class="o">.</span><span class="n">EqualFold</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"hello"</span><span class="p">)</span>
+<span class="c">// true</span>
+</code></pre></div></div>
+
+<h3 id="change-case">Change case</h3>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">strings</span><span class="o">.</span><span class="n">ToUpper</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">strings</span><span class="o">.</span><span class="n">ToLower</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">strings</span><span class="o">.</span><span class="n">ToTitle</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre></div></div>
+
 <h2 id="split">Split</h2>
 
 <h3 id="split-by-whitespace">Split by whitespace</h3>
