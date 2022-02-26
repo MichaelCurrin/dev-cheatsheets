@@ -161,34 +161,142 @@
 
 <h2 id="raise">Raise</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">raise</span> <span class="nb">RuntimeError</span><span class="p">(</span><span class="s">"Message"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"My message"</span><span class="p">)</span>
 </code></pre></div></div>
+<p>Output:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-RuntimeError: Message
+ValueError: My message
+</code></pre></div></div>
+
+<h2 id="catch">Catch</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"Dummy error"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="bare">Bare</h3>
+
+<p>Not recommended.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+     <span class="n">foo</span><span class="p">()</span>
+<span class="k">except</span><span class="p">:</span>
+     <span class="k">print</span><span class="p">(</span><span class="s">"Do something"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="broad">Broad</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+     <span class="n">foo</span><span class="p">()</span>
+<span class="k">except</span> <span class="nb">Exception</span><span class="p">:</span>
+     <span class="k">print</span><span class="p">(</span><span class="s">"Do something"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+     <span class="n">foo</span><span class="p">()</span>
+<span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+     <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Something bad happened </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="specific">Specific</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+     <span class="n">foo</span><span class="p">()</span>
+<span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
+     <span class="k">print</span><span class="p">(</span><span class="s">"Do something"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="chained">Chained</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+     <span class="n">foo</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">ConnectioError</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Could not connect"</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
+     <span class="k">print</span><span class="p">(</span><span class="s">"We had a bad key"</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">Exception</span><span class="p">:</span>
+     <span class="k">print</span><span class="p">(</span><span class="s">"Default"</span><span class="p">)</span>     
 </code></pre></div></div>
 
 <h2 id="catch-and-re-raise">Catch and re-raise</h2>
 
-<p>Python 3 syntax - you don’t have to catch and raise <code class="language-plaintext highlighter-rouge">e</code> explicitly.</p>
+<h3 id="implicit">Implicit</h3>
+
+<p>No need to assign the exception to a variable. Just use <code class="language-plaintext highlighter-rouge">raise</code> after your custom logic and the caught exception will be raised. This will keep the message.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
     <span class="n">foo</span> <span class="o">=</span> <span class="s">"My foo"</span>
-    <span class="n">bar</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+    <span class="c1"># Expecting bar to fail here.
+</span>    <span class="n">bar</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
 <span class="k">except</span> <span class="nb">Exception</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Foo: </span><span class="si">{</span><span class="n">foo</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+    
     <span class="k">raise</span>
 </code></pre></div></div>
 
-<h2 id="custom-error">Custom error</h2>
+<h3 id="explicit">Explicit</h3>
+
+<p>Here we use the same error type but a custom message.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">foo</span> <span class="o">=</span> <span class="s">"My foo"</span>
+    <span class="c1"># Expecting bar to fail here.
+</span>    <span class="n">bar</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Foo: </span><span class="si">{</span><span class="n">foo</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+    
+    <span class="k">raise</span> <span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">)(</span><span class="s">"My custom message"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="base-classes">Base classes</h2>
+
+<p>See <a href="https://docs.python.org/3/library/exceptions.html#base-classes">Base classes</a> in the docs.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"My message"</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">args</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>My message
+My message
+('My message',)
+</code></pre></div></div>
+
+<p>Recommended - use <code class="language-plaintext highlighter-rouge">str(e)</code> when putting your error inside a string like <code class="language-plaintext highlighter-rouge">"Got error - {str(e))</code>.</p>
+
+<p>What is avaiable as public attributes and methods:</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">args</code> - The tuple of arguments given to the exception constructor.</p>
+
+  <p><code class="language-plaintext highlighter-rouge">with_traceback(tb)</code> - This method sets tb as the new traceback for the exception and returns the exception object.</p>
+</blockquote>
+
+<p>Example from the docs:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>try:
+    ...
+except SomeException:
+    tb = sys.exc_info()[2]
+    raise OtherException(...).with_traceback(tb)
+</code></pre></div></div>
+
+<h2 id="custom-exception">Custom exception</h2>
+
+<p>If you don’t want to use one of the built-in exception types like <code class="language-plaintext highlighter-rouge">ValueError</code>, or a library’s exceptions like <code class="language-plaintext highlighter-rouge">requests.ConnectionError</code>, you can make your own with an class.</p>
 
 <h3 id="basic">Basic</h3>
 
-<p>You can use <code class="language-plaintext highlighter-rouge">pass</code> or docstring or both.</p>
+<p>Empty class - you can use <code class="language-plaintext highlighter-rouge">pass</code> or docstring or both for the contents.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">RuntimeError</span><span class="p">):</span>
     <span class="s">"""Description of Foo error"""</span>
 </code></pre></div></div>
+
+<p>Usage:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">raise</span> <span class="n">Foo</span><span class="p">(</span><span class="s">"Message"</span><span class="p">)</span>
 </code></pre></div></div>
@@ -198,18 +306,9 @@ RuntimeError: Message
 __main__.Foo: Message
 </code></pre></div></div>
 
-<pre><code class="language-pythpn">try:
-    # Function call that raises this...
-    raise NetworkError("Message")
-except NetworkError as e:
-    print(e)
-    print(e.args)
-</code></pre>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Message
-('Message',)
-</code></pre></div></div>
-
 <h3 id="override-init">Override init</h3>
+
+<p>Here with a custom value on the error.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">NetworkError</span><span class="p">(</span><span class="nb">RuntimeError</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
@@ -220,7 +319,7 @@ except NetworkError as e:
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
     <span class="c1"># Function call that raises this...
 </span>    <span class="k">raise</span> <span class="n">NetworkError</span><span class="p">(</span><span class="s">"Message"</span><span class="p">)</span>
-<span class="k">except</span> <span class="n">NetworkError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="k">except</span> <span class="n">NetworkError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span> 
     <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">msg</span><span class="p">)</span>
 </code></pre></div></div>
 <p>Output:</p>
