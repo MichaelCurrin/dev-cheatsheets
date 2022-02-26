@@ -192,7 +192,7 @@
 <span class="c">// [ 0 1 3 5 4 2 ]</span>
 </code></pre></div></div>
 
-<p>Get permutations of an array.</p>
+<p>Get permutations of an array:</p>
 
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
 
@@ -234,6 +234,37 @@ pear
 peach
 grape
 grapefruit
+</code></pre></div></div>
+
+<h2 id="shuffle">Shuffle</h2>
+
+<blockquote>
+  <p>Shuffle pseudo-randomizes the order of elements using the default Source. n is the number of elements. Shuffle panics if n &lt; 0. swap swaps the elements with indexes i and j.</p>
+</blockquote>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">Shuffle</span><span class="p">(</span><span class="n">n</span> <span class="kt">int</span><span class="p">,</span> <span class="n">swap</span> <span class="k">func</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="kt">int</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+	<span class="s">"fmt"</span>
+	<span class="s">"math/rand"</span>
+	<span class="s">"strings"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">words</span> <span class="o">:=</span> <span class="n">strings</span><span class="o">.</span><span class="n">Fields</span><span class="p">(</span><span class="s">"ink runs from the corners of my mouth"</span><span class="p">)</span>
+    
+	<span class="n">rand</span><span class="o">.</span><span class="n">Shuffle</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">),</span> <span class="k">func</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">words</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+	<span class="p">})</span>
+    
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c">// [mouth my the of runs corners from ink]</span>
 </code></pre></div></div>
 
         

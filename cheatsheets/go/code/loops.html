@@ -174,24 +174,40 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="unpack-object-with-range">Unpack object with range</h3>
+<h3 id="iterate-over-an-object">Iterate over an object</h3>
 
 <p>You can use <code class="language-plaintext highlighter-rouge">range</code> to iterate over an array, a slice, a string, a map, or a channel.</p>
 
 <p><code class="language-plaintext highlighter-rouge">range</code> returns one (channel) or two values (array, slice, string and map).</p>
 
-<p>For each pair in the map, print key and value.</p>
+<h3 id="map-of-key-values-pairs">Map of key-values pairs.</h3>
 
-<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="o">:=</span> <span class="k">range</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="s">"one"</span><span class="o">:</span> <span class="m">1</span><span class="p">,</span> <span class="s">"two"</span><span class="o">:</span> <span class="m">2</span><span class="p">,</span> <span class="s">"three"</span><span class="o">:</span> <span class="m">3</span><span class="p">}</span> <span class="p">{</span>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_map</span> <span class="o">:=</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="s">"one"</span><span class="o">:</span> <span class="m">1</span><span class="p">,</span> <span class="s">"two"</span><span class="o">:</span> <span class="m">2</span><span class="p">,</span> <span class="s">"three"</span><span class="o">:</span> <span class="m">3</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">my_map</span> <span class="p">{</span>
     <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"key=%s, value=%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>If you only need the value, use the underscore as the key.</p>
+<h3 id="slice">Slice</h3>
 
-<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">name</span> <span class="o">:=</span> <span class="k">range</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"Bob"</span><span class="p">,</span> <span class="s">"Bill"</span><span class="p">,</span> <span class="s">"Joe"</span><span class="p">}</span> <span class="p">{</span>
+<p>Unpack as index and value. Or use an underscore for index if you don’t need it.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_slice</span> <span class="o">=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"Bob"</span><span class="p">,</span> <span class="s">"Bill"</span><span class="p">,</span> <span class="s">"Joe"</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">name</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">my_slice</span> <span class="p">{</span>
     <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Hello, %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 <span class="p">}</span>
+<span class="c">// Bob</span>
+<span class="c">// Bill</span>
+<span class="c">// Joe</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">my_slice</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c">// 0 Bob</span>
+<span class="c">// 1 Bill</span>
+<span class="c">// 2 Joe</span>
 </code></pre></div></div>
 
 <h2 id="while-loop">while loop</h2>
