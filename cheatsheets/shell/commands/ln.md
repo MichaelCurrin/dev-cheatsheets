@@ -105,6 +105,27 @@ $ ln -s -f TARGET DEST
 ```
 
 
+## Flags
+
+```
+     -i    Cause ln to write a prompt to standard error if the target file exists.  If the response
+           from the standard input begins with the character `y' or `Y', then unlink the target
+           file so that the link may occur.  Otherwise, do not attempt the link.  (The -i option
+           overrides any previous -f options.)
+```
+
+```
+     -F    If the target file already exists and is a directory, then remove it so that the link
+           may occur.  The -F option should be used with either -f or -i options.  If none is spec-
+           ified, -f is implied.  The -F option is a no-op unless -s option is specified.``
+```
+
+```
+  -f    If the target file already exists, then unlink it so that the link may occur.  (The -f
+           option overrides any previous -i options.)
+```
+
+
 ## Examples
 
 ### Git hooks
