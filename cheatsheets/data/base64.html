@@ -245,16 +245,22 @@
 
 <h3 id="decode-1">Decode</h3>
 
-<p>Bytes input.</p>
+<p>Bytes input:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">base64</span><span class="p">.</span><span class="n">b64decode</span><span class="p">(</span><span class="sa">b</span><span class="s">'SGVsbG8sIHdvcmxkIQ=='</span><span class="p">)</span>
 <span class="sa">b</span><span class="s">'Hello, world!'</span>
 </code></pre></div></div>
 
-<p>Or (unicode) string input.</p>
+<p>Or unicode string input:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">base64</span><span class="p">.</span><span class="n">b64decode</span><span class="p">(</span><span class="s">'SGVsbG8sIHdvcmxkIQ=='</span><span class="p">)</span>
 <span class="sa">b</span><span class="s">'Hello, world!'</span>
+</code></pre></div></div>
+
+<p>Result is always bytes. Convert to string:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="sa">b</span><span class="s">'Hello, world!'</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+<span class="s">'Hello, world!'</span>
 </code></pre></div></div>
 
 <h3 id="shell">Shell</h3>
