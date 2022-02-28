@@ -64,14 +64,56 @@ buf.toString('base64')
 
 ## Python
 
+Guide for Python 3.
+
+Use the built-in `base64` library.
+
+### Import
+
+```python
+>>> import base64
+```
+
+### Encode
+
+```python
+>>> base64.b64encode("Hello, world!".encode())
+b'SGVsbG8sIHdvcmxkIQ=='
+```
+
+Always convert to `bytes` first using `str.encode`. Otherwise you get an error (in both PY 2 and 3).
+
+As `bytes` means any special characters like accents or emojis will be ASCII.
+
+For ordinary ASCII characters, the `bytes` will look the same:
+
+```python
+>>> "Hello, world!".encode()
+b'Hello, world!'
+```
+
+### Decode
+
+Bytes input:
+
+```python
+>>> base64.b64decode(b'SGVsbG8sIHdvcmxkIQ==')
+b'Hello, world!'
+```
+
+Or unicode string input:
+
 ```python
 >>> base64.b64decode('SGVsbG8sIHdvcmxkIQ==')
 b'Hello, world!'
 ```
 
-See [Python Base 64][] cheatsheet for more info.
+Result is always bytes. Convert to string:
 
-[Python Base 64]: {% link cheatsheets/python/strings/encoding/base64.md %}
+```python
+>>> b'Hello, world!'.decode('utf-8')
+'Hello, world!'
+```
 
 ### Shell
 
