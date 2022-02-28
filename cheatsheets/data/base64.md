@@ -94,18 +94,25 @@ b'Hello, world!'
 
 ### Decode
 
-Bytes input.
+Bytes input:
 
 ```python
 >>> base64.b64decode(b'SGVsbG8sIHdvcmxkIQ==')
 b'Hello, world!'
 ```
 
-Or (unicode) string input.
+Or unicode string input:
 
 ```python
 >>> base64.b64decode('SGVsbG8sIHdvcmxkIQ==')
 b'Hello, world!'
+```
+
+Result is always bytes. Convert to string:
+
+```python
+>>> b'Hello, world!'.decode('utf-8')
+'Hello, world!'
 ```
 
 ### Shell
