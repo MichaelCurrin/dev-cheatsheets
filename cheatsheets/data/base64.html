@@ -218,50 +218,11 @@
 
 <h2 id="python">Python</h2>
 
-<p>Guide for Python 3.</p>
-
-<p>Use the built-in <code class="language-plaintext highlighter-rouge">base64</code> library.</p>
-
-<h3 id="import">Import</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">base64</span>
-</code></pre></div></div>
-
-<h3 id="encode-1">Encode</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">base64</span><span class="p">.</span><span class="n">b64encode</span><span class="p">(</span><span class="s">"Hello, world!"</span><span class="p">.</span><span class="n">encode</span><span class="p">())</span>
-<span class="sa">b</span><span class="s">'SGVsbG8sIHdvcmxkIQ=='</span>
-</code></pre></div></div>
-
-<p>Always convert to <code class="language-plaintext highlighter-rouge">bytes</code> first using <code class="language-plaintext highlighter-rouge">str.encode</code>. Otherwise you get an error (in both PY 2 and 3).</p>
-
-<p>As <code class="language-plaintext highlighter-rouge">bytes</code> means any special characters like accents or emojis will be ASCII.</p>
-
-<p>For ordinary ASCII characters, the <code class="language-plaintext highlighter-rouge">bytes</code> will look the same:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="s">"Hello, world!"</span><span class="p">.</span><span class="n">encode</span><span class="p">()</span>
-<span class="sa">b</span><span class="s">'Hello, world!'</span>
-</code></pre></div></div>
-
-<h3 id="decode-1">Decode</h3>
-
-<p>Bytes input:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">base64</span><span class="p">.</span><span class="n">b64decode</span><span class="p">(</span><span class="sa">b</span><span class="s">'SGVsbG8sIHdvcmxkIQ=='</span><span class="p">)</span>
-<span class="sa">b</span><span class="s">'Hello, world!'</span>
-</code></pre></div></div>
-
-<p>Or unicode string input:</p>
-
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">base64</span><span class="p">.</span><span class="n">b64decode</span><span class="p">(</span><span class="s">'SGVsbG8sIHdvcmxkIQ=='</span><span class="p">)</span>
 <span class="sa">b</span><span class="s">'Hello, world!'</span>
 </code></pre></div></div>
 
-<p>Result is always bytes. Convert to string:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="sa">b</span><span class="s">'Hello, world!'</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
-<span class="s">'Hello, world!'</span>
-</code></pre></div></div>
+<p>See <a href="/dev-cheatsheets/cheatsheets/python/strings/encoding/base64.html">Python Base 64</a> cheatsheet for more info.</p>
 
 <h3 id="shell">Shell</h3>
 
