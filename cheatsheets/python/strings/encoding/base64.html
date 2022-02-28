@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Base64 encoding | Dev Cheatsheets</title>
+    <title>Base 64 | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Base64 encoding" />
+    <meta property="og:title" content="Base 64" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Base64 encoding" />
+    <meta property="twitter:title" content="Base 64" />
 <meta name="generator" content="Jekyll v4.2.1" />
 
 <meta property="og:locale" content="en_US" />
@@ -26,16 +26,16 @@
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/data/base64.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/data/base64.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/strings/encoding/base64.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/strings/encoding/base64.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/data/base64.html",
-    "headline":    "Base64 encoding",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/strings/encoding/base64.html",
+    "headline":    "Base 64",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -82,11 +82,11 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/data/base64.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/python/strings/encoding/base64.md">
     📝 <span>Edit page</span>
 </a>
 
-            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/data/">
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/python/strings/encoding/">
     ➕ <span>Add page</span>
 </a>
 
@@ -99,7 +99,7 @@
             
 
 
-            <span>Base64 encoding</span>
+            <span>Base 64</span>
         </h1>
 
         
@@ -127,8 +127,8 @@
 
         
             
-            <a href="/dev-cheatsheets/cheatsheets/data/">
-    Data formats
+            <a href="/dev-cheatsheets/cheatsheets/python/">
+    Python
 </a>
 
         
@@ -138,8 +138,32 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/data/base64.html" class="underline">
-                Base64 encoding
+            
+            <a href="/dev-cheatsheets/cheatsheets/python/strings/">
+    Strings
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/python/strings/encoding/">
+    Encoding
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/python/strings/encoding/base64.html" class="underline">
+                Base 64
             </a>
         
      
@@ -151,97 +175,47 @@
 
     <div class="post-content">
         
-            <ul>
-  <li><a href="https://en.wikipedia.org/wiki/Base64">Base64 on Wikipedia</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Base32">Base32 on Wikipedia</a></li>
-</ul>
+            <p>Use the built-in <code class="language-plaintext highlighter-rouge">base64</code> library.</p>
 
-<h2 id="index-table">Index table</h2>
+<h2 id="import">Import</h2>
 
-<p>Values 0 to 61 are the following, in order:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">A</code> – <code class="language-plaintext highlighter-rouge">Z</code></li>
-  <li><code class="language-plaintext highlighter-rouge">a</code> – <code class="language-plaintext highlighter-rouge">z</code></li>
-  <li><code class="language-plaintext highlighter-rouge">0</code> – <code class="language-plaintext highlighter-rouge">9</code></li>
-</ul>
-
-<p>Then the last two values can change but typically <code class="language-plaintext highlighter-rouge">+</code> and <code class="language-plaintext highlighter-rouge">/</code>.</p>
-
-<p>Padding character: <code class="language-plaintext highlighter-rouge">=</code>.</p>
-
-<h2 id="usage">Usage</h2>
-
-<h3 id="browser-javascript">Browser JavaScript</h3>
-
-<p>Use the built-in functions <code class="language-plaintext highlighter-rouge">btoa</code> and <code class="language-plaintext highlighter-rouge">atob</code>. You can use these directly in the browser. But not in Node.</p>
-
-<p>Note that <code class="language-plaintext highlighter-rouge">b</code> stands for <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMString/Binary">binary string</a> (UTF-16 encoded strings) and <strong>not</strong> base-64.</p>
-
-<p>From <a href="https://developer.mozilla.org/en-US/docs/Glossary/Base64">Mozilla docs</a>:</p>
-
-<blockquote>
-  <p>In JavaScript there are two functions respectively for decoding and encoding base64 strings:</p>
-
-  <ul>
-    <li><code class="language-plaintext highlighter-rouge">btoa()</code>: creates a base-64 encoded ASCII string from a “string” of binary data (“btoa” should be read as “binary to ASCII”).</li>
-    <li><code class="language-plaintext highlighter-rouge">atob()</code>: decodes a base-64 encoded string (“atob” should be read as “ASCII to binary”).</li>
-  </ul>
-</blockquote>
-
-<h3 id="encode">Encode</h3>
-
-<p>Convert from binary string to base-64 ASCII string.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">btoa</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello, world!</span><span class="dl">"</span><span class="p">)</span>
-<span class="dl">"</span><span class="s2">SGVsbG8sIHdvcmxk</span><span class="dl">"</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">base64</span>
 </code></pre></div></div>
 
-<h3 id="decode">Decode</h3>
+<h2 id="encode">Encode</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">atob</span><span class="p">(</span><span class="dl">"</span><span class="s2">SGVsbG8sIHdvcmxk</span><span class="dl">"</span><span class="p">)</span>
-<span class="dl">"</span><span class="s2">Hello, world!</span><span class="dl">"</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">base64</span><span class="p">.</span><span class="n">b64encode</span><span class="p">(</span><span class="s">"Hello, world!"</span><span class="p">.</span><span class="n">encode</span><span class="p">())</span>
+<span class="sa">b</span><span class="s">'SGVsbG8sIHdvcmxkIQ=='</span>
 </code></pre></div></div>
 
-<h2 id="node">Node</h2>
+<p>Always convert to <code class="language-plaintext highlighter-rouge">bytes</code> first using <code class="language-plaintext highlighter-rouge">str.encode</code>. Otherwise you get an error (in both PY 2 and 3).</p>
 
-<p>Using the built-in <a href="https://nodejs.org/api/buffer.html">buffer</a> API. No imports are needed.</p>
+<p>As <code class="language-plaintext highlighter-rouge">bytes</code> means any special characters like accents or emojis will be ASCII.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">buf</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello world</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">utf8</span><span class="dl">'</span><span class="p">);</span>
+<p>For ordinary ASCII characters, the <code class="language-plaintext highlighter-rouge">bytes</code> will look the same:</p>
 
-<span class="nx">buf</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="dl">'</span><span class="s1">hex</span><span class="dl">'</span><span class="p">)</span>
-<span class="c1">// 68656c6c6f20776f726c64</span>
-
-<span class="nx">buf</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="dl">'</span><span class="s1">base64</span><span class="dl">'</span><span class="p">)</span>
-<span class="c1">//  aGVsbG8gd29ybGQ=</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="s">"Hello, world!"</span><span class="p">.</span><span class="n">encode</span><span class="p">()</span>
+<span class="sa">b</span><span class="s">'Hello, world!'</span>
 </code></pre></div></div>
 
-<h2 id="python">Python</h2>
+<h2 id="decode">Decode</h2>
+
+<p>Input as bytes:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">base64</span><span class="p">.</span><span class="n">b64decode</span><span class="p">(</span><span class="sa">b</span><span class="s">'SGVsbG8sIHdvcmxkIQ=='</span><span class="p">)</span>
+<span class="sa">b</span><span class="s">'Hello, world!'</span>
+</code></pre></div></div>
+
+<p>Input as string:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">base64</span><span class="p">.</span><span class="n">b64decode</span><span class="p">(</span><span class="s">'SGVsbG8sIHdvcmxkIQ=='</span><span class="p">)</span>
 <span class="sa">b</span><span class="s">'Hello, world!'</span>
 </code></pre></div></div>
 
-<p>See <a href="/dev-cheatsheets/cheatsheets/python/strings/encoding/base64.html">Python Base 64</a> cheatsheet for more info.</p>
+<p>The result is always bytes. So convert to string:</p>
 
-<h3 id="shell">Shell</h3>
-
-<ul>
-  <li><a href="https://linux.die.net/man/1/base64">base64</a> Linux man page.</li>
-</ul>
-
-<p>Use <code class="language-plaintext highlighter-rouge">base64</code> and <code class="language-plaintext highlighter-rouge">-d</code> or <code class="language-plaintext highlighter-rouge">--decode</code> to decode.</p>
-
-<p>Encode:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span>  <span class="s1">'Hello, world!'</span> | <span class="nb">base64
-</span><span class="nv">SGVsbG8sIHdvcmxkIQo</span><span class="o">=</span>
-</code></pre></div></div>
-
-<p>Decode:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'SGVsbG8sIHdvcmxkIQo='</span> | <span class="nb">base64</span> <span class="nt">-d</span>
-Hello, world!
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">base64</span><span class="p">.</span><span class="n">b64decode</span><span class="p">(</span><span class="s">'SGVsbG8sIHdvcmxkIQ=='</span><span class="p">).</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+<span class="s">'Hello, world!'</span>
 </code></pre></div></div>
 
         
