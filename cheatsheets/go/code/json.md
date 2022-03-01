@@ -121,9 +121,10 @@ type Person struct {
 ## Decode from JSON
 
 If you know the structure of the response data, use a [Struct](#struct), otherwise use a [Map](#map).
+
 ### Struct
 
-```json
+```go
 package main
 
 import (

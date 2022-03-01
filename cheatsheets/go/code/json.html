@@ -275,43 +275,44 @@
 <h2 id="decode-from-json">Decode from JSON</h2>
 
 <p>If you know the structure of the response data, use a <a href="#struct">Struct</a>, otherwise use a <a href="#map">Map</a>.</p>
+
 <h3 id="struct">Struct</h3>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">package</span><span class="w"> </span><span class="err">main</span><span class="w">
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
 
-</span><span class="err">import</span><span class="w"> </span><span class="err">(</span><span class="w">
-	</span><span class="s2">"encoding/json"</span><span class="w">
-	</span><span class="s2">"fmt"</span><span class="w">
-</span><span class="err">)</span><span class="w">
+<span class="k">import</span> <span class="p">(</span>
+	<span class="s">"encoding/json"</span>
+	<span class="s">"fmt"</span>
+<span class="p">)</span>
 
-</span><span class="err">type</span><span class="w"> </span><span class="err">Person</span><span class="w"> </span><span class="err">struct</span><span class="w"> </span><span class="p">{</span><span class="w">
-	</span><span class="err">Name</span><span class="w">      </span><span class="err">string</span><span class="w">   </span><span class="err">`json:</span><span class="s2">"name"</span><span class="err">`</span><span class="w">
-	</span><span class="err">Age</span><span class="w">       </span><span class="err">int</span><span class="w">      </span><span class="err">`json:</span><span class="s2">"age"</span><span class="err">`</span><span class="w">
-	</span><span class="err">FavColors</span><span class="w"> </span><span class="p">[]</span><span class="err">string</span><span class="w"> </span><span class="err">`json:</span><span class="s2">"fav_colors,omitempty"</span><span class="err">`</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<span class="k">type</span> <span class="n">Person</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">Name</span>      <span class="kt">string</span>   <span class="s">`json:"name"`</span>
+	<span class="n">Age</span>       <span class="kt">int</span>      <span class="s">`json:"age"`</span>
+	<span class="n">FavColors</span> <span class="p">[]</span><span class="kt">string</span> <span class="s">`json:"fav_colors,omitempty"`</span>
+<span class="p">}</span>
 
-</span><span class="err">func</span><span class="w"> </span><span class="err">main()</span><span class="w"> </span><span class="p">{</span><span class="w">
-	</span><span class="err">person_data</span><span class="w"> </span><span class="err">:=</span><span class="w"> </span><span class="p">[]</span><span class="err">byte(`</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-			</span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
-			</span><span class="nl">"fav_colors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-					</span><span class="s2">"purple"</span><span class="p">,</span><span class="w">
-					</span><span class="s2">"blue"</span><span class="p">,</span><span class="w">
-					</span><span class="s2">"yellow"</span><span class="w">
-			</span><span class="p">]</span><span class="w">
-		</span><span class="p">}</span><span class="w">
-	</span><span class="err">`)</span><span class="w">
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">person_data</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">(</span><span class="s">`
+		{
+			"name": "Jane",
+      "age": 44,
+			"fav_colors": [
+					"purple",
+					"blue",
+					"yellow"
+			]
+		}
+	`</span><span class="p">)</span>
 
-	</span><span class="err">var</span><span class="w"> </span><span class="err">p</span><span class="w"> </span><span class="err">Person</span><span class="w">
+	<span class="k">var</span> <span class="n">p</span> <span class="n">Person</span>
 
-	</span><span class="err">valid</span><span class="w"> </span><span class="err">:=</span><span class="w"> </span><span class="err">json.Valid((person_data))</span><span class="w">
-	</span><span class="err">if</span><span class="w"> </span><span class="err">valid</span><span class="w"> </span><span class="p">{</span><span class="w">
-		</span><span class="err">json.Unmarshal(person_data</span><span class="p">,</span><span class="w"> </span><span class="err">&amp;p)</span><span class="w">
-		</span><span class="err">fmt.Printf(</span><span class="s2">"%#v</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w"> </span><span class="err">p)</span><span class="w">
-	</span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+	<span class="n">valid</span> <span class="o">:=</span> <span class="n">json</span><span class="o">.</span><span class="n">Valid</span><span class="p">((</span><span class="n">person_data</span><span class="p">))</span>
+	<span class="k">if</span> <span class="n">valid</span> <span class="p">{</span>
+		<span class="n">json</span><span class="o">.</span><span class="n">Unmarshal</span><span class="p">(</span><span class="n">person_data</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">)</span>
+		<span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%#v</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">main</span><span class="o">.</span><span class="n">Person</span><span class="p">{</span><span class="n">Name</span><span class="o">:</span><span class="s">"Jane"</span><span class="p">,</span> <span class="n">Age</span><span class="o">:</span><span class="m">44</span><span class="p">,</span> <span class="n">FavColors</span><span class="o">:</span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"purple"</span><span class="p">,</span> <span class="s">"blue"</span><span class="p">,</span> <span class="s">"yellow"</span><span class="p">}}</span>
 </code></pre></div></div>
 
