@@ -210,7 +210,6 @@
 	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">byte_count</span><span class="p">)</span>
   <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">String</span><span class="p">())</span>
 <span class="p">}</span>
-
 </code></pre></div></div>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>go run main.go
@@ -230,6 +229,161 @@
   "url": "https://httpbin.org/get"
 }
 </span></code></pre></div></div>
+
+<h2 id="post">POST</h2>
+
+<p>Make sure to print content as a string with <code class="language-plaintext highlighter-rouge">Printf</code> - if you use you use <code class="language-plaintext highlighter-rouge">Println</code> you’ll get bytes.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+	<span class="s">"fmt"</span>
+	<span class="s">"io/ioutil"</span>
+	<span class="s">"net/http"</span>
+	<span class="s">"strings"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">u</span> <span class="o">:=</span> <span class="s">"https://httpbin.org/post"</span>
+
+	<span class="n">respBody</span> <span class="o">:=</span> <span class="n">strings</span><span class="o">.</span><span class="n">NewReader</span><span class="p">(</span><span class="s">`
+		{
+			"foo": "bar",
+			"fizz": "buzz"
+		}
+	`</span><span class="p">)</span>
+
+	<span class="n">resp</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">Post</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">,</span> <span class="n">respBody</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+	<span class="p">}</span>
+
+	<span class="n">content</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">ioutil</span><span class="o">.</span><span class="n">ReadAll</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">Body</span><span class="p">)</span>
+	<span class="k">defer</span> <span class="n">resp</span><span class="o">.</span><span class="n">Body</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>go run main.go
+<span class="go">{
+  "args": {}, 
+  "data": "\n\t\t{\n\t\t\t\"foo\": \"bar\",\n\t\t\t\"fizz\": \"buzz\"\n\t\t}\n\t", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept-Encoding": "gzip", 
+    "Content-Length": "45", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "Go-http-client/2.0", 
+    "X-Amzn-Trace-Id": "Root=1-621de218-5bc6f4d6284a49792fee5772"
+  }, 
+  "json": {
+    "fizz": "buzz", 
+    "foo": "bar"
+  }, 
+  "origin": "165.255.122.197", 
+  "url": "https://httpbin.org/post"
+}
+</span></code></pre></div></div>
+
+<p>If you want to work with the data in the response, you’ll need to add a struct for the response type. Note <code class="language-plaintext highlighter-rouge">JSON</code> is the attribute here because HTTPBin returns <code class="language-plaintext highlighter-rouge">"json"</code> as a key with an object in it.</p>
+
+<p>Recommended - use <a href="https://mholt.github.io/json-to-go/">JSON to Go</a> to generat the struct from sample JSON.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+	<span class="s">"encoding/json"</span>
+	<span class="s">"fmt"</span>
+	<span class="s">"io/ioutil"</span>
+	<span class="s">"net/http"</span>
+	<span class="s">"strings"</span>
+<span class="p">)</span>
+
+<span class="k">type</span> <span class="n">Response</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">Args</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="p">}</span> <span class="s">`json:"args"`</span>
+	<span class="n">Data</span>  <span class="kt">string</span> <span class="s">`json:"data"`</span>
+	<span class="n">Files</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="p">}</span> <span class="s">`json:"files"`</span>
+	<span class="n">Form</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="p">}</span> <span class="s">`json:"form"`</span>
+	<span class="n">Headers</span> <span class="k">struct</span> <span class="p">{</span>
+		<span class="n">AcceptEncoding</span> <span class="kt">string</span> <span class="s">`json:"Accept-Encoding"`</span>
+		<span class="n">ContentLength</span>  <span class="kt">string</span> <span class="s">`json:"Content-Length"`</span>
+		<span class="n">ContentType</span>    <span class="kt">string</span> <span class="s">`json:"Content-Type"`</span>
+		<span class="n">Host</span>           <span class="kt">string</span> <span class="s">`json:"Host"`</span>
+		<span class="n">UserAgent</span>      <span class="kt">string</span> <span class="s">`json:"User-Agent"`</span>
+		<span class="n">XAmznTraceID</span>   <span class="kt">string</span> <span class="s">`json:"X-Amzn-Trace-Id"`</span>
+	<span class="p">}</span> <span class="s">`json:"headers"`</span>
+	<span class="n">JSON</span> <span class="k">struct</span> <span class="p">{</span>
+		<span class="n">Fizz</span> <span class="kt">string</span> <span class="s">`json:"fizz"`</span>
+		<span class="n">Foo</span>  <span class="kt">string</span> <span class="s">`json:"foo"`</span>
+	<span class="p">}</span> <span class="s">`json:"json"`</span>
+	<span class="n">Origin</span> <span class="kt">string</span> <span class="s">`json:"origin"`</span>
+	<span class="n">URL</span>    <span class="kt">string</span> <span class="s">`json:"url"`</span>
+<span class="p">}</span>
+
+<span class="c">// PrettyPrint Print struct in a readable way</span>
+<span class="k">func</span> <span class="n">PrettyPrint</span><span class="p">(</span><span class="n">i</span> <span class="k">interface</span><span class="p">{})</span> <span class="kt">string</span> <span class="p">{</span>
+	<span class="n">s</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">json</span><span class="o">.</span><span class="n">MarshalIndent</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="s">"</span><span class="se">\t</span><span class="s">"</span><span class="p">)</span>
+
+	<span class="k">return</span> <span class="kt">string</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">u</span> <span class="o">:=</span> <span class="s">"https://httpbin.org/post"</span>
+
+	<span class="n">respBody</span> <span class="o">:=</span> <span class="n">strings</span><span class="o">.</span><span class="n">NewReader</span><span class="p">(</span><span class="s">`
+		{
+			"foo": "bar",
+			"fizz": "buzz"
+		}
+	`</span><span class="p">)</span>
+
+	<span class="n">resp</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">Post</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">,</span> <span class="n">respBody</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+	<span class="p">}</span>
+
+	<span class="n">content</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">ioutil</span><span class="o">.</span><span class="n">ReadAll</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">Body</span><span class="p">)</span>
+	<span class="k">defer</span> <span class="n">resp</span><span class="o">.</span><span class="n">Body</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+
+	<span class="k">var</span> <span class="n">result</span> <span class="n">Response</span>
+	<span class="k">if</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">json</span><span class="o">.</span><span class="n">Unmarshal</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">result</span><span class="p">);</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+		<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Can not unmarshal JSON"</span><span class="p">)</span>
+	<span class="p">}</span>
+    <span class="c">// Full struct.</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">PrettyPrint</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+
+	<span class="c">// Map of your response data.</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">JSON</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+        "args": {},
+        "data": "\n\t\t{\n\t\t\t\"foo\": \"bar\",\n\t\t\t\"fizz\": \"buzz\"\n\t\t}\n\t",
+        "files": {},
+        "form": {},
+        "headers": {
+                "Accept-Encoding": "gzip",
+                "Content-Length": "45",
+                "Content-Type": "application/json",
+                "Host": "httpbin.org",
+                "User-Agent": "Go-http-client/2.0",
+                "X-Amzn-Trace-Id": "Root=1-621de61e-04c382b4412f40c936e9feb3"
+        },
+        "json": {
+                "fizz": "buzz",
+                "foo": "bar"
+        },
+        "origin": "165.255.122.197",
+        "url": "https://httpbin.org/post"
+}
+{buzz bar}
+</code></pre></div></div>
 
         
     </div>
