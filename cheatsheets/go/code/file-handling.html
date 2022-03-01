@@ -163,7 +163,7 @@
 
     <div class="post-content">
         
-            <p>Using <a href="https://pkg.go.dev/os">os</a> built-in package.</p>
+            <p>Using the built-in <a href="https://pkg.go.dev/os">os</a> package.</p>
 
 <h2 id="open-file">Open file</h2>
 
@@ -303,6 +303,40 @@
 
 <span class="k">if</span> <span class="n">_</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">WriteString</span><span class="p">(</span><span class="n">text</span><span class="p">);</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
     <span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="directories">Directories</h2>
+
+<h3 id="create">Create</h3>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="o">.</span><span class="n">MkDir</span><span class="p">(</span><span class="s">"my-dir"</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">ModePerm</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">MkDirAll</span><span class="p">(</span><span class="s">"my/nested/my-dir"</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">ModePerm</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="delete">Delete</h3>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defer</span> <span class="n">os</span><span class="o">.</span><span class="n">Remove</span><span class="p">(</span><span class="s">"my-dir"</span><span class="p">)</span>
+<span class="k">defer</span> <span class="n">os</span><span class="o">.</span><span class="n">RemoveAll</span><span class="p">(</span><span class="s">"my/nested/my-dir"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="working-directory">Working directory</h3>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="o">.</span><span class="n">Getwd</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="current-process">Current process</h3>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">exedir</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">Executable</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>If you do <code class="language-plaintext highlighter-rouge">go run main.go</code> the result will be a binary executable in a temp directory.</p>
+
+<h3 id="contents">Contents</h3>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">contents</span> <span class="o">=</span> <span class="n">ioutils</span><span class="o">.</span><span class="n">ReadDir</span><span class="p">(</span><span class="s">"."</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">fi</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">contents</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">fi</span><span class="o">.</span><span class="n">Name</span><span class="p">(),</span> <span class="n">fi</span><span class="o">.</span><span class="n">IsDir</span><span class="p">())</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
