@@ -165,7 +165,15 @@
         
             <p>A map is a dynamic structure of key-value pairs. Like a hash or dictionary in other languages.</p>
 
+<h2 id="related">Related</h2>
+
+<ul>
+  <li><a href="/dev-cheatsheets/cheatsheets/go/code/json.html">JSON</a> cheatsheet for converting a JSON string to a map.</li>
+</ul>
+
 <h2 id="syntax">Syntax</h2>
+
+<p>Declare:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map[KEY_TYPE]VALUE_TYPE
 </code></pre></div></div>
@@ -175,11 +183,13 @@
 <p>Declare empty.</p>
 
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">a</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span>
+
+<span class="k">var</span> <span class="n">b</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="k">interface</span><span class="p">{}</span>
 </code></pre></div></div>
 
-<p>Declare with contents.</p>
+<p>Declare with contents:</p>
 
-<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">b</span> <span class="o">:=</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span> <span class="s">"foo"</span><span class="o">:</span> <span class="m">10</span><span class="p">,</span> <span class="s">"bar"</span><span class="o">:</span> <span class="m">123</span> <span class="p">}</span>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">:=</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span> <span class="s">"foo"</span><span class="o">:</span> <span class="m">10</span><span class="p">,</span> <span class="s">"bar"</span><span class="o">:</span> <span class="m">123</span> <span class="p">}</span>
 </code></pre></div></div>
 
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">isLegume</span> <span class="o">:=</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">bool</span><span class="p">{</span>
@@ -188,7 +198,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Update.</p>
+<p>Update:</p>
 
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">b</span><span class="p">[</span><span class="s">"bazz"</span><span class="p">]</span> <span class="o">=</span> <span class="m">999</span>
 </code></pre></div></div>
