@@ -259,3 +259,25 @@ q = strconv.QuoteToASCII("Hello, 世界")
 fmt.Println("Result", q)
 // Result "Hello, \u4e16\u754c"
 ```
+
+
+## Bytes to string
+
+If you print bytes you'll see something like this:
+
+```go
+fmt.Println(content)
+// [123 10 32 32 34 97]
+```
+
+Use `string` function:
+
+```go
+fmt.Println(string(content))
+```
+
+Or format as a string with `Printf` instead:
+
+```go
+fmt.Printf("%s\n", content)
+```

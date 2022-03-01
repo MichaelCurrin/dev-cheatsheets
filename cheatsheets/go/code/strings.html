@@ -392,6 +392,24 @@ Unicode characters are escaped with <code class="language-plaintext highlighter-
 <span class="c">// Result "Hello, \u4e16\u754c"</span>
 </code></pre></div></div>
 
+<h2 id="bytes-to-string">Bytes to string</h2>
+
+<p>If you print bytes you’ll see something like this:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<span class="c">// [123 10 32 32 34 97]</span>
+</code></pre></div></div>
+
+<p>Use <code class="language-plaintext highlighter-rouge">string</code> function:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">content</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Or format as a string with <code class="language-plaintext highlighter-rouge">Printf</code> instead:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+</code></pre></div></div>
+
         
     </div>
 </article>
