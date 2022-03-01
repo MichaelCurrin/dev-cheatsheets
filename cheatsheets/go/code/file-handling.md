@@ -1,6 +1,6 @@
 # File handling
 
-Using [os](https://pkg.go.dev/os) built-in package.
+Using the built-in [os](https://pkg.go.dev/os) package.
 
 ## Open file
 
@@ -154,5 +154,45 @@ defer f.Close()
 
 if _, err = f.WriteString(text); err != nil {
     panic(err)
+}
+```
+
+
+## Directories
+
+### Create
+
+```go
+os.MkDir("my-dir", os.ModePerm)
+os.MkDirAll("my/nested/my-dir", os.ModePerm)
+```
+
+### Delete
+
+```go
+defer os.Remove("my-dir")
+defer os.RemoveAll("my/nested/my-dir")
+```
+
+### Working directory
+
+```go
+os.Getwd()
+```
+
+### Current process
+
+```go
+exedir, _ = os.Executable()
+```
+
+If you do `go run main.go` the result will be a binary executable in a temp directory.
+
+### Contents
+
+```go
+contents = ioutils.ReadDir(".")
+for _, fi := range contents {
+    fmt.Println(fi.Name(), fi.IsDir())
 }
 ```
