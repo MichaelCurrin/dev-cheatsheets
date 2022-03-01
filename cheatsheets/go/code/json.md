@@ -30,7 +30,7 @@ func main() {
 	fmt.Printf("%s\n", result)
 }
 ```
-```json
+```
 [{"Name":"John","Age":23,"FavColors":null},{"Name":"Jane","Age":55,"FavColors":["purple","blue","yellow"]}]
 ```
 
