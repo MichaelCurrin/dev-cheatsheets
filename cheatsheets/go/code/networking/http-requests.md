@@ -28,14 +28,13 @@ func main() {
 	fmt.Println(resp.Status)
 	fmt.Println(resp.ContentLength)
 
-	// Build content from bytes.
 	var sb strings.Builder
 
 	content, _ := ioutil.ReadAll(resp.Body)
 	byte_count, _ := sb.Write(content)
 
 	fmt.Println(byte_count)
-  fmt.Println(sb.String())
+	fmt.Println(sb.String())
 }
 ```
 
