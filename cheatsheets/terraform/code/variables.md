@@ -40,7 +40,7 @@ variable "image_id" {
 
 These will give an error if the key is not set, except for the last which sets a default value.
 
-```terraform
+```
 bar.foo
 bar["foo"]
 
