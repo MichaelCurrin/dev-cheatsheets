@@ -201,14 +201,13 @@
 	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">Status</span><span class="p">)</span>
 	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">ContentLength</span><span class="p">)</span>
 
-	<span class="c">// Build content from bytes.</span>
 	<span class="k">var</span> <span class="n">sb</span> <span class="n">strings</span><span class="o">.</span><span class="n">Builder</span>
 
 	<span class="n">content</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">ioutil</span><span class="o">.</span><span class="n">ReadAll</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">Body</span><span class="p">)</span>
 	<span class="n">byte_count</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">sb</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
 
 	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">byte_count</span><span class="p">)</span>
-  <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">String</span><span class="p">())</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">String</span><span class="p">())</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
