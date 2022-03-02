@@ -198,12 +198,12 @@
 
 <p>These will give an error if the key is not set, except for the last which sets a default value.</p>
 
-<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">bar</span><span class="err">.</span><span class="nx">foo</span>
-<span class="nx">bar</span><span class="p">[</span><span class="s2">"foo"</span><span class="p">]</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bar.foo
+bar["foo"]
 
-<span class="nx">lookup</span><span class="err">(</span><span class="nx">bar</span><span class="err">,</span> <span class="s2">"foo"</span><span class="err">)</span>
-<span class="c1"># Set default.</span>
-<span class="nx">lookup</span><span class="err">(</span><span class="nx">bar</span><span class="err">,</span> <span class="s2">"foo"</span><span class="err">,</span> <span class="kc">null</span><span class="err">)</span>
+lookup(bar, "foo")
+# Set default.
+lookup(bar, "foo", null)
 </code></pre></div></div>
 
 <p>Here, <code class="language-plaintext highlighter-rouge">bar</code> is of type <code class="language-plaintext highlighter-rouge">inputMap</code> and you need to use <code class="language-plaintext highlighter-rouge">.value</code> to get a map or you’ll get an error.</p>
