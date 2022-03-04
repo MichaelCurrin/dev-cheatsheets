@@ -4,7 +4,7 @@
 See also my [Git config](https://github.com/MichaelCurrin/dotfiles/blob/master/.gitconfig.toml) in my dotfiles repo.
 
 
-## Editor
+## Commit messag editor
 
 If you prefer to use another editor rather than `vim` when doing `git commit`.
 
@@ -32,6 +32,35 @@ Or
 
 ```sh
 $ git config --global core.editor "code --wait"
+```
+
+
+## Diff tool
+
+Git uses `vimdiff` by default.
+
+Usage:
+
+```sh
+$ git difftool
+$ # OR
+$ git difftool COMMIT_REF^ COMMIT_REF
+```
+
+Help:
+
+```sh
+$ git difftool --tool-help
+```
+
+Set up VS Code as your diff tool based on [SO](https://stackoverflow.com/questions/30024353/how-to-use-visual-studio-code-as-default-editor-for-git#36644561):
+
+```yaml
+[diff]
+    tool = default-difftool
+    
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
 ```
 
 
