@@ -6,11 +6,32 @@ See also my [Git config](https://github.com/MichaelCurrin/dotfiles/blob/master/.
 
 ## Editor
 
-If you prefer to use `nano` rather than `vim` when doing `git commit`.
+If you prefer to use another editor rather than `vim` when doing `git commit`.
 
-```yoml
+### Nano
+
+```yaml
 [core]
 	editor = "nano"
+```
+
+Or
+
+```sh
+$ git config --global core.editor "nano
+```
+
+### VS Code
+
+```yaml
+[core]
+	editor = "code --wait"
+```
+
+Or
+
+```sh
+$ git config --global core.editor "code --wait"
 ```
 
 
