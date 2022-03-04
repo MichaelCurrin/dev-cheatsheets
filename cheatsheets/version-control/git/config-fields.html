@@ -15,7 +15,7 @@
 
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:title" content="Config files" />
-<meta name="generator" content="Jekyll v4.2.1" />
+<meta name="generator" content="Jekyll v4.2.2" />
 
 <meta property="og:locale" content="en_US" />
 
@@ -167,11 +167,29 @@
 
 <h2 id="editor">Editor</h2>
 
-<p>If you prefer to use <code class="language-plaintext highlighter-rouge">nano</code> rather than <code class="language-plaintext highlighter-rouge">vim</code> when doing <code class="language-plaintext highlighter-rouge">git commit</code>.</p>
+<p>If you prefer to use another editor rather than <code class="language-plaintext highlighter-rouge">vim</code> when doing <code class="language-plaintext highlighter-rouge">git commit</code>.</p>
 
-<pre><code class="language-yoml">[core]
-	editor = "nano"
-</code></pre>
+<h3 id="nano">Nano</h3>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">[</span><span class="nv">core</span><span class="pi">]</span>
+<span class="err">	</span><span class="s">editor = "nano"</span>
+</code></pre></div></div>
+
+<p>Or</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git config <span class="nt">--global</span> core.editor <span class="s2">"nano
+</span></code></pre></div></div>
+
+<h3 id="vs-code">VS Code</h3>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">[</span><span class="nv">core</span><span class="pi">]</span>
+<span class="err">	</span><span class="s">editor = "code --wait"</span>
+</code></pre></div></div>
+
+<p>Or</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git config <span class="nt">--global</span> core.editor <span class="s2">"code --wait"</span>
+</code></pre></div></div>
 
 <h2 id="aliases">Aliases</h2>
 
