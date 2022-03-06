@@ -1075,6 +1075,9 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/typescript.html</loc>
 </url>
 <url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/uname.html</loc>
+</url>
+<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/restore/undo.html</loc>
 </url>
 <url>
@@ -2831,9 +2834,6 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/scp.html</loc>
-</url>
-<url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/uname.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/which.html</loc>
