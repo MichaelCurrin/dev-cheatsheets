@@ -19,7 +19,9 @@ echo "$OSTYPE"
 
 ### The uname command
 
-See `uname` [manpage](https://ss64.com/osx/uname.html).
+See [uname][] cheatsheet.
+
+[uname]: {% link cheatsheets/shell/commands/uname.md %}
 
 ```sh
 $ uname
