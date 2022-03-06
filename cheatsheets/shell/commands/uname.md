@@ -1,5 +1,7 @@
-# uname
-
+----
+title: uname
+description: Print system information
+---
 
 ## Help
 
@@ -27,17 +29,33 @@ Full documentation at: <https://www.gnu.org/software/coreutils/
 
 ## Samples
 
+### Kernel name
+
+Use no flags or add `-s`.
+
+On Linux and macOS:
+
 ```console
-$ uname -s
-Linux
 $ uname
 Linux
 ```
 
 ```console
+$ uname
+Darwin
+```
+
+### Machine hardware
+
+On a Dell and macOS:
+
+```console
 $ uname -m
 x86_64
 ```
+
+
+### All
 
 ```console
 $ uname -a

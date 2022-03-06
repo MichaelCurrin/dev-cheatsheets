@@ -8,13 +8,6 @@
 
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
-
-    <title>uname | Dev Cheatsheets</title>
-
-    <meta property="og:title" content="uname" />
-
-    <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="uname" />
 <meta name="generator" content="Jekyll v4.2.2" />
 
 <meta property="og:locale" content="en_US" />
@@ -35,7 +28,7 @@
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/uname.html",
-    "headline":    "uname",
+    "headline":    "",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -99,7 +92,7 @@
             
 
 
-            <span>uname</span>
+            <span></span>
         </h1>
 
         
@@ -151,7 +144,7 @@
 
         
             <a href="/dev-cheatsheets/cheatsheets/shell/commands/uname.html" class="underline">
-                uname
+                
             </a>
         
      
@@ -163,7 +156,12 @@
 
     <div class="post-content">
         
-            <h2 id="help">Help</h2>
+            <hr />
+<p>title: uname
+description: Print system information
+—</p>
+
+<h2 id="help">Help</h2>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">uname</span> <span class="nt">--help</span>
 <span class="go">Usage: uname [OPTION]...
@@ -188,15 +186,29 @@ Print certain system information.  With no OPTION, same as -s.
 
 <h2 id="samples">Samples</h2>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">uname</span> <span class="nt">-s</span>
-<span class="go">Linux
-</span><span class="gp">$</span><span class="w"> </span><span class="nb">uname</span>
+<h3 id="kernel-name">Kernel name</h3>
+
+<p>Use no flags or add <code class="language-plaintext highlighter-rouge">-s</code>.</p>
+
+<p>On Linux and macOS:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">uname</span>
 <span class="go">Linux
 </span></code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">uname</span>
+<span class="go">Darwin
+</span></code></pre></div></div>
+
+<h3 id="machine-hardware">Machine hardware</h3>
+
+<p>On a Dell and macOS:</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">uname</span> <span class="nt">-m</span>
 <span class="go">x86_64
 </span></code></pre></div></div>
+
+<h3 id="all">All</h3>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">uname</span> <span class="nt">-a</span>
 <span class="gp">Linux dell-lite 5.4.0-64-generic #</span>72-Ubuntu SMP Fri Jan 15 10:27:54 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
