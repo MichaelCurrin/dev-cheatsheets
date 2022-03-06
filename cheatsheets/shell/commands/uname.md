@@ -1,4 +1,4 @@
-----
+---
 title: uname
 description: Print system information
 ---
