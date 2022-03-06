@@ -5,6 +5,10 @@ description: Print system information
 
 ## Help
 
+See OSX [Manpage](https://ss64.com/osx/uname.html).
+
+CLI help for Linux (macOS gives an error on `-h` or `--help`).
+
 ```console
 $ uname --help
 Usage: uname [OPTION]...
