@@ -364,6 +364,67 @@ metadata:
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl describe deploy my-pod-name | <span class="nb">grep </span>NewReplicaSet
 </code></pre></div></div>
 
+<h2 id="copy">Copy</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl <span class="nb">cp</span> &lt;file-spec-src&gt; &lt;file-spec-dest&gt; <span class="o">[</span>options]
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl <span class="nb">cp</span> /tmp/foo &lt;some-pod&gt;:/tmp/bar
+</code></pre></div></div>
+
+<p>From CLI help:</p>
+
+<blockquote>
+  <p>Copy /tmp/foo local file to <code class="language-plaintext highlighter-rouge">/tmp/bar</code> in a remote pod in a specific container</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl <span class="nb">cp</span> /tmp/foo &lt;some-pod&gt;:/tmp/bar <span class="nt">-c</span> &lt;specific-container&gt;
+</code></pre></div></div>
+
+<p>More help:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>kubectl <span class="nb">cp</span> <span class="nt">-h</span>
+<span class="go">Copy files and directories to and from containers.
+
+Examples:
+</span><span class="gp">  #</span><span class="w"> </span><span class="o">!!!</span>Important Note!!!
+<span class="gp">  #</span><span class="w"> </span>Requires that the <span class="s1">'tar'</span> binary is present <span class="k">in </span>your container
+<span class="gp">  #</span><span class="w"> </span>image.  If <span class="s1">'tar'</span> is not present, <span class="s1">'kubectl cp'</span> will fail.
+<span class="gp">  #</span><span class="w">
+</span><span class="gp">  #</span><span class="w"> </span>For advanced use cases, such as symlinks, wildcard expansion or
+<span class="gp">  #</span><span class="w"> </span>file mode preservation, consider using <span class="s1">'kubectl exec'</span><span class="nb">.</span>
+<span class="go">
+</span><span class="gp">  #</span><span class="w"> </span>Copy /tmp/foo <span class="nb">local </span>file to /tmp/bar <span class="k">in </span>a remote pod <span class="k">in </span>namespace &lt;some-namespace&gt;
+<span class="gp">  tar cf - /tmp/foo | kubectl exec -i -n &lt;some-namespace&gt;</span><span class="w"> </span>&lt;some-pod&gt; <span class="nt">--</span> <span class="nb">tar </span>xf - <span class="nt">-C</span> /tmp/bar
+<span class="go">
+</span><span class="gp">  #</span><span class="w"> </span>Copy /tmp/foo from a remote pod to /tmp/bar locally
+<span class="gp">  kubectl exec -n &lt;some-namespace&gt;</span><span class="w"> </span>&lt;some-pod&gt; <span class="nt">--</span> <span class="nb">tar </span>cf - /tmp/foo | <span class="nb">tar </span>xf - <span class="nt">-C</span> /tmp/bar
+<span class="go">
+</span><span class="gp">  #</span><span class="w"> </span>Copy /tmp/foo_dir <span class="nb">local </span>directory to /tmp/bar_dir <span class="k">in </span>a remote pod <span class="k">in </span>the default namespace
+<span class="gp">  kubectl cp /tmp/foo_dir &lt;some-pod&gt;</span>:/tmp/bar_dir
+<span class="go">
+</span><span class="gp">  #</span><span class="w"> </span>Copy /tmp/foo <span class="nb">local </span>file to /tmp/bar <span class="k">in </span>a remote pod <span class="k">in </span>a specific container
+<span class="gp">  kubectl cp /tmp/foo &lt;some-pod&gt;</span>:/tmp/bar <span class="nt">-c</span> &lt;specific-container&gt;
+<span class="go">
+</span><span class="gp">  #</span><span class="w"> </span>Copy /tmp/foo <span class="nb">local </span>file to /tmp/bar <span class="k">in </span>a remote pod <span class="k">in </span>namespace &lt;some-namespace&gt;
+<span class="gp">  kubectl cp /tmp/foo &lt;some-namespace&gt;</span>/&lt;some-pod&gt;:/tmp/bar
+<span class="go">
+</span><span class="gp">  #</span><span class="w"> </span>Copy /tmp/foo from a remote pod to /tmp/bar locally
+<span class="gp">  kubectl cp &lt;some-namespace&gt;</span>/&lt;some-pod&gt;:/tmp/foo /tmp/bar
+<span class="go">
+Options:
+  -c, --container='': Container name. If omitted, use the kubectl.kubernetes.io/default-container annotation for
+selecting the container to be attached or the first container in the pod will be chosen
+      --no-preserve=false: The copied file/directory's ownership and permissions will not be preserved in the container
+
+Usage:
+</span><span class="gp">  kubectl cp &lt;file-spec-src&gt;</span><span class="w"> </span>&lt;file-spec-dest&gt; <span class="o">[</span>options]
+<span class="go">
+Use "kubectl options" for a list of global command-line options (applies to all commands).
+</span></code></pre></div></div>
+
 <h2 id="man-page">Man page</h2>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl <span class="nt">--help</span>
