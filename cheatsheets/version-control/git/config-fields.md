@@ -4,21 +4,23 @@
 See also my [Git config](https://github.com/MichaelCurrin/dotfiles/blob/master/.gitconfig.toml) in my dotfiles repo.
 
 
-## Commit messag editor
+## Commit message editor
 
-If you prefer to use another editor rather than `vim` when doing `git commit`.
+If you prefer to use another editor rather than `vim` (default on macOS and Linux) when doing `git commit`.
+
+More info - see [Git Commands - setup and config](https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Setup-and-Config) in the Git docs.
 
 ### Nano
 
 ```yaml
 [core]
-	editor = "nano"
+	editor = "nano -w"
 ```
 
 Or
 
 ```sh
-$ git config --global core.editor "nano
+$ git config --global core.editor "nano -w"
 ```
 
 ### VS Code
