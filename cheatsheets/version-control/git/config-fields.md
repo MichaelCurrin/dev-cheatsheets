@@ -1,7 +1,10 @@
 # Config files
 
 
-See also my [Git config](https://github.com/MichaelCurrin/dotfiles/blob/master/.gitconfig.toml) in my dotfiles repo.
+See also:
+
+- [Git config](https://github.com/MichaelCurrin/dotfiles/blob/master/.gitconfig.toml) in my dotfiles repo.
+- [Git configuration](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) in the Git docs.
 
 
 ## Commit message editor
