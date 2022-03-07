@@ -165,20 +165,22 @@
         
             <p>See also my <a href="https://github.com/MichaelCurrin/dotfiles/blob/master/.gitconfig.toml">Git config</a> in my dotfiles repo.</p>
 
-<h2 id="commit-messag-editor">Commit messag editor</h2>
+<h2 id="commit-message-editor">Commit message editor</h2>
 
-<p>If you prefer to use another editor rather than <code class="language-plaintext highlighter-rouge">vim</code> when doing <code class="language-plaintext highlighter-rouge">git commit</code>.</p>
+<p>If you prefer to use another editor rather than <code class="language-plaintext highlighter-rouge">vim</code> (default on macOS and Linux) when doing <code class="language-plaintext highlighter-rouge">git commit</code>.</p>
+
+<p>More info - see <a href="https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Setup-and-Config">Git Commands - setup and config</a> in the Git docs.</p>
 
 <h3 id="nano">Nano</h3>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">[</span><span class="nv">core</span><span class="pi">]</span>
-<span class="err">	</span><span class="s">editor = "nano"</span>
+<span class="err">	</span><span class="s">editor = "nano -w"</span>
 </code></pre></div></div>
 
 <p>Or</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git config <span class="nt">--global</span> core.editor <span class="s2">"nano
-</span></code></pre></div></div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git config <span class="nt">--global</span> core.editor <span class="s2">"nano -w"</span>
+</code></pre></div></div>
 
 <h3 id="vs-code">VS Code</h3>
 
