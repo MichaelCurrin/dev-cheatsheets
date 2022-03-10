@@ -193,6 +193,7 @@
   <li>Browser
     <ul>
       <li>The <code class="language-plaintext highlighter-rouge">fetch</code> function is built-in for modern browsers.</li>
+      <li>Built-in for Node 17+ - <a href="https://fusebit.io/blog/node-fetch/">article</a>.</li>
       <li>Available as a polyfill from NPM for older browsers:
         <ul>
           <li><a href="https://github.com/github/fetch">whatwg-fetch</a> on GitHub.</li>
@@ -201,11 +202,11 @@
       </li>
     </ul>
   </li>
-  <li>NPM
+  <li>Node/NPM
     <ul>
       <li><a href="https://www.npmjs.com/package/node-fetch">node-fetch</a>
         <ul>
-          <li>The browser <code class="language-plaintext highlighter-rouge">fetch</code> function brought to Noded.js.</li>
+          <li>The browser <code class="language-plaintext highlighter-rouge">fetch</code> function brought to Node.js.</li>
           <li>The docs show how to use it.</li>
         </ul>
       </li>
@@ -217,8 +218,6 @@
     </ul>
   </li>
 </ul>
-
-<p>In Node, you can use <code class="language-plaintext highlighter-rouge">node-fetch</code> or alternatives for the server side.</p>
 
 <p>Warning - an error will <strong>not</strong> be thrown for you on a non-200 status, so you must handle this yourself. Other libraries tend to handle errors for you.</p>
 
