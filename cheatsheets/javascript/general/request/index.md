@@ -6,7 +6,8 @@ description: How to fetch and send data over HTTP using JavaScript
 
 A few common options:
 
-- `fetch` (built-in) or `node-fetch`
+- `fetch` - built-in for the browser and for Node 17+
+- `node-fetch` - polyfill for the Node server side
 - `axios` package
 - `request` package
-- `jquery` - use the `ajax` function.
+- `jquery` package - use the `ajax` function.
