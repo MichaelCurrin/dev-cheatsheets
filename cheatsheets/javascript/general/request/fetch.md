@@ -14,17 +14,16 @@ description: How to get data using the `fetch` function
 
 - Browser
     - The `fetch` function is built-in for modern browsers. 
+    - Built-in for Node 17+ - [article](https://fusebit.io/blog/node-fetch/).
     - Available as a polyfill from NPM for older browsers:
         - [whatwg-fetch](https://github.com/github/fetch) on GitHub.
         - [fetch-polyfill](https://www.npmjs.com/package/fetch-polyfill) on NPM. Or [CDN](https://www.jsdelivr.com/package/npm/fetch-polyfill).
-- NPM
+- Node/NPM
     - [node-fetch](https://www.npmjs.com/package/node-fetch)
-        - The browser `fetch` function brought to Noded.js.
+        - The browser `fetch` function brought to Node.js.
         - The docs show how to use it.
     - [fetch](https://www.npmjs.com/package/fetch)
         - Unrelated to `fetch` function but shown for interest.
-
-In Node, you can use `node-fetch` or alternatives for the server side.
 
 Warning - an error will **not** be thrown for you on a non-200 status, so you must handle this yourself. Other libraries tend to handle errors for you.
 
