@@ -19,7 +19,7 @@ While session storage data gets cleared when the page session ends — that is, 
 
 ## Resources
 
-In Mozilla docs.
+In Mozilla docs:
 
 - [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 - [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
@@ -27,6 +27,8 @@ In Mozilla docs.
 See also [Cookies][] cheatsheet.
 
 [Cookies]: {% link cheatsheets/javascript/browser/cookies.md %}
+
+[Blog post](https://dev.to/arikaturika/javascript-local-storage-beginner-s-guide-1gk1) on local storage.
 
 
 ## Methods
