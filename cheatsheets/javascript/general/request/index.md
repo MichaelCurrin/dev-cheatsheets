@@ -1,6 +1,6 @@
 ---
-title: Request
-description: How to fetch and send data over HTTP using JavaScript
+title: HTTP request
+description: How to get and send data over HTTP using JavaScript
 ---
 
 
