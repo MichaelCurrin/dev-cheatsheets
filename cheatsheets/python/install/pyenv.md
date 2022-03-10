@@ -1,8 +1,10 @@
-# Pyenv
+---
+title: Pyenv
+description: Manage multipe versions of Python
+---
 
 <!-- TODO: Copy from learn to code python -->
 
-Manage multiple versions of Python.
 
 ## List available Python versions
 
