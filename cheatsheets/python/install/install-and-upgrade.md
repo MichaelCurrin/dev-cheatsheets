@@ -1,4 +1,4 @@
-# Install and upgrade
+# Install and upgrade Python
 
 ## macOS
 
