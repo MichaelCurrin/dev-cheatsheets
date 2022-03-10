@@ -36,10 +36,29 @@ In a function:
 function resolveAfter2Seconds() {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve(`resolved at ${(new Date()).toTimeString()}`);
+      resolve(`resolved at ${ (new Date()).toTimeString() }`);
     }, 2000);
   });
 }
+```
+
+
+## Resolve and reject
+
+```javascript
+new Promise(resolve => {
+    resolve("Success value")
+});
+```
+
+```javascript
+new Promise((resolve, reject) => {    
+    reject("Failure value")
+    // OR
+    reject(throw new Error("Failure value"))
+    
+    resolve("Success value")
+});
 ```
 
 

@@ -206,10 +206,26 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">resolveAfter2Seconds</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">resolve</span><span class="p">(</span><span class="s2">`resolved at </span><span class="p">${(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">toTimeString</span><span class="p">()}</span><span class="s2">`</span><span class="p">);</span>
+      <span class="nx">resolve</span><span class="p">(</span><span class="s2">`resolved at </span><span class="p">${</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">toTimeString</span><span class="p">()</span> <span class="p">}</span><span class="s2">`</span><span class="p">);</span>
     <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
   <span class="p">});</span>
 <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="resolve-and-reject">Resolve and reject</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">Success value</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>    
+    <span class="nx">reject</span><span class="p">(</span><span class="dl">"</span><span class="s2">Failure value</span><span class="dl">"</span><span class="p">)</span>
+    <span class="c1">// OR</span>
+    <span class="nx">reject</span><span class="p">(</span><span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Failure value</span><span class="dl">"</span><span class="p">))</span>
+    
+    <span class="nx">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">Success value</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">});</span>
 </code></pre></div></div>
 
 <h2 id="promiseall">Promise.all</h2>
