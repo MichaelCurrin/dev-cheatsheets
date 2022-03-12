@@ -439,16 +439,20 @@ dt.time()
 
 ### Convert from unix timestamp to datetime
 
+Pass in an integer or flaot.
+
+Use `datetime.datetime.fromtimestamp` to get datetime or `datetime.date.fromtimestamp` to get a date.
+
+e.g.
+
 ```python
 datetime.datetime.fromtimestamp(1403602426.0)
 # datetime.datetime(2014, 6, 24, 11, 33, 46)
 ```
 
-The input be an integer or float.
-
 ### Convert unix timestamp to date and time
 
-Convert duration in seconds to equivalent value in days, hours, minutes or seconds. Using maths and without using `datetime`.
+Convert duration in seconds to equivalent value in days, hours, minutes or seconds. Using maths and without using `datetime`, in case you ever had to do this or something similar.
 
 ```python
 duration = 1234
