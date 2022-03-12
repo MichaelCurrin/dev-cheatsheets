@@ -168,9 +168,23 @@
 <h2 id="basic">Basic</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://httpbin.org/get"</span><span class="p">)</span>
-<span class="n">resp</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">resp</span><span class="p">.</span><span class="n">text</span>
+<span class="c1"># ...
+</span></code></pre></div></div>
+
+<p>If you want to parse JSON data to a Python object:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resp</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
 <span class="c1"># { ... }
 </span></code></pre></div></div>
+
+<h2 id="errors">Errors</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://httpbin.org/get"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">resp</span><span class="p">.</span><span class="n">ok</span><span class="p">:</span>
+    <span class="n">resp</span><span class="p">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+</code></pre></div></div>
 
 <h2 id="auth">Auth</h2>
 
@@ -178,6 +192,15 @@
 <span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="s">'my-username'</span><span class="p">,</span> <span class="s">'my-password'</span><span class="p">)</span>
 
 <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="headers">Headers</h2>
+
+<p>Custom user-agent based on the docs:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.github.com/some/endpoint'</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'user-agent'</span><span class="p">:</span> <span class="s">'my-app/0.0.1'</span><span class="p">}</span>
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="sample">Sample</h2>
