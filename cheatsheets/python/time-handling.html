@@ -562,15 +562,19 @@
 
 <h3 id="convert-from-unix-timestamp-to-datetime">Convert from unix timestamp to datetime</h3>
 
+<p>Pass in an integer or flaot.</p>
+
+<p>Use <code class="language-plaintext highlighter-rouge">datetime.datetime.fromtimestamp</code> to get datetime or <code class="language-plaintext highlighter-rouge">datetime.date.fromtimestamp</code> to get a date.</p>
+
+<p>e.g.</p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="mf">1403602426.0</span><span class="p">)</span>
 <span class="c1"># datetime.datetime(2014, 6, 24, 11, 33, 46)
 </span></code></pre></div></div>
 
-<p>The input be an integer or float.</p>
-
 <h3 id="convert-unix-timestamp-to-date-and-time">Convert unix timestamp to date and time</h3>
 
-<p>Convert duration in seconds to equivalent value in days, hours, minutes or seconds. Using maths and without using <code class="language-plaintext highlighter-rouge">datetime</code>.</p>
+<p>Convert duration in seconds to equivalent value in days, hours, minutes or seconds. Using maths and without using <code class="language-plaintext highlighter-rouge">datetime</code>, in case you ever had to do this or something similar.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">duration</span> <span class="o">=</span> <span class="mi">1234</span>
 
