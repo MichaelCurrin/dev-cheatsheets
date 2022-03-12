@@ -187,6 +187,8 @@
   <li><a href="#print">Print</a></li>
   <li><a href="#printf">Printf</a></li>
   <li><a href="#sprintf">Sprintf</a></li>
+  <li><a href="#fprintln">Fprintln</a></li>
+  <li><a href="#fprint">Fprint</a></li>
 </ul>
 
 <h2 id="println">Println</h2>
@@ -286,6 +288,20 @@
 	<span class="n">io</span><span class="o">.</span><span class="n">WriteString</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Stdout</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
+
+<h2 id="fprintln">Fprintln</h2>
+
+<p>Print to an <code class="language-plaintext highlighter-rouge">io.Writer</code> instance.</p>
+
+<p>e.g.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fmt</span><span class="o">.</span><span class="n">Fprintln</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Stdout</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> 
+<span class="n">fmt</span><span class="o">.</span><span class="n">Fprintln</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Stdout</span><span class="p">,</span> <span class="s">"a"</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="s">"b"</span><span class="p">,</span> <span class="m">12.0</span><span class="p">)</span> 
+</code></pre></div></div>
+
+<h2 id="fprint">Fprint</h2>
+
+<p>As above but without newline.</p>
 
         
     </div>
