@@ -170,3 +170,21 @@ with open(path, 'w') as f_out:
     write.writeheader()
     write.writerows(rows)
 ```
+
+
+## Request CSV over HTTP 
+
+```python
+import csv
+
+import requests 
+
+
+CSV_URL = '' 
+
+with requests.Session() as s:
+    download = s.get(CSV_URL) 
+    decoded_content = download.content.decode('utf-8') 
+    reader = csv.reader(decoded_content.splitlines(), delimiter=',') 
+    csv_data = list(reader) 
+```

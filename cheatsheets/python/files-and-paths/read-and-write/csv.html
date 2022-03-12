@@ -339,6 +339,22 @@ xyz,,1000
     <span class="n">write</span><span class="p">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
 </code></pre></div></div>
 
+<h2 id="request-csv-over-http">Request CSV over HTTP</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="kn">import</span> <span class="nn">requests</span> 
+
+
+<span class="n">CSV_URL</span> <span class="o">=</span> <span class="s">''</span> 
+
+<span class="k">with</span> <span class="n">requests</span><span class="p">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+    <span class="n">download</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">CSV_URL</span><span class="p">)</span> 
+    <span class="n">decoded_content</span> <span class="o">=</span> <span class="n">download</span><span class="p">.</span><span class="n">content</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span> 
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="n">reader</span><span class="p">(</span><span class="n">decoded_content</span><span class="p">.</span><span class="n">splitlines</span><span class="p">(),</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">)</span> 
+    <span class="n">csv_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span> 
+</code></pre></div></div>
+
         
     </div>
 </article>
