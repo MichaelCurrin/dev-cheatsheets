@@ -1300,9 +1300,6 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/go/code/json.html</loc>
 </url>
 <url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/go/code/log.html</loc>
-</url>
-<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/go/code/loops.html</loc>
 </url>
 <url>
@@ -1322,6 +1319,9 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/go/code/printing/</loc>
+</url>
+<url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/go/code/printing/log.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/go/code/random.html</loc>
