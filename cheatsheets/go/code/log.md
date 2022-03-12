@@ -18,3 +18,5 @@ if err != nil {
   log.Fatal(err)
 }
 ```
+
+You can also use `Fatalln`.
