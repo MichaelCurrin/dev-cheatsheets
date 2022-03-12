@@ -186,12 +186,21 @@
     <span class="n">resp</span><span class="p">.</span><span class="n">raise_for_status</span><span class="p">()</span>
 </code></pre></div></div>
 
-<h2 id="auth">Auth</h2>
+<h2 id="query-parameters">Query parameters</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.github.com/user'</span>
-<span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="s">'my-username'</span><span class="p">,</span> <span class="s">'my-password'</span><span class="p">)</span>
+<p>Based on the docs:</p>
 
-<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'key1'</span><span class="p">:</span> <span class="s">'value1'</span><span class="p">,</span> 
+  <span class="s">'key2'</span><span class="p">:</span> <span class="s">'value2'</span>
+<span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://httpbin.org/get'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>You can see that the URL has been correctly encoded by printing the URL:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resp</span><span class="p">.</span><span class="n">url</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">httpbin</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">get</span><span class="err">?</span><span class="n">key2</span><span class="o">=</span><span class="n">value2</span><span class="o">&amp;</span><span class="n">key1</span><span class="o">=</span><span class="n">value1</span>
 </code></pre></div></div>
 
 <h2 id="headers">Headers</h2>
@@ -201,6 +210,14 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.github.com/some/endpoint'</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'user-agent'</span><span class="p">:</span> <span class="s">'my-app/0.0.1'</span><span class="p">}</span>
 <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="auth">Auth</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.github.com/user'</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="s">'my-username'</span><span class="p">,</span> <span class="s">'my-password'</span><span class="p">)</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="sample">Sample</h2>
