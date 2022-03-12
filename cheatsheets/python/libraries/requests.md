@@ -29,13 +29,23 @@ if not resp.ok:
 ```
 
 
-## Auth
+## Query parameters
+
+Based on the docs:
 
 ```python
-url = 'https://api.github.com/user'
-auth = ('my-username', 'my-password')
+params = {
+  'key1': 'value1', 
+  'key2': 'value2'
+}
+resp = requests.get('https://httpbin.org/get', params=params)
+```
 
-resp = requests.get(url, auth=auth)
+You can see that the URL has been correctly encoded by printing the URL:
+
+```python
+resp.url
+https://httpbin.org/get?key2=value2&key1=value1
 ```
 
 
@@ -49,6 +59,15 @@ headers = {'user-agent': 'my-app/0.0.1'}
 requests.get(url, headers=headers)
 ```
 
+
+## Auth
+
+```python
+url = 'https://api.github.com/user'
+auth = ('my-username', 'my-password')
+
+resp = requests.get(url, auth=auth)
+```
 
 ## Sample
 
