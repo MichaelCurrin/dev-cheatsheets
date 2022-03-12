@@ -9,6 +9,8 @@ description: Guide to functions for printing in Go
 - [Print](#print)
 - [Printf](#printf)
 - [Sprintf](#sprintf)
+- [Fprintln](#fprintln)
+- [Fprint](#fprint)
 
 
 ## Println
@@ -120,3 +122,18 @@ func main() {
 	io.WriteString(os.Stdout, s)
 }
 ```
+
+## Fprintln
+
+Print to an `io.Writer` instance.
+
+e.g.
+
+```go
+fmt.Fprintln(os.Stdout, e) 
+fmt.Fprintln(os.Stdout, "a", 12, "b", 12.0) 
+```
+
+## Fprint 
+
+As above but without newline.
