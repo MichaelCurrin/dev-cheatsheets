@@ -31,17 +31,25 @@ From [Usage](https://matplotlib.org/stable/tutorials/introductory/usage.html) tu
 
 ### Simple plot
 
-Create a figure containing a single axes. Then plot some data on the axes.
-
 ```python
-fig, ax = plt.subplots()  
-ax.plot([1, 2, 3, 4], [1, 4, 2, 3]) 
+plot(x, y)        # plot x and y using default line style and color
+
+plot(x, y, 'bo')  # plot x and y using blue circle markers
+
+plot(y)           # plot y using x as index array 0..N-1
+
+plot(y, 'r+')     # ditto, but with red plusses
 ```
 
-Shorter:
-
 ```python
-plt.plot([1, 2, 3, 4], [1, 4, 2, 3]) 
+x = [1, 2, 3, 4]
+y = [1, 4, 2, 3]
+
+fig, ax = plt.subplots()  
+ax.plot(x, y) 
+
+# Or in one line:
+plt.plot(x, y) 
 ```
 
 ### Three lines on a plot
