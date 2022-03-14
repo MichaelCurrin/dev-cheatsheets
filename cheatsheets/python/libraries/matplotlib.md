@@ -25,21 +25,20 @@ import numpy as np
 ```
 
 
-## Examples
+## Line graph
 
-From [Usage](https://matplotlib.org/stable/tutorials/introductory/usage.html) tutorial.
+From [Usage](https://matplotlib.org/stable/tutorials/introductory/usage.html) tutorial and [plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot) method docs.
 
 ### Simple plot
 
 ```python
 plot(x, y)        # plot x and y using default line style and color
-
 plot(x, y, 'bo')  # plot x and y using blue circle markers
-
 plot(y)           # plot y using x as index array 0..N-1
-
 plot(y, 'r+')     # ditto, but with red plusses
 ```
+
+e.g.
 
 ```python
 x = [1, 2, 3, 4]
@@ -52,9 +51,7 @@ ax.plot(x, y)
 plt.plot(x, y) 
 ```
 
-### Three lines on a plot
-
-Using the PyPlot interface.
+### Multiple lines on a plot
 
 ```python
 x = np.linspace(0, 2, 100)
