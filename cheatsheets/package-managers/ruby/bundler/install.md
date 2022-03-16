@@ -52,7 +52,7 @@ But you may prefer to rewrite write it yourself like this:
 
 ```ruby
 group :jekyll_plugins do
-  gem 'jekyll-optional-front-matter', '~>	0.3.2'
+  gem 'jekyll-optional-front-matter', '~> 0.3.2'
   # Other plugins...
 end
 ```
