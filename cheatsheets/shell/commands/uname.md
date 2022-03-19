@@ -51,7 +51,7 @@ Darwin
 
 ### Machine hardware
 
-On a Dell and macOS:
+Sample 64-bit output from a Dell and macOS.
 
 ```console
 $ uname -m
@@ -61,7 +61,7 @@ x86_64
 
 ### All
 
-```console
+```sh
 $ uname -a
 Linux dell-lite 5.4.0-64-generic #72-Ubuntu SMP Fri Jan 15 10:27:54 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
 ```
