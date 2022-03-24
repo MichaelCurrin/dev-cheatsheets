@@ -43,7 +43,7 @@ Go to this page:
 
 - [Install Docker Desktop on Mac](https://docs.docker.com/docker-for-mac/install/)
 
-There is a file to download from the browser. Drag the downloaded `Docker.app` to your _Applications_ as per the install instuctions and you'll get Docker app.
+There is a file to download from the browser. Drag the downloaded `Docker.app` to your _Applications_ as per the install instructions and you'll get Docker app.
 
 This install includes both Docker CLI and the Docker Desktop app. The latter docks as an icon at the top of the screen and allows functionality like signing into Docker hub, changing Kubernetes environment.
 
@@ -52,6 +52,7 @@ This install includes both Docker CLI and the Docker Desktop app. The latter doc
 Go to this page:
 
 - [Install Docker Desktop on Windows](https://docs.docker.com/desktop/windows/install/)
+
 
 ## Install Docker Engine
 
@@ -100,9 +101,9 @@ $ brew install docker-machine
 #### Linux
 
 - [Ubuntu install guide](https://docs.docker.com/engine/install/ubuntu/)
-- [Debian install guide](https://docs.docker.com/engine/install/debian/) 
+- [Debian install guide](https://docs.docker.com/engine/install/debian/)
 
-Below are instructions from the Debian install guide.
+Below are instructions from the Debian install guide. See [Docker Compose install][] cheatsheet if you want to install that too.
 
 1. Remove old Docker packages in case they exist.
     ```sh
@@ -122,9 +123,30 @@ $ sudo apt-get install docker.io
 
 That will install `bridge-utils`, `containerd`, `runc` and `ubuntu-fan`.
 
+Check your version:
+
+```console
+$ sudo docker -v
+Docker version 20.10.7, build 20.10.7-0ubuntu5~20.04.2
+```
+
 Verify that Docker works by using:
 
 ```sh
 $ sudo docker run hello-world
 ```
 
+If you want to run without `sudo` but get an error on permissions, then set this:
+
+```sh
+$ sudo chown $USER /var/run/docker.sock
+```
+
+Check docker:
+
+```console
+$ docker -v
+Docker version 20.10.7, build 20.10.7-0ubuntu5~20.04.2
+```
+
+[Docker Compose install]: {% link cheatsheets/containers/docker-compose/install.md %}
