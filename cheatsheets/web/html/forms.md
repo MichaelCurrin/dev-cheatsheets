@@ -373,3 +373,22 @@ Based on [guide](https://html.com/forms/).
     <!-- repeat -->
 </form>
 ```
+## Password sections
+<input> elements of type [password](https://www.scaler.com/topics/html/html-forms/) provide a way for the user to securely enter a password. We can enter our password which will appear as a plain text editor control where the text is obscured so that it cannot be read, usually by replacing each character with a symbol such as an asterisk ("*") or a dot ("•").
+```html
+<input type="password"> //defines an obscure password field
+```
+
+**Example:**
+```html
+    <form>
+        <label for="pass"><h4>Enter Password :</h4></label>
+        <input
+          type="password"
+          id="pass"
+          name="password"
+          minlength="8"
+          required >
+    </form>
+```
+
