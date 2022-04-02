@@ -27,6 +27,14 @@ logo: postgresql
 
 [source](https://www.postgresqltutorial.com/postgresql-show-databases/)
 
+In the CLI:
+
+```sh
+$ psql -U postgres -l
+```
+
+Recommended - specify a user as the default is `root` and you'll get an error if that does not exist.
+
 ### Tables
 
 Show all tables.
@@ -44,6 +52,15 @@ Get info on a table.
 
 ```
 postgres=# \d+ table_name
+```
+
+
+## Use database
+
+If you omit database name argument, the default of `postgres` will be used.
+
+```sh
+$ psql -U postgres DB_NAME
 ```
 
 
