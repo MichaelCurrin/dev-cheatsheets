@@ -9,7 +9,7 @@ description: Working with dates, times and current time in JS
 See [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object and methods in the Mozilla docs.
 
 > A JavaScript date is fundamentally specified as the number of **milliseconds** that have elapsed since midnight on January 1, 1970, UTC.
-> 
+>
 > This date and time are **not the same** as the UNIX epoch (the number of seconds that have elapsed since midnight on January 1, 1970, UTC), which is the predominant base value for computer-recorded date and time values.
 
 <!-- Note this page's snippets are not setup with '>' and result, because the results for timing are hard to read with highlighting. -->
@@ -21,7 +21,7 @@ See [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Glo
 const datetime = new Date()
 ```
 
-Just a few of the methods available.
+Just a few of the methods available:
 
 ```javascript
 datetime.getFullYear()
@@ -83,6 +83,20 @@ datetime.toLocaleString()
 // '09/09/2001, 03:46:40'
 ```
 
+Unix timestamp from datetime:
+
+```javascript
+const datetime = new Date()
+
+// Milliseconds:
+const ts = datetime.getTime()
+// 1648715729097
+
+// Convert to seconds:
+parseInt(ts/1000)
+// 1648715729
+```
+
 
 ## Get current date and time
 
@@ -112,9 +126,7 @@ It is a shortcut for calling `new Date().toString()`.
 
 ### Using Date.now
 
-Create unix timestamp for current time.
-
-Passing a param doesn't seem to make a difference.
+Create unix timestamp for current time in milliseconds. See earlier section for converting to seconds.
 
 ```javascript
 Date.now()
@@ -127,6 +139,8 @@ That is the same as using `Date` constructor but shorter and cleaner.
 Date.now() === (new Date()).getTime()
 // true
 ```
+
+
 
 
 ## UTC constructor
@@ -158,7 +172,7 @@ new Date(Date.UTC(2020, 1, 2, 3, 4, 5))
 
 ## Timestamp
 
-Convert timestamp to datetime. 
+Convert timestamp to datetime.
 
 Timestamp is in milliseconds, otherewise it is like unix timestamp (which is in seconds).
 
@@ -217,7 +231,7 @@ currYear
 expiry.setYear(currYear + 5);
 
 expiry
-// Date Mon Apr 20 2026 19:28:52 GMT+0200 (South Africa Standard Time) 
+// Date Mon Apr 20 2026 19:28:52 GMT+0200 (South Africa Standard Time)
 
 expiry.toGMTString() // now 2026!
 // "Mon, 20 Apr 2026 17:28:52 GMT"
