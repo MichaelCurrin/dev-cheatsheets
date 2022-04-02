@@ -185,7 +185,7 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>Just a few of the methods available.</p>
+<p>Just a few of the methods available:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">()</span>
 <span class="c1">// 2021</span>
@@ -236,6 +236,19 @@
 <span class="c1">// '09/09/2001, 03:46:40'</span>
 </code></pre></div></div>
 
+<p>Unix timestamp from datetime:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
+
+<span class="c1">// Milliseconds:</span>
+<span class="kd">const</span> <span class="nx">ts</span> <span class="o">=</span> <span class="nx">datetime</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span>
+<span class="c1">// 1648715729097</span>
+
+<span class="c1">// Convert to seconds:</span>
+<span class="nb">parseInt</span><span class="p">(</span><span class="nx">ts</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>
+<span class="c1">// 1648715729</span>
+</code></pre></div></div>
+
 <h2 id="get-current-date-and-time">Get current date and time</h2>
 
 <h3 id="using-date">Using Date</h3>
@@ -261,9 +274,7 @@
 
 <h3 id="using-datenow">Using Date.now</h3>
 
-<p>Create unix timestamp for current time.</p>
-
-<p>Passing a param doesn’t seem to make a difference.</p>
+<p>Create unix timestamp for current time in milliseconds. See earlier section for converting to seconds.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
 <span class="c1">// 1618822230513</span>
@@ -356,7 +367,7 @@
 <span class="nx">expiry</span><span class="p">.</span><span class="nx">setYear</span><span class="p">(</span><span class="nx">currYear</span> <span class="o">+</span> <span class="mi">5</span><span class="p">);</span>
 
 <span class="nx">expiry</span>
-<span class="c1">// Date Mon Apr 20 2026 19:28:52 GMT+0200 (South Africa Standard Time) </span>
+<span class="c1">// Date Mon Apr 20 2026 19:28:52 GMT+0200 (South Africa Standard Time)</span>
 
 <span class="nx">expiry</span><span class="p">.</span><span class="nx">toGMTString</span><span class="p">()</span> <span class="c1">// now 2026!</span>
 <span class="c1">// "Mon, 20 Apr 2026 17:28:52 GMT"</span>

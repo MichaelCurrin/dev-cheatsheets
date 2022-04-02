@@ -198,6 +198,13 @@
 
 <p><a href="https://www.postgresqltutorial.com/postgresql-show-databases/">source</a></p>
 
+<p>In the CLI:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="nt">-U</span> postgres <span class="nt">-l</span>
+</code></pre></div></div>
+
+<p>Recommended - specify a user as the default is <code class="language-plaintext highlighter-rouge">root</code> and you’ll get an error if that does not exist.</p>
+
 <h3 id="tables">Tables</h3>
 
 <p>Show all tables.</p>
@@ -212,6 +219,13 @@
 <p>Get info on a table.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>postgres=# \d+ table_name
+</code></pre></div></div>
+
+<h2 id="use-database">Use database</h2>
+
+<p>If you omit database name argument, the default of <code class="language-plaintext highlighter-rouge">postgres</code> will be used.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="nt">-U</span> postgres DB_NAME
 </code></pre></div></div>
 
 <h2 id="quit">Quit</h2>

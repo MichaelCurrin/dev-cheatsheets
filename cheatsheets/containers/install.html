@@ -205,7 +205,7 @@
   <li><a href="https://docs.docker.com/docker-for-mac/install/">Install Docker Desktop on Mac</a></li>
 </ul>
 
-<p>There is a file to download from the browser. Drag the downloaded <code class="language-plaintext highlighter-rouge">Docker.app</code> to your <em>Applications</em> as per the install instuctions and you’ll get Docker app.</p>
+<p>There is a file to download from the browser. Drag the downloaded <code class="language-plaintext highlighter-rouge">Docker.app</code> to your <em>Applications</em> as per the install instructions and you’ll get Docker app.</p>
 
 <p>This install includes both Docker CLI and the Docker Desktop app. The latter docks as an icon at the top of the screen and allows functionality like signing into Docker hub, changing Kubernetes environment.</p>
 
@@ -275,7 +275,7 @@
   <li><a href="https://docs.docker.com/engine/install/debian/">Debian install guide</a></li>
 </ul>
 
-<p>Below are instructions from the Debian install guide.</p>
+<p>Below are instructions from the Debian install guide. See <a href="/dev-cheatsheets/cheatsheets/containers/docker-compose/install.html">Docker Compose install</a> cheatsheet if you want to install that too.</p>
 
 <ol>
   <li>Remove old Docker packages in case they exist.
@@ -296,10 +296,27 @@
 
 <p>That will install <code class="language-plaintext highlighter-rouge">bridge-utils</code>, <code class="language-plaintext highlighter-rouge">containerd</code>, <code class="language-plaintext highlighter-rouge">runc</code> and <code class="language-plaintext highlighter-rouge">ubuntu-fan</code>.</p>
 
+<p>Check your version:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>docker <span class="nt">-v</span>
+<span class="go">Docker version 20.10.7, build 20.10.7-0ubuntu5~20.04.2
+</span></code></pre></div></div>
+
 <p>Verify that Docker works by using:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>docker run hello-world
 </code></pre></div></div>
+
+<p>If you want to run without <code class="language-plaintext highlighter-rouge">sudo</code> but get an error on permissions, then set this:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo chown</span> <span class="nv">$USER</span> /var/run/docker.sock
+</code></pre></div></div>
+
+<p>Check docker:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>docker <span class="nt">-v</span>
+<span class="go">Docker version 20.10.7, build 20.10.7-0ubuntu5~20.04.2
+</span></code></pre></div></div>
 
 
         
