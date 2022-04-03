@@ -156,7 +156,13 @@
 
     <div class="post-content">
         
-            <h2 id="resources">Resources</h2>
+            <h2 id="related">Related</h2>
+
+<ul>
+  <li><a href="/dev-cheatsheets/cheatsheets/containers/docker-compose/install.html">Install Docker Compose</a></li>
+</ul>
+
+<h2 id="resources">Resources</h2>
 
 <p>See one of these in the Docker docs and choose your OS there:</p>
 
@@ -248,20 +254,10 @@
 
 <ul>
   <li><a href="https://formulae.brew.sh/formula/docker">docker</a> Brew formula</li>
-  <li><a href="https://formulae.brew.sh/formula/docker-compose#default">docker-compose</a></li>
 </ul>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>docker
-<span class="nv">$ </span>brew <span class="nb">install </span>docker-compose
 </code></pre></div></div>
-
-<blockquote>
-  <p>Compose is now a Docker plugin. For Docker to find this plugin, symlink it:</p>
-
-  <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> ~/.docker/cli-plugins
-<span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-sfn</span> <span class="si">$(</span>brew <span class="nt">--prefix</span><span class="si">)</span>/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
-</code></pre></div>  </div>
-</blockquote>
 
 <p>You might need to install and run <code class="language-plaintext highlighter-rouge">docker-machine</code> too as per <a href="https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3">article</a>.</p>
 
@@ -275,7 +271,10 @@
   <li><a href="https://docs.docker.com/engine/install/debian/">Debian install guide</a></li>
 </ul>
 
-<p>Below are instructions from the Debian install guide. See <a href="/dev-cheatsheets/cheatsheets/containers/docker-compose/install.html">Docker Compose install</a> cheatsheet if you want to install that too.</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>docker.io
+</code></pre></div></div>
+
+<p>If that doesn’t work, below are instructions from the Debian install guide.</p>
 
 <ol>
   <li>Remove old Docker packages in case they exist.
@@ -289,12 +288,10 @@
   </li>
 </ol>
 
-<p>For Linux Lite, those packages not available, so use:</p>
+<p>If you want to run without <code class="language-plaintext highlighter-rouge">sudo</code> but get an error on permissions, then change access for <code class="language-plaintext highlighter-rouge">/var/run/docker.sock</code>. NB. this must be owned by root always and on a reboot it will be reset to root each time. So maybe this will work:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>docker.io
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo chmod </span>755 /var/run/docker.sock
 </code></pre></div></div>
-
-<p>That will install <code class="language-plaintext highlighter-rouge">bridge-utils</code>, <code class="language-plaintext highlighter-rouge">containerd</code>, <code class="language-plaintext highlighter-rouge">runc</code> and <code class="language-plaintext highlighter-rouge">ubuntu-fan</code>.</p>
 
 <p>Check your version:</p>
 
@@ -306,18 +303,6 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>docker run hello-world
 </code></pre></div></div>
-
-<p>If you want to run without <code class="language-plaintext highlighter-rouge">sudo</code> but get an error on permissions, then change access for <code class="language-plaintext highlighter-rouge">/var/run/docker.sock</code>. NB. this must be owned by root always and on a reboot it will be reset to root each time. So maybe this will work:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo chmod </span>755 /var/run/docker.sock
-</code></pre></div></div>
-
-<p>Check docker:</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>docker <span class="nt">-v</span>
-<span class="go">Docker version 20.10.7, build 20.10.7-0ubuntu5~20.04.2
-</span></code></pre></div></div>
-
 
         
     </div>
