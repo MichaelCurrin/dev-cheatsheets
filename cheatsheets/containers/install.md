@@ -136,10 +136,10 @@ Verify that Docker works by using:
 $ sudo docker run hello-world
 ```
 
-If you want to run without `sudo` but get an error on permissions, then set this:
+If you want to run without `sudo` but get an error on permissions, then change access for `/var/run/docker.sock`. NB. this must be owned by root always and on a reboot it will be reset to root each time. So maybe this will work:
 
 ```sh
-$ sudo chown $USER /var/run/docker.sock
+$ sudo chmod 755 /var/run/docker.sock
 ```
 
 Check docker:
