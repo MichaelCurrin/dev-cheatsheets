@@ -373,3 +373,26 @@ Based on [guide](https://html.com/forms/).
     <!-- repeat -->
 </form>
 ```
+
+
+## Password
+
+Enter a password securely where the text is obscured with an asterisk or dot.
+
+```html
+<input type="password" /> 
+```
+
+e.g.
+
+```html
+<form>
+    <label for="pass">Enter Password:</label>
+    <input id="pass" name="password" type="password" minlength="16" required />
+</form>
+```
+
+<form>
+    <label for="pass">Enter Password:</label>
+    <input id="pass" name="password" type="password" minlength="16" required />
+</form>
