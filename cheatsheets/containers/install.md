@@ -3,6 +3,13 @@ title: Install
 description: How to install Docker and related tools
 ---
 
+## Related
+
+- [Install Docker Compose][]
+
+[Install Docker Compose]: {% link cheatsheets/containers/docker-compose/install.md %}
+
+
 ## Resources
 
 See one of these in the Docker docs and choose your OS there:
@@ -78,19 +85,10 @@ I can't see instructions for Windows and macOS though - just the desktop instruc
 ### macOS
 
 - [docker](https://formulae.brew.sh/formula/docker) Brew formula
-- [docker-compose](https://formulae.brew.sh/formula/docker-compose#default)
 
 ```sh
 $ brew install docker
-$ brew install docker-compose
 ```
-
-> Compose is now a Docker plugin. For Docker to find this plugin, symlink it:
->
-> ```sh
-> $ mkdir -p ~/.docker/cli-plugins
-> $ ln -sfn $(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
-> ```
 
 You might need to install and run `docker-machine` too as per [article](https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3).
 
@@ -103,25 +101,27 @@ $ brew install docker-machine
 - [Ubuntu install guide](https://docs.docker.com/engine/install/ubuntu/)
 - [Debian install guide](https://docs.docker.com/engine/install/debian/)
 
-Below are instructions from the Debian install guide. See [Docker Compose install][] cheatsheet if you want to install that too.
+```sh
+$ sudo apt-get install docker.io
+```
+
+If that doesn't work, below are instructions from the Debian install guide. 
 
 1. Remove old Docker packages in case they exist.
     ```sh
     sudo apt-get remove docker docker-engine docker.io containerd runc
     ```
-2. Install the newer packages.
+1. Install the newer packages.
     ```sh
     $ sudo apt-get update
     $ sudo apt-get install docker-ce docker-ce-cli containerd.io
     ```
-
-For Linux Lite, those packages not available, so use:
+    
+If you want to run without `sudo` but get an error on permissions, then change access for `/var/run/docker.sock`. NB. this must be owned by root always and on a reboot it will be reset to root each time. So maybe this will work:
 
 ```sh
-$ sudo apt-get install docker.io
+$ sudo chmod 755 /var/run/docker.sock
 ```
-
-That will install `bridge-utils`, `containerd`, `runc` and `ubuntu-fan`.
 
 Check your version:
 
@@ -135,18 +135,3 @@ Verify that Docker works by using:
 ```sh
 $ sudo docker run hello-world
 ```
-
-If you want to run without `sudo` but get an error on permissions, then change access for `/var/run/docker.sock`. NB. this must be owned by root always and on a reboot it will be reset to root each time. So maybe this will work:
-
-```sh
-$ sudo chmod 755 /var/run/docker.sock
-```
-
-Check docker:
-
-```console
-$ docker -v
-Docker version 20.10.7, build 20.10.7-0ubuntu5~20.04.2
-```
-
-[Docker Compose install]: {% link cheatsheets/containers/docker-compose/install.md %}
