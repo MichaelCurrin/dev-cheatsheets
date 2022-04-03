@@ -27,9 +27,11 @@ Set permissions:
 $ chmod +x ~/.docker/cli-plugins/docker-compose
 ```
 
-Test docker compose:
+Test docker compose command.
 
 ```console
 $ docker compose version
 Docker Compose version v2.3.3
 ```
+
+Note the new way is as a subcommand and not `docker-compose` command.
