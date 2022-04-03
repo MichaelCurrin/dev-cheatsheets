@@ -163,24 +163,7 @@
 
     <div class="post-content">
         
-            <p>Compose is now a Docker plugin, accessed as a subcommand as <code class="language-plaintext highlighter-rouge">docker compose</code> and not <code class="language-plaintext highlighter-rouge">docker-compose</code> (to be deprecated).</p>
-
-<h2 id="macos">macOS</h2>
-
-<ul>
-  <li><a href="https://formulae.brew.sh/formula/docker-compose#default">docker-compose</a></li>
-</ul>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>docker-compose
-</code></pre></div></div>
-
-<p>For Docker to find this plugin, symlink it:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> ~/.docker/cli-plugins
-<span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-sfn</span> <span class="si">$(</span>brew <span class="nt">--prefix</span><span class="si">)</span>/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
-</code></pre></div></div>
-
-<h2 id="linux">Linux</h2>
+            <h2 id="linux">Linux</h2>
 
 <p>On Linux, you need to install this as a separate plugin.</p>
 
@@ -209,6 +192,8 @@
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>docker compose version
 <span class="go">Docker Compose version v2.3.3
 </span></code></pre></div></div>
+
+<p>Note the new way is as a subcommand and not <code class="language-plaintext highlighter-rouge">docker-compose</code> command.</p>
 
         
     </div>
