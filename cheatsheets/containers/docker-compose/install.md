@@ -1,5 +1,23 @@
 # Install
 
+Compose is now a Docker plugin, accessed as a subcommand as `docker compose` and not `docker-compose` (to be deprecated).
+
+## macOS
+
+- [docker-compose](https://formulae.brew.sh/formula/docker-compose#default)
+
+```sh
+$ brew install docker-compose
+```
+
+For Docker to find this plugin, symlink it:
+
+```sh
+$ mkdir -p ~/.docker/cli-plugins
+$ ln -sfn $(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
+```
+
+
 ## Linux
 
 On Linux, you need to install this as a separate plugin.
@@ -33,5 +51,3 @@ Test docker compose command.
 $ docker compose version
 Docker Compose version v2.3.3
 ```
-
-Note the new way is as a subcommand and not `docker-compose` command.
