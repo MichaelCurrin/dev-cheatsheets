@@ -307,9 +307,9 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>docker run hello-world
 </code></pre></div></div>
 
-<p>If you want to run without <code class="language-plaintext highlighter-rouge">sudo</code> but get an error on permissions, then set this:</p>
+<p>If you want to run without <code class="language-plaintext highlighter-rouge">sudo</code> but get an error on permissions, then change access for <code class="language-plaintext highlighter-rouge">/var/run/docker.sock</code>. NB. this must be owned by root always and on a reboot it will be reset to root each time. So maybe this will work:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo chown</span> <span class="nv">$USER</span> /var/run/docker.sock
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo chmod </span>755 /var/run/docker.sock
 </code></pre></div></div>
 
 <p>Check docker:</p>
