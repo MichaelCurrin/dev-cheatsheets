@@ -368,9 +368,9 @@ curl [OPTIONS...] URL
             <p>Output file with resource’s name. No argument required. The name will be inferred from the URL - useful for when downloading a zip file for example.</p>
 
         </td><td class="col3">
-            <p><code class="language-plaintext highlighter-rouge">curl -O https://example.com/abc/def.zip</code></p>
+            <p><code class="language-plaintext highlighter-rouge">curl https://example.com/abc/def.zip -O</code></p>
 
-<p>Now available as <code class="language-plaintext highlighter-rouge">def.zip</code>.</p>
+<p>Now it will be available as <code class="language-plaintext highlighter-rouge">def.zip</code>.</p>
 
         </td></tr>
 
@@ -382,10 +382,10 @@ curl [OPTIONS...] URL
             <p><code class="language-plaintext highlighter-rouge">-o OUTPUT_PATH</code></p>
 
         </td><td class="col2">
-            <p>Save resource with desired name</p>
+            <p>Save resource with desired name.</p>
 
         </td><td class="col3">
-            <p><code class="language-plaintext highlighter-rouge">curl URL -o foo.txt</code></p>
+            <p><code class="language-plaintext highlighter-rouge">curl https://example.com/abc/def.zip -o foo.zip</code></p>
 
         </td></tr>
 
