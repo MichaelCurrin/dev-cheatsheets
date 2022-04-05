@@ -13,7 +13,6 @@
 
 ## Overview
 
-
 - Start an existing container.
     ```sh
     $ docker start my-app
@@ -84,10 +83,18 @@ $ docker run --rm \
 
 Run a command in an **existing** and **running** container, given a tagged name or ID.
 
-```sh
-$ docker start CONTAINER_NAME
-$ docker exec CONTAINER_NAME
-```
+1. Create the container:
+    ```sh
+    $ docker run IMAGE --name CONTAINER_NAME
+    ```
+1. Start it:
+    ```sh
+    $ docker start CONTAINER_NAME
+    ```
+1. Execute inside it:
+    ```sh
+    $ docker exec CONTAINER_NAME
+    ```
 
 That is useful if you want to tunnel in and use an interactive session with Bash, Python, etc.
 
@@ -147,6 +154,25 @@ $ docker run --rm -p 80:8080 node-app
 
 The Node app will serve on port `8080` and Docker routes that port `80` on the host.
 
+
+## Network
+
+From [Network settings](https://docs.docker.com/engine/reference/run/#network-settings).
+
+```
+--network="bridge" : Connect a container to a network
+                      'bridge': create a network stack on the default Docker bridge
+                      'none': no networking
+                      'container:<name|id>': reuse another container's network stack
+                      'host': use the Docker host network stack
+                      '<network-name>|<network-id>': connect to a user-defined network
+```
+
+e.g. If `my-network` was created by Docker Compose and you want to add a container to that network.
+
+```sh
+$ docker run --network='my-network'
+```
 
 ## Start shell
 
