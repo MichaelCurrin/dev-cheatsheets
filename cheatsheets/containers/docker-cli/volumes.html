@@ -163,17 +163,33 @@
 
     <div class="post-content">
         
-            <h2 id="mount">Mount</h2>
+            <p>Use the more verbose mount approach or the more succinct volume approach.</p>
+
+<ul>
+  <li><a href="https://docs.docker.com/storage/volumes/">Volumes</a> in the Docker docs.</li>
+</ul>
+
+<blockquote>
+  <p>If you start a container with a volume that does not yet exist, Docker creates the volume for</p>
+</blockquote>
+
+<h2 id="mount-vs-volume">Mount vs Volume</h2>
+
+<p>From the docs. Both approaches here give the same results.</p>
 
 <p>Using the <code class="language-plaintext highlighter-rouge">--mount</code> flag.</p>
 
-<p>This is more verbose preferred, according to the docs.</p>
-
-<p>e.g.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">-d</span> <span class="se">\</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="se">\</span>
   <span class="nt">--name</span> devtest <span class="se">\</span>
   <span class="nt">--mount</span> <span class="nb">source</span><span class="o">=</span>myvol2,target<span class="o">=</span>/app <span class="se">\</span>
+  nginx:latest
+</code></pre></div></div>
+
+<p>Using the <code class="language-plaintext highlighter-rouge">--volume</code> flag.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="se">\</span>
+  <span class="nt">--name</span> devtest <span class="se">\</span>
+  <span class="nt">-v</span> myvol2:/app <span class="se">\</span>
   nginx:latest
 </code></pre></div></div>
 
@@ -187,6 +203,8 @@
 ...
 </code></pre></div></div>
 
+<p>Set the <em>from</em> path on the host and the <em>to</em> path in the container.</p>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--volume=FROM:TO
 </code></pre></div></div>
 
@@ -194,14 +212,16 @@
 --volume=$PWD:/app
 </code></pre></div></div>
 
-<p>You can’t use <code class="language-plaintext highlighter-rouge">.</code> for from as you’ll get an error that is must be at least two characters.</p>
+<p>You can’t use <code class="language-plaintext highlighter-rouge">.</code> for <em>from</em> as you’ll get an error that is must be at least two characters. So you the working directory with <code class="language-plaintext highlighter-rouge">$PWD</code>.</p>
 
 <p>e.g.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">--rm</span> <span class="se">\</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="se">\</span>
+  <span class="nt">-it</span> <span class="se">\</span>
+  <span class="nt">--rm</span> <span class="se">\</span>
   <span class="nt">-p</span> 4000:4000
   <span class="nt">--volume</span> <span class="s2">"</span><span class="nv">$PWD</span><span class="s2">:/srv/jekyll"</span> <span class="se">\</span>
-  <span class="nt">-it</span> jekyll/jekyll:<span class="nv">$JEKYLL_VERSION</span> <span class="se">\</span>
+  jekyll/jekyll:<span class="nv">$JEKYLL_VERSION</span> <span class="se">\</span>
   jekyll build <span class="nt">--trace</span>
 </code></pre></div></div>
 
