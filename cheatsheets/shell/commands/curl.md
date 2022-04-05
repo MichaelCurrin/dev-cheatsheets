@@ -54,15 +54,15 @@ cli:
          `-O`
       description: Output file with resource's name. No argument required. The name will be inferred from the URL - useful for when downloading a zip file for example.
       example: |
-        `curl -O https://example.com/abc/def.zip`
+        `curl https://example.com/abc/def.zip -O`
         
-        Now available as `def.zip`.
+        Now it will be available as `def.zip`.
         
     - flag: |
          `-o OUTPUT_PATH`
-      description: Save resource with desired name
+      description: Save resource with desired name.
       example: |
-        `curl URL -o foo.txt`
+        `curl https://example.com/abc/def.zip -o foo.zip`
 ---
 
 
