@@ -28,9 +28,17 @@ $ sudo ./aws/install
 You can now run: /usr/local/bin/aws --version
 ```
 
+Test it:
+
 ```console
 $ aws --version
 aws-cli/2.4.5 Python/3.8.8 Linux/5.4.117-58.216.amzn2.x86_64 exe/x86_64.debian.9 prompt/off
+```
+
+Clean up:
+
+```sh
+$ rm -rf awscliv2.zip aws/
 ```
 
 
