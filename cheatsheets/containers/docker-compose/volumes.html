@@ -234,18 +234,21 @@ This is mounted in the container as <code class="language-plaintext highlighter-
   <span class="na">services</span><span class="pi">:</span>
     <span class="na">web</span><span class="pi">:</span>
       <span class="na">image</span><span class="pi">:</span> <span class="s">nginx:alpine</span>
+        
       <span class="na">volumes</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="na">type</span><span class="pi">:</span> <span class="s">volume</span>
           <span class="na">source</span><span class="pi">:</span> <span class="s">mydata</span>
           <span class="na">target</span><span class="pi">:</span> <span class="s">/data</span>
           <span class="na">volume</span><span class="pi">:</span>
             <span class="na">nocopy</span><span class="pi">:</span> <span class="no">true</span>
+              
         <span class="pi">-</span> <span class="na">type</span><span class="pi">:</span> <span class="s">bind</span>
           <span class="na">source</span><span class="pi">:</span> <span class="s">./static</span>
           <span class="na">target</span><span class="pi">:</span> <span class="s">/opt/app/static</span>
 
     <span class="na">db</span><span class="pi">:</span>
       <span class="na">image</span><span class="pi">:</span> <span class="s">postgres:latest</span>
+        
       <span class="na">volumes</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s2">"</span><span class="s">/var/run/postgres/postgres.sock:/var/run/postgres/postgres.sock"</span>
         <span class="pi">-</span> <span class="s2">"</span><span class="s">dbdata:/var/lib/postgresql/data"</span>
@@ -253,6 +256,31 @@ This is mounted in the container as <code class="language-plaintext highlighter-
   <span class="na">volumes</span><span class="pi">:</span>
     <span class="na">mydata</span><span class="pi">:</span>
     <span class="na">dbdata</span><span class="pi">:</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Another example, from the Docker Compose file <a href="https://docs.docker.com/compose/compose-file/">specification</a>.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">docker-compose.yml</code>
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">services</span><span class="pi">:</span>
+    <span class="na">backend</span><span class="pi">:</span>
+      <span class="na">image</span><span class="pi">:</span> <span class="s">awesome/backend</span>
+        
+      <span class="na">volumes</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">type</span><span class="pi">:</span> <span class="s">volume</span>
+          <span class="na">source</span><span class="pi">:</span> <span class="s">db-data</span>
+          <span class="na">target</span><span class="pi">:</span> <span class="s">/data</span>
+          <span class="na">volume</span><span class="pi">:</span>
+            <span class="na">nocopy</span><span class="pi">:</span> <span class="no">true</span>
+              
+        <span class="pi">-</span> <span class="na">type</span><span class="pi">:</span> <span class="s">bind</span>
+          <span class="na">source</span><span class="pi">:</span> <span class="s">/var/run/postgres/postgres.sock</span>
+          <span class="na">target</span><span class="pi">:</span> <span class="s">/var/run/postgres/postgres.sock</span>
+
+  <span class="na">volumes</span><span class="pi">:</span>
+    <span class="na">db-data</span><span class="pi">:</span>
 </code></pre></div>    </div>
   </li>
 </ul>
