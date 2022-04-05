@@ -73,18 +73,21 @@ Samples from [compose file](https://docs.docker.com/compose/compose-file/) docs.
     services:
       web:
         image: nginx:alpine
+        
         volumes:
           - type: volume
             source: mydata
             target: /data
             volume:
               nocopy: true
+              
           - type: bind
             source: ./static
             target: /opt/app/static
 
       db:
         image: postgres:latest
+        
         volumes:
           - "/var/run/postgres/postgres.sock:/var/run/postgres/postgres.sock"
           - "dbdata:/var/lib/postgresql/data"
@@ -92,4 +95,28 @@ Samples from [compose file](https://docs.docker.com/compose/compose-file/) docs.
     volumes:
       mydata:
       dbdata:
+    ```
+
+
+Another example, from the Docker Compose file [specification](https://docs.docker.com/compose/compose-file/).
+
+- `docker-compose.yml`
+    ```yaml
+    services:
+      backend:
+        image: awesome/backend
+        
+        volumes:
+          - type: volume
+            source: db-data
+            target: /data
+            volume:
+              nocopy: true
+              
+          - type: bind
+            source: /var/run/postgres/postgres.sock
+            target: /var/run/postgres/postgres.sock
+
+    volumes:
+      db-data:
     ```
