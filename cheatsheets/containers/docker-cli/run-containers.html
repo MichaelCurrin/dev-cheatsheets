@@ -249,9 +249,20 @@
 
 <p>Run a command in an <strong>existing</strong> and <strong>running</strong> container, given a tagged name or ID.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker start CONTAINER_NAME
-<span class="nv">$ </span>docker <span class="nb">exec </span>CONTAINER_NAME
-</code></pre></div></div>
+<ol>
+  <li>Create the container:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>docker run IMAGE <span class="nt">--name</span> CONTAINER_NAME
+</code></pre></div>    </div>
+  </li>
+  <li>Start it:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>docker start CONTAINER_NAME
+</code></pre></div>    </div>
+  </li>
+  <li>Execute inside it:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>docker <span class="nb">exec </span>CONTAINER_NAME
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 <p>That is useful if you want to tunnel in and use an interactive session with Bash, Python, etc.</p>
 
@@ -305,6 +316,23 @@
 </code></pre></div></div>
 
 <p>The Node app will serve on port <code class="language-plaintext highlighter-rouge">8080</code> and Docker routes that port <code class="language-plaintext highlighter-rouge">80</code> on the host.</p>
+
+<h2 id="network">Network</h2>
+
+<p>From <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network settings</a>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--network="bridge" : Connect a container to a network
+                      'bridge': create a network stack on the default Docker bridge
+                      'none': no networking
+                      'container:&lt;name|id&gt;': reuse another container's network stack
+                      'host': use the Docker host network stack
+                      '&lt;network-name&gt;|&lt;network-id&gt;': connect to a user-defined network
+</code></pre></div></div>
+
+<p>e.g. If <code class="language-plaintext highlighter-rouge">my-network</code> was created by Docker Compose and you want to add a container to that network.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">--network</span><span class="o">=</span><span class="s1">'my-network'</span>
+</code></pre></div></div>
 
 <h2 id="start-shell">Start shell</h2>
 
