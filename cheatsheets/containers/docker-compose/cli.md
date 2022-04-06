@@ -168,21 +168,21 @@ $ docker compose stop
 
 If you container exited immediately when using `up`, you could use `run` instead, against the name of a service listed in `docker-compose.yml`.
 
+When you use `run` again using the command above, it will spin up a **new** container under a new ID with _run_ in the name.
+
 ```sh
 $ docker compose run SERVICE
 $ # e.g.
 $ docker compose run foo
 ```
 
-If you have no commands specified in the `Dockerfile`, this will start an interactive shell session in teh container.
+If you have no commands specified in the `Dockerfile`, this will start an interactive shell session in the container.
 
 You can exit with `exit` command or hit <kbd>CTRL</kbd>+<kbd>D</kbd>.
 
 Your container will be stopped but kept.
 
-When you use `run` again using the command aboeb, it will spin up a **new** container under a new ID.
-
-You can add `--rm` command to delete the container each time. Note you will **lose** data in the container unless you persist in a volume.
+You can add `--rm` command to **delete** the container each time. Note you will **lose** data in the container unless you persist in a volume.
 
 ```sh
 $ docker compose run --rm SERVICE
