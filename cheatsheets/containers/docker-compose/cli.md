@@ -5,8 +5,11 @@ title: CLI
 
 ## Resources
 
-- [up](https://docs.docker.com/compose/reference/up/) in the docs.
-- [build](https://docs.docker.com/compose/reference/build/) in docs.
+Docker Compose docs:
+
+- [up](https://docs.docker.com/compose/reference/up/) 
+- [run](https://docs.docker.com/compose/reference/run/)
+- [build](https://docs.docker.com/compose/reference/build/) 
 
 
 ## Requirements
