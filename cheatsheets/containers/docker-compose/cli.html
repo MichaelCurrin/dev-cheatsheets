@@ -321,20 +321,20 @@ Starting foo_bar_1 ... <span class="k">done
 
 <p>If you container exited immediately when using <code class="language-plaintext highlighter-rouge">up</code>, you could use <code class="language-plaintext highlighter-rouge">run</code> instead, against the name of a service listed in <code class="language-plaintext highlighter-rouge">docker-compose.yml</code>.</p>
 
+<p>When you use <code class="language-plaintext highlighter-rouge">run</code> again using the command above, it will spin up a <strong>new</strong> container under a new ID with <em>run</em> in the name.</p>
+
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker compose run SERVICE
 <span class="nv">$ </span><span class="c"># e.g.</span>
 <span class="nv">$ </span>docker compose run foo
 </code></pre></div></div>
 
-<p>If you have no commands specified in the <code class="language-plaintext highlighter-rouge">Dockerfile</code>, this will start an interactive shell session in teh container.</p>
+<p>If you have no commands specified in the <code class="language-plaintext highlighter-rouge">Dockerfile</code>, this will start an interactive shell session in the container.</p>
 
 <p>You can exit with <code class="language-plaintext highlighter-rouge">exit</code> command or hit <kbd>CTRL</kbd>+<kbd>D</kbd>.</p>
 
 <p>Your container will be stopped but kept.</p>
 
-<p>When you use <code class="language-plaintext highlighter-rouge">run</code> again using the command aboeb, it will spin up a <strong>new</strong> container under a new ID.</p>
-
-<p>You can add <code class="language-plaintext highlighter-rouge">--rm</code> command to delete the container each time. Note you will <strong>lose</strong> data in the container unless you persist in a volume.</p>
+<p>You can add <code class="language-plaintext highlighter-rouge">--rm</code> command to <strong>delete</strong> the container each time. Note you will <strong>lose</strong> data in the container unless you persist in a volume.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker compose run <span class="nt">--rm</span> SERVICE
 </code></pre></div></div>
