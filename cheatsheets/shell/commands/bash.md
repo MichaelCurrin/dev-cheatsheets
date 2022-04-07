@@ -50,27 +50,48 @@ General help using GNU software: <http://www.gnu.org/gethelp/>
 
 ## Run script
 
-Run script in subshell.
+### Current shell
 
-```sh
-$ bash script.sh
-```
-
-Run in current shell - any changes to directory, variablets, etc. get persisted.
+Run in current shell (ZSH, Bash, etc.) Any changes to directory, variablets, etc. will be **persisted**. It effectively copies the contents of the script and runs them at the current level.
 
 ```sh
 $ source script.sh
 ```
 
-Run commands in subshell.
+### Subshell
+
+This will **not** persist anything.
+
+Run script by name:
 
 ```sh
+$ bash script.sh
+```
+
+Run commands with string:
+
+```console
 $ bash -c 'echo Hello'
 Hello
 ```
-```sh
+
+Separate with newlines:
+
+```console
 $ bash -c 'echo Hello
 echo World'
 Hello
 World
 ```
+
+Run as root:
+
+```console
+$ sudo bash -c 'echo Hello && echo World'
+Hello
+World
+```
+
+See [sudo][] for more info.
+
+[sudo]: {% link cheatsheets/shell/commands/sudo.md %}

@@ -205,26 +205,45 @@ General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;
 
 <h2 id="run-script">Run script</h2>
 
-<p>Run script in subshell.</p>
+<h3 id="current-shell">Current shell</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bash script.sh
-</code></pre></div></div>
-
-<p>Run in current shell - any changes to directory, variablets, etc. get persisted.</p>
+<p>Run in current shell (ZSH, Bash, etc.) Any changes to directory, variablets, etc. will be <strong>persisted</strong>. It effectively copies the contents of the script and runs them at the current level.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">source </span>script.sh
 </code></pre></div></div>
 
-<p>Run commands in subshell.</p>
+<h3 id="subshell">Subshell</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bash <span class="nt">-c</span> <span class="s1">'echo Hello'</span>
-Hello
+<p>This will <strong>not</strong> persist anything.</p>
+
+<p>Run script by name:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bash script.sh
 </code></pre></div></div>
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bash <span class="nt">-c</span> <span class="s1">'echo Hello
-echo World'</span>
+
+<p>Run commands with string:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>bash <span class="nt">-c</span> <span class="s1">'echo Hello'</span>
+<span class="go">Hello
+</span></code></pre></div></div>
+
+<p>Separate with newlines:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>bash <span class="nt">-c</span> <span class="s1">'echo Hello
+</span><span class="go">echo World'
 Hello
 World
-</code></pre></div></div>
+</span></code></pre></div></div>
+
+<p>Run as root:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>bash <span class="nt">-c</span> <span class="s1">'echo Hello &amp;&amp; echo World'</span>
+<span class="go">Hello
+World
+</span></code></pre></div></div>
+
+<p>See <a href="/dev-cheatsheets/cheatsheets/shell/commands/sudo.html">sudo</a> for more info.</p>
+
 
         
     </div>
