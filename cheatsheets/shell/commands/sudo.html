@@ -163,7 +163,9 @@
 
     <div class="post-content">
         
-            <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">sudo</span> <span class="nt">-h</span>
+            <h2 id="help">Help</h2>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">sudo</span> <span class="nt">-h</span>
 <span class="go">sudo - execute a command as another user
 
 usage: sudo -h | -K | -k | -V
@@ -202,6 +204,13 @@ Options:
   -v, --validate                update user's timestamp without running a command
   --                            stop processing command line arguments
 </span></code></pre></div></div>
+
+<h2 id="run-multiple-commands">Run multiple commands</h2>
+
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'COMMAND1 &amp;&amp; COMMAND2'</span>
+</code></pre></div></div>
 
         
     </div>
