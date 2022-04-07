@@ -239,7 +239,7 @@ Most used commands:
 
 <h2 id="all">All</h2>
 
-<p>This is useful for a Dockerfile.</p>
+<p>This is useful for a Dockerfile:</p>
 
 <pre><code class="language-ah">apt update 
   &amp;&amp; apt -y upgrade
@@ -249,6 +249,39 @@ apt install -y foo
 apt autoremove \
   &amp;&amp; apt clean
 </code></pre>
+
+<h2 id="sources">Sources</h2>
+
+<h3 id="add">Add</h3>
+
+<p>Copy instructions from the relevant documentation. Some examples below.</p>
+
+<ul>
+  <li>Based on the <a href="https://www.pgadmin.org/download/pgadmin-4-apt/">PGAdmin</a> instructions:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb URL PACKAGE_NAME main" &gt; /etc/apt/sources.list.d/PACKAGE_NAME.list &amp;&amp; apt update'</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Based on the <a href="https://nodejs.org/en/download/package-manager/">Node</a> instructions.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>curl <span class="nt">-sL</span> <span class="s2">"URL/VERSION"</span> | <span class="nb">sudo</span> <span class="nt">-E</span> bash -
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="edit">Edit</h3>
+
+<p>You might want to remove or update a source if you get errors or no longer need something.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> /etc/apt/sources.d
+</code></pre></div></div>
+
+<p>Files:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nodesource.list
+official-package-repositories.list
+pgadmin4.list
+slack.list
+vscode.list
+</code></pre></div></div>
 
         
     </div>
