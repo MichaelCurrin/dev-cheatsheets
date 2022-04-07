@@ -1,6 +1,8 @@
 # sudo
 
 
+## Help
+
 ```console
 $ sudo -h
 sudo - execute a command as another user
@@ -40,4 +42,13 @@ Options:
   -V, --version                 display version information and exit
   -v, --validate                update user's timestamp without running a command
   --                            stop processing command line arguments
+```
+
+
+## Run multiple commands
+
+e.g.
+
+```sh
+$ sudo sh -c 'COMMAND1 && COMMAND2'
 ```
