@@ -102,6 +102,14 @@ apt autoremove \
 
 ## Sources
 
+### Help
+
+```sh
+$ man sources.list
+```
+
+See [sources.list(5)](https://manpages.debian.org/bullseye/apt/sources.list.5.en.html) on the Debian manpages site.
+
 ### Add
 
 Copy instructions from the relevant documentation. Some examples below.
@@ -114,8 +122,6 @@ Copy instructions from the relevant documentation. Some examples below.
     ```sh
     $ curl -sL "URL/VERSION" | sudo -E bash -
     ```
-
-
 
 ### Edit
 
