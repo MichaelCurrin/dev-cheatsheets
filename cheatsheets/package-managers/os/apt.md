@@ -87,7 +87,7 @@ $ sudo apt autoremove
 
 ## All
 
-This is useful for a Dockerfile.
+This is useful for a Dockerfile:
 
 ```ah
 apt update 
@@ -97,4 +97,40 @@ apt install -y foo
 
 apt autoremove \
   && apt clean
+```
+
+
+## Sources
+
+### Add
+
+Copy instructions from the relevant documentation. Some examples below.
+
+- Based on the [PGAdmin](https://www.pgadmin.org/download/pgadmin-4-apt/) instructions:
+    ```sh
+    $ sudo sh -c 'echo "deb URL PACKAGE_NAME main" > /etc/apt/sources.list.d/PACKAGE_NAME.list && apt update'
+    ```
+- Based on the [Node](https://nodejs.org/en/download/package-manager/) instructions.
+    ```sh
+    $ curl -sL "URL/VERSION" | sudo -E bash -
+    ```
+
+
+
+### Edit
+
+You might want to remove or update a source if you get errors or no longer need something.
+
+```sh
+$ cd /etc/apt/sources.d
+```
+
+Files:
+
+```
+nodesource.list
+official-package-repositories.list
+pgadmin4.list
+slack.list
+vscode.list
 ```
