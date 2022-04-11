@@ -1,6 +1,9 @@
-# Indefinite
+---
+title: Indefinite
+description: Run a container continously
+---
 
-Stop a container from exiting immediately - this is useful for if you need to keep it running long enough to start a terminal session in or check some other attributes.
+This will sStop a container from exiting immediately on completing a command. This is useful for if you need to keep it running long enough to start a terminal session in or check some other attributes.
 
 
 ## Tail
