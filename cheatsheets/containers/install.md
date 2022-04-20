@@ -117,10 +117,10 @@ If that doesn't work, below are instructions from the Debian install guide.
     $ sudo apt-get install docker-ce docker-ce-cli containerd.io
     ```
     
-If you want to run without `sudo` but get an error on permissions, then change access for `/var/run/docker.sock`. NB. this must be owned by root always and on a reboot it will be reset to root each time. So maybe this will work:
+If you want to run **without** `sudo` but get an error on permissions, then change access for `/var/run/docker.sock`. NB. this must be owned by root always and on a reboot it will be reset to root each time. So maybe this will work:
 
 ```sh
-$ sudo chmod 755 /var/run/docker.sock
+$ sudo chmod 666 /var/run/docker.sock
 ```
 
 Check your version:
@@ -133,5 +133,5 @@ Docker version 20.10.7, build 20.10.7-0ubuntu5~20.04.2
 Verify that Docker works by using:
 
 ```sh
-$ sudo docker run hello-world
+$ docker run hello-world
 ```
