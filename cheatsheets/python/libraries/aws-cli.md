@@ -121,3 +121,15 @@ $ aws s3 ls s3://my-bucket/
 $ # Use forward slash to show contents rather than dir itself.
 $ aws s3 ls s3://my-bucket/my-dir/
 ```
+
+### Configure
+
+From [docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
+
+```console
+$ aws configure
+AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+Default region name [None]: us-west-2
+Default output format [None]: json
+```
