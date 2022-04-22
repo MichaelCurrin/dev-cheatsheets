@@ -277,11 +277,16 @@ SYNOPSIS
 <p>From <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">docs</a>.</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>aws configure
-<span class="go">AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+<span class="go">AWS Access Key ID [None]: abc
+AWS Secret Access Key [None]: def
 Default region name [None]: us-west-2
 Default output format [None]: json
 </span></code></pre></div></div>
+
+<h3 id="test-credentials">Test credentials</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>aws sts get-caller-identity
+</code></pre></div></div>
 
         
     </div>
