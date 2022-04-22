@@ -128,8 +128,14 @@ From [docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files
 
 ```console
 $ aws configure
-AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+AWS Access Key ID [None]: abc
+AWS Secret Access Key [None]: def
 Default region name [None]: us-west-2
 Default output format [None]: json
+```
+
+### Test credentials
+
+```sh
+$ aws sts get-caller-identity
 ```
