@@ -265,32 +265,12 @@
   <li>Result if not Mac: <code class="language-plaintext highlighter-rouge">Hello</code></li>
 </ul>
 
-<h2 id="check-os-flavor">Check OS flavor</h2>
-
-<h3 id="is-linux-lite">Is Linux Lite</h3>
-
-<ul>
-  <li><a href="https://linuxliteos.com/">linuxliteos.com</a></li>
-</ul>
-
-<p>Linux Lite uses a text file which includes the version.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">IS_LINUX_LITE</span><span class="o">=</span><span class="si">$(</span><span class="o">[[</span> <span class="nt">-f</span> /etc/llver <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s1">'true'</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s1">'false'</span><span class="si">)</span>
-</code></pre></div></div>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">[[</span> <span class="nt">-f</span> /etc/llver <span class="o">]]</span><span class="p">;</span> <span class="k">then
-  </span><span class="nv">IS_LINUX_LITE</span><span class="o">=</span><span class="nb">true
-</span><span class="k">else
-  </span><span class="nv">IS_LINUX_LITE</span><span class="o">=</span><span class="nb">false
-</span><span class="k">fi</span>
-</code></pre></div></div>
-
 <h2 id="release">Release</h2>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>less /etc/<span class="k">*</span>release
 </code></pre></div></div>
 
-<p>Example for Linux Lite 5, which uses Debian and Ubuntu.</p>
+<p>Example for Linux Lite 5, which uses Debian and Ubuntu:</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">lsb-release</code>
@@ -309,13 +289,55 @@
   VERSION_ID="20.04"
   HOME_URL="https://www.ubuntu.com/"
   SUPPORT_URL="https://help.ubuntu.com/"
-  BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+  BUG_REPORT_URL="https://bugs.launc
+  hpad.net/ubuntu/"
   PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
   VERSION_CODENAME=focal
   UBUNTU_CODENAME=focal
 </code></pre></div>    </div>
   </li>
 </ul>
+
+<p>On an AWS EC2 instance:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">/etc/os-release</code>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  NAME="Amazon Linux"
+  VERSION="2"
+  ID="amzn"
+  ID_LIKE="centos rhel fedora"
+  VERSION_ID="2"
+  PRETTY_NAME="Amazon Linux 2"
+  ANSI_COLOR="0;33"
+  CPE_NAME="cpe:2.3:o:amazon:amazon_linux:2"
+  HOME_URL="https://amazonlinux.com/"
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">/etc/system-release</code>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Amazon Linux release 2 (Karoo)
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="check-os-flavor">Check OS flavor</h2>
+
+<h3 id="check-if-linux-lite">Check if Linux Lite</h3>
+
+<ul>
+  <li><a href="https://linuxliteos.com/">linuxliteos.com</a></li>
+</ul>
+
+<p>Linux Lite uses a text file which includes the version.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">IS_LINUX_LITE</span><span class="o">=</span><span class="si">$(</span><span class="o">[[</span> <span class="nt">-f</span> /etc/llver <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s1">'true'</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s1">'false'</span><span class="si">)</span>
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">[[</span> <span class="nt">-f</span> /etc/llver <span class="o">]]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nv">IS_LINUX_LITE</span><span class="o">=</span><span class="nb">true
+</span><span class="k">else
+  </span><span class="nv">IS_LINUX_LITE</span><span class="o">=</span><span class="nb">false
+</span><span class="k">fi</span>
+</code></pre></div></div>
 
         
     </div>
