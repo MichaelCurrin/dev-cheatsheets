@@ -223,7 +223,14 @@ See [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) docs.
 pg_dump [connection-option...] [option...] [dbname]
 ```
 
-- `-f, --format FORMAT` - The default format is `p` or `plain` for plain text SQL. Use `c` or `custom` as a compressed archive which is the most flexible option. Also `d` or `directory` and `t` or `tar` are options.
+- `-F, --format FORMAT` - The default format is `p` or `plain` for plain text SQL. Use `c` or `custom` as a compressed archive which is the most flexible option. Also `d` or `directory` and `t` or `tar` are options. e.g. `-Fc` note no equals sign.
+- `-f, --file PATH` - path to write to, otherwise will write to stdout.
+
+e.g.
+
+```sh
+$ pg_dump -U my-user -d db-name -Fc -h abcdef.eu-central-1.rds.amazonaws.com -f db.pgdump
+```
 
 ### Restore
 
@@ -244,10 +251,29 @@ See [pg_restore](https://www.postgresql.org/docs/current/app-pgrestore.html) doc
 pg_restore [connection-option...] [option...] [filename]
 ```
 
-- `-C` - Create the database before restoring into it.
+- `-C, --create` - Create the database before restoring into it.
+- `-c, --clean` - drop the DB first.
+- `--if-exists` - to be used with the clean flag.
+
+The database comes from within the dump (unlike with plain SQL) so you don't need to specify it.
+
+e.g.
+
+```sh
+$ dropdb -U my-user db-name
+$ pg_restore -U my-user db.pgdump
+```
 
 Another option for restoring is using `psql` and a plain-text SQL file. Note that you might have to create the DB first before you first into it.
 
 ```sh
-$ psql postgres://postgres:$POSTGRES_PASSWORD@$POSTGRES_HOST < db_name.sql
+$ psql postgres://postgres:$POSTGRES_PASSWORD@$POSTGRES_HOST < db.sql
 ```
+
+Or if on the same host like for local dev or inside a Postgres container.
+
+```sh
+$ psql -U my-user -d db-name < db.sql
+```
+
+
