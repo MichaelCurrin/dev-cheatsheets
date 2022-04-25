@@ -368,8 +368,14 @@
 </code></pre></div></div>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">-f, --format FORMAT</code> - The default format is <code class="language-plaintext highlighter-rouge">p</code> or <code class="language-plaintext highlighter-rouge">plain</code> for plain text SQL. Use <code class="language-plaintext highlighter-rouge">c</code> or <code class="language-plaintext highlighter-rouge">custom</code> as a compressed archive which is the most flexible option. Also <code class="language-plaintext highlighter-rouge">d</code> or <code class="language-plaintext highlighter-rouge">directory</code> and <code class="language-plaintext highlighter-rouge">t</code> or <code class="language-plaintext highlighter-rouge">tar</code> are options.</li>
+  <li><code class="language-plaintext highlighter-rouge">-F, --format FORMAT</code> - The default format is <code class="language-plaintext highlighter-rouge">p</code> or <code class="language-plaintext highlighter-rouge">plain</code> for plain text SQL. Use <code class="language-plaintext highlighter-rouge">c</code> or <code class="language-plaintext highlighter-rouge">custom</code> as a compressed archive which is the most flexible option. Also <code class="language-plaintext highlighter-rouge">d</code> or <code class="language-plaintext highlighter-rouge">directory</code> and <code class="language-plaintext highlighter-rouge">t</code> or <code class="language-plaintext highlighter-rouge">tar</code> are options. e.g. <code class="language-plaintext highlighter-rouge">-Fc</code> note no equals sign.</li>
+  <li><code class="language-plaintext highlighter-rouge">-f, --file PATH</code> - path to write to, otherwise will write to stdout.</li>
 </ul>
+
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pg_dump <span class="nt">-U</span> my-user <span class="nt">-d</span> db-name <span class="nt">-Fc</span> <span class="nt">-h</span> abcdef.eu-central-1.rds.amazonaws.com <span class="nt">-f</span> db.pgdump
+</code></pre></div></div>
 
 <h3 id="restore">Restore</h3>
 
@@ -391,12 +397,27 @@
 </code></pre></div></div>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">-C</code> - Create the database before restoring into it.</li>
+  <li><code class="language-plaintext highlighter-rouge">-C, --create</code> - Create the database before restoring into it.</li>
+  <li><code class="language-plaintext highlighter-rouge">-c, --clean</code> - drop the DB first.</li>
+  <li><code class="language-plaintext highlighter-rouge">--if-exists</code> - to be used with the clean flag.</li>
 </ul>
+
+<p>The database comes from within the dump (unlike with plain SQL) so you don’t need to specify it.</p>
+
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dropdb <span class="nt">-U</span> my-user db-name
+<span class="nv">$ </span>pg_restore <span class="nt">-U</span> my-user db.pgdump
+</code></pre></div></div>
 
 <p>Another option for restoring is using <code class="language-plaintext highlighter-rouge">psql</code> and a plain-text SQL file. Note that you might have to create the DB first before you first into it.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql postgres://postgres:<span class="nv">$POSTGRES_PASSWORD</span>@<span class="nv">$POSTGRES_HOST</span> &lt; db_name.sql
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql postgres://postgres:<span class="nv">$POSTGRES_PASSWORD</span>@<span class="nv">$POSTGRES_HOST</span> &lt; db.sql
+</code></pre></div></div>
+
+<p>Or if on the same host like for local dev or inside a Postgres container.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="nt">-U</span> my-user <span class="nt">-d</span> db-name &lt; db.sql
 </code></pre></div></div>
 
         
