@@ -189,6 +189,26 @@
   </li>
 </ul>
 
+<h2 id="installation">Installation</h2>
+
+<ul>
+  <li><a href="https://www.postgresql.org/download/">Download</a></li>
+  <li><a href="https://www.postgresql.org/download/linux/ubuntu/">Ubuntu</a>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c"># Create the file repository configuration:</span>
+  <span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" &gt; /etc/apt/sources.list.d/pgdg.list'</span>
+    
+  <span class="c"># Import the repository signing key:</span>
+  wget <span class="nt">--quiet</span> <span class="nt">-O</span> - https://www.postgresql.org/media/keys/ACCC4CF8.asc | <span class="nb">sudo </span>apt-key add -
+    
+  <span class="nb">sudo </span>apt-get update
+
+  <span class="nb">sudo </span>apt-get <span class="nt">-y</span> <span class="nb">install </span>postgresql
+  <span class="c"># OR</span>
+  <span class="nb">sudo </span>apt-get <span class="nt">-y</span> <span class="nb">install </span>postgresql-12
+</code></pre></div>    </div>
+  </li>
+</ul>
+
 <h2 id="show">Show</h2>
 
 <h3 id="show-database">Show database</h3>
