@@ -119,14 +119,34 @@ $ sudo -u postgres createuser foo
 
 ### Create role
 
+> `CREATE ROLE` adds a new role to a PostgreSQL database cluster. 
+> 
+> A role is an entity that can own database objects and have database privileges; a role can be considered a “user”, a “group”, or both depending on how it is used.
+
+See [create role][] docs.
+
+Create a role that can log in, but don't give it a password:
+
 ```sql
-CREATE ROLE foo LOGIN;
-```
-```sql
-CREATE ROLE admin WITH CREATEDB CREATEROLE;
+CREATE ROLE my-role LOGIN;
 ```
 
-[create role](https://www.postgresql.org/docs/current/sql-createrole.html) docs.
+Create a role with a password:
+
+```sql
+CREATE USER my-user WITH PASSWORD 'abce1234';
+```
+
+> `CREATE USER` is the same as `CREATE ROLE` except that it implies `LOGIN`.
+
+Give permissions to the role.
+
+```sql
+CREATE ROLE foo WITH CREATEDB;
+CREATE ROLE foo WITH CREATEDB CREATEROLE;
+```
+
+[create role]: https://www.postgresql.org/docs/current/sql-createrole.html
 
 ### Change password
 
