@@ -273,12 +273,33 @@
 
 <h3 id="create-role">Create role</h3>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">foo</span> <span class="n">LOGIN</span><span class="p">;</span>
-</code></pre></div></div>
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="k">admin</span> <span class="k">WITH</span> <span class="k">CREATEDB</span> <span class="n">CREATEROLE</span><span class="p">;</span>
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">CREATE ROLE</code> adds a new role to a PostgreSQL database cluster.</p>
+
+  <p>A role is an entity that can own database objects and have database privileges; a role can be considered a “user”, a “group”, or both depending on how it is used.</p>
+</blockquote>
+
+<p>See <a href="https://www.postgresql.org/docs/current/sql-createrole.html">create role</a> docs.</p>
+
+<p>Create a role that can log in, but don’t give it a password:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">my</span><span class="o">-</span><span class="k">role</span> <span class="n">LOGIN</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p><a href="https://www.postgresql.org/docs/current/sql-createrole.html">create role</a> docs.</p>
+<p>Create a role with a password:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">USER</span> <span class="n">my</span><span class="o">-</span><span class="k">user</span> <span class="k">WITH</span> <span class="n">PASSWORD</span> <span class="s1">'abce1234'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">CREATE USER</code> is the same as <code class="language-plaintext highlighter-rouge">CREATE ROLE</code> except that it implies <code class="language-plaintext highlighter-rouge">LOGIN</code>.</p>
+</blockquote>
+
+<p>Give permissions to the role.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">foo</span> <span class="k">WITH</span> <span class="k">CREATEDB</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">foo</span> <span class="k">WITH</span> <span class="k">CREATEDB</span> <span class="n">CREATEROLE</span><span class="p">;</span>
+</code></pre></div></div>
 
 <h3 id="change-password">Change password</h3>
 
