@@ -77,13 +77,13 @@ Or <kbd>CTRL</kbd>+<kbd>d</kbd>.
 
 ### Login
 
-Here we use a user named `postgres`.
+Here we use a user named `postgres`:
 
 ```sh
 $ psql -U postgres
 ```
 
-The console will now look like this:
+The console will then look like this:
 
 ```
 postgres=#
@@ -92,14 +92,30 @@ postgres=#
 ### Create user
 
 ```sql
-CREATE USER postgres
+CREATE USER foo
 ```
+
+Recommended - use the optional `ENCRYPTED` modified.
 
 ```sql
-CREATE USER foo WITH PASSWORD 'bar';
+CREATE USER foo WITH ENCRYPTED PASSWORD 'bar';
 ```
 
-https://www.postgresql.org/docs/current/app-createuser.html
+See [create user][] docs.
+
+[create user]: https://www.postgresql.org/docs/current/app-createuser.html
+
+Grant priviledges:
+
+```sql
+GRANT ALL PRIVILEGES ON DATABASE my-db TO foo;
+```
+
+Or create with the shell:
+
+```sh
+$ sudo -u postgres createuser foo
+```
 
 ### Create role
 
@@ -170,8 +186,8 @@ If using a remote database, add host:
 $ psql -h "$HOST" ...
 ```
 
-## Passwords
 
+## Passwords
 
 If you database is password-protected.
 
@@ -187,6 +203,7 @@ $ PGPASSWORD=123 psql ...
 [env vars](http://www.postgresql.org/docs/current/static/libpq-envars.html) manual.
 
 ### PG pass
+
 Use a `.pgpass` file to store the password. [pgpass](http://www.postgresql.org/docs/current/static/libpq-pgpass.html) manual.
 
 #### Trust authentication
@@ -203,7 +220,6 @@ Use a connection string that contains everything:
 
 
 ## Dump and restore
-
 
 ### Dump
 
@@ -276,4 +292,31 @@ Or if on the same host like for local dev or inside a Postgres container.
 $ psql -U my-user -d db-name < db.sql
 ```
 
+### Dump cluster
+
+From [pg_dumpall][] docs.
+
+This is useful if you have several databases to dump or need to dump the roles for users, which exists at the cluster level so don't appear in a `pg_dump` dump.
+
+```sh
+$ pg_dumpall > db.out
+```
+
+Some flags:
+
+- `--clean`
+- `-f, --file FILENAME`
+- `--roles-only`
+
+Reload database(s) from this file, you can use:
+
+```sh
+$ psql -f db.out postgres
+```
+
+> It is not important to which database you connect here since the script file created by `pg_dumpall` will contain the appropriate commands to create and connect to the saved databases. 
+> 
+> An exception is that if you specified `--clean`, you must connect to the postgres database initially; the script will attempt to drop other databases immediately, and that will fail for the database you are connected to.
+
+[pg_dumpall]: https://www.postgresql.org/docs/current/app-pg-dumpall.html
 
