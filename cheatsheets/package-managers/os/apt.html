@@ -237,7 +237,9 @@ Most used commands:
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt autoremove
 </code></pre></div></div>
 
-<h2 id="all">All</h2>
+<h2 id="full-flow">Full flow</h2>
+
+<p>Upgrade, upgrade, install, and clean-up.</p>
 
 <p>This is useful for a Dockerfile:</p>
 
@@ -249,6 +251,35 @@ apt install -y foo
 apt autoremove \
   &amp;&amp; apt clean
 </code></pre>
+
+<h2 id="list">List</h2>
+
+<p>Available:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt list
+</code></pre></div></div>
+
+<p>Installed only:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt list <span class="nt">--installed</span>
+</code></pre></div></div>
+
+<p>Upgradeable:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt list <span class="nt">--upgradeable</span>
+</code></pre></div></div>
+
+<p>You can filter the list if you know the exact package name.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>apt list python
+<span class="go">Listing... Done
+python/xenial-updates,now 2.7.12-1~16.04 amd64 [installed]
+N: There is 1 additional version. Please use the '-a' switch to see it
+</span><span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>apt list python <span class="nt">-a</span>
+<span class="go">Listing... Done
+python/xenial-updates,now 2.7.12-1~16.04 amd64 [installed]
+python/xenial 2.7.11-1 amd64
+</span></code></pre></div></div>
 
 <h2 id="sources">Sources</h2>
 
