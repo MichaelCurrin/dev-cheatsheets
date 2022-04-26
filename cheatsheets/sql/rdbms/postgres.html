@@ -360,7 +360,21 @@
 
 <p><a href="http://www.postgresql.org/docs/current/static/libpq-connect.html#AEN42532">Connect</a> in manual.</p>
 
-<h2 id="dump-and-restore">Dump and restore</h2>
+<h2 id="create-drop-dump-and-restore">Create, drop, dump and restore</h2>
+
+<h3 id="create-db">Create DB</h3>
+
+<p>See <a href="https://www.postgresql.org/docs/latest/app-createdb.html">createdb</a> docs.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>createdb <span class="nt">-U</span> my-user my-db
+</code></pre></div></div>
+
+<h3 id="drop-db">Drop DB</h3>
+
+<p>See <a href="https://www.postgresql.org/docs/latest/app-dropdb.html">dropdb</a> docs.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dropdb <span class="nt">-U</span> my-user my-db
+</code></pre></div></div>
 
 <h3 id="dump">Dump</h3>
 
@@ -398,7 +412,7 @@
 <span class="nv">$ </span>pg_restore <span class="nt">-C</span> <span class="nt">-d</span> db_name db_name.dump
 </code></pre></div></div>
 
-<p>See <a href="https://www.postgresql.org/docs/current/app-pgrestore.html">pg_restore</a> docs.</p>
+<p>See <a href="https://www.postgresql.org/docs/current/app-pgrestore.htm">pg_restore</a> docs.</p>
 
 <blockquote>
   <p>pg_restore — restore a PostgreSQL database from an archive file created by pg_dump</p>
