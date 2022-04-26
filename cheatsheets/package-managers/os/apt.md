@@ -85,7 +85,9 @@ $ sudo apt autoremove
 ```
 
 
-## All
+## Full flow
+
+Upgrade, upgrade, install, and clean-up.
 
 This is useful for a Dockerfile:
 
@@ -97,6 +99,40 @@ apt install -y foo
 
 apt autoremove \
   && apt clean
+```
+
+
+## List
+
+Available:
+
+```sh
+$ sudo apt list
+```
+
+Installed only:
+
+```sh
+$ sudo apt list --installed
+```
+
+Upgradeable:
+
+```sh
+$ sudo apt list --upgradeable
+```
+
+You can filter the list if you know the exact package name.
+
+```console
+$ sudo apt list python
+Listing... Done
+python/xenial-updates,now 2.7.12-1~16.04 amd64 [installed]
+N: There is 1 additional version. Please use the '-a' switch to see it
+$ sudo apt list python -a
+Listing... Done
+python/xenial-updates,now 2.7.12-1~16.04 amd64 [installed]
+python/xenial 2.7.11-1 amd64
 ```
 
 
