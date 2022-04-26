@@ -219,7 +219,27 @@ Use a connection string that contains everything:
 [Connect](http://www.postgresql.org/docs/current/static/libpq-connect.html#AEN42532) in manual.
 
 
-## Dump and restore
+## Create, drop, dump and restore
+
+### Create DB
+
+See [createdb][] docs.
+
+```sh
+$ createdb -U my-user my-db
+```
+
+[createdb]: https://www.postgresql.org/docs/latest/app-createdb.html
+
+### Drop DB
+
+See [dropdb][] docs.
+
+```sh
+$ dropdb -U my-user my-db
+```
+
+[dropdb]: https://www.postgresql.org/docs/latest/app-dropdb.html
 
 ### Dump
 
@@ -229,7 +249,9 @@ Create a dump from a DB:
 $ pg_dump --format=custom db_name > db_name.dump
 ```
 
-See [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) docs.
+See [pg_dump][] docs.
+
+[pg_dump]: https://www.postgresql.org/docs/current/app-pgdump.html
 
 > pg_dump — extract a PostgreSQL database into a script file or other archive file
 >
@@ -257,7 +279,9 @@ $ dropdb db_name
 $ pg_restore -C -d db_name db_name.dump
 ```
 
-See [pg_restore](https://www.postgresql.org/docs/current/app-pgrestore.html) docs.
+See [pg_restore][] docs.
+
+[pg_restore]: https://www.postgresql.org/docs/current/app-pgrestore.htm
 
 > pg_restore — restore a PostgreSQL database from an archive file created by pg_dump
 >
