@@ -239,25 +239,37 @@
 
 <h3 id="login">Login</h3>
 
-<p>Here we use a user named <code class="language-plaintext highlighter-rouge">postgres</code>.</p>
+<p>Here we use a user named <code class="language-plaintext highlighter-rouge">postgres</code>:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="nt">-U</span> postgres
 </code></pre></div></div>
 
-<p>The console will now look like this:</p>
+<p>The console will then look like this:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>postgres=#
 </code></pre></div></div>
 
 <h3 id="create-user">Create user</h3>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">USER</span> <span class="n">postgres</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">USER</span> <span class="n">foo</span>
 </code></pre></div></div>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">USER</span> <span class="n">foo</span> <span class="k">WITH</span> <span class="n">PASSWORD</span> <span class="s1">'bar'</span><span class="p">;</span>
+<p>Recommended - use the optional <code class="language-plaintext highlighter-rouge">ENCRYPTED</code> modified.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">USER</span> <span class="n">foo</span> <span class="k">WITH</span> <span class="k">ENCRYPTED</span> <span class="n">PASSWORD</span> <span class="s1">'bar'</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>https://www.postgresql.org/docs/current/app-createuser.html</p>
+<p>See <a href="https://www.postgresql.org/docs/current/app-createuser.html">create user</a> docs.</p>
+
+<p>Grant priviledges:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="k">DATABASE</span> <span class="n">my</span><span class="o">-</span><span class="n">db</span> <span class="k">TO</span> <span class="n">foo</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Or create with the shell:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo</span> <span class="nt">-u</span> postgres createuser foo
+</code></pre></div></div>
 
 <h3 id="create-role">Create role</h3>
 
@@ -333,6 +345,7 @@
 <p><a href="http://www.postgresql.org/docs/current/static/libpq-envars.html">env vars</a> manual.</p>
 
 <h3 id="pg-pass">PG pass</h3>
+
 <p>Use a <code class="language-plaintext highlighter-rouge">.pgpass</code> file to store the password. <a href="http://www.postgresql.org/docs/current/static/libpq-pgpass.html">pgpass</a> manual.</p>
 
 <h4 id="trust-authentication">Trust authentication</h4>
@@ -419,6 +432,35 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="nt">-U</span> my-user <span class="nt">-d</span> db-name &lt; db.sql
 </code></pre></div></div>
+
+<h3 id="dump-cluster">Dump cluster</h3>
+
+<p>From <a href="https://www.postgresql.org/docs/current/app-pg-dumpall.html">pg_dumpall</a> docs.</p>
+
+<p>This is useful if you have several databases to dump or need to dump the roles for users, which exists at the cluster level so don’t appear in a <code class="language-plaintext highlighter-rouge">pg_dump</code> dump.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pg_dumpall <span class="o">&gt;</span> db.out
+</code></pre></div></div>
+
+<p>Some flags:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">--clean</code></li>
+  <li><code class="language-plaintext highlighter-rouge">-f, --file FILENAME</code></li>
+  <li><code class="language-plaintext highlighter-rouge">--roles-only</code></li>
+</ul>
+
+<p>Reload database(s) from this file, you can use:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="nt">-f</span> db.out postgres
+</code></pre></div></div>
+
+<blockquote>
+  <p>It is not important to which database you connect here since the script file created by <code class="language-plaintext highlighter-rouge">pg_dumpall</code> will contain the appropriate commands to create and connect to the saved databases.</p>
+
+  <p>An exception is that if you specified <code class="language-plaintext highlighter-rouge">--clean</code>, you must connect to the postgres database initially; the script will attempt to drop other databases immediately, and that will fail for the database you are connected to.</p>
+</blockquote>
+
 
         
     </div>
