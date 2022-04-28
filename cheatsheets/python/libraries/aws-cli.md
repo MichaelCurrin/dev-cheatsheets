@@ -126,6 +126,8 @@ $ aws s3 ls s3://my-bucket/my-dir/
 
 From [docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
 
+Run this from anywhere.
+
 ```console
 $ aws configure
 AWS Access Key ID [None]: abc
@@ -134,8 +136,14 @@ Default region name [None]: us-west-2
 Default output format [None]: json
 ```
 
+That will create the following:
+
+- `~/.aws/credentials`
+- `~/.aws/config`
+
 ### Test credentials
 
+Check that your credentials are valid.
 ```sh
 $ aws sts get-caller-identity
 ```
