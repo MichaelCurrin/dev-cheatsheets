@@ -92,6 +92,17 @@ $ tmux attach -t my-name
 Kill a session:
 
 ```sh
-$ mux kill-ses -t my-name
+$ tmux kill-ses -t my-name
 ```
 
+Kill all sessions but the current.
+
+```sh
+$ tmux kill-session -a
+```
+
+Kill all sessions but `my-name`.
+
+```sh
+$ tmux kill-session -a -t `my-name`.
+```
