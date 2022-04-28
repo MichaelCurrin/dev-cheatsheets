@@ -223,7 +223,7 @@ $ sudo su postgres
 If you don't want to use default user of `postgres`, set the user. You might need to set `-h` for the host too.
 
 ```sh
-$ psql -U "$DB_USER" -d "$DB_NAME" -h "abc.eu-central-1.rds.amazonaws.com"
+$ psql -U my-user -d my-db -h abc.eu-central-1.rds.amazonaws.com
 ```
 
 From the [docs](https://www.postgresql.org/docs/13/app-psql.html).
@@ -237,6 +237,8 @@ $ psql postgresql://dbmaster:5433/mydb?sslmode=require
 ## Run query using CLI
 
 See [Connect](#connect) above for other flags to add.
+
+See [psql](https://www.postgresql.org/docs/current/app-psql.html) docs.
 
 Interactive console:
 
@@ -322,7 +324,9 @@ $ dropdb -U my-user my-db
 Create a dump from a DB:
 
 ```sh
-$ pg_dump --format=custom db_name > db_name.dump
+$ pg_dump -Fc db_name -f db_name.pgdump
+$ # OR
+$ pg_dump -Fc db_name > db_name.pgdump
 ```
 
 See [pg_dump][] docs.
