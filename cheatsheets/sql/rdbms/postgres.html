@@ -368,7 +368,7 @@
 
 <p>If you don’t want to use default user of <code class="language-plaintext highlighter-rouge">postgres</code>, set the user. You might need to set <code class="language-plaintext highlighter-rouge">-h</code> for the host too.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="nt">-U</span> <span class="s2">"</span><span class="nv">$DB_USER</span><span class="s2">"</span> <span class="nt">-d</span> <span class="s2">"</span><span class="nv">$DB_NAME</span><span class="s2">"</span> <span class="nt">-h</span> <span class="s2">"abc.eu-central-1.rds.amazonaws.com"</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="nt">-U</span> my-user <span class="nt">-d</span> my-db <span class="nt">-h</span> abc.eu-central-1.rds.amazonaws.com
 </code></pre></div></div>
 
 <p>From the <a href="https://www.postgresql.org/docs/13/app-psql.html">docs</a>.</p>
@@ -380,6 +380,8 @@
 <h2 id="run-query-using-cli">Run query using CLI</h2>
 
 <p>See <a href="#connect">Connect</a> above for other flags to add.</p>
+
+<p>See <a href="https://www.postgresql.org/docs/current/app-psql.html">psql</a> docs.</p>
 
 <p>Interactive console:</p>
 
@@ -451,7 +453,9 @@
 
 <p>Create a dump from a DB:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pg_dump <span class="nt">--format</span><span class="o">=</span>custom db_name <span class="o">&gt;</span> db_name.dump
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pg_dump <span class="nt">-Fc</span> db_name <span class="nt">-f</span> db_name.pgdump
+<span class="nv">$ </span><span class="c"># OR</span>
+<span class="nv">$ </span>pg_dump <span class="nt">-Fc</span> db_name <span class="o">&gt;</span> db_name.pgdump
 </code></pre></div></div>
 
 <p>See <a href="https://www.postgresql.org/docs/current/app-pgdump.html">pg_dump</a> docs.</p>
