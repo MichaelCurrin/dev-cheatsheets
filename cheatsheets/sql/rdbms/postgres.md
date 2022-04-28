@@ -167,21 +167,27 @@ CREATE ROLE foo WITH CREATEDB CREATEROLE;
 
 [create role]: https://www.postgresql.org/docs/current/sql-createrole.html
 
+Drop:
+
+```sql
+DROP ROLE foo;
+```
+
 ### Change password
 
 ```sql
-ALTER USER postgres WITH PASSWORD 'newpass';
+ALTER USER foo WITH PASSWORD 'newpass';
 ```
 
-[alter user](https://www.postgresql.org/docs/current/sql-alteruser.html) docs.
+See [alter user](https://www.postgresql.org/docs/current/sql-alteruser.html) docs.
 
-Set it interactively.
+Set it interactively:
 
 ```sql
 postgres=# \password
 ```
 
-[question on forum](https://serverfault.com/questions/110154/whats-the-default-superuser-username-password-for-postgres-after-a-new-install/325596)
+From [question on forum](https://serverfault.com/questions/110154/whats-the-default-superuser-username-password-for-postgres-after-a-new-install/325596)
 
 ### List users
 
@@ -204,6 +210,22 @@ postgres=# \du+
 
 ## Connect
 
+```sh
+$ psql
+```
+
+You might need to switch users first:
+
+```sh
+$ sudo su postgres
+```
+
+If you don't want to use default user of `postgres`, set the user. You might need to set `-h` for the host too.
+
+```sh
+$ psql -U "$DB_USER" -d "$DB_NAME" -h "abc.eu-central-1.rds.amazonaws.com"
+```
+
 From the [docs](https://www.postgresql.org/docs/13/app-psql.html).
 
 ```sh
@@ -211,18 +233,33 @@ $ psql "service=myservice sslmode=require"
 $ psql postgresql://dbmaster:5433/mydb?sslmode=require
 ```
 
+
 ## Run query using CLI
 
+See [Connect](#connect) above for other flags to add.
+
+Interactive console:
+
 ```sh
-$ psql -U "$DB_USER" -d "$DB_NAME" -c "SELECT COUNT(*) FROM my_table"
+$ psql
+```
+
+Run query in string:
+
+```sh
+$ psql -c 'SELECT COUNT(*) FROM my_table'
 ```
 
 Or you can pass the name of a `.sql` file.
 
-If using a remote database, add host:
+```sh
+$ psql -f query.sql
+```
+
+Or
 
 ```sh
-$ psql -h "$HOST" ...
+$ psql < query.sql
 ```
 
 
