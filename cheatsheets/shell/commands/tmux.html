@@ -245,9 +245,18 @@ DESCRIPTION
 
 <p>Kill a session:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mux kill-ses <span class="nt">-t</span> my-name
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>tmux kill-ses <span class="nt">-t</span> my-name
 </code></pre></div></div>
 
+<p>Kill all sessions but the current.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>tmux kill-session <span class="nt">-a</span>
+</code></pre></div></div>
+
+<p>Kill all sessions but <code class="language-plaintext highlighter-rouge">my-name</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>tmux kill-session <span class="nt">-a</span> <span class="nt">-t</span> <span class="sb">`</span>my-name<span class="sb">`</span><span class="nb">.</span>
+</code></pre></div></div>
 
         
     </div>
