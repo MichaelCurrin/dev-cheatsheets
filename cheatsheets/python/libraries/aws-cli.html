@@ -276,6 +276,8 @@ SYNOPSIS
 
 <p>From <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">docs</a>.</p>
 
+<p>Run this from anywhere.</p>
+
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>aws configure
 <span class="go">AWS Access Key ID [None]: abc
 AWS Secret Access Key [None]: def
@@ -283,8 +285,16 @@ Default region name [None]: us-west-2
 Default output format [None]: json
 </span></code></pre></div></div>
 
+<p>That will create the following:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">~/.aws/credentials</code></li>
+  <li><code class="language-plaintext highlighter-rouge">~/.aws/config</code></li>
+</ul>
+
 <h3 id="test-credentials">Test credentials</h3>
 
+<p>Check that your credentials are valid.</p>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>aws sts get-caller-identity
 </code></pre></div></div>
 
