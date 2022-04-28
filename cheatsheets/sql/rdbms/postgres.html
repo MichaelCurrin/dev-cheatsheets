@@ -321,19 +321,24 @@
 <span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">foo</span> <span class="k">WITH</span> <span class="k">CREATEDB</span> <span class="n">CREATEROLE</span><span class="p">;</span>
 </code></pre></div></div>
 
-<h3 id="change-password">Change password</h3>
+<p>Drop:</p>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">USER</span> <span class="n">postgres</span> <span class="k">WITH</span> <span class="n">PASSWORD</span> <span class="s1">'newpass'</span><span class="p">;</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">DROP</span> <span class="k">ROLE</span> <span class="n">foo</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p><a href="https://www.postgresql.org/docs/current/sql-alteruser.html">alter user</a> docs.</p>
+<h3 id="change-password">Change password</h3>
 
-<p>Set it interactively.</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">USER</span> <span class="n">foo</span> <span class="k">WITH</span> <span class="n">PASSWORD</span> <span class="s1">'newpass'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>See <a href="https://www.postgresql.org/docs/current/sql-alteruser.html">alter user</a> docs.</p>
+
+<p>Set it interactively:</p>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">postgres</span><span class="o">=#</span> <span class="err">\</span><span class="n">password</span>
 </code></pre></div></div>
 
-<p><a href="https://serverfault.com/questions/110154/whats-the-default-superuser-username-password-for-postgres-after-a-new-install/325596">question on forum</a></p>
+<p>From <a href="https://serverfault.com/questions/110154/whats-the-default-superuser-username-password-for-postgres-after-a-new-install/325596">question on forum</a></p>
 
 <h3 id="list-users">List users</h3>
 
@@ -353,6 +358,19 @@
 
 <h2 id="connect">Connect</h2>
 
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql
+</code></pre></div></div>
+
+<p>You might need to switch users first:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>su postgres
+</code></pre></div></div>
+
+<p>If you don’t want to use default user of <code class="language-plaintext highlighter-rouge">postgres</code>, set the user. You might need to set <code class="language-plaintext highlighter-rouge">-h</code> for the host too.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="nt">-U</span> <span class="s2">"</span><span class="nv">$DB_USER</span><span class="s2">"</span> <span class="nt">-d</span> <span class="s2">"</span><span class="nv">$DB_NAME</span><span class="s2">"</span> <span class="nt">-h</span> <span class="s2">"abc.eu-central-1.rds.amazonaws.com"</span>
+</code></pre></div></div>
+
 <p>From the <a href="https://www.postgresql.org/docs/13/app-psql.html">docs</a>.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="s2">"service=myservice sslmode=require"</span>
@@ -361,14 +379,26 @@
 
 <h2 id="run-query-using-cli">Run query using CLI</h2>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="nt">-U</span> <span class="s2">"</span><span class="nv">$DB_USER</span><span class="s2">"</span> <span class="nt">-d</span> <span class="s2">"</span><span class="nv">$DB_NAME</span><span class="s2">"</span> <span class="nt">-c</span> <span class="s2">"SELECT COUNT(*) FROM my_table"</span>
+<p>See <a href="#connect">Connect</a> above for other flags to add.</p>
+
+<p>Interactive console:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql
+</code></pre></div></div>
+
+<p>Run query in string:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="nt">-c</span> <span class="s1">'SELECT COUNT(*) FROM my_table'</span>
 </code></pre></div></div>
 
 <p>Or you can pass the name of a <code class="language-plaintext highlighter-rouge">.sql</code> file.</p>
 
-<p>If using a remote database, add host:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="nt">-f</span> query.sql
+</code></pre></div></div>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="nt">-h</span> <span class="s2">"</span><span class="nv">$HOST</span><span class="s2">"</span> ...
+<p>Or</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql &lt; query.sql
 </code></pre></div></div>
 
 <h2 id="passwords">Passwords</h2>
