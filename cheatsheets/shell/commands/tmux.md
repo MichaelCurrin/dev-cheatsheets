@@ -5,7 +5,7 @@ description: Setup terminal windows and attach and detach from them
 
 Useful for long-running tasks on a remote server.
 
-For more help see [tmuxcheatsheet](https://tmuxcheatsheet.com/) site.
+For more help see [tmuxcheatsheet](https://tmuxcheatsheet.com/) site or [Getting Started with tmux](https://linuxize.com/post/getting-started-with-tmux/).
 
 ## Install
 
@@ -57,6 +57,8 @@ Create a named session:
 $ tmux new -s my-name
 ```
 
+You'll get an error if it already exists.
+
 Then you can exit with `exit` or <kbd>CTRL</kbd>+<kbd>D</kbd> to end the session.
 
 Or press this sequence to detach from the session and keep it running: <kbd>CTRL</kbd>+<kbd>B</kbd> and then <kbd>D</kbd>,
@@ -87,6 +89,12 @@ You can attach to a running session:
 
 ```sh
 $ tmux attach -t my-name
+```
+
+It seems to work the same as this, as it requires the session to exist already:
+
+```sh
+$ tmux new -t my-name
 ```
 
 Kill a session:
