@@ -252,6 +252,13 @@ apt autoremove \
   &amp;&amp; apt clean
 </code></pre>
 
+<h2 id="fixed-packages">Fixed packages</h2>
+
+<p>If you get an error when running <code class="language-plaintext highlighter-rouge">apt</code> because of locked or broken packages, then the output will suggest this which solves it for me:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>dpkg <span class="nt">--configure</span> <span class="nt">-a</span>
+</code></pre></div></div>
+
 <h2 id="list">List</h2>
 
 <p>Available:</p>
