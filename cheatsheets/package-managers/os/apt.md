@@ -101,6 +101,14 @@ apt autoremove \
   && apt clean
 ```
 
+## Fixed packages
+
+If you get an error when running `apt` because of locked or broken packages, then the output will suggest this which solves it for me:
+
+```sh
+$ sudo dpkg --configure -a
+```
+
 
 ## List
 
