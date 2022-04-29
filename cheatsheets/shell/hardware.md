@@ -8,6 +8,7 @@ description: Get info on your hardware from the shell
 
 On Linux and macOS:
 
-```sh
+```console
 $ getconf _NPROCESSORS_ONLN
+8
 ```
