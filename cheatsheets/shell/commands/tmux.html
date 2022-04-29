@@ -170,7 +170,7 @@
         
             <p>Useful for long-running tasks on a remote server.</p>
 
-<p>For more help see <a href="https://tmuxcheatsheet.com/">tmuxcheatsheet</a> site.</p>
+<p>For more help see <a href="https://tmuxcheatsheet.com/">tmuxcheatsheet</a> site or <a href="https://linuxize.com/post/getting-started-with-tmux/">Getting Started with tmux</a>.</p>
 
 <h2 id="install">Install</h2>
 
@@ -215,6 +215,8 @@ DESCRIPTION
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>tmux new <span class="nt">-s</span> my-name
 </code></pre></div></div>
 
+<p>You’ll get an error if it already exists.</p>
+
 <p>Then you can exit with <code class="language-plaintext highlighter-rouge">exit</code> or <kbd>CTRL</kbd>+<kbd>D</kbd> to end the session.</p>
 
 <p>Or press this sequence to detach from the session and keep it running: <kbd>CTRL</kbd>+<kbd>B</kbd> and then <kbd>D</kbd>,</p>
@@ -241,6 +243,11 @@ DESCRIPTION
 <p>You can attach to a running session:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>tmux attach <span class="nt">-t</span> my-name
+</code></pre></div></div>
+
+<p>It seems to work the same as this, as it requires the session to exist already:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>tmux new <span class="nt">-t</span> my-name
 </code></pre></div></div>
 
 <p>Kill a session:</p>
