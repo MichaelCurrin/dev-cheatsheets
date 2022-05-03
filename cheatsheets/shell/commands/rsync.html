@@ -179,12 +179,22 @@
 
 <h3 id="basic">Basic</h3>
 
-<p>Sync directory. The manpage uses <code class="language-plaintext highlighter-rouge">-avz</code> in examples.</p>
+<p>Sync directory. The manpage uses <code class="language-plaintext highlighter-rouge">-avz</code> in examples - archive, verbose, and compress.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rsync <span class="o">[</span>OPTIONS] foo bar
 </code></pre></div></div>
 
-<p>Add trailing slash to <code class="language-plaintext highlighter-rouge">foo/</code> to sync contents.</p>
+<p>Note on forwardslash, when copying from a directory <code class="language-plaintext highlighter-rouge">foo</code>.</p>
+
+<p>This will copy <code class="language-plaintext highlighter-rouge">foo</code> so there is a directory of the same name in the destination.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rsync foo <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>This will copy the directory’s contents to the current directory without creating a new directory called <code class="language-plaintext highlighter-rouge">foo</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rsync foo/ <span class="nb">.</span>
+</code></pre></div></div>
 
 <h3 id="common-flag-usage">Common flag usage</h3>
 
@@ -193,13 +203,11 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rsync <span class="nt">-avzh</span> SOURCE DEST
 </code></pre></div></div>
 
-<p>Add <code class="language-plaintext highlighter-rouge">-c</code> f</p>
-
 <h3 id="move">Move</h3>
 
 <p>By default, <code class="language-plaintext highlighter-rouge">rsync</code> will copy files.</p>
 
-<p>If you want to move them (i.e. delete after copy), you can use these flags:</p>
+<p>If you want to <em>move</em> them (i.e. delete after copy), you can use these flags:</p>
 
 <p>Sender removes synchronized files (non-dir).</p>
 
@@ -247,7 +255,7 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-l, --links
 </code></pre></div></div>
 
-<p>Archive</p>
+<p>Archive:</p>
 
 <blockquote>
   <p>This is equivalent to <code class="language-plaintext highlighter-rouge">-rlptgoD</code>. It is a quick way of saying you want recursion and want to preserve almost everything (with -H being a notable omission). The only exception to the above equivalence is when <code class="language-plaintext highlighter-rouge">--files-from</code> is specified, in which case -r is not implied</p>
@@ -256,7 +264,7 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-a, --archive
 </code></pre></div></div>
 
-<p>Handled by the above.</p>
+<p>These are covered by doing archive:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-r, --recursive
 </code></pre></div></div>

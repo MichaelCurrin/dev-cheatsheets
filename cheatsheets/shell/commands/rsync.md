@@ -15,13 +15,25 @@ It is similar to `scp`. But `rsync` has some more advanced features.
 
 ### Basic
 
-Sync directory. The manpage uses `-avz` in examples.
+Sync directory. The manpage uses `-avz` in examples - archive, verbose, and compress.
 
 ```sh
 $ rsync [OPTIONS] foo bar
 ```
 
-Add trailing slash to `foo/` to sync contents.
+Note on forwardslash, when copying from a directory `foo`.
+
+This will copy `foo` so there is a directory of the same name in the destination.
+
+```sh
+$ rsync foo .
+```
+
+This will copy the directory's contents to the current directory without creating a new directory called `foo`.
+
+```sh
+$ rsync foo/ .
+```
 
 ### Common flag usage
 
@@ -31,13 +43,12 @@ Archive, verbose, compressed, human-readable.
 $ rsync -avzh SOURCE DEST
 ```
 
-Add `-c` f
 
 ### Move
 
 By default, `rsync` will copy files.
 
-If you want to move them (i.e. delete after copy), you can use these flags:
+If you want to _move_ them (i.e. delete after copy), you can use these flags:
 
 Sender removes synchronized files (non-dir).
 
@@ -90,7 +101,7 @@ Copy symlinks as links
 -l, --links
 ```
 
-Archive
+Archive:
 
 > This is equivalent to `-rlptgoD`. It is a quick way of saying you want recursion and want to preserve almost everything (with -H being a notable omission). The only exception to the above equivalence is when `--files-from` is specified, in which case -r is not implied
 
@@ -98,7 +109,7 @@ Archive
 -a, --archive
 ```
 
-Handled by the above.
+These are covered by doing archive:
 
 ```
 -r, --recursive
