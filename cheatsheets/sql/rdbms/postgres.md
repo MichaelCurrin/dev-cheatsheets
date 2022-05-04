@@ -56,21 +56,29 @@ Recommended - specify a user as the default is `root` and you'll get an error if
 
 ### Tables
 
-Show all tables.
+Show all tables:
 
 ```
-postgres=# \dt
+\d
 ```
 
-For more info.
-```
-postgres=# \dt+
-```
-
-Get info on a table.
+Tables and views:
 
 ```
-postgres=# \d+ table_name
+\dt
+```
+
+
+More info:
+
+```
+\dt+
+```
+
+Add a table name to filter:
+
+```
+\d table_name
 ```
 
 
@@ -86,7 +94,7 @@ $ psql -U postgres DB_NAME
 ## Quit
 
 ```
-postgres=# \q
+\q
 ```
 
 Or <kbd>CTRL</kbd>+<kbd>d</kbd>.
