@@ -227,18 +227,24 @@
 
 <h3 id="tables">Tables</h3>
 
-<p>Show all tables.</p>
+<p>Show all tables:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>postgres=# \dt
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\d
 </code></pre></div></div>
 
-<p>For more info.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>postgres=# \dt+
+<p>Tables and views:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\dt
 </code></pre></div></div>
 
-<p>Get info on a table.</p>
+<p>More info:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>postgres=# \d+ table_name
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\dt+
+</code></pre></div></div>
+
+<p>Add a table name to filter:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\d table_name
 </code></pre></div></div>
 
 <h2 id="use-database">Use database</h2>
@@ -250,7 +256,7 @@
 
 <h2 id="quit">Quit</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>postgres=# \q
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\q
 </code></pre></div></div>
 
 <p>Or <kbd>CTRL</kbd>+<kbd>d</kbd>.</p>
