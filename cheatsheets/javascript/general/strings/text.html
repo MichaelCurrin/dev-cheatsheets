@@ -182,17 +182,24 @@
 
 <h2 id="slicing">Slicing</h2>
 
-<p>Using <code class="language-plaintext highlighter-rouge">.substr</code> or <code class="language-plaintext highlighter-rouge">.slice</code>. See <a href="https://stackoverflow.com/questions/2243824/what-is-the-difference-between-string-slice-and-string-substring">SO</a> thread.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myText</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="nx">first</span><span class="p">,</span> <span class="nx">length</span><span class="p">)</span>
+<span class="nx">myText</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">)</span>
+<span class="nx">myText</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">)</span>
+</code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myText</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="nx">first</span><span class="p">,</span> <span class="nx">length</span><span class="p">)</span>
+<p>For using <code class="language-plaintext highlighter-rouge">.substr</code> or <code class="language-plaintext highlighter-rouge">.slice</code>, see <a href="https://stackoverflow.com/questions/2243824/what-is-the-difference-between-string-slice-and-string-substring">SO</a> thread.</p>
 
-<span class="o">&gt;</span> <span class="nx">myText</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">)</span>
+<p>e.g.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="dl">'</span><span class="s1">abcd</span><span class="dl">'</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="dl">'</span><span class="s1">ab</span><span class="dl">'</span>
 </code></pre></div></div>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="dl">'</span><span class="s1">abcdef</span><span class="dl">'</span><span class="p">.</span><span class="nx">substring</span><span class="p">()</span>
 <span class="dl">'</span><span class="s1">abcdef</span><span class="dl">'</span>
 <span class="o">&gt;</span> <span class="dl">'</span><span class="s1">abcdef</span><span class="dl">'</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="dl">'</span><span class="s1">abcdef</span><span class="dl">'</span>
+
 <span class="o">&gt;</span> <span class="dl">'</span><span class="s1">abcdef</span><span class="dl">'</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="dl">'</span><span class="s1">bcdef</span><span class="dl">'</span>
 <span class="o">&gt;</span> <span class="dl">'</span><span class="s1">abcdef</span><span class="dl">'</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
@@ -206,27 +213,7 @@
 <span class="dl">'</span><span class="s1">bc</span><span class="dl">'</span>
 </code></pre></div></div>
 
-<h2 id="replace-character-in-text">Replace character in text</h2>
-
-<h3 id="replace-all-occurences">Replace all occurences</h3>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="dl">'</span><span class="s1">AAA</span><span class="dl">'</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/A/g</span><span class="p">,</span> <span class="dl">'</span><span class="s1">C</span><span class="dl">'</span><span class="p">)</span>
-<span class="dl">'</span><span class="s1">CCC</span><span class="dl">'</span>
-</code></pre></div></div>
-
-<p>Or the more verbose.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="dl">'</span><span class="s1">AAA</span><span class="dl">'</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">),</span> <span class="dl">'</span><span class="s1">C</span><span class="dl">'</span><span class="p">)</span>
-<span class="dl">'</span><span class="s1">CCC</span><span class="dl">'</span>
-</code></pre></div></div>
-
-<p>You might use <code class="language-plaintext highlighter-rouge">RegExp</code> to escape characters for you.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">)</span>
-<span class="o">/</span><span class="nx">A</span><span class="o">/</span><span class="nx">g</span>
-<span class="o">&gt;</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">"</span><span class="s2">/A</span><span class="dl">"</span><span class="p">)</span>
-<span class="o">/</span><span class="err">\</span><span class="o">/</span><span class="nx">A</span><span class="o">/</span>
-</code></pre></div></div>
+<h2 id="replace-text-in-text">Replace text in text</h2>
 
 <h3 id="replace-first-occurence-only">Replace first occurence only</h3>
 
@@ -242,6 +229,34 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="dl">'</span><span class="s1">AAA</span><span class="dl">'</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/A/</span><span class="p">,</span> <span class="dl">'</span><span class="s1">C</span><span class="dl">'</span><span class="p">)</span>
 <span class="dl">'</span><span class="s1">CAA</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<h3 id="replace-all-occurences">Replace all occurences</h3>
+
+<p>A newer method added to JS:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="dl">'</span><span class="s1">AAA</span><span class="dl">'</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">C</span><span class="dl">'</span><span class="p">)</span>
+<span class="dl">'</span><span class="s1">CCC</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<p>Using regex - note <code class="language-plaintext highlighter-rouge">g</code> for global replace.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="dl">'</span><span class="s1">AAA</span><span class="dl">'</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/A/g</span><span class="p">,</span> <span class="dl">'</span><span class="s1">C</span><span class="dl">'</span><span class="p">)</span>
+<span class="dl">'</span><span class="s1">CCC</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<p>Or the more verbose:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="dl">'</span><span class="s1">AAA</span><span class="dl">'</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">),</span> <span class="dl">'</span><span class="s1">C</span><span class="dl">'</span><span class="p">)</span>
+<span class="dl">'</span><span class="s1">CCC</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<p>You might use <code class="language-plaintext highlighter-rouge">RegExp</code> to escape characters for you.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">)</span>
+<span class="o">/</span><span class="nx">A</span><span class="o">/</span><span class="nx">g</span>
+<span class="o">&gt;</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">"</span><span class="s2">/A</span><span class="dl">"</span><span class="p">)</span>
+<span class="o">/</span><span class="err">\</span><span class="o">/</span><span class="nx">A</span><span class="o">/</span>
 </code></pre></div></div>
 
 <h2 id="remove-empty-lines">Remove empty lines</h2>

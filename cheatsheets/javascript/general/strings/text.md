@@ -9,21 +9,28 @@
 
 ## Slicing
 
-Using `.substr` or `.slice`. See [SO](https://stackoverflow.com/questions/2243824/what-is-the-difference-between-string-slice-and-string-substring) thread.
-
 
 ```javascript
-> myText.substr(first, length)
-
-> myText.substring(start, end)
+myText.substr(first, length)
+myText.substring(start, end)
+myText.slice(start, end)
 ```
 
+For using `.substr` or `.slice`, see [SO](https://stackoverflow.com/questions/2243824/what-is-the-difference-between-string-slice-and-string-substring) thread.
+
+e.g.
+
+```javascript
+> 'abcd'.substr(0,2)
+'ab'
+```
 
 ```javascript
 > 'abcdef'.substring()
 'abcdef'
 > 'abcdef'.substring(0)
 'abcdef'
+
 > 'abcdef'.substring(1)
 'bcdef'
 > 'abcdef'.substring(1,3)
@@ -33,37 +40,13 @@ Using `.substr` or `.slice`. See [SO](https://stackoverflow.com/questions/224382
 > 
 ```
 
-
 ```javascript
 > 'abcdef'.slice(1,3)
 'bc'
 ```
 
 
-## Replace character in text
-
-### Replace all occurences
-
-```javascript
-> 'AAA'.replace(/A/g, 'C')
-'CCC'
-```
-
-Or the more verbose.
-
-```javascript
-> 'AAA'.replace(new RegExp("A", "g"), 'C')
-'CCC'
-```
-
-You might use `RegExp` to escape characters for you.
-
-```javascript
-> new RegExp("A", "g")
-/A/g
-> new RegExp("/A")
-/\/A/
-```
+## Replace text in text
 
 ### Replace first occurence only
 
@@ -81,6 +64,38 @@ Or pass regex, but without `g`:
 ```javascript
 > 'AAA'.replace(/A/, 'C')
 'CAA'
+```
+
+### Replace all occurences
+
+A newer method added to JS:
+
+```javascript
+> 'AAA'.replaceAll('A', 'C')
+'CCC'
+```
+
+Using regex - note `g` for global replace.
+
+```javascript
+> 'AAA'.replace(/A/g, 'C')
+'CCC'
+```
+
+Or the more verbose:
+
+```javascript
+> 'AAA'.replace(new RegExp("A", "g"), 'C')
+'CCC'
+```
+
+You might use `RegExp` to escape characters for you.
+
+```javascript
+> new RegExp("A", "g")
+/A/g
+> new RegExp("/A")
+/\/A/
 ```
 
 
