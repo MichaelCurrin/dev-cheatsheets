@@ -9,10 +9,34 @@
 
 ## Slicing
 
+Using `.substr` or `.slice`. See [SO](https://stackoverflow.com/questions/2243824/what-is-the-difference-between-string-slice-and-string-substring) thread.
+
+
 ```javascript
 > myText.substr(first, length)
 
 > myText.substring(start, end)
+```
+
+
+```javascript
+> 'abcdef'.substring()
+'abcdef'
+> 'abcdef'.substring(0)
+'abcdef'
+> 'abcdef'.substring(1)
+'bcdef'
+> 'abcdef'.substring(1,3)
+'bc'
+> 'abcdef'.substring(0,3)
+'abc'
+> 
+```
+
+
+```javascript
+> 'abcdef'.slice(1,3)
+'bc'
 ```
 
 
