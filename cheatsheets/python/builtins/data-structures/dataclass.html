@@ -177,25 +177,37 @@
         
             <p>See <a href="https://docs.python.org/3/library/dataclasses.html">Data class</a> in PY3 docs.</p>
 
+<h2 id="about">About</h2>
+
 <ul>
   <li>Added in Python <code class="language-plaintext highlighter-rouge">3.7</code>.</li>
-  <li>A container of attributes, when you want to store data and not add methods, but methods are allowed. Similar to a <code class="language-plaintext highlighter-rouge">namedtuple</code> or <code class="language-plaintext highlighter-rouge">dict</code>.</li>
+  <li>A container of attributes, when you want to store data and not add methods, but methods are allowed.</li>
+  <li>Allows attribute lookup like a class or named tuple. Also allows lookup as if a <code class="language-plaintext highlighter-rouge">dict</code>.</li>
   <li>Lighter than a plain class - no <code class="language-plaintext highlighter-rouge">__init__</code> method needed.</li>
-  <li>Raises an error if an item omitted.</li>
   <li>Allows defaults.</li>
-  <li>Has types and keeps the structure, unlike a <code class="language-plaintext highlighter-rouge">dict</code> - <strong>Note that does not validate</strong>. See <a href="#validation">Validation</a>.</li>
-  <li>Not frozen but it can be frozen.</li>
-  <li>Lookup - allows attribute lookup and you can also lookup as a dict or tuple.</li>
+  <li>Raises an error if an attribute without a default is omitted.</li>
+  <li>Has types and keeps the structure, unlike a <code class="language-plaintext highlighter-rouge">dict</code> - note that it does not validate automatically so see <a href="#validation">Validation</a>.</li>
+  <li>Not frozen, but it can be frozen.</li>
 </ul>
 
-<h2 id="definition">Definition</h2>
+<h2 id="usage">Usage</h2>
+
+<h3 id="define">Define</h3>
+
+<ul>
+  <li>Add a decorator to a class.</li>
+  <li>Add class-level attributes.</li>
+  <li>Add methods if you need.</li>
+</ul>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
 
 
 <span class="o">@</span><span class="n">dataclass</span>
 <span class="k">class</span> <span class="nc">InventoryItem</span><span class="p">:</span>
-    <span class="s">"""Class for keeping track of an item in inventory."""</span>
+    <span class="s">"""
+    Class for keeping track of an item in inventory.
+    """</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">unit_price</span><span class="p">:</span> <span class="nb">float</span>
     <span class="n">quantity_on_hand</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
@@ -204,23 +216,39 @@
         <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">unit_price</span> <span class="o">*</span> <span class="bp">self</span><span class="p">.</span><span class="n">quantity_on_hand</span>
 </code></pre></div></div>
 
-<p>Equivalent definition without using data class:</p>
+<p>Equivalent definition <em>without</em> using a data class:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">unit_price</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">quantity_on_hand</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">unit_price</span> <span class="o">=</span> <span class="n">unit_price</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">quantity_on_hand</span> <span class="o">=</span> <span class="n">quantity_on_hand</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">InventoryItem</span><span class="p">:</span>
+    <span class="s">"""
+    Class for keeping track of an item in inventory.
+    """</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">unit_price</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">quantity_on_hand</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">unit_price</span> <span class="o">=</span> <span class="n">unit_price</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">quantity_on_hand</span> <span class="o">=</span> <span class="n">quantity_on_hand</span>
 </code></pre></div></div>
 
-<p>Note that for <code class="language-plaintext highlighter-rouge">float</code> type, an input <code class="language-plaintext highlighter-rouge">int</code> will be converted to <code class="language-plaintext highlighter-rouge">float</code>.</p>
+<p>Note that for <code class="language-plaintext highlighter-rouge">float</code> type, an input <code class="language-plaintext highlighter-rouge">int</code> will get converted to <code class="language-plaintext highlighter-rouge">float</code>.</p>
 
-<h2 id="usage">Usage</h2>
+<h3 id="use-instance">Use instance</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">item</span> <span class="o">=</span> <span class="n">InventoryItem</span><span class="p">(</span><span class="s">"Foo"</span><span class="p">,</span> <span class="mf">123.4</span><span class="p">)</span>
 
 <span class="n">item</span>
 <span class="c1"># =&gt; InventoryItem(name='Foo', unit_price=123.4, quantity_on_hand=0)
+</span>
+<span class="n">item</span><span class="p">.</span><span class="n">name</span>
+<span class="c1"># 'Foo'
 </span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Validation
+</span><span class="n">item</span> <span class="o">=</span> <span class="n">InventoryItem</span><span class="p">()</span>
+<span class="c1"># TypeError: __init__() missing 2 required positional arguments: 'name' and 'unit_price'
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">item</span><span class="p">.</span><span class="n">__dict__</span>
+<span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'Foo'</span><span class="p">,</span> <span class="s">'unit_price'</span><span class="p">:</span> <span class="mf">123.4</span><span class="p">,</span> <span class="s">'quantity_on_hand'</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+</code></pre></div></div>
 
 <h2 id="parameters">Parameters</h2>
 
@@ -241,19 +269,25 @@
 
 <h2 id="validation">Validation</h2>
 
-<p>You do <strong>not</strong> an error for using the wrong type.</p>
+<p>By default you do <strong>not</strong> get an error for using the wrong type.</p>
 
 <p>But, you can use Mypy to check types for you. Example from <a href="https://mypy.readthedocs.io/en/stable/additional_features.html">Additional features</a> docs page.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+
 
 <span class="o">@</span><span class="n">dataclass</span>
 <span class="k">class</span> <span class="nc">Application</span><span class="p">:</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">plugins</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
 
-<span class="n">test</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="s">"Testing..."</span><span class="p">)</span>  <span class="c1"># OK
-</span><span class="n">bad</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="s">"Testing..."</span><span class="p">,</span> <span class="s">"with plugin"</span><span class="p">)</span>  <span class="c1"># Error: List[str] expected
+
+<span class="n">test</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="s">"Testing..."</span><span class="p">)</span> 
+<span class="c1"># OK
+</span>
+<span class="c1"># Passing a string instead of list of strings:
+</span><span class="n">bad</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="s">"Testing..."</span><span class="p">,</span> <span class="s">"with plugin"</span><span class="p">)</span>  
+<span class="c1"># Error: List[str] expected
 </span></code></pre></div></div>
 
 <p>Or you could use a separate package like <a href="https://pypi.org/project/dataclass-type-validator/">dataclass-type-validator</a>.</p>
