@@ -55,13 +55,13 @@ $ docker run python:3.9
 Use default entry-point (in this case Python terminal) and use interactive mode.
 
 ```sh
-$ docker run -it -rm python:3.9
+$ docker run -it --rm python:3.9
 ```
 
 Specify shell as entry-point and interactive mode. 
 
 ```sh
-$ docker run -it -rm python:3.9 bash
+$ docker run -it --rm python:3.9 bash
 ```
 
 Give the container name if you want. This can be useful if you have long-running container like a server. You'll want to use the `rm` flag otherwise you'll get an error on the 2nd run that the container name already is used.

@@ -225,12 +225,12 @@
 
 <p>Use default entry-point (in this case Python terminal) and use interactive mode.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">-it</span> <span class="nt">-rm</span> python:3.9
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">-it</span> <span class="nt">--rm</span> python:3.9
 </code></pre></div></div>
 
 <p>Specify shell as entry-point and interactive mode.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">-it</span> <span class="nt">-rm</span> python:3.9 bash
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">-it</span> <span class="nt">--rm</span> python:3.9 bash
 </code></pre></div></div>
 
 <p>Give the container name if you want. This can be useful if you have long-running container like a server. You’ll want to use the <code class="language-plaintext highlighter-rouge">rm</code> flag otherwise you’ll get an error on the 2nd run that the container name already is used.</p>
