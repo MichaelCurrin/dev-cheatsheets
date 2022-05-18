@@ -200,7 +200,7 @@ Returning a JSON object - from [docs](https://docs.github.com/en/actions/referen
 
         steps:
           - id: set-matrix
-            run: echo "::set-output name=matrix::{\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}"
+            run: echo '::set-output name=matrix::{"include":[{"project":"foo","config":"Debug"},{"project":"bar","config":"Release"}]}'
 
       job2:
         needs: job1
