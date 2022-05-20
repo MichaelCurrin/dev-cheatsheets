@@ -360,7 +360,7 @@
 
       <span class="na">steps</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">set-matrix</span>
-          <span class="na">run</span><span class="pi">:</span> <span class="s">echo "::set-output name=matrix::{\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}"</span>
+          <span class="na">run</span><span class="pi">:</span> <span class="s">echo '::set-output name=matrix::{"include":[{"project":"foo","config":"Debug"},{"project":"bar","config":"Release"}]}'</span>
 
     <span class="na">job2</span><span class="pi">:</span>
       <span class="na">needs</span><span class="pi">:</span> <span class="s">job1</span>
