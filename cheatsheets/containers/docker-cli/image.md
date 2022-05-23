@@ -1,4 +1,4 @@
-# image
+# image command
 
 ```
 Usage:  docker image COMMAND
