@@ -1,6 +1,6 @@
 ---
+title: Poetry
 ---
-# Poetry
 
 [Homepage](https://python-poetry.org/)
 
