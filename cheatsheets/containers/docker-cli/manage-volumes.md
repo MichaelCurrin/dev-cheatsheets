@@ -24,6 +24,17 @@ $ docker volume ls -q
 
 ### Dangling volumes
 
+Using filter:
+
+- `-f, --filter filter` Provide filter values (e.g. 'dangling=true')
+  
 ```sh
 $ docker volume ls -qf dangling=true
+```
+
+
+## Remove
+
+```sh
+$ docker volume rm $(docker volume ls -q)
 ```
