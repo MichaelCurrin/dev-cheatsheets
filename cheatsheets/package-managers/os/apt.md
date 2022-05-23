@@ -130,17 +130,24 @@ Upgradeable:
 $ sudo apt list --upgradeable
 ```
 
-You can filter the list if you know the exact package name.
+You can filter the list if you know the exact package name. The prefix of the slash names will be use.
 
 ```console
-$ sudo apt list python
+$ sudo apt list python3
 Listing... Done
-python/xenial-updates,now 2.7.12-1~16.04 amd64 [installed]
-N: There is 1 additional version. Please use the '-a' switch to see it
-$ sudo apt list python -a
-Listing... Done
-python/xenial-updates,now 2.7.12-1~16.04 amd64 [installed]
-python/xenial 2.7.11-1 amd64
+python3/focal,now 3.8.2-0ubuntu2 amd64 [installed]
+python3/focal 3.8.2-0ubuntu2 i386
+```
+
+Or use a glob pattern.
+
+```console
+$ sudo apt list 'python*'
+Listing...
+python-acme-doc/focal,focal 1.1.0-1 all
+python-agate-doc/focal,focal 1.6.0-3 all
+python-agatedbf-doc/focal,focal 0.2.0-2 all
+..
 ```
 
 
