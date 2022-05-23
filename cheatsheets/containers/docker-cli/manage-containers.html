@@ -168,17 +168,20 @@
 <h2 id="list">List</h2>
 
 <ul>
-  <li>Show all running containers.
+  <li>Show all running containers:
     <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker ps
 </code></pre></div>    </div>
   </li>
-  <li>Show running and stopped containers with <code class="language-plaintext highlighter-rouge">--all</code> flag or alias.
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker ps <span class="nt">-a</span>
+  <li>Show running and stopped containers with the <code class="language-plaintext highlighter-rouge">-a, --all</code> flag:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker ps <span class="nt">-a</span>
 </code></pre></div>    </div>
   </li>
-  <li>Show a specific container
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker ps <span class="nt">-a</span> <span class="se">\</span>
-      <span class="nt">--filter</span> <span class="s2">"name=my-app"</span>
+  <li>Show a specific container:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker ps <span class="nt">-a</span> <span class="nt">--filter</span> <span class="s1">'name=my-app'</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Show just IDs with <code class="language-plaintext highlighter-rouge">--quiet</code>. Useful for chaining commands.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker ps <span class="nt">-q</span>
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -199,20 +202,27 @@
 
 <h2 id="stop-and-remove-container">Stop and remove container</h2>
 
-<p>Stop a running container.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker stop my-app
-</code></pre></div></div>
-
-<p>Stop <strong>all</strong> running containers. This uses <code class="language-plaintext highlighter-rouge">--quiet</code> flag return only the container IDs.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker stop <span class="si">$(</span>docker ps <span class="nt">-q</span><span class="si">)</span>
-</code></pre></div></div>
-
-<p>Remove a stopped container.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker <span class="nb">rm </span>my-app
-</code></pre></div></div>
+<ul>
+  <li>Stop a running container:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker stop my-app
+</code></pre></div>    </div>
+  </li>
+  <li>Stop <strong>all</strong> running containers. This uses <code class="language-plaintext highlighter-rouge">--quiet</code> flag return only the container IDs.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker stop <span class="si">$(</span>docker ps <span class="nt">-q</span><span class="si">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Remove a container (must be stopped first).
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker <span class="nb">rm </span>my-app
+</code></pre></div>    </div>
+  </li>
+  <li>Remove all containers.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker <span class="nb">rm</span> <span class="nt">-f</span> <span class="si">$(</span>docker ps <span class="nt">-a</span> <span class="nt">-q</span><span class="si">)</span>
+</code></pre></div>    </div>
+    <p>Or</p>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker ps <span class="nt">-q</span> | xargs docker <span class="nb">rm</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
 
         
     </div>
