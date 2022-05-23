@@ -183,7 +183,18 @@
 
 <h3 id="dangling-volumes">Dangling volumes</h3>
 
+<p>Using filter:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-f, --filter filter</code> Provide filter values (e.g. ‘dangling=true’)</li>
+</ul>
+
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker volume <span class="nb">ls</span> <span class="nt">-qf</span> <span class="nv">dangling</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div></div>
+
+<h2 id="remove">Remove</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker volume <span class="nb">rm</span> <span class="si">$(</span>docker volume <span class="nb">ls</span> <span class="nt">-q</span><span class="si">)</span>
 </code></pre></div></div>
 
         
