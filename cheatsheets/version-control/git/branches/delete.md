@@ -107,7 +107,7 @@ $ git branch -d abc def xyz
    
 ### Aggressive
 
-A branch might actually be merged (such as using a PR merge button), but might not known to `git` as merged if it was a **squash** merge. 
+A branch might actually be merged (such as using a PR merge button), but still not be recognized by Git as merged if there was a **squash** merge. 
 
 In that case:
 
