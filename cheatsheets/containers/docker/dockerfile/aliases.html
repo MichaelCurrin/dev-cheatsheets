@@ -177,18 +177,18 @@
         
             <p>Given an image an alias and then use it later.</p>
 
-<div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> IMAGE AS ALIAS</span>
+<div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="w"> </span><span class="s">IMAGE</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">ALIAS</span>
 </code></pre></div></div>
 
 <p>Example:</p>
 
 <p><code class="language-plaintext highlighter-rouge">Dockerfile</code></p>
-<div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> python:alpine AS base</span>
+<div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="w"> </span><span class="s">python:alpine</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">base</span>
 
-<span class="k">FROM</span><span class="s"> base AS dev</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">base</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">dev</span>
 <span class="k">CMD</span><span class="s"> ["mkdocs", "serve", "-a", "0.0.0.0:8000"]</span>
 
-<span class="k">FROM</span><span class="s"> base AS build</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">base</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">build</span>
 <span class="k">COPY</span><span class="s"> . .</span>
 <span class="k">RUN </span>mkdocs build
 </code></pre></div></div>

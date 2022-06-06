@@ -207,7 +207,7 @@
 <span class="s">"{:10,}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="c1"># '     1,234'
 </span>
-<span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">x</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="si">}</span><span class="s">"</span>
+<span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="mi">10</span><span class="p">,</span><span class="si">}</span><span class="s">"</span>
 <span class="c1"># '     1,234'
 </span></code></pre></div></div>
 
@@ -265,7 +265,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">i</span> <span class="o">=</span> <span class="mi">2021</span>
 
-<span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">i</span><span class="err">!</span><span class="n">r</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">i</span><span class="err">!</span><span class="n">a</span><span class="si">}</span><span class="s">"</span>
+<span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">i</span><span class="si">!r}</span><span class="s"> </span><span class="si">{</span><span class="n">i</span><span class="si">!a}</span><span class="s">"</span>
 <span class="c1"># "2021 '2021' '2021'"
 </span></code></pre></div></div>
 
@@ -273,7 +273,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="s">'2021'</span>
 
-<span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">s</span><span class="err">!</span><span class="n">r</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">s</span><span class="err">!</span><span class="n">a</span><span class="si">}</span><span class="s">"</span>
+<span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">s</span><span class="si">!r}</span><span class="s"> </span><span class="si">{</span><span class="n">s</span><span class="si">!a}</span><span class="s">"</span>
 <span class="c1"># "2021 '2021' '2021'"
 </span></code></pre></div></div>
 
@@ -370,7 +370,7 @@
 
 <p>Or using f-strings.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="p">:</span><span class="n">f</span><span class="si">}</span><span class="s">"</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="si">:</span><span class="n">f</span><span class="si">}</span><span class="s">"</span>
 <span class="s">'3.141593'</span>
 </code></pre></div></div>
 
