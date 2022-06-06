@@ -2,6 +2,7 @@
 
 ## calendar
 
+CLI help:
 
 ```
 CALENDAR(1)                                                                              BSD General Commands Manual                                                                              CALENDAR(1)
@@ -14,9 +15,12 @@ SYNOPSIS
 ...
 ```
 
+Description:
+
 > The calendar utility checks the current directory or the directory specified by the CALENDAR_DIR environment variable for a file named calendar and displays lines that begin with either today's date
 > or tomorrow's.  On Fridays, events on Friday through Monday are displayed.
 
+Sample output on 6 June:
 
 ```console
 $ calendar
@@ -29,6 +33,8 @@ Jun 07  Róbert
 ```
 
 ## cal
+
+CLI help:
 
 ```
 NAME
@@ -44,8 +50,12 @@ SYNOPSIS
 ...
 ```
 
+Description:
+
 > The cal utility displays a simple calendar in traditional format and ncal offers an alternative layout, more options and the date of Easter.  The new format is a little cramped but it makes a year fit
 > on a 25x80 terminal.  If arguments are not specified, the current month is displayed.
+
+Sample output:
 
 ```console
 $ cal
