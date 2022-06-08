@@ -120,12 +120,14 @@ Download tarball:
 
 Point to the latest release without having to specify an exact tag number.
 
-Note this only works if your have a _release_ not a _pre-release_, and you need to make the release and not just use a tag.
+Note this only works if your have a _release_ not a _pre-release_, and you need to make the release and not just use a tag. 
 
 e.g.
 
 - [https://github.com/MichaelCurrin/code-cookbook/releases/latest](https://github.com/MichaelCurrin/code-cookbook/releases/latest)
 
-That redirects you to a release page like:
+That redirects you to the actual latest release page like:
 
 - [https://github.com/MichaelCurrin/code-cookbook/releases/tag/v4.0.0](https://github.com/MichaelCurrin/code-cookbook/releases/tag/v4.0.0)
+
+Or it falls back to a page of all releases.
