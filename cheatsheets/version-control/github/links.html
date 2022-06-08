@@ -206,11 +206,11 @@
 
 <h3 id="feature-branch">Feature branch</h3>
 
-<p>Note this link will not work in this case.</p>
-
 <ul>
   <li><a href="https://github.com/MichaelCurrin/cheatsheets/archive/feat-branch.zip">https://github.com/MichaelCurrin/cheatsheets/archive/feat-branch.zip</a></li>
 </ul>
+
+<p>Note this link will not work in this case as this is not an existing branch.</p>
 
 <h3 id="specific-tag">Specific tag</h3>
 
@@ -218,7 +218,7 @@
   <li><a href="https://github.com/MichaelCurrin/cheatsheets/archive/v1.0.0.zip">https://github.com/MichaelCurrin/cheatsheets/archive/v1.0.0.zip</a></li>
 </ul>
 
-<p>Note you need <code class="language-plaintext highlighter-rouge">-L</code> to follow a redirect.</p>
+<p>Usage - note, you do need <code class="language-plaintext highlighter-rouge">-L</code> to follow a redirect.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="nt">-L</span> <span class="nt">-O</span> https://github.com/MichaelCurrin/cheatsheets/archive/v1.0.0.zip
 </code></pre></div></div>
@@ -234,7 +234,7 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/owner/name/releases/latest/download/asset-name.zip
 </code></pre></div></div>
 
-<p>I find that doesn’t work for me.</p>
+<p>But, I find that doesn’t work for me.</p>
 
 <p>e.g. this is invalid:</p>
 
@@ -248,7 +248,7 @@
   <li><a href="https://github.com/trashhalo/imgcat/releases/download/v1.2.0/checksums.txt">https://github.com/trashhalo/imgcat/releases/download/v1.2.0/checksums.txt</a></li>
 </ul>
 
-<p>Also the other assets on there have the tag name in filename, so you can’t just do a generic way.</p>
+<p>Also the other assets on there have the tag name in actual filename, so you can’t just do a generic way.</p>
 
 <p>See assets here:</p>
 
@@ -293,13 +293,17 @@
 
 <h3 id="latest-release-1">Latest release</h3>
 
-<p>This only works if your have a release, not just pre-releases.</p>
+<p>Point to the latest release without having to specify an exact tag number.</p>
+
+<p>Note this only works if your have a <em>release</em> not a <em>pre-release</em>, and you need to make the release and not just use a tag.</p>
+
+<p>e.g.</p>
 
 <ul>
   <li><a href="https://github.com/MichaelCurrin/code-cookbook/releases/latest">https://github.com/MichaelCurrin/code-cookbook/releases/latest</a></li>
 </ul>
 
-<p>That redirects you to a page like:</p>
+<p>That redirects you to a release page like:</p>
 
 <ul>
   <li><a href="https://github.com/MichaelCurrin/code-cookbook/releases/tag/v4.0.0">https://github.com/MichaelCurrin/code-cookbook/releases/tag/v4.0.0</a></li>

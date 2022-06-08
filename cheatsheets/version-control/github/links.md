@@ -48,15 +48,15 @@ Then you have a file `master.zip`.
 
 ### Feature branch
 
-Note this link will not work in this case.
-
 - [https://github.com/MichaelCurrin/cheatsheets/archive/feat-branch.zip](https://github.com/MichaelCurrin/cheatsheets/archive/feat-branch.zip)
+
+Note this link will not work in this case as this is not an existing branch.
 
 ### Specific tag
 
 - [https://github.com/MichaelCurrin/cheatsheets/archive/v1.0.0.zip](https://github.com/MichaelCurrin/cheatsheets/archive/v1.0.0.zip)
 
-Note you need `-L` to follow a redirect.
+Usage - note, you do need `-L` to follow a redirect.
 
 ```sh
 $ curl -L -O https://github.com/MichaelCurrin/cheatsheets/archive/v1.0.0.zip
@@ -74,7 +74,7 @@ Download the latest release's assets:
 /owner/name/releases/latest/download/asset-name.zip
 ```
 
-I find that doesn't work for me.
+But, I find that doesn't work for me.
 
 e.g. this is invalid:
 
@@ -84,7 +84,7 @@ But this works:
 
 - [https://github.com/trashhalo/imgcat/releases/download/v1.2.0/checksums.txt](https://github.com/trashhalo/imgcat/releases/download/v1.2.0/checksums.txt)
 
-Also the other assets on there have the tag name in filename, so you can't just do a generic way.
+Also the other assets on there have the tag name in actual filename, so you can't just do a generic way.
 
 See assets here:
 
@@ -118,10 +118,14 @@ Download tarball:
 
 ### Latest release
 
-This only works if your have a release, not just pre-releases.
+Point to the latest release without having to specify an exact tag number.
+
+Note this only works if your have a _release_ not a _pre-release_, and you need to make the release and not just use a tag.
+
+e.g.
 
 - [https://github.com/MichaelCurrin/code-cookbook/releases/latest](https://github.com/MichaelCurrin/code-cookbook/releases/latest)
 
-That redirects you to a page like:
+That redirects you to a release page like:
 
 - [https://github.com/MichaelCurrin/code-cookbook/releases/tag/v4.0.0](https://github.com/MichaelCurrin/code-cookbook/releases/tag/v4.0.0)
