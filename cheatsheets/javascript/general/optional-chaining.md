@@ -67,7 +67,7 @@ foo && foo.bar && foo.bar.bazz
 
 ### Example
 
-Without handling.
+Without handling, you get an error.
 
 ```javascript
 const foo = {}
@@ -79,15 +79,20 @@ With handling.
 
 ```javascript
 const foo = {}
-
-// Old style.
-foo && foo.bar && foo.bar.bazz
-// undefined
-
-// New style.
-foo?.bar?.bazz?
-// undefined
 ```
+
+When the value is not set.
+
+- New style:
+    ```javascript
+    foo?.bar?.bazz?
+    // undefined
+    ```
+- Old style:
+    ```javascript
+    foo && foo.bar && foo.bar.bazz
+    // undefined
+    ```
 
 When the value is set.
 
@@ -97,19 +102,22 @@ const foo = {
     bazz: 123
   }
 }
-
-// New style
-foo?.bar?.bazz
-// 123
-foo?.badKey?.bazz
-// undefined
-
-// Old style
-foo && foo.bar && foo.bar.bazz
-// 123
-foo && foo.badKey && foo.badKey.bazz
-// undefined
 ```
+
+- New style:
+    ```javascript
+    foo?.bar?.bazz
+    // 123
+    foo?.badKey?.bazz
+    // undefined
+    ```
+- Old style:
+    ```javascript
+    foo && foo.bar && foo.bar.bazz
+    // 123
+    foo && foo.badKey && foo.badKey.bazz
+    // undefined
+    ```
 
 
 ## Optional chaining for functions
