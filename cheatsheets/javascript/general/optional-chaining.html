@@ -222,7 +222,7 @@
 
 <h3 id="example">Example</h3>
 
-<p>Without handling.</p>
+<p>Without handling, you get an error.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">.</span><span class="nx">bazz</span>
@@ -232,15 +232,22 @@
 <p>With handling.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="c1">// Old style.</span>
-<span class="nx">foo</span> <span class="o">&amp;&amp;</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span> <span class="o">&amp;&amp;</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">.</span><span class="nx">bazz</span>
-<span class="c1">// undefined</span>
-
-<span class="c1">// New style.</span>
-<span class="nx">foo</span><span class="p">?.</span><span class="nx">bar</span><span class="p">?.</span><span class="nx">bazz</span><span class="p">?</span>
-<span class="c1">// undefined</span>
 </code></pre></div></div>
+
+<p>When the value is not set.</p>
+
+<ul>
+  <li>New style:
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">foo</span><span class="p">?.</span><span class="nx">bar</span><span class="p">?.</span><span class="nx">bazz</span><span class="p">?</span>
+  <span class="c1">// undefined</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Old style:
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">foo</span> <span class="o">&amp;&amp;</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span> <span class="o">&amp;&amp;</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">.</span><span class="nx">bazz</span>
+  <span class="c1">// undefined</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
 
 <p>When the value is set.</p>
 
@@ -249,19 +256,24 @@
     <span class="na">bazz</span><span class="p">:</span> <span class="mi">123</span>
   <span class="p">}</span>
 <span class="p">}</span>
-
-<span class="c1">// New style</span>
-<span class="nx">foo</span><span class="p">?.</span><span class="nx">bar</span><span class="p">?.</span><span class="nx">bazz</span>
-<span class="c1">// 123</span>
-<span class="nx">foo</span><span class="p">?.</span><span class="nx">badKey</span><span class="p">?.</span><span class="nx">bazz</span>
-<span class="c1">// undefined</span>
-
-<span class="c1">// Old style</span>
-<span class="nx">foo</span> <span class="o">&amp;&amp;</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span> <span class="o">&amp;&amp;</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">.</span><span class="nx">bazz</span>
-<span class="c1">// 123</span>
-<span class="nx">foo</span> <span class="o">&amp;&amp;</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">badKey</span> <span class="o">&amp;&amp;</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">badKey</span><span class="p">.</span><span class="nx">bazz</span>
-<span class="c1">// undefined</span>
 </code></pre></div></div>
+
+<ul>
+  <li>New style:
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">foo</span><span class="p">?.</span><span class="nx">bar</span><span class="p">?.</span><span class="nx">bazz</span>
+  <span class="c1">// 123</span>
+  <span class="nx">foo</span><span class="p">?.</span><span class="nx">badKey</span><span class="p">?.</span><span class="nx">bazz</span>
+  <span class="c1">// undefined</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Old style:
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">foo</span> <span class="o">&amp;&amp;</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span> <span class="o">&amp;&amp;</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">.</span><span class="nx">bazz</span>
+  <span class="c1">// 123</span>
+  <span class="nx">foo</span> <span class="o">&amp;&amp;</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">badKey</span> <span class="o">&amp;&amp;</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">badKey</span><span class="p">.</span><span class="nx">bazz</span>
+  <span class="c1">// undefined</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
 
 <h2 id="optional-chaining-for-functions">Optional chaining for functions</h2>
 
