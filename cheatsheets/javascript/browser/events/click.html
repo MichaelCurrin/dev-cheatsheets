@@ -177,19 +177,24 @@
         
             <h2 id="syntax">Syntax</h2>
 
+<p>Set the click event function and override any existing one.</p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">TARGET</span><span class="p">.</span><span class="nx">onClick</span> <span class="o">=</span> <span class="nx">FUNCTION</span>
 </code></pre></div></div>
 
-<p>Or</p>
+<p>Same as above but append to the click events, so you could have more than one on the same element.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TARGET.addEventListener('click', FUNCION)
 </code></pre></div></div>
 
-<p>Or directly an HTML element.</p>
+<p>Or add directly on an HTML element.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">onClick=</span><span class="s">"foo"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
 
-<span class="nt">&lt;div</span> <span class="na">onClick=</span><span class="s">"foo('bar')"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<p>Or with arguments.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">onClick=</span><span class="s">"foo('bar')"</span><span class="nt">&gt;&lt;/div&gt;</span>
 </code></pre></div></div>
 
 <h2 id="example">Example</h2>
