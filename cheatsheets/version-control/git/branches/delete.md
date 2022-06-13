@@ -40,13 +40,11 @@ baz' | xargs git branch -D
 ```
 
 
-### Delete multiple branches
+### Delete multiple merged branches
 
-Here I assume you've got all your Pull Requests merged or closed.
-    
-This will delete all your **merged** local branches, aside from the current (started with asterisk like `* BRANCH_NAME`) and special branches (`main`, `master` and `develop`).
+To delete all your **merged** local branches, aside from the current (started with asterisk like `* BRANCH_NAME`) and special branches (`main`, `master` and `develop`).
         
-Note the significance of the star for the current branch, as it will be used below in the regex.
+Example branches list:
 
 ```console
 $ git branch
@@ -58,8 +56,9 @@ $ git branch
 
 Note on accuracy:
 
-- Run `git fetch` (or `git pull`) first to make sure you are up to date with the remote.
-- Push any in-progress work in case you need to recover a branch from the remote.
+- Get your Pull Requests merged or closed on GitHub.
+- Run `git fetch` (or `git pull`) to make sure you are up to date with the remote.
+- Push any in-progress work in case you need to recover a branch from the remote. Alteratively, recover a branch using `git reflog`.
     
 #### Use single grep and xargs
     
@@ -71,6 +70,14 @@ This will use `xargs` to take each branch name and run the delete branch command
 $ git branch --no-color --merged \
     | command egrep -v "^(\+|\*|\s*(main|master|develop)\s*$)" \
     | command xargs -n 1 git branch -d
+```
+
+Sample outptut:
+
+```
+Deleted branch foo (was d1e73df07).
+Deleted branch bar (was bd31cf305).
+...
 ```
 
 Using `command COMMAND` avoids using any aliases you have setup I guess.
