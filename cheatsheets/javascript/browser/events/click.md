@@ -6,13 +6,32 @@
 Set the click event function and override any existing one.
 
 ```javascript
-TARGET.onClick = FUNCTION
+TARGET.onclick = FUNCTION
+```
+
+e.g.
+
+```javascript
+el.onclick = function () { console.log('Hello') }
+```
+```javascript
+function foo() { 
+  console.log('Hello') 
+}
+el.onclick = foo
 ```
 
 Same as above but append to the click events, so you could have more than one on the same element.
 
+```javascript
+TARGET.addEventListener('click', FUNCTION)
 ```
-TARGET.addEventListener('click', FUNCION)
+
+e.g.
+
+
+```javascript
+el.addEventListener('click', function () { console.log('Hello'))
 ```
 
 Or add directly on an HTML element.
