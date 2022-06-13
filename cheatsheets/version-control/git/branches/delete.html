@@ -213,7 +213,7 @@ baz'</span> | xargs git branch <span class="nt">-D</span>
 
 <p>Here I assume you’ve got all your Pull Requests merged or closed.</p>
 
-<p>This will delete all your <strong>merged</strong> local branches, aside from the current or special branches (<code class="language-plaintext highlighter-rouge">main</code>, <code class="language-plaintext highlighter-rouge">master</code> and <code class="language-plaintext highlighter-rouge">develop</code>).</p>
+<p>This will delete all your <strong>merged</strong> local branches, aside from the current (started with asterisk like <code class="language-plaintext highlighter-rouge">* BRANCH_NAME</code>) and special branches (<code class="language-plaintext highlighter-rouge">main</code>, <code class="language-plaintext highlighter-rouge">master</code> and <code class="language-plaintext highlighter-rouge">develop</code>).</p>
 
 <p>Note the significance of the star for the current branch, as it will be used below in the regex.</p>
 
@@ -242,15 +242,15 @@ baz'</span> | xargs git branch <span class="nt">-D</span>
     | <span class="nb">command </span>xargs <span class="nt">-n</span> 1 git branch <span class="nt">-d</span>
 </code></pre></div></div>
 
+<p>Using <code class="language-plaintext highlighter-rouge">command COMMAND</code> avoids using any aliases you have setup I guess.</p>
+
 <h4 id="use-double-grep">Use double grep</h4>
 
 <p>Based on another source I found.</p>
 
-<p>Here we get the branch names as one long string, excluding the current branch (starting with <code class="language-plaintext highlighter-rouge">*</code> and the special branches.</p>
+<p>Here we get the branch names a single string. Then in two steps we remove the current branch and then special branches.</p>
 
-<p>Then remove line breaks with <code class="language-plaintext highlighter-rouge">tr</code>.</p>
-
-<p>And pass the output all the delete branch command as multiple arguments.</p>
+<p>Then remove line breaks with <code class="language-plaintext highlighter-rouge">tr</code>. Then pass the output all the delete branch command as multiple arguments.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch <span class="nt">-d</span> <span class="si">$(</span>git branch <span class="nt">--merged</span> <span class="se">\</span>
     | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s1">'^*'</span> <span class="se">\</span>
@@ -278,8 +278,8 @@ Deleted branch bar (was 125f0d2).
 <p>In that case:</p>
 
 <ul>
-  <li>Omit the <code class="language-plaintext highlighter-rouge">--merged</code> flag in the commands below.</li>
-  <li>Use <code class="language-plaintext highlighter-rouge">-D</code> to force a delete instead of a warning.</li>
+  <li>Omit the <code class="language-plaintext highlighter-rouge">--merged</code> flag in the command below.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">-D</code> flag to <em>force</em> a delete instead of a warning.</li>
 </ul>
 
 <p>Instead of using <code class="language-plaintext highlighter-rouge">tr</code>, here using <code class="language-plaintext highlighter-rouge">xargs</code> as a more elegant way to put all the arguments on one line i.e. remove line breaks.</p>
