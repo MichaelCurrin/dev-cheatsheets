@@ -40,7 +40,7 @@ baz' | xargs git branch -D
 ```
 
 
-## Delete multiple branches
+### Delete multiple branches
 
 Here I assume you've got all your Pull Requests merged or closed.
     
@@ -61,7 +61,7 @@ Note on accuracy:
 - Run `git fetch` (or `git pull`) first to make sure you are up to date with the remote.
 - Push any in-progress work in case you need to recover a branch from the remote.
     
-### Use single grep and xargs
+#### Use single grep and xargs
     
 Based on the ZSH alias `gbda`. Which probably stands for "git branch delete all".
 
@@ -73,7 +73,7 @@ $ git branch --no-color --merged \
     | command xargs -n 1 git branch -d
 ```
     
-### Use double grep
+#### Use double grep
     
 Based on another source I found.
     
@@ -105,7 +105,7 @@ Equivalent to:
 $ git branch -d abc def xyz
 ```
    
-### Aggressive
+#### Aggressive
 
 A branch might actually be merged (such as using a PR merge button), but still not be recognized by Git as merged if there was a **squash** merge. 
 

@@ -209,7 +209,7 @@ bar
 baz'</span> | xargs git branch <span class="nt">-D</span>
 </code></pre></div></div>
 
-<h2 id="delete-multiple-branches">Delete multiple branches</h2>
+<h3 id="delete-multiple-branches">Delete multiple branches</h3>
 
 <p>Here I assume you’ve got all your Pull Requests merged or closed.</p>
 
@@ -231,7 +231,7 @@ baz'</span> | xargs git branch <span class="nt">-D</span>
   <li>Push any in-progress work in case you need to recover a branch from the remote.</li>
 </ul>
 
-<h3 id="use-single-grep-and-xargs">Use single grep and xargs</h3>
+<h4 id="use-single-grep-and-xargs">Use single grep and xargs</h4>
 
 <p>Based on the ZSH alias <code class="language-plaintext highlighter-rouge">gbda</code>. Which probably stands for “git branch delete all”.</p>
 
@@ -242,7 +242,7 @@ baz'</span> | xargs git branch <span class="nt">-D</span>
     | <span class="nb">command </span>xargs <span class="nt">-n</span> 1 git branch <span class="nt">-d</span>
 </code></pre></div></div>
 
-<h3 id="use-double-grep">Use double grep</h3>
+<h4 id="use-double-grep">Use double grep</h4>
 
 <p>Based on another source I found.</p>
 
@@ -271,7 +271,7 @@ Deleted branch bar (was 125f0d2).
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch <span class="nt">-d</span> abc def xyz
 </code></pre></div></div>
 
-<h3 id="aggressive">Aggressive</h3>
+<h4 id="aggressive">Aggressive</h4>
 
 <p>A branch might actually be merged (such as using a PR merge button), but still not be recognized by Git as merged if there was a <strong>squash</strong> merge.</p>
 
