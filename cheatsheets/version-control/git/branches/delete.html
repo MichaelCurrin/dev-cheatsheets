@@ -209,13 +209,11 @@ bar
 baz'</span> | xargs git branch <span class="nt">-D</span>
 </code></pre></div></div>
 
-<h3 id="delete-multiple-branches">Delete multiple branches</h3>
+<h3 id="delete-multiple-merged-branches">Delete multiple merged branches</h3>
 
-<p>Here I assume you’ve got all your Pull Requests merged or closed.</p>
+<p>To delete all your <strong>merged</strong> local branches, aside from the current (started with asterisk like <code class="language-plaintext highlighter-rouge">* BRANCH_NAME</code>) and special branches (<code class="language-plaintext highlighter-rouge">main</code>, <code class="language-plaintext highlighter-rouge">master</code> and <code class="language-plaintext highlighter-rouge">develop</code>).</p>
 
-<p>This will delete all your <strong>merged</strong> local branches, aside from the current (started with asterisk like <code class="language-plaintext highlighter-rouge">* BRANCH_NAME</code>) and special branches (<code class="language-plaintext highlighter-rouge">main</code>, <code class="language-plaintext highlighter-rouge">master</code> and <code class="language-plaintext highlighter-rouge">develop</code>).</p>
-
-<p>Note the significance of the star for the current branch, as it will be used below in the regex.</p>
+<p>Example branches list:</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git branch
 <span class="go">  abc
@@ -227,8 +225,9 @@ baz'</span> | xargs git branch <span class="nt">-D</span>
 <p>Note on accuracy:</p>
 
 <ul>
-  <li>Run <code class="language-plaintext highlighter-rouge">git fetch</code> (or <code class="language-plaintext highlighter-rouge">git pull</code>) first to make sure you are up to date with the remote.</li>
-  <li>Push any in-progress work in case you need to recover a branch from the remote.</li>
+  <li>Get your Pull Requests merged or closed on GitHub.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git fetch</code> (or <code class="language-plaintext highlighter-rouge">git pull</code>) to make sure you are up to date with the remote.</li>
+  <li>Push any in-progress work in case you need to recover a branch from the remote. Alteratively, recover a branch using <code class="language-plaintext highlighter-rouge">git reflog</code>.</li>
 </ul>
 
 <h4 id="use-single-grep-and-xargs">Use single grep and xargs</h4>
@@ -240,6 +239,13 @@ baz'</span> | xargs git branch <span class="nt">-D</span>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch <span class="nt">--no-color</span> <span class="nt">--merged</span> <span class="se">\</span>
     | <span class="nb">command </span>egrep <span class="nt">-v</span> <span class="s2">"^(</span><span class="se">\+</span><span class="s2">|</span><span class="se">\*</span><span class="s2">|</span><span class="se">\s</span><span class="s2">*(main|master|develop)</span><span class="se">\s</span><span class="s2">*</span><span class="nv">$)</span><span class="s2">"</span> <span class="se">\</span>
     | <span class="nb">command </span>xargs <span class="nt">-n</span> 1 git branch <span class="nt">-d</span>
+</code></pre></div></div>
+
+<p>Sample outptut:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Deleted branch foo (was d1e73df07).
+Deleted branch bar (was bd31cf305).
+...
 </code></pre></div></div>
 
 <p>Using <code class="language-plaintext highlighter-rouge">command COMMAND</code> avoids using any aliases you have setup I guess.</p>
