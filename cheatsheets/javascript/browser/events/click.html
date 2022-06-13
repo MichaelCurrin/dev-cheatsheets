@@ -179,12 +179,27 @@
 
 <p>Set the click event function and override any existing one.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">TARGET</span><span class="p">.</span><span class="nx">onClick</span> <span class="o">=</span> <span class="nx">FUNCTION</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">TARGET</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">FUNCTION</span>
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">el</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello</span><span class="dl">'</span><span class="p">)</span> <span class="p">}</span>
+</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span> 
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello</span><span class="dl">'</span><span class="p">)</span> 
+<span class="p">}</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">foo</span>
 </code></pre></div></div>
 
 <p>Same as above but append to the click events, so you could have more than one on the same element.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TARGET.addEventListener('click', FUNCION)
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">TARGET</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="nx">FUNCTION</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">el</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello</span><span class="dl">'</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>Or add directly on an HTML element.</p>
