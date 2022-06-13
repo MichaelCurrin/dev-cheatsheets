@@ -44,7 +44,7 @@ baz' | xargs git branch -D
 
 Here I assume you've got all your Pull Requests merged or closed.
     
-This will delete all your **merged** local branches, aside from the current or special branches (`main`, `master` and `develop`).
+This will delete all your **merged** local branches, aside from the current (started with asterisk like `* BRANCH_NAME`) and special branches (`main`, `master` and `develop`).
         
 Note the significance of the star for the current branch, as it will be used below in the regex.
 
@@ -72,16 +72,16 @@ $ git branch --no-color --merged \
     | command egrep -v "^(\+|\*|\s*(main|master|develop)\s*$)" \
     | command xargs -n 1 git branch -d
 ```
+
+Using `command COMMAND` avoids using any aliases you have setup I guess.
     
 #### Use double grep
     
 Based on another source I found.
     
-Here we get the branch names as one long string, excluding the current branch (starting with `*` and the special branches.
+Here we get the branch names a single string. Then in two steps we remove the current branch and then special branches.
 
-Then remove line breaks with `tr`. 
-
-And pass the output all the delete branch command as multiple arguments.
+Then remove line breaks with `tr`. Then pass the output all the delete branch command as multiple arguments.
     
 ```sh
 $ git branch -d $(git branch --merged \
@@ -111,8 +111,8 @@ A branch might actually be merged (such as using a PR merge button), but still n
 
 In that case:
 
-- Omit the `--merged` flag in the commands below.
-- Use `-D` to force a delete instead of a warning.
+- Omit the `--merged` flag in the command below.
+- Use `-D` flag to _force_ a delete instead of a warning.
 
 Instead of using `tr`, here using `xargs` as a more elegant way to put all the arguments on one line i.e. remove line breaks.
 
