@@ -3,24 +3,29 @@
 
 ## Syntax
 
+Set the click event function and override any existing one.
+
 ```javascript
 TARGET.onClick = FUNCTION
 ```
 
-Or
+Same as above but append to the click events, so you could have more than one on the same element.
 
 ```
 TARGET.addEventListener('click', FUNCION)
 ```
 
-Or directly an HTML element.
+Or add directly on an HTML element.
 
 ```html
 <div onClick="foo"></div>
-
-<div onClick="foo('bar')"></div>
 ```
 
+Or with arguments.
+
+```html
+<div onClick="foo('bar')"></div>
+```
 
 
 ## Example
