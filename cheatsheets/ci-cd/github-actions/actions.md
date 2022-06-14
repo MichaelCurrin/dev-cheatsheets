@@ -1,6 +1,6 @@
 ---
 title: Actions
-description: What an Actions is, how to use one and how to make your own
+description: What an Action is in GitHub Actions, how to use one and how to make your own
 ---
 
 
