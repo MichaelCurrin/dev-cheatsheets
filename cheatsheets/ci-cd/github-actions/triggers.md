@@ -407,6 +407,8 @@ See [Manual events](https://docs.github.com/en/free-pro-team@latest/actions/refe
 
 There are two formats available.
 
+See also [inputs docs](https://docs.github.com/en/actions/learn-github-actions/contexts#inputs-context) in the docs.
+
 ### Workflow dispatch
 
 Trigger a workflow on a button click.
@@ -457,15 +459,23 @@ Basic trigger and job example:
             description: 'location'
             required: false
             default: 'The Octoverse'
+            
+          perform_deploy:
+            required: true
+            type: boolean
 
     jobs:
       say-hello:
         runs-on: ubuntu-latest
-
         steps:
-          - run: |
-            echo "Hello, ${{ github.event.inputs.name }}!"
-            echo "- in ${{ github.event.inputs.home }}!"
+          - name: Greet
+            run: |
+              echo "Hello, ${{ inputs.name }}!"
+              echo "- in ${{ inputs.home }}!"
+              
+          - name: Deploy
+            if: ${{ inputs.perform_deploy }}
+            run: ./build.sh
     ```
 
 An example suggested by GH Actions, when making new workflow file.
@@ -489,7 +499,7 @@ An example suggested by GH Actions, when making new workflow file.
 
         steps:
           - name: Send greeting
-            run: echo "Hello ${{ github.event.inputs.name }}"
+            run: echo "Hello ${{ inputs.name }}"
     ```
 
 
