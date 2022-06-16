@@ -560,10 +560,46 @@ You can also set a time zone with a `tzinfo` object. See  the [pytz](https://pyp
 
 > The preferred way of dealing with times is to always work in UTC, converting to localtime only when generating output to be read by humans.
 
+Here adding `tzinfo` to a `datetime` object, though this does not work properly for timezones which use daylight savings.
+
 ```python
 import pytz
+
 
 datetime.datetime(2002, 10, 27, 6, 0, 0, tzinfo=pytz.utc)
 
 datetime.datetime.now(tzinfo=pytz.utc)
+```
+
+My example:
+
+```python
+from datetime import datetime
+
+import pytz
+from pytz import timezone
+
+
+FMT = "%Y-%m-%d %H:%M:%S %Z%z"
+
+dt = datetime(2002, 10, 27, 6, 0, 0)
+amsterdam = timezone("Europe/Amsterdam")
+loc_dt = amsterdam.localize(dt)
+
+# Naiive
+print(dt)
+# 2002-10-27 06:00:00
+
+# Timezzone aware
+print(loc_dt.strftime(FMT))
+# 2002-10-27 06:00:00 CET+0100
+
+# Note straight printing gives you offset but not the symbol.
+print(str(loc_dt))
+# 2002-10-27 06:00:00+01:00
+
+# Display in another timezone.
+utc = pytz.utc
+print(loc_dt.astimezone(tz=utc))
+# 2002-10-27 05:00:00+00:00
 ```
