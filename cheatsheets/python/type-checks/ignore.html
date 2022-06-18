@@ -207,6 +207,16 @@
   </li>
 </ul>
 
+<p>e.g. There is <code class="language-plaintext highlighter-rouge">types-Flask</code> for <code class="language-plaintext highlighter-rouge">Flask</code> but no types for <code class="language-plaintext highlighter-rouge">Flask-RESTful</code>.</p>
+
+<p>So you can do this:</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[mypy]</span>
+
+<span class="nn">[mypy-flask_restful.*]</span>
+<span class="py">ignore_missing_imports</span> <span class="p">=</span> <span class="s">True</span>
+</code></pre></div></div>
+
 <h2 id="ignore-imports-globally-in-config">Ignore imports globally in config</h2>
 
 <p>Ignore all missing imports across libraries.</p>
