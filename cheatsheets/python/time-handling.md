@@ -590,7 +590,7 @@ loc_dt = amsterdam.localize(dt)
 print(dt)
 # 2002-10-27 06:00:00
 
-# Timezzone aware
+# Timezone aware
 print(loc_dt.strftime(FMT))
 # 2002-10-27 06:00:00 CET+0100
 
