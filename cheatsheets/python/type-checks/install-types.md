@@ -2,9 +2,10 @@
 
 When you run type checks with Mypy, you might get an error that types are missing for your installed 3rd-party packages.
 
-So run a command below to install the missing types. 
+So run a command below to install the missing types. If you can't find appropriate types, see other pages in this guide to make stubs or ignore that package for typechecks.
 
 See [typeshed README](https://github.com/python/typeshed/blob/master/README.md) for more info.
+
 
 ## Install using Mypy
 
