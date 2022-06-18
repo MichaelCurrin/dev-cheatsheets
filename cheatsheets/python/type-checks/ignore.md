@@ -42,6 +42,19 @@ OR
     [mypy-foobar.*]
     ignore_missing_imports = True
     ```
+    
+    
+e.g. There is `types-Flask` for `Flask` but no types for `Flask-RESTful`.
+
+So you can do this:
+
+```ini
+[mypy]
+
+[mypy-flask_restful.*]
+ignore_missing_imports = True
+```
+
 
 ## Ignore imports globally in config
 
