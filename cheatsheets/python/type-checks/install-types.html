@@ -163,18 +163,28 @@
 
     <div class="post-content">
         
-            <p>Maybe this is a newer feature - I never ran into this before.</p>
+            <p>When you run type checks with Mypy, you might get an error that types are missing for your installed 3rd-party packages.</p>
 
-<p>I got an error from Mypy on missing types.</p>
+<p>So run a command below to install the missing types.</p>
 
-<p>These can be installed like this.</p>
+<h2 id="install-using-mypy">Install using Mypy</h2>
 
-<h2 id="interactive">Interactive</h2>
+<p>Note you cannot run this as the <em>first</em> command as it will complain there is no Mypy cache, so you need to attempt your checks, install types, then do checks again.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mypy <span class="nt">--install-types</span> <span class="nt">--non-interactive</span>
+<h3 id="interactive">Interactive</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mypy <span class="nt">--install-types</span>
 </code></pre></div></div>
 
 <p>Then you have to enter <kbd>y</kbd> and press <kbd>Enter</kbd>.</p>
+
+<p>Sample console output:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Installing missing stub packages:
+.../python3 -m pip install types-setuptools
+
+Install? [yN] 
+</code></pre></div></div>
 
 <h2 id="non-interactive">Non-interactive</h2>
 
@@ -183,16 +193,9 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mypy <span class="nt">--install-types</span> <span class="nt">--non-interactive</span>
 </code></pre></div></div>
 
-<h2 id="error">Error</h2>
+<h2 id="install-using-pip">Install using pip</h2>
 
-<p>You might get an error on the first run of the install.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>error: Can't determine which types to install with no files to check (and no cache from previous mypy run)
-</code></pre></div></div>
-
-<p>So it looks like you need to run Mypy first and then install missing types. I don’t know how to work this into a CI flow.</p>
-
-<h2 id="install-by-name">Install by name</h2>
+<h3 id="install-using-cli">Install using CLI</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>types-requests
 </code></pre></div></div>
@@ -204,6 +207,21 @@
 ...:13: note: (or run "mypy --install-types" to install all missing stub packages)
 ...:13: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
 </code></pre></div></div>
+
+<h3 id="install-using-requirements-file">Install using requirements file</h3>
+
+<p>After you know what types you need, then you should switch to this approach with name added to your <code class="language-plaintext highlighter-rouge">requirements-dev.txt</code> file. Then everytime someone sets up your project on their machine, it will include types.</p>
+
+<ol>
+  <li>Set up the file with content like:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> types-requests
+</code></pre></div>    </div>
+  </li>
+  <li>Install from it:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>pip <span class="nb">install</span> <span class="nt">-r</span> requirements-dev.txt
+</code></pre></div>    </div>
+  </li>
+</ol>
 
         
     </div>
