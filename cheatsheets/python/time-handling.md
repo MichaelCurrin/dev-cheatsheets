@@ -212,14 +212,14 @@ x = datetime.datetime.now()
 Showing functionality of a few areas:
 
 ```python
-x.strftime('%Y/%m/%d - %b %y - %H:%m:%S')
+x.strftime('%Y/%m/%d - %b %y - %H:%M:%S')
 # '2021/05/08 - May 21 - 11:05:51'
 ```
 
 Short date and 24-hour time:
 
 ```python
-x.strftime('%Y-%m-%d %H:%m')
+x.strftime('%Y-%m-%d %H:%M')
 '2021-11-02 20:11'
 ```
 
