@@ -4,6 +4,8 @@ When you run type checks with Mypy, you might get an error that types are missin
 
 So run a command below to install the missing types. 
 
+See [typeshed README](https://github.com/python/typeshed/blob/master/README.md) for more info.
+
 ## Install using Mypy
 
 Note you cannot run this as the _first_ command as it will complain there is no Mypy cache, so you need to attempt your checks, install types, then do checks again.
@@ -35,8 +37,9 @@ $ mypy --install-types --non-interactive
 
 ## Install using pip
 
-### Install using CLI
+See [types-requests](https://pypi.org/project/types-requests/) on PyPI.
 
+### Install using CLI
 
 ```sh
 $ pip install types-requests
