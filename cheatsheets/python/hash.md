@@ -21,6 +21,8 @@ An integer is the same.
 -2
 ```
 
+Note that `hash(-1)` and `hash(-2)` are both equal to `-2` in CPython because `-1` is a reserved value for throwing an erro. See [StackOverflow](https://stackoverflow.com/questions/10130454/why-do-1-and-2-both-hash-to-2-in-cpython).
+
 Other types.
 
 ```python
@@ -32,7 +34,6 @@ Other types.
 2346156457918776634
 >>> hash('ab')
 -3228631933982636868
-
 ```
 
 
