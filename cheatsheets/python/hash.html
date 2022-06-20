@@ -171,6 +171,8 @@
 <span class="o">-</span><span class="mi">2</span>
 </code></pre></div></div>
 
+<p>Note that <code class="language-plaintext highlighter-rouge">hash(-1)</code> and <code class="language-plaintext highlighter-rouge">hash(-2)</code> are both equal to <code class="language-plaintext highlighter-rouge">-2</code> in CPython because <code class="language-plaintext highlighter-rouge">-1</code> is a reserved value for throwing an erro. See <a href="https://stackoverflow.com/questions/10130454/why-do-1-and-2-both-hash-to-2-in-cpython">StackOverflow</a>.</p>
+
 <p>Other types.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">(</span><span class="mf">1.234</span><span class="p">)</span>
@@ -181,7 +183,6 @@
 <span class="mi">2346156457918776634</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">(</span><span class="s">'ab'</span><span class="p">)</span>
 <span class="o">-</span><span class="mi">3228631933982636868</span>
-
 </code></pre></div></div>
 
 <h2 id="hashlib">Hashlib</h2>
