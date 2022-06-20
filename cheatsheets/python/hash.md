@@ -44,16 +44,9 @@ Using the builtin [hashlib](https://docs.python.org/3/library/hashlib.html) modu
 e.g. to use the SHA256 algorithm.
 
 ```python
->>> import hashlib
+import hashlib
 
->>> m = hashlib.sha256()
 
->>> m.update(b"Nobody inspects")
->>> m.update(b" the spammish repetition")
->>> m.digest()
-b'\x03\x1e\xdd}Ae\x15\x93\xc5\xfe\\\x00o\xa5u+7\xfd\xdf\xf7\xbcN\x84:\xa6\xaf\x0c\x95\x0fK\x94\x06'
->>> m.digest_size
-32
->>> m.block_size
-64
+hashlib.sha224(b"Nobody inspects the spammish repetition").hexdigest()
+# 'a4337bc45a8fc544c03f52dc550cd6e1e87021bc896588bd79e901e2'
 ```
