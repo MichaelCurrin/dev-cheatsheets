@@ -25,9 +25,15 @@ set -- apple banana "kiwi fruit"
 
 ### Get one
 
+The first is always the shell and not included in the count.
+
 ```sh
 echo $0
 # /bin/bash
+```
+
+
+```sh
 echo $1
 # apple
 echo $2
@@ -38,6 +44,15 @@ echo $4
 #
 ```
 
+Use curly braces and quotes if you need double digits:
+
+```sh
+set -- a b c d e f g h i j k l m
+echo "${11}"
+# k
+echo "$11"
+# a1
+```
 
 ### Get all
 
