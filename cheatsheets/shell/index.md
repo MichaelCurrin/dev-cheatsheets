@@ -1,9 +1,9 @@
 ---
 title: Shell
+description: Unix shell guide 
 logo: gnubash
 ---
 
-Unix shell guide.
 
 - Use-cases
     - [x] Shell scripting
