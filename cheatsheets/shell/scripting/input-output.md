@@ -1,5 +1,7 @@
-# Input and output between commands
-
+---
+title: Input and output
+description: How to handle input and output of data between shell commands in a chain
+---
 See also [Redirection][] cheatsheet under Files.
 
 [Redirection]: {% link cheatsheets/shell/files/redirection.md %}
