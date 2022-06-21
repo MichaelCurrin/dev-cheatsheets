@@ -187,9 +187,13 @@
 
 <h3 id="get-one">Get one</h3>
 
+<p>The first is always the shell and not included in the count.</p>
+
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="nv">$0</span>
 <span class="c"># /bin/bash</span>
-<span class="nb">echo</span> <span class="nv">$1</span>
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="nv">$1</span>
 <span class="c"># apple</span>
 <span class="nb">echo</span> <span class="nv">$2</span>
 <span class="c"># banana</span>
@@ -197,6 +201,15 @@
 <span class="c"># kiwi fruit</span>
 <span class="nb">echo</span> <span class="nv">$4</span>
 <span class="c">#</span>
+</code></pre></div></div>
+
+<p>Use curly braces and quotes if you need double digits:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">set</span> <span class="nt">--</span> a b c d e f g h i j k l m
+<span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="nv">11</span><span class="k">}</span><span class="s2">"</span>
+<span class="c"># k</span>
+<span class="nb">echo</span> <span class="s2">"</span><span class="nv">$11</span><span class="s2">"</span>
+<span class="c"># a1</span>
 </code></pre></div></div>
 
 <h3 id="get-all">Get all</h3>
