@@ -6,18 +6,20 @@
 ## Overview
 
 ```sh
-$ MONTHS=("Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov" "Dec")
-$ echo ${MONTHS[1]}
-$ echo ${MONTHS[@]}
+MONTHS=("Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" 
+  "Aug" "Sep" "Oct" "Nov" "Dec")
+echo ${MONTHS[1]}
+echo ${MONTHS[@]}
 ```
-
 
 
 ## Create
 
-Create using brackets and spaces.
+Create using brackets and spaces:
 
 ```sh
+X=()
+
 X=(abc def ghi)
 ```
 
@@ -29,54 +31,59 @@ def
 ghi)
 ```
 
-Or
+Or the old style.
 
 ```sh
-$ declare -A X
+declare -A X
 ```
 
 
 ## Slice
 
-#### New
-
-In ZSH and Bash 4 (?) the index starts at 1.
-
-```sh
-echo ${MONTHS[1]}
-Jan
-echo ${MONTHS[4]}
-Apr
-```
-
-### Old
-
-In Bash 3, it starts at 0.
-
-```sh
-$ echo ${MONTHS[0]}
-Jan
-$ echo ${MONTHS[3]}
-Apr
-```
+### Get one element
 
 Any invalid index here returns nothing and also a success code.
 
-All elements. You can use `*` too but `@` seems most common.
+In ZSH the index starts at 1.
 
 ```sh
-$ echo $MONTHS[@]
-Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+echo ${MONTHS[1]}
+# Jan
+echo ${MONTHS[4]}
+# Apr
+```
+
+### Bash
+
+In Bash it starts at 0.
+
+```sh
+echo ${MONTHS[0]}
+# Jan
+echo ${MONTHS[3]}
+# Apr
 ```
 
 
+### Get all
+
+```sh
+echo $MONTHS[@]
+# Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+```
+
+
+
+
 ## Iterate
+
+Given array:
 
 ```sh
 MY_ARRAY=(abc def ghi)
 ```
 
-### New
+### New syntax
 
 ZSH and Bash 4.
 
@@ -115,14 +122,22 @@ ghi
 ```
 
 
-## Update
+## Modify array
 
 ```sh
-$ X[2]=zzz
-$ echo $X[2]
-zzz
+X[2]=zzz
+echo $X[2]
+# zzz
 ```
 
+
+## Convert arguments to an array
+
+```sh
+MY_ARRAY=("$@")
+```
+
+Based on this [StackOverflow thread](https://stackoverflow.com/questions/12711786/convert-command-line-arguments-into-an-array-in-bash).
 
 
 ## Strings
@@ -130,11 +145,11 @@ zzz
 You can also slice a string.
 
 ```sh
-x=abc
-$ echo "$x[1]"
-a
-$ echo "$x[2]"
-b
-$ echo "$x[@]"
-abc
+X=abc
+echo "$X[1]"
+# a
+echo "$X[2]"
+# b
+echo "$X[@]"
+# abc
 ```
