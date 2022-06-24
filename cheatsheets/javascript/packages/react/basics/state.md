@@ -3,7 +3,7 @@
 ## Props vs state
 
 - `props` get passed **to** the component - similar to function parameters.
-- `state `is managed **within** the component - similar to variables declared within a function.
+- `state` is managed **within** the component - similar to variables declared within a function.
 
 
 ## Library for state management
@@ -43,9 +43,17 @@ function Foo(props) {
     </>
   )
 }
-```
 
 ReactDOM.render(<Parent />, document.querySelector("#app"))
+```
+
+If your state is an object, you can use `setState` with your key and value and React will modify the state for just that key.
+
+```jsx
+const [myObject, setMyObject] = useState({abc: 123, def: 456})
+
+setMyObject({abc: 999})
+```
 
 ### Timer
 

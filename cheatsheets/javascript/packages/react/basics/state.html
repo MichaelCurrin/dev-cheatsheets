@@ -191,7 +191,7 @@
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">props</code> get passed <strong>to</strong> the component - similar to function parameters.</li>
-  <li><code class="language-plaintext highlighter-rouge">state </code>is managed <strong>within</strong> the component - similar to variables declared within a function.</li>
+  <li><code class="language-plaintext highlighter-rouge">state</code> is managed <strong>within</strong> the component - similar to variables declared within a function.</li>
 </ul>
 
 <h2 id="library-for-state-management">Library for state management</h2>
@@ -233,9 +233,16 @@
     <span class="p">&lt;/&gt;</span>
   <span class="p">)</span>
 <span class="p">}</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(&lt;</span><span class="nc">Parent</span> <span class="p">/&gt;,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">))</span>
 </code></pre></div></div>
 
-<p>ReactDOM.render(<Parent></Parent>, document.querySelector(“#app”))</p>
+<p>If your state is an object, you can use <code class="language-plaintext highlighter-rouge">setState</code> with your key and value and React will modify the state for just that key.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">myObject</span><span class="p">,</span> <span class="nx">setMyObject</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">({</span><span class="na">abc</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span> <span class="na">def</span><span class="p">:</span> <span class="mi">456</span><span class="p">})</span>
+
+<span class="nx">setMyObject</span><span class="p">({</span><span class="na">abc</span><span class="p">:</span> <span class="mi">999</span><span class="p">})</span>
+</code></pre></div></div>
 
 <h3 id="timer">Timer</h3>
 
