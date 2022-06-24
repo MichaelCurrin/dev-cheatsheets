@@ -1,8 +1,48 @@
 ---
 title: Lifting up state
 
-description: Lifting state up so to a parent so it can be used in two child components
+description: Lifting state up so to a parent so it can be passed to child components
 ---
+
+Here we use a pattern of putting state in a parent component, then pass the value and the `onChange` function to a child component, so the child component can pass changes back up.
+
+
+```jsx
+function Child(props) {
+  const { myValue, onInput } = props
+  
+  return (
+    <>
+      <input type="text" value={myValue} onInput={onInput} />
+    </>
+  )
+}
+
+function Parent(props) {
+  const [myValue, setMyValue] = useState("")
+
+  const onInput = (event) => {
+    setMyValue(event.target.value)
+  }
+
+  return (
+    <>
+      <h2>Controls</h2>
+      <Child value={myValue} onInput={onInput} />
+      <br />
+      <h2>Results</h2>
+      <p>
+        {myValue.toUpperCase()}
+      </p>
+    </>
+  )
+}
+
+ReactDOM.render(<Parent />, document.querySelector("#app"))
+```
+
+
+## Tempature example
 
 See [CodePen demo][] and [Lifting state up][] tutorial.
 
