@@ -7,13 +7,15 @@ description: Lifting state up so to a parent so it can be passed to child compon
 Here we use a pattern of putting state in a parent component, then pass the value and the `onChange` function to a child component, so the child component can pass changes back up.
 
 
+## Basic
+
 ```jsx
 function Child(props) {
   const { myValue, onInput } = props
   
   return (
     <>
-      <input type="text" value={myValue} onInput={onInput} />
+      <input type="text" value={ myValue } onInput={ onInput } />
     </>
   )
 }
