@@ -15,13 +15,41 @@
 > don't use Redux until you have problems with vanilla React.
 
 
-## Basic state examples
+## Examples
 
 See [State hook][] cheatsheet for more info.
 
 [State hook]: {% link cheatsheets/javascript/packages/react/hooks/state.md %}
 
-Here is how you use create an incrementing value based on a timer.
+### Generic
+
+```jsx
+function Foo(props) {
+  const [myValue, setMyValue] = useState("")
+
+  const onInput = (event) => {
+    setMyValue(event.target.value)
+  }
+
+  return (
+    <>
+      <h2>Controls</h2>
+      <input type="text" value={myValue} onInput={onInput} />
+      <br />
+      <h2>Results</h2>
+      <p>
+        {myValue.toUpperCase()}
+      </p>
+    </>
+  )
+}
+```
+
+ReactDOM.render(<Parent />, document.querySelector("#app"))
+
+### Timer
+
+Here is how you use create an incrementing value based on a timer:
 
 ```jsx
 class Timer extends React.Component {

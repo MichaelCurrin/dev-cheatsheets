@@ -208,11 +208,38 @@
   <p>don’t use Redux until you have problems with vanilla React.</p>
 </blockquote>
 
-<h2 id="basic-state-examples">Basic state examples</h2>
+<h2 id="examples">Examples</h2>
 
 <p>See <a href="/dev-cheatsheets/cheatsheets/javascript/packages/react/hooks/state.html">State hook</a> cheatsheet for more info.</p>
 
-<p>Here is how you use create an incrementing value based on a timer.</p>
+<h3 id="generic">Generic</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Foo</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">myValue</span><span class="p">,</span> <span class="nx">setMyValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
+
+  <span class="kd">const</span> <span class="nx">onInput</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setMyValue</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Controls<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">myValue</span><span class="si">}</span> <span class="na">onInput</span><span class="p">=</span><span class="si">{</span><span class="nx">onInput</span><span class="si">}</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Results<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="si">{</span><span class="nx">myValue</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="si">}</span>
+      <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>ReactDOM.render(<Parent></Parent>, document.querySelector(“#app”))</p>
+
+<h3 id="timer">Timer</h3>
+
+<p>Here is how you use create an incrementing value based on a timer:</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Timer</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
   <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
