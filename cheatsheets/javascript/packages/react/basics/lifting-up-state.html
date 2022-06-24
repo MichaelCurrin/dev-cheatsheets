@@ -20,8 +20,8 @@
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="Lifting state up so to a parent so it can be used in two child components" />
-    <meta property="og:description" content="Lifting state up so to a parent so it can be used in two child components" />
+    <meta name="description" content="Lifting state up so to a parent so it can be passed to child components" />
+    <meta property="og:description" content="Lifting state up so to a parent so it can be passed to child components" />
 <meta name="author" content="Michael Currin" />
 
 
@@ -33,7 +33,7 @@
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "Lifting state up so to a parent so it can be used in two child components",
+    "description": "Lifting state up so to a parent so it can be passed to child components",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/react/basics/lifting-up-state.html",
     "headline":    "Lifting up state",
     "@type":       "WebSite",
@@ -104,7 +104,7 @@
 
         
             <blockquote>
-                <p>Lifting state up so to a parent so it can be used in two child components</p>
+                <p>Lifting state up so to a parent so it can be passed to child components</p>
 
             </blockquote>
         
@@ -192,7 +192,44 @@
 
     <div class="post-content">
         
-            <p>See <a href="https://codepen.io/gaearon/pen/WZpxpz?editors=0010">CodePen demo</a> and <a href="https://reactjs.org/docs/lifting-state-up.html">Lifting state up</a> tutorial.</p>
+            <p>Here we use a pattern of putting state in a parent component, then pass the value and the <code class="language-plaintext highlighter-rouge">onChange</code> function to a child component, so the child component can pass changes back up.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Child</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">myValue</span><span class="p">,</span> <span class="nx">onInput</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
+  
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">myValue</span><span class="si">}</span> <span class="na">onInput</span><span class="p">=</span><span class="si">{</span><span class="nx">onInput</span><span class="si">}</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">Parent</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">myValue</span><span class="p">,</span> <span class="nx">setMyValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
+
+  <span class="kd">const</span> <span class="nx">onInput</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setMyValue</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Controls<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Child</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">myValue</span><span class="si">}</span> <span class="na">onInput</span><span class="p">=</span><span class="si">{</span><span class="nx">onInput</span><span class="si">}</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Results<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="si">{</span><span class="nx">myValue</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="si">}</span>
+      <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(&lt;</span><span class="nc">Parent</span> <span class="p">/&gt;,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="tempature-example">Tempature example</h2>
+
+<p>See <a href="https://codepen.io/gaearon/pen/WZpxpz?editors=0010">CodePen demo</a> and <a href="https://reactjs.org/docs/lifting-state-up.html">Lifting state up</a> tutorial.</p>
 
 <p>In this example we have a form for inputting temperature in two inputs and then allow the values to change across both of them as well as an output component. Instead of storing two temperatue values, we just store one value and the current scale in use (Celcius or Fahrenheit).</p>
 
