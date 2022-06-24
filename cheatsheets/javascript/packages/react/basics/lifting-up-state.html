@@ -194,12 +194,14 @@
         
             <p>Here we use a pattern of putting state in a parent component, then pass the value and the <code class="language-plaintext highlighter-rouge">onChange</code> function to a child component, so the child component can pass changes back up.</p>
 
+<h2 id="basic">Basic</h2>
+
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Child</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">myValue</span><span class="p">,</span> <span class="nx">onInput</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
   
   <span class="k">return</span> <span class="p">(</span>
     <span class="p">&lt;&gt;</span>
-      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">myValue</span><span class="si">}</span> <span class="na">onInput</span><span class="p">=</span><span class="si">{</span><span class="nx">onInput</span><span class="si">}</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span> <span class="nx">myValue</span> <span class="si">}</span> <span class="na">onInput</span><span class="p">=</span><span class="si">{</span> <span class="nx">onInput</span> <span class="si">}</span> <span class="p">/&gt;</span>
     <span class="p">&lt;/&gt;</span>
   <span class="p">)</span>
 <span class="p">}</span>
