@@ -439,7 +439,7 @@ dt.time()
 
 ### Convert from unix timestamp to datetime
 
-Pass in an integer or flaot.
+Pass in an integer or float.
 
 Use `datetime.datetime.fromtimestamp` to get datetime or `datetime.date.fromtimestamp` to get a date.
 
