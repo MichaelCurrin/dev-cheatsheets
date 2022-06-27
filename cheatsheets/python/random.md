@@ -53,17 +53,24 @@ Interval between arrivals averaging 5 seconds
 
 ## Integers
 
-Integer from 0 to 9 inclusive
+Integer from 0 to 9 inclusive:
 
 ```python
 >>> random.randrange(10)
 7
 ```
 
-Even integer from 0 to 100 inclusive
+Even integer from 1 to 100 inclusive:
 
 ```python
->>> random.randrange(0, 101, 2)
+>>> random.randrange(1, 100)
+26
+```
+
+Or set the _step_ such as for even numbers:
+
+```python
+>>> random.randrange(1, 100, 2)
 26
 ```
 
