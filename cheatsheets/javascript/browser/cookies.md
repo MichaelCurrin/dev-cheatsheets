@@ -156,7 +156,7 @@ Then use `JSON.parse` to get it out - after getting just your cookie by name. Se
 
 ### Expires field
 
-From [Set-Cookie][] docs.
+From  the [Set-Cookie][] docs.
 
 > `Expires=<date>` Optional
 >
@@ -190,7 +190,7 @@ document.cookie = `my_cookie=${value}; SameSite=None; Secure; Path=/; Expires=${
 
 ### Max-age field
 
-Or set max age in seconds.
+Or set max age in seconds. And alternative that is more convenient for developers but doesn't work on all browsers.
 
 > `Max-Age=<number>` Optional
 >
@@ -202,7 +202,7 @@ e.g.
 Max-Age=30
 ```
 
-And this is decent support as covered on [CanIUse][].
+And this has decent support as covered on [CanIUse][]. Though it says globally this is only around 47% of users.
 
 [Set-Cookie]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
 [CanIUse]: https://caniuse.com/?search=max-age
