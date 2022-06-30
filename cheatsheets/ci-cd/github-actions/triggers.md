@@ -102,38 +102,37 @@ on:
   pull_request:
 ```
 
-### On push to main or Pull Request to main
+### On push to main or  aPull Request to main
 
 Runs on a PR again main but won't run on a PR between two branches that both aren't the _main_ branch.
 
+This is **probably** what you need for most use-cases and can copy as paste.
+
 ```yaml
 on:
   push:
     branches: main
-    
   pull_request:
     branches: main
 ```
 
-Or, more verbose:
+Or, more verbose using an array:
 
 ```yaml
 on:
   push:
     branches: [ main ]
-    
   pull_request:
     branches: [ main ]
 ```
 
-Or
+Or multi-line array:
 
 ```yaml
 on:
   push:
     branches:
       - main
-      
   pull_request:
     branches:
       - main
