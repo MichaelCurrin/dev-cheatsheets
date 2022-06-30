@@ -259,35 +259,34 @@
   <span class="na">pull_request</span><span class="pi">:</span>
 </code></pre></div></div>
 
-<h3 id="on-push-to-main-or-pull-request-to-main">On push to main or Pull Request to main</h3>
+<h3 id="on-push-to-main-or--apull-request-to-main">On push to main or  aPull Request to main</h3>
 
 <p>Runs on a PR again main but won’t run on a PR between two branches that both aren’t the <em>main</em> branch.</p>
 
+<p>This is <strong>probably</strong> what you need for most use-cases and can copy as paste.</p>
+
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
   <span class="na">push</span><span class="pi">:</span>
     <span class="na">branches</span><span class="pi">:</span> <span class="s">main</span>
-    
   <span class="na">pull_request</span><span class="pi">:</span>
     <span class="na">branches</span><span class="pi">:</span> <span class="s">main</span>
 </code></pre></div></div>
 
-<p>Or, more verbose:</p>
+<p>Or, more verbose using an array:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
   <span class="na">push</span><span class="pi">:</span>
     <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">main</span> <span class="pi">]</span>
-    
   <span class="na">pull_request</span><span class="pi">:</span>
     <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">main</span> <span class="pi">]</span>
 </code></pre></div></div>
 
-<p>Or</p>
+<p>Or multi-line array:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">on</span><span class="pi">:</span>
   <span class="na">push</span><span class="pi">:</span>
     <span class="na">branches</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">main</span>
-      
   <span class="na">pull_request</span><span class="pi">:</span>
     <span class="na">branches</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">main</span>
