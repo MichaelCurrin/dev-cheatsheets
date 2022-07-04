@@ -441,6 +441,34 @@
 
 <h2 id="create-drop-dump-and-restore">Create, drop, dump and restore</h2>
 
+<h3 id="overview">Overview</h3>
+
+<h4 id="binary-dumps">Binary dumps</h4>
+
+<p>Using compress binary archive.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pg_dump <span class="nt">-U</span> postgres DB_NAME <span class="nt">-fc</span>
+
+dropdb <span class="nt">-U</span> postgres DB_NAME
+pg_restore <span class="nt">-U</span> postgres db.pgdump
+</code></pre></div></div>
+
+<p>Convert the dump to plain text:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pg_restore db.pgdump <span class="nt">-f</span> db.sql
+</code></pre></div></div>
+
+<h4 id="text-dump">Text dump</h4>
+
+<p>Using plain text SQL file - larger as it is not compressed but it is easy to read.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pg_dump <span class="nt">-U</span> postgres DB_NAME <span class="nt">-fp</span>
+
+dropdb <span class="nt">-U</span> postgres DB_NAME
+createdb <span class="nt">-U</span> postgres DB_NAME
+psql <span class="nt">-U</span> postgres DB_NAME &lt; db.sql
+</code></pre></div></div>
+
 <h3 id="create-db">Create DB</h3>
 
 <p>See <a href="https://www.postgresql.org/docs/latest/app-createdb.html">createdb</a> docs.</p>
