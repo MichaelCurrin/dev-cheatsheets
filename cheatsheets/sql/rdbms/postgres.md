@@ -307,6 +307,37 @@ Use a connection string that contains everything:
 
 ## Create, drop, dump and restore
 
+### Overview
+
+#### Binary dumps
+
+Using compress binary archive.
+
+```sh
+pg_dump -U postgres DB_NAME -fc
+
+dropdb -U postgres DB_NAME
+pg_restore -U postgres db.pgdump
+```
+
+Convert the dump to plain text:
+
+```sh
+pg_restore db.pgdump -f db.sql
+```
+
+#### Text dump
+
+Using plain text SQL file - larger as it is not compressed but it is easy to read.
+
+```sh
+pg_dump -U postgres DB_NAME -fp
+
+dropdb -U postgres DB_NAME
+createdb -U postgres DB_NAME
+psql -U postgres DB_NAME < db.sql
+```
+
 ### Create DB
 
 See [createdb][] docs.
