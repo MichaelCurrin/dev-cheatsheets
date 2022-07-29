@@ -175,15 +175,43 @@
 
     <div class="post-content">
         
-            <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git <span class="nb">rm </span>PATH
+            <h2 id="help">Help</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git <span class="nb">rm</span> <span class="nt">-h</span>
+usage: git <span class="nb">rm</span> <span class="o">[</span>&lt;options&gt;] <span class="o">[</span><span class="nt">--</span><span class="o">]</span> &lt;file&gt;...
+
+    <span class="nt">-n</span>, <span class="nt">--dry-run</span>         dry run
+    <span class="nt">-q</span>, <span class="nt">--quiet</span>           <span class="k">do </span>not list removed files
+    <span class="nt">--cached</span>              only remove from the index
+    <span class="nt">-f</span>, <span class="nt">--force</span>           override the up-to-date check
+    <span class="nt">-r</span>                    allow recursive removal
+    <span class="nt">--ignore-unmatch</span>      <span class="nb">exit </span>with a zero status even <span class="k">if </span>nothing matched
 </code></pre></div></div>
 
-<p>Remove a directory from the working tree without deleting it.</p>
+<h2 id="usage">Usage</h2>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git <span class="nb">rm</span> <span class="nt">-r</span> <span class="nt">--cached</span> PATH
+<p>Remember to run <code class="language-plaintext highlighter-rouge">git commit</code> afterwards.</p>
+
+<h3 id="basic">Basic</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git <span class="nb">rm </span>PATH
 </code></pre></div></div>
 
-<p>Another approach uses the <code class="language-plaintext highlighter-rouge">rm</code> shell command.</p>
+<h3 id="keep-file">Keep file</h3>
+
+<p>Remove from the working tree without deleting it.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git <span class="nb">rm</span> <span class="nt">--cached</span> PATH
+</code></pre></div></div>
+
+<h3 id="delete-directory">Delete directory</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git <span class="nb">rm</span> <span class="nt">-r</span> PATH
+</code></pre></div></div>
+
+<h2 id="alternative">Alternative</h2>
+
+<p>Another approach without <code class="language-plaintext highlighter-rouge">git rm</code> - using the plain <code class="language-plaintext highlighter-rouge">rm</code> shell command rather.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">rm </span>PATH
 <span class="nv">$ </span>git add PATH
