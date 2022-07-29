@@ -172,33 +172,53 @@
   <li><a href="https://www.baeldung.com/linux/bash-parse-command-line-arguments">Parse Command Line Arguments in Bash</a></li>
 </ul>
 
-<h2 id="example">Example</h2>
+<h2 id="examples">Examples</h2>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<p>From the getopts docs:</p>
 
-<span class="k">while </span><span class="nb">getopts</span> <span class="s1">'abc:h'</span> opt<span class="p">;</span> <span class="k">do
-  case</span> <span class="s2">"</span><span class="nv">$opt</span><span class="s2">"</span> <span class="k">in
-  </span>a<span class="p">)</span>
-    <span class="nb">echo</span> <span class="s2">"Processing option 'a'"</span>
-    <span class="p">;;</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">aflag</span><span class="o">=</span>
+<span class="nv">bflag</span><span class="o">=</span>
 
+<span class="k">while </span><span class="nb">getopts </span>ab: name<span class="p">;</span> <span class="k">do
+  case</span> <span class="nv">$name</span> <span class="k">in
+  </span>a<span class="p">)</span> <span class="nv">aflag</span><span class="o">=</span>1 <span class="p">;;</span>
   b<span class="p">)</span>
-    <span class="nb">echo</span> <span class="s2">"Processing option 'b'"</span>
+    <span class="nv">bflag</span><span class="o">=</span>1
+    <span class="nv">bval</span><span class="o">=</span><span class="s2">"</span><span class="nv">$OPTARG</span><span class="s2">"</span>
     <span class="p">;;</span>
-
-  c<span class="p">)</span>
-    <span class="nv">arg</span><span class="o">=</span><span class="s2">"</span><span class="nv">$OPTARG</span><span class="s2">"</span>
-    <span class="nb">echo</span> <span class="s2">"Processing option 'c' with '</span><span class="k">${</span><span class="nv">OPTARG</span><span class="k">}</span><span class="s2">' argument"</span>
-    <span class="p">;;</span>
-
-  ? <span class="p">|</span> h<span class="p">)</span>
-    <span class="nb">echo</span> <span class="s2">"Usage: </span><span class="si">$(</span><span class="nb">basename</span> <span class="nv">$0</span><span class="si">)</span><span class="s2"> [-a] [-b] [-c arg]"</span>
-    <span class="nb">exit </span>1
+  ?<span class="p">)</span>
+    <span class="nb">printf</span> <span class="s2">"Usage: %s: [-a] [-b value] args</span><span class="se">\n</span><span class="s2">"</span> <span class="nv">$0</span>
+    <span class="nb">exit </span>2
     <span class="p">;;</span>
   <span class="k">esac</span>
 <span class="k">done
 
-</span><span class="nb">shift</span> <span class="s2">"</span><span class="k">$((</span><span class="nv">$OPTIND</span> <span class="o">-</span><span class="m">1</span><span class="k">))</span><span class="s2">"</span>
+if</span> <span class="o">[</span> <span class="o">!</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$aflag</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">printf</span> <span class="s2">"Option -a specified</span><span class="se">\n</span><span class="s2">"</span>
+<span class="k">fi
+if</span> <span class="o">[</span> <span class="o">!</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$bflag</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">printf</span> <span class="s1">'Option -b "%s" specified\n'</span> <span class="s2">"</span><span class="nv">$bval</span><span class="s2">"</span>
+<span class="k">fi
+
+</span><span class="nb">shift</span> <span class="k">$((</span><span class="nv">$OPTIND</span> <span class="o">-</span> <span class="m">1</span><span class="k">))</span>
+<span class="nb">printf</span> <span class="s2">"Remaining arguments are: %s</span><span class="se">\n</span><span class="nv">$*</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<p>If you want to add a help flag:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while </span><span class="nb">getopts</span> <span class="s1">'ab:h'</span> opt<span class="p">;</span> <span class="k">do
+  case</span> <span class="s2">"</span><span class="nv">$opt</span><span class="s2">"</span> <span class="k">in
+  </span>a<span class="p">)</span>
+    <span class="c"># ...</span>
+    <span class="p">;;</span>
+  b<span class="p">)</span>
+    <span class="c"># ...</span>
+    <span class="p">;;</span>
+  ? <span class="p">|</span> h<span class="p">)</span>
+    <span class="c"># ...</span>
+    <span class="p">;;</span>
+  <span class="k">esac</span>
+<span class="k">done</span>
 </code></pre></div></div>
 
         

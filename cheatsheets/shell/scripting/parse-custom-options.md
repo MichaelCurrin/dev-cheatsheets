@@ -7,32 +7,54 @@ See [manpage](https://www.man7.org/linux/man-pages/man1/getopts.1p.html) for `ge
 - [Parsing bash script options with getopts](https://sookocheff.com/post/bash/parsing-bash-script-arguments-with-shopts/)
 - [Parse Command Line Arguments in Bash](https://www.baeldung.com/linux/bash-parse-command-line-arguments)
 
-## Example
+
+## Examples
+
+From the getopts docs:
 
 ```sh
-#!/bin/bash
+aflag=
+bflag=
 
-while getopts 'abc:h' opt; do
-  case "$opt" in
-  a)
-    echo "Processing option 'a'"
-    ;;
-
+while getopts ab: name; do
+  case $name in
+  a) aflag=1 ;;
   b)
-    echo "Processing option 'b'"
+    bflag=1
+    bval="$OPTARG"
     ;;
-
-  c)
-    arg="$OPTARG"
-    echo "Processing option 'c' with '${OPTARG}' argument"
-    ;;
-
-  ? | h)
-    echo "Usage: $(basename $0) [-a] [-b] [-c arg]"
-    exit 1
+  ?)
+    printf "Usage: %s: [-a] [-b value] args\n" $0
+    exit 2
     ;;
   esac
 done
 
-shift "$(($OPTIND -1))"
+if [ ! -z "$aflag" ]; then
+  printf "Option -a specified\n"
+fi
+if [ ! -z "$bflag" ]; then
+  printf 'Option -b "%s" specified\n' "$bval"
+fi
+
+shift $(($OPTIND - 1))
+printf "Remaining arguments are: %s\n$*"
+```
+
+If you want to add a help flag:
+
+```sh
+while getopts 'ab:h' opt; do
+  case "$opt" in
+  a)
+    # ...
+    ;;
+  b)
+    # ...
+    ;;
+  ? | h)
+    # ...
+    ;;
+  esac
+done
 ```
