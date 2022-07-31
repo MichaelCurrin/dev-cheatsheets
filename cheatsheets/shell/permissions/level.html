@@ -170,89 +170,44 @@
         
             <h2 id="access-bits">Access bits</h2>
 
-<p>SUUUGGGOOO</p>
+<p>``
+SUUUGGGOOO</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+S is special.
 
-<p>S is special.</p>
+Symbol | Meaning
+---   | ---
+`-` | file
+`d` | directory
+`l` | link
 
-<table>
-  <thead>
-    <tr>
-      <th>Symbol</th>
-      <th>Meaning</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">-</code></td>
-      <td>file</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">d</code></td>
-      <td>directory</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">l</code></td>
-      <td>link</td>
-    </tr>
-  </tbody>
-</table>
+The others are one of `r`, `w`, `x`, or `-`.
 
-<p>The others are one of <code class="language-plaintext highlighter-rouge">r</code>, <code class="language-plaintext highlighter-rouge">w</code>, <code class="language-plaintext highlighter-rouge">x</code>, or <code class="language-plaintext highlighter-rouge">-</code>.</p>
+U is for user who is the owner.
 
-<p>U is for user who is the owner.</p>
+G is for user group.
 
-<p>G is for user group.</p>
+O is for other users.
 
-<p>O is for other users.</p>
 
-<h2 id="levels">Levels</h2>
+## Levels
 
-<table>
-  <thead>
-    <tr>
-      <th>Number</th>
-      <th>Octet</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td><code class="language-plaintext highlighter-rouge">---</code></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td><code class="language-plaintext highlighter-rouge">--x</code></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td><code class="language-plaintext highlighter-rouge">-w-</code></td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td><code class="language-plaintext highlighter-rouge">-wx</code></td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td><code class="language-plaintext highlighter-rouge">r--</code></td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td><code class="language-plaintext highlighter-rouge">r-x</code></td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td><code class="language-plaintext highlighter-rouge">rw-</code></td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td><code class="language-plaintext highlighter-rouge">rwx</code></td>
-    </tr>
-  </tbody>
-</table>
+Number | Octet
+--- | ---
+0 | `---`
+1 | `--x`
+2 | `-w-`
+3 | `-wx`
+4 | `r--`
+5 | `r-x`
+6 | `rw-`
+7 | `rwx`
 
-<h2 id="commands">Commands</h2>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod </span>VALUE PATH
+## Commands
+
+```sh
+$ chmod VALUE PATH
 </code></pre></div></div>
 
 <h2 id="modify">Modify</h2>

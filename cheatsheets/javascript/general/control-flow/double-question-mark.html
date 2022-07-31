@@ -179,7 +179,7 @@
 
 <p>Use value of <code class="language-plaintext highlighter-rouge">x</code> if it not <code class="language-plaintext highlighter-rouge">null</code> or <code class="language-plaintext highlighter-rouge">undefined</code>, otherwise use value of <code class="language-plaintext highlighter-rouge">y</code>.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">z</span> <span class="o">=</span> <span class="nx">x</span> <span class="p">??</span> <span class="nx">y</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">z</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">??</span> <span class="nx">y</span>
 </code></pre></div></div>
 
 <p>That is equivalent to:</p>
@@ -203,12 +203,12 @@
 <span class="kd">var</span> <span class="nx">nullValue</span> <span class="o">=</span> <span class="kc">null</span>
 <span class="kd">var</span> <span class="nx">udfValue</span> <span class="o">=</span> <span class="kc">undefined</span>
 
-<span class="nx">one</span> <span class="p">??</span> <span class="nx">two</span>
+<span class="nx">one</span> <span class="o">??</span> <span class="nx">two</span>
 <span class="c1">// one</span>
 
-<span class="nx">nullValue</span> <span class="p">??</span> <span class="nx">two</span>
+<span class="nx">nullValue</span> <span class="o">??</span> <span class="nx">two</span>
 <span class="c1">// two</span>
-<span class="nx">udfValue</span> <span class="p">??</span> <span class="nx">two</span>
+<span class="nx">udfValue</span> <span class="o">??</span> <span class="nx">two</span>
 <span class="c1">// two</span>
 </code></pre></div></div>
 
