@@ -28,7 +28,7 @@ $ sudo su
 
 ### Configs
 
-Read the config file. Do not edit this directly.
+Read the sudoers config file. Do not edit this directly.
 
 ```sh
 $ view /etc/sudoers
@@ -39,6 +39,8 @@ Edit using:
 ```sh
 $ sudo visudo
 ```
+
+Note if you want to give a user sudoers affect, do not add them to the file. Rather add them to the `admin` group.
 
 See also a directory for adding local content.
 
@@ -51,7 +53,7 @@ $ ls /etc/sudoers.d/
 
 Configure your system to avoid entering your password every time your run sudo.
 
-Add this as a row to sudoers config under this section. Replace `foo` with username.
+Add this as a row to sudoers config under this section. Replace `foo` with your target username so your user is affected.
 
 ```
 foo ALL=(ALL) NOPASSWD:ALL
@@ -62,7 +64,7 @@ It might even work do to `%foo` if that references a group.
 - [source](https://askubuntu.com/questions/21343/how-to-make-sudo-remember-my-password-and-how-to-add-an-application-to-startup)
 - [source](https://askubuntu.com/questions/147241/execute-sudo-without-password)
 
-Another source says to edit the `admin` line:
+Another source says to edit the `admin` line instead - remember this will affect _all_ users on your machine with sudo access, not just yours.
 
 ```
 %admin ALL=(ALL) NOPASSWD: ALL
