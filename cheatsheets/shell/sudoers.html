@@ -177,7 +177,7 @@
 
 <h3 id="configs">Configs</h3>
 
-<p>Read the config file. Do not edit this directly.</p>
+<p>Read the sudoers config file. Do not edit this directly.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>view /etc/sudoers
 </code></pre></div></div>
@@ -186,6 +186,8 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>visudo
 </code></pre></div></div>
+
+<p>Note if you want to give a user sudoers affect, do not add them to the file. Rather add them to the <code class="language-plaintext highlighter-rouge">admin</code> group.</p>
 
 <p>See also a directory for adding local content.</p>
 
@@ -196,7 +198,7 @@
 
 <p>Configure your system to avoid entering your password every time your run sudo.</p>
 
-<p>Add this as a row to sudoers config under this section. Replace <code class="language-plaintext highlighter-rouge">foo</code> with username.</p>
+<p>Add this as a row to sudoers config under this section. Replace <code class="language-plaintext highlighter-rouge">foo</code> with your target username so your user is affected.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foo ALL=(ALL) NOPASSWD:ALL
 </code></pre></div></div>
@@ -208,7 +210,7 @@
   <li><a href="https://askubuntu.com/questions/147241/execute-sudo-without-password">source</a></li>
 </ul>
 
-<p>Another source says to edit the <code class="language-plaintext highlighter-rouge">admin</code> line:</p>
+<p>Another source says to edit the <code class="language-plaintext highlighter-rouge">admin</code> line instead - remember this will affect <em>all</em> users on your machine with sudo access, not just yours.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%admin ALL=(ALL) NOPASSWD: ALL
 </code></pre></div></div>
