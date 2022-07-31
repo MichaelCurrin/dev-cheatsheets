@@ -4,6 +4,11 @@ description: How to act as the root user
 # Sudoers
 
 
+See the [Users][] cheatsheet for creating a user and adding them to the sudo group.
+
+[Users]: {% link cheatsheets/shell/user.md %}
+
+
 ## View manpage
 
 ```sh
@@ -40,7 +45,7 @@ Edit using:
 $ sudo visudo
 ```
 
-Note if you want to give a user sudoers affect, do not add them to the file. Rather add them to the `admin` group.
+Note if you want to give a user sudoers ability, do not add them to the file. Rather add them to sudo group as per [Users][] cheatsheet.
 
 See also a directory for adding local content.
 
@@ -64,21 +69,21 @@ It might even work do to `%foo` if that references a group.
 - [source](https://askubuntu.com/questions/21343/how-to-make-sudo-remember-my-password-and-how-to-add-an-application-to-startup)
 - [source](https://askubuntu.com/questions/147241/execute-sudo-without-password)
 
-Another source says to edit the `admin` line instead - remember this will affect _all_ users on your machine with sudo access, not just yours.
+Another [source](https://www.ubuntugeek.com/how-to-disable-password-prompts-in-ubuntu.html) says to edit the `admin` line instead - remember this will affect _all_ users on your machine with admin access, not just yours.
 
 ```
 %admin ALL=(ALL) NOPASSWD: ALL
 ```
 
-[source](https://www.ubuntugeek.com/how-to-disable-password-prompts-in-ubuntu.html)
+Note also `admin` and `sudo` groups are different. Admin users "may gain root privileges" and sudo users can "execute any command", according to notes in sudoers file.
 
 
 ## Remember sudo password for a set time
 
-The machine will not prompt you again for your password for a time. More secure than the above.
+The machine will not prompt you again for your password for a time. More secure than the above as you stay your own user and don't have to enter your user's password on _every_ command, only once for multiple commands.
 
 1. Edit sudoers file.
-1. Set a default.
+1. Set a default in seconds - here 5 minutes.
   ```
   Defaults        timestamp_timeout=300
   ```
