@@ -156,7 +156,9 @@
 
     <div class="post-content">
         
-            <h2 id="view-manpage">View manpage</h2>
+            <p>See the <a href="/dev-cheatsheets/cheatsheets/shell/user.html">Users</a> cheatsheet for creating a user and adding them to the sudo group.</p>
+
+<h2 id="view-manpage">View manpage</h2>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>man sudoers
 </code></pre></div></div>
@@ -187,7 +189,7 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>visudo
 </code></pre></div></div>
 
-<p>Note if you want to give a user sudoers affect, do not add them to the file. Rather add them to the <code class="language-plaintext highlighter-rouge">admin</code> group.</p>
+<p>Note if you want to give a user sudoers ability, do not add them to the file. Rather add them to sudo group as per <a href="/dev-cheatsheets/cheatsheets/shell/user.html">Users</a> cheatsheet.</p>
 
 <p>See also a directory for adding local content.</p>
 
@@ -210,20 +212,20 @@
   <li><a href="https://askubuntu.com/questions/147241/execute-sudo-without-password">source</a></li>
 </ul>
 
-<p>Another source says to edit the <code class="language-plaintext highlighter-rouge">admin</code> line instead - remember this will affect <em>all</em> users on your machine with sudo access, not just yours.</p>
+<p>Another <a href="https://www.ubuntugeek.com/how-to-disable-password-prompts-in-ubuntu.html">source</a> says to edit the <code class="language-plaintext highlighter-rouge">admin</code> line instead - remember this will affect <em>all</em> users on your machine with admin access, not just yours.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%admin ALL=(ALL) NOPASSWD: ALL
 </code></pre></div></div>
 
-<p><a href="https://www.ubuntugeek.com/how-to-disable-password-prompts-in-ubuntu.html">source</a></p>
+<p>Note also <code class="language-plaintext highlighter-rouge">admin</code> and <code class="language-plaintext highlighter-rouge">sudo</code> groups are different. Admin users “may gain root privileges” and sudo users can “execute any command”, according to notes in sudoers file.</p>
 
 <h2 id="remember-sudo-password-for-a-set-time">Remember sudo password for a set time</h2>
 
-<p>The machine will not prompt you again for your password for a time. More secure than the above.</p>
+<p>The machine will not prompt you again for your password for a time. More secure than the above as you stay your own user and don’t have to enter your user’s password on <em>every</em> command, only once for multiple commands.</p>
 
 <ol>
   <li>Edit sudoers file.</li>
-  <li>Set a default.
+  <li>Set a default in seconds - here 5 minutes.
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Defaults        timestamp_timeout=300
 </code></pre></div>    </div>
   </li>
