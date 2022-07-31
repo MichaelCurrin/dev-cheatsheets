@@ -204,6 +204,28 @@
 
 <p>Note this is dangerous as every command you will run as root and you could run a command accidentally without being asked for your password.</p>
 
+<h2 id="create-user-with-sudo-access">Create user with sudo access</h2>
+
+<ol>
+  <li>Create user.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo </span>adduser newuser
+</code></pre></div>    </div>
+  </li>
+  <li>Add user to sudo group. The <code class="language-plaintext highlighter-rouge">-aG</code> option tells the system to append the user to the specified group. The <code class="language-plaintext highlighter-rouge">-a</code> option is only used with <code class="language-plaintext highlighter-rouge">G</code>.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo </span>usermod <span class="nt">-aG</span> <span class="nb">sudo </span>newuser
+</code></pre></div>    </div>
+  </li>
+  <li>Verify group.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">groups </span>newuser
+</code></pre></div>    </div>
+  </li>
+  <li>Verify sudo access - become the user and then try a <code class="language-plaintext highlighter-rouge">sudo</code> command.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>su - newuser
+ <span class="nv">$ </span><span class="nb">sudo ls</span> /root
+</code></pre></div>    </div>
+  </li>
+</ol>
+
         
     </div>
 </article>
