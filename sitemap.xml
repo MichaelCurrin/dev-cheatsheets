@@ -511,6 +511,9 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/compression/</loc>
 </url>
 <url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/permissions/</loc>
+</url>
+<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/date/</loc>
 </url>
 <url>
@@ -2948,9 +2951,6 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/permissions/change-owner.html</loc>
-</url>
-<url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/permissions/</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/printing/echo.html</loc>
