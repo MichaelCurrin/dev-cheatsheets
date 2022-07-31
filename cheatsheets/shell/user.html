@@ -185,6 +185,25 @@
 <span class="go">~
 </span></code></pre></div></div>
 
+<h2 id="switch-user">Switch user</h2>
+
+<p>Change to a target user - enter their password.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>su some-user
+</code></pre></div></div>
+
+<p>Or using sudo if you are in the sudoers file:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>su some-user
+</code></pre></div></div>
+
+<p>If you leave out the username, then you will change to <code class="language-plaintext highlighter-rouge">root</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>su
+</code></pre></div></div>
+
+<p>Note this is dangerous as every command you will run as root and you could run a command accidentally without being asked for your password.</p>
+
         
     </div>
 </article>
