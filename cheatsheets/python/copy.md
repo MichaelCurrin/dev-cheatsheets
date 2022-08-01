@@ -9,6 +9,7 @@ description: Copying objects in Python
 - [lib.copy](https://docs.python.org/3/library/copy.html) builtin docs
 	> Shallow and deep copy operations
 - [copy in Python (Deep Copy and Shallow Copy)](https://www.geeksforgeeks.org/copy-python-deep-copy-shallow-copy/) tutorial
+- [Learn Copy in Python)](https://www.scaler.com/topics/copy-in-python/)
 
 
 ## Reference
