@@ -6,6 +6,21 @@ Using Homebrew.
 
 Note that upgrading Python with Homebrew causes all my virtual envs to break. Using `pyenv` is safer.
 
+### Install
+
+Using the [python@3.9](https://formulae.brew.sh/formula/python@3.9) formula.
+
+```sh
+$ brew install python@3.9
+```
+
+Or for latest:
+
+```sh
+$ brew install python
+```
+
+
 ### Upgrading
 
 I had 3 versions of PY3 installed.
