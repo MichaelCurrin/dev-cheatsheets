@@ -4,7 +4,9 @@
 
 Using Homebrew.
 
-Note that upgrading Python with Homebrew causes all my virtual envs to break. Using `pyenv` is safer.
+Note that upgrading Python with Homebrew causes all my virtual envs to break. Using [Pyenv][] is safer.
+
+[Pyenv]: {% link cheatsheets/python/install/pyenv.md %}
 
 ### Install
 
