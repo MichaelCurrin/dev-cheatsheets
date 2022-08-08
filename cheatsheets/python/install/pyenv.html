@@ -168,11 +168,41 @@
 
     <div class="post-content">
         
-            <!-- TODO: Copy from learn to code python -->
+            <p>“Simple Python version management”</p>
 
-<h2 id="list-available-python-versions">List available Python versions</h2>
+<!-- TODO: Copy from learn to code python -->
+
+<p>Repo - <a href="https://github.com/pyenv/pyenv">pyenv/pyenv</a></p>
+
+<h2 id="list-installed-versions">List installed versions</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pyenv versions
+</code></pre></div></div>
+
+<h2 id="list-available-versions">List available versions</h2>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pyenv <span class="nb">install</span> <span class="nt">-l</span>
+</code></pre></div></div>
+
+<h2 id="install">Install</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pyenv <span class="nb">install </span>3.10.4
+</code></pre></div></div>
+
+<h2 id="select">Select</h2>
+
+<p>Select just for current shell session:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pyenv shell &lt;version&gt;
+</code></pre></div></div>
+
+<p>Automatically select whenever you are in the current directory (or its subdirectories):</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pyenv <span class="nb">local</span> &lt;version&gt;
+</code></pre></div></div>
+
+<p>Select globally for your user account:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pyenv global &lt;version&gt;
 </code></pre></div></div>
 
         
