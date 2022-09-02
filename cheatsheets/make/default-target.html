@@ -167,11 +167,11 @@
 
 <p>Running without an argument execute the first.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make
-Welcome!
-</code></pre></div></div>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>make
+<span class="go">Welcome!
+</span></code></pre></div></div>
 
-<p>Traditionally, a Makefile will have an <code class="language-plaintext highlighter-rouge">all</code> or <code class="language-plaintext highlighter-rouge">default</code> command.</p>
+<p>Traditionally, a Makefile will have an <code class="language-plaintext highlighter-rouge">all</code> or <code class="language-plaintext highlighter-rouge">default</code> command, as below.</p>
 
 <p>The target word can be anything must be set up <em>first</em> in the file in order to be the default when running without arguments.</p>
 
@@ -190,7 +190,7 @@ Welcome!
 Installing deps...
 </code></pre></div></div>
 
-<p>The GNU docs recommend <code class="language-plaintext highlighter-rouge">all</code> but the <code class="language-plaintext highlighter-rouge">default</code> makes more sense to me. The <code class="language-plaintext highlighter-rouge">all</code> can be useful if there are many steps to run while <code class="language-plaintext highlighter-rouge">default</code> I would set up as one command.</p>
+<p>The GNU docs recommend <code class="language-plaintext highlighter-rouge">all</code>, but the <code class="language-plaintext highlighter-rouge">default</code> makes more sense to me. The <code class="language-plaintext highlighter-rouge">all</code> can be useful if there are many steps to run while <code class="language-plaintext highlighter-rouge">default</code> I would set up as one command.</p>
 
 <div class="language-make highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">default</span><span class="o">:</span> <span class="nf">install</span>
 </code></pre></div></div>
@@ -208,6 +208,11 @@ Installing deps...
 </code></pre></div></div>
 
 <p>See the <a href="https://www.gnu.org/software/make/manual/html_node/Special-Variables.html">docs</a></p>
+
+<p>Alternatively, set the default like this, if <code class="language-plaintext highlighter-rouge">all</code> was not first.</p>
+
+<div class="language-make highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">.DEFAULT_GOAL</span> <span class="o">:=</span> all
+</code></pre></div></div>
 
 <h2 id="multiple-files">Multiple files</h2>
 
