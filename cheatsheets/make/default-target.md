@@ -17,14 +17,12 @@ install:
 
 Running without an argument execute the first.
 
-
-```sh
+```console
 $ make
 Welcome!
 ```
 
-
-Traditionally, a Makefile will have an `all` or `default` command.
+Traditionally, a Makefile will have an `all` or `default` command, as below.
 
 The target word can be anything must be set up _first_ in the file in order to be the default when running without arguments.
 
@@ -45,7 +43,7 @@ $ make
 Installing deps...
 ```
 
-The GNU docs recommend `all` but the `default` makes more sense to me. The `all` can be useful if there are many steps to run while `default` I would set up as one command.
+The GNU docs recommend `all`, but the `default` makes more sense to me. The `all` can be useful if there are many steps to run while `default` I would set up as one command.
 
 ```make
 default: install
@@ -66,6 +64,12 @@ build: deps site
 ```
 
 See the [docs](https://www.gnu.org/software/make/manual/html_node/Special-Variables.html)
+
+Alternatively, set the default like this, if `all` was not first.
+
+```make
+.DEFAULT_GOAL := all
+```
 
 
 ## Multiple files
