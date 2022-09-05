@@ -163,7 +163,14 @@
 
     <div class="post-content">
         
-            <h2 id="macos">macOS</h2>
+            <p>See more info in these gists:</p>
+
+<ul>
+  <li><a href="https://gist.github.com/MichaelCurrin/57caae30bd7b0991098e9804a9494c23">How to install Python 3</a></li>
+  <li><a href="https://gist.github.com/MichaelCurrin/3a4d14ba1763b4d6a1884f56a01412b7">Set up Python 3 and new virtual environment</a></li>
+</ul>
+
+<h2 id="macos">macOS</h2>
 
 <p>Using Homebrew.</p>
 
@@ -199,7 +206,7 @@ Python 3.7.3
 python@3.8: stable 3.8.6 <span class="o">(</span>bottled<span class="o">)</span>
 </code></pre></div></div>
 
-<p>Python 3.9 got installed because sphinx-doc has it as a dependency, but it did not replace the existing one. See notes from the output.</p>
+<p>Python 3.9 got installed because <code class="language-plaintext highlighter-rouge">sphinx-doc</code> has it as a dependency, but it did not replace the existing one. See notes from the output.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>==&gt; python@3.9
 Python has been installed as
@@ -229,7 +236,7 @@ For pkg-config to find python@3.9 you may need to set:
   export PKG_CONFIG_PATH="/usr/local/opt/python@3.9/lib/pkgconfig"
 </code></pre></div></div>
 
-<p>Try this to sort out the linking.</p>
+<p>Try this to sort out the linking:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">unlink </span>python <span class="o">&amp;&amp;</span> brew <span class="nb">link </span>python
 </code></pre></div></div>

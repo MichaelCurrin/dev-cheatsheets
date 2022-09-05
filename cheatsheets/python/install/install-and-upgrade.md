@@ -1,5 +1,11 @@
 # Install and upgrade Python
 
+See more info in these gists:
+
+- [How to install Python 3](https://gist.github.com/MichaelCurrin/57caae30bd7b0991098e9804a9494c23)
+- [Set up Python 3 and new virtual environment](https://gist.github.com/MichaelCurrin/3a4d14ba1763b4d6a1884f56a01412b7)
+
+
 ## macOS
 
 Using Homebrew.
@@ -43,7 +49,7 @@ $ brew info python
 python@3.8: stable 3.8.6 (bottled)
 ```
 
-Python 3.9 got installed because sphinx-doc has it as a dependency, but it did not replace the existing one. See notes from the output.
+Python 3.9 got installed because `sphinx-doc` has it as a dependency, but it did not replace the existing one. See notes from the output.
 
 
 ```
@@ -76,7 +82,7 @@ For pkg-config to find python@3.9 you may need to set:
 ```
 
 
-Try this to sort out the linking.
+Try this to sort out the linking:
 
 ```sh
 $ brew unlink python && brew link python
@@ -123,7 +129,6 @@ Python 3.7.3
 
 Create by hand:
 
-
 ```sh
 $ cd /usr/local/opt
 $ ln -s  ../Cellar/python@3.9/3.9.0 python@3.9
@@ -131,7 +136,6 @@ $ ln -s  ../Cellar/python@3.9/3.9.0 python@3
 ```
 
 Then you can add this to `PATH` - `/usr/local/opt/python@3`.
-
 
 Also I can't just delete the old one as it is used by other Brew packages.
 
