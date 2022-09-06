@@ -6,6 +6,34 @@ See more info in these gists:
 - [Set up Python 3 and new virtual environment](https://gist.github.com/MichaelCurrin/3a4d14ba1763b4d6a1884f56a01412b7)
 
 
+## Linux
+
+Using `apt-get`.
+
+### Latest
+
+```sh
+$ sudo apt-get install -y python3
+```
+
+### Target
+
+```sh
+$ sudo apt-get install -y python3.7
+```
+
+### Non-standard
+
+If the APT repositories don't support the old or new version you're after.
+
+Using [deadsnakes PPA](https://launchpad.net/%7Edeadsnakes/+archive/ubuntu/ppa) for Ubuntu.
+
+```sh
+$ sudo add-apt-repository ppa:deadsnakes/ppa
+$ sudo apt-get install -y python3.7
+```
+
+
 ## macOS
 
 Using Homebrew.
