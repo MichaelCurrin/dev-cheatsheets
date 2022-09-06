@@ -170,6 +170,30 @@
   <li><a href="https://gist.github.com/MichaelCurrin/3a4d14ba1763b4d6a1884f56a01412b7">Set up Python 3 and new virtual environment</a></li>
 </ul>
 
+<h2 id="linux">Linux</h2>
+
+<p>Using <code class="language-plaintext highlighter-rouge">apt-get</code>.</p>
+
+<h3 id="latest">Latest</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> python3
+</code></pre></div></div>
+
+<h3 id="target">Target</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> python3.7
+</code></pre></div></div>
+
+<h3 id="non-standard">Non-standard</h3>
+
+<p>If the APT repositories don’t support the old or new version you’re after.</p>
+
+<p>Using <a href="https://launchpad.net/%7Edeadsnakes/+archive/ubuntu/ppa">deadsnakes PPA</a> for Ubuntu.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>add-apt-repository ppa:deadsnakes/ppa
+<span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> python3.7
+</code></pre></div></div>
+
 <h2 id="macos">macOS</h2>
 
 <p>Using Homebrew.</p>
