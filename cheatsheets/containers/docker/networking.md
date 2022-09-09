@@ -2,7 +2,11 @@
 
 ## Host and container connection
 
-For host, use `host.docker.internal`. This resolves to the internal IP address used by host for the Docker network. See the [docs](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host).
+For host, use `host.docker.internal`.
+
+On macOS, there is also another one you can use - `docker.for.mac.host.internal`.
+
+This resolves to the internal IP address used by host for the Docker network. See the [docs](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host).
 
 For example connecting to a database in a container from the command-line or a database GUI. 
 
@@ -22,3 +26,11 @@ Or connecting from a container to the host.
     $ apk add curl
     $ curl http://host.docker.internal:8000
     ```
+
+## Ports
+
+Publish port `80` on the container as `8000` on the host.
+
+```sh
+$ docker run -p 8000:80 --name webserver nginx
+```

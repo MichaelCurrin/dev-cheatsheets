@@ -165,7 +165,11 @@
         
             <h2 id="host-and-container-connection">Host and container connection</h2>
 
-<p>For host, use <code class="language-plaintext highlighter-rouge">host.docker.internal</code>. This resolves to the internal IP address used by host for the Docker network. See the <a href="https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host">docs</a>.</p>
+<p>For host, use <code class="language-plaintext highlighter-rouge">host.docker.internal</code>.</p>
+
+<p>On macOS, there is also another one you can use - <code class="language-plaintext highlighter-rouge">docker.for.mac.host.internal</code>.</p>
+
+<p>This resolves to the internal IP address used by host for the Docker network. See the <a href="https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host">docs</a>.</p>
 
 <p>For example connecting to a database in a container from the command-line or a database GUI.</p>
 
@@ -186,6 +190,13 @@
 </code></pre></div>    </div>
   </li>
 </ul>
+
+<h2 id="ports">Ports</h2>
+
+<p>Publish port <code class="language-plaintext highlighter-rouge">80</code> on the container as <code class="language-plaintext highlighter-rouge">8000</code> on the host.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">-p</span> 8000:80 <span class="nt">--name</span> webserver nginx
+</code></pre></div></div>
 
         
     </div>
