@@ -2,11 +2,27 @@
 
 ## Host and container connection
 
-For host, use `host.docker.internal`.
+For host value, use:
 
-On macOS, there is also another one you can use - `docker.for.mac.host.internal`.
+```
+host.docker.internal
+```
+
+Sometimes it doesn't work after it worked before, so you can use this assuming you have Kubernetes installed. From [comment](https://github.com/docker/for-mac/issues/2965#issuecomment-895164896).
+
+```
+kubernetes.docker.internal
+```
+
+On macOS, there is also another one you can use:
+
+```
+docker.for.mac.host.internal
+```
 
 This resolves to the internal IP address used by host for the Docker network. See the [docs](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host).
+
+### Examples
 
 For example connecting to a database in a container from the command-line or a database GUI. 
 

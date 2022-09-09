@@ -165,11 +165,24 @@
         
             <h2 id="host-and-container-connection">Host and container connection</h2>
 
-<p>For host, use <code class="language-plaintext highlighter-rouge">host.docker.internal</code>.</p>
+<p>For host value, use:</p>
 
-<p>On macOS, there is also another one you can use - <code class="language-plaintext highlighter-rouge">docker.for.mac.host.internal</code>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>host.docker.internal
+</code></pre></div></div>
+
+<p>Sometimes it doesn’t work after it worked before, so you can use this assuming you have Kubernetes installed. From <a href="https://github.com/docker/for-mac/issues/2965#issuecomment-895164896">comment</a>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubernetes.docker.internal
+</code></pre></div></div>
+
+<p>On macOS, there is also another one you can use:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker.for.mac.host.internal
+</code></pre></div></div>
 
 <p>This resolves to the internal IP address used by host for the Docker network. See the <a href="https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host">docs</a>.</p>
+
+<h3 id="examples">Examples</h3>
 
 <p>For example connecting to a database in a container from the command-line or a database GUI.</p>
 
