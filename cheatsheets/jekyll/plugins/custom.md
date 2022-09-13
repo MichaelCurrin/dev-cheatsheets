@@ -82,7 +82,7 @@ If you need access to `site`, such as for making a static file.
 module Jekyll
   module Foo
     def foo(source, options)
-      site = @contextension.registers[:site]
+      site = @context.registers[:site]
       
       # ...
   
