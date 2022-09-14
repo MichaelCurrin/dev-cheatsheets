@@ -20,8 +20,10 @@ logo: postgresql
 
 ## Installation
 
-- [Download](https://www.postgresql.org/download/)
-- [Ubuntu](https://www.postgresql.org/download/linux/ubuntu/)
+Choose an option below.
+
+- Go to [Download](https://www.postgresql.org/download/) page.
+- Follow the [Ubuntu Postgres download instructons](https://www.postgresql.org/download/linux/ubuntu/). Make sure you install `wget` first.
     ```sh
     # Create the file repository configuration:
     sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
@@ -30,9 +32,10 @@ logo: postgresql
     wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
     
     sudo apt-get update
-
+    
+    # Latest
     sudo apt-get -y install postgresql
-    # OR
+    # OR target a version.
     sudo apt-get -y install postgresql-12
     ```
 
