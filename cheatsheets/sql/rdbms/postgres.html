@@ -191,9 +191,11 @@
 
 <h2 id="installation">Installation</h2>
 
+<p>Choose an option below.</p>
+
 <ul>
-  <li><a href="https://www.postgresql.org/download/">Download</a></li>
-  <li><a href="https://www.postgresql.org/download/linux/ubuntu/">Ubuntu</a>
+  <li>Go to <a href="https://www.postgresql.org/download/">Download</a> page.</li>
+  <li>Follow the <a href="https://www.postgresql.org/download/linux/ubuntu/">Ubuntu Postgres download instructons</a>. Make sure you install <code class="language-plaintext highlighter-rouge">wget</code> first.
     <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c"># Create the file repository configuration:</span>
   <span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" &gt; /etc/apt/sources.list.d/pgdg.list'</span>
     
@@ -201,9 +203,10 @@
   wget <span class="nt">--quiet</span> <span class="nt">-O</span> - https://www.postgresql.org/media/keys/ACCC4CF8.asc | <span class="nb">sudo </span>apt-key add -
     
   <span class="nb">sudo </span>apt-get update
-
+    
+  <span class="c"># Latest</span>
   <span class="nb">sudo </span>apt-get <span class="nt">-y</span> <span class="nb">install </span>postgresql
-  <span class="c"># OR</span>
+  <span class="c"># OR target a version.</span>
   <span class="nb">sudo </span>apt-get <span class="nt">-y</span> <span class="nb">install </span>postgresql-12
 </code></pre></div>    </div>
   </li>
