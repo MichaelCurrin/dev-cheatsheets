@@ -127,9 +127,23 @@ def test_answer():
 
 ### Run tests
 
+Run all test suits:
+
 ```sh
 $ pytest
 ```
+
+Run targets - see [Usage docs](https://docs.pytest.org/en/latest/how-to/usage.html).
+
+```sh
+$ # Module
+$ pytest test_abc.py
+$ # Directory
+$ pytest dir_name/
+$ # Keyword. Exclude keywords.
+$ pytest -k "MyClass and not method"
+```
+
 
 ## Nose
 
