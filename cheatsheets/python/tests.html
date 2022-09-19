@@ -284,7 +284,19 @@
 
 <h3 id="run-tests">Run tests</h3>
 
+<p>Run all test suits:</p>
+
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pytest
+</code></pre></div></div>
+
+<p>Run targets - see <a href="https://docs.pytest.org/en/latest/how-to/usage.html">Usage docs</a>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="c"># Module</span>
+<span class="nv">$ </span>pytest test_abc.py
+<span class="nv">$ </span><span class="c"># Directory</span>
+<span class="nv">$ </span>pytest dir_name/
+<span class="nv">$ </span><span class="c"># Keyword. Exclude keywords.</span>
+<span class="nv">$ </span>pytest <span class="nt">-k</span> <span class="s2">"MyClass and not method"</span>
 </code></pre></div></div>
 
 <h2 id="nose">Nose</h2>
