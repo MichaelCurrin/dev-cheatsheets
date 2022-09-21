@@ -103,29 +103,27 @@ See also the [Jekyll Supported Languages][] page.
 
 These are usually based on the file extension.
 
-- `markdown` or `md`
-	- The former shows better rendering in the GitHub editor view.
-- `json`
-- `json5`
-	- Support comments without giving red errors when rendered.
-- `python` or `py`
-- `ruby` or `rb`
-- `html`
-- `javascript` or `js`
+- `markdown` or `md` for Markdwn. The former shows better rendering in the GitHub editor view.
+- `json` for JSON.
+- `json5` for JSON5, more advanced JSON. It support comments and superfluous comments, without giving red errors when rendered.
+- `python` or `py`, or for Python console with `>>>` lines use `pycon`.
+- `ruby` or `rb` for Ruby.
+- `html` for HTML.
+- `javascript` or `js` for JavaScript.
 - Shell
-    - `sh` or `shell`
-    - `bash` for
-    - `powershell` for Windows.
-    - `console` - for
-- `diff`
-- `liquid`
-- `yaml` or `yml`
-- `regex` or `re`
-	- The former actually provide more/better highlighting when viewing the rendered content.
-- `mk`, `make`, `Makefile` (or lowercase).
+    - `sh` or `shell` across systems. I prefer `sh` but either works.
+    - `bash` for Bash on Linux/macOS.
+    - `powershell` for Windows PowerShell.
+    - `console` - for interactive console. This can be used across programming languages but I usually use for shell. A line starting with say `$` or `>` will be colored differently to the lines after it without. Great fror demonstrating the output of shell commands. Does not include language-specific syntax highlighting though. See [Shell](#shell) examples section.
+- `diff` for Git diff. Then lines should start with `+` or `-` for differences.
+- `liquid` for Liquid templating.
+- `yaml` or `yml` for YAML.
+- `regex` or `re` for Regex. The longer keyword actually provide more/better highlighting when viewing the rendered content.
+- `mk`, `make`, `Makefile` (or lowercase `makefile`).
 	- These all work, I haven't compared how well though.
-- `c`
-- `c++`, `cpp`, `cplusplus`
+	- Make sure to always use _tabs_ for indentation within the codeblock, to avoid red warnings.
+- `c` for C.
+- `c++`, `cpp`, `cplusplus` for C++.
 
 ### Examples
 

@@ -245,44 +245,33 @@ print("Hello, world!")
 <p>These are usually based on the file extension.</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">markdown</code> or <code class="language-plaintext highlighter-rouge">md</code>
-    <ul>
-      <li>The former shows better rendering in the GitHub editor view.</li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">json</code></li>
-  <li><code class="language-plaintext highlighter-rouge">json5</code>
-    <ul>
-      <li>Support comments without giving red errors when rendered.</li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">python</code> or <code class="language-plaintext highlighter-rouge">py</code></li>
-  <li><code class="language-plaintext highlighter-rouge">ruby</code> or <code class="language-plaintext highlighter-rouge">rb</code></li>
-  <li><code class="language-plaintext highlighter-rouge">html</code></li>
-  <li><code class="language-plaintext highlighter-rouge">javascript</code> or <code class="language-plaintext highlighter-rouge">js</code></li>
+  <li><code class="language-plaintext highlighter-rouge">markdown</code> or <code class="language-plaintext highlighter-rouge">md</code> for Markdwn. The former shows better rendering in the GitHub editor view.</li>
+  <li><code class="language-plaintext highlighter-rouge">json</code> for JSON.</li>
+  <li><code class="language-plaintext highlighter-rouge">json5</code> for JSON5, more advanced JSON. It support comments and superfluous comments, without giving red errors when rendered.</li>
+  <li><code class="language-plaintext highlighter-rouge">python</code> or <code class="language-plaintext highlighter-rouge">py</code>, or for Python console with <code class="language-plaintext highlighter-rouge">&gt;&gt;&gt;</code> lines use <code class="language-plaintext highlighter-rouge">pycon</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">ruby</code> or <code class="language-plaintext highlighter-rouge">rb</code> for Ruby.</li>
+  <li><code class="language-plaintext highlighter-rouge">html</code> for HTML.</li>
+  <li><code class="language-plaintext highlighter-rouge">javascript</code> or <code class="language-plaintext highlighter-rouge">js</code> for JavaScript.</li>
   <li>Shell
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">sh</code> or <code class="language-plaintext highlighter-rouge">shell</code></li>
-      <li><code class="language-plaintext highlighter-rouge">bash</code> for</li>
-      <li><code class="language-plaintext highlighter-rouge">powershell</code> for Windows.</li>
-      <li><code class="language-plaintext highlighter-rouge">console</code> - for</li>
+      <li><code class="language-plaintext highlighter-rouge">sh</code> or <code class="language-plaintext highlighter-rouge">shell</code> across systems. I prefer <code class="language-plaintext highlighter-rouge">sh</code> but either works.</li>
+      <li><code class="language-plaintext highlighter-rouge">bash</code> for Bash on Linux/macOS.</li>
+      <li><code class="language-plaintext highlighter-rouge">powershell</code> for Windows PowerShell.</li>
+      <li><code class="language-plaintext highlighter-rouge">console</code> - for interactive console. This can be used across programming languages but I usually use for shell. A line starting with say <code class="language-plaintext highlighter-rouge">$</code> or <code class="language-plaintext highlighter-rouge">&gt;</code> will be colored differently to the lines after it without. Great fror demonstrating the output of shell commands. Does not include language-specific syntax highlighting though. See <a href="#shell">Shell</a> examples section.</li>
     </ul>
   </li>
-  <li><code class="language-plaintext highlighter-rouge">diff</code></li>
-  <li><code class="language-plaintext highlighter-rouge">liquid</code></li>
-  <li><code class="language-plaintext highlighter-rouge">yaml</code> or <code class="language-plaintext highlighter-rouge">yml</code></li>
-  <li><code class="language-plaintext highlighter-rouge">regex</code> or <code class="language-plaintext highlighter-rouge">re</code>
-    <ul>
-      <li>The former actually provide more/better highlighting when viewing the rendered content.</li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">mk</code>, <code class="language-plaintext highlighter-rouge">make</code>, <code class="language-plaintext highlighter-rouge">Makefile</code> (or lowercase).
+  <li><code class="language-plaintext highlighter-rouge">diff</code> for Git diff. Then lines should start with <code class="language-plaintext highlighter-rouge">+</code> or <code class="language-plaintext highlighter-rouge">-</code> for differences.</li>
+  <li><code class="language-plaintext highlighter-rouge">liquid</code> for Liquid templating.</li>
+  <li><code class="language-plaintext highlighter-rouge">yaml</code> or <code class="language-plaintext highlighter-rouge">yml</code> for YAML.</li>
+  <li><code class="language-plaintext highlighter-rouge">regex</code> or <code class="language-plaintext highlighter-rouge">re</code> for Regex. The longer keyword actually provide more/better highlighting when viewing the rendered content.</li>
+  <li><code class="language-plaintext highlighter-rouge">mk</code>, <code class="language-plaintext highlighter-rouge">make</code>, <code class="language-plaintext highlighter-rouge">Makefile</code> (or lowercase <code class="language-plaintext highlighter-rouge">makefile</code>).
     <ul>
       <li>These all work, I haven’t compared how well though.</li>
+      <li>Make sure to always use <em>tabs</em> for indentation within the codeblock, to avoid red warnings.</li>
     </ul>
   </li>
-  <li><code class="language-plaintext highlighter-rouge">c</code></li>
-  <li><code class="language-plaintext highlighter-rouge">c++</code>, <code class="language-plaintext highlighter-rouge">cpp</code>, <code class="language-plaintext highlighter-rouge">cplusplus</code></li>
+  <li><code class="language-plaintext highlighter-rouge">c</code> for C.</li>
+  <li><code class="language-plaintext highlighter-rouge">c++</code>, <code class="language-plaintext highlighter-rouge">cpp</code>, <code class="language-plaintext highlighter-rouge">cplusplus</code> for C++.</li>
 </ul>
 
 <h3 id="examples">Examples</h3>
