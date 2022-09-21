@@ -1,6 +1,6 @@
 # Requests
 
-See the [Docs](https://docs.python-requests.org/en/master/)
+See the [requests package's docs](https://docs.python-requests.org/en/master/)
 
 
 ## Basic
