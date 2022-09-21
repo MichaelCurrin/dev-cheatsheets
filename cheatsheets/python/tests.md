@@ -144,6 +144,24 @@ $ # Keyword. Exclude keywords.
 $ pytest -k "MyClass and not method"
 ```
 
+Run only failed tests:
+
+```sh
+$ pytest --last-failed
+```
+
+Run in parallel e.g. with 4 processes:
+
+```sh
+$ pytest -n 4
+```
+
+Run quietly - taken from PyCharm:
+
+```sh
+$ pytest --no-header --no-summary -q
+```
+
 
 ## Nose
 
