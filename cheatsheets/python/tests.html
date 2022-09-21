@@ -299,6 +299,21 @@
 <span class="nv">$ </span>pytest <span class="nt">-k</span> <span class="s2">"MyClass and not method"</span>
 </code></pre></div></div>
 
+<p>Run only failed tests:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pytest <span class="nt">--last-failed</span>
+</code></pre></div></div>
+
+<p>Run in parallel e.g. with 4 processes:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pytest <span class="nt">-n</span> 4
+</code></pre></div></div>
+
+<p>Run quietly - taken from PyCharm:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pytest <span class="nt">--no-header</span> <span class="nt">--no-summary</span> <span class="nt">-q</span>
+</code></pre></div></div>
+
 <h2 id="nose">Nose</h2>
 
 <ul>
