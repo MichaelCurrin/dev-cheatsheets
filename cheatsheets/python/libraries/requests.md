@@ -71,7 +71,37 @@ auth = ('my-username', 'my-password')
 resp = requests.get(url, auth=auth)
 ```
 
+
+## Sessions
+
+Persist parameters across requests.
+
+Basic:
+
+```python
+s = requests.Session()
+
+s.get('https://httpbin.org/cookies/set/sessioncookie/123456789')
+
+r = s.get('https://httpbin.org/cookies')
+r.text
+# '{"cookies": {"sessioncookie": "123456789"}}'
+```
+
+Set attributes on the session and also on the request.
+
+```python
+s = requests.Session()
+s.auth = ('user', 'pass')
+s.headers.update({'x-test': 'true'})
+
+s.get('https://httpbin.org/headers', headers={'x-test2': 'true'})
+```
+
+
 ## Sample
+
+Query the GitHub API, check response data.
 
 ```python
 url = 'https://api.github.com/user'

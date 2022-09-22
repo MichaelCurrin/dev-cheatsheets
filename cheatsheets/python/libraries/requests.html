@@ -224,7 +224,33 @@
 <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">)</span>
 </code></pre></div></div>
 
+<h2 id="sessions">Sessions</h2>
+
+<p>Persist parameters across requests.</p>
+
+<p>Basic:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">Session</span><span class="p">()</span>
+
+<span class="n">s</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://httpbin.org/cookies/set/sessioncookie/123456789'</span><span class="p">)</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://httpbin.org/cookies'</span><span class="p">)</span>
+<span class="n">r</span><span class="p">.</span><span class="n">text</span>
+<span class="c1"># '{"cookies": {"sessioncookie": "123456789"}}'
+</span></code></pre></div></div>
+
+<p>Set attributes on the session and also on the request.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">s</span><span class="p">.</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="s">'user'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+<span class="n">s</span><span class="p">.</span><span class="n">headers</span><span class="p">.</span><span class="n">update</span><span class="p">({</span><span class="s">'x-test'</span><span class="p">:</span> <span class="s">'true'</span><span class="p">})</span>
+
+<span class="n">s</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://httpbin.org/headers'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'x-test2'</span><span class="p">:</span> <span class="s">'true'</span><span class="p">})</span>
+</code></pre></div></div>
+
 <h2 id="sample">Sample</h2>
+
+<p>Query the GitHub API, check response data.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.github.com/user'</span>
 <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
