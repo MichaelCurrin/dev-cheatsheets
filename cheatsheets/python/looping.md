@@ -1,6 +1,6 @@
 # Looping 
 
-## while
+## while loop
 
 ### Basic
 
@@ -46,18 +46,22 @@ else:
 ```
 
 
-## for
+## for loop
 
 ### Basic
 
-Iterate over an iterable.
+Iterate over an iterable:
 
 ```python
 for foo in foos:
     print(foo)
 ```
 
+See more specific examples below.
+
 ### String
+
+Chracters of a string.
 
 ```python
 for c in "abc":
@@ -78,7 +82,7 @@ for x in my_items:
 # def
 ```
 
-If you need the index and the value:
+If you need both the index and the value:
 
 ```python
 for i, x in enumerate(my_items):
@@ -89,7 +93,7 @@ for i, x in enumerate(my_items):
 
 Please _avoid_ using `range` to get the index of items in an a list and then get each item. I see people doing that because they are used to a C-style array. 
 
-i.e. Do _not_ do this in Python. It is messier and slower.
+i.e. Do _not_ do this in Python. It is messier and slower:
 
 ```python
 my_items = ["abc", "def"]
@@ -116,7 +120,7 @@ for i in range(5):
 # 4
 ```
 
-Set a minimum.
+Set a minimum:
 
 ```python
 for i in range(1, 5):
