@@ -1,6 +1,8 @@
 # Requests
 
-See the [requests package's docs](https://docs.python-requests.org/en/master/)
+## Related
+
+- [Resources](https://michaelcurrin.github.io/dev-resources/resources/python/libraries/web-scraping/requests.html) for requests in Dev-Resources.
 
 
 ## Basic
