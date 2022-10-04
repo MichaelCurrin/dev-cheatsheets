@@ -376,9 +376,6 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/graphql/</loc>
 </url>
 <url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/configs/</loc>
-</url>
-<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/type-checks/data-structures/</loc>
 </url>
 <url>
@@ -2522,6 +2519,9 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/configs/dotenv.html</loc>
+</url>
+<url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/configs/</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/configs/ini.html</loc>
