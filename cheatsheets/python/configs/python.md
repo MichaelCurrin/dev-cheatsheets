@@ -1,4 +1,4 @@
-# Configs
+# Python modules as configs
 
 Various ways to store config values.
 
