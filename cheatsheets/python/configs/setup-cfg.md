@@ -2,6 +2,8 @@
 
 See [setuptools docs](https://setuptools.pypa.io/en/latest/userguide/declarative_config.html).
 
+See also [Python Package Quickstart repo](https://github.com/MichaelCurrin/python-package-quickstart).
+
 e.g.
 
 ```ini
