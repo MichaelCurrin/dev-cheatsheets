@@ -23,8 +23,8 @@ deps: echo.deps
 
 site: echo.site
 	rm -rf site
-    mkdir site
-    mkdocs build
+	mkdir site
+	mkdocs build
 ```
 
 
