@@ -448,15 +448,15 @@
 
 <h4 id="binary-dumps">Binary dumps</h4>
 
-<p>Using compress binary archive.</p>
+<p>Using compress binary archive:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pg_dump <span class="nt">-U</span> postgres DB_NAME <span class="nt">-fc</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pg_dump <span class="nt">-U</span> postgres DB_NAME <span class="nt">--format</span><span class="o">=</span>custom
 
 dropdb <span class="nt">-U</span> postgres DB_NAME
 pg_restore <span class="nt">-U</span> postgres db.pgdump
 </code></pre></div></div>
 
-<p>Convert the dump to plain text:</p>
+<p>Convert an existing dump to plain text:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pg_restore db.pgdump <span class="nt">-f</span> db.sql
 </code></pre></div></div>
@@ -474,17 +474,17 @@ psql <span class="nt">-U</span> postgres DB_NAME &lt; db.sql
 
 <h3 id="create-db">Create DB</h3>
 
-<p>See <a href="https://www.postgresql.org/docs/latest/app-createdb.html">createdb</a> docs.</p>
-
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>createdb <span class="nt">-U</span> my-user my-db
 </code></pre></div></div>
 
-<h3 id="drop-db">Drop DB</h3>
+<p>See <a href="https://www.postgresql.org/docs/latest/app-createdb.html">createdb</a> docs.</p>
 
-<p>See <a href="https://www.postgresql.org/docs/latest/app-dropdb.html">dropdb</a> docs.</p>
+<h3 id="drop-db">Drop DB</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dropdb <span class="nt">-U</span> my-user my-db
 </code></pre></div></div>
+
+<p>See <a href="https://www.postgresql.org/docs/latest/app-dropdb.html">dropdb</a> docs.</p>
 
 <h3 id="dump">Dump</h3>
 
@@ -507,7 +507,7 @@ psql <span class="nt">-U</span> postgres DB_NAME &lt; db.sql
 </code></pre></div></div>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">-F, --format FORMAT</code> - The default format is <code class="language-plaintext highlighter-rouge">p</code> or <code class="language-plaintext highlighter-rouge">plain</code> for plain text SQL. Use <code class="language-plaintext highlighter-rouge">c</code> or <code class="language-plaintext highlighter-rouge">custom</code> as a compressed archive which is the most flexible option. Also <code class="language-plaintext highlighter-rouge">d</code> or <code class="language-plaintext highlighter-rouge">directory</code> and <code class="language-plaintext highlighter-rouge">t</code> or <code class="language-plaintext highlighter-rouge">tar</code> are options. e.g. <code class="language-plaintext highlighter-rouge">-Fc</code> note no equals sign.</li>
+  <li><code class="language-plaintext highlighter-rouge">-F, --format FORMAT</code> - The default format is <code class="language-plaintext highlighter-rouge">p</code> or <code class="language-plaintext highlighter-rouge">plain</code> for plain text SQL. Use <code class="language-plaintext highlighter-rouge">c</code> or <code class="language-plaintext highlighter-rouge">custom</code> as a compressed archive which is the most flexible option. Also <code class="language-plaintext highlighter-rouge">d</code> or <code class="language-plaintext highlighter-rouge">directory</code> and <code class="language-plaintext highlighter-rouge">t</code> or <code class="language-plaintext highlighter-rouge">tar</code> are options. e.g. <code class="language-plaintext highlighter-rouge">-Fc</code> (note no equals sign) or <code class="language-plaintext highlighter-rouge">--format=custom</code>.</li>
   <li><code class="language-plaintext highlighter-rouge">-f, --file PATH</code> - path to write to, otherwise will write to stdout.</li>
 </ul>
 
