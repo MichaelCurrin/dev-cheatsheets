@@ -314,16 +314,16 @@ Use a connection string that contains everything:
 
 #### Binary dumps
 
-Using compress binary archive.
+Using compress binary archive:
 
 ```sh
-pg_dump -U postgres DB_NAME -fc
+pg_dump -U postgres DB_NAME --format=custom
 
 dropdb -U postgres DB_NAME
 pg_restore -U postgres db.pgdump
 ```
 
-Convert the dump to plain text:
+Convert an existing dump to plain text:
 
 ```sh
 pg_restore db.pgdump -f db.sql
@@ -343,21 +343,21 @@ psql -U postgres DB_NAME < db.sql
 
 ### Create DB
 
-See [createdb][] docs.
-
 ```sh
 $ createdb -U my-user my-db
 ```
+
+See [createdb][] docs.
 
 [createdb]: https://www.postgresql.org/docs/latest/app-createdb.html
 
 ### Drop DB
 
-See [dropdb][] docs.
-
 ```sh
 $ dropdb -U my-user my-db
 ```
+
+See [dropdb][] docs.
 
 [dropdb]: https://www.postgresql.org/docs/latest/app-dropdb.html
 
@@ -383,7 +383,7 @@ See [pg_dump][] docs.
 pg_dump [connection-option...] [option...] [dbname]
 ```
 
-- `-F, --format FORMAT` - The default format is `p` or `plain` for plain text SQL. Use `c` or `custom` as a compressed archive which is the most flexible option. Also `d` or `directory` and `t` or `tar` are options. e.g. `-Fc` note no equals sign.
+- `-F, --format FORMAT` - The default format is `p` or `plain` for plain text SQL. Use `c` or `custom` as a compressed archive which is the most flexible option. Also `d` or `directory` and `t` or `tar` are options. e.g. `-Fc` (note no equals sign) or `--format=custom`.
 - `-f, --file PATH` - path to write to, otherwise will write to stdout.
 
 e.g.
