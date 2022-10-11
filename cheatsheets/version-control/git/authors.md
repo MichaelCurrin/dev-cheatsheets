@@ -24,12 +24,21 @@ For more info, see the [shortlog][] command.
 
 Change the author of a commit.
 
+
 ### Edit one commit
+
+If you just want to change the most recent commit, a rebase is not necessary. Just amend the commit:
+
+```sh
+$ git commit --amend --no-edit --reset-author
+```
+
+
+### Edit range of commits by hand
 
 How to update one commit at a time, using Git manually one command at a time.
 
-This logic comes from the first part of the tutorial linked above and is provided as
-instructions below.
+Note that this convenient for fixing a handful of commits, but is inefficient for changing a lot of commits.
 
 1. Set your new author name and email in a variable. e.g.
     ```sh
@@ -53,4 +62,7 @@ instructions below.
 
 ### Bulk editing
 
-For bulk editing, see [MichaelCurrin/rewrite-git-author](https://github.com/MichaelCurrin/rewrite-git-author) repo.
+Replace the author across the history of commits, using a single command.
+
+See [MichaelCurrin/rewrite-git-author](https://github.com/MichaelCurrin/rewrite-git-author) repo.
+
