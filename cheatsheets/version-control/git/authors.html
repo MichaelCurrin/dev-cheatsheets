@@ -186,10 +186,16 @@
 
 <h3 id="edit-one-commit">Edit one commit</h3>
 
+<p>If you just want to change the most recent commit, a rebase is not necessary. Just amend the commit:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit <span class="nt">--amend</span> <span class="nt">--no-edit</span> <span class="nt">--reset-author</span>
+</code></pre></div></div>
+
+<h3 id="edit-range-of-commits-by-hand">Edit range of commits by hand</h3>
+
 <p>How to update one commit at a time, using Git manually one command at a time.</p>
 
-<p>This logic comes from the first part of the tutorial linked above and is provided as
-instructions below.</p>
+<p>Note that this convenient for fixing a handful of commits, but is inefficient for changing a lot of commits.</p>
 
 <ol>
   <li>Set your new author name and email in a variable. e.g.
@@ -214,7 +220,10 @@ instructions below.</p>
 
 <h3 id="bulk-editing">Bulk editing</h3>
 
-<p>For bulk editing, see <a href="https://github.com/MichaelCurrin/rewrite-git-author">MichaelCurrin/rewrite-git-author</a> repo.</p>
+<p>Replace the author across the history of commits, using a single command.</p>
+
+<p>See <a href="https://github.com/MichaelCurrin/rewrite-git-author">MichaelCurrin/rewrite-git-author</a> repo.</p>
+
 
         
     </div>
