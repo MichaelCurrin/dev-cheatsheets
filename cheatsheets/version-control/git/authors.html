@@ -168,7 +168,9 @@
 
     <div class="post-content">
         
-            <p>In a Git repo, show a summary of GitHub users (using author names) and the number of commits by each, sorted by commit count.</p>
+            <h2 id="show">Show</h2>
+
+<p>In a Git repo, show a summary of GitHub users (using author names) and the number of commits by each, sorted by commit count.</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git shortlog <span class="nt">-n</span> <span class="nt">-s</span>
 <span class="go">   969  michaelcurrin
@@ -178,6 +180,41 @@
 
 <p>For more info, see the <a href="/dev-cheatsheets/cheatsheets/version-control/git/commands/shortlog.html">shortlog</a> command.</p>
 
+<h2 id="edit">Edit</h2>
+
+<p>Change the author of a commit.</p>
+
+<h3 id="edit-one-commit">Edit one commit</h3>
+
+<p>How to update one commit at a time, using Git manually one command at a time.</p>
+
+<p>This logic comes from the first part of the tutorial linked above and is provided as
+instructions below.</p>
+
+<ol>
+  <li>Set your new author name and email in a variable. e.g.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">export </span><span class="nv">AUTHOR</span><span class="o">=</span><span class="s2">"John Doe &lt;john@doe.org&gt;"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Start a rebase, starting with one commit <em>before</em> the first commit you want to update.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>git rebase <span class="nt">-i</span> <span class="nt">-p</span> COMMIT_REFERENCE
+</code></pre></div>    </div>
+    <p>e.g. use the carat and the target first commit to get one commit before it.</p>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>git rebase <span class="nt">-i</span> <span class="nt">-p</span> fd27b00ac^
+</code></pre></div>    </div>
+  </li>
+  <li>Change <code class="language-plaintext highlighter-rouge">pick</code> to <code class="language-plaintext highlighter-rouge">edit</code> or <code class="language-plaintext highlighter-rouge">e</code> for each commit where you want to change the author. <strong>Warning</strong> - this will replace the author regardless of who it was.</li>
+  <li>Save the content in the editor view then exit.</li>
+  <li>Now you adjust each commit one at a time with these two commands:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit <span class="nt">--amend</span> <span class="nt">--author</span><span class="o">=</span><span class="s2">"</span><span class="nv">$AUTHOR</span><span class="s2">"</span> <span class="nt">--no-edit</span>
+<span class="nv">$ </span>git rebase <span class="nt">--continue</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="bulk-editing">Bulk editing</h3>
+
+<p>For bulk editing, see <a href="https://github.com/MichaelCurrin/rewrite-git-author">MichaelCurrin/rewrite-git-author</a> repo.</p>
 
         
     </div>
