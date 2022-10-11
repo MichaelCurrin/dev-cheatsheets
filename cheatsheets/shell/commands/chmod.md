@@ -69,6 +69,12 @@ Add for _group_ only.
 $ chmod g+x PATH 
 ```
 
+Remove read access for _other_ and _group_.
+
+```sh
+$ chmod og-r PATH
+```
+
 #### Octal mode
 
 Use an octal mask which will _overwrite_ all 3 octets.
