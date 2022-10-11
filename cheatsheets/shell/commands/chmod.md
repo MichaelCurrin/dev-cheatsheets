@@ -39,16 +39,34 @@ SYNOPSIS
 
 #### Mode
 
-You can give a mode like this. It will only add (or take away) where relevant.
+You can give a mode like this.
+
+The default is _all_ users.
 
 ```sh
-$ chmod +x PATH  # Add for all.
-$ chmod -x PATH  # Remove for owner.
+$ # Add using plus.
+$ chmod +x PATH 
+$ chmod +xw PATH 
+$ # Remove using minus.
+$ chmod -x PATH  
+```
 
-$ chmod +xw PATH # Add two for owner.
+Add for _owner_ only.
 
-$ chmod o+x      # Add for other.
-$ chmod g+x      # Add for group.
+```sh
+$ chmod u+x PATH 
+```
+
+Add for _other_ only.
+
+```sh
+$ chmod o+x PATH 
+```
+
+Add for _group_ only.
+
+```sh
+$ chmod g+x PATH 
 ```
 
 #### Octal mode
@@ -84,7 +102,7 @@ Control | Description
 ---     | ---
 `u`     | the user who owns it
 `g`     | other users in the file's group
-`o`     | other users not in the file's group (`o`), 
+`o`     | other users not in the file's group 
 `a`     | all users
 
 If none of these are given, the effect is as if `a` were given. But bits that are set in the umask are not affected.

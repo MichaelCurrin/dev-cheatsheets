@@ -198,15 +198,30 @@ SYNOPSIS
 
 <h4 id="mode">Mode</h4>
 
-<p>You can give a mode like this. It will only add (or take away) where relevant.</p>
+<p>You can give a mode like this.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod</span> +x PATH  <span class="c"># Add for all.</span>
-<span class="nv">$ </span><span class="nb">chmod</span> <span class="nt">-x</span> PATH  <span class="c"># Remove for owner.</span>
+<p>The default is <em>all</em> users.</p>
 
-<span class="nv">$ </span><span class="nb">chmod</span> +xw PATH <span class="c"># Add two for owner.</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="c"># Add using plus.</span>
+<span class="nv">$ </span><span class="nb">chmod</span> +x PATH 
+<span class="nv">$ </span><span class="nb">chmod</span> +xw PATH 
+<span class="nv">$ </span><span class="c"># Remove using minus.</span>
+<span class="nv">$ </span><span class="nb">chmod</span> <span class="nt">-x</span> PATH  
+</code></pre></div></div>
 
-<span class="nv">$ </span><span class="nb">chmod </span>o+x      <span class="c"># Add for other.</span>
-<span class="nv">$ </span><span class="nb">chmod </span>g+x      <span class="c"># Add for group.</span>
+<p>Add for <em>owner</em> only.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod </span>u+x PATH 
+</code></pre></div></div>
+
+<p>Add for <em>other</em> only.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod </span>o+x PATH 
+</code></pre></div></div>
+
+<p>Add for <em>group</em> only.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod </span>g+x PATH 
 </code></pre></div></div>
 
 <h4 id="octal-mode">Octal mode</h4>
@@ -259,7 +274,7 @@ SYNOPSIS
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">o</code></td>
-      <td>other users not in the file’s group (<code class="language-plaintext highlighter-rouge">o</code>),</td>
+      <td>other users not in the file’s group</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">a</code></td>
