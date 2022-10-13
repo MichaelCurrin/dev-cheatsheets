@@ -70,7 +70,7 @@ match subject:
         <action_wildcard>
 ```
 
-e.g.
+A simple example of literal matching.
 
 ```python
 def http_error(status):
