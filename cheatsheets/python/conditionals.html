@@ -151,7 +151,23 @@
 
     <div class="post-content">
         
-            <h2 id="check-list">Check list</h2>
+            <h2 id="basic">Basic</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">CONDITION</span><span class="p">:</span>
+    <span class="n">STATEMENT</span>
+    
+<span class="k">if</span> <span class="n">CONDITION</span><span class="p">:</span>
+    <span class="n">STATEMENT</span>
+<span class="k">else</span> <span class="n">CONDITION</span><span class="p">:</span>
+    <span class="n">STATEMENT</span>
+   
+<span class="k">if</span> <span class="n">CONDITION</span><span class="p">:</span>
+    <span class="n">STATEMENT</span>
+<span class="k">elif</span> <span class="n">CONDITION</span><span class="p">:</span>
+    <span class="n">STATEMENT</span>
+</code></pre></div></div>
+
+<h2 id="check-list">Check list</h2>
 
 <p>Check all values are truthy i.e. not of one of <code class="language-plaintext highlighter-rouge">False</code>, <code class="language-plaintext highlighter-rouge">0</code>, <code class="language-plaintext highlighter-rouge">[]</code>, <code class="language-plaintext highlighter-rouge">{}</code>.</p>
 
@@ -180,6 +196,41 @@
 <span class="nb">all</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span>
 <span class="c1"># False
 </span></code></pre></div></div>
+
+<h2 id="match">Match</h2>
+
+<p>Added in Python 3.10.</p>
+
+<p>See <a href="https://docs.python.org/3/whatsnew/3.10.html">post</a>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">match</span> <span class="n">subject</span><span class="p">:</span>
+    <span class="n">case</span> <span class="o">&lt;</span><span class="n">pattern_1</span><span class="o">&gt;</span><span class="p">:</span>
+        <span class="o">&lt;</span><span class="n">action_1</span><span class="o">&gt;</span>
+    <span class="n">case</span> <span class="o">&lt;</span><span class="n">pattern_2</span><span class="o">&gt;</span><span class="p">:</span>
+        <span class="o">&lt;</span><span class="n">action_2</span><span class="o">&gt;</span>
+    <span class="n">case</span> <span class="o">&lt;</span><span class="n">pattern_3</span><span class="o">&gt;</span><span class="p">:</span>
+        <span class="o">&lt;</span><span class="n">action_3</span><span class="o">&gt;</span>
+    <span class="n">case</span> <span class="n">_</span><span class="p">:</span>
+        <span class="o">&lt;</span><span class="n">action_wildcard</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">http_error</span><span class="p">(</span><span class="n">status</span><span class="p">):</span>
+    <span class="n">match</span> <span class="n">status</span><span class="p">:</span>
+        <span class="n">case</span> <span class="mi">400</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">"Bad request"</span>
+        <span class="n">case</span> <span class="mi">404</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">"Not found"</span>
+        <span class="n">case</span> <span class="mi">418</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">"I'm a teapot"</span>
+        <span class="n">case</span> <span class="n">_</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">"Something's wrong with the internet"</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">case</span> <span class="mi">401</span> <span class="o">|</span> <span class="mi">403</span> <span class="o">|</span> <span class="mi">404</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">"Not allowed"</span>
+</code></pre></div></div>
 
         
     </div>
