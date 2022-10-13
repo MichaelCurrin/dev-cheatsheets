@@ -89,3 +89,8 @@ def http_error(status):
 case 401 | 403 | 404:
     return "Not allowed"
 ```
+
+
+### Links
+
+- [How to Use a match case Statement in Python 3.10](https://learnpython.com/blog/python-match-case-statement/)
