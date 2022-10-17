@@ -71,7 +71,7 @@ If the value is multiple words (separated by space or newline), then the value w
 
 Quotes are usually optional.
 
-Sometimes they make a difference.
+Sometimes they do make a difference.
 
 ### Empty values
 
@@ -234,7 +234,40 @@ DEF
 GHI
 ```
 
-#### Skip first line.
+#### Wrap a long string without splitting over newlines
+
+Use a backslash to go to the next line.
+
+Make sure to use double quotes or not quotes.
+
+```sh
+$ echo "abcdef\
+123456"
+```
+```
+abcdef123456
+```
+
+Or
+
+```sh
+$ echo abcdef\
+123456
+```
+```
+abcdef123456
+```
+
+Single quotes will have a literal backslash:
+
+```sh
+$ echo 'abcdef\
+> 123456'
+abcdef\
+123456
+```
+
+#### Skip first line
 
 For indentation reason, you might want to leave text off of the first line. Use the `\` symbol to split your command so you start the string on the next line.
 
@@ -248,20 +281,9 @@ First line
 second line
 ```
 
-Note that this does **not** work. It adds a literal backslash. But in JavaScript or Python, this approach works.
-
-```sh
-$ echo '\
-First line
-Second line'
-```
-```
-\
-First line
-Second line
-```
-
 ### Escaping quotes
+
+If you want to include quotation marks in your output.
 
 ```sh
 echo "With 'single' quotes"
@@ -271,7 +293,7 @@ echo 'With \'escaped single\' quotes'
 echo "With \"escaped single\" quotes"
 ```
 
-If you need to use single and double quotes in the same string and don't want to use `\` to escape them, then read on for the heredoc belo.
+If you need to use single and double quotes in the same string and don't want to use `\` to escape them, then read on for _heredoc_ below.
 
 ### Defaults
 
