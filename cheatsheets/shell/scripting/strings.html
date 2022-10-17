@@ -219,7 +219,7 @@
 
 <p>Quotes are usually optional.</p>
 
-<p>Sometimes they make a difference.</p>
+<p>Sometimes they do make a difference.</p>
 
 <h3 id="empty-values">Empty values</h3>
 
@@ -356,7 +356,35 @@ DEF
 GHI
 </code></pre></div></div>
 
-<h4 id="skip-first-line">Skip first line.</h4>
+<h4 id="wrap-a-long-string-without-splitting-over-newlines">Wrap a long string without splitting over newlines</h4>
+
+<p>Use a backslash to go to the next line.</p>
+
+<p>Make sure to use double quotes or not quotes.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"abcdef</span><span class="se">\</span><span class="s2">
+123456"</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abcdef123456
+</code></pre></div></div>
+
+<p>Or</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo </span>abcdef<span class="se">\</span>
+123456
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abcdef123456
+</code></pre></div></div>
+
+<p>Single quotes will have a literal backslash:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'abcdef\
+&gt; 123456'</span>
+abcdef<span class="se">\</span>
+123456
+</code></pre></div></div>
+
+<h4 id="skip-first-line">Skip first line</h4>
 
 <p>For indentation reason, you might want to leave text off of the first line. Use the <code class="language-plaintext highlighter-rouge">\</code> symbol to split your command so you start the string on the next line.</p>
 
@@ -368,18 +396,9 @@ Second line'</span>
 second line
 </code></pre></div></div>
 
-<p>Note that this does <strong>not</strong> work. It adds a literal backslash. But in JavaScript or Python, this approach works.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'\
-First line
-Second line'</span>
-</code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\
-First line
-Second line
-</code></pre></div></div>
-
 <h3 id="escaping-quotes">Escaping quotes</h3>
+
+<p>If you want to include quotation marks in your output.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"With 'single' quotes"</span>
 <span class="nb">echo</span> <span class="s1">'With "double" quotes'</span>
@@ -388,7 +407,7 @@ Second line
 echo "With \"escaped single\" quotes"
 </span></code></pre></div></div>
 
-<p>If you need to use single and double quotes in the same string and don’t want to use <code class="language-plaintext highlighter-rouge">\</code> to escape them, then read on for the heredoc belo.</p>
+<p>If you need to use single and double quotes in the same string and don’t want to use <code class="language-plaintext highlighter-rouge">\</code> to escape them, then read on for <em>heredoc</em> below.</p>
 
 <h3 id="defaults">Defaults</h3>
 
