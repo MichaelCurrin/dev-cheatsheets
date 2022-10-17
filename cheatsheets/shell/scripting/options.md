@@ -8,25 +8,30 @@ This applies both for shell scripting and running commands in interactive CLI.
 This page is focussed on `bash` but behavior should be similar for `zsh`.
 
 
-## Overview of how to set flags
+## Overview of methods for setting flags
 
 ### Shebang
 
 ```sh
 #!/bin/bash -e
+echo 'Hello'
 ```
 
 Multiple:
 
 ```sh
 #!/bin/bash -eo pipefail
+echo 'Hello'
 ```
+
+### In script body
 
 If you use `env`, you need to provide options in the body of the script.
 
 ```sh
 #!/usr/bin/env bash
 set -e
+echo 'Hello'
 ```
 
 ### CLI
@@ -38,19 +43,22 @@ $ set -e
 $ ./script.sh
 ```
 
-Or
+Or set the flag when you run your script. The order does not matter.
 
 ```sh
 $ bash -e script.sh
+$ # OR
+$ bash -o errexit script.sh
 ```
 
-Using minus will enable the flag to exit on error.
+Using minus will _enable_ the flag to exit on error.
 
-Using a plus sign will disable the flag.
+Using a plus sign will _disable_ the flag. You can turn these on and off within a script.
 
 ```sh
+echo 'Hello'
 set -e
-
+echo 'World'
 set +e
 ```
 
@@ -211,6 +219,8 @@ From `man bash`:
 
 ## Xtrace
 
+Verbose mode for showing commands before they are run.
+
 From the man page:
 
 ```
@@ -236,3 +246,10 @@ From the docs:
           parameters.   The -x and -v options are turned off.  If there are no args, the positional
           parameters remain unchanged.
 ```
+
+e.g.
+
+```sh
+$ curl URL | bash -
+```
+
