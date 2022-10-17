@@ -172,22 +172,27 @@
 
 <p>This page is focussed on <code class="language-plaintext highlighter-rouge">bash</code> but behavior should be similar for <code class="language-plaintext highlighter-rouge">zsh</code>.</p>
 
-<h2 id="overview-of-how-to-set-flags">Overview of how to set flags</h2>
+<h2 id="overview-of-methods-for-setting-flags">Overview of methods for setting flags</h2>
 
 <h3 id="shebang">Shebang</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash -e</span>
+<span class="nb">echo</span> <span class="s1">'Hello'</span>
 </code></pre></div></div>
 
 <p>Multiple:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash -eo pipefail</span>
+<span class="nb">echo</span> <span class="s1">'Hello'</span>
 </code></pre></div></div>
+
+<h3 id="in-script-body">In script body</h3>
 
 <p>If you use <code class="language-plaintext highlighter-rouge">env</code>, you need to provide options in the body of the script.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
 <span class="nb">set</span> <span class="nt">-e</span>
+<span class="nb">echo</span> <span class="s1">'Hello'</span>
 </code></pre></div></div>
 
 <h3 id="cli">CLI</h3>
@@ -198,17 +203,20 @@
 <span class="nv">$ </span>./script.sh
 </code></pre></div></div>
 
-<p>Or</p>
+<p>Or set the flag when you run your script. The order does not matter.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bash <span class="nt">-e</span> script.sh
+<span class="nv">$ </span><span class="c"># OR</span>
+<span class="nv">$ </span>bash <span class="nt">-o</span> errexit script.sh
 </code></pre></div></div>
 
-<p>Using minus will enable the flag to exit on error.</p>
+<p>Using minus will <em>enable</em> the flag to exit on error.</p>
 
-<p>Using a plus sign will disable the flag.</p>
+<p>Using a plus sign will <em>disable</em> the flag. You can turn these on and off within a script.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">set</span> <span class="nt">-e</span>
-
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'Hello'</span>
+<span class="nb">set</span> <span class="nt">-e</span>
+<span class="nb">echo</span> <span class="s1">'World'</span>
 <span class="nb">set</span> +e
 </code></pre></div></div>
 
@@ -353,6 +361,8 @@ xtrace          off
 
 <h2 id="xtrace">Xtrace</h2>
 
+<p>Verbose mode for showing commands before they are run.</p>
+
 <p>From the man page:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-o xtrace
@@ -374,6 +384,12 @@ xtrace          off
           parameters.   The -x and -v options are turned off.  If there are no args, the positional
           parameters remain unchanged.
 </code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl URL | bash -
+</code></pre></div></div>
+
 
         
     </div>
