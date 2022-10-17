@@ -43,7 +43,7 @@ $ set -e
 $ ./script.sh
 ```
 
-Or set the flag when you run your script. The order does not matter.
+Or set the flag when you run your script, but _before_ the script name.
 
 ```sh
 $ bash -e script.sh
