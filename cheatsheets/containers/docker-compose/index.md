@@ -8,3 +8,8 @@ Docker compose allows orchestration of multiple containers. It allows you to sto
 From CLI help:
 
 > Define and run multi-container applications with Docker.
+
+
+### Resources
+
+- [Docker compose](https://michaelcurrin.github.io/dev-resources/resources/containers/docker-compose.html) section of my Dev Resources project.
