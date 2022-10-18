@@ -26,15 +26,15 @@
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/docker-compose/configured.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/docker-compose/configured.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/docker-compose/configure.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/docker-compose/configure.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/docker-compose/configured.html",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/docker-compose/configure.html",
     "headline":    "Configure",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
@@ -82,7 +82,7 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/containers/docker-compose/configured.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/containers/docker-compose/configure.md">
     📝 <span>Edit page</span>
 </a>
 
@@ -150,7 +150,7 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/containers/docker-compose/configured.html" class="underline">
+            <a href="/dev-cheatsheets/cheatsheets/containers/docker-compose/configure.html" class="underline">
                 Configure
             </a>
         
@@ -163,18 +163,34 @@
 
     <div class="post-content">
         
-            <h2 id="context-and-dockerfile">Context and Dockerfile</h2>
-
-<p>For more info, see <a href="https://github.com/compose-spec/compose-spec/blob/master/build.md#build-definition">Build definition</a> in the docs.</p>
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="m">3</span>
+            <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="m">3</span>
 
 <span class="na">services</span><span class="pi">:</span>
+  <span class="na">foo-service</span><span class="pi">:</span>
+    <span class="c1"># ...</span>
+  <span class="na">bar-service</span><span class="pi">:</span>
+    <span class="c1"># ...</span>
+</code></pre></div></div>
+
+<h2 id="context-and-dockerfile">Context and Dockerfile</h2>
+
+<p>For more info, see <a href="https://github.com/compose-spec/compose-spec/blob/master/build.md#build-definition">Build definition</a> in the docs.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+  <span class="na">my-service</span><span class="pi">:</span>
+    <span class="na">build</span><span class="pi">:</span>
+      <span class="na">context</span><span class="pi">:</span> <span class="s">.</span>
+</code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
   <span class="na">my-service</span><span class="pi">:</span>
     <span class="na">image</span><span class="pi">:</span> <span class="s">user/foo</span>
     <span class="na">build</span><span class="pi">:</span>
       <span class="na">context</span><span class="pi">:</span> <span class="s">../my-dir</span>
       <span class="na">dockerfile</span><span class="pi">:</span> <span class="s">foo.Dockerfile</span>
 </code></pre></div></div>
+
+<p>Warning as per the docs - never use <code class="language-plaintext highlighter-rouge">/</code> as context as it will copy everything on your hard drive to the image.</p>
 
         
     </div>
