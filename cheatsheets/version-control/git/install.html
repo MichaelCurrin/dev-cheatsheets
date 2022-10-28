@@ -184,7 +184,12 @@ git/focal-updates,focal-security 1:2.25.1-1ubuntu3.6 amd64
 git/focal 1:2.25.1-1ubuntu3 amd64
 </span></code></pre></div></div>
 
-<p>So you get the latest available, use this:</p>
+<p>Uninstall your current Git, if necessary:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt remove git
+</code></pre></div></div>
+
+<p>So you get the latest available, add to sources with this:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>add-apt-repository ppa:git-core/ppa
 </code></pre></div></div>
@@ -198,9 +203,12 @@ git/focal-updates,focal-security 1:2.25.1-1ubuntu3.6 amd64
 git/focal 1:2.25.1-1ubuntu3 amd64
 </span></code></pre></div></div>
 
-<p>The first one will be installed with a simple install.</p>
+<p>The one at the top of the list will be installed with a simple install.</p>
 
-<p>If you want to pick a specific version, to this with the appropriate version:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>git
+</code></pre></div></div>
+
+<p>Or if you want to pick a specific version, to this with the appropriate version:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span><span class="nv">git</span><span class="o">=</span>1:2.38.1-0ppa1~ubuntu20.04.1
 </code></pre></div></div>
