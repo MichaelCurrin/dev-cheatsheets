@@ -218,6 +218,16 @@ Most used commands:
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>bar
 </code></pre></div></div>
 
+<p>Install a target version:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span><span class="nv">PACKAGE</span><span class="o">=</span>VERSION
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span><span class="nv">git</span><span class="o">=</span>1:2.38.1-0ppa1~ubuntu20.04.1
+</code></pre></div></div>
+
 <h3 id="remove-package">Remove package</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt remove PACKAGE
@@ -292,6 +302,15 @@ python-acme-doc/focal,focal 1.1.0-1 all
 python-agate-doc/focal,focal 1.6.0-3 all
 python-agatedbf-doc/focal,focal 0.2.0-2 all
 </span><span class="c">..
+</span></code></pre></div></div>
+
+<p>There might be version available from different sources:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>apt list git <span class="nt">-a</span>
+<span class="go">Listing... Done
+git/focal,now 1:2.38.1-0ppa1~ubuntu20.04.1 amd64 [installed]
+git/focal-updates,focal-security 1:2.25.1-1ubuntu3.6 amd64
+git/focal 1:2.25.1-1ubuntu3 amd64
 </span></code></pre></div></div>
 
 <h2 id="sources">Sources</h2>
