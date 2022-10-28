@@ -184,17 +184,23 @@ git/focal-updates,focal-security 1:2.25.1-1ubuntu3.6 amd64
 git/focal 1:2.25.1-1ubuntu3 amd64
 </span></code></pre></div></div>
 
+<h4 id="1-uninstall">1. Uninstall</h4>
+
 <p>Uninstall your current Git, if necessary:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt remove git
 </code></pre></div></div>
 
-<p>So you get the latest available, add to sources with this:</p>
+<h4 id="2-add-source">2. Add source</h4>
+
+<p>Get the latest available, add to sources with this:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>add-apt-repository ppa:git-core/ppa
 </code></pre></div></div>
 
-<p>List all versions you can now install with this command, including <code class="language-plaintext highlighter-rouge">2.38</code> now.</p>
+<p>You not need to add run <code class="language-plaintext highlighter-rouge">sudo apt update</code>.</p>
+
+<p>Now list all versions you can now install with this command, including <code class="language-plaintext highlighter-rouge">2.38</code> now at the top in this exmaple:</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>apt list git <span class="nt">-a</span>
 <span class="go">Listing... Done
@@ -202,6 +208,8 @@ git/focal,now 1:2.38.1-0ppa1~ubuntu20.04.1 amd64 [installed]
 git/focal-updates,focal-security 1:2.25.1-1ubuntu3.6 amd64
 git/focal 1:2.25.1-1ubuntu3 amd64
 </span></code></pre></div></div>
+
+<h4 id="3-install">3. Install</h4>
 
 <p>The one at the top of the list will be installed with a simple install.</p>
 
