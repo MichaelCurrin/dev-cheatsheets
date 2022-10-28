@@ -54,13 +54,20 @@ $ git branch
   xyz
 ```
 
-Note on accuracy:
+    
+Equivalent to:
+    
+```sh
+$ git branch -d abc def xyz
+```
+
+Tips for actions to follow before you run the commands:
 
 - Get your Pull Requests merged or closed on GitHub.
 - Run `git fetch` (or `git pull`) to make sure you are up to date with the remote.
 - Push any in-progress work in case you need to recover a branch from the remote. Alteratively, recover a branch using `git reflog`.
     
-#### Approach using grep and xargs
+#### Approach using long grep
     
 Based on the ZSH alias `gbda`. Which probably stands for "git branch delete all".
 
@@ -82,35 +89,20 @@ Deleted branch bar (was bd31cf305).
 
 Using `command COMMAND` avoids using any aliases you have setup I guess.
     
-#### Approach using grep, egrep, and tr
+#### Approach using simle grep
     
 Based on another source I found.
     
 Here we get the branch names a single string. Then in two steps we remove the current branch and then special branches.
 
-Then remove line breaks with `tr`. Then pass the output all the delete branch command as multiple arguments.
-    
 ```sh
-$ git branch -d $(git branch --merged \
+$ git branch -d $(git branch --no-color --merged \
     | grep -v '^*' \
     | egrep -v 'main|master|develop' \
-    | tr -d '\n')
+    | xargs)
 ```
 
 Note `egrep` (or `grep -E`) to handle the pipe pattern specifically.
-    
-Sample output:
-    
-``` 
-Deleted branch foo (was 06e07e7).
-Deleted branch bar (was 125f0d2).
-```
-    
-Equivalent to:
-    
-```sh
-$ git branch -d abc def xyz
-```
    
 #### Aggressive simple delete
 
@@ -118,20 +110,11 @@ This approach doesn't check whether a branch is deleted or not, it just deletes 
 
 A branch might actually be merged (such as using a PR merge button), but still not be recognized by Git as merged if there was a **squash** merge. 
 
-In that case:
+In that case, modifiy one of the commands above:
 
-- Omit the `--merged` flag in the command below.
+- Omit the `--merged` flag in the command.
 - Use `-D` flag to _force_ a delete instead of a warning.
 
-Instead of using `tr`, here using `xargs` as a more elegant way to put all the arguments on one line i.e. remove line breaks.
-
-```sh
-$ git branch -D $(git branch \
-    | grep -v '^*' \
-    | grep -v 'main|master|develop' \
-    | xargs)
-```
-    
 
 ## Delete local references to remote branches
 
