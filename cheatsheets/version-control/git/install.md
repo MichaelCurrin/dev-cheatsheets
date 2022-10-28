@@ -1,5 +1,6 @@
 # Install
 
+See release versions on the [Git Wikipedia](https://en.wikipedia.org/wiki/Git) page.
 
 ## Linux
 
