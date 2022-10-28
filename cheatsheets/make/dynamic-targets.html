@@ -15,7 +15,7 @@
 
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:title" content="Dynamic targets" />
-<meta name="generator" content="Jekyll v4.2.2" />
+<meta name="generator" content="Jekyll v4.3.1" />
 
 <meta property="og:locale" content="en_US" />
 
@@ -165,7 +165,7 @@
 <span class="nv">off</span>  <span class="o">=</span> <span class="s2">"</span><span class="se">\\</span><span class="s2">033[0m"</span>
 
 <span class="nl">echo.%</span><span class="o">:</span>
-	<span class="p">@</span><span class="nb">echo</span> <span class="s2">"</span><span class="se">\n</span><span class="nv">$(cyan)</span><span class="s2">Building </span><span class="nv">$*$(off)</span><span class="s2">"</span>
+	<span class="p">@</span><span class="nb">echo</span> <span class="s2">"</span><span class="se">\n</span><span class="p">$(</span><span class="s2">cyan</span><span class="p">)</span><span class="s2">Building </span><span class="nv">$*</span><span class="p">$(</span><span class="s2">off</span><span class="p">)</span><span class="s2">"</span>
 
 <span class="nl">deps</span><span class="o">:</span> <span class="nf">echo.deps</span>
 	pip <span class="nb">install</span> <span class="nt">--upgrade</span> pip
@@ -192,7 +192,7 @@
 <div class="language-make highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">COMMON_CONSTRAINTS_TXT</span><span class="o">=</span>requirements/common_constraints.txt
 <span class="nl">.PHONY</span><span class="o">:</span> <span class="nf">$(COMMON_CONSTRAINTS_TXT)</span>
 <span class="nl">$(COMMON_CONSTRAINTS_TXT)</span><span class="o">:</span>
-	wget <span class="nt">-O</span> <span class="s2">"</span><span class="err">$</span><span class="s2">(@)"</span> https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt <span class="o">||</span> <span class="nb">touch</span> <span class="s2">"</span><span class="err">$</span><span class="s2">(@)"</span>
+	wget <span class="nt">-O</span> <span class="s2">"</span><span class="p">$(</span><span class="s2">@</span><span class="p">)</span><span class="s2">"</span> https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt <span class="o">||</span> <span class="nb">touch</span> <span class="s2">"</span><span class="p">$(</span><span class="s2">@</span><span class="p">)</span><span class="s2">"</span>
 </code></pre></div></div>
 
 <p>In this case it was followed by two <code class="language-plaintext highlighter-rouge">upgrade</code> targets.</p>

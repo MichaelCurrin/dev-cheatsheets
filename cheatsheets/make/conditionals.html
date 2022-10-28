@@ -15,7 +15,7 @@
 
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:title" content="Conditionals" />
-<meta name="generator" content="Jekyll v4.2.2" />
+<meta name="generator" content="Jekyll v4.3.1" />
 
 <meta property="og:locale" content="en_US" />
 
@@ -166,7 +166,7 @@
 <p>Optionally use <code class="language-plaintext highlighter-rouge">@</code> to make it quiet.</p>
 
 <div class="language-make highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">foo</span><span class="o">:</span>
-	<span class="p">@</span><span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="nv">$(FOO)</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="se">\</span>
+	<span class="p">@</span><span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="p">$(</span>FOO<span class="p">)</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="se">\</span>
 		<span class="nb">echo</span> <span class="s2">"FOO must be set. Use </span><span class="sb">`</span><span class="nb">export </span><span class="nv">FOO</span><span class="o">=</span>&lt;foo&gt;<span class="sb">`</span><span class="s2">"</span><span class="p">;</span> <span class="se">\</span>
 		<span class="nb">exit </span>1<span class="p">;</span> <span class="se">\</span>
 	<span class="k">fi</span>
@@ -214,7 +214,7 @@ endif
 
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">foo</span><span class="o">:</span>
 <span class="k">ifneq</span> <span class="nv">($(wildcard ./fizz/$(BUZZ)),)</span>
-	<span class="nf">$(</span><span class="nb">eval</span> <span class="nv">NAME</span><span class="o">=</span><span class="nf">$(</span><span class="nb">shell</span> sh <span class="nt">-c</span> <span class="s2">"grep ..."</span><span class="nf">))</span>
+	<span class="p">$(</span><span class="nb">eval </span><span class="nv">NAME</span><span class="o">=</span><span class="p">$(</span>shell sh <span class="nt">-c</span> <span class="s2">"grep ..."</span><span class="p">))</span>
 <span class="k">endif</span>
 	<span class="c"># ...</span>
 
@@ -259,7 +259,7 @@ TEST_SHELL_PATH = $(SHELL_PATH)
 	<span class="nb">echo</span> <span class="s2">"Must set DEPLOYMENT_ENVIRONMENT"</span>
 	<span class="nb">exit </span>1
 <span class="k">endif</span>
-	<span class="nb">echo</span> <span class="s2">"DEPLOYMENT_ENVIRONMENT: </span><span class="nv">$(DEPLOYMENT_ENVIRONMENT)</span><span class="s2">"</span>
+	<span class="nb">echo</span> <span class="s2">"DEPLOYMENT_ENVIRONMENT: </span><span class="p">$(</span><span class="s2">DEPLOYMENT_ENVIRONMENT</span><span class="p">)</span><span class="s2">"</span>
 
 <span class="nl">deploy</span><span class="o">:</span> <span class="nf">.check-env</span>
 	<span class="c"># do stuff</span>

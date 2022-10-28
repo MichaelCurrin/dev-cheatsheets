@@ -15,7 +15,7 @@
 
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:title" content="Aliases" />
-<meta name="generator" content="Jekyll v4.2.2" />
+<meta name="generator" content="Jekyll v4.3.1" />
 
 <meta property="og:locale" content="en_US" />
 
@@ -181,12 +181,12 @@
 
 <p>For example, from:</p>
 
-<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">{</span>
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
   "dependencies": {
 <span class="gd">-  "foo": "^1.0.0"
 </span><span class="gi">+  "@bar/foo": "^1.0.0"
 </span>  }
-<span class="err">}</span>
+}
 </code></pre></div></div>
 
 <p>This means you have to change all your imports:</p>
@@ -204,12 +204,12 @@
 
 <p>Which makes this change:</p>
 
-<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">{</span>
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
   "dependencies": {
 <span class="gd">-  "foo": "^1.0.0"
 </span><span class="gi">+  "foo": "npm:@buzz/foo@^1.0.0"
 </span>  }
-<span class="err">}</span>
+}
 </code></pre></div></div>
 
 <p>The <code class="language-plaintext highlighter-rouge">npm</code> part indicates to download from the NPM registry. You can also install from GitHub instead.</p>

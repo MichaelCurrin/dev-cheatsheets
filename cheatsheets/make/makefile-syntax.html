@@ -15,7 +15,7 @@
 
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:title" content="Makefile syntax" />
-<meta name="generator" content="Jekyll v4.2.2" />
+<meta name="generator" content="Jekyll v4.3.1" />
 
 <meta property="og:locale" content="en_US" />
 
@@ -265,8 +265,8 @@
   <li><code class="language-plaintext highlighter-rouge">Makefile</code>
     <div class="language-make highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nl">foo</span><span class="o">:</span>
       <span class="err">for</span> <span class="err">bar</span> <span class="err">in</span> <span class="err">my-dir/*;</span> <span class="err">do</span> <span class="err">\</span>
-          <span class="k">export </span><span class="nv">fizz</span><span class="o">=</span><span class="err">$$</span><span class="o">(</span><span class="nb">echo</span> <span class="nv">$$</span>bar<span class="o">)</span> <span class="se">\</span>
-          <span class="nv">$(MAKE)</span> plan<span class="p">;</span> <span class="se">\</span>
+          <span class="k">export </span><span class="nv">fizz</span><span class="o">=</span><span class="p">$$(</span><span class="nb">echo</span> <span class="nv">$$</span>bar<span class="p">)</span> <span class="se">\</span>
+          <span class="p">$(</span>MAKE<span class="p">)</span> plan<span class="p">;</span> <span class="se">\</span>
       <span class="k">done</span>
 </code></pre></div>    </div>
   </li>
@@ -383,10 +383,10 @@ docs := $(wildcard */*.md)
 
 <p>This will search in subdirectories.</p>
 
-<div class="language-make highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">files</span> <span class="o">:=</span> <span class="nf">$(</span><span class="nb">shell</span> find <span class="nb">.</span> <span class="nt">-name</span> <span class="s2">"*.lock"</span><span class="nf">)</span>
+<div class="language-make highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">files</span> <span class="o">:=</span> <span class="p">$(</span>shell find <span class="nb">.</span> <span class="nt">-name</span> <span class="s2">"*.lock"</span><span class="p">)</span>
 
 <span class="nl">a</span><span class="o">:</span>
-	<span class="p">@</span><span class="nb">echo</span> <span class="nv">$(all_files)</span>
+	<span class="p">@</span><span class="nb">echo</span> <span class="p">$(</span>all_files<span class="p">)</span>
 </code></pre></div></div>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make a

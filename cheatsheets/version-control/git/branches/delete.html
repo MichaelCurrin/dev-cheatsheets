@@ -15,7 +15,7 @@
 
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:title" content="Delete" />
-<meta name="generator" content="Jekyll v4.2.2" />
+<meta name="generator" content="Jekyll v4.3.1" />
 
 <meta property="og:locale" content="en_US" />
 
@@ -230,7 +230,7 @@ baz'</span> | xargs git branch <span class="nt">-D</span>
   <li>Push any in-progress work in case you need to recover a branch from the remote. Alteratively, recover a branch using <code class="language-plaintext highlighter-rouge">git reflog</code>.</li>
 </ul>
 
-<h4 id="use-single-grep-and-xargs">Use single grep and xargs</h4>
+<h4 id="approach-using-grep-and-xargs">Approach using grep and xargs</h4>
 
 <p>Based on the ZSH alias <code class="language-plaintext highlighter-rouge">gbda</code>. Which probably stands for “git branch delete all”.</p>
 
@@ -250,7 +250,7 @@ Deleted branch bar (was bd31cf305).
 
 <p>Using <code class="language-plaintext highlighter-rouge">command COMMAND</code> avoids using any aliases you have setup I guess.</p>
 
-<h4 id="use-double-grep">Use double grep</h4>
+<h4 id="approach-using-grep-egrep-and-tr">Approach using grep, egrep, and tr</h4>
 
 <p>Based on another source I found.</p>
 
@@ -277,7 +277,9 @@ Deleted branch bar (was 125f0d2).
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch <span class="nt">-d</span> abc def xyz
 </code></pre></div></div>
 
-<h4 id="aggressive">Aggressive</h4>
+<h4 id="aggressive-simple-delete">Aggressive simple delete</h4>
+
+<p>This approach doesn’t check whether a branch is deleted or not, it just deletes all branches besides the current one and the special branches.</p>
 
 <p>A branch might actually be merged (such as using a PR merge button), but still not be recognized by Git as merged if there was a <strong>squash</strong> merge.</p>
 

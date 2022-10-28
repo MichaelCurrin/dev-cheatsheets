@@ -15,7 +15,7 @@
 
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:title" content="Themes" />
-<meta name="generator" content="Jekyll v4.2.2" />
+<meta name="generator" content="Jekyll v4.3.1" />
 
 <meta property="og:locale" content="en_US" />
 
@@ -165,7 +165,7 @@ $ hugo mod init github.com/<your_user>/<your_project></your_project></your_user>
   </li>
   <li>
     <p>Add the theme’s repo to your <code class="language-plaintext highlighter-rouge">config.toml</code>:</p>
-    <div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">theme</span> <span class="p">=</span> <span class="nn">["github.com/theNewDynamic/gohugo-theme-ananke"]</span>
+    <div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">theme</span> <span class="p">=</span> <span class="p">[</span><span class="s">"github.com/theNewDynamic/gohugo-theme-ananke"</span><span class="p">]</span>
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -177,7 +177,7 @@ $ hugo mod init github.com/<your_user>/<your_project></your_project></your_user>
 
 <p>This creates <code class="language-plaintext highlighter-rouge">.gitsubmodules</code> file:</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">[submodule</span> <span class="err">"themes/a</span><span class="mf">nan</span><span class="err">ke"]</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[submodule "themes/ananke"]</span>
 <span class="py">path</span> <span class="p">=</span> <span class="err">themes/a</span><span class="mf">nan</span><span class="err">ke</span>
 <span class="py">url</span> <span class="p">=</span> <span class="err">https://github.com/budparr/gohugo-theme-a</span><span class="mf">nan</span><span class="err">ke.git</span>
 </code></pre></div></div>
