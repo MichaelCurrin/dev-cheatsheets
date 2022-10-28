@@ -12,7 +12,16 @@ $ sudo apt install git
 
 ### Latest
 
-The default version for Ubuntu is usually old (2 years when I checked once).
+Using Ubuntu and the default source of software might mean the latest version of Git you can install is a few years old.
+
+In this case, only `2.25` was available and not `2.38`.
+
+```console
+$ sudo apt list git -a
+Listing... Done
+git/focal-updates,focal-security 1:2.25.1-1ubuntu3.6 amd64
+git/focal 1:2.25.1-1ubuntu3 amd64
+```
 
 So you get the latest available, use this:
 
@@ -20,9 +29,9 @@ So you get the latest available, use this:
 $ sudo add-apt-repository ppa:git-core/ppa
 ```
 
-List all:
+List all versions you can now install with this command, including `2.38` now.
 
-```sh
+```console
 $ sudo apt list git -a
 Listing... Done
 git/focal,now 1:2.38.1-0ppa1~ubuntu20.04.1 amd64 [installed]
