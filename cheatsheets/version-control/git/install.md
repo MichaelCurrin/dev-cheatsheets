@@ -23,19 +23,25 @@ git/focal-updates,focal-security 1:2.25.1-1ubuntu3.6 amd64
 git/focal 1:2.25.1-1ubuntu3 amd64
 ```
 
+#### 1. Uninstall
+
 Uninstall your current Git, if necessary:
 
 ```sh
 $ sudo apt remove git
 ```
 
-So you get the latest available, add to sources with this:
+#### 2. Add source
+
+Get the latest available, add to sources with this:
 
 ```sh
 $ sudo add-apt-repository ppa:git-core/ppa
 ```
 
-List all versions you can now install with this command, including `2.38` now.
+You not need to add run `sudo apt update`.
+
+Now list all versions you can now install with this command, including `2.38` now at the top in this exmaple:
 
 ```console
 $ sudo apt list git -a
@@ -44,6 +50,8 @@ git/focal,now 1:2.38.1-0ppa1~ubuntu20.04.1 amd64 [installed]
 git/focal-updates,focal-security 1:2.25.1-1ubuntu3.6 amd64
 git/focal 1:2.25.1-1ubuntu3 amd64
 ```
+
+#### 3. Install
 
 The one at the top of the list will be installed with a simple install.
 
