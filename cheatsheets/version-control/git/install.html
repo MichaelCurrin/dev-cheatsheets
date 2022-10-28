@@ -174,21 +174,29 @@
 
 <h3 id="latest">Latest</h3>
 
-<p>The default version for Ubuntu is usually old (2 years when I checked once).</p>
+<p>Using Ubuntu and the default source of software might mean the latest version of Git you can install is a few years old.</p>
+
+<p>In this case, only <code class="language-plaintext highlighter-rouge">2.25</code> was available and not <code class="language-plaintext highlighter-rouge">2.38</code>.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>apt list git <span class="nt">-a</span>
+<span class="go">Listing... Done
+git/focal-updates,focal-security 1:2.25.1-1ubuntu3.6 amd64
+git/focal 1:2.25.1-1ubuntu3 amd64
+</span></code></pre></div></div>
 
 <p>So you get the latest available, use this:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>add-apt-repository ppa:git-core/ppa
 </code></pre></div></div>
 
-<p>List all:</p>
+<p>List all versions you can now install with this command, including <code class="language-plaintext highlighter-rouge">2.38</code> now.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt list git <span class="nt">-a</span>
-Listing... Done
-git/focal,now 1:2.38.1-0ppa1~ubuntu20.04.1 amd64 <span class="o">[</span>installed]
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>apt list git <span class="nt">-a</span>
+<span class="go">Listing... Done
+git/focal,now 1:2.38.1-0ppa1~ubuntu20.04.1 amd64 [installed]
 git/focal-updates,focal-security 1:2.25.1-1ubuntu3.6 amd64
 git/focal 1:2.25.1-1ubuntu3 amd64
-</code></pre></div></div>
+</span></code></pre></div></div>
 
 <p>The first one will be installed with a simple install.</p>
 
