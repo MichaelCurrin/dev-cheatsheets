@@ -60,6 +60,18 @@ e.g.
 $ sudo apt install bar
 ```
 
+Install a target version:
+
+```sh
+$ sudo apt install PACKAGE=VERSION
+```
+
+e.g.
+
+```sh
+$ sudo apt install git=1:2.38.1-0ppa1~ubuntu20.04.1
+```
+
 ### Remove package
 
 ```sh
@@ -148,6 +160,16 @@ python-acme-doc/focal,focal 1.1.0-1 all
 python-agate-doc/focal,focal 1.6.0-3 all
 python-agatedbf-doc/focal,focal 0.2.0-2 all
 ..
+```
+
+There might be version available from different sources:
+
+```console
+$ sudo apt list git -a
+Listing... Done
+git/focal,now 1:2.38.1-0ppa1~ubuntu20.04.1 amd64 [installed]
+git/focal-updates,focal-security 1:2.25.1-1ubuntu3.6 amd64
+git/focal 1:2.25.1-1ubuntu3 amd64
 ```
 
 
