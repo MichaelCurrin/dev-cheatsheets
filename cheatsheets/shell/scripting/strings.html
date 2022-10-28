@@ -737,6 +737,39 @@ answer=${ans^}
 echo "Your answer is $answer."
 </code></pre></div></div>
 
+<h2 id="remove-newlines">Remove newlines</h2>
+
+<p>Basic:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'a
+b
+c'</span>
+<span class="c"># a</span>
+<span class="c"># b</span>
+<span class="c"># c</span>
+</code></pre></div></div>
+
+<p>Use <code class="language-plaintext highlighter-rouge">tr</code> to remove newlines:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'a
+b
+c'</span> | <span class="nb">tr</span> <span class="nt">-d</span> <span class="s1">'\n'</span>
+<span class="c"># abc</span>
+</code></pre></div></div>
+
+<p>Or <code class="language-plaintext highlighter-rouge">xargs</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'a
+b
+c'</span> | xargs
+<span class="c"># a b c</span>
+</code></pre></div></div>
+
+<p>You could use either approach when passing values to another command, like where you want to take output over multiple lines from <code class="language-plaintext highlighter-rouge">command_b</code> below and send it as arguments to <code class="language-plaintext highlighter-rouge">command_a</code>.</p>
+
+<p>```sh
+command_a $(command_b | xargs)</p>
+
         
     </div>
 </article>

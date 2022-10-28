@@ -645,3 +645,39 @@ read -p "Do you like music? " ans
 answer=${ans^}
 echo "Your answer is $answer."
 ```
+
+## Remove newlines
+
+Basic:
+
+```sh
+$ echo 'a
+b
+c'
+# a
+# b
+# c
+```
+
+Use `tr` to remove newlines:
+
+```sh
+echo 'a
+b
+c' | tr -d '\n'
+# abc
+```
+
+Or `xargs`.
+
+```sh
+echo 'a
+b
+c' | xargs
+# a b c
+```
+
+You could use either approach when passing values to another command, like where you want to take output over multiple lines from `command_b` below and send it as arguments to `command_a`.
+
+```sh
+command_a $(command_b | xargs)
