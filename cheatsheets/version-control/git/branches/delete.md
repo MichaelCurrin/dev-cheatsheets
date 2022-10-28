@@ -60,7 +60,7 @@ Note on accuracy:
 - Run `git fetch` (or `git pull`) to make sure you are up to date with the remote.
 - Push any in-progress work in case you need to recover a branch from the remote. Alteratively, recover a branch using `git reflog`.
     
-#### Use single grep and xargs
+#### Approach using grep and xargs
     
 Based on the ZSH alias `gbda`. Which probably stands for "git branch delete all".
 
@@ -82,7 +82,7 @@ Deleted branch bar (was bd31cf305).
 
 Using `command COMMAND` avoids using any aliases you have setup I guess.
     
-#### Use double grep
+#### Approach using grep, egrep, and tr
     
 Based on another source I found.
     
@@ -112,7 +112,9 @@ Equivalent to:
 $ git branch -d abc def xyz
 ```
    
-#### Aggressive
+#### Aggressive simple delete
+
+This approach doesn't check whether a branch is deleted or not, it just deletes all branches besides the current one and the special branches.
 
 A branch might actually be merged (such as using a PR merge button), but still not be recognized by Git as merged if there was a **squash** merge. 
 
