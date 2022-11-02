@@ -51,6 +51,14 @@ https://httpbin.org/get?key2=value2&key1=value1
 ```
 
 
+## Data
+
+```python
+data = {'abc': 123}
+requests.post(url, data=data)
+```
+
+
 ## Headers
 
 Custom user-agent based on the docs:
@@ -58,11 +66,14 @@ Custom user-agent based on the docs:
 ```python 
 url = 'https://api.github.com/some/endpoint'
 headers = {'user-agent': 'my-app/0.0.1'}
+
 requests.get(url, headers=headers)
 ```
 
 
 ## Auth
+
+### Username and password
 
 ```python
 url = 'https://api.github.com/user'
@@ -71,6 +82,15 @@ auth = ('my-username', 'my-password')
 resp = requests.get(url, auth=auth)
 ```
 
+### Token
+
+```python
+url = '...'
+token = 'abcdef1234'
+headers = {"Authorization": f"Bearer {token}"}
+
+requests.post(url, headers=headers)
+```
 
 ## Sessions
 
