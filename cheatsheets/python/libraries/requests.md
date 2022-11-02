@@ -71,7 +71,7 @@ requests.get(url, headers=headers)
 ```
 
 
-## Auth
+## Authorization
 
 ### Username and password
 
@@ -84,6 +84,8 @@ resp = requests.get(url, auth=auth)
 
 ### Token
 
+Using [Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization).
+
 ```python
 url = '...'
 token = 'abcdef1234'
@@ -91,6 +93,7 @@ headers = {"Authorization": f"Bearer {token}"}
 
 requests.post(url, headers=headers)
 ```
+
 
 ## Sessions
 
@@ -108,7 +111,7 @@ r.text
 # '{"cookies": {"sessioncookie": "123456789"}}'
 ```
 
-Set attributes on the session and also on the request.
+Set attributes on the session and also on the current request:
 
 ```python
 s = requests.Session()
