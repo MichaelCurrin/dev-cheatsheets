@@ -163,7 +163,47 @@
 
     <div class="post-content">
         
-            <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">declare</span> <span class="nt">-A</span> name
+            <h2 id="syntax">Syntax</h2>
+
+<p>Create:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">declare</span> <span class="nt">-A</span> MY_ARRAY
+</code></pre></div></div>
+
+<p>Update:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MY_ARRAY[abc]<span class="o">=</span>def
+</code></pre></div></div>
+<p>Retrieve:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo </span>MY_ARRAY[abc]
+<span class="c"># def</span>
+</code></pre></div></div>
+
+<h2 id="examples">Examples</h2>
+
+<p>Define and then set values:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">declare</span> <span class="nt">-A</span> MY_ENVS
+MY_ENVS[d]<span class="o">=</span>develop
+MY_ENVS[s]<span class="o">=</span>stage
+MY_ENVS[p]<span class="o">=</span>production
+</code></pre></div></div>
+
+<p>Define and then set values in one line:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">declare</span> <span class="nt">-A</span> <span class="nv">MY_ENVS</span><span class="o">=([</span>d]<span class="o">=</span>develop <span class="o">[</span>s]<span class="o">=</span>stage <span class="o">[</span>p]<span class="o">=</span>production<span class="o">)</span>
+</code></pre></div></div>
+
+<p>Sample usage to lookup:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="k">${</span><span class="nv">MY_ENVS</span><span class="p">[d]</span><span class="k">}</span>
+<span class="c"># develop</span>
+
+<span class="nv">ENV</span><span class="o">=</span><span class="s1">'d'</span>
+<span class="nv">TARGET_ENV</span><span class="o">=</span><span class="k">${</span><span class="nv">MY_ENVS</span><span class="p">[</span><span class="nv">$ENV</span><span class="p">]</span><span class="k">}</span>
+<span class="nb">echo</span> <span class="nv">$TARGET_ENV</span>
+<span class="c"># develop</span>
 </code></pre></div></div>
 
         
