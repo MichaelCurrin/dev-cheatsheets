@@ -165,20 +165,55 @@
         
             <h2 id="syntax">Syntax</h2>
 
-<p>Create:</p>
+<h3 id="create">Create</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">declare</span> <span class="nt">-A</span> MY_ARRAY
 </code></pre></div></div>
 
-<p>Update:</p>
+<h3 id="update">Update</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MY_ARRAY[abc]<span class="o">=</span>def
 </code></pre></div></div>
-<p>Retrieve:</p>
+
+<p>You can have spaces in a key.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MY_ARRAY[abc xyz]<span class="o">=</span>def
+</code></pre></div></div>
+
+<h3 id="retrieve">Retrieve</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo </span>MY_ARRAY[abc]
 <span class="c"># def</span>
 </code></pre></div></div>
+
+<h3 id="get-keys">Get keys</h3>
+
+<p>Show all keys.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">declare</span> <span class="nt">-A</span> <span class="nv">MYMAP</span><span class="o">=(</span> <span class="o">[</span>foo]<span class="o">=</span>bar <span class="o">[</span>fizz buzz]<span class="o">=</span>123 <span class="o">)</span>
+<span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="p">!MYMAP[@]</span><span class="k">}</span><span class="s2">"</span>
+<span class="go">foo fizz buzz
+</span></code></pre></div></div>
+
+<p>Loop through all keys.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="k">for </span>K <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="p">!MYMAP[@]</span><span class="k">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do </span><span class="nb">echo</span> <span class="nv">$K</span><span class="p">;</span> <span class="k">done</span>
+<span class="go">foo
+fizz buzz
+</span></code></pre></div></div>
+
+<h3 id="values">Values</h3>
+
+<p>Loop through all values.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="k">for </span>V <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="nv">MYMAP</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do </span><span class="nb">echo</span> <span class="nv">$V</span><span class="p">;</span> <span class="k">done</span>
+<span class="go">bar
+123
+</span></code></pre></div></div>
+
+<h2 id="deleting-values">Deleting values</h2>
+
+<p>See <a href="https://www.artificialworlds.net/blog/2012/10/17/bash-associative-array-examples/">Bash associative array examples</a>.</p>
 
 <h2 id="examples">Examples</h2>
 
