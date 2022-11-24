@@ -33,6 +33,8 @@ Some SVG images:
 
 #### Result
 
+_Note - this works fine on GitHub [here](https://github.com/MichaelCurrin/dev-cheatsheets/blob/master/cheatsheets/markdown/alignment.md#result) but not in Jekyll - it just appears as plain text_
+
 <div align="center">
   
 My _Markdown_ text.
