@@ -1,9 +1,10 @@
 # Alignment
 
+This page is specifically for styling Markdown using HTML attributes and without using CSS. Since on GitHub for Markdown, CSS gets ignored.
 
-Using markdown on GitHub, you can't styling with CSS. It gets ignored. If you are using Jekyll or similar to process you markdown as HTML, then this page isn't as relevant, as you an use CSS there.
+Here we use the `align` HTML attribute - on a `div` tag, `p` tag or `img` tag. With value as `"center"` or `"right"`.
 
-But, you can use the `align` attribute, on a `div` tag, `p` tag or `img` tag. With value as `"center"` or `"right"`.
+If you use a tool to convert HTML to CSS, such as Jekyll, you can choose between this approach or using CSS (such as a CSS class to align center).
 
 
 ## Examples
