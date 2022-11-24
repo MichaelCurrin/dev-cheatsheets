@@ -2,7 +2,7 @@
 
 Check for a string in another string.
 
-Remember that methods are usually case-sensitive.
+Remember that methods are usually case-sensitive. To do case-insensitive searches, use `.toLowerCase()` first.
 
 
 ## Related
@@ -10,6 +10,16 @@ Remember that methods are usually case-sensitive.
 - [String methods cheatsheet][]
 
 [String methods cheatsheet]: {% link cheatsheets/javascript/general/strings/methods.md %}
+
+
+## Check if string contains a value
+
+```javascript
+const x = 'abc'
+
+x.includes('b')
+// true
+```
 
 
 ## Get index of a value
@@ -23,6 +33,11 @@ x.indexOf('z')
 // -1
 ```
 
+```javascript
+'Blue Whale'.indexOf('Blue') !== -1
+// true
+```
+
 You'll get the same result with `.search()`:
 
 ```javascript
@@ -33,33 +48,13 @@ x.search('z')
 ```
 
 
-## Check if string contains a value
-
-A boolean of whether there is match or not.
-
-```javascript
-'Blue Whale'.indexOf('Blue') !== -1
-// true
-
-'Blue Whale'.indexOf('Bloe') !== -1
-// false
-```
-
-Do a case-insensitive search:
-
-```javascript
-'Blue Whale'.toLowerCase().indexOf('blue') !== -1
-// true
-```
-
-
 ## Count occurences
 
 Based on MDN docs.
 
-Use `indexOf()` to count occurrences of a letter in a string.
+Use `indexOf()` to count occurrences of a letter in a string:
 
-```
+```javascript
 const str = 'To be, or not to be, that is the question.'
 let count = 0
 let position = str.indexOf('e')
@@ -73,7 +68,7 @@ console.log(count)
 // 4
 ```
 
-Contrast with Python:
+Contrast with Python and built-in method:
 
 ```python
 >>> x = 'abcabc'
