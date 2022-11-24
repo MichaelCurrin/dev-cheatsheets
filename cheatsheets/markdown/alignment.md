@@ -32,7 +32,7 @@ Some SVG images:
 
 <div align="center">
   
-My _Mrkdown_ text.
+My _Markdown_ text.
 
 More text.
 
