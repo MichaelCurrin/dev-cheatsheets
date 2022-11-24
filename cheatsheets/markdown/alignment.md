@@ -1,4 +1,7 @@
-# Alignment
+---
+title: Alignment
+description: How to align content in a Markdown file without using CSS
+---
 
 CSS will get ignored in a Markdown file on GitHub. So this page is specifically for styling Markdown using HTML attributes instead.
 
