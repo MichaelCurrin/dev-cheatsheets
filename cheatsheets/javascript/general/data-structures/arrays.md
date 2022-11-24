@@ -20,7 +20,7 @@ myArray.length
 // 4
 ```
 
-### Get elemeny by index
+### Get element by index
 
 ```javascript
 myArray[index]
@@ -249,6 +249,29 @@ for (const [index, value] of Object.entries(myArray)) {
 ```
 
 
+## Contains
+
+### Check if array contains a value
+
+```javascript
+const x = ['abc', 'def']
+
+x.includes('abc')
+// true
+```
+
+### Get index of a value
+
+```javascript
+const x = ['abc', 'def']
+
+x.indexOf('abc')
+// 0
+x.indexOf('abcd')
+// -1
+```
+
+
 ## Array and spread operator
 
 ### Duplicate an array
@@ -278,7 +301,7 @@ Array.from(mySet)
 
 ### Treat iterable as an array
 
-If you need to convert a document selection to an array, so you can use array methods on it like `.map`.
+Process to follow if you need to convert a document selection to an array so you can use array methods on it like `.map`.
 
 ```javascript
 const divs = document.getElementsByTagName('div')
@@ -286,7 +309,7 @@ const divs = document.getElementsByTagName('div')
 //   divs.map
 //   divs.forEach
 
-// Convert to an array.
+// Convert it to an array.
 const divsArr = [...divs]
 
 divsArr[0]

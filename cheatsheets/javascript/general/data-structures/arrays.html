@@ -190,7 +190,7 @@
 <span class="c1">// 4</span>
 </code></pre></div></div>
 
-<h3 id="get-elemeny-by-index">Get elemeny by index</h3>
+<h3 id="get-element-by-index">Get element by index</h3>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myArray</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
 </code></pre></div></div>
@@ -393,6 +393,26 @@
 <span class="c1">// 2 C</span>
 </code></pre></div></div>
 
+<h2 id="contains">Contains</h2>
+
+<h3 id="check-if-array-contains-a-value">Check if array contains a value</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">def</span><span class="dl">'</span><span class="p">]</span>
+
+<span class="nx">x</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">)</span>
+<span class="c1">// true</span>
+</code></pre></div></div>
+
+<h3 id="get-index-of-a-value">Get index of a value</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">def</span><span class="dl">'</span><span class="p">]</span>
+
+<span class="nx">x</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">)</span>
+<span class="c1">// 0</span>
+<span class="nx">x</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">abcd</span><span class="dl">'</span><span class="p">)</span>
+<span class="c1">// -1</span>
+</code></pre></div></div>
+
 <h2 id="array-and-spread-operator">Array and spread operator</h2>
 
 <h3 id="duplicate-an-array">Duplicate an array</h3>
@@ -420,14 +440,14 @@
 
 <h3 id="treat-iterable-as-an-array">Treat iterable as an array</h3>
 
-<p>If you need to convert a document selection to an array, so you can use array methods on it like <code class="language-plaintext highlighter-rouge">.map</code>.</p>
+<p>Process to follow if you need to convert a document selection to an array so you can use array methods on it like <code class="language-plaintext highlighter-rouge">.map</code>.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">divs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">// Not available:</span>
 <span class="c1">//   divs.map</span>
 <span class="c1">//   divs.forEach</span>
 
-<span class="c1">// Convert to an array.</span>
+<span class="c1">// Convert it to an array.</span>
 <span class="kd">const</span> <span class="nx">divsArr</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">divs</span><span class="p">]</span>
 
 <span class="nx">divsArr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
