@@ -177,13 +177,21 @@
         
             <p>Check for a string in another string.</p>
 
-<p>Remember that methods are usually case-sensitive.</p>
+<p>Remember that methods are usually case-sensitive. To do case-insensitive searches, use <code class="language-plaintext highlighter-rouge">.toLowerCase()</code> first.</p>
 
 <h2 id="related">Related</h2>
 
 <ul>
   <li><a href="/dev-cheatsheets/cheatsheets/javascript/general/strings/methods.html">String methods cheatsheet</a></li>
 </ul>
+
+<h2 id="check-if-string-contains-a-value">Check if string contains a value</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span>
+
+<span class="nx">x</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">)</span>
+<span class="c1">// true</span>
+</code></pre></div></div>
 
 <h2 id="get-index-of-a-value">Get index of a value</h2>
 
@@ -195,6 +203,10 @@
 <span class="c1">// -1</span>
 </code></pre></div></div>
 
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">Blue Whale</span><span class="dl">'</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Blue</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="c1">// true</span>
+</code></pre></div></div>
+
 <p>You’ll get the same result with <code class="language-plaintext highlighter-rouge">.search()</code>:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">x</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="dl">'</span><span class="s1">cd</span><span class="dl">'</span><span class="p">)</span>
@@ -203,43 +215,26 @@
 <span class="c1">// -1</span>
 </code></pre></div></div>
 
-<h2 id="check-if-string-contains-a-value">Check if string contains a value</h2>
-
-<p>A boolean of whether there is match or not.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">Blue Whale</span><span class="dl">'</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Blue</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span>
-<span class="c1">// true</span>
-
-<span class="dl">'</span><span class="s1">Blue Whale</span><span class="dl">'</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Bloe</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span>
-<span class="c1">// false</span>
-</code></pre></div></div>
-
-<p>Do a case-insensitive search:</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">Blue Whale</span><span class="dl">'</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">blue</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span>
-<span class="c1">// true</span>
-</code></pre></div></div>
-
 <h2 id="count-occurences">Count occurences</h2>
 
 <p>Based on MDN docs.</p>
 
-<p>Use <code class="language-plaintext highlighter-rouge">indexOf()</code> to count occurrences of a letter in a string.</p>
+<p>Use <code class="language-plaintext highlighter-rouge">indexOf()</code> to count occurrences of a letter in a string:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const str = 'To be, or not to be, that is the question.'
-let count = 0
-let position = str.indexOf('e')
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">To be, or not to be, that is the question.</span><span class="dl">'</span>
+<span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="kd">let</span> <span class="nx">position</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">e</span><span class="dl">'</span><span class="p">)</span>
 
-while (position !== -1) {
-  count++
-  position = str.indexOf('e', position + 1)
-}
+<span class="k">while</span> <span class="p">(</span><span class="nx">position</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">count</span><span class="o">++</span>
+  <span class="nx">position</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">e</span><span class="dl">'</span><span class="p">,</span> <span class="nx">position</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">}</span>
 
-console.log(count)
-// 4
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span>
+<span class="c1">// 4</span>
 </code></pre></div></div>
 
-<p>Contrast with Python:</p>
+<p>Contrast with Python and built-in method:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="s">'abcabc'</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="s">'a'</span><span class="p">)</span>
