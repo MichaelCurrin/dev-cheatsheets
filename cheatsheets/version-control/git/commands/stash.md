@@ -76,15 +76,63 @@ Create stash.
 $ git stash
 ```
 
-### Untracked
+### Stash selectively
 
-Stash everything, tracked or not.
+Based on [SO](https://stackoverflow.com/questions/5506339/how-can-i-git-stash-a-specific-file).
+
+#### Stash by path
+
+From Git 2.13:
+
+```sh
+$ git stash push -m MESSAGE PATH
+```
+
+e.g.
+
+```sh
+$ git stash push -m welcome_cart abc.txt
+```
+
+#### Stash staged
+
+Stage files to stash.
+
+```sh
+git add abc.txt def.txt
+```
+
+Then stash them, ignoring unstaged.
+
+```sh
+$ git stash --staged
+```
+
+#### Stage unstaged
+
+Stage files to ignore.
+
+```sh
+git add abc.txt def.txt
+```
+
+Then stash everything that is _not_ staged.
+
+```sh
+$ git stash --keep-index
+```
+
+#### Everything
+
+By default, stashing will ignore files not tracked by Git.
+
+Stash everything, tracked and not tracked:
 
 ```sh
 $ git stash --include-untracked
 ```
 
-Or use `add` if you need to include untracked files then stash.
+Or use `add` so Git knows about the files (without committing them), then do a plain stash.
 
 ```sh
 $ git add .

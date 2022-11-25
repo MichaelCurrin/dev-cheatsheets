@@ -242,14 +242,56 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash
 </code></pre></div></div>
 
-<h3 id="untracked">Untracked</h3>
+<h3 id="stash-selectively">Stash selectively</h3>
 
-<p>Stash everything, tracked or not.</p>
+<p>Based on <a href="https://stackoverflow.com/questions/5506339/how-can-i-git-stash-a-specific-file">SO</a>.</p>
+
+<h4 id="stash-by-path">Stash by path</h4>
+
+<p>From Git 2.13:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash push <span class="nt">-m</span> MESSAGE PATH
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash push <span class="nt">-m</span> welcome_cart abc.txt
+</code></pre></div></div>
+
+<h4 id="stash-staged">Stash staged</h4>
+
+<p>Stage files to stash.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add abc.txt def.txt
+</code></pre></div></div>
+
+<p>Then stash them, ignoring unstaged.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash <span class="nt">--staged</span>
+</code></pre></div></div>
+
+<h4 id="stage-unstaged">Stage unstaged</h4>
+
+<p>Stage files to ignore.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add abc.txt def.txt
+</code></pre></div></div>
+
+<p>Then stash everything that is <em>not</em> staged.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash <span class="nt">--keep-index</span>
+</code></pre></div></div>
+
+<h4 id="everything">Everything</h4>
+
+<p>By default, stashing will ignore files not tracked by Git.</p>
+
+<p>Stash everything, tracked and not tracked:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash <span class="nt">--include-untracked</span>
 </code></pre></div></div>
 
-<p>Or use <code class="language-plaintext highlighter-rouge">add</code> if you need to include untracked files then stash.</p>
+<p>Or use <code class="language-plaintext highlighter-rouge">add</code> so Git knows about the files (without committing them), then do a plain stash.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git add <span class="nb">.</span>
 <span class="nv">$ </span>git stash
