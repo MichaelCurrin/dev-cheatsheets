@@ -498,7 +498,7 @@ psql <span class="nt">-U</span> postgres DB_NAME &lt; db.sql
 <span class="nv">$ </span>pg_dump <span class="nt">-Fc</span> db_name <span class="o">&gt;</span> db_name.pgdump
 </code></pre></div></div>
 
-<p>See <a href="https://www.postgresql.org/docs/current/app-pgdump.html">pg_dump</a> docs.</p>
+<p>See the <a href="https://www.postgresql.org/docs/current/app-pgdump.html">pg_dump</a> docs.</p>
 
 <blockquote>
   <p>pg_dump — extract a PostgreSQL database into a script file or other archive file</p>
@@ -510,7 +510,7 @@ psql <span class="nt">-U</span> postgres DB_NAME &lt; db.sql
 </code></pre></div></div>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">-F, --format FORMAT</code> - The default format is <code class="language-plaintext highlighter-rouge">p</code> or <code class="language-plaintext highlighter-rouge">plain</code> for plain text SQL. Use <code class="language-plaintext highlighter-rouge">c</code> or <code class="language-plaintext highlighter-rouge">custom</code> as a compressed archive which is the most flexible option. Also <code class="language-plaintext highlighter-rouge">d</code> or <code class="language-plaintext highlighter-rouge">directory</code> and <code class="language-plaintext highlighter-rouge">t</code> or <code class="language-plaintext highlighter-rouge">tar</code> are options. e.g. <code class="language-plaintext highlighter-rouge">-Fc</code> (note no equals sign) or <code class="language-plaintext highlighter-rouge">--format=custom</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">-F, --format FORMAT</code> - The default format is <code class="language-plaintext highlighter-rouge">p</code> or <code class="language-plaintext highlighter-rouge">plain</code> for plain text SQL. Use <code class="language-plaintext highlighter-rouge">c</code> or <code class="language-plaintext highlighter-rouge">custom</code> as a <strong>compressed archive</strong> which is the most flexible option. Also <code class="language-plaintext highlighter-rouge">d</code> or <code class="language-plaintext highlighter-rouge">directory</code> for a directory of files, and <code class="language-plaintext highlighter-rouge">t</code> or <code class="language-plaintext highlighter-rouge">tar</code> are options. e.g. <code class="language-plaintext highlighter-rouge">-Fc</code> (note no equals sign) or <code class="language-plaintext highlighter-rouge">--format=custom</code>.</li>
   <li><code class="language-plaintext highlighter-rouge">-f, --file PATH</code> - path to write to, otherwise will write to stdout.</li>
 </ul>
 
