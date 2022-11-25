@@ -23,7 +23,11 @@ logo: postgresql
 Choose an option below.
 
 - Go to [Download](https://www.postgresql.org/download/) page.
-- Follow the [Ubuntu Postgres download instructons](https://www.postgresql.org/download/linux/ubuntu/). Make sure you install `wget` first.
+- Follow the [Ubuntu Postgres download instructons](https://www.postgresql.org/download/linux/ubuntu/). 
+    Make sure you install `ls_release` and `wget` first if needed.
+    ```sh
+    $ sudo apt-get install lsb-release wget -y
+    ```
     ```sh
     # Create the file repository configuration:
     sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
