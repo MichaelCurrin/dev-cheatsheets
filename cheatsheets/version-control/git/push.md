@@ -62,7 +62,7 @@ $ git push -d origin my-branch
 
 ## Trouble shooting
 
-I found when I had issues pushing.
+I found when I had issues pushing, even though my connection was fine and I already tried a force-push.
 
 ```
 client_loop: send disconnect: Broken pipe
@@ -70,8 +70,11 @@ send-pack: unexpected disconnect while reading sideband packet
 fatal: the remote end hung up unexpectedly
 ```
 
-That this worked.
+Then this worked to fix it:
 
 ```sh
 $ git push origin HEAD:my-branch
 ```
+
+Afterwards I only had to do the plain `git push` as usual.
+

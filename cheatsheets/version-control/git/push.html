@@ -209,17 +209,19 @@
 
 <h2 id="trouble-shooting">Trouble shooting</h2>
 
-<p>I found when I had issues pushing.</p>
+<p>I found when I had issues pushing, even though my connection was fine and I already tried a force-push.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>client_loop: send disconnect: Broken pipe
 send-pack: unexpected disconnect while reading sideband packet
 fatal: the remote end hung up unexpectedly
 </code></pre></div></div>
 
-<p>That this worked.</p>
+<p>Then this worked to fix it:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git push origin HEAD:my-branch
 </code></pre></div></div>
+
+<p>Afterwards I only had to do the plain <code class="language-plaintext highlighter-rouge">git push</code> as usual.</p>
 
         
     </div>
