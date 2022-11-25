@@ -375,7 +375,7 @@ $ # OR
 $ pg_dump -Fc db_name > db_name.pgdump
 ```
 
-See [pg_dump][] docs.
+See the [pg_dump][] docs.
 
 [pg_dump]: https://www.postgresql.org/docs/current/app-pgdump.html
 
@@ -387,7 +387,7 @@ See [pg_dump][] docs.
 pg_dump [connection-option...] [option...] [dbname]
 ```
 
-- `-F, --format FORMAT` - The default format is `p` or `plain` for plain text SQL. Use `c` or `custom` as a compressed archive which is the most flexible option. Also `d` or `directory` and `t` or `tar` are options. e.g. `-Fc` (note no equals sign) or `--format=custom`.
+- `-F, --format FORMAT` - The default format is `p` or `plain` for plain text SQL. Use `c` or `custom` as a **compressed archive** which is the most flexible option. Also `d` or `directory` for a directory of files, and `t` or `tar` are options. e.g. `-Fc` (note no equals sign) or `--format=custom`.
 - `-f, --file PATH` - path to write to, otherwise will write to stdout.
 
 e.g.
