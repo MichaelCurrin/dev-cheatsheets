@@ -28,5 +28,5 @@ $ kubectl get pods --namespace=my-namespace
 Or set it globally for the context.
 
 ```sh
-$ kubectl config set-context --current --namespace=my_namespace
+$ kubectl config set-context --current --namespace=my-namespace
 ```
