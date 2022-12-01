@@ -36,10 +36,13 @@ $ sudo apt remove git
 Get the latest available, add to sources with this:
 
 ```sh
+$ sudo apt install software-properties-common
 $ sudo add-apt-repository ppa:git-core/ppa
 ```
 
-You not need to add run `sudo apt update`.
+The first step is to make `add-apt-repository` available on Debian but it should be included on Ubuntu already, from my experience using both.
+
+PS. You do _not_ need to add run `sudo apt update`.
 
 Now list all versions you can now install with this command, including `2.38` now at the top in this exmaple:
 
