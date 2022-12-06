@@ -179,10 +179,16 @@
   <p>YAML is a human-friendly data serialization language for all programming languages. YAML is most often used for configuration files, but it’s also used for data exchange</p>
 </blockquote>
 
-<p>Use the PyYAML library.</p>
+<h2 id="install-package">Install package</h2>
+
+<p>Use the PyYAML package.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>PyYAML
 </code></pre></div></div>
+
+<h2 id="read">Read</h2>
+
+<h3 id="from-file">From file</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">yaml</span>
 
@@ -200,7 +206,28 @@
 <span class="n">data</span><span class="p">[</span><span class="s">'def'</span><span class="p">][</span><span class="s">'x'</span><span class="p">]</span>
 </code></pre></div></div>
 
-<p>See also <a href="https://python.land/data-processing/python-yaml">article</a>.</p>
+<h3 id="from-string">From string</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">contents</span> <span class="o">=</span> <span class="s">"""
+abc:
+  d: 1000
+  e: 10
+"""</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">yaml</span><span class="p">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="write">Write</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">yaml</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'abc'</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'out_file.yaml'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">yaml</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</code></pre></div></div>
 
         
     </div>
