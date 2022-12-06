@@ -2,11 +2,17 @@
 
 > YAML is a human-friendly data serialization language for all programming languages. YAML is most often used for configuration files, but it’s also used for data exchange
 
-Use the PyYAML library.
+## Install package
+
+Use the PyYAML package.
 
 ```sh
 $ pip install PyYAML
 ```
+
+## Read
+
+### From file
 
 ```python
 import yaml
@@ -26,5 +32,29 @@ data['abc'][0]
 data['def']['x']
 ```
 
+### From string
 
-See also [article](https://python.land/data-processing/python-yaml).
+```python
+contents = """
+abc:
+  d: 1000
+  e: 10
+"""
+
+data = yaml.safe_load(contents)
+```
+
+
+
+## Write
+
+```python
+import yaml
+
+output = {
+  'abc': [100, 10]
+}
+
+with open('out_file.yaml', 'w') as f:
+    yaml.dump(data, f)
+```
