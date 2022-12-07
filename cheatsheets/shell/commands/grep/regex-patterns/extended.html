@@ -209,19 +209,37 @@
 
 <h2 id="examples">Examples</h2>
 
-<p>I think <code class="language-plaintext highlighter-rouge">+</code> is something in particular that only works in extended grep.</p>
+<p>Find numbers:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>egrep <span class="s1">'[0-9]'</span>
+</code></pre></div></div>
+
+<p>Note that some versions of egrep will allow <code class="language-plaintext highlighter-rouge">\d</code> but not on WSL, from my testing.</p>
+
+<p>Find alphabetic characters:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>egrep <span class="s1">'^[a-zA-Z]+$'</span> myfile.txt
+</code></pre></div></div>
+
+<p>Find alphanumeric characters:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>egrep <span class="s1">'My prefix \w\w\w\w'</span>
+</code></pre></div></div>
+
+<p>Find words:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>egrep <span class="s2">"support|help|windows"</span> myfile.txt
 </code></pre></div></div>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>egrep <span class="s1">'^[a-zA-Z]+$'</span> myfile.txt
-</code></pre></div></div>
+<p>Add <code class="language-plaintext highlighter-rouge">-c</code> for count.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>egrep <span class="nt">-c</span> <span class="s1">'^begin|end$'</span> myfile.txt
 </code></pre></div></div>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>egrep <span class="s1">'^[a-z -]+:'</span> Makefile
 </code></pre></div></div>
+
+<p>Find Go version in a Go module file.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>egrep <span class="s1">'go \d+\.\d+'</span> go.mod
 go 1.15
