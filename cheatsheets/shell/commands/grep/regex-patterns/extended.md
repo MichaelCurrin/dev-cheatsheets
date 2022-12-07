@@ -24,15 +24,33 @@ Or `grep -e` in place of `egrep`.
 
 ## Examples
 
-I think `+` is something in particular that only works in extended grep.
+Find numbers:
+
+```sh
+$ egrep '[0-9]'
+```
+
+Note that some versions of egrep will allow `\d` but not on WSL, from my testing.
+
+Find alphabetic characters:
+
+```sh
+$ egrep '^[a-zA-Z]+$' myfile.txt
+```
+
+Find alphanumeric characters:
+
+```sh
+$ egrep 'My prefix \w\w\w\w'
+```
+
+Find words:
 
 ```sh
 $ egrep "support|help|windows" myfile.txt
 ```
 
-```sh
-$ egrep '^[a-zA-Z]+$' myfile.txt
-```
+Add `-c` for count.
 
 ```sh
 $ egrep -c '^begin|end$' myfile.txt
@@ -41,6 +59,8 @@ $ egrep -c '^begin|end$' myfile.txt
 ```sh
 $ egrep '^[a-z -]+:' Makefile
 ```
+
+Find Go version in a Go module file.
 
 ```sh
 $ egrep 'go \d+\.\d+' go.mod
