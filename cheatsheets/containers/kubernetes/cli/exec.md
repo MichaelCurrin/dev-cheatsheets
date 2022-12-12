@@ -1,4 +1,4 @@
-# exec
+# exec command
 
 ## Interactive
 
@@ -13,4 +13,3 @@ e.g. Running a Postgres dump command and writing the file.
 ```sh
 $ kubectl exec -it POD_NAME -- bash -c 'ls > my_files.txt'
 ```
-
