@@ -171,10 +171,10 @@
 <span class="na">AWS</span><span class="pi">:</span>
     <span class="na">Region</span><span class="pi">:</span> <span class="s">us-east-1</span>
     <span class="na">Lambda</span><span class="pi">:</span>
-        <span class="s">Fn::GetAtt:</span>
-          <span class="s">- "LambdaExecutionRole"</span>
-          <span class="s">- "Arn"</span>
-        <span class="s">Runtime</span><span class="err">:</span> <span class="s2">"</span><span class="s">python3.7"</span>
+        <span class="na">Fn::GetAtt</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s2">"</span><span class="s">LambdaExecutionRole"</span>
+          <span class="pi">-</span> <span class="s2">"</span><span class="s">Arn"</span>
+        <span class="na">Runtime</span><span class="pi">:</span> <span class="s2">"</span><span class="s">python3.7"</span>
 </code></pre></div></div>
 
 <p>Using <a href="https://github.com/sampsyo/confuse">confuse</a> library.</p>
