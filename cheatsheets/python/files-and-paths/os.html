@@ -172,12 +172,10 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">getcwd</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>This seems like a longer equivalent:</p>
+<p>This is equivalent to this where <code class="language-plaintext highlighter-rouge">os.curdir</code> is <code class="language-plaintext highlighter-rouge">'.'</code>.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">realpath</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">curdir</span><span class="p">)</span>
 </code></pre></div></div>
-
-<p>Where <code class="language-plaintext highlighter-rouge">os.durdir</code> is <code class="language-plaintext highlighter-rouge">'.'</code>.</p>
 
 <h3 id="path-to-script">Path to script</h3>
 
@@ -186,14 +184,16 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">__file__</span>
 </code></pre></div></div>
 
-<p>NB. <code class="language-plaintext highlighter-rouge">__file__</code>  is not defined in the interactive console.</p>
+<p>Though, the variable <code class="language-plaintext highlighter-rouge">__file__</code>  is <strong>not</strong> defined in the interactive console.</p>
 
-<p>Absolute path to the current file. Note the realpath is safer than abspath.</p>
+<p>Absolute path to the current file:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">realpath</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="check-access-to-path">Check access to path</h2>
+<p>Note that <code class="language-plaintext highlighter-rouge">realpath</code> here is <strong>safer</strong> than using <code class="language-plaintext highlighter-rouge">abspath</code>.</p>
+
+<h2 id="check-access-to-a-path">Check access to a path</h2>
 
 <h3 id="exists">exists</h3>
 
@@ -235,7 +235,7 @@
 
 <h3 id="real">Real</h3>
 
-<p>The “canonical” path.</p>
+<p>The “canonical” path:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">realpath</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </code></pre></div></div>
@@ -247,9 +247,9 @@
 
 <h3 id="relative">Relative</h3>
 
-<p>Convert to relative.</p>
+<p>Convert to relative:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">path</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="expand-user-path">Expand user path</h3>
@@ -266,12 +266,13 @@
 
 <h3 id="get-directory">Get directory</h3>
 
-<p>Of a file.</p>
+<p>Of a file:</p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">dirname</span><span class="p">(</span><span class="s">'foo/bar/baz.txt'</span><span class="p">)</span>
 <span class="c1"># =&gt; 'foo/bar'
 </span></code></pre></div></div>
 
-<p>Of a directory.</p>
+<p>Of a directory:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">dirname</span><span class="p">(</span><span class="s">'foo/bar'</span><span class="p">)</span>
 <span class="c1"># =&gt; 'foo'
@@ -305,12 +306,16 @@
 
 <h3 id="parent-directory">Parent directory</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">pardir</span>
-<span class="c1"># =&gt; '..'
-</span></code></pre></div></div>
+<p>Get the parent directory of a file or directory:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </code></pre></div></div>
+
+<p>If you need to get the symbol for parent directory”</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">pardir</span>
+<span class="c1"># =&gt; '..'
+</span></code></pre></div></div>
 
         
     </div>
