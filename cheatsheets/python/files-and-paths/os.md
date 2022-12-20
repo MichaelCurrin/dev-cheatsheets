@@ -10,14 +10,11 @@ Absolute path to directory where you are executing from.
 os.getcwd()
 ```
 
-This seems like a longer equivalent:
+This is equivalent to this where `os.curdir` is `'.'`.
 
 ```python
 os.path.realpath(os.curdir)
 ```
-
-Where `os.durdir` is `'.'`.
-
 
 ### Path to script
 
@@ -27,16 +24,18 @@ Path of the current file.
 __file__
 ```
 
-NB. `__file__`  is not defined in the interactive console.
+Though, the variable `__file__`  is **not** defined in the interactive console.
 
-Absolute path to the current file. Note the realpath is safer than abspath.
+Absolute path to the current file:
 
 ```python
 os.path.realpath(__file__)
 ```
 
+Note that `realpath` here is **safer** than using `abspath`.
 
-## Check access to path
+
+## Check access to a path
 
 ### exists
 
@@ -72,6 +71,7 @@ os.path.islink(path)
 os.path.isabs(path)
 ```
 
+
 ## Format path
 
 ### Absolute
@@ -82,7 +82,7 @@ os.path.abspath(path)
 
 ### Real
 
-The "canonical" path.
+The "canonical" path:
 
 ```python
 os.path.realpath(path)
@@ -93,10 +93,10 @@ os.path.realpath(path)
 
 ### Relative
 
-Convert to relative.
+Convert to relative:
 
 ```python
-os.path.relpath(path
+os.path.relpath(path)
 ```
 
 ### Expand user path
@@ -116,13 +116,14 @@ os.path.join(foo, bar)
 
 ### Get directory
 
-Of a file.
+Of a file:
+
 ```python
 os.path.dirname('foo/bar/baz.txt')
 # => 'foo/bar'
 ```
 
-Of a directory.
+Of a directory:
 
 ```python
 os.path.dirname('foo/bar')
@@ -161,14 +162,17 @@ os.path.basename('foo/bar/')
 
 ## Traverse
 
-
 ### Parent directory
+
+Get the parent directory of a file or directory:
+
+```python
+os.path.dirname(path)
+```
+
+If you need to get the symbol for parent directory"
 
 ```python
 os.path.pardir
 # => '..'
-```
-
-```python
-os.path.dirname(path)
 ```
