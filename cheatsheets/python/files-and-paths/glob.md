@@ -16,14 +16,18 @@ From this [StackOverflow](https://stackoverflow.com/questions/29847426/python-gl
 
 ### File paths
 
+Provide a path as a single argument. You get results as absolute paths.
+
 ```python
-# => glob.glob("some_dir/*.png")
+glob.glob("some_dir/*.png")
 # => ['/home/michael/foo/bar/some_dir/a.png', '/home/michael/foo/baz/some_dir/b.png', ]
 ```
 
+In this example, the current working directory was above `some_dir`, but you could change directory first and then run the glob using the short pattern `*.png`.
+
 ### Filenames
 
-Use the `glob1(dirname, pattern)` method to get the filenames.
+use a different method and provide two arguments as `glob1(dirname, pattern)`. You get results as filenames only.
 
 ```python
 glob.glob1("some_dir", "*.png")
@@ -33,13 +37,11 @@ glob.glob1("some_dir", "*.png")
 
 ### Dotfiles
 
-Dot files are not picked up using a star (as in the shell), but you can specify a leading dot.
+"Dotfiles" which start with a dot are not picked up using a star pattern (as in the shell if you did `ls *`). But, you can specify a leading dot.
 
 ```python
-glob.glob('*.gif')
-# => ['card.gif']
 glob.glob('.c*')
-# => ['.card.gif']
+# => ['.foo.bar']
 ```
 
 

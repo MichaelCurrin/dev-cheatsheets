@@ -177,13 +177,17 @@
 
 <h3 id="file-paths">File paths</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># =&gt; glob.glob("some_dir/*.png")
-# =&gt; ['/home/michael/foo/bar/some_dir/a.png', '/home/michael/foo/baz/some_dir/b.png', ]
+<p>Provide a path as a single argument. You get results as absolute paths.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="s">"some_dir/*.png"</span><span class="p">)</span>
+<span class="c1"># =&gt; ['/home/michael/foo/bar/some_dir/a.png', '/home/michael/foo/baz/some_dir/b.png', ]
 </span></code></pre></div></div>
+
+<p>In this example, the current working directory was above <code class="language-plaintext highlighter-rouge">some_dir</code>, but you could change directory first and then run the glob using the short pattern <code class="language-plaintext highlighter-rouge">*.png</code>.</p>
 
 <h3 id="filenames">Filenames</h3>
 
-<p>Use the <code class="language-plaintext highlighter-rouge">glob1(dirname, pattern)</code> method to get the filenames.</p>
+<p>use a different method and provide two arguments as <code class="language-plaintext highlighter-rouge">glob1(dirname, pattern)</code>. You get results as filenames only.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">glob</span><span class="p">.</span><span class="n">glob1</span><span class="p">(</span><span class="s">"some_dir"</span><span class="p">,</span> <span class="s">"*.png"</span><span class="p">)</span>
 <span class="c1"># =&gt; ['a.png', 'a.png', ...]
@@ -191,12 +195,10 @@
 
 <h3 id="dotfiles">Dotfiles</h3>
 
-<p>Dot files are not picked up using a star (as in the shell), but you can specify a leading dot.</p>
+<p>“Dotfiles” which start with a dot are not picked up using a star pattern (as in the shell if you did <code class="language-plaintext highlighter-rouge">ls *</code>). But, you can specify a leading dot.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="s">'*.gif'</span><span class="p">)</span>
-<span class="c1"># =&gt; ['card.gif']
-</span><span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="s">'.c*'</span><span class="p">)</span>
-<span class="c1"># =&gt; ['.card.gif']
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="s">'.c*'</span><span class="p">)</span>
+<span class="c1"># =&gt; ['.foo.bar']
 </span></code></pre></div></div>
 
 <h2 id="functions">Functions</h2>
