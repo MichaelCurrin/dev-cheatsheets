@@ -179,7 +179,7 @@
 
 <h3 id="path-to-script">Path to script</h3>
 
-<p>Path of the current file.</p>
+<p>Path of the current file. e.g. <code class="language-plaintext highlighter-rouge">abc.py</code> or <code class="language-plaintext highlighter-rouge">foo/abc.py</code>.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">__file__</span>
 </code></pre></div></div>
@@ -192,6 +192,18 @@
 </code></pre></div></div>
 
 <p>Note that <code class="language-plaintext highlighter-rouge">realpath</code> here is <strong>safer</strong> than using <code class="language-plaintext highlighter-rouge">abspath</code>.</p>
+
+<h3 id="directory-of-script">Directory of script</h3>
+
+<p>If the file is in the current working directory, the result will be an empty string.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Absolute path to that file’s directory:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">realpath</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">))</span>
+</code></pre></div></div>
 
 <h2 id="check-access-to-a-path">Check access to a path</h2>
 

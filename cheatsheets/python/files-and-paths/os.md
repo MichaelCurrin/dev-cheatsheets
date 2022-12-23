@@ -18,7 +18,7 @@ os.path.realpath(os.curdir)
 
 ### Path to script
 
-Path of the current file.
+Path of the current file. e.g. `abc.py` or `foo/abc.py`.
 
 ```python
 __file__
@@ -33,6 +33,20 @@ os.path.realpath(__file__)
 ```
 
 Note that `realpath` here is **safer** than using `abspath`.
+
+### Directory of script
+
+If the file is in the current working directory, the result will be an empty string.
+
+```python
+os.path.dirname(__file__)
+```
+
+Absolute path to that file's directory:
+
+```python
+os.path.realpath(os.path.dirname(__file__))
+```
 
 
 ## Check access to a path
