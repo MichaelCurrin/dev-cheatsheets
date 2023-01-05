@@ -54,21 +54,41 @@ steps:
 
 ### Syntax
 
+Note that `set-output` and `save-state` are deprecated - see [post](https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/).
+
+```yaml
+
+- name: Set output
+  run: echo "{name}={value}" >> $GITHUB_OUTPUT
+  # Deprecated  
+- name: Set output
+  run: echo "::set-output name={name}::{value}"
+```
+
 Plain text:
 
 ```sh
-echo "::set-output name=my_value::hello"
+echo "GREETING=hello" >> $GITHUB_OUTPUT
+
+# Deprecated
+echo "::set-output name=GREETING::hello"
 ```
 
 Variable:
 
 ```sh
-echo "::set-output name=my_value::$MY_VAR"
+echo "GREETING={MY_VAR}" >> $GITHUB_OUTPUT
+
+# Deprecated
+echo "::set-output name=GREETING::$MY_VAR"
 ```
 
 Expression - use a subshell.
 
 ```sh
+echo "GREETING=$(grep ...)" >> $GITHUB_OUTPUT
+
+# Deprecated
 echo "::set-output name=my_value::$(grep ...)"
 ```
 
@@ -76,7 +96,7 @@ Or in two steps:
 
 ```sh
 MY_VAR="$(grep ...)"
-echo "::set-output name=my_value::$MY_VAR"
+echo "name=my_value::$MY_VAR" >> $GITHUB_OUTPUT
 ```
 
 Reuse across steps. My trimmed down example from the docs example.
@@ -84,10 +104,10 @@ Reuse across steps. My trimmed down example from the docs example.
 ```yaml
 steps:
   - id: step1
-    run: echo "::set-output name=test::hello"
+    run: echo "name=hello" >> $GITHUB_OUTPUT
 
   - id: step2
-    run: echo "::set-output name=test::world"
+    run: echo "name=test::world" >> $GITHUB_OUTPUT
 
   - name: Display
     run: |
@@ -108,10 +128,10 @@ steps:
    run: |
      OUTDATED=$(npm outdated) || true
      
-     echo "::set-output name=outdated::$OUTDATED"
+     echo "OUTDATED={OUTDATED}" >> $GITHUB_OUTPUT
       
  - name: Upgrade
-   if: ${{ steps.vars.outputs.outdated != '' }}
+   if: ${{ steps.vars.outputs.OUTDATED != '' }}
    run: npm upgrade
 ```
 
