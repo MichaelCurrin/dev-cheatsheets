@@ -24,17 +24,18 @@ There's probably a way to do it with `iter`, `zip`, or `itertools`. Here is an o
 from itertools import zip_longest
 
 
-def group_elements(n, iterable, padvalue='x'):
-    return zip_longest(*[iter(iterable)]*n, fillvalue=padvalue)
+def group_elements(n, iterable_data, pad_value='x'):
+    return zip_longest(*[iter(iterable_data)]*n, fillvalue=pad_value)
 
-my_list = ['1','2','3','4','5','6','7','8','9','10']
+
+my_list = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 
 for output in group_elements(3, my_list):
     print(output)
-('1', '2', '3')
-('4', '5', '6')
-('7', '8', '9')
-('10', 'x', 'x')
+# ('1', '2', '3')
+# ('4', '5', '6')
+# ('7', '8', '9')
+# ('10', 'x', 'x')
 ```
 
 Or my own idea:
