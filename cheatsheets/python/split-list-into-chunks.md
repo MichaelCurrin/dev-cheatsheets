@@ -25,11 +25,76 @@ def divide_chunks(values, size):
         yield values[i:i + size]
 ```
 
+
 ## Using itertools
 
-Use itertools for something that works well on large data structures without loading them all into memory at once.
+Useful for something that works well on large data structures without loading them all into memory at once.
 
-Here is an okay way that is still messy.
+
+### Using islice
+
+```python
+from itertools import islice
+
+
+def chunks(data: list, size=1000):
+    it = iter(data)
+
+    for i in range(0, len(data), size):
+        yield [k for k in islice(it, size)]
+        
+```
+
+e.g.
+
+```python
+list(chunks(range(20), 3))
+# [[0, 1, 2],
+#  [3, 4, 5],
+#  [6, 7, 8],
+#  [9, 10, 11],
+#  [12, 13, 14],
+#  [15, 16, 17],
+#  [18, 19]]
+```
+
+### groupby and count
+
+This is a lazy loading approach where you only get the value but evaluating the item not just iterating over the values.
+
+```python
+from itertools import groupby, count
+
+
+def list_chunks(iterable, size=50):
+    c = count()
+    for _, g in groupby(iterable, lambda _: next(c) // size):
+        yield g
+```
+
+e.g.
+
+```python
+list(list_chunks(range(20), 3))
+# [<itertools._grouper at 0x7f7f5052d610>,
+#  <itertools._grouper at 0x7f7f5052da50>,
+#  <itertools._grouper at 0x7f7f5052de10>,
+#  <itertools._grouper at 0x7f7f5052da90>,
+#  <itertools._grouper at 0x7f7f5052d050>,
+#  <itertools._grouper at 0x7f7f5052db50>,
+#  <itertools._grouper at 0x7f7f5052ddd0>]
+
+[list(x) for x in list_chunks(range(20), 3)]
+# [[0, 1, 2],
+# [3, 4, 5],
+# [6, 7, 8],
+# [9, 10, 11],
+# [12, 13, 14],
+# [15, 16, 17],
+# [18, 19]]
+```
+
+### zip_longest
 
 ```python
 from itertools import zip_longest
