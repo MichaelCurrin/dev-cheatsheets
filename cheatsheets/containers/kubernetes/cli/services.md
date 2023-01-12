@@ -5,6 +5,8 @@ $ kubectl get services
 $ kubectl get svc
 ```
 
+Sample ouput:
+
 ```
 NAME                    TYPE           CLUSTER-IP       EXTERNAL-IP            PORT(S)                      AGE
 foobarb-backend-dev      ClusterIP      10.100.104.121   <none>                5000/TCP                     164d

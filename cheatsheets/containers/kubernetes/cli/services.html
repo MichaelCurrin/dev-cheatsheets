@@ -26,15 +26,15 @@
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes/services.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes/services.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes/cli/services.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes/cli/services.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes/services.html",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes/cli/services.html",
     "headline":    "Services",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
@@ -82,11 +82,11 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/containers/kubernetes/services.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/containers/kubernetes/cli/services.md">
     📝 <span>Edit page</span>
 </a>
 
-            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/containers/kubernetes/">
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/containers/kubernetes/cli/">
     ➕ <span>Add page</span>
 </a>
 
@@ -150,7 +150,19 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/containers/kubernetes/services.html" class="underline">
+            
+            <a href="/dev-cheatsheets/cheatsheets/containers/kubernetes/cli/">
+    CLI
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/containers/kubernetes/cli/services.html" class="underline">
                 Services
             </a>
         
@@ -166,6 +178,8 @@
             <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl get services
 <span class="nv">$ </span>kubectl get svc
 </code></pre></div></div>
+
+<p>Sample ouput:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME                    TYPE           CLUSTER-IP       EXTERNAL-IP            PORT(S)                      AGE
 foobarb-backend-dev      ClusterIP      10.100.104.121   &lt;none&gt;                5000/TCP                     164d
