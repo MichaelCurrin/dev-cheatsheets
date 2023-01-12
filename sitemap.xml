@@ -1288,6 +1288,9 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes/cli/cp.html</loc>
 </url>
 <url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes/cli/deployment.html</loc>
+</url>
+<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes/cli/exec.html</loc>
 </url>
 <url>
@@ -1310,9 +1313,6 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes/cli/services.html</loc>
-</url>
-<url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes/deployment.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/kubernetes/install.html</loc>
