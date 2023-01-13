@@ -189,23 +189,33 @@
 foobarb-backend-stg     2/2     2            2           2d18h
 </code></pre></div></div>
 
-<p>Optionally get as long YAML output as below. Optionally write to a local YAML file.</p>
+<p>Optionally get as long YAML output as below.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl get deployment DEPLOYMENT_NAME <span class="nt">-o</span> yaml  <span class="c"># &gt; foo.yaml</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apiVersion: apps/v1
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>kubectl get deployment DEPLOYMENT_NAME <span class="nt">-o</span> yaml
+<span class="go">apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
     deployment.kubernetes.io/revision: "12"
-    meta.helm.sh/release-name: foobarb-backend-stg
+    meta.helm.sh/release-name: foobar-backend-stg
     meta.helm.sh/release-namespace: marketing
   creationTimestamp: "2021-01-19T18:14:59Z"
   generation: 12
-  ...
+</span><span class="c">  ...
 ....
+</span></code></pre></div></div>
+
+<p>Optionally write to a local YAML file by adding this:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> foo.yaml
 </code></pre></div></div>
+
+<h2 id="edit-deployment">Edit deployment</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl edit DEPLOYMENT_NAME
+</code></pre></div></div>
+
+<p>Then you’ll get a text editor window which you can edit and save.</p>
 
 <h2 id="scale">Scale</h2>
 

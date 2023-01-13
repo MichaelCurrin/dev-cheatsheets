@@ -17,25 +17,38 @@ NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
 foobarb-backend-stg     2/2     2            2           2d18h
 ```
 
-Optionally get as long YAML output as below. Optionally write to a local YAML file.
+Optionally get as long YAML output as below.
 
-```sh
-$ kubectl get deployment DEPLOYMENT_NAME -o yaml  # > foo.yaml
-```
-
-```
+```console
+$ kubectl get deployment DEPLOYMENT_NAME -o yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
     deployment.kubernetes.io/revision: "12"
-    meta.helm.sh/release-name: foobarb-backend-stg
+    meta.helm.sh/release-name: foobar-backend-stg
     meta.helm.sh/release-namespace: marketing
   creationTimestamp: "2021-01-19T18:14:59Z"
   generation: 12
   ...
 ....
 ```
+
+Optionally write to a local YAML file by adding this:
+
+```sh
+> foo.yaml
+```
+
+
+## Edit deployment
+
+```sh
+$ kubectl edit DEPLOYMENT_NAME
+```
+
+Then you'll get a text editor window which you can edit and save.
+
 
 ## Scale
 
