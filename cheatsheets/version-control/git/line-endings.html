@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>End of line | Dev Cheatsheets</title>
+    <title>Line endings | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="End of line" />
+    <meta property="og:title" content="Line endings" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="End of line" />
+    <meta property="twitter:title" content="Line endings" />
 <meta name="generator" content="Jekyll v4.3.1" />
 
 <meta property="og:locale" content="en_US" />
@@ -26,16 +26,16 @@
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/end-of-line.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/end-of-line.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/line-endings.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/line-endings.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/end-of-line.html",
-    "headline":    "End of line",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/line-endings.html",
+    "headline":    "Line endings",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -82,7 +82,7 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/version-control/git/end-of-line.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/version-control/git/line-endings.md">
     📝 <span>Edit page</span>
 </a>
 
@@ -99,7 +99,7 @@
             
 
 
-            <span>End of line</span>
+            <span>Line endings</span>
         </h1>
 
         
@@ -150,8 +150,8 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/version-control/git/end-of-line.html" class="underline">
-                End of line
+            <a href="/dev-cheatsheets/cheatsheets/version-control/git/line-endings.html" class="underline">
+                Line endings
             </a>
         
      
@@ -176,12 +176,25 @@
 
 <p>Then you can change how Git behaves (see next section) or change your IDE’s LF/CRLF setting.</p>
 
-<h2 id="set-auto-crlf">Set Auto-CRLF</h2>
+<h2 id="solutions">Solutions</h2>
+
+<p>Based on <a href="https://stackoverflow.com/questions/10418975/how-to-change-line-ending-settings/40821931#40821931">answer</a>.</p>
+
+<h3 id="set-on-linux-and-macos">Set on Linux and macOS</h3>
+
+<p>This will fix any <code class="language-plaintext highlighter-rouge">CRLF</code> to <code class="language-plaintext highlighter-rouge">LF</code> when you commit.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git config <span class="nt">--global</span> core.autocrlf input
+</code></pre></div></div>
+
+<h3 id="set-auto-crlf-on-windows">Set Auto-CRLF on Windows</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git config <span class="nt">--global</span> core.autocrlf <span class="nb">true</span>
 </code></pre></div></div>
 
-<p>See <a href="https://stackoverflow.com/questions/2825428/why-should-i-use-core-autocrlf-true-in-git">StackOverflow thread</a>.</p>
+<p>This will make sure that when you checkout in windows, all <code class="language-plaintext highlighter-rouge">LF</code> will be converted to <code class="language-plaintext highlighter-rouge">CRLF</code>.</p>
+
+<p>See more info on <a href="https://stackoverflow.com/questions/2825428/why-should-i-use-core-autocrlf-true-in-git">StackOverflow thread</a>.</p>
 
 <blockquote>
   <p>The only specific reasons to set <code class="language-plaintext highlighter-rouge">autocrlf</code> to <code class="language-plaintext highlighter-rouge">true</code> are:</p>
@@ -191,6 +204,31 @@
     <li><em>and</em> your coding tools somehow depends on a native EOL style being present in your file</li>
   </ul>
 </blockquote>
+
+<h3 id="git-attributes">Git attributes</h3>
+
+<p><code class="language-plaintext highlighter-rouge">.gitattributes</code> file</p>
+
+<blockquote>
+  <p>It is a good idea to keep a <code class="language-plaintext highlighter-rouge">.gitattributes</code> file as we don’t want to expect everyone in our team to set their own config. This file should be placed in the repository root and if it exists, git will respect it.</p>
+</blockquote>
+
+<p>e.g.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* text=auto
+</code></pre></div></div>
+
+<blockquote>
+  <p>This will treat all files as text files and convert to OS’s line ending on checkout and back to <code class="language-plaintext highlighter-rouge">LF</code> on commit automatically.</p>
+</blockquote>
+
+<blockquote>
+  <p>If you want to specify the line ending explicitly, you can use:</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* text eol=crlf
+* text eol=lf
+</code></pre></div></div>
 
         
     </div>

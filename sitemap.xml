@@ -3430,9 +3430,6 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/count-files-in-repo.html</loc>
 </url>
 <url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/end-of-line.html</loc>
-</url>
-<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/every-day.html</loc>
 </url>
 <url>
@@ -3443,6 +3440,9 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/install.html</loc>
+</url>
+<url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/line-endings.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/move-rename.html</loc>
