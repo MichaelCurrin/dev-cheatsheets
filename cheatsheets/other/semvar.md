@@ -1,4 +1,4 @@
-# Semtantic versioning
+# Semantic versioning
 
 
 ## Standard
