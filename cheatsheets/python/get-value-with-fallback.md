@@ -3,6 +3,8 @@ title: Get value with fallback
 description: Get a value from a data structure even if the key/attribute is not present
 ---
 
+The "safe" approaches below handle errors internally so you don't have to check.
+
 ## dict.get
 
 ```python
@@ -14,7 +16,9 @@ Unsafe:
 ```python
 y['a']
 # 123
+
 y['b']
+# KeyError: 'b'
 ```
 
 Safe:
@@ -31,7 +35,7 @@ y.get('b', 'my default')
 # 'my default'
 ```
 
-## getattr for a class
+## Get attribute of a class
 
 ```python
 class MyClass:
