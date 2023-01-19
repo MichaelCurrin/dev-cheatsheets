@@ -5,7 +5,7 @@ description: Get a value from a data structure even if the key/attribute is not 
 
 The "safe" approaches below handle errors internally so you don't have to check.
 
-## dict.get
+## Dictionary
 
 ```python
 y = {'a': 123}
