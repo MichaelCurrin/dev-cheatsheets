@@ -15,7 +15,7 @@
 
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:title" content="Union" />
-<meta name="generator" content="Jekyll v4.3.1" />
+<meta name="generator" content="Jekyll v4.3.2" />
 
 <meta property="og:locale" content="en_US" />
 
@@ -177,21 +177,25 @@
         
             <p>Use Union to allow a variable to be one of given types.</p>
 
-<p>Python 3.10:</p>
+<h2 id="python-310">Python 3.10</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TYPE | TYPE | TYPE
-# e.g.
-float | int | str
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TYPE</span> <span class="o">|</span> <span class="n">TYPE</span> <span class="o">|</span> <span class="n">TYPE</span>
+
+<span class="c1"># e.g.
+</span><span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span>
 </code></pre></div></div>
 
-<p>Python 3.8:</p>
+<h2 id="python-38">Python 3.8</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Union[TYPE, TYPE, ...]
-# e.g.
-float | int | str
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Union</span><span class="p">[</span><span class="n">TYPE</span><span class="p">,</span> <span class="n">TYPE</span><span class="p">,</span> <span class="p">...]</span>
+
+<span class="c1"># e.g.
+</span><span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span>
 </code></pre></div></div>
 
-<p>Here we allow an integer or string.</p>
+<h2 id="example">Example</h2>
+
+<p>Here we allow return value as integer or string.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">bazz</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">bazz</span><span class="p">:</span>
