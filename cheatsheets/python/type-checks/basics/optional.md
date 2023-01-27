@@ -1,30 +1,22 @@
-# Optional
-
-For height to be optional, you could have a union using `float` and `None`. 
-
-e.g.
-
-```python
-Union(float, None)
-# Python 3.10
-float | None
-```
-
-The docs say that prefered way is `Optional[float]` - see [page](https://mypy.readthedocs.io/en/latest/kinds_of_types.html).
-
-Or just set `height=0.0` as a default as then it is never None type and the float type will be inferred.
+---
+title: Optional
+description: Allow a variable to be `None`
+---
 
 
-## Import
+## Optional type
+
+The docs say that this is the preferred way. See [page](https://mypy.readthedocs.io/en/latest/kinds_of_types.html).
+
+### Import
 
 ```python
 from typing import Optional
 ```
 
+### Use Optional
 
-## Using Optional
-
-Allow a variable to be `None`.
+Allow a variable to be `None`:
 
 ```
 Optional[TYPE]
@@ -38,13 +30,32 @@ foo: Optional[str] = None
 foo = 'abc'
 ```
 
-Here we return a string or `None`. The second case shows a necessary annotation. Note you must declare the time on the first declariation from top to bottom - not the 2nd and not both.
+ 
+ 
+## Union approach
+
+Use the `Union` type. This is not preferred but might be needed in some cases.
+
+```python
+Union(float, None)
+
+# Python 3.10
+float | None
+```
+
+
+## Function examples
+
+Here we return a string or `None`.
 
 ```python
 def foo() -> Optional[str]:
     pass
+```
 
-
+The second case shows a necessary annotation. Note you must declare the type on the _first_ declaration of a variable and on that one _only_.
+ 
+```python
 def bar(bazz: bool) -> Optional[str]:
     if bazz:
         buzz: Optional[str] = 'Yes'
@@ -60,7 +71,7 @@ You may can an error from Pylint:
 E1136: Value 'Optional' is unsubscriptable (unsubscriptable-object)
 ```
 
-You can use use `Union` instead. But then you have to use it twice.
+You can use use `Union` instead.
 
 ```python
 def bar(bazz: bool) -> Union[str, None]:
@@ -82,5 +93,18 @@ def bar(bazz: bool) -> Union[str, None]:
     return buzz
 ```
 
-Unless you use a `return` sooner and so don't define `buzz`.
- 
+Or, you can use a `return None` sooner and so don't define `buzz` at that point so `buzz` is never `None` but the function can return `None`.
+
+### Parameters
+
+For function parameters which have defaults, you can avoid using `Optional` or `Union` by ensuring the default is not set as `None`.
+
+e.g.
+
+```python
+def foo(fizz, buzz:Optional[float]=None):
+    pass
+    
+def foo(fizz, buzz:float=0.0):
+    pass
+```
