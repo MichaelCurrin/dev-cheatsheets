@@ -20,8 +20,8 @@
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
-    <meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+    <meta name="description" content="Allow a variable to be `None`" />
+    <meta property="og:description" content="Allow a variable to be `None`" />
 <meta name="author" content="Michael Currin" />
 
 
@@ -33,7 +33,7 @@
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
+    "description": "Allow a variable to be `None`",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/type-checks/basics/optional.html",
     "headline":    "Optional",
     "@type":       "WebSite",
@@ -102,6 +102,11 @@
             <span>Optional</span>
         </h1>
 
+        
+            <blockquote>
+                <p>Allow a variable to be <code class="language-plaintext highlighter-rouge">None</code></p>
+
+            </blockquote>
         
     </header>
 
@@ -175,27 +180,18 @@
 
     <div class="post-content">
         
-            <p>For height to be optional, you could have a union using <code class="language-plaintext highlighter-rouge">float</code> and <code class="language-plaintext highlighter-rouge">None</code>.</p>
+            <h2 id="optional-type">Optional type</h2>
 
-<p>e.g.</p>
+<p>The docs say that this is the preferred way. See <a href="https://mypy.readthedocs.io/en/latest/kinds_of_types.html">page</a>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Union</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
-<span class="c1"># Python 3.10
-</span><span class="nb">float</span> <span class="o">|</span> <span class="bp">None</span>
-</code></pre></div></div>
-
-<p>The docs say that prefered way is <code class="language-plaintext highlighter-rouge">Optional[float]</code> - see <a href="https://mypy.readthedocs.io/en/latest/kinds_of_types.html">page</a>.</p>
-
-<p>Or just set <code class="language-plaintext highlighter-rouge">height=0.0</code> as a default as then it is never None type and the float type will be inferred.</p>
-
-<h2 id="import">Import</h2>
+<h3 id="import">Import</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
 </code></pre></div></div>
 
-<h2 id="using-optional">Using Optional</h2>
+<h3 id="use-optional">Use Optional</h3>
 
-<p>Allow a variable to be <code class="language-plaintext highlighter-rouge">None</code>.</p>
+<p>Allow a variable to be <code class="language-plaintext highlighter-rouge">None</code>:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Optional[TYPE]
 </code></pre></div></div>
@@ -207,13 +203,27 @@
 <span class="n">foo</span> <span class="o">=</span> <span class="s">'abc'</span>
 </code></pre></div></div>
 
-<p>Here we return a string or <code class="language-plaintext highlighter-rouge">None</code>. The second case shows a necessary annotation. Note you must declare the time on the first declariation from top to bottom - not the 2nd and not both.</p>
+<h2 id="union-approach">Union approach</h2>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">Union</code> type. This is not preferred but might be needed in some cases.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Union</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+<span class="c1"># Python 3.10
+</span><span class="nb">float</span> <span class="o">|</span> <span class="bp">None</span>
+</code></pre></div></div>
+
+<h2 id="function-examples">Function examples</h2>
+
+<p>Here we return a string or <code class="language-plaintext highlighter-rouge">None</code>.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
     <span class="k">pass</span>
+</code></pre></div></div>
 
+<p>The second case shows a necessary annotation. Note you must declare the type on the <em>first</em> declaration of a variable and on that one <em>only</em>.</p>
 
-<span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">bazz</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">bazz</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
     <span class="k">if</span> <span class="n">bazz</span><span class="p">:</span>
         <span class="n">buzz</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s">'Yes'</span>
     <span class="k">else</span><span class="p">:</span>
@@ -227,7 +237,7 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>E1136: Value 'Optional' is unsubscriptable (unsubscriptable-object)
 </code></pre></div></div>
 
-<p>You can use use <code class="language-plaintext highlighter-rouge">Union</code> instead. But then you have to use it twice.</p>
+<p>You can use use <code class="language-plaintext highlighter-rouge">Union</code> instead.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">bazz</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="bp">None</span><span class="p">]:</span>
     <span class="k">if</span> <span class="n">bazz</span><span class="p">:</span>
@@ -247,7 +257,20 @@
     <span class="k">return</span> <span class="n">buzz</span>
 </code></pre></div></div>
 
-<p>Unless you use a <code class="language-plaintext highlighter-rouge">return</code> sooner and so don’t define <code class="language-plaintext highlighter-rouge">buzz</code>.</p>
+<p>Or, you can use a <code class="language-plaintext highlighter-rouge">return None</code> sooner and so don’t define <code class="language-plaintext highlighter-rouge">buzz</code> at that point so <code class="language-plaintext highlighter-rouge">buzz</code> is never <code class="language-plaintext highlighter-rouge">None</code> but the function can return <code class="language-plaintext highlighter-rouge">None</code>.</p>
+
+<h3 id="parameters">Parameters</h3>
+
+<p>For function parameters which have defaults, you can avoid using <code class="language-plaintext highlighter-rouge">Optional</code> or <code class="language-plaintext highlighter-rouge">Union</code> by ensuring the default is not set as <code class="language-plaintext highlighter-rouge">None</code>.</p>
+
+<p>e.g.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">fizz</span><span class="p">,</span> <span class="n">buzz</span><span class="p">:</span><span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">pass</span>
+    
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">fizz</span><span class="p">,</span> <span class="n">buzz</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div></div>
 
         
     </div>
