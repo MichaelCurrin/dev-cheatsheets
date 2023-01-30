@@ -182,12 +182,9 @@
 
 <h2 id="build">Build</h2>
 
-<p>No name. This can hard to use then when <code class="language-plaintext highlighter-rouge">docker run</code>.</p>
+<p>Create a container from an image.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker build <span class="nb">.</span>
-</code></pre></div></div>
-
-<p>Give the image a name.</p>
+<p>Give the image a name with <code class="language-plaintext highlighter-rouge">-t</code> flag. If you don’t do this, then a random name will be used and then it is harder to use <code class="language-plaintext highlighter-rouge">docker run</code> as you then have to lookup a name.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker build <span class="nt">-t</span> my-app <span class="nb">.</span>
 </code></pre></div></div>
@@ -196,6 +193,25 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker build <span class="nt">-t</span> my-app <span class="nb">.</span> <span class="nt">--no-cache</span> 
 </code></pre></div></div>
+
+<h2 id="pull">Pull</h2>
+
+<p>Download an Docker image from a container registry. See <a href="https://docs.docker.com/engine/reference/commandline/image_pull/">docs</a>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker image pull REFERENCE
+</code></pre></div></div>
+
+<p>Get the <code class="language-plaintext highlighter-rouge">latest</code> image:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker image pull foo/bar
+</code></pre></div></div>
+
+<p>Get a named image such as with a release tag or branch name.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker image pull foo/bar@v1.2.3
+</code></pre></div></div>
+
+<p>Use <code class="language-plaintext highlighter-rouge">--all-tags</code> or <code class="language-plaintext highlighter-rouge">-a</code> to download all tags in the image repository.</p>
 
         
     </div>

@@ -24,13 +24,9 @@ $ docker image ls my-app
 
 ## Build
 
-No name. This can hard to use then when `docker run`.
+Create a container from an image.
 
-```sh
-$ docker build .
-```
-
-Give the image a name.
+Give the image a name with `-t` flag. If you don't do this, then a random name will be used and then it is harder to use `docker run` as you then have to lookup a name.
 
 ```sh
 $ docker build -t my-app .
@@ -38,7 +34,29 @@ $ docker build -t my-app .
 
 Ignore cache.
 
-
 ```sh
 $ docker build -t my-app . --no-cache 
 ```
+
+
+## Pull
+
+Download an Docker image from a container registry. See [docs](https://docs.docker.com/engine/reference/commandline/image_pull/).
+
+```sh
+$ docker image pull REFERENCE
+```
+
+Get the `latest` image:
+
+```sh
+$ docker image pull foo/bar
+```
+
+Get a named image such as with a release tag or branch name.
+
+```sh
+$ docker image pull foo/bar@v1.2.3
+```
+
+Use `--all-tags` or `-a` to download all tags in the image repository.
