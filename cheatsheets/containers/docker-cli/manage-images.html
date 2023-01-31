@@ -208,10 +208,20 @@
 
 <p>Get a named image such as with a release tag or branch name.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker image pull foo/bar@v1.2.3
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker image pull foo.com/bar@v1.2.3
+<span class="nv">$ </span>docker image pull ubuntu@lunar
+<span class="nv">$ </span>docker image pull ubuntu@23.04
 </code></pre></div></div>
 
 <p>Use <code class="language-plaintext highlighter-rouge">--all-tags</code> or <code class="language-plaintext highlighter-rouge">-a</code> to download all tags in the image repository.</p>
+
+<p>To use an image directly with an unnamed container:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker image pull ubuntu
+<span class="nv">$ </span>docker run ubuntu
+</code></pre></div></div>
+
+<p>Or use the name in Dockerfile like <code class="language-plaintext highlighter-rouge">IMAGE ubuntu</code>.</p>
 
         
     </div>
