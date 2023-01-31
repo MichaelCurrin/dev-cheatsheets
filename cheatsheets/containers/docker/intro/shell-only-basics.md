@@ -179,7 +179,7 @@ $ docker rm my-container
 Or use this to remove the container when it exits.
 
 ```sh
-docker run -rm OPTIONS
+$ docker run -rm OPTIONS
 ```
 
 
