@@ -70,4 +70,7 @@ $ docker image pull ubuntu
 $ docker run ubuntu
 ```
 
-Or use the name in Dockerfile like `IMAGE ubuntu`.
+Or use the name in Dockerfile like `FROM ubuntu`.
+
+See [ubuntu](https://hub.docker.com/_/ubuntu/) on Docker Hub.
+
