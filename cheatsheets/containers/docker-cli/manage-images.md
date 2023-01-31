@@ -56,7 +56,18 @@ $ docker image pull foo/bar
 Get a named image such as with a release tag or branch name.
 
 ```sh
-$ docker image pull foo/bar@v1.2.3
+$ docker image pull foo.com/bar@v1.2.3
+$ docker image pull ubuntu@lunar
+$ docker image pull ubuntu@23.04
 ```
 
 Use `--all-tags` or `-a` to download all tags in the image repository.
+
+To use an image directly with an unnamed container:
+
+```sh
+$ docker image pull ubuntu
+$ docker run ubuntu
+```
+
+Or use the name in Dockerfile like `IMAGE ubuntu`.
