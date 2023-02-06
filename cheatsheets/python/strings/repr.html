@@ -163,7 +163,11 @@
 
     <div class="post-content">
         
-            <h2 id="calling-methods">Calling methods</h2>
+            <p>Rather than just getting the string-formatted version of an object, you can get the string reprentation.</p>
+
+<p>The latter means <code class="language-plaintext highlighter-rouge">None</code> will appear as <code class="language-plaintext highlighter-rouge">None</code> and not an empty string, and that strings have quotes around them.</p>
+
+<h2 id="calling-methods">Calling methods</h2>
 
 <p>Printing a string and using <code class="language-plaintext highlighter-rouge">repr</code>.</p>
 
@@ -171,6 +175,17 @@
 <span class="n">abc</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="s">'abc'</span><span class="p">))</span>
 <span class="s">'abc'</span>
+</code></pre></div></div>
+
+<p>Printing using f-stirngs and <code class="language-plaintext highlighter-rouge">!r</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="sa">f</span><span class="s">"My value is </span><span class="si">{</span><span class="n">x</span><span class="si">!r}</span><span class="s">"</span>
+<span class="c1"># 'My value is None'
+</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s">''</span>
+<span class="s">"My value is ''"</span>
 </code></pre></div></div>
 
 <p>Printing using <code class="language-plaintext highlighter-rouge">.format</code> and <code class="language-plaintext highlighter-rouge">!r</code>.</p>
@@ -200,6 +215,13 @@
 </code></pre></div></div>
 
 <h2 id="defining-repr-on-a-class">Defining repr on a class</h2>
+
+<p>When making a class, it can be useful to override the built-in  methods:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">__str__</code> - string formatted</li>
+  <li><code class="language-plaintext highlighter-rouge">__repr__</code> - string representation</li>
+</ul>
 
 <p>For classes, the <code class="language-plaintext highlighter-rouge">__repr__</code> might be set to exactly match the contents so a new instance be created, or it might be a summary. But it won’t be set by default.</p>
 
