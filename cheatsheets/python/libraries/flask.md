@@ -1,12 +1,73 @@
 # Flask
 
-## Basic Flask app
+## Start
 
-Start command:
+Use `hello` here for `hello.py`.
 
 ```sh
-$ flask --app myapp/app.py --debug run
+$ flask --app hello run
+ * Serving Flask app 'hello'
+ * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
 ```
+
+Or
+
+```console
+$ export FLASK_APP=hello
+$ flask run
+ * Running on http://127.0.0.1:5000/
+```
+
+Or
+
+```console
+$ export FLASK_APP=hello
+$ python -m flask run
+ * Running on http://127.0.0.1:5000/
+```
+
+
+### Debug mode
+
+```sh
+$ FLASK_DEBUG=1
+```
+
+Or
+
+```sh
+$ flask run --debug
+```
+
+### Host
+
+Make visible on your network not just localhost:
+
+```sh
+$ flask run --host=0.0.0.0
+```
+
+### Development 
+
+```sh
+$ export FLASK_ENV=development
+```
+
+
+## Basic Flask app
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+```
+
+## Demonstrate endpoints
 
 The script:
 

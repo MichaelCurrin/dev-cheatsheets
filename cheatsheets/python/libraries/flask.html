@@ -163,12 +163,64 @@
 
     <div class="post-content">
         
-            <h2 id="basic-flask-app">Basic Flask app</h2>
+            <h2 id="start">Start</h2>
 
-<p>Start command:</p>
+<p>Use <code class="language-plaintext highlighter-rouge">hello</code> here for <code class="language-plaintext highlighter-rouge">hello.py</code>.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>flask <span class="nt">--app</span> myapp/app.py <span class="nt">--debug</span> run
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>flask <span class="nt">--app</span> hello run
+ <span class="k">*</span> Serving Flask app <span class="s1">'hello'</span>
+ <span class="k">*</span> Running on http://127.0.0.1:5000 <span class="o">(</span>Press CTRL+C to quit<span class="o">)</span>
 </code></pre></div></div>
+
+<p>Or</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">export </span><span class="nv">FLASK_APP</span><span class="o">=</span>hello
+<span class="gp">$</span><span class="w"> </span>flask run
+<span class="go"> * Running on http://127.0.0.1:5000/
+</span></code></pre></div></div>
+
+<p>Or</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">export </span><span class="nv">FLASK_APP</span><span class="o">=</span>hello
+<span class="gp">$</span><span class="w"> </span>python <span class="nt">-m</span> flask run
+<span class="go"> * Running on http://127.0.0.1:5000/
+</span></code></pre></div></div>
+
+<h3 id="debug-mode">Debug mode</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ FLASK_DEBUG</span><span class="o">=</span>1
+</code></pre></div></div>
+
+<p>Or</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>flask run <span class="nt">--debug</span>
+</code></pre></div></div>
+
+<h3 id="host">Host</h3>
+
+<p>Make visible on your network not just localhost:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>flask run <span class="nt">--host</span><span class="o">=</span>0.0.0.0
+</code></pre></div></div>
+
+<h3 id="development">Development</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export </span><span class="nv">FLASK_ENV</span><span class="o">=</span>development
+</code></pre></div></div>
+
+<h2 id="basic-flask-app">Basic Flask app</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">'Hello, World!'</span>
+</code></pre></div></div>
+
+<h2 id="demonstrate-endpoints">Demonstrate endpoints</h2>
 
 <p>The script:</p>
 
