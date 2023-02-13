@@ -173,8 +173,8 @@
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">index.ts</code>
-    <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Deno</span><span class="p">.</span><span class="nx">readTextFile</span><span class="p">(</span><span class="dl">"</span><span class="s2">test.txt</span><span class="dl">"</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span>
+    <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Deno</span><span class="p">.</span><span class="nf">readTextFile</span><span class="p">(</span><span class="dl">"</span><span class="s2">test.txt</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span>
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -193,9 +193,9 @@
     <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello, World!</span><span class="dl">"</span><span class="p">;</span>
   <span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">test.txt</span><span class="dl">"</span><span class="p">;</span>
 
-  <span class="kd">const</span> <span class="nx">write</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Deno</span><span class="p">.</span><span class="nx">writeTextFile</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">output</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">write</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Deno</span><span class="p">.</span><span class="nf">writeTextFile</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">output</span><span class="p">);</span>
 
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Wrote file: </span><span class="p">${</span><span class="nx">path</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Wrote file: </span><span class="p">${</span><span class="nx">path</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -207,19 +207,19 @@
 
 <p>Based on example in the docs.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">writeJson</span><span class="p">(</span><span class="nx">path</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">data</span><span class="p">:</span> <span class="nx">object</span><span class="p">):</span> <span class="kr">string</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">writeJson</span><span class="p">(</span><span class="nx">path</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">data</span><span class="p">:</span> <span class="nx">object</span><span class="p">):</span> <span class="kr">string</span> <span class="p">{</span>
   <span class="k">try</span> <span class="p">{</span>
-    <span class="nx">Deno</span><span class="p">.</span><span class="nx">writeTextFileSync</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+    <span class="nx">Deno</span><span class="p">.</span><span class="nf">writeTextFileSync</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
 
-    <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Wrote file: </span><span class="p">${</span><span class="nx">path</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Wrote file: </span><span class="p">${</span><span class="nx">path</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">}</span> <span class="nf">catch </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kd">const</span> <span class="nx">outData</span> <span class="o">=</span> <span class="p">{</span> <span class="na">hello</span><span class="p">:</span> <span class="dl">"</span><span class="s2">World</span><span class="dl">"</span> <span class="p">}</span>
 <span class="kd">const</span> <span class="nx">outPath</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">data.json</span><span class="dl">"</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">writeJson</span><span class="p">(</span><span class="nx">outPath</span><span class="p">,</span> <span class="nx">outData</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nf">writeJson</span><span class="p">(</span><span class="nx">outPath</span><span class="p">,</span> <span class="nx">outData</span><span class="p">));</span>
 </code></pre></div></div>
 
         

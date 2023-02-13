@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Reactivity | Dev Cheatsheets</title>
+    <title>Delete | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Reactivity" />
+    <meta property="og:title" content="Delete" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Reactivity" />
+    <meta property="twitter:title" content="Delete" />
 <meta name="generator" content="Jekyll v4.3.2" />
 
 <meta property="og:locale" content="en_US" />
@@ -26,16 +26,16 @@
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/vue/reactivity.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/vue/reactivity.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/delete.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/delete.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/vue/reactivity.html",
-    "headline":    "Reactivity",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/delete.html",
+    "headline":    "Delete",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -82,11 +82,11 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/javascript/packages/vue/reactivity.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/python/delete.md">
     📝 <span>Edit page</span>
 </a>
 
-            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/javascript/packages/vue/">
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/python/">
     ➕ <span>Add page</span>
 </a>
 
@@ -99,7 +99,7 @@
             
 
 
-            <span>Reactivity</span>
+            <span>Delete</span>
         </h1>
 
         
@@ -127,8 +127,8 @@
 
         
             
-            <a href="/dev-cheatsheets/cheatsheets/javascript/">
-    JavaScript
+            <a href="/dev-cheatsheets/cheatsheets/python/">
+    Python
 </a>
 
         
@@ -138,32 +138,8 @@
         
 
         
-            
-            <a href="/dev-cheatsheets/cheatsheets/javascript/packages/">
-    Packages
-</a>
-
-        
-     
-        
-            /
-        
-
-        
-            
-            <a href="/dev-cheatsheets/cheatsheets/javascript/packages/vue/">
-    Vue
-</a>
-
-        
-     
-        
-            /
-        
-
-        
-            <a href="/dev-cheatsheets/cheatsheets/javascript/packages/vue/reactivity.html" class="underline">
-                Reactivity
+            <a href="/dev-cheatsheets/cheatsheets/python/delete.html" class="underline">
+                Delete
             </a>
         
      
@@ -175,50 +151,63 @@
 
     <div class="post-content">
         
-            <p>See <a href="https://v3.vuejs.org/guide/reactivity-fundamentals.html">Reactivity Fundamentals</a> in the Vue docs.</p>
+            <h2 id="delete-any-object">Delete any object</h2>
 
-<h2 id="declaring-reactive-state">Declaring reactive state</h2>
-
-<blockquote>
-  <p>To create a reactive state from a JavaScript object, we can use a reactive method:</p>
-</blockquote>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">reactive</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
-
-<span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="nf">reactive</span><span class="p">({</span>
-  <span class="na">count</span><span class="p">:</span> <span class="mi">0</span>
-<span class="p">})</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">del</span><span class="p">(</span><span class="n">my_object</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="create-standalone-reactive-values-as-refs">Create standalone reactive values as refs</h2>
+<h2 id="remove-object-from-list">Remove object from list</h2>
 
-<blockquote>
-  <p>Imagine the case where we have a standalone primitive value (for example, a string) and we want to make it reactive.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-  <p>Of course, we could make an object with a single property equal to our string, and pass it to <code class="language-plaintext highlighter-rouge">reactive</code>.</p>
+<span class="nf">del</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">x</span>
+<span class="c1"># [1, 3]
+</span></code></pre></div></div>
 
-  <p>Vue has a method that will do the same for us - it’s a <code class="language-plaintext highlighter-rouge">ref</code>:</p>
-</blockquote>
+<p>Or</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ref</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-<span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nf">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># 2
+</span><span class="n">x</span>
+<span class="c1"># [1, 3]
+</span></code></pre></div></div>
+
+<h2 id="remove-key-from-dictionary">Remove key from dictionary</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s">'my_key'</span><span class="p">:</span> <span class="mi">123</span><span class="p">}</span>
+<span class="n">x</span><span class="p">[</span><span class="s">'my_key'</span><span class="p">]</span>
+<span class="c1"># 123
+</span>
+<span class="nf">del</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s">'my_key'</span><span class="p">])</span>
 </code></pre></div></div>
 
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">ref</code> will return a reactive and mutable object that serves as a reactive reference to the internal value it is holding - that’s where the name comes from.</p>
+<h2 id="delete-attribute-from-class-instance">Delete attribute from class instance</h2>
 
-  <p>This object contains the only one property named <code class="language-plaintext highlighter-rouge">value</code>:</p>
-</blockquote>
+<p>Delete an attribute on an object instance (you cannot delete on the class itself).</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ref</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
-
-<span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nf">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="c1">// 0</span>
-
-<span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="o">++</span>
-<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="c1">// 1</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">delattr</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 </code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+
+<span class="n">my_object</span> <span class="o">=</span> <span class="nc">MyClass</span><span class="p">()</span>
+
+<span class="n">my_object</span><span class="p">.</span><span class="n">my_attribute</span> <span class="o">=</span> <span class="s">"my value"</span>
+
+<span class="n">my_object</span><span class="p">.</span><span class="n">my_attribute</span>
+<span class="c1"># my value
+</span>
+<span class="nf">delattr</span><span class="p">(</span><span class="n">my_object</span><span class="p">,</span> <span class="s">'my_attribute'</span><span class="p">)</span>
+<span class="n">my_object</span><span class="p">.</span><span class="n">my_attribute</span>
+<span class="c1"># AttributeError 'MyClass' object has no attribute 'my_attribute'
+</span></code></pre></div></div>
 
         
     </div>

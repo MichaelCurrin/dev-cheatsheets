@@ -165,27 +165,27 @@
         
             <h2 id="import">Import</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">re</span>
 </code></pre></div></div>
 
 <h2 id="pattern">Pattern</h2>
 
 <p>Compile a pattern and then use it later. This is more efficient if the pattern is reused as it just has to be compiled once.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PATTERN</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="sa">r</span><span class="s">"REGEX_PATTERN"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PATTERN</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">compile</span><span class="p">(</span><span class="sa">r</span><span class="s">"REGEX_PATTERN"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="match">Match</h2>
 
 <p>Using <code class="language-plaintext highlighter-rouge">.search</code> for anywhere in the string or <code class="language-plaintext highlighter-rouge">.match</code> for the start.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">=</span> <span class="n">PATTERN</span><span class="p">.</span><span class="n">search</span><span class="p">(</span><span class="n">my_str</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">PATTERN</span><span class="p">.</span><span class="n">match</span><span class="p">(</span><span class="n">my_str</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">=</span> <span class="n">PATTERN</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="n">my_str</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">PATTERN</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="n">my_str</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Or using <code class="language-plaintext highlighter-rouge">re</code> directly.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">my_str</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">my_str</span><span class="p">)</span>
 </code></pre></div></div>
 
         

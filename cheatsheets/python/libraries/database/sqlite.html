@@ -189,14 +189,14 @@
 
 <h3 id="set-up-cursor">Set up cursor</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'trends.db'</span><span class="p">)</span>
-<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="n">cursor</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="s">'trends.db'</span><span class="p">)</span>
+<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="nf">cursor</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h3 id="create-table">Create table</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">drop_query</span> <span class="o">=</span> <span class="s">'DROP TABLE IF EXISTS foo;'</span>
-<span class="n">cur</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">drop_query</span><span class="p">)</span>
+<span class="n">cur</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="n">drop_query</span><span class="p">)</span>
 
 <span class="n">create_query</span> <span class="o">=</span> <span class="s">"""</span><span class="se">\
 </span><span class="s">CREATE TABLE IF NOT EXISTS foo (
@@ -206,7 +206,7 @@
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 """</span>
-<span class="n">cur</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">create_query</span><span class="p">)</span>
+<span class="n">cur</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="n">create_query</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="insert">Insert</h3>
@@ -215,7 +215,7 @@
     INSERT INTO foo (bar, baz, updated_at)
              VALUES (?, ?, CURRENT_TIMESTAMP);
 """</span>
-<span class="n">cur</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">insert_sql</span><span class="p">,</span> <span class="s">"Fizz"</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>
+<span class="n">cur</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="n">insert_sql</span><span class="p">,</span> <span class="s">"Fizz"</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="select">Select</h3>
@@ -225,10 +225,10 @@
     FROM foo;
 """</span>
 
-<span class="n">cur</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">select_sql</span><span class="p">)</span>
+<span class="n">cur</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="n">select_sql</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cur</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
 </code></pre></div></div>
 
         

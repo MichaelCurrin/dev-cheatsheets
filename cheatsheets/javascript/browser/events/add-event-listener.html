@@ -179,9 +179,9 @@
   <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">addEventListener</a> on MDN docs</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">target</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">listener</span><span class="p">);</span>
-<span class="nx">target</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">listener</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
-<span class="nx">target</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">listener</span><span class="p">,</span> <span class="nx">useCapture</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">target</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">listener</span><span class="p">);</span>
+<span class="nx">target</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">listener</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+<span class="nx">target</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">listener</span><span class="p">,</span> <span class="nx">useCapture</span><span class="p">);</span>
 </code></pre></div></div>
 
 <ul>
@@ -197,10 +197,10 @@
 <p>From the MDN docs.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Function to change the content of t2</span>
-<span class="kd">function</span> <span class="nx">modifyText</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">t2</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">t2</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">function</span> <span class="nf">modifyText</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">t2</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">t2</span><span class="dl">"</span><span class="p">);</span>
 
-  <span class="k">if</span> <span class="p">(</span><span class="nx">t2</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">nodeValue</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">three</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nx">t2</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">nodeValue</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">three</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">t2</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">nodeValue</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="p">;</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nx">t2</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">nodeValue</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">three</span><span class="dl">"</span><span class="p">;</span>
@@ -208,8 +208,8 @@
 <span class="p">}</span>
 
 <span class="c1">// Add event listener to table</span>
-<span class="kd">const</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">outside</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">el</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">modifyText</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">outside</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">el</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">modifyText</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 </code></pre></div></div>
 
         

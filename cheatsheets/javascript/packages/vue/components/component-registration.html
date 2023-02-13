@@ -230,9 +230,9 @@
 
 <p>Add a component directly to the <code class="language-plaintext highlighter-rouge">app</code> instance without defining it as a standalone object.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({})</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nf">createApp</span><span class="p">({})</span>
 
-<span class="nx">app</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="dl">'</span><span class="s1">my-foo</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+<span class="nx">app</span><span class="p">.</span><span class="nf">component</span><span class="p">(</span><span class="dl">'</span><span class="s1">my-foo</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
   <span class="c1">// ...</span>
 <span class="p">})</span>
 </code></pre></div></div>
@@ -243,7 +243,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">vue</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="k">export</span> <span class="k">default</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Vue</span><span class="p">.</span><span class="nf">extend</span><span class="p">({</span>
   <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">MyFoo</span><span class="dl">"</span>
   <span class="c1">// ...</span>
 <span class="p">})</span>
@@ -255,7 +255,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">defineComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">vue</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="k">export</span> <span class="k">default</span> <span class="nx">defineComponent</span><span class="p">({</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nf">defineComponent</span><span class="p">({</span>
   <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">MyFoo</span><span class="dl">"</span>
   <span class="c1">// ...</span>
 <span class="p">})</span>

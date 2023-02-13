@@ -165,7 +165,7 @@
         
             <h2 id="throw">Throw</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">My message</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">My message</span><span class="dl">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="try-catch">Try catch</h2>
@@ -174,8 +174,8 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Cannot foo the bar - </span><span class="p">${</span><span class="nx">err</span><span class="p">.</span><span class="nx">toString</span><span class="p">()}</span><span class="s2">)
+<span class="p">}</span> <span class="nf">catch </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Cannot foo the bar - </span><span class="p">${</span><span class="nx">err</span><span class="p">.</span><span class="nf">toString</span><span class="p">()}</span><span class="s2">)
   
   throw Err
 }
@@ -189,12 +189,12 @@
 
 <p>Given error:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">My message</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">My message</span><span class="dl">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Convert to string - with error type and the message.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">err</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">err</span><span class="p">.</span><span class="nf">toString</span><span class="p">()</span>
 <span class="dl">'</span><span class="s1">Error: My message</span><span class="dl">'</span>
 </code></pre></div></div>
 

@@ -189,7 +189,7 @@
 
 <p>Or you can replace <code class="language-plaintext highlighter-rouge">\n</code> with <code class="language-plaintext highlighter-rouge">&lt;br&gt;</code> and also use <code class="language-plaintext highlighter-rouge">v-html</code> so it sets as <code class="language-plaintext highlighter-rouge">innerHTML</code> rather than just as literal <code class="language-plaintext highlighter-rouge">\n</code> text. But it has a security concern if you use user-generated data.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">(?:\r\n</span><span class="sr">|</span><span class="se">\r</span><span class="sr">|</span><span class="se">\n)</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">'</span><span class="s1">&lt;br /&gt;</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">text</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">(?:\r\n</span><span class="sr">|</span><span class="se">\r</span><span class="sr">|</span><span class="se">\n)</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">'</span><span class="s1">&lt;br /&gt;</span><span class="dl">'</span><span class="p">);</span>
 </code></pre></div></div>
 
         

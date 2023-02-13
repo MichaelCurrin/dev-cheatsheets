@@ -226,17 +226,17 @@
 
 <h2 id="examples">Examples</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">encodeURI</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://example.com?q=Hello, world!</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nf">encodeURI</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://example.com?q=Hello, world!</span><span class="dl">'</span><span class="p">)</span>
 <span class="dl">"</span><span class="s2">https://example.com?q=Hello,%20world!</span><span class="dl">"</span>
 
 <span class="c1">// If you actually want a character comma to be encoded and not skipped, you would use this and then build the URL.</span>
-<span class="o">&gt;</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, world!</span><span class="dl">'</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">encodeURIComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, world!</span><span class="dl">'</span><span class="p">)</span>
 <span class="dl">"</span><span class="s2">Hello%2C%20world!</span><span class="dl">"</span>
 
-<span class="o">&gt;</span> <span class="nb">decodeURI</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello,%20world!</span><span class="dl">"</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">decodeURI</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello,%20world!</span><span class="dl">"</span><span class="p">)</span>
 <span class="dl">"</span><span class="s2">Hello, world!</span><span class="dl">"</span>
 
-<span class="o">&gt;</span> <span class="nb">decodeURI</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://example.com?q=Hello,%20world!</span><span class="dl">"</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">decodeURI</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://example.com?q=Hello,%20world!</span><span class="dl">"</span><span class="p">)</span>
 <span class="dl">"</span><span class="s2">https://example.com?q=Hello, world!</span><span class="dl">"</span>
 </code></pre></div></div>
 

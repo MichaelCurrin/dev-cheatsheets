@@ -157,7 +157,7 @@
 
 <p>If the input is from a user like a form, then you need to cast a string to the right type. This doesn’t guarantee the value though, so you might need your own input validation or throw an error.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">foo</span><span class="p">(</span><span class="nx">fruitInput</span> <span class="k">as</span> <span class="nx">Fruit</span><span class="p">)</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">foo</span><span class="p">(</span><span class="nx">fruitInput</span> <span class="k">as</span> <span class="nx">Fruit</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="enum">Enum</h3>
@@ -167,16 +167,16 @@
   <span class="nx">Banana</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">banana</span><span class="dl">"</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">fruit</span><span class="p">:</span> <span class="nx">Fruit</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fruit</span><span class="p">)</span>
+<span class="kd">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">fruit</span><span class="p">:</span> <span class="nx">Fruit</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">fruit</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="nx">foo</span><span class="p">(</span><span class="nx">Fruit</span><span class="p">.</span><span class="nx">Apple</span><span class="p">)</span>
+<span class="nf">foo</span><span class="p">(</span><span class="nx">Fruit</span><span class="p">.</span><span class="nx">Apple</span><span class="p">)</span>
 <span class="c1">// apple</span>
-<span class="nx">foo</span><span class="p">(</span><span class="nx">Fruit</span><span class="p">.</span><span class="nx">Banana</span><span class="p">)</span>
+<span class="nf">foo</span><span class="p">(</span><span class="nx">Fruit</span><span class="p">.</span><span class="nx">Banana</span><span class="p">)</span>
 <span class="c1">// banana</span>
 
-<span class="nx">foo</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
+<span class="nf">foo</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
 <span class="c1">// Argument is not of type Fruit so is not allowed.</span>
 </code></pre></div></div>
 
@@ -186,16 +186,16 @@
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">Fruit</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">apple</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">banana</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">fruit</span><span class="p">:</span> <span class="nx">Fruit</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fruit</span><span class="p">)</span>
+<span class="kd">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">fruit</span><span class="p">:</span> <span class="nx">Fruit</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">fruit</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="nx">foo</span><span class="p">(</span><span class="dl">"</span><span class="s2">apple</span><span class="dl">"</span><span class="p">)</span>
+<span class="nf">foo</span><span class="p">(</span><span class="dl">"</span><span class="s2">apple</span><span class="dl">"</span><span class="p">)</span>
 <span class="c1">// apple</span>
-<span class="nx">foo</span><span class="p">(</span><span class="dl">"</span><span class="s2">banana</span><span class="dl">"</span><span class="p">)</span>
+<span class="nf">foo</span><span class="p">(</span><span class="dl">"</span><span class="s2">banana</span><span class="dl">"</span><span class="p">)</span>
 <span class="c1">// banana</span>
 
-<span class="nx">foo</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
+<span class="nf">foo</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
 <span class="c1">// Argument is not of type Fruit so is not allowed.</span>
 </code></pre></div></div>
 
@@ -215,13 +215,13 @@
 
 <p>Or in a function. Optional values must go last.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Foo</span><span class="p">(</span><span class="nx">bar</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">foo</span><span class="p">?:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Foo</span><span class="p">(</span><span class="nx">bar</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">foo</span><span class="p">?:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>Or</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Foo</span><span class="p">(</span><span class="nx">bar</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">foo</span> <span class="o">=</span> <span class="dl">""</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Foo</span><span class="p">(</span><span class="nx">bar</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">foo</span> <span class="o">=</span> <span class="dl">""</span><span class="p">)</span> <span class="p">{</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -231,8 +231,8 @@
 
 <p>So then you need your own check.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">foo</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">`foo` may not be null</span><span class="dl">"</span><span class="p">);</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">foo</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">`foo` may not be null</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 

@@ -191,11 +191,11 @@
   <li><code class="language-plaintext highlighter-rouge">foo.spec.js</code>
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">import</span> <span class="nx">foo</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../foo.js</span><span class="dl">"</span>
 
-  <span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">#foo</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">returns a correct foo when given a number</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+  <span class="nf">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">#foo</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">returns a correct foo when given a number</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nf">foo</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
 
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">result</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">({</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">:</span> <span class="mi">12</span> <span class="p">})</span>
+      <span class="nf">expect</span><span class="p">(</span><span class="nx">result</span><span class="p">).</span><span class="nf">toEqual</span><span class="p">({</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">:</span> <span class="mi">12</span> <span class="p">})</span>
     <span class="p">})</span>
   <span class="p">})</span>
 </code></pre></div>    </div>

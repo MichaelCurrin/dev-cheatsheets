@@ -171,20 +171,20 @@
 
 <p>That handles tabs, newlines and spaces.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_string</span><span class="p">.</span><span class="n">split</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_string</span><span class="p">.</span><span class="nf">split</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>e.g.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"abc def ghi klm"</span><span class="p">.</span><span class="n">split</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"abc def ghi klm"</span><span class="p">.</span><span class="nf">split</span><span class="p">()</span>
 <span class="c1"># ['abc', 'def', 'ghi', 'klm']
 </span></code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"abcdef"</span><span class="p">.</span><span class="n">split</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"abcdef"</span><span class="p">.</span><span class="nf">split</span><span class="p">()</span>
 <span class="c1"># ['abcdef']
 </span></code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"abc</span><span class="se">\t</span><span class="s">def</span><span class="se">\n</span><span class="s">ghi klm"</span><span class="p">.</span><span class="n">split</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"abc</span><span class="se">\t</span><span class="s">def</span><span class="se">\n</span><span class="s">ghi klm"</span><span class="p">.</span><span class="nf">split</span><span class="p">()</span>
 <span class="c1"># ['abc', 'def', 'ghi', 'klm']
 </span></code></pre></div></div>
 
@@ -192,10 +192,10 @@
 
 <h3 id="simple">Simple</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_string</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">":"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_string</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s">":"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"abc:def:ghi"</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">":"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"abc:def:ghi"</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s">":"</span><span class="p">)</span>
 <span class="c1"># ['abc', 'def', 'ghi']
 </span></code></pre></div></div>
 
@@ -203,25 +203,25 @@
 
 <p>Split by a sequence of a command <em>and</em> a space.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"abc, def, ghi, klm"</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">", "</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"abc, def, ghi, klm"</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s">", "</span><span class="p">)</span>
 <span class="c1"># ['abc', 'def', 'ghi', 'klm']
 </span></code></pre></div></div>
 
 <p>If items may or may not have space as in the next example, you can use <code class="language-plaintext highlighter-rouge">str.strip</code> on each items to remove whitespace if any.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="s">"abc, def,ghi, klm"</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">","</span><span class="p">)]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="nf">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="s">"abc, def,ghi, klm"</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s">","</span><span class="p">)]</span>
 <span class="c1"># ['abc', 'def', 'ghi', 'klm']
 </span></code></pre></div></div>
 
 <p>Warning - here the whitespace is retained in each item, because we only split by a comma.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"abc, def, ghi, klm"</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">","</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"abc, def, ghi, klm"</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s">","</span><span class="p">)</span>
 <span class="c1"># ['abc', ' def', ' ghi', ' klm']
 </span></code></pre></div></div>
 
 <h3 id="split-by-newline-characters">Split by newline characters</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_string</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_string</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>e.g.</p>
@@ -229,20 +229,20 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"""abc
 def
 ghi
-"""</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+"""</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
 <span class="c1"># ['abc', 'def', 'ghi', '']
 </span></code></pre></div></div>
 
 <p>If reading text from a file, you’ll end up with a trailing newline in each string still. Then this more appropriate:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_string</span><span class="p">.</span><span class="n">splitlines</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_string</span><span class="p">.</span><span class="nf">splitlines</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>e.g.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">f_in</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="n">splitlines</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">f_in</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="nf">splitlines</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Or not from a file.</p>
@@ -250,7 +250,7 @@ ghi
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"""abc
 def
 ghi
-"""</span><span class="p">.</span><span class="n">splitlines</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+"""</span><span class="p">.</span><span class="nf">splitlines</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
 <span class="p">[</span><span class="s">'abc'</span><span class="p">,</span> <span class="s">'def'</span><span class="p">,</span> <span class="s">'ghi'</span><span class="p">]</span>
 </code></pre></div></div>
 
@@ -262,7 +262,7 @@ ghi
 
 <p>Use <code class="language-plaintext highlighter-rouge">list</code>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">list</span><span class="p">(</span><span class="s">"abcdef ghi"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">list</span><span class="p">(</span><span class="s">"abcdef ghi"</span><span class="p">)</span>
 <span class="c1"># ['a', 'b', 'c', 'd', 'e', 'f', ' ', 'g', 'h', 'i']
 </span></code></pre></div></div>
 

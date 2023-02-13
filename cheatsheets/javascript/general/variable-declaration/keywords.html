@@ -201,27 +201,27 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">foo</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+<span class="nf">if </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Declared only in inner scope.</span>
   <span class="kd">let</span> <span class="nx">foo</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">;</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">)</span>
   <span class="c1">// B</span>
 <span class="p">}</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">)</span> <span class="c1">// A</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">)</span> <span class="c1">// A</span>
 </code></pre></div></div>
 
 <p>Use <code class="language-plaintext highlighter-rouge">let</code> in an <code class="language-plaintext highlighter-rouge">if</code> statement. Declare outside the blocks, so the variable persists.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+<span class="nf">if </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">x</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">yes</span><span class="dl">'</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
   <span class="nx">x</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">no</span><span class="dl">'</span>
 <span class="p">}</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
 <span class="c1">// yes</span>
 </code></pre></div></div>
 
@@ -232,7 +232,7 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-<span class="kd">let</span> <span class="nx">z</span> <span class="o">=</span> <span class="nx">y</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nx">z</span> <span class="o">=</span> <span class="nx">y</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="p">)</span>
 <span class="c1">// [{}, {}, {}]</span>
 
 <span class="nx">x</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span>
@@ -255,7 +255,7 @@
 <span class="nx">y</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">123</span> <span class="p">]</span>
 <span class="c1">// Uncaught TypeError: Assignment to constant variable.</span>
 
-<span class="nx">y</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nx">y</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="nx">y</span>
 <span class="c1">// [ 1 ]</span>
 </code></pre></div></div>
@@ -264,11 +264,11 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="p">]</span>
 
-<span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nf">freeze</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span>
 <span class="nx">y</span>
 <span class="c1">// [ 1 ]</span>
 
-<span class="nx">y</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nx">y</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="c1">// Uncaught TypeError: Cannot add property 1, object is not extensible</span>
 <span class="c1">//    at Array.push (&lt;anonymous&gt;)</span>
 </code></pre></div></div>
@@ -279,11 +279,11 @@
 
 <p>Here, the variable exists only in the block and not available outside of it.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">if </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
 <span class="p">}</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
 </code></pre></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
@@ -294,9 +294,9 @@ ReferenceError: x is not defined
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
   <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
 <span class="p">}</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
 </code></pre></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
@@ -327,26 +327,26 @@ ReferenceError: x is not defined
 
 <h4 id="functions">Functions</h4>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">greet</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">greet</span><span class="p">()</span> <span class="p">{</span>
   <span class="c1">// Use global variable.</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
 
   <span class="c1">// Define function-scoped variable.</span>
   <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">;</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1">// Define and use global variable.</span>
 <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
 <span class="c1">// A</span>
 
 <span class="c1">// Use function-scoped variable.</span>
-<span class="nx">greet</span><span class="p">()</span>
+<span class="nf">greet</span><span class="p">()</span>
 <span class="c1">// B</span>
 
 <span class="c1">// Use global variable.</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
 <span class="c1">// A</span>
 </code></pre></div></div>
 

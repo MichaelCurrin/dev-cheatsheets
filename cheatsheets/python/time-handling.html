@@ -182,7 +182,7 @@
 
 <p>Get a <code class="language-plaintext highlighter-rouge">date</code> object for today’s date - using <code class="language-plaintext highlighter-rouge">date.today</code> method.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">date</span><span class="p">.</span><span class="n">today</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">date</span><span class="p">.</span><span class="nf">today</span><span class="p">()</span>
 <span class="c1"># datetime.date(2021, 5, 8)
 </span></code></pre></div></div>
 
@@ -190,13 +190,13 @@
 
 <p>Get a <code class="language-plaintext highlighter-rouge">datetime</code> object for the current date and time - using <code class="language-plaintext highlighter-rouge">datetime.today</code> or <code class="language-plaintext highlighter-rouge">datetime.now</code> methods:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">today</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">today</span><span class="p">()</span>
 <span class="c1"># datetime.datetime(2021, 11, 2, 20, 21, 10, 742033)
 </span>
-<span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
 <span class="c1"># datetime.datetime(2021, 11, 2, 20, 21, 10, 753648)
 </span>
-<span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">utcnow</span><span class="p">()</span>
+<span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">utcnow</span><span class="p">()</span>
 <span class="c1"># datetime.datetime(2021, 11, 2, 18, 21, 10, 760241)
 </span></code></pre></div></div>
 
@@ -204,13 +204,13 @@
 
 <p>Get a float for the current time, using <code class="language-plaintext highlighter-rouge">time</code> module.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
 <span class="c1"># 1635876799.357939
 </span></code></pre></div></div>
 
 <p>The long way using <code class="language-plaintext highlighter-rouge">datetime</code>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">today</span><span class="p">().</span><span class="n">timestamp</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">today</span><span class="p">().</span><span class="nf">timestamp</span><span class="p">()</span>
 <span class="c1"># 1635876799.357939
 </span></code></pre></div></div>
 
@@ -218,13 +218,13 @@
 
 <p>Unix timestamp:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
 <span class="c1"># 1641638542.2153149
 </span></code></pre></div></div>
 
 <p>C time:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">time</span><span class="p">.</span><span class="n">ctime</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">time</span><span class="p">.</span><span class="nf">ctime</span><span class="p">()</span>
 <span class="s">'Sat Jan  8 12:42:28 2022'</span>
 </code></pre></div></div>
 
@@ -232,9 +232,9 @@
 
 <h3 id="date">Date</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">date</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="c1"># datetime.date(2021, 1, 2)
-</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span class="nf">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="c1"># '2021-01-02'
 </span></code></pre></div></div>
 
@@ -242,23 +242,23 @@
 
 <p>Create a datetime from a date - defaults to midnight.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="nf">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="c1"># datetime.datetime(2021, 1, 2, 0, 0)
-</span><span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</span><span class="nf">str</span><span class="p">(</span><span class="n">datetime</span><span class="p">.</span><span class="nf">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="s">'2021-01-02 00:00:00'</span>
 </code></pre></div></div>
 
 <p>Create a datetime object:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 <span class="c1"># datetime.datetime(2021, 1, 2, 3, 40)
-</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span class="nf">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="c1"># '2021-01-02 03:40:00'
 </span></code></pre></div></div>
 
 <p>If you want to be more explicit:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2021</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="nf">datetime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2021</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="c1"># datetime.datetime(2021, 1, 2, 0, 0)
 </span></code></pre></div></div>
 
@@ -278,7 +278,7 @@
 
 <p>e.g.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
 
 <span class="n">n</span><span class="p">.</span><span class="n">hour</span>
 <span class="c1"># 11
@@ -310,25 +310,25 @@
 
 <h3 id="format-datetime-as-built-in-string">Format datetime as built-in string</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Use <a href="#resources">ISO-8601</a> format:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">.</span><span class="n">isoformat</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">.</span><span class="nf">isoformat</span><span class="p">()</span>
 <span class="c1"># '2021-11-02T20:19:57.928643'
 </span></code></pre></div></div>
 
 <p>You can also stringify the object for the same result:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="c1"># '2021-11-02T20:19:57.928643'
 </span></code></pre></div></div>
 
 <p>Use C time:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
-<span class="n">dt</span><span class="p">.</span><span class="n">ctime</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
+<span class="n">dt</span><span class="p">.</span><span class="nf">ctime</span><span class="p">()</span>
 <span class="c1"># 'Sat Jan  8 12:41:22 2022'
 </span></code></pre></div></div>
 
@@ -340,24 +340,24 @@
 
 <p>Supply a custom format.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MY_DATETIME</span><span class="p">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">MY_FORMAT</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MY_DATETIME</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="n">MY_FORMAT</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>e.g.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
 <span class="c1"># datetime.datetime(2021, 5, 8, 11, 30, 51, 733268)
 </span></code></pre></div></div>
 
 <p>Showing functionality of a few areas:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%Y/%m/%d - %b %y - %H:%M:%S'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="s">'%Y/%m/%d - %b %y - %H:%M:%S'</span><span class="p">)</span>
 <span class="c1"># '2021/05/08 - May 21 - 11:05:51'
 </span></code></pre></div></div>
 
 <p>Short date and 24-hour time:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%Y-%m-%d %H:%M'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="s">'%Y-%m-%d %H:%M'</span><span class="p">)</span>
 <span class="s">'2021-11-02 20:11'</span>
 </code></pre></div></div>
 
@@ -373,29 +373,29 @@
 
 <p>Using <code class="language-plaintext highlighter-rouge">strptime</code>, where the <code class="language-plaintext highlighter-rouge">p</code> stands for “parse”.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">DATETIME_STRING</span><span class="p">,</span> <span class="n">CUSTOM_FORMAT</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">strptime</span><span class="p">(</span><span class="n">DATETIME_STRING</span><span class="p">,</span> <span class="n">CUSTOM_FORMAT</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>e.g.</p>
 
 <p>Set the time.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">strptime</span><span class="p">(</span><span class="s">"21/11/06 16:30"</span><span class="p">,</span> <span class="s">"%d/%m/%y %H:%M"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">strptime</span><span class="p">(</span><span class="s">"21/11/06 16:30"</span><span class="p">,</span> <span class="s">"%d/%m/%y %H:%M"</span><span class="p">)</span>
 <span class="c1"># datetime.datetime(2006, 11, 21, 16, 30)
-</span><span class="nb">str</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+</span><span class="nf">str</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
 <span class="c1"># '2006-11-21 16:30:00'
 </span></code></pre></div></div>
 
 <p>Omit time and it will be midnight.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">strptime</span><span class="p">(</span><span class="s">'2021-01-02'</span><span class="p">,</span> <span class="s">'%Y-%m-%d'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">strptime</span><span class="p">(</span><span class="s">'2021-01-02'</span><span class="p">,</span> <span class="s">'%Y-%m-%d'</span><span class="p">)</span>
 <span class="c1"># datetime.datetime(2021, 1, 2, 0, 0)
-</span><span class="nb">str</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+</span><span class="nf">str</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
 <span class="c1"># '2021-01-02 00:00:00'
 </span>
-<span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">strptime</span><span class="p">(</span><span class="s">'12/05/19'</span><span class="p">,</span> <span class="s">'%m/%d/%y'</span><span class="p">)</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">strptime</span><span class="p">(</span><span class="s">'12/05/19'</span><span class="p">,</span> <span class="s">'%m/%d/%y'</span><span class="p">)</span>
 <span class="c1"># datetime.datetime(2019, 12, 5, 0, 0)
-</span><span class="nb">str</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+</span><span class="nf">str</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
 <span class="s">'2019-12-05 00:00:00'</span>
 </code></pre></div></div>
 
@@ -413,7 +413,7 @@
 <p>The response is a timezone-aware datetime object.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v</span> <span class="o">=</span> <span class="s">"2020-01-24T08:37:37+00:00"</span>
-<span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">fromisoformat</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 <span class="c1"># datetime.datetime(2020, 1, 24, 8, 37, 37, tzinfo=datetime.timezone.utc)
 </span></code></pre></div></div>
 
@@ -428,8 +428,8 @@
 
 <p>See <a href="https://stackoverflow.com/questions/7703865/going-from-twitter-date-to-python-datetime-date">SO</a> answers.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">from</span> <span class="nn">email.utils</span> <span class="kn">import</span> <span class="n">mktime_tz</span><span class="p">,</span> <span class="n">parsedate_tz</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="n">email.utils</span> <span class="kn">import</span> <span class="n">mktime_tz</span><span class="p">,</span> <span class="n">parsedate_tz</span>
 
 
 <span class="k">def</span> <span class="nf">parse_datetime</span><span class="p">(</span><span class="n">standard_datetime</span><span class="p">):</span>
@@ -445,10 +445,10 @@
         if printing in a system set to +0200 timezone,
         whether doing `str(obj)` or `str(obj.hour)`.
     """</span>
-    <span class="n">time_tuple</span> <span class="o">=</span> <span class="n">parsedate_tz</span><span class="p">(</span><span class="n">standard_datetime</span><span class="p">)</span>
-    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">mktime_tz</span><span class="p">(</span><span class="n">time_tuple</span><span class="p">)</span>
+    <span class="n">time_tuple</span> <span class="o">=</span> <span class="nf">parsedate_tz</span><span class="p">(</span><span class="n">standard_datetime</span><span class="p">)</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="nf">mktime_tz</span><span class="p">(</span><span class="n">time_tuple</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">fromtimestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="format-codes">Format codes</h2>
@@ -498,22 +498,22 @@
 
 <p>Get a date object from datetime object.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span><span class="p">.</span><span class="n">date</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span><span class="p">.</span><span class="nf">date</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>e.g. Current date.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">214702</span><span class="p">)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">dt</span><span class="p">.</span><span class="n">date</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">214702</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">dt</span><span class="p">.</span><span class="nf">date</span><span class="p">()</span>
 <span class="c1"># datetime.date(2022, 1, 8)
 </span></code></pre></div></div>
 
 <p>Parse a string of a date (just omit the time) then convert from datetime to date.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">strptime</span><span class="p">(</span><span class="s">'12/05/19'</span><span class="p">,</span> <span class="s">'%m/%d/%y'</span><span class="p">)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">dt</span><span class="p">.</span><span class="n">date</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">strptime</span><span class="p">(</span><span class="s">'12/05/19'</span><span class="p">,</span> <span class="s">'%m/%d/%y'</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">dt</span><span class="p">.</span><span class="nf">date</span><span class="p">()</span>
 <span class="c1"># datetime.date(2019, 12, 5)
-</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</span><span class="nf">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="s">'2019-12-05'</span>
 </code></pre></div></div>
 
@@ -525,38 +525,38 @@
 
 <p>Omit the time:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">d</span><span class="p">.</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="n">d</span><span class="p">.</span><span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="n">d</span><span class="p">.</span><span class="n">day</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">date</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">datetime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">d</span><span class="p">.</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="n">d</span><span class="p">.</span><span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="n">d</span><span class="p">.</span><span class="n">day</span><span class="p">)</span>
 <span class="c1"># datetime.datetime(2022, 1, 8, 0, 0)
 </span></code></pre></div></div>
 
 <p>Then set it after if you need to:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">34</span><span class="p">)</span>
-<span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">34</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">34</span><span class="p">)</span>
+<span class="n">datetime</span><span class="p">.</span><span class="nf">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">34</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Specify a time at creation:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">day</span><span class="p">,</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="nf">datetime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">day</span><span class="p">,</span> 
                   <span class="n">hour</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">34</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">56</span><span class="p">)</span>
 <span class="c1"># datetime.datetime(2022, 1, 8, 12, 34, 56)
 </span>
-<span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">day</span><span class="p">,</span> 
+<span class="n">datetime</span><span class="p">.</span><span class="nf">datetime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">day</span><span class="p">,</span> 
                   <span class="n">hour</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">34</span><span class="p">)</span>
 <span class="c1"># datetime.datetime(2022, 1, 8, 12, 34)
 </span></code></pre></div></div>
 
 <h3 id="convert-from-datetime-to-time">Convert from datetime to time</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>e.g.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
 <span class="c1"># datetime.datetime(2022, 1, 8, 13, 8, 1, 493063)
-</span><span class="n">dt</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+</span><span class="n">dt</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
 <span class="c1"># datetime.time(13, 8, 1, 493063)
 </span></code></pre></div></div>
 
@@ -568,7 +568,7 @@
 
 <p>e.g.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="mf">1403602426.0</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">fromtimestamp</span><span class="p">(</span><span class="mf">1403602426.0</span><span class="p">)</span>
 <span class="c1"># datetime.datetime(2014, 6, 24, 11, 33, 46)
 </span></code></pre></div></div>
 
@@ -597,14 +597,14 @@
 
 <p>Get timedelta in days between two dates.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="n">datetime</span><span class="p">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datetime</span><span class="p">.</span><span class="nf">date</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">date</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="c1"># datetime.timedelta(days=4)
 </span></code></pre></div></div>
 
 <h3 id="difference-in-seconds">Difference in seconds</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
 
 <span class="n">y</span> <span class="o">-</span> <span class="n">x</span>
 <span class="c1"># datetime.timedelta(seconds=2, microseconds=693039)
@@ -617,17 +617,17 @@
 
 <p>Lets say you want to get age.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">date</span><span class="p">.</span><span class="n">today</span><span class="p">()</span> <span class="o">-</span> <span class="n">datetime</span><span class="p">.</span><span class="n">date</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">date</span><span class="p">.</span><span class="nf">today</span><span class="p">()</span> <span class="o">-</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">date</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="c1"># datetime.timedelta(days=11449)
 </span>
 <span class="n">x</span><span class="p">.</span><span class="n">days</span>
 <span class="c1"># 11449
 </span>
 <span class="c1"># Appromiate age in years.
-</span><span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">days</span> <span class="o">/</span> <span class="mf">365.25</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span><span class="nf">round</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">days</span> <span class="o">/</span> <span class="mf">365.25</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="c1"># 31.35
 </span>
-<span class="n">x</span><span class="p">.</span><span class="n">total_seconds</span><span class="p">()</span>
+<span class="n">x</span><span class="p">.</span><span class="nf">total_seconds</span><span class="p">()</span>
 <span class="mf">989193600.0</span>
 </code></pre></div></div>
 
@@ -641,30 +641,30 @@
 
 <p>Let’s say you want something to expire in 30 minutes from now and you want to know when that is.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
-<span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="c1"># '2021-05-08 11:30:51.733268'
 </span>
-<span class="n">expire_at</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">datetime</span><span class="p">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-<span class="nb">str</span><span class="p">(</span><span class="n">expire_at</span><span class="p">)</span>
+<span class="n">expire_at</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">expire_at</span><span class="p">)</span>
 <span class="c1"># '2021-05-08 12:00:51.733268'
 </span></code></pre></div></div>
 
 <p>You can be more precise with hours, minutes and seconds.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">minutes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">seconds</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">minutes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">seconds</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="c1"># datetime.timedelta(seconds=3723)
 </span>
-<span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="s">'1:02:03'</span>
 </code></pre></div></div>
 
 <p>Or with days.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span><span class="n">seconds</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span><span class="n">seconds</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="c1"># datetime.timedelta(days=1000, seconds=10)
 </span>
-<span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="c1"># '1000 days, 0:00:10'
 </span></code></pre></div></div>
 
@@ -678,43 +678,43 @@
 
 <p>Here adding <code class="language-plaintext highlighter-rouge">tzinfo</code> to a <code class="language-plaintext highlighter-rouge">datetime</code> object, though this does not work properly for timezones which use daylight savings.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pytz</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pytz</span>
 
 
-<span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2002</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">pytz</span><span class="p">.</span><span class="n">utc</span><span class="p">)</span>
+<span class="n">datetime</span><span class="p">.</span><span class="nf">datetime</span><span class="p">(</span><span class="mi">2002</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">pytz</span><span class="p">.</span><span class="n">utc</span><span class="p">)</span>
 
-<span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">pytz</span><span class="p">.</span><span class="n">utc</span><span class="p">)</span>
+<span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">pytz</span><span class="p">.</span><span class="n">utc</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>My example:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
-<span class="kn">import</span> <span class="nn">pytz</span>
-<span class="kn">from</span> <span class="nn">pytz</span> <span class="kn">import</span> <span class="n">timezone</span>
+<span class="kn">import</span> <span class="n">pytz</span>
+<span class="kn">from</span> <span class="n">pytz</span> <span class="kn">import</span> <span class="n">timezone</span>
 
 
 <span class="n">FMT</span> <span class="o">=</span> <span class="s">"%Y-%m-%d %H:%M:%S %Z%z"</span>
 
-<span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2002</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">amsterdam</span> <span class="o">=</span> <span class="n">timezone</span><span class="p">(</span><span class="s">"Europe/Amsterdam"</span><span class="p">)</span>
-<span class="n">loc_dt</span> <span class="o">=</span> <span class="n">amsterdam</span><span class="p">.</span><span class="n">localize</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="nf">datetime</span><span class="p">(</span><span class="mi">2002</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">amsterdam</span> <span class="o">=</span> <span class="nf">timezone</span><span class="p">(</span><span class="s">"Europe/Amsterdam"</span><span class="p">)</span>
+<span class="n">loc_dt</span> <span class="o">=</span> <span class="n">amsterdam</span><span class="p">.</span><span class="nf">localize</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
 
 <span class="c1"># Naiive
-</span><span class="k">print</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+</span><span class="nf">print</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
 <span class="c1"># 2002-10-27 06:00:00
 </span>
 <span class="c1"># Timezone aware
-</span><span class="k">print</span><span class="p">(</span><span class="n">loc_dt</span><span class="p">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">FMT</span><span class="p">))</span>
+</span><span class="nf">print</span><span class="p">(</span><span class="n">loc_dt</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="n">FMT</span><span class="p">))</span>
 <span class="c1"># 2002-10-27 06:00:00 CET+0100
 </span>
 <span class="c1"># Note straight printing gives you offset but not the symbol.
-</span><span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">loc_dt</span><span class="p">))</span>
+</span><span class="nf">print</span><span class="p">(</span><span class="nf">str</span><span class="p">(</span><span class="n">loc_dt</span><span class="p">))</span>
 <span class="c1"># 2002-10-27 06:00:00+01:00
 </span>
 <span class="c1"># Display in another timezone.
 </span><span class="n">utc</span> <span class="o">=</span> <span class="n">pytz</span><span class="p">.</span><span class="n">utc</span>
-<span class="k">print</span><span class="p">(</span><span class="n">loc_dt</span><span class="p">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">tz</span><span class="o">=</span><span class="n">utc</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">loc_dt</span><span class="p">.</span><span class="nf">astimezone</span><span class="p">(</span><span class="n">tz</span><span class="o">=</span><span class="n">utc</span><span class="p">))</span>
 <span class="c1"># 2002-10-27 05:00:00+00:00
 </span></code></pre></div></div>
 

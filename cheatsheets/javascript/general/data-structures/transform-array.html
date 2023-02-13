@@ -190,29 +190,29 @@
 
 <p>General format:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ARRAY</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">ITEM</span> <span class="o">=&gt;</span> <span class="nx">EXPRESSION</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ARRAY</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">ITEM</span> <span class="o">=&gt;</span> <span class="nx">EXPRESSION</span><span class="p">)</span>
 
-<span class="nx">ARRAY</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">ITEM</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">EXPRESSION</span> <span class="p">})</span>
+<span class="nx">ARRAY</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">ITEM</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">EXPRESSION</span> <span class="p">})</span>
 </code></pre></div></div>
 
 <p>Example:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">letters</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">]</span>
 
-<span class="kd">const</span> <span class="nx">upper</span> <span class="o">=</span> <span class="nx">letters</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">())</span>
+<span class="kd">const</span> <span class="nx">upper</span> <span class="o">=</span> <span class="nx">letters</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">())</span>
 
 <span class="nx">upper</span>
 <span class="c1">// [ "A", "B", "C" ]</span>
 </code></pre></div></div>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="kd">const</span> <span class="nx">squares</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">squares</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="c1">// [1, 4, 9]</span>
 </code></pre></div></div>
 
 <p>Without declaring a variable first.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">squares</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">squares</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="c1">// [1, 4, 9]</span>
 </code></pre></div></div>
 
@@ -222,18 +222,18 @@
 
 <p>General format:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ARRAY</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">FUNCTION</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ARRAY</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">FUNCTION</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Example:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">upper</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">item</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">upper</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">item</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">()</span>
 <span class="p">}</span>
 
 <span class="kd">const</span> <span class="nx">letters</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">]</span>
 
-<span class="kd">const</span> <span class="nx">upper</span> <span class="o">=</span> <span class="nx">letters</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">upper</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">upper</span> <span class="o">=</span> <span class="nx">letters</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">upper</span><span class="p">)</span>
 
 <span class="nx">upper</span>
 <span class="c1">// [ "A", "B", "C" ]</span>
@@ -241,15 +241,15 @@
 
 <p>This is equivalent to the more verbose form:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">upper</span> <span class="o">=</span> <span class="nx">letters</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">upper</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">upper</span> <span class="o">=</span> <span class="nx">letters</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nf">upper</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span>
 </code></pre></div></div>
 
 <h3 id="promises">Promises</h3>
 
 <p>Warning - when using <code class="language-plaintext highlighter-rouge">.then</code> promise chains, it does not work to just pass a function. you need to wrap that in a function.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">([</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span> <span class="p">]</span> <span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="p">.</span><span class="nx">upper</span><span class="p">())</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nf">resolve</span><span class="p">([</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span> <span class="p">]</span> <span class="p">)</span>
+  <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="p">.</span><span class="nf">upper</span><span class="p">())</span>
 </code></pre></div></div>
 
 <h2 id="comparison-with-functional-programming">Comparison with Functional Programming</h2>
@@ -274,14 +274,14 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
-<span class="nx">myArray</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nx">myArray</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>But <code class="language-plaintext highlighter-rouge">const</code> is still good at stopping your from doing this, because you will get an error that a <code class="language-plaintext highlighter-rouge">const</code> variable can’t be reassigned.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-<span class="nx">myArray</span> <span class="o">=</span> <span class="nx">myArray</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">myFunction</span><span class="p">)</span>
+<span class="nx">myArray</span> <span class="o">=</span> <span class="nx">myArray</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">myFunction</span><span class="p">)</span>
 </code></pre></div></div>
 
         

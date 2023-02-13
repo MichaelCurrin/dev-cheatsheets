@@ -186,7 +186,7 @@
 
 <p>From <a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">post</a> in 2018.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MyComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">memo</span><span class="p">(</span><span class="kd">function</span> <span class="nx">MyComponent</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MyComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nf">memo</span><span class="p">(</span><span class="kd">function</span> <span class="nf">MyComponent</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="cm">/* only rerenders if props change */</span>
 <span class="p">});</span>
 </code></pre></div></div>
@@ -195,11 +195,11 @@
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span>
 
-<span class="kd">function</span> <span class="nx">RocketComponent</span><span class="p">()</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nf">RocketComponent</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>my rocket component. <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">fuel</span> <span class="si">}</span>!<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
 <span class="p">}</span>
 
-<span class="kd">const</span> <span class="nx">MemoizedRocketComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">memo</span><span class="p">(</span><span class="nx">RocketComponent</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">MemoizedRocketComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nf">memo</span><span class="p">(</span><span class="nx">RocketComponent</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Or</p>
@@ -207,13 +207,13 @@
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="kd">const</span> <span class="nx">Todos</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">todos</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">child render</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">child render</span><span class="dl">"</span><span class="p">);</span>
   
-  <span class="k">return</span> <span class="p">(</span>
+  <span class="nf">return </span><span class="p">(</span>
     <span class="p">&lt;&gt;</span>
       <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>My Todos<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
       
-      <span class="si">{</span><span class="nx">todos</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">todo</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="si">{</span><span class="nx">todos</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">todo</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span> <span class="nx">index</span> <span class="si">}</span><span class="p">&gt;</span>
           <span class="si">{</span><span class="nx">todo</span><span class="si">}</span>
         <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;;</span>
@@ -222,7 +222,7 @@
   <span class="p">);</span>
 <span class="p">};</span>
 
-<span class="k">export</span> <span class="k">default</span> <span class="nx">React</span><span class="p">.</span><span class="nx">memo</span><span class="p">(</span><span class="nx">Todos</span><span class="p">);</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">React</span><span class="p">.</span><span class="nf">memo</span><span class="p">(</span><span class="nx">Todos</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>See also <code class="language-plaintext highlighter-rouge">useMemo</code> under Hooks.</p>

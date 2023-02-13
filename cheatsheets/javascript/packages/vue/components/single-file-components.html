@@ -283,7 +283,7 @@
     <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Foo</span><span class="dl">"</span><span class="p">,</span>
 
     <span class="c1">// A function returning a dictionary.</span>
-    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">data</span><span class="p">()</span> <span class="p">{</span>
       <span class="k">return</span> <span class="p">{</span>
         <span class="na">foo</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Foo</span><span class="dl">"</span><span class="p">,</span>
         <span class="na">bar</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
@@ -291,8 +291,8 @@
 
     <span class="c1">// An attribute returning a dictionary of functions.</span>
     <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nx">submit</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">foo</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+      <span class="nf">submit</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">foo</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">();</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
@@ -306,7 +306,7 @@
 <ul>
   <li>Short
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span>
-      <span class="nx">methodName</span><span class="p">()</span> <span class="p">{}</span>
+      <span class="nf">methodName</span><span class="p">()</span> <span class="p">{}</span>
   <span class="p">}</span>
 </code></pre></div>    </div>
   </li>
@@ -341,10 +341,10 @@
 
     <span class="c1">// An attribute returning a dictionary of functions.</span>
     <span class="na">computed</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nx">newFoo</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">foo</span><span class="p">.</span><span class="nx">toUppercase</span><span class="p">();</span>
+      <span class="nf">newFoo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">foo</span><span class="p">.</span><span class="nf">toUppercase</span><span class="p">();</span>
       <span class="p">},</span>
-      <span class="nx">buzz</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nf">buzz</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="dl">'</span><span class="s1">Buzz</span><span class="dl">'</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -386,7 +386,7 @@
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
   <span class="nl">computed</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nx">myVar</span><span class="p">():</span> <span class="kr">number</span> <span class="p">{</span>
+    <span class="nf">myVar</span><span class="p">():</span> <span class="kr">number</span> <span class="p">{</span>
       <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">myNumber</span> <span class="o">**</span> <span class="mi">2</span><span class="p">;</span>
     <span class="p">},</span>
   <span class="p">}</span>

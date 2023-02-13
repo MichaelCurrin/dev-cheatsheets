@@ -171,23 +171,23 @@
 
 <h2 id="basic">Basic</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://httpbin.org/get"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"https://httpbin.org/get"</span><span class="p">)</span>
 <span class="n">resp</span><span class="p">.</span><span class="n">text</span>
 <span class="c1"># ...
 </span></code></pre></div></div>
 
 <p>If you want to parse JSON data to a Python object:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resp</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resp</span><span class="p">.</span><span class="nf">json</span><span class="p">()</span>
 <span class="c1"># { ... }
 </span></code></pre></div></div>
 
 <h2 id="errors">Errors</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://httpbin.org/get"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"https://httpbin.org/get"</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="ow">not</span> <span class="n">resp</span><span class="p">.</span><span class="n">ok</span><span class="p">:</span>
-    <span class="n">resp</span><span class="p">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+    <span class="n">resp</span><span class="p">.</span><span class="nf">raise_for_status</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h2 id="query-parameters">Query parameters</h2>
@@ -198,7 +198,7 @@
   <span class="s">'key1'</span><span class="p">:</span> <span class="s">'value1'</span><span class="p">,</span> 
   <span class="s">'key2'</span><span class="p">:</span> <span class="s">'value2'</span>
 <span class="p">}</span>
-<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://httpbin.org/get'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">'https://httpbin.org/get'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>You can see that the URL has been correctly encoded by printing the URL:</p>
@@ -210,7 +210,7 @@
 <h2 id="data">Data</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">'abc'</span><span class="p">:</span> <span class="mi">123</span><span class="p">}</span>
-<span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="n">requests</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="headers">Headers</h2>
@@ -220,7 +220,7 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.github.com/some/endpoint'</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'user-agent'</span><span class="p">:</span> <span class="s">'my-app/0.0.1'</span><span class="p">}</span>
 
-<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="authorization">Authorization</h2>
@@ -230,7 +230,7 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.github.com/user'</span>
 <span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="s">'my-username'</span><span class="p">,</span> <span class="s">'my-password'</span><span class="p">)</span>
 
-<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="token">Token</h3>
@@ -241,7 +241,7 @@
 <span class="n">token</span> <span class="o">=</span> <span class="s">'abcdef1234'</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="sa">f</span><span class="s">"Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s">"</span><span class="p">}</span>
 
-<span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">requests</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="sessions">Sessions</h2>
@@ -250,22 +250,22 @@
 
 <p>Basic:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">Session</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nc">Session</span><span class="p">()</span>
 
-<span class="n">s</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://httpbin.org/cookies/set/sessioncookie/123456789'</span><span class="p">)</span>
+<span class="n">s</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">'https://httpbin.org/cookies/set/sessioncookie/123456789'</span><span class="p">)</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://httpbin.org/cookies'</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">'https://httpbin.org/cookies'</span><span class="p">)</span>
 <span class="n">r</span><span class="p">.</span><span class="n">text</span>
 <span class="c1"># '{"cookies": {"sessioncookie": "123456789"}}'
 </span></code></pre></div></div>
 
 <p>Set attributes on the session and also on the current request:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">Session</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nc">Session</span><span class="p">()</span>
 <span class="n">s</span><span class="p">.</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="s">'user'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
-<span class="n">s</span><span class="p">.</span><span class="n">headers</span><span class="p">.</span><span class="n">update</span><span class="p">({</span><span class="s">'x-test'</span><span class="p">:</span> <span class="s">'true'</span><span class="p">})</span>
+<span class="n">s</span><span class="p">.</span><span class="n">headers</span><span class="p">.</span><span class="nf">update</span><span class="p">({</span><span class="s">'x-test'</span><span class="p">:</span> <span class="s">'true'</span><span class="p">})</span>
 
-<span class="n">s</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://httpbin.org/headers'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'x-test2'</span><span class="p">:</span> <span class="s">'true'</span><span class="p">})</span>
+<span class="n">s</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">'https://httpbin.org/headers'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'x-test2'</span><span class="p">:</span> <span class="s">'true'</span><span class="p">})</span>
 </code></pre></div></div>
 
 <h2 id="sample">Sample</h2>
@@ -273,7 +273,7 @@
 <p>Query the GitHub API, check response data.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.github.com/user'</span>
-<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
 <span class="n">resp</span><span class="p">.</span><span class="n">status_code</span>
 <span class="c1"># 200
@@ -284,7 +284,7 @@
 </span>
 <span class="n">resp</span><span class="p">.</span><span class="n">text</span>
 <span class="c1"># '{"type":"User"...'
-</span><span class="n">resp</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
+</span><span class="n">resp</span><span class="p">.</span><span class="nf">json</span><span class="p">()</span>
 <span class="c1"># {'private_gists': 419, 'total_private_repos': 77, ...}
 </span></code></pre></div></div>
 

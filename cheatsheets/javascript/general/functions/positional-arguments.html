@@ -179,30 +179,30 @@
 
 <p>The weakness if that is you change order of the parameters or add a parameter between existing parameters, then calls to the function will behave unexpectedly.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">a</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="nx">bar</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">,</span> <span class="nx">foo</span><span class="p">)</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span> <span class="nx">bar</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">a</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="nx">bar</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">,</span> <span class="nx">foo</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span> <span class="nx">bar</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>Call it using a list of arguments.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">a</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">a</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="c1">// foo 1</span>
 <span class="c1">// bar 2</span>
 </code></pre></div></div>
 
 <p>Order matters. Leaving out a parameter leaves it as undefined. So you need to pass a value in a position as <code class="language-plaintext highlighter-rouge">undefined</code> to skip it.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">a</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">a</span><span class="p">()</span>
 <span class="c1">// foo undefined</span>
 <span class="c1">// bar undefined</span>
 
-<span class="nx">a</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nf">a</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="c1">// foo 1</span>
 <span class="c1">// bar undefined</span>
 
-<span class="nx">a</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nf">a</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="c1">// foo undefined</span>
 <span class="c1">// bar 2</span>
 </code></pre></div></div>
@@ -211,7 +211,7 @@
 
 <p>You can pass associative array if you want, but it will be used for the value of the first parameter, it will <em>not</em> be split up, and <code class="language-plaintext highlighter-rouge">undefined</code> will be implied for the second parameter.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">a</span><span class="p">(</span> <span class="p">{</span> <span class="na">foo</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">bar</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">a</span><span class="p">(</span> <span class="p">{</span> <span class="na">foo</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">bar</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">)</span>
 <span class="c1">// foo { foo: 1, bar: 2 }</span>
 <span class="c1">// bar undefined</span>
 </code></pre></div></div>

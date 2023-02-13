@@ -182,15 +182,15 @@
 
 <p>Be explicit that a module is local.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">foo</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">.</span> <span class="kn">import</span> <span class="n">foo</span>
 
 
-<span class="n">foo</span><span class="p">.</span><span class="n">greet</span><span class="p">()</span>
+<span class="n">foo</span><span class="p">.</span><span class="nf">greet</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>To import an object directly:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">.foo</span> <span class="kn">import</span> <span class="n">greet</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">.foo</span> <span class="kn">import</span> <span class="n">greet</span>
 </code></pre></div></div>
 
 <p>Unfortunately, any dot imports will break unless you use this approach for your CLI:</p>
@@ -202,10 +202,10 @@
 
 <p>This code is also valid to run.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">foo</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">foo</span>
 
 
-<span class="n">foo</span><span class="p">.</span><span class="n">greet</span><span class="p">()</span>
+<span class="n">foo</span><span class="p">.</span><span class="nf">greet</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>But since it not clearly local, Mypy will think it is external (installed) and complain that it can’t be found.</p>

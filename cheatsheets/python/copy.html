@@ -176,7 +176,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">123</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">456</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">456</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="p">[</span><span class="mi">123</span><span class="p">,</span> <span class="mi">456</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span>
@@ -193,19 +193,19 @@
 
 <h3 id="list">list</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">new_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">original_list</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">new_list</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">original_list</span><span class="p">)</span>
 <span class="c1"># OR
 # Make a slice using every element, like doing original_list[0:len(original_list)]
 </span><span class="n">new_list</span> <span class="o">=</span> <span class="n">original_list</span><span class="p">[:]</span>
 <span class="c1"># OR
-</span><span class="n">new_list</span> <span class="o">=</span> <span class="n">original_list</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span class="n">new_list</span> <span class="o">=</span> <span class="n">original_list</span><span class="p">.</span><span class="nf">copy</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>e.g.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">123</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">456</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">456</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span>
 <span class="p">[</span><span class="mi">123</span><span class="p">,</span> <span class="mi">456</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>  <span class="c1"># original got modified too
@@ -214,7 +214,7 @@
 
 <h3 id="dictionary">dictionary</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">new_dict</span> <span class="o">=</span> <span class="n">original_dict</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">new_dict</span> <span class="o">=</span> <span class="n">original_dict</span><span class="p">.</span><span class="nf">copy</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h3 id="why-shallow-copies-can-be-bad">Why shallow copies can be bad</h3>
@@ -224,8 +224,8 @@
 <p>e.g.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'d'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="nf">copy</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="s">'d'</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span>
 <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'d'</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>  <span class="c1"># original preserved
@@ -239,7 +239,7 @@
 <p>e.g. Note how only the new list <code class="language-plaintext highlighter-rouge">y</code> is modified, but <code class="language-plaintext highlighter-rouge">x</code> gets the change too.,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s">'abc'</span><span class="p">,</span> <span class="p">{}]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="nf">copy</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span>
 <span class="p">[</span><span class="s">'abc'</span><span class="p">,</span> <span class="p">{</span><span class="s">'a'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]</span>
@@ -251,26 +251,26 @@
 
 <p>I don’t know if this is useful, as it is only a shallow copy and you can save an import by using built-in approaches above.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">copy</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">copy</span>
 
-<span class="n">new_list</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="n">copy</span><span class="p">(</span><span class="n">original_list</span><span class="p">)</span>
-<span class="n">new_dict</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="n">copy</span><span class="p">(</span><span class="n">original_dict</span><span class="p">)</span>
+<span class="n">new_list</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="nf">copy</span><span class="p">(</span><span class="n">original_list</span><span class="p">)</span>
+<span class="n">new_dict</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="nf">copy</span><span class="p">(</span><span class="n">original_dict</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="deep-copies">Deep copies</h2>
 
 <p>If you have data structures in your data structures and you don’t want them to be connected, then use a deep copy.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">copy</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">copy</span>
 
-<span class="n">new_list</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">original_list</span><span class="p">)</span>
-<span class="n">new_dict</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">original_dict</span><span class="p">)</span>
+<span class="n">new_list</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="nf">deepcopy</span><span class="p">(</span><span class="n">original_list</span><span class="p">)</span>
+<span class="n">new_dict</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="nf">deepcopy</span><span class="p">(</span><span class="n">original_dict</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>e.g.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s">'abc'</span><span class="p">,</span> <span class="p">{}]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="nf">deepcopy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span>
 <span class="p">[</span><span class="s">'abc'</span><span class="p">,</span> <span class="p">{</span><span class="s">'a'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]</span>

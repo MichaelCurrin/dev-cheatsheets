@@ -182,70 +182,70 @@
 
 <h3 id="get-attribute-from-datetime">Get attribute from datetime</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Just a few of the methods available:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nf">getFullYear</span><span class="p">()</span>
 <span class="c1">// 2021</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nf">getMonth</span><span class="p">()</span>
 <span class="c1">// 3</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nf">getDate</span><span class="p">()</span>
 <span class="c1">// 17</span>
 </code></pre></div></div>
 
 <p>Day of week - 1 is Monday.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span><span class="p">.</span><span class="nx">getDay</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span><span class="p">.</span><span class="nf">getDay</span><span class="p">()</span>
 <span class="c1">// 1</span>
 </code></pre></div></div>
 
 <h3 id="represent-datetime">Represent datetime</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Convert a <code class="language-plaintext highlighter-rouge">Date</code> instance to a string.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nf">toISOString</span><span class="p">()</span>
 <span class="c1">// '2001-09-09T01:46:40.000Z'</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nf">toString</span><span class="p">()</span>
 <span class="c1">// 'Tue Mar 02 2021 13:47:43 GMT+0200 (South Africa Standard Time)'</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">toUTCString</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nf">toUTCString</span><span class="p">()</span>
 <span class="c1">// 'Sun, 09 Sep 2001 01:46:40 GMT'</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">toDateString</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nf">toDateString</span><span class="p">()</span>
 <span class="c1">// 'Sun Sep 09 2001'</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">toTimeString</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nf">toTimeString</span><span class="p">()</span>
 <span class="c1">// '03:46:40 GMT+0200 (South Africa Standard Time)'</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nf">toLocaleString</span><span class="p">()</span>
 <span class="c1">// '09/09/2001, 03:46:40'</span>
 </code></pre></div></div>
 
 <p>Unix timestamp from datetime:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">()</span>
 
 <span class="c1">// Milliseconds:</span>
-<span class="kd">const</span> <span class="nx">ts</span> <span class="o">=</span> <span class="nx">datetime</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">ts</span> <span class="o">=</span> <span class="nx">datetime</span><span class="p">.</span><span class="nf">getTime</span><span class="p">()</span>
 <span class="c1">// 1648715729097</span>
 
 <span class="c1">// Convert to seconds:</span>
-<span class="nb">parseInt</span><span class="p">(</span><span class="nx">ts</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>
+<span class="nf">parseInt</span><span class="p">(</span><span class="nx">ts</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>
 <span class="c1">// 1648715729</span>
 </code></pre></div></div>
 
@@ -255,18 +255,18 @@
 
 <p>Create an <code class="language-plaintext highlighter-rouge">Date</code> object with type `object. If you don’t pass a value to the constructor, you get the current date and time.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Then use methods on it.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">datetime</span><span class="p">.</span><span class="nf">toISOString</span><span class="p">()</span>
 <span class="c1">// 2021-03-02T11:47:43.759Z</span>
 </code></pre></div></div>
 
 <p>If you omit <code class="language-plaintext highlighter-rouge">new</code> keyword, you get a string. This is not so useful to work with.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Date</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Date</span><span class="p">()</span>
 <span class="c1">// "Mon Apr 19 2021 10:43:22 GMT+0200 (South Africa Standard Time)"</span>
 </code></pre></div></div>
 
@@ -276,13 +276,13 @@
 
 <p>Create unix timestamp for current time in milliseconds. See earlier section for converting to seconds.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Date</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
 <span class="c1">// 1618822230513</span>
 </code></pre></div></div>
 
 <p>That is the same as using <code class="language-plaintext highlighter-rouge">Date</code> constructor but shorter and cleaner.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">===</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Date</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">===</span> <span class="p">(</span><span class="k">new</span> <span class="nc">Date</span><span class="p">()).</span><span class="nf">getTime</span><span class="p">()</span>
 <span class="c1">// true</span>
 </code></pre></div></div>
 
@@ -301,13 +301,13 @@
 
 <p>Example:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Date</span><span class="p">.</span><span class="nc">UTC</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="c1">// 1580612645000</span>
 </code></pre></div></div>
 
 <p>Example use with <code class="language-plaintext highlighter-rouge">Date</code> constructor:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nc">UTC</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="c1">// Date Sun Feb 02 2020 05:04:05 GMT+0200 (South Africa Standard Time)</span>
 </code></pre></div></div>
 
@@ -317,22 +317,22 @@
 
 <p>Timestamp is in milliseconds, otherewise it is like unix timestamp (which is in seconds).</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">1000000000000</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">(</span><span class="mi">1000000000000</span><span class="p">)</span>
 <span class="c1">// Sun Sep 09 2001 03:46:40 GMT+0200 (South Africa Standard Time)</span>
 </code></pre></div></div>
 
 <p>Create unix timestamp from string.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">1970-01-02</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Date</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">1970-01-02</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">// 86400000</span>
 
-<span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">1970-01-01 02:00</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// Currently at GMT+2</span>
+<span class="nb">Date</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">1970-01-01 02:00</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// Currently at GMT+2</span>
 <span class="c1">// 0</span>
 
-<span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">1970-01-01 03:00</span><span class="dl">'</span><span class="p">)</span>
+<span class="nb">Date</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">1970-01-01 03:00</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">// 3600000</span>
 
-<span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">2021-02-03 04:05:01</span><span class="dl">'</span><span class="p">)</span>
+<span class="nb">Date</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">2021-02-03 04:05:01</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">// 1612317901000</span>
 </code></pre></div></div>
 
@@ -344,11 +344,11 @@
 <span class="nx">fiveYears</span>
 <span class="c1">// 157680000000</span>
 
-<span class="kd">const</span> <span class="nx">expiry</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">+</span> <span class="nx">fiveYears</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">expiry</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="nx">fiveYears</span><span class="p">;</span>
 <span class="nx">expiry</span>
 <span class="c1">// 1776618462014</span>
 
-<span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">expiry</span><span class="p">)</span>
+<span class="k">new</span> <span class="nc">Date</span><span class="p">(</span><span class="nx">expiry</span><span class="p">)</span>
 <span class="c1">// Sun Apr 19 2026 19:07:42 GMT+0200 (South Africa Standard Time)</span>
 </code></pre></div></div>
 
@@ -356,34 +356,34 @@
 
 <p>Here using <code class="language-plaintext highlighter-rouge">.setYear</code> to set an expiry date in 5 years time.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">expiry</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span> <span class="c1">// Now</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">expiry</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">()</span> <span class="c1">// Now</span>
 <span class="nx">expiry</span>
 <span class="c1">// Date Tue Apr 20 2021 19:28:52 GMT+0200 (South Africa Standard Time)</span>
 
-<span class="kd">const</span> <span class="nx">currYear</span> <span class="o">=</span> <span class="nx">expiry</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">currYear</span> <span class="o">=</span> <span class="nx">expiry</span><span class="p">.</span><span class="nf">getFullYear</span><span class="p">()</span>
 <span class="nx">currYear</span>
 <span class="c1">// 2021</span>
 
-<span class="nx">expiry</span><span class="p">.</span><span class="nx">setYear</span><span class="p">(</span><span class="nx">currYear</span> <span class="o">+</span> <span class="mi">5</span><span class="p">);</span>
+<span class="nx">expiry</span><span class="p">.</span><span class="nf">setYear</span><span class="p">(</span><span class="nx">currYear</span> <span class="o">+</span> <span class="mi">5</span><span class="p">);</span>
 
 <span class="nx">expiry</span>
 <span class="c1">// Date Mon Apr 20 2026 19:28:52 GMT+0200 (South Africa Standard Time)</span>
 
-<span class="nx">expiry</span><span class="p">.</span><span class="nx">toGMTString</span><span class="p">()</span> <span class="c1">// now 2026!</span>
+<span class="nx">expiry</span><span class="p">.</span><span class="nf">toGMTString</span><span class="p">()</span> <span class="c1">// now 2026!</span>
 <span class="c1">// "Mon, 20 Apr 2026 17:28:52 GMT"</span>
 </code></pre></div></div>
 
 <p>Here setting an expiry date in seconds time. Note that setting a seconds value of 60 or higher makes minutes increase.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">()</span>
 
 <span class="nx">a</span>
 <span class="c1">// Date Mon Sep 13 2021 12:09:40 GMT+0200 (South Africa Standard Time)</span>
 
-<span class="kd">const</span> <span class="nx">currSeconds</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">currSeconds</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nf">getSeconds</span><span class="p">()</span>
 <span class="c1">// 40</span>
 
-<span class="nx">a</span><span class="p">.</span><span class="nx">setSeconds</span><span class="p">(</span><span class="nx">currSeconds</span> <span class="o">+</span> <span class="mi">60</span><span class="p">)</span>
+<span class="nx">a</span><span class="p">.</span><span class="nf">setSeconds</span><span class="p">(</span><span class="nx">currSeconds</span> <span class="o">+</span> <span class="mi">60</span><span class="p">)</span>
 
 <span class="nx">a</span>
 <span class="c1">// Date Mon Sep 13 2021 12:10:40 GMT+0200 (South Africa Standard Time)</span>

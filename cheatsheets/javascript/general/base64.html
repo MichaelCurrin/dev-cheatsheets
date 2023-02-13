@@ -167,12 +167,12 @@
 
 <p>“Binary” to “ASCII” i.e. JS object to plain ASCII characters.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">btoa</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">btoa</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>If you want to store an array or hash or some other object that is not a string, use this.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">btoa</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">value</span><span class="p">))</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">btoa</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">value</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>Just don’t use that on a string otherwise you’ll put double quotes in the string’s value.</p>
@@ -181,24 +181,24 @@
 
 <p>So it can be good to use URI encoding first.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">btoa</span><span class="p">(</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">value</span><span class="p">))</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">btoa</span><span class="p">(</span><span class="nf">encodeURIComponent</span><span class="p">(</span><span class="nx">value</span><span class="p">))</span>
 </code></pre></div></div>
 
 <h2 id="decode">Decode</h2>
 
 <p>“ASCII” to “Binary”.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">atob</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">atob</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>If you had a data structure.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">atob</span><span class="p">(</span><span class="nx">value</span><span class="p">))</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="nf">atob</span><span class="p">(</span><span class="nx">value</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>If you had URI encoding:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">decodeURIComponent</span><span class="p">(</span><span class="nx">atob</span><span class="p">(</span><span class="nx">value</span><span class="p">))</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">decodeURIComponent</span><span class="p">(</span><span class="nf">atob</span><span class="p">(</span><span class="nx">value</span><span class="p">))</span>
 </code></pre></div></div>
 
         

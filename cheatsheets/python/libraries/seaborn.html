@@ -202,13 +202,13 @@
 
 <p>Using a sample dataset - you could also load a CSV with <code class="language-plaintext highlighter-rouge">pandas.read_csv()</code>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
 
 
-<span class="n">sns</span><span class="p">.</span><span class="n">set_theme</span><span class="p">()</span>
+<span class="n">sns</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">()</span>
 
-<span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s">"tips"</span><span class="p">)</span>
-<span class="n">sns</span><span class="p">.</span><span class="n">relplot</span><span class="p">(</span>
+<span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="nf">load_dataset</span><span class="p">(</span><span class="s">"tips"</span><span class="p">)</span>
+<span class="n">sns</span><span class="p">.</span><span class="nf">relplot</span><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s">"total_bill"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">"tip"</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">"time"</span><span class="p">,</span>
     <span class="n">hue</span><span class="o">=</span><span class="s">"smoker"</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">"smoker"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">"size"</span><span class="p">,</span>
@@ -219,19 +219,19 @@
 
 <p>Here we switch styling with <code class="language-plaintext highlighter-rouge">kind</code>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dots</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s">"dots"</span><span class="p">)</span>
-<span class="n">sns</span><span class="p">.</span><span class="n">relplot</span><span class="p">(</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dots</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="nf">load_dataset</span><span class="p">(</span><span class="s">"dots"</span><span class="p">)</span>
+<span class="n">sns</span><span class="p">.</span><span class="nf">relplot</span><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="n">dots</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s">"line"</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s">"time"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">"firing_rate"</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">"align"</span><span class="p">,</span>
     <span class="n">hue</span><span class="o">=</span><span class="s">"choice"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">"coherence"</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">"choice"</span><span class="p">,</span>
-    <span class="n">facet_kws</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">sharex</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span>
+    <span class="n">facet_kws</span><span class="o">=</span><span class="nf">dict</span><span class="p">(</span><span class="n">sharex</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span>
 <span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="statistical-estimation-and-error-bars">Statistical estimation and error bars</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fmri</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s">"fmri"</span><span class="p">)</span>
-<span class="n">sns</span><span class="p">.</span><span class="n">relplot</span><span class="p">(</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fmri</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="nf">load_dataset</span><span class="p">(</span><span class="s">"fmri"</span><span class="p">)</span>
+<span class="n">sns</span><span class="p">.</span><span class="nf">relplot</span><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="n">fmri</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s">"line"</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s">"timepoint"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">"signal"</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">"region"</span><span class="p">,</span>
     <span class="n">hue</span><span class="o">=</span><span class="s">"event"</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">"event"</span><span class="p">,</span>
@@ -240,7 +240,7 @@
 
 <p>Add a linear regression model and its uncertainty.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="n">lmplot</span><span class="p">(</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="nf">lmplot</span><span class="p">(</span>
   <span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span> 
   <span class="n">x</span><span class="o">=</span><span class="s">"total_bill"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">"tip"</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">"time"</span><span class="p">,</span>
   <span class="n">hue</span><span class="o">=</span><span class="s">"smoker"</span>

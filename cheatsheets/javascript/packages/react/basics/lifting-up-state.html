@@ -196,37 +196,37 @@
 
 <h2 id="basic">Basic</h2>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Child</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Child</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">myValue</span><span class="p">,</span> <span class="nx">onInput</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
   
-  <span class="k">return</span> <span class="p">(</span>
+  <span class="nf">return </span><span class="p">(</span>
     <span class="p">&lt;&gt;</span>
       <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span> <span class="nx">myValue</span> <span class="si">}</span> <span class="na">onInput</span><span class="p">=</span><span class="si">{</span> <span class="nx">onInput</span> <span class="si">}</span> <span class="p">/&gt;</span>
     <span class="p">&lt;/&gt;</span>
   <span class="p">)</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">Parent</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">myValue</span><span class="p">,</span> <span class="nx">setMyValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
+<span class="kd">function</span> <span class="nf">Parent</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">myValue</span><span class="p">,</span> <span class="nx">setMyValue</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
 
   <span class="kd">const</span> <span class="nx">onInput</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setMyValue</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+    <span class="nf">setMyValue</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
   <span class="p">}</span>
 
-  <span class="k">return</span> <span class="p">(</span>
+  <span class="nf">return </span><span class="p">(</span>
     <span class="p">&lt;&gt;</span>
       <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Controls<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nc">Child</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">myValue</span><span class="si">}</span> <span class="na">onInput</span><span class="p">=</span><span class="si">{</span><span class="nx">onInput</span><span class="si">}</span> <span class="p">/&gt;</span>
       <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
       <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Results<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="nx">myValue</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="si">}</span>
+        <span class="si">{</span><span class="nx">myValue</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">()</span><span class="si">}</span>
       <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
     <span class="p">&lt;/&gt;</span>
   <span class="p">)</span>
 <span class="p">}</span>
 
-<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(&lt;</span><span class="nc">Parent</span> <span class="p">/&gt;,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">))</span>
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nf">render</span><span class="p">(&lt;</span><span class="nc">Parent</span> <span class="p">/&gt;,</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">))</span>
 </code></pre></div></div>
 
 <h2 id="tempature-example">Tempature example</h2>
@@ -242,31 +242,31 @@
   <span class="na">f</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Fahrenheit</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="kd">function</span> <span class="nx">toCelsius</span><span class="p">(</span><span class="nx">fahrenheit</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span><span class="nx">fahrenheit</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nf">toCelsius</span><span class="p">(</span><span class="nx">fahrenheit</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">return </span><span class="p">(</span><span class="nx">fahrenheit</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">toFahrenheit</span><span class="p">(</span><span class="nx">celsius</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span><span class="nx">celsius</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nf">toFahrenheit</span><span class="p">(</span><span class="nx">celsius</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">return </span><span class="p">(</span><span class="nx">celsius</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">tryConvert</span><span class="p">(</span><span class="nx">temperature</span><span class="p">,</span> <span class="nx">convert</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">temperature</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">input</span><span class="p">))</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nf">tryConvert</span><span class="p">(</span><span class="nx">temperature</span><span class="p">,</span> <span class="nx">convert</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nf">parseFloat</span><span class="p">(</span><span class="nx">temperature</span><span class="p">);</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nf">isNaN</span><span class="p">(</span><span class="nx">input</span><span class="p">))</span> <span class="p">{</span>
     <span class="k">return</span> <span class="dl">''</span><span class="p">;</span>
   <span class="p">}</span>
-  <span class="kd">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">convert</span><span class="p">(</span><span class="nx">input</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">rounded</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">output</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="nf">convert</span><span class="p">(</span><span class="nx">input</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">rounded</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">round</span><span class="p">(</span><span class="nx">output</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">;</span>
   
-  <span class="k">return</span> <span class="nx">rounded</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nx">rounded</span><span class="p">.</span><span class="nf">toString</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>Set up the display-only component:</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">BoilingVerdict</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">BoilingVerdict</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">msg</span><span class="p">;</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">celsius</span> <span class="o">&gt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">celsius</span> <span class="o">&gt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">msg</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">The water would boil</span><span class="dl">"</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nx">msg</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">The water would not boil.</span><span class="dl">"</span>
@@ -284,21 +284,21 @@
 
 <p>Note also that when we render, we get values from props and not from state. The state exists in the parent component and the child component only cares about properties passed to it.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">TemperatureInput</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">TemperatureInput</span> <span class="kd">extends</span> <span class="nc">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
   <span class="p">}</span>
 
-  <span class="nx">handleChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onTemperatureChange</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> 
+  <span class="nf">handleChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nf">onTemperatureChange</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> 
   <span class="p">}</span>
 
-  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">temperature</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">temperature</span><span class="p">;</span>    
     <span class="kd">const</span> <span class="nx">scale</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">scale</span><span class="p">;</span>
     
-    <span class="k">return</span> <span class="p">(</span>
+    <span class="nf">return </span><span class="p">(</span>
       <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Enter temperature in <span class="si">{</span> <span class="nx">scaleNames</span><span class="p">[</span><span class="nx">scale</span><span class="p">]</span> <span class="si">}</span>:<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
         
@@ -314,35 +314,35 @@
 
 <p>Note the handler functions are defined on the parent level here and passed down as a functions to the child components as <code class="language-plaintext highlighter-rouge">onTemperatureChange={ this.handleCelsiusChange }</code>.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Calculator</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Calculator</span> <span class="kd">extends</span> <span class="nc">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
     
     <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
       <span class="na">temperature</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> 
       <span class="na">scale</span><span class="p">:</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span> 
     <span class="p">};</span>
     
-    <span class="k">this</span><span class="p">.</span><span class="nx">handleCelsiusChange</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleCelsiusChange</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">handleFahrenheitChange</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleFahrenheitChange</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleCelsiusChange</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleCelsiusChange</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleFahrenheitChange</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleFahrenheitChange</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
   <span class="p">}</span>
   
-  <span class="nx">handleCelsiusChange</span><span class="p">(</span><span class="nx">temperature</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="na">scale</span><span class="p">:</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">,</span> <span class="nx">temperature</span><span class="p">});</span>  
+  <span class="nf">handleCelsiusChange</span><span class="p">(</span><span class="nx">temperature</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nf">setState</span><span class="p">({</span><span class="na">scale</span><span class="p">:</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">,</span> <span class="nx">temperature</span><span class="p">});</span>  
   <span class="p">}</span>
 
-  <span class="nx">handleFahrenheitChange</span><span class="p">(</span><span class="nx">temperature</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="na">scale</span><span class="p">:</span> <span class="dl">'</span><span class="s1">f</span><span class="dl">'</span><span class="p">,</span> <span class="nx">temperature</span><span class="p">});</span> 
+  <span class="nf">handleFahrenheitChange</span><span class="p">(</span><span class="nx">temperature</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nf">setState</span><span class="p">({</span><span class="na">scale</span><span class="p">:</span> <span class="dl">'</span><span class="s1">f</span><span class="dl">'</span><span class="p">,</span> <span class="nx">temperature</span><span class="p">});</span> 
   <span class="p">}</span>
 
-  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">scale</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">scale</span><span class="p">;</span>    
     <span class="kd">const</span> <span class="nx">temperature</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">temperature</span><span class="p">;</span>    
     
-    <span class="kd">const</span> <span class="nx">celsius</span> <span class="o">=</span> <span class="nx">scale</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">f</span><span class="dl">'</span> <span class="p">?</span> <span class="nx">tryConvert</span><span class="p">(</span><span class="nx">temperature</span><span class="p">,</span> <span class="nx">toCelsius</span><span class="p">)</span> <span class="p">:</span> <span class="nx">temperature</span><span class="p">;</span>    
-    <span class="kd">const</span> <span class="nx">fahrenheit</span> <span class="o">=</span> <span class="nx">scale</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span> <span class="p">?</span> <span class="nx">tryConvert</span><span class="p">(</span><span class="nx">temperature</span><span class="p">,</span> <span class="nx">toFahrenheit</span><span class="p">)</span> <span class="p">:</span> <span class="nx">temperature</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">celsius</span> <span class="o">=</span> <span class="nx">scale</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">f</span><span class="dl">'</span> <span class="p">?</span> <span class="nf">tryConvert</span><span class="p">(</span><span class="nx">temperature</span><span class="p">,</span> <span class="nx">toCelsius</span><span class="p">)</span> <span class="p">:</span> <span class="nx">temperature</span><span class="p">;</span>    
+    <span class="kd">const</span> <span class="nx">fahrenheit</span> <span class="o">=</span> <span class="nx">scale</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span> <span class="p">?</span> <span class="nf">tryConvert</span><span class="p">(</span><span class="nx">temperature</span><span class="p">,</span> <span class="nx">toFahrenheit</span><span class="p">)</span> <span class="p">:</span> <span class="nx">temperature</span><span class="p">;</span>
     
-    <span class="k">return</span> <span class="p">(</span>
+    <span class="nf">return </span><span class="p">(</span>
       <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nc">TemperatureInput</span>
           <span class="na">scale</span><span class="p">=</span><span class="s">"c"</span>
@@ -355,7 +355,7 @@
           <span class="na">onTemperatureChange</span><span class="p">=</span><span class="si">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleFahrenheitChange</span> <span class="si">}</span> <span class="p">/&gt;</span>    
           
         <span class="p">&lt;</span><span class="nc">BoilingVerdict</span>
-          <span class="na">celsius</span><span class="p">=</span><span class="si">{</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">celsius</span><span class="p">)</span> <span class="si">}</span> <span class="p">/&gt;</span>      
+          <span class="na">celsius</span><span class="p">=</span><span class="si">{</span> <span class="nf">parseFloat</span><span class="p">(</span><span class="nx">celsius</span><span class="p">)</span> <span class="si">}</span> <span class="p">/&gt;</span>      
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">);</span>
   <span class="p">}</span>
@@ -364,9 +364,9 @@
 
 <p>Render the app.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ReactDOM</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span>
   <span class="p">&lt;</span><span class="nc">Calculator</span> <span class="p">/&gt;,</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">)</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">);</span>
 </code></pre></div></div>
 

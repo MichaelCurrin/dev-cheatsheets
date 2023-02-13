@@ -239,13 +239,13 @@
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Vue</span><span class="p">.</span><span class="nf">createApp</span><span class="p">({</span>
   <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nx">say</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
+    <span class="nf">say</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nf">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
     <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">}).</span><span class="nx">mount</span><span class="p">(</span><span class="dl">'</span><span class="s1">#inline-handler</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}).</span><span class="nf">mount</span><span class="p">(</span><span class="dl">'</span><span class="s1">#inline-handler</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="modify-data">Modify data</h3>
@@ -271,7 +271,7 @@
 
   <span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
   <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
-    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">data</span><span class="p">()</span> <span class="p">{</span>
       <span class="k">return</span> <span class="p">{</span>
         <span class="na">counter</span><span class="p">:</span> <span class="mi">0</span>
       <span class="p">}</span>
@@ -290,13 +290,13 @@
   Submit
 <span class="nt">&lt;/button&gt;</span>
 </code></pre></div></div>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Vue</span><span class="p">.</span><span class="nf">createApp</span><span class="p">({</span>
   <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nx">warn</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span>
+    <span class="nf">warn</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nf">if </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">event</span><span class="p">.</span><span class="nf">preventDefault</span><span class="p">()</span>
       <span class="p">}</span>
-      <span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
+      <span class="nf">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>

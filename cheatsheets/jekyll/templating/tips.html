@@ -183,7 +183,7 @@
 <p>You can create a custom file. The layout must be null otherwise it will use default layout with too much HTML.</p>
 
 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">layout</span><span class="pi">:</span> <span class="no">null</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="kc">null</span>
 <span class="nn">---</span>
 User-agent: <span class="err">*</span>
 Sitemap: {{ site.url }}/sitemap.xml
@@ -204,11 +204,11 @@ Sitemap: {{ site.url }}/sitemap.xml
       <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
     <span class="na">values</span><span class="pi">:</span>
       <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">default"</span>
-      <span class="na">text_width</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">text_width</span><span class="pi">:</span> <span class="kc">true</span>
   <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
       <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">index.html"</span>
     <span class="na">values</span><span class="pi">:</span>
-      <span class="na">text_width</span><span class="pi">:</span> <span class="no">false</span>
+      <span class="na">text_width</span><span class="pi">:</span> <span class="kc">false</span>
 </code></pre></div></div>
 
 <p>Here, the <code class="language-plaintext highlighter-rouge">index.md</code> pages at all levels get certain layout. And everything else defaults to <code class="language-plaintext highlighter-rouge">page</code> layout. Anything else is set on a page itself.</p>

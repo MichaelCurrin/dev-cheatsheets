@@ -179,8 +179,8 @@
 
 <p>Methods on classes can be set like this:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Foo</span> <span class="p">{</span>
-  <span class="nx">fizz</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+  <span class="nf">fizz</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span>
   <span class="p">}</span>
 
@@ -191,10 +191,10 @@
 <h2 id="object-methods">Object methods</h2>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="kd">const</span> <span class="nx">myObj</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// ...</span>
   <span class="p">},</span>
-  <span class="nx">bar</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">bar</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// ...</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -217,17 +217,17 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myObj</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">a</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
 
-  <span class="nx">fizz</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">fizz</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">x</span>
   <span class="p">},</span>
 
-  <span class="k">async</span> <span class="nx">buzz</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">async</span> <span class="nf">buzz</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">await</span> <span class="nx">somePromise</span>
   <span class="p">}</span>
   <span class="c1">// ...</span>
 <span class="p">}</span>
 
-<span class="nx">myObj</span><span class="p">.</span><span class="nx">fizz</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// 124</span>
+<span class="nx">myObj</span><span class="p">.</span><span class="nf">fizz</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// 124</span>
 </code></pre></div></div>
 
         

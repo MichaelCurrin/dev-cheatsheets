@@ -191,10 +191,10 @@
 
 <p>You can use <code class="language-plaintext highlighter-rouge">.map</code> on an array as in plain JS to build up a list of elements such as <code class="language-plaintext highlighter-rouge">li</code>, then put them inside a wrapping element such as <code class="language-plaintext highlighter-rouge">ul</code>.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">NumbersList</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">NumbersList</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">numbers</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
 
-  <span class="kd">const</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="si">{</span> <span class="nx">x</span> <span class="si">}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;)</span>
+  <span class="kd">const</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="si">{</span> <span class="nx">x</span> <span class="si">}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;)</span>
 
   <span class="k">return</span> <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span><span class="si">{</span> <span class="nx">items</span> <span class="si">}</span><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 <span class="p">}</span>
@@ -216,7 +216,7 @@
 
 <p>e.g.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span> <span class="nx">value</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="si">}</span><span class="p">&gt;</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span> <span class="nx">value</span><span class="p">.</span><span class="nf">toString</span><span class="p">()</span> <span class="si">}</span><span class="p">&gt;</span>
   <span class="si">{</span> <span class="nx">value</span> <span class="si">}</span>
 <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 </code></pre></div></div>
@@ -230,7 +230,7 @@
 
 <p>How to set with an enumerated index.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">items</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span> <span class="nx">index</span> <span class="p">}</span><span class="o">&gt;</span>
     <span class="p">{</span> <span class="nx">item</span><span class="p">.</span><span class="nx">text</span> <span class="p">}</span>
   <span class="p">&lt;</span><span class="err">/</span><span class="na">li</span><span class="p">&gt;</span>
@@ -239,16 +239,16 @@
 
 <p>Example:</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">ListItem</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">ListItem</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">value</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
   
   <span class="k">return</span> <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="si">{</span> <span class="nx">value</span> <span class="si">}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">NumberList</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nf">NumberList</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">numbers</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
-  <span class="kd">const</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">items</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="o">&lt;</span><span class="nx">ListItem</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span> <span class="nx">item</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="p">}</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span> <span class="nx">item</span> <span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+  <span class="kd">const</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">items</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="o">&lt;</span><span class="nx">ListItem</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span> <span class="nx">item</span><span class="p">.</span><span class="nf">toString</span><span class="p">()</span> <span class="p">}</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span> <span class="nx">item</span> <span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
 </span>  <span class="p">})</span>
   
   <span class="k">return</span> <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span><span class="si">{</span> <span class="nx">items</span> <span class="si">}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>

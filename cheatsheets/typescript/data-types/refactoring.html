@@ -169,17 +169,17 @@
 
 <p>Original:</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">repo</span><span class="p">:</span> <span class="nx">Repo</span><span class="p">,</span> <span class="nx">pkgName</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">logo</span><span class="p">:</span> <span class="kr">string</span><span class="p">?,</span> <span class="nx">logoColor</span><span class="p">:</span> <span class="kr">string</span><span class="p">?)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">repo</span><span class="p">,</span> <span class="nx">pkgName</span><span class="p">,</span> <span class="nx">logoName</span><span class="p">,</span> <span class="nx">logoColor</span><span class="p">)</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">repo</span><span class="p">:</span> <span class="nx">Repo</span><span class="p">,</span> <span class="nx">pkgName</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">logo</span><span class="p">:</span> <span class="kr">string</span><span class="p">?,</span> <span class="nx">logoColor</span><span class="p">:</span> <span class="kr">string</span><span class="p">?)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">repo</span><span class="p">,</span> <span class="nx">pkgName</span><span class="p">,</span> <span class="nx">logoName</span><span class="p">,</span> <span class="nx">logoColor</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1">// Usage:</span>
-<span class="nx">foo</span><span class="p">(</span><span class="nx">myRepo</span><span class="p">,</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">jekyll</span><span class="dl">'</span><span class="p">)</span>
+<span class="nf">foo</span><span class="p">(</span><span class="nx">myRepo</span><span class="p">,</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">jekyll</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Converted to named parameters.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">({</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">foo</span><span class="p">({</span>
   <span class="nx">repo</span><span class="p">,</span>
   <span class="nx">pkgName</span><span class="p">,</span>
   <span class="nx">logo</span><span class="p">,</span>
@@ -190,12 +190,12 @@
   <span class="nl">logoName</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
   <span class="nl">logoColor</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
 <span class="p">})</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">repo</span><span class="p">,</span> <span class="nx">pkgName</span><span class="p">,</span> <span class="nx">logoName</span><span class="p">,</span> <span class="nx">logoColor</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">repo</span><span class="p">,</span> <span class="nx">pkgName</span><span class="p">,</span> <span class="nx">logoName</span><span class="p">,</span> <span class="nx">logoColor</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1">// Usage:</span>
 <span class="kd">const</span> <span class="nx">pkgName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span>
-<span class="nx">foo</span><span class="p">({</span>
+<span class="nf">foo</span><span class="p">({</span>
   <span class="na">repo</span><span class="p">:</span> <span class="nx">myRepo</span><span class="p">,</span> 
   <span class="nx">pkgName</span><span class="p">,</span> <span class="c1">// i.e. Same as `pkgName: pkgName`.</span>
   <span class="na">logoName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">jekyll</span><span class="dl">'</span>
@@ -207,7 +207,7 @@
   <span class="na">pkgName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">logoName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">jekyll</span><span class="dl">'</span>
 <span class="p">}</span>
-<span class="nx">foo</span><span class="p">(</span><span class="nx">myBazz</span><span class="p">)</span>
+<span class="nf">foo</span><span class="p">(</span><span class="nx">myBazz</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>We can tidy that up making a type or interface to define the structure of the input object. Especially useful if you want to use the type or interface elswhere.</p>
@@ -219,18 +219,18 @@
     <span class="nl">logoColor</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">foo</span><span class="p">({</span>
+<span class="kd">function</span> <span class="nf">foo</span><span class="p">({</span>
   <span class="nx">repo</span><span class="p">,</span>
   <span class="nx">pkgName</span><span class="p">,</span>
   <span class="nx">logoName</span><span class="p">,</span>
   <span class="nx">logoColor</span><span class="p">,</span>
 <span class="p">}:</span> <span class="nx">IFoo</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">repo</span><span class="p">,</span> <span class="nx">pkgName</span><span class="p">,</span> <span class="nx">logoName</span><span class="p">,</span> <span class="nx">logoColor</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">repo</span><span class="p">,</span> <span class="nx">pkgName</span><span class="p">,</span> <span class="nx">logoName</span><span class="p">,</span> <span class="nx">logoColor</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1">// Usage - as previous example.</span>
 <span class="kd">const</span> <span class="nx">pkgName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span>
-<span class="nx">foo</span><span class="p">({</span>
+<span class="nf">foo</span><span class="p">({</span>
   <span class="na">repo</span><span class="p">:</span> <span class="nx">myRepo</span><span class="p">,</span> 
   <span class="nx">pkgName</span><span class="p">,</span> 
   <span class="na">logoName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">jekyll</span><span class="dl">'</span>
@@ -246,8 +246,8 @@
     <span class="nl">logoColor</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">bazz</span><span class="p">:</span> <span class="nx">IBazz</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bazz</span><span class="p">.</span><span class="nx">repo</span><span class="p">,</span> <span class="nx">bazz</span><span class="p">.</span><span class="nx">pkgName</span><span class="p">,</span> <span class="nx">bazz</span><span class="p">.</span><span class="nx">logoName</span><span class="p">,</span> <span class="nx">bazz</span><span class="p">.</span><span class="nx">logoColor</span><span class="p">)</span>
+<span class="kd">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">bazz</span><span class="p">:</span> <span class="nx">IBazz</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">bazz</span><span class="p">.</span><span class="nx">repo</span><span class="p">,</span> <span class="nx">bazz</span><span class="p">.</span><span class="nx">pkgName</span><span class="p">,</span> <span class="nx">bazz</span><span class="p">.</span><span class="nx">logoName</span><span class="p">,</span> <span class="nx">bazz</span><span class="p">.</span><span class="nx">logoColor</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1">// Usage.</span>
@@ -258,20 +258,20 @@
   <span class="na">pkgName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span> 
   <span class="na">logoName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">jekyll</span><span class="dl">'</span>
 <span class="p">}</span>
-<span class="nx">foo</span><span class="p">(</span><span class="nx">myBazz</span><span class="p">)</span>
+<span class="nf">foo</span><span class="p">(</span><span class="nx">myBazz</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>You could add an extra step in the function to unpack as this. But then that undoes some of the reduced lines gain in replacing <code class="language-plaintext highlighter-rouge">{...}</code> with <code class="language-plaintext highlighter-rouge">bazz</code> as a param.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">bazz</span><span class="p">:</span> <span class="nx">IBazz</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">bazz</span><span class="p">:</span> <span class="nx">IBazz</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">repo</span><span class="p">,</span> <span class="nx">pkgName</span><span class="p">,</span> <span class="nx">logoName</span><span class="p">,</span> <span class="nx">logoColor</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">bazz</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">repo</span><span class="p">,</span> <span class="nx">pkgName</span><span class="p">,</span> <span class="nx">logoName</span><span class="p">,</span> <span class="nx">logoColor</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">repo</span><span class="p">,</span> <span class="nx">pkgName</span><span class="p">,</span> <span class="nx">logoName</span><span class="p">,</span> <span class="nx">logoColor</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>Note that refactoring from 4 params.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">repo</span><span class="p">:</span> <span class="nx">Repo</span><span class="p">,</span> <span class="nx">pkgName</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">logoName</span><span class="p">:</span> <span class="kr">string</span><span class="p">?,</span> <span class="nx">logoColor</span><span class="p">:</span> <span class="kr">string</span><span class="p">?)</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">repo</span><span class="p">:</span> <span class="nx">Repo</span><span class="p">,</span> <span class="nx">pkgName</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">logoName</span><span class="p">:</span> <span class="kr">string</span><span class="p">?,</span> <span class="nx">logoColor</span><span class="p">:</span> <span class="kr">string</span><span class="p">?)</span> <span class="p">{</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -283,7 +283,7 @@
 
 <p>We can do something similar with the logo.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">repo</span><span class="p">:</span> <span class="nx">Repo</span><span class="p">,</span> <span class="nx">pkgName</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">logo</span><span class="p">:</span> <span class="nx">Logo</span><span class="p">?)</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">repo</span><span class="p">:</span> <span class="nx">Repo</span><span class="p">,</span> <span class="nx">pkgName</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">logo</span><span class="p">:</span> <span class="nx">Logo</span><span class="p">?)</span> <span class="p">{</span>
 <span class="p">}</span>
 </code></pre></div></div>
 

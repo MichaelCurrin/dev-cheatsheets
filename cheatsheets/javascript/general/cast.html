@@ -180,7 +180,7 @@
 <h3 id="integer-or-float">Integer or float</h3>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myNumber</span> <span class="o">=</span> <span class="mi">123</span>
-<span class="nx">myNumber</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+<span class="nx">myNumber</span><span class="p">.</span><span class="nf">toString</span><span class="p">()</span>
 <span class="c1">// "123"</span>
 </code></pre></div></div>
 
@@ -188,7 +188,7 @@
 
 <p>Note that a method directly on number (without a variable declared first) will give an error.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">123</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">123</span><span class="p">.</span><span class="nf">toString</span><span class="p">()</span>
 <span class="c1">// Uncaught SyntaxError: Invalid or unexpected token</span>
 </code></pre></div></div>
 
@@ -198,40 +198,40 @@
 
 <h3 id="to-integer">To integer</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">parseInt</span><span class="p">(</span><span class="dl">"</span><span class="s2">123</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">parseInt</span><span class="p">(</span><span class="dl">"</span><span class="s2">123</span><span class="dl">"</span><span class="p">)</span>
 <span class="c1">// 123</span>
 
-<span class="nb">parseInt</span><span class="p">(</span><span class="dl">"</span><span class="s2">123.45</span><span class="dl">"</span><span class="p">)</span>
+<span class="nf">parseInt</span><span class="p">(</span><span class="dl">"</span><span class="s2">123.45</span><span class="dl">"</span><span class="p">)</span>
 <span class="c1">// 123</span>
 </code></pre></div></div>
 
 <p>No effect if already an integer.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">parseInt</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">parseInt</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
 <span class="c1">// 123</span>
 </code></pre></div></div>
 
 <p>Recommended - pass the <code class="language-plaintext highlighter-rouge">radix</code> argument as the base, to avoid linting errors. The base can be inferred, but in some cases will be incorrect so it is better to always set it. See <a href="#other-number-systems">Other number systems</a> section below for other uses of this argument.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">parseInt</span><span class="p">(</span><span class="dl">"</span><span class="s2">123</span><span class="dl">"</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">parseInt</span><span class="p">(</span><span class="dl">"</span><span class="s2">123</span><span class="dl">"</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="c1">// 123</span>
 
-<span class="nb">parseInt</span><span class="p">(</span><span class="dl">"</span><span class="s2">123.45</span><span class="dl">"</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nf">parseInt</span><span class="p">(</span><span class="dl">"</span><span class="s2">123.45</span><span class="dl">"</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="c1">// 123</span>
 </code></pre></div></div>
 
 <h3 id="to-float">To float</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">parseFloat</span><span class="p">(</span><span class="dl">"</span><span class="s2">123.45</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">parseFloat</span><span class="p">(</span><span class="dl">"</span><span class="s2">123.45</span><span class="dl">"</span><span class="p">)</span>
 <span class="c1">// 123.45</span>
 
-<span class="nb">parseFloat</span><span class="p">(</span><span class="dl">"</span><span class="s2">123</span><span class="dl">"</span><span class="p">)</span>
+<span class="nf">parseFloat</span><span class="p">(</span><span class="dl">"</span><span class="s2">123</span><span class="dl">"</span><span class="p">)</span>
 <span class="c1">// 123</span>
 </code></pre></div></div>
 
 <p>No change on float input.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">parseFloat</span><span class="p">(</span><span class="mf">123.45</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">parseFloat</span><span class="p">(</span><span class="mf">123.45</span><span class="p">)</span>
 <span class="c1">// 123.45</span>
 </code></pre></div></div>
 
@@ -241,17 +241,17 @@
 
 <h3 id="parse-base-2">Parse base 2</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">parseInt</span><span class="p">(</span><span class="dl">"</span><span class="s2">10</span><span class="dl">"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">parseInt</span><span class="p">(</span><span class="dl">"</span><span class="s2">10</span><span class="dl">"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="c1">// 2</span>
 </code></pre></div></div>
 
 <h3 id="parse-hexidecimal">Parse hexidecimal</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">parseInt</span><span class="p">(</span><span class="dl">"</span><span class="s2">f</span><span class="dl">"</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nf">parseInt</span><span class="p">(</span><span class="dl">"</span><span class="s2">f</span><span class="dl">"</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
 <span class="mi">15</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">parseInt</span><span class="p">(</span><span class="dl">"</span><span class="s2">0xf</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nf">parseInt</span><span class="p">(</span><span class="dl">"</span><span class="s2">0xf</span><span class="dl">"</span><span class="p">)</span>
 <span class="mi">15</span>
 </code></pre></div></div>
 
@@ -259,7 +259,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myNumber</span> <span class="o">=</span> <span class="mi">10</span>
 
-<span class="nx">myNumber</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nx">myNumber</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="c1">// '1010'</span>
 </code></pre></div></div>
 
@@ -267,7 +267,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myNumber</span> <span class="o">=</span> <span class="mi">10</span>
 
-<span class="nx">myNumber</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+<span class="nx">myNumber</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
 <span class="c1">// 'a'</span>
 </code></pre></div></div>
 

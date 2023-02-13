@@ -201,13 +201,13 @@ It is like an Associative Array / Object, but it</p>
 
 <p>Empty.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Map</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">Map</span><span class="p">()</span>
 <span class="c1">// Map(0) {}</span>
 </code></pre></div></div>
 
 <p>Pass an iterable like an array of arrays.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myMap</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">([</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myMap</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">([</span>
   <span class="p">[</span> <span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span> <span class="p">],</span> 
   <span class="p">[</span> <span class="dl">'</span><span class="s1">baz</span><span class="dl">'</span><span class="p">,</span> <span class="mi">42</span> <span class="p">]</span> 
 <span class="p">])</span>
@@ -221,7 +221,7 @@ It is like an Associative Array / Object, but it</p>
 
 <p>Update a key with a value.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myMap</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">fizz</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">buzz</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myMap</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">fizz</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">buzz</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">// Map(3) { 'foo' =&gt; 'bar', 'baz' =&gt; 42, 'fizz' =&gt; 'buzz' }</span>
 </code></pre></div></div>
 
@@ -229,7 +229,7 @@ It is like an Associative Array / Object, but it</p>
 
 <p>Get a value by key.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myMap</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myMap</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">// 'bar'</span>
 
 <span class="c1">// Does not work like a plain Object.</span>
@@ -239,8 +239,8 @@ It is like an Associative Array / Object, but it</p>
 
 <h2 id="iterate">Iterate</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nx">myMap</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nx">myMap</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -252,12 +252,12 @@ It is like an Associative Array / Object, but it</p>
 
 <p>e.g.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">(</span> <span class="p">[[</span> <span class="dl">'</span><span class="s1">size</span><span class="dl">'</span><span class="p">,</span> <span class="mi">123</span><span class="p">]]</span> <span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">(</span> <span class="p">[[</span> <span class="dl">'</span><span class="s1">size</span><span class="dl">'</span><span class="p">,</span> <span class="mi">123</span><span class="p">]]</span> <span class="p">)</span>
 
 <span class="nx">y</span><span class="p">.</span><span class="nx">size</span> <span class="c1">// or y['size']</span>
 <span class="c1">// 1</span>
 
-<span class="nx">y</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">size</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">y</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">size</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>The <code class="language-plaintext highlighter-rouge">Map</code> type has a <code class="language-plaintext highlighter-rouge">get</code> method, which a plain Associative Array object does not.</p>
@@ -271,24 +271,24 @@ y.keys                  y.set                   y.size                  y.values
 
 <h2 id="demo">Demo</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">map1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">();</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">map1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">();</span>
 
-<span class="nx">map1</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="nx">map1</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-<span class="nx">map1</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">map1</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nx">map1</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="nx">map1</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 
-<span class="nx">map1</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">map1</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">// 1</span>
 
-<span class="nx">map1</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="mi">97</span><span class="p">);</span>
+<span class="nx">map1</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="mi">97</span><span class="p">);</span>
 
-<span class="nx">map1</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">map1</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">// 97</span>
 
 <span class="nx">map1</span><span class="p">.</span><span class="nx">size</span>
 <span class="c1">// 3</span>
 
-<span class="nx">map1</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">map1</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="nx">map1</span><span class="p">.</span><span class="nx">size</span><span class="p">)</span>
 <span class="c1">// 2</span>

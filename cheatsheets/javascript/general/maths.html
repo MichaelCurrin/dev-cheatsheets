@@ -171,49 +171,49 @@
 
 <p>Or use the more verbose power function.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="mi">100</span>
 </code></pre></div></div>
 
 <h2 id="round">Round</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">1234.567</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">round</span><span class="p">(</span><span class="mf">1234.567</span><span class="p">)</span>
 <span class="mi">1235</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">1234.123</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">round</span><span class="p">(</span><span class="mf">1234.123</span><span class="p">)</span>
 <span class="mi">1234</span>
 </code></pre></div></div>
 
 <p>Unfortunately, passing extra parameters does <strong>not</strong> set the precision level.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">1234.123</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">round</span><span class="p">(</span><span class="mf">1234.123</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="mi">1234</span>
 </code></pre></div></div>
 
 <p>So you need to do this - multiple by a value, round then divide by the value. Here we use <code class="language-plaintext highlighter-rouge">100</code>, using <code class="language-plaintext highlighter-rouge">10</code> (base) to the power of <code class="language-plaintext highlighter-rouge">2</code> (precision level).</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">1234.123</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">round</span><span class="p">(</span><span class="mf">1234.123</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span>
 <span class="mf">1234.12</span>
-<span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">1234.123</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10</span><span class="o">**</span><span class="mi">2</span>
+<span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">round</span><span class="p">(</span><span class="mf">1234.123</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10</span><span class="o">**</span><span class="mi">2</span>
 <span class="mf">1234.12</span>
 </code></pre></div></div>
 
 <p>As a function:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">round</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">precision</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">round</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">precision</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">multiplier</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="nx">precision</span><span class="p">;</span>
-  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">value</span> <span class="o">*</span> <span class="nx">multiplier</span><span class="p">)</span> <span class="o">/</span> <span class="nx">multiplier</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">round</span><span class="p">(</span><span class="nx">value</span> <span class="o">*</span> <span class="nx">multiplier</span><span class="p">)</span> <span class="o">/</span> <span class="nx">multiplier</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>Usage:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">round</span><span class="p">(</span><span class="mf">1234.123</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">round</span><span class="p">(</span><span class="mf">1234.123</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="mf">1234.12</span>
-<span class="o">&gt;</span> <span class="nx">round</span><span class="p">(</span><span class="mf">1234.12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">round</span><span class="p">(</span><span class="mf">1234.12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="mf">1234.1</span>
-<span class="o">&gt;</span> <span class="nx">round</span><span class="p">(</span><span class="mf">1234.12</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">round</span><span class="p">(</span><span class="mf">1234.12</span><span class="p">)</span>
 <span class="mi">1234</span>
 </code></pre></div></div>
 
@@ -231,13 +231,13 @@
 
 <p>Round up the value.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mf">2.3</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="mf">2.3</span><span class="p">)</span>
 <span class="mi">3</span>
 </code></pre></div></div>
 
 <p>A negative value will round towards zero.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">)</span>
 <span class="o">-</span><span class="mi">1</span>
 </code></pre></div></div>
 
@@ -245,13 +245,13 @@
 
 <p>Round down the value.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="mf">2.3</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="mf">2.3</span><span class="p">)</span>
 <span class="mi">2</span>
 </code></pre></div></div>
 
 <p>A negative value will round away from zero.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">)</span>
 <span class="o">-</span><span class="mi">2</span>
 </code></pre></div></div>
 

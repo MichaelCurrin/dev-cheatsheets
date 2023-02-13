@@ -167,17 +167,17 @@
 
 <h2 id="single-style">Single style</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">%cMy red text</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">color: red</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">%cMy red text</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">color: red</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="combine-styles">Combine styles</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">%cMy bold and red text</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">font-weight: bold; color: red</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">%cMy bold and red text</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">font-weight: bold; color: red</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="split-styles">Split styles</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">%cMy bold text %cMy red text</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">font-weight: bold</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">color: red</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">%cMy bold text %cMy red text</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">font-weight: bold</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">color: red</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>This only seems to work in the browser and not in Node. You’ll need come control characters or an NPM package to handle colors in Node.</p>

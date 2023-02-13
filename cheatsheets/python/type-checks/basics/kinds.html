@@ -217,19 +217,19 @@
 
 <p>Allow a value to be <code class="language-plaintext highlighter-rouge">None</code>. More details in Optional section below.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">some_function</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nf">some_function</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Mypy understands a value can’t be <code class="language-plaintext highlighter-rouge">None</code> in used an if-statement.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="nf">upper</span><span class="p">())</span>
 </code></pre></div></div>
 
 <p>If a value can never be <code class="language-plaintext highlighter-rouge">None</code> due to some invariants, use an <code class="language-plaintext highlighter-rouge">assert</code>.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">assert</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
-<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="nf">upper</span><span class="p">())</span>
 </code></pre></div></div>
 
         

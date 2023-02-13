@@ -209,50 +209,50 @@
   <li><a href="https://docs.python.org/3/library/urllib.parse.html#urllib.parse.parse_qs">urllib.parse.parse_qs</a></li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">urllib.parse</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">urllib.parse</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="n">quote</span><span class="p">(</span><span class="s">'Hello, world!'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="nf">quote</span><span class="p">(</span><span class="s">'Hello, world!'</span><span class="p">)</span>
 <span class="c1"># 'Hello%2C%20world%21'
 </span>
-<span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="n">quote_plus</span><span class="p">(</span><span class="s">'Hello, world!'</span><span class="p">)</span>
+<span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="nf">quote_plus</span><span class="p">(</span><span class="s">'Hello, world!'</span><span class="p">)</span>
 <span class="c1"># 'Hello%2C+world%21'
 </span></code></pre></div></div>
 
 <p>URL params:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s">'q'</span><span class="p">:</span> <span class="s">'Python URL encoding'</span><span class="p">,</span> <span class="s">'abc'</span><span class="p">:</span> <span class="s">'134'</span><span class="p">}</span>
-<span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="n">urlencode</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="nf">urlencode</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
 <span class="c1"># 'q=Python+URL+encoding&amp;abc=134'
 </span></code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">params_str</span> <span class="o">=</span> <span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="n">urlencode</span><span class="p">({</span><span class="s">'spam'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'eggs'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'bacon'</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">params_str</span> <span class="o">=</span> <span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="nf">urlencode</span><span class="p">({</span><span class="s">'spam'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'eggs'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'bacon'</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
 <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"http://www.musi-cal.com/cgi-bin/query?</span><span class="si">{</span><span class="n">params_str</span><span class="si">}</span><span class="s">"</span>
 </code></pre></div></div>
 
 <h3 id="decode">Decode</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="n">unquote</span><span class="p">(</span><span class="s">'Hello%2C%20world%21'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="nf">unquote</span><span class="p">(</span><span class="s">'Hello%2C%20world%21'</span><span class="p">)</span>
 <span class="c1"># 'Hello, world!'
 </span></code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="n">unquote_plus</span><span class="p">(</span><span class="s">'Hello%2C+world%21'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="nf">unquote_plus</span><span class="p">(</span><span class="s">'Hello%2C+world%21'</span><span class="p">)</span>
 <span class="c1"># 'Hello, world!'
 </span></code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="n">parse_qs</span><span class="p">(</span><span class="s">'q=Python+URL+encoding&amp;abc=134'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="nf">parse_qs</span><span class="p">(</span><span class="s">'q=Python+URL+encoding&amp;abc=134'</span><span class="p">)</span>
 <span class="c1"># {'q': ['Python URL encoding'], 'abc': ['134']}
 </span>
-<span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="n">parse_qsl</span><span class="p">(</span><span class="s">'q=Python+URL+encoding&amp;abc=134'</span><span class="p">)</span>
+<span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="nf">parse_qsl</span><span class="p">(</span><span class="s">'q=Python+URL+encoding&amp;abc=134'</span><span class="p">)</span>
 <span class="c1"># [('q', 'Python URL encoding'), ('abc', '134')]
 </span></code></pre></div></div>
 
 <p>Note <code class="language-plaintext highlighter-rouge">urlparse</code> won’t separate query params.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="n">urlparse</span><span class="p">(</span><span class="s">'q=Python+URL+encoding&amp;abc=134'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="nf">urlparse</span><span class="p">(</span><span class="s">'q=Python+URL+encoding&amp;abc=134'</span><span class="p">)</span>
 <span class="c1"># ParseResult(scheme='', netloc='', path='q=Python+URL+encoding&amp;abc=134', params='', query='', fragment='')
 </span>
-<span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="n">urlparse</span><span class="p">(</span><span class="s">'https://example.com?q=Python+URL+encoding&amp;abc=134'</span><span class="p">)</span>
+<span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="nf">urlparse</span><span class="p">(</span><span class="s">'https://example.com?q=Python+URL+encoding&amp;abc=134'</span><span class="p">)</span>
 <span class="c1"># ParseResult(scheme='https', netloc='example.com', path='', params='', query='q=Python+URL+encoding&amp;abc=134', fragment='')
 </span></code></pre></div></div>
 

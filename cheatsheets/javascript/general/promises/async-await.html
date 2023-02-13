@@ -181,40 +181,40 @@
 
 <p>Here we have <code class="language-plaintext highlighter-rouge">asyncCall</code> defined as an <code class="language-plaintext highlighter-rouge">async</code> function. It calls a promise that resolves after 2 seconds, to imitate doing a request to an API.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">resolveAfter2Seconds</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">resolved</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">resolveAfter2Seconds</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nf">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">resolved</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
   <span class="p">});</span>
 <span class="p">}</span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">asyncCall</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">calling</span><span class="dl">'</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">resolveAfter2Seconds</span><span class="p">();</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">asyncCall</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">calling</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">resolveAfter2Seconds</span><span class="p">();</span>
   
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
   <span class="c1">// "resolved"</span>
 <span class="p">}</span>
 
-<span class="nx">asyncCall</span><span class="p">();</span>
+<span class="nf">asyncCall</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p>It uses <code class="language-plaintext highlighter-rouge">await</code> to call a function that returns a promise, so you don’t have to use <code class="language-plaintext highlighter-rouge">.then()</code> chains.</p>
 
 <p>Here is another example showing how <code class="language-plaintext highlighter-rouge">await</code> approach reads much more naturally.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
   <span class="c1">// Two independent await statements.</span>
-  <span class="kd">const</span> <span class="nx">result1</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">)))</span>
-  <span class="kd">const</span> <span class="nx">result2</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">def</span><span class="dl">'</span><span class="p">)))</span>
+  <span class="kd">const</span> <span class="nx">result1</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nf">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">)))</span>
+  <span class="kd">const</span> <span class="nx">result2</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nf">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">def</span><span class="dl">'</span><span class="p">)))</span>
 
   <span class="c1">// Use result of one await call in another.</span>
-  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/user.json</span><span class="dl">'</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/user.json</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="nx">foo</span><span class="p">()</span>
+<span class="nf">foo</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h2 id="top-level-code-vs-functions">Top-level code vs functions</h2>
@@ -225,15 +225,15 @@
 
 <p>Top-level - example from <a href="https://javascript.info/async-await">Async/await</a> on JavaScript Info:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/article/promise-chaining/user.json</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/article/promise-chaining/user.json</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p>The old approach using <a href="https://developer.mozilla.org/en-US/docs/Glossary/IIFE">IIFE</a>.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/article/promise-chaining/user.json</span><span class="dl">'</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/article/promise-chaining/user.json</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
   <span class="c1">// ...</span>
 <span class="p">})();</span>
 </code></pre></div></div>
@@ -248,18 +248,18 @@
   <p>This symmetry with asynchronous code culminates in the async/await syntactic sugar in ECMAScript 2017:</p>
 </blockquote>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">failureCallback</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error generating audio file: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">error</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">failureCallback</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error generating audio file: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">error</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">doSomething</span><span class="p">();</span>
-    <span class="kd">const</span> <span class="nx">newResult</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">doSomethingElse</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">finalResult</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">doThirdThing</span><span class="p">(</span><span class="nx">newResult</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Got the final result: </span><span class="p">${</span><span class="nx">finalResult</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">failureCallback</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">doSomething</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="nx">newResult</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">doSomethingElse</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">finalResult</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">doThirdThing</span><span class="p">(</span><span class="nx">newResult</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Got the final result: </span><span class="p">${</span><span class="nx">finalResult</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">}</span> <span class="nf">catch</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">failureCallback</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -268,30 +268,30 @@
 
 <p>Give a function that resolves after 2 seconds and prints the current time.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">resolveAfter2Seconds</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">resolve</span><span class="p">(</span><span class="s2">`resolved at </span><span class="p">${(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">toTimeString</span><span class="p">()}</span><span class="s2">`</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">resolveAfter2Seconds</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nf">resolve</span><span class="p">(</span><span class="s2">`resolved at </span><span class="p">${(</span><span class="k">new</span> <span class="nc">Date</span><span class="p">()).</span><span class="nf">toTimeString</span><span class="p">()}</span><span class="s2">`</span><span class="p">);</span>
     <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
   <span class="p">});</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">async</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">toTimeString</span><span class="p">())</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">async</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">((</span><span class="k">new</span> <span class="nc">Date</span><span class="p">()).</span><span class="nf">toTimeString</span><span class="p">())</span>
 
   <span class="c1">// Here we resolve the function twice in series, taking a total of 2 seconds.</span>
 
-  <span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">resolveAfter2Seconds</span><span class="p">()</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">resolveAfter2Seconds</span><span class="p">()</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
 
-  <span class="kd">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">resolveAfter2Seconds</span><span class="p">()</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">resolveAfter2Seconds</span><span class="p">()</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span>
   
   <span class="c1">// Here we resolve the promises in parallel.</span>
-  <span class="kd">const</span> <span class="nx">promises</span> <span class="o">=</span> <span class="p">[</span><span class="nx">resolveAfter2Seconds</span><span class="p">(),</span> <span class="nx">resolveAfter2Seconds</span><span class="p">()]</span>
-  <span class="kd">const</span> <span class="nx">resolvedPromises</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">promises</span><span class="p">)</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resolvedPromises</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">promises</span> <span class="o">=</span> <span class="p">[</span><span class="nf">resolveAfter2Seconds</span><span class="p">(),</span> <span class="nf">resolveAfter2Seconds</span><span class="p">()]</span>
+  <span class="kd">const</span> <span class="nx">resolvedPromises</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nf">all</span><span class="p">(</span><span class="nx">promises</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">resolvedPromises</span><span class="p">)</span>
 <span class="p">})()</span>
 </code></pre></div></div>
 
@@ -310,12 +310,12 @@ resolved at 16:31:51 GMT+0200 (South Africa Standard Time)
 
 <p>Then we set up two actions that log when the promise resolves. But the calls are not blocking so they both happen at the same time.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">async</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">toTimeString</span><span class="p">())</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">async</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">((</span><span class="k">new</span> <span class="nc">Date</span><span class="p">()).</span><span class="nf">toTimeString</span><span class="p">())</span>
 
-  <span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">resolveAfter2Seconds</span><span class="p">()</span>
-  <span class="nx">x</span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">done A</span><span class="dl">'</span><span class="p">,</span> <span class="nx">v</span><span class="p">))</span>
-  <span class="nx">x</span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">done B</span><span class="dl">'</span><span class="p">,</span> <span class="nx">v</span><span class="p">))</span>
+  <span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nf">resolveAfter2Seconds</span><span class="p">()</span>
+  <span class="nx">x</span><span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">done A</span><span class="dl">'</span><span class="p">,</span> <span class="nx">v</span><span class="p">))</span>
+  <span class="nx">x</span><span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">done B</span><span class="dl">'</span><span class="p">,</span> <span class="nx">v</span><span class="p">))</span>
 <span class="p">})()</span>
 </code></pre></div></div>
 

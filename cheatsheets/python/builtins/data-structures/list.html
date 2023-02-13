@@ -185,13 +185,13 @@
 <h2 id="the-list-keyword">The list keyword</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nf">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="c1"># list
-</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+</span><span class="nf">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
 <span class="c1"># True
 </span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="nf">list</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="c1"># [1, 2, 3]
 </span></code></pre></div></div>
 
@@ -201,20 +201,20 @@
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">.append</code> - add an element at the end, one argument only.
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">x</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'def'</span><span class="p">)</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">x</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="s">'def'</span><span class="p">)</span>
 </code></pre></div>    </div>
   </li>
   <li><code class="language-plaintext highlighter-rouge">.extend</code> - add multiple elements from an iterable at the end of a list.
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">x</span><span class="p">.</span><span class="n">extend</span><span class="p">([</span><span class="s">'ghi'</span><span class="p">,</span><span class="s">'jkl'</span><span class="p">])</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">x</span><span class="p">.</span><span class="nf">extend</span><span class="p">([</span><span class="s">'ghi'</span><span class="p">,</span><span class="s">'jkl'</span><span class="p">])</span>
 </code></pre></div>    </div>
   </li>
   <li><code class="language-plaintext highlighter-rouge">.insert</code> - add an element at a given position.
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">x</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">'def'</span><span class="p">)</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">x</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">'def'</span><span class="p">)</span>
 </code></pre></div>    </div>
   </li>
   <li><code class="language-plaintext highlighter-rouge">.pop</code> - remove an element from the end or given position.
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">el</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1"># end
-</span>  <span class="n">el</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># start
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">el</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="nf">pop</span><span class="p">()</span> <span class="c1"># end
+</span>  <span class="n">el</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># start
 </span></code></pre></div>    </div>
   </li>
 </ul>
@@ -223,16 +223,16 @@
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">.remove</code> - remove a target value.
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">x</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'def'</span><span class="p">)</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">x</span><span class="p">.</span><span class="nf">remove</span><span class="p">(</span><span class="s">'def'</span><span class="p">)</span>
 </code></pre></div>    </div>
   </li>
   <li><code class="language-plaintext highlighter-rouge">.index</code>
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">x</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">x</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
   <span class="c1"># 0
 </span></code></pre></div>    </div>
   </li>
   <li><code class="language-plaintext highlighter-rouge">.count</code>
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">x</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">x</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
   <span class="c1"># 1
 </span></code></pre></div>    </div>
   </li>
@@ -248,7 +248,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="p">[]</span>
 <span class="p">[]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">()</span>
 <span class="p">[]</span>
 </code></pre></div></div>
 
@@ -270,7 +270,7 @@
 <span class="p">[[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]]</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="c1"># Append a value inside the first item.
-</span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">append</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="c1"># It gets added to all.
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="p">[[</span><span class="s">'abc'</span><span class="p">],</span> <span class="p">[</span><span class="s">'abc'</span><span class="p">],</span> <span class="p">[</span><span class="s">'abc'</span><span class="p">],</span> <span class="p">[</span><span class="s">'abc'</span><span class="p">],</span> <span class="p">[</span><span class="s">'abc'</span><span class="p">],</span> <span class="p">[</span><span class="s">'abc'</span><span class="p">],</span> <span class="p">[</span><span class="s">'abc'</span><span class="p">],</span> <span class="p">[</span><span class="s">'abc'</span><span class="p">],</span> <span class="p">[</span><span class="s">'abc'</span><span class="p">],</span> <span class="p">[</span><span class="s">'abc'</span><span class="p">]</span>
@@ -278,15 +278,15 @@
 
 <p>You can’t use this either.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nb">list</span><span class="p">()]</span><span class="o">*</span><span class="mi">10</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nf">list</span><span class="p">()]</span><span class="o">*</span><span class="mi">10</span>
 </code></pre></div></div>
 
 <p>You’ll need a <code class="language-plaintext highlighter-rouge">lambda</code>.</p>
 
 <p>Or list comprehension. With <code class="language-plaintext highlighter-rouge">[]</code> or <code class="language-plaintext highlighter-rouge">list()</code> inside.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">append</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="p">[[</span><span class="s">'abc'</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]]</span>
 </code></pre></div></div>
@@ -297,14 +297,14 @@
 <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">])</span>
 <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>You must pass an iterable to <code class="language-plaintext highlighter-rouge">list</code>. Passing a single <code class="language-plaintext highlighter-rouge">str</code> or <code class="language-plaintext highlighter-rouge">int</code> will fail.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nc">Traceback </span><span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
   <span class="n">File</span> <span class="s">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="nb">TypeError</span><span class="p">:</span> <span class="s">'int'</span> <span class="nb">object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">iterable</span>
 </code></pre></div></div>
@@ -368,7 +368,7 @@
 <p>Tuple to list.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
 </code></pre></div></div>
 
@@ -378,13 +378,13 @@
 </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>String to list.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
 <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">]</span>
 </code></pre></div></div>
 

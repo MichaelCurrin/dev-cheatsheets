@@ -154,12 +154,12 @@
             <p>Don’t define data structures in function parameters. Only constants.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[]):</span>
-    <span class="n">x</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'test'</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="s">'test'</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="n">foo</span><span class="p">()</span>
+<span class="nf">foo</span><span class="p">()</span>
 <span class="c1"># =&gt; ['test']
-</span><span class="n">foo</span><span class="p">()</span>
+</span><span class="nf">foo</span><span class="p">()</span>
 <span class="c1"># =&gt; ['test', 'test']
 </span></code></pre></div></div>
 
@@ -168,12 +168,12 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
         <span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">x</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'test'</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="s">'test'</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="n">foo</span><span class="p">()</span>
+<span class="nf">foo</span><span class="p">()</span>
 <span class="c1"># =&gt; ['test']
-</span><span class="n">foo</span><span class="p">()</span>
+</span><span class="nf">foo</span><span class="p">()</span>
 <span class="c1"># =&gt; ['test']
 </span></code></pre></div></div>
 

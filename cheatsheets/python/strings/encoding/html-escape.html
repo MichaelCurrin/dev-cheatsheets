@@ -179,17 +179,17 @@
 
 <h2 id="cgi">CGI</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">cgi</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">cgi</span>
 
-<span class="n">s</span> <span class="o">=</span> <span class="n">cgi</span><span class="p">.</span><span class="n">escape</span><span class="p">(</span> <span class="s">"""&amp; &lt; &gt;"""</span> <span class="p">)</span>   <span class="c1"># s = "&amp;amp; &amp;lt; &amp;gt;"
+<span class="n">s</span> <span class="o">=</span> <span class="n">cgi</span><span class="p">.</span><span class="nf">escape</span><span class="p">(</span> <span class="s">"""&amp; &lt; &gt;"""</span> <span class="p">)</span>   <span class="c1"># s = "&amp;amp; &amp;lt; &amp;gt;"
 </span></code></pre></div></div>
 
 <h2 id="html">HTML</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">html</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">html</span>
 
 
-<span class="n">s</span> <span class="o">=</span> <span class="n">html</span><span class="p">.</span><span class="n">escape</span><span class="p">(</span> <span class="s">"""&amp; &lt; " ' &gt;"""</span> <span class="p">)</span>   <span class="c1"># s = '&amp;amp; &amp;lt; &amp;quot; &amp;#x27; &amp;gt;'
+<span class="n">s</span> <span class="o">=</span> <span class="n">html</span><span class="p">.</span><span class="nf">escape</span><span class="p">(</span> <span class="s">"""&amp; &lt; " ' &gt;"""</span> <span class="p">)</span>   <span class="c1"># s = '&amp;amp; &amp;lt; &amp;quot; &amp;#x27; &amp;gt;'
 </span></code></pre></div></div>
 
         

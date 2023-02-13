@@ -198,7 +198,7 @@
 
 <p>Or, this works too.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nc">Object</span><span class="p">()</span>
 <span class="c1">// {}</span>
 </code></pre></div></div>
 
@@ -236,11 +236,11 @@
 <span class="p">}</span>
 
 <span class="c1">// Compressed.</span>
-<span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+<span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
 <span class="c1">// '{"foo":"abc"}'</span>
 
 <span class="c1">// Expanded.</span>
-<span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="c1">// {</span>
 <span class="c1">//   "foo": "abc"</span>
 <span class="c1">// }</span>
@@ -250,11 +250,11 @@
 
 <p>See also <a href="/dev-cheatsheets/cheatsheets/javascript/general/data-structures/looping.html">Looping</a> cheatsheet for iterating over an associative array.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nf">keys</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
 
-<span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nf">values</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
 
-<span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="modify">Modify</h2>

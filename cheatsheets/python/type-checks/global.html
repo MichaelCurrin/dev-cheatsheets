@@ -171,23 +171,23 @@
 
 <p>Setting this up is possible at the top of the module:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
 
-<span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="p">.</span><span class="n">Firefox</span><span class="p">()</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="p">.</span><span class="nc">Firefox</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>But it launches the browser immediately. Which is not desirable when importing code or doing tests.</p>
 
 <p>So we rather want to set it to be null and set it later.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
 
 <span class="n">driver</span> <span class="o">=</span> <span class="bp">None</span>
 
 
 <span class="k">def</span> <span class="nf">setup_driver</span><span class="p">():</span>
     <span class="k">global</span> <span class="n">driver</span>
-    <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="p">.</span><span class="n">Firefox</span><span class="p">()</span>
+    <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="p">.</span><span class="nc">Firefox</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Though, this presents challenges with types, which is what this page is about.</p>
@@ -206,25 +206,25 @@
 <p>e.g.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># pylint: disable=global-statement,global-variable-not-assigned
-</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+</span><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
 
-<span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
-<span class="kn">from</span> <span class="nn">selenium.webdriver.firefox.webdriver</span> <span class="kn">import</span> <span class="n">WebDriver</span>
+<span class="kn">from</span> <span class="n">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<span class="kn">from</span> <span class="n">selenium.webdriver.firefox.webdriver</span> <span class="kn">import</span> <span class="n">WebDriver</span>
 
 <span class="n">driver</span><span class="p">:</span> <span class="n">WebDriver</span>
 
 
 <span class="k">def</span> <span class="nf">close</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
     <span class="k">global</span> <span class="n">driver</span>
-    <span class="n">driver</span><span class="p">.</span><span class="n">quit</span><span class="p">()</span>
+    <span class="n">driver</span><span class="p">.</span><span class="nf">quit</span><span class="p">()</span>
     
     
 <span class="k">def</span> <span class="nf">setup_driver</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
     <span class="k">global</span> <span class="n">driver</span>
-    <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="p">.</span><span class="n">Firefox</span><span class="p">()</span>
+    <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="p">.</span><span class="nc">Firefox</span><span class="p">()</span>
     
-<span class="n">setup_driver</span><span class="p">()</span>
-<span class="n">close</span><span class="p">()</span>
+<span class="nf">setup_driver</span><span class="p">()</span>
+<span class="nf">close</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h2 id="optional">Optional</h2>
@@ -246,10 +246,10 @@
 
 <p>Here is an example:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
 
-<span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
-<span class="kn">from</span> <span class="nn">selenium.webdriver.firefox.webdriver</span> <span class="kn">import</span> <span class="n">WebDriver</span>
+<span class="kn">from</span> <span class="n">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<span class="kn">from</span> <span class="n">selenium.webdriver.firefox.webdriver</span> <span class="kn">import</span> <span class="n">WebDriver</span>
 
 
 <span class="n">driver</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">WebDriver</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
@@ -257,12 +257,12 @@
 
 <span class="k">def</span> <span class="nf">close</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
     <span class="k">global</span> <span class="n">driver</span>
-    <span class="n">driver</span><span class="p">.</span><span class="n">quit</span><span class="p">()</span>
+    <span class="n">driver</span><span class="p">.</span><span class="nf">quit</span><span class="p">()</span>
 
 
 <span class="k">def</span> <span class="nf">setup_driver</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
     <span class="k">global</span> <span class="n">driver</span>
-    <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="p">.</span><span class="n">Firefox</span><span class="p">()</span>
+    <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="p">.</span><span class="nc">Firefox</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Though I still get this error from Mypy:</p>

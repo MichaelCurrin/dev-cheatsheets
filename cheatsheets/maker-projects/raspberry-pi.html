@@ -191,16 +191,16 @@
 
 <p>This will open a window to view the feed.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
-<span class="kn">from</span> <span class="nn">picamera</span> <span class="kn">import</span> <span class="n">PiCamera</span>
+<span class="kn">from</span> <span class="n">picamera</span> <span class="kn">import</span> <span class="n">PiCamera</span>
 
 
-<span class="n">camera</span> <span class="o">=</span> <span class="n">PiCamera</span><span class="p">()</span>
+<span class="n">camera</span> <span class="o">=</span> <span class="nc">PiCamera</span><span class="p">()</span>
 
-<span class="n">camera</span><span class="p">.</span><span class="n">start_preview</span><span class="p">()</span>
-<span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">camera</span><span class="p">.</span><span class="n">stop_preview</span><span class="p">()</span>
+<span class="n">camera</span><span class="p">.</span><span class="nf">start_preview</span><span class="p">()</span>
+<span class="nf">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">camera</span><span class="p">.</span><span class="nf">stop_preview</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h3 id="cli">CLI</h3>

@@ -172,24 +172,24 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
     <span class="n">my_class_variable</span> <span class="o">=</span> <span class="s">'xyz'</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">abc</span><span class="p">,</span> <span class="n">def</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">abc</span> <span class="o">=</span> <span class="n">abc</span>
-        <span class="bp">self</span><span class="p">.</span><span class="k">def</span> <span class="err">= </span><span class="nf">def</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">abc</span><span class="p">,</span> <span class="n">def</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">abc</span> <span class="o">=</span> <span class="n">abc</span>
+        <span class="n">self</span><span class="p">.</span><span class="k">def</span> <span class="err">= </span><span class="nf">def</span>
         
-    <span class="k">def</span> <span class="nf">my_public_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">my_public_method</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="k">pass</span>
      
-    <span class="k">def</span> <span class="nf">_my_private_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_my_private_method</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="k">pass</span>
         
-    <span class="k">def</span> <span class="nf">__my_very_private_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__my_very_private_method</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="k">pass</span>
         
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="mi">456</span><span class="p">)</span>
-<span class="n">x</span><span class="p">.</span><span class="n">my_public_method</span><span class="p">()</span>
-<span class="n">x</span><span class="p">.</span><span class="n">_my_private_method</span><span class="p">()</span>
-<span class="n">x</span><span class="p">.</span><span class="n">_Foo__my_very_private_method</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nc">Foo</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="mi">456</span><span class="p">)</span>
+<span class="n">x</span><span class="p">.</span><span class="nf">my_public_method</span><span class="p">()</span>
+<span class="n">x</span><span class="p">.</span><span class="nf">_my_private_method</span><span class="p">()</span>
+<span class="n">x</span><span class="p">.</span><span class="nf">_Foo__my_very_private_method</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h2 id="decorators">Decorators</h2>
@@ -201,16 +201,16 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
     <span class="n">my_class_variable</span> <span class="o">=</span> <span class="s">'xyz'</span>
     
-    <span class="k">def</span> <span class="nf">my_public_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">abc</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">abc</span> <span class="o">=</span> <span class="n">abc</span>
+    <span class="k">def</span> <span class="nf">my_public_method</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">abc</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">abc</span> <span class="o">=</span> <span class="n">abc</span>
         
-    <span class="o">@</span><span class="nb">classmethod</span>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">my_class_method</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">cls</span><span class="p">.</span><span class="n">my_class_variable</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">cls</span><span class="p">.</span><span class="n">my_class_variable</span><span class="p">)</span>
         
-        <span class="n">my_instance</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+        <span class="n">my_instance</span> <span class="o">=</span> <span class="nf">cls</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
         
-<span class="n">Foo</span><span class="p">.</span><span class="n">my_class_method</span><span class="p">()</span>
+<span class="n">Foo</span><span class="p">.</span><span class="nf">my_class_method</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h3 id="static-method">Static method</h3>
@@ -219,11 +219,11 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
         
-    <span class="o">@</span><span class="nb">staticmethod</span>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">my_static_method</span><span class="p">():</span>
         <span class="k">pass</span>
 
-<span class="n">Foo</span><span class="p">.</span><span class="n">static_method</span><span class="p">()</span>
+<span class="n">Foo</span><span class="p">.</span><span class="nf">static_method</span><span class="p">()</span>
 </code></pre></div></div>
 
         

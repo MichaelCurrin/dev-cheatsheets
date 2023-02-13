@@ -167,14 +167,14 @@
 
 <h2 id="import">Import</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">subprocess</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">subprocess</span>
 </code></pre></div></div>
 
 <h2 id="run">Run</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cmd</span> <span class="o">=</span> <span class="s">"MY_COMMAND"</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span>
     <span class="n">cmd</span><span class="p">,</span> 
     <span class="n">capture_output</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> 
     <span class="n">text</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> 
@@ -184,7 +184,7 @@
 
 <h2 id="capture-output">Capture output</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">output</span> <span class="o">=</span> <span class="n">subprocess</span><span class="p">.</span><span class="n">getstatusoutput</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">output</span> <span class="o">=</span> <span class="n">subprocess</span><span class="p">.</span><span class="nf">getstatusoutput</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Output will be a string.</p>
@@ -193,13 +193,13 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cmd</span> <span class="o">=</span> <span class="s">"git remote get-url origin"</span>
 
-<span class="n">subprocess</span><span class="p">.</span><span class="n">getstatusoutput</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+<span class="n">subprocess</span><span class="p">.</span><span class="nf">getstatusoutput</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
 <span class="c1"># 'git@github.com:MichaelCurrin/shell-dev-setup.git'
 </span></code></pre></div></div>
 
 <h2 id="capture-output-and-status-code">Capture output and status code</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">exitcode</span><span class="p">,</span> <span class="n">output</span> <span class="o">=</span> <span class="n">subprocess</span><span class="p">.</span><span class="n">getstatusoutput</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">exitcode</span><span class="p">,</span> <span class="n">output</span> <span class="o">=</span> <span class="n">subprocess</span><span class="p">.</span><span class="nf">getstatusoutput</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Exitcode will be an integer.</p>
@@ -209,12 +209,12 @@
 <p>e.g.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cmd</span> <span class="o">=</span> <span class="s">"ls -l"</span>
-<span class="n">exitcode</span><span class="p">,</span> <span class="n">output</span> <span class="o">=</span> <span class="n">subprocess</span><span class="p">.</span><span class="n">getstatusoutput</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+<span class="n">exitcode</span><span class="p">,</span> <span class="n">output</span> <span class="o">=</span> <span class="n">subprocess</span><span class="p">.</span><span class="nf">getstatusoutput</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
 
 <span class="n">exitcode</span>
 <span class="c1"># 0
 </span>
-<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 <span class="c1"># total 36
 # drwxrwxr-x 5 michael michael 4096 Oct 16 21:14 bin
 # drwxrwxr-x 4 michael michael 4096 Oct 16 21:14 configs

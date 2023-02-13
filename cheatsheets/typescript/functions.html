@@ -155,31 +155,31 @@
 
 <p>Set the type of each parameter.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">a</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">b</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="kr">number</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">a</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">b</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="kr">number</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>And set optionally the return type - it it can be inferred from the functions called within, but you may want to enforce that the encounter function returns a certain type when the the internal functions change.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">a</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="kr">string</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">fizz</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">a</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="kr">string</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nf">fizz</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>Optional types with <code class="language-plaintext highlighter-rouge">?</code> must be last.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">color</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">,</span> <span class="nx">label</span><span class="p">?:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">color</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">,</span> <span class="nx">label</span><span class="p">?:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{}</span>
 </code></pre></div></div>
 
 <h2 id="convert-to-named-arguments">Convert to named arguments</h2>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">color</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">label</span><span class="p">?:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">color</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">label</span><span class="p">?:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{}</span>
 </code></pre></div></div>
 
 <p>Using VS Code to convert to a destructured object.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">({</span> <span class="nx">message</span><span class="p">,</span> <span class="nx">color</span><span class="p">,</span> <span class="nx">label</span> <span class="p">}:</span> <span class="p">{</span> <span class="nl">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span> <span class="nl">color</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span> <span class="nl">label</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span> <span class="p">})</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">foo</span><span class="p">({</span> <span class="nx">message</span><span class="p">,</span> <span class="nx">color</span><span class="p">,</span> <span class="nx">label</span> <span class="p">}:</span> <span class="p">{</span> <span class="nl">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span> <span class="nl">color</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span> <span class="nl">label</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span> <span class="p">})</span>
 </code></pre></div></div>
 
 <p>Note use of semicolons.</p>

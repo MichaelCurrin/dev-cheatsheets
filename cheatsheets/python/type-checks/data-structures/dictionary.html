@@ -205,7 +205,7 @@
 
 <p><em>I’ve only see this comment approach used for a dictionary, I don’t know why it is used here and not so much for others, but it seems like the preferred style.</em></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
 
 <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># type: Dict[str, int]
 </span></code></pre></div></div>
@@ -244,12 +244,12 @@
 
 <h3 id="define">Define</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">typing_extensions</span> <span class="kn">import</span> <span class="n">TypedDict</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">typing_extensions</span> <span class="kn">import</span> <span class="n">TypedDict</span>
 </code></pre></div></div>
 
 <p>A generic example, using a single field with type of string.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MyType</span> <span class="o">=</span> <span class="n">TypedDict</span><span class="p">(</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MyType</span> <span class="o">=</span> <span class="nc">TypedDict</span><span class="p">(</span>
     <span class="s">'MyType'</span><span class="p">,</span> 
     <span class="p">{</span>
         <span class="s">'my_key'</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
@@ -261,7 +261,7 @@
 
 <p>Here are using a <code class="language-plaintext highlighter-rouge">Movie</code> type, defined as follows:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Movie</span> <span class="o">=</span> <span class="n">TypedDict</span><span class="p">(</span><span class="s">'Movie'</span><span class="p">,</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="s">'year'</span><span class="p">:</span> <span class="nb">int</span><span class="p">})</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Movie</span> <span class="o">=</span> <span class="nc">TypedDict</span><span class="p">(</span><span class="s">'Movie'</span><span class="p">,</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="s">'year'</span><span class="p">:</span> <span class="nb">int</span><span class="p">})</span>
 </code></pre></div></div>
 
 <p>The 4 approaches are:</p>
@@ -277,19 +277,19 @@
 
 <p>Use the type as a constructor. Similar to a class.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'Toy Story'</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">1995</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movie</span> <span class="o">=</span> <span class="nc">Movie</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'Toy Story'</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">1995</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h4 id="function-parameter">Function parameter</h4>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span> <span class="n">Movie</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">movie</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="class-inheritance">Class inheritance</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">typing_extensions</span> <span class="kn">import</span> <span class="n">TypedDict</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">typing_extensions</span> <span class="kn">import</span> <span class="n">TypedDict</span>
 
 
 <span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
@@ -318,10 +318,10 @@
 
 <p>Here we define a <code class="language-plaintext highlighter-rouge">Person</code> type and use it in two functions.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">typing_extensions</span> <span class="kn">import</span> <span class="n">TypedDict</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">typing_extensions</span> <span class="kn">import</span> <span class="n">TypedDict</span>
 
 
-<span class="n">Person</span> <span class="o">=</span> <span class="n">TypedDict</span><span class="p">(</span>
+<span class="n">Person</span> <span class="o">=</span> <span class="nc">TypedDict</span><span class="p">(</span>
     <span class="s">'Person'</span><span class="p">,</span> 
     <span class="p">{</span>
         <span class="s">'name'</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
@@ -332,13 +332,13 @@
 
 
 <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">person</span><span class="p">:</span> <span class="n">Person</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="s">'name'</span><span class="p">])</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="s">'age'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="s">'height'</span><span class="p">])</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="s">'name'</span><span class="p">])</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="s">'age'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="s">'height'</span><span class="p">])</span>
 
 
 <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">person</span><span class="p">:</span> <span class="n">Person</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Hello, </span><span class="si">{</span><span class="n">person</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Hello, </span><span class="si">{</span><span class="n">person</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div></div>
 
         

@@ -188,19 +188,19 @@
 
 <p>How to check for undefined and give an error:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">respData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">requestApi</span><span class="p">()</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">respData</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">requestApi</span><span class="p">()</span>
 
 <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">respData</span><span class="p">.</span><span class="nx">name</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">name</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">undefined</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Missing 'name' on API response</span><span class="dl">"</span><span class="p">)</span>
+<span class="nf">if </span><span class="p">(</span><span class="k">typeof</span> <span class="nx">name</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">undefined</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Missing 'name' on API response</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MY_VAR</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">MY_VAR</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">MY_VAR</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Must set MY_VAR on environment variables</span><span class="dl">'</span><span class="p">)</span>
+<span class="nf">if </span><span class="p">(</span><span class="k">typeof</span> <span class="nx">MY_VAR</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Must set MY_VAR on environment variables</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -210,25 +210,25 @@
 
 <p>In newer JS you can use <code class="language-plaintext highlighter-rouge">??</code> to replace null and undefined with a default.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">respData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">requestApi</span><span class="p">()</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">respData</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">requestApi</span><span class="p">()</span>
 <span class="c1">// e.g. Objecy with age and no name.</span>
 <span class="c1">// { age: 123 }</span>
 
 <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">respData</span><span class="p">.</span><span class="nx">name</span> <span class="o">??</span> <span class="dl">""</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">())</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">())</span>
 </code></pre></div></div>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MY_VAR</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">MY_VAR</span> <span class="o">??</span> <span class="dl">""</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">MY_VAR</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">())</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">MY_VAR</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">())</span>
 </code></pre></div></div>
 
 <p>In older JS, you can use <code class="language-plaintext highlighter-rouge">||</code> instead. With the downside that falsey values like zero, false, and an empty string will be replaced too.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MY_VAR</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">MY_VAR</span> <span class="o">||</span> <span class="dl">""</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">MY_VAR</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">())</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">MY_VAR</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">())</span>
 </code></pre></div></div>
 
 <h2 id="check-if-function-argument-is-defined">Check if function argument is defined</h2>
@@ -237,28 +237,28 @@
 
 <p>Here is how to do that yourself.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">abc</span><span class="p">)</span> <span class="p">{</span>
- <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">abc</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
-   <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">abc is a required argument</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">abc</span><span class="p">)</span> <span class="p">{</span>
+ <span class="nf">if </span><span class="p">(</span><span class="k">typeof</span> <span class="nx">abc</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">abc is a required argument</span><span class="dl">'</span><span class="p">)</span>
   <span class="p">}</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">abc</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">abc</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="nx">foo</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-<span class="nx">foo</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
-<span class="nx">foo</span><span class="p">()</span> <span class="c1">// error</span>
+<span class="nf">foo</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="nf">foo</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+<span class="nf">foo</span><span class="p">()</span> <span class="c1">// error</span>
 </code></pre></div></div>
 
 <h2 id="skip-positional-arguments">Skip positional arguments</h2>
 
 <p>Another use is to skip positional arguments by passing a value explicitly as undefined, assuming it is optional.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">foobar</span><span class="p">(</span><span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="mi">456</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">foobar</span><span class="p">(</span><span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="mi">456</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>In Python this is not need as you can switch to keyword params.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">foobar</span><span class="p">(</span><span class="s">"abc"</span><span class="p">,</span> <span class="n">third_param</span><span class="o">=</span><span class="mi">456</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">foobar</span><span class="p">(</span><span class="s">"abc"</span><span class="p">,</span> <span class="n">third_param</span><span class="o">=</span><span class="mi">456</span><span class="p">)</span>
 </code></pre></div></div>
 
         

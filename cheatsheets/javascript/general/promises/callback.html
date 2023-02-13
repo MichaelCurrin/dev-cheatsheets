@@ -175,16 +175,16 @@
 
     <div class="post-content">
         
-            <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">foo</span><span class="p">(</span><span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">bazz</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bazz</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
+            <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">foo</span><span class="p">(</span><span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">bazz</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">bazz</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">());</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
 <p>This is the infamous “callback hell” where you have to nest function calls to chain them. This what the only way for a long time.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">foo</span><span class="p">(</span><span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">bazz</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">fizz</span><span class="p">(</span><span class="nx">bazz</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">boo</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">boo</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">foo</span><span class="p">(</span><span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">bazz</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">fizz</span><span class="p">(</span><span class="nx">bazz</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">boo</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">boo</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">());</span>
   <span class="p">}</span>
 <span class="p">});</span>
 </code></pre></div></div>

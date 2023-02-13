@@ -185,7 +185,7 @@
 
 <p>Enclose a function inside a pair of brackets and then invoke it.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">statements</span>
 <span class="p">})();</span>
 </code></pre></div></div>
@@ -194,7 +194,7 @@
 
 <p>If you prefer, you can use the <em>not</em> operator instead of the pair of brackets.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">statements</span>
 <span class="p">}();</span>
 </code></pre></div></div>
@@ -205,7 +205,7 @@
   <p>The function becomes a function expression which is immediately executed. The variable within the expression can not be accessed from outside it.</p>
 </blockquote>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">aName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Barry</span><span class="dl">"</span><span class="p">;</span>
 <span class="p">})();</span>
 
@@ -217,7 +217,7 @@
   <p>Assigning the IIFE to a variable stores the function’s return value, not the function definition itself.</p>
 </blockquote>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Barry</span><span class="dl">"</span><span class="p">;</span>
     <span class="k">return</span> <span class="nx">name</span><span class="p">;</span>
 <span class="p">})();</span>
@@ -232,14 +232,14 @@
 
 <ul>
   <li>Plain function
-    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">)</span>
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">)</span>
   <span class="p">}</span>
 </code></pre></div>    </div>
   </li>
   <li>Adding a call at the end will give a <strong>syntax error</strong>.
-    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">)</span>
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">)</span>
   <span class="p">}()</span>
 </code></pre></div>    </div>
   </li>
@@ -249,8 +249,8 @@
 
 <p>Surround the function in brackets before calling it will work.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">})()</span>
 </code></pre></div></div>
 
@@ -259,18 +259,18 @@
 <p>e.g.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
-<span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">statements</span>
 <span class="p">})();</span>
 
 <span class="c1">// i.e.</span>
-<span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">statements</span> <span class="p">})();</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="nf">y</span><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span> <span class="nx">statements</span> <span class="p">})();</span>
 </code></pre></div></div>
 
 <p>Instead of brackets, you can use the <em>not</em> operator at the start. This will treat the function as an expression and return <code class="language-plaintext highlighter-rouge">true</code> (since the opposite of <code class="language-plaintext highlighter-rouge">!undefined</code> is <code class="language-plaintext highlighter-rouge">true</code>).</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">}()</span>
 </code></pre></div></div>
 
@@ -279,7 +279,7 @@
 <p>This is valid:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span>
-<span class="o">!</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="o">!</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">statements</span>
 <span class="p">}()</span>
 </code></pre></div></div>
@@ -292,14 +292,14 @@
 
 <p>And you probably want to persist functions or variables outside the IIFE, so attach them to the window object.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="kd">function</span> <span class="p">(</span><span class="nb">window</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="nf">function </span><span class="p">(</span><span class="nb">window</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">statements</span>
 <span class="p">}(</span><span class="nb">window</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Using document:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="kd">function</span> <span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="nb">document</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="nf">function </span><span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="nb">document</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">statements</span>
 <span class="p">}(</span><span class="nb">window</span><span class="p">,</span> <span class="nb">document</span><span class="p">);</span>
 </code></pre></div></div>
@@ -308,11 +308,11 @@
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">main.js</code>
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">!</span><span class="kd">function</span> <span class="p">(</span><span class="nb">window</span><span class="p">)</span> <span class="p">{</span>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">!</span><span class="nf">function </span><span class="p">(</span><span class="nb">window</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">MY_GLOBAL_VAR</span> <span class="o">=</span> <span class="mi">123</span>
     <span class="kd">const</span> <span class="nx">MY_SCOPED_VAR</span> <span class="o">=</span> <span class="mi">456</span>
 
-    <span class="kd">function</span> <span class="nx">myFunc</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="nf">myFunc</span><span class="p">()</span> <span class="p">{</span>
       <span class="c1">// ...</span>
     <span class="p">}</span>
 
@@ -323,9 +323,9 @@
   </li>
   <li><code class="language-plaintext highlighter-rouge">index.html</code>
     <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;script&gt;</span>
-      <span class="nb">window</span><span class="p">.</span><span class="nx">myFunc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+      <span class="nb">window</span><span class="p">.</span><span class="nf">myFunc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
         
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">MY_GLOBAL_VAR</span><span class="p">)</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">MY_GLOBAL_VAR</span><span class="p">)</span>
   <span class="nt">&lt;/script&gt;</span>
 </code></pre></div>    </div>
   </li>

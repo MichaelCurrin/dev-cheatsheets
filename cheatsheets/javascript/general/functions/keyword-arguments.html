@@ -181,18 +181,18 @@
 
 <p>Use destructuring in the <em>definition</em> of the function’s parameters.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">b</span><span class="p">({</span> <span class="nx">foo</span><span class="p">,</span> <span class="nx">bar</span> <span class="p">})</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">,</span> <span class="nx">foo</span><span class="p">)</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span> <span class="nx">bar</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">b</span><span class="p">({</span> <span class="nx">foo</span><span class="p">,</span> <span class="nx">bar</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">,</span> <span class="nx">foo</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span> <span class="nx">bar</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>That is equivalent to this:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">b</span><span class="p">(</span><span class="nx">myObject</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">b</span><span class="p">(</span><span class="nx">myObject</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">foo</span><span class="p">,</span> <span class="nx">bar</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">myObject</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">,</span> <span class="nx">foo</span><span class="p">)</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span> <span class="nx">bar</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">,</span> <span class="nx">foo</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span> <span class="nx">bar</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -204,10 +204,10 @@
 
 <p>Inline:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">b</span><span class="p">(</span> <span class="p">{</span> <span class="na">foo</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">bar</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">b</span><span class="p">(</span> <span class="p">{</span> <span class="na">foo</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">bar</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">)</span>
 <span class="c1">// foo 1</span>
 <span class="c1">// bar 2</span>
-<span class="nx">b</span><span class="p">(</span> <span class="p">{</span> <span class="na">bar</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">foo</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span> <span class="p">)</span>
+<span class="nf">b</span><span class="p">(</span> <span class="p">{</span> <span class="na">bar</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">foo</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span> <span class="p">)</span>
 <span class="c1">// foo 1</span>
 <span class="c1">// bar 2</span>
 </code></pre></div></div>
@@ -215,7 +215,7 @@
 <p>Or, define an object then pass it. No need to use rest operator (i.e. <code class="language-plaintext highlighter-rouge">...</code>).</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span> <span class="na">foo</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">bar</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span>
-<span class="nx">b</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+<span class="nf">b</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
 <span class="c1">// foo 1</span>
 <span class="c1">// bar 2</span>
 </code></pre></div></div>
@@ -224,11 +224,11 @@
 
 <p>If you omit arguments, this is fine, they will be <code class="language-plaintext highlighter-rouge">undefined</code>.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">b</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">b</span><span class="p">()</span>
 <span class="c1">// foo undefined</span>
 <span class="c1">// bar undefined</span>
 
-<span class="nx">b</span><span class="p">(</span> <span class="p">{</span> <span class="na">bar</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">)</span>
+<span class="nf">b</span><span class="p">(</span> <span class="p">{</span> <span class="na">bar</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">)</span>
 <span class="c1">// foo undefined</span>
 <span class="c1">// bar 2</span>
 </code></pre></div></div>
@@ -241,7 +241,7 @@
 
 <p>This will not work. Two positional arguments are passed, where none are expected, and the keyword arguments remain <code class="language-plaintext highlighter-rouge">undefined</code>.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">b</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">b</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="c1">// foo undefined</span>
 <span class="c1">// bar undefined</span>
 </code></pre></div></div>

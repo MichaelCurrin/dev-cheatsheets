@@ -200,10 +200,10 @@
   <li>Add methods if you need.</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
 
 
-<span class="o">@</span><span class="n">dataclass</span>
+<span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">InventoryItem</span><span class="p">:</span>
     <span class="s">"""
     Class for keeping track of an item in inventory.
@@ -212,8 +212,8 @@
     <span class="n">unit_price</span><span class="p">:</span> <span class="nb">float</span>
     <span class="n">quantity_on_hand</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
 
-    <span class="k">def</span> <span class="nf">total_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">unit_price</span> <span class="o">*</span> <span class="bp">self</span><span class="p">.</span><span class="n">quantity_on_hand</span>
+    <span class="k">def</span> <span class="nf">total_cost</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">unit_price</span> <span class="o">*</span> <span class="n">self</span><span class="p">.</span><span class="n">quantity_on_hand</span>
 </code></pre></div></div>
 
 <p>Equivalent definition <em>without</em> using a data class:</p>
@@ -222,17 +222,17 @@
     <span class="s">"""
     Class for keeping track of an item in inventory.
     """</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">unit_price</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">quantity_on_hand</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">unit_price</span> <span class="o">=</span> <span class="n">unit_price</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">quantity_on_hand</span> <span class="o">=</span> <span class="n">quantity_on_hand</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">unit_price</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">quantity_on_hand</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">unit_price</span> <span class="o">=</span> <span class="n">unit_price</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">quantity_on_hand</span> <span class="o">=</span> <span class="n">quantity_on_hand</span>
 </code></pre></div></div>
 
 <p>Note that for <code class="language-plaintext highlighter-rouge">float</code> type, an input <code class="language-plaintext highlighter-rouge">int</code> will get converted to <code class="language-plaintext highlighter-rouge">float</code>.</p>
 
 <h3 id="use-instance">Use instance</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">item</span> <span class="o">=</span> <span class="n">InventoryItem</span><span class="p">(</span><span class="s">"Foo"</span><span class="p">,</span> <span class="mf">123.4</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">item</span> <span class="o">=</span> <span class="nc">InventoryItem</span><span class="p">(</span><span class="s">"Foo"</span><span class="p">,</span> <span class="mf">123.4</span><span class="p">)</span>
 
 <span class="n">item</span>
 <span class="c1"># =&gt; InventoryItem(name='Foo', unit_price=123.4, quantity_on_hand=0)
@@ -242,7 +242,7 @@
 </span></code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Validation
-</span><span class="n">item</span> <span class="o">=</span> <span class="n">InventoryItem</span><span class="p">()</span>
+</span><span class="n">item</span> <span class="o">=</span> <span class="nc">InventoryItem</span><span class="p">()</span>
 <span class="c1"># TypeError: __init__() missing 2 required positional arguments: 'name' and 'unit_price'
 </span></code></pre></div></div>
 
@@ -254,17 +254,17 @@
 
 <p>Signature:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">dataclasses</span><span class="p">.</span><span class="n">dataclass</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="nb">repr</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">eq</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">unsafe_hash</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@dataclasses.dataclass</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="nb">repr</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">eq</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">unsafe_hash</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>See <a href="https://docs.python.org/3/library/dataclasses.html#module-level-decorators-classes-and-functions">definitions</a>.</p>
 
 <p>Example:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
 
-<span class="o">@</span><span class="n">dataclass</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="nb">repr</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">eq</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">unsafe_hash</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="nb">repr</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">eq</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">unsafe_hash</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="validation">Validation</h2>
@@ -273,20 +273,20 @@
 
 <p>But, you can use Mypy to check types for you. Example from <a href="https://mypy.readthedocs.io/en/stable/additional_features.html">Additional features</a> docs page.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
 
 
-<span class="o">@</span><span class="n">dataclass</span>
+<span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">Application</span><span class="p">:</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">plugins</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">plugins</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nf">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
 
 
-<span class="n">test</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="s">"Testing..."</span><span class="p">)</span> 
+<span class="n">test</span> <span class="o">=</span> <span class="nc">Application</span><span class="p">(</span><span class="s">"Testing..."</span><span class="p">)</span> 
 <span class="c1"># OK
 </span>
 <span class="c1"># Passing a string instead of list of strings:
-</span><span class="n">bad</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="s">"Testing..."</span><span class="p">,</span> <span class="s">"with plugin"</span><span class="p">)</span>  
+</span><span class="n">bad</span> <span class="o">=</span> <span class="nc">Application</span><span class="p">(</span><span class="s">"Testing..."</span><span class="p">,</span> <span class="s">"with plugin"</span><span class="p">)</span>  
 <span class="c1"># Error: List[str] expected
 </span></code></pre></div></div>
 

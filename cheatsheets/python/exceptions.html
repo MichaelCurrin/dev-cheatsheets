@@ -161,7 +161,7 @@
 
 <h2 id="raise">Raise</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"My message"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="s">"My message"</span><span class="p">)</span>
 </code></pre></div></div>
 <p>Output:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Traceback (most recent call last):
@@ -172,7 +172,7 @@ ValueError: My message
 <h2 id="catch">Catch</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
-    <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"Dummy error"</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="s">"Dummy error"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="bare">Bare</h3>
@@ -180,43 +180,43 @@ ValueError: My message
 <p>Not recommended.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
-     <span class="n">foo</span><span class="p">()</span>
+     <span class="nf">foo</span><span class="p">()</span>
 <span class="k">except</span><span class="p">:</span>
-     <span class="k">print</span><span class="p">(</span><span class="s">"Do something"</span><span class="p">)</span>
+     <span class="nf">print</span><span class="p">(</span><span class="s">"Do something"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="broad">Broad</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
-     <span class="n">foo</span><span class="p">()</span>
+     <span class="nf">foo</span><span class="p">()</span>
 <span class="k">except</span> <span class="nb">Exception</span><span class="p">:</span>
-     <span class="k">print</span><span class="p">(</span><span class="s">"Do something"</span><span class="p">)</span>
+     <span class="nf">print</span><span class="p">(</span><span class="s">"Do something"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
-     <span class="n">foo</span><span class="p">()</span>
+     <span class="nf">foo</span><span class="p">()</span>
 <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-     <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Something bad happened </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+     <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Something bad happened </span><span class="si">{</span><span class="nf">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="specific">Specific</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
-     <span class="n">foo</span><span class="p">()</span>
+     <span class="nf">foo</span><span class="p">()</span>
 <span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
-     <span class="k">print</span><span class="p">(</span><span class="s">"Do something"</span><span class="p">)</span>
+     <span class="nf">print</span><span class="p">(</span><span class="s">"Do something"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="chained">Chained</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
-     <span class="n">foo</span><span class="p">()</span>
+     <span class="nf">foo</span><span class="p">()</span>
 <span class="k">except</span> <span class="n">ConnectioError</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"Could not connect"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Could not connect"</span><span class="p">)</span>
 <span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
-     <span class="k">print</span><span class="p">(</span><span class="s">"We had a bad key"</span><span class="p">)</span>
+     <span class="nf">print</span><span class="p">(</span><span class="s">"We had a bad key"</span><span class="p">)</span>
 <span class="k">except</span> <span class="nb">Exception</span><span class="p">:</span>
-     <span class="k">print</span><span class="p">(</span><span class="s">"Default"</span><span class="p">)</span>     
+     <span class="nf">print</span><span class="p">(</span><span class="s">"Default"</span><span class="p">)</span>     
 </code></pre></div></div>
 
 <h2 id="catch-and-re-raise">Catch and re-raise</h2>
@@ -228,9 +228,9 @@ ValueError: My message
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
     <span class="n">foo</span> <span class="o">=</span> <span class="s">"My foo"</span>
     <span class="c1"># Expecting bar to fail here.
-</span>    <span class="n">bar</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+</span>    <span class="nf">bar</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
 <span class="k">except</span> <span class="nb">Exception</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Foo: </span><span class="si">{</span><span class="n">foo</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Foo: </span><span class="si">{</span><span class="n">foo</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
     
     <span class="k">raise</span>
 </code></pre></div></div>
@@ -242,11 +242,11 @@ ValueError: My message
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
     <span class="n">foo</span> <span class="o">=</span> <span class="s">"My foo"</span>
     <span class="c1"># Expecting bar to fail here.
-</span>    <span class="n">bar</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+</span>    <span class="nf">bar</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
 <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Foo: </span><span class="si">{</span><span class="n">foo</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Foo: </span><span class="si">{</span><span class="n">foo</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
     
-    <span class="k">raise</span> <span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">)(</span><span class="s">"My custom message"</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="nf">type</span><span class="p">(</span><span class="n">e</span><span class="p">)(</span><span class="s">"My custom message"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="base-classes">Base classes</h2>
@@ -254,11 +254,11 @@ ValueError: My message
 <p>See <a href="https://docs.python.org/3/library/exceptions.html#base-classes">Base classes</a> in the docs.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"My message"</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="s">"My message"</span><span class="p">)</span>
 <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">args</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">args</span><span class="p">)</span>
 </code></pre></div></div>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>My message
 My message
@@ -298,7 +298,7 @@ except SomeException:
 
 <p>Usage:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">raise</span> <span class="n">Foo</span><span class="p">(</span><span class="s">"Message"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">raise</span> <span class="nc">Foo</span><span class="p">(</span><span class="s">"Message"</span><span class="p">)</span>
 </code></pre></div></div>
 <p>Output:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Traceback (most recent call last):
@@ -311,16 +311,16 @@ __main__.Foo: Message
 <p>Here with a custom value on the error.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">NetworkError</span><span class="p">(</span><span class="nb">RuntimeError</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span>
 
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
     <span class="c1"># Function call that raises this...
-</span>    <span class="k">raise</span> <span class="n">NetworkError</span><span class="p">(</span><span class="s">"Message"</span><span class="p">)</span>
+</span>    <span class="k">raise</span> <span class="nc">NetworkError</span><span class="p">(</span><span class="s">"Message"</span><span class="p">)</span>
 <span class="k">except</span> <span class="n">NetworkError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span> 
-    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">msg</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">msg</span><span class="p">)</span>
 </code></pre></div></div>
 <p>Output:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Message

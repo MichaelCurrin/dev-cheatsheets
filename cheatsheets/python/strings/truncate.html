@@ -165,20 +165,20 @@
         
             <p>Truncate long strings.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">textwrap</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">textwrap</span>
 
 
-<span class="n">textwrap</span><span class="p">.</span><span class="n">shorten</span><span class="p">(</span><span class="s">"Hello  world!"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">textwrap</span><span class="p">.</span><span class="nf">shorten</span><span class="p">(</span><span class="s">"Hello  world!"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="c1"># =&gt; 'Hello world!'
-</span><span class="n">textwrap</span><span class="p">.</span><span class="n">shorten</span><span class="p">(</span><span class="s">"Hello  world!"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+</span><span class="n">textwrap</span><span class="p">.</span><span class="nf">shorten</span><span class="p">(</span><span class="s">"Hello  world!"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
 <span class="c1"># &gt; 'Hello [...]'
-</span><span class="n">textwrap</span><span class="p">.</span><span class="n">shorten</span><span class="p">(</span><span class="s">"Hello world"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">placeholder</span><span class="o">=</span><span class="s">"..."</span><span class="p">)</span>
+</span><span class="n">textwrap</span><span class="p">.</span><span class="nf">shorten</span><span class="p">(</span><span class="s">"Hello world"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">placeholder</span><span class="o">=</span><span class="s">"..."</span><span class="p">)</span>
 <span class="c1"># =&gt; 'Hello...'
 </span></code></pre></div></div>
 
 <p><a href="https://stackoverflow.com/questions/2872512/python-truncate-a-long-string">source</a></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'{:.5}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="s">'xylophone'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'{:.5}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s">'xylophone'</span><span class="p">)</span>
 <span class="c1"># =&gt; 'xylop'
 </span></code></pre></div></div>
 

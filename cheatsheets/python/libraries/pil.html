@@ -190,11 +190,11 @@
 
 <p>From <a href="https://pillow.readthedocs.io/en/latest/handbook/tutorial.html">Tutorial</a> in the Handbook.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 
-<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span><span class="s">"hopper.ppm"</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s">"hopper.ppm"</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">im</span><span class="p">.</span><span class="nb">format</span><span class="p">,</span> <span class="n">im</span><span class="p">.</span><span class="n">size</span><span class="p">,</span> <span class="n">im</span><span class="p">.</span><span class="n">mode</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">im</span><span class="p">.</span><span class="nb">format</span><span class="p">,</span> <span class="n">im</span><span class="p">.</span><span class="n">size</span><span class="p">,</span> <span class="n">im</span><span class="p">.</span><span class="n">mode</span><span class="p">)</span>
 <span class="c1"># PPM (512, 512) RGB
 </span></code></pre></div></div>
 
@@ -202,13 +202,13 @@
 
 <p>Based on <a href="https://amazon.qwiklabs.com/focuses/16506?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&amp;parent=catalog&amp;search_id=11282443">AWS lab</a>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 
 
 <span class="k">def</span> <span class="nf">resize_image</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">resized_path</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">Image</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">image</span><span class="p">:</span>
-        <span class="n">image</span><span class="p">.</span><span class="n">thumbnail</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">))</span>
-        <span class="n">image</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="n">resized_path</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">image</span><span class="p">:</span>
+        <span class="n">image</span><span class="p">.</span><span class="nf">thumbnail</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">))</span>
+        <span class="n">image</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="n">resized_path</span><span class="p">)</span>
 </code></pre></div></div>
 
         

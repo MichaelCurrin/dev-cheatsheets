@@ -185,51 +185,51 @@
 
 <h2 id="syntax">Syntax</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">,</span> <span class="nx">milliseconds</span><span class="p">,</span> <span class="nx">param1</span><span class="p">,</span> <span class="nx">param2</span><span class="p">,</span> <span class="p">...)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">,</span> <span class="nx">milliseconds</span><span class="p">,</span> <span class="nx">param1</span><span class="p">,</span> <span class="nx">param2</span><span class="p">,</span> <span class="p">...)</span>
 </code></pre></div></div>
 
 <p>Or from MDN:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">intervalID</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="p">[</span><span class="nx">delay</span><span class="p">,</span> <span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">,</span> <span class="p">...]);</span>
-<span class="kd">var</span> <span class="nx">intervalID</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">[,</span> <span class="nx">delay</span><span class="p">]);</span>
-<span class="kd">var</span> <span class="nx">intervalID</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="nx">code</span><span class="p">,</span> <span class="p">[</span><span class="nx">delay</span><span class="p">]);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">intervalID</span> <span class="o">=</span> <span class="nf">setInterval</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="p">[</span><span class="nx">delay</span><span class="p">,</span> <span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">,</span> <span class="p">...]);</span>
+<span class="kd">var</span> <span class="nx">intervalID</span> <span class="o">=</span> <span class="nf">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">[,</span> <span class="nx">delay</span><span class="p">]);</span>
+<span class="kd">var</span> <span class="nx">intervalID</span> <span class="o">=</span> <span class="nf">setInterval</span><span class="p">(</span><span class="nx">code</span><span class="p">,</span> <span class="p">[</span><span class="nx">delay</span><span class="p">]);</span>
 </code></pre></div></div>
 
 <h2 id="cancel">Cancel</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">cancelTimer</span><span class="p">(</span><span class="nx">intervalID</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">cancelTimer</span><span class="p">(</span><span class="nx">intervalID</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="example">Example</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">myCallback</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
- <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
- <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">myCallback</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kd">const</span> <span class="nx">intervalID</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="nx">myCallback</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Parameter 1</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Parameter 2</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">intervalID</span> <span class="o">=</span> <span class="nf">setInterval</span><span class="p">(</span><span class="nx">myCallback</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Parameter 1</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Parameter 2</span><span class="dl">'</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Start and stop:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">timer</span><span class="p">;</span>
 
-<span class="kd">function</span> <span class="nx">startTimer</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">5 seconds are up</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">function</span> <span class="nf">startTimer</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">timer</span> <span class="o">=</span> <span class="nf">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">5 seconds are up</span><span class="dl">"</span><span class="p">);</span>
     <span class="p">},</span> <span class="mi">5000</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">stopTimer</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Timer stopped</span><span class="dl">"</span><span class="p">);</span>
-    <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
+<span class="kd">function</span> <span class="nf">stopTimer</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Timer stopped</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nf">clearInterval</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>An interval that can cancel itself. This can be useful if you want to check until something is done and intervals and then stop checking when it is ready.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">timer</span> <span class="o">=</span> <span class="nf">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">clearInterval</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
 <span class="p">},</span> <span class="mi">500</span><span class="p">);</span>
 </code></pre></div></div>
 

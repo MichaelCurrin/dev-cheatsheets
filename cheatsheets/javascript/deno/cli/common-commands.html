@@ -344,11 +344,11 @@ Emitting bundle to "server.bundle.js"
   <li><code class="language-plaintext highlighter-rouge">test.ts</code> or <code class="language-plaintext highlighter-rouge">src/index_test.ts</code> or <code class="language-plaintext highlighter-rouge">tests/index_test.ts</code>.
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">import</span> <span class="p">{</span> <span class="nx">assertEquals</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://deno.land/std/testing/asserts.ts</span><span class="dl">"</span><span class="p">;</span>
 
-  <span class="nx">Deno</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="dl">"</span><span class="s2">deno test</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">Deno</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="dl">"</span><span class="s2">deno test</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Foo</span><span class="dl">"</span><span class="p">;</span>
       <span class="kd">const</span> <span class="nx">surname</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Bar</span><span class="dl">"</span><span class="p">;</span>
       <span class="kd">const</span> <span class="nx">fullname</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2"> </span><span class="p">${</span><span class="nx">surname</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
-      <span class="nx">assertEquals</span><span class="p">(</span><span class="nx">fullname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Foo Bar</span><span class="dl">"</span><span class="p">);</span>
+      <span class="nf">assertEquals</span><span class="p">(</span><span class="nx">fullname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Foo Bar</span><span class="dl">"</span><span class="p">);</span>
   <span class="p">});</span>
 </code></pre></div>    </div>
   </li>

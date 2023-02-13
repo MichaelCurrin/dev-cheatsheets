@@ -179,34 +179,34 @@
 
 <p>A promise.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Promise</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">Promise</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>An immediately-resoving promise:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">My value</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">My value</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>An immediately-failing promise:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">My error message</span><span class="dl">'</span><span class="p">))</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nf">reject</span><span class="p">(</span><span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">My error message</span><span class="dl">'</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>A promise that resolves after a delay, to match waiting on a network request. We pass a function</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">resolve</span><span class="p">(</span><span class="s2">`resolved at </span><span class="p">${(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">toTimeString</span><span class="p">()}</span><span class="s2">`</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nf">resolve</span><span class="p">(</span><span class="s2">`resolved at </span><span class="p">${(</span><span class="k">new</span> <span class="nc">Date</span><span class="p">()).</span><span class="nf">toTimeString</span><span class="p">()}</span><span class="s2">`</span><span class="p">);</span>
     <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
   <span class="p">});</span>
 </code></pre></div></div>
 
 <p>In a function:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">resolveAfter2Seconds</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">resolve</span><span class="p">(</span><span class="s2">`resolved at </span><span class="p">${</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">toTimeString</span><span class="p">()</span> <span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">resolveAfter2Seconds</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nf">resolve</span><span class="p">(</span><span class="s2">`resolved at </span><span class="p">${</span> <span class="p">(</span><span class="k">new</span> <span class="nc">Date</span><span class="p">()).</span><span class="nf">toTimeString</span><span class="p">()</span> <span class="p">}</span><span class="s2">`</span><span class="p">);</span>
     <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
   <span class="p">});</span>
 <span class="p">}</span>
@@ -214,17 +214,17 @@
 
 <h2 id="resolve-and-reject">Resolve and reject</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">Success value</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">Success value</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>    
-    <span class="nx">reject</span><span class="p">(</span><span class="dl">"</span><span class="s2">Failure value</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>    
+    <span class="nf">reject</span><span class="p">(</span><span class="dl">"</span><span class="s2">Failure value</span><span class="dl">"</span><span class="p">)</span>
     <span class="c1">// OR</span>
-    <span class="nx">reject</span><span class="p">(</span><span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Failure value</span><span class="dl">"</span><span class="p">))</span>
+    <span class="nf">reject</span><span class="p">(</span><span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Failure value</span><span class="dl">"</span><span class="p">))</span>
     
-    <span class="nx">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">Success value</span><span class="dl">"</span><span class="p">)</span>
+    <span class="nf">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">Success value</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
@@ -232,18 +232,18 @@
 
 <p>Wait for a batch of promises to resolve. The calls start at the same time and finish in any order (so this is great for requests to APIs that are independent). This will only resolve after the <em>last</em> one has resolved.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">ARRAY_OF_PROMISES</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nf">all</span><span class="p">(</span><span class="nx">ARRAY_OF_PROMISES</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>e.g.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">async</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">toTimeString</span><span class="p">())</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">async</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">((</span><span class="k">new</span> <span class="nc">Date</span><span class="p">()).</span><span class="nf">toTimeString</span><span class="p">())</span>
 
-  <span class="kd">const</span> <span class="nx">timers</span> <span class="o">=</span> <span class="p">[</span><span class="nx">resolveAfter2Seconds</span><span class="p">(),</span> <span class="nx">resolveAfter2Seconds</span><span class="p">(),</span> <span class="nx">resolveAfter2Seconds</span><span class="p">()]</span>
-  <span class="kd">const</span> <span class="nx">values</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">timers</span><span class="p">)</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`All done at </span><span class="p">${(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">toTimeString</span><span class="p">()}</span><span class="s2">`</span><span class="p">)</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">({</span> <span class="nx">values</span> <span class="p">})</span>
+  <span class="kd">const</span> <span class="nx">timers</span> <span class="o">=</span> <span class="p">[</span><span class="nf">resolveAfter2Seconds</span><span class="p">(),</span> <span class="nf">resolveAfter2Seconds</span><span class="p">(),</span> <span class="nf">resolveAfter2Seconds</span><span class="p">()]</span>
+  <span class="kd">const</span> <span class="nx">values</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nf">all</span><span class="p">(</span><span class="nx">timers</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`All done at </span><span class="p">${(</span><span class="k">new</span> <span class="nc">Date</span><span class="p">()).</span><span class="nf">toTimeString</span><span class="p">()}</span><span class="s2">`</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">({</span> <span class="nx">values</span> <span class="p">})</span>
 <span class="p">})()</span>
 </code></pre></div></div>
 

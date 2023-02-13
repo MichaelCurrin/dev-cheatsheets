@@ -195,10 +195,10 @@
 
 <h3 id="with-a-constructor">With a constructor</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">"</span><span class="s2">e</span><span class="dl">"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">RegExp</span><span class="p">(</span><span class="dl">"</span><span class="s2">e</span><span class="dl">"</span><span class="p">);</span>
 
-<span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">'</span><span class="s1">ab+c</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">i</span><span class="dl">'</span><span class="p">)</span>  <span class="c1">// string pattern as argument</span>
-<span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="sr">/ab+c/</span><span class="p">,</span> <span class="dl">'</span><span class="s1">i</span><span class="dl">'</span><span class="p">)</span>  <span class="c1">// regular expression literal as first argument - from ES6</span>
+<span class="k">new</span> <span class="nc">RegExp</span><span class="p">(</span><span class="dl">'</span><span class="s1">ab+c</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">i</span><span class="dl">'</span><span class="p">)</span>  <span class="c1">// string pattern as argument</span>
+<span class="k">new</span> <span class="nc">RegExp</span><span class="p">(</span><span class="sr">/ab+c/</span><span class="p">,</span> <span class="dl">'</span><span class="s1">i</span><span class="dl">'</span><span class="p">)</span>  <span class="c1">// regular expression literal as first argument - from ES6</span>
 </code></pre></div></div>
 
 <h3 id="literal-notation">Literal notation</h3>
@@ -211,17 +211,17 @@
 <p>Use with string methods:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// inline</span>
-<span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/my pattern/i</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/my pattern/i</span><span class="p">);</span>
 
 <span class="c1">// with object</span>
 <span class="kd">const</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="sr">/my pattern/i</span><span class="p">;</span>
-<span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">pattern</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="nx">pattern</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>e.g.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Rain and Spain</span><span class="dl">'</span>
-<span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/ai/gi</span><span class="p">)</span>
+<span class="nx">text</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/ai/gi</span><span class="p">)</span>
 <span class="c1">// [ 'ai', 'ai' ]</span>
 </code></pre></div></div>
 
@@ -231,15 +231,15 @@
 </code></pre></div></div>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">R096  bar.txt    fizz/foo.txt</span><span class="dl">"</span>
-<span class="nx">y</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/</span><span class="se">\s</span><span class="sr">+/</span><span class="p">)</span>
+<span class="nx">y</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sr">/</span><span class="se">\s</span><span class="sr">+/</span><span class="p">)</span>
 <span class="c1">// [ 'R096', 'bar.txt', 'fizz/foo.txt' ]</span>
 
 <span class="c1">// These won't work so well:</span>
-<span class="nx">y</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">y</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span>
 <span class="c1">// [ 'R096', '', 'bar.txt', '', '', '', 'fizz/foo.txt' ]</span>
-<span class="nx">y</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/" "/</span><span class="p">)</span>
+<span class="nx">y</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sr">/" "/</span><span class="p">)</span>
 <span class="p">[</span> <span class="dl">'</span><span class="s1">R096  bar.txt    fizz/foo.txt</span><span class="dl">'</span> <span class="p">]</span>
-<span class="nx">y</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/</span><span class="se">\s</span><span class="sr">/</span><span class="p">)</span>
+<span class="nx">y</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sr">/</span><span class="se">\s</span><span class="sr">/</span><span class="p">)</span>
 <span class="c1">// [ 'R096', '', 'bar.txt', '', '', '', 'fizz/foo.txt' ]</span>
 </code></pre></div></div>
 
@@ -250,7 +250,7 @@
 
 <p>Or</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">'</span><span class="se">\\</span><span class="s1">w+</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">RegExp</span><span class="p">(</span><span class="dl">'</span><span class="se">\\</span><span class="s1">w+</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="search-method">Search method</h2>
@@ -261,14 +261,14 @@
 
 <p>This is done with a <strong>case-insensitive</strong> search.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">text</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="nx">pattern</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">text</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="nx">pattern</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="examples">Examples</h3>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">My Example</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="nx">text</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="sr">/example/i</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="sr">/example/i</span><span class="p">);</span>
 <span class="c1">// 3</span>
 </code></pre></div></div>
 
@@ -280,10 +280,10 @@
 
 <p>Find matches in text and get an object back containing matches.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">"</span><span class="s2">e</span><span class="dl">"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RegExp</span><span class="p">(</span><span class="dl">"</span><span class="s2">e</span><span class="dl">"</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">The best things in life are free</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">matches</span> <span class="o">=</span> <span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">pattern</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">matches</span> <span class="o">=</span> <span class="nx">text</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="nx">pattern</span><span class="p">);</span>
 <span class="c1">// ["e", index: 2, input: "The best things in life are free", groups: undefined]</span>
 </code></pre></div></div>
 
@@ -293,17 +293,17 @@
 
 <p>Check a string matches a regex pattern and return <code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code>.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">patt</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">patt</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>This is equivalent to using <code class="language-plaintext highlighter-rouge">match</code> and use <code class="language-plaintext highlighter-rouge">!!</code> to convert to a boolean.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!!</span><span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">patt</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!!</span><span class="nx">text</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="nx">patt</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="examples-1">Examples</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">/</span><span class="nx">Hello</span><span class="o">/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello world!</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">/</span><span class="nx">Hello</span><span class="o">/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello world!</span><span class="dl">"</span><span class="p">)</span>
 <span class="c1">// true</span>
 </code></pre></div></div>
 
@@ -311,7 +311,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">patt</span> <span class="o">=</span> <span class="sr">/e/</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">The best things in life are free</span><span class="dl">"</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">patt</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">patt</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
 <span class="c1">// true</span>
 </code></pre></div></div>
 
@@ -321,9 +321,9 @@
 
 <p>Here using both to replace every occurence, using <code class="language-plaintext highlighter-rouge">replaceAll</code> and a string and then <code class="language-plaintext highlighter-rouge">replace</code> with multiline regex.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="dl">'</span><span class="s1">ABC ABC ABC</span><span class="dl">'</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">ABC</span><span class="dl">'</span><span class="p">,</span> <span class="dl">"</span><span class="s2">X</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="dl">'</span><span class="s1">ABC ABC ABC</span><span class="dl">'</span><span class="p">.</span><span class="nf">replaceAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">ABC</span><span class="dl">'</span><span class="p">,</span> <span class="dl">"</span><span class="s2">X</span><span class="dl">"</span><span class="p">)</span>
 <span class="dl">'</span><span class="s1">X X X</span><span class="dl">'</span>
-<span class="o">&gt;</span> <span class="dl">'</span><span class="s1">ABC ABC ABC</span><span class="dl">'</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/ABC/g</span><span class="p">,</span> <span class="dl">"</span><span class="s2">X</span><span class="dl">"</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="dl">'</span><span class="s1">ABC ABC ABC</span><span class="dl">'</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sr">/ABC/g</span><span class="p">,</span> <span class="dl">"</span><span class="s2">X</span><span class="dl">"</span><span class="p">)</span>
 <span class="dl">'</span><span class="s1">X X X</span><span class="dl">'</span>
 </code></pre></div></div>
 
@@ -343,7 +343,7 @@
 
 <p>From <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace">Mozilla docs</a>.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span> <span class="nx">replaceStr</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">text</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span> <span class="nx">replaceStr</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><em>Warning - the default behavior is to only replace the <strong>first occurrence</strong>. So make sure to use <code class="language-plaintext highlighter-rouge">g</code> global flag in your regex, even if you have to convert your plain string or regex. You can use the <a href="#replace-all-method">replaceAll</a> method to replace all values for a string pattern, but you still need global flag for regex pattern.</em></p>
@@ -355,7 +355,7 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="sr">/Dog/i</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ferret</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">text</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ferret</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">//                                            | NB.         | NB.</span>
 <span class="c1">// "The quick brown fox jumps over the lazy ferret. If the dog reacted, was it really lazy?"</span>
 </code></pre></div></div>
@@ -365,7 +365,7 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="sr">/Dog/gi</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ferret</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">text</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ferret</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">//                                            | NB.         | NB.</span>
 <span class="c1">// "The quick brown fox jumps over the lazy ferret. If the ferret reacted, was it really lazy?"</span>
 </code></pre></div></div>
@@ -380,7 +380,7 @@
 
 <p>Syntax:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">str</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="nx">regexp</span><span class="o">|</span><span class="nx">substr</span><span class="p">,</span> <span class="nx">newSubstr</span><span class="o">|</span><span class="kd">function</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">str</span><span class="p">.</span><span class="nf">replaceAll</span><span class="p">(</span><span class="nx">regexp</span><span class="o">|</span><span class="nx">substr</span><span class="p">,</span> <span class="nx">newSubstr</span><span class="o">|</span><span class="kd">function</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Note that as per linked docs, this only replaces <strong>all</strong> occurrences for a string pattern.</p>
@@ -395,7 +395,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="nx">text</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">dog</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">monkey</span><span class="dl">'</span><span class="p">));</span>
+<span class="nx">text</span><span class="p">.</span><span class="nf">replaceAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">dog</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">monkey</span><span class="dl">'</span><span class="p">));</span>
 <span class="c1">//                                            | NB.         | NB.</span>
 <span class="c1">// "The quick brown fox jumps over the lazy monkey. If the monkey reacted, was it really lazy?"</span>
 </code></pre></div></div>
@@ -404,7 +404,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="nx">text</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="sr">/Dog/gi</span><span class="p">,</span> <span class="dl">'</span><span class="s1">monkey</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">text</span><span class="p">.</span><span class="nf">replaceAll</span><span class="p">(</span><span class="sr">/Dog/gi</span><span class="p">,</span> <span class="dl">'</span><span class="s1">monkey</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">//                                            | NB.         | NB.</span>
 <span class="c1">// "The quick brown fox jumps over the lazy monkey. If the monkey reacted, was it really lazy?"</span>
 </code></pre></div></div>
@@ -426,7 +426,7 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">aliceExcerpt</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">The Caterpillar and Alice looked at each other</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">regexpWithoutE</span> <span class="o">=</span> <span class="sr">/</span><span class="se">\b[</span><span class="sr">a-df-z</span><span class="se">]</span><span class="sr">+</span><span class="se">\b</span><span class="sr">/ig</span><span class="p">;</span>
 
-<span class="nx">aliceExcerpt</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">regexpWithoutE</span><span class="p">)</span>
+<span class="nx">aliceExcerpt</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="nx">regexpWithoutE</span><span class="p">)</span>
 <span class="c1">// ["and", "at"]</span>
 </code></pre></div></div>
 
@@ -437,7 +437,7 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">imageDescription</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">This image has a resolution of 1440×900 pixels.</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">regexpSize</span> <span class="o">=</span> <span class="sr">/</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">×</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">/</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">match</span> <span class="o">=</span> <span class="nx">imageDescription</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">regexpSize</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">match</span> <span class="o">=</span> <span class="nx">imageDescription</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="nx">regexpSize</span><span class="p">);</span>
 <span class="s2">`Width: </span><span class="p">${</span><span class="nx">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span><span class="s2"> / Height: </span><span class="p">${</span><span class="nx">match</span><span class="p">[</span><span class="mi">2</span><span class="p">]}</span><span class="s2">.`</span>
 <span class="c1">// "Width: 1440 / Height: 900."</span>
 </code></pre></div></div>
@@ -448,9 +448,9 @@
 
 <p>Here we need the protocol to match on the value but we drop it in the result.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">patt</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">'</span><span class="s1">(?:https?)://([^/</span><span class="se">\r\n</span><span class="s1">]+)(/[^</span><span class="se">\r\n</span><span class="s1">]*)?</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">patt</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RegExp</span><span class="p">(</span><span class="dl">'</span><span class="s1">(?:https?)://([^/</span><span class="se">\r\n</span><span class="s1">]+)(/[^</span><span class="se">\r\n</span><span class="s1">]*)?</span><span class="dl">'</span><span class="p">)</span>
 
-<span class="nx">cont</span> <span class="nx">matches</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">http://stackoverflow.com/</span><span class="dl">'</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">patt</span><span class="p">)</span>
+<span class="nx">cont</span> <span class="nx">matches</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">http://stackoverflow.com/</span><span class="dl">'</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="nx">patt</span><span class="p">)</span>
 <span class="nx">matches</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="c1">// stackoverflow.com</span>
 </code></pre></div></div>
@@ -462,7 +462,7 @@
 <p>This only matches <em>once</em>.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">pat</span> <span class="o">=</span> <span class="sr">/#</span><span class="se">(\w</span><span class="sr">+</span><span class="se">)</span><span class="sr">/</span>
-<span class="nx">m</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">abc #python #def</span><span class="dl">'</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">pat</span><span class="p">)</span>
+<span class="nx">m</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">abc #python #def</span><span class="dl">'</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="nx">pat</span><span class="p">)</span>
 <span class="nx">m</span>
 <span class="c1">// [ '#python', </span>
 <span class="c1">//   'python', </span>
@@ -474,7 +474,7 @@
 <p>Using <code class="language-plaintext highlighter-rouge">g</code> for a global matches to get more than one match. But made the attributes disappear. Maybe I don’t understand this area properly and what the best practice is.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">pat</span> <span class="o">=</span> <span class="sr">/#</span><span class="se">(\w</span><span class="sr">+</span><span class="se">)</span><span class="sr">/g</span>
-<span class="nx">m</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">abc #python #def</span><span class="dl">'</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">pat</span><span class="p">)</span>
+<span class="nx">m</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">abc #python #def</span><span class="dl">'</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="nx">pat</span><span class="p">)</span>
 <span class="nx">m</span>
 <span class="c1">// [</span>
 <span class="c1">//   '#python',</span>
@@ -485,7 +485,7 @@
 <p>Extending the pattern to capture hyphens (not valid hashtags on Twitter but useful on other platforms for keyword topics).</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">pat</span> <span class="o">=</span> <span class="sr">/#</span><span class="se">([\w</span><span class="sr">-</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">/g</span>
-<span class="nx">m</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">abc #ruby #data-science</span><span class="dl">'</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">pat</span><span class="p">)</span>
+<span class="nx">m</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">abc #ruby #data-science</span><span class="dl">'</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="nx">pat</span><span class="p">)</span>
 <span class="nx">m</span>
 <span class="c1">// [ '#ruby', '#data-science' ] </span>
 </code></pre></div></div>

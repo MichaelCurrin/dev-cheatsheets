@@ -153,26 +153,26 @@
         
             <h2 id="variable-substituation">Variable substituation</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Hello %s, my name is %"</span><span class="p">,</span> <span class="s">"world"</span><span class="p">,</span> <span class="s">"Joe"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s">"Hello %s, my name is %"</span><span class="p">,</span> <span class="s">"world"</span><span class="p">,</span> <span class="s">"Joe"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="levels">Levels</h2>
 
 <h3 id="basic">Basic</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="n">logger</span><span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logger</span><span class="p">.</span><span class="nf">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="add-error-trace">Add error trace</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logger</span><span class="p">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logger</span><span class="p">.</span><span class="nf">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Equivalent to:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logger</span><span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logger</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>This will log the stack trace of the current error, so you don’t have to add <code class="language-plaintext highlighter-rouge">str(e)</code> to your message.</p>
@@ -180,7 +180,7 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
     <span class="c1"># ...
 </span><span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="n">logger</span><span class="p">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="n">logger</span><span class="p">.</span><span class="nf">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 </code></pre></div></div>
 
         

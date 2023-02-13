@@ -217,7 +217,7 @@
 
 <p>Split string into an array.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">; </span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">; </span><span class="dl">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>You’ll then need to split by <code class="language-plaintext highlighter-rouge">=</code> and find the one you need by key.</p>
@@ -299,7 +299,7 @@
 <p>How to set an array value in a cookie by stringifying it first.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myValues</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">def</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">xyz</span><span class="dl">"</span><span class="p">]</span>
-<span class="kd">const</span> <span class="nx">myValuesStr</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">my_interests</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">myValuesStr</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">my_interests</span><span class="p">)</span>
 
 <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="s2">`my_cookie=</span><span class="p">${</span><span class="nx">myValuesStr</span><span class="p">}</span><span class="s2">; SameSite=None; Secure; Path=/;`</span><span class="p">;</span>
 </code></pre></div></div>
@@ -332,13 +332,13 @@
 
 <p>e.g.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">expiry</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">currSeconds</span> <span class="o">=</span> <span class="nx">expiry</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span>
-<span class="nx">expiry</span><span class="p">.</span><span class="nx">setSeconds</span><span class="p">(</span><span class="nx">currSeconds</span> <span class="o">+</span> <span class="mi">30</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">expiry</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">currSeconds</span> <span class="o">=</span> <span class="nx">expiry</span><span class="p">.</span><span class="nf">getSeconds</span><span class="p">();</span>
+<span class="nx">expiry</span><span class="p">.</span><span class="nf">setSeconds</span><span class="p">(</span><span class="nx">currSeconds</span> <span class="o">+</span> <span class="mi">30</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">abcdef 123</span><span class="dl">"</span>
 
-<span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="s2">`my_cookie=</span><span class="p">${</span><span class="nx">value</span><span class="p">}</span><span class="s2">; SameSite=None; Secure; Path=/; Expires=</span><span class="p">${</span><span class="nx">expiry</span><span class="p">.</span><span class="nx">toGMTString</span><span class="p">()}</span><span class="s2">`</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="s2">`my_cookie=</span><span class="p">${</span><span class="nx">value</span><span class="p">}</span><span class="s2">; SameSite=None; Secure; Path=/; Expires=</span><span class="p">${</span><span class="nx">expiry</span><span class="p">.</span><span class="nf">toGMTString</span><span class="p">()}</span><span class="s2">`</span><span class="p">;</span>
 </code></pre></div></div>
 
 <h3 id="max-age-field">Max-age field</h3>

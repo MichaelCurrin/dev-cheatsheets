@@ -292,8 +292,8 @@ var COLOR;
   <span class="nx">Town</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hawkins</span><span class="dl">"</span>
 <span class="p">}</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">StrangerThings</span><span class="p">.</span><span class="nx">Power</span><span class="p">)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">StrangerThings</span><span class="p">.</span><span class="nx">Character</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">StrangerThings</span><span class="p">.</span><span class="nx">Power</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">StrangerThings</span><span class="p">.</span><span class="nx">Character</span><span class="p">)</span>
 </code></pre></div></div>
 
 <details>
@@ -324,13 +324,13 @@ var StrangerThings;
 
 <p>For string enum:</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">StrangerThings</span><span class="p">)</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nf">keys</span><span class="p">(</span><span class="nx">StrangerThings</span><span class="p">)</span>
 <span class="c1">// [ "Character", "Father", "Power", "Town" ]</span>
 </code></pre></div></div>
 
 <p>For numeric enum:</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">StrangerThings</span><span class="p">)</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nf">keys</span><span class="p">(</span><span class="nx">StrangerThings</span><span class="p">)</span>
 <span class="c1">// [ "0", "1", "2", "3", "Character", "Father", "Power", "Town" ]</span>
 </code></pre></div></div>
 
@@ -403,16 +403,16 @@ var StrangerThings;
 <span class="kd">type</span> <span class="nx">ColorStrings</span> <span class="o">=</span> <span class="kr">keyof</span> <span class="k">typeof</span> <span class="nx">COLOR</span><span class="p">;</span>
 <span class="c1">// I think the same as: 'Red' | 'Green'</span>
 
-<span class="kd">function</span> <span class="nx">describeColor</span><span class="p">(</span><span class="nx">key</span><span class="p">:</span> <span class="nx">ColorStrings</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nf">describeColor</span><span class="p">(</span><span class="nx">key</span><span class="p">:</span> <span class="nx">ColorStrings</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">COLOR</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
 <span class="p">}</span>
 <span class="c1">// OR</span>
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">describeCode</span><span class="p">(</span><span class="nx">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">export</span> <span class="kd">function</span> <span class="nf">describeCode</span><span class="p">(</span><span class="nx">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">DESCRIPTION</span><span class="p">[</span><span class="nx">key</span> <span class="k">as</span> <span class="nx">DescriptionKeys</span><span class="p">];</span>
 <span class="p">}</span>
 
 <span class="kd">const</span> <span class="nx">key</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Red</span><span class="dl">'</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">bar</span> <span class="o">=</span> <span class="nx">describeColor</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">bar</span> <span class="o">=</span> <span class="nf">describeColor</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
 </code></pre></div></div>
 
 <h2 id="enum-for-function-types">Enum for function types</h2>
@@ -432,17 +432,17 @@ var StrangerThings;
 
 <p>Continuing below, we enforce that the key must be a string that matches the keys of the enum.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">printImportant</span><span class="p">(</span><span class="nx">key</span><span class="p">:</span> <span class="nx">LogLevelStrings</span><span class="p">,</span> <span class="nx">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">printImportant</span><span class="p">(</span><span class="nx">key</span><span class="p">:</span> <span class="nx">LogLevelStrings</span><span class="p">,</span> <span class="nx">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">num</span> <span class="o">=</span> <span class="nx">LogLevel</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
 
-  <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&lt;=</span> <span class="nx">LogLevel</span><span class="p">.</span><span class="nx">WARN</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Log level key is:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">key</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Log level value is:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">num</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Log level message is:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">message</span><span class="p">);</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nx">num</span> <span class="o">&lt;=</span> <span class="nx">LogLevel</span><span class="p">.</span><span class="nx">WARN</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Log level key is:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">key</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Log level value is:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">num</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Log level message is:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">message</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">printImportant</span><span class="p">(</span><span class="dl">"</span><span class="s2">ERROR</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">This is a message</span><span class="dl">"</span><span class="p">);</span>
+<span class="nf">printImportant</span><span class="p">(</span><span class="dl">"</span><span class="s2">ERROR</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">This is a message</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>You could also use <code class="language-plaintext highlighter-rouge">level: LogLevel</code> in place of the key, but then the function caller must pass in an enum value and not a string.</p>

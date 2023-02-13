@@ -207,7 +207,7 @@
 
 <p>Use like this:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">markup</span><span class="p">,</span> <span class="s">"html.parser"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">BeautifulSoup</span><span class="p">(</span><span class="n">markup</span><span class="p">,</span> <span class="s">"html.parser"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h4 id="lxml">LXML</h4>
@@ -228,13 +228,13 @@
 
 <ul>
   <li>HTML parsing
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">markup</span><span class="p">,</span> <span class="s">"lxml"</span><span class="p">)</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nc">BeautifulSoup</span><span class="p">(</span><span class="n">markup</span><span class="p">,</span> <span class="s">"lxml"</span><span class="p">)</span>
 </code></pre></div>    </div>
   </li>
   <li>XML parsing
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">markup</span><span class="p">,</span> <span class="s">"lxml-xml"</span><span class="p">)</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nc">BeautifulSoup</span><span class="p">(</span><span class="n">markup</span><span class="p">,</span> <span class="s">"lxml-xml"</span><span class="p">)</span>
   <span class="c1"># OR
-</span>  <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">markup</span><span class="p">,</span> <span class="s">"xml"</span><span class="p">)</span>
+</span>  <span class="nc">BeautifulSoup</span><span class="p">(</span><span class="n">markup</span><span class="p">,</span> <span class="s">"xml"</span><span class="p">)</span>
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -245,19 +245,19 @@
 
 <p>Use like this:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">markup</span><span class="p">,</span> <span class="s">"html5lib"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">BeautifulSoup</span><span class="p">(</span><span class="n">markup</span><span class="p">,</span> <span class="s">"html5lib"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="import">Import</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 </code></pre></div></div>
 
 <h2 id="make-soup">Make soup</h2>
 
 <h3 id="syntax">Syntax</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">markup</span><span class="p">,</span> <span class="n">features</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span> <span class="o">=</span> <span class="nc">BeautifulSoup</span><span class="p">(</span><span class="n">markup</span><span class="p">,</span> <span class="n">features</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Mark up as a string of file object.</p>
@@ -318,25 +318,25 @@
 <h3 id="read-string">Read string</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">markup</span> <span class="o">=</span> <span class="s">"&lt;div&gt;Hello, world!&lt;/div&gt;"</span>
-<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">markup</span><span class="p">,</span> <span class="s">'lxml'</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="nc">BeautifulSoup</span><span class="p">(</span><span class="n">markup</span><span class="p">,</span> <span class="s">'lxml'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="read-local-text-file">Read local text file</h3>
 
 <p>Note you do not need to use <code class="language-plaintext highlighter-rouge">f_in.read()</code>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"index.html"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
-    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">f_in</span><span class="p">,</span> <span class="s">'lxml'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="s">"index.html"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="nc">BeautifulSoup</span><span class="p">(</span><span class="n">f_in</span><span class="p">,</span> <span class="s">'lxml'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="read-webpage">Read webpage</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">resp</span><span class="p">.</span><span class="n">ok</span><span class="p">:</span>
-    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">resp</span><span class="p">.</span><span class="n">text</span><span class="p">,</span> <span class="s">'lxml'</span><span class="p">)</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="nc">BeautifulSoup</span><span class="p">(</span><span class="n">resp</span><span class="p">.</span><span class="n">text</span><span class="p">,</span> <span class="s">'lxml'</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">resp</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="find-elements">Find elements</h2>
@@ -360,17 +360,17 @@
 
 <p>Get the first element matching search and any attribute filters.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tag</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">"name"</span> <span class="p">:</span> <span class="s">"stainfo"</span><span class="p">})</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tag</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">"name"</span> <span class="p">:</span> <span class="s">"stainfo"</span><span class="p">})</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">"ul"</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span> <span class="s">"id"</span> <span class="p">:</span> <span class="s">"mylist"</span> <span class="p">}</span> <span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="s">"ul"</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span> <span class="s">"id"</span> <span class="p">:</span> <span class="s">"mylist"</span> <span class="p">}</span> <span class="p">))</span>
 <span class="c1"># OR
-</span><span class="n">soup</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">"ul"</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s">"mylist"</span><span class="p">))</span>
+</span><span class="n">soup</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="s">"ul"</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s">"mylist"</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>To narrow down a search, you can use an element in place of soup.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">el</span><span class="p">.</span><span class="n">find</span><span class="p">(...)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">el</span><span class="p">.</span><span class="nf">find</span><span class="p">(...)</span>
 </code></pre></div></div>
 
 <p>Or use a nested CSS selector.</p>
@@ -379,12 +379,12 @@
 
 <p>Get all elements.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tags</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">"li"</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tags</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="s">"li"</span><span class="p">):</span>
 </code></pre></div></div>
 
 <p>Use a list.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tags</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">find_all</span><span class="p">([</span><span class="s">"h2"</span><span class="p">,</span> <span class="s">"p"</span><span class="p">]):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tags</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="nf">find_all</span><span class="p">([</span><span class="s">"h2"</span><span class="p">,</span> <span class="s">"p"</span><span class="p">]):</span>
 </code></pre></div></div>
 
 <p>Use a function.</p>
@@ -392,14 +392,14 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">tag</span><span class="p">.</span><span class="n">is_empty_element</span>
 
-<span class="n">tags</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">is_empty</span><span class="p">):</span>
+<span class="n">tags</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="n">is_empty</span><span class="p">):</span>
 </code></pre></div></div>
 
 <h3 id="use-select_one">Use select_one</h3>
 
 <p>CSS selector.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tag</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">select_one</span><span class="p">(</span><span class="s">"#mylist"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tag</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="nf">select_one</span><span class="p">(</span><span class="s">"#mylist"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="use-selector">Use selector</h3>
@@ -408,7 +408,7 @@
 
 <p>Get third element.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tags</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">"li:nth-of-type(3)"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tags</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="s">"li:nth-of-type(3)"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="attributes">Attributes</h2>
@@ -417,7 +417,7 @@
 
 <h3 id="get">Get</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">el</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'id'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">el</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">'id'</span><span class="p">)</span>
 <span class="c1"># &gt; 'foo
 </span></code></pre></div></div>
 
@@ -430,19 +430,19 @@
 <span class="c1"># =&gt; 'foo'
 </span>
 <span class="c1"># Safer dict lookup which can return None for no key found.
-</span><span class="n">el</span><span class="p">.</span><span class="n">attrs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'id'</span><span class="p">)</span>
+</span><span class="n">el</span><span class="p">.</span><span class="n">attrs</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">'id'</span><span class="p">)</span>
 <span class="c1"># =&gt; 'foo'
 </span></code></pre></div></div>
 
 <h3 id="get-all-urls">Get all URLs</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'a'</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">link</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'href'</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="s">'a'</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">link</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">'href'</span><span class="p">))</span>
 </code></pre></div></div>
 
 <h3 id="get-all-text-on-the-page">Get all text on the page</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">get_text</span><span class="p">())</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="nf">get_text</span><span class="p">())</span>
 </code></pre></div></div>
 
 <h2 id="traversing">Traversing</h2>
@@ -468,20 +468,20 @@
 
 <h3 id="traverse-recursively">Traverse recursively</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"index.html"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
-    <span class="n">contents</span> <span class="o">=</span> <span class="n">f_in</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">contents</span><span class="p">,</span> <span class="s">'lxml'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="s">"index.html"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+    <span class="n">contents</span> <span class="o">=</span> <span class="n">f_in</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="nc">BeautifulSoup</span><span class="p">(</span><span class="n">contents</span><span class="p">,</span> <span class="s">'lxml'</span><span class="p">)</span>
 
-    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">.</span><span class="n">recursiveChildGenerator</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">.</span><span class="nf">recursiveChildGenerator</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">child</span><span class="p">.</span><span class="n">name</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">child</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">child</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="modify">Modify</h2>
 
 <h3 id="create">Create</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">new_tag</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">new_tag</span><span class="p">(</span><span class="s">'li'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">new_tag</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="nf">new_tag</span><span class="p">(</span><span class="s">'li'</span><span class="p">)</span>
 <span class="n">new_tag</span><span class="p">.</span><span class="n">string</span><span class="o">=</span><span class="s">'Foo'</span>
 
 <span class="n">ul_tag</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">ul</span>
@@ -489,30 +489,30 @@
 
 <h3 id="append">Append</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ul_tag</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_tag</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ul_tag</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">new_tag</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="insert">Insert</h3>
 
 <p>Insert at 3rd position:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ul_tag</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">new_tag</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ul_tag</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">new_tag</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="replace">Replace</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tag</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">"Windows"</span><span class="p">)</span>
-<span class="n">tag</span><span class="p">.</span><span class="n">replace_with</span><span class="p">(</span><span class="s">"OpenBSD"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tag</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">"Windows"</span><span class="p">)</span>
+<span class="n">tag</span><span class="p">.</span><span class="nf">replace_with</span><span class="p">(</span><span class="s">"OpenBSD"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="remove">Remove</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tag</span><span class="p">.</span><span class="n">decompose</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tag</span><span class="p">.</span><span class="nf">decompose</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h2 id="prettify">Prettify</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">soup</span><span class="p">.</span><span class="n">prettify</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">soup</span><span class="p">.</span><span class="n">prettify</span><span class="p">))</span>
 </code></pre></div></div>
 
         

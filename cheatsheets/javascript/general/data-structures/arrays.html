@@ -210,42 +210,42 @@
 
 <p>Get array of elements between a range. If you omit the second argument, it is implied as the lenght of the array (i.e. up to the end of the array).</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myArray</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">START_INDEX</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myArray</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="nx">START_INDEX</span><span class="p">)</span>
 
-<span class="nx">myArray</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">START_INDEX</span><span class="p">,</span> <span class="nx">END_INDEX</span><span class="p">)</span>
+<span class="nx">myArray</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="nx">START_INDEX</span><span class="p">,</span> <span class="nx">END_INDEX</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>e.g.</p>
 
 <p>Start from a given index and go to the end.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myArray</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myArray</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="c1">// [ 'b', 'c', 'd' ]</span>
 </code></pre></div></div>
 
 <p>Start at an index (inclusive) and go up to an index (exclusive).</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myArray</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myArray</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="c1">// [ 'a' ]</span>
-<span class="nx">myArray</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nx">myArray</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="c1">// [ 'a', 'b' ]</span>
 
-<span class="nx">myArray</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nx">myArray</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="c1">// ['b']</span>
 
-<span class="nx">myArray</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nx">myArray</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="c1">// [ 'b', 'c' ]</span>
 </code></pre></div></div>
 
 <p>Using negative index:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myArray</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// last</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myArray</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// last</span>
 <span class="c1">// [ 'd' ]</span>
 
-<span class="nx">myArray</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="c1">// last 2</span>
+<span class="nx">myArray</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="c1">// last 2</span>
 <span class="c1">// [ 'd', 'e' ]</span>
 
-<span class="nx">myArray</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// 3rd last and 2nd last</span>
+<span class="nx">myArray</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// 3rd last and 2nd last</span>
 <span class="c1">//[ 'b', 'c' ]</span>
 </code></pre></div></div>
 
@@ -279,7 +279,7 @@
 
 <p>A slice is returned as an array. So to get the last element as a scalar (like a string), then use need to get the element from the array.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myArray</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myArray</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="c1">// 'd'</span>
 </code></pre></div></div>
 
@@ -300,48 +300,48 @@
 
 <p><strong>Remove</strong> last element.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myArray</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myArray</span><span class="p">.</span><span class="nf">pop</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p><strong>Insert</strong> element at the end. i.e. append.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myArray</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myArray</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="modify-at-the-start">Modify at the start</h3>
 
 <p><strong>Remove</strong> from the beginning. Like Python’s <code class="language-plaintext highlighter-rouge">list.pop(0)</code>. Returns new length.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myArray</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myArray</span><span class="p">.</span><span class="nf">shift</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><strong>Insert</strong> at the start. Like Python’s <code class="language-plaintext highlighter-rouge">list.insert(0, obj)</code>. Returns new length.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myArray</span><span class="p">.</span><span class="nx">shift</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myArray</span><span class="p">.</span><span class="nf">shift</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="change-order">Change order</h3>
 
 <p>Reverse.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myArray</span><span class="p">.</span><span class="nx">reverse</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myArray</span><span class="p">.</span><span class="nf">reverse</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Sort. See <a href="sort.md">Sort</a> for more info, as this will not sort numbers properly.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myArray</span><span class="p">.</span><span class="nx">sort</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myArray</span><span class="p">.</span><span class="nf">sort</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h3 id="join-arrays">Join arrays</h3>
 
 <p>Concatenate arrays.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myArrayA</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">myArrayB</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myArrayA</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="nx">myArrayB</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Join elements using a separator e.g. <code class="language-plaintext highlighter-rouge">', '</code>. This will return a single string.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myArray</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">sep</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">myArray</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="nx">sep</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="splice-an-array">Splice an array</h3>
@@ -353,7 +353,7 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">oldArray</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">d</span><span class="dl">'</span><span class="p">]</span>
 <span class="c1">// [ 'a', 'b', 'c', 'd' ]</span>
 
-<span class="kd">const</span> <span class="nx">newArray</span> <span class="o">=</span> <span class="nx">oldArray</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">newArray</span> <span class="o">=</span> <span class="nx">oldArray</span><span class="p">.</span><span class="nf">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="c1">// [ 'b', 'c' ]</span>
 
 <span class="c1">// Items have been removed.</span>
@@ -367,7 +367,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">]</span>
 
-<span class="nx">myArray</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">value</span><span class="o">=&gt;</span> <span class="nx">value</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">())</span>
+<span class="nx">myArray</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">value</span><span class="o">=&gt;</span> <span class="nx">value</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">())</span>
 <span class="c1">// [ 'A', 'B', 'C' ]</span>
 </code></pre></div></div>
 
@@ -375,7 +375,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">]</span>
 
-<span class="nx">myArray</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">value</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="p">])</span>
+<span class="nx">myArray</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">value</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">()</span> <span class="p">])</span>
 <span class="c1">// [</span>
 <span class="c1">//   [ 0, 'A' ],</span>
 <span class="c1">//   [ 1, 'B' ],</span>
@@ -385,8 +385,8 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">]</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">myArray</span><span class="p">))</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">value</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">())</span>
+<span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="nx">myArray</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">value</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">())</span>
 <span class="p">}</span>
 <span class="c1">// 0 A</span>
 <span class="c1">// 1 B</span>
@@ -399,7 +399,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">def</span><span class="dl">'</span><span class="p">]</span>
 
-<span class="nx">x</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">x</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">// true</span>
 </code></pre></div></div>
 
@@ -407,9 +407,9 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">def</span><span class="dl">'</span><span class="p">]</span>
 
-<span class="nx">x</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">x</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">// 0</span>
-<span class="nx">x</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">abcd</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">x</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">abcd</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">// -1</span>
 </code></pre></div></div>
 
@@ -422,19 +422,19 @@
 <span class="p">[...</span><span class="nx">myArray</span><span class="p">]</span>
 <span class="c1">// [ 'a', 'b', 'a' ]</span>
 
-<span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">myArray</span><span class="p">)</span>
+<span class="nb">Array</span><span class="p">.</span><span class="nf">from</span><span class="p">(</span><span class="nx">myArray</span><span class="p">)</span>
 <span class="c1">// [ 'a', 'b', 'a' ]</span>
 </code></pre></div></div>
 
 <h3 id="convert-iterable-to-an-array">Convert iterable to an array</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mySet</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Set</span><span class="p">([</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">])</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mySet</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="p">([</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">])</span>
 
 <span class="p">[...</span><span class="nx">mySet</span><span class="p">]</span>
 <span class="c1">// [ 'a', 'b' ]</span>
 
 <span class="c1">// More verbose, older syntax, used internally by spread.</span>
-<span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">mySet</span><span class="p">)</span>
+<span class="nb">Array</span><span class="p">.</span><span class="nf">from</span><span class="p">(</span><span class="nx">mySet</span><span class="p">)</span>
 <span class="c1">// [ 'a', 'b' ]</span>
 </code></pre></div></div>
 
@@ -442,7 +442,7 @@
 
 <p>Process to follow if you need to convert a document selection to an array so you can use array methods on it like <code class="language-plaintext highlighter-rouge">.map</code>.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">divs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">divs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementsByTagName</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">// Not available:</span>
 <span class="c1">//   divs.map</span>
 <span class="c1">//   divs.forEach</span>
@@ -454,7 +454,7 @@
 <span class="c1">// &lt;div class="position-relative js-header-wrapper "&gt;...&lt;/div&gt;</span>
 
 <span class="c1">// Now use `.map`.</span>
-<span class="nx">divsArr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">i</span><span class="p">.</span><span class="nx">innerText</span><span class="p">)</span>
+<span class="nx">divsArr</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">i</span><span class="p">.</span><span class="nx">innerText</span><span class="p">)</span>
 </code></pre></div></div>
 
         

@@ -207,7 +207,7 @@
 
 <p>Or method.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">foo</span><span class="p">?.</span><span class="nx">fizz</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">foo</span><span class="p">?.</span><span class="nf">fizz</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>For an object <code class="language-plaintext highlighter-rouge">foo</code> with optional attribute <code class="language-plaintext highlighter-rouge">bar</code>, which has optional attribute <code class="language-plaintext highlighter-rouge">bazz</code>.</p>
@@ -284,7 +284,7 @@
 
 <p>Where a standard call is:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">VARIABLE</span><span class="p">.</span><span class="nx">OPTIONAL_METHOD</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">VARIABLE</span><span class="p">.</span><span class="nc">OPTIONAL_METHOD</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h3 id="examples">Examples</h3>
@@ -301,10 +301,10 @@
 
 <p>Standard approach:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myString</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myString</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">()</span>
 <span class="c1">// 'abc'</span>
 
-<span class="nx">myBool</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span>
+<span class="nx">myBool</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">()</span>
 <span class="c1">// Uncaught TypeError: myBool.toLowerCase is not a function</span>
 </code></pre></div></div>
 

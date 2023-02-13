@@ -194,9 +194,9 @@
 
 <p>Instead of reading the whole file into memory, process lines as they are needed. Such as to print them or add to a database.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f_in</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
+        <span class="nf">print</span><span class="p">(</span><span class="nf">repr</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>Result:</p>
@@ -210,8 +210,8 @@
 
 <p>Get a file as a single string variable, with line breaks in it.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">f_in</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">f_in</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>The value will be like:</p>
@@ -224,9 +224,9 @@
 
 <p>Here we <strong>split</strong> that single string of the file text into a <strong>list of strings</strong>. Using the <code class="language-plaintext highlighter-rouge">str.splitlines</code> method.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">f_in</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="n">splitlines</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">f_in</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="nf">splitlines</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Result:</p>
@@ -243,16 +243,16 @@
 
 <p>Get the line count with <code class="language-plaintext highlighter-rouge">len</code>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
 <span class="mi">3</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Line count: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Line count: </span><span class="si">{</span><span class="nf">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 <span class="n">Line</span> <span class="n">count</span><span class="p">:</span> <span class="mi">3</span>
 </code></pre></div></div>
 
 <h2 id="convert-file-to-list">Convert file to list</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">f_in</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">f_in</span><span class="p">)</span>
     <span class="c1"># OR
 </span>    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">f_in</span><span class="p">]</span>
 </code></pre></div></div>
@@ -274,12 +274,12 @@
 <p>Read line by line, as you need a line. This is usually more memory efficient than reading the entire file into memory. And is more practical if you might only need the first few lines and then will close the file.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">process_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f_in</span><span class="p">:</span>
-        <span class="n">process_line</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="nf">process_line</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="how-to-use-seek">How to use seek</h3>
@@ -294,17 +294,17 @@
 
 <p>Example, in the interactive console:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">f_in</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'file.txt'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">f_in</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="s">'file.txt'</span><span class="p">)</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f_in</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>   <span class="c1"># It has content.
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f_in</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>   <span class="c1"># It has content.
 </span><span class="s">'First line</span><span class="se">\n</span><span class="s">Second line</span><span class="se">\n</span><span class="s">'</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f_in</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>   <span class="c1"># Appears empty
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f_in</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>   <span class="c1"># Appears empty
 </span><span class="s">''</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f_in</span><span class="p">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Reset.
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f_in</span><span class="p">.</span><span class="nf">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Reset.
 </span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f_in</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>   <span class="c1"># It has content again
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f_in</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>   <span class="c1"># It has content again
 </span><span class="s">'First line</span><span class="se">\n</span><span class="s">Second line</span><span class="se">\n</span><span class="s">'</span>
 </code></pre></div></div>
 
@@ -317,15 +317,15 @@
   <span class="s">"And line 2."</span>
 <span class="p">]</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
-    <span class="n">f_out</span><span class="p">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
+    <span class="n">f_out</span><span class="p">.</span><span class="nf">writelines</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Write one line at a time.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
-    <span class="n">f_out</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s">'foo</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-    <span class="n">f_out</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s">'bar</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
+    <span class="n">f_out</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">'foo</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    <span class="n">f_out</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">'bar</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Example path values:</p>

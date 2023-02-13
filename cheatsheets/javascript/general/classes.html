@@ -173,32 +173,32 @@
 
 <h2 id="basic">Basic</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Greeter</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Greeter</span> <span class="p">{</span>
   <span class="nx">abc</span> <span class="o">=</span> <span class="mi">123</span>
 
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="nx">message</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="nx">greet</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">greet</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="s2">`Hello, </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">const</span> <span class="nx">greeter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Greeter</span><span class="p">(</span><span class="dl">"</span><span class="s2">World</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">greet</span><span class="p">.</span><span class="nx">greet</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">greeter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Greeter</span><span class="p">(</span><span class="dl">"</span><span class="s2">World</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">greet</span><span class="p">.</span><span class="nf">greet</span><span class="p">()</span>
 <span class="c1">// Hello, World!</span>
 </code></pre></div></div>
 
 <h2 id="extending">Extending</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MyClass</span> <span class="kd">extends</span> <span class="nx">ParentClass</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">();</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">MyClass</span> <span class="kd">extends</span> <span class="nc">ParentClass</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">super</span><span class="p">();</span>
     <span class="c1">// ...</span>
   <span class="p">}</span>
 
-  <span class="nx">foo</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">foo</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// ...</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -210,22 +210,22 @@
 
 <p>See <a href="https://www.w3schools.com/js/js_object_accessors.asp">JavaScript Object Accessors</a> guide.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Person</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Person</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">language</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">n/a</span><span class="dl">'</span>
   <span class="p">}</span>
 
-  <span class="kd">get</span> <span class="nx">lang</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">get</span> <span class="nf">lang</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">language</span>
   <span class="p">}</span>
 
-  <span class="kd">set</span> <span class="nx">lang</span><span class="p">(</span><span class="nx">lang</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">set</span> <span class="nf">lang</span><span class="p">(</span><span class="nx">lang</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">language</span> <span class="o">=</span> <span class="nx">lang</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Person</span><span class="p">()</span>
 
 <span class="nx">p</span>
 <span class="c1">// Person { language: 'n/a' }</span>

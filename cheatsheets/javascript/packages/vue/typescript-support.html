@@ -187,7 +187,7 @@
 <span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
 
 <span class="c1">// Type inference enabled.</span>
-<span class="kd">const</span> <span class="nx">Component</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<span class="kd">const</span> <span class="nx">Component</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nf">extend</span><span class="p">({</span>
 <span class="p">})</span>
 
 <span class="c1">// No type inference.</span>
@@ -203,7 +203,7 @@
 <div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="k">script</span> <span class="na">lang=</span><span class="s">"ts"</span><span class="nt">&gt;</span>
 <span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">vue</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="k">export</span> <span class="k">default</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Vue</span><span class="p">.</span><span class="nf">extend</span><span class="p">({</span>
   <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">HelloWorld</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">msg</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
@@ -217,7 +217,7 @@
 <div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="k">script</span> <span class="na">lang=</span><span class="s">"ts"</span><span class="nt">&gt;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">defineComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
 
-<span class="kd">const</span> <span class="nx">Component</span> <span class="o">=</span> <span class="nx">defineComponent</span><span class="p">({</span>
+<span class="kd">const</span> <span class="nx">Component</span> <span class="o">=</span> <span class="nf">defineComponent</span><span class="p">({</span>
 <span class="p">})</span>
 <span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
 </code></pre></div></div>

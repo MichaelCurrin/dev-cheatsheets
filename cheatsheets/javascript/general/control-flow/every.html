@@ -191,15 +191,15 @@
 
 <p>Pass a function, that takes 1 to 3 arguments.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">every</span><span class="p">((</span><span class="nx">element</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="p">)</span>
-<span class="nx">every</span><span class="p">((</span><span class="nx">element</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="p">)</span>
-<span class="nx">every</span><span class="p">((</span><span class="nx">element</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">every</span><span class="p">((</span><span class="nx">element</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="p">)</span>
+<span class="nf">every</span><span class="p">((</span><span class="nx">element</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="p">)</span>
+<span class="nf">every</span><span class="p">((</span><span class="nx">element</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="p">)</span>
 </code></pre></div></div>
 
 <p>Or passing a callback function and optional success value instead of <code class="language-plaintext highlighter-rouge">true</code>.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">every</span><span class="p">(</span><span class="nx">callbackFn</span><span class="p">)</span>
-<span class="nx">every</span><span class="p">(</span><span class="nx">callbackFn</span><span class="p">,</span> <span class="nx">thisArg</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">every</span><span class="p">(</span><span class="nx">callbackFn</span><span class="p">)</span>
+<span class="nf">every</span><span class="p">(</span><span class="nx">callbackFn</span><span class="p">,</span> <span class="nx">thisArg</span><span class="p">)</span>
 </code></pre></div></div>
 
 <blockquote>
@@ -210,13 +210,13 @@
 
 <p>Check all values are true.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">].</span><span class="nx">every</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">i</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">].</span><span class="nf">every</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">i</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span>
 <span class="c1">// true</span>
 </code></pre></div></div>
 
 <p>Check values all are positive.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nx">every</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nf">every</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
 <span class="c1">// true</span>
 </code></pre></div></div>
 
@@ -224,7 +224,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 
-<span class="nx">myArray</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">i</span> <span class="o">===</span> <span class="nx">myArray</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nx">myArray</span><span class="p">.</span><span class="nf">every</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">i</span> <span class="o">===</span> <span class="nx">myArray</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="c1">// true</span>
 </code></pre></div></div>
 

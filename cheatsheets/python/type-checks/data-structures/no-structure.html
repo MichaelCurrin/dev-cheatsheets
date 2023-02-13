@@ -180,9 +180,9 @@
 <p>For some cases you might be okay without a naming a structure as a type. Go for a simpler approach of just using a function expecting 2 or 3 named parameters with types.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]):</span> <span class="o">-&gt;</span> <span class="bp">None</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>If there are more fields and if you want to use the type outside the function, rather make a type or class, like <code class="language-plaintext highlighter-rouge">Person</code>.</p>

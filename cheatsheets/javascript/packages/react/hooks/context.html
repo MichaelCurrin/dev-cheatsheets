@@ -187,7 +187,7 @@
 
     <div class="post-content">
         
-            <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">MyContext</span><span class="p">);</span>
+            <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nf">useContext</span><span class="p">(</span><span class="nx">MyContext</span><span class="p">);</span>
 </code></pre></div></div>
 
 <blockquote>
@@ -227,28 +227,28 @@
   <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="kd">const</span> <span class="nx">ThemeContext</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createContext</span><span class="p">(</span><span class="nx">themes</span><span class="p">.</span><span class="nx">light</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">ThemeContext</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nf">createContext</span><span class="p">(</span><span class="nx">themes</span><span class="p">.</span><span class="nx">light</span><span class="p">);</span>
 
-<span class="kd">function</span> <span class="nx">ThemedButton</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">ThemeContext</span><span class="p">);</span>  
+<span class="kd">function</span> <span class="nf">ThemedButton</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nf">useContext</span><span class="p">(</span><span class="nx">ThemeContext</span><span class="p">);</span>  
   
-  <span class="k">return</span> <span class="p">(</span>    
+  <span class="nf">return </span><span class="p">(</span>    
     <span class="p">&lt;</span><span class="nt">button</span> <span class="na">style</span><span class="p">=</span><span class="si">{</span><span class="p">{</span> <span class="na">background</span><span class="p">:</span> <span class="nx">theme</span><span class="p">.</span><span class="nx">background</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="nx">theme</span><span class="p">.</span><span class="nx">foreground</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>     
       I am styled by theme context!    
     <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>  <span class="p">);</span>
 <span class="p">}</span>
 
 
-<span class="kd">function</span> <span class="nx">Toolbar</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
+<span class="kd">function</span> <span class="nf">Toolbar</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nc">ThemedButton</span> <span class="p">/&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
+<span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nc">ThemeContext</span><span class="p">.</span><span class="nc">Provider</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">themes</span><span class="p">.</span><span class="nx">dark</span><span class="si">}</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nc">Toolbar</span> <span class="p">/&gt;</span>
     <span class="p">&lt;/</span><span class="nc">ThemeContext</span><span class="p">.</span><span class="nc">Provider</span><span class="p">&gt;</span>

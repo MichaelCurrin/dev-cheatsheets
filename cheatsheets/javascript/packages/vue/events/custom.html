@@ -191,7 +191,7 @@
 
 <p>From the docs:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">myEvent</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nf">$emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">myEvent</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;my-component</span> <span class="err">@</span><span class="na">my-event=</span><span class="s">"doSomething"</span><span class="nt">&gt;&lt;/my-component&gt;</span>
@@ -201,7 +201,7 @@
 
 <p>Emitted events can be defined on the component via the emits option.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="dl">'</span><span class="s1">custom-form</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nf">component</span><span class="p">(</span><span class="dl">'</span><span class="s1">custom-form</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">emits</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">inFocus</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">submit</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 </code></pre></div></div>

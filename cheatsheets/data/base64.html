@@ -193,13 +193,13 @@
 
 <p>Convert from binary string to base-64 ASCII string.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">btoa</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello, world!</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nf">btoa</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello, world!</span><span class="dl">"</span><span class="p">)</span>
 <span class="dl">"</span><span class="s2">SGVsbG8sIHdvcmxk</span><span class="dl">"</span>
 </code></pre></div></div>
 
 <h3 id="decode">Decode</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">atob</span><span class="p">(</span><span class="dl">"</span><span class="s2">SGVsbG8sIHdvcmxk</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nf">atob</span><span class="p">(</span><span class="dl">"</span><span class="s2">SGVsbG8sIHdvcmxk</span><span class="dl">"</span><span class="p">)</span>
 <span class="dl">"</span><span class="s2">Hello, world!</span><span class="dl">"</span>
 </code></pre></div></div>
 
@@ -207,18 +207,18 @@
 
 <p>Using the built-in <a href="https://nodejs.org/api/buffer.html">buffer</a> API. No imports are needed.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">buf</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello world</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">utf8</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">buf</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">.</span><span class="nf">from</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello world</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">utf8</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="nx">buf</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="dl">'</span><span class="s1">hex</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">buf</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="dl">'</span><span class="s1">hex</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">// 68656c6c6f20776f726c64</span>
 
-<span class="nx">buf</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="dl">'</span><span class="s1">base64</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">buf</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="dl">'</span><span class="s1">base64</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">//  aGVsbG8gd29ybGQ=</span>
 </code></pre></div></div>
 
 <h2 id="python">Python</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">base64</span><span class="p">.</span><span class="n">b64decode</span><span class="p">(</span><span class="s">'SGVsbG8sIHdvcmxkIQ=='</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">base64</span><span class="p">.</span><span class="nf">b64decode</span><span class="p">(</span><span class="s">'SGVsbG8sIHdvcmxkIQ=='</span><span class="p">)</span>
 <span class="sa">b</span><span class="s">'Hello, world!'</span>
 </code></pre></div></div>
 

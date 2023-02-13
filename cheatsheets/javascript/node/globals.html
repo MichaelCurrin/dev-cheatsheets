@@ -192,12 +192,12 @@
   <span class="nx">clearTimeout</span><span class="p">:</span> <span class="p">[</span><span class="nb">Function</span><span class="p">:</span> <span class="nx">clearTimeout</span><span class="p">],</span>
   <span class="nx">setInterval</span><span class="p">:</span> <span class="p">[</span><span class="nb">Function</span><span class="p">:</span> <span class="nx">setInterval</span><span class="p">],</span>
   <span class="nx">setTimeout</span><span class="p">:</span> <span class="p">[</span><span class="nb">Function</span><span class="p">:</span> <span class="nx">setTimeout</span><span class="p">]</span> <span class="p">{</span>
-    <span class="p">[</span><span class="nb">Symbol</span><span class="p">(</span><span class="nx">nodejs</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">promisify</span><span class="p">.</span><span class="nx">custom</span><span class="p">)]:</span> <span class="p">[</span><span class="nb">Function</span> <span class="p">(</span><span class="nx">anonymous</span><span class="p">)]</span>
+    <span class="p">[</span><span class="nc">Symbol</span><span class="p">(</span><span class="nx">nodejs</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">promisify</span><span class="p">.</span><span class="nx">custom</span><span class="p">)]:</span> <span class="p">[</span><span class="nc">Function </span><span class="p">(</span><span class="nx">anonymous</span><span class="p">)]</span>
   <span class="p">},</span>
   <span class="nx">queueMicrotask</span><span class="p">:</span> <span class="p">[</span><span class="nb">Function</span><span class="p">:</span> <span class="nx">queueMicrotask</span><span class="p">],</span>
   <span class="nx">clearImmediate</span><span class="p">:</span> <span class="p">[</span><span class="nb">Function</span><span class="p">:</span> <span class="nx">clearImmediate</span><span class="p">],</span>
   <span class="nx">setImmediate</span><span class="p">:</span> <span class="p">[</span><span class="nb">Function</span><span class="p">:</span> <span class="nx">setImmediate</span><span class="p">]</span> <span class="p">{</span>
-    <span class="p">[</span><span class="nb">Symbol</span><span class="p">(</span><span class="nx">nodejs</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">promisify</span><span class="p">.</span><span class="nx">custom</span><span class="p">)]:</span> <span class="p">[</span><span class="nb">Function</span> <span class="p">(</span><span class="nx">anonymous</span><span class="p">)]</span>
+    <span class="p">[</span><span class="nc">Symbol</span><span class="p">(</span><span class="nx">nodejs</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">promisify</span><span class="p">.</span><span class="nx">custom</span><span class="p">)]:</span> <span class="p">[</span><span class="nc">Function </span><span class="p">(</span><span class="nx">anonymous</span><span class="p">)]</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -214,7 +214,7 @@
 <p>Here are some common uses:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">Foo</span>
-<span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nx">process</span><span class="p">.</span><span class="nf">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>https://nodejs.org/api/process.html</p>
@@ -223,7 +223,7 @@
 
 <p>As in the browser, you can log in a Node.js app.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Foo</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Foo</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="require">Require</h3>
@@ -232,7 +232,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">require</span>
 
-<span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">)</span>
+<span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="paths">Paths</h3>
@@ -288,9 +288,9 @@
 </code></pre></div></div>
 
 <p>Add an export line at the end of your script.</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span> <span class="p">()</span> <span class="p">{}</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">foo</span> <span class="p">()</span> <span class="p">{}</span>
 
-<span class="kd">class</span> <span class="nx">Bar</span> <span class="p">()</span> <span class="p">{}</span>
+<span class="kd">class</span> <span class="nc">Bar</span> <span class="p">()</span> <span class="p">{}</span>
 
 <span class="c1">// This is more modern and uses a cleaner hash.</span>
 <span class="k">export</span> <span class="p">{</span>
@@ -306,9 +306,9 @@
 
 <p>Or export in place:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">function</span> <span class="nx">foo</span> <span class="p">()</span> <span class="p">{}</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">function</span> <span class="nf">foo</span> <span class="p">()</span> <span class="p">{}</span>
 
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">Bar</span> <span class="p">()</span> <span class="p">{}</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nc">Bar</span> <span class="p">()</span> <span class="p">{}</span>
 </code></pre></div></div>
 
 <h2 id="not-available">Not available</h2>

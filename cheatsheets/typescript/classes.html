@@ -159,12 +159,12 @@
 
 <p>And <code class="language-plaintext highlighter-rouge">x</code> and <code class="language-plaintext highlighter-rouge">y</code> as variables on each class instance.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Point</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Point</span> <span class="p">{</span>
   <span class="k">static</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span>
   <span class="nx">x</span><span class="p">:</span> <span class="kr">number</span>
   <span class="nx">y</span><span class="p">:</span> <span class="kr">number</span>
 
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">x</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">y</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span><span class="nx">x</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">y</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">y</span>
   <span class="p">}</span>
@@ -173,10 +173,10 @@
 
 <p>Or, with shorthand where you can leave the constructor contents empty.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Point</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Point</span> <span class="p">{</span>
   <span class="k">static</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span>
 
-  <span class="kd">constructor</span><span class="p">(</span>
+  <span class="nf">constructor</span><span class="p">(</span>
     <span class="k">public</span> <span class="nx">x</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span>
     <span class="k">public</span> <span class="nx">y</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span>
   <span class="p">){}</span>
@@ -191,12 +191,12 @@
 
 <p>Set an attribute that does not get set up in the constructor. Here we don’t even have a constructor.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Point</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Point</span> <span class="p">{</span>
   <span class="k">public</span> <span class="nx">foo</span><span class="o">!</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
   <span class="c1">// ...</span>
 <span class="p">}</span>
 
-<span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Point</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Point</span><span class="p">()</span>
 <span class="nx">x</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="mi">123</span>
 <span class="nx">x</span><span class="p">.</span><span class="nx">foo</span>
 <span class="c1">/// 123</span>
@@ -218,19 +218,19 @@
 
 <p>For ES6 onwards.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Greeter</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Greeter</span> <span class="p">{</span>
   <span class="nl">greeting</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
 
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">greeting</span> <span class="o">=</span> <span class="nx">message</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="nx">greet</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">greet</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="s2">`Hello, </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">greeting</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">greeter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Greeter</span><span class="p">(</span><span class="dl">"</span><span class="s2">world</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">greeter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Greeter</span><span class="p">(</span><span class="dl">"</span><span class="s2">world</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div></div>
 
 <h3 id="as-javascript">As JavaScript</h3>
@@ -239,19 +239,19 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="kd">var</span> <span class="nx">Greeter</span> <span class="o">=</span> <span class="cm">/** @class */</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="kd">function</span> <span class="nx">Greeter</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">Greeter</span> <span class="o">=</span> <span class="cm">/** @class */</span> <span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="nf">Greeter</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">greeting</span> <span class="o">=</span> <span class="nx">message</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="nx">Greeter</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">greet</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Greeter</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">greet</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="s2">`Hello, </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">greeting</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
     <span class="p">};</span>
 
     <span class="k">return</span> <span class="nx">Greeter</span><span class="p">;</span>
 <span class="p">}());</span>
 
-<span class="kd">var</span> <span class="nx">greeter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Greeter</span><span class="p">(</span><span class="dl">"</span><span class="s2">world</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">greeter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Greeter</span><span class="p">(</span><span class="dl">"</span><span class="s2">world</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div></div>
 
         

@@ -178,14 +178,14 @@
 
 <p>Strip out non-ASCII characters like emojis and special language characters.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">value</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"ascii"</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">"replace"</span><span class="p">).</span><span class="n">decode</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">value</span><span class="p">.</span><span class="nf">encode</span><span class="p">(</span><span class="s">"ascii"</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">"replace"</span><span class="p">).</span><span class="nf">decode</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>This converts from Unicode to ASCII, then back again, replacing characters with <code class="language-plaintext highlighter-rouge">?</code>.</p>
 
 <p>e.g.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'accent _ é smiley 😀'</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"ascii"</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">"replace"</span><span class="p">).</span><span class="n">decode</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'accent _ é smiley 😀'</span><span class="p">.</span><span class="nf">encode</span><span class="p">(</span><span class="s">"ascii"</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">"replace"</span><span class="p">).</span><span class="nf">decode</span><span class="p">()</span>
 <span class="c1"># 'accent _ ? smiley ?'
 </span></code></pre></div></div>
 
@@ -193,23 +193,23 @@
 
 <p>Replace all characters that are not alphanumeric with a dash. Adjacent characters will become a single dash.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SLUG_PATTERN</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="n">NEW_CHAR</span><span class="p">,</span> <span class="n">TEXT</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SLUG_PATTERN</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="n">NEW_CHAR</span><span class="p">,</span> <span class="n">TEXT</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>e.g. Note how the Unicode emoji gets stripped out, but the accented character is kept.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">re</span>
 
-<span class="n">PATTERN</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="sa">r</span><span class="s">"[\W_]+"</span><span class="p">)</span>
+<span class="n">PATTERN</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">compile</span><span class="p">(</span><span class="sa">r</span><span class="s">"[\W_]+"</span><span class="p">)</span>
     
     
-<span class="n">SLUG_PATTERN</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="s">'-'</span><span class="p">,</span> <span class="s">'accent _ é smiley 😀'</span><span class="p">)</span>
+<span class="n">SLUG_PATTERN</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="s">'-'</span><span class="p">,</span> <span class="s">'accent _ é smiley 😀'</span><span class="p">)</span>
 <span class="s">'accent-é-smiley-'</span>
 </code></pre></div></div>
 
 <p>e.g. Remove punctuation symbols.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SLUG_PATTERN</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="s">'-'</span><span class="p">,</span> <span class="s">'!@#$%^&amp; é 😀'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SLUG_PATTERN</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="s">'-'</span><span class="p">,</span> <span class="s">'!@#$%^&amp; é 😀'</span><span class="p">)</span>
 <span class="c1"># '-é-'
 </span></code></pre></div></div>
 
@@ -219,9 +219,9 @@
 
 <p>It also strips out any dash characters on the ends of the result.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">re</span>
 
-<span class="n">PATTERN</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="sa">r</span><span class="s">"[\W_]+"</span><span class="p">)</span>
+<span class="n">PATTERN</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">compile</span><span class="p">(</span><span class="sa">r</span><span class="s">"[\W_]+"</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">slugify</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
@@ -231,10 +231,10 @@
     Non-ASCII characters and symbols are replaced, so the result is only basic
     alphanumeric and hyphens.
     """</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"ascii"</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">"replace"</span><span class="p">).</span><span class="n">decode</span><span class="p">()</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="n">SLUG_PATTERN</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="s">"-"</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">.</span><span class="nf">encode</span><span class="p">(</span><span class="s">"ascii"</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">"replace"</span><span class="p">).</span><span class="nf">decode</span><span class="p">()</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">SLUG_PATTERN</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="s">"-"</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">value</span><span class="p">.</span><span class="n">strip</span><span class="p">(</span><span class="s">"-"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span><span class="p">.</span><span class="nf">strip</span><span class="p">(</span><span class="s">"-"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="use-packages">Use packages</h2>

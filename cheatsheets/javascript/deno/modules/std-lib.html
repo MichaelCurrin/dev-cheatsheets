@@ -207,12 +207,12 @@
   <li><code class="language-plaintext highlighter-rouge">index.ts</code>
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">import</span> <span class="p">{</span> <span class="nx">serve</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://deno.land/std@0.59.0/http/server.ts</span><span class="dl">"</span><span class="p">;</span>
 
-  <span class="kd">const</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">serve</span><span class="p">({</span> <span class="na">port</span><span class="p">:</span> <span class="mi">8000</span> <span class="p">});</span>
+  <span class="kd">const</span> <span class="nx">s</span> <span class="o">=</span> <span class="nf">serve</span><span class="p">({</span> <span class="na">port</span><span class="p">:</span> <span class="mi">8000</span> <span class="p">});</span>
 
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost:8000/</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost:8000/</span><span class="dl">"</span><span class="p">);</span>
 
-  <span class="k">for</span> <span class="k">await</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">req</span> <span class="k">of</span> <span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">req</span><span class="p">.</span><span class="nx">respond</span><span class="p">({</span> <span class="na">body</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hello World</span><span class="se">\n</span><span class="dl">"</span> <span class="p">});</span>
+  <span class="k">for</span> <span class="nf">await </span><span class="p">(</span><span class="kd">const</span> <span class="nx">req</span> <span class="k">of</span> <span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nf">respond</span><span class="p">({</span> <span class="na">body</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hello World</span><span class="se">\n</span><span class="dl">"</span> <span class="p">});</span>
   <span class="p">}</span>
 </code></pre></div>    </div>
   </li>
@@ -229,7 +229,7 @@
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">parse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://deno.land/std@$STD_VERSION/flags/mod.ts</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">parse</span><span class="p">(</span><span class="nx">Deno</span><span class="p">.</span><span class="nx">args</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">dir</span><span class="p">(</span><span class="nf">parse</span><span class="p">(</span><span class="nx">Deno</span><span class="p">.</span><span class="nx">args</span><span class="p">));</span>
 </code></pre></div></div>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>deno run https://deno.land/std/examples/flags.ts <span class="nt">-a</span> beep <span class="nt">-b</span> boop
@@ -264,7 +264,7 @@
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">parse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://deno.land/std@0.84.0/flags/mod.ts</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">parse</span><span class="p">(</span><span class="nx">Deno</span><span class="p">.</span><span class="nx">args</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">args</span> <span class="o">=</span> <span class="nf">parse</span><span class="p">(</span><span class="nx">Deno</span><span class="p">.</span><span class="nx">args</span><span class="p">);</span>
 <span class="c1">// { foo: "bar" }</span>
 </code></pre></div></div>
 

@@ -183,7 +183,7 @@
 
 <h2 id="reload">Reload</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nf">reload</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>The argument is for a full reload:</p>
@@ -214,7 +214,7 @@
 <p>The user can then still navigate back by pressing the “back” button.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://example.com</span><span class="dl">"</span><span class="p">;</span>
-<span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nf">assign</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
 </code></pre></div></div>
 
 <h3 id="http-redirect">HTTP redirect</h3>
@@ -222,7 +222,7 @@
 <p>Simulate an HTTP redirect that was driven by the page such as a 301 redirect.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://example.com</span><span class="dl">"</span><span class="p">;</span>
-<span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Using <code class="language-plaintext highlighter-rouge">replace</code> also removes the old URL from the history, so you <em>cannot</em> click the Back btton.</p>
@@ -237,42 +237,42 @@
 
 <p>This will open a new tab in the same window - first going to <code class="language-plaintext highlighter-rouge">about:blank</code> and then to the target URL. The window will be autofocused (it is also confusing to the user if the window is opened and not focused.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">,</span> <span class="p">[</span><span class="nx">windowFeatures</span><span class="p">]);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">,</span> <span class="p">[</span><span class="nx">windowFeatures</span><span class="p">]);</span>
 </code></pre></div></div>
 
 <p>e.g.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">windowObjectRef</span>
-<span class="nx">windowObjectRef</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://michaelcurrin.github.io/dev-cheatsheets/</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">myWindow</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">windowObjectRef</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://michaelcurrin.github.io/dev-cheatsheets/</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">myWindow</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Pass features like this:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">,</span> <span class="dl">"</span><span class="s2">resizable,scrollbars,status</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">,</span> <span class="dl">"</span><span class="s2">resizable,scrollbars,status</span><span class="dl">"</span><span class="p">)</span>
 
 <span class="kd">const</span> <span class="nx">windowFeatures</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes</span><span class="dl">"</span>
-<span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">,</span> <span class="nx">windowFeatures</span><span class="p">)</span>
+<span class="nb">window</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">,</span> <span class="nx">windowFeatures</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="example">Example</h3>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">windowObjectRefs</span> <span class="o">=</span> <span class="p">{};</span>
 
-<span class="kd">function</span> <span class="nx">nav</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nf">nav</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">ref</span> <span class="o">=</span> <span class="nx">windowObjectRefs</span><span class="p">[</span><span class="nx">windowName</span><span class="p">];</span>
 
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">ref</span> <span class="o">||</span> <span class="nx">ref</span><span class="p">.</span><span class="nx">closed</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">ref</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">);</span>
+  <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">ref</span> <span class="o">||</span> <span class="nx">ref</span><span class="p">.</span><span class="nx">closed</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ref</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">);</span>
     <span class="nx">windowObjectRefs</span><span class="p">[</span><span class="nx">windowName</span><span class="p">]</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">;</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">ref</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+    <span class="nx">ref</span><span class="p">.</span><span class="nf">focus</span><span class="p">();</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">""</span><span class="nx">https</span><span class="p">:</span><span class="c1">//michaelcurrin.github.io/dev-cheatsheets/""</span>
 <span class="kd">const</span> <span class="nx">windowName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">DevCheatsheets</span><span class="dl">"</span>
 
-<span class="nx">nav</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">)</span>
+<span class="nf">nav</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">windowName</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Use it in HTML. Note using the standard <code class="language-plaintext highlighter-rouge">target</code> field.</p>
@@ -289,13 +289,13 @@
 
 <p>You can focus it with</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ref</span><span class="p">.</span><span class="nx">focus</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ref</span><span class="p">.</span><span class="nf">focus</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Close it and check closed status.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ref</span><span class="p">.</span><span class="nx">close</span><span class="p">()</span>
-<span class="nx">ref</span><span class="p">.</span><span class="nx">closed</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ref</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+<span class="nx">ref</span><span class="p">.</span><span class="nf">closed</span><span class="p">()</span>
 <span class="c1">// true</span>
 </code></pre></div></div>
 
@@ -303,7 +303,7 @@
 
 <p>e.g.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ref</span><span class="p">.</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ref</span><span class="p">.</span><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>If not, you’ll get permissions error.</p>
@@ -324,9 +324,9 @@
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;script&gt;</span>
-      <span class="kd">function</span> <span class="nx">load</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">function</span> <span class="nf">load</span><span class="p">()</span> <span class="p">{</span>
         <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://example.com</span><span class="dl">"</span>
-        <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nf">assign</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
       <span class="p">}</span>
     <span class="nt">&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
@@ -338,13 +338,13 @@
 
 <h3 id="react">React</h3>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">load</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">load</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://example.com</span><span class="dl">"</span>
-  <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nf">assign</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">Button</span><span class="p">()</span> <span class="p">{</span> 
-  <span class="k">return</span> <span class="p">(</span>
+<span class="kd">function</span> <span class="nf">Button</span><span class="p">()</span> <span class="p">{</span> 
+  <span class="nf">return </span><span class="p">(</span>
     <span class="p">&lt;&gt;</span>
       <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">load</span><span class="si">}</span><span class="p">&gt;</span>
         Load new document

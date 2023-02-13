@@ -157,12 +157,12 @@
 
 <p>Wait a second between actions.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">time</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">time</span>
 
 
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
-    <span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
+    <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="fixed-count">Fixed count</h3>
@@ -176,7 +176,7 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resp</span> <span class="o">=</span> <span class="bp">None</span>
 
 <span class="k">while</span> <span class="n">resp</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">resp</span><span class="p">.</span><span class="n">has_next_page</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="n">resp</span> <span class="o">=</span> <span class="n">do_request</span><span class="p">()</span>
+    <span class="n">resp</span> <span class="o">=</span> <span class="nf">do_request</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h3 id="while-else">while-else</h3>
@@ -184,12 +184,12 @@
 <p>Here with while-else such that the <code class="language-plaintext highlighter-rouge">else</code> block is executed if <code class="language-plaintext highlighter-rouge">break</code> is <em>not</em> applied. i.e. the loop exited because the expression became false.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="n">my_condition</span><span class="p">:</span>
-    <span class="n">do_stuff</span><span class="p">()</span>
+    <span class="nf">do_stuff</span><span class="p">()</span>
 
     <span class="k">if</span> <span class="n">some_cond</span><span class="p">:</span>
         <span class="k">break</span>
 <span class="k">else</span><span class="p">:</span>
-     <span class="n">do_more_stuff</span><span class="p">()</span>
+     <span class="nf">do_more_stuff</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h2 id="for-loop">for loop</h2>
@@ -199,7 +199,7 @@
 <p>Iterate over an iterable:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">foo</span> <span class="ow">in</span> <span class="n">foos</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>See more specific examples below.</p>
@@ -209,7 +209,7 @@
 <p>Chracters of a string.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s">"abc"</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 <span class="c1"># a
 # b
 # c
@@ -220,15 +220,15 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_items</span> <span class="o">=</span> <span class="p">[</span><span class="s">"abc"</span><span class="p">,</span> <span class="s">"def"</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">my_items</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="c1"># abc
 # def
 </span></code></pre></div></div>
 
 <p>If you need both the index and the value:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">my_items</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">my_items</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="c1"># 0 abc
 # 1 def
 </span></code></pre></div></div>
@@ -239,8 +239,8 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_items</span> <span class="o">=</span> <span class="p">[</span><span class="s">"abc"</span><span class="p">,</span> <span class="s">"def"</span><span class="p">]</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">my_items</span><span class="p">)):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">my_items</span><span class="p">)):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 <span class="c1"># abc
 # def
 </span></code></pre></div></div>
@@ -251,8 +251,8 @@
 
 <p>Note that zero start is implied and the upper value is excluded.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="c1"># 0
 # 1
 # 2
@@ -262,8 +262,8 @@
 
 <p>Set a minimum:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="c1"># 1
 # 2
 # 3
@@ -276,31 +276,31 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">"abc"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span> <span class="s">"def"</span><span class="p">:</span> <span class="mi">456</span><span class="p">}</span>
 
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">.</span><span class="n">keys</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">.</span><span class="nf">keys</span><span class="p">():</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
 <span class="c1"># abc
 # def
 </span></code></pre></div></div>
 
 <p>If you need the values:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">.</span><span class="nf">values</span><span class="p">():</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>If you need both the key and value, then unpack as tuples:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 
 <span class="c1"># Same as:
-</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
     <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">i</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 
 <span class="c1"># Or:
-</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </code></pre></div></div>
 
 <h3 id="for-else">for-else</h3>
@@ -308,12 +308,12 @@
 <p>Here with for-else such that the <code class="language-plaintext highlighter-rouge">else</code> block is executed if <code class="language-plaintext highlighter-rouge">break</code> is <em>not</em> applied. i.e. the loop exited because the last item was reached.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">foo</span> <span class="ow">in</span> <span class="n">foos</span><span class="p">:</span>
-    <span class="n">do_stuff</span><span class="p">()</span>
+    <span class="nf">do_stuff</span><span class="p">()</span>
 
     <span class="k">if</span> <span class="n">some_cond</span><span class="p">:</span>
         <span class="k">break</span>
 <span class="k">else</span><span class="p">:</span>
-     <span class="n">do_more_stuff</span><span class="p">()</span>
+     <span class="nf">do_more_stuff</span><span class="p">()</span>
 </code></pre></div></div>
 
         

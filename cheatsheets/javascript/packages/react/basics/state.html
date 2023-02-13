@@ -214,54 +214,54 @@
 
 <h3 id="generic">Generic</h3>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Foo</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">myValue</span><span class="p">,</span> <span class="nx">setMyValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Foo</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">myValue</span><span class="p">,</span> <span class="nx">setMyValue</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
 
   <span class="kd">const</span> <span class="nx">onInput</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setMyValue</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+    <span class="nf">setMyValue</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
   <span class="p">}</span>
 
-  <span class="k">return</span> <span class="p">(</span>
+  <span class="nf">return </span><span class="p">(</span>
     <span class="p">&lt;&gt;</span>
       <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Controls<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">myValue</span><span class="si">}</span> <span class="na">onInput</span><span class="p">=</span><span class="si">{</span><span class="nx">onInput</span><span class="si">}</span> <span class="p">/&gt;</span>
       <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
       <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Results<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="nx">myValue</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="si">}</span>
+        <span class="si">{</span><span class="nx">myValue</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">()</span><span class="si">}</span>
       <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
     <span class="p">&lt;/&gt;</span>
   <span class="p">)</span>
 <span class="p">}</span>
 
-<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(&lt;</span><span class="nc">Parent</span> <span class="p">/&gt;,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">))</span>
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nf">render</span><span class="p">(&lt;</span><span class="nc">Parent</span> <span class="p">/&gt;,</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>If your state is an object, you can use <code class="language-plaintext highlighter-rouge">setState</code> with your key and value and React will modify the state for just that key.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">myObject</span><span class="p">,</span> <span class="nx">setMyObject</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">({</span><span class="na">abc</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span> <span class="na">def</span><span class="p">:</span> <span class="mi">456</span><span class="p">})</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">myObject</span><span class="p">,</span> <span class="nx">setMyObject</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">({</span><span class="na">abc</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span> <span class="na">def</span><span class="p">:</span> <span class="mi">456</span><span class="p">})</span>
 
-<span class="nx">setMyObject</span><span class="p">({</span><span class="na">abc</span><span class="p">:</span> <span class="mi">999</span><span class="p">})</span>
+<span class="nf">setMyObject</span><span class="p">({</span><span class="na">abc</span><span class="p">:</span> <span class="mi">999</span><span class="p">})</span>
 </code></pre></div></div>
 
 <h3 id="timer">Timer</h3>
 
 <p>Here is how you use create an incrementing value based on a timer:</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Timer</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Timer</span> <span class="kd">extends</span> <span class="nc">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span> <span class="na">seconds</span><span class="p">:</span> <span class="mi">0</span> <span class="p">};</span>
   <span class="p">}</span>
 
-  <span class="nx">tick</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">({</span>
+  <span class="nf">tick</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nf">setState</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">({</span>
       <span class="na">seconds</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">seconds</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="p">}));</span>
   <span class="p">}</span>
 
-  <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">interval</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">tick</span><span class="p">(),</span> <span class="mi">1000</span><span class="p">);</span>
+  <span class="nf">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">interval</span> <span class="o">=</span> <span class="nf">setInterval</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nf">tick</span><span class="p">(),</span> <span class="mi">1000</span><span class="p">);</span>
   <span class="p">}</span>
 </code></pre></div></div>
 
