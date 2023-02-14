@@ -1,5 +1,7 @@
 # Flask
 
+For help see [2.2.x](https://flask.palletsprojects.com/en/2.2.x/quickstart/) quickstart docs or later.
+
 ## Start
 
 Use `hello` here for `hello.py`.
@@ -53,8 +55,9 @@ $ flask run --host=0.0.0.0
 $ export FLASK_ENV=development
 ```
 
+## Sample apps
 
-## Basic Flask app
+### Basic Flask app
 
 ```python
 from flask import Flask
@@ -67,9 +70,20 @@ def hello_world():
     return 'Hello, World!'
 ```
 
-## Demonstrate endpoints
+### GET and POST
 
-The script:
+Based on the docs.
+
+```python
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        return do_the_login()
+    else:
+        return show_the_login_form()
+```
+
+### Basic API endpoints
 
 ```python
 from flask import Flask, abort, request
@@ -138,3 +152,4 @@ def send():
     return {"json": json}
 ```
   
+

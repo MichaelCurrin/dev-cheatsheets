@@ -163,7 +163,9 @@
 
     <div class="post-content">
         
-            <h2 id="start">Start</h2>
+            <p>For help see <a href="https://flask.palletsprojects.com/en/2.2.x/quickstart/">2.2.x</a> quickstart docs or later.</p>
+
+<h2 id="start">Start</h2>
 
 <p>Use <code class="language-plaintext highlighter-rouge">hello</code> here for <code class="language-plaintext highlighter-rouge">hello.py</code>.</p>
 
@@ -208,7 +210,9 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export </span><span class="nv">FLASK_ENV</span><span class="o">=</span>development
 </code></pre></div></div>
 
-<h2 id="basic-flask-app">Basic Flask app</h2>
+<h2 id="sample-apps">Sample apps</h2>
+
+<h3 id="basic-flask-app">Basic Flask app</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
 
@@ -220,9 +224,19 @@
     <span class="k">return</span> <span class="s">'Hello, World!'</span>
 </code></pre></div></div>
 
-<h2 id="demonstrate-endpoints">Demonstrate endpoints</h2>
+<h3 id="get-and-post">GET and POST</h3>
 
-<p>The script:</p>
+<p>Based on the docs.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@app.route</span><span class="p">(</span><span class="s">'/login'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'GET'</span><span class="p">,</span> <span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">login</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'POST'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nf">do_the_login</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nf">show_the_login_form</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="basic-api-endpoints">Basic API endpoints</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">abort</span><span class="p">,</span> <span class="n">request</span>
 <span class="kn">from</span> <span class="n">flask_restful</span> <span class="kn">import</span> <span class="n">Api</span>
