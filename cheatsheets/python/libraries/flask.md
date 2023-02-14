@@ -131,7 +131,7 @@ def message(foo, bar):
     return {"foo": foo, "bar": bar}
 
 
-@app.route("/api/send/", methods=["GET", "POST"])
+@app.route("/api/send/", methods=["POST"])
 def send():
     json = request.json
 
