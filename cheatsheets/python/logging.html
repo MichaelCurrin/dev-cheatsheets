@@ -156,6 +156,19 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s">"Hello %s, my name is %"</span><span class="p">,</span> <span class="s">"world"</span><span class="p">,</span> <span class="s">"Joe"</span><span class="p">)</span>
 </code></pre></div></div>
 
+<h3 id="built-in-variables">Built-in variables</h3>
+
+<p>See <a href="https://docs.python.org/3/library/logging.html?highlight=funcname#logrecord-attributes">LogRecord attributes</a> in the docs.</p>
+
+<p>Including:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">%(filename)s</code> - name of the current file</li>
+  <li><code class="language-plaintext highlighter-rouge">%(funcName)s</code> - name of the function in current scope</li>
+  <li><code class="language-plaintext highlighter-rouge">%(thread)d</code> - thread ID if available</li>
+  <li><code class="language-plaintext highlighter-rouge">%(threadName)s</code> - thread name if available</li>
+</ul>
+
 <h2 id="levels">Levels</h2>
 
 <h3 id="basic">Basic</h3>

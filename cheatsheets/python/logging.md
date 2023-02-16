@@ -6,6 +6,18 @@
 logger.info("Hello %s, my name is %", "world", "Joe")
 ```
 
+
+### Built-in variables
+
+See [LogRecord attributes](https://docs.python.org/3/library/logging.html?highlight=funcname#logrecord-attributes) in the docs.
+
+Including:
+
+- `%(filename)s` - name of the current file
+- `%(funcName)s` - name of the function in current scope
+- `%(thread)d` - thread ID if available
+- `%(threadName)s` - thread name if available
+
 ## Levels
 
 ### Basic
