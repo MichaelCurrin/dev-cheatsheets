@@ -151,16 +151,64 @@
 
     <div class="post-content">
         
-            <h2 id="variable-substituation">Variable substituation</h2>
+            <h2 id="links">Links</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s">"Hello %s, my name is %"</span><span class="p">,</span> <span class="s">"world"</span><span class="p">,</span> <span class="s">"Joe"</span><span class="p">)</span>
+<ul>
+  <li><a href="https://docs.python.org/3/howto/logging.html">logging</a> in Python 3 docs.</li>
+  <li><a href="https://docs.python.org/3/library/logging.html#module-logging">logging</a> Python 3 API</li>
+</ul>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>The default is to log WARNING level to stdout.</p>
+
+<p>Here is a simple config setup from the docs.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'example.log'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'utf-8'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="log-levels">Log levels</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">logging.debug</code></li>
+  <li><code class="language-plaintext highlighter-rouge">logging.info</code></li>
+  <li><code class="language-plaintext highlighter-rouge">logging.warning</code></li>
+  <li><code class="language-plaintext highlighter-rouge">logging.error</code></li>
+  <li><code class="language-plaintext highlighter-rouge">logging.critical</code></li>
+</ul>
+
+<h2 id="variable-substitution">Variable substitution</h2>
+
+<p>Pass literal values to logging message.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s">"Hello %s, my name is %"</span><span class="p">,</span> <span class="s">"world"</span><span class="p">,</span> <span class="s">"Joe"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Or variables.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="s">'world'</span>
+<span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s">"Hello %s"</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Using <code class="language-plaintext highlighter-rouge">extra</code> keyword, based on the docs.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FORMAT</span> <span class="o">=</span> <span class="s">'%(asctime)s %(clientip)-15s %(user)-8s %(message)s'</span>
+<span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="n">FORMAT</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nf">getLogger</span><span class="p">(</span><span class="s">'tcpserver'</span><span class="p">)</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">'clientip'</span><span class="p">:</span> <span class="s">'192.168.0.1'</span><span class="p">,</span> <span class="s">'user'</span><span class="p">:</span> <span class="s">'fbloggs'</span><span class="p">}</span>
+<span class="n">logger</span><span class="p">.</span><span class="nf">warning</span><span class="p">(</span><span class="s">'Protocol problem: %s'</span><span class="p">,</span> <span class="s">'connection reset'</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Would print something like:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2006-02-08 22:20:02,165 192.168.0.1 fbloggs  Protocol problem: connection reset
 </code></pre></div></div>
 
 <h3 id="built-in-variables">Built-in variables</h3>
 
 <p>See <a href="https://docs.python.org/3/library/logging.html?highlight=funcname#logrecord-attributes">LogRecord attributes</a> in the docs.</p>
 
-<p>Including:</p>
+<p>Including some like:</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">%(filename)s</code> - name of the current file</li>
