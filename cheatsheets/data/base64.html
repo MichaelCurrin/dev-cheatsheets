@@ -236,13 +236,13 @@
 
 <p>Use <code class="language-plaintext highlighter-rouge">base64</code> and <code class="language-plaintext highlighter-rouge">-d</code> or <code class="language-plaintext highlighter-rouge">--decode</code> to decode.</p>
 
-<h3 id="encode-1">Encode</h3>
+<h4 id="encode-1">Encode</h4>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span>  <span class="s1">'Hello, world!'</span> | <span class="nb">base64
 </span><span class="nv">SGVsbG8sIHdvcmxkIQo</span><span class="o">=</span>
 </code></pre></div></div>
 
-<h3 id="decode-2">Decode</h3>
+<h4 id="decode-2">Decode</h4>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'SGVsbG8sIHdvcmxkIQo='</span> | <span class="nb">base64</span> <span class="nt">-d</span>
 Hello, world!
