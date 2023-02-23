@@ -73,7 +73,7 @@ See [Python Base 64][] cheatsheet for more info.
 
 [Python Base 64]: {% link cheatsheets/python/strings/encoding/base64.md %}
 
-### Shell
+## Bash shell
 
 - [base64](https://linux.die.net/man/1/base64) Linux man page.
 
