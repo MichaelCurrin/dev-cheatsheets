@@ -31,7 +31,7 @@ From [Mozilla docs](https://developer.mozilla.org/en-US/docs/Glossary/Base64):
 > - `btoa()`: creates a base-64 encoded ASCII string from a "string" of binary data ("btoa" should be read as "binary to ASCII").
 > - `atob()`: decodes a base-64 encoded string ("atob" should be read as "ASCII to binary").
 
-### Encode
+#### Encode
 
 Convert from binary string to base-64 ASCII string.
 
@@ -40,29 +40,33 @@ Convert from binary string to base-64 ASCII string.
 "SGVsbG8sIHdvcmxk"
 ```
 
-### Decode
+#### Decode
 
 ```javascript
 > atob("SGVsbG8sIHdvcmxk")
 "Hello, world!"
 ```
 
-## Node
+### Node
 
-Using the built-in [buffer](https://nodejs.org/api/buffer.html) API. No imports are needed.
+Using the built-in [buffer](https://nodejs.org/api/buffer.html) API.
+
+#### Decode
 
 ```javascript
-const buf = Buffer.from('hello world', 'utf8');
+import { Buffer } from 'node:buffer';
 
-buf.toString('hex')
-// 68656c6c6f20776f726c64
+const buf = Buffer.from('hello world', 'utf8');
 
 buf.toString('base64')
 //  aGVsbG8gd29ybGQ=
+
+buf.toString('hex')
+// 68656c6c6f20776f726c64
 ```
 
 
-## Python
+### Python
 
 ```python
 >>> base64.b64decode('SGVsbG8sIHdvcmxkIQ==')
@@ -73,20 +77,20 @@ See [Python Base 64][] cheatsheet for more info.
 
 [Python Base 64]: {% link cheatsheets/python/strings/encoding/base64.md %}
 
-## Bash shell
+### Bash shell
 
 - [base64](https://linux.die.net/man/1/base64) Linux man page.
 
 Use `base64` and `-d` or `--decode` to decode.
 
-Encode:
+### Encode
 
 ```sh
 $ echo  'Hello, world!' | base64
 SGVsbG8sIHdvcmxkIQo=
 ```
 
-Decode:
+### Decode
 
 ```sh
 $ echo 'SGVsbG8sIHdvcmxkIQo=' | base64 -d
