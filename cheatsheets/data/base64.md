@@ -20,7 +20,7 @@ Padding character: `=`.
 
 ### Browser JavaScript
 
-Use the built-in functions `btoa` and `atob`. You can use these directly in the browser. But not in Node.
+Use the built-in functions `btoa` and `atob`. You can use these directly in the browser and _also_ in Node.
 
 Note that `b` stands for [binary string](https://developer.mozilla.org/en-US/docs/Web/API/DOMString/Binary) (UTF-16 encoded strings) and **not** base-64.
 
@@ -49,20 +49,24 @@ Convert from binary string to base-64 ASCII string.
 
 ### Node
 
-Using the built-in [buffer](https://nodejs.org/api/buffer.html) API.
+For newer versions of Node you can use the conversions above, otherwise use the Node approach here.
+
+Using the built-in [buffer](https://nodejs.org/api/buffer.html) API. The docs cover using an import for `Buffer`, however this is _not_ needed.
+
+#### Encode
+
+```javascript
+const plainText = "hello world";
+const base64Encoded = Buffer.from(plainText).toString("base64");
+// 'aGVsbG8gd29ybGQ='
+```
 
 #### Decode
 
 ```javascript
-import { Buffer } from 'node:buffer';
-
-const buf = Buffer.from('hello world', 'utf8');
-
-buf.toString('base64')
-//  aGVsbG8gd29ybGQ=
-
-buf.toString('hex')
-// 68656c6c6f20776f726c64
+const base64Encoded = 'aGVsbG8gd29ybGQ='
+const decodedText = Buffer.from(base64Encoded, "base64").toString("utf-8");
+'hello world'
 ```
 
 
