@@ -174,7 +174,7 @@
 
 <h3 id="browser-javascript">Browser JavaScript</h3>
 
-<p>Use the built-in functions <code class="language-plaintext highlighter-rouge">btoa</code> and <code class="language-plaintext highlighter-rouge">atob</code>. You can use these directly in the browser. But not in Node.</p>
+<p>Use the built-in functions <code class="language-plaintext highlighter-rouge">btoa</code> and <code class="language-plaintext highlighter-rouge">atob</code>. You can use these directly in the browser and <em>also</em> in Node.</p>
 
 <p>Note that <code class="language-plaintext highlighter-rouge">b</code> stands for <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMString/Binary">binary string</a> (UTF-16 encoded strings) and <strong>not</strong> base-64.</p>
 
@@ -205,19 +205,22 @@
 
 <h3 id="node">Node</h3>
 
-<p>Using the built-in <a href="https://nodejs.org/api/buffer.html">buffer</a> API.</p>
+<p>For newer versions of Node you can use the conversions above, otherwise use the Node approach here.</p>
+
+<p>Using the built-in <a href="https://nodejs.org/api/buffer.html">buffer</a> API. The docs cover using an import for <code class="language-plaintext highlighter-rouge">Buffer</code>, however this is <em>not</em> needed.</p>
+
+<h4 id="encode-1">Encode</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">plainText</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">hello world</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">base64Encoded</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">.</span><span class="nf">from</span><span class="p">(</span><span class="nx">plainText</span><span class="p">).</span><span class="nf">toString</span><span class="p">(</span><span class="dl">"</span><span class="s2">base64</span><span class="dl">"</span><span class="p">);</span>
+<span class="c1">// 'aGVsbG8gd29ybGQ='</span>
+</code></pre></div></div>
 
 <h4 id="decode-1">Decode</h4>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Buffer</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">node:buffer</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">buf</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">.</span><span class="nf">from</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello world</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">utf8</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="nx">buf</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="dl">'</span><span class="s1">base64</span><span class="dl">'</span><span class="p">)</span>
-<span class="c1">//  aGVsbG8gd29ybGQ=</span>
-
-<span class="nx">buf</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="dl">'</span><span class="s1">hex</span><span class="dl">'</span><span class="p">)</span>
-<span class="c1">// 68656c6c6f20776f726c64</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">base64Encoded</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">aGVsbG8gd29ybGQ=</span><span class="dl">'</span>
+<span class="kd">const</span> <span class="nx">decodedText</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">.</span><span class="nf">from</span><span class="p">(</span><span class="nx">base64Encoded</span><span class="p">,</span> <span class="dl">"</span><span class="s2">base64</span><span class="dl">"</span><span class="p">).</span><span class="nf">toString</span><span class="p">(</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="p">);</span>
+<span class="dl">'</span><span class="s1">hello world</span><span class="dl">'</span>
 </code></pre></div></div>
 
 <h3 id="python">Python</h3>
@@ -236,7 +239,7 @@
 
 <p>Use <code class="language-plaintext highlighter-rouge">base64</code> and <code class="language-plaintext highlighter-rouge">-d</code> or <code class="language-plaintext highlighter-rouge">--decode</code> to decode.</p>
 
-<h4 id="encode-1">Encode</h4>
+<h4 id="encode-2">Encode</h4>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span>  <span class="s1">'Hello, world!'</span> | <span class="nb">base64
 </span><span class="nv">SGVsbG8sIHdvcmxkIQo</span><span class="o">=</span>
