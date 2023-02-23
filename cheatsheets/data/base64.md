@@ -83,14 +83,14 @@ See [Python Base 64][] cheatsheet for more info.
 
 Use `base64` and `-d` or `--decode` to decode.
 
-### Encode
+#### Encode
 
 ```sh
 $ echo  'Hello, world!' | base64
 SGVsbG8sIHdvcmxkIQo=
 ```
 
-### Decode
+#### Decode
 
 ```sh
 $ echo 'SGVsbG8sIHdvcmxkIQo=' | base64 -d
