@@ -55,6 +55,65 @@ $ flask run --host=0.0.0.0
 $ export FLASK_ENV=development
 ```
 
+## Serve JSON
+
+Return data as JSON text on a specific endpoint:
+
+```python
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route("/")
+def foo():
+    return jsonify({'fizz': 'buzz'})
+```
+
+Convert your app into an API to get data returned as JSON text by default, on a success.
+
+```json
+from flask import Flask
+from flask_restful import Api
+
+
+app = Flask(__name__)
+api = Api(app)
+
+@app.route("/")
+def foo():
+    return {'fizz': 'buzz'}
+```
+
+You'll still have to return errors as JSON explicitly:
+
+```python
+@app.route("/bad")
+def bar():
+    resp_data = {"error": "My error message"}
+    return jsonify(resp_data), 400
+```
+
+
+
+## Static files
+
+Serve the contents of the `static` directory (the default) as `/assets`:
+
+```python
+app = Flask(__name__, static_folder='static', static_url_path="/assets")
+```
+
+Serve a specific file - note the `index.html` will be served from `static` directory.
+
+```python
+@app.route('/')
+def my_home(path):
+    return app.send_static_file("index.html")
+```
+
+See also [Single-Page Applications](https://flask.palletsprojects.com/en/2.2.x/patterns/singlepageapplications/) in the Flask docs.
+
+
 ## Sample apps
 
 ### Basic Flask app
@@ -152,21 +211,3 @@ def send():
     return {"json": json}
 ```
   
-
-## Static files
-
-Serve the contents of the `static` directory as `/assets`:
-
-```python
-app = Flask(__name__, static_folder='static', static_url_path="/assets")
-```
-
-Serve a specific file:
-
-```python
-@app.route('/')
-def my_home(path):
-    return app.send_static_file("index.html")
-```
-
-See also [Single-Page Applications](https://flask.palletsprojects.com/en/2.2.x/patterns/singlepageapplications/) in the Flask docs.

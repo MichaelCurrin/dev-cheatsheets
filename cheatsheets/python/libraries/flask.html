@@ -210,6 +210,57 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export </span><span class="nv">FLASK_ENV</span><span class="o">=</span>development
 </code></pre></div></div>
 
+<h2 id="serve-json">Serve JSON</h2>
+
+<p>Return data as JSON text on a specific endpoint:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">jsonify</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">return</span> <span class="nf">jsonify</span><span class="p">({</span><span class="s">'fizz'</span><span class="p">:</span> <span class="s">'buzz'</span><span class="p">})</span>
+</code></pre></div></div>
+
+<p>Convert your app into an API to get data returned as JSON text by default, on a success.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">from</span><span class="w"> </span><span class="err">flask</span><span class="w"> </span><span class="err">import</span><span class="w"> </span><span class="err">Flask</span><span class="w">
+</span><span class="err">from</span><span class="w"> </span><span class="err">flask_restful</span><span class="w"> </span><span class="err">import</span><span class="w"> </span><span class="err">Api</span><span class="w">
+
+
+</span><span class="err">app</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">Flask(__name__)</span><span class="w">
+</span><span class="err">api</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">Api(app)</span><span class="w">
+
+</span><span class="err">@app.route(</span><span class="s2">"/"</span><span class="err">)</span><span class="w">
+</span><span class="err">def</span><span class="w"> </span><span class="err">foo():</span><span class="w">
+    </span><span class="err">return</span><span class="w"> </span><span class="p">{</span><span class="err">'fizz':</span><span class="w"> </span><span class="err">'buzz'</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>You’ll still have to return errors as JSON explicitly:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@app.route</span><span class="p">(</span><span class="s">"/bad"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">bar</span><span class="p">():</span>
+    <span class="n">resp_data</span> <span class="o">=</span> <span class="p">{</span><span class="s">"error"</span><span class="p">:</span> <span class="s">"My error message"</span><span class="p">}</span>
+    <span class="k">return</span> <span class="nf">jsonify</span><span class="p">(</span><span class="n">resp_data</span><span class="p">),</span> <span class="mi">400</span>
+</code></pre></div></div>
+
+<h2 id="static-files">Static files</h2>
+
+<p>Serve the contents of the <code class="language-plaintext highlighter-rouge">static</code> directory (the default) as <code class="language-plaintext highlighter-rouge">/assets</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">,</span> <span class="n">static_folder</span><span class="o">=</span><span class="s">'static'</span><span class="p">,</span> <span class="n">static_url_path</span><span class="o">=</span><span class="s">"/assets"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Serve a specific file - note the <code class="language-plaintext highlighter-rouge">index.html</code> will be served from <code class="language-plaintext highlighter-rouge">static</code> directory.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@app.route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">my_home</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">app</span><span class="p">.</span><span class="nf">send_static_file</span><span class="p">(</span><span class="s">"index.html"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>See also <a href="https://flask.palletsprojects.com/en/2.2.x/patterns/singlepageapplications/">Single-Page Applications</a> in the Flask docs.</p>
+
 <h2 id="sample-apps">Sample apps</h2>
 
 <h3 id="basic-flask-app">Basic Flask app</h3>
@@ -303,22 +354,6 @@
 
     <span class="k">return</span> <span class="p">{</span><span class="s">"json"</span><span class="p">:</span> <span class="n">json</span><span class="p">}</span>
 </code></pre></div></div>
-
-<h2 id="static-files">Static files</h2>
-
-<p>Serve the contents of the <code class="language-plaintext highlighter-rouge">static</code> directory as <code class="language-plaintext highlighter-rouge">/assets</code>:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">,</span> <span class="n">static_folder</span><span class="o">=</span><span class="s">'static'</span><span class="p">,</span> <span class="n">static_url_path</span><span class="o">=</span><span class="s">"/assets"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>Serve a specific file:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@app.route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">my_home</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">app</span><span class="p">.</span><span class="nf">send_static_file</span><span class="p">(</span><span class="s">"index.html"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>See also <a href="https://flask.palletsprojects.com/en/2.2.x/patterns/singlepageapplications/">Single-Page Applications</a> in the Flask docs.</p>
 
         
     </div>
