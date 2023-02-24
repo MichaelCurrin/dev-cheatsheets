@@ -165,7 +165,7 @@ Serve a specific file:
 
 ```python
 @app.route('/')
-def catch_all(path):
+def my_home(path):
     return app.send_static_file("index.html")
 ```
 
