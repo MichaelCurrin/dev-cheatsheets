@@ -304,6 +304,22 @@
     <span class="k">return</span> <span class="p">{</span><span class="s">"json"</span><span class="p">:</span> <span class="n">json</span><span class="p">}</span>
 </code></pre></div></div>
 
+<h2 id="static-files">Static files</h2>
+
+<p>Serve the contents of the <code class="language-plaintext highlighter-rouge">static</code> directory as <code class="language-plaintext highlighter-rouge">/assets</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">,</span> <span class="n">static_folder</span><span class="o">=</span><span class="s">'static'</span><span class="p">,</span> <span class="n">static_url_path</span><span class="o">=</span><span class="s">"/assets"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Serve a specific file:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@app.route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">catch_all</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">app</span><span class="p">.</span><span class="nf">send_static_file</span><span class="p">(</span><span class="s">"index.html"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>See also <a href="https://flask.palletsprojects.com/en/2.2.x/patterns/singlepageapplications/">Single-Page Applications</a> in the Flask docs.</p>
+
         
     </div>
 </article>

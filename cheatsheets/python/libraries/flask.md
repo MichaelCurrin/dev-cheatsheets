@@ -153,3 +153,20 @@ def send():
 ```
   
 
+## Static files
+
+Serve the contents of the `static` directory as `/assets`:
+
+```python
+app = Flask(__name__, static_folder='static', static_url_path="/assets")
+```
+
+Serve a specific file:
+
+```python
+@app.route('/')
+def catch_all(path):
+    return app.send_static_file("index.html")
+```
+
+See also [Single-Page Applications](https://flask.palletsprojects.com/en/2.2.x/patterns/singlepageapplications/) in the Flask docs.
