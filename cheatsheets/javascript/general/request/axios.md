@@ -65,7 +65,7 @@ const params = {
 axios.get('/user', { params })
 ```
 
-### POST reqeuest
+### POST request
 
 ```javascript
 axios.post('/user', {
