@@ -9,11 +9,19 @@
 
 ```python
 resp = requests.get("https://httpbin.org/get")
+```
+
+```python
+# Text content
 resp.text
+# ...
+
+# Bytes content.
+resp.content
 # ...
 ```
 
-If you want to parse JSON data to a Python object:
+Parse JSON response as a Python object:
 
 ```python
 resp.json()
@@ -25,6 +33,9 @@ resp.json()
 
 ```python
 resp = requests.get("https://httpbin.org/get")
+
+resp.ok
+# True
 
 if not resp.ok:
     resp.raise_for_status()
@@ -51,7 +62,7 @@ https://httpbin.org/get?key2=value2&key1=value1
 ```
 
 
-## Data
+## Send data
 
 ```python
 data = {'abc': 123}
@@ -132,13 +143,16 @@ resp = requests.get(url)
 
 resp.status_code
 # 200
+
 resp.headers['content-type']
 # 'application/json; charset=utf8'
+
 resp.encoding
 # 'utf-8'
 
 resp.text
 # '{"type":"User"...'
+
 resp.json()
 # {'private_gists': 419, 'total_private_repos': 77, ...}
 ```
