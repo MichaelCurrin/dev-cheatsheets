@@ -1,6 +1,5 @@
 ---
-title: Shell
-description: Unix shell guide 
+title: Unix shell
 logo: gnubash
 ---
 
