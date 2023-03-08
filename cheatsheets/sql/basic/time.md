@@ -57,11 +57,12 @@ SELECT CAST(NOW() AS TEXT);
 
 ## Format
 
-At least in SQLite.
+### SQLite
 
 String format. Pass in 'NOW' for easy testing, or pass a timestamp column.
 
 ```sql
+SELECT STRFTIME('%s', my_timestamp)
 SELECT STRFTIME('%s', 'NOW')
 ```
 
@@ -71,6 +72,13 @@ Get just year.
 SELECT STRFTIME('%Y', 'NOW')
 ```
 
+### Postgres
+
+Get just year.
+
+```sql
+SELECT EXTRACT(YEAR FROM my_timestamp)
+```
 
 ## Convert unix timestamp to timestamp
 
@@ -78,10 +86,7 @@ From seconds.
 
 ```sql
 SELECT TO_TIMESTAMP(1618313491.437 );
-```
-
-```
-2021-04-13 11:31:31.437+00
+// 2021-04-13 11:31:31.437+00
 ```
 
 Using milliseconds input by dividing by 1000 to get to seconds, then converting to timestamp.
@@ -90,10 +95,7 @@ Note use of decimal to force the result to include milliseconds.
 
 ```sql
 SELECT TO_TIMESTAMP(1618313491437 / 1000.0);
-```
-
-```
-2021-04-13 11:31:31.437+00
+// 2021-04-13 11:31:31.437+00
 ```
 
 

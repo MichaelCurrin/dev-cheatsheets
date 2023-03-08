@@ -207,11 +207,12 @@
 
 <h2 id="format">Format</h2>
 
-<p>At least in SQLite.</p>
+<h3 id="sqlite">SQLite</h3>
 
 <p>String format. Pass in ‘NOW’ for easy testing, or pass a timestamp column.</p>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">STRFTIME</span><span class="p">(</span><span class="s1">'%s'</span><span class="p">,</span> <span class="s1">'NOW'</span><span class="p">)</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">STRFTIME</span><span class="p">(</span><span class="s1">'%s'</span><span class="p">,</span> <span class="n">my_timestamp</span><span class="p">)</span>
+<span class="k">SELECT</span> <span class="n">STRFTIME</span><span class="p">(</span><span class="s1">'%s'</span><span class="p">,</span> <span class="s1">'NOW'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Get just year.</p>
@@ -219,14 +220,19 @@
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">STRFTIME</span><span class="p">(</span><span class="s1">'%Y'</span><span class="p">,</span> <span class="s1">'NOW'</span><span class="p">)</span>
 </code></pre></div></div>
 
+<h3 id="postgres">Postgres</h3>
+
+<p>Get just year.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="k">EXTRACT</span><span class="p">(</span><span class="nb">YEAR</span> <span class="k">FROM</span> <span class="n">my_timestamp</span><span class="p">)</span>
+</code></pre></div></div>
+
 <h2 id="convert-unix-timestamp-to-timestamp">Convert unix timestamp to timestamp</h2>
 
 <p>From seconds.</p>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">TO_TIMESTAMP</span><span class="p">(</span><span class="mi">1618313491</span><span class="p">.</span><span class="mi">437</span> <span class="p">);</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2021-04-13 11:31:31.437+00
+<span class="o">//</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">13</span> <span class="mi">11</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">31</span><span class="p">.</span><span class="mi">437</span><span class="o">+</span><span class="mi">00</span>
 </code></pre></div></div>
 
 <p>Using milliseconds input by dividing by 1000 to get to seconds, then converting to timestamp.</p>
@@ -234,9 +240,7 @@
 <p>Note use of decimal to force the result to include milliseconds.</p>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">TO_TIMESTAMP</span><span class="p">(</span><span class="mi">1618313491437</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2021-04-13 11:31:31.437+00
+<span class="o">//</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">13</span> <span class="mi">11</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">31</span><span class="p">.</span><span class="mi">437</span><span class="o">+</span><span class="mi">00</span>
 </code></pre></div></div>
 
 <h2 id="interval">Interval</h2>
