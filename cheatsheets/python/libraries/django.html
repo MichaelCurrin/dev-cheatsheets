@@ -243,6 +243,85 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python manage.py changepassword USERNAME
 </code></pre></div></div>
 
+<h2 id="filter-syntax">Filter syntax</h2>
+
+<p>These are just some examples of the many filter lookups available in Django. For more information, you can refer to the Django documentation on QuerySet API reference.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">exact</code>: Performs an exact match lookup. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">name__exact</span><span class="o">=</span><span class="s">'John'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">iexact</code>: Performs a case-insensitive exact match lookup. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">name__iexact</span><span class="o">=</span><span class="s">'john'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">contains</code>: Performs a case-sensitive substring match lookup. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">name__contains</span><span class="o">=</span><span class="s">'oh'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">icontains</code>: Performs a case-insensitive substring match lookup. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">name__icontains</span><span class="o">=</span><span class="s">'OH'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">in</code>: Matches any of the given values. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">id__in</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">gt</code>: Matches values greater than the given value. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">age__gt</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">lt</code>: Matches values less than the given value. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">age__lt</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">gte</code>: Matches values greater than or equal to the given value. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">age__gte</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">lte</code>: Matches values less than or equal to the given value. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">age__lte</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">startswith</code>: Matches values that start with the given substring. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">name__startswith</span><span class="o">=</span><span class="s">'Joh'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">endswith</code>: Matches values that end with the given substring. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">name__endswith</span><span class="o">=</span><span class="s">'n'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">range</code>: Matches values within a range. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">age__range</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">year</code>: Matches the year of a <code class="language-plaintext highlighter-rouge">DateTimeField</code>. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">pub_date__year</span><span class="o">=</span><span class="mi">2022</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">month</code>: Matches the month of a <code class="language-plaintext highlighter-rouge">DateTimeField</code>. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">pub_date__month</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">day</code>: Matches the day of a <code class="language-plaintext highlighter-rouge">DateTimeField</code>. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">pub_date__day</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">week_day</code>: Matches the day of the week of a <code class="language-plaintext highlighter-rouge">DateTimeField</code>, where <code class="language-plaintext highlighter-rouge">Sunday=1</code> and <code class="language-plaintext highlighter-rouge">Saturday=7</code>. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">pub_date__week_day</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Matches all records with a pub_date on a Tuesday
+</span></code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">isnull</code>: Matches records where a field is null or not null. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">some_field__isnull</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>  <span class="c1"># Matches all records where some_field is null
+</span></code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">regex</code>: Matches records where a field matches a regular expression. For example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">name__regex</span><span class="o">=</span><span class="sa">r</span><span class="s">'^[A-Za-z]+$'</span><span class="p">)</span>  <span class="c1"># Matches all records where name contains only letters
+</span></code></pre></div>    </div>
+  </li>
+</ol>
+
 <h2 id="django-mvt">Django MVT</h2>
 
 <p>Django follows MVT (Model, View, Template) architecture.</p>
