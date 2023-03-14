@@ -3,9 +3,17 @@
 ## Get context
 
 ```console
-$ kubectl config set-context
+$ kubectl config current-context
 my-context
 ```
+
+
+```console
+$ kubectl config get-contexts
+CURRENT   NAME               CLUSTER            AUTHINFO                             NAMESPACE
+...
+```
+
 
 
 ## Set context
