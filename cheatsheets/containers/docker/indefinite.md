@@ -1,6 +1,6 @@
 ---
 title: Indefinite
-description: Run a container continously
+description: Run a container continuously
 ---
 
 This will sStop a container from exiting immediately on completing a command. This is useful for if you need to keep it running long enough to start a terminal session in or check some other attributes.
@@ -17,7 +17,7 @@ $ tail -f
 Or
 
 ```sh
-$ tail -f > /dev/null
+$ tail -f /dev/null
 ```
 
 So use that as command in `Dockerfile`:
