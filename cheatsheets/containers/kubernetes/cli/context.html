@@ -177,8 +177,13 @@
         
             <h2 id="get-context">Get context</h2>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>kubectl config set-context
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>kubectl config current-context
 <span class="go">my-context
+</span></code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>kubectl config get-contexts
+<span class="go">CURRENT   NAME               CLUSTER            AUTHINFO                             NAMESPACE
+</span><span class="c">...
 </span></code></pre></div></div>
 
 <h2 id="set-context">Set context</h2>
