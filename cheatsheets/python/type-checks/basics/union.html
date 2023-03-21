@@ -175,7 +175,7 @@
 
     <div class="post-content">
         
-            <p>Use Union to allow a variable to be one of given types.</p>
+            <p>Use Union to allow a variable to be one of given types or values.</p>
 
 <h2 id="python-310">Python 3.10</h2>
 
@@ -183,6 +183,9 @@
 
 <span class="c1"># e.g.
 </span><span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span>
+
+<span class="c1"># e.g.
+</span><span class="s">"ABC"</span> <span class="o">|</span> <span class="s">"DEF"</span> <span class="o">|</span> <span class="s">"XYZ"</span>
 </code></pre></div></div>
 
 <h2 id="python-38">Python 3.8</h2>
@@ -190,7 +193,10 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Union</span><span class="p">[</span><span class="n">TYPE</span><span class="p">,</span> <span class="n">TYPE</span><span class="p">,</span> <span class="p">...]</span>
 
 <span class="c1"># e.g.
-</span><span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span>
+</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>
+
+<span class="c1"># e.g.
+</span><span class="n">Union</span><span class="p">[</span><span class="s">"ABC"</span><span class="p">,</span> <span class="s">"DEF"</span><span class="p">,</span> <span class="s">"XYZ"</span><span class="p">]</span>
 </code></pre></div></div>
 
 <h2 id="example">Example</h2>
@@ -202,6 +208,20 @@
         <span class="k">return</span> <span class="s">'Yes'</span>
 
     <span class="k">return</span> <span class="mi">12</span>
+</code></pre></div></div>
+
+<p>Allow a value to be one of three values.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+
+<span class="n">MyType</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="s">"ABC"</span><span class="p">,</span> <span class="s">"DEF"</span><span class="p">,</span> <span class="s">"XYZ"</span><span class="p">]</span>
+
+<span class="c1"># This would be valid
+</span><span class="n">foo</span><span class="p">:</span> <span class="n">MyType</span> <span class="o">=</span> <span class="s">"ABC"</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="s">"DEF"</span>
+
+<span class="c1"># This would cause a type error
+</span><span class="n">foo</span> <span class="o">=</span> <span class="s">"GHI"</span>
 </code></pre></div></div>
 
         
