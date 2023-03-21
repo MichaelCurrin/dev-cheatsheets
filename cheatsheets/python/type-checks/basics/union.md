@@ -1,6 +1,6 @@
 # Union
 
-Use Union to allow a variable to be one of given types.
+Use Union to allow a variable to be one of given types or values.
 
 ## Python 3.10
 
@@ -9,7 +9,12 @@ TYPE | TYPE | TYPE
 
 # e.g.
 float | int | str
+
+# e.g.
+"ABC" | "DEF" | "XYZ"
 ```
+
+
 
 ## Python 3.8
 
@@ -17,7 +22,10 @@ float | int | str
 Union[TYPE, TYPE, ...]
 
 # e.g.
-float | int | str
+Union[float, int, str]
+
+# e.g.
+Union["ABC", "DEF", "XYZ"]
 ```
 
 
@@ -31,5 +39,20 @@ def bar(bazz: bool) -> int | str:
         return 'Yes'
 
     return 12
+```
+
+Allow a value to be one of three values.
+
+```python
+from typing import Union
+
+MyType = Union["ABC", "DEF", "XYZ"]
+
+# This would be valid
+foo: MyType = "ABC"
+foo = "DEF"
+
+# This would cause a type error
+foo = "GHI"
 ```
 
