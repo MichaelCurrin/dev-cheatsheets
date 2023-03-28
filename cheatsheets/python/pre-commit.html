@@ -162,16 +162,25 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>pre-commit
 </code></pre></div></div>
 
-<p>Install in your repo:</p>
+<h2 id="configure">Configure</h2>
+
+<p>Create <code class="language-plaintext highlighter-rouge">.pre-commit.config.yaml</code> in your repo.</p>
+
+<p>Install in your repo for each commit.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pre-commit <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>Or if you want commits to be quicker and rather check on a push, install on pre-push instead:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pre-commit <span class="nb">install</span> <span class="nt">--hook-type</span> pre-push
 </code></pre></div></div>
 
 <h2 id="usage">Usage</h2>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pre-commit run <span class="nt">--all-files</span>
 <span class="nv">$ </span><span class="c"># OR</span>
-<span class="nv">$ </span>pre-commit <span class="nt">--files</span> PATH PATH PATH
+<span class="nv">$ </span>pre-commit run <span class="nt">--files</span> PATH PATH PATH
 </code></pre></div></div>
 
 <p>Verbose output:</p>

@@ -12,20 +12,29 @@ Install with `pip` directly, or add to `requirements.txt`.
 $ pip install pre-commit
 ```
 
-Install in your repo:
+## Configure
+
+Create `.pre-commit.config.yaml` in your repo.
+
+Install in your repo for each commit.
 
 ```sh 
 $ pre-commit install
 ```
 
+Or if you want commits to be quicker and rather check on a push, install on pre-push instead:
+
+```sh
+$ pre-commit install --hook-type pre-push
+```
+
 
 ## Usage
-
 
 ```sh
 $ pre-commit run --all-files
 $ # OR
-$ pre-commit --files PATH PATH PATH
+$ pre-commit run --files PATH PATH PATH
 ```
 
 Verbose output:
