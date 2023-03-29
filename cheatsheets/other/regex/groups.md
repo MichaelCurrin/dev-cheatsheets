@@ -17,3 +17,9 @@ Non-capturing group. If you want to use brackets to make a group such as to make
 ```re
 (?:\w) (\w)
 ```
+
+Match any one of these groups:
+
+```re
+(abc def)|(Foo bar)(fizz)
+```
