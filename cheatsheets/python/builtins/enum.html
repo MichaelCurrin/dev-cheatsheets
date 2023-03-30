@@ -177,6 +177,8 @@
 
 <h2 id="definition">Definition</h2>
 
+<h3 id="explicit">Explicit</h3>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 
 
@@ -186,20 +188,7 @@
     <span class="n">BLUE</span> <span class="o">=</span> <span class="mi">3</span>
 </code></pre></div></div>
 
-<h2 id="get-item">Get item</h2>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">member</span> <span class="o">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">RED</span>
-<span class="c1"># OR
-</span><span class="n">member</span> <span class="o">=</span> <span class="n">Color</span><span class="p">[</span><span class="s">'RED'</span><span class="p">]</span>
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">member</span><span class="p">.</span><span class="n">name</span>
-<span class="s">'RED'</span>
-<span class="n">member</span><span class="p">.</span><span class="n">value</span>
-<span class="mi">1</span>
-</code></pre></div></div>
-
-<h2 id="auto-enumerate">Auto enumerate</h2>
+<h3 id="auto-enumerate">Auto enumerate</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">enum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">auto</span>
 
@@ -210,9 +199,37 @@
     <span class="n">GREEN</span> <span class="o">=</span> <span class="nf">auto</span><span class="p">()</span>
 </code></pre></div></div>
 
+<p>These wil use 1, 2, etc.</p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">list</span><span class="p">(</span><span class="n">Color</span><span class="p">)</span>
 <span class="c1"># =&gt; [&lt;Color.RED: 1&gt;, &lt;Color.BLUE: 2&gt;, &lt;Color.GREEN: 3&gt;]
 </span></code></pre></div></div>
+
+<h3 id="string-values">String values</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Color</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">RED</span> <span class="o">=</span> <span class="s">"RED"</span>
+    <span class="n">BLUE</span> <span class="o">=</span> <span class="s">"BLUE"</span>
+    <span class="n">GREEN</span> <span class="o">=</span> <span class="s">"GREEN"</span>
+    
+<span class="n">Color</span><span class="p">.</span><span class="n">RED</span>
+<span class="c1"># &lt;Color.RED: 'RED'&gt;
+</span></code></pre></div></div>
+
+<h2 id="get-item">Get item</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">member</span> <span class="o">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">RED</span>
+<span class="c1"># OR
+</span><span class="n">member</span> <span class="o">=</span> <span class="n">Color</span><span class="p">[</span><span class="s">'RED'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>For the integer example:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">member</span><span class="p">.</span><span class="n">name</span>
+<span class="s">'RED'</span>
+<span class="n">member</span><span class="p">.</span><span class="n">value</span>
+<span class="mi">1</span>
+</code></pre></div></div>
 
         
     </div>
