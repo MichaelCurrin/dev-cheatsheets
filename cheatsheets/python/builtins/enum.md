@@ -10,6 +10,8 @@
 
 ## Definition
 
+### Explicit 
+
 ```python
 from enum import Enum
 
@@ -20,24 +22,7 @@ class Color(Enum):
     BLUE = 3
 ```
 
-
-## Get item
-
-```python
-member = Color.RED
-# OR
-member = Color['RED']
-```
-
-```python
-member.name
-'RED'
-member.value
-1
-```
-
-
-## Auto enumerate
+### Auto enumerate
 
 ```python
 from enum import Enum, auto
@@ -49,7 +34,41 @@ class Color(Enum):
     GREEN = auto()
 ```
 
+These wil use 1, 2, etc.
+
 ```python
 list(Color)
 # => [<Color.RED: 1>, <Color.BLUE: 2>, <Color.GREEN: 3>]
 ```
+
+### String values
+
+```python
+class Color(Enum):
+    RED = "RED"
+    BLUE = "BLUE"
+    GREEN = "GREEN"
+    
+Color.RED
+# <Color.RED: 'RED'>
+```
+
+
+
+## Get item
+
+```python
+member = Color.RED
+# OR
+member = Color['RED']
+```
+
+For the integer example:
+
+```python
+member.name
+'RED'
+member.value
+1
+```
+
