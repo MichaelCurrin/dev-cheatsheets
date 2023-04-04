@@ -93,3 +93,43 @@ E241 (*) 	multiple spaces after ‘,’
 
 W606 	‘async’ and ‘await’ are reserved keywords starting with Python 3.7
 ```
+
+
+## Ignore
+
+### Basic
+
+```python
+# noqa: F123
+```
+
+e.g.
+
+```python
+abc = def()  # noqa: F123
+```
+
+
+Note for the unused variable error, you need to put the comment on the first line (where the variable name is).
+
+```python
+abc = def(  # noqa: F841
+  x=1
+)
+```
+
+### Ignore multiple rules
+
+```python
+# noqa: E731,E123
+```
+
+### Ignore whole file
+
+Either add to your config or add this to the top of the file:
+
+```python
+# flake8:noqa
+```
+
+
