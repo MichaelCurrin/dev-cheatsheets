@@ -271,6 +271,37 @@ E241 (*) 	multiple spaces after ‘,’
 W606 	‘async’ and ‘await’ are reserved keywords starting with Python 3.7
 </code></pre></div></div>
 
+<h2 id="ignore">Ignore</h2>
+
+<h3 id="basic">Basic</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># noqa: F123
+</span></code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">abc</span> <span class="o">=</span> <span class="nf">def</span><span class="p">()</span>  <span class="c1"># noqa: F123
+</span></code></pre></div></div>
+
+<p>Note for the unused variable error, you need to put the comment on the first line (where the variable name is).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">abc</span> <span class="o">=</span> <span class="nf">def</span><span class="p">(</span>  <span class="c1"># noqa: F841
+</span>  <span class="n">x</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="ignore-multiple-rules">Ignore multiple rules</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># noqa: E731,E123
+</span></code></pre></div></div>
+
+<h3 id="ignore-whole-file">Ignore whole file</h3>
+
+<p>Either add to your config or add this to the top of the file:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># flake8:noqa
+</span></code></pre></div></div>
+
         
     </div>
 </article>
