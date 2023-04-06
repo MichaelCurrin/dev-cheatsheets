@@ -76,14 +76,15 @@ The values in a set are hashed, like dictionary keys, so it is very efficient to
 ```
 
 
-## Add element
+## Update
+
+### Add element
 
 ```python 
 my_set.add(VALUE)
 ```
 
-
-## Add elements 
+### Add elements 
 
 Pass an iterable, such an list or another set.
 
@@ -103,6 +104,16 @@ y = {"google", "microsoft", "apple"}
 x.update(y)
 ```
 
+### Remove elements
+
+From elements in set `y` from set `x`.
+
+```python
+x -= y
+# i.e.
+x = x - y
+```
+
 
 ## Operations
 
@@ -112,7 +123,7 @@ Use bitwise operators or methods. The former only works with two sets while the 
 
 ### Intersection
 
-OR
+**OR**
 
 Returns a new set with elements common to the set and the other set.
 
@@ -127,7 +138,7 @@ x.intersection(y)
 
 ### Union
 
-AND
+**AND**
 
 Returns a new set with elements from the set and the other set.
 
@@ -140,7 +151,7 @@ x.union(y)
 
 ### Difference
 
-NOT
+**NOT**
 
 Returns a new set with elements in the set that are not in the other set.
 
@@ -155,7 +166,7 @@ x.difference(y)
 
 ### Symmetric difference
 
-XOR
+**XOR**
 
 Returns a new set with elements in either the set or the other set but not both.
 
@@ -173,5 +184,5 @@ Similarly to list comprehensions, set comprehensions are also supported:
 
 ```python 
 a = {x for x in 'abracadabra' if x not in 'abc'}
-a
 # {'r', 'd'}
+```
