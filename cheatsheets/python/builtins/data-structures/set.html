@@ -247,12 +247,14 @@
 <span class="c1"># False 
 </span></code></pre></div></div>
 
-<h2 id="add-element">Add element</h2>
+<h2 id="update">Update</h2>
+
+<h3 id="add-element">Add element</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_set</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">VALUE</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="add-elements">Add elements</h2>
+<h3 id="add-elements">Add elements</h3>
 
 <p>Pass an iterable, such an list or another set.</p>
 
@@ -270,6 +272,15 @@
 <span class="n">x</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </code></pre></div></div>
 
+<h3 id="remove-elements">Remove elements</h3>
+
+<p>From elements in set <code class="language-plaintext highlighter-rouge">y</code> from set <code class="language-plaintext highlighter-rouge">x</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">-=</span> <span class="n">y</span>
+<span class="c1"># i.e.
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+</code></pre></div></div>
+
 <h2 id="operations">Operations</h2>
 
 <p>Do a join to see what a set has in common or different from another.</p>
@@ -278,7 +289,7 @@
 
 <h3 id="intersection">Intersection</h3>
 
-<p>OR</p>
+<p><strong>OR</strong></p>
 
 <p>Returns a new set with elements common to the set and the other set.</p>
 
@@ -292,7 +303,7 @@
 
 <h3 id="union">Union</h3>
 
-<p>AND</p>
+<p><strong>AND</strong></p>
 
 <p>Returns a new set with elements from the set and the other set.</p>
 
@@ -304,7 +315,7 @@
 
 <h3 id="difference">Difference</h3>
 
-<p>NOT</p>
+<p><strong>NOT</strong></p>
 
 <p>Returns a new set with elements in the set that are not in the other set.</p>
 
@@ -318,7 +329,7 @@
 
 <h3 id="symmetric-difference">Symmetric difference</h3>
 
-<p>XOR</p>
+<p><strong>XOR</strong></p>
 
 <p>Returns a new set with elements in either the set or the other set but not both.</p>
 
@@ -332,10 +343,9 @@
 
 <p>Similarly to list comprehensions, set comprehensions are also supported:</p>
 
-<p>```python 
-a = {x for x in ‘abracadabra’ if x not in ‘abc’}
-a</p>
-<h1 id="r-d">{‘r’, ‘d’}</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="s">'abracadabra'</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s">'abc'</span><span class="p">}</span>
+<span class="c1"># {'r', 'd'}
+</span></code></pre></div></div>
 
         
     </div>
