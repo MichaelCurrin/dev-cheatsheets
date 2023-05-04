@@ -14,6 +14,15 @@ path = "demo.csv"
 
 - [csv](https://docs.python.org/3/library/csv.html) module in docs.
 
+## Newlines
+
+To avoid issues with newlines, especially when writing out, it is a good ideas as per the documentation to specify an empty newline character before making your reader or writer object:
+
+```python
+with open('some.csv', newline='') as f:
+    # ...
+```
+
 ## Read CSV file
 
 Given data:
@@ -24,14 +33,14 @@ abc,def,123
 xyz,,1000
 ```
 
-### Read as a list of list
+### Read as a list of lists
 
 Using `csv.reader`:
 
 This approach will return each row as a list. You need to reference the columns by index. This is fragile as if the columns are reordered or deleted then you'll get the wrong data.
 
 ```python
-with open(path) as f_in:
+with open(path, newline='') as f_in:
     reader = csv.reader(f_in)
 ```
 
@@ -143,13 +152,20 @@ rows = [
   ["fizz", "buzz"]
 ]
 
-with open(path, 'w') as f_out:
+with open(path, 'w', newline='') as f_out:
     writer = csv.writer(f_out)
     write.writerow(header)
     write.writerows(rows)
 
 print(f"Wrote to {path}, rows: {len(rows)}")
 ```
+
+You can also write individual rows:
+
+```python
+write.writerow(row)
+```
+
 
 ### Write a list of dictionaries
 
