@@ -189,6 +189,14 @@
   <li><a href="https://docs.python.org/3/library/csv.html">csv</a> module in docs.</li>
 </ul>
 
+<h2 id="newlines">Newlines</h2>
+
+<p>To avoid issues with newlines, especially when writing out, it is a good ideas as per the documentation to specify an empty newline character before making your reader or writer object:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="s">'some.csv'</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s">''</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># ...
+</span></code></pre></div></div>
+
 <h2 id="read-csv-file">Read CSV file</h2>
 
 <p>Given data:</p>
@@ -198,13 +206,13 @@ abc,def,123
 xyz,,1000
 </code></pre></div></div>
 
-<h3 id="read-as-a-list-of-list">Read as a list of list</h3>
+<h3 id="read-as-a-list-of-lists">Read as a list of lists</h3>
 
 <p>Using <code class="language-plaintext highlighter-rouge">csv.reader</code>:</p>
 
 <p>This approach will return each row as a list. You need to reference the columns by index. This is fragile as if the columns are reordered or deleted then you’ll get the wrong data.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s">''</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
     <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="nf">reader</span><span class="p">(</span><span class="n">f_in</span><span class="p">)</span>
 </code></pre></div></div>
 
@@ -312,12 +320,17 @@ xyz,,1000
   <span class="p">[</span><span class="s">"fizz"</span><span class="p">,</span> <span class="s">"buzz"</span><span class="p">]</span>
 <span class="p">]</span>
 
-<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'w'</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s">''</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
     <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="nf">writer</span><span class="p">(</span><span class="n">f_out</span><span class="p">)</span>
     <span class="n">write</span><span class="p">.</span><span class="nf">writerow</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
     <span class="n">write</span><span class="p">.</span><span class="nf">writerows</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
 
 <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Wrote to </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s">, rows: </span><span class="si">{</span><span class="nf">len</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>You can also write individual rows:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">write</span><span class="p">.</span><span class="nf">writerow</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="write-a-list-of-dictionaries">Write a list of dictionaries</h3>
