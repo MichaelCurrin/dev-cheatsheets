@@ -168,7 +168,9 @@
 
     <div class="post-content">
         
-            <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mypy <span class="nt">--help</span>
+            <h2 id="help">Help</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mypy <span class="nt">--help</span>
 </code></pre></div></div>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usage: mypy [-h] [-v] [-V] [more options; see below]
             [-m MODULE] [-p PACKAGE] [-c PROGRAM_TEXT] [files ...]
@@ -184,6 +186,20 @@ For more information on getting started, see:
 
 - http://mypy.readthedocs.io/en/latest/getting_started.html
 ...
+</code></pre></div></div>
+
+<h2 id="usage">Usage</h2>
+
+<p>See also my <a href="https://github.com/MichaelCurrin/py-project-template/blob/master/Makefile">Makefile</a> in <code class="language-plaintext highlighter-rouge">py-project-template</code> repo on GitHub.</p>
+
+<p>Give a path such as a directory or a script:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mypy app_dir
+</code></pre></div></div>
+
+<p>You can provide multiple paths:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mypy app_dir tests
 </code></pre></div></div>
 
         
