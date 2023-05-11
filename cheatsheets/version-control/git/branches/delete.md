@@ -42,6 +42,8 @@ baz' | xargs git branch -D
 
 ### Delete multiple merged branches
 
+#### One at a time
+
 To delete all your **merged** local branches, aside from the current (started with asterisk like `* BRANCH_NAME`) and special branches (`main`, `master` and `develop`).
         
 Example branches list:
@@ -67,7 +69,7 @@ Tips for actions to follow before you run the commands:
 - Run `git fetch` (or `git pull`) to make sure you are up to date with the remote.
 - Push any in-progress work in case you need to recover a branch from the remote. Alteratively, recover a branch using `git reflog`.
     
-#### Approach using long grep
+#### All at once using long grep pattern
     
 Based on the ZSH alias `gbda`. Which probably stands for "git branch delete all".
 
@@ -89,7 +91,7 @@ Deleted branch bar (was bd31cf305).
 
 Using `command COMMAND` avoids using any aliases you have setup I guess.
     
-#### Approach using simle grep
+#### All at once using simple grep pattern
     
 Based on another source I found.
     
@@ -104,11 +106,11 @@ $ git branch -d $(git branch --no-color --merged \
 
 Note `egrep` (or `grep -E`) to handle the pipe pattern specifically.
    
-#### Aggressive simple delete
+#### Aggressively delete branches regardless of merged status
 
-This approach doesn't check whether a branch is deleted or not, it just deletes all branches besides the current one and the special branches.
+This approach doesn't check whether a branch is deleted or not, it just deletes **all** branches besides the current one and the special branches.
 
-A branch might actually be merged (such as using a PR merge button), but still not be recognized by Git as merged if there was a **squash** merge. 
+A branch might _actually_ be merged on the remote (such as using a PR merge button), but still not be _recognized_ by Git as merged like if there was a **squash** merge (which creates a new commit and so the PR commits do not appear on the main branch).
 
 In that case, modifiy one of the commands above:
 
