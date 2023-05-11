@@ -3,6 +3,9 @@ description: Mypy usage
 ---
 # CLI
 
+
+## Help
+
 ```sh
 mypy --help
 ```
@@ -21,4 +24,21 @@ For more information on getting started, see:
 
 - http://mypy.readthedocs.io/en/latest/getting_started.html
 ...
+```
+
+
+## Usage
+
+See also my [Makefile](https://github.com/MichaelCurrin/py-project-template/blob/master/Makefile) in `py-project-template` repo on GitHub.
+
+Give a path such as a directory or a script:
+
+```sh
+$ mypy app_dir
+```
+
+You can provide multiple paths:
+
+```sh
+$ mypy app_dir tests
 ```
