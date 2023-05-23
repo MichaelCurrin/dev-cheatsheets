@@ -1,11 +1,14 @@
 # Collapsible items
 
-In Markdown, how to create _sections_ which can expand and collapse again like an accordion.
+In Markdown, how to create _sections_ which can expand and collapse again, like an accordion.
 
 
 ## Format
 
 Here we use the `details` and `summary` HTML5 tags as HTML in Markdown, which works GitHub. No JavaScript or CSS needed.
+
+
+**Markdown code:**
 
 ```html
 <details>
@@ -16,12 +19,23 @@ BODY CONTENT
 </details>
 ```
 
+**Result:**
+
+<details>
+<summary>TITLE</summary>
+
+BODY CONTENT
+
+</details>
+
 
 ## Markdown and HTML
 
-Here we use HTML in the title and Markdown in the body.
+HTML code is also valid in Markdown documents, since everything gets converted to HTML when viewed.
 
-**HTML code:**
+Here we use HTML in the title of the accordion and Markdown in the body.
+
+**Markdown code:**
 
     <details>
     <summary><b>Preview title</b></summary>
@@ -39,12 +53,12 @@ Here we use HTML in the title and Markdown in the body.
 
     </details>
 
-<!-- Result omitted here as Jekyll can't handle it right. Though I can force it to HTML without Jekjyll and then add the result as HTML. -->
+<!-- Result omitted here as Jekyll can't handle it right. Though I could force it to HTML without Jekyll and then add the result as HTML. -->
 
 
 ## Jekyll site
 
-Example using [Jekyll][] templating. In particular, putting a codeblock inside the expandable section.
+Example of an accordion using [Jekyll][] static site generator. Here we put a codeblock inside the expandable section, to show how to combine HTML and Liquid.
 
 [Jekyll]: {% link cheatsheets/jekyll/index.md %}
 

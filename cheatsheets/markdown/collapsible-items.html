@@ -151,11 +151,13 @@
 
     <div class="post-content">
         
-            <p>In Markdown, how to create <em>sections</em> which can expand and collapse again like an accordion.</p>
+            <p>In Markdown, how to create <em>sections</em> which can expand and collapse again, like an accordion.</p>
 
 <h2 id="format">Format</h2>
 
 <p>Here we use the <code class="language-plaintext highlighter-rouge">details</code> and <code class="language-plaintext highlighter-rouge">summary</code> HTML5 tags as HTML in Markdown, which works GitHub. No JavaScript or CSS needed.</p>
+
+<p><strong>Markdown code:</strong></p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;details&gt;</span>
 <span class="nt">&lt;summary&gt;</span>TITLE<span class="nt">&lt;/summary&gt;</span>
@@ -165,11 +167,22 @@ BODY CONTENT
 <span class="nt">&lt;/details&gt;</span>
 </code></pre></div></div>
 
+<p><strong>Result:</strong></p>
+
+<details>
+<summary>TITLE</summary>
+
+BODY CONTENT
+
+</details>
+
 <h2 id="markdown-and-html">Markdown and HTML</h2>
 
-<p>Here we use HTML in the title and Markdown in the body.</p>
+<p>HTML code is also valid in Markdown documents, since everything gets converted to HTML when viewed.</p>
 
-<p><strong>HTML code:</strong></p>
+<p>Here we use HTML in the title of the accordion and Markdown in the body.</p>
+
+<p><strong>Markdown code:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;details&gt;
 &lt;summary&gt;&lt;b&gt;Preview title&lt;/b&gt;&lt;/summary&gt;
@@ -188,11 +201,11 @@ _Markdown is valid, but add empty lines to separate from the HTML tags._
 &lt;/details&gt;
 </code></pre></div></div>
 
-<!-- Result omitted here as Jekyll can't handle it right. Though I can force it to HTML without Jekjyll and then add the result as HTML. -->
+<!-- Result omitted here as Jekyll can't handle it right. Though I could force it to HTML without Jekyll and then add the result as HTML. -->
 
 <h2 id="jekyll-site">Jekyll site</h2>
 
-<p>Example using <a href="/dev-cheatsheets/cheatsheets/jekyll/">Jekyll</a> templating. In particular, putting a codeblock inside the expandable section.</p>
+<p>Example of an accordion using <a href="/dev-cheatsheets/cheatsheets/jekyll/">Jekyll</a> static site generator. Here we put a codeblock inside the expandable section, to show how to combine HTML and Liquid.</p>
 
 <p><strong>Sample Jekyll/Liquid code</strong></p>
 
