@@ -153,9 +153,9 @@
         
             <p>In Markdown, how to create <em>sections</em> which can expand and collapse again, like an accordion.</p>
 
-<h2 id="format">Format</h2>
+<h2 id="general-format">General format</h2>
 
-<p>Here we use the <code class="language-plaintext highlighter-rouge">details</code> and <code class="language-plaintext highlighter-rouge">summary</code> HTML5 tags as HTML in Markdown, which works GitHub. No JavaScript or CSS needed.</p>
+<p>Here we use the <code class="language-plaintext highlighter-rouge">details</code> and <code class="language-plaintext highlighter-rouge">summary</code> HTML5 tags as HTML in Markdown, which works GitHub. No additional JavaScript or CSS needed.</p>
 
 <p><strong>Markdown code:</strong></p>
 
@@ -167,6 +167,10 @@ BODY CONTENT
 <span class="nt">&lt;/details&gt;</span>
 </code></pre></div></div>
 
+<p><br /></p>
+
+<p>When you click to expand the accordion, the attribute will be added to the outer element as: <code class="language-plaintext highlighter-rouge">&lt;details open=""&gt;</code></p>
+
 <p><strong>Result:</strong></p>
 
 <details>
@@ -176,9 +180,15 @@ BODY CONTENT
 
 </details>
 
+<p><br /></p>
+
+<hr />
+
 <h2 id="markdown-and-html">Markdown and HTML</h2>
 
-<p>HTML code is also valid in Markdown documents, since everything gets converted to HTML when viewed.</p>
+<p><em>Warning: This approach works well in GitHub when it renders Markdown as HTML, but when Jekyll will renders the code it keeps the Markdown as plain text and does not render it as formatted Markdown.</em></p>
+
+<p>HTML code is  valid in Markdown documents, since everything gets converted to HTML when viewed.</p>
 
 <p>Here we use HTML in the title of the accordion and Markdown in the body.</p>
 
@@ -195,7 +205,22 @@ BODY CONTENT
 <span class="nt">&lt;/details&gt;</span>
 </code></pre></div></div>
 
-<p><strong>Result:</strong></p>
+<p><br /></p>
+
+<p><strong>Result when rendered with GitHub:</strong></p>
+
+<details>
+<summary><b>Preview title</b></summary>
+<p data-sourcepos="57:1-57:72" dir="auto"><em>Markdown is valid, but add empty lines to separate from the HTML tags.</em></p>
+<ul data-sourcepos="59:1-61:0" dir="auto">
+<li data-sourcepos="59:1-59:8">Bullet</li>
+<li data-sourcepos="60:1-61:0">Points</li>
+</ul>
+</details>
+
+<p><br /></p>
+
+<p><strong>Result when rendered with Jekyll:</strong></p>
 
 <details>
 <summary><b>Preview title</b></summary>
@@ -206,6 +231,10 @@ _Markdown is valid, but add empty lines to separate from the HTML tags._
 - Points
 
 </details>
+
+<p><br /></p>
+
+<hr />
 
 <h2 id="jekyll-site">Jekyll site</h2>
 
@@ -226,6 +255,8 @@ puts 'Expanded message'
 
 &lt;/details&gt;
 </code></pre></div></div>
+
+<p><br /></p>
 
 <p><strong>Sample rendered HTML</strong></p>
 
