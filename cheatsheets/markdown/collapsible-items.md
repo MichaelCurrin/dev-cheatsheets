@@ -37,28 +37,36 @@ Here we use HTML in the title of the accordion and Markdown in the body.
 
 **Markdown code:**
 
-    <details>
-    <summary><b>Preview title</b></summary>
+```markdown
+<details>
+<summary><b>Preview title</b></summary>
 
-    _Markdown is valid, but add empty lines to separate from the HTML tags._
+_Markdown is valid, but add empty lines to separate from the HTML tags._
 
-    - Bullet
-    - Points
+- Bullet
+- Points
 
-    ```json
-    {
-        "codeblock": "demo"
-    }
-    ```
+</details>
+```
 
-    </details>
+**Result:**
 
-<!-- Result omitted here as Jekyll can't handle it right. Though I could force it to HTML without Jekyll and then add the result as HTML. -->
+<details>
+<summary><b>Preview title</b></summary>
+
+_Markdown is valid, but add empty lines to separate from the HTML tags._
+
+- Bullet
+- Points
+
+</details>
 
 
 ## Jekyll site
 
-Example of an accordion using [Jekyll][] static site generator. Here we put a codeblock inside the expandable section, to show how to combine HTML and Liquid.
+Example of writing Liquid code inside an accordion, when using the [Jekyll][] static site generator.
+
+Here we put a codeblock inside the expandable section, to show how to combine HTML and Liquid. Since is needed in particular for putting codeblocks inside HTML, since using trick backticks or indentation just gets shown literally and not converted to Markdown.
 
 [Jekyll]: {% link cheatsheets/jekyll/index.md %}
 
@@ -83,7 +91,7 @@ puts 'Expanded message'
 
 **Sample rendered HTML**
 
-_Using the code above in a Jekyll site, here is the result after building to plain HTML._
+Using the code above in a Jekyll site, here is the result after building to plain HTML:
 
 <details>
 <summary>Preview</summary>
@@ -96,9 +104,7 @@ _Using the code above in a Jekyll site, here is the result after building to pla
 
 <br>
 
-**Sample HTML for displaying output**
-
-_Here is the rendered result above shown in a code block below, for clarity. The only change was wrapping, for readability._
+If you want to see the HTML code that was generated, here it is. For readability, the output was wrapped.
 
 ```html
 <details>
@@ -112,7 +118,3 @@ _Here is the rendered result above shown in a code block below, for clarity. The
     </pre>
 </figure>
 ```
-
-**Note**
-
-To explain the approach here - if you want to use Jekyll templating, Markdown does **not** get picked up here correctly. So if you want a codeblock in your expanded block, you need to use HTML or the `highlight` Liquid tag. Whether using triple backticks or indentation for a codeblock inside the details tag, those just end up being used literally.
