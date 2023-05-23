@@ -168,17 +168,17 @@
 
 <h2 id="basic">Basic</h2>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%-</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="nv">my_var</span><span class="w"> </span><span class="p">-%}</span>
-/api/<span class="p">{{</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>.json
-<span class="p">{%-</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="p">-%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%-</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="nv">my_var</span><span class="w"> </span><span class="cp">-%}</span>
+/api/<span class="cp">{{</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="cp">}}</span>.json
+<span class="cp">{%-</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="cp">-%}</span>
 </code></pre></div></div>
 
 <p>You can do multiple lines.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%-</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="nv">foo</span><span class="w"> </span><span class="p">-%}</span>
-abc <span class="p">{{</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span> def
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%-</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="nv">foo</span><span class="w"> </span><span class="cp">-%}</span>
+abc <span class="cp">{{</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="cp">}}</span> def
 xyz 123
-<span class="p">{%-</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="p">-%}</span>
+<span class="cp">{%-</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="cp">-%}</span>
 </code></pre></div></div>
 
 <h2 id="trim-whitespace">Trim whitespace</h2>
@@ -198,16 +198,16 @@ xyz 123
 
 <p>So trim it.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%-</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="nv">my_data</span><span class="w"> </span><span class="p">-%}</span>
-/api/<span class="p">{{</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{%-</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="p">-%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%-</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="nv">my_data</span><span class="w"> </span><span class="cp">-%}</span>
+/api/<span class="cp">{{</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%-</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="cp">-%}</span>
 </code></pre></div></div>
 
 <p>Note use of <code class="language-plaintext highlighter-rouge">-</code> before and after the value, to avoid the newlines. Using <code class="language-plaintext highlighter-rouge">-</code> on the outer of the entire capture doesn’t work.</p>
 
 <p>Or</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="nv">my_data</span><span class="w"> </span><span class="p">%}</span>/api/<span class="p">{{</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="p">}}{%</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="nv">my_data</span><span class="w"> </span><span class="cp">%}</span>/api/<span class="cp">{{</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="cp">}}{%</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 

@@ -199,9 +199,9 @@
 
 <h2 id="get-categories">Get categories</h2>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.categories</span><span class="w"> </span><span class="p">%}</span>
-- <span class="p">{{</span><span class="w"> </span><span class="nv">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}</span>
+- <span class="cp">{{</span><span class="w"> </span><span class="nv">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 <h2 id="get-categories-and-their-posts">Get categories and their posts</h2>
@@ -209,20 +209,20 @@
 <p>Unpack a hash where <code class="language-plaintext highlighter-rouge">c[0]</code> is the key (the category name) and <code class="language-plaintext highlighter-rouge">c[1]</code> is the value (the array of posts).</p>
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ul&gt;
-    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.categories</span><span class="w"> </span><span class="p">%}</span>
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}</span>
         &lt;li&gt;
-            <span class="p">{{</span><span class="w"> </span><span class="nv">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">}}</span>
+            <span class="cp">{{</span><span class="w"> </span><span class="nv">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="cp">}}</span>
             &lt;ul&gt;
-                <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">p</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">c[1]</span><span class="w"> </span><span class="p">%}</span>
+                <span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">p</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="cp">%}</span>
                     &lt;li&gt;
-                        &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">p</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="p">}}</span>"&gt;
-                            <span class="p">{{</span><span class="w"> </span><span class="nv">p</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+                        &lt;a href="<span class="cp">{{</span><span class="w"> </span><span class="nv">p</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="cp">}}</span>"&gt;
+                            <span class="cp">{{</span><span class="w"> </span><span class="nv">p</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
                         &lt;/a&gt;
                     &lt;/li&gt;
-                <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+                <span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
             &lt;/ul&gt;
         &lt;/li&gt;
-    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
 &lt;/ul&gt;
 </code></pre></div></div>
 
@@ -246,9 +246,9 @@
 
 <h2 id="get-posts-in-target-category">Get posts in target category</h2>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">p</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.categories.foo</span><span class="w"> </span><span class="na">limit</span><span class="o">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">%}</span>
-- <span class="p">{{</span><span class="w"> </span><span class="nv">p</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">p</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">categories</span><span class="p">.</span><span class="nv">foo</span><span class="w"> </span><span class="na">limit</span><span class="o">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="cp">%}</span>
+- <span class="cp">{{</span><span class="w"> </span><span class="nv">p</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 

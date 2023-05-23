@@ -165,24 +165,24 @@
         
             <h2 id="repeating-strings">Repeating strings</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="s">'---'</span><span class="o">*</span><span class="mi">10</span>
-<span class="s">'------------------------------'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">---</span><span class="sh">'</span><span class="o">*</span><span class="mi">10</span>
+<span class="sh">'</span><span class="s">------------------------------</span><span class="sh">'</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s">'---'</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span>
-<span class="p">[</span><span class="s">'---'</span><span class="p">,</span> <span class="s">'---'</span><span class="p">,</span> <span class="s">'---'</span><span class="p">,</span> <span class="s">'---'</span><span class="p">,</span> <span class="s">'---'</span><span class="p">,</span> <span class="s">'---'</span><span class="p">,</span> <span class="s">'---'</span><span class="p">,</span> <span class="s">'---'</span><span class="p">,</span> <span class="s">'---'</span><span class="p">,</span> <span class="s">'---'</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="p">[</span><span class="sh">'</span><span class="s">---</span><span class="sh">'</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span>
+<span class="p">[</span><span class="sh">'</span><span class="s">---</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">---</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">---</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">---</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">---</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">---</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">---</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">---</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">---</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">---</span><span class="sh">'</span><span class="p">]</span>
 
-<span class="o">|</span> <span class="o">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="s">" | "</span><span class="p">.</span><span class="nf">join</span><span class="p">([</span><span class="s">'---'</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="p">))</span> <span class="o">|</span>
+<span class="o">|</span> <span class="gp">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s"> | </span><span class="sh">"</span><span class="p">.</span><span class="nf">join</span><span class="p">([</span><span class="sh">'</span><span class="s">---</span><span class="sh">'</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="p">))</span> <span class="o">|</span>
 <span class="o">|</span> <span class="o">-----------</span> <span class="o">|</span> <span class="o">-------------------</span> <span class="o">||</span>  <span class="o">|</span>  <span class="o">|</span>  <span class="o">|</span>  <span class="o">|</span>  <span class="o">|</span>  <span class="o">|</span>  <span class="o">|</span>
 </code></pre></div></div>
 
 <h2 id="convert-strings-to-a-markdown-table">Convert strings to a Markdown table</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">header</span> <span class="o">=</span> <span class="s">"a,b,c"</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s">','</span><span class="p">)</span>
-<span class="n">row</span> <span class="o">=</span> <span class="s">"1,2,3"</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s">","</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">header</span> <span class="o">=</span> <span class="sh">"</span><span class="s">a,b,c</span><span class="sh">"</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sh">'</span><span class="s">,</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">row</span> <span class="o">=</span> <span class="sh">"</span><span class="s">1,2,3</span><span class="sh">"</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sh">"</span><span class="s">,</span><span class="sh">"</span><span class="p">)</span>
 
-<span class="nf">print</span><span class="p">(</span><span class="s">" | "</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">header</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="s">" | "</span><span class="p">.</span><span class="nf">join</span><span class="p">([</span><span class="s">'---'</span><span class="p">]</span><span class="o">*</span><span class="nf">len</span><span class="p">(</span><span class="n">header</span><span class="p">)))</span>
-<span class="nf">print</span><span class="p">(</span><span class="s">" | "</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s"> | </span><span class="sh">"</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">header</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s"> | </span><span class="sh">"</span><span class="p">.</span><span class="nf">join</span><span class="p">([</span><span class="sh">'</span><span class="s">---</span><span class="sh">'</span><span class="p">]</span><span class="o">*</span><span class="nf">len</span><span class="p">(</span><span class="n">header</span><span class="p">)))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s"> | </span><span class="sh">"</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
 </code></pre></div></div>
 
 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| a   | b   | c   |
@@ -209,8 +209,8 @@
 
 <h2 id="convert-strings-to-a-dict">Convert strings to a dict</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">header</span> <span class="o">=</span> <span class="s">"a,b,c"</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s">','</span><span class="p">)</span>
-<span class="n">row</span> <span class="o">=</span> <span class="s">"1,2,3"</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s">","</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">header</span> <span class="o">=</span> <span class="sh">"</span><span class="s">a,b,c</span><span class="sh">"</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sh">'</span><span class="s">,</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">row</span> <span class="o">=</span> <span class="sh">"</span><span class="s">1,2,3</span><span class="sh">"</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sh">"</span><span class="s">,</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="n">row_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">row</span><span class="p">)}</span>
 

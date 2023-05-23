@@ -197,7 +197,7 @@
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="s1">'jekyll'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">append</span><span class="p">:</span><span class="w"> </span><span class="s1">'.jpg'</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="s1">'jekyll'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">append</span><span class="p">:</span><span class="w"> </span><span class="s1">'.jpg'</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -207,7 +207,7 @@
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="s1">'Jekyll'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">prepend</span><span class="p">:</span><span class="w"> </span><span class="s1">'I love '</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="s1">'Jekyll'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">prepend</span><span class="p">:</span><span class="w"> </span><span class="s1">'I love '</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -220,9 +220,9 @@
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="s2">"hello"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slice</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}}</span> &lt;!-- h --&gt;
-<span class="p">{{</span><span class="w"> </span><span class="s2">"hello"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slice</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}}</span> &lt;!-- e --&gt;
-<span class="p">{{</span><span class="w"> </span><span class="s2">"hello"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slice</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">}}</span> &lt;!-- ell --&gt;</code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="s2">"hello"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slice</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="cp">}}</span> &lt;!-- h --&gt;
+<span class="cp">{{</span><span class="w"> </span><span class="s2">"hello"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slice</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="cp">}}</span> &lt;!-- e --&gt;
+<span class="cp">{{</span><span class="w"> </span><span class="s2">"hello"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slice</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="cp">}}</span> &lt;!-- ell --&gt;</code></pre></figure>
 
         
     </li>
@@ -238,8 +238,8 @@
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">my_var</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">jsonify</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">my_data</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">jsonify</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="nv">my_var</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">jsonify</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">my_data</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">jsonify</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -252,8 +252,8 @@
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">my_var</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">inspect</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">page</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">inspect</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="nv">my_var</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">inspect</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">page</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">inspect</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -269,8 +269,8 @@
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">new_var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">foo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">default</span><span class="p">:</span><span class="w"> </span><span class="s1">'fallback'</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">new_var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">bar</span><span class="p">.</span><span class="nv">buzz</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">default</span><span class="p">:</span><span class="w"> </span><span class="s1">'fallback'</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">new_var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">foo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">default</span><span class="p">:</span><span class="w"> </span><span class="s1">'fallback'</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">new_var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">bar</span><span class="p">.</span><span class="nv">buzz</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">default</span><span class="p">:</span><span class="w"> </span><span class="s1">'fallback'</span><span class="w"> </span><span class="cp">%}</span></code></pre></figure>
 
         
     </li>
@@ -331,7 +331,7 @@
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">my_str</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">split</span><span class="p">:</span><span class="w"> </span><span class="s1">','</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="nv">my_str</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">split</span><span class="p">:</span><span class="w"> </span><span class="s1">','</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -386,7 +386,7 @@
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="s2">"&lt;p&gt;Jekyll&lt;/p&gt;"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">escape</span><span class="w"> </span><span class="p">}}</span>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="s2">"&lt;p&gt;Jekyll&lt;/p&gt;"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">escape</span><span class="w"> </span><span class="cp">}}</span>
 
 Result:
 
@@ -403,7 +403,7 @@ Result:
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="s2">"foo, bar \baz?"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">uri_escape</span><span class="w"> </span><span class="p">}}</span>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="s2">"foo, bar \baz?"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">uri_escape</span><span class="w"> </span><span class="cp">}}</span>
 
 Result:
 
@@ -429,7 +429,7 @@ foo,%20bar%20%5Cbaz?</code></pre></figure>
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="s2">"The _config.yml file"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slugify</span><span class="w"> </span><span class="p">}}</span> &lt;!-- the-config-yml-file --&gt;</code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="s2">"The _config.yml file"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slugify</span><span class="w"> </span><span class="cp">}}</span> &lt;!-- the-config-yml-file --&gt;</code></pre></figure>
 
         
     </li>
@@ -445,7 +445,7 @@ foo,%20bar%20%5Cbaz?</code></pre></figure>
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">join</span><span class="p">:</span><span class="w"> </span><span class="s1">', '</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">join</span><span class="p">:</span><span class="w"> </span><span class="s1">', '</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -455,7 +455,7 @@ foo,%20bar%20%5Cbaz?</code></pre></figure>
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">first</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">first</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -465,7 +465,7 @@ foo,%20bar%20%5Cbaz?</code></pre></figure>
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">last</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">last</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -485,7 +485,7 @@ foo:
 bar:
   - 123
 ---
-<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">foo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">concat</span><span class="p">:</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">bar</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">inspect</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">foo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">concat</span><span class="p">:</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">bar</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">inspect</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -501,10 +501,10 @@ bar:
 <figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">---
 foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
 ---
-<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">foo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slice</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}}</span> &lt;!-- 1st element --&gt;
-<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">foo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slice</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">}}</span> &lt;!-- 4th element --&gt;
-<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">foo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slice</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">}}</span> &lt;!-- First three elements --&gt;
-<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">foo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slice</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">}}</span> &lt;!-- First 3 elements starting at 2nd element --&gt;</code></pre></figure>
+<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">foo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slice</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="cp">}}</span> &lt;!-- 1st element --&gt;
+<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">foo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slice</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="cp">}}</span> &lt;!-- 4th element --&gt;
+<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">foo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slice</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="cp">}}</span> &lt;!-- First three elements --&gt;
+<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">foo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slice</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="cp">}}</span> &lt;!-- First 3 elements starting at 2nd element --&gt;</code></pre></figure>
 
         
     </li>
@@ -514,7 +514,7 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">map</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_attribute"</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">map</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_attribute"</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -527,8 +527,8 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s2">"category"</span><span class="p">,</span><span class="w"> </span><span class="s2">"foo"</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">people</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s2">"school"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Stanford"</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s2">"category"</span><span class="p">,</span><span class="w"> </span><span class="s2">"foo"</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">people</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s2">"school"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Stanford"</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -541,9 +541,9 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">people</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where_exp</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> </span><span class="s2">"item.name contains 'Jo'"</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">people</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where_exp</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> </span><span class="s2">"item.year &gt;= 2016"</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">people</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where_exp</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> </span><span class="s2">"item.school != "</span><span class="nv">Stanford</span>"<span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">people</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where_exp</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> </span><span class="s2">"item.name contains 'Jo'"</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">people</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where_exp</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> </span><span class="s2">"item.year &gt;= 2016"</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">people</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where_exp</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> </span><span class="s2">"item.school != "</span><span class="nv">Stanford</span>"<span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -556,7 +556,7 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">people</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">group_by</span><span class="p">:</span><span class="w"> </span><span class="nv">country</span><span class="w"> </span><span class="p">}}</span>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">people</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">group_by</span><span class="p">:</span><span class="w"> </span><span class="nv">country</span><span class="w"> </span><span class="cp">}}</span>
 &lt;!--
   Source:
       [ [name: 'Joe', country: 'England'], [name: 'Sally', country: 'England']
@@ -572,9 +572,9 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">people</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">group_by_exp</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> </span><span class="s2">"item.name | size"</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">people</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">group_by_exp</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> </span><span class="s2">"item.year | modulo: 2"</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">people</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">group_by_exp</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> </span><span class="s2">"item.country | replace: 'rd', 'ry' "</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">people</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">group_by_exp</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> </span><span class="s2">"item.name | size"</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">people</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">group_by_exp</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> </span><span class="s2">"item.year | modulo: 2"</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">people</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">group_by_exp</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> </span><span class="s2">"item.country | replace: 'rd', 'ry' "</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -584,7 +584,7 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">size</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">size</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -594,7 +594,7 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">reverse</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">reverse</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -604,8 +604,8 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">sort</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">sort</span><span class="p">:</span><span class="w"> </span><span class="s1">'author'</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">sort</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">sort</span><span class="p">:</span><span class="w"> </span><span class="s1">'author'</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -618,8 +618,8 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"zebra, octopus, giraffe, Sally Snake"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">split</span><span class="p">:</span><span class="w"> </span><span class="s2">", "</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">sort_natural</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">join</span><span class="p">:</span><span class="w"> </span><span class="s2">", "</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"zebra, octopus, giraffe, Sally Snake"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">split</span><span class="p">:</span><span class="w"> </span><span class="s2">", "</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">sort_natural</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">join</span><span class="p">:</span><span class="w"> </span><span class="s2">", "</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -632,8 +632,8 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">uniq</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">sort</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">uniq</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">uniq</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">sort</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">uniq</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -646,7 +646,7 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">push</span><span class="p">:</span><span class="w"> </span><span class="s1">'my value '</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">push</span><span class="p">:</span><span class="w"> </span><span class="s1">'my value '</span><span class="w"> </span><span class="cp">%}</span></code></pre></figure>
 
         
     </li>
@@ -659,8 +659,8 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">pop</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">pop</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">pop</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">pop</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="cp">%}</span></code></pre></figure>
 
         
     </li>
@@ -673,7 +673,7 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">unshift</span><span class="p">:</span><span class="w"> </span><span class="s1">'my value '</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">unshift</span><span class="p">:</span><span class="w"> </span><span class="s1">'my value '</span><span class="w"> </span><span class="cp">%}</span></code></pre></figure>
 
         
     </li>
@@ -686,8 +686,8 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">shift</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">shift</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">shift</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">shift</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="cp">%}</span></code></pre></figure>
 
         
     </li>
@@ -700,7 +700,7 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">site_categories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">pages</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">map</span><span class="p">:</span><span class="w"> </span><span class="s2">"category"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">compact</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">site_categories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">pages</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">map</span><span class="p">:</span><span class="w"> </span><span class="s2">"category"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">compact</span><span class="w"> </span><span class="cp">%}</span></code></pre></figure>
 
         
     </li>
@@ -716,7 +716,7 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">plus</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">plus</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="cp">}}</span></code></pre></figure>
 
         
     </li>
@@ -777,7 +777,7 @@ foo: ['abc', 'def', 'ghi', 'jkl', 'mno' ]
         
         
             
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">at_least</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">}}</span> &lt;!-- 3 -- &gt;</code></pre></figure>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{{</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">at_least</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="cp">}}</span> &lt;!-- 3 -- &gt;</code></pre></figure>
 
         
     </li>

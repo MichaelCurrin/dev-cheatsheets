@@ -212,18 +212,18 @@
 
 <h3 id="create-instance">Create instance</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">engine</span> <span class="o">=</span> <span class="nf">create_engine</span><span class="p">(</span><span class="s">'sqlite:///bookstore.db'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">engine</span> <span class="o">=</span> <span class="nf">create_engine</span><span class="p">(</span><span class="sh">'</span><span class="s">sqlite:///bookstore.db</span><span class="sh">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Or</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">db_path</span> <span class="o">=</span> <span class="s">"bookstore.db"</span>
-<span class="n">engine</span> <span class="o">=</span> <span class="nf">create_engine</span><span class="p">(</span><span class="sa">f</span><span class="s">"sqlite:///</span><span class="si">{</span><span class="n">db_path</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">db_path</span> <span class="o">=</span> <span class="sh">"</span><span class="s">bookstore.db</span><span class="sh">"</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="nf">create_engine</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">sqlite:///</span><span class="si">{</span><span class="n">db_path</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="raw-sql">Raw SQL</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span> <span class="o">=</span> <span class="s">"SELECT * FROM tweets"</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span> <span class="o">=</span> <span class="sh">"</span><span class="s">SELECT * FROM tweets</span><span class="sh">"</span>
 
 <span class="k">with</span> <span class="nf">get_connection</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
     <span class="n">query</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
@@ -239,13 +239,13 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">metadata</span> <span class="o">=</span> <span class="nc">MetaData</span><span class="p">()</span>
 
-<span class="n">books</span> <span class="o">=</span> <span class="nc">Table</span><span class="p">(</span><span class="s">'book'</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span>
-    <span class="nc">Column</span><span class="p">(</span><span class="s">'id'</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span>
-    <span class="nc">Column</span><span class="p">(</span><span class="s">'title'</span><span class="p">,</span> <span class="n">String</span><span class="p">),</span>
-    <span class="nc">Column</span><span class="p">(</span><span class="s">'primary_author'</span><span class="p">,</span> <span class="n">String</span><span class="p">),</span>
+<span class="n">books</span> <span class="o">=</span> <span class="nc">Table</span><span class="p">(</span><span class="sh">'</span><span class="s">book</span><span class="sh">'</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span>
+    <span class="nc">Column</span><span class="p">(</span><span class="sh">'</span><span class="s">id</span><span class="sh">'</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span>
+    <span class="nc">Column</span><span class="p">(</span><span class="sh">'</span><span class="s">title</span><span class="sh">'</span><span class="p">,</span> <span class="n">String</span><span class="p">),</span>
+    <span class="nc">Column</span><span class="p">(</span><span class="sh">'</span><span class="s">primary_author</span><span class="sh">'</span><span class="p">,</span> <span class="n">String</span><span class="p">),</span>
 <span class="p">)</span>
 
-<span class="n">engine</span> <span class="o">=</span> <span class="nf">create_engine</span><span class="p">(</span><span class="s">'sqlite:///bookstore.db'</span><span class="p">)</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="nf">create_engine</span><span class="p">(</span><span class="sh">'</span><span class="s">sqlite:///bookstore.db</span><span class="sh">'</span><span class="p">)</span>
 <span class="n">metadata</span><span class="p">.</span><span class="nf">create_all</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
 </code></pre></div></div>
 
@@ -253,10 +253,10 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sqlalchemy.sql</span> <span class="kn">import</span> <span class="n">table</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">select</span>
 
-<span class="n">t</span> <span class="o">=</span> <span class="nf">table</span><span class="p">(</span><span class="s">'t'</span><span class="p">,</span> <span class="nf">column</span><span class="p">(</span><span class="s">'x'</span><span class="p">))</span>
+<span class="n">t</span> <span class="o">=</span> <span class="nf">table</span><span class="p">(</span><span class="sh">'</span><span class="s">t</span><span class="sh">'</span><span class="p">,</span> <span class="nf">column</span><span class="p">(</span><span class="sh">'</span><span class="s">x</span><span class="sh">'</span><span class="p">))</span>
 <span class="n">s</span> <span class="o">=</span> <span class="nf">select</span><span class="p">(</span><span class="n">t</span><span class="p">).</span><span class="nf">where</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">c</span><span class="p">.</span><span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span>
 
-<span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="nf">compile</span><span class="p">(</span><span class="n">compile_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s">"literal_binds"</span><span class="p">:</span> <span class="bp">True</span><span class="p">}))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="nf">compile</span><span class="p">(</span><span class="n">compile_kwargs</span><span class="o">=</span><span class="p">{</span><span class="sh">"</span><span class="s">literal_binds</span><span class="sh">"</span><span class="p">:</span> <span class="bp">True</span><span class="p">}))</span>
 </code></pre></div></div>
 
 <h3 id="stringify-query">Stringify query</h3>
@@ -266,7 +266,7 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sqlalchemy</span> <span class="kn">import</span> <span class="n">table</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">select</span>
 
 
-<span class="n">t</span> <span class="o">=</span> <span class="nf">table</span><span class="p">(</span><span class="s">'my_table'</span><span class="p">,</span> <span class="nf">column</span><span class="p">(</span><span class="s">'x'</span><span class="p">))</span>
+<span class="n">t</span> <span class="o">=</span> <span class="nf">table</span><span class="p">(</span><span class="sh">'</span><span class="s">my_table</span><span class="sh">'</span><span class="p">,</span> <span class="nf">column</span><span class="p">(</span><span class="sh">'</span><span class="s">x</span><span class="sh">'</span><span class="p">))</span>
 <span class="n">statement</span> <span class="o">=</span> <span class="nf">select</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 
 <span class="nf">str</span><span class="p">(</span><span class="n">statement</span><span class="p">)</span>
@@ -286,22 +286,22 @@
 
 
 <span class="k">def</span> <span class="nf">get_connection</span><span class="p">():</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     Create and return a connection to the configured SQLite database.`
-    """</span>
+    </span><span class="sh">"""</span>
     <span class="k">assert</span> <span class="n">os</span><span class="p">.</span><span class="nf">access</span><span class="p">(</span><span class="n">config</span><span class="p">.</span><span class="n">DB_PATH</span><span class="p">,</span> <span class="n">os</span><span class="p">.</span><span class="n">R_OK</span><span class="p">),</span> <span class="p">(</span>
-        <span class="s">"Create the database or symlink then restart the application."</span>
-        <span class="s">" Expected path: {}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">config</span><span class="p">.</span><span class="n">DB_PATH</span><span class="p">)</span>
+        <span class="sh">"</span><span class="s">Create the database or symlink then restart the application.</span><span class="sh">"</span>
+        <span class="sh">"</span><span class="s"> Expected path: {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">config</span><span class="p">.</span><span class="n">DB_PATH</span><span class="p">)</span>
     <span class="p">)</span>
-    <span class="n">sql_engine</span> <span class="o">=</span> <span class="nf">create_engine</span><span class="p">(</span><span class="s">"sqlite:///{}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">config</span><span class="p">.</span><span class="n">DB_PATH</span><span class="p">))</span>
+    <span class="n">sql_engine</span> <span class="o">=</span> <span class="nf">create_engine</span><span class="p">(</span><span class="sh">"</span><span class="s">sqlite:///{}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">config</span><span class="p">.</span><span class="n">DB_PATH</span><span class="p">))</span>
 
     <span class="k">return</span> <span class="n">sql_engine</span><span class="p">.</span><span class="nf">connect</span><span class="p">()</span>
 
 
 <span class="k">def</span> <span class="nf">fetch_data</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     Expect a SQL query, execute it and return rows and field names.
-    """</span>
+    </span><span class="sh">"""</span>
     <span class="k">with</span> <span class="nf">get_connection</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
         <span class="n">query</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
         <span class="n">rows</span> <span class="o">=</span> <span class="n">query</span><span class="p">.</span><span class="n">cursor</span><span class="p">.</span><span class="nf">fetchall</span><span class="p">()</span>

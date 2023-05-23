@@ -195,10 +195,10 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">configparser</span>
 
-<span class="n">config</span> <span class="o">=</span> <span class="n">configparser</span><span class="p">.</span><span class="nc">ConfigParser</span><span class="p">()</span>                                <span class="n">config</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="s">"config.ini"</span><span class="p">)</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">configparser</span><span class="p">.</span><span class="nc">ConfigParser</span><span class="p">()</span>                                <span class="n">config</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="sh">"</span><span class="s">config.ini</span><span class="sh">"</span><span class="p">)</span>
 
-<span class="n">config</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">'DATABASE'</span><span class="p">,</span> <span class="s">'HOST'</span><span class="p">)</span>
-<span class="n">config</span><span class="p">[</span><span class="s">'DATABASE'</span><span class="p">][</span><span class="s">'HOST'</span><span class="p">]</span>
+<span class="n">config</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">DATABASE</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">HOST</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">config</span><span class="p">[</span><span class="sh">'</span><span class="s">DATABASE</span><span class="sh">'</span><span class="p">][</span><span class="sh">'</span><span class="s">HOST</span><span class="sh">'</span><span class="p">]</span>
 </code></pre></div></div>
 
 <h3 id="validation">Validation</h3>
@@ -211,7 +211,7 @@
   <p>This method is case-insensitive and recognizes Boolean values from <code class="language-plaintext highlighter-rouge">'yes'</code>/<code class="language-plaintext highlighter-rouge">'no'</code>, <code class="language-plaintext highlighter-rouge">'on'</code>/<code class="language-plaintext highlighter-rouge">'off'</code>, <code class="language-plaintext highlighter-rouge">'true'</code>/<code class="language-plaintext highlighter-rouge">'false'</code> and <code class="language-plaintext highlighter-rouge">'1'</code>/<code class="language-plaintext highlighter-rouge">'0'</code> <a href="https://docs.python.org/3/library/configparser.html#id14">1</a>.</p>
 </blockquote>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="p">.</span><span class="nf">getboolean</span><span class="p">(</span><span class="s">'my-key'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="p">.</span><span class="nf">getboolean</span><span class="p">(</span><span class="sh">'</span><span class="s">my-key</span><span class="sh">'</span><span class="p">)</span>
 <span class="c1"># =&gt; False
 </span></code></pre></div></div>
 
@@ -222,8 +222,8 @@
 <p>From the <a href="https://docs.python.org/3/library/configparser.html#configparser.ConfigParser.read">read</a> method in docs.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span>
-	<span class="p">[</span><span class="s">'site.cfg'</span><span class="p">,</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">expanduser</span><span class="p">(</span><span class="s">'~/.myapp.cfg'</span><span class="p">)],</span>
-        <span class="n">encoding</span><span class="o">=</span><span class="s">'cp1250'</span>
+	<span class="p">[</span><span class="sh">'</span><span class="s">site.cfg</span><span class="sh">'</span><span class="p">,</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">expanduser</span><span class="p">(</span><span class="sh">'</span><span class="s">~/.myapp.cfg</span><span class="sh">'</span><span class="p">)],</span>
+        <span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">cp1250</span><span class="sh">'</span>
 <span class="p">)</span>
 </code></pre></div></div>
 

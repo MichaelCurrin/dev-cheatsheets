@@ -247,7 +247,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="nf">if </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Re-declared in the outer scope, overriding `foo` everywhere.</span>
   <span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">;</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">)</span>
@@ -262,7 +262,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">foo</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="nf">if </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Declared only in inner scope.</span>
   <span class="kd">let</span> <span class="nx">foo</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">;</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">)</span>

@@ -185,8 +185,8 @@ input(prompt=None, /)
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> <span class="n">answer</span> <span class="o">=</span> <span class="nf">input</span><span class="p">()</span>
 <span class="n">Hello</span><span class="p">,</span> <span class="n">World</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">answer</span>
-<span class="s">'Hello, World'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">answer</span>
+<span class="sh">'</span><span class="s">Hello, World</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Or as a script:</p>
@@ -197,11 +197,11 @@ input(prompt=None, /)
 
 <p>Example with a prompt. Note the space after the prompt text.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">answer</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="s">"What is your age? "</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">answer</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">What is your age? </span><span class="sh">"</span><span class="p">)</span>
 <span class="n">What</span> <span class="ow">is</span> <span class="n">your</span> <span class="n">age</span><span class="err">?</span> <span class="mi">31</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">answer</span>
-<span class="s">"31"</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nf">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">answer</span>
+<span class="sh">"</span><span class="s">31</span><span class="sh">"</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="nf">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
 <span class="mi">31</span>
 </code></pre></div></div>
 
@@ -215,12 +215,12 @@ What is your age?
 
 <p>Here is a REPL. It runs in a loop, handling user input and printing repeatedly.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="s">"Square tool"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Square tool</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-  <span class="n">answer</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="s">"Enter a number:</span><span class="se">\n</span><span class="s">&gt; "</span><span class="p">)</span>
+  <span class="n">answer</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter a number:</span><span class="se">\n</span><span class="s">&gt; </span><span class="sh">"</span><span class="p">)</span>
   <span class="n">squared</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
-  <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Squared: </span><span class="si">{</span><span class="n">squared</span><span class="si">}</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+  <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Squared: </span><span class="si">{</span><span class="n">squared</span><span class="si">}</span><span class="se">\n</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Running it:</p>
@@ -286,9 +286,9 @@ Squared: 16
 <span class="k">try</span><span class="p">:</span> 
     <span class="n">p</span> <span class="o">=</span> <span class="n">getpass</span><span class="p">.</span><span class="nf">getpass</span><span class="p">()</span> 
 <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span> 
-    <span class="nf">print</span><span class="p">(</span><span class="s">'ERROR'</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> 
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">ERROR</span><span class="sh">'</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> 
 <span class="k">else</span><span class="p">:</span> 
-    <span class="nf">print</span><span class="p">(</span><span class="s">'Password entered:'</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> 
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Password entered:</span><span class="sh">'</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> 
 </code></pre></div></div>
 
 <p>Run it.</p>

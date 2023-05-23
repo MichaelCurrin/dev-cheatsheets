@@ -177,19 +177,19 @@
 
 <p>Random float:  0.0 &lt;= x &lt; 1.0</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span>
 <span class="mf">0.37444887175646646</span>
 </code></pre></div></div>
 
 <p>Random float:  2.5 &lt;= x &lt; 10.0</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">uniform</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">uniform</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span>
 <span class="mf">3.1800146073117523</span>
 </code></pre></div></div>
 
 <p>Interval between arrivals averaging 5 seconds</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">expovariate</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">expovariate</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span>
 <span class="mf">5.148957571865031</span>
 </code></pre></div></div>
 
@@ -197,19 +197,19 @@
 
 <p>Integer from 0 to 9 inclusive:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">randrange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">randrange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="mi">7</span>
 </code></pre></div></div>
 
 <p>Even integer from 1 to 100 inclusive:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="mi">26</span>
 </code></pre></div></div>
 
 <p>Or set the <em>step</em> such as for even numbers:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="mi">26</span>
 </code></pre></div></div>
 
@@ -219,33 +219,33 @@
 
 <p>Single random element from a sequence.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">choice</span><span class="p">([</span><span class="s">'win'</span><span class="p">,</span> <span class="s">'lose'</span><span class="p">,</span> <span class="s">'draw'</span><span class="p">])</span>
-<span class="s">'lose'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">choice</span><span class="p">([</span><span class="sh">'</span><span class="s">win</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">lose</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">draw</span><span class="sh">'</span><span class="p">])</span>
+<span class="sh">'</span><span class="s">lose</span><span class="sh">'</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">choice</span><span class="p">(</span><span class="s">'abcdef'</span><span class="p">)</span>
-<span class="s">'f'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">choice</span><span class="p">(</span><span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">)</span>
+<span class="sh">'</span><span class="s">f</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <h3 id="choices-function">choices function</h3>
 
 <p>Similar to <code class="language-plaintext highlighter-rouge">choice</code> but accepts an optional count to return.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">choices</span><span class="p">([</span><span class="s">'win'</span><span class="p">,</span> <span class="s">'lose'</span><span class="p">,</span> <span class="s">'draw'</span><span class="p">])</span>
-<span class="p">[</span><span class="s">'draw'</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">choices</span><span class="p">([</span><span class="sh">'</span><span class="s">win</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">lose</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">draw</span><span class="sh">'</span><span class="p">])</span>
+<span class="p">[</span><span class="sh">'</span><span class="s">draw</span><span class="sh">'</span><span class="p">]</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">choices</span><span class="p">([</span><span class="s">'win'</span><span class="p">,</span> <span class="s">'lose'</span><span class="p">,</span> <span class="s">'draw'</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="p">[</span><span class="s">'draw'</span><span class="p">,</span> <span class="s">'lose'</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">choices</span><span class="p">([</span><span class="sh">'</span><span class="s">win</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">lose</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">draw</span><span class="sh">'</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">[</span><span class="sh">'</span><span class="s">draw</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">lose</span><span class="sh">'</span><span class="p">]</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">choices</span><span class="p">(</span><span class="s">'abcdef'</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="p">[</span><span class="s">'e'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'e'</span><span class="p">,</span> <span class="s">'e'</span><span class="p">,</span> <span class="s">'d'</span><span class="p">,</span> <span class="s">'e'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">choices</span><span class="p">(</span><span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="p">[</span><span class="sh">'</span><span class="s">e</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">c</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">e</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">e</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">d</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">e</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">c</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">]</span>
 </code></pre></div></div>
 
 <h3 id="sample-function">sample function</h3>
 
 <p>Four samples without replacement.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">sample</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">sample</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
 </code></pre></div></div>
 
@@ -253,10 +253,10 @@
 
 <p>Shuffle a list.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">deck</span> <span class="o">=</span> <span class="s">'ace two three four'</span><span class="p">.</span><span class="nf">split</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">shuffle</span><span class="p">(</span><span class="n">deck</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">deck</span>
-<span class="p">[</span><span class="s">'four'</span><span class="p">,</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'ace'</span><span class="p">,</span> <span class="s">'three'</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">deck</span> <span class="o">=</span> <span class="sh">'</span><span class="s">ace two three four</span><span class="sh">'</span><span class="p">.</span><span class="nf">split</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">random</span><span class="p">.</span><span class="nf">shuffle</span><span class="p">(</span><span class="n">deck</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">deck</span>
+<span class="p">[</span><span class="sh">'</span><span class="s">four</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">two</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">ace</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">three</span><span class="sh">'</span><span class="p">]</span>
 </code></pre></div></div>
 
 <h2 id="strings">Strings</h2>
@@ -275,13 +275,13 @@
 
 <span class="n">length</span> <span class="o">=</span> <span class="mi">20</span>
 
-<span class="s">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="nf">choices</span><span class="p">(</span><span class="n">chars</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">length</span><span class="p">))</span>
+<span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="nf">choices</span><span class="p">(</span><span class="n">chars</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">length</span><span class="p">))</span>
 <span class="c1"># 'sibuudijstpmozrmrfzp'
 </span></code></pre></div></div>
 
 <p>Or use <code class="language-plaintext highlighter-rouge">.choice</code> for a more verbose and possibly inefficient way.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="nf">choice</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="nf">choice</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
 <span class="c1"># 'ohzeasftnbkvinijtkud'
 </span></code></pre></div></div>
 
@@ -295,10 +295,10 @@
   <p>In particular, secrets should be used in preference to the default pseudo-random number generator in the random module, which is designed for modelling and simulation, not security or cryptography.</p>
 </blockquote>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">chars</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">ascii_uppercase</span> <span class="o">+</span> <span class="n">string</span><span class="p">.</span><span class="n">digits</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">chars</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">ascii_uppercase</span> <span class="o">+</span> <span class="n">string</span><span class="p">.</span><span class="n">digits</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="s">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="nc">SystemRandom</span><span class="p">().</span><span class="nf">choice</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
-<span class="s">'xgfzjbzgkogbrqvakutd'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="nc">SystemRandom</span><span class="p">().</span><span class="nf">choice</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+<span class="sh">'</span><span class="s">xgfzjbzgkogbrqvakutd</span><span class="sh">'</span>
 </code></pre></div></div>
 
         

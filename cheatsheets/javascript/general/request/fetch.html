@@ -250,7 +250,7 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://httpbin.org/get</span><span class="dl">'</span>
 
 <span class="kd">const</span> <span class="nx">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
-<span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">resp</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">resp</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="s2">`HTTP error: </span><span class="p">${</span><span class="nx">resp</span><span class="p">.</span><span class="nx">status</span><span class="p">}</span><span class="s2"> - </span><span class="p">${</span><span class="nx">resp</span><span class="p">.</span><span class="nx">statusText</span><span class="p">}</span><span class="s2"> URL: </span><span class="p">${</span><span class="nx">url</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -262,7 +262,7 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://httpbin.org/get</span><span class="dl">'</span>
 <span class="kd">const</span> <span class="nx">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
 
-<span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">resp</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">resp</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
   <span class="nf">alert</span><span class="p">(</span><span class="s2">`HTTP-Error: </span><span class="p">${</span><span class="nx">resp</span><span class="p">.</span><span class="nx">status</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -273,7 +273,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nf">requestJson</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
-  <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">resp</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">resp</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span>
       <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="s2">`HTTP error: </span><span class="p">${</span><span class="nx">resp</span><span class="p">.</span><span class="nx">status</span><span class="p">}</span><span class="s2"> - </span><span class="p">${</span><span class="nx">resp</span><span class="p">.</span><span class="nx">statusText</span><span class="p">}</span><span class="s2"> URL: </span><span class="p">${</span><span class="nx">url</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
     <span class="p">);</span>
@@ -296,7 +296,7 @@
     
     <span class="k">async</span> <span class="kd">function</span> <span class="nf">request</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
       <span class="kd">const</span> <span class="nx">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
-      <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">resp</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">resp</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">url</span><span class="p">}</span><span class="s2"> HTTP error: </span><span class="p">${</span><span class="nx">resp</span><span class="p">.</span><span class="nx">status</span><span class="p">}</span><span class="s2"> - </span><span class="p">${</span><span class="nx">resp</span><span class="p">.</span><span class="nx">statusText</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
       <span class="p">}</span>
     
@@ -324,7 +324,7 @@
 <span class="nf">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
   <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">resp</span> <span class="o">=&gt;</span> <span class="nx">resp</span><span class="p">.</span><span class="nf">json</span><span class="p">())</span>
   <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">json</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
-  <span class="p">.</span><span class="nf">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
 </code></pre></div></div>
 
 <h3 id="send-data-using-post-request">Send data using POST request</h3>
@@ -375,7 +375,7 @@
   <span class="p">}</span>
 
   <span class="kd">const</span> <span class="nx">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
-  <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">resp</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">resp</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">url</span><span class="p">}</span><span class="s2"> HTTP error: </span><span class="p">${</span><span class="nx">resp</span><span class="p">.</span><span class="nx">status</span><span class="p">}</span><span class="s2"> - </span><span class="p">${</span><span class="nx">resp</span><span class="p">.</span><span class="nx">statusText</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
   <span class="p">}</span>
 

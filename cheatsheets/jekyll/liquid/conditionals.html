@@ -167,43 +167,43 @@
 
 <h2 id="if-statement">if statement</h2>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">expression</span><span class="w"> </span><span class="p">%}</span>
-    <span class="p">{{</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">expression</span><span class="w"> </span><span class="cp">%}</span>
+    <span class="cp">{{</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 <p>Example using <a href="/dev-cheatsheets/cheatsheets/jekyll/templating/analytics.html">Google Analytics</a></p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="p">{%-</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">jekyll</span><span class="p">.</span><span class="nv">environment</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'production'</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">google_analytics</span><span class="w"> </span><span class="p">-%}</span>
-     <span class="p">{%-</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>google-analytics.html<span class="w"> </span><span class="p">-%}</span>
- <span class="p">{%-</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">-%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="cp">{%-</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">jekyll</span><span class="p">.</span><span class="nv">environment</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'production'</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">google_analytics</span><span class="w"> </span><span class="cp">-%}</span>
+     <span class="cp">{%-</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>google-analytics.html<span class="w"> </span><span class="cp">-%}</span>
+ <span class="cp">{%-</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">-%}</span>
 </code></pre></div></div>
 
 <h2 id="else-statement">else statement</h2>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">expression</span><span class="w"> </span><span class="p">%}</span>
-    <span class="p">{{</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{%</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">%}</span>
-    <span class="p">{{</span><span class="w"> </span><span class="nv">other_value</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">expression</span><span class="w"> </span><span class="cp">%}</span>
+    <span class="cp">{{</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">else</span><span class="w"> </span><span class="cp">%}</span>
+    <span class="cp">{{</span><span class="w"> </span><span class="nv">other_value</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 <p>Example, using assignment:</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">expression</span><span class="w"> </span><span class="p">%}</span>
-    <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"yes"</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">%}</span>
-    <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"yes"</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">expression</span><span class="w"> </span><span class="cp">%}</span>
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"yes"</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">else</span><span class="w"> </span><span class="cp">%}</span>
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"yes"</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
 
-<span class="p">{{</span><span class="w"> </span><span class="nv">answer</span><span class="w"> </span><span class="p">}}</span>
+<span class="cp">{{</span><span class="w"> </span><span class="nv">answer</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div></div>
 
 <h2 id="unless-statement">unless statement</h2>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">unless</span><span class="w"> </span><span class="nv">expression</span><span class="w"> </span><span class="p">%}</span>
-    <span class="p">{{</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{%</span><span class="w"> </span><span class="kr">endunless</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">unless</span><span class="w"> </span><span class="nv">expression</span><span class="w"> </span><span class="cp">%}</span>
+    <span class="cp">{{</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endunless</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 <p>This is a negated <code class="language-plaintext highlighter-rouge">if</code> statement.</p>
@@ -216,10 +216,10 @@
 <p>Using <code class="language-plaintext highlighter-rouge">unless</code> can be useful for adding a separator between items.</p>
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p&gt;
-    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">page.my_array</span><span class="w"> </span><span class="p">%}</span>
-        <span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="p">}}</span>
-        <span class="p">{%</span><span class="w"> </span><span class="kr">unless</span><span class="w"> </span><span class="nb">forloop.last</span><span class="w"> </span><span class="p">%}</span>, <span class="p">{%</span><span class="w"> </span><span class="kr">endunless</span><span class="w"> </span><span class="p">%}</span>
-    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">my_array</span><span class="w"> </span><span class="cp">%}</span>
+        <span class="cp">{{</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="cp">}}</span>
+        <span class="cp">{%</span><span class="w"> </span><span class="nt">unless</span><span class="w"> </span><span class="nb">forloop.last</span><span class="w"> </span><span class="cp">%}</span>, <span class="cp">{%</span><span class="w"> </span><span class="nt">endunless</span><span class="w"> </span><span class="cp">%}</span>
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
 &lt;/p&gt;
 </code></pre></div></div>
 

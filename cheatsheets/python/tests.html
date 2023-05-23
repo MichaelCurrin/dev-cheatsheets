@@ -203,21 +203,21 @@
 <span class="k">class</span> <span class="nc">TestStringMethods</span><span class="p">(</span><span class="n">unittest</span><span class="p">.</span><span class="n">TestCase</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">test_upper</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="s">'foo'</span><span class="p">.</span><span class="nf">upper</span><span class="p">(),</span> <span class="s">'FOO'</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="sh">'</span><span class="s">foo</span><span class="sh">'</span><span class="p">.</span><span class="nf">upper</span><span class="p">(),</span> <span class="sh">'</span><span class="s">FOO</span><span class="sh">'</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">test_isupper</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="nf">assertTrue</span><span class="p">(</span><span class="s">'FOO'</span><span class="p">.</span><span class="nf">isupper</span><span class="p">())</span>
-        <span class="n">self</span><span class="p">.</span><span class="nf">assertFalse</span><span class="p">(</span><span class="s">'Foo'</span><span class="p">.</span><span class="nf">isupper</span><span class="p">())</span>
+        <span class="n">self</span><span class="p">.</span><span class="nf">assertTrue</span><span class="p">(</span><span class="sh">'</span><span class="s">FOO</span><span class="sh">'</span><span class="p">.</span><span class="nf">isupper</span><span class="p">())</span>
+        <span class="n">self</span><span class="p">.</span><span class="nf">assertFalse</span><span class="p">(</span><span class="sh">'</span><span class="s">Foo</span><span class="sh">'</span><span class="p">.</span><span class="nf">isupper</span><span class="p">())</span>
 
     <span class="k">def</span> <span class="nf">test_split</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="n">s</span> <span class="o">=</span> <span class="s">'hello world'</span>
-        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="nf">split</span><span class="p">(),</span> <span class="p">[</span><span class="s">'hello'</span><span class="p">,</span> <span class="s">'world'</span><span class="p">])</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="sh">'</span><span class="s">hello world</span><span class="sh">'</span>
+        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="nf">split</span><span class="p">(),</span> <span class="p">[</span><span class="sh">'</span><span class="s">hello</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">world</span><span class="sh">'</span><span class="p">])</span>
         <span class="c1"># check that s.split fails when the separator is not a string
 </span>        <span class="k">with</span> <span class="n">self</span><span class="p">.</span><span class="nf">assertRaises</span><span class="p">(</span><span class="nb">TypeError</span><span class="p">):</span>
             <span class="n">s</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
     <span class="n">unittest</span><span class="p">.</span><span class="nf">main</span><span class="p">()</span>
 </code></pre></div></div>
 
@@ -228,13 +228,13 @@
 <span class="k">class</span> <span class="nc">TestSum</span><span class="p">(</span><span class="n">unittest</span><span class="p">.</span><span class="n">TestCase</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">test_sum</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="nf">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span> <span class="mi">6</span><span class="p">,</span> <span class="s">"Should be 6"</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="nf">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span> <span class="mi">6</span><span class="p">,</span> <span class="sh">"</span><span class="s">Should be 6</span><span class="sh">"</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">test_sum_tuple</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="nf">sum</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span> <span class="mi">6</span><span class="p">,</span> <span class="s">"Should be 6"</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="nf">sum</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span> <span class="mi">6</span><span class="p">,</span> <span class="sh">"</span><span class="s">Should be 6</span><span class="sh">"</span><span class="p">)</span>
 
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
     <span class="n">unittest</span><span class="p">.</span><span class="nf">main</span><span class="p">()</span>
 </code></pre></div></div>
 

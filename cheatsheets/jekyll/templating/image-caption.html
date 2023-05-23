@@ -167,13 +167,13 @@
 <h2 id="includes-file">Includes file</h2>
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;figure&gt;
-    &lt;img src="<span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">src</span><span class="w"> </span><span class="p">}}</span>"
-         alt="<span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">alt</span><span class="w"> </span><span class="p">}}</span>"
-         style="<span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">style</span><span class="w"> </span><span class="p">}}</span>"
+    &lt;img src="<span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">src</span><span class="w"> </span><span class="cp">}}</span>"
+         alt="<span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">alt</span><span class="w"> </span><span class="cp">}}</span>"
+         style="<span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">style</span><span class="w"> </span><span class="cp">}}</span>"
          class="img-responsive"
     &gt;
     &lt;figcaption&gt;
-        <span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">caption</span><span class="w"> </span><span class="p">}}</span>
+        <span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">caption</span><span class="w"> </span><span class="cp">}}</span>
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 </code></pre></div></div>
@@ -183,7 +183,7 @@
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;figcaption&gt;
     &lt;sub&gt;
         &lt;i&gt;
-            <span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">caption</span><span class="w"> </span><span class="p">}}</span>
+            <span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">caption</span><span class="w"> </span><span class="cp">}}</span>
         &lt;/i&gt;
     &lt;/sub&gt;
 &lt;/figcaption&gt;
@@ -193,25 +193,25 @@
 
 <p>Then all you need to do use is one line:</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="s2">"abc.png"</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s2">"Logo"</span><span class="w"> </span><span class="na">caption</span><span class="o">=</span><span class="s2">"My caption here"</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="s2">"abc.png"</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s2">"Logo"</span><span class="w"> </span><span class="na">caption</span><span class="o">=</span><span class="s2">"My caption here"</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 <p>Or pass a variable from <code class="language-plaintext highlighter-rouge">assign</code> or from frontmatter.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">img_src</span><span class="o">=</span><span class="s2">"abc.png"</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">caption</span><span class="o">=</span><span class="s2">"My caption here"</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">img_src</span><span class="o">=</span><span class="s2">"abc.png"</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">caption</span><span class="o">=</span><span class="s2">"My caption here"</span><span class="w"> </span><span class="cp">%}</span>
 
-<span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="nv">img_src</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s2">"Logo"</span><span class="w"> </span><span class="na">caption</span><span class="o">=</span><span class="nv">caption</span><span class="w"> </span><span class="p">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="nv">img_src</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s2">"Logo"</span><span class="w"> </span><span class="na">caption</span><span class="o">=</span><span class="nv">caption</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 <p>And if you want to set style overrides:</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="err">
-</span><span class="w">    </span><span class="na">src</span><span class="o">=</span><span class="s2">"abc.png"</span><span class="w"> </span><span class="err">
-</span><span class="w">    </span><span class="na">alt</span><span class="o">=</span><span class="s2">"Logo"</span><span class="err">
-</span><span class="w">    </span><span class="na">caption</span><span class="o">=</span><span class="s2">"My caption here"</span><span class="err">
-</span><span class="w">    </span><span class="na">style</span><span class="o">=</span><span class="s2">"float: right; height: 65%; width: 65%"</span><span class="err">
-</span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> 
+    </span><span class="na">src</span><span class="o">=</span><span class="s2">"abc.png"</span><span class="w"> 
+    </span><span class="na">alt</span><span class="o">=</span><span class="s2">"Logo"</span><span class="w">
+    </span><span class="na">caption</span><span class="o">=</span><span class="s2">"My caption here"</span><span class="w">
+    </span><span class="na">style</span><span class="o">=</span><span class="s2">"float: right; height: 65%; width: 65%"</span><span class="w">
+</span><span class="cp">%}</span>
 </code></pre></div></div>
 
 

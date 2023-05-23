@@ -184,12 +184,12 @@
 <p>Indenting will add pretty printing but is optional.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_data</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s">"a"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="s">"b"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-  <span class="s">"c"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+  <span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="sh">"</span><span class="s">b</span><span class="sh">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="sh">"</span><span class="s">c</span><span class="sh">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
 <span class="p">]</span>
 
-<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
     <span class="n">json</span><span class="p">.</span><span class="nf">dump</span><span class="p">(</span><span class="n">my_data</span><span class="p">,</span> <span class="n">f_out</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div></div>
 
@@ -208,7 +208,7 @@
 
 <p>If you want to load from a string object instead of a file, using <code class="language-plaintext highlighter-rouge">.loads</code> where <code class="language-plaintext highlighter-rouge">s</code> is for “string”.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_json_str</span> <span class="o">=</span> <span class="s">'{ "a": 1, "b": 2, "c": 3 }'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_json_str</span> <span class="o">=</span> <span class="sh">'</span><span class="s">{ </span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="s">: 1, </span><span class="sh">"</span><span class="s">b</span><span class="sh">"</span><span class="s">: 2, </span><span class="sh">"</span><span class="s">c</span><span class="sh">"</span><span class="s">: 3 }</span><span class="sh">'</span>
 
 <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
     <span class="n">my_data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">loads</span><span class="p">(</span><span class="n">my_json_str</span><span class="p">)</span>

@@ -266,7 +266,7 @@
 
 <h3 id="expand-user-path">Expand user path</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">expanduser</span><span class="p">(</span><span class="s">"~/file.txt"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">expanduser</span><span class="p">(</span><span class="sh">"</span><span class="s">~/file.txt</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="join">Join</h2>
@@ -280,19 +280,19 @@
 
 <p>Of a file:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="s">'foo/bar/baz.txt'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="sh">'</span><span class="s">foo/bar/baz.txt</span><span class="sh">'</span><span class="p">)</span>
 <span class="c1"># =&gt; 'foo/bar'
 </span></code></pre></div></div>
 
 <p>Of a directory:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="s">'foo/bar'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="sh">'</span><span class="s">foo/bar</span><span class="sh">'</span><span class="p">)</span>
 <span class="c1"># =&gt; 'foo'
 </span></code></pre></div></div>
 
 <p>Note if it ends in forwardslash it will just remove that.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="s">'foo/bar/'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="sh">'</span><span class="s">foo/bar/</span><span class="sh">'</span><span class="p">)</span>
 <span class="c1"># =&gt; 'foo/bar'
 </span></code></pre></div></div>
 
@@ -300,17 +300,17 @@
 
 <p>Get the last part of a path - whether a directory or filename.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="s">'foo/bar/baz.txt'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="sh">'</span><span class="s">foo/bar/baz.txt</span><span class="sh">'</span><span class="p">)</span>
 <span class="c1"># =&gt; 'baz.txt'
 </span></code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="s">'foo/bar'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="sh">'</span><span class="s">foo/bar</span><span class="sh">'</span><span class="p">)</span>
 <span class="c1"># =&gt; 'bar'
 </span></code></pre></div></div>
 
 <p>If ending in forwardslash is empty.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="s">'foo/bar/'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="sh">'</span><span class="s">foo/bar/</span><span class="sh">'</span><span class="p">)</span>
 <span class="c1"># =&gt; ''
 </span></code></pre></div></div>
 

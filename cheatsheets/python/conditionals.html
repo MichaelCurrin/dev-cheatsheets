@@ -219,17 +219,17 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">http_error</span><span class="p">(</span><span class="n">status</span><span class="p">):</span>
     <span class="n">match</span> <span class="n">status</span><span class="p">:</span>
         <span class="n">case</span> <span class="mi">400</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s">"Bad request"</span>
+            <span class="k">return</span> <span class="sh">"</span><span class="s">Bad request</span><span class="sh">"</span>
         <span class="n">case</span> <span class="mi">404</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s">"Not found"</span>
+            <span class="k">return</span> <span class="sh">"</span><span class="s">Not found</span><span class="sh">"</span>
         <span class="n">case</span> <span class="mi">418</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s">"I'm a teapot"</span>
+            <span class="k">return</span> <span class="sh">"</span><span class="s">I</span><span class="sh">'</span><span class="s">m a teapot</span><span class="sh">"</span>
         <span class="n">case</span> <span class="n">_</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s">"Something's wrong with the internet"</span>
+            <span class="k">return</span> <span class="sh">"</span><span class="s">Something</span><span class="sh">'</span><span class="s">s wrong with the internet</span><span class="sh">"</span>
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">case</span> <span class="mi">401</span> <span class="o">|</span> <span class="mi">403</span> <span class="o">|</span> <span class="mi">404</span><span class="p">:</span>
-    <span class="k">return</span> <span class="s">"Not allowed"</span>
+    <span class="k">return</span> <span class="sh">"</span><span class="s">Not allowed</span><span class="sh">"</span>
 </code></pre></div></div>
 
 <h3 id="links">Links</h3>

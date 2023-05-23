@@ -208,9 +208,9 @@
 <h3 id="string-values">String values</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Color</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
-    <span class="n">RED</span> <span class="o">=</span> <span class="s">"RED"</span>
-    <span class="n">BLUE</span> <span class="o">=</span> <span class="s">"BLUE"</span>
-    <span class="n">GREEN</span> <span class="o">=</span> <span class="s">"GREEN"</span>
+    <span class="n">RED</span> <span class="o">=</span> <span class="sh">"</span><span class="s">RED</span><span class="sh">"</span>
+    <span class="n">BLUE</span> <span class="o">=</span> <span class="sh">"</span><span class="s">BLUE</span><span class="sh">"</span>
+    <span class="n">GREEN</span> <span class="o">=</span> <span class="sh">"</span><span class="s">GREEN</span><span class="sh">"</span>
     
 <span class="n">Color</span><span class="p">.</span><span class="n">RED</span>
 <span class="c1"># &lt;Color.RED: 'RED'&gt;
@@ -220,13 +220,13 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">member</span> <span class="o">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">RED</span>
 <span class="c1"># OR
-</span><span class="n">member</span> <span class="o">=</span> <span class="n">Color</span><span class="p">[</span><span class="s">'RED'</span><span class="p">]</span>
+</span><span class="n">member</span> <span class="o">=</span> <span class="n">Color</span><span class="p">[</span><span class="sh">'</span><span class="s">RED</span><span class="sh">'</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>For the integer example:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">member</span><span class="p">.</span><span class="n">name</span>
-<span class="s">'RED'</span>
+<span class="sh">'</span><span class="s">RED</span><span class="sh">'</span>
 <span class="n">member</span><span class="p">.</span><span class="n">value</span>
 <span class="mi">1</span>
 </code></pre></div></div>

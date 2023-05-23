@@ -205,7 +205,7 @@
 <p>Pass child components as the content of an element, such as <code class="language-plaintext highlighter-rouge">h1</code> and <code class="language-plaintext highlighter-rouge">p</code> below in <code class="language-plaintext highlighter-rouge">FancyBorder</code>:</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">WelcomeDialog</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nf">return </span><span class="p">(</span>
+  <span class="k">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nc">FancyBorder</span> <span class="na">color</span><span class="p">=</span><span class="s">"blue"</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">className</span><span class="p">=</span><span class="s">"Dialog-title"</span><span class="p">&gt;</span>       
         Welcome     
@@ -222,7 +222,7 @@
 <p>Then insert those components within the component with the special <code class="language-plaintext highlighter-rouge">children</code> property:</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">FancyBorder</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">return </span><span class="p">(</span>
+  <span class="k">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span> <span class="s2">`FancyBorder FancyBorder-</span><span class="p">${</span><span class="nx">props</span><span class="p">.</span><span class="nx">color</span><span class="p">}</span><span class="s2">`</span> <span class="si">}</span><span class="p">&gt;</span>
       <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">children</span> <span class="si">}</span>    
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -235,7 +235,7 @@
 <p>Here is an alternative approach from the docs, using custom names for <em>left</em> and <em>right</em> components.</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">SplitPane</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">return </span><span class="p">(</span>
+  <span class="k">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"SplitPane"</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"SplitPane-left"</span><span class="p">&gt;</span>
         <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">left</span> <span class="si">}</span>     
@@ -249,7 +249,7 @@
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nf">return </span><span class="p">(</span>
+  <span class="k">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nc">SplitPane</span>
       <span class="na">left</span><span class="p">=</span><span class="si">{</span> <span class="p">&lt;</span><span class="nc">Contacts</span> <span class="p">/&gt;</span> <span class="si">}</span>
       <span class="na">right</span><span class="p">=</span><span class="si">{</span> <span class="p">&lt;</span><span class="nc">Chat</span> <span class="p">/&gt;</span> <span class="si">}</span> 
@@ -275,7 +275,7 @@
 <p>Generic component:</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Dialog</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">return </span><span class="p">(</span>
+  <span class="k">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nc">FancyBorder</span> <span class="na">color</span><span class="p">=</span><span class="s">"blue"</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">className</span><span class="p">=</span><span class="s">"Dialog-title"</span><span class="p">&gt;</span>
         <span class="si">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">title</span> <span class="si">}</span>    

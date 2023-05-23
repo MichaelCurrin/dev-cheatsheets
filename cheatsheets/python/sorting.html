@@ -169,13 +169,13 @@
 
 <p>On a tuple:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">sorted </span><span class="p">((</span> <span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="nf">sorted </span><span class="p">((</span> <span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>On a set:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">sorted</span><span class="p">({</span> <span class="mi">1</span> <span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">})</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="nf">sorted</span><span class="p">({</span> <span class="mi">1</span> <span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">})</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </code></pre></div></div>
 
@@ -183,7 +183,7 @@
 
 <p>Here we keep both lists.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">"abc"</span><span class="p">,</span> <span class="s">"xyz"</span><span class="p">,</span> <span class="s">"def"</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_strings</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">abc</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">xyz</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">def</span><span class="sh">"</span><span class="p">]</span>
 
 <span class="n">my_sorted_strings</span> <span class="o">=</span> <span class="nf">sorted</span><span class="p">(</span><span class="n">my_strings</span><span class="p">)</span>
 <span class="n">my_sorted_strings</span>
@@ -192,7 +192,7 @@
 
 <p>Here we overwrite the original list.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">"abc"</span><span class="p">,</span> <span class="s">"xyz"</span><span class="p">,</span> <span class="s">"def"</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_strings</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">abc</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">xyz</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">def</span><span class="sh">"</span><span class="p">]</span>
 
 <span class="n">my_strings</span> <span class="o">=</span> <span class="nf">sorted</span><span class="p">(</span><span class="n">my_strings</span><span class="p">)</span>
 <span class="n">my_strings</span>
@@ -201,7 +201,7 @@
 
 <p>Neatly with a <code class="language-plaintext highlighter-rouge">for</code> loop:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">"abc"</span><span class="p">,</span> <span class="s">"xyz"</span><span class="p">,</span> <span class="s">"def"</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_strings</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">abc</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">xyz</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">def</span><span class="sh">"</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nf">sorted</span><span class="p">(</span><span class="n">my_strings</span><span class="p">):</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -217,7 +217,7 @@
 <span class="c1"># [1, 2, 3, 4, 5]
 </span></code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">"abc"</span><span class="p">,</span> <span class="s">"xyz"</span><span class="p">,</span> <span class="s">"def"</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_strings</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">abc</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">xyz</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">def</span><span class="sh">"</span><span class="p">]</span>
 
 <span class="n">my_strings</span><span class="p">.</span><span class="nf">sort</span><span class="p">()</span>
 <span class="n">my_strings</span>
@@ -232,7 +232,7 @@
 
 <p>Applying <code class="language-plaintext highlighter-rouge">sorted</code> on <code class="language-plaintext highlighter-rouge">dict</code> will sort and return its keys only.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s">'D'</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s">'B'</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s">'B'</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s">'E'</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="s">'A'</span><span class="p">}</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="sh">'</span><span class="s">D</span><span class="sh">'</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="sh">'</span><span class="s">A</span><span class="sh">'</span><span class="p">}</span>
 <span class="nf">sorted</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
 <span class="c1"># [1, 2, 3, 4, 5]
 </span></code></pre></div></div>
@@ -258,7 +258,7 @@
 <p>Or iterate over the sorted keys and get the value too.
 This can be used to get keys and values together though.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s">'D'</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s">'B'</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s">'B'</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s">'E'</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="s">'A'</span><span class="p">}</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="sh">'</span><span class="s">D</span><span class="sh">'</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="sh">'</span><span class="s">A</span><span class="sh">'</span><span class="p">}</span>
 
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nf">sorted</span><span class="p">(</span><span class="n">my_dict</span><span class="p">):</span>
      <span class="nf">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">my_dict</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
@@ -287,12 +287,12 @@ This can be used to get keys and values together though.</p>
 
 <p>Or a Lambda anonymous function, such as to reference a class attribute or dictionary key or to compare a value numerically.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>Here we sort a <code class="language-plaintext highlighter-rouge">list</code> as if all the elements were lowercase, but we keep the original values without actually storing any value as lowercase.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_list</span> <span class="o">=</span> <span class="s">"This is a test string from Andrew"</span><span class="p">.</span><span class="nf">split</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_list</span> <span class="o">=</span> <span class="sh">"</span><span class="s">This is a test string from Andrew</span><span class="sh">"</span><span class="p">.</span><span class="nf">split</span><span class="p">()</span>
 
 <span class="nf">sorted</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="p">.</span><span class="n">lower</span><span class="p">)</span>
 <span class="c1"># ['a', 'Andrew', 'from', 'is', 'string', 'test', 'This']
@@ -312,13 +312,13 @@ This can be used to get keys and values together though.</p>
 
 
 <span class="n">student_objects</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="nc">Student</span><span class="p">(</span><span class="s">'john'</span><span class="p">,</span> <span class="s">'A'</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
-    <span class="nc">Student</span><span class="p">(</span><span class="s">'jane'</span><span class="p">,</span> <span class="s">'B'</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
-    <span class="nc">Student</span><span class="p">(</span><span class="s">'dave'</span><span class="p">,</span> <span class="s">'B'</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="nc">Student</span><span class="p">(</span><span class="sh">'</span><span class="s">john</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">A</span><span class="sh">'</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
+    <span class="nc">Student</span><span class="p">(</span><span class="sh">'</span><span class="s">jane</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
+    <span class="nc">Student</span><span class="p">(</span><span class="sh">'</span><span class="s">dave</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
 <span class="p">]</span>
 
 <span class="nf">sorted</span><span class="p">(</span><span class="n">student_objects</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">student</span><span class="p">:</span> <span class="n">student</span><span class="p">.</span><span class="n">age</span><span class="p">)</span>
-<span class="p">[(</span><span class="s">'dave'</span><span class="p">,</span> <span class="s">'B'</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="s">'jane'</span><span class="p">,</span> <span class="s">'B'</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="p">(</span><span class="s">'john'</span><span class="p">,</span> <span class="s">'A'</span><span class="p">,</span> <span class="mi">15</span><span class="p">)]</span>
+<span class="p">[(</span><span class="sh">'</span><span class="s">dave</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">jane</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">john</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">A</span><span class="sh">'</span><span class="p">,</span> <span class="mi">15</span><span class="p">)]</span>
 </code></pre></div></div>
 
 <h3 id="operator-module-functions">Operator module functions</h3>
@@ -337,7 +337,7 @@ This can be used to get keys and values together though.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">operator</span> <span class="kn">import</span> <span class="n">attrgetter</span>
 
 
-<span class="nf">sorted</span><span class="p">(</span><span class="n">student_objects</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nf">attrgetter</span><span class="p">(</span><span class="s">'age'</span><span class="p">))</span>
+<span class="nf">sorted</span><span class="p">(</span><span class="n">student_objects</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nf">attrgetter</span><span class="p">(</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">))</span>
 <span class="c1"># [('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]
 </span></code></pre></div></div>
 
@@ -347,7 +347,7 @@ This can be used to get keys and values together though.</p>
 <span class="c1"># [('john', 'A', 15), ('dave', 'B', 10), ('jane', 'B', 12)]
 </span></code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">sorted</span><span class="p">(</span><span class="n">student_objects</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nf">attrgetter</span><span class="p">(</span><span class="s">'grade'</span><span class="p">,</span> <span class="s">'age'</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">sorted</span><span class="p">(</span><span class="n">student_objects</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nf">attrgetter</span><span class="p">(</span><span class="sh">'</span><span class="s">grade</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">))</span>
 <span class="c1"># [('john', 'A', 15), ('dave', 'B', 10), ('jane', 'B', 12)]
 </span></code></pre></div></div>
 
@@ -356,7 +356,7 @@ This can be used to get keys and values together though.</p>
 <h3 id="reverse-function">Reverse function</h3>
 
 <p>This returns an iterator, so remember to use convert to a list or use in a <code class="language-plaintext highlighter-rouge">for</code> loop.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">'abc'</span><span class="p">,</span> <span class="s">'def'</span><span class="p">,</span> <span class="s">'xyz'</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_strings</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">def</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">xyz</span><span class="sh">'</span><span class="p">]</span>
 
 <span class="nf">reversed</span><span class="p">(</span><span class="n">my_strings</span><span class="p">)</span>
 <span class="c1"># &lt;list_reverseiterator object at 0x10f343a90&gt;
@@ -367,7 +367,7 @@ This can be used to get keys and values together though.</p>
 
 <h3 id="reversed-method">Reversed method</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">'abc'</span><span class="p">,</span> <span class="s">'def'</span><span class="p">,</span> <span class="s">'xyz'</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_strings</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">def</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">xyz</span><span class="sh">'</span><span class="p">]</span>
 
 <span class="n">my_strings</span><span class="p">.</span><span class="nf">reversed</span><span class="p">()</span>
 

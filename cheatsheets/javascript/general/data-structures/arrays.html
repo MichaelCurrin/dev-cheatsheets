@@ -385,7 +385,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">]</span>
 
-<span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="nx">myArray</span><span class="p">))</span> <span class="p">{</span>
+<span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="nx">myArray</span><span class="p">))</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">value</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">())</span>
 <span class="p">}</span>
 <span class="c1">// 0 A</span>
@@ -422,7 +422,7 @@
 <span class="p">[...</span><span class="nx">myArray</span><span class="p">]</span>
 <span class="c1">// [ 'a', 'b', 'a' ]</span>
 
-<span class="nb">Array</span><span class="p">.</span><span class="nf">from</span><span class="p">(</span><span class="nx">myArray</span><span class="p">)</span>
+<span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">myArray</span><span class="p">)</span>
 <span class="c1">// [ 'a', 'b', 'a' ]</span>
 </code></pre></div></div>
 
@@ -434,7 +434,7 @@
 <span class="c1">// [ 'a', 'b' ]</span>
 
 <span class="c1">// More verbose, older syntax, used internally by spread.</span>
-<span class="nb">Array</span><span class="p">.</span><span class="nf">from</span><span class="p">(</span><span class="nx">mySet</span><span class="p">)</span>
+<span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">mySet</span><span class="p">)</span>
 <span class="c1">// [ 'a', 'b' ]</span>
 </code></pre></div></div>
 

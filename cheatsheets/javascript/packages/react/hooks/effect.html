@@ -304,12 +304,12 @@
   <span class="nf">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>    
     <span class="nx">ChatAPI</span><span class="p">.</span><span class="nf">subscribeToFriendStatus</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">friend</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">handleStatusChange</span><span class="p">);</span>    
     
-    <span class="nf">return </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>   
+    <span class="k">return </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>   
       <span class="nx">ChatAPI</span><span class="p">.</span><span class="nf">unsubscribeFromFriendStatus</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">friend</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">handleStatusChange</span><span class="p">);</span> 
     <span class="p">};</span>
   <span class="p">});</span>
   
-  <span class="nf">if </span><span class="p">(</span><span class="nx">isOnline</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">isOnline</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="dl">'</span><span class="s1">Loading...</span><span class="dl">'</span><span class="p">;</span>
   <span class="p">}</span>
   
@@ -337,7 +337,7 @@
 
     <span class="nx">ChatAPI</span><span class="p">.</span><span class="nf">subscribeToFriendStatus</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">friend</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">handleStatusChange</span><span class="p">);</span>
 
-    <span class="nf">return </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="nx">ChatAPI</span><span class="p">.</span><span class="nf">unsubscribeFromFriendStatus</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">friend</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">handleStatusChange</span><span class="p">);</span>
     <span class="p">};</span>
   <span class="p">});</span>
@@ -378,7 +378,7 @@
       <span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">`You clicked </span><span class="p">${</span><span class="nx">count</span><span class="p">}</span><span class="s2"> times`</span><span class="p">;</span>
     <span class="p">});</span>
 
-    <span class="nf">return </span><span class="p">(</span>
+    <span class="k">return </span><span class="p">(</span>
       <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>You clicked <span class="si">{</span> <span class="nx">count</span> <span class="si">}</span> times<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
           
@@ -393,7 +393,7 @@
   <li>Class component with logic to run on mount and update in separate methods.
     <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">class</span> <span class="nc">Example</span> <span class="kd">extends</span> <span class="nc">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
     <span class="nf">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nf">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+      <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
         
       <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
         <span class="na">count</span><span class="p">:</span> <span class="mi">0</span>
@@ -409,7 +409,7 @@
     <span class="p">}</span>
 
     <span class="nf">render</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nf">return </span><span class="p">(</span>
+      <span class="k">return </span><span class="p">(</span>
         <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>You clicked <span class="si">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span> <span class="si">}</span> times<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
             

@@ -218,9 +218,9 @@
 
 <span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="sh">"</span><span class="s">/</span><span class="sh">"</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
-    <span class="k">return</span> <span class="nf">jsonify</span><span class="p">({</span><span class="s">'fizz'</span><span class="p">:</span> <span class="s">'buzz'</span><span class="p">})</span>
+    <span class="k">return</span> <span class="nf">jsonify</span><span class="p">({</span><span class="sh">'</span><span class="s">fizz</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">buzz</span><span class="sh">'</span><span class="p">})</span>
 </code></pre></div></div>
 
 <p>Convert your app into an API to get data returned as JSON text by default, on a success.</p>
@@ -239,9 +239,9 @@
 
 <p>You’ll still have to return errors as JSON explicitly:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@app.route</span><span class="p">(</span><span class="s">"/bad"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@app.route</span><span class="p">(</span><span class="sh">"</span><span class="s">/bad</span><span class="sh">"</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">bar</span><span class="p">():</span>
-    <span class="n">resp_data</span> <span class="o">=</span> <span class="p">{</span><span class="s">"error"</span><span class="p">:</span> <span class="s">"My error message"</span><span class="p">}</span>
+    <span class="n">resp_data</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">error</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">My error message</span><span class="sh">"</span><span class="p">}</span>
     <span class="k">return</span> <span class="nf">jsonify</span><span class="p">(</span><span class="n">resp_data</span><span class="p">),</span> <span class="mi">400</span>
 </code></pre></div></div>
 
@@ -249,14 +249,14 @@
 
 <p>Serve the contents of the <code class="language-plaintext highlighter-rouge">static</code> directory (the default) as <code class="language-plaintext highlighter-rouge">/assets</code>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">,</span> <span class="n">static_folder</span><span class="o">=</span><span class="s">'static'</span><span class="p">,</span> <span class="n">static_url_path</span><span class="o">=</span><span class="s">"/assets"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">,</span> <span class="n">static_folder</span><span class="o">=</span><span class="sh">'</span><span class="s">static</span><span class="sh">'</span><span class="p">,</span> <span class="n">static_url_path</span><span class="o">=</span><span class="sh">"</span><span class="s">/assets</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Serve a specific file - note the <code class="language-plaintext highlighter-rouge">index.html</code> will be served from <code class="language-plaintext highlighter-rouge">static</code> directory.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@app.route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@app.route</span><span class="p">(</span><span class="sh">'</span><span class="s">/</span><span class="sh">'</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">my_home</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">app</span><span class="p">.</span><span class="nf">send_static_file</span><span class="p">(</span><span class="s">"index.html"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">app</span><span class="p">.</span><span class="nf">send_static_file</span><span class="p">(</span><span class="sh">"</span><span class="s">index.html</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>See also <a href="https://flask.palletsprojects.com/en/2.2.x/patterns/singlepageapplications/">Single-Page Applications</a> in the Flask docs.</p>
@@ -270,18 +270,18 @@
 <span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="sh">'</span><span class="s">/</span><span class="sh">'</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
-    <span class="k">return</span> <span class="s">'Hello, World!'</span>
+    <span class="k">return</span> <span class="sh">'</span><span class="s">Hello, World!</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <h3 id="get-and-post">GET and POST</h3>
 
 <p>Based on the docs.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@app.route</span><span class="p">(</span><span class="s">'/login'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'GET'</span><span class="p">,</span> <span class="s">'POST'</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@app.route</span><span class="p">(</span><span class="sh">'</span><span class="s">/login</span><span class="sh">'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">GET</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">POST</span><span class="sh">'</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">login</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'POST'</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="n">method</span> <span class="o">==</span> <span class="sh">'</span><span class="s">POST</span><span class="sh">'</span><span class="p">:</span>
         <span class="k">return</span> <span class="nf">do_the_login</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="nf">show_the_login_form</span><span class="p">()</span>
@@ -296,63 +296,63 @@
 <span class="n">api</span> <span class="o">=</span> <span class="nc">Api</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="sh">"</span><span class="s">/</span><span class="sh">"</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">root</span><span class="p">():</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     Handle the app root.
-    """</span>
-    <span class="k">return</span> <span class="s">"""
+    </span><span class="sh">"""</span>
+    <span class="k">return</span> <span class="sh">"""</span><span class="s">
         &lt;h1&gt;Flask demo app&lt;/h1&gt;
 
         &lt;h2&gt;API test links&lt;/h2&gt;
 
         &lt;ul&gt;
             &lt;li&gt;
-                &lt;a href="/api/greet"&gt;Greet basic&lt;/a&gt;
+                &lt;a href=</span><span class="sh">"</span><span class="s">/api/greet</span><span class="sh">"</span><span class="s">&gt;Greet basic&lt;/a&gt;
             &lt;/li&gt;
             &lt;li&gt;
-                &lt;a href="/api/greet?name=Dev"&gt;Greet with query params&lt;/a&gt;
+                &lt;a href=</span><span class="sh">"</span><span class="s">/api/greet?name=Dev</span><span class="sh">"</span><span class="s">&gt;Greet with query params&lt;/a&gt;
             &lt;/li&gt;
             &lt;li&gt;
-                &lt;a href="/api/greet?name="&gt;Greet error&lt;/a&gt;
+                &lt;a href=</span><span class="sh">"</span><span class="s">/api/greet?name=</span><span class="sh">"</span><span class="s">&gt;Greet error&lt;/a&gt;
             &lt;/li&gt;
             &lt;li&gt;
-                &lt;a href="/api/message/abc/def"&gt;Position params&lt;/a&gt;
+                &lt;a href=</span><span class="sh">"</span><span class="s">/api/message/abc/def</span><span class="sh">"</span><span class="s">&gt;Position params&lt;/a&gt;
             &lt;/li&gt;
         &lt;/ul&gt;
-    """</span>
+    </span><span class="sh">"""</span>
 
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">"/api/greet"</span><span class="p">)</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="sh">"</span><span class="s">/api/greet</span><span class="sh">"</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">greet</span><span class="p">():</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     Handle the greet endpoint to demonstrate query params, defaults, and errors.
-    """</span>
+    </span><span class="sh">"""</span>
     <span class="n">args</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">args</span>
 
-    <span class="n">name</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"name"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">"World"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="sh">"</span><span class="s">World</span><span class="sh">"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s">""</span><span class="p">:</span>
-        <span class="nf">abort</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="s">"`name` must be non-empty string or not supplied"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="sh">""</span><span class="p">:</span>
+        <span class="nf">abort</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="sh">"</span><span class="s">`name` must be non-empty string or not supplied</span><span class="sh">"</span><span class="p">)</span>
 
-    <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">"</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="sh">"</span>
 
-    <span class="k">return</span> <span class="p">{</span><span class="s">"greeting"</span><span class="p">:</span> <span class="n">msg</span><span class="p">}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="sh">"</span><span class="s">greeting</span><span class="sh">"</span><span class="p">:</span> <span class="n">msg</span><span class="p">}</span>
 
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">"/api/message/&lt;foo&gt;/&lt;bar&gt;"</span><span class="p">)</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="sh">"</span><span class="s">/api/message/&lt;foo&gt;/&lt;bar&gt;</span><span class="sh">"</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">message</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">):</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     Demonstrate using positional params.
-    """</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s">"foo"</span><span class="p">:</span> <span class="n">foo</span><span class="p">,</span> <span class="s">"bar"</span><span class="p">:</span> <span class="n">bar</span><span class="p">}</span>
+    </span><span class="sh">"""</span>
+    <span class="k">return</span> <span class="p">{</span><span class="sh">"</span><span class="s">foo</span><span class="sh">"</span><span class="p">:</span> <span class="n">foo</span><span class="p">,</span> <span class="sh">"</span><span class="s">bar</span><span class="sh">"</span><span class="p">:</span> <span class="n">bar</span><span class="p">}</span>
 
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">"/api/send/"</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">"POST"</span><span class="p">])</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="sh">"</span><span class="s">/api/send/</span><span class="sh">"</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">POST</span><span class="sh">"</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">send</span><span class="p">():</span>
     <span class="n">json</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">json</span>
 
-    <span class="k">return</span> <span class="p">{</span><span class="s">"json"</span><span class="p">:</span> <span class="n">json</span><span class="p">}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="sh">"</span><span class="s">json</span><span class="sh">"</span><span class="p">:</span> <span class="n">json</span><span class="p">}</span>
 </code></pre></div></div>
 
         

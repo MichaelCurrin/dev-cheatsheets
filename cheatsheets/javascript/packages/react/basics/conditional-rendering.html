@@ -202,7 +202,7 @@
 
 <h3 id="standalone-if-statement">Standalone if statement</h3>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">if </span><span class="p">(</span><span class="nx">CONDITION</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if </span><span class="p">(</span><span class="nx">CONDITION</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">&lt;</span><span class="nc">A</span> <span class="p">/&gt;;</span>
 <span class="p">}</span>
 
@@ -214,7 +214,7 @@
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Greeting</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">isLoggedIn</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
   
-  <span class="nf">if </span><span class="p">(</span><span class="nx">isLoggedIn</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">isLoggedIn</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">&lt;</span><span class="nc">UserGreeting</span> <span class="p">/&gt;;</span>
   <span class="p">}</span> 
   
@@ -241,7 +241,7 @@
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Mailbox</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">unreadMessages</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
 
-  <span class="nf">return </span><span class="p">(</span>
+  <span class="k">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
       
@@ -266,7 +266,7 @@
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  
   
-<span class="nf">return </span><span class="p">(</span>
+<span class="k">return </span><span class="p">(</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="si">{</span> <span class="nx">count</span> <span class="o">&amp;&amp;</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Messages: <span class="si">{</span> <span class="nx">count</span> <span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span> <span class="si">}</span> 
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -277,7 +277,7 @@
 
 <p>Inline in the JSX:</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">return </span><span class="p">(</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return </span><span class="p">(</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     The user is <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span><span class="si">{</span> <span class="nx">isLoggedIn</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">currently</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">not</span><span class="dl">'</span> <span class="si">}</span><span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> logged in.    
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -288,7 +288,7 @@
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">loggedInMsg</span> <span class="o">=</span> <span class="nx">isLoggedIn</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">currently</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">not</span><span class="dl">'</span>
 
-<span class="nf">return </span><span class="p">(</span>
+<span class="k">return </span><span class="p">(</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     The user is <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span><span class="si">{</span> <span class="nx">loggedInMsg</span> <span class="si">}</span><span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> logged in.    
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -299,7 +299,7 @@
 
 <p>Harder to read:</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">return </span><span class="p">(</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return </span><span class="p">(</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="si">{</span><span class="nx">isLoggedIn</span>
       <span class="p">?</span> <span class="p">&lt;</span><span class="nc">LogoutButton</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleLogoutClick</span><span class="si">}</span> <span class="p">/&gt;</span>
@@ -314,7 +314,7 @@
   <span class="p">?</span> <span class="p">&lt;</span><span class="nc">LogoutButton</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleLogoutClick</span><span class="si">}</span> <span class="p">/&gt;</span>
   <span class="p">:</span> <span class="p">&lt;</span><span class="nc">LoginButton</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleLoginClick</span><span class="si">}</span> <span class="p">/&gt;;</span>
 
-<span class="nf">return </span><span class="p">(</span>
+<span class="k">return </span><span class="p">(</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="si">{</span><span class="nx">loggedIn</span><span class="si">}</span>
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -326,11 +326,11 @@
 <p>Here we a warning banner as per the docs example. We use the property <code class="language-plaintext highlighter-rouge">warn</code> as a <code class="language-plaintext highlighter-rouge">true</code> value to show some content or <code class="language-plaintext highlighter-rouge">false</code> to hide it.</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">WarningBanner</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">props</span><span class="p">.</span><span class="nx">warn</span><span class="p">)</span> <span class="p">{</span>   
+  <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">props</span><span class="p">.</span><span class="nx">warn</span><span class="p">)</span> <span class="p">{</span>   
     <span class="k">return</span> <span class="kc">null</span><span class="p">;</span> 
   <span class="p">}</span>
   
-  <span class="nf">return </span><span class="p">(</span>
+  <span class="k">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"warning"</span><span class="p">&gt;</span>
       Warning!
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>

@@ -344,7 +344,7 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">READY_STATES</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">complete</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">interactive</span><span class="dl">'</span><span class="p">]</span>
 
 <span class="kd">function</span> <span class="nf">domReady</span><span class="p">(</span><span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nx">READY_STATES</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">READY_STATES</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span><span class="p">)</span> <span class="p">{</span>
     <span class="nf">setTimeout</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="nx">fn</span><span class="p">);</span>

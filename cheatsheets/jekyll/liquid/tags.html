@@ -172,12 +172,12 @@
 
 <p>Note no quotes or colon.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">link</span><span class="w"> </span>foo.md<span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">link</span><span class="w"> </span><span class="nv">foo</span><span class="p">.</span><span class="nv">md</span><span class="w"> </span><span class="cp">%}</span>
 
-<span class="p">{%</span><span class="w"> </span><span class="nt">link</span><span class="w"> </span>foo/bar.md<span class="w"> </span><span class="p">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">link</span><span class="w"> </span>foo/bar.md<span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;img src="<span class="p">{%</span><span class="w"> </span><span class="nt">link</span><span class="w"> </span>assets/img/foo<span class="w"> </span>bar.jpg<span class="w"> </span><span class="p">%}</span>" /&gt;
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;img src="<span class="cp">{%</span><span class="w"> </span><span class="nt">link</span><span class="w"> </span>assets/img/foo<span class="w"> </span><span class="nv">bar</span><span class="p">.</span><span class="nv">jpg</span><span class="w"> </span><span class="cp">%}</span>" /&gt;
 </code></pre></div></div>
 
 <p>Use a variable instead.</p>
@@ -194,11 +194,11 @@ Maybe not for link tag or Jekyll 3? Or maybe just because `link` is a special le
 
 <p>It works at least for <code class="language-plaintext highlighter-rouge">include</code> tag. Based on Jekyll’s own <a href="https://github.com/jekyll/jekyll/blob/master/test/source/_posts/2013-12-17-include-variable-filters.markdown">tests</a>.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">abc</span><span class="w"> </span><span class="p">}}</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">abc</span><span class="w"> </span><span class="cp">}}</span><span class="w"> </span><span class="cp">%}</span>
 
-<span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">abc</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">append</span><span class="p">:</span><span class="w"> </span><span class="s1">'.html'</span><span class="w"> </span><span class="p">}}</span><span class="w"> </span><span class="p">%}</span> 
+<span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">abc</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">append</span><span class="p">:</span><span class="w"> </span><span class="s1">'.html'</span><span class="w"> </span><span class="cp">}}</span><span class="w"> </span><span class="cp">%}</span> 
 
-<span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">abc</span><span class="w"> </span><span class="p">}}.</span><span class="nv">html</span><span class="w"> </span><span class="na">a</span><span class="o">=</span><span class="s1">'b'</span><span class="w"> </span><span class="na">def</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="p">%}</span> 
+<span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">abc</span><span class="w"> </span><span class="cp">}}</span><span class="p">.</span><span class="nv">html</span><span class="w"> </span><span class="na">a</span><span class="o">=</span><span class="s1">'b'</span><span class="w"> </span><span class="na">def</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="cp">%}</span> 
 </code></pre></div></div>
 
 

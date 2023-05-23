@@ -179,7 +179,7 @@
 
 <p>Provide a path as a single argument. You get results as absolute paths.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">glob</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="s">"some_dir/*.png"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">glob</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="sh">"</span><span class="s">some_dir/*.png</span><span class="sh">"</span><span class="p">)</span>
 <span class="c1"># =&gt; ['/home/michael/foo/bar/some_dir/a.png', '/home/michael/foo/baz/some_dir/b.png', ]
 </span></code></pre></div></div>
 
@@ -189,7 +189,7 @@
 
 <p>use a different method and provide two arguments as <code class="language-plaintext highlighter-rouge">glob1(dirname, pattern)</code>. You get results as filenames only.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">glob</span><span class="p">.</span><span class="nf">glob1</span><span class="p">(</span><span class="s">"some_dir"</span><span class="p">,</span> <span class="s">"*.png"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">glob</span><span class="p">.</span><span class="nf">glob1</span><span class="p">(</span><span class="sh">"</span><span class="s">some_dir</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">*.png</span><span class="sh">"</span><span class="p">)</span>
 <span class="c1"># =&gt; ['a.png', 'a.png', ...]
 </span></code></pre></div></div>
 
@@ -197,7 +197,7 @@
 
 <p>“Dotfiles” which start with a dot are not picked up using a star pattern (as in the shell if you did <code class="language-plaintext highlighter-rouge">ls *</code>). But, you can specify a leading dot.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">glob</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="s">'.c*'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">glob</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="sh">'</span><span class="s">.c*</span><span class="sh">'</span><span class="p">)</span>
 <span class="c1"># =&gt; ['.foo.bar']
 </span></code></pre></div></div>
 
@@ -213,7 +213,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">glob</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="c1"># e.g.
-</span><span class="nf">glob</span><span class="p">(</span><span class="s">"foo/*.txt"</span><span class="p">)</span>
+</span><span class="nf">glob</span><span class="p">(</span><span class="sh">"</span><span class="s">foo/*.txt</span><span class="sh">"</span><span class="p">)</span>
 <span class="c1"># =&gt; [ "foo/a.txt", "foo/b.txt" ]
 </span></code></pre></div></div>
 
@@ -223,9 +223,9 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">glob0</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span>
 <span class="c1"># e.g.
-</span><span class="nf">glob0</span><span class="p">(</span><span class="s">"foo"</span><span class="p">,</span> <span class="s">"*.txt"</span><span class="p">)</span>
+</span><span class="nf">glob0</span><span class="p">(</span><span class="sh">"</span><span class="s">foo</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">*.txt</span><span class="sh">"</span><span class="p">)</span>
 <span class="c1"># =&gt; [ ]
-</span><span class="nf">glob0</span><span class="p">(</span><span class="s">"foo"</span><span class="p">,</span> <span class="s">"a.txt"</span><span class="p">)</span>
+</span><span class="nf">glob0</span><span class="p">(</span><span class="sh">"</span><span class="s">foo</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">a.txt</span><span class="sh">"</span><span class="p">)</span>
 <span class="c1"># =&gt; [ 'a.txt', 'b.txt' ]
 </span></code></pre></div></div>
 
@@ -235,7 +235,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">glob1</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span>
 <span class="c1"># e.g.
-</span><span class="nf">glob1</span><span class="p">(</span><span class="s">"foo"</span><span class="p">,</span> <span class="s">"*.txt"</span><span class="p">)</span>
+</span><span class="nf">glob1</span><span class="p">(</span><span class="sh">"</span><span class="s">foo</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">*.txt</span><span class="sh">"</span><span class="p">)</span>
 <span class="c1"># =&gt; [ 'a.txt', 'b.txt' ]
 </span></code></pre></div></div>
 

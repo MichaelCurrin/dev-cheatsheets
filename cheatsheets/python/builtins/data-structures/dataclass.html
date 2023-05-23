@@ -205,9 +205,9 @@
 
 <span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">InventoryItem</span><span class="p">:</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     Class for keeping track of an item in inventory.
-    """</span>
+    </span><span class="sh">"""</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">unit_price</span><span class="p">:</span> <span class="nb">float</span>
     <span class="n">quantity_on_hand</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
@@ -219,9 +219,9 @@
 <p>Equivalent definition <em>without</em> using a data class:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">InventoryItem</span><span class="p">:</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     Class for keeping track of an item in inventory.
-    """</span>
+    </span><span class="sh">"""</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">unit_price</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">quantity_on_hand</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="n">self</span><span class="p">.</span><span class="n">unit_price</span> <span class="o">=</span> <span class="n">unit_price</span>
@@ -232,7 +232,7 @@
 
 <h3 id="use-instance">Use instance</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">item</span> <span class="o">=</span> <span class="nc">InventoryItem</span><span class="p">(</span><span class="s">"Foo"</span><span class="p">,</span> <span class="mf">123.4</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">item</span> <span class="o">=</span> <span class="nc">InventoryItem</span><span class="p">(</span><span class="sh">"</span><span class="s">Foo</span><span class="sh">"</span><span class="p">,</span> <span class="mf">123.4</span><span class="p">)</span>
 
 <span class="n">item</span>
 <span class="c1"># =&gt; InventoryItem(name='Foo', unit_price=123.4, quantity_on_hand=0)
@@ -247,7 +247,7 @@
 </span></code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">item</span><span class="p">.</span><span class="n">__dict__</span>
-<span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'Foo'</span><span class="p">,</span> <span class="s">'unit_price'</span><span class="p">:</span> <span class="mf">123.4</span><span class="p">,</span> <span class="s">'quantity_on_hand'</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Foo</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">unit_price</span><span class="sh">'</span><span class="p">:</span> <span class="mf">123.4</span><span class="p">,</span> <span class="sh">'</span><span class="s">quantity_on_hand</span><span class="sh">'</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
 </code></pre></div></div>
 
 <h2 id="parameters">Parameters</h2>
@@ -282,12 +282,12 @@
     <span class="n">plugins</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nf">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
 
 
-<span class="n">test</span> <span class="o">=</span> <span class="nc">Application</span><span class="p">(</span><span class="s">"Testing..."</span><span class="p">)</span> 
-<span class="c1"># OK
-</span>
-<span class="c1"># Passing a string instead of list of strings:
-</span><span class="n">bad</span> <span class="o">=</span> <span class="nc">Application</span><span class="p">(</span><span class="s">"Testing..."</span><span class="p">,</span> <span class="s">"with plugin"</span><span class="p">)</span>  
-<span class="c1"># Error: List[str] expected
+<span class="n">test</span> <span class="o">=</span> <span class="nc">Application</span><span class="p">(</span><span class="sh">"</span><span class="s">Testing</span><span class="gp">...</span><span class="sh">"</span><span class="s">) 
+# OK
+
+# Passing a string instead of list of strings:
+bad = Application(</span><span class="sh">"</span><span class="n">Testing</span><span class="p">...</span><span class="sh">"</span><span class="s">, </span><span class="sh">"</span><span class="k">with</span> <span class="n">plugin</span><span class="sh">"</span><span class="s">)  
+# Error: List[str] expected
 </span></code></pre></div></div>
 
 <p>Or you could use a separate package like <a href="https://pypi.org/project/dataclass-type-validator/">dataclass-type-validator</a>.</p>

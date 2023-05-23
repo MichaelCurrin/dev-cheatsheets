@@ -189,41 +189,41 @@
 
 <h3 id="set-up-cursor">Set up cursor</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="s">'trends.db'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="sh">'</span><span class="s">trends.db</span><span class="sh">'</span><span class="p">)</span>
 <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="nf">cursor</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h3 id="create-table">Create table</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">drop_query</span> <span class="o">=</span> <span class="s">'DROP TABLE IF EXISTS foo;'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">drop_query</span> <span class="o">=</span> <span class="sh">'</span><span class="s">DROP TABLE IF EXISTS foo;</span><span class="sh">'</span>
 <span class="n">cur</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="n">drop_query</span><span class="p">)</span>
 
-<span class="n">create_query</span> <span class="o">=</span> <span class="s">"""</span><span class="se">\
+<span class="n">create_query</span> <span class="o">=</span> <span class="sh">"""</span><span class="se">\
 </span><span class="s">CREATE TABLE IF NOT EXISTS foo (
     id INTEGER PRIMARY KEY,
     bar VARCHAR(50)
     baz INTEGER
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-"""</span>
+</span><span class="sh">"""</span>
 <span class="n">cur</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="n">create_query</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="insert">Insert</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">insert_sql</span> <span class="o">=</span> <span class="s">"""
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">insert_sql</span> <span class="o">=</span> <span class="sh">"""</span><span class="s">
     INSERT INTO foo (bar, baz, updated_at)
              VALUES (?, ?, CURRENT_TIMESTAMP);
-"""</span>
-<span class="n">cur</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="n">insert_sql</span><span class="p">,</span> <span class="s">"Fizz"</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>
+</span><span class="sh">"""</span>
+<span class="n">cur</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="n">insert_sql</span><span class="p">,</span> <span class="sh">"</span><span class="s">Fizz</span><span class="sh">"</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="select">Select</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">select_sql</span> <span class="o">=</span> <span class="s">"""
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">select_sql</span> <span class="o">=</span> <span class="sh">"""</span><span class="s">
     SELECT *
     FROM foo;
-"""</span>
+</span><span class="sh">"""</span>
 
 <span class="n">cur</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="n">select_sql</span><span class="p">)</span>
 

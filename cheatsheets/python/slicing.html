@@ -160,34 +160,34 @@
 
 <p>Set start and end.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="s">'abcdef'</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="s">'bcdef'</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="s">'abcdef'</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
-<span class="s">'bcdef'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="sh">'</span><span class="s">bcdef</span><span class="sh">'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+<span class="sh">'</span><span class="s">bcdef</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <h2 id="interval">Interval</h2>
 
 <p>The <code class="language-plaintext highlighter-rouge">1</code> at the end is implied and not nothing here:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="s">'abcdef'</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
-<span class="s">'bcde'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
+<span class="sh">'</span><span class="s">bcde</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Or you can get every 2nd, or 3rd element:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="s">'abcdef'</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
-<span class="s">'ace'</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="s">'abcdef'</span><span class="p">[::</span><span class="mi">3</span><span class="p">]</span>
-<span class="s">'ad'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+<span class="sh">'</span><span class="s">ace</span><span class="sh">'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">[::</span><span class="mi">3</span><span class="p">]</span>
+<span class="sh">'</span><span class="s">ad</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Or you can get every 2nd, or 3rd element:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="s">'abcdef'</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
-<span class="s">'ace'</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="s">'abcdef'</span><span class="p">[::</span><span class="mi">3</span><span class="p">]</span>
-<span class="s">'ad'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+<span class="sh">'</span><span class="s">ace</span><span class="sh">'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">[::</span><span class="mi">3</span><span class="p">]</span>
+<span class="sh">'</span><span class="s">ad</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Use a negative value to reverse - see below.</p>
@@ -196,28 +196,28 @@
 
 <p>You can reverse the iterable:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="s">'abcdef'</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="s">'fedc'</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="s">'abcdef'</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="s">'fedcba'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="sh">'</span><span class="s">fedc</span><span class="sh">'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="sh">'</span><span class="s">fedcba</span><span class="sh">'</span>
 </code></pre></div></div>
 <p>You can use reversed function too but isn’t practical for strings:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">reversed</span><span class="p">(</span><span class="s">'abcdef'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="nf">reversed</span><span class="p">(</span><span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">)</span>
 <span class="o">&lt;</span><span class="nb">reversed</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7fc4065056a0</span><span class="o">&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nf">str</span><span class="p">(</span><span class="nf">reversed</span><span class="p">(</span><span class="s">'abcdef'</span><span class="p">))</span>
-<span class="s">'&lt;reversed object at 0x7fc406550d30&gt;'</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="s">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="nf">reversed</span><span class="p">(</span><span class="s">'abcdef'</span><span class="p">))</span>
-<span class="s">'fedcba'</span><span class="c1"># 1 at the end is implied and not nothing here
-</span><span class="o">&gt;&gt;&gt;</span> <span class="s">'abcdef'</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
-<span class="s">'bcde'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="nf">str</span><span class="p">(</span><span class="nf">reversed</span><span class="p">(</span><span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">))</span>
+<span class="sh">'</span><span class="s">&lt;reversed object at 0x7fc406550d30&gt;</span><span class="sh">'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="nf">reversed</span><span class="p">(</span><span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">))</span>
+<span class="sh">'</span><span class="s">fedcba</span><span class="sh">'</span><span class="c1"># 1 at the end is implied and not nothing here
+</span><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">abcdef</span><span class="sh">'</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
+<span class="sh">'</span><span class="s">bcde</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>This is easier on a list:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">reversed</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="nf">reversed</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
 <span class="o">&lt;</span><span class="n">list_reverseiterator</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7fc4065056a0</span><span class="o">&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">(</span><span class="nf">reversed</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">(</span><span class="nf">reversed</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
 <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 </code></pre></div></div>
 <p>Or</p>

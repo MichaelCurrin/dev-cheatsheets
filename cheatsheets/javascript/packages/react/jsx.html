@@ -256,7 +256,7 @@
 </code></pre></div>    </div>
     <p>Add brackets if you want to start the tag on its own line after <code class="language-plaintext highlighter-rouge">return</code>.</p>
     <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="nf">Greet</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nf">return </span><span class="p">(</span>
+    <span class="k">return </span><span class="p">(</span>
       <span class="p">&lt;&gt;</span>
         <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>This is React<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
@@ -314,7 +314,7 @@
 </code></pre></div>    </div>
     <p>With brackets:</p>
     <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="nf">Greeting</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nf">return </span><span class="p">(</span>
+    <span class="k">return </span><span class="p">(</span>
       <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"my-class"</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>This is React<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
@@ -355,7 +355,7 @@
 
   <span class="kd">const</span> <span class="nx">status</span> <span class="o">=</span> <span class="nx">age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">major</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">minor</span><span class="dl">'</span>
 
-  <span class="nf">return </span><span class="p">(</span>
+  <span class="k">return </span><span class="p">(</span>
     <span class="p">&lt;&gt;</span>
       <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="si">{</span> <span class="nx">name</span> <span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="si">{</span> <span class="nx">status</span> <span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -369,7 +369,7 @@
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Greet</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">age</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
 
-  <span class="nf">return </span><span class="p">(</span>
+  <span class="k">return </span><span class="p">(</span>
     <span class="p">&lt;&gt;</span>
       <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">major</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">minor</span><span class="dl">'</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -392,7 +392,7 @@
 <p>Setting a function as an event:</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Greet</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nf">return </span><span class="p">(</span>
+  <span class="k">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello!</span><span class="dl">"</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>
       Greet
     <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
@@ -403,7 +403,7 @@
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">setState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="kd">function</span> <span class="nf">LikeButton</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nf">return </span><span class="p">(</span>
+  <span class="k">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">setState</span><span class="p">({</span> <span class="na">liked</span><span class="p">:</span> <span class="kc">true</span> <span class="p">})</span><span class="si">}</span><span class="p">&gt;</span>
       Like
     <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
@@ -422,7 +422,7 @@
 <span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nf">Counter</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 
-  <span class="nf">return </span><span class="p">(</span>
+  <span class="k">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Count: <span class="si">{</span><span class="nx">count</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
@@ -468,7 +468,7 @@
 <span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Joe</span><span class="dl">"</span>
 
-  <span class="nf">return </span><span class="p">(</span>
+  <span class="k">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"App"</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nc">Greet</span><span class="p">/&gt;</span>
       <span class="p">&lt;</span><span class="nc">GreetPerson</span> <span class="na">name</span><span class="p">=</span><span class="s">"World"</span><span class="p">/&gt;</span>
@@ -485,7 +485,7 @@
 <p>Writing code with JSX.</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">LikeButton</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nf">return </span><span class="p">(</span>
+  <span class="k">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nf">setState</span><span class="p">({</span> <span class="na">liked</span><span class="p">:</span> <span class="kc">true</span> <span class="p">})</span><span class="si">}</span><span class="p">&gt;</span>
       Like
     <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>

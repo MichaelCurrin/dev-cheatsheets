@@ -340,7 +340,12 @@
 
 <h3 id="change-password">Change password</h3>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">USER</span> <span class="n">foo</span> <span class="k">WITH</span> <span class="n">PASSWORD</span> <span class="s1">'newpass'</span><span class="p">;</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">USER</span> <span class="n">my_user</span> <span class="k">WITH</span> <span class="n">PASSWORD</span> <span class="s1">'my_password'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Or encrypt it:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">USER</span> <span class="n">my_user</span> <span class="k">WITH</span> <span class="k">ENCRYPTED</span> <span class="n">PASSWORD</span> <span class="s1">'my_password'</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>See <a href="https://www.postgresql.org/docs/current/sql-alteruser.html">alter user</a> docs.</p>
@@ -351,6 +356,8 @@
 </code></pre></div></div>
 
 <p>From <a href="https://serverfault.com/questions/110154/whats-the-default-superuser-username-password-for-postgres-after-a-new-install/325596">question on forum</a></p>
+
+<p>You cannot read the original value of an encryped password. But you can set a new one.</p>
 
 <h3 id="list-users">List users</h3>
 

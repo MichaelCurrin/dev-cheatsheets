@@ -231,7 +231,7 @@
 
 <p>The old approach using <a href="https://developer.mozilla.org/en-US/docs/Glossary/IIFE">IIFE</a>.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/article/promise-chaining/user.json</span><span class="dl">'</span><span class="p">);</span>
   <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
   <span class="c1">// ...</span>
@@ -258,7 +258,7 @@
     <span class="kd">const</span> <span class="nx">newResult</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">doSomethingElse</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="kd">const</span> <span class="nx">finalResult</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">doThirdThing</span><span class="p">(</span><span class="nx">newResult</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Got the final result: </span><span class="p">${</span><span class="nx">finalResult</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-  <span class="p">}</span> <span class="nf">catch</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="nf">failureCallback</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>

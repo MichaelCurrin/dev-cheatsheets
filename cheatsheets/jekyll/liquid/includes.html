@@ -175,11 +175,11 @@
 <p><code class="language-plaintext highlighter-rouge">_include/image.html</code></p>
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;figure&gt;
-   &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;
-   &lt;img src="<span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">file</span><span class="w"> </span><span class="p">}}</span>" style="max-width: <span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">max-width</span><span class="w"> </span><span class="p">}}</span>;"
-      alt="<span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">alt</span><span class="w"> </span><span class="p">}}</span>"/&gt;
+   &lt;a href="<span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="cp">}}</span>"&gt;
+   &lt;img src="<span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">file</span><span class="w"> </span><span class="cp">}}</span>" style="max-width: <span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">max-width</span><span class="w"> </span><span class="cp">}}</span>;"
+      alt="<span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">alt</span><span class="w"> </span><span class="cp">}}</span>"/&gt;
    &lt;/a&gt;
-   &lt;figcaption&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">caption</span><span class="w"> </span><span class="p">}}</span>&lt;/figcaption&gt;
+   &lt;figcaption&gt;<span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">caption</span><span class="w"> </span><span class="cp">}}</span>&lt;/figcaption&gt;
 &lt;/figure&gt;
 </code></pre></div></div>
 
@@ -187,9 +187,9 @@
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 ---
-<span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">url</span><span class="o">=</span><span class="s2">"http://jekyllrb.com"</span><span class="err">
-</span><span class="na">max-width</span><span class="o">=</span><span class="s2">"200px"</span><span class="w"> </span><span class="na">file</span><span class="o">=</span><span class="s2">"logo.png"</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s2">"Jekyll logo"</span><span class="err">
-</span><span class="na">caption</span><span class="o">=</span><span class="s2">"This is the Jekyll logo."</span><span class="w"> </span><span class="p">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">url</span><span class="o">=</span><span class="s2">"http://jekyllrb.com"</span><span class="w">
+</span><span class="na">max-width</span><span class="o">=</span><span class="s2">"200px"</span><span class="w"> </span><span class="na">file</span><span class="o">=</span><span class="s2">"logo.png"</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s2">"Jekyll logo"</span><span class="w">
+</span><span class="na">caption</span><span class="o">=</span><span class="s2">"This is the Jekyll logo."</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 <p>Or pass variable names instead of values, as defined in frontmatter or data file. Be careful not to override URL on the page with an image url or it can break things.</p>
@@ -199,12 +199,12 @@ my_image:
   url: '...'
   alt: '...'
 ---
-<span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">url</span><span class="o">=</span>page.my_image.url<span class="w"> </span><span class="na">alt</span><span class="o">=</span>page.my_image.html<span class="w"> </span>...<span class="w"> </span><span class="p">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">url</span><span class="o">=</span><span class="nv">page</span><span class="p">.</span><span class="nv">my_image</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="nv">page</span><span class="p">.</span><span class="nv">my_image</span><span class="p">.</span><span class="nv">html</span><span class="w"> </span>...<span class="w"> </span><span class="cp">%}</span>
 
 From _data/gallery.yaml
 
-<span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">url</span><span class="o">=</span>site.data.gallery.my_image.url<span class="w"> </span><span class="err">
-</span>...<span class="w"> </span><span class="p">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">url</span><span class="o">=</span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">gallery</span><span class="p">.</span><span class="nv">my_image</span><span class="p">.</span><span class="nv">url</span><span class="w"> 
+</span>...<span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 <p>Or pass an object with attributes on it.</p>
@@ -214,7 +214,7 @@ my_image:
   url: '...'
   alt: '...'
 ---
-<span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">image_attributes</span><span class="o">=</span>page.my_image<span class="w"> </span><span class="p">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">image_attributes</span><span class="o">=</span><span class="nv">page</span><span class="p">.</span><span class="nv">my_image</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 

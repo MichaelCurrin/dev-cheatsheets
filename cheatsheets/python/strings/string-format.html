@@ -180,34 +180,34 @@
 
 <h3 id="implied-order">Implied order</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"{} {}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"</span><span class="s">{} {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="explicit-order">Explicit order</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"{0} {1}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"</span><span class="s">{0} {1}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="named-parameters">Named parameters</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"{foo} {bar}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">foo</span><span class="o">=</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="o">=</span><span class="n">bar</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"</span><span class="s">{foo} {bar}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">foo</span><span class="o">=</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="o">=</span><span class="n">bar</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="f-string">F-string</h3>
 
 <p>The rules of the <code class="language-plaintext highlighter-rouge">str.format</code> approach work with the newer F-string syntax, introduced in Python 3.6. This replaces the need for the older named parameters approach above.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">foo</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">bar</span><span class="si">}</span><span class="s">"</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">foo</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">bar</span><span class="si">}</span><span class="sh">"</span>
 </code></pre></div></div>
 
 <p>Number formatting done with both styles:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">1234</span>
 
-<span class="s">"{:10,}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="sh">"</span><span class="s">{:10,}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="c1"># '     1,234'
 </span>
-<span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="mi">10</span><span class="p">,</span><span class="si">}</span><span class="s">"</span>
+<span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="mi">10</span><span class="p">,</span><span class="si">}</span><span class="sh">"</span>
 <span class="c1"># '     1,234'
 </span></code></pre></div></div>
 
@@ -221,12 +221,12 @@
 
 <p>Using <code class="language-plaintext highlighter-rouge">__repr__()</code>. This is similar but different to using <code class="language-plaintext highlighter-rouge">str</code>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'{0!r}'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">'</span><span class="s">{0!r}</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Use ASCII modifier, since Python 3.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'{0!a}'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">'</span><span class="s">{0!a}</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <h3 id="example">Example</h3>
@@ -234,13 +234,13 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Data</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">'str'</span>
+        <span class="k">return</span> <span class="sh">'</span><span class="s">str</span><span class="sh">'</span>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">'repr'</span>
+        <span class="k">return</span> <span class="sh">'</span><span class="s">repr</span><span class="sh">'</span>
         
         
-<span class="s">'{0!s} {0!r}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="nc">Data</span><span class="p">())</span>
+<span class="sh">'</span><span class="s">{0!s} {0!r}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="nc">Data</span><span class="p">())</span>
 <span class="c1"># 'str repr'
 </span></code></pre></div></div>
 
@@ -249,15 +249,15 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Data</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">'räpr'</span>
+        <span class="k">return</span> <span class="sh">'</span><span class="s">räpr</span><span class="sh">'</span>
         
         
 <span class="c1"># Interactive console.
-</span><span class="s">'{0!r} {0!a}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="nc">Data</span><span class="p">())</span>
-<span class="s">'räpr r</span><span class="se">\\</span><span class="s">xe4pr'</span>
+</span><span class="sh">'</span><span class="s">{0!r} {0!a}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="nc">Data</span><span class="p">())</span>
+<span class="sh">'</span><span class="s">räpr r</span><span class="se">\\</span><span class="s">xe4pr</span><span class="sh">'</span>
 
 <span class="c1"># Printing.
-</span><span class="nf">print</span><span class="p">(</span><span class="s">'{0!r} {0!a}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="nc">Data</span><span class="p">()))</span>
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">{0!r} {0!a}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="nc">Data</span><span class="p">()))</span>
 <span class="c1"># räpr r\xe4pr
 </span></code></pre></div></div>
 
@@ -265,15 +265,15 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">i</span> <span class="o">=</span> <span class="mi">2021</span>
 
-<span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">i</span><span class="si">!r}</span><span class="s"> </span><span class="si">{</span><span class="n">i</span><span class="si">!a}</span><span class="s">"</span>
+<span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">i</span><span class="si">!r}</span><span class="s"> </span><span class="si">{</span><span class="n">i</span><span class="si">!a}</span><span class="sh">"</span>
 <span class="c1"># "2021 '2021' '2021'"
 </span></code></pre></div></div>
 
 <p>But with a string, you’ll get quotes for <code class="language-plaintext highlighter-rouge">r</code> and <code class="language-plaintext highlighter-rouge">a</code>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="s">'2021'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="sh">'</span><span class="s">2021</span><span class="sh">'</span>
 
-<span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">s</span><span class="si">!r}</span><span class="s"> </span><span class="si">{</span><span class="n">s</span><span class="si">!a}</span><span class="s">"</span>
+<span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">s</span><span class="si">!r}</span><span class="s"> </span><span class="si">{</span><span class="n">s</span><span class="si">!a}</span><span class="sh">"</span>
 <span class="c1"># "2021 '2021' '2021'"
 </span></code></pre></div></div>
 
@@ -281,37 +281,37 @@
 
 <p>With no direction set, the default for strings it to align left. Number alignment is covered in <a href="#numbers">Numbers</a>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'{:CHARS}'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">'</span><span class="s">{:CHARS}</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Align left.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'{:&lt;CHARS}'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">'</span><span class="s">{:&lt;CHARS}</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Align right with padding.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'{:&gt;CHARS}'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">'</span><span class="s">{:&gt;CHARS}</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Align center.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'{:^CHARS}'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">'</span><span class="s">{:^CHARS}</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>e.g.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"{:&lt;4}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s">"ab"</span><span class="p">)</span>
-<span class="s">'ab  '</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"</span><span class="s">{:&lt;4}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">ab</span><span class="sh">"</span><span class="p">)</span>
+<span class="sh">'</span><span class="s">ab  </span><span class="sh">'</span>
 
-<span class="s">"{:&gt;4}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s">"ab"</span><span class="p">)</span>
-<span class="s">'  ab'</span>
+<span class="sh">"</span><span class="s">{:&gt;4}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">ab</span><span class="sh">"</span><span class="p">)</span>
+<span class="sh">'</span><span class="s">  ab</span><span class="sh">'</span>
 
-<span class="s">"{:^4}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s">"ab"</span><span class="p">)</span>
-<span class="s">' ab '</span>
+<span class="sh">"</span><span class="s">{:^4}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">ab</span><span class="sh">"</span><span class="p">)</span>
+<span class="sh">'</span><span class="s"> ab </span><span class="sh">'</span>
 <span class="c1"># Odd number for even characters mean extra space on the right.
-</span><span class="s">"{:^5}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s">"ab"</span><span class="p">)</span>
-<span class="s">' ab  '</span>
+</span><span class="sh">"</span><span class="s">{:^5}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">ab</span><span class="sh">"</span><span class="p">)</span>
+<span class="sh">'</span><span class="s"> ab  </span><span class="sh">'</span>
 </code></pre></div></div>
 
 <h3 id="numbers">Numbers</h3>
@@ -322,15 +322,15 @@
 
 <p>If you set <code class="language-plaintext highlighter-rouge">d</code> as the type and specify total character places, you’ll get aligned right by default.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"{:CHARSd}"</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"</span><span class="s">{:CHARSd}</span><span class="sh">"</span>
 </code></pre></div></div>
 
 <p>e.g. Setting a total of 4 spaces, which adds two spaces before two-digit number.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"{:4d}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"</span><span class="s">{:4d}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="c1"># '  42'
 </span>
-<span class="s">"{42:4d}"</span>
+<span class="sh">"</span><span class="s">{42:4d}</span><span class="sh">"</span>
 <span class="c1"># '  42'
 </span></code></pre></div></div>
 
@@ -340,12 +340,12 @@
 
 <p>Make a long number readable using a separator like a comma.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"{:SEPARATOR}"</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"</span><span class="s">{:SEPARATOR}</span><span class="sh">"</span>
 </code></pre></div></div>
 
 <p>e.g. Use <code class="language-plaintext highlighter-rouge">"{:,}"</code> or `””.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"{:,}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">12345678910</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"</span><span class="s">{:,}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">12345678910</span><span class="p">)</span>
 <span class="c1"># 12,345,678,910
 </span></code></pre></div></div>
 
@@ -364,14 +364,14 @@
 
 <p>Default - implied as <code class="language-plaintext highlighter-rouge">"{:7.6f}"</code>. i.e. 7 digits with 6 after the decimal point.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"{:f}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"</span><span class="s">{:f}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="p">)</span>
 <span class="c1"># '3.141593'
 </span></code></pre></div></div>
 
 <p>Or using f-strings.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="si">:</span><span class="n">f</span><span class="si">}</span><span class="s">"</span>
-<span class="s">'3.141593'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="si">:</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span>
+<span class="sh">'</span><span class="s">3.141593</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Custom format - 3 digits, 2 after the decimal point.</p>
@@ -388,22 +388,22 @@
 
 <p>Leading zeroes padding.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"{:04d}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"</span><span class="s">{:04d}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="c1"># '0004'
 </span>
-<span class="s">'{:04d}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="sh">'</span><span class="s">{:04d}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="c1"># '0042'
 </span></code></pre></div></div>
 
 <p>Out of interest, align left.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'{:&lt;04d}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-<span class="s">'4200'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">'</span><span class="s">{:&lt;04d}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="sh">'</span><span class="s">4200</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Use white space padding and align to right.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'{:4d}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">'</span><span class="s">{:4d}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="c1"># '  42'
 </span></code></pre></div></div>
 
@@ -411,7 +411,7 @@
 
 <p>Leading zeroes.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"{:06.2f}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"</span><span class="s">{:06.2f}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="p">)</span>
 <span class="c1"># '003.14'
 </span></code></pre></div></div>
 

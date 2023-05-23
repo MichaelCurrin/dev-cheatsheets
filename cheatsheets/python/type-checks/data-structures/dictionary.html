@@ -250,9 +250,9 @@
 <p>A generic example, using a single field with type of string.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MyType</span> <span class="o">=</span> <span class="nc">TypedDict</span><span class="p">(</span>
-    <span class="s">'MyType'</span><span class="p">,</span> 
+    <span class="sh">'</span><span class="s">MyType</span><span class="sh">'</span><span class="p">,</span> 
     <span class="p">{</span>
-        <span class="s">'my_key'</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+        <span class="sh">'</span><span class="s">my_key</span><span class="sh">'</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre></div></div>
@@ -261,7 +261,7 @@
 
 <p>Here are using a <code class="language-plaintext highlighter-rouge">Movie</code> type, defined as follows:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Movie</span> <span class="o">=</span> <span class="nc">TypedDict</span><span class="p">(</span><span class="s">'Movie'</span><span class="p">,</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="s">'year'</span><span class="p">:</span> <span class="nb">int</span><span class="p">})</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Movie</span> <span class="o">=</span> <span class="nc">TypedDict</span><span class="p">(</span><span class="sh">'</span><span class="s">Movie</span><span class="sh">'</span><span class="p">,</span> <span class="p">{</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="sh">'</span><span class="s">year</span><span class="sh">'</span><span class="p">:</span> <span class="nb">int</span><span class="p">})</span>
 </code></pre></div></div>
 
 <p>The 4 approaches are:</p>
@@ -270,20 +270,20 @@
 
 <p>Annotate the type with comment explicitly.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movie</span> <span class="o">=</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'Toy Story'</span><span class="p">,</span> <span class="s">'year'</span><span class="p">:</span> <span class="mi">1995</span><span class="p">}</span>  <span class="c1"># type: Movie
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movie</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Toy Story</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">year</span><span class="sh">'</span><span class="p">:</span> <span class="mi">1995</span><span class="p">}</span>  <span class="c1"># type: Movie
 </span></code></pre></div></div>
 
 <h4 id="constructor">Constructor</h4>
 
 <p>Use the type as a constructor. Similar to a class.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movie</span> <span class="o">=</span> <span class="nc">Movie</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'Toy Story'</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">1995</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movie</span> <span class="o">=</span> <span class="nc">Movie</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">Toy Story</span><span class="sh">'</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">1995</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h4 id="function-parameter">Function parameter</h4>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span> <span class="n">Movie</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">movie</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">movie</span><span class="p">[</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">]</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </code></pre></div></div>
 
@@ -297,11 +297,11 @@
     <span class="n">y</span><span class="p">:</span> <span class="nb">int</span>
 
 
-<span class="n">p</span><span class="p">:</span> <span class="n">Point</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'y'</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+<span class="n">p</span><span class="p">:</span> <span class="n">Point</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">x</span><span class="sh">'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="sh">'</span><span class="s">y</span><span class="sh">'</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
 
 <span class="c1"># Error: Incompatible types (expression has type "float",
 #        TypedDict item "x" has type "int")
-</span><span class="n">p</span><span class="p">:</span> <span class="n">Point</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x'</span><span class="p">:</span> <span class="mf">1.2</span><span class="p">,</span> <span class="s">'y'</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+</span><span class="n">p</span><span class="p">:</span> <span class="n">Point</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">x</span><span class="sh">'</span><span class="p">:</span> <span class="mf">1.2</span><span class="p">,</span> <span class="sh">'</span><span class="s">y</span><span class="sh">'</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
 </code></pre></div></div>
 
 <p>From <a href="https://mypy.readthedocs.io/en/stable/error_code_list.html#check-dict-items-dict-item">Check TypedDict items</a>.</p>
@@ -310,7 +310,7 @@
 
 <p>When you use a typed dictionary, Mypy can detect an invalid key or value type and give an error:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">director</span> <span class="o">=</span> <span class="n">movie</span><span class="p">[</span><span class="s">'director'</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">director</span> <span class="o">=</span> <span class="n">movie</span><span class="p">[</span><span class="sh">'</span><span class="s">director</span><span class="sh">'</span><span class="p">]</span>
 <span class="c1"># Error: 'director' is not a valid key
 </span></code></pre></div></div>
 
@@ -322,23 +322,23 @@
 
 
 <span class="n">Person</span> <span class="o">=</span> <span class="nc">TypedDict</span><span class="p">(</span>
-    <span class="s">'Person'</span><span class="p">,</span> 
+    <span class="sh">'</span><span class="s">Person</span><span class="sh">'</span><span class="p">,</span> 
     <span class="p">{</span>
-        <span class="s">'name'</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
-        <span class="s">'age'</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
-        <span class="s">'height'</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+        <span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+        <span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+        <span class="sh">'</span><span class="s">height</span><span class="sh">'</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
     <span class="p">}</span>
 <span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">person</span><span class="p">:</span> <span class="n">Person</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="s">'name'</span><span class="p">])</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="s">'age'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="s">'height'</span><span class="p">])</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">])</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="sh">'</span><span class="s">height</span><span class="sh">'</span><span class="p">])</span>
 
 
 <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">person</span><span class="p">:</span> <span class="n">Person</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Hello, </span><span class="si">{</span><span class="n">person</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Hello, </span><span class="si">{</span><span class="n">person</span><span class="p">[</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
         

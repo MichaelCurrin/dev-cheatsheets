@@ -171,46 +171,46 @@
 
 <p>Printing a string and using <code class="language-plaintext highlighter-rouge">repr</code>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">)</span>
 <span class="n">abc</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="nf">repr</span><span class="p">(</span><span class="s">'abc'</span><span class="p">))</span>
-<span class="s">'abc'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="nf">repr</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">))</span>
+<span class="sh">'</span><span class="s">abc</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Printing using f-stirngs and <code class="language-plaintext highlighter-rouge">!r</code>.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="bp">None</span>
 
-<span class="sa">f</span><span class="s">"My value is </span><span class="si">{</span><span class="n">x</span><span class="si">!r}</span><span class="s">"</span>
+<span class="sa">f</span><span class="sh">"</span><span class="s">My value is </span><span class="si">{</span><span class="n">x</span><span class="si">!r}</span><span class="sh">"</span>
 <span class="c1"># 'My value is None'
 </span>
-<span class="n">x</span> <span class="o">=</span> <span class="s">''</span>
-<span class="s">"My value is ''"</span>
+<span class="n">x</span> <span class="o">=</span> <span class="sh">''</span>
+<span class="sh">"</span><span class="s">My value is </span><span class="sh">''"</span>
 </code></pre></div></div>
 
 <p>Printing using <code class="language-plaintext highlighter-rouge">.format</code> and <code class="language-plaintext highlighter-rouge">!r</code>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="s">'{}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s">'abc'</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">{}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">))</span>
 <span class="n">abc</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="s">'{!r}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s">'abc'</span><span class="p">))</span>
-<span class="s">'abc'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">{!r}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">))</span>
+<span class="sh">'</span><span class="s">abc</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Without using print, the value is quoted.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="s">'{}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
-<span class="s">'abc'</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="s">'{!r}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
-<span class="s">"'abc'"</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">{}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">)</span>
+<span class="sh">'</span><span class="s">abc</span><span class="sh">'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">{!r}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">)</span>
+<span class="sh">"'</span><span class="s">abc</span><span class="sh">'"</span>
 </code></pre></div></div>
 
 <p>The <code class="language-plaintext highlighter-rouge">repr</code> function gives out which can be used to create a new object. So a string must be quoted.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="nf">repr</span><span class="p">(</span><span class="s">'abc'</span><span class="p">))</span>
-<span class="s">'abc'</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="nf">repr</span><span class="p">(</span><span class="mi">123</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="nf">repr</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">))</span>
+<span class="sh">'</span><span class="s">abc</span><span class="sh">'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="nf">repr</span><span class="p">(</span><span class="mi">123</span><span class="p">))</span>
 <span class="mi">123</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="nf">repr</span><span class="p">(</span><span class="bp">True</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="nf">repr</span><span class="p">(</span><span class="bp">True</span><span class="p">))</span>
 <span class="bp">True</span>
 </code></pre></div></div>
 
@@ -233,11 +233,11 @@
         <span class="n">self</span><span class="p">.</span><span class="n">mileage</span> <span class="o">=</span> <span class="n">mileage</span>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-       <span class="nf">return </span><span class="p">(</span><span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">__class__</span><span class="p">.</span><span class="n">__name__</span><span class="si">}</span><span class="s">('</span>
-               <span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">color</span><span class="si">!r}</span><span class="s">, </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">mileage</span><span class="si">!r}</span><span class="s">)'</span><span class="p">)</span>
+       <span class="nf">return </span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">__class__</span><span class="p">.</span><span class="n">__name__</span><span class="si">}</span><span class="s">(</span><span class="sh">'</span>
+               <span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">color</span><span class="si">!r}</span><span class="s">, </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">mileage</span><span class="si">!r}</span><span class="s">)</span><span class="sh">'</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s">'a </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">color</span><span class="si">}</span><span class="s"> foo'</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="sh">'</span><span class="s">a </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">color</span><span class="si">}</span><span class="s"> foo</span><span class="sh">'</span>
 </code></pre></div></div>
 
         

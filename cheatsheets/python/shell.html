@@ -172,7 +172,7 @@
 
 <h2 id="run">Run</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cmd</span> <span class="o">=</span> <span class="s">"MY_COMMAND"</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cmd</span> <span class="o">=</span> <span class="sh">"</span><span class="s">MY_COMMAND</span><span class="sh">"</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span>
     <span class="n">cmd</span><span class="p">,</span> 
@@ -191,7 +191,7 @@
 
 <p>e.g.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cmd</span> <span class="o">=</span> <span class="s">"git remote get-url origin"</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cmd</span> <span class="o">=</span> <span class="sh">"</span><span class="s">git remote get-url origin</span><span class="sh">"</span>
 
 <span class="n">subprocess</span><span class="p">.</span><span class="nf">getstatusoutput</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
 <span class="c1"># 'git@github.com:MichaelCurrin/shell-dev-setup.git'
@@ -208,7 +208,7 @@
 
 <p>e.g.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cmd</span> <span class="o">=</span> <span class="s">"ls -l"</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cmd</span> <span class="o">=</span> <span class="sh">"</span><span class="s">ls -l</span><span class="sh">"</span>
 <span class="n">exitcode</span><span class="p">,</span> <span class="n">output</span> <span class="o">=</span> <span class="n">subprocess</span><span class="p">.</span><span class="nf">getstatusoutput</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
 
 <span class="n">exitcode</span>

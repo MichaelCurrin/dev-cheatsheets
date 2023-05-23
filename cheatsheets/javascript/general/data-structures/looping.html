@@ -194,19 +194,19 @@
   <li><a href="#for">for</a>
     <ul>
       <li><a href="#using-index">Using index</a>
-        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">iterableLength</span><span class="p">;</span> <span class="nx">index</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">iterableLength</span><span class="p">;</span> <span class="nx">index</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 </code></pre></div>        </div>
       </li>
       <li><a href="#using-for...in">Using for…in</a>
-        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 </code></pre></div>        </div>
       </li>
       <li><a href="#using-for...of">Using for…of</a>
-        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">item</span> <span class="k">of</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">item</span> <span class="k">of</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 
-  <span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="nx">myArray</span><span class="p">))</span> <span class="p">{</span> <span class="p">}</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="nx">myArray</span><span class="p">))</span> <span class="p">{</span> <span class="p">}</span>
 
-  <span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="nx">myAssociativeArray</span><span class="p">))</span> <span class="p">{</span> <span class="p">}</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="nx">myAssociativeArray</span><span class="p">))</span> <span class="p">{</span> <span class="p">}</span>
 </code></pre></div>        </div>
       </li>
     </ul>
@@ -245,7 +245,7 @@
 
 <p>Traditionally, this style was done using <code class="language-plaintext highlighter-rouge">var</code>, but <code class="language-plaintext highlighter-rouge">let</code> is the modern way for block scoping.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="c1">// 0</span>
@@ -257,7 +257,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">iterable</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">];</span>
 
-<span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">iterableLength</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">iterableLength</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">iterable</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
     <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
 <span class="p">}</span>
@@ -274,7 +274,7 @@
 
 <span class="kd">let</span> <span class="nx">upper</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">letters</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">letters</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
 
   <span class="kd">const</span> <span class="nx">u</span> <span class="o">=</span> <span class="nx">letters</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nf">toUpperCase</span><span class="p">()</span>
@@ -292,7 +292,7 @@
 
 <p>If you need to count <em>down</em>:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">letters</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">letters</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="c1">// 3</span>
@@ -306,7 +306,7 @@
 
 <p>This gets the index much like the C-style approach, but this shorter i.e. no need for <code class="language-plaintext highlighter-rouge">i++</code> etc..</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 </code></pre></div></div>
 
 <p>What if you want an array index or associative array key, as well as the value?
@@ -316,7 +316,7 @@ It is possible as shown with the examples below, but is it verbose and inefficie
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">letters</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">]</span>
 
-<span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">letters</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">letters</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">letters</span><span class="p">[</span><span class="nx">index</span><span class="p">])</span>
 <span class="p">}</span>
 <span class="c1">// 0 a</span>
@@ -328,7 +328,7 @@ It is possible as shown with the examples below, but is it verbose and inefficie
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span> <span class="p">}</span>
 
-<span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">foo</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">foo</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">foo</span><span class="p">[</span><span class="nx">key</span><span class="p">])</span>
 <span class="p">}</span>
 <span class="c1">// a 1</span>
@@ -340,7 +340,7 @@ It is possible as shown with the examples below, but is it verbose and inefficie
 
 <p>Get the items using <code class="language-plaintext highlighter-rouge">of</code>, without having to deal with the index.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">item</span> <span class="k">of</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">item</span> <span class="k">of</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 </code></pre></div></div>
 
 <p>In Python:</p>
@@ -357,7 +357,7 @@ It is possible as shown with the examples below, but is it verbose and inefficie
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">letters</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">];</span>
 
-<span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">letter</span> <span class="k">of</span> <span class="nx">letters</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">letter</span> <span class="k">of</span> <span class="nx">letters</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">letter</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="c1">// a</span>
@@ -369,7 +369,7 @@ It is possible as shown with the examples below, but is it verbose and inefficie
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">letters</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">];</span>
 
-<span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">letter</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="nx">letters</span><span class="p">))</span> <span class="p">{</span>
+<span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">letter</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="nx">letters</span><span class="p">))</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">letter</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="c1">// 0 a</span>
@@ -383,7 +383,7 @@ It is possible as shown with the examples below, but is it verbose and inefficie
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">letters</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">letter</span> <span class="k">of</span> <span class="nx">letters</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">letter</span> <span class="k">of</span> <span class="nx">letters</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">letter</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="c1">// a</span>
@@ -399,7 +399,7 @@ It is possible as shown with the examples below, but is it verbose and inefficie
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span> <span class="p">}</span>
 
-<span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">key</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">keys</span><span class="p">(</span><span class="nx">foo</span><span class="p">))</span> <span class="p">{</span>
+<span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">key</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">keys</span><span class="p">(</span><span class="nx">foo</span><span class="p">))</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="c1">// a</span>
@@ -411,7 +411,7 @@ It is possible as shown with the examples below, but is it verbose and inefficie
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span> <span class="p">}</span>
 
-<span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">key</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">values</span><span class="p">(</span><span class="nx">foo</span><span class="p">))</span> <span class="p">{</span>
+<span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">key</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">values</span><span class="p">(</span><span class="nx">foo</span><span class="p">))</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="c1">// 1</span>
@@ -423,7 +423,7 @@ It is possible as shown with the examples below, but is it verbose and inefficie
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span> <span class="p">}</span>
 
-<span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="nx">foo</span><span class="p">))</span> <span class="p">{</span>
+<span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="nx">foo</span><span class="p">))</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="c1">// a 1</span>
@@ -440,7 +440,7 @@ It is possible as shown with the examples below, but is it verbose and inefficie
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">]</span> <span class="p">);</span>
 <span class="c1">// Map(3) { a → 1, b → 2, c → 3 }</span>
 
-<span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nx">foo</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nx">foo</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="c1">// a 1</span>
@@ -450,7 +450,7 @@ It is possible as shown with the examples below, but is it verbose and inefficie
 
 <p>To understanding the unpacking, see use with tuples.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">pair</span> <span class="k">of</span> <span class="nx">foo</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">pair</span> <span class="k">of</span> <span class="nx">foo</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">pair</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="c1">// ['a', 1]</span>
@@ -476,7 +476,7 @@ It is possible as shown with the examples below, but is it verbose and inefficie
 
 <h4 id="syntax">Syntax</h4>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="nf">await </span><span class="p">(</span><span class="nx">variable</span> <span class="k">of</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="k">await </span><span class="p">(</span><span class="nx">variable</span> <span class="k">of</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">statement</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -491,7 +491,7 @@ It is possible as shown with the examples below, but is it verbose and inefficie
 </ul>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">async</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-   <span class="k">for</span> <span class="nf">await </span><span class="p">(</span><span class="kd">const</span> <span class="nx">value</span> <span class="k">of</span> <span class="nx">myAsyncIterable</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">for</span> <span class="k">await </span><span class="p">(</span><span class="kd">const</span> <span class="nx">value</span> <span class="k">of</span> <span class="nx">myAsyncIterable</span><span class="p">)</span> <span class="p">{</span>
      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
    <span class="p">}</span>
 <span class="p">})();</span>

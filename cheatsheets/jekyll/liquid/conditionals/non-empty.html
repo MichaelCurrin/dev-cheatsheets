@@ -193,51 +193,51 @@
   <li>The variable is not <code class="language-plaintext highlighter-rouge">null</code>.</li>
 </ul>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">my_var</span><span class="w"> </span><span class="p">%}</span>
-    <span class="p">{{</span><span class="w"> </span><span class="nv">my_var</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">my_var</span><span class="w"> </span><span class="cp">%}</span>
+    <span class="cp">{{</span><span class="w"> </span><span class="nv">my_var</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 <p>Warning - this check will return <code class="language-plaintext highlighter-rouge">true</code> even for a value that is a zero number, an empty string, or an empty array.</p>
 
 <h2 id="check-that-number-is-non-zero">Check that number is non-zero</h2>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">my_int</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">my_int</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">%}</span>
-    <span class="p">{{</span><span class="w"> </span><span class="nv">my_int</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">my_int</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">my_int</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="cp">%}</span>
+    <span class="cp">{{</span><span class="w"> </span><span class="nv">my_int</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 <h2 id="check-that-string-is-not-empty">Check that string is not empty</h2>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">my_str</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">my_str</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">''</span><span class="w"> </span><span class="p">%}</span>
-    <span class="p">{{</span><span class="w"> </span><span class="nv">my_str</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">my_str</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">my_str</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">''</span><span class="w"> </span><span class="cp">%}</span>
+    <span class="cp">{{</span><span class="w"> </span><span class="nv">my_str</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 <h2 id="check-that-array-is-not-empty">Check that array is not empty</h2>
 
 <p>Here we check an array is defined and that it has at least one element.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">my_array</span><span class="p">.</span><span class="nf">size</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">%}</span>
-    <span class="p">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">inspect</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">my_array</span><span class="p">.</span><span class="nf">size</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="cp">%}</span>
+    <span class="cp">{{</span><span class="w"> </span><span class="nv">my_array</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">inspect</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 <p>It is <strong>not</strong> sufficient to check <code class="language-plaintext highlighter-rouge">my_var.size</code> as a zero value is still truthy.</p>
 
 <p>Example case:</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">playgrounds</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">playgrounds</span><span class="p">.</span><span class="nf">size</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">playgrounds</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">playgrounds</span><span class="p">.</span><span class="nf">size</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="cp">%}</span>
     &lt;h3&gt;Online playgrounds&lt;/h3&gt;
 
     &lt;ul&gt;
-    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">page.playgrounds</span><span class="w"> </span><span class="p">%}</span>
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">playgrounds</span><span class="w"> </span><span class="cp">%}</span>
     &lt;li&gt;
-        <span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>
+        <span class="cp">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="cp">}}</span>
     &lt;li&gt;
-    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
     &lt;/ul&gt;
-<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">-%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">-%}</span>
 </code></pre></div></div>
 
 <p>If you just had a <code class="language-plaintext highlighter-rouge">for</code> loop, that wouldn’t matter. But if you might want to know an array has values in it so you can render a heading before it.</p>
@@ -250,12 +250,12 @@
 
 <p>Using <code class="language-plaintext highlighter-rouge">nil</code> to select posts that either do not have <code class="language-plaintext highlighter-rouge">my_prop</code> defined or <code class="language-plaintext highlighter-rouge">my_prop</code> has been set to <code class="language-plaintext highlighter-rouge">nil</code> explicitly.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">filtered_posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s1">'my_prop'</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">filtered_posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s1">'my_prop'</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 <p>Using Liquid’s special literal <code class="language-plaintext highlighter-rouge">empty</code> or <code class="language-plaintext highlighter-rouge">blank</code> to select posts that have <code class="language-plaintext highlighter-rouge">my_prop</code> set to an empty value.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">filtered_posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s1">'my_prop'</span><span class="p">,</span><span class="w"> </span><span class="nb">empty</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">filtered_posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s1">'my_prop'</span><span class="p">,</span><span class="w"> </span><span class="nb">empty</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 

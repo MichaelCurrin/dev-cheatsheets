@@ -225,7 +225,7 @@
 <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="kd">let</span> <span class="nx">position</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">e</span><span class="dl">'</span><span class="p">)</span>
 
-<span class="nf">while </span><span class="p">(</span><span class="nx">position</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">while </span><span class="p">(</span><span class="nx">position</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">count</span><span class="o">++</span>
   <span class="nx">position</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">e</span><span class="dl">'</span><span class="p">,</span> <span class="nx">position</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 <span class="p">}</span>
@@ -236,10 +236,10 @@
 
 <p>Contrast with Python and built-in method:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="s">'abcabc'</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="s">'a'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="sh">'</span><span class="s">abcabc</span><span class="sh">'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">)</span>
 <span class="mi">2</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">)</span>
 <span class="mi">2</span>
 </code></pre></div></div>
 

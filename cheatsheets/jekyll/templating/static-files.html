@@ -166,11 +166,11 @@
             
 <p>From <a href="https://stackoverflow.com/questions/17677094/jekyll-for-loop-over-all-images-in-a-folder">StackOverflow</a>.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">asset</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.static_files</span><span class="w"> </span><span class="p">%}</span>
-    <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">asset</span><span class="p">.</span><span class="nv">path</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s1">'&lt;NEEDLE&gt;'</span><span class="w"> </span><span class="p">%}</span>
-        &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">asset</span><span class="p">.</span><span class="nv">path</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">asset</span><span class="p">.</span><span class="nv">path</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;
-    <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">asset</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">static_files</span><span class="w"> </span><span class="cp">%}</span>
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">asset</span><span class="p">.</span><span class="nv">path</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s1">'&lt;NEEDLE&gt;'</span><span class="w"> </span><span class="cp">%}</span>
+        &lt;a href="<span class="cp">{{</span><span class="w"> </span><span class="nv">asset</span><span class="p">.</span><span class="nv">path</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="cp">}}</span>"&gt;<span class="cp">{{</span><span class="w"> </span><span class="nv">asset</span><span class="p">.</span><span class="nv">path</span><span class="w"> </span><span class="cp">}}</span>&lt;/a&gt;
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 

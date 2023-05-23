@@ -192,14 +192,14 @@
 
 <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">respData</span><span class="p">.</span><span class="nx">name</span>
 
-<span class="nf">if </span><span class="p">(</span><span class="k">typeof</span> <span class="nx">name</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">undefined</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if </span><span class="p">(</span><span class="k">typeof</span> <span class="nx">name</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">undefined</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Missing 'name' on API response</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MY_VAR</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">MY_VAR</span>
 
-<span class="nf">if </span><span class="p">(</span><span class="k">typeof</span> <span class="nx">MY_VAR</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if </span><span class="p">(</span><span class="k">typeof</span> <span class="nx">MY_VAR</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Must set MY_VAR on environment variables</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -238,7 +238,7 @@
 <p>Here is how to do that yourself.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">abc</span><span class="p">)</span> <span class="p">{</span>
- <span class="nf">if </span><span class="p">(</span><span class="k">typeof</span> <span class="nx">abc</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+ <span class="k">if </span><span class="p">(</span><span class="k">typeof</span> <span class="nx">abc</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">abc is a required argument</span><span class="dl">'</span><span class="p">)</span>
   <span class="p">}</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">abc</span><span class="p">)</span>
@@ -258,7 +258,7 @@
 
 <p>In Python this is not need as you can switch to keyword params.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">foobar</span><span class="p">(</span><span class="s">"abc"</span><span class="p">,</span> <span class="n">third_param</span><span class="o">=</span><span class="mi">456</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">foobar</span><span class="p">(</span><span class="sh">"</span><span class="s">abc</span><span class="sh">"</span><span class="p">,</span> <span class="n">third_param</span><span class="o">=</span><span class="mi">456</span><span class="p">)</span>
 </code></pre></div></div>
 
         

@@ -170,7 +170,7 @@
 <p>Use a double underscore to actually make it private. To access it from the outside, you use need to access through a generated method name.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
-    <span class="n">my_class_variable</span> <span class="o">=</span> <span class="s">'xyz'</span>
+    <span class="n">my_class_variable</span> <span class="o">=</span> <span class="sh">'</span><span class="s">xyz</span><span class="sh">'</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">abc</span><span class="p">,</span> <span class="n">def</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">abc</span> <span class="o">=</span> <span class="n">abc</span>
@@ -199,7 +199,7 @@
 <p>Note <code class="language-plaintext highlighter-rouge">cls</code> instead of <code class="language-plaintext highlighter-rouge">self</code>. So you can access variables or methods on the class without an instance.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
-    <span class="n">my_class_variable</span> <span class="o">=</span> <span class="s">'xyz'</span>
+    <span class="n">my_class_variable</span> <span class="o">=</span> <span class="sh">'</span><span class="s">xyz</span><span class="sh">'</span>
     
     <span class="k">def</span> <span class="nf">my_public_method</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">abc</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">abc</span> <span class="o">=</span> <span class="n">abc</span>

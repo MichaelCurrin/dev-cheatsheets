@@ -180,10 +180,10 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">boto3</span>
 
 
-<span class="n">s3_client</span> <span class="o">=</span> <span class="n">boto3</span><span class="p">.</span><span class="nf">client</span><span class="p">(</span><span class="s">'s3'</span><span class="p">)</span>
+<span class="n">s3_client</span> <span class="o">=</span> <span class="n">boto3</span><span class="p">.</span><span class="nf">client</span><span class="p">(</span><span class="sh">'</span><span class="s">s3</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="n">s3_client</span><span class="p">.</span><span class="nf">download_file</span><span class="p">(</span><span class="n">bucket</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">download_path</span><span class="p">)</span>
-<span class="n">s3_client</span><span class="p">.</span><span class="nf">upload_file</span><span class="p">(</span><span class="n">upload_path</span><span class="p">,</span> <span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">bucket</span><span class="si">}</span><span class="s">-resized'</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<span class="n">s3_client</span><span class="p">.</span><span class="nf">upload_file</span><span class="p">(</span><span class="n">upload_path</span><span class="p">,</span> <span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">bucket</span><span class="si">}</span><span class="s">-resized</span><span class="sh">'</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
 </code></pre></div></div>
 
         

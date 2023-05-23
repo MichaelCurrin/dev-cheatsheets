@@ -177,28 +177,28 @@
 
 <p>You can <code class="language-plaintext highlighter-rouge">'now'</code> as pass it to a date-related filter.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="s1">'now'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Y/%m/%d"</span><span class="w"> </span><span class="p">}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="s1">'now'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Y/%m/%d"</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div></div>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2021/04/18
 </code></pre></div></div>
 
 <h3 id="date-and-time">Date and time</h3>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="s1">'now'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date_to_xmlschema</span><span class="w"> </span><span class="p">}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="s1">'now'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date_to_xmlschema</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div></div>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2021-04-18T20:27:23+02:00
 </code></pre></div></div>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- This page was last updated on <span class="p">{{</span><span class="w"> </span><span class="s2">"now"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Y-%m-%d %H:%M"</span><span class="w"> </span><span class="p">}}</span> --&gt;
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- This page was last updated on <span class="cp">{{</span><span class="w"> </span><span class="s2">"now"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Y-%m-%d %H:%M"</span><span class="w"> </span><span class="cp">}}</span> --&gt;
 </code></pre></div></div>
 
 <h3 id="unix-timestamp">Unix timestamp</h3>
 
 <p>Get a value as a string, or as an integer if you add zero.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="s1">'now'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s1">'%s'</span><span class="w"> </span><span class="p">}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="s1">'now'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s1">'%s'</span><span class="w"> </span><span class="cp">}}</span>
 
-<span class="p">{{</span><span class="w"> </span><span class="s1">'now'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s1">'%s'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">plus</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}}</span>
+<span class="cp">{{</span><span class="w"> </span><span class="s1">'now'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s1">'%s'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">plus</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div></div>
 
 <p>Result (using <code class="language-plaintext highlighter-rouge">| inspect</code> to show format):</p>
@@ -212,7 +212,7 @@
 
 <p>Get the current time.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">time</span><span class="w"> </span><span class="p">}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">time</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div></div>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2021-04-18 20:28:58 +0200
 </code></pre></div></div>
@@ -236,7 +236,7 @@
 
 <p>Then Jekyll will convert it to a time at midnight.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div></div>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2020-04-01 00:00:00 +0200
 </code></pre></div></div>
@@ -247,7 +247,7 @@
 
 <p>Code:</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date_to_string</span><span class="w"> </span><span class="p">}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date_to_string</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div></div>
 
 <p>Result:</p>
@@ -257,7 +257,7 @@
 
 <p>Equivalent to:</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%-d %b %Y"</span><span class="w"> </span><span class="p">}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%-d %b %Y"</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div></div>
 
 <h3 id="long-string">Long string</h3>
@@ -276,7 +276,7 @@
 
 <p>Date and time with day of week and timezone.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date_to_rfc822</span><span class="w"> </span><span class="p">}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date_to_rfc822</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Wed, 23 Mar 2016 23:20:00 +1300
@@ -284,7 +284,7 @@
 
 <h3 id="date-time-and-timezone">Date, time, and timezone</h3>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date_to_xmlschema</span><span class="w"> </span><span class="p">}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date_to_xmlschema</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2016-03-23T23:20:00+13:00
@@ -292,7 +292,7 @@
 
 <h3 id="year--month--day">Year / month / day</h3>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Y/%m/%d"</span><span class="w"> </span><span class="p">}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Y/%m/%d"</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div></div>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2020/02/01
 </code></pre></div></div>
@@ -301,7 +301,7 @@
 
 <p>Just year:</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Y"</span><span class="w"> </span><span class="p">}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Y"</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2020
@@ -309,7 +309,7 @@
 
 <p>Date and time.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Y-%m-%d %H:%M:%S"</span><span class="w"> </span><span class="p">}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Y-%m-%d %H:%M:%S"</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div></div>
 
 <h2 id="ordinal">Ordinal</h2>
@@ -320,16 +320,16 @@
   <p>A workaround for this is to use Liquid to calculate and output the ordinal.</p>
 </blockquote>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%-d"</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%-d"</span><span class="w"> </span><span class="cp">%}</span>
 
-<span class="p">{%</span><span class="w"> </span><span class="kr">case</span><span class="w"> </span><span class="nv">day</span><span class="w"> </span><span class="p">%}</span>
-    <span class="p">{%</span><span class="w"> </span><span class="kr">when</span><span class="w"> </span><span class="s1">'1'</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="s1">'21'</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="s1">'31'</span><span class="w"> </span><span class="p">%}{{</span><span class="w"> </span><span class="nv">day</span><span class="w"> </span><span class="p">}}</span>st
-    <span class="p">{%</span><span class="w"> </span><span class="kr">when</span><span class="w"> </span><span class="s1">'2'</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="s1">'22'</span><span class="w"> </span><span class="p">%}{{</span><span class="w"> </span><span class="nv">day</span><span class="w"> </span><span class="p">}}</span>nd
-    <span class="p">{%</span><span class="w"> </span><span class="kr">when</span><span class="w"> </span><span class="s1">'3'</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="s1">'23'</span><span class="w"> </span><span class="p">%}{{</span><span class="w"> </span><span class="nv">day</span><span class="w"> </span><span class="p">}}</span>rd
-    <span class="p">{%</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">%}{{</span><span class="w"> </span><span class="nv">day</span><span class="w"> </span><span class="p">}}</span>th
-<span class="p">{%</span><span class="w"> </span><span class="kr">endcase</span><span class="w"> </span><span class="p">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">case</span><span class="w"> </span><span class="nv">day</span><span class="w"> </span><span class="cp">%}</span>
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">when</span><span class="w"> </span><span class="s1">'1'</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="s1">'21'</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="s1">'31'</span><span class="w"> </span><span class="cp">%}{{</span><span class="w"> </span><span class="nv">day</span><span class="w"> </span><span class="cp">}}</span>st
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">when</span><span class="w"> </span><span class="s1">'2'</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="s1">'22'</span><span class="w"> </span><span class="cp">%}{{</span><span class="w"> </span><span class="nv">day</span><span class="w"> </span><span class="cp">}}</span>nd
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">when</span><span class="w"> </span><span class="s1">'3'</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="s1">'23'</span><span class="w"> </span><span class="cp">%}{{</span><span class="w"> </span><span class="nv">day</span><span class="w"> </span><span class="cp">}}</span>rd
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">else</span><span class="w"> </span><span class="cp">%}{{</span><span class="w"> </span><span class="nv">day</span><span class="w"> </span><span class="cp">}}</span>th
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endcase</span><span class="w"> </span><span class="cp">%}</span>
 
-<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"of %B, %Y"</span><span class="w"> </span><span class="p">}}</span>
+<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"of %B, %Y"</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div></div>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>23rd of March, 2016
 </code></pre></div></div>

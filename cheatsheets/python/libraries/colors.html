@@ -178,16 +178,16 @@
 
 <p>This isn’t about printing, just switching between formats.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="n">colour</span> <span class="kn">import</span> <span class="n">Color</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="nc">Color</span><span class="p">(</span><span class="s">"blue"</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="n">colour</span> <span class="kn">import</span> <span class="n">Color</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="nc">Color</span><span class="p">(</span><span class="sh">"</span><span class="s">blue</span><span class="sh">"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">c</span>
 <span class="o">&lt;</span><span class="n">Color</span> <span class="n">blue</span><span class="o">&gt;</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span><span class="p">.</span><span class="nb">hex</span>
-<span class="s">'#00f'</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">hsl</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">c</span><span class="p">.</span><span class="nb">hex</span>
+<span class="sh">'</span><span class="s">#00f</span><span class="sh">'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">hsl</span>
 <span class="p">(</span><span class="mf">0.66</span><span class="p">...,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">rgb</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">rgb</span>
 <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 </code></pre></div></div>
 
@@ -205,26 +205,26 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">colors</span> <span class="kn">import</span> <span class="n">color</span>
 
-<span class="nf">print</span><span class="p">(</span><span class="nf">color</span><span class="p">(</span><span class="s">'my string'</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="s">'blue'</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">color</span><span class="p">(</span><span class="s">'some text'</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="s">'red'</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s">'yellow'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">'underline'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">color</span><span class="p">(</span><span class="sh">'</span><span class="s">my string</span><span class="sh">'</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="sh">'</span><span class="s">blue</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">color</span><span class="p">(</span><span class="sh">'</span><span class="s">some text</span><span class="sh">'</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="sh">'</span><span class="s">red</span><span class="sh">'</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="sh">'</span><span class="s">yellow</span><span class="sh">'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="sh">'</span><span class="s">underline</span><span class="sh">'</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>As strings:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'</span><span class="se">\x1b</span><span class="s">[34mmy string</span><span class="se">\x1b</span><span class="s">[0m'</span>
-<span class="s">'</span><span class="se">\x1b</span><span class="s">[31;43;4msome text</span><span class="se">\x1b</span><span class="s">[0m'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">'</span><span class="se">\x1b</span><span class="s">[34mmy string</span><span class="se">\x1b</span><span class="s">[0m</span><span class="sh">'</span>
+<span class="sh">'</span><span class="se">\x1b</span><span class="s">[31;43;4msome text</span><span class="se">\x1b</span><span class="s">[0m</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Named colors</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">colors</span> <span class="kn">import</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span>
 
-<span class="nf">print</span><span class="p">(</span><span class="nf">red</span><span class="p">(</span><span class="s">'This is red'</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">green</span><span class="p">(</span><span class="s">'This is green'</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">blue</span><span class="p">(</span><span class="s">'This is blue'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">red</span><span class="p">(</span><span class="sh">'</span><span class="s">This is red</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">green</span><span class="p">(</span><span class="sh">'</span><span class="s">This is green</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">blue</span><span class="p">(</span><span class="sh">'</span><span class="s">This is blue</span><span class="sh">'</span><span class="p">))</span>
 
-<span class="nf">print</span><span class="p">(</span><span class="nf">red</span><span class="p">(</span><span class="s">'red on blue'</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s">'blue'</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">green</span><span class="p">(</span><span class="s">'green on black'</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s">'black'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">'underline'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">red</span><span class="p">(</span><span class="sh">'</span><span class="s">red on blue</span><span class="sh">'</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="sh">'</span><span class="s">blue</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">green</span><span class="p">(</span><span class="sh">'</span><span class="s">green on black</span><span class="sh">'</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="sh">'</span><span class="s">black</span><span class="sh">'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="sh">'</span><span class="s">underline</span><span class="sh">'</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>Using a partial.</p>
@@ -232,9 +232,9 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">functools</span> <span class="kn">import</span> <span class="n">partial</span>
 <span class="kn">from</span> <span class="n">colors</span> <span class="kn">import</span> <span class="n">color</span>
 
-<span class="n">important</span> <span class="o">=</span> <span class="nf">partial</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="s">'red'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">'bold+underline'</span><span class="p">))</span>
+<span class="n">important</span> <span class="o">=</span> <span class="nf">partial</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="sh">'</span><span class="s">red</span><span class="sh">'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="sh">'</span><span class="s">bold+underline</span><span class="sh">'</span><span class="p">))</span>
 
-<span class="nf">print</span><span class="p">(</span><span class="nf">important</span><span class="p">(</span><span class="s">'this is very important!'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">important</span><span class="p">(</span><span class="sh">'</span><span class="s">this is very important!</span><span class="sh">'</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>Or without a library.</p>
@@ -245,21 +245,21 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">color</span><span class="p">:</span>
 
-    <span class="n">END_C</span> <span class="o">=</span> <span class="s">'</span><span class="se">\033</span><span class="s">[0m'</span>
+    <span class="n">END_C</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0m</span><span class="sh">'</span>
 
-    <span class="n">OK_BLUE</span> <span class="o">=</span> <span class="s">'</span><span class="se">\033</span><span class="s">[94m'</span>
-    <span class="n">OK_GREEN</span> <span class="o">=</span> <span class="s">'</span><span class="se">\033</span><span class="s">[92m'</span>
+    <span class="n">OK_BLUE</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[94m</span><span class="sh">'</span>
+    <span class="n">OK_GREEN</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[92m</span><span class="sh">'</span>
 
-    <span class="n">WARNING</span> <span class="o">=</span> <span class="s">'</span><span class="se">\033</span><span class="s">[93m'</span>
-    <span class="n">FAIL</span> <span class="o">=</span> <span class="s">'</span><span class="se">\033</span><span class="s">[91m'</span>
+    <span class="n">WARNING</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[93m</span><span class="sh">'</span>
+    <span class="n">FAIL</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[91m</span><span class="sh">'</span>
 
-    <span class="n">BOLD</span> <span class="o">=</span> <span class="s">'</span><span class="se">\033</span><span class="s">[1m'</span>
-    <span class="n">UNDERLINE</span> <span class="o">=</span> <span class="s">'</span><span class="se">\033</span><span class="s">[4m'</span>
+    <span class="n">BOLD</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[1m</span><span class="sh">'</span>
+    <span class="n">UNDERLINE</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[4m</span><span class="sh">'</span>
 
-    <span class="n">HEADER</span> <span class="o">=</span> <span class="s">'</span><span class="se">\033</span><span class="s">[95m'</span>
+    <span class="n">HEADER</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[95m</span><span class="sh">'</span>
 
 
-<span class="nf">print</span><span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="n">OK_BLUE</span><span class="p">,</span> <span class="s">'Hello, world'</span><span class="p">,</span> <span class="n">color</span><span class="p">.</span><span class="n">END_C</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="n">OK_BLUE</span><span class="p">,</span> <span class="sh">'</span><span class="s">Hello, world</span><span class="sh">'</span><span class="p">,</span> <span class="n">color</span><span class="p">.</span><span class="n">END_C</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>As a function:</p>

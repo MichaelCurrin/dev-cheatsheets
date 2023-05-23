@@ -200,7 +200,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">foo</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
 
-<span class="n">foo</span> <span class="o">=</span> <span class="s">'abc'</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="sh">'</span><span class="s">abc</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <h2 id="union-approach">Union approach</h2>
@@ -225,7 +225,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">bazz</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
     <span class="k">if</span> <span class="n">bazz</span><span class="p">:</span>
-        <span class="n">buzz</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s">'Yes'</span>
+        <span class="n">buzz</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Yes</span><span class="sh">'</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">buzz</span> <span class="o">=</span> <span class="bp">None</span>
     
@@ -241,7 +241,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">bazz</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="bp">None</span><span class="p">]:</span>
     <span class="k">if</span> <span class="n">bazz</span><span class="p">:</span>
-        <span class="n">buzz</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="bp">None</span><span class="p">]</span> <span class="o">=</span> <span class="s">'Yes'</span>
+        <span class="n">buzz</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="bp">None</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Yes</span><span class="sh">'</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">buzz</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="k">return</span> <span class="n">buzz</span>
@@ -251,7 +251,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">bazz</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="bp">None</span><span class="p">]:</span>
     <span class="k">if</span> <span class="n">bazz</span><span class="p">:</span>
-        <span class="n">buzz</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s">'Yes'</span>
+        <span class="n">buzz</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Yes</span><span class="sh">'</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">buzz</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="k">return</span> <span class="n">buzz</span>

@@ -200,7 +200,7 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">peewee</span> <span class="kn">import</span> <span class="o">*</span>
 
 
-<span class="n">db</span> <span class="o">=</span> <span class="nc">SqliteDatabase</span><span class="p">(</span><span class="s">'people.db'</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="nc">SqliteDatabase</span><span class="p">(</span><span class="sh">'</span><span class="s">people.db</span><span class="sh">'</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
@@ -233,34 +233,34 @@
 
 <span class="c1"># Many to many.
 </span><span class="k">class</span> <span class="nc">Relationship</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">from_user</span> <span class="o">=</span> <span class="nc">ForeignKeyField</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="s">'relationships'</span><span class="p">)</span>
-    <span class="n">to_user</span> <span class="o">=</span> <span class="nc">ForeignKeyField</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="s">'related_to'</span><span class="p">)</span>
+    <span class="n">from_user</span> <span class="o">=</span> <span class="nc">ForeignKeyField</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="sh">'</span><span class="s">relationships</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">to_user</span> <span class="o">=</span> <span class="nc">ForeignKeyField</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="sh">'</span><span class="s">related_to</span><span class="sh">'</span><span class="p">)</span>
 
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">indexes</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="p">((</span><span class="s">'from_user'</span><span class="p">,</span> <span class="s">'to_user'</span><span class="p">),</span> <span class="bp">True</span><span class="p">),</span>
+            <span class="p">((</span><span class="sh">'</span><span class="s">from_user</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">to_user</span><span class="sh">'</span><span class="p">),</span> <span class="bp">True</span><span class="p">),</span>
         <span class="p">)</span>
 
 
 <span class="c1"># One to many. Also, user's messages will be accessible as User.messages
 </span><span class="k">class</span> <span class="nc">Message</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">user</span> <span class="o">=</span> <span class="nc">ForeignKeyField</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="s">'messages'</span><span class="p">)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="nc">ForeignKeyField</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="sh">'</span><span class="s">messages</span><span class="sh">'</span><span class="p">)</span>
     <span class="n">content</span> <span class="o">=</span> <span class="nc">TextField</span><span class="p">()</span>
     <span class="n">pub_date</span> <span class="o">=</span> <span class="nc">DateTimeField</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h2 id="raw-sql">Raw SQL</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cursor</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">execute_sql</span><span class="p">(</span><span class="s">'SELECT * FROM tweets;'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cursor</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">execute_sql</span><span class="p">(</span><span class="sh">'</span><span class="s">SELECT * FROM tweets;</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">.</span><span class="nf">fetchall</span><span class="p">():</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cursor</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">execute_sql</span><span class="p">(</span><span class="s">'SELECT COUNT(*) FROM tweets;'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cursor</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">execute_sql</span><span class="p">(</span><span class="sh">'</span><span class="s">SELECT COUNT(*) FROM tweets;</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">cursor</span><span class="p">.</span><span class="nf">fetchone</span><span class="p">()</span>
-<span class="nf">print</span><span class="p">(</span><span class="s">'Total: '</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Total: </span><span class="sh">'</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </code></pre></div></div>
 
         

@@ -243,26 +243,26 @@
   <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">finalResult</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Got the final result: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">finalResult</span><span class="p">);</span>
   <span class="p">})</span>
-  <span class="p">.</span><span class="nf">catch</span><span class="p">(</span><span class="nx">failureCallback</span><span class="p">);</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">failureCallback</span><span class="p">);</span>
 </code></pre></div></div>
 
 <h2 id="catch">Catch</h2>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nf">reject</span><span class="p">(</span><span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">My error message</span><span class="dl">"</span><span class="p">)</span>
-  <span class="p">.</span><span class="nf">catch</span><span class="p">(</span><span class="nx">failureCallback</span><span class="p">)</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">failureCallback</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Or you can define the function in place.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nf">reject</span><span class="p">(</span><span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">My error message</span><span class="dl">"</span><span class="p">))</span>
-  <span class="p">.</span><span class="nf">catch</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Critical failure: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Critical failure: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>This is similar to synchronous code approach:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="p">}</span> <span class="nf">catch</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
   <span class="nf">failureCallback</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>

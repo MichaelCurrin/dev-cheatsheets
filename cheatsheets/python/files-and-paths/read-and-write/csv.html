@@ -180,7 +180,7 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">csv</span>
 
 
-<span class="n">path</span> <span class="o">=</span> <span class="s">"demo.csv"</span>
+<span class="n">path</span> <span class="o">=</span> <span class="sh">"</span><span class="s">demo.csv</span><span class="sh">"</span>
 </code></pre></div></div>
 
 <h2 id="resources">Resources</h2>
@@ -193,7 +193,7 @@
 
 <p>To avoid issues with newlines, especially when writing out, it is a good ideas as per the documentation to specify an empty newline character before making your reader or writer object:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="s">'some.csv'</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s">''</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">some.csv</span><span class="sh">'</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="sh">''</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="c1"># ...
 </span></code></pre></div></div>
 
@@ -212,15 +212,15 @@ xyz,,1000
 
 <p>This approach will return each row as a list. You need to reference the columns by index. This is fragile as if the columns are reordered or deleted then you’ll get the wrong data.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s">''</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="sh">''</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
     <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="nf">reader</span><span class="p">(</span><span class="n">f_in</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Data will be like this:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="s">'First'</span><span class="p">,</span> <span class="s">'Second'</span><span class="p">,</span> <span class="s">'Third'</span><span class="p">]</span>
-<span class="p">[</span><span class="s">"abc"</span><span class="p">,</span> <span class="s">"def"</span><span class="p">,</span> <span class="mi">123</span><span class="p">]</span>
-<span class="p">[</span><span class="s">'xyz'</span><span class="p">,</span> <span class="s">''</span><span class="p">,</span> <span class="s">'1000'</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="sh">'</span><span class="s">First</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Second</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Third</span><span class="sh">'</span><span class="p">]</span>
+<span class="p">[</span><span class="sh">"</span><span class="s">abc</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">def</span><span class="sh">"</span><span class="p">,</span> <span class="mi">123</span><span class="p">]</span>
+<span class="p">[</span><span class="sh">'</span><span class="s">xyz</span><span class="sh">'</span><span class="p">,</span> <span class="sh">''</span><span class="p">,</span> <span class="sh">'</span><span class="s">1000</span><span class="sh">'</span><span class="p">]</span>
 </code></pre></div></div>
 
 <h3 id="read-as-a-list-of-dictionaries">Read as a list of dictionaries</h3>
@@ -239,8 +239,8 @@ xyz,,1000
 
 <p>Here are two rows as dictionaries:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="s">'First'</span><span class="p">:</span> <span class="s">'abc'</span><span class="p">,</span> <span class="s">'Second'</span><span class="p">:</span> <span class="s">'def'</span><span class="p">,</span> <span class="s">'Third'</span><span class="p">:</span> <span class="s">'123'</span><span class="p">}</span>
-<span class="p">{</span><span class="s">'First'</span><span class="p">:</span> <span class="s">'xyz'</span><span class="p">,</span> <span class="s">'Second'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span> <span class="s">'Third'</span><span class="p">:</span> <span class="s">'1000'</span><span class="p">}</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="sh">'</span><span class="s">First</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Second</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">def</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Third</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">123</span><span class="sh">'</span><span class="p">}</span>
+<span class="p">{</span><span class="sh">'</span><span class="s">First</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">xyz</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Second</span><span class="sh">'</span><span class="p">:</span> <span class="sh">''</span><span class="p">,</span> <span class="sh">'</span><span class="s">Third</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">1000</span><span class="sh">'</span><span class="p">}</span>
 </code></pre></div></div>
 
 <h3 id="iterate">Iterate</h3>
@@ -270,7 +270,7 @@ xyz,,1000
 
       <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
           <span class="nf">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
-          <span class="nf">print</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">"First"</span><span class="p">])</span>
+          <span class="nf">print</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">First</span><span class="sh">"</span><span class="p">])</span>
 </code></pre></div>    </div>
   </li>
   <li>Use <code class="language-plaintext highlighter-rouge">next</code> on the iterator.
@@ -289,7 +289,7 @@ xyz,,1000
 </span>  <span class="nf">next</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
   <span class="c1"># ["abc", "def", 123]
 </span>  <span class="nf">next</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
-  <span class="p">[</span><span class="s">'xyz'</span><span class="p">,</span> <span class="s">''</span><span class="p">,</span> <span class="s">'1000'</span><span class="p">]</span>
+  <span class="p">[</span><span class="sh">'</span><span class="s">xyz</span><span class="sh">'</span><span class="p">,</span> <span class="sh">''</span><span class="p">,</span> <span class="sh">'</span><span class="s">1000</span><span class="sh">'</span><span class="p">]</span>
   <span class="nf">next</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
   <span class="c1"># Traceback (most recent call last):
 </span>  <span class="c1">#   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
@@ -314,18 +314,18 @@ xyz,,1000
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">csv</span>
 
 
-<span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Foo"</span><span class="p">,</span> <span class="s">"Bar"</span><span class="p">]</span>
+<span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">Foo</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Bar</span><span class="sh">"</span><span class="p">]</span>
 <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">[</span><span class="s">"foo"</span><span class="p">,</span> <span class="s">"bar"</span><span class="p">],</span>
-  <span class="p">[</span><span class="s">"fizz"</span><span class="p">,</span> <span class="s">"buzz"</span><span class="p">]</span>
+  <span class="p">[</span><span class="sh">"</span><span class="s">foo</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">bar</span><span class="sh">"</span><span class="p">],</span>
+  <span class="p">[</span><span class="sh">"</span><span class="s">fizz</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">buzz</span><span class="sh">"</span><span class="p">]</span>
 <span class="p">]</span>
 
-<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'w'</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s">''</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="sh">''</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
     <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="nf">writer</span><span class="p">(</span><span class="n">f_out</span><span class="p">)</span>
     <span class="n">write</span><span class="p">.</span><span class="nf">writerow</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
     <span class="n">write</span><span class="p">.</span><span class="nf">writerows</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
 
-<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Wrote to </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s">, rows: </span><span class="si">{</span><span class="nf">len</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Wrote to </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s">, rows: </span><span class="si">{</span><span class="nf">len</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>You can also write individual rows:</p>
@@ -340,13 +340,13 @@ xyz,,1000
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">csv</span>
 
 
-<span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Foo"</span><span class="p">,</span> <span class="s">"Bar"</span><span class="p">]</span>
+<span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">Foo</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Bar</span><span class="sh">"</span><span class="p">]</span>
 <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s">"Foo"</span><span class="p">:</span> <span class="s">"a"</span><span class="p">,</span> <span class="s">"Bar"</span> <span class="mi">1</span><span class="p">},</span>
-    <span class="p">{</span><span class="s">"Foo"</span><span class="p">:</span> <span class="s">"b"</span><span class="p">,</span> <span class="s">"Bar"</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+    <span class="p">{</span><span class="sh">"</span><span class="s">Foo</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Bar</span><span class="sh">"</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="p">{</span><span class="sh">"</span><span class="s">Foo</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">b</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Bar</span><span class="sh">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
     <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="nc">DictWriter</span><span class="p">(</span><span class="n">f_out</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
     <span class="n">write</span><span class="p">.</span><span class="nf">writeheader</span><span class="p">()</span>
     <span class="n">write</span><span class="p">.</span><span class="nf">writerows</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
@@ -359,12 +359,12 @@ xyz,,1000
 <span class="kn">import</span> <span class="n">requests</span> 
 
 
-<span class="n">CSV_URL</span> <span class="o">=</span> <span class="s">''</span> 
+<span class="n">CSV_URL</span> <span class="o">=</span> <span class="sh">''</span> 
 
 <span class="k">with</span> <span class="n">requests</span><span class="p">.</span><span class="nc">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
     <span class="n">download</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">CSV_URL</span><span class="p">)</span> 
-    <span class="n">decoded_content</span> <span class="o">=</span> <span class="n">download</span><span class="p">.</span><span class="n">content</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span> 
-    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="nf">reader</span><span class="p">(</span><span class="n">decoded_content</span><span class="p">.</span><span class="nf">splitlines</span><span class="p">(),</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">)</span> 
+    <span class="n">decoded_content</span> <span class="o">=</span> <span class="n">download</span><span class="p">.</span><span class="n">content</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span> 
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="nf">reader</span><span class="p">(</span><span class="n">decoded_content</span><span class="p">.</span><span class="nf">splitlines</span><span class="p">(),</span> <span class="n">delimiter</span><span class="o">=</span><span class="sh">'</span><span class="s">,</span><span class="sh">'</span><span class="p">)</span> 
     <span class="n">csv_data</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span> 
 </code></pre></div></div>
 

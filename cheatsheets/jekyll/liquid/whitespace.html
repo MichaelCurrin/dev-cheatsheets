@@ -169,7 +169,7 @@
 
 <p>Trim whitespace from value.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{-</span><span class="w"> </span><span class="nv">my_text</span><span class="w"> </span><span class="p">-}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{-</span><span class="w"> </span><span class="nv">my_text</span><span class="w"> </span><span class="cp">-}}</span>
 </code></pre></div></div>
 
 <h2 id="raw">Raw</h2>
@@ -178,11 +178,11 @@
 
 <p>The proper raw tag is shown as “raw” here otherwise it would not render on this page.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>raw <span class="p">{%</span><span class="w"> </span><span class="nt">highlight</span><span class="w"> </span>ruby<span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>raw <span class="cp">{%</span><span class="w"> </span><span class="nt">highlight</span><span class="w"> </span><span class="nv">ruby</span><span class="w"> </span><span class="cp">%}</span>
 def foo
   puts 'foo'
 end
-<span class="p">{%</span><span class="w"> </span><span class="nt">endhighlight</span><span class="w"> </span><span class="p">%}</span> endraw 
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endhighlight</span><span class="w"> </span><span class="cp">%}</span> endraw 
 </code></pre></div></div>
 
 <p>Note the <code class="language-plaintext highlighter-rouge">endraw</code> cannot start with a dash.</p>
@@ -190,11 +190,11 @@ end
 <p>This would give <strong>too much</strong> whitespace:</p>
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>raw 
-<span class="p">{%</span><span class="w"> </span><span class="nt">highlight</span><span class="w"> </span>ruby<span class="w"> </span><span class="p">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">highlight</span><span class="w"> </span><span class="nv">ruby</span><span class="w"> </span><span class="cp">%}</span>
 def foo
   puts 'foo'
 end
-<span class="p">{%</span><span class="w"> </span><span class="nt">endhighlight</span><span class="w"> </span><span class="p">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endhighlight</span><span class="w"> </span><span class="cp">%}</span>
 endraw
 </code></pre></div></div>
 

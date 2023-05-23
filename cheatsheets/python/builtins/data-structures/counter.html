@@ -194,8 +194,8 @@
 <h2 id="create">Create</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="nc">Counter</span><span class="p">()</span>                           <span class="c1"># a new, empty counter
-</span><span class="n">c</span> <span class="o">=</span> <span class="nc">Counter</span><span class="p">(</span><span class="s">'gallahad'</span><span class="p">)</span>                 <span class="c1"># a new counter from an iterable
-</span><span class="n">c</span> <span class="o">=</span> <span class="nc">Counter</span><span class="p">({</span><span class="s">'red'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">'blue'</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>      <span class="c1"># a new counter from a mapping
+</span><span class="n">c</span> <span class="o">=</span> <span class="nc">Counter</span><span class="p">(</span><span class="sh">'</span><span class="s">gallahad</span><span class="sh">'</span><span class="p">)</span>                 <span class="c1"># a new counter from an iterable
+</span><span class="n">c</span> <span class="o">=</span> <span class="nc">Counter</span><span class="p">({</span><span class="sh">'</span><span class="s">red</span><span class="sh">'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="sh">'</span><span class="s">blue</span><span class="sh">'</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>      <span class="c1"># a new counter from a mapping
 </span><span class="n">c</span> <span class="o">=</span> <span class="nc">Counter</span><span class="p">(</span><span class="n">cats</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">dogs</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>             <span class="c1"># a new counter from keyword args
 </span></code></pre></div></div>
 
@@ -209,10 +209,10 @@
 <p>e.g.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="nc">Counter</span><span class="p">()</span>
-<span class="n">c</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="s">'a'</span><span class="p">)</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># c
-</span><span class="nc">Counter</span><span class="p">({</span><span class="s">'a'</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+</span><span class="nc">Counter</span><span class="p">({</span><span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
 </code></pre></div></div>
 
 <p>If you want to a pass a tuple, put it in a list to stop the tuple from being broken up.</p>
@@ -237,15 +237,15 @@
 <p>Strings</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="nc">Counter</span><span class="p">()</span>
-<span class="n">c</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="s">'abc'</span><span class="p">,</span> <span class="s">'def'</span><span class="p">)</span>
-<span class="nc">Counter</span><span class="p">({</span><span class="s">'abc'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'def'</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">def</span><span class="sh">'</span><span class="p">)</span>
+<span class="nc">Counter</span><span class="p">({</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="sh">'</span><span class="s">def</span><span class="sh">'</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
 </code></pre></div></div>
 
 <p>Characters</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span><span class="p">.</span><span class="nf">update</span><span class="p">((</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span><span class="p">.</span><span class="nf">update</span><span class="p">((</span><span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">))</span>
 <span class="c1"># OR
-</span><span class="n">c</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="s">'ab'</span><span class="p">)</span>
+</span><span class="n">c</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="sh">'</span><span class="s">ab</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="n">c</span>
 <span class="c1"># Counter({"a": 1", "b": 2})
@@ -257,14 +257,14 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="nc">Counter</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">d</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
 <span class="nf">sorted</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="nf">elements</span><span class="p">())</span>
-<span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">]</span>
+<span class="p">[</span><span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">]</span>
 </code></pre></div></div>
 
 <h3 id="most-common">Most common</h3>
 
 <p>Request <code class="language-plaintext highlighter-rouge">n</code> elements, or all if omitted.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="nc">Counter</span><span class="p">(</span><span class="s">'abracadabra'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="nc">Counter</span><span class="p">(</span><span class="sh">'</span><span class="s">abracadabra</span><span class="sh">'</span><span class="p">)</span>
 <span class="n">c</span><span class="p">.</span><span class="nf">most_common</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="c1"># [('a', 5), ('b', 2), ('r', 2)]
 </span></code></pre></div></div>
@@ -290,9 +290,9 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 
 <span class="n">c</span> <span class="o">=</span> <span class="nc">Counter</span><span class="p">()</span>
-<span class="n">c</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="s">'a'</span><span class="p">)</span>
-<span class="n">c</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="s">'a'</span><span class="p">)</span>
-<span class="n">c</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="s">'b'</span><span class="p">)</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="n">c</span>
 <span class="c1"># Counter({'a': 2, 'b': 1})

@@ -202,8 +202,8 @@
 
 <p>Note - this will not be applied to any HTML headings. You’ll have to write that logic yourself as such in your layout.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h2 id="<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slugify</span><span class="w"> </span><span class="p">}}</span>"&gt;
-    <span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h2 id="<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slugify</span><span class="w"> </span><span class="cp">}}</span>"&gt;
+    <span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
 &lt;/h2&gt;
 </code></pre></div></div>
 
@@ -211,10 +211,10 @@
 
 <p>So you could do this in a includes or layout file.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">slug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slugify</span><span class="w"> </span><span class="p">%}</span>
-&lt;h2 id="<span class="p">{{</span><span class="w"> </span><span class="nv">slug</span><span class="w"> </span><span class="p">}}</span>"&gt;
-    &lt;a href="#<span class="p">{{</span><span class="w"> </span><span class="nv">slug</span><span class="w"> </span><span class="p">}}</span>"&gt;
-        <span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">slug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">slugify</span><span class="w"> </span><span class="cp">%}</span>
+&lt;h2 id="<span class="cp">{{</span><span class="w"> </span><span class="nv">slug</span><span class="w"> </span><span class="cp">}}</span>"&gt;
+    &lt;a href="#<span class="cp">{{</span><span class="w"> </span><span class="nv">slug</span><span class="w"> </span><span class="cp">}}</span>"&gt;
+        <span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
     &lt;/a&gt;
 &lt;/h2&gt;
 </code></pre></div></div>
@@ -223,7 +223,7 @@
 
 <p>Even on oneline formats badly in HTML or markdown files.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;a href="#<span class="p">{{</span><span class="w"> </span><span class="nv">slug</span><span class="w"> </span><span class="p">}}</span>"&gt;&lt;h2 id="<span class="p">{{</span><span class="w"> </span><span class="nv">slug</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/h2&gt;&lt;/a&gt;
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;a href="#<span class="cp">{{</span><span class="w"> </span><span class="nv">slug</span><span class="w"> </span><span class="cp">}}</span>"&gt;&lt;h2 id="<span class="cp">{{</span><span class="w"> </span><span class="nv">slug</span><span class="w"> </span><span class="cp">}}</span>"&gt;<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>&lt;/h2&gt;&lt;/a&gt;
 </code></pre></div></div>
 
 <p>Becomes:</p>

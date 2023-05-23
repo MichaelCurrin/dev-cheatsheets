@@ -185,9 +185,9 @@
   <p>.get() can accept a datatype value such as int. Doing so ensures that the value we’re getting is actually of the schema we’re expecting, which is a neat feature.</p>
 </blockquote>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span> <span class="o">=</span> <span class="n">confuse</span><span class="p">.</span><span class="nc">Configuration</span><span class="p">(</span><span class="s">'MyApp'</span><span class="p">,</span> <span class="n">__name__</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span> <span class="o">=</span> <span class="n">confuse</span><span class="p">.</span><span class="nc">Configuration</span><span class="p">(</span><span class="sh">'</span><span class="s">MyApp</span><span class="sh">'</span><span class="p">,</span> <span class="n">__name__</span><span class="p">)</span>
 
-<span class="n">config</span><span class="p">[</span><span class="s">'AWS'</span><span class="p">][</span><span class="s">'Lambda'</span><span class="p">][</span><span class="s">'Runtime'</span><span class="p">].</span><span class="nf">get</span><span class="p">()</span>
+<span class="n">config</span><span class="p">[</span><span class="sh">'</span><span class="s">AWS</span><span class="sh">'</span><span class="p">][</span><span class="sh">'</span><span class="s">Lambda</span><span class="sh">'</span><span class="p">][</span><span class="sh">'</span><span class="s">Runtime</span><span class="sh">'</span><span class="p">].</span><span class="nf">get</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Otherwise use <code class="language-plaintext highlighter-rouge">PyYAML</code>.</p>

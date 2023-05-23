@@ -190,7 +190,7 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">loginBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">login</span><span class="dl">'</span><span class="p">)</span>
 <span class="kd">const</span> <span class="nx">logoutBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">logout</span><span class="dl">'</span><span class="p">)</span>
 
-<span class="nf">if </span><span class="p">(</span><span class="nf">isloggedIn</span><span class="p">())</span> <span class="p">{</span>
+<span class="k">if </span><span class="p">(</span><span class="nf">isloggedIn</span><span class="p">())</span> <span class="p">{</span>
   <span class="nx">loginBtn</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">disabled</span><span class="dl">'</span><span class="p">,</span> <span class="dl">''</span><span class="p">)</span>
   <span class="nx">logoutBtn</span><span class="p">.</span><span class="nf">removeAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">disabled</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>

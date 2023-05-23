@@ -190,20 +190,20 @@
 
 <p>Use the <code class="language-plaintext highlighter-rouge">Literal</code> type for possible values.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Colors</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span><span class="s">"red"</span><span class="p">,</span> <span class="s">"blue"</span><span class="p">,</span> <span class="s">"yellow"</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Colors</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span><span class="sh">"</span><span class="s">red</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">blue</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">yellow</span><span class="sh">"</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>Example from the docs:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PrimaryColors</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span><span class="s">"red"</span><span class="p">,</span> <span class="s">"blue"</span><span class="p">,</span> <span class="s">"yellow"</span><span class="p">]</span>
-<span class="n">SecondaryColors</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span><span class="s">"purple"</span><span class="p">,</span> <span class="s">"green"</span><span class="p">,</span> <span class="s">"orange"</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PrimaryColors</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span><span class="sh">"</span><span class="s">red</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">blue</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">yellow</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">SecondaryColors</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span><span class="sh">"</span><span class="s">purple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">green</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">orange</span><span class="sh">"</span><span class="p">]</span>
 <span class="n">AllowedColors</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span><span class="n">PrimaryColors</span><span class="p">,</span> <span class="n">SecondaryColors</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">paint</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="n">AllowedColors</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
     <span class="k">pass</span>
 
-<span class="nf">paint</span><span class="p">(</span><span class="s">"red"</span><span class="p">)</span>        <span class="c1"># Valid
-</span><span class="nf">paint</span><span class="p">(</span><span class="s">"turquoise"</span><span class="p">)</span>  <span class="c1"># Invalid
+<span class="nf">paint</span><span class="p">(</span><span class="sh">"</span><span class="s">red</span><span class="sh">"</span><span class="p">)</span>        <span class="c1"># Valid
+</span><span class="nf">paint</span><span class="p">(</span><span class="sh">"</span><span class="s">turquoise</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># Invalid
 </span></code></pre></div></div>
 
         

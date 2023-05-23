@@ -213,10 +213,10 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span> <span class="o">=</span> <span class="nf">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
-<span class="n">d</span><span class="p">[</span><span class="s">'a'</span><span class="p">]</span>
+<span class="n">d</span><span class="p">[</span><span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">]</span>
 <span class="c1"># =&gt; 0
 </span>
-<span class="n">d</span><span class="p">[</span><span class="s">'b'</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">d</span><span class="p">[</span><span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="n">d</span>
 <span class="c1"># =&gt; defaultdict(&lt;class 'int'&gt;, {'a': 0, 'b': 1})
 </span></code></pre></div></div>
@@ -225,7 +225,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span> <span class="o">=</span> <span class="nf">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="n">d</span><span class="p">[</span><span class="s">'c'</span><span class="p">]</span>
+<span class="n">d</span><span class="p">[</span><span class="sh">'</span><span class="s">c</span><span class="sh">'</span><span class="p">]</span>
 <span class="c1"># =&gt; 1
 </span><span class="n">d</span>
 <span class="c1"># =&gt; defaultdict(&lt;function &lt;lambda&gt; at 0x10fa69ee0&gt;, {'c': 1})
@@ -235,7 +235,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span> <span class="o">=</span> <span class="nf">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
 
-<span class="n">d</span><span class="p">[</span><span class="s">'a'</span><span class="p">].</span><span class="nf">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">d</span><span class="p">[</span><span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">].</span><span class="nf">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="n">d</span>
 <span class="c1"># =&gt; defaultdict(&lt;class 'list'&gt;, {'a': [2]})
@@ -259,14 +259,14 @@
 <p>Expected structure.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-    <span class="s">"2016"</span><span class="p">:</span> <span class="p">{</span>                               <span class="c1"># Outer dict key, with a dict as value.
-</span>        <span class="s">"category A"</span><span class="p">:</span> <span class="p">[</span>                    <span class="c1"># Inner dict key, with a list value
-</span>           <span class="p">{</span> <span class="s">"x"</span><span class="p">:</span> <span class="s">"some name"</span><span class="p">,</span> <span class="s">"y"</span><span class="p">:</span> <span class="mi">123</span> <span class="p">},</span> <span class="c1"># Dictionary.
+    <span class="sh">"</span><span class="s">2016</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>                               <span class="c1"># Outer dict key, with a dict as value.
+</span>        <span class="sh">"</span><span class="s">category A</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span>                    <span class="c1"># Inner dict key, with a list value
+</span>           <span class="p">{</span> <span class="sh">"</span><span class="s">x</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">some name</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">y</span><span class="sh">"</span><span class="p">:</span> <span class="mi">123</span> <span class="p">},</span> <span class="c1"># Dictionary.
 </span>           <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
         <span class="p">]</span>
-        <span class="s">"category B"</span><span class="p">:</span> <span class="p">[</span> <span class="p">],</span>
+        <span class="sh">"</span><span class="s">category B</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span> <span class="p">],</span>
    <span class="p">}</span> <span class="p">,</span>
-  <span class="s">"2017"</span><span class="p">:</span> <span class="p">[</span> <span class="p">...</span> <span class="p">]</span>
+  <span class="sh">"</span><span class="s">2017</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span> <span class="p">...</span> <span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -274,9 +274,9 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span> <span class="o">=</span> <span class="nf">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="nf">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">))</span>
 
-<span class="n">year</span> <span class="o">=</span> <span class="s">"2016"</span>
-<span class="n">category</span> <span class="o">=</span> <span class="s">"Category A"</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s">"Foo"</span>
+<span class="n">year</span> <span class="o">=</span> <span class="sh">"</span><span class="s">2016</span><span class="sh">"</span>
+<span class="n">category</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Category A</span><span class="sh">"</span>
+<span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Foo</span><span class="sh">"</span>
 <span class="n">value</span> <span class="o">=</span> <span class="mi">123</span>
 
 <span class="n">data_point</span> <span class="o">=</span> <span class="nf">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>

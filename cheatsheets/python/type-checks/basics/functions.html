@@ -184,7 +184,7 @@
 <p>e.g.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">greeting</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">count</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s">"Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s"> - your count is </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s">"</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s"> - your count is </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="sh">"</span>
 </code></pre></div></div>
 
 <h2 id="default-values">Default values</h2>
@@ -197,7 +197,7 @@
 
 <span class="nf">greet</span><span class="p">(</span><span class="mi">456</span><span class="p">)</span>
 
-<span class="nf">greet</span><span class="p">(</span><span class="s">"456"</span><span class="p">)</span>
+<span class="nf">greet</span><span class="p">(</span><span class="sh">"</span><span class="s">456</span><span class="sh">"</span><span class="p">)</span>
 <span class="c1"># Argument 1 to "greet" has incompatible type "str"; expected "int"
 </span></code></pre></div></div>
 
@@ -211,7 +211,7 @@
 
 <span class="nf">greet</span><span class="p">(</span><span class="mi">456</span><span class="p">)</span>
 
-<span class="nf">greet</span><span class="p">(</span><span class="s">"456"</span><span class="p">)</span>
+<span class="nf">greet</span><span class="p">(</span><span class="sh">"</span><span class="s">456</span><span class="sh">"</span><span class="p">)</span>
 <span class="c1"># No error raised unfortunately.
 </span></code></pre></div></div>
 
@@ -220,9 +220,9 @@
 <p>Python 3.9 - <code class="language-plaintext highlighter-rouge">list</code>, <code class="language-plaintext highlighter-rouge">tuple</code>, <code class="language-plaintext highlighter-rouge">dict</code>, etc.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">greet_all</span><span class="p">(</span><span class="n">names</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="s">','</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="sh">'</span><span class="s">,</span><span class="sh">'</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
     
-    <span class="k">return</span> <span class="sa">f</span><span class="s">"Hello, </span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s">"</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Hello, </span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="sh">"</span>
 </code></pre></div></div>
 
 <p>Python 3.8 - <code class="language-plaintext highlighter-rouge">list</code>, <code class="language-plaintext highlighter-rouge">Tuple</code>, <code class="language-plaintext highlighter-rouge">Dict</code>, etc.</p>
@@ -231,9 +231,9 @@
 
 
 <span class="k">def</span> <span class="nf">greet_all</span><span class="p">(</span><span class="n">names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="s">','</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="sh">'</span><span class="s">,</span><span class="sh">'</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
     
-    <span class="k">return</span> <span class="sa">f</span><span class="s">"Hello, </span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s">"</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Hello, </span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="sh">"</span>
 </code></pre></div></div>
 
 <h2 id="custom-type">Custom type</h2>
