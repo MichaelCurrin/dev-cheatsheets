@@ -191,7 +191,13 @@ DROP ROLE foo;
 ### Change password
 
 ```sql
-ALTER USER foo WITH PASSWORD 'newpass';
+ALTER USER my_user WITH PASSWORD 'my_password';
+```
+
+Or encrypt it:
+
+```sql
+ALTER USER my_user WITH ENCRYPTED PASSWORD 'my_password';
 ```
 
 See [alter user](https://www.postgresql.org/docs/current/sql-alteruser.html) docs.
@@ -203,6 +209,8 @@ postgres=# \password
 ```
 
 From [question on forum](https://serverfault.com/questions/110154/whats-the-default-superuser-username-password-for-postgres-after-a-new-install/325596)
+
+You cannot read the original value of an encryped password. But you can set a new one.
 
 ### List users
 
