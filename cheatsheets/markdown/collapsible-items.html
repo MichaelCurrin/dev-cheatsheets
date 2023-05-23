@@ -184,28 +184,34 @@ BODY CONTENT
 
 <p><strong>Markdown code:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;details&gt;
-&lt;summary&gt;&lt;b&gt;Preview title&lt;/b&gt;&lt;/summary&gt;
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;details&gt;</span>
+<span class="nt">&lt;summary&gt;&lt;b&gt;</span>Preview title<span class="nt">&lt;/b&gt;&lt;/summary&gt;</span>
+
+<span class="ge">_Markdown is valid, but add empty lines to separate from the HTML tags._</span>
+<span class="p">
+-</span> Bullet
+<span class="p">-</span> Points
+
+<span class="nt">&lt;/details&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<details>
+<summary><b>Preview title</b></summary>
 
 _Markdown is valid, but add empty lines to separate from the HTML tags._
 
 - Bullet
 - Points
 
-```json
-{
-    "codeblock": "demo"
-}
-```
-
-&lt;/details&gt;
-</code></pre></div></div>
-
-<!-- Result omitted here as Jekyll can't handle it right. Though I could force it to HTML without Jekyll and then add the result as HTML. -->
+</details>
 
 <h2 id="jekyll-site">Jekyll site</h2>
 
-<p>Example of an accordion using <a href="/dev-cheatsheets/cheatsheets/jekyll/">Jekyll</a> static site generator. Here we put a codeblock inside the expandable section, to show how to combine HTML and Liquid.</p>
+<p>Example of writing Liquid code inside an accordion, when using the <a href="/dev-cheatsheets/cheatsheets/jekyll/">Jekyll</a> static site generator.</p>
+
+<p>Here we put a codeblock inside the expandable section, to show how to combine HTML and Liquid. Since is needed in particular for putting codeblocks inside HTML, since using trick backticks or indentation just gets shown literally and not converted to Markdown.</p>
 
 <p><strong>Sample Jekyll/Liquid code</strong></p>
 
@@ -223,7 +229,7 @@ puts 'Expanded message'
 
 <p><strong>Sample rendered HTML</strong></p>
 
-<p><em>Using the code above in a Jekyll site, here is the result after building to plain HTML.</em></p>
+<p>Using the code above in a Jekyll site, here is the result after building to plain HTML:</p>
 
 <details>
 <summary>Preview</summary>
@@ -236,9 +242,7 @@ puts 'Expanded message'
 
 <p><br /></p>
 
-<p><strong>Sample HTML for displaying output</strong></p>
-
-<p><em>Here is the rendered result above shown in a code block below, for clarity. The only change was wrapping, for readability.</em></p>
+<p>If you want to see the HTML code that was generated, here it is. For readability, the output was wrapped.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;details&gt;</span>
 <span class="nt">&lt;summary&gt;</span>Preview<span class="nt">&lt;/summary&gt;</span>
@@ -251,10 +255,6 @@ puts 'Expanded message'
     <span class="nt">&lt;/pre&gt;</span>
 <span class="nt">&lt;/figure&gt;</span>
 </code></pre></div></div>
-
-<p><strong>Note</strong></p>
-
-<p>To explain the approach here - if you want to use Jekyll templating, Markdown does <strong>not</strong> get picked up here correctly. So if you want a codeblock in your expanded block, you need to use HTML or the <code class="language-plaintext highlighter-rouge">highlight</code> Liquid tag. Whether using triple backticks or indentation for a codeblock inside the details tag, those just end up being used literally.</p>
 
         
     </div>
