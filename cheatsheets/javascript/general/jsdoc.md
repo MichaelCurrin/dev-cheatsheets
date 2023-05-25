@@ -97,7 +97,7 @@ Use square brackets.
 
 ```javascript
 /**
- * @param {string} author - Somebody's name.
+ * @param {string} [author] - Somebody's name.
  * // OR
  * @param {?string} author - Somebody's name.
  */
