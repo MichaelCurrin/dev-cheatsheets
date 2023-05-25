@@ -174,7 +174,7 @@
 
 <ul>
   <li><a href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf">Pandas Cheat Sheet</a> PDF on Pandas main site.</li>
-  <li><a href="https://github.com/MichaelCurrin/learn-to-code/blob/master/en/topics/scripting_languages/Python/libraries/pandas.md">Pands</a> on Learn to Code.</li>
+  <li><a href="https://github.com/MichaelCurrin/learn-to-code/blob/master/en/topics/scripting_languages/Python/libraries/pandas.md">Pandas</a> on Learn to Code.</li>
 </ul>
 
 <h2 id="imports">Imports</h2>
@@ -208,7 +208,7 @@
 
 <p>With <code class="language-plaintext highlighter-rouge">data</code> as a 2-D list - a list of rows where each row is a list. Columns must be named.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">]]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">]]</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span>
     <span class="n">data</span><span class="p">,</span>
     <span class="n">indexes</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
@@ -237,12 +237,12 @@
 
 <p>Select <em>range</em> of named columns, inclusive.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[:,</span><span class="sh">'</span><span class="s">foo</span><span class="sh">'</span><span class="p">:</span><span class="sh">'</span><span class="s">bar</span><span class="sh">'</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="sh">'</span><span class="s">foo</span><span class="sh">'</span><span class="p">:</span><span class="sh">'</span><span class="s">bar</span><span class="sh">'</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>Select individual columns by index.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="p">,</span><span class="mi">5</span><span class="p">]]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="p">,</span><span class="mi">5</span><span class="p">]]</span>
 </code></pre></div></div>
 
 <p>Also filter by condition.</p>
@@ -331,6 +331,35 @@
 <p>Scatter chart using pairs of points.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="nf">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="sh">'</span><span class="s">foo</span><span class="sh">'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="sh">'</span><span class="s">bar</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="read-and-write-files">Read and write files</h2>
+
+<p>See <a href="https://realpython.com/pandas-read-write-files/">pandas: How to Read and Write Files</a> on Real Python blog.</p>
+
+<h3 id="csv">CSV</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>pandas
+</code></pre></div></div>
+
+<p>Write:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="nf">to_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">data.csv</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Read:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">data.csv</span><span class="sh">'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="excel">Excel</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>xlwt openpyxl xlsxwriter xlrd
+</code></pre></div></div>
+
+<p>Write:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="nf">to_excel</span><span class="p">(</span><span class="sh">'</span><span class="s">data.xlsx</span><span class="sh">'</span><span class="p">)</span>
 </code></pre></div></div>
 
         
