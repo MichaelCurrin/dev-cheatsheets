@@ -8,7 +8,7 @@ Commands in Pandas which I have used or would like to use. This is not meant to 
 See also:
 
 - [Pandas Cheat Sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) PDF on Pandas main site.
-- [Pands](https://github.com/MichaelCurrin/learn-to-code/blob/master/en/topics/scripting_languages/Python/libraries/pandas.md) on Learn to Code.
+- [Pandas](https://github.com/MichaelCurrin/learn-to-code/blob/master/en/topics/scripting_languages/Python/libraries/pandas.md) on Learn to Code.
 
 
 ## Imports
@@ -23,7 +23,7 @@ import pandas as pd
 
 - `pd.Series`
 - `pd.GroupBy`
--  `pd.DataFrame`
+- `pd.DataFrame`
 
 
 ## Create dataframe
@@ -45,7 +45,7 @@ df = pd.DataFrame(
 With `data` as a 2-D list - a list of rows where each row is a list. Columns must be named.
 
 ```python
-data = [[4, 7, 10],[5, 8, 11],[6, 9, 12]]
+data = [[4, 7, 10], [5, 8, 11], [6, 9, 12]]
 df = pd.DataFrame(
     data,
     indexes=[1, 2, 3],
@@ -79,13 +79,13 @@ df.filter(regex='foo')
 Select _range_ of named columns, inclusive.
 
 ```python
-df.loc[:,'foo':'bar']
+df.loc[:, 'foo':'bar']
 ```
 
 Select individual columns by index.
 
 ```python
-df.iloc[:,[0, 2 ,5]]
+df.iloc[:, [0, 2 ,5]]
 ```
 
 Also filter by condition.
@@ -185,4 +185,39 @@ Scatter chart using pairs of points.
 
 ```python
 df.plot.scatter(x='foo', y='bar')
+```
+
+
+## Read and write files
+
+See [pandas: How to Read and Write Files](https://realpython.com/pandas-read-write-files/) on Real Python blog.
+
+### CSV
+
+```sh
+$ pip install pandas
+```
+
+Write:
+
+```python
+df.to_csv('data.csv')
+```
+
+Read:
+
+```python
+df = pd.read_csv('data.csv', index_col=0)
+```
+
+### Excel
+
+```sh
+$ pip install xlwt openpyxl xlsxwriter xlrd
+```
+
+Write:
+
+```python
+df.to_excel('data.xlsx')
 ```
