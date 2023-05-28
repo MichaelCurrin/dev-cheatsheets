@@ -168,9 +168,9 @@
 
     <div class="post-content">
         
-            <p>Add docstrings to your JS functions using the JSDoc standard. There is a format to cover types and descriptions of variables to help developers knwo what to use for a function’s input. This might help with intellisense suggestions and validation too.</p>
+            <p>JSDoc is a standard for documenting JavaScript code, particularly for adding docstrings to functions. By using JSDoc, you can provide clear and structured documentation for your code, including information about function parameters, return values, and more. This might help with intellisense suggestions and validation too. This page will guide you through the basics of JSDoc and its usage.</p>
 
-<p>IDEs like VS Code support synax highlightin to help write the docstrings.</p>
+<p>IDEs like VS Code support synax highlighting to help write the docstrings.</p>
 
 <h2 id="resources">Resources</h2>
 
@@ -190,7 +190,18 @@
 
 <h2 id="syntax">Syntax</h2>
 
+<h3 id="common-jsdoc-tags">Common JSDoc Tags</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">@param</code>: Documents a function parameter.</li>
+  <li><code class="language-plaintext highlighter-rouge">@returns</code>: Documents the return value of a function.</li>
+  <li><code class="language-plaintext highlighter-rouge">@throws</code>: Documents the errors that a function may throw.</li>
+  <li><code class="language-plaintext highlighter-rouge">@example</code>: Provides an example usage of a function.</li>
+</ul>
+
 <h3 id="overview">Overview</h3>
+
+<p>Consider the following example that demonstrates the usage of JSDoc in a JavaScript function:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
  * Generate a book description.
