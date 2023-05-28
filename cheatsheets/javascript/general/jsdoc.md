@@ -3,9 +3,9 @@ title: JSDoc
 description: Writing docstrings for JS functions
 ---
 
-Add docstrings to your JS functions using the JSDoc standard. There is a format to cover types and descriptions of variables to help developers knwo what to use for a function's input. This might help with intellisense suggestions and validation too.
+JSDoc is a standard for documenting JavaScript code, particularly for adding docstrings to functions. By using JSDoc, you can provide clear and structured documentation for your code, including information about function parameters, return values, and more. This might help with intellisense suggestions and validation too. This page will guide you through the basics of JSDoc and its usage.
 
-IDEs like VS Code support synax highlightin to help write the docstrings.
+IDEs like VS Code support synax highlighting to help write the docstrings.
 
 
 ## Resources
@@ -27,7 +27,16 @@ $ jsdoc book.js
 
 ## Syntax
 
+### Common JSDoc Tags
+
+- `@param`: Documents a function parameter.
+- `@returns`: Documents the return value of a function.
+- `@throws`: Documents the errors that a function may throw.
+- `@example`: Provides an example usage of a function.
+
 ### Overview
+
+Consider the following example that demonstrates the usage of JSDoc in a JavaScript function:
 
 ```javascript
 /**
