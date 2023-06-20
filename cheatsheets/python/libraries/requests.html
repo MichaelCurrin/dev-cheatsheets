@@ -247,12 +247,12 @@
 
 <p>Using <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization">Authorization header</a>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="sh">'</span><span class="gp">...</span><span class="sh">'</span><span class="s">
-token = </span><span class="sh">'</span><span class="n">abcdef1234</span><span class="sh">'</span><span class="s">
-headers = {</span><span class="sh">"</span><span class="s">Authorization</span><span class="sh">"</span><span class="s">: f</span><span class="sh">"</span><span class="s">Bearer {token}</span><span class="sh">"</span><span class="s">}
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="sh">'</span><span class="s">...</span><span class="sh">'</span>
+<span class="n">token</span> <span class="o">=</span> <span class="sh">'</span><span class="s">abcdef1234</span><span class="sh">'</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">Authorization</span><span class="sh">"</span><span class="p">:</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="sh">"</span><span class="p">}</span>
 
-requests.post(url, headers=headers)
-</span></code></pre></div></div>
+<span class="n">requests</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h2 id="sessions">Sessions</h2>
 

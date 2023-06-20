@@ -282,12 +282,12 @@
     <span class="n">plugins</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nf">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
 
 
-<span class="n">test</span> <span class="o">=</span> <span class="nc">Application</span><span class="p">(</span><span class="sh">"</span><span class="s">Testing</span><span class="gp">...</span><span class="sh">"</span><span class="s">) 
-# OK
-
-# Passing a string instead of list of strings:
-bad = Application(</span><span class="sh">"</span><span class="n">Testing</span><span class="p">...</span><span class="sh">"</span><span class="s">, </span><span class="sh">"</span><span class="k">with</span> <span class="n">plugin</span><span class="sh">"</span><span class="s">)  
-# Error: List[str] expected
+<span class="n">test</span> <span class="o">=</span> <span class="nc">Application</span><span class="p">(</span><span class="sh">"</span><span class="s">Testing...</span><span class="sh">"</span><span class="p">)</span> 
+<span class="c1"># OK
+</span>
+<span class="c1"># Passing a string instead of list of strings:
+</span><span class="n">bad</span> <span class="o">=</span> <span class="nc">Application</span><span class="p">(</span><span class="sh">"</span><span class="s">Testing...</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">with plugin</span><span class="sh">"</span><span class="p">)</span>  
+<span class="c1"># Error: List[str] expected
 </span></code></pre></div></div>
 
 <p>Or you could use a separate package like <a href="https://pypi.org/project/dataclass-type-validator/">dataclass-type-validator</a>.</p>

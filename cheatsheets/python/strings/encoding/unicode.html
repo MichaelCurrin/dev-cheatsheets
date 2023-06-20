@@ -188,20 +188,20 @@
 
 <p>A unicode character will be displayed in human-readable form.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="se">\u003e</span><span class="sh">'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="se">\u003e</span><span class="sh">'</span>
 <span class="sh">'</span><span class="s">&gt;</span><span class="sh">'</span>
 
-<span class="gp">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="se">\u003e</span><span class="sh">'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="se">\u003e</span><span class="sh">'</span><span class="p">)</span>
 <span class="o">&gt;</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="se">\u00cd</span><span class="sh">'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="se">\u00cd</span><span class="sh">'</span>
 <span class="sh">'</span><span class="s">Í</span><span class="sh">'</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="se">\uabcd</span><span class="sh">'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="se">\uabcd</span><span class="sh">'</span>
 <span class="sh">'</span><span class="s">ꯍ</span><span class="sh">'</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">foo </span><span class="se">\u003e</span><span class="s"> </span><span class="se">\u00cd</span><span class="s"> </span><span class="se">\xf0\x9f\x98\x80</span><span class="s"> baz</span><span class="sh">'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">foo </span><span class="se">\u003e</span><span class="s"> </span><span class="se">\u00cd</span><span class="s"> </span><span class="se">\xf0\x9f\x98\x80</span><span class="s"> baz</span><span class="sh">'</span>
 <span class="sh">'</span><span class="s">foo &gt; Í ð</span><span class="se">\x9f\x98\x80</span><span class="s"> baz</span><span class="sh">'</span>
 </code></pre></div></div>
 
@@ -209,17 +209,17 @@
 
 <p>If you make it a raw string, then Python will escape it.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sa">r</span><span class="sh">'</span><span class="s">\u003e</span><span class="sh">'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="sa">r</span><span class="sh">'</span><span class="s">\u003e</span><span class="sh">'</span>
 <span class="sh">'</span><span class="se">\\</span><span class="s">u003e</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Same as above but with escaping backslash using a double backslash.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="se">\\</span><span class="s">u003e</span><span class="sh">'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="se">\\</span><span class="s">u003e</span><span class="sh">'</span>
 <span class="sh">'</span><span class="se">\\</span><span class="s">u003e</span><span class="sh">'</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">\u003e</span><span class="sh">'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">\u003e</span><span class="sh">'</span><span class="p">)</span>
 \<span class="n">u003e</span>
 </code></pre></div></div>
 
@@ -229,13 +229,13 @@
 
 <p>An emoji:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">😀</span><span class="sh">'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">😀</span><span class="sh">'</span>
 <span class="sh">'</span><span class="s">😀</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <h3 id="convert-from-string-to-bytes">Convert from string to bytes</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">Hello 😀</span><span class="sh">'</span><span class="p">.</span><span class="nf">encode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">Hello 😀</span><span class="sh">'</span><span class="p">.</span><span class="nf">encode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span>
 <span class="sa">b</span><span class="sh">'</span><span class="s">Hello </span><span class="se">\xf0\x9f\x98\x80</span><span class="sh">'</span>
 </code></pre></div></div>
 
@@ -243,13 +243,13 @@
 
 <h3 id="convert-from-bytes-to-string">Convert from bytes to string</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sa">b</span><span class="sh">'</span><span class="s">Hello </span><span class="se">\xf0\x9f\x98\x80</span><span class="sh">'</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="sa">b</span><span class="sh">'</span><span class="s">Hello </span><span class="se">\xf0\x9f\x98\x80</span><span class="sh">'</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span>
 <span class="sh">'</span><span class="s">Hello 😀</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Note the unicode characters are left as is.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sa">b</span><span class="sh">'</span><span class="s">foo </span><span class="se">\u003e</span><span class="s"> </span><span class="se">\u00cd</span><span class="s"> </span><span class="se">\xf0\x9f\x98\x80</span><span class="s"> baz</span><span class="sh">'</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="sa">b</span><span class="sh">'</span><span class="s">foo </span><span class="se">\u003e</span><span class="s"> </span><span class="se">\u00cd</span><span class="s"> </span><span class="se">\xf0\x9f\x98\x80</span><span class="s"> baz</span><span class="sh">'</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span>
 <span class="sh">'</span><span class="s">foo </span><span class="se">\\</span><span class="s">u003e </span><span class="se">\\</span><span class="s">u00cd 😀 baz</span><span class="sh">'</span>
 </code></pre></div></div>
 
@@ -259,18 +259,18 @@
 
 <p>The default behavior implies <code class="language-plaintext highlighter-rouge">errors='strict'</code> and can raise an error.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">Hello 😀</span><span class="sh">'</span><span class="p">.</span><span class="nf">encode</span><span class="p">(</span><span class="sh">'</span><span class="s">ascii</span><span class="sh">'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">Hello 😀</span><span class="sh">'</span><span class="p">.</span><span class="nf">encode</span><span class="p">(</span><span class="sh">'</span><span class="s">ascii</span><span class="sh">'</span><span class="p">)</span>
 <span class="c1"># UnicodeEncodeError: 'ascii' codec can't encode character '\U0001f600' in position 6: ordinal not in range(128)
 </span></code></pre></div></div>
 
 <p>We can choose to replace or ignore unicode characters.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">Hello 😀 хелло world</span><span class="sh">'</span><span class="p">.</span><span class="nf">encode</span><span class="p">(</span><span class="sh">'</span><span class="s">ascii</span><span class="sh">'</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="sh">'</span><span class="s">replace</span><span class="sh">'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">Hello 😀 хелло world</span><span class="sh">'</span><span class="p">.</span><span class="nf">encode</span><span class="p">(</span><span class="sh">'</span><span class="s">ascii</span><span class="sh">'</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="sh">'</span><span class="s">replace</span><span class="sh">'</span><span class="p">)</span>
 <span class="sa">b</span><span class="sh">'</span><span class="s">Hello ? ????? world</span><span class="sh">'</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">plain_text</span> <span class="o">=</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">plain_text</span> <span class="o">=</span> 
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">Hello 😀 хелло world</span><span class="sh">'</span><span class="p">.</span><span class="nf">encode</span><span class="p">(</span><span class="sh">'</span><span class="s">ascii</span><span class="sh">'</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="sh">'</span><span class="s">ignore</span><span class="sh">'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="sh">'</span><span class="s">Hello 😀 хелло world</span><span class="sh">'</span><span class="p">.</span><span class="nf">encode</span><span class="p">(</span><span class="sh">'</span><span class="s">ascii</span><span class="sh">'</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="sh">'</span><span class="s">ignore</span><span class="sh">'</span><span class="p">)</span>
 <span class="sa">b</span><span class="sh">'</span><span class="s">Hello   world</span><span class="sh">'</span>
 </code></pre></div></div>
 
@@ -287,8 +287,8 @@
 
 <h3 id="example">Example</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="n">codecs</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">codecs</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">\u003e</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">unicode-escape</span><span class="sh">'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="n">codecs</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">codecs</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">\u003e</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">unicode-escape</span><span class="sh">'</span><span class="p">)</span>
 <span class="sh">'</span><span class="s">&gt;</span><span class="sh">'</span>
 </code></pre></div></div>
 

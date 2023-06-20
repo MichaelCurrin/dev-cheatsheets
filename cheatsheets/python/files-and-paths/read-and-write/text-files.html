@@ -216,7 +216,7 @@
 
 <p>The value will be like:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">text</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">text</span>
 <span class="sh">"</span><span class="s">Line 1\And line 2</span><span class="se">\n</span><span class="s">Line 3</span><span class="se">\n</span><span class="sh">"</span>
 </code></pre></div></div>
 
@@ -231,7 +231,7 @@
 
 <p>Result:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">lines</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">lines</span>
 <span class="p">[</span>
     <span class="sh">"</span><span class="s">Line 1</span><span class="sh">"</span><span class="p">,</span>
     <span class="sh">"</span><span class="s">Line 2</span><span class="sh">"</span><span class="p">,</span>
@@ -243,9 +243,9 @@
 
 <p>Get the line count with <code class="language-plaintext highlighter-rouge">len</code>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="nf">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
 <span class="mi">3</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Line count: </span><span class="si">{</span><span class="nf">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Line count: </span><span class="si">{</span><span class="nf">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">Line</span> <span class="n">count</span><span class="p">:</span> <span class="mi">3</span>
 </code></pre></div></div>
 
@@ -259,7 +259,7 @@
 
 <p>Result:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">lines</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">lines</span>
 <span class="p">[</span>
     <span class="sh">'</span><span class="s">Line 1</span><span class="se">\n</span><span class="sh">'</span><span class="p">,</span>
     <span class="sh">'</span><span class="s">Line 2</span><span class="se">\n</span><span class="sh">'</span><span class="p">,</span>
@@ -294,17 +294,17 @@
 
 <p>Example, in the interactive console:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">f_in</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">file.txt</span><span class="sh">'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">f_in</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">file.txt</span><span class="sh">'</span><span class="p">)</span>
 
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">f_in</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>   <span class="c1"># It has content.
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f_in</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>   <span class="c1"># It has content.
 </span><span class="sh">'</span><span class="s">First line</span><span class="se">\n</span><span class="s">Second line</span><span class="se">\n</span><span class="sh">'</span>
 
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">f_in</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>   <span class="c1"># Appears empty
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f_in</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>   <span class="c1"># Appears empty
 </span><span class="sh">''</span>
 
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">f_in</span><span class="p">.</span><span class="nf">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Reset.
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f_in</span><span class="p">.</span><span class="nf">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Reset.
 </span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">f_in</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>   <span class="c1"># It has content again
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f_in</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>   <span class="c1"># It has content again
 </span><span class="sh">'</span><span class="s">First line</span><span class="se">\n</span><span class="s">Second line</span><span class="se">\n</span><span class="sh">'</span>
 </code></pre></div></div>
 

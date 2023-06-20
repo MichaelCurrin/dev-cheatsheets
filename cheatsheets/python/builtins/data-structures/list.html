@@ -246,9 +246,9 @@
 
 <h3 id="empty-array">Empty array</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="p">[]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="p">[]</span>
 <span class="p">[]</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">()</span>
 <span class="p">[]</span>
 </code></pre></div></div>
 
@@ -256,23 +256,23 @@
 
 <p>This is only safe for primitive types.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span>
 <span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">abc</span><span class="sh">'</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">abc</span><span class="sh">'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="p">[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>For data structures, this gives unexpected results as each element points to the same variable.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[[]]</span><span class="o">*</span><span class="mi">10</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[[]]</span><span class="o">*</span><span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="p">[[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]]</span>
 
-<span class="gp">&gt;&gt;&gt;</span> <span class="c1"># Append a value inside the first item.
-</span><span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">append</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="c1"># It gets added to all.
-</span><span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="c1"># Append a value inside the first item.
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">append</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="c1"># It gets added to all.
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="p">[[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">]</span>
 </code></pre></div></div>
 
@@ -285,25 +285,25 @@
 
 <p>Or list comprehension. With <code class="language-plaintext highlighter-rouge">[]</code> or <code class="language-plaintext highlighter-rouge">list()</code> inside.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">append</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">append</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="p">[[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]]</span>
 </code></pre></div></div>
 
 <h3 id="with-values">With values</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
 <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">])</span>
 <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>You must pass an iterable to <code class="language-plaintext highlighter-rouge">list</code>. Passing a single <code class="language-plaintext highlighter-rouge">str</code> or <code class="language-plaintext highlighter-rouge">int</code> will fail.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="nc">Traceback </span><span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
   <span class="n">File</span> <span class="sh">"</span><span class="s">&lt;stdin&gt;</span><span class="sh">"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="nb">TypeError</span><span class="p">:</span> <span class="sh">'</span><span class="s">int</span><span class="sh">'</span> <span class="nb">object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">iterable</span>
@@ -316,46 +316,46 @@
 
 <p>Get item.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="sh">'</span><span class="s">def</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <p>Get a range.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[:]</span>  <span class="c1"># all
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[:]</span>  <span class="c1"># all
 </span><span class="p">[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">def</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">ghi</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">jkl</span><span class="sh">'</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># first
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># first
 </span><span class="p">[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># second
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># second
 </span><span class="p">[</span><span class="sh">'</span><span class="s">def</span><span class="sh">'</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># second and third, using index 1 and 2
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># second and third, using index 1 and 2
 </span><span class="p">[</span><span class="sh">'</span><span class="s">def</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">ghi</span><span class="sh">'</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># last
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># last
 </span><span class="sh">'</span><span class="s">jkl</span><span class="sh">'</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># second last
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># second last
 </span><span class="sh">'</span><span class="s">ghi</span><span class="sh">'</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>  <span class="c1"># last 2
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>  <span class="c1"># last 2
 </span><span class="p">[</span><span class="sh">'</span><span class="s">ghi</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">jkl</span><span class="sh">'</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>Assign.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">ABC</span><span class="sh">'</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">ABC</span><span class="sh">'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="p">[</span><span class="sh">'</span><span class="s">ABC</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">def</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">ghi</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">jkl</span><span class="sh">'</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>Overwrite a range using an iterable.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">DEF</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">GHI</span><span class="sh">'</span><span class="p">]</span>  <span class="c1"># Replace items at index 1 and 2.
-</span><span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">DEF</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">GHI</span><span class="sh">'</span><span class="p">]</span>  <span class="c1"># Replace items at index 1 and 2.
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="p">[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">DEF</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">GHI</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">jkl</span><span class="sh">'</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>Insert elements between elements. Here inserting at the start.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">123</span><span class="p">,</span> <span class="mi">456</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">123</span><span class="p">,</span> <span class="mi">456</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="p">[</span><span class="mi">123</span><span class="p">,</span> <span class="mi">456</span><span class="p">,</span> <span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">def</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">ghi</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">jkl</span><span class="sh">'</span><span class="p">]</span>
 </code></pre></div></div>
 
@@ -367,24 +367,24 @@
 
 <p>Tuple to list.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>Set to list.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>  <span class="c1"># Or set((1, 1, 2))
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>  <span class="c1"># Or set((1, 1, 2))
 </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="n">x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>String to list.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">list</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">)</span>
 <span class="p">[</span><span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">c</span><span class="sh">'</span><span class="p">]</span>
 </code></pre></div></div>
 

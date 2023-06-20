@@ -202,19 +202,21 @@
 </code></pre></div>    </div>
   </li>
   <li><code class="language-plaintext highlighter-rouge">setup.cfg</code>
-    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nn">[flake8]</span>
-  <span class="py">ignore</span> <span class="p">=</span> <span class="s">D203</span>
-  <span class="py">exclude</span> <span class="p">=</span>
-    <span class="err">.git,</span>
-    <span class="err">__pycache__,</span>
-    <span class="err">docs/source/conf.py,</span>
-    <span class="err">old,</span>
-    <span class="err">build,</span>
-    <span class="err">dist</span>
-  <span class="py">max-complexity</span> <span class="p">=</span> <span class="s">10</span>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [flake8]
+  ignore = D203
+  exclude =
+    .git,
+    __pycache__,
+    docs/source/conf.py,
+    old,
+    build,
+    dist
+  max-complexity = 10
 </code></pre></div>    </div>
   </li>
 </ul>
+
+<p>Max complexity is the number of linear paths allowed in a function - adding if/else statement for example increases this. See <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">Cyclomatic complexity</a>. The value of 10 is a starting point based on the docs.</p>
 
 <p>I find it useful to ignore these:</p>
 
