@@ -36,7 +36,7 @@ Example:
     ignore = E266,E402,E241
     ```
 - `setup.cfg`
-    ```ini
+    ```
     [flake8]
     ignore = D203
     exclude =
@@ -48,6 +48,8 @@ Example:
       dist
     max-complexity = 10
     ```
+
+Max complexity is the number of linear paths allowed in a function - adding if/else statement for example increases this. See [Cyclomatic complexity](https://en.wikipedia.org/wiki/Cyclomatic_complexity). The value of 10 is a starting point based on the docs.
 
 I find it useful to ignore these:
 
