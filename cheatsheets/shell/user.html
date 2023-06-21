@@ -165,6 +165,27 @@
 <span class="go">mcurrin
 </span></code></pre></div></div>
 
+<h2 id="current-users-groups">Current user’s groups</h2>
+
+<p>From <a href="https://unix.stackexchange.com/questions/252980/is-there-a-whoami-to-find-the-current-group-im-logged-in-as#252981">thread</a>.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">id</span> <span class="nt">-g</span>
+<span class="go">1000
+</span></code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">id</span> <span class="nt">-g</span> <span class="nt">-n</span>
+<span class="go">michael
+</span></code></pre></div></div>
+
+<p>All groups:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">groups</span>
+<span class="go">michael sudo docker
+</span><span class="gp">$</span><span class="w"> </span><span class="c"># OR</span>
+<span class="gp">$</span><span class="w"> </span><span class="nb">id</span> <span class="nt">-G</span> <span class="nt">-n</span>
+<span class="go">michael sudo docker
+</span></code></pre></div></div>
+
 <h2 id="home-directory">Home directory</h2>
 
 <p>Using a built-in variable:</p>

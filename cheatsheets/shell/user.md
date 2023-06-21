@@ -17,6 +17,30 @@ $ whoami
 mcurrin
 ```
 
+## Current user's groups
+
+From [thread](https://unix.stackexchange.com/questions/252980/is-there-a-whoami-to-find-the-current-group-im-logged-in-as#252981).
+
+```console
+$ id -g
+1000
+```
+
+```console
+$ id -g -n
+michael
+```
+
+All groups:
+
+```console
+$ groups
+michael sudo docker
+$ # OR
+$ id -G -n
+michael sudo docker
+```
+
 
 ## Home directory
 
