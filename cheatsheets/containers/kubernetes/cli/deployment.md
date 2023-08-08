@@ -44,7 +44,7 @@ Optionally write to a local YAML file by adding this:
 ## Edit deployment
 
 ```sh
-$ kubectl edit DEPLOYMENT_NAME
+$ kubectl edit deploy DEPLOYMENT_NAME
 ```
 
 Then you'll get a text editor window which you can edit and save.
