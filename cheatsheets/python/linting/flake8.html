@@ -312,16 +312,16 @@ W606 	‘async’ and ‘await’ are reserved keywords starting with Python 3.7
 
 <p>Ignore a rule for a file by setting it in the Flake8 config:</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">[</span><span class="nv">flake8</span><span class="pi">]</span>
-<span class="s">per-file-ignores =</span> 
-  <span class="s">file1.py</span><span class="err">:</span> <span class="s">F401</span>
-  <span class="s">file2.py</span><span class="err">:</span> <span class="s">E501</span>
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[flake8]</span>
+<span class="py">per-file-ignores</span> <span class="p">=</span> 
+  <span class="s">file1.py: F401</span>
+  <span class="err">file2.py:</span> <span class="err">E501</span>
 </code></pre></div></div>
 
 <p>I tested this pattern also works with globstart:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">per-file-ignores =</span>
-<span class="na">	test_*</span><span class="pi">:</span>  <span class="s">FS003</span>
+  <span class="s">test_*</span><span class="err">:</span>  <span class="s">FS003</span>
 </code></pre></div></div>
 
 <h2 id="f-string">F-string</h2>

@@ -142,7 +142,7 @@ Based on this [answer](https://stackoverflow.com/a/54454433) that you **cannot**
 
 Ignore a rule for a file by setting it in the Flake8 config:
 
-```yaml
+```ini
 [flake8]
 per-file-ignores = 
   file1.py: F401
@@ -153,7 +153,7 @@ I tested this pattern also works with globstart:
 
 ```yaml
 per-file-ignores =
-	test_*:  FS003
+  test_*:  FS003
 ```
 
 ## F-string
