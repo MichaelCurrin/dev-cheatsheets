@@ -282,12 +282,16 @@ W606 	‘async’ and ‘await’ are reserved keywords starting with Python 3.7
 
 <p>e.g.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">abc</span> <span class="o">=</span> <span class="nf">def</span><span class="p">()</span>  <span class="c1"># noqa: F123
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">abc</span> <span class="o">=</span> <span class="nf">xyz</span><span class="p">()</span>  <span class="c1"># noqa: F123
+</span>
+<span class="k">def</span> <span class="err">= (
+  "</span><span class="nf">xyz</span><span class="sh">"</span><span class="s">  # noqa: F123
+]
 </span></code></pre></div></div>
 
-<p>Note for the unused variable error, you need to put the comment on the first line (where the variable name is).</p>
+<p>Note for the <em>unused variable</em> error specifically, you need to put the comment on the first line (where the variable name is).</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">abc</span> <span class="o">=</span> <span class="nf">def</span><span class="p">(</span>  <span class="c1"># noqa: F841
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">abc</span> <span class="o">=</span> <span class="nf">xyz</span><span class="p">(</span>  <span class="c1"># noqa: F841
 </span>  <span class="n">x</span><span class="o">=</span><span class="mi">1</span>
 <span class="p">)</span>
 </code></pre></div></div>
@@ -303,6 +307,40 @@ W606 	‘async’ and ‘await’ are reserved keywords starting with Python 3.7
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># flake8:noqa
 </span></code></pre></div></div>
+
+<p>Based on this <a href="https://stackoverflow.com/a/54454433">answer</a> that you <strong>cannot</strong> ignore a specific rule for a file like you can for other linters. This does not work as it ignores everything: <code class="language-plaintext highlighter-rouge"># flake8: noqa: F401</code></p>
+
+<p>Ignore a rule for a file by setting it in the Flake8 config:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">[</span><span class="nv">flake8</span><span class="pi">]</span>
+<span class="s">per-file-ignores =</span> 
+  <span class="s">file1.py</span><span class="err">:</span> <span class="s">F401</span>
+  <span class="s">file2.py</span><span class="err">:</span> <span class="s">E501</span>
+</code></pre></div></div>
+
+<p>I tested this pattern also works with globstart:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">per-file-ignores =</span>
+<span class="na">	test_*</span><span class="pi">:</span>  <span class="s">FS003</span>
+</code></pre></div></div>
+
+<h2 id="f-string">F-string</h2>
+
+<p>If you have a f-string subsitution but no <code class="language-plaintext highlighter-rouge">f</code> prefix, you can detect that. But you need a plugin and a flag.</p>
+
+<ul>
+  <li><a href="https://github.com/MichaelKim0407/flake8-use-fstring">MichaelKim0407/flake8-use-fstring</a></li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>flake8-use-fstring
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flake8 <span class="nt">--enable-extensions</span><span class="o">=</span>FS003
+</code></pre></div></div>
+
+<p>Note that is aggressive - detecting strings which don’t have variable subsitution but have a pair of <code class="language-plaintext highlighter-rouge">{}</code>. You can ignore the rule for that line. Or you can make it a raw string, such as for regex.</p>
+
+<p>By default, the plugin will suggest precent (<code class="language-plaintext highlighter-rouge">%</code>) and format (<code class="language-plaintext highlighter-rouge">.format</code>) substitution get used. You can also add arguments based on the plugin’s docs, to change the level of alerting. It seems they can only get more aggressive and not turned off.</p>
 
         
     </div>

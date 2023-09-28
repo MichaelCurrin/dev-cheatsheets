@@ -108,14 +108,18 @@ W606 	‘async’ and ‘await’ are reserved keywords starting with Python 3.7
 e.g.
 
 ```python
-abc = def()  # noqa: F123
+abc = xyz()  # noqa: F123
+
+def = (
+  "xyz"  # noqa: F123
+]
 ```
 
 
-Note for the unused variable error, you need to put the comment on the first line (where the variable name is).
+Note for the _unused variable_ error specifically, you need to put the comment on the first line (where the variable name is).
 
 ```python
-abc = def(  # noqa: F841
+abc = xyz(  # noqa: F841
   x=1
 )
 ```
@@ -134,4 +138,38 @@ Either add to your config or add this to the top of the file:
 # flake8:noqa
 ```
 
+Based on this [answer](https://stackoverflow.com/a/54454433) that you **cannot** ignore a specific rule for a file like you can for other linters. This does not work as it ignores everything: `# flake8: noqa: F401`
 
+Ignore a rule for a file by setting it in the Flake8 config:
+
+```yaml
+[flake8]
+per-file-ignores = 
+  file1.py: F401
+  file2.py: E501
+```
+
+I tested this pattern also works with globstart:
+
+```yaml
+per-file-ignores =
+	test_*:  FS003
+```
+
+## F-string
+
+If you have a f-string subsitution but no `f` prefix, you can detect that. But you need a plugin and a flag.
+
+- [MichaelKim0407/flake8-use-fstring](https://github.com/MichaelKim0407/flake8-use-fstring)
+
+```sh
+pip install flake8-use-fstring
+```
+
+```sh
+flake8 --enable-extensions=FS003
+```
+
+Note that is aggressive - detecting strings which don't have variable subsitution but have a pair of `{}`. You can ignore the rule for that line. Or you can make it a raw string, such as for regex.
+
+By default, the plugin will suggest precent (`%`) and format (`.format`) substitution get used. You can also add arguments based on the plugin's docs, to change the level of alerting. It seems they can only get more aggressive and not turned off.
