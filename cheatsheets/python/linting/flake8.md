@@ -156,7 +156,7 @@ per-file-ignores =
   test_*:  FS003
 ```
 
-## F-string
+## F-string format checking
 
 If you have a f-string subsitution but no `f` prefix, you can detect that. But you need a plugin and a flag.
 
@@ -172,4 +172,13 @@ flake8 --enable-extensions=FS003
 
 Note that is aggressive - detecting strings which don't have variable subsitution but have a pair of `{}`. You can ignore the rule for that line. Or you can make it a raw string, such as for regex.
 
-By default, the plugin will suggest precent (`%`) and format (`.format`) substitution get used. You can also add arguments based on the plugin's docs, to change the level of alerting. It seems they can only get more aggressive and not turned off.
+### Other formats
+
+By default, the plugin will suggest perecent (`%`) and format (`.format`) substitution get used. 
+
+You can also add arguments based on the plugin's docs to make them more aggressive.
+
+If you want to ignore the rules, then add these to your Flake8 config:
+
+- `FS001`: `%` formatting is used.
+- `FS002`: `.format` formatting is used.

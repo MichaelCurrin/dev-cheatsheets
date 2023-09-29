@@ -324,7 +324,7 @@ W606 	‘async’ and ‘await’ are reserved keywords starting with Python 3.7
   <span class="s">test_*</span><span class="err">:</span>  <span class="s">FS003</span>
 </code></pre></div></div>
 
-<h2 id="f-string">F-string</h2>
+<h2 id="f-string-format-checking">F-string format checking</h2>
 
 <p>If you have a f-string subsitution but no <code class="language-plaintext highlighter-rouge">f</code> prefix, you can detect that. But you need a plugin and a flag.</p>
 
@@ -340,7 +340,18 @@ W606 	‘async’ and ‘await’ are reserved keywords starting with Python 3.7
 
 <p>Note that is aggressive - detecting strings which don’t have variable subsitution but have a pair of <code class="language-plaintext highlighter-rouge">{}</code>. You can ignore the rule for that line. Or you can make it a raw string, such as for regex.</p>
 
-<p>By default, the plugin will suggest precent (<code class="language-plaintext highlighter-rouge">%</code>) and format (<code class="language-plaintext highlighter-rouge">.format</code>) substitution get used. You can also add arguments based on the plugin’s docs, to change the level of alerting. It seems they can only get more aggressive and not turned off.</p>
+<h3 id="other-formats">Other formats</h3>
+
+<p>By default, the plugin will suggest perecent (<code class="language-plaintext highlighter-rouge">%</code>) and format (<code class="language-plaintext highlighter-rouge">.format</code>) substitution get used.</p>
+
+<p>You can also add arguments based on the plugin’s docs to make them more aggressive.</p>
+
+<p>If you want to ignore the rules, then add these to your Flake8 config:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">FS001</code>: <code class="language-plaintext highlighter-rouge">%</code> formatting is used.</li>
+  <li><code class="language-plaintext highlighter-rouge">FS002</code>: <code class="language-plaintext highlighter-rouge">.format</code> formatting is used.</li>
+</ul>
 
         
     </div>
