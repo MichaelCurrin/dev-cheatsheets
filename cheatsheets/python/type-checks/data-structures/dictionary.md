@@ -68,8 +68,7 @@ d: MyType = {}
 ```
 
 
-
-## Using TypedDict
+## Use TypedDict
 
 Here we define and use the `TypeDict` type. 
 
@@ -91,7 +90,6 @@ MyType = TypedDict(
     }
 )
 ```
-
 
 ### Ways to use the type
 
@@ -146,6 +144,51 @@ p: Point = {'x': 1.2, 'y': 4}
 ```
 
 From [Check TypedDict items](https://mypy.readthedocs.io/en/stable/error_code_list.html#check-dict-items-dict-item).
+
+### Nesting objects
+
+Example based on asking Rix AI for help.
+
+Note that we define as class and use that to either annonate a `dict` or create a class instance, for the same results.
+
+We validate here that an object has the value types as defined in `Fruit`, and that the value for the `taste` key follows `dict` insdie that matching the structure of `FruitTaste`.
+
+```python
+from typing import TypedDict
+
+
+class Fruit(TypedDict):
+    name: str
+    color: str 
+    taste: 'FruitTaste'
+    id: int
+
+class FruitTaste(TypedDict):
+    sweetness: int
+    sourness: int
+
+apple = Fruit({
+    "name": "Apple", 
+    "color": "red",
+    "taste": {
+        "sweetness": 8,
+        "sourness": 2,
+    },
+    "id": 1
+})
+
+# This format also works the same for running or checking types.
+
+orange: Fruit = {
+    "name": "Orange",
+    "color": "orange", 
+    "taste": {
+        "sweetness": 6,
+        "sourness": 4,
+    },
+    "id": 2  
+})
+```
 
 
 ## Errors

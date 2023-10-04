@@ -236,7 +236,7 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span><span class="p">:</span> <span class="n">MyType</span> <span class="o">=</span> <span class="p">{}</span>
 </code></pre></div></div>
 
-<h2 id="using-typeddict">Using TypedDict</h2>
+<h2 id="use-typeddict">Use TypedDict</h2>
 
 <p>Here we define and use the <code class="language-plaintext highlighter-rouge">TypeDict</code> type.</p>
 
@@ -305,6 +305,50 @@
 </code></pre></div></div>
 
 <p>From <a href="https://mypy.readthedocs.io/en/stable/error_code_list.html#check-dict-items-dict-item">Check TypedDict items</a>.</p>
+
+<h3 id="nesting-objects">Nesting objects</h3>
+
+<p>Example based on asking Rix AI for help.</p>
+
+<p>Note that we define as class and use that to either annonate a <code class="language-plaintext highlighter-rouge">dict</code> or create a class instance, for the same results.</p>
+
+<p>We validate here that an object has the value types as defined in <code class="language-plaintext highlighter-rouge">Fruit</code>, and that the value for the <code class="language-plaintext highlighter-rouge">taste</code> key follows <code class="language-plaintext highlighter-rouge">dict</code> insdie that matching the structure of <code class="language-plaintext highlighter-rouge">FruitTaste</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">TypedDict</span>
+
+
+<span class="k">class</span> <span class="nc">Fruit</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">color</span><span class="p">:</span> <span class="nb">str</span> 
+    <span class="n">taste</span><span class="p">:</span> <span class="sh">'</span><span class="s">FruitTaste</span><span class="sh">'</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span>
+
+<span class="k">class</span> <span class="nc">FruitTaste</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+    <span class="n">sweetness</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">sourness</span><span class="p">:</span> <span class="nb">int</span>
+
+<span class="n">apple</span> <span class="o">=</span> <span class="nc">Fruit</span><span class="p">({</span>
+    <span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Apple</span><span class="sh">"</span><span class="p">,</span> 
+    <span class="sh">"</span><span class="s">color</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">red</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">taste</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="sh">"</span><span class="s">sweetness</span><span class="sh">"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="sh">"</span><span class="s">sourness</span><span class="sh">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="sh">"</span><span class="s">id</span><span class="sh">"</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">})</span>
+
+<span class="c1"># This format also works the same for running or checking types.
+</span>
+<span class="n">orange</span><span class="p">:</span> <span class="n">Fruit</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Orange</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">color</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">orange</span><span class="sh">"</span><span class="p">,</span> 
+    <span class="sh">"</span><span class="s">taste</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="sh">"</span><span class="s">sweetness</span><span class="sh">"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="sh">"</span><span class="s">sourness</span><span class="sh">"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="sh">"</span><span class="s">id</span><span class="sh">"</span><span class="p">:</span> <span class="mi">2</span>  
+<span class="p">})</span>
+</code></pre></div></div>
 
 <h2 id="errors">Errors</h2>
 
