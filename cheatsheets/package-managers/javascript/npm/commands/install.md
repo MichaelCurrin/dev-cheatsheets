@@ -10,7 +10,7 @@ description: The `npm install` command
 - [Maintain packages][]
 - [Upgrade packages][]
 
-[upgrade]: {% link cheatsheets/package-managers/javascript/npm/commands/update.md %}
+[update]: {% link cheatsheets/package-managers/javascript/npm/commands/update.md %}
 [Install packages]: {% link cheatsheets/package-managers/javascript/npm/install-packages.md %}
 [Maintain packages]: {% link cheatsheets/package-managers/javascript/npm/maintain-packages.md %}
 [Upgrade packages]: {% link cheatsheets/package-managers/javascript/npm/upgrade-packages.md %}
@@ -66,18 +66,18 @@ $ npm install PACKAGE
 
 This will add to `dependencies` of `package.json` after installing.
 
-Install latest:
-
-```sh
-$ npm install PACKAGE
-```
-
 Example:
 
 ```sh
 $ npm install foo
 $ # Install multiple packages at once.
 $ npm install foo bar baz
+```
+
+Install latest:
+
+```sh
+$ npm install PACKAGE@latest
 ```
 
 Install specific version:
