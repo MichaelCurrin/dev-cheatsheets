@@ -177,7 +177,7 @@
         
             <p>You must create a <code class="language-plaintext highlighter-rouge">package.json</code> file with <code class="language-plaintext highlighter-rouge">npm init</code> before you can run installs in a project.</p>
 
-<h2 id="install">Install</h2>
+<h2 id="install-commands">Install commands</h2>
 
 <p>See cheatsheets for:</p>
 
@@ -186,7 +186,57 @@
   <li><a href="/dev-cheatsheets/cheatsheets/package-managers/javascript/npm/commands/ci.html">npm ci</a> command for production and automated deploys.</li>
 </ul>
 
-<h2 id="view">View</h2>
+<h2 id="install-packages-globally">Install packages globally</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-g</span> PACKAGE
+</code></pre></div></div>
+
+<h3 id="fix-permissions-error">Fix permissions error</h3>
+
+<p>You may get a permissions error because you are installing as a user to directories that are shared and owned by root.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">/usr/lib/node_modules/</code></li>
+  <li><code class="language-plaintext highlighter-rouge">/usr/bin</code></li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">usr</code> directory is intended for installing and sharing across users.</p>
+
+<p>Here are some ways to fix that:</p>
+
+<ul>
+  <li>Install as the root user.
+    <ul>
+      <li><strong>Warning</strong> avoid doing this. There is a security risk here, as you are giving the package and its dependencies the ability to run scripts with access to your whole machine, to change or read data they shouldn’t.</li>
+      <li>Adding <code class="language-plaintext highlighter-rouge">sudo</code>:
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">sudo </span>npm <span class="nb">install</span> <span class="nt">-g</span> PACKAGE
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>Change the owner of the directories to your current user.
+    <ul>
+      <li><strong>Warning</strong> This is fixes the issue for your current user, but if another tries to install there you will get a similar error to before.</li>
+      <li>Command, using recursive flag:
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="nv">$USER</span> /usr/lib/node_modules /usr/bin
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>Allow all users to write to the directories.
+    <ul>
+      <li>This is a better option than the one above, if you don’t want to change the owner of the directory or if you want all users and not just one to have access.</li>
+      <li><strong>Warning</strong> This will give access for your own user and all other users on the machine.</li>
+      <li>Command to add write access <code class="language-plaintext highlighter-rouge">w</code> for all users <code class="language-plaintext highlighter-rouge">a</code>:
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">sudo chmod </span>a+w /usr/lib/node_modules /usr/bin
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>If you want to give more granular access then above, you could change the group owner of the directories and change the permissions so anyone in the owner group has write access. This means you can target one or more users in a certain group instead of all users.</li>
+</ul>
+
+<h2 id="view-package">View package</h2>
 
 <p>You can get info on a package about it from the NPM registry.</p>
 
