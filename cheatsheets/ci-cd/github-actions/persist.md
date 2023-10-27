@@ -54,7 +54,7 @@ steps:
 
 ### Syntax
 
-Note that `set-output` and `save-state` are deprecated - see [post](https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/).
+Note that `set-output` and `save-state` are **deprecated** - see [post](https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/).
 
 ```yaml
 
@@ -77,7 +77,7 @@ echo "::set-output name=GREETING::hello"
 Variable:
 
 ```sh
-echo "GREETING={MY_VAR}" >> $GITHUB_OUTPUT
+echo "GREETING=$MY_VAR" >> $GITHUB_OUTPUT
 
 # Deprecated
 echo "::set-output name=GREETING::$MY_VAR"
@@ -121,6 +121,8 @@ Don't forget to set and use the `id` attributes. If you only have _one_ step wit
 
 Get output from `npm outdated` command, if any.
 
+Note using of single quotes to handle multi-line output.
+
 ```yaml
 steps:
  - name: Check for outdated packages
@@ -128,14 +130,14 @@ steps:
    run: |
      OUTDATED=$(npm outdated) || true
      
-     echo "OUTDATED={OUTDATED}" >> $GITHUB_OUTPUT
+     echo "OUTDATED='$OUTDATED'" >> $GITHUB_OUTPUT
       
  - name: Upgrade
    if: ${{ steps.vars.outputs.OUTDATED != '' }}
    run: npm upgrade
 ```
 
-Get Go version from `go.mod`.
+Get Go version from `go.mod`, using `set-output` method.
 
 ```yaml
 steps:
