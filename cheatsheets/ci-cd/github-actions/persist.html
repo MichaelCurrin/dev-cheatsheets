@@ -217,7 +217,7 @@
 
 <h3 id="syntax">Syntax</h3>
 
-<p>Note that <code class="language-plaintext highlighter-rouge">set-output</code> and <code class="language-plaintext highlighter-rouge">save-state</code> are deprecated - see <a href="https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/">post</a>.</p>
+<p>Note that <code class="language-plaintext highlighter-rouge">set-output</code> and <code class="language-plaintext highlighter-rouge">save-state</code> are <strong>deprecated</strong> - see <a href="https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/">post</a>.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set output</span>
@@ -237,7 +237,7 @@
 
 <p>Variable:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"GREETING={MY_VAR}"</span> <span class="o">&gt;&gt;</span> <span class="nv">$GITHUB_OUTPUT</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"GREETING=</span><span class="nv">$MY_VAR</span><span class="s2">"</span> <span class="o">&gt;&gt;</span> <span class="nv">$GITHUB_OUTPUT</span>
 
 <span class="c"># Deprecated</span>
 <span class="nb">echo</span> <span class="s2">"::set-output name=GREETING::</span><span class="nv">$MY_VAR</span><span class="s2">"</span>
@@ -278,20 +278,22 @@
 
 <p>Get output from <code class="language-plaintext highlighter-rouge">npm outdated</code> command, if any.</p>
 
+<p>Note using of single quotes to handle multi-line output.</p>
+
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">steps</span><span class="pi">:</span>
  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Check for outdated packages</span>
    <span class="na">id</span><span class="pi">:</span> <span class="s">vars</span>
    <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
      <span class="s">OUTDATED=$(npm outdated) || true</span>
      
-     <span class="s">echo "OUTDATED={OUTDATED}" &gt;&gt; $GITHUB_OUTPUT</span>
+     <span class="s">echo "OUTDATED='$OUTDATED'" &gt;&gt; $GITHUB_OUTPUT</span>
      <span class="no"> </span>
  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Upgrade</span>
    <span class="na">if</span><span class="pi">:</span> <span class="s">${{ steps.vars.outputs.OUTDATED != '' }}</span>
    <span class="na">run</span><span class="pi">:</span> <span class="s">npm upgrade</span>
 </code></pre></div></div>
 
-<p>Get Go version from <code class="language-plaintext highlighter-rouge">go.mod</code>.</p>
+<p>Get Go version from <code class="language-plaintext highlighter-rouge">go.mod</code>, using <code class="language-plaintext highlighter-rouge">set-output</code> method.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">steps</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Get Go version</span>
