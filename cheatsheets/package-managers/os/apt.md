@@ -78,12 +78,16 @@ $ sudo apt install git=1:2.38.1-0ppa1~ubuntu20.04.1
 $ sudo apt remove PACKAGE
 ```
 
+Or use the more aggressive command to also remove configurations - `purge`.
+
 
 ## Upgrade all packages
 
 ```sh
 $ sudo apt upgrade
 ```
+
+Add `-y` for _yes_ to accept immediately.
 
 Note that `apt upgrade PACKAGE` will **not** target a single package.
 
@@ -101,9 +105,9 @@ $ sudo apt autoremove
 
 Upgrade, upgrade, install, and clean-up.
 
-This is useful for a Dockerfile:
+This is useful for a Dockerfile such as this:
 
-```ah
+```sh
 apt update 
   && apt -y upgrade
 
