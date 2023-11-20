@@ -233,10 +233,14 @@ Most used commands:
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt remove PACKAGE
 </code></pre></div></div>
 
+<p>Or use the more aggressive command to also remove configurations - <code class="language-plaintext highlighter-rouge">purge</code>.</p>
+
 <h2 id="upgrade-all-packages">Upgrade all packages</h2>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt upgrade
 </code></pre></div></div>
+
+<p>Add <code class="language-plaintext highlighter-rouge">-y</code> for <em>yes</em> to accept immediately.</p>
 
 <p>Note that <code class="language-plaintext highlighter-rouge">apt upgrade PACKAGE</code> will <strong>not</strong> target a single package.</p>
 
@@ -251,16 +255,16 @@ Most used commands:
 
 <p>Upgrade, upgrade, install, and clean-up.</p>
 
-<p>This is useful for a Dockerfile:</p>
+<p>This is useful for a Dockerfile such as this:</p>
 
-<pre><code class="language-ah">apt update 
-  &amp;&amp; apt -y upgrade
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt update 
+  <span class="o">&amp;&amp;</span> apt <span class="nt">-y</span> upgrade
 
-apt install -y foo
+apt <span class="nb">install</span> <span class="nt">-y</span> foo
 
-apt autoremove \
-  &amp;&amp; apt clean
-</code></pre>
+apt autoremove <span class="se">\</span>
+  <span class="o">&amp;&amp;</span> apt clean
+</code></pre></div></div>
 
 <h2 id="fixed-packages">Fixed packages</h2>
 
