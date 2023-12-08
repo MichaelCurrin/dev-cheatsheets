@@ -3,10 +3,10 @@
 
 [![GH Pages Deploy](https://github.com/MichaelCurrin/dev-cheatsheets/workflows/GH%20Pages%20Deploy/badge.svg)](https://github.com/MichaelCurrin/dev-cheatsheets/actions?query=workflow:"GH+Pages+Deploy")
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/dev-cheatsheets?include_prereleases=&sort=semver&color=5d15a1)](https://github.com/MichaelCurrin/dev-cheatsheets/releases/)
-[![License](https://img.shields.io/badge/License-MIT-blue)](#license)
+[![License](https://img.shields.io/badge/License-MIT-5d15a1)](#license)
 
-[![Hosted with - GitHub Pages](https://img.shields.io/badge/Hosted_with-GitHub_Pages-blue?logo=github&logoColor=white)](https://pages.github.com/)
-[![Made with Jekyll](https://img.shields.io/badge/Jekyll-4-blue.svg?logo=jekyll)](https://jekyllrb.com)
+[![Hosted with - GitHub Pages](https://img.shields.io/badge/Hosted_with-GitHub_Pages-5d15a1?logo=github&logoColor=white)](https://pages.github.com/)
+[![Made with Jekyll](https://img.shields.io/badge/Jekyll-4-5d15a1.svg?logo=jekyll)](https://jekyllrb.com)
 
 
 ## Preview
@@ -55,7 +55,7 @@ To set up and run this project (or a fork), see the project docs:
 
 <div align="center">
 
-[![Docs](https://img.shields.io/badge/View-Project_docs-blue?style=for-the-badge)](/docs/)
+[![Docs](https://img.shields.io/badge/View-Project_docs-5d15a1?style=for-the-badge)](/docs/)
 
 </div>
 
@@ -66,7 +66,7 @@ Contributions are welcome. See instructions:
 
 <div align="center">
 
-[![Contributing doc](https://img.shields.io/badge/View-Contributing-blue?style=for-the-badge)](/CONTRIBUTING.md)
+[![Contributing doc](https://img.shields.io/badge/View-Contributing-5d15a1?style=for-the-badge)](/CONTRIBUTING.md)
 
 </div>
 
