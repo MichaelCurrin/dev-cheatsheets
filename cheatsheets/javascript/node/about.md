@@ -14,7 +14,7 @@ For interest, [Deno][] is another server-side environment of JS.
 
 ## Why Node?
 
-JavaScript generally works the same in the browser and in Node on the server. 
+JavaScript generally works the same in the browser and in Node on the server.
 
 You can use Node to write a backend application, or to build your frontend application, or you might do a mix where you have a Node server and also use Node to make your frontend. You could also leave out Node completely - write your frontend in HTML, CSS and JS and write your backend in Python, PHP or Java.
 
@@ -28,14 +28,14 @@ If you use pure browser-based JavaScript, you miss out on things that other lang
 - Create a GUI.
 - Do logic which is obscured from the user, so can include more expensive API calls, requests to a database, use of secret credentials, caching a respose to use.
 
-There are many tasks covered in the next section which are difficult, impractical or impossible using _only_ the browser. Using Node means you can run these tasks locally or in the cloud, at speed, without a browser running (or even installed). 
+There are many tasks covered in the next section which are difficult, impractical or impossible using _only_ the browser. Using Node means you can run these tasks locally or in the cloud, at speed, without a browser running (or even installed).
 
 And with Node, you get access to write to files on disk or a local database, which is impractical using the browser alone - since for security reasons a browser cannot read or write files on your machine unless you explicitly save or upload a file.
 
 
 ## What is Node good for?
 
-Node can be used for the following, among other use cases. 
+Node can be used for the following, among other use cases.
 
 - Web scraping
 - CLI tools
@@ -139,10 +139,10 @@ The examples below focus on one HTML file, one CSS file and one JS file. And you
 
 Here is a Vue-based application. Rather than loading Vue using a `script` tag in the HTML, rather the newer ES Module syntax is used. So within the JS script, there is an import of Vue from a CDN and the browser knows to download this and use it.
 
-- [![MichaelCurrin - vue-frontend-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=vue-frontend-quickstart&color=blue&logo=github)](https://github.com/MichaelCurrin/vue-frontend-quickstart)
+- [![MichaelCurrin - vue-frontend-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=vue-frontend-quickstart&color=5d15a1&logo=github)](https://github.com/MichaelCurrin/vue-frontend-quickstart)
 
 ### React
 
 And here is one for React.
 
-- [![MichaelCurrin - react-frontend-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=rect-frontend-quickstart&color=blue&logo=github)](https://github.com/MichaelCurrin/react-frontend-quickstart)
+- [![MichaelCurrin - react-frontend-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=rect-frontend-quickstart&color=5d15a1&logo=github)](https://github.com/MichaelCurrin/react-frontend-quickstart)

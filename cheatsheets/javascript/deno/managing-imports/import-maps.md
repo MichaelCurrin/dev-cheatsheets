@@ -12,7 +12,7 @@ This page is based on [Import maps](https://deno.land/manual/linking_to_external
 This Import Maps standard.
 
 - [Homepage](https://wicg.github.io/import-maps/)
-- [![WICG - import-maps](https://img.shields.io/static/v1?label=WICG&message=import-maps&color=blue&logo=github)](https://github.com/WICG/import-maps)
+- [![WICG - import-maps](https://img.shields.io/static/v1?label=WICG&message=import-maps&color=5d15a1&logo=github)](https://github.com/WICG/import-maps)
     > How to control the behavior of JavaScript imports
 
 For use in general and outside of the Deno context, see the JS [Import maps]({% link cheatsheets/javascript/general/modules/import-maps.md %}) section of this cheatsheets guide.

@@ -9,7 +9,7 @@ This allows installing of themes from GitHub.
 
 This is specifically used on GitHub Pages for installing extra themes. But outside of GitHub Pages you can just these the standard `theme` field.
 
-[![benbalter - jekyll-remote-theme](https://img.shields.io/static/v1?label=benbalter&message=jekyll-remote-theme&color=blue&logo=github)](https://github.com/benbalter/jekyll-remote-theme)
+[![benbalter - jekyll-remote-theme](https://img.shields.io/static/v1?label=benbalter&message=jekyll-remote-theme&color=5d15a1&logo=github)](https://github.com/benbalter/jekyll-remote-theme)
 
 > Jekyll plugin for building Jekyll sites with any public GitHub-hosted theme
 

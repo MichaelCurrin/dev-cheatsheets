@@ -18,14 +18,14 @@ If you use a tool to convert HTML to CSS, such as Jekyll, you can choose between
 
 ```markdown
 <div align="center">
-  
+
 My _Markdown_ text.
 
 More text.
 
 Some SVG images:
 
-[![MichaelCurrin - dev-cheatsheets](https://img.shields.io/static/v1?label=MichaelCurrin&message=dev-cheatsheets&color=blue&logo=github)](https://github.com/MichaelCurrin/dev-cheatsheets)
+[![MichaelCurrin - dev-cheatsheets](https://img.shields.io/static/v1?label=MichaelCurrin&message=dev-cheatsheets&color=5d15a1&logo=github)](https://github.com/MichaelCurrin/dev-cheatsheets)
 [![stars - dev-cheatsheets](https://img.shields.io/github/stars/MichaelCurrin/dev-cheatsheets?style=social)](https://github.com/MichaelCurrin/dev-cheatsheets)
 
 </div>
@@ -36,14 +36,14 @@ Some SVG images:
 _Note - this works fine on GitHub [here](https://github.com/MichaelCurrin/dev-cheatsheets/blob/master/cheatsheets/markdown/alignment.md#result) but not in Jekyll - it just appears as plain text_
 
 <div align="center">
-  
+
 My _Markdown_ text.
 
 More text.
 
 Some SVG images:
 
-[![MichaelCurrin - dev-cheatsheets](https://img.shields.io/static/v1?label=MichaelCurrin&message=dev-cheatsheets&color=blue&logo=github)](https://github.com/MichaelCurrin/dev-cheatsheets)
+[![MichaelCurrin - dev-cheatsheets](https://img.shields.io/static/v1?label=MichaelCurrin&message=dev-cheatsheets&color=5d15a1&logo=github)](https://github.com/MichaelCurrin/dev-cheatsheets)
 [![stars - dev-cheatsheets](https://img.shields.io/github/stars/MichaelCurrin/dev-cheatsheets?style=social)](https://github.com/MichaelCurrin/dev-cheatsheets)
 
 </div>

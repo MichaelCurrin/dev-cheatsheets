@@ -53,11 +53,11 @@ Here from the JSPM [sandbox](https://jspm.org/sandbox) page.
 - `index.html`
     ```html
     <!DOCTYPE html>
-    
+
     <body style=margin:0>
       <div id="container"></div>
     </body>
-    
+
     <script type="importmap">
     {
       "imports": {
@@ -65,7 +65,7 @@ Here from the JSPM [sandbox](https://jspm.org/sandbox) page.
       }
     }
     </script>
-    
+
     <script type="module">
     import Vue from 'vue';
 
@@ -113,7 +113,7 @@ Here from the JSPM [sandbox](https://jspm.org/sandbox) page.
     document.body.innerHTML = `<pre>${code}</pre>`;
     </script>
     ```
-    
+
 ### PrimeVue
 
 This is my own example, from setting up Vue and PrimeVue to work without Node.
@@ -140,7 +140,7 @@ I added these all to my import map as follows:
     }
 </script>
 ```
-    
+
 And I rewrote my import as:
 
 ```javascript
@@ -212,16 +212,16 @@ Here I am using "ES Module Shims".
 From the docs:
 
 > 93% of users are now running browsers with baseline support for ES modules.
-> 
+>
 > But modules features like Import Maps will take a while to be supported in browsers.
-> 
+>
 > It turns out that we can actually polyfill new modules features on top of these baseline implementations in a performant 7KB shim.
 
 So a small file size seems great.
 
 Check out the repo and docs.
 
-[![guybedford - es-module-shims](https://img.shields.io/static/v1?label=guybedford&message=es-module-shims&color=blue&logo=github)](https://github.com/guybedford/es-module-shims)
+[![guybedford - es-module-shims](https://img.shields.io/static/v1?label=guybedford&message=es-module-shims&color=5d15a1&logo=github)](https://github.com/guybedford/es-module-shims)
 
 That provided me with this snippet, giving me a choice of a polyfill from either CDN.
 
@@ -238,7 +238,7 @@ I added the UNPKG one to my site, which now works well on Firefox.
 You might still see an error in the console, but that is not a concern.
 
 > This execution failure is wanted - it avoids the polyfill causing double execution. The first import being a bare specifier in the pattern above is important to ensure this.
-> 
+>
 > This is because the polyfill cannot disable the native loader - instead it can only execute modules that would otherwise fail instantiation while avoiding duplicate fetches or executions.
 
 Here is a snippet from the first time I saw it in use, on JSPM Generator playground:
@@ -250,7 +250,7 @@ Here is a snippet from the first time I saw it in use, on JSPM Generator playgro
 
 ### Async and defer
 
-I took out `async` though from the examples above. As that is not reliable though. As the script might be loaded _after_ it is needed. The impact is so small, so it is fine to use no `async`. 
+I took out `async` though from the examples above. As that is not reliable though. As the script might be loaded _after_ it is needed. The impact is so small, so it is fine to use no `async`.
 
 You can also use `defer` instead. Then you can have the polyfill deferred and your main JS script deferred, so they will be non-blocking (making them easy to put in the `head`, yet will still load in the correct order.
 
