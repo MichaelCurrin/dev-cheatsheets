@@ -40,7 +40,7 @@ const MyComponent = {
   // ...
 }
 
-export default myComponent
+export default MyComponent
 ```
 
 ### Add to app
