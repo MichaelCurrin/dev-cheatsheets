@@ -19,10 +19,16 @@ So you can validate that a dictionary passed around meets the following:
 
 ## Use a plain dict
 
+If you care about the type of the key and value but not the actual keys.
+
 Here we create a type using a dictionary.
 
 ```python
 dict[KEY_TYPE, VALUE_TYPE]
+
+# e.g.
+dict[str, str]
+dict[str, list[str]]
 ```
 
 ### Type comment
@@ -32,15 +38,12 @@ From the Mypy [Examples](http://mypy-lang.org/examples.html) page.
 _I've only see this comment approach used for a dictionary, I don't know why it is used here and not so much for others, but it seems like the preferred style._
 
 ```python
+d = {}  # type: dict[str, int]
+
+# For older Python versions:
 from typing import Dict
 
 d = {}  # type: Dict[str, int]
-```
-
-Or, in newer Python without the import:
-
-```python
-d = {}  # type: dict[str, int]
 ```
 
 You could make an alias, for reuse:
@@ -59,20 +62,18 @@ You can add the type like for other data types.
 
 ```python
 d: dict[str, int] = {}
-```
 
-Or
-
-```python
+# Resuable type.
+MyType = dict[str, int]
 d: MyType = {}
 ```
 
 
 ## Use TypedDict
 
-Here we define and use the `TypeDict` type. 
+This approach is useful if you have specific keys you want to want to include. If you use `dict[str, str]` from above you can't check keys. And you can't use `x = { 'abc': str }` as your type because it won't work, so we use TypedDict.
 
-Example from [TypedDict](https://mypy.readthedocs.io/en/stable/more_types.html#typeddict) section of Mypy docs.
+Here we define and use the `TypeDict` type. Example from [TypedDict](https://mypy.readthedocs.io/en/stable/more_types.html#typeddict) section of Mypy docs.
 
 ### Define
 
