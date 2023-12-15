@@ -192,7 +192,7 @@
   <li>Fields are only null when allowed to be.</li>
 </ul>
 
-<h2 id="using-plain-dict">Using plain Dict</h2>
+<h2 id="use-a-plain-dict">Use a plain dict</h2>
 
 <p>Here we create a type using a dictionary.</p>
 
@@ -262,6 +262,17 @@
 <p>Here are using a <code class="language-plaintext highlighter-rouge">Movie</code> type, defined as follows:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Movie</span> <span class="o">=</span> <span class="nc">TypedDict</span><span class="p">(</span><span class="sh">'</span><span class="s">Movie</span><span class="sh">'</span><span class="p">,</span> <span class="p">{</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="sh">'</span><span class="s">year</span><span class="sh">'</span><span class="p">:</span> <span class="nb">int</span><span class="p">})</span>
+</code></pre></div></div>
+
+<p>A nested example:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FooBar</span> <span class="o">=</span> <span class="nc">TypedDict</span><span class="p">(</span>
+    <span class="sh">"</span><span class="s">FooBar</span><span class="sh">"</span><span class="p">,</span>
+    <span class="p">{</span>
+        <span class="sh">"</span><span class="s">Id</span><span class="sh">"</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="sh">"</span><span class="s">Status</span><span class="sh">"</span><span class="p">:</span> <span class="nc">TypedDict</span><span class="p">(</span><span class="sh">"</span><span class="s">Status</span><span class="sh">"</span><span class="p">,</span> <span class="p">{</span><span class="sh">"</span><span class="s">Id</span><span class="sh">"</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="sh">"</span><span class="s">Name</span><span class="sh">"</span><span class="p">:</span> <span class="nb">str</span><span class="p">}),</span>
+    <span class="p">},</span>
+<span class="p">)</span>
 </code></pre></div></div>
 
 <p>The 4 approaches are:</p>

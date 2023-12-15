@@ -17,7 +17,7 @@ So you can validate that a dictionary passed around meets the following:
 - Fields are only null when allowed to be.
 
 
-## Using plain Dict
+## Use a plain dict
 
 Here we create a type using a dictionary.
 
@@ -97,6 +97,18 @@ Here are using a `Movie` type, defined as follows:
 
 ```python
 Movie = TypedDict('Movie', {'name': str, 'year': int})
+```
+
+A nested example:
+
+```python
+FooBar = TypedDict(
+    "FooBar",
+    {
+        "Id": str,
+        "Status": TypedDict("Status", {"Id": int, "Name": str}),
+    },
+)
 ```
 
 The 4 approaches are:
