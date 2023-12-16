@@ -386,32 +386,53 @@
 
 <h3 id="integer">Integer</h3>
 
-<p>Leading zeroes padding.</p>
+<p>Leading zeroes as padding.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"</span><span class="s">{:04d}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="c1"># '0004'
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+
+<span class="c1"># Spaces (default)
+</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="mi">4</span><span class="n">d</span><span class="si">}</span><span class="sh">"</span>
+<span class="c1"># '  42'
 </span>
-<span class="sh">'</span><span class="s">{:04d}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="c1"># Zero
+</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="mi">04</span><span class="n">d</span><span class="si">}</span><span class="sh">"</span>
 <span class="c1"># '0042'
 </span></code></pre></div></div>
 
 <p>Out of interest, align left.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">'</span><span class="s">{:&lt;04d}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="o">&lt;</span><span class="mi">04</span><span class="n">d</span><span class="si">}</span><span class="sh">'</span>
 <span class="sh">'</span><span class="s">4200</span><span class="sh">'</span>
 </code></pre></div></div>
 
-<p>Use white space padding and align to right.</p>
+<p>Or use <code class="language-plaintext highlighter-rouge">str.zfill</code> method:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">'</span><span class="s">{:4d}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-<span class="c1"># '  42'
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">x</span><span class="p">).</span><span class="nf">zfill</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="c1"># '0042'
 </span></code></pre></div></div>
 
 <h3 id="float">Float</h3>
 
-<p>Leading zeroes.</p>
+<p>The first number is the total number of characters and the second is the number after the decimal.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"</span><span class="s">{:06.2f}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="p">)</span>
+<p>Typically for 2 decimal places at and at least one before the decimal point:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">z</span> <span class="o">=</span> <span class="n">math</span><span class="p">.</span><span class="n">pi</span>
+
+<span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">z</span><span class="si">:</span><span class="mf">3.2</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span>
+<span class="c1"># '3.14'
+</span>
+<span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">z</span><span class="si">:</span><span class="mf">3.6</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span>
+<span class="c1"># '3.141593'
+</span></code></pre></div></div>
+
+<p>If you want to add padding on the left, increase the first number e.g. here as <code class="language-plaintext highlighter-rouge">6</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">z</span><span class="si">:</span><span class="mf">6.2</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span>
+<span class="c1"># '  3.14'
+</span>
+<span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">z</span><span class="si">:</span><span class="mf">06.2</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span>
 <span class="c1"># '003.14'
 </span></code></pre></div></div>
 

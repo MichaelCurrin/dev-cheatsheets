@@ -246,35 +246,57 @@ For numbers, the [Alignment](#alignment) here defaults to right with `>` implied
 
 ### Integer
 
-Leading zeroes padding.
+Leading zeroes as padding.
 
 ```python
-"{:04d}".format(4)
-# '0004'
+x = 42
 
-'{:04d}'.format(42)
+# Spaces (default)
+f"{x:4d}"
+# '  42'
+
+# Zero
+f"{x:04d}"
 # '0042'
 ```
 
 Out of interest, align left.
 
 ```python
-'{:<04d}'.format(42)
+f'{x:<04d}'
 '4200'
 ```
 
-Use white space padding and align to right.
+Or use `str.zfill` method:
 
 ```python
-'{:4d}'.format(42)
-# '  42'
+x = 42
+str(x).zfill(4)
+# '0042'
 ```
 
 ### Float
 
-Leading zeroes.
+The first number is the total number of characters and the second is the number after the decimal.
+
+Typically for 2 decimal places at and at least one before the decimal point:
 
 ```python
-"{:06.2f}".format(math.pi)
+z = math.pi
+
+f"{z:3.2f}"
+# '3.14'
+
+f"{z:3.6f}"
+# '3.141593'
+```
+
+If you want to add padding on the left, increase the first number e.g. here as `6`.
+
+```python
+f"{z:6.2f}"
+# '  3.14'
+
+f"{z:06.2f}"
 # '003.14'
 ```
