@@ -61,7 +61,22 @@ $ wc docs/*
       64     153    1262 total
 ```
 
-## Count files
+If you want the number only and not the filename, use std in:
+
+```console
+$ wc -l < path
+123
+```
+
+### Count lenth of stdin
+
+```console
+$ echo "abc
+def" | wc -l
+2
+```
+
+### Count number of files and directories
 
 Here is a simple approach.
 
