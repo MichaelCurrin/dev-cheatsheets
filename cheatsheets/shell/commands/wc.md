@@ -4,10 +4,9 @@ description: Command to count contents size of text or files
 
 ---
 
-Count number of characters, lines, and words. or
+Count number of characters, lines, and words.
 
-
-he default is to show all 3 counts.
+The default is to show all 3 counts.
 
 
 ## Options
@@ -31,8 +30,9 @@ wc: sample-cheatsheets.png: Illegal byte sequence
   202331 sample-cheatsheets.png
 ```
 
+## Usage
 
-## Files
+### Count lines in files
 
 This can be useful on file contents. Use it in file paths. You get an error on directories.
 
@@ -60,10 +60,31 @@ $ wc docs/*
        9      13      96 docs/usage.md
       64     153    1262 total
 ```
+
+## Count files
+
+Here is a simple approach.
+
+```sh
+ls | wc -l
+```
+
+Parsing the output of `ls` is **not** recommended due to issues with handling special characters or spaces in filenames.
+
+Here are some alternative ways to count files in a directory using Bash:
+
+```sh
+find PATH/* -maxdepth 1 -type f | wc -l
+```
+
+Note use of `/*` to count contents of the directory and not the directory itself.
+
+Use `-type d` to count directories instead of files.
+
   
 ## Related
 
-See [Count files in repo][]
+See [Count files in repo][].
 
 [Count files in repo]: {% link cheatsheets/version-control/git/count-files-in-repo.md %}
 
