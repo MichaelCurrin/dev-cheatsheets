@@ -168,9 +168,9 @@
 
     <div class="post-content">
         
-            <p>Count number of characters, lines, and words. or</p>
+            <p>Count number of characters, lines, and words.</p>
 
-<p>he default is to show all 3 counts.</p>
+<p>The default is to show all 3 counts.</p>
 
 <h2 id="options">Options</h2>
 
@@ -212,7 +212,9 @@
   202331 sample-cheatsheets.png
 </span></code></pre></div></div>
 
-<h2 id="files">Files</h2>
+<h2 id="usage">Usage</h2>
+
+<h3 id="count-lines-in-files">Count lines in files</h3>
 
 <p>This can be useful on file contents. Use it in file paths. You get an error on directories.</p>
 
@@ -238,9 +240,27 @@
       64     153    1262 total
 </span></code></pre></div></div>
 
+<h2 id="count-files">Count files</h2>
+
+<p>Here is a simple approach.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> | <span class="nb">wc</span> <span class="nt">-l</span>
+</code></pre></div></div>
+
+<p>Parsing the output of <code class="language-plaintext highlighter-rouge">ls</code> is <strong>not</strong> recommended due to issues with handling special characters or spaces in filenames.</p>
+
+<p>Here are some alternative ways to count files in a directory using Bash:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find PATH/<span class="k">*</span> <span class="nt">-maxdepth</span> 1 <span class="nt">-type</span> f | <span class="nb">wc</span> <span class="nt">-l</span>
+</code></pre></div></div>
+
+<p>Note use of <code class="language-plaintext highlighter-rouge">/*</code> to count contents of the directory and not the directory itself.</p>
+
+<p>Use <code class="language-plaintext highlighter-rouge">-type d</code> to count directories instead of files.</p>
+
 <h2 id="related">Related</h2>
 
-<p>See <a href="/dev-cheatsheets/cheatsheets/version-control/git/count-files-in-repo.html">Count files in repo</a></p>
+<p>See <a href="/dev-cheatsheets/cheatsheets/version-control/git/count-files-in-repo.html">Count files in repo</a>.</p>
 
 <h2 id="help">Help</h2>
 
