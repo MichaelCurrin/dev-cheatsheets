@@ -240,7 +240,20 @@
       64     153    1262 total
 </span></code></pre></div></div>
 
-<h2 id="count-files">Count files</h2>
+<p>If you want the number only and not the filename, use std in:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">wc</span> <span class="nt">-l</span> &lt; path
+<span class="go">123
+</span></code></pre></div></div>
+
+<h3 id="count-lenth-of-stdin">Count lenth of stdin</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"abc
+</span><span class="go">def" | wc -l
+2
+</span></code></pre></div></div>
+
+<h3 id="count-number-of-files-and-directories">Count number of files and directories</h3>
 
 <p>Here is a simple approach.</p>
 
