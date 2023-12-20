@@ -30,6 +30,7 @@ Links to get you to the Package Managers section easily, outside of this JS sect
 
 - [JS in Learn to Code][]
 - [JS in Code Cookbook][]
+- [Visual JavaScript Cheat Sheet][]
 
 
 [Browser]: {% link cheatsheets/javascript/browser/index.md %}
@@ -41,3 +42,4 @@ Links to get you to the Package Managers section easily, outside of this JS sect
 
 [JS in Learn to Code]: https://github.com/MichaelCurrin/learn-to-code/blob/master/en/topics/scripting_languages/JavaScript/README.md
 [JS in Code Cookbook]: https://michaelcurrin.github.io/code-cookbook/recipes/javascript/
+[Visual JavaScript Cheat Sheet]: https://www.git-tower.com/learn/cheat-sheets/javascript
