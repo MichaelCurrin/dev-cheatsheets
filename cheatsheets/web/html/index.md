@@ -7,3 +7,4 @@ logo: html5
 
 - [Markdown HTML]({% link cheatsheets/markdown/html.md %}) cheatsheet
 - [HTML](https://michaelcurrin.github.io/code-cookbook/recipes/web/html/) cookbook.
+- [Visual HTML Cheat Sheet](https://www.git-tower.com/learn/cheat-sheets/html)
