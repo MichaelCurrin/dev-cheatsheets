@@ -17,4 +17,4 @@ This section is not meant to be complete but rather useful as a quick reference 
 
 Most of the content here is intended for GitHub Flavored Markdown (GFM) to be viewed on GitHub or an IDE which supports Markdown. Some the content is HTML which will render well in a markdown file on GitHub.
 
-Some content comes from [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). See also the the Wordpress [Markdown Quick Reference](https://en.support.wordpress.com/markdown-quick-reference/).
+Some content comes from [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). See also the the WordPress [Markdown Quick Reference](https://en.support.wordpress.com/markdown-quick-reference/) and Tower's visual [Markdown cheat sheet](https://www.git-tower.com/learn/cheat-sheets/markdown).
