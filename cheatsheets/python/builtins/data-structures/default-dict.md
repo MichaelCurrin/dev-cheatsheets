@@ -2,6 +2,7 @@
 
 Python docs: [defaultdict](https://docs.python.org/3/library/collections.html#collections.defaultdict)
 
+With this variation of a dictionary, you can perform an operation on a value in the object without getting a key error that it does not exist. For example incrementing a value or appending to a list.
 
 ## Setup
 
@@ -24,10 +25,27 @@ For value.
     - `dict`
 - Or a callable i.e. a function.
     - `lambda: 1`
-    - `lambda: defaultdict(list)`
-
+    - `lambda: 'Not set'`
 
 ## Examples
+
+### Overview
+
+Here we set default as `0`.
+
+```python
+>>> from collections import defaultdict
+>>> x = defaultdict(int)
+>>> x['abc']
+0
+>>> x
+defaultdict(<class 'int'>, {'abc': 0})
+>>> x['def'] += 1
+>>> x
+defaultdict(<class 'int'>, {'abc': 0, 'def': 1})
+>>> dict(x)
+{'abc': 0, 'def': 1}
+```
 
 ### Number
 
