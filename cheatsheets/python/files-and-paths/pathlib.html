@@ -15,13 +15,13 @@
 
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:title" content="Pathlib" />
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.3.3" />
 
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="A new built-in alternative to using `os.path`" />
-    <meta property="og:description" content="A new built-in alternative to using `os.path`" />
+    <meta name="description" content="A built-in alternative to using `os.path`, since Python 3.4" />
+    <meta property="og:description" content="A built-in alternative to using `os.path`, since Python 3.4" />
 <meta name="author" content="Michael Currin" />
 
 
@@ -33,7 +33,7 @@
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "A new built-in alternative to using `os.path`",
+    "description": "A built-in alternative to using `os.path`, since Python 3.4",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/files-and-paths/pathlib.html",
     "headline":    "Pathlib",
     "@type":       "WebSite",
@@ -104,7 +104,7 @@
 
         
             <blockquote>
-                <p>A new built-in alternative to using <code class="language-plaintext highlighter-rouge">os.path</code></p>
+                <p>A built-in alternative to using <code class="language-plaintext highlighter-rouge">os.path</code>, since Python 3.4</p>
 
             </blockquote>
         
@@ -274,13 +274,24 @@
 
 <h2 id="resolve">Resolve</h2>
 
-<p>This adds an absolute path to the current working directory to the path.</p>
+<p>Resolve to an absolute path.</p>
+
+<p>This adds the current working directory to the path object.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="sh">"</span><span class="s">abc/def</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="n">p</span><span class="p">.</span><span class="nf">resolve</span><span class="p">()</span>
-<span class="c1"># PosixPath('/Users/mcurrin/repos/testing/abc/def'
+<span class="c1"># PosixPath('/Users/.../repos/testing/abc/def')
 </span></code></pre></div></div>
+
+<h2 id="relative-to">Relative to</h2>
+
+<p>Useful for printing.</p>
+
+<p>Printing a path object will just be the file or foldername. And using resolve above will make it very long. So you can use this to specify a path that the object should be relative to.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">path</span><span class="p">.</span><span class="nf">relative_to</span><span class="p">(</span><span class="n">base_path</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h2 id="practical-examples">Practical examples</h2>
 

@@ -15,7 +15,7 @@
 
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:title" content="Flake8" />
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.3.3" />
 
 <meta property="og:locale" content="en_US" />
 
@@ -202,16 +202,16 @@
 </code></pre></div>    </div>
   </li>
   <li><code class="language-plaintext highlighter-rouge">setup.cfg</code>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [flake8]
-  ignore = D203
-  exclude =
-    .git,
-    __pycache__,
-    docs/source/conf.py,
-    old,
-    build,
-    dist
-  max-complexity = 10
+    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nn">[flake8]</span>
+  <span class="py">ignore</span> <span class="p">=</span> <span class="s">D203</span>
+  <span class="py">exclude</span> <span class="p">=</span>
+    <span class="err">.git,</span>
+    <span class="err">__pycache__,</span>
+    <span class="err">docs/source/conf.py,</span>
+    <span class="err">old,</span>
+    <span class="err">build,</span>
+    <span class="err">dist</span>
+  <span class="py">max-complexity</span> <span class="p">=</span> <span class="s">10</span>
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -284,10 +284,10 @@ W606 	‘async’ and ‘await’ are reserved keywords starting with Python 3.7
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">abc</span> <span class="o">=</span> <span class="nf">xyz</span><span class="p">()</span>  <span class="c1"># noqa: F123
 </span>
-<span class="k">def</span> <span class="err">= (
-  "</span><span class="nf">xyz</span><span class="sh">"</span><span class="s">  # noqa: F123
-]
-</span></code></pre></div></div>
+<span class="n">abc</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="sh">"</span><span class="s">xyz</span><span class="sh">"</span>  <span class="c1"># noqa: F123
+</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>Note for the <em>unused variable</em> error specifically, you need to put the comment on the first line (where the variable name is).</p>
 

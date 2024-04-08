@@ -15,7 +15,7 @@
 
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:title" content="Argument parsing" />
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.3.3" />
 
 <meta property="og:locale" content="en_US" />
 
@@ -155,12 +155,21 @@
 
 <p>Without using a library.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="n">sys</span><span class="p">.</span><span class="n">stderr</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Usage: </span><span class="si">{</span><span class="n">__file__</span><span class="si">}</span><span class="s"> DIRECTORY</span><span class="se">\n</span><span class="sh">"</span><span class="p">)</span>
-    <span class="n">sys</span><span class="p">.</span><span class="nf">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">sys</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="p">:</span>
+        <span class="n">sys</span><span class="p">.</span><span class="n">stderr</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Usage: </span><span class="si">{</span><span class="n">__file__</span><span class="si">}</span><span class="s"> ABC</span><span class="se">\n</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">sys</span><span class="p">.</span><span class="nf">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">first_arg</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">first_arg</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 </code></pre></div></div>
 
-<p>The snippet I used set up the dynamic value as <code class="language-plaintext highlighter-rouge">sys.argv[0]. The value of that will be like script name if running standalone as an install package. But if running as </code>python app.py<code class="language-plaintext highlighter-rouge">, it will be </code>python`.</p>
+<p>The snippet I used set up the dynamic value as <code class="language-plaintext highlighter-rouge">sys.argv[0]</code>. The value of that will be like script name if running standalone as an install package. But if running as <code class="language-plaintext highlighter-rouge">python app.py</code>, it will be <code class="language-plaintext highlighter-rouge">python</code>.</p>
 
 <p>I used <code class="language-plaintext highlighter-rouge">__file__</code> above - so you’ll have <code class="language-plaintext highlighter-rouge">app.py</code>. Or the full path.</p>
 
@@ -170,6 +179,57 @@
   <li><a href="https://docs.python.org/3/howto/argparse.html">Argparse Tutorial</a> in PY3 docs.</li>
   <li><a href="https://docs.python.org/3/library/argparse.html">argparse</a> module in the docs.</li>
 </ul>
+
+<h3 id="parameters">Parameters</h3>
+
+<p>An example using some basic datatypes.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">argparse</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="p">.</span><span class="nc">ArgumentParser</span><span class="p">()</span>
+
+
+<span class="c1"># bool flag. -v for True or omit for False (not need to set default as here it is implied).
+</span><span class="n">parser</span><span class="p">.</span><span class="nf">add_argument</span><span class="p">(</span><span class="sh">"</span><span class="s">-v</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">--verbose</span><span class="sh">"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="sh">"</span><span class="s">store_true</span><span class="sh">"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="sh">"</span><span class="s">Enable verbose output</span><span class="sh">"</span><span class="p">)</span>
+<span class="c1"># list of str
+</span><span class="n">parser</span><span class="p">.</span><span class="nf">add_argument</span><span class="p">(</span><span class="sh">"</span><span class="s">filenames</span><span class="sh">"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="sh">'</span><span class="s">+</span><span class="sh">'</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="sh">"</span><span class="s">The filenames to process</span><span class="sh">"</span><span class="p">)</span>
+<span class="c1"># int with default and set to optional.
+</span><span class="n">parser</span><span class="p">.</span><span class="nf">add_argument</span><span class="p">(</span><span class="sh">"</span><span class="s">count</span><span class="sh">"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="sh">"</span><span class="s">The number of items to process</span><span class="sh">"</span><span class="p">)</span>
+
+
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="p">.</span><span class="nf">parse_args</span><span class="p">()</span>
+<span class="n">count</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="n">count</span>
+<span class="n">verbose</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="n">verbose</span>
+<span class="n">filenames</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="n">filenames</span>
+</code></pre></div></div>
+
+<h3 id="commands">Commands</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">argparse</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="p">.</span><span class="nc">ArgumentParser</span><span class="p">()</span>
+
+<span class="n">subparsers</span> <span class="o">=</span> <span class="n">parser</span><span class="p">.</span><span class="nf">add_subparsers</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sh">"</span><span class="s">Commands</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Count command.
+</span><span class="n">count_parser</span> <span class="o">=</span> <span class="n">subparsers</span><span class="p">.</span><span class="nf">add_parser</span><span class="p">(</span><span class="sh">"</span><span class="s">count</span><span class="sh">"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="sh">"</span><span class="s">Count the number of items in a file</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">count_parser</span><span class="p">.</span><span class="nf">add_argument</span><span class="p">(</span><span class="sh">"</span><span class="s">filename</span><span class="sh">"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="sh">"</span><span class="s">The filename to process</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Filter command.
+</span><span class="n">filter_parser</span> <span class="o">=</span> <span class="n">subparsers</span><span class="p">.</span><span class="nf">add_parser</span><span class="p">(</span><span class="sh">"</span><span class="s">filter</span><span class="sh">"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="sh">"</span><span class="s">Filter a file based on a pattern</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">filter_parser</span><span class="p">.</span><span class="nf">add_argument</span><span class="p">(</span><span class="sh">"</span><span class="s">filename</span><span class="sh">"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="sh">"</span><span class="s">The filename to process</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">filter_parser</span><span class="p">.</span><span class="nf">add_argument</span><span class="p">(</span><span class="sh">"</span><span class="s">pattern</span><span class="sh">"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="sh">"</span><span class="s">The pattern to filter for</span><span class="sh">"</span><span class="p">)</span>
+
+
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="p">.</span><span class="nf">parse_args</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">args</span><span class="p">.</span><span class="n">command</span> <span class="o">==</span> <span class="sh">"</span><span class="s">count</span><span class="sh">"</span><span class="p">:</span>
+    <span class="nf">count_file</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">args</span><span class="p">.</span><span class="n">command</span> <span class="o">==</span> <span class="sh">"</span><span class="s">filter</span><span class="sh">"</span><span class="p">:</span>
+    <span class="nf">filter_file</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Invalid command</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
 
         
     </div>

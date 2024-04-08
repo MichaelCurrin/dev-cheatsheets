@@ -36,7 +36,7 @@ Example:
     ignore = E266,E402,E241
     ```
 - `setup.cfg`
-    ```
+    ```ini
     [flake8]
     ignore = D203
     exclude =
@@ -110,9 +110,9 @@ e.g.
 ```python
 abc = xyz()  # noqa: F123
 
-def = (
+abc = (
   "xyz"  # noqa: F123
-]
+)
 ```
 
 
