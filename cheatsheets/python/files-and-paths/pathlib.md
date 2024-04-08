@@ -1,8 +1,7 @@
 ---
 title: Pathlib
-description: A new built-in alternative to using `os.path`
+description: A built-in alternative to using `os.path`, since Python 3.4
 ---
-
 
 
 ## Resources
@@ -128,13 +127,25 @@ p.is_dir()
 
 ## Resolve
 
-This adds an absolute path to the current working directory to the path.
+Resolve to an absolute path.
+
+This adds the current working directory to the path object.
 
 ```python
 p = Path("abc/def")
 
 p.resolve()
-# PosixPath('/Users/mcurrin/repos/testing/abc/def'
+# PosixPath('/Users/.../repos/testing/abc/def')
+```
+
+## Relative to
+
+Useful for printing.
+
+Printing a path object will just be the file or foldername. And using resolve above will make it very long. So you can use this to specify a path that the object should be relative to.
+
+```python
+path.relative_to(base_path)
 ```
 
 
