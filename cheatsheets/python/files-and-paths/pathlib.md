@@ -148,6 +148,16 @@ Printing a path object will just be the file or foldername. And using resolve ab
 path.relative_to(base_path)
 ```
 
+## Directories
+
+### Create with mkdir
+
+e.g.
+
+```python
+folder_path.mkdir(parents=True, exist_ok=True)
+```
+
 
 ## Practical examples
 
