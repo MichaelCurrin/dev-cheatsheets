@@ -1,36 +1,34 @@
 ---
-description: Reference for the git ignore file
+description: Reference for the Git ignore file
 ---
 # Ignore
 
 
-## JavaScript
+## Paths and nesting
 
-Examples of names - from React quickstart.
+### File at all levels
 
-### JS Install and build
-
-Also seen with `/` prefix but that is optional.
+Ignores foo at all levels
 
 ```
-node_modules/
-
-build/
+foo
 ```
 
-### Env file
+### Fixed path
+
+Ignores `foo` at `/fizz/foo` in the repo root.
 
 ```
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+fizz/foo
 ```
 
-### JS logs
+This does **not** ignore a path like `abc/fizz/foo`, so see below.
+
+### Path at any level
+
+ignores foo at fizz/foo, abc/fizz/foo, etc.
 
 ```
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+*/fizz/foo
 ```
+
