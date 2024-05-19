@@ -20,8 +20,8 @@
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="Reference for the git ignore file" />
-    <meta property="og:description" content="Reference for the git ignore file" />
+    <meta name="description" content="Reference for the Git ignore file" />
+    <meta property="og:description" content="Reference for the Git ignore file" />
 <meta name="author" content="Michael Currin" />
 
 
@@ -33,7 +33,7 @@
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "Reference for the git ignore file",
+    "description": "Reference for the Git ignore file",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/ignore.html",
     "headline":    "Ignore",
     "@type":       "WebSite",
@@ -104,7 +104,7 @@
 
         
             <blockquote>
-                <p>Reference for the git ignore file</p>
+                <p>Reference for the Git ignore file</p>
 
             </blockquote>
         
@@ -168,33 +168,42 @@
 
     <div class="post-content">
         
-            <h2 id="javascript">JavaScript</h2>
+            <h2 id="paths-and-nesting">Paths and nesting</h2>
 
-<p>Examples of names - from React quickstart.</p>
+<h3 id="file-at-all-levels">File at all levels</h3>
 
-<h3 id="js-install-and-build">JS Install and build</h3>
+<p>Ignores <code class="language-plaintext highlighter-rouge">foo</code> at any location.</p>
 
-<p>Also seen with <code class="language-plaintext highlighter-rouge">/</code> prefix but that is optional.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node_modules/
-
-build/
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foo
 </code></pre></div></div>
 
-<h3 id="env-file">Env file</h3>
+<h3 id="fixed-path">Fixed path</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+<p>Ignores <code class="language-plaintext highlighter-rouge">foo</code> only the root <code class="language-plaintext highlighter-rouge">fizz</code> directory.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fizz/foo
 </code></pre></div></div>
 
-<h3 id="js-logs">JS logs</h3>
+<p>This does <strong>not</strong> ignore a path like <code class="language-plaintext highlighter-rouge">abc/fizz/foo</code>, so see below.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+<h3 id="path-at-any-level">Path at any level</h3>
+
+<p>Ignores <code class="language-plaintext highlighter-rouge">foo</code> in any <code class="language-plaintext highlighter-rouge">fizz</code> directory at any level in the directory hierarchy.</p>
+
+<p>e.g. <code class="language-plaintext highlighter-rouge">fizz/foo</code>, <code class="language-plaintext highlighter-rouge">abc/fizz/foo</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*/fizz/foo
 </code></pre></div></div>
+
+<h2 id="extension">Extension</h2>
+
+<p>Using the same rules as above but for a <code class="language-plaintext highlighter-rouge">.foo</code> file:</p>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">*.foo</code></strong>: Ignores all files with the <code class="language-plaintext highlighter-rouge">.foo</code> extension, regardless of their directory.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">fizz/*.foo</code></strong>: Ignores files with the <code class="language-plaintext highlighter-rouge">.foo</code> extension only in the <code class="language-plaintext highlighter-rouge">fizz</code> directory at the root of the repository.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">*/fizz/*.foo</code></strong>: Ignores files with the <code class="language-plaintext highlighter-rouge">.foo</code> extension in any <code class="language-plaintext highlighter-rouge">fizz</code> directory, no matter where the <code class="language-plaintext highlighter-rouge">fizz</code> directory is located within the repository.</li>
+</ul>
 
         
     </div>
