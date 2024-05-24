@@ -16,6 +16,7 @@ For tags, you cannot use `latest`, you have to use a specific value.
 - Releases - empty list [https://api.github.com/repos/golang/go/releases](https://api.github.com/repos/golang/go/releases), and `latest` gives an error as not found.
 - Tags - [https://api.github.com/repos/golang/go/tags](https://api.github.com/repos/golang/go/tags)
 
+### Attemps
 I got this from the API could could not get it to work with a SHA.
 
 ```
@@ -23,3 +24,13 @@ git_tags_url	"https://api.github.com/repos/golang/go/git/tags{/sha}"
 ```
 
 Tried: [https://api.github.com/repos/golang/go/git/tags/cdd3d6932853ec2fb2ac0a693143b22098adb012](https://api.github.com/repos/golang/go/git/tags/cdd3d6932853ec2fb2ac0a693143b22098adb012)
+
+And tried based on [docs](https://docs.github.com/en/rest/git/tags?apiVersion=2022-11-28#get-a-tag).
+
+```sh
+curl -L \
+  -H "Accept: application/vnd.github+json" \
+  -H "Authorization: Bearer TOKEN" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  https://api.github.com/repos/golang/go/git/tags/ca64a37d9d925dec179e1142097dc9f135807656
+```
