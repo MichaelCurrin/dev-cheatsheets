@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Releases | Dev Cheatsheets</title>
+    <title>Releases and tags | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Releases" />
+    <meta property="og:title" content="Releases and tags" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Releases" />
+    <meta property="twitter:title" content="Releases and tags" />
 <meta name="generator" content="Jekyll v4.3.3" />
 
 <meta property="og:locale" content="en_US" />
@@ -35,7 +35,7 @@
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/github/api/v3/releases.html",
-    "headline":    "Releases",
+    "headline":    "Releases and tags",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -99,7 +99,7 @@
             
 
 
-            <span>Releases</span>
+            <span>Releases and tags</span>
         </h1>
 
         
@@ -175,7 +175,7 @@
 
         
             <a href="/dev-cheatsheets/cheatsheets/version-control/github/api/v3/releases.html" class="underline">
-                Releases
+                Releases and tags
             </a>
         
      
@@ -187,7 +187,29 @@
 
     <div class="post-content">
         
-            <p>e.g. <a href="https://api.github.com/repos/octokit/core.js/releases/latest">https://api.github.com/repos/octokit/core.js/releases/latest</a></p>
+            <p>Some repos only have tags and no releases, so check if there are releases in the GitHub UI for a specific repo before looking for its release in the API.</p>
+
+<p>A release is specific to GitHub, while a tag is in the Git repo and also stored on GitHub.</p>
+
+<p>The latest release, if there are releases.</p>
+
+<p>e.g. <a href="https://api.github.com/repos/octokit/core.js/releases/latest">https://api.github.com/repos/octokit/core.js/releases/latest</a></p>
+
+<p>For tags, you cannot use <code class="language-plaintext highlighter-rouge">latest</code>, you have to use a specific value.</p>
+
+<h2 id="go-example">Go example</h2>
+
+<ul>
+  <li>Releases - empty list <a href="https://api.github.com/repos/golang/go/releases">https://api.github.com/repos/golang/go/releases</a>, and <code class="language-plaintext highlighter-rouge">latest</code> gives an error as not found.</li>
+  <li>Tags - <a href="https://api.github.com/repos/golang/go/tags">https://api.github.com/repos/golang/go/tags</a></li>
+</ul>
+
+<p>I got this from the API could could not get it to work with a SHA.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git_tags_url	"https://api.github.com/repos/golang/go/git/tags{/sha}"
+</code></pre></div></div>
+
+<p>Tried: <a href="https://api.github.com/repos/golang/go/git/tags/cdd3d6932853ec2fb2ac0a693143b22098adb012">https://api.github.com/repos/golang/go/git/tags/cdd3d6932853ec2fb2ac0a693143b22098adb012</a></p>
 
         
     </div>
