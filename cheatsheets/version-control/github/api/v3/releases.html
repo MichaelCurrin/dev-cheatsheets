@@ -204,12 +204,22 @@
   <li>Tags - <a href="https://api.github.com/repos/golang/go/tags">https://api.github.com/repos/golang/go/tags</a></li>
 </ul>
 
+<h3 id="attemps">Attemps</h3>
 <p>I got this from the API could could not get it to work with a SHA.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git_tags_url	"https://api.github.com/repos/golang/go/git/tags{/sha}"
 </code></pre></div></div>
 
 <p>Tried: <a href="https://api.github.com/repos/golang/go/git/tags/cdd3d6932853ec2fb2ac0a693143b22098adb012">https://api.github.com/repos/golang/go/git/tags/cdd3d6932853ec2fb2ac0a693143b22098adb012</a></p>
+
+<p>And tried based on <a href="https://docs.github.com/en/rest/git/tags?apiVersion=2022-11-28#get-a-tag">docs</a>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-L</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.github+json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer TOKEN"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"X-GitHub-Api-Version: 2022-11-28"</span> <span class="se">\</span>
+  https://api.github.com/repos/golang/go/git/tags/ca64a37d9d925dec179e1142097dc9f135807656
+</code></pre></div></div>
 
         
     </div>
