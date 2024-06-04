@@ -13,14 +13,14 @@ Here's a breakdown of what these tools can do:
 
 ## Which one to use
 
+See also this [StackOverflow answer](https://stackoverflow.com/questions/749544/pipe-to-from-the-clipboard-in-bash-script) for usage and shortcuts.
+
 ### macOS
 
 Using the `pbcopy` and `pbpaste` option is recommended.
 
 ### Linux
 
-Choosing between `xclip` and `xsel`:
+You can use either `xclip` and `xsel` for similar results.
 
-- In many cases, either tool will work well for basic clipboard management.
-- If you need to read data from **files** and set it as the clipboard content, `xclip` is the better choice.
-- If you need to specifically target the **secondary** selection buffer or prefer a potentially simpler tool, `xsel` might be sufficient.
+If you need to read data from **files** and set it as the clipboard content, `xclip` has the `-in` option while with `xsel` you need to pipe content.
