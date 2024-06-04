@@ -5,6 +5,8 @@ description: Command-line tool for X11 to interact with clipboard data
 
 `xclip` is a command-line utility available on many Linux systems that enables you to manage the clipboard data within the X Window System (X11) environment. It provides functionality similar to the built-in `pbcopy` and `pbpaste` commands found on macOS.
 
+A feature of this tool is that is supports secondary selection. Many graphical environments have a secondary selection buffer (middle mouse button) in addition to the main clipboard. This tool can be used to work with this secondary buffer as well.
+
 
 ## Installation
 
@@ -27,33 +29,72 @@ Here are some common approaches:
 
 ## Usage
 
+### Manual
+
 For detailed information on these options and more, refer to the `xclip` man page:
 
 ```sh
 $ man xclip
 ```
 
+Use `xclip` - see [man page](https://linux.die.net/man/1/xclip).
+
+> xclip [OPTION] [FILE]...
+>
+> Description
+>
+> Reads from standard in, or from one or more files, and makes the data available as an X selection for pasting into X applications. Prints current X selection to standard out.
+
 See clipboard management tasks below.
 
-### Copy text to clipboard
+### Read
+
+Store value in **X** clipboard selection.
+
+Pipe to `xclip`:
 
 ```sh
-$ echo "This is a test" | xclip
+$ COMMAND | xclip
 ```
-
-This copies the string "This is a test" to the clipboard.
-
-### Paste clipboard contents to a file
 
 ```sh
-$ xclip -o > test.txt
+$ echo 'My content' | xclip
 ```
 
-This retrieves the clipboard contents and saves them to a file named `test.txt`.
+Read a file:
 
-### Additional options:
+```sh
+$ xclip -i PATH
+$ # OR
+$ xclip < PATH
+$ # OR
+$ xclip PATH
+```
+
+### Output
+
+Print clipboard contents:
+
+```sh
+$ xclip
+```
+
+Paste clipboard contents to a file:
+
+```sh
+$ xclip -o PATH
+$ # OR
+$ xclip > PATH
+```
+
+### Selection
 
 - `-selection clipboard`: This specifies the primary clipboard (default).
+- `-selection primary`: This targets the primrary selection (if available).
 - `-selection secondary`: This targets the secondary clipboard (if available).
-- `-in`: Read clipboard content from a file.
-- `-out`: Write clipboard content to a file.
+
+e.g.
+
+```sh
+$ xclip -sel clip PATH
+```
