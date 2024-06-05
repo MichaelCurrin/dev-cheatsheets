@@ -1,6 +1,6 @@
 # UMD
 
-[![umdjs - umd](https://img.shields.io/static/v1?label=umdjs&message=umd&color=5d15a1&logo=github)](https://github.com/umdjs/umd)
+[![umdjs - umd](https://img.shields.io/static/v1?label=umdjs&message=umd&color=blue&logo=github)](https://github.com/umdjs/umd)
 [![stars - umd](https://img.shields.io/github/stars/umdjs/umd?style=social)](https://github.com/umdjs/umd)
 [![forks - umd](https://img.shields.io/github/forks/umdjs/umd?style=social)](https://github.com/umdjs/umd)
 

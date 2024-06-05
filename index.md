@@ -15,7 +15,7 @@ Including syntax but emphasizing real world examples. While trying to keep expla
 
 <div align="center" style="padding-bottom: 1em;">
     <a href="{% link cheatsheets/index.md %}">
-        <img src="https://img.shields.io/badge/all_cheatsheet_topics-5d15a1?style=for-the-badge"
+        <img src="https://img.shields.io/badge/all_cheatsheet_topics-blue?style=for-the-badge"
             alt="Go to cheatsheets"/>
     </a>
 </div>

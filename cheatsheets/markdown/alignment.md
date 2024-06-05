@@ -25,7 +25,7 @@ More text.
 
 Some SVG images:
 
-[![MichaelCurrin - dev-cheatsheets](https://img.shields.io/static/v1?label=MichaelCurrin&message=dev-cheatsheets&color=5d15a1&logo=github)](https://github.com/MichaelCurrin/dev-cheatsheets)
+[![MichaelCurrin - dev-cheatsheets](https://img.shields.io/static/v1?label=MichaelCurrin&message=dev-cheatsheets&color=blue&logo=github)](https://github.com/MichaelCurrin/dev-cheatsheets)
 [![stars - dev-cheatsheets](https://img.shields.io/github/stars/MichaelCurrin/dev-cheatsheets?style=social)](https://github.com/MichaelCurrin/dev-cheatsheets)
 
 </div>
@@ -43,7 +43,7 @@ More text.
 
 Some SVG images:
 
-[![MichaelCurrin - dev-cheatsheets](https://img.shields.io/static/v1?label=MichaelCurrin&message=dev-cheatsheets&color=5d15a1&logo=github)](https://github.com/MichaelCurrin/dev-cheatsheets)
+[![MichaelCurrin - dev-cheatsheets](https://img.shields.io/static/v1?label=MichaelCurrin&message=dev-cheatsheets&color=blue&logo=github)](https://github.com/MichaelCurrin/dev-cheatsheets)
 [![stars - dev-cheatsheets](https://img.shields.io/github/stars/MichaelCurrin/dev-cheatsheets?style=social)](https://github.com/MichaelCurrin/dev-cheatsheets)
 
 </div>

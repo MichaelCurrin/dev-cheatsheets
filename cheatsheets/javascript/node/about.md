@@ -139,10 +139,10 @@ The examples below focus on one HTML file, one CSS file and one JS file. And you
 
 Here is a Vue-based application. Rather than loading Vue using a `script` tag in the HTML, rather the newer ES Module syntax is used. So within the JS script, there is an import of Vue from a CDN and the browser knows to download this and use it.
 
-- [![MichaelCurrin - vue-frontend-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=vue-frontend-quickstart&color=5d15a1&logo=github)](https://github.com/MichaelCurrin/vue-frontend-quickstart)
+- [![MichaelCurrin - vue-frontend-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=vue-frontend-quickstart&color=blue&logo=github)](https://github.com/MichaelCurrin/vue-frontend-quickstart)
 
 ### React
 
 And here is one for React.
 
-- [![MichaelCurrin - react-frontend-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=rect-frontend-quickstart&color=5d15a1&logo=github)](https://github.com/MichaelCurrin/react-frontend-quickstart)
+- [![MichaelCurrin - react-frontend-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=rect-frontend-quickstart&color=blue&logo=github)](https://github.com/MichaelCurrin/react-frontend-quickstart)

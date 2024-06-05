@@ -39,7 +39,7 @@ See the link for config options.
 
 #### GitHub
 
-![egoist - presite](https://img.shields.io/static/v1?label=egoist&message=presite&color=5d15a1&logo=github)](https://github.com/egoist/presite)
+![egoist - presite](https://img.shields.io/static/v1?label=egoist&message=presite&color=blue&logo=github)](https://github.com/egoist/presite)
 [![stars - presite](https://img.shields.io/github/stars/egoist/presite?style=social)](https://github.com/egoist/presite)
 [![forks - presite](https://img.shields.io/github/forks/egoist/presite?style=social)](https://github.com/egoist/presite)
 
@@ -55,7 +55,7 @@ This is not actually make static assets. It just wraps your SPA with a Node serv
 
 > Node server that uses Headless Chrome to render a javascript-rendered page as HTML. To be used in conjunction with prerender middleware.
 
-[![prerender - prerender](https://img.shields.io/static/v1?label=prerender&message=prerender&color=5d15a1&logo=github)](https://github.com/prerender/prerender)
+[![prerender - prerender](https://img.shields.io/static/v1?label=prerender&message=prerender&color=blue&logo=github)](https://github.com/prerender/prerender)
 [![stars - prerender](https://img.shields.io/github/stars/prerender/prerender?style=social)](https://github.com/prerender/prerender)
 [![forks - prerender](https://img.shields.io/github/forks/prerender/prerender?style=social)](https://github.com/prerender/prerender)
 

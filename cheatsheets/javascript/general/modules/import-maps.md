@@ -221,7 +221,7 @@ So a small file size seems great.
 
 Check out the repo and docs.
 
-[![guybedford - es-module-shims](https://img.shields.io/static/v1?label=guybedford&message=es-module-shims&color=5d15a1&logo=github)](https://github.com/guybedford/es-module-shims)
+[![guybedford - es-module-shims](https://img.shields.io/static/v1?label=guybedford&message=es-module-shims&color=blue&logo=github)](https://github.com/guybedford/es-module-shims)
 
 That provided me with this snippet, giving me a choice of a polyfill from either CDN.
 

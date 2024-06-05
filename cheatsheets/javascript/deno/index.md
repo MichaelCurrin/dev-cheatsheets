@@ -35,4 +35,4 @@ Running Deno with the explicit permissions it needs can be cumbersone. Insteadin
 
 Get started with Deno easily by using my template project.
 
-[![MichaelCurrin - deno-project-template](https://img.shields.io/static/v1?label=MichaelCurrin&message=deno-project-template&color=5d15a1&logo=github)](https://github.com/MichaelCurrin/deno-project-template)
+[![MichaelCurrin - deno-project-template](https://img.shields.io/static/v1?label=MichaelCurrin&message=deno-project-template&color=blue&logo=github)](https://github.com/MichaelCurrin/deno-project-template)

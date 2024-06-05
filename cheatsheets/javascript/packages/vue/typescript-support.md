@@ -2,7 +2,7 @@
 
 See my starter project.
 
-[![MichaelCurrin - vue-typescript-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=vue-typescript-quickstart&color=5d15a1&logo=github)](https://github.com/MichaelCurrin/vue-typescript-quickstart)
+[![MichaelCurrin - vue-typescript-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=vue-typescript-quickstart&color=blue&logo=github)](https://github.com/MichaelCurrin/vue-typescript-quickstart)
 
 Notes copied from the docs linked in [Resources](#resources).
 
