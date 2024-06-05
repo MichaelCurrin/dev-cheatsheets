@@ -9,33 +9,33 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Clipboard | Dev Cheatsheets</title>
+    <title>xclip | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Clipboard" />
+    <meta property="og:title" content="xclip" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Clipboard" />
+    <meta property="twitter:title" content="xclip" />
 <meta name="generator" content="Jekyll v4.3.3" />
 
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="Copy to and paste from clipboard. Especially useful for very large files or when you use SSH with no GUI." />
-    <meta property="og:description" content="Copy to and paste from clipboard. Especially useful for very large files or when you use SSH with no GUI." />
+    <meta name="description" content="Command-line tool for X11 to interact with clipboard data" />
+    <meta property="og:description" content="Command-line tool for X11 to interact with clipboard data" />
 <meta name="author" content="Michael Currin" />
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/files/text-files/clipboard.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/files/text-files/clipboard.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/clipboard/xclip.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/clipboard/xclip.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "Copy to and paste from clipboard. Especially useful for very large files or when you use SSH with no GUI.",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/files/text-files/clipboard.html",
-    "headline":    "Clipboard",
+    "description": "Command-line tool for X11 to interact with clipboard data",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/clipboard/xclip.html",
+    "headline":    "xclip",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -82,11 +82,11 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/shell/files/text-files/clipboard.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/shell/commands/clipboard/xclip.md">
     📝 <span>Edit page</span>
 </a>
 
-            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/shell/files/text-files/">
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/shell/commands/clipboard/">
     ➕ <span>Add page</span>
 </a>
 
@@ -99,12 +99,12 @@
             
 
 
-            <span>Clipboard</span>
+            <span>xclip</span>
         </h1>
 
         
             <blockquote>
-                <p>Copy to and paste from clipboard. Especially useful for very large files or when you use SSH with no GUI.</p>
+                <p>Command-line tool for X11 to interact with clipboard data</p>
 
             </blockquote>
         
@@ -144,8 +144,8 @@
 
         
             
-            <a href="/dev-cheatsheets/cheatsheets/shell/files/">
-    Files
+            <a href="/dev-cheatsheets/cheatsheets/shell/commands/">
+    Commands
 </a>
 
         
@@ -156,8 +156,8 @@
 
         
             
-            <a href="/dev-cheatsheets/cheatsheets/shell/files/text-files/">
-    Working with text files
+            <a href="/dev-cheatsheets/cheatsheets/shell/commands/clipboard/">
+    
 </a>
 
         
@@ -167,8 +167,8 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/shell/files/text-files/clipboard.html" class="underline">
-                Clipboard
+            <a href="/dev-cheatsheets/cheatsheets/shell/commands/clipboard/xclip.html" class="underline">
+                xclip
             </a>
         
      
@@ -180,7 +180,99 @@
 
     <div class="post-content">
         
-            <p>See <a href="/dev-cheatsheets/cheatsheets/shell/commands/clipboard/">Clipboard commands</a> cheatsheet section.</p>
+            <p><code class="language-plaintext highlighter-rouge">xclip</code> is a command-line utility available on many Linux systems that enables you to manage the clipboard data within the X Window System (X11) environment. It provides functionality similar to the built-in <code class="language-plaintext highlighter-rouge">pbcopy</code> and <code class="language-plaintext highlighter-rouge">pbpaste</code> commands found on macOS.</p>
+
+<p>A feature of this tool is that is supports secondary selection. Many graphical environments have a secondary selection buffer (middle mouse button) in addition to the main clipboard. This tool can be used to work with this secondary buffer as well.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>The installation method for <code class="language-plaintext highlighter-rouge">xclip</code> varies depending on your Linux distribution. It might already be installed.</p>
+
+<p>Here are some common approaches:</p>
+
+<ul>
+  <li><strong>Debian-based systems</strong>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">sudo </span>apt <span class="nb">install </span>xclip
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Red Hat-based systems:</strong>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">sudo </span>yum <span class="nb">install </span>xclip
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Arch Linux and Manjaro:</strong>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">sudo </span>pacman <span class="nt">-S</span> xclip
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<h3 id="manual">Manual</h3>
+
+<p>For detailed information on these options and more, refer to the <code class="language-plaintext highlighter-rouge">xclip</code> man page:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>man xclip
+</code></pre></div></div>
+
+<p>Use <code class="language-plaintext highlighter-rouge">xclip</code> - see <a href="https://linux.die.net/man/1/xclip">man page</a>.</p>
+
+<blockquote>
+  <p>xclip [OPTION] [FILE]…</p>
+
+  <p>Description</p>
+
+  <p>Reads from standard in, or from one or more files, and makes the data available as an X selection for pasting into X applications. Prints current X selection to standard out.</p>
+</blockquote>
+
+<p>See clipboard management tasks below.</p>
+
+<h3 id="read">Read</h3>
+
+<p>Store value in <strong>X</strong> clipboard selection.</p>
+
+<p>Pipe to <code class="language-plaintext highlighter-rouge">xclip</code>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>COMMAND | xclip
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'My content'</span> | xclip
+</code></pre></div></div>
+
+<p>Read a file:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>xclip <span class="nt">-i</span> PATH
+<span class="nv">$ </span><span class="c"># OR</span>
+<span class="nv">$ </span>xclip &lt; PATH
+<span class="nv">$ </span><span class="c"># OR</span>
+<span class="nv">$ </span>xclip PATH
+</code></pre></div></div>
+
+<h3 id="output">Output</h3>
+
+<p>Print clipboard contents:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>xclip
+</code></pre></div></div>
+
+<p>Paste clipboard contents to a file:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>xclip <span class="nt">-o</span> PATH
+<span class="nv">$ </span><span class="c"># OR</span>
+<span class="nv">$ </span>xclip <span class="o">&gt;</span> PATH
+</code></pre></div></div>
+
+<h3 id="selection">Selection</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-selection clipboard</code>: This specifies the primary clipboard (default).</li>
+  <li><code class="language-plaintext highlighter-rouge">-selection primary</code>: This targets the primrary selection (if available).</li>
+  <li><code class="language-plaintext highlighter-rouge">-selection secondary</code>: This targets the secondary clipboard (if available).</li>
+</ul>
+
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>xclip <span class="nt">-sel</span> clip PATH
+</code></pre></div></div>
 
         
     </div>

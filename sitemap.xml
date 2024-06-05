@@ -97,6 +97,9 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/cli.html</loc>
 </url>
 <url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/files/text-files/clipboard.html</loc>
+</url>
+<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/clone.html</loc>
 </url>
 <url>
@@ -511,6 +514,9 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/files/</loc>
 </url>
 <url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/clipboard/</loc>
+</url>
+<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/grep/</loc>
 </url>
 <url>
@@ -904,6 +910,9 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/scripting/control-flow/pattern-matching.html</loc>
 </url>
 <url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/clipboard/pbcopy-pbpaste.html</loc>
+</url>
+<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/ci-cd/github-actions/persist.html</loc>
 </url>
 <url>
@@ -1181,6 +1190,12 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/ci-cd/github-actions/workflow.html</loc>
+</url>
+<url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/clipboard/xclip.html</loc>
+</url>
+<url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/clipboard/xsel.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/about.html</loc>
@@ -3002,9 +3017,6 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/files/handling-files.html</loc>
-</url>
-<url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/files/text-files/clipboard.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/files/text-files/combine.html</loc>

@@ -8,34 +8,27 @@
 
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
-
-    <title>CLI | Dev Cheatsheets</title>
-
-    <meta property="og:title" content="CLI" />
-
-    <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="CLI" />
 <meta name="generator" content="Jekyll v4.3.3" />
 
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="General guide to designing Command-line Interfaces" />
-    <meta property="og:description" content="General guide to designing Command-line Interfaces" />
+    <meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+    <meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
 <meta name="author" content="Michael Currin" />
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/other/cli/" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/other/cli/" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/clipboard/" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/clipboard/" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "General guide to designing Command-line Interfaces",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/other/cli/",
-    "headline":    "CLI",
+    "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/clipboard/",
+    "headline":    "",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -82,11 +75,11 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/other/cli/index.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/shell/commands/clipboard/index.md">
     📝 <span>Edit page</span>
 </a>
 
-            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/other/cli/">
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/shell/commands/clipboard/">
     ➕ <span>Add page</span>
 </a>
 
@@ -99,14 +92,9 @@
             
 
 
-            <span>CLI</span>
+            <span></span>
         </h1>
 
-        
-            <blockquote>
-                <p>General guide to designing Command-line Interfaces</p>
-
-            </blockquote>
         
     </header>
 
@@ -132,8 +120,8 @@
 
         
             
-            <a href="/dev-cheatsheets/cheatsheets/other/">
-    Other
+            <a href="/dev-cheatsheets/cheatsheets/shell/">
+    Unix shell
 </a>
 
         
@@ -143,8 +131,20 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/other/cli/" class="underline">
-                CLI
+            
+            <a href="/dev-cheatsheets/cheatsheets/shell/commands/">
+    Commands
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/shell/commands/clipboard/" class="underline">
+                
             </a>
         
      
@@ -1422,31 +1422,64 @@
 <ul class="page-list">
     
             <li>
-                <a href="/dev-cheatsheets/cheatsheets/other/cli/implementation.html">
+                <a href="/dev-cheatsheets/cheatsheets/shell/commands/clipboard/pbcopy-pbpaste.html">
                     
 
 
-                    <span>Command-line interfaces</span>
-                </a>
-                    <i>
-</i>
-                </li>
+                    <span>pbcopy / pbpaste</span>
+                </a></li>
         
             <li>
-                <a href="/dev-cheatsheets/cheatsheets/other/cli/interface.html">
+                <a href="/dev-cheatsheets/cheatsheets/shell/commands/clipboard/xclip.html">
                     
 
 
-                    <span>Writing a CLI</span>
-                </a>
-                    <i>
-</i>
-                </li>
+                    <span>xclip</span>
+                </a></li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/shell/commands/clipboard/xsel.html">
+                    
+
+
+                    <span>xsel</span>
+                </a></li>
         </ul>
 
     <br>
 
     
+    
+        <h2>Content</h2>
+
+        <hr />
+<p>title: Clipboard
+description: Use content from the clipboard or copy content to it
+—-</p>
+
+<h2 id="features">Features</h2>
+
+<p>Here’s a breakdown of what these tools can do:</p>
+
+<ul>
+  <li><strong>View Clipboard Contents:</strong> Retrieve the current text or data stored in the clipboard.</li>
+  <li><strong>Set Clipboard Contents:</strong> Copy text directly from the command line into the clipboard.</li>
+  <li><strong>Simplify Scripting:</strong> Automate clipboard interactions within scripts using a shell command.</li>
+</ul>
+
+<h2 id="which-one-to-use">Which one to use</h2>
+
+<p>See also this <a href="https://stackoverflow.com/questions/749544/pipe-to-from-the-clipboard-in-bash-script">StackOverflow answer</a> for usage and shortcuts.</p>
+
+<h3 id="macos">macOS</h3>
+
+<p>Using the <code class="language-plaintext highlighter-rouge">pbcopy</code> and <code class="language-plaintext highlighter-rouge">pbpaste</code> option is recommended.</p>
+
+<h3 id="linux">Linux</h3>
+
+<p>You can use either <code class="language-plaintext highlighter-rouge">xclip</code> and <code class="language-plaintext highlighter-rouge">xsel</code> for similar results.</p>
+
+<p>If you need to read data from <strong>files</strong> and set it as the clipboard content, <code class="language-plaintext highlighter-rouge">xclip</code> has the <code class="language-plaintext highlighter-rouge">-in</code> option while with <code class="language-plaintext highlighter-rouge">xsel</code> you need to pipe content.</p>
     
 
         

@@ -9,33 +9,33 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Clipboard | Dev Cheatsheets</title>
+    <title>pbcopy / pbpaste | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Clipboard" />
+    <meta property="og:title" content="pbcopy / pbpaste" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Clipboard" />
+    <meta property="twitter:title" content="pbcopy / pbpaste" />
 <meta name="generator" content="Jekyll v4.3.3" />
 
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="Copy to and paste from clipboard. Especially useful for very large files or when you use SSH with no GUI." />
-    <meta property="og:description" content="Copy to and paste from clipboard. Especially useful for very large files or when you use SSH with no GUI." />
+    <meta name="description" content="CLI tool for macOS to interact with clipboard data" />
+    <meta property="og:description" content="CLI tool for macOS to interact with clipboard data" />
 <meta name="author" content="Michael Currin" />
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/files/text-files/clipboard.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/files/text-files/clipboard.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/clipboard/pbcopy-pbpaste.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/clipboard/pbcopy-pbpaste.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "Copy to and paste from clipboard. Especially useful for very large files or when you use SSH with no GUI.",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/files/text-files/clipboard.html",
-    "headline":    "Clipboard",
+    "description": "CLI tool for macOS to interact with clipboard data",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/clipboard/pbcopy-pbpaste.html",
+    "headline":    "pbcopy / pbpaste",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -82,11 +82,11 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/shell/files/text-files/clipboard.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/shell/commands/clipboard/pbcopy-pbpaste.md">
     📝 <span>Edit page</span>
 </a>
 
-            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/shell/files/text-files/">
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/shell/commands/clipboard/">
     ➕ <span>Add page</span>
 </a>
 
@@ -99,12 +99,12 @@
             
 
 
-            <span>Clipboard</span>
+            <span>pbcopy / pbpaste</span>
         </h1>
 
         
             <blockquote>
-                <p>Copy to and paste from clipboard. Especially useful for very large files or when you use SSH with no GUI.</p>
+                <p>CLI tool for macOS to interact with clipboard data</p>
 
             </blockquote>
         
@@ -144,8 +144,8 @@
 
         
             
-            <a href="/dev-cheatsheets/cheatsheets/shell/files/">
-    Files
+            <a href="/dev-cheatsheets/cheatsheets/shell/commands/">
+    Commands
 </a>
 
         
@@ -156,8 +156,8 @@
 
         
             
-            <a href="/dev-cheatsheets/cheatsheets/shell/files/text-files/">
-    Working with text files
+            <a href="/dev-cheatsheets/cheatsheets/shell/commands/clipboard/">
+    
 </a>
 
         
@@ -167,8 +167,8 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/shell/files/text-files/clipboard.html" class="underline">
-                Clipboard
+            <a href="/dev-cheatsheets/cheatsheets/shell/commands/clipboard/pbcopy-pbpaste.html" class="underline">
+                pbcopy / pbpaste
             </a>
         
      
@@ -180,7 +180,43 @@
 
     <div class="post-content">
         
-            <p>See <a href="/dev-cheatsheets/cheatsheets/shell/commands/clipboard/">Clipboard commands</a> cheatsheet section.</p>
+            <h2 id="note-for-linux-users">Note for Linux users</h2>
+
+<p>You can setup <code class="language-plaintext highlighter-rouge">xsel</code> to behave like this tool - see the aliases section on the <a href="/dev-cheatsheets/cheatsheets/shell/commands/clipboard/xsel.html">xsel</a> cheatsheet.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>This comes installed on macOS.</p>
+
+<h2 id="usage">Usage</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"This is a test"</span> | pbcopy
+
+</code></pre></div></div>
+
+<h3 id="read-with-pbcopy">Read with <code class="language-plaintext highlighter-rouge">pbcopy</code></h3>
+
+<p>Copy file to the clipboard.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pbcopy &lt; PATH
+</code></pre></div></div>
+
+<h3 id="output-with-pbpaste">Output with <code class="language-plaintext highlighter-rouge">pbpaste</code></h3>
+
+<p>Print the clipboard contents:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pbpaste
+</code></pre></div></div>
+
+<p>Pipe to a command:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pbpaste | <span class="nb">head</span>
+</code></pre></div></div>
+
+<p>Write to a file:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pbpaste <span class="o">&gt;</span> test.txt
+</code></pre></div></div>
 
         
     </div>
