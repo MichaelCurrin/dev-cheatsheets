@@ -1,4 +1,4 @@
 ---
-description: Info on specific Bash shell commands on Linux or macOS
+description: Info on Bash shell commands on Linux or macOS (builtin and installable)
 ---
 # Commands

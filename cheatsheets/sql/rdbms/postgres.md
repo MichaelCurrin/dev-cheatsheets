@@ -3,6 +3,12 @@ logo: postgresql
 ---
 # Postgres
 
+## Related
+
+For CLI help, see cheatsheets:
+
+- [postgres]({% link cheatsheets/shell/database/pqsl.md %})
+
 
 ## Resources
 
@@ -23,7 +29,7 @@ logo: postgresql
 Choose an option below.
 
 - Go to [Download](https://www.postgresql.org/download/) page.
-- Follow the [Ubuntu Postgres download instructons](https://www.postgresql.org/download/linux/ubuntu/). 
+- Follow the [Ubuntu Postgres download instructons](https://www.postgresql.org/download/linux/ubuntu/).
     Make sure you install `ls_release` and `wget` first if needed.
     ```sh
     $ sudo apt-get install lsb-release wget -y
@@ -31,12 +37,12 @@ Choose an option below.
     ```sh
     # Create the file repository configuration:
     sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-    
+
     # Import the repository signing key:
     wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-    
+
     sudo apt-get update
-    
+
     # Latest
     sudo apt-get -y install postgresql
     # OR target a version.
@@ -47,7 +53,7 @@ Choose an option below.
 
 ### Show database
 
-```
+```console
 \l
 ```
 
@@ -153,8 +159,8 @@ $ sudo -u postgres createuser foo
 
 ### Create role
 
-> `CREATE ROLE` adds a new role to a PostgreSQL database cluster. 
-> 
+> `CREATE ROLE` adds a new role to a PostgreSQL database cluster.
+>
 > A role is an entity that can own database objects and have database privileges; a role can be considered a “user”, a “group”, or both depending on how it is used.
 
 See [create role][] docs.
@@ -472,9 +478,8 @@ Reload database(s) from this file, you can use:
 $ psql -f db.out postgres
 ```
 
-> It is not important to which database you connect here since the script file created by `pg_dumpall` will contain the appropriate commands to create and connect to the saved databases. 
-> 
+> It is not important to which database you connect here since the script file created by `pg_dumpall` will contain the appropriate commands to create and connect to the saved databases.
+>
 > An exception is that if you specified `--clean`, you must connect to the postgres database initially; the script will attempt to drop other databases immediately, and that will fail for the database you are connected to.
 
 [pg_dumpall]: https://www.postgresql.org/docs/current/app-pg-dumpall.html
-
