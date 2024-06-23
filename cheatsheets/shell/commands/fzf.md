@@ -1,15 +1,11 @@
+---
+description: Fuzzy finder
+---
 # fzf
 
+Interactive CLI tool for listing and finding files by a pattern using fuzzy search (rather than exact match or regex).
+
 See [fzf GitHub repo](https://github.com/junegunn/fzf).
-
-See also [Find it Faster](https://marketplace.visualstudio.com/items?itemName=TomRijndorp.find-it-faster) VS Code extension, which depends on these being installed:
-
-- `fzf`
-- [rg][]
-- [bat][]
-
-[bat]: {% link cheatsheets/shell/commands/bat.md %}
-[rg]: {% link cheatsheets/shell/commands/grep/rg.md %}
 
 ## Installation
 
