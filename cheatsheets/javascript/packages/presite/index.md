@@ -13,9 +13,14 @@ See the [Presite repo](https://github.com/egoist/presite) on GitHub for docs, in
 
 ## How it works
 
-As a build step, Presite uses Puppeteer as a headless browser to view your pages and then store the DOM as HTML. This can be stored and served as your public site.
+As a build step
 
-Then when a user visits the page:
+1. Presite uses Puppeteer to launch a headless browser instance of Chromium.
+1. Presite will render the DOM for your SPA based on the contents of build directory e.g. `build` or `dist`.
+1. Presite creates the HTML for the page and each additional page configured.
+1. The HTML is stored in the `.presite` directory.
+
+When a user visits the page:
 
 1. Static HTML is loaded. User gets a flat but fixed HTML page initially. This happens without needing your app logic JS dependencies or processing all the logic in your JS to build the DOM. So this is ideal for a crawler.
 1. Your JS app is loaded.
@@ -24,7 +29,13 @@ Then when a user visits the page:
 
 ## Install
 
-Install in your project as dev dependency:
+Make sure you have Chrome or Chromium installed.
+
+```sh
+$ sudo apt-get install chromium-browser
+```
+
+Install in your project as a dev dependency:
 
 ```sh
 $ npm install -D presite
