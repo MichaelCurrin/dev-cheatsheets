@@ -19,7 +19,6 @@ This comes installed on macOS.
 
 ```sh
 $ echo "This is a test" | pbcopy
-
 ```
 
 ### Read with `pbcopy`

@@ -98,3 +98,32 @@ e.g.
 ```sh
 $ xclip -sel clip PATH
 ```
+
+
+## Configure aliases
+
+Reduce how much you have to type by imitating use of `pbcopy` and `pbpaste` on macOS.
+
+Edit your `~/.bashrc` or `~/.zshrc` with these aliases:
+
+```sh
+if [ -z "$(command -v pbcopy)" ]; then
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+fi
+```
+
+If `pbcopy` is installed, it will do nothing, so you can apply that same code on macOS and Linux.
+
+Test like this:
+
+```sh
+$ echo 'Testing content sent to clipboard and printed out' | pbcopy && pbpaste
+```
+
+Then use your alias like this:
+
+```sh
+$ echo "This is a test" | pbcopy
+$ pbpaste > PATH
+```
