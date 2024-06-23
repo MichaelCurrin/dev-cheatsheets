@@ -2,9 +2,9 @@
 
 > Presite is an alternative to static site generators like Gatsby, Next.js and Nuxt.js etc, the difference is that it uses Puppeteer to prerender websites instead of relying on server-side rendering.
 
-It works well on sites built around React and Vue, to improve performance for the initial load for users (as the HTMl is loaded without needing JS dependencies and then build the DOM) and also makes SPAs visible to search engine crawlers.
+It works well on sites built around React and Vue, to improve performance for the initial load for users (as the HTML is loaded without needing JS dependencies and then build the DOM) and also makes SPAs visible to search engine crawlers.
 
-See [Presite](https://github.com/egoist/presite) on GitHub for docs including examples.
+See the [Presite repo](https://github.com/egoist/presite) on GitHub for docs including examples.
 
 
 ## Install
