@@ -247,11 +247,20 @@
 
 <p>Edit your <code class="language-plaintext highlighter-rouge">~/.bashrc</code> or <code class="language-plaintext highlighter-rouge">~/.zshrc</code> with these aliases:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">pbcopy</span><span class="o">=</span><span class="s1">'xsel --input --clipboard'</span>
-<span class="nb">alias </span><span class="nv">pbpaste</span><span class="o">=</span><span class="s1">'xsel --output --clipboard'</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="si">$(</span><span class="nb">command</span> <span class="nt">-v</span> pbcopy<span class="si">)</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">alias </span><span class="nv">pbcopy</span><span class="o">=</span><span class="s1">'xsel --input --clipboard'</span>
+  <span class="nb">alias </span><span class="nv">pbpaste</span><span class="o">=</span><span class="s1">'xsel --output --clipboard'</span>
+<span class="k">fi</span>
 </code></pre></div></div>
 
-<p>Then use as:</p>
+<p>If <code class="language-plaintext highlighter-rouge">pbcopy</code> is installed, it will do nothing, so you can apply that same code on macOS and Linux.</p>
+
+<p>Test like this:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'Testing content sent to clipboard and printed out'</span> | pbcopy <span class="o">&amp;&amp;</span> pbpaste
+</code></pre></div></div>
+
+<p>Then use your alias like this:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"This is a test"</span> | pbcopy
 <span class="nv">$ </span>pbpaste <span class="o">&gt;</span> PATH

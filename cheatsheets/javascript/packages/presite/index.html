@@ -1453,18 +1453,48 @@
   <p>Presite is an alternative to static site generators like Gatsby, Next.js and Nuxt.js etc, the difference is that it uses Puppeteer to prerender websites instead of relying on server-side rendering.</p>
 </blockquote>
 
-<p>It works well on sites built around React and Vue, to improve performance for the initial load for users (as the HTMl is loaded without needing JS dependencies and then build the DOM) and also makes SPAs visible to search engine crawlers.</p>
+<h2 id="benefits">Benefits</h2>
 
-<p>See <a href="https://github.com/egoist/presite">Presite</a> on GitHub for docs including examples.</p>
+<ul>
+  <li>It works well on sites built around React or Vue. Add it as a step in your build flow and get the benefits.</li>
+  <li>It will improve performance for the initial load for users.</li>
+  <li>Makes SPAs visible to search engine crawlers (such as Google’s crawler). As otherwise, crawlers have little or no visibilty of SPA sites as like do not like to render JS and they prefer to process a rendered DOM (from a static site or a server-side loading).</li>
+</ul>
+
+<p>See the <a href="https://github.com/egoist/presite">Presite repo</a> on GitHub for docs, including examples.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>As a build step</p>
+
+<ol>
+  <li>Presite uses Puppeteer to launch a headless browser instance of Chromium.</li>
+  <li>Presite will render the DOM for your SPA based on the contents of build directory e.g. <code class="language-plaintext highlighter-rouge">build</code> or <code class="language-plaintext highlighter-rouge">dist</code>.</li>
+  <li>Presite creates the HTML for the page and each additional page configured.</li>
+  <li>The HTML is stored in the <code class="language-plaintext highlighter-rouge">.presite</code> directory.</li>
+</ol>
+
+<p>When a user visits the page:</p>
+
+<ol>
+  <li>Static HTML is loaded. User gets a flat but fixed HTML page initially. This happens without needing your app logic JS dependencies or processing all the logic in your JS to build the DOM. So this is ideal for a crawler.</li>
+  <li>Your JS app is loaded.</li>
+  <li>The static DOM is hydrated, so the page becomes interactive. This is useful for users. And a search engine crawler will probably not care about this part.</li>
+</ol>
 
 <h2 id="install">Install</h2>
 
-<p>Install in your project as dev dependency.</p>
+<p>Make sure you have Chrome or Chromium installed.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>chromium-browser
+</code></pre></div></div>
+
+<p>Install in your project as a dev dependency:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-D</span> presite
 </code></pre></div></div>
 
-<p>Or install globally if you want to try it out on a few projects and not put it in your build flow yet.</p>
+<p>Or, install globally if you want to try it out on a few projects and not put it in your build flow yet.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-g</span> presite
 </code></pre></div></div>
@@ -1495,9 +1525,11 @@
 
 <p>Make sure to add the output directory to your <code class="language-plaintext highlighter-rouge">.gitignore</code> file.</p>
 
-<h2 id="examples">Examples</h2>
+<h2 id="configure">Configure</h2>
 
-<p>Remember to also fix up your routing for a multi-page site so you don’t use <code class="language-plaintext highlighter-rouge">/#/about</code> hash routing. i.e. Make sure your app uses <code class="language-plaintext highlighter-rouge">/about</code> for URLs <em>before</em> you run render, so that an HTML page is created for each path.</p>
+<h3 id="js-packagejson-configs">JS package.json configs</h3>
+
+<p>Configure your <code class="language-plaintext highlighter-rouge">package.json</code> file to use <code class="language-plaintext highlighter-rouge">presite</code> for your build flow:</p>
 
 <h3 id="react">React</h3>
 
@@ -1518,6 +1550,37 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
+
+<h2 id="multi-page-sites">Multi-page sites</h2>
+
+<h3 id="presite-config">Presite config</h3>
+
+<p>Create a configuration file to define your routes:</p>
+
+<p>e.g.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">presite.config.js</code>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">entry</span><span class="p">:</span> <span class="dl">'</span><span class="s1">build/index.html</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">outDir</span><span class="p">:</span> <span class="dl">'</span><span class="s1">presite-output</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">routes</span><span class="p">:</span> <span class="p">[</span>
+      <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">/about</span><span class="dl">'</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">/contact</span><span class="dl">'</span>
+    <span class="p">]</span>
+  <span class="p">};</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="routting">Routting</h3>
+
+<p>Remember to fix up your routing for a multi-page site, when linking between pages.</p>
+
+<p>Make sure your React/Vue app does <strong>not</strong> use <code class="language-plaintext highlighter-rouge">/#/about</code> routing (with a hash), otherwise you’ll got get a <strong>single</strong> HTML page generated and this will be rather limiting.</p>
+
+<p>Rather make sure your app is setup to use <code class="language-plaintext highlighter-rouge">/about</code> as the style for URLs (without a hash). Then at the Presite build step a new file will be created for each page.</p>
     
 
         
