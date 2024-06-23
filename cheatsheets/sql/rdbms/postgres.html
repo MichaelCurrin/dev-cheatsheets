@@ -173,7 +173,15 @@
 
     <div class="post-content">
         
-            <h2 id="resources">Resources</h2>
+            <h2 id="related">Related</h2>
+
+<p>For CLI help, see cheatsheets:</p>
+
+<ul>
+  <li><a href="/dev-cheatsheets/cheatsheets/shell/database/pqsl.html">postgres</a></li>
+</ul>
+
+<h2 id="resources">Resources</h2>
 
 <ul>
   <li><a href="https://www.postgresql.org/about/">Homepage</a> on Postgres homepage.
@@ -201,18 +209,18 @@
 
 <ul>
   <li>Go to <a href="https://www.postgresql.org/download/">Download</a> page.</li>
-  <li>Follow the <a href="https://www.postgresql.org/download/linux/ubuntu/">Ubuntu Postgres download instructons</a>. 
+  <li>Follow the <a href="https://www.postgresql.org/download/linux/ubuntu/">Ubuntu Postgres download instructons</a>.
   Make sure you install <code class="language-plaintext highlighter-rouge">ls_release</code> and <code class="language-plaintext highlighter-rouge">wget</code> first if needed.
     <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>lsb-release wget <span class="nt">-y</span>
 </code></pre></div>    </div>
     <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c"># Create the file repository configuration:</span>
   <span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" &gt; /etc/apt/sources.list.d/pgdg.list'</span>
-    
+
   <span class="c"># Import the repository signing key:</span>
   wget <span class="nt">--quiet</span> <span class="nt">-O</span> - https://www.postgresql.org/media/keys/ACCC4CF8.asc | <span class="nb">sudo </span>apt-key add -
-    
+
   <span class="nb">sudo </span>apt-get update
-    
+
   <span class="c"># Latest</span>
   <span class="nb">sudo </span>apt-get <span class="nt">-y</span> <span class="nb">install </span>postgresql
   <span class="c"># OR target a version.</span>
@@ -225,8 +233,8 @@
 
 <h3 id="show-database">Show database</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\l
-</code></pre></div></div>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">\l
+</span></code></pre></div></div>
 
 <p><a href="https://www.postgresqltutorial.com/postgresql-show-databases/">source</a></p>
 

@@ -177,22 +177,22 @@
 
 <h3 id="syntax">Syntax</h3>
 
-<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">for</span> <span class="nx">ITEM</span> <span class="nx">in</span> <span class="nx">ITERABLE</span> <span class="err">:</span> <span class="nx">EXPRESSION_USING_ITEM</span><span class="p">]</span>
+<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">for</span> <span class="nx">ITEM</span> <span class="nx">in</span> <span class="nx">ITERABLE</span> <span class="o">:</span> <span class="nx">EXPRESSION_USING_ITEM</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>Iterate over a map of keys and values:</p>
 
-<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">for</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">v</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">map</span> <span class="err">:</span> <span class="nx">length</span><span class="p">(</span><span class="nx">k</span><span class="p">)</span> <span class="err">+</span> <span class="nx">length</span><span class="p">(</span><span class="nx">v</span><span class="p">)]</span>
+<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">for</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">v</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">map</span> <span class="o">:</span> <span class="nx">length</span><span class="p">(</span><span class="nx">k</span><span class="p">)</span> <span class="o">+</span> <span class="nx">length</span><span class="p">(</span><span class="nx">v</span><span class="p">)]</span>
 </code></pre></div></div>
 
 <p>Iterate of a list, using an optiona index.</p>
 
-<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">v</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">list</span> <span class="err">:</span> <span class="s2">"</span><span class="k">${</span><span class="nx">i</span><span class="k">}</span><span class="s2"> is </span><span class="k">${</span><span class="nx">v</span><span class="k">}</span><span class="s2">"</span><span class="p">]</span>
+<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">v</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">list</span> <span class="o">:</span> <span class="s2">"</span><span class="k">${</span><span class="nx">i</span><span class="k">}</span><span class="s2"> is </span><span class="k">${</span><span class="nx">v</span><span class="k">}</span><span class="s2">"</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>Convert a list into a map:</p>
 
-<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="nx">for</span> <span class="nx">s</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">list</span> <span class="err">:</span> <span class="nx">s</span> <span class="p">=</span><span class="err">&gt;</span> <span class="nx">upper</span><span class="p">(</span><span class="nx">s</span><span class="p">)}</span>
+<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="nx">for</span> <span class="nx">s</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">list</span> <span class="o">:</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="nx">upper</span><span class="p">(</span><span class="nx">s</span><span class="p">)}</span>
 </code></pre></div></div>
 
 <p>Sample result:</p>
@@ -208,30 +208,30 @@
 
 <p>Get an attribute:</p>
 
-<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">for</span> <span class="nx">x</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">my_var</span> <span class="err">:</span> <span class="nx">x</span><span class="p">.</span><span class="nx">my_attribute</span><span class="p">]</span>
+<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">for</span> <span class="nx">x</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">my_var</span> <span class="o">:</span> <span class="nx">x</span><span class="p">.</span><span class="nx">my_attribute</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>Using a function:</p>
 
-<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">for</span> <span class="nx">x</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">my_var</span> <span class="err">:</span> <span class="nx">chomp</span><span class="p">(</span><span class="nx">x</span><span class="p">)]</span>
+<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">for</span> <span class="nx">x</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">my_var</span> <span class="o">:</span> <span class="nx">chomp</span><span class="p">(</span><span class="nx">x</span><span class="p">)]</span>
 </code></pre></div></div>
 
 <p>Using a filter:</p>
 
-<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">for</span> <span class="nx">word</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">word_list</span> <span class="err">:</span> <span class="nx">upper</span><span class="p">(</span><span class="nx">word</span><span class="p">)</span> <span class="nx">if</span> <span class="nx">word</span> <span class="err">!=</span> <span class="s2">"coffee"</span><span class="p">]</span>
+<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">for</span> <span class="nx">word</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">word_list</span> <span class="o">:</span> <span class="nx">upper</span><span class="p">(</span><span class="nx">word</span><span class="p">)</span> <span class="nx">if</span> <span class="nx">word</span> <span class="o">!=</span> <span class="s2">"coffee"</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>Given an array:</p>
 
 <div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span> 
-  <span class="p">{</span> <span class="nx">name</span> <span class="p">=</span> <span class="s2">"Foo"</span><span class="p">},</span> 
-  <span class="p">{</span> <span class="nx">name</span> <span class="p">=</span> <span class="s2">"Bar"</span><span class="p">}</span> 
+  <span class="p">{</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">"Foo"</span><span class="p">},</span> 
+  <span class="p">{</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">"Bar"</span><span class="p">}</span> 
 <span class="p">]</span>
 </code></pre></div></div>
 
 <p>You could get all the names as:</p>
 
-<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">for</span> <span class="nx">o</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">people</span> <span class="err">:</span> <span class="nx">x</span><span class="p">.</span><span class="nx">name</span><span class="p">]</span>
+<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">for</span> <span class="nx">o</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">people</span> <span class="o">:</span> <span class="nx">x</span><span class="p">.</span><span class="nx">name</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>Or the more succint <em>splat</em>:</p>
@@ -258,8 +258,8 @@
 <p>For an array, you can use <code class="language-plaintext highlighter-rouge">each.index</code>.</p>
 
 <div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="s2">"my_module"</span> <span class="p">{</span>
-  <span class="nx">for_each</span> <span class="p">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">subpaths</span>
-  <span class="nx">message</span> <span class="p">=</span> <span class="s2">"Problem reaching page: </span><span class="k">${</span><span class="kd">var</span><span class="p">.</span><span class="nx">subpaths</span><span class="p">[</span><span class="nx">each</span><span class="p">.</span><span class="nx">index</span><span class="p">]</span><span class="k">}</span><span class="s2">"</span>
+  <span class="nx">for_each</span> <span class="o">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">subpaths</span>
+  <span class="nx">message</span> <span class="o">=</span> <span class="s2">"Problem reaching page: </span><span class="k">${</span><span class="kd">var</span><span class="p">.</span><span class="nx">subpaths</span><span class="p">[</span><span class="nx">each</span><span class="p">.</span><span class="nx">index</span><span class="p">]</span><span class="k">}</span><span class="s2">"</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -269,37 +269,37 @@
 
 <p>Here using <code class="language-plaintext highlighter-rouge">each.key</code> and <code class="language-plaintext highlighter-rouge">each.value</code> to get keys and values of a map.</p>
 
-<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">my_map</span> <span class="err">=</span> <span class="p">{</span>
- <span class="nx">foo</span> <span class="p">=</span> <span class="s2">"bar"</span><span class="p">,</span>
- <span class="nx">fizz</span> <span class="p">=</span> <span class="s2">"buzz"</span>
+<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">my_map</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="nx">foo</span> <span class="o">=</span> <span class="s2">"bar"</span><span class="p">,</span>
+ <span class="nx">fizz</span> <span class="o">=</span> <span class="s2">"buzz"</span>
 <span class="p">}</span>
  
 <span class="k">resource</span> <span class="s2">"test_resource"</span> <span class="s2">"abc"</span> <span class="p">{</span>
- <span class="nx">for_each</span> <span class="p">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">my_map</span>
+ <span class="nx">for_each</span> <span class="o">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">my_map</span>
  
- <span class="nx">my_key</span> <span class="p">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">key</span>      <span class="c1"># e.g. "foo"</span>
- <span class="nx">my_value</span> <span class="p">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">value</span>  <span class="c1"># e.g. "bar"</span>
+ <span class="nx">my_key</span> <span class="o">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">key</span>      <span class="c1"># e.g. "foo"</span>
+ <span class="nx">my_value</span> <span class="o">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">value</span>  <span class="c1"># e.g. "bar"</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>Here, flattening some nested values. Based on <a href="https://spacelift.io/blog/terraform-functions-expressions-loops">article</a>.</p>
 
-<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">my_instances</span> <span class="err">=</span> <span class="p">{</span>
- <span class="nx">instance_1</span> <span class="p">=</span> <span class="p">{</span>
-   <span class="nx">ami</span>   <span class="p">=</span> <span class="s2">"ami-00124569584abc"</span><span class="p">,</span>
-   <span class="nx">type</span>  <span class="p">=</span> <span class="s2">"t2.micro"</span>
+<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">my_instances</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="nx">instance_1</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="nx">ami</span>   <span class="o">=</span> <span class="s2">"ami-00124569584abc"</span><span class="p">,</span>
+   <span class="nx">type</span>  <span class="o">=</span> <span class="s2">"t2.micro"</span>
  <span class="p">},</span>
- <span class="nx">instance_2</span> <span class="p">=</span> <span class="p">{</span>
-   <span class="nx">ami</span>   <span class="p">=</span> <span class="s2">"ami-987654321xyzab"</span><span class="p">,</span>
-   <span class="nx">type</span>  <span class="p">=</span> <span class="s2">"t2.large"</span>
+ <span class="nx">instance_2</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="nx">ami</span>   <span class="o">=</span> <span class="s2">"ami-987654321xyzab"</span><span class="p">,</span>
+   <span class="nx">type</span>  <span class="o">=</span> <span class="s2">"t2.large"</span>
  <span class="p">},</span>
 <span class="p">}</span>
  
 <span class="k">resource</span> <span class="s2">"aws_instance"</span> <span class="s2">"test"</span> <span class="p">{</span>
- <span class="nx">for_each</span> <span class="p">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">my_instances</span>
+ <span class="nx">for_each</span> <span class="o">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">my_instances</span>
  
- <span class="nx">ami</span>           <span class="p">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">value</span><span class="p">[</span><span class="s2">"ami"</span><span class="p">]</span>
- <span class="nx">instance_type</span> <span class="p">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">value</span><span class="p">[</span><span class="s2">"type"</span><span class="p">]</span>
+ <span class="nx">ami</span>           <span class="o">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">value</span><span class="p">[</span><span class="s2">"ami"</span><span class="p">]</span>
+ <span class="nx">instance_type</span> <span class="o">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">value</span><span class="p">[</span><span class="s2">"type"</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -308,20 +308,20 @@
 <p>This has duplication of the URL value. And that can’t be broken out as in variables or locals because <code class="language-plaintext highlighter-rouge">for_each</code> references <em>must</em> be inside a module or resource.</p>
 
 <div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="s2">"my_module"</span> <span class="p">{</span>
-  <span class="nx">for_each</span>    <span class="p">=</span> <span class="nx">toset</span><span class="p">(</span><span class="kd">var</span><span class="p">.</span><span class="nx">subpaths</span><span class="p">)</span>
-  <span class="nx">name</span>        <span class="p">=</span> <span class="kd">local</span><span class="p">.</span><span class="nx">organic_name</span>
-  <span class="nx">message</span>     <span class="p">=</span> <span class="s2">"Problem reaching page: </span><span class="k">${</span><span class="kd">local</span><span class="p">.</span><span class="nx">url_prefix</span><span class="k">}${</span><span class="kd">var</span><span class="p">.</span><span class="nx">main_url</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">key</span><span class="k">}</span><span class="s2">"</span>
-  <span class="nx">url</span>         <span class="p">=</span> <span class="s2">"</span><span class="k">${</span><span class="kd">local</span><span class="p">.</span><span class="nx">url_prefix</span><span class="k">}${</span><span class="kd">var</span><span class="p">.</span><span class="nx">main_url</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">key</span><span class="k">}</span><span class="s2">"</span>
+  <span class="nx">for_each</span>    <span class="o">=</span> <span class="nx">toset</span><span class="p">(</span><span class="kd">var</span><span class="p">.</span><span class="nx">subpaths</span><span class="p">)</span>
+  <span class="nx">name</span>        <span class="o">=</span> <span class="kd">local</span><span class="p">.</span><span class="nx">organic_name</span>
+  <span class="nx">message</span>     <span class="o">=</span> <span class="s2">"Problem reaching page: </span><span class="k">${</span><span class="kd">local</span><span class="p">.</span><span class="nx">url_prefix</span><span class="k">}${</span><span class="kd">var</span><span class="p">.</span><span class="nx">main_url</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">key</span><span class="k">}</span><span class="s2">"</span>
+  <span class="nx">url</span>         <span class="o">=</span> <span class="s2">"</span><span class="k">${</span><span class="kd">local</span><span class="p">.</span><span class="nx">url_prefix</span><span class="k">}${</span><span class="kd">var</span><span class="p">.</span><span class="nx">main_url</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">key</span><span class="k">}</span><span class="s2">"</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>So, to avoid duplication:</p>
 
 <div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="s2">"my_module"</span> <span class="p">{</span>
-  <span class="nx">for_each</span> <span class="p">=</span> <span class="nx">toset</span><span class="p">([</span><span class="nx">for</span> <span class="nx">subpath</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">subpaths</span> <span class="err">:</span> <span class="s2">"</span><span class="k">${</span><span class="kd">local</span><span class="p">.</span><span class="nx">url_prefix</span><span class="k">}${</span><span class="kd">var</span><span class="p">.</span><span class="nx">main_url</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nx">subpath</span><span class="k">}</span><span class="s2">"</span><span class="p">])</span>
+  <span class="nx">for_each</span> <span class="o">=</span> <span class="nx">toset</span><span class="p">([</span><span class="nx">for</span> <span class="nx">subpath</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">subpaths</span> <span class="o">:</span> <span class="s2">"</span><span class="k">${</span><span class="kd">local</span><span class="p">.</span><span class="nx">url_prefix</span><span class="k">}${</span><span class="kd">var</span><span class="p">.</span><span class="nx">main_url</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nx">subpath</span><span class="k">}</span><span class="s2">"</span><span class="p">])</span>
 
-  <span class="nx">message</span>     <span class="p">=</span> <span class="s2">"Problem reaching page: </span><span class="k">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">value</span><span class="k">}</span><span class="s2">"</span>
-  <span class="nx">url</span>    <span class="p">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">value</span>
+  <span class="nx">message</span>     <span class="o">=</span> <span class="s2">"Problem reaching page: </span><span class="k">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">value</span><span class="k">}</span><span class="s2">"</span>
+  <span class="nx">url</span>    <span class="o">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">value</span>
 <span class="p">}</span>
 </code></pre></div></div>
 

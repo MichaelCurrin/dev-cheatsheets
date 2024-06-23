@@ -359,10 +359,10 @@ var StrangerThings;
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">type</span> <span class="nx">Fruit</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Orange</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">Apple</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">Banana</span><span class="dl">"</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">myString</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Banana</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="kd">let</span> <span class="nx">myFruit</span><span class="p">:</span> <span class="nx">Fruit</span> <span class="o">=</span> <span class="nx">myString</span> <span class="k">as</span> <span class="nx">Fruit</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">myFruit</span><span class="p">:</span> <span class="nx">Fruit</span> <span class="o">=</span> <span class="nx">myString</span> <span class="kd">as </span><span class="nx">Fruit</span><span class="p">;</span>
 
 <span class="c1">// Newer syntax.</span>
-<span class="kd">let</span> <span class="nx">fruit</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Banana</span><span class="dl">"</span> <span class="k">as</span> <span class="kd">const</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">fruit</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Banana</span><span class="dl">"</span> <span class="kd">as const</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>Here is my example from a frontend Vue app where the color comes from the frontend. This would be more like <code class="language-plaintext highlighter-rouge">this.color</code> in place of <code class="language-plaintext highlighter-rouge">chosenColor</code>.</p>
@@ -372,11 +372,11 @@ var StrangerThings;
   <span class="nx">Green</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">green</span><span class="dl">'</span>
 <span class="p">}</span>
 
-<span class="kd">const</span> <span class="nx">colorKey</span> <span class="o">=</span> <span class="nx">chosenColor</span> <span class="k">as</span> <span class="kr">keyof</span> <span class="k">typeof</span> <span class="nx">Color</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">colorKey</span> <span class="o">=</span> <span class="nx">chosenColor</span> <span class="kd">as </span><span class="kr">keyof</span> <span class="k">typeof</span> <span class="nx">Color</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">color</span> <span class="o">=</span> <span class="nx">Color</span><span class="p">[</span><span class="nx">colorKey</span><span class="p">];</span>
 
 <span class="c1">// One line</span>
-<span class="kd">const</span> <span class="nx">color</span> <span class="o">=</span> <span class="nx">Color</span><span class="p">[</span><span class="nx">chosenColor</span> <span class="k">as</span> <span class="kr">keyof</span> <span class="k">typeof</span> <span class="nx">Color</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">color</span> <span class="o">=</span> <span class="nx">Color</span><span class="p">[</span><span class="nx">chosenColor</span> <span class="kd">as </span><span class="kr">keyof</span> <span class="k">typeof</span> <span class="nx">Color</span><span class="p">];</span>
 </code></pre></div></div>
 
 <p>You need as a type cast to the key before using it to lookup. You’ll get a TS <strong>error</strong> if you do this:</p>
@@ -414,7 +414,7 @@ var StrangerThings;
 <span class="p">}</span>
 <span class="c1">// OR</span>
 <span class="k">export</span> <span class="kd">function</span> <span class="nf">describeCode</span><span class="p">(</span><span class="nx">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">DESCRIPTION</span><span class="p">[</span><span class="nx">key</span> <span class="k">as</span> <span class="nx">DescriptionKeys</span><span class="p">];</span>
+  <span class="k">return</span> <span class="nx">DESCRIPTION</span><span class="p">[</span><span class="nx">key</span> <span class="kd">as </span><span class="nx">DescriptionKeys</span><span class="p">];</span>
 <span class="p">}</span>
 
 <span class="kd">const</span> <span class="nx">key</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Red</span><span class="dl">'</span><span class="p">;</span>

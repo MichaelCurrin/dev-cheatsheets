@@ -178,9 +178,9 @@
 <h2 id="basic">Basic</h2>
 
 <div class="language-tf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="s2">"servers"</span> <span class="p">{</span>
-  <span class="nx">source</span> <span class="p">=</span> <span class="s2">"./app-cluster"</span>
+  <span class="nx">source</span> <span class="o">=</span> <span class="s2">"./app-cluster"</span>
 
-  <span class="nx">servers</span> <span class="p">=</span> <span class="mi">5</span>
+  <span class="nx">servers</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -189,7 +189,7 @@
 <div class="language-tf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">resource</span> <span class="s2">"aws_elb"</span> <span class="s2">"example"</span> <span class="p">{</span>
   <span class="c1"># ...</span>
 
-  <span class="nx">instances</span> <span class="p">=</span> <span class="k">module</span><span class="p">.</span><span class="nx">servers</span><span class="p">.</span><span class="nx">instance_ids</span>
+  <span class="nx">instances</span> <span class="o">=</span> <span class="k">module</span><span class="p">.</span><span class="nx">servers</span><span class="p">.</span><span class="nx">instance_ids</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -198,10 +198,10 @@
 <p>Use a version number when referencing a module that is in a GitHub repo or the Terraform package registry.</p>
 
 <div class="language-tf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="s2">"consul"</span> <span class="p">{</span>
-  <span class="nx">source</span>  <span class="p">=</span> <span class="s2">"hashicorp/consul/aws"</span>
-  <span class="nx">version</span> <span class="p">=</span> <span class="s2">"0.0.5"</span>
+  <span class="nx">source</span>  <span class="o">=</span> <span class="s2">"hashicorp/consul/aws"</span>
+  <span class="nx">version</span> <span class="o">=</span> <span class="s2">"0.0.5"</span>
 
-  <span class="nx">servers</span> <span class="p">=</span> <span class="mi">3</span>
+  <span class="nx">servers</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -212,9 +212,9 @@
 <ul>
   <li><code class="language-plaintext highlighter-rouge">my_buckets.tf</code>
     <div class="language-tf highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">module</span> <span class="s2">"bucket"</span> <span class="p">{</span>
-    <span class="nx">for_each</span> <span class="p">=</span> <span class="nx">toset</span><span class="p">([</span><span class="s2">"assets"</span><span class="p">,</span> <span class="s2">"media"</span><span class="p">])</span>
-    <span class="nx">source</span>   <span class="p">=</span> <span class="s2">"./publish_bucket"</span>
-    <span class="nx">name</span>     <span class="p">=</span> <span class="s2">"</span><span class="k">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">key</span><span class="k">}</span><span class="s2">_bucket"</span>
+    <span class="nx">for_each</span> <span class="o">=</span> <span class="nx">toset</span><span class="p">([</span><span class="s2">"assets"</span><span class="p">,</span> <span class="s2">"media"</span><span class="p">])</span>
+    <span class="nx">source</span>   <span class="o">=</span> <span class="s2">"./publish_bucket"</span>
+    <span class="nx">name</span>     <span class="o">=</span> <span class="s2">"</span><span class="k">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">key</span><span class="k">}</span><span class="s2">_bucket"</span>
   <span class="p">}</span>
 </code></pre></div>    </div>
   </li>
@@ -225,7 +225,7 @@
     <span class="c1"># Because var.name includes each.key in the calling</span>
     <span class="c1"># module block, its value will be different for</span>
     <span class="c1"># each instance of this module.</span>
-    <span class="nx">bucket</span> <span class="p">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">name</span>
+    <span class="nx">bucket</span> <span class="o">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">name</span>
 
     <span class="c1"># ...</span>
   <span class="p">}</span>
@@ -241,9 +241,9 @@
 
 <div class="language-tf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">terraform</span> <span class="p">{</span>
   <span class="nx">required_providers</span> <span class="p">{</span>
-    <span class="nx">aws</span> <span class="p">=</span> <span class="p">{</span>
-      <span class="nx">source</span>  <span class="p">=</span> <span class="s2">"hashicorp/aws"</span>
-      <span class="nx">version</span> <span class="p">=</span> <span class="s2">"&gt;= 2.7.0"</span>
+    <span class="nx">aws</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">source</span>  <span class="o">=</span> <span class="s2">"hashicorp/aws"</span>
+      <span class="nx">version</span> <span class="o">=</span> <span class="s2">"&gt;= 2.7.0"</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>

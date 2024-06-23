@@ -192,7 +192,7 @@
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">build.ts</code>
-    <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">esbuild</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">https://deno.land/x/esbuild@v0.11.17/mod.js</span><span class="dl">'</span>
+    <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">import</span> <span class="o">*</span> <span class="kd">as </span><span class="nx">esbuild</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">https://deno.land/x/esbuild@v0.11.17/mod.js</span><span class="dl">'</span>
 
   <span class="kd">const</span> <span class="nx">ts</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">let test: boolean = true</span><span class="dl">'</span>
   <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">esbuild</span><span class="p">.</span><span class="nf">transform</span><span class="p">(</span><span class="nx">ts</span><span class="p">,</span> <span class="p">{</span> <span class="na">loader</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ts</span><span class="dl">'</span> <span class="p">})</span>

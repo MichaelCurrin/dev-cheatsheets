@@ -174,21 +174,21 @@
 <h2 id="basic">Basic</h2>
 
 <div class="language-tf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">resource</span> <span class="s2">"aws_instance"</span> <span class="s2">"web"</span> <span class="p">{</span>
-  <span class="nx">ami</span>           <span class="p">=</span> <span class="s2">"ami-a1b2c3d4"</span>
-  <span class="nx">instance_type</span> <span class="p">=</span> <span class="s2">"t2.micro"</span>
+  <span class="nx">ami</span>           <span class="o">=</span> <span class="s2">"ami-a1b2c3d4"</span>
+  <span class="nx">instance_type</span> <span class="o">=</span> <span class="s2">"t2.micro"</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h2 id="count">Count</h2>
 
 <div class="language-tf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">resource</span> <span class="s2">"aws_instance"</span> <span class="s2">"server"</span> <span class="p">{</span>
-  <span class="nx">count</span> <span class="p">=</span> <span class="mi">4</span> <span class="c1"># create four similar EC2 instances</span>
+  <span class="nx">count</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># create four similar EC2 instances</span>
 
-  <span class="nx">ami</span>           <span class="p">=</span> <span class="s2">"ami-a1b2c3d4"</span>
-  <span class="nx">instance_type</span> <span class="p">=</span> <span class="s2">"t2.micro"</span>
+  <span class="nx">ami</span>           <span class="o">=</span> <span class="s2">"ami-a1b2c3d4"</span>
+  <span class="nx">instance_type</span> <span class="o">=</span> <span class="s2">"t2.micro"</span>
 
-  <span class="nx">tags</span> <span class="p">=</span> <span class="p">{</span>
-    <span class="nx">Name</span> <span class="p">=</span> <span class="s2">"Server </span><span class="k">${</span><span class="nx">count</span><span class="p">.</span><span class="nx">index</span><span class="k">}</span><span class="s2">"</span>
+  <span class="nx">tags</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">Name</span> <span class="o">=</span> <span class="s2">"Server </span><span class="k">${</span><span class="nx">count</span><span class="p">.</span><span class="nx">index</span><span class="k">}</span><span class="s2">"</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -198,20 +198,20 @@
 <h3 id="map">Map</h3>
 
 <div class="language-tf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">resource</span> <span class="s2">"azurerm_resource_group"</span> <span class="s2">"rg"</span> <span class="p">{</span>
-  <span class="nx">for_each</span> <span class="p">=</span> <span class="p">{</span>
-    <span class="nx">a_group</span> <span class="p">=</span> <span class="s2">"eastus"</span>
-    <span class="nx">another_group</span> <span class="p">=</span> <span class="s2">"westus2"</span>
+  <span class="nx">for_each</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">a_group</span> <span class="o">=</span> <span class="s2">"eastus"</span>
+    <span class="nx">another_group</span> <span class="o">=</span> <span class="s2">"westus2"</span>
   <span class="p">}</span>
-  <span class="nx">name</span>     <span class="p">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">key</span>
-  <span class="nx">location</span> <span class="p">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">value</span>
+  <span class="nx">name</span>     <span class="o">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">key</span>
+  <span class="nx">location</span> <span class="o">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">value</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h3 id="array">Array</h3>
 
 <div class="language-tf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">resource</span> <span class="s2">"aws_iam_user"</span> <span class="s2">"the-accounts"</span> <span class="p">{</span>
-  <span class="nx">for_each</span> <span class="p">=</span> <span class="nx">toset</span><span class="p">(</span> <span class="p">[</span><span class="s2">"Todd"</span><span class="p">,</span> <span class="s2">"James"</span><span class="p">,</span> <span class="s2">"Alice"</span><span class="p">,</span> <span class="s2">"Dottie"</span><span class="p">]</span> <span class="p">)</span>
-  <span class="nx">name</span>     <span class="p">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">key</span>
+  <span class="nx">for_each</span> <span class="o">=</span> <span class="nx">toset</span><span class="p">(</span> <span class="p">[</span><span class="s2">"Todd"</span><span class="p">,</span> <span class="s2">"James"</span><span class="p">,</span> <span class="s2">"Alice"</span><span class="p">,</span> <span class="s2">"Dottie"</span><span class="p">]</span> <span class="p">)</span>
+  <span class="nx">name</span>     <span class="o">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">key</span>
 <span class="p">}</span>
 </code></pre></div></div>
 

@@ -343,8 +343,8 @@
 
 <p>Import from a package installed with NPM.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">vscode</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">vscode</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">assert</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">assert</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">vscode</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">vscode</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">assert</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">assert</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
 </code></pre></div></div>
 
@@ -411,7 +411,7 @@
 <span class="k">import</span> <span class="p">{</span> <span class="nx">foo</span><span class="p">,</span> <span class="nx">fuzz</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./foo</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="c1">// Rename.</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">foo</span> <span class="k">as</span> <span class="nx">fizz</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./foo</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">foo</span> <span class="nx">as</span> <span class="nx">fizz</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./foo</span><span class="dl">'</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>Or, exporting a module (without importing it first).</p>
@@ -425,7 +425,7 @@
 
 <p>Import multiple objects and put them under a namespace.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">foo</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./foo</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">foo</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./foo</span><span class="dl">"</span><span class="p">;</span>
 <span class="nx">foo</span><span class="p">.</span><span class="nf">bar</span><span class="p">()</span>
 <span class="nx">foo</span><span class="p">.</span><span class="nf">buzz</span><span class="p">()</span>
 </code></pre></div></div>
@@ -464,8 +464,8 @@
 
 <p>Here is an alternative. So instead of assigning a name directly, import as unpacking the <code class="language-plaintext highlighter-rouge">default</code> object and then assign it a name.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="p">{</span> <span class="k">default</span> <span class="k">as</span> <span class="nx">React</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://dev.jspm.io/react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">export</span> <span class="p">{</span> <span class="k">default</span> <span class="k">as</span> <span class="nx">ReactDOMServer</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://dev.jspm.io/react-dom/server</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="p">{</span> <span class="k">default</span> <span class="nx">as</span> <span class="nx">React</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://dev.jspm.io/react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">export</span> <span class="p">{</span> <span class="k">default</span> <span class="nx">as</span> <span class="nx">ReactDOMServer</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://dev.jspm.io/react-dom/server</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="c1">// Equivalent to:</span>
 <span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://dev.jspm.io/react</span><span class="dl">"</span><span class="p">;</span>
