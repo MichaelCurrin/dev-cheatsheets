@@ -174,9 +174,11 @@
 
     <div class="post-content">
         
-            <p>Globbing is a programming concept that involves the use of wildcards and special characters to match and filter. Glob patterns are similar to regex patterns, but simpler and limited in scope.</p>
+            <p>Globbing, also known as wildcard matching, is a technique used in computer systems and programming languages to match one or more files or paths based on a pattern containing wildcard characters. It is commonly used in command-line interfaces, file managers, and programming languages to perform operations on multiple files or directories at once.</p>
 
-<p>This guide is based on Bash and ZSH.</p>
+<p>Glob patterns involve the use of wildcards and special characters to match and then filter. They patterns are similar to regex patterns, but simpler and limited in scope.</p>
+
+<p>Note, this guide is based on Bash and ZSH usage.</p>
 
 <h2 id="resources">Resources</h2>
 
@@ -190,25 +192,42 @@
 
 <p>Some links copied from <a href="https://github.com/begin/globbing/blob/master/README.md">begin/globbing</a></p>
 
-<h2 id="basics">Basics</h2>
+<h2 id="use-cases">Use cases</h2>
 
-<p><a href="https://github.com/begin/globbing/blob/master/cheatsheet.md">Source</a></p>
+<ul>
+  <li><strong>Command-line interfaces</strong>: In Unix-like operating systems (e.g., Linux, macOS), globbing is used in the shell to perform operations on multiple files or directories matching a pattern.
+ Example: <code class="language-plaintext highlighter-rouge">rm *.txt</code> removes all files with the <code class="language-plaintext highlighter-rouge">.txt</code> extension in the current directory.</li>
+  <li><strong>File managers</strong>: Many graphical file managers support globbing to filter and select files based on patterns.</li>
+  <li><strong>Programming languages</strong>: Many programming languages, such as Python, JavaScript, Ruby, and Bash, provide built-in support for globbing or have libraries that implement globbing functionality.
+ Example (Python): <code class="language-plaintext highlighter-rouge">import glob; files = glob.glob('*.py')</code> retrieves a list of all Python files in the current directory.</li>
+  <li><strong>Regular expressions</strong>: While globbing and regular expressions serve different purposes, some programming languages and tools allow the use of globbing patterns within regular expressions for more advanced pattern matching.</li>
+</ul>
+
+<h2 id="common-wildcard-characters">Common wildcard characters</h2>
+
+<p>Based on a <a href="https://github.com/begin/globbing/blob/master/cheatsheet.md">Globbing cheatsheet</a></p>
 
 <p>Wildcard matches are used alongside literals.</p>
 
 <p>Basic wildcards:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">*</code> - Match any character zero or more times.</li>
-  <li><code class="language-plaintext highlighter-rouge">**</code> - Match any character zero or more times, including <code class="language-plaintext highlighter-rouge">/</code> unlike the others.</li>
-  <li><code class="language-plaintext highlighter-rouge">?</code> - Match any single character one time.</li>
-  <li><code class="language-plaintext highlighter-rouge">[...]</code> - Match any of the characters. e.g. <code class="language-plaintext highlighter-rouge">[abc]</code>, <code class="language-plaintext highlighter-rouge">[123]</code></li>
-  <li><code class="language-plaintext highlighter-rouge">[X-Y]</code> - Match a range. e.g. <code class="language-plaintext highlighter-rouge">[0-9a-z]</code>, <code class="language-plaintext highlighter-rouge">[\w]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">*</code> (asterisk) - Match any character zero or more times.</li>
+  <li><code class="language-plaintext highlighter-rouge">**</code> (double asterisk) - Match any character zero or more times, including <code class="language-plaintext highlighter-rouge">/</code> unlike the others.</li>
+  <li><code class="language-plaintext highlighter-rouge">?</code> (question mark) - Match any single character exactly one time.</li>
+  <li><code class="language-plaintext highlighter-rouge">[...]</code> (character range). Match one of any of the characters. e.g. <code class="language-plaintext highlighter-rouge">[abc]</code>, <code class="language-plaintext highlighter-rouge">[123]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">[^...]</code> (negated character range): Matches any single character not within the specified range or set.</li>
 </ul>
 
-<p>Example:</p>
+<h2 id="basic-examples">Basic examples</h2>
 
 <ul>
+  <li><code class="language-plaintext highlighter-rouge">*.txt</code> matches all files with the <code class="language-plaintext highlighter-rouge">.txt</code> extension.</li>
+  <li><code class="language-plaintext highlighter-rouge">file?.txt</code> matches <code class="language-plaintext highlighter-rouge">file1.txt</code>, <code class="language-plaintext highlighter-rouge">file2.txt</code>, but not <code class="language-plaintext highlighter-rouge">file10.txt</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">file[0-9].txt</code> matches <code class="language-plaintext highlighter-rouge">file0.txt</code>, <code class="language-plaintext highlighter-rouge">file1.txt</code>, …, <code class="language-plaintext highlighter-rouge">file9.txt</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">[0-9a-z]</code> will match 0 to 9 and a to z (lowercase only).</li>
+  <li><code class="language-plaintext highlighter-rouge">[\w]</code> will match any word characters (alphanumeric).</li>
+  <li><code class="language-plaintext highlighter-rouge">file[^0-9].txt</code> matches <code class="language-plaintext highlighter-rouge">fileA.txt</code>, <code class="language-plaintext highlighter-rouge">file_.txt</code>, but not <code class="language-plaintext highlighter-rouge">file1.txt</code>.</li>
   <li><code class="language-plaintext highlighter-rouge">*/*</code> - will match <code class="language-plaintext highlighter-rouge">foo/bar</code>.</li>
   <li><code class="language-plaintext highlighter-rouge">*</code> will match all files and directories in the current directory.
     <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">echo</span> <span class="k">*</span>
