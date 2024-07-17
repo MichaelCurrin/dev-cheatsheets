@@ -1,6 +1,9 @@
-# Todo list (checklist)
+---
+description: Turn your bullet list into a checklist of done and not done items
+---
+# Todo list
 
-Use hard brackets. With either a space (not down) or lowercase `x` (done).
+Use hard brackets. With either a space (not done) or lowercase `x` (done).
 
 ## Sample code
 
