@@ -1,4 +1,4 @@
-# Todo list
+# Todo list (checklist)
 
 Use hard brackets. With either a space (not down) or lowercase `x` (done).
 
