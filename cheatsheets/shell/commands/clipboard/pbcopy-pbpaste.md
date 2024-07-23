@@ -29,6 +29,12 @@ Copy file to the clipboard.
 $ pbcopy < PATH
 ```
 
+Or:
+
+```sh
+$ cat PATH | pbcopy
+```
+
 ### Output with `pbpaste`
 
 Print the clipboard contents:
@@ -37,13 +43,13 @@ Print the clipboard contents:
 $ pbpaste
 ```
 
-Pipe to a command:
+Pipe clipboard contents to a command:
 
 ```sh
 $ pbpaste | head
 ```
 
-Write to a file:
+Write clipboard contents to a file:
 
 ```sh
 $ pbpaste > test.txt
