@@ -206,6 +206,11 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pbcopy &lt; PATH
 </code></pre></div></div>
 
+<p>Or:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat </span>PATH | pbcopy
+</code></pre></div></div>
+
 <h3 id="output-with-pbpaste">Output with <code class="language-plaintext highlighter-rouge">pbpaste</code></h3>
 
 <p>Print the clipboard contents:</p>
@@ -213,12 +218,12 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pbpaste
 </code></pre></div></div>
 
-<p>Pipe to a command:</p>
+<p>Pipe clipboard contents to a command:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pbpaste | <span class="nb">head</span>
 </code></pre></div></div>
 
-<p>Write to a file:</p>
+<p>Write clipboard contents to a file:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pbpaste <span class="o">&gt;</span> test.txt
 </code></pre></div></div>
