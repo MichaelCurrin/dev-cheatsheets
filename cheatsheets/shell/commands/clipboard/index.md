@@ -1,7 +1,7 @@
 ---
 title: Clipboard
 description: Use content from the clipboard or copy content to it
-----
+---
 
 ## Features
 
