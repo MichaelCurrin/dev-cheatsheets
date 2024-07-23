@@ -1,15 +1,18 @@
 ---
-title: Unix shell
+title: Shell (Unix)
 logo: gnubash
+description: |
+  Guide to using Bash/ZSH on macOS and Linux
 ---
 
+What is covered here:
 
 - Use-cases
     - [x] Shell scripting
     - [x] Command-line
     - [x] Manage your system's configs and packages.
 - Operating systems
-    - [x] Linux
+    - [x] Linux (Debian/Ubuntu focus)
     - [x] macOS
 - Shells
     - [x] Bash (this is the focus)
