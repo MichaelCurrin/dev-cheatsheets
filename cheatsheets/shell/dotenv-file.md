@@ -114,7 +114,9 @@ Related - see the [export command][] cheatsheet.
 Use a package that can read the `.env` file when your app starts. This does add an extra dependency though.
 
 - [dotenv package for Node.js](https://www.npmjs.com/package/dotenv)
-- [python-dotenv for Python](https://pypi.org/project/python-dotenv/)
+-  See [Python dotenv][] cheatsheet.
+
+[Python dotenv]: {% link cheatsheets/python/configs/dotenv.md %}
 
 ## Resources
 
