@@ -173,6 +173,8 @@
 
 <h2 id="basic">Basic</h2>
 
+<p>This approach is more manual but does not rely on package.</p>
+
 <p>Store values in a shell file.</p>
 
 <ul>
@@ -183,7 +185,7 @@
   </li>
 </ul>
 
-<p>Then set the values as export variable.s</p>
+<p>Then set the values as export variables.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export</span> <span class="si">$(</span>&lt; .env | xargs<span class="si">)</span>
 </code></pre></div></div>
@@ -209,10 +211,14 @@
 
 <p>How to load a dotenv file, then use the values in your Python application, without using the <code class="language-plaintext highlighter-rouge">export</code> command.</p>
 
+<h3 id="install">Install</h3>
+
 <p>Install <a href="https://pypi.org/project/python-dotenv/">python-dotenv</a>. Use the <code class="language-plaintext highlighter-rouge">-U</code> flag if installing globally to restrict to your user, or omit if in a virtual environment (recommended).</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>python-dotenv
 </code></pre></div></div>
+
+<h3 id="configure-values">Configure values</h3>
 
 <p>Create a <code class="language-plaintext highlighter-rouge">.env</code> file which follows Bash Shell syntax, with content such as:</p>
 
@@ -225,6 +231,8 @@
 </code></pre></div>    </div>
   </li>
 </ul>
+
+<h3 id="load">Load</h3>
 
 <p>Load the file in Python.</p>
 
