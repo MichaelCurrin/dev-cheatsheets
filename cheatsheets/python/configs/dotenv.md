@@ -4,6 +4,8 @@ How to load values from a dotenv file.
 
 ## Basic
 
+This approach is more manual but does not rely on package.
+
 Store values in a shell file.
 
 - `.env`
@@ -12,7 +14,7 @@ Store values in a shell file.
     BUZZ=123
     ```
 
-Then set the values as export variable.s
+Then set the values as export variables.
 
 ```sh
 $ export $(< .env | xargs)
@@ -38,11 +40,15 @@ Run a script that uses the variables.
 
 How to load a dotenv file, then use the values in your Python application, without using the `export` command.
 
+### Install
+
 Install [python-dotenv](https://pypi.org/project/python-dotenv/). Use the `-U` flag if installing globally to restrict to your user, or omit if in a virtual environment (recommended).
 
 ```sh
 $ pip install python-dotenv
 ```
+
+### Configure values
 
 Create a `.env` file which follows Bash Shell syntax, with content such as:
 
@@ -53,6 +59,8 @@ Create a `.env` file which follows Bash Shell syntax, with content such as:
     MEANING_OF_LIFE=42
     MULTILINE_VAR="hello\nworld"
     ```
+
+### Load
 
 Load the file in Python.
 
