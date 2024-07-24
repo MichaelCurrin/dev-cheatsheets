@@ -131,7 +131,11 @@ Foo ./vendor/bundle/ruby/2.7.0/gems/sass-3.7.4/README.md
 
 ## Export config file
 
-If you had values to set by hand, you could do:
+See [dotenv file][] cheatsheet for more info.
+
+[dotenv file]: {% link cheatsheets/shell/dotenv-file.md %}
+
+If you had values to set by hand, you could do this:
 
 ```sh
 $ export FOO=bar FIZZ=buzz
@@ -145,10 +149,10 @@ But what those in are a file?
     FIZZ=buzz
     ```
     
-Then you can do this, which reads the contents of the `.env` shell file and passes the contents to `export` to evaluate.
+Then you can do this, which reads the contents of the `.env` shell file and passes the contents to `export` to evaluate it.
 
 ```sh
-$ export (xargs< .env)
+$ export $(xargs< .env)
 ```
 
 Using `< file.txt` is a more efficient form of `cat file.txt`. See [Useless use of cat award][].
@@ -163,7 +167,7 @@ FIZZ=buzz
 FOO=bar
 ```
 
-Break it down:
+Breaking it down:
 
 ```console
 $ echo $(< .env) 
@@ -178,9 +182,9 @@ FOO=bar FIZZ=buzz
 Evaluate:
 
 ```sh
-$ export (xargs< .env)
+$ export $(xargs< .env)
 ```
 
-I find it works without `xargs` sometimes but it is safer with.
+I find it works without `xargs` sometimes but it is safer with, perhaps for multi-line values?
 
-Warning - make sure to not have any comments in your file, as `xargs` makes the output all on one line and you'll lose anything after the comment.
+Warning - make sure to **not** have any comments in your file, as `xargs` makes the output all on one line and you'll lose anything after the comment.

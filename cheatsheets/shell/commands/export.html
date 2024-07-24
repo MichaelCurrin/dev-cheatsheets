@@ -284,7 +284,9 @@ Foo ./vendor/bundle/ruby/2.7.0/gems/sass-3.7.4/README.md
 
 <h2 id="export-config-file">Export config file</h2>
 
-<p>If you had values to set by hand, you could do:</p>
+<p>See <a href="/dev-cheatsheets/cheatsheets/shell/dotenv-file.html">dotenv file</a> cheatsheet for more info.</p>
+
+<p>If you had values to set by hand, you could do this:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export </span><span class="nv">FOO</span><span class="o">=</span>bar <span class="nv">FIZZ</span><span class="o">=</span>buzz
 </code></pre></div></div>
@@ -299,9 +301,9 @@ Foo ./vendor/bundle/ruby/2.7.0/gems/sass-3.7.4/README.md
   </li>
 </ul>
 
-<p>Then you can do this, which reads the contents of the <code class="language-plaintext highlighter-rouge">.env</code> shell file and passes the contents to <code class="language-plaintext highlighter-rouge">export</code> to evaluate.</p>
+<p>Then you can do this, which reads the contents of the <code class="language-plaintext highlighter-rouge">.env</code> shell file and passes the contents to <code class="language-plaintext highlighter-rouge">export</code> to evaluate it.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export</span> <span class="o">(</span>xargs&lt; .env<span class="o">)</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export</span> <span class="si">$(</span>xargs&lt; .env<span class="si">)</span>
 </code></pre></div></div>
 
 <p>Using <code class="language-plaintext highlighter-rouge">&lt; file.txt</code> is a more efficient form of <code class="language-plaintext highlighter-rouge">cat file.txt</code>. See <a href="https://porkmail.org/era/unix/award.html#cat">Useless use of cat award</a>.</p>
@@ -313,7 +315,7 @@ Foo ./vendor/bundle/ruby/2.7.0/gems/sass-3.7.4/README.md
 <span class="nv">FOO</span><span class="o">=</span>bar
 </code></pre></div></div>
 
-<p>Break it down:</p>
+<p>Breaking it down:</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="si">$(</span>&lt; .env<span class="si">)</span> 
 <span class="go">FOO=bar FIZZ=buzz
@@ -325,12 +327,12 @@ Foo ./vendor/bundle/ruby/2.7.0/gems/sass-3.7.4/README.md
 
 <p>Evaluate:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export</span> <span class="o">(</span>xargs&lt; .env<span class="o">)</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export</span> <span class="si">$(</span>xargs&lt; .env<span class="si">)</span>
 </code></pre></div></div>
 
-<p>I find it works without <code class="language-plaintext highlighter-rouge">xargs</code> sometimes but it is safer with.</p>
+<p>I find it works without <code class="language-plaintext highlighter-rouge">xargs</code> sometimes but it is safer with, perhaps for multi-line values?</p>
 
-<p>Warning - make sure to not have any comments in your file, as <code class="language-plaintext highlighter-rouge">xargs</code> makes the output all on one line and you’ll lose anything after the comment.</p>
+<p>Warning - make sure to <strong>not</strong> have any comments in your file, as <code class="language-plaintext highlighter-rouge">xargs</code> makes the output all on one line and you’ll lose anything after the comment.</p>
 
         
     </div>
