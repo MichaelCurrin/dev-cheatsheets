@@ -189,31 +189,31 @@
   <li>No spaces around <code class="language-plaintext highlighter-rouge">=</code> sign: <code class="language-plaintext highlighter-rouge">API_KEY=abcdef123456</code></li>
   <li>Use quotes for values with spaces: <code class="language-plaintext highlighter-rouge">MESSAGE="Hello World"</code></li>
   <li>Multi-line values:
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MULTI_LINE="line 1
-line 2"
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">MULTI_LINE</span><span class="o">=</span><span class="s2">"line 1
+line 2"</span>
 </code></pre></div>    </div>
   </li>
 </ul>
 
 <h2 id="sample">Sample</h2>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Database Configuration</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Database configuration</span>
 <span class="nv">DB_HOST</span><span class="o">=</span>localhost
 <span class="nv">DB_PORT</span><span class="o">=</span>5432
 <span class="nv">DB_NAME</span><span class="o">=</span>myapp_database
 <span class="nv">DB_USER</span><span class="o">=</span>admin
-<span class="nv">DB_PASSWORD</span><span class="o">=</span>super_secret_password
+<span class="nv">DB_PASSWORD</span><span class="o">=</span>abcdef
 
 <span class="c"># API Keys</span>
-<span class="nv">STRIPE_API_KEY</span><span class="o">=</span>sk_test_4eC39HqLyjWDarjtT1zdp7dc
-<span class="nv">MAILGUN_API_KEY</span><span class="o">=</span>key-3ax6xnjp29jd6fds4gc373sgvjxteol0
+<span class="nv">STRIPE_API_KEY</span><span class="o">=</span>sk_test_abcdef
+<span class="nv">MAILGUN_API_KEY</span><span class="o">=</span>key-abcdef
 
-<span class="c"># Application Settings</span>
+<span class="c"># Application settings</span>
 <span class="nv">APP_ENV</span><span class="o">=</span>development
 <span class="nv">DEBUG_MODE</span><span class="o">=</span><span class="nb">true
 </span><span class="nv">LOG_LEVEL</span><span class="o">=</span>info
 
-<span class="c"># Server Configuration</span>
+<span class="c"># Server configuration</span>
 <span class="nv">PORT</span><span class="o">=</span>3000
 <span class="nv">HOST</span><span class="o">=</span>0.0.0.0
 
@@ -222,12 +222,12 @@ line 2"
 
 <span class="c"># External Service URLs</span>
 <span class="nv">API_URL</span><span class="o">=</span>https://api.example.com/v1
-<span class="nv">WEBHOOK_URL</span><span class="o">=</span>https://webhook.site/1234abcd-5678-90ef-ghij-klmnopqrstuv
+<span class="nv">WEBHOOK_URL</span><span class="o">=</span>https://webhook.site/abcdef
 
 <span class="c"># Secrets</span>
-<span class="nv">JWT_SECRET</span><span class="o">=</span>my_super_secret_jwt_token_do_not_share
+<span class="nv">JWT_SECRET</span><span class="o">=</span>abcdef
 
-<span class="c"># Multi-line Value Example</span>
+<span class="c"># Multi-line example.</span>
 <span class="nv">MULTI_LINE_VALUE</span><span class="o">=</span><span class="s2">"This is a
 multi-line
 value example"</span>
