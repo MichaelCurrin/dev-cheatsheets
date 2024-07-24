@@ -28,7 +28,7 @@ It must be a valid shell script (usually Bash).
 - No spaces around `=` sign: `API_KEY=abcdef123456`
 - Use quotes for values with spaces: `MESSAGE="Hello World"`
 - Multi-line values:
-  ```
+  ```sh
   MULTI_LINE="line 1
   line 2"
   ```
@@ -37,23 +37,23 @@ It must be a valid shell script (usually Bash).
 ## Sample
 
 ```sh
-# Database Configuration
+# Database configuration
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=myapp_database
 DB_USER=admin
-DB_PASSWORD=super_secret_password
+DB_PASSWORD=abcdef
 
 # API Keys
-STRIPE_API_KEY=sk_test_4eC39HqLyjWDarjtT1zdp7dc
-MAILGUN_API_KEY=key-3ax6xnjp29jd6fds4gc373sgvjxteol0
+STRIPE_API_KEY=sk_test_abcdef
+MAILGUN_API_KEY=key-abcdef
 
-# Application Settings
+# Application settings
 APP_ENV=development
 DEBUG_MODE=true
 LOG_LEVEL=info
 
-# Server Configuration
+# Server configuration
 PORT=3000
 HOST=0.0.0.0
 
@@ -62,12 +62,12 @@ ENABLE_NEW_FEATURE=false
 
 # External Service URLs
 API_URL=https://api.example.com/v1
-WEBHOOK_URL=https://webhook.site/1234abcd-5678-90ef-ghij-klmnopqrstuv
+WEBHOOK_URL=https://webhook.site/abcdef
 
 # Secrets
-JWT_SECRET=my_super_secret_jwt_token_do_not_share
+JWT_SECRET=abcdef
 
-# Multi-line Value Example
+# Multi-line example.
 MULTI_LINE_VALUE="This is a
 multi-line
 value example"
