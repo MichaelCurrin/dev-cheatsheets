@@ -1,29 +1,29 @@
-# Dotenv file
+---
+title: Dotenv file
+description: |
+  A `.env` file is a simple text file used to store environment variables for an application.
+---
+
+A `.env` file is a configuration file used to store environment variables. It's commonly used in development to keep sensitive information (like API keys) out of source code. It must be a valid shell script (usually Bash).
+
+This is similar to `config.properties` in Java - see [article](https://www.baeldung.com/java-properties).
 
 
-## Introduction
-
-A `.env` file is a configuration file used to store environment variables. It's commonly used in development to keep sensitive information (like API keys) out of source code.
-
-It must be a valid shell script (usually Bash).
-
-## Cheatsheet
-
-### Basic Usage
+## Basic usage
 
 - Create a file named `.env` in your project's root directory.
 - Add variables in `KEY=VALUE` format, one per line. 
 - Access variables in your code using `process.env.KEY` (Node.js) or similar methods in other languages
 
-### Top Tips
+## Top tips
 
-1. Never commit `.env` files to version control
-2. Use `.env.example` to share template of required variables.
-3. Load `.env` files as early as possible in your application.
-4. Use different `.env` files for different environments (e.g., `.env.development`, `.env.production`)
-5. Validate required environment variables on startup.
+1. Never commit `.env` files with secrets in them to version control.
+1. Use `.env.template` to share template of required variables.
+1. Load `.env` files as early as possible in your application.
+1. Validate required environment variables on startup.
+1. You can use different `.env` files for different environments (e.g. `.env.development`, `.env.production`). Though you could set those variables instead as environment variables in your build pipeline such that as dotenv file is not needed in a deploymed environment.
 
-### Syntax
+## Syntax
 
 - No spaces around `=` sign: `API_KEY=abcdef123456`
 - Use quotes for values with spaces: `MESSAGE="Hello World"`
@@ -33,39 +33,15 @@ It must be a valid shell script (usually Bash).
   line 2"
   ```
 
-
-## Sample
+## Sample content
 
 ```sh
 # Database configuration
 DB_HOST=localhost
 DB_PORT=5432
-DB_NAME=myapp_database
-DB_USER=admin
-DB_PASSWORD=abcdef
 
 # API Keys
-STRIPE_API_KEY=sk_test_abcdef
-MAILGUN_API_KEY=key-abcdef
-
-# Application settings
-APP_ENV=development
-DEBUG_MODE=true
-LOG_LEVEL=info
-
-# Server configuration
-PORT=3000
-HOST=0.0.0.0
-
-# Feature Flags
-ENABLE_NEW_FEATURE=false
-
-# External Service URLs
-API_URL=https://api.example.com/v1
-WEBHOOK_URL=https://webhook.site/abcdef
-
-# Secrets
-JWT_SECRET=abcdef
+API_KEY=sk_test_abcdef
 
 # Multi-line example.
 MULTI_LINE_VALUE="This is a
@@ -109,7 +85,7 @@ Related - see the [export command][] cheatsheet.
 
 [export command]: {% link cheatsheets/shell/commands/export.md %}
 
-### Automatically
+### Automatic
 
 Use a package that can read the `.env` file when your app starts. This does add an extra dependency though.
 
@@ -122,3 +98,4 @@ Use a package that can read the `.env` file when your app starts. This does add 
 
 - [dotenv.org](https://www.dotenv.org/) - sync .env files between machines, environments, and team members
 - [Twelve-Factor App: Config](https://12factor.net/config)
+
