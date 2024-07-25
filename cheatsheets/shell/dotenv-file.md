@@ -4,7 +4,7 @@ description: |
   A `.env` file is a simple text file used to store environment variables for an application.
 ---
 
-A `.env` file is a configuration file used to store environment variables. It's commonly used in development to keep sensitive information (like API keys) out of source code. It must be a valid shell script (usually Bash).
+A `.env` file is a configuration file used to store environment variables, typically as a file in the project root. It's commonly used in development to keep sensitive information (like API keys) out of source code. 
 
 This is similar to `config.properties` in Java - see [article](https://www.baeldung.com/java-properties).
 
@@ -17,14 +17,16 @@ This is similar to `config.properties` in Java - see [article](https://www.baeld
 
 ## Top tips
 
-1. Never commit `.env` files with secrets in them to version control.
-1. Use `.env.template` to share template of required variables.
-1. Load `.env` files as early as possible in your application.
-1. Validate required environment variables on startup.
-1. You can use different `.env` files for different environments (e.g. `.env.development`, `.env.production`). Though you could set those variables instead as environment variables in your build pipeline such that as dotenv file is not needed in a deploymed environment.
+- The contents of the file are not encrypted, so it should be kept private and not shared with others.
+- Never commit `.env` files to version control. Or only if there are no sensitive secrets in them.
+- Use `.env.template` to share template of required variables.
+- Load `.env` files as early as possible in your application.
+- Validate required environment variables on startup.
+- You can use different `.env` files for different environments (e.g. `.env.development`, `.env.production`). Though you could set those variables instead as environment variables in your build pipeline such that as dotenv file is not needed in a deploymed environment.
 
 ## Syntax
 
+- It must be a valid shell script (usually Bash).
 - No spaces around `=` sign: `API_KEY=abcdef123456`
 - Use quotes for values with spaces: `MESSAGE="Hello World"`
 - Multi-line values:
@@ -89,8 +91,26 @@ Related - see the [export command][] cheatsheet.
 
 Use a package that can read the `.env` file when your app starts. This does add an extra dependency though.
 
-- [dotenv package for Node.js](https://www.npmjs.com/package/dotenv)
--  See [Python dotenv][] cheatsheet.
+### Node
+
+See [dotenv package for Node.js](https://www.npmjs.com/package/dotenv)
+
+- Install the package in your project with:
+    ```sh
+    $ npm install --save-dev dotenv
+    ```
+- Load environment variables from the ".env" file with:
+    ```sh
+    $ dotenv -e .env
+    ```
+- Test with this in a JS script:
+    ```js
+    console.log(process.env.API_KEY)
+    ```
+    
+### Python
+
+See [Python dotenv][] cheatsheet.
 
 [Python dotenv]: {% link cheatsheets/python/configs/dotenv.md %}
 
