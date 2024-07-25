@@ -165,7 +165,7 @@
 
     <div class="post-content">
         
-            <p>A <code class="language-plaintext highlighter-rouge">.env</code> file is a configuration file used to store environment variables. It’s commonly used in development to keep sensitive information (like API keys) out of source code. It must be a valid shell script (usually Bash).</p>
+            <p>A <code class="language-plaintext highlighter-rouge">.env</code> file is a configuration file used to store environment variables, typically as a file in the project root. It’s commonly used in development to keep sensitive information (like API keys) out of source code.</p>
 
 <p>This is similar to <code class="language-plaintext highlighter-rouge">config.properties</code> in Java - see <a href="https://www.baeldung.com/java-properties">article</a>.</p>
 
@@ -179,17 +179,19 @@
 
 <h2 id="top-tips">Top tips</h2>
 
-<ol>
-  <li>Never commit <code class="language-plaintext highlighter-rouge">.env</code> files with secrets in them to version control.</li>
+<ul>
+  <li>The contents of the file are not encrypted, so it should be kept private and not shared with others.</li>
+  <li>Never commit <code class="language-plaintext highlighter-rouge">.env</code> files to version control. Or only if there are no sensitive secrets in them.</li>
   <li>Use <code class="language-plaintext highlighter-rouge">.env.template</code> to share template of required variables.</li>
   <li>Load <code class="language-plaintext highlighter-rouge">.env</code> files as early as possible in your application.</li>
   <li>Validate required environment variables on startup.</li>
   <li>You can use different <code class="language-plaintext highlighter-rouge">.env</code> files for different environments (e.g. <code class="language-plaintext highlighter-rouge">.env.development</code>, <code class="language-plaintext highlighter-rouge">.env.production</code>). Though you could set those variables instead as environment variables in your build pipeline such that as dotenv file is not needed in a deploymed environment.</li>
-</ol>
+</ul>
 
 <h2 id="syntax">Syntax</h2>
 
 <ul>
+  <li>It must be a valid shell script (usually Bash).</li>
   <li>No spaces around <code class="language-plaintext highlighter-rouge">=</code> sign: <code class="language-plaintext highlighter-rouge">API_KEY=abcdef123456</code></li>
   <li>Use quotes for values with spaces: <code class="language-plaintext highlighter-rouge">MESSAGE="Hello World"</code></li>
   <li>Multi-line values:
@@ -248,10 +250,28 @@ value example"</span>
 
 <p>Use a package that can read the <code class="language-plaintext highlighter-rouge">.env</code> file when your app starts. This does add an extra dependency though.</p>
 
+<h3 id="node">Node</h3>
+
+<p>See <a href="https://www.npmjs.com/package/dotenv">dotenv package for Node.js</a></p>
+
 <ul>
-  <li><a href="https://www.npmjs.com/package/dotenv">dotenv package for Node.js</a></li>
-  <li>See <a href="/dev-cheatsheets/cheatsheets/python/configs/dotenv.html">Python dotenv</a> cheatsheet.</li>
+  <li>Install the package in your project with:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">--save-dev</span> dotenv
+</code></pre></div>    </div>
+  </li>
+  <li>Load environment variables from the “.env” file with:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>dotenv <span class="nt">-e</span> .env
+</code></pre></div>    </div>
+  </li>
+  <li>Test with this in a JS script:
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">API_KEY</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
 </ul>
+
+<h3 id="python">Python</h3>
+
+<p>See <a href="/dev-cheatsheets/cheatsheets/python/configs/dotenv.html">Python dotenv</a> cheatsheet.</p>
 
 <h2 id="resources">Resources</h2>
 
