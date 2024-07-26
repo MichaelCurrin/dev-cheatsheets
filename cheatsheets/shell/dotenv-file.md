@@ -64,7 +64,7 @@ $ export $(< .env)
 Or this (does not work with comments in the file).
 
 ```sh
-$ export $(xargs< .env)
+$ export $(xargs < .env)
 ```
 
 Run that once in a terminal window. Then start your app.
@@ -73,8 +73,8 @@ In a Makefile, you can set this to make that easier:
 
 ```Makefile
 run:
-  export $(< .env) \
-    && npm start
+	export $(< .env) \
+		&& npm start
 ```
 
 Then run:
