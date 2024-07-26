@@ -227,7 +227,7 @@ value example"</span>
 
 <p>Or this (does not work with comments in the file).</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export</span> <span class="si">$(</span>xargs&lt; .env<span class="si">)</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export</span> <span class="si">$(</span>xargs &lt; .env<span class="si">)</span>
 </code></pre></div></div>
 
 <p>Run that once in a terminal window. Then start your app.</p>
@@ -235,8 +235,8 @@ value example"</span>
 <p>In a Makefile, you can set this to make that easier:</p>
 
 <pre><code class="language-Makefile">run:
-  export $(&lt; .env) \
-    &amp;&amp; npm start
+	export $(&lt; .env) \
+		&amp;&amp; npm start
 </code></pre>
 
 <p>Then run:</p>
