@@ -77,12 +77,20 @@ const upper = letters.map(x => upper(x))
 
 ### Promises
 
-Warning - when using `.then` promise chains, it does not work to just pass a function. you need to wrap that in a function.
+Calling `String.upper()` on an array of items in a promise:
 
 ```javascript
 Promise.resolve([ 'a', 'b', 'c' ] )
-  .then(x => x.upper())
+  .then(x => x.toUpperCase())
+// ['A', 'B', 'C']
 ```
+
+When using `.then` promise chains with `map`, be careful about how you pass functions. 
+
+In other languages, you could use something like `.then(console.log)` if there is a single paramter but for JS you need to specify a variable. e.g. `.then(x => console.log(x))`
+
+
+
 
 
 ## Comparison with Functional Programming
