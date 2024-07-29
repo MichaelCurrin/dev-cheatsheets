@@ -181,7 +181,7 @@
 <p>The downside to this approach that it uses a literal string - is does not validate if the page actually exists and also does not obey and permalink settings set on the metadata or config.</p>
 
 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> <span class="p">[</span><span class="nv">Link text</span><span class="p">](</span><span class="sx">{{</span> <span class="nn">'/'</span> | relative_url }})
-<span class="p">-</span> <span class="p">[</span><span class="nv">Link text</span><span class="p">](</span><span class="sx">{{</span> <span class="nn">'asserts/foo.js'</span> | relative_url }})
+<span class="p">-</span> <span class="p">[</span><span class="nv">Link text</span><span class="p">](</span><span class="sx">{{</span> <span class="nn">'assets/foo.js'</span> | relative_url }})
 </code></pre></div></div>
 
 <p>If you reference a page object, then it is safer to expect the URL to be valid - use of config settings might affect this though such as permalink or collections.</p>
