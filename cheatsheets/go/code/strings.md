@@ -41,7 +41,7 @@ Use the compare function to get `-1`, `0`, or `1` as result.
 result := strings.Compare("dog", "cat")
 ```
 
-Case-insensitive comparsion.
+Case-insensitive comparison.
 
 ```go
 strings.EqualFold("Hello", "hello")
