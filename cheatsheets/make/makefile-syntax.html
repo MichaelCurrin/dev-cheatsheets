@@ -379,7 +379,7 @@ docs := $(wildcard */*.md)
 # _site/about.md docs/README.md docs/deploy.md docs/development.md docs/installation.md docs/usage.md resources/index.md
 </code></pre>
 
-<p>Note using <code class="language-plaintext highlighter-rouge">**/*.md</code> will <strong>not</strong> work for finding the current directory - it will still search one level down.</p>
+<p>Note using <code class="language-plaintext highlighter-rouge">**/*.md</code> will <strong>not</strong> work for finding the current directory like if using with <code class="language-plaintext highlighter-rouge">grep</code>. For Make wildcards, it will still search <strong>one level</strong> below the current directory.</p>
 
 <h3 id="shell-find">Shell find</h3>
 
