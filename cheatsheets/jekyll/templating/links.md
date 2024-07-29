@@ -15,7 +15,7 @@ The downside to this approach that it uses a literal string - is does not valida
 
 ```markdown
 - [Link text]({{ '/' | relative_url }})
-- [Link text]({{ 'asserts/foo.js' | relative_url }})
+- [Link text]({{ 'assets/foo.js' | relative_url }})
 ```
 
 If you reference a page object, then it is safer to expect the URL to be valid - use of config settings might affect this though such as permalink or collections.
