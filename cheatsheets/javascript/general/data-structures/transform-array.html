@@ -252,11 +252,16 @@
 
 <h3 id="promises">Promises</h3>
 
-<p>Warning - when using <code class="language-plaintext highlighter-rouge">.then</code> promise chains, it does not work to just pass a function. you need to wrap that in a function.</p>
+<p>Calling <code class="language-plaintext highlighter-rouge">String.upper()</code> on an array of items in a promise:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nf">resolve</span><span class="p">([</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span> <span class="p">]</span> <span class="p">)</span>
-  <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="p">.</span><span class="nf">upper</span><span class="p">())</span>
+  <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">())</span>
+<span class="c1">// ['A', 'B', 'C']</span>
 </code></pre></div></div>
+
+<p>When using <code class="language-plaintext highlighter-rouge">.then</code> promise chains with <code class="language-plaintext highlighter-rouge">map</code>, be careful about how you pass functions.</p>
+
+<p>In other languages, you could use something like <code class="language-plaintext highlighter-rouge">.then(console.log)</code> if there is a single paramter but for JS you need to specify a variable. e.g. <code class="language-plaintext highlighter-rouge">.then(x =&gt; console.log(x))</code></p>
 
 <h2 id="comparison-with-functional-programming">Comparison with Functional Programming</h2>
 
