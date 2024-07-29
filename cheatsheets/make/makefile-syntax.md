@@ -14,7 +14,6 @@ For language specific examples, see my [Code Cookbook](https://github.com/Michae
 
 Phony is useful if your target matches an actual directory but you don't want to `make` to run against it. Normally, you could run `make DIR` for compiling a C program or similar, but that isn't helpful outside of compiled languages.
 
-
 This can be done at the start, or just before each target.
 
 Here we use PHONY where `foo` and `docs` are actual directories as well targets.
@@ -215,7 +214,7 @@ docs := $(wildcard */*.md)
 # _site/about.md docs/README.md docs/deploy.md docs/development.md docs/installation.md docs/usage.md resources/index.md
 ```
 
-Note using `**/*.md` will **not** work for finding the current directory - it will still search one level down.
+Note using `**/*.md` will **not** work for finding the current directory like if using with `grep`. For Make wildcards, it will still search **one level** below the current directory.
 
 ### Shell find
 
