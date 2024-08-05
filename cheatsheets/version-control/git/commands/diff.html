@@ -181,17 +181,16 @@
 
     <div class="post-content">
         
-            <p>See git docs: <a href="https://git-scm.com/docs/git-diff">git-diff</a></p>
+            <p>See full details in the Git docs: <a href="https://git-scm.com/docs/git-diff">git-diff</a></p>
 
-<p>See usage and flags below.</p>
+<p>Related - <a href="/dev-cheatsheets/cheatsheets/version-control/git/commands/diff-index.html">diff-index cheatsheet</a>.</p>
 
 <h2 id="help">Help</h2>
 
 <p>Short help:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="nt">-h</span>
-</code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usage: git diff [&lt;options&gt;] [&lt;commit&gt; [&lt;commit&gt;]] [--] [&lt;path&gt;...]
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git diff <span class="nt">-h</span>
+<span class="gp">usage: git diff [&lt;options&gt;</span><span class="o">]</span> <span class="o">[</span>&lt;commit&gt; <span class="o">[</span>&lt;commit&gt;]] <span class="o">[</span><span class="nt">--</span><span class="o">]</span> <span class="o">[</span>&lt;path&gt;...]
 </code></pre></div></div>
 
 <p>Long help:</p>
@@ -439,13 +438,6 @@ git diff feature-a feature-b
  1 file changed, 39 insertions(+)
 </code></pre></div></div>
 
-<h3 id="name-and-status">Name and status</h3>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff
-M       opm/datadog/Makefile
-M       opm/datadog/README.md
-</code></pre></div></div>
-
 <h3 id="name-only">Name only</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="nt">--name-only</span>
@@ -453,7 +445,7 @@ genesis/install.sh
 genesis/upgrade.sh
 </code></pre></div></div>
 
-<h3 id="name-and-status-1">Name and status</h3>
+<h3 id="name-and-status">Name and status</h3>
 
 <p>This is similar to git status.</p>
 
@@ -463,12 +455,21 @@ genesis/upgrade.sh
   <p>Show only names and status of changed files. See the description of the –diff-filter option on what the status letters mean.</p>
 </blockquote>
 
-<p>This is similar to git status short output.</p>
-
 <p>e.g.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff name-status
-M       cheatsheets/version-control/git/commands/status.md
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="nt">--name-status</span>
+M       opm/datadog/Makefile
+M       opm/datadog/README.md
+</code></pre></div></div>
+
+<p>That is the same as running:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index HEAD <span class="nt">--name-status</span>
+</code></pre></div></div>
+
+<p>Or</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status <span class="nt">--short</span>
 </code></pre></div></div>
 
 <h3 id="hook">Hook</h3>
