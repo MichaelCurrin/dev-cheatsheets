@@ -167,6 +167,86 @@
 
 <p>See <a href="https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/">Install</a> guides. See commands for your OS and then see the OS-specific instructions to start/stop the Redis server and CLI client.</p>
 
+<h2 id="basics">Basics</h2>
+
+<p>As a NoSQL in-memory database with no schema, Redis is faster than SQL databases for IO.</p>
+
+<p>Redis is useful for simple data types and structures, such as a queue or a counter.</p>
+
+<p>And where persistance of data is not a priority.</p>
+
+<h3 id="data-types">Data types</h3>
+
+<ul>
+  <li>Strings (there are no numbers)</li>
+  <li>Lists</li>
+  <li>Sets (unique)</li>
+  <li>Sorted sets (where order is important such as leaderboard)</li>
+  <li>Hashes (such as attributes of a user)</li>
+  <li>Streams</li>
+</ul>
+
+<p>More advanced:</p>
+
+<ul>
+  <li>Bitmaps</li>
+  <li>HyperLogLogs</li>
+  <li>Geospatial indexes</li>
+</ul>
+
+<h3 id="start-and-stop-redis-using-the-shell">Start and stop Redis using the shell</h3>
+
+<p>Start server:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>redis-server
+</code></pre></div></div>
+
+<p>Or start as a service using a package manager for your OS.</p>
+
+<p>Start CLI client:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>redis-cli
+</code></pre></div></div>
+
+<h2 id="redis-cli">Redis CLI</h2>
+
+<h3 id="get-and-set">Get and set</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>SET key value
+</code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>GET key
+</code></pre></div></div>
+
+<p>Add quotes for spaces:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>SET <span class="s2">"my key"</span> <span class="s2">"my value"</span>
+</code></pre></div></div>
+
+<h3 id="working-with-numeric-data">Working with numeric data</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>SET counter 0
+<span class="gp">&gt;</span><span class="w"> </span>GET counter
+<span class="go">0
+</span><span class="gp">&gt;</span><span class="w"> </span>INCR counter
+<span class="gp">&gt;</span><span class="w"> </span>DECR counter
+<span class="gp">&gt;</span><span class="w"> </span>INCRBY counter 4
+<span class="gp">&gt;</span><span class="w"> </span>DECRBY counter 2
+</code></pre></div></div>
+
+<h3 id="strings">Strings</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>STRLEN key
+</code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>APPEND key <span class="s2">" value"</span>
+</code></pre></div></div>
+
+<h3 id="slicing">Slicing</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>GETRANGE key 0 3
+</code></pre></div></div>
+
         
     </div>
 </article>
