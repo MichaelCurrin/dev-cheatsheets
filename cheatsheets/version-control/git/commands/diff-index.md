@@ -116,23 +116,27 @@ $ git diff-index --cached  HEAD
 
 Jump to [Diff filter](#diff-filter) section.
 
-Summary view, close to `git status -s`.
+Summary view:
 
-```sh
+```console
+$ git diff-index --name-status HEAD
+M       src/extension.ts
+A       src/workspace.ts
 $ git diff-index --cached --name-status HEAD
 A       src/workspace.ts
 ```
 
+That can be achieved with these:
+
 ```sh
-$ git diff-index --name-status HEAD
-M       src/extension.ts
-A       src/workspace.ts
+$ git status --short
+$ git diff --name-status
 ```
 
 ### Stat
 
 ```sh
-$ git diff-index --stat  --cached  HEAD
+$ git diff-index --stat  --cached HEAD
  src/workspace.ts | 8 ++++++++
  1 file changed, 8 insertions(+)
 ```
@@ -140,12 +144,12 @@ $ git diff-index --stat  --cached  HEAD
 ### Num stat
 
 ```sh
-$ git diff-index --numstat  --cached  HEAD
+$ git diff-index --numstat  --cached HEAD
 8       0       src/workspace.ts
 ```
 
 ```sh
-$ git diff-index --numstat   HEAD
+$ git diff-index --numstat HEAD
 82      55      src/extension.ts
 8       0       src/workspace.ts
 ```
