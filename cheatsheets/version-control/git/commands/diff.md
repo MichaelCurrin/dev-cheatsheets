@@ -1,18 +1,18 @@
 # diff
 
-See git docs: [git-diff](https://git-scm.com/docs/git-diff)
+See full details in the Git docs: [git-diff](https://git-scm.com/docs/git-diff)
 
-See usage and flags below.
+Related - [diff-index cheatsheet][].
+
+[diff-index cheatsheet]: {% link cheatsheets/version-control/git/commands/diff-index.md %}
 
 
 ## Help
 
 Short help:
 
-```sh
+```console
 $ git diff -h
-```
-```
 usage: git diff [<options>] [<commit> [<commit>]] [--] [<path>...]
 ```
 
@@ -279,14 +279,6 @@ $ git diff --compact-summary
  1 file changed, 39 insertions(+)
 ```
 
-### Name and status
-
-```sh
-$ git diff
-M       opm/datadog/Makefile
-M       opm/datadog/README.md
-```
-
 ### Name only
 
 ```sh
@@ -303,13 +295,24 @@ This is similar to git status.
 
 > Show only names and status of changed files. See the description of the --diff-filter option on what the status letters mean.
 
-This is similar to git status short output.
-
 e.g.
 
 ```sh
-$ git diff name-status
-M       cheatsheets/version-control/git/commands/status.md
+$ git diff --name-status
+M       opm/datadog/Makefile
+M       opm/datadog/README.md
+```
+
+That is the same as running:
+
+```sh
+$ git diff-index HEAD --name-status
+```
+
+Or
+
+```sh
+$ git status --short
 ```
 
 ### Hook
