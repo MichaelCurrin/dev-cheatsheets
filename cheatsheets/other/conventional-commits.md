@@ -47,13 +47,13 @@ I've grouped them as they make sense to me.
     - `fix`
     - `style`
     - `refactor`
-    - `build`
+    - `build` - a change in the build system.
     - `perf` - performance
 - Supplemental (the app can still run locally without these)
-    - `ci` - update workflow for CI.
-    - `docs`
+    - `ci` - changes to the CI.
+    - `docs` - changes to documentation files or docs in code.
     - `test` - relating to running tests.
-- `chore` - like configs and file renames or moves.
+- `chore` - changes to configs, file renames or moves, changes to dependencies.
 - `revert`
 
 Check these pages to see officially allowed types.
@@ -99,6 +99,7 @@ From the docs:
 > A scope is a phrase describing a section of the codebase enclosed in parenthesis.
 >
 > e.g. 'fix(parser):'
+
 This would be specific to a particular project, so you cannot know the generalize scopes for all projects. The standard says you should agree in your team what the scopes would be. Perhaps based on features, projects or directories.
 
 I believe there are some scope values which do generalize well.
