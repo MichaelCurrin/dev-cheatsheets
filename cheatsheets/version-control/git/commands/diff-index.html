@@ -289,31 +289,35 @@ DESCRIPTION
 
 <p>Jump to <a href="#diff-filter">Diff filter</a> section.</p>
 
-<p>Summary view, close to <code class="language-plaintext highlighter-rouge">git status -s</code>.</p>
+<p>Summary view:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--cached</span> <span class="nt">--name-status</span> HEAD
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git diff-index <span class="nt">--name-status</span> HEAD
+<span class="go">M       src/extension.ts
 A       src/workspace.ts
-</code></pre></div></div>
+</span><span class="gp">$</span><span class="w"> </span>git diff-index <span class="nt">--cached</span> <span class="nt">--name-status</span> HEAD
+<span class="go">A       src/workspace.ts
+</span></code></pre></div></div>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--name-status</span> HEAD
-M       src/extension.ts
-A       src/workspace.ts
+<p>That can be achieved with these:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status <span class="nt">--short</span>
+<span class="nv">$ </span>git diff <span class="nt">--name-status</span>
 </code></pre></div></div>
 
 <h3 id="stat">Stat</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--stat</span>  <span class="nt">--cached</span>  HEAD
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--stat</span>  <span class="nt">--cached</span> HEAD
  src/workspace.ts | 8 ++++++++
  1 file changed, 8 insertions<span class="o">(</span>+<span class="o">)</span>
 </code></pre></div></div>
 
 <h3 id="num-stat">Num stat</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--numstat</span>  <span class="nt">--cached</span>  HEAD
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--numstat</span>  <span class="nt">--cached</span> HEAD
 8       0       src/workspace.ts
 </code></pre></div></div>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--numstat</span>   HEAD
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff-index <span class="nt">--numstat</span> HEAD
 82      55      src/extension.ts
 8       0       src/workspace.ts
 </code></pre></div></div>
