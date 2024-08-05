@@ -22,8 +22,7 @@ Long help:
 $ git diff --help
 ```
 
-<details>
-<summary>Long help output</summary>
+Long help output:
 
 ```
 NAME
@@ -42,8 +41,6 @@ DESCRIPTION
 
        ...
 ```
-
-</details>
 
 So you can run against zero, one or two commits. And can specify paths.
 

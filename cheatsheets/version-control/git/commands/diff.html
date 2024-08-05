@@ -199,311 +199,288 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="nt">--help</span>
 </code></pre></div></div>
 
-<details>
-<summary>Long help output</summary>
+<p>Long help output:</p>
 
-```
-NAME
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME
        git-diff - Show changes between commits, commit and working tree, etc
 
 SYNOPSIS
-       git diff [<options>] [<commit>] [--] [<path>...]
-       git diff [<options>] --cached [<commit>] [--] [<path>...]
-       git diff [<options>] <commit> <commit> [--] [<path>...]
-       git diff [<options>] <blob> <blob>
-       git diff [<options>] --no-index [--] <path> <path>
+       git diff [&lt;options&gt;] [&lt;commit&gt;] [--] [&lt;path&gt;...]
+       git diff [&lt;options&gt;] --cached [&lt;commit&gt;] [--] [&lt;path&gt;...]
+       git diff [&lt;options&gt;] &lt;commit&gt; &lt;commit&gt; [--] [&lt;path&gt;...]
+       git diff [&lt;options&gt;] &lt;blob&gt; &lt;blob&gt;
+       git diff [&lt;options&gt;] --no-index [--] &lt;path&gt; &lt;path&gt;
 
 DESCRIPTION
        Show changes between the working tree and the index or a tree, changes between the index and a tree, changes between two
        trees, changes between two blob objects, or changes between two files on disk.
 
        ...
-```
+</code></pre></div></div>
 
-&lt;/details&gt;
+<p>So you can run against zero, one or two commits. And can specify paths.</p>
 
-So you can run against zero, one or two commits. And can specify paths.
+<h2 id="basic">Basic</h2>
 
+<p>Show file names and line changes. Ignores staged files.</p>
 
-## Basic
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff <span class="o">[</span>COMMIT_REF] <span class="o">[</span>COMMIT_REF]
+</code></pre></div></div>
 
-Show file names and line changes. Ignores staged files.
+<p>Compares possibly modified files to the files at the current commit.</p>
 
-```sh
-git diff [COMMIT_REF] [COMMIT_REF]
-```
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff
+</code></pre></div></div>
 
-Compares possibly modified files to the files at the current commit.
+<p>Include stage files.</p>
 
-```sh
-git diff
-```
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff HEAD
+</code></pre></div></div>
 
-Include stage files.
+<p>Check commit against previous commit.</p>
 
-```sh
-git diff HEAD
-```
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff HEAD~
+</code></pre></div></div>
 
-Check commit against previous commit.
+<p>Show names of modified files and not lines changed. This is like a very short <code class="language-plaintext highlighter-rouge">git status</code> with no color and indentation. Note this is does <strong>not</strong> include untracked files.</p>
 
-```sh
-git diff HEAD~
-```
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff <span class="nt">--names-only</span>
+</code></pre></div></div>
 
-Show names of modified files and not lines changed. This is like a very short `git status` with no color and indentation. Note this is does **not** include untracked files.
+<p>e.g.</p>
 
-```sh
-git diff --names-only
-```
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foo/bar.txt
+</code></pre></div></div>
 
-e.g.
+<p>Compare current commit against remote.</p>
 
-```
-foo/bar.txt
-```
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff origin/master
+</code></pre></div></div>
 
-Compare current commit against remote.
+<p>Compare two commit references. Note the order matters.</p>
 
-```sh
-git diff origin/master
-```
-
-Compare two commit references. Note the order matters.
-
-```sh
-git diff HEAD~3..HEAD~5
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff HEAD~3..HEAD~5
 
 git diff HEAD~3 HEAD~5
 
 git diff feature-a feature-b
-```
+</code></pre></div></div>
 
+<h2 id="select-scope">Select scope</h2>
 
-## Select scope
+<p>What commits or files to run against.</p>
 
-What commits or files to run against.
+<h3 id="default---no-arguments">Default - no arguments</h3>
 
-### Default - no arguments
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff
+</code></pre></div></div>
 
-```sh
-$ git diff
-```
+<p>This will include:</p>
 
-This will include:
+<ul>
+  <li>staged</li>
+  <li>unstaged</li>
+</ul>
 
-- staged
-- unstaged
+<p>But not:</p>
 
-But not:
+<ul>
+  <li>untracked</li>
+</ul>
 
-- untracked
+<p>If you have no uncommit changes, you’ll see no output.</p>
 
-If you have no uncommit changes, you'll see no output.
+<p>If you want untracked files, then git status works file. The line count doesn’t matter so much as the files are new and there is no lines changed.</p>
 
+<h3 id="staged-only">Staged only</h3>
 
-If you want untracked files, then git status works file. The line count doesn't matter so much as the files are new and there is no lines changed.
+<p>Show diff of stages files only.</p>
 
-### Staged only
+<p>All the other flags below also assume all files that are tracked, unless you specifically ask for staged/cached, which can include previously untracked files.</p>
 
-Show diff of stages files only.
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="nt">--cached</span>
+</code></pre></div></div>
 
-All the other flags below also assume all files that are tracked, unless you specifically ask for staged/cached, which can include previously untracked files.
+<p>Note <code class="language-plaintext highlighter-rouge">--cached</code> and <code class="language-plaintext highlighter-rouge">--staged</code> are synonyms.</p>
 
-```sh
-$ git diff --cached
-```
+<h3 id="compare-current-against-a-commit">Compare current against a commit</h3>
 
-Note `--cached` and `--staged` are synonyms.
+<p>Specify target past commit only to compare against current <code class="language-plaintext highlighter-rouge">HEAD</code>. You might want to stash changes first.</p>
 
-### Compare current against a commit
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff COMMIT
+</code></pre></div></div>
 
-Specify target past commit only to compare against current `HEAD`. You might want to stash changes first.
+<p>e.g.</p>
 
-```sh
-$ git diff COMMIT
-```
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff HEAD~
 
-e.g.
+<span class="nv">$ </span>git checkout feature
+<span class="nv">$ </span>git diff master
+</code></pre></div></div>
 
-```sh
-$ git diff HEAD~
+<h3 id="compare-two-commits">Compare two commits</h3>
 
-$ git checkout feature
-$ git diff master
-```
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff COMMIT COMMIT
+</code></pre></div></div>
+<p>The order doesn’t matter.</p>
 
-### Compare two commits
+<p>e.g.</p>
 
-```sh
-$ git diff COMMIT COMMIT
-```
-The order doesn't matter.
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff HEAD~5 HEAD~7
+<span class="nv">$ </span>git diff master feature
+</code></pre></div></div>
 
-e.g.
+<p>This works too and is similar to what you’d run for <code class="language-plaintext highlighter-rouge">git log</code>.</p>
 
-```sh
-$ git diff HEAD~5 HEAD~7
-$ git diff master feature
-```
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff HEAD~5..HEAD~7
+</code></pre></div></div>
 
-This works too and is similar to what you'd run for `git log`.
+<h3 id="no-index-option">No index option</h3>
 
-```sh
-$ git diff HEAD~5..HEAD~7
-```
+<p>Compare when at least one of the filse is out the repo, or the entire command is run outside the repo.</p>
 
-### No index option
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="o">[</span>&lt;options&gt;] <span class="nt">--no-index</span> <span class="o">[</span><span class="nt">--</span><span class="o">]</span> &lt;path&gt; &lt;path&gt;
+</code></pre></div></div>
 
-Compare when at least one of the filse is out the repo, or the entire command is run outside the repo.
+<h3 id="ignore-submodules">Ignore submodules</h3>
 
-```sh
-$ git diff [<options>] --no-index [--] <path> <path>
-```
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--ignore-submodules[=&lt;when&gt;]
+</code></pre></div></div>
 
-### Ignore submodules
+<blockquote>
+  <p>Ignore changes to submodules in the diff generation. <when> can be either "none", "untracked", "dirty" or "all", which is the default.</when></p>
+</blockquote>
 
-```
---ignore-submodules[=<when>]
-```
+<h2 id="output-modes">Output modes</h2>
 
-&gt; Ignore changes to submodules in the diff generation. <when> can be either "none", "untracked", "dirty" or "all", which is the default.
+<h3 id="patch">Patch</h3>
 
+<p>This is the default.</p>
 
-## Output modes
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="nt">-p</span>
+</code></pre></div></div>
 
-### Patch
+<p>This can be hidden with <code class="language-plaintext highlighter-rouge">s</code> for <code class="language-plaintext highlighter-rouge">--no-patch</code></p>
 
-This is the default.
+<h3 id="output-to-file">Output to file</h3>
 
-```sh
-$ git diff -p
-```
+<blockquote>
+  <p>Output to a specific file instead of stdout.</p>
+</blockquote>
 
-This can be hidden with `s` for `--no-patch`
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--output=&lt;file&gt;
+</code></pre></div></div>
 
+<h3 id="raw">Raw</h3>
 
-### Output to file
+<blockquote>
+  <p>Generate the diff in raw format.</p>
+</blockquote>
 
-&gt; Output to a specific file instead of stdout.
+<p>e.g.</p>
 
-```
---output=<file>
-```
-
-### Raw
-
-&gt; Generate the diff in raw format.
-
-e.g.
-
-```sh
-$ git diff --raw
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="nt">--raw</span>
 :100755 100755 0f5324b 0000000 M        genesis/install.sh
 :100755 100755 b3858ab 0000000 M        genesis/upgrade.sh
-```
+</code></pre></div></div>
 
-### Stat
+<h3 id="stat">Stat</h3>
 
-`--stat` - see [docs](https://git-scm.com/docs/git-diff#Documentation/git-diff.txt---statltwidthgtltname-widthgtltcountgt)
+<p><code class="language-plaintext highlighter-rouge">--stat</code> - see <a href="https://git-scm.com/docs/git-diff#Documentation/git-diff.txt---statltwidthgtltname-widthgtltcountgt">docs</a></p>
 
-```sh
-$ git diff --stat
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="nt">--stat</span>
  genesis/install.sh |  5 ++---
  genesis/upgrade.sh | 14 ++++++++++++++
- 2 files changed, 16 insertions(+), 3 deletions(-)
-```
+ 2 files changed, 16 insertions<span class="o">(</span>+<span class="o">)</span>, 3 deletions<span class="o">(</span>-<span class="o">)</span>
+</code></pre></div></div>
 
-### Short stat
+<h3 id="short-stat">Short stat</h3>
 
-&gt; Output only the last line of the --stat format containing total number of modified files, as well as number of added and deleted lines.
+<blockquote>
+  <p>Output only the last line of the –stat format containing total number of modified files, as well as number of added and deleted lines.</p>
+</blockquote>
 
-```sh
-$ git diff --shortstat
- 2 files changed, 16 insertions(+), 3 deletions(-)
-```
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="nt">--shortstat</span>
+ 2 files changed, 16 insertions<span class="o">(</span>+<span class="o">)</span>, 3 deletions<span class="o">(</span>-<span class="o">)</span>
+</code></pre></div></div>
 
-### Summary
+<h3 id="summary">Summary</h3>
 
-`--summary`
+<p><code class="language-plaintext highlighter-rouge">--summary</code></p>
 
-&gt; Output a condensed summary of extended header information such as creations, renames and mode changes.
+<blockquote>
+  <p>Output a condensed summary of extended header information such as creations, renames and mode changes.</p>
+</blockquote>
 
-```sh
-$ git diff --summary --staged
-```
-```
- create mode 100644 src/my-git.ts
-```
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="nt">--summary</span> <span class="nt">--staged</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> create mode 100644 src/my-git.ts
+</code></pre></div></div>
 
-Note this is only useful in certain cases such as when there is a new file AND it is staged. Otherwise you'll see no output. The other flags would be more useful.
+<p>Note this is only useful in certain cases such as when there is a new file AND it is staged. Otherwise you’ll see no output. The other flags would be more useful.</p>
 
-### Compact summary
+<h3 id="compact-summary">Compact summary</h3>
 
-`--compact-summary`
+<p><code class="language-plaintext highlighter-rouge">--compact-summary</code></p>
 
-&gt; Output a condensed summary of extended header information such as file creations or deletions ("new" or "gone", optionally "+l" if it’s a symlink) and mode changes ("+x" or "-x" for adding or removing executable bit respectively) in diffstat. The information is put between the filename part and the graph part. Implies --stat.
+<blockquote>
+  <p>Output a condensed summary of extended header information such as file creations or deletions (“new” or “gone”, optionally “+l” if it’s a symlink) and mode changes (“+x” or “-x” for adding or removing executable bit respectively) in diffstat. The information is put between the filename part and the graph part. Implies –stat.</p>
+</blockquote>
 
-e.g.
+<p>e.g.</p>
 
-```sh
-$ git diff --compact-summary
-```
-```
- genesis/install.sh |  5 ++---
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="nt">--compact-summary</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> genesis/install.sh |  5 ++---
  genesis/upgrade.sh | 14 ++++++++++++++
  2 files changed, 16 insertions(+), 3 deletions(-)
-```
-```
- src/my-git.ts (new) | 39 +++++++++++++++++++++++++++++++++++++++
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> src/my-git.ts (new) | 39 +++++++++++++++++++++++++++++++++++++++
  1 file changed, 39 insertions(+)
-```
+</code></pre></div></div>
 
-### Name and status
+<h3 id="name-and-status">Name and status</h3>
 
-```sh
-$ git diff
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff
 M       opm/datadog/Makefile
 M       opm/datadog/README.md
-```
+</code></pre></div></div>
 
-### Name only
+<h3 id="name-only">Name only</h3>
 
-```sh
-$ git diff --name-only
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="nt">--name-only</span>
 genesis/install.sh
 genesis/upgrade.sh
-```
+</code></pre></div></div>
 
-### Name and status
+<h3 id="name-and-status-1">Name and status</h3>
 
-This is similar to git status.
+<p>This is similar to git status.</p>
 
-`--name-status`
+<p><code class="language-plaintext highlighter-rouge">--name-status</code></p>
 
-&gt; Show only names and status of changed files. See the description of the --diff-filter option on what the status letters mean.
+<blockquote>
+  <p>Show only names and status of changed files. See the description of the –diff-filter option on what the status letters mean.</p>
+</blockquote>
 
-This is similar to git status short output.
+<p>This is similar to git status short output.</p>
 
-e.g.
+<p>e.g.</p>
 
-```sh
-$ git diff name-status
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff name-status
 M       cheatsheets/version-control/git/commands/status.md
-```
+</code></pre></div></div>
 
-### Hook
+<h3 id="hook">Hook</h3>
 
-Copied from sample hook:
+<p>Copied from sample hook:</p>
 
-```sh
-git diff --cached --name-status -r
-```
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff <span class="nt">--cached</span> <span class="nt">--name-status</span> <span class="nt">-r</span>
+</code></pre></div></div>
 
-Breaking that down from the help:
+<p>Breaking that down from the help:</p>
 
-```
---staged is a synonym of --cached
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--staged is a synonym of --cached
 
 --name-status
     Show only names and status of changed files. See the description of the --diff-filter
@@ -517,8 +494,7 @@ Breaking that down from the help:
     to the combination, all paths are selected if there is any file that matches other
     criteria in the comparison; if there is no file that matches other criteria, nothing
     is selected.
-```
-</file></when></when></path></path></options></path></path></options></blob></blob></options></path></commit></commit></options></path></commit></options></path></commit></options></details>
+</code></pre></div></div>
 
         
     </div>
