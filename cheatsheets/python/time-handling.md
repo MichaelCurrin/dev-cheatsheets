@@ -1,4 +1,4 @@
-# Time handling
+# Date and time handling
 
 
 ## Resources
