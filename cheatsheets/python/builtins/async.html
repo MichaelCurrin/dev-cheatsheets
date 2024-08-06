@@ -184,6 +184,7 @@
 
 <span class="k">async</span> <span class="k">def</span> <span class="nf">my_coroutine</span><span class="p">():</span>
     <span class="k">await</span> <span class="n">asyncio</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
     <span class="k">return</span> <span class="sh">"</span><span class="s">Done</span><span class="sh">"</span>
 </code></pre></div></div>
 
@@ -197,7 +198,7 @@
 <span class="n">loop</span><span class="p">.</span><span class="nf">run_until_complete</span><span class="p">(</span><span class="nf">my_coroutine</span><span class="p">())</span>
 </code></pre></div></div>
 
-<h2 id="key-functions">Key Functions</h2>
+<h2 id="key-functions">Key functions</h2>
 
 <h3 id="asynciorun">asyncio.run()</h3>
 
@@ -237,6 +238,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
     <span class="k">await</span> <span class="n">asyncio</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
     <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Result from </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="sh">"</span>
 
 <span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>

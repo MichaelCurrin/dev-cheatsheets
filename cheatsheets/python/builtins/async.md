@@ -16,6 +16,7 @@ import asyncio
 
 async def my_coroutine():
     await asyncio.sleep(1)
+
     return "Done"
 ```
 
@@ -30,7 +31,7 @@ loop = asyncio.get_event_loop()
 loop.run_until_complete(my_coroutine())
 ```
 
-## Key Functions
+## Key functions
 
 ### asyncio.run()
 
@@ -73,6 +74,7 @@ Runs multiple coroutines concurrently.
 ```python
 async def fetch(url):
     await asyncio.sleep(1)
+
     return f"Result from {url}"
 
 async def main():
