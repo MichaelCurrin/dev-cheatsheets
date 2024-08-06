@@ -3,25 +3,29 @@ description: Working with environment variables in Python
 ---
 # Environment
 
-We use the Python [os](https://docs.python.org/3/library/os.html) library.
+We typicall use the Python [os](https://docs.python.org/3/library/os.html) library for environment variables.
 
 Using `os.environ` is the preferred way. Avoiding using `os.getenv('FOO')` and `os.putenv('FOO')`, since the latter does not update `os.environ`.
 
+Related - see [dot-env][] cheatsheet for reading environment variables in your Python application.
 
-## Setup
+[dot-env]: {% link cheatsheets/python/configs/dotenv.md %}
 
-Run this in the shell to set up the environment.
+
+## Read values
+
+Set the values in Bash first:
 
 ```sh
-FOO=bar python main.py
-
-# OR
-export FOO=bar
-python main.py
+$ FOO=bar python main.py
+```
+Or
+```sh
+$ export FOO=bar
+$ python main.py
 ```
 
-
-## Read
+Read the values in Python:
 
 ```python
 import os
@@ -30,17 +34,20 @@ import os
 os.environ['FOO']
 # bar
 
-# Safely.
-os.environ.get('FOO', 'fallback')
-# bar
+# Safely in case the variable is not set.
+os.environ.get('FOO', 'fallback-value')
+# fallback-value
 ```
 
 
-## Update
+## Set values
 
 ```python
 import os
 
 
 os.environ['FOO'] = 'bazz'
+
+os.environ['FOO']
+# 'bazz'
 ```
