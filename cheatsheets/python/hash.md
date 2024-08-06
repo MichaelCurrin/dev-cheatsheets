@@ -2,7 +2,7 @@
 
 ## Basic
 
-Use a builtin `hash` function.
+Use the builtin `hash` function.
 
 Only works on hashable types - immutable values so not a list.
 
@@ -45,7 +45,6 @@ e.g. to use the SHA256 algorithm.
 
 ```python
 import hashlib
-
 
 hashlib.sha224(b"Nobody inspects the spammish repetition").hexdigest()
 # 'a4337bc45a8fc544c03f52dc550cd6e1e87021bc896588bd79e901e2'
