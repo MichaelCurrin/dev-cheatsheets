@@ -162,22 +162,24 @@
 
     <div class="post-content">
         
-            <p>We use the Python <a href="https://docs.python.org/3/library/os.html">os</a> library.</p>
+            <p>We typicall use the Python <a href="https://docs.python.org/3/library/os.html">os</a> library for environment variables.</p>
 
 <p>Using <code class="language-plaintext highlighter-rouge">os.environ</code> is the preferred way. Avoiding using <code class="language-plaintext highlighter-rouge">os.getenv('FOO')</code> and <code class="language-plaintext highlighter-rouge">os.putenv('FOO')</code>, since the latter does not update <code class="language-plaintext highlighter-rouge">os.environ</code>.</p>
 
-<h2 id="setup">Setup</h2>
+<p>Related - see <a href="/dev-cheatsheets/cheatsheets/python/configs/dotenv.html">dot-env</a> cheatsheet for reading environment variables in your Python application.</p>
 
-<p>Run this in the shell to set up the environment.</p>
+<h2 id="read-values">Read values</h2>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">FOO</span><span class="o">=</span>bar python main.py
+<p>Set the values in Bash first:</p>
 
-<span class="c"># OR</span>
-<span class="nb">export </span><span class="nv">FOO</span><span class="o">=</span>bar
-python main.py
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ FOO</span><span class="o">=</span>bar python main.py
+</code></pre></div></div>
+<p>Or</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export </span><span class="nv">FOO</span><span class="o">=</span>bar
+<span class="nv">$ </span>python main.py
 </code></pre></div></div>
 
-<h2 id="read">Read</h2>
+<p>Read the values in Python:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
 
@@ -185,18 +187,21 @@ python main.py
 <span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="sh">'</span><span class="s">FOO</span><span class="sh">'</span><span class="p">]</span>
 <span class="c1"># bar
 </span>
-<span class="c1"># Safely.
-</span><span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">FOO</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">fallback</span><span class="sh">'</span><span class="p">)</span>
-<span class="c1"># bar
+<span class="c1"># Safely in case the variable is not set.
+</span><span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">FOO</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">fallback-value</span><span class="sh">'</span><span class="p">)</span>
+<span class="c1"># fallback-value
 </span></code></pre></div></div>
 
-<h2 id="update">Update</h2>
+<h2 id="set-values">Set values</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
 
 
 <span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="sh">'</span><span class="s">FOO</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">bazz</span><span class="sh">'</span>
-</code></pre></div></div>
+
+<span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="sh">'</span><span class="s">FOO</span><span class="sh">'</span><span class="p">]</span>
+<span class="c1"># 'bazz'
+</span></code></pre></div></div>
 
         
     </div>
