@@ -159,7 +159,7 @@
         
             <h2 id="basic">Basic</h2>
 
-<p>Use a builtin <code class="language-plaintext highlighter-rouge">hash</code> function.</p>
+<p>Use the builtin <code class="language-plaintext highlighter-rouge">hash</code> function.</p>
 
 <p>Only works on hashable types - immutable values so not a list.</p>
 
@@ -198,7 +198,6 @@
 <p>e.g. to use the SHA256 algorithm.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">hashlib</span>
-
 
 <span class="n">hashlib</span><span class="p">.</span><span class="nf">sha224</span><span class="p">(</span><span class="sa">b</span><span class="sh">"</span><span class="s">Nobody inspects the spammish repetition</span><span class="sh">"</span><span class="p">).</span><span class="nf">hexdigest</span><span class="p">()</span>
 <span class="c1"># 'a4337bc45a8fc544c03f52dc550cd6e1e87021bc896588bd79e901e2'
