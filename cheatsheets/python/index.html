@@ -1756,49 +1756,9 @@
   <li><a href="/dev-cheatsheets/cheatsheets/package-managers/python/">Python package managers</a> - how to use tools like <code class="language-plaintext highlighter-rouge">pip</code> and <code class="language-plaintext highlighter-rouge">poetry</code> to install Python packages.</li>
   <li><a href="/dev-cheatsheets/cheatsheets/package-managers/python/pip/versions.html">Python pip versions</a> - how pip uses version numbers</li>
   <li><a href="https://michaelcurrin.github.io/code-cookbook/recipes/python/">Python recipes</a> in my Code Cookbook.</li>
+  <li><a href="https://michaelcurrin.github.io/dev-resources/resources/python/">Python resources</a> in my Dev Resources site.</li>
+  <li><a href="https://www.pythoncheatsheet.org/">Python Cheatsheet</a> content on another site.</li>
 </ul>
-
-<h3 id="other-cheatsheets">Other cheatsheets</h3>
-
-<ul>
-  <li><a href="https://www.pythoncheatsheet.org/">Python Cheatsheet</a> website</li>
-</ul>
-
-<h3 id="installing-dependencies-and-installing-your-package">Installing dependencies and installing your package</h3>
-
-<ul>
-  <li><a href="https://github.com/MichaelCurrin/py-project-template">py-project-template</a></li>
-</ul>
-
-<p>It uses <code class="language-plaintext highlighter-rouge">requirement.txt</code> and <code class="language-plaintext highlighter-rouge">pip</code> which are the traditional/common choices. And <code class="language-plaintext highlighter-rouge">setup.cfg</code> as from my research that is also the popular/modern way to go. Use <code class="language-plaintext highlighter-rouge">requirements-lock.txt</code> if you care about subdependencies.</p>
-
-<p>If you care about installing your project itself (not just its dependencies), so it can be installed by others for example, only then do you need to worry about <code class="language-plaintext highlighter-rouge">setup.py</code>.</p>
-
-<p>See my installable package here:</p>
-
-<ul>
-  <li><a href="https://github.com/MichaelCurrin/python-package-quickstart">python-package-quickstart</a></li>
-</ul>
-
-<p>Or</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">setup.py</code>
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">#!/usr/bin/env python
-</span>  <span class="sh">"""</span><span class="s">
-  Install my-app.
-  </span><span class="sh">"""</span>
-
-  <span class="kn">import</span> <span class="n">setuptools</span>
-
-  <span class="n">setuptools</span><span class="p">.</span><span class="nf">setup</span><span class="p">()</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<p>Some tools like <a href="https://python-poetry.org/docs/pyproject/">poetry</a> need <code class="language-plaintext highlighter-rouge">pyproject.toml</code>.</p>
-
-<p>And if using Pipenv then use <code class="language-plaintext highlighter-rouge">Pipfile</code> and <code class="language-plaintext highlighter-rouge">Pipfile.lock</code>.</p>
     
 
         
