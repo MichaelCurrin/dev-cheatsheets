@@ -157,7 +157,9 @@
 
     <div class="post-content">
         
-            <p>Homepage: <a href="https://redis.io/">https://redis.io/</a>.</p>
+            <p>A key-value NoSQL database.</p>
+
+<p>Homepage: <a href="https://redis.io/">https://redis.io/</a>.</p>
 
 <h2 id="redis-commands">Redis commands</h2>
 
@@ -171,7 +173,13 @@
 
 <p>As a NoSQL in-memory database with no schema, Redis is faster than SQL databases for IO.</p>
 
-<p>Redis is useful for simple data types and structures, such as a queue or a counter.</p>
+<p>Redis is useful for simple data types and structures.</p>
+
+<ul>
+  <li>queue</li>
+  <li>logged in users</li>
+  <li>counter</li>
+</ul>
 
 <p>And where persistance of data is not a priority.</p>
 
@@ -227,7 +235,7 @@
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>SET counter 0
 <span class="gp">&gt;</span><span class="w"> </span>GET counter
-<span class="go">0
+<span class="go">"0"
 </span><span class="gp">&gt;</span><span class="w"> </span>INCR counter
 <span class="gp">&gt;</span><span class="w"> </span>DECR counter
 <span class="gp">&gt;</span><span class="w"> </span>INCRBY counter 4
@@ -237,14 +245,266 @@
 <h3 id="strings">Strings</h3>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>STRLEN key
-</code></pre></div></div>
+<span class="go">(integer) 123
+</span></code></pre></div></div>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>APPEND key <span class="s2">" value"</span>
 </code></pre></div></div>
 
-<h3 id="slicing">Slicing</h3>
-
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>GETRANGE key 0 3
+</code></pre></div></div>
+
+<h3 id="hashmap">Hashmap</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>HSET key field value <span class="o">[</span>field value...]
+<span class="gp">&gt;</span><span class="w"> </span>HSET loggedInUser:123 name <span class="s2">"Foo Bar"</span> url <span class="s2">"https://example.com"</span>
+</code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>HGET loggedInUser:123 name
+<span class="go">"Foo Bar"
+</span></code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>HMGET loggedInUser:123 name url
+<span class="go">1) "Foo Bar"
+2) "https://example.com"
+</span></code></pre></div></div>
+
+<p>A shopping cart of data for users. The cart is 123 and items are 1 and 2 here.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>HSET cart:123 dev:1:name <span class="s2">"Oranges"</span> dev:1:price <span class="s2">"1.23"</span>
+</code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>HSET cart:123 dev:1:name <span class="s2">"Oranges"</span> dev:1:price <span class="s2">"1.23"</span> dev:2:name <span class="s2">"Bananas"</span>
+<span class="gp">&gt;</span><span class="w"> </span>HGETALL cart:123
+<span class="go">1) "dev:1:name"
+2) "Oranges"
+3) "dev:1:price"
+4) "1.23"
+5) "dev:2:name"
+6) "Bananas"
+</span><span class="gp">&gt;</span><span class="w"> </span>HLEN cart:123
+<span class="go">6
+</span></code></pre></div></div>
+
+<h3 id="lists">Lists</h3>
+
+<p>They are implemented as doubly linked lists. Inserting and removing from either end has \(O(1)\) time complexity. Retrieving an element in the middle has \(O(N)\) time complexity since you cannot look up an element by index directly.</p>
+
+<h4 id="length">Length</h4>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>LLEN key
+</code></pre></div></div>
+
+<h4 id="add-at-start-or-end-with-push">Add at start or end with push</h4>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>LPUSH key element <span class="o">[</span>element, ...]
+<span class="gp">&gt;</span><span class="w"> </span>RPUSH key element <span class="o">[</span>element, ...]
+</code></pre></div></div>
+
+<h4 id="add-next-to-element-insert">Add next to element insert</h4>
+
+<p>This will add before/after the <em>first</em> instance of an existing string.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>LINSERT key BEFORE|AFTER pivot element 
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>LINSERT key AFTER <span class="s2">"existing"</span> <span class="s2">"new"</span>
+</code></pre></div></div>
+
+<h4 id="remove">Remove</h4>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>RPOP key <span class="o">[</span>count]
+<span class="gp">&gt;</span><span class="w"> </span>LPOP key <span class="o">[</span>count]
+</code></pre></div></div>
+
+<h4 id="view">View</h4>
+
+<p>The indexes are inclusive.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>LRANGE key start stop
+</code></pre></div></div>
+
+<p>Head element:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>LRANGE queue 0 0
+</code></pre></div></div>
+
+<p>Tail element:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>LRANGE queue <span class="nt">-1</span> <span class="nt">-1</span>
+</code></pre></div></div>
+
+<p>Get first 3 elements (at <code class="language-plaintext highlighter-rouge">0</code>, <code class="language-plaintext highlighter-rouge">1</code>, and <code class="language-plaintext highlighter-rouge">2</code>):</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>LRANGE queue 0 2
+<span class="go">1) "a"
+2) "b"
+3) "c"
+</span></code></pre></div></div>
+
+<p>All elements:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>LRANGE queue 0 <span class="nt">-1</span>
+</code></pre></div></div>
+
+<h3 id="sets">Sets</h3>
+
+<p>Sets are useful for data generated externally where the order doesn’t matter and you don’t want to have duplicates.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>SADD key member <span class="o">[</span>member ...]
+</code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>SREM key member
+</code></pre></div></div>
+
+<p>Remove a random number of members from the set.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>SPOP key <span class="o">[</span>count]
+</code></pre></div></div>
+
+<p>Retrieve elements</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>SMEMBERS queue
+<span class="go">1) abc
+2) def
+</span></code></pre></div></div>
+
+<h3 id="sorted-set">Sorted set</h3>
+
+<p>Unique elements with order. Give the value and sort index. Change the index and the set will be reordered.</p>
+
+<p>Use-cases:</p>
+
+<ul>
+  <li>priority queue</li>
+  <li>leaderboard</li>
+  <li>task scheduling</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ZADD key score member [score member ...]
+</code></pre></div></div>
+<p>e.g.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ZADD users 123 "foo bar"
+ZADD users 1000 "fizz buzz"
+</code></pre></div></div>
+
+<p>Get with ascending order.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Ascending
+ZRANGE key start stop
+# Descending
+ZREVRANGE key start stop
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ZRANGE users 0 1 
+1) "foo bar"
+2) "fizz buzz"
+</code></pre></div></div>
+
+<p>Update a member by incrementing their value:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ZINCRBY key increment member
+</code></pre></div></div>
+
+<h2 id="pun-sub-feature">Pun sub feature</h2>
+
+<p>Under fire and forget principle. Data sent to the bus is sent to all consumers. If not consumed by workers, the data are lost.</p>
+
+<p>Works for realtime data transport and is lightweight and easy to use. But data is not persisted.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PUBLISH channel message
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SUBSCRIBE channel [channel ...]
+</code></pre></div></div>
+
+<h2 id="streams">Streams</h2>
+
+<p>An append-only data type (not a feature). They <strong>persist</strong> data unless you remove a record. Modelled after log files. You can add complex data as key-value pairs.</p>
+
+<h3 id="add">Add</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>XADD key id field value
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">id</code> is usually <code class="language-plaintext highlighter-rouge">*</code>.</p>
+
+<p>The IDs are unix timestamps.</p>
+
+<p>e.g.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>XADD events <span class="k">*</span> user <span class="s2">"joe"</span> event_type <span class="s2">"left-click"</span> coord_x 31 coord_y 50
+<span class="go">"1722958057606-0"
+</span><span class="gp">&gt;</span><span class="w"> </span>XADD events <span class="k">*</span> user <span class="s2">"joe"</span> event_type <span class="s2">"scroll"</span>
+<span class="go">"1722958065294-0"
+</span></code></pre></div></div>
+
+<h3 id="read">Read</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>XRANGE key start end <span class="o">[</span>COUNT count]
+<span class="gp">&gt;</span><span class="w"> </span>XREVRANGE key start end <span class="o">[</span>COUNT count]
+</code></pre></div></div>
+
+<p>e.g. All events.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>XRANGE events - +
+<span class="go">1) 1) "1722958057606-0"
+   2) 1) "user"
+      2) "joe"
+      3) "event_type"
+      4) "left-click"
+      5) "coord_x"
+      6) "32"
+      7) "coord_y"
+      8) "50"
+2) 1) "1722958065294-0"
+   2) 1) "user"
+      2) "joe"
+      3) "event_type"
+      4) "scroll"
+</span></code></pre></div></div>
+
+<p>You can query a window of time. e.g. The 1st event, using the timestamp of the first event as the max (inclusive).</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>XRANGE events - 1722958057606
+<span class="go">1) 1) "1722958057606-0"
+   2) 1) "user"
+      2) "joe"
+      3) "event_type"
+      4) "left-click"
+      5) "coord_x"
+      6) "32"
+      7) "coord_y"
+      8) "50"
+</span></code></pre></div></div>
+
+<p>Get a fixed number of events at the start or end.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>XRANGE events - + COUNT 1
+XREVRANGE events + - COUNT 1
+</code></pre></div></div>
+
+<h4 id="reading-in-realtime">Reading in realtime</h4>
+
+<p>It’s similar to pub/sub. Each message is sent to each consumer, except they are not removed from the stream.</p>
+
+<p>Basic:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>XREAD STREAMS key id
+</code></pre></div></div>
+<p>Full:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>XREAD [COUNT count] [BLOCK milliseconds] STREAMS key [key ...] id [id ...]
+</code></pre></div></div>
+
+<p>e.g.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>XREAD BLOCK 0 STREAMS events $
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>XADD events * user "bob" event_type "scroll"
 </code></pre></div></div>
 
         
