@@ -1,4 +1,4 @@
-# Queues and messaging
+# Queue messaging
 
 
 ### Choosing a queuing approach
