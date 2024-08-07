@@ -387,27 +387,27 @@
 </code></pre></div></div>
 <p>e.g.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ZADD users 123 "foo bar"
-ZADD users 1000 "fizz buzz"
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>ZADD <span class="nb">users </span>123 <span class="s2">"foo bar"</span>
+<span class="gp">&gt;</span><span class="w"> </span>ZADD <span class="nb">users </span>1000 <span class="s2">"fizz buzz"</span>
 </code></pre></div></div>
 
 <p>Get with ascending order.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Ascending
-ZRANGE key start stop
-# Descending
-ZREVRANGE key start stop
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span><span class="c"># Ascending</span>
+<span class="gp">&gt;</span><span class="w"> </span>ZRANGE key start stop
+<span class="gp">&gt;</span><span class="w"> </span><span class="c"># Descending</span>
+<span class="gp">&gt;</span><span class="w"> </span>ZREVRANGE key start stop
 </code></pre></div></div>
 
 <p>e.g.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ZRANGE users 0 1 
-1) "foo bar"
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>ZRANGE <span class="nb">users </span>0 1 
+<span class="go">1) "foo bar"
 2) "fizz buzz"
-</code></pre></div></div>
+</span></code></pre></div></div>
 
 <p>Update a member by incrementing their value:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ZINCRBY key increment member
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>ZINCRBY key increment member
 </code></pre></div></div>
 
 <h2 id="pun-sub-feature">Pun sub feature</h2>
@@ -484,8 +484,8 @@ ZREVRANGE key start stop
 
 <p>Get a fixed number of events at the start or end.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>XRANGE events - + COUNT 1
-XREVRANGE events + - COUNT 1
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>XRANGE events - + COUNT 1
+<span class="gp">&gt;</span><span class="w"> </span>XREVRANGE events + - COUNT 1
 </code></pre></div></div>
 
 <h4 id="reading-in-realtime">Reading in realtime</h4>
@@ -493,19 +493,99 @@ XREVRANGE events + - COUNT 1
 <p>It’s similar to pub/sub. Each message is sent to each consumer, except they are not removed from the stream.</p>
 
 <p>Basic:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>XREAD STREAMS key id
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>XREAD STREAMS key <span class="nb">id</span>
 </code></pre></div></div>
 <p>Full:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>XREAD [COUNT count] [BLOCK milliseconds] STREAMS key [key ...] id [id ...]
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>XREAD <span class="o">[</span>COUNT count] <span class="o">[</span>BLOCK milliseconds] STREAMS key <span class="o">[</span>key ...] <span class="nb">id</span> <span class="o">[</span><span class="nb">id</span> ...]
 </code></pre></div></div>
 
 <p>e.g.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>XREAD BLOCK 0 STREAMS events $
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>XREAD BLOCK 0 STREAMS events <span class="err">$</span>
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>XADD events * user "bob" event_type "scroll"
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>XADD events <span class="k">*</span> user <span class="s2">"bob"</span> event_type <span class="s2">"scroll"</span>
 </code></pre></div></div>
+
+<h2 id="keyspace-notifications">Keyspace notifications</h2>
+
+<p>Get notified when data enters or leaves Redis. Also timeout and time-based notifications.</p>
+
+<h3 id="user-login-timeout-example">User login timeout example</h3>
+
+<p>Here we logout a user after a set time and also send a keyspace notification about it which we can subscribe to.</p>
+
+<p>With EX you can set TTL (time to live).</p>
+
+<p>For example, login a user and set expiration of an hour with 3600 seconds (user will remove the key after this). T=T==</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>SET logged_in_user:1234 123456789 EX 3600
+</code></pre></div></div>
+
+<p>Then again with the <code class="language-plaintext highlighter-rouge">XX</code> flag which will update an existing value and return <code class="language-plaintext highlighter-rouge">-1</code> if they key does not yet exist.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>SET logged_in_user:1234 123456789 EX 3600 XX
+</code></pre></div></div>
+
+<p>Subscribe to expiration events:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>redis-cli <span class="nt">--csv</span> psubscribe <span class="s1">'__key*__:expired'</span>
+</code></pre></div></div>
+
+<h2 id="scaling">Scaling</h2>
+
+<p>Needs:</p>
+
+<ul>
+  <li>Scaling - storage capacity and processing can grow.</li>
+  <li>High availability - always available even if some servers have issues.</li>
+  <li>Partition tolerance - if the network is partioned, and some are disconnected, Redis must still work.</li>
+</ul>
+
+<p>Solutions:</p>
+
+<h3 id="clusters">Clusters</h3>
+
+<ul>
+  <li>To distribute data and load.</li>
+  <li>There is time to sync between clusters, so the queried result for two clusters could be different, but it will always be available.</li>
+</ul>
+
+<p>Features:</p>
+
+<ul>
+  <li>No limit to storage and always available.</li>
+  <li>The storage capacity can grow outside the limits of the memory of a single node.</li>
+  <li>Elastic capacity - can scale up and down with demand.</li>
+  <li>Data sharding (information is distributed based on key and algorithm, info is distributed so one server doesn’t get overloaded) and data replication (highly available, data replicated on other servers). Just needs configuration.</li>
+  <li>Client transparency - client connector works the same with and without a cluster.</li>
+</ul>
+
+<h4 id="example-setup">Example setup</h4>
+
+<p>Start some servers using a config file for each and running on a different port.</p>
+
+<p>Then start the cluster using, where info is replicated from each node to 1 other.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>redis-cli <span class="nt">--cluster</span> create 127.0.0.1:7001 127.0.0.1:7002 127.0.0.1:7003 <span class="nt">--cluster-replicas</span> 1
+</code></pre></div></div>
+
+<h2 id="sentinel">Sentinel</h2>
+
+<p>A pattern of master and replicas. So if master goes down, the replica can be promoted.</p>
+
+<p>Provides monitoring and failover for your Redis instances.</p>
+
+<ol>
+  <li>Start your instances, each with a config.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>redis-cli ./redis.conf
+</code></pre></div>    </div>
+  </li>
+  <li>Start your sentinels, each with a config.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>redis-sentinel ./sentinel.conf
+</code></pre></div>    </div>
+  </li>
+</ol>
 
         
     </div>

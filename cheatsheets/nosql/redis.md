@@ -255,31 +255,31 @@ ZADD key score member [score member ...]
 ```
 e.g.
 
-```
-ZADD users 123 "foo bar"
-ZADD users 1000 "fizz buzz"
+```console
+> ZADD users 123 "foo bar"
+> ZADD users 1000 "fizz buzz"
 ```
 
 Get with ascending order.
 
-```
-# Ascending
-ZRANGE key start stop
-# Descending
-ZREVRANGE key start stop
+```console
+> # Ascending
+> ZRANGE key start stop
+> # Descending
+> ZREVRANGE key start stop
 ```
 
 e.g.
 
-```
-ZRANGE users 0 1 
+```console
+> ZRANGE users 0 1 
 1) "foo bar"
 2) "fizz buzz"
 ```
 
 Update a member by incrementing their value:
-```
-ZINCRBY key increment member
+```console
+> ZINCRBY key increment member
 ```
 
 ## Pun sub feature
@@ -363,9 +363,9 @@ You can query a window of time. e.g. The 1st event, using the timestamp of the f
 
 Get a fixed number of events at the start or end.
 
-```
-XRANGE events - + COUNT 1
-XREVRANGE events + - COUNT 1
+```console
+> XRANGE events - + COUNT 1
+> XREVRANGE events + - COUNT 1
 ```
 
 #### Reading in realtime
@@ -373,20 +373,100 @@ XREVRANGE events + - COUNT 1
 It's similar to pub/sub. Each message is sent to each consumer, except they are not removed from the stream.
 
 Basic:
-```
-XREAD STREAMS key id
+```console
+> XREAD STREAMS key id
 ```
 Full:
-```
-XREAD [COUNT count] [BLOCK milliseconds] STREAMS key [key ...] id [id ...]
+```console
+> XREAD [COUNT count] [BLOCK milliseconds] STREAMS key [key ...] id [id ...]
 ```
 
 e.g.
 
-```
-XREAD BLOCK 0 STREAMS events $
+```console
+> XREAD BLOCK 0 STREAMS events $
 ```
 
+```console
+> XADD events * user "bob" event_type "scroll"
 ```
-XADD events * user "bob" event_type "scroll"
+
+
+## Keyspace notifications
+
+Get notified when data enters or leaves Redis. Also timeout and time-based notifications.
+
+### User login timeout example
+
+Here we logout a user after a set time and also send a keyspace notification about it which we can subscribe to.
+
+With EX you can set TTL (time to live).
+
+For example, login a user and set expiration of an hour with 3600 seconds (user will remove the key after this). T=T==
+
+```console
+> SET logged_in_user:1234 123456789 EX 3600
 ```
+
+Then again with the `XX` flag which will update an existing value and return `-1` if they key does not yet exist.
+
+```console
+> SET logged_in_user:1234 123456789 EX 3600 XX
+```
+
+Subscribe to expiration events:
+
+```sh
+$ redis-cli --csv psubscribe '__key*__:expired'
+```
+
+
+## Scaling
+
+Needs:
+
+- Scaling - storage capacity and processing can grow.
+- High availability - always available even if some servers have issues.
+- Partition tolerance - if the network is partioned, and some are disconnected, Redis must still work.
+
+Solutions:
+
+### Clusters
+
+- To distribute data and load.
+- There is time to sync between clusters, so the queried result for two clusters could be different, but it will always be available.
+
+Features:
+
+- No limit to storage and always available.
+- The storage capacity can grow outside the limits of the memory of a single node.
+- Elastic capacity - can scale up and down with demand.
+- Data sharding (information is distributed based on key and algorithm, info is distributed so one server doesn't get overloaded) and data replication (highly available, data replicated on other servers). Just needs configuration.
+- Client transparency - client connector works the same with and without a cluster.
+
+#### Example setup
+
+Start some servers using a config file for each and running on a different port.
+
+Then start the cluster using, where info is replicated from each node to 1 other.
+
+```sh
+$ redis-cli --cluster create 127.0.0.1:7001 127.0.0.1:7002 127.0.0.1:7003 --cluster-replicas 1
+```
+
+## Sentinel
+
+A pattern of master and replicas. So if master goes down, the replica can be promoted.
+
+Provides monitoring and failover for your Redis instances.
+
+1. Start your instances, each with a config.
+    ```sh
+    $ redis-cli ./redis.conf
+    ```
+1. Start your sentinels, each with a config.
+    ```sh
+    $ redis-sentinel ./sentinel.conf
+    ```
+
+    
