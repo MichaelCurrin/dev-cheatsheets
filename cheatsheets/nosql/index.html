@@ -1421,6 +1421,14 @@
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
         </div>
 
 <br>
@@ -1444,6 +1452,163 @@
     <br>
 
     
+    
+        <h2>Content</h2>
+
+        <h3 id="types-of-dbs">Types of DBs</h3>
+
+<p>The NoSQL database types, from most to least common:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Key-Value Store</td>
+      <td>Stores data as key-value pairs, with keys acting as unique identifiers and values containing the associated data.</td>
+      <td>Redis, DynamoDB, Riak</td>
+    </tr>
+    <tr>
+      <td>Document Store</td>
+      <td>Stores data as semi-structured documents, typically in JSON or XML format. Documents can have nested structures and are schema-less.</td>
+      <td>MongoDB, Couchbase, DocumentDB</td>
+    </tr>
+    <tr>
+      <td>Column-Family Store</td>
+      <td>Stores data in column families, which are containers for rows of data. Columns can be added dynamically, and data is stored and retrieved by column family.</td>
+      <td>Apache Cassandra, HBase, Bigtable</td>
+    </tr>
+    <tr>
+      <td>Graph Database</td>
+      <td>Stores data as nodes and relationships (edges) between nodes, optimized for traversing and querying highly connected data.</td>
+      <td>Neo4j, JanusGraph, Amazon Neptune</td>
+    </tr>
+    <tr>
+      <td>Time-Series Database</td>
+      <td>Optimized for storing and analyzing time-series data, such as sensor data, application metrics, and financial data.</td>
+      <td>InfluxDB, Prometheus, Timescale</td>
+    </tr>
+    <tr>
+      <td>Search Engine Database</td>
+      <td>Designed for full-text search and indexing large amounts of data.</td>
+      <td>Solr, Sphinx, Elasticsearch</td>
+    </tr>
+    <tr>
+      <td>Multi-Model Database</td>
+      <td>Supports multiple data models (e.g., key-value, document, graph) within a single database.</td>
+      <td>ArangoDB, OrientDB, MarkLogic</td>
+    </tr>
+    <tr>
+      <td>Object Store</td>
+      <td>Stores data as objects, with each object having a unique identifier and associated metadata.</td>
+      <td>Amazon S3, Azure Blob Storage, OpenStack Swift</td>
+    </tr>
+    <tr>
+      <td>Event Store</td>
+      <td>Designed to store and process event data, often used in event-driven architectures and event sourcing.</td>
+      <td>Event Store, Kafka Streams</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="comparison-of-dbs">Comparison of DBs</h3>
+
+<p>Redis, MongoDB, and other popular NoSQL databases, focusing on their differences relevant for cloud engineers:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Database</th>
+      <th>Type</th>
+      <th>Performance</th>
+      <th>Storage</th>
+      <th>Persistence</th>
+      <th>Support</th>
+      <th>Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Redis</td>
+      <td>Key-Value</td>
+      <td>Extremely fast, in-memory</td>
+      <td>RAM, disk (optional)</td>
+      <td>Configurable, snapshots</td>
+      <td>Excellent, widely used</td>
+      <td>Open-source (free), paid enterprise support</td>
+    </tr>
+    <tr>
+      <td>AWS DynamoDB</td>
+      <td>Key-Value</td>
+      <td>High, fully managed</td>
+      <td>Cloud storage</td>
+      <td>Automatic, durable</td>
+      <td>Excellent, fully managed</td>
+      <td>Pay-per-use, can be expensive at scale</td>
+    </tr>
+    <tr>
+      <td>MongoDB</td>
+      <td>Document</td>
+      <td>High, with indexing</td>
+      <td>Disk</td>
+      <td>Automatic, journaling</td>
+      <td>Excellent, widely used</td>
+      <td>Open-source (free), paid enterprise support</td>
+    </tr>
+    <tr>
+      <td>Elasticsearch</td>
+      <td>Document</td>
+      <td>High, distributed</td>
+      <td>Disk</td>
+      <td>Automatic, replication</td>
+      <td>Excellent, widely used</td>
+      <td>Open-source (free), paid enterprise support</td>
+    </tr>
+    <tr>
+      <td>Couchbase</td>
+      <td>Document</td>
+      <td>High, with indexing</td>
+      <td>Disk, RAM (optional)</td>
+      <td>Automatic, replication</td>
+      <td>Good, widely used</td>
+      <td>Open-source (free), paid enterprise support</td>
+    </tr>
+    <tr>
+      <td>Cassandra</td>
+      <td>Wide Column</td>
+      <td>High, distributed</td>
+      <td>Disk</td>
+      <td>Automatic, replication</td>
+      <td>Good, widely used</td>
+      <td>Open-source (free), paid enterprise support</td>
+    </tr>
+    <tr>
+      <td>Neo4j</td>
+      <td>Graph</td>
+      <td>High for graph queries</td>
+      <td>Disk</td>
+      <td>Automatic, snapshots</td>
+      <td>Good, widely used</td>
+      <td>Open-source (free), paid enterprise support</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Key differences:</p>
+
+<ul>
+  <li><strong>Type</strong>: Redis is a key-value store, MongoDB and Couchbase are document stores, Cassandra is a wide column store, and Neo4j is a graph database.</li>
+  <li><strong>Performance</strong>: Redis is extremely fast due to its in-memory nature, while others trade some speed for durability by storing data on disk.</li>
+  <li><strong>Storage</strong>: Redis can use RAM or disk, while others primarily use disk storage.</li>
+  <li><strong>Persistence</strong>: Redis requires configuration for persistence, while others automatically handle it.</li>
+  <li><strong>Support</strong>: Most have excellent community support, with paid enterprise options available.</li>
+  <li><strong>Cost</strong>: Redis, MongoDB, Cassandra, Couchbase, and Elasticsearch have open-source versions, while DynamoDB is a fully managed service with pay-per-use pricing.</li>
+</ul>
     
 
         

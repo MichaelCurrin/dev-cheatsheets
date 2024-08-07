@@ -1,8 +1,23 @@
 # Redis
 
-A key-value NoSQL database.
+A in-memory data structure store, known for high performance as a database, cache, and message broker. It can handel complex data types and large volumes at a speed and with reliability.
 
 Homepage: [https://redis.io/](https://redis.io/).
+
+## Related
+
+- [redis][] cheatsheet in the Python libraries section.
+
+[redis]: {% link cheatsheets/python/libraries/database/redis/index.md %}
+
+
+## Security tips
+
+Protect unauthorized data access and manipulation.
+
+- Authentication - use strong authentication mechanims so only autherized applications and user have access.
+- Use TLS for data transfer between Redis and client apps.
+- Network security - Apply firewalls to limit IP access and monitor network traffic.
 
 ## Redis commands
 
@@ -17,21 +32,23 @@ See [Install](https://redis.io/docs/latest/operate/oss_and_stack/install/install
 
 As a NoSQL in-memory database with no schema, Redis is faster than SQL databases for IO.
 
-Redis is useful for simple data types and structures.
+### Use cases
 
+Redis is useful for simple data types and structures where persistance of data is not a priority. Such as:
+
+- cache (store frequently-accessed data to reduce response time)
 - queue
-- logged in users
+- session storage for authenticated users
+- message brokering for realtime applications
 - counter
-
-And where persistance of data is not a priority.
 
 ### Data types
 
-- Strings (there are no numbers)
-- Lists
-- Sets (unique)
-- Sorted sets (where order is important such as leaderboard)
-- Hashes (such as attributes of a user)
+- Strings (there are no numbers) - can store text or binary data. Useful for caching info or counters.
+- Lists - good for queues or leaderboards where duplicates are allowed.
+- Sets - efficient storage for unique items.
+- Sorted sets - set but with order. For where order is important such as leaderboard.
+- Hashes - represent objects. Attributes can be accessed without retrieving the etire object.
 - Streams
 
 More advanced:
@@ -42,7 +59,9 @@ More advanced:
 
 ### Start and stop Redis using the shell
 
-Start server:
+Add `.exe` for Windows.
+
+#### Start server
 
 ```sh
 $ redis-server
@@ -50,7 +69,7 @@ $ redis-server
 
 Or start as a service using a package manager for your OS.
 
-Start CLI client:
+### Start CLI client
 
 ```sh
 $ redis-cli
@@ -138,7 +157,6 @@ A shopping cart of data for users. The cart is 123 and items are 1 and 2 here.
 > HLEN cart:123
 6
 ```
-
 
 ### Lists
 

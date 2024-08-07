@@ -157,9 +157,25 @@
 
     <div class="post-content">
         
-            <p>A key-value NoSQL database.</p>
+            <p>A in-memory data structure store, known for high performance as a database, cache, and message broker. It can handel complex data types and large volumes at a speed and with reliability.</p>
 
 <p>Homepage: <a href="https://redis.io/">https://redis.io/</a>.</p>
+
+<h2 id="related">Related</h2>
+
+<ul>
+  <li><a href="/dev-cheatsheets/cheatsheets/python/libraries/database/redis/">redis</a> cheatsheet in the Python libraries section.</li>
+</ul>
+
+<h2 id="security-tips">Security tips</h2>
+
+<p>Protect unauthorized data access and manipulation.</p>
+
+<ul>
+  <li>Authentication - use strong authentication mechanims so only autherized applications and user have access.</li>
+  <li>Use TLS for data transfer between Redis and client apps.</li>
+  <li>Network security - Apply firewalls to limit IP access and monitor network traffic.</li>
+</ul>
 
 <h2 id="redis-commands">Redis commands</h2>
 
@@ -173,24 +189,26 @@
 
 <p>As a NoSQL in-memory database with no schema, Redis is faster than SQL databases for IO.</p>
 
-<p>Redis is useful for simple data types and structures.</p>
+<h3 id="use-cases">Use cases</h3>
+
+<p>Redis is useful for simple data types and structures where persistance of data is not a priority. Such as:</p>
 
 <ul>
+  <li>cache (store frequently-accessed data to reduce response time)</li>
   <li>queue</li>
-  <li>logged in users</li>
+  <li>session storage for authenticated users</li>
+  <li>message brokering for realtime applications</li>
   <li>counter</li>
 </ul>
-
-<p>And where persistance of data is not a priority.</p>
 
 <h3 id="data-types">Data types</h3>
 
 <ul>
-  <li>Strings (there are no numbers)</li>
-  <li>Lists</li>
-  <li>Sets (unique)</li>
-  <li>Sorted sets (where order is important such as leaderboard)</li>
-  <li>Hashes (such as attributes of a user)</li>
+  <li>Strings (there are no numbers) - can store text or binary data. Useful for caching info or counters.</li>
+  <li>Lists - good for queues or leaderboards where duplicates are allowed.</li>
+  <li>Sets - efficient storage for unique items.</li>
+  <li>Sorted sets - set but with order. For where order is important such as leaderboard.</li>
+  <li>Hashes - represent objects. Attributes can be accessed without retrieving the etire object.</li>
   <li>Streams</li>
 </ul>
 
@@ -204,14 +222,16 @@
 
 <h3 id="start-and-stop-redis-using-the-shell">Start and stop Redis using the shell</h3>
 
-<p>Start server:</p>
+<p>Add <code class="language-plaintext highlighter-rouge">.exe</code> for Windows.</p>
+
+<h4 id="start-server">Start server</h4>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>redis-server
 </code></pre></div></div>
 
 <p>Or start as a service using a package manager for your OS.</p>
 
-<p>Start CLI client:</p>
+<h3 id="start-cli-client">Start CLI client</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>redis-cli
 </code></pre></div></div>
