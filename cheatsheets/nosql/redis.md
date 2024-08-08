@@ -2,6 +2,7 @@
 
 A in-memory data structure store, known for high performance as a database, cache, and message broker. It can handel complex data types and large volumes at a speed and with reliability.
 
+
 ## Related
 
 - [redis.io](https://redis.io/)
@@ -12,18 +13,20 @@ A in-memory data structure store, known for high performance as a database, cach
 [Redis]: {% link cheatsheets/python/libraries/database/redis/index.md %}
 
 
-## Security tips
-
-Protect unauthorized data access and manipulation.
-
-- Authentication - use strong authentication mechanims so only autherized applications and user have access.
-- Use TLS for data transfer between Redis and client apps.
-- Network security - Apply firewalls to limit IP access and monitor network traffic.
-
 
 ## Basics
 
 As a NoSQL in-memory database with no schema, Redis is faster than SQL databases for IO.
+
+### What is Redis?
+
+Redis stands for: Remote Dictionary Service.
+
+- A Redis DB holds `key:value` pairs.
+- It supports commands such as `GET`, `SET`, and `DEL`.
+- Redis keys are always strings.
+- See Data Types below for what values you can store.
+
 
 ### Use cases
 
@@ -66,10 +69,23 @@ $ redis-server
 
 Or start as a service using a package manager for your OS.
 
+Start with a config:
+
+```sh
+$ redis-server /etc/redis/6379.conf
+```
+
 ### Start CLI client
 
 ```sh
 $ redis-cli
+```
+
+Test connectivity:
+
+```console
+> PING
+PONG
 ```
 
 
@@ -77,7 +93,7 @@ $ redis-cli
 
 See [Commands](https://redis.io/docs/latest/commands/) on the Redis docs.
 
-### Get and set scalar values
+### String operations
 
 ```console
 > SET key value
@@ -93,20 +109,6 @@ Add quotes for spaces:
 > SET "my key" "my value"
 ```
 
-### Working with numeric data
-
-```console
-> SET counter 0
-> GET counter
-"0"
-> INCR counter
-> DECR counter
-> INCRBY counter 4
-> DECRBY counter 2
-```
-
-### Strings
-
 ```console
 > STRLEN key
 (integer) 123
@@ -118,6 +120,19 @@ Add quotes for spaces:
 
 ```console
 > GETRANGE key 0 3
+```
+
+
+### Working with numeric data
+
+```console
+> SET counter 0
+> GET counter
+"0"
+> INCR counter
+> DECR counter
+> INCRBY counter 4
+> DECRBY counter 2
 ```
 
 ### Hashmap
@@ -487,3 +502,11 @@ Provides monitoring and failover for your Redis instances.
     ```
 
     
+
+## Security tips
+
+Protect unauthorized data access and manipulation.
+
+- Authentication - use strong authentication mechanims so only autherized applications and user have access.
+- Use TLS for data transfer between Redis and client apps.
+- Network security - Apply firewalls to limit IP access and monitor network traffic.

@@ -167,19 +167,20 @@
   <li><a href="https://github.com/redis-developer/redis-nodejs-starter">redis-nodejs-starter</a> as a  Node starter project on GitHub.</li>
 </ul>
 
-<h2 id="security-tips">Security tips</h2>
-
-<p>Protect unauthorized data access and manipulation.</p>
-
-<ul>
-  <li>Authentication - use strong authentication mechanims so only autherized applications and user have access.</li>
-  <li>Use TLS for data transfer between Redis and client apps.</li>
-  <li>Network security - Apply firewalls to limit IP access and monitor network traffic.</li>
-</ul>
-
 <h2 id="basics">Basics</h2>
 
 <p>As a NoSQL in-memory database with no schema, Redis is faster than SQL databases for IO.</p>
+
+<h3 id="what-is-redis">What is Redis?</h3>
+
+<p>Redis stands for: Remote Dictionary Service.</p>
+
+<ul>
+  <li>A Redis DB holds <code class="language-plaintext highlighter-rouge">key:value</code> pairs.</li>
+  <li>It supports commands such as <code class="language-plaintext highlighter-rouge">GET</code>, <code class="language-plaintext highlighter-rouge">SET</code>, and <code class="language-plaintext highlighter-rouge">DEL</code>.</li>
+  <li>Redis keys are always strings.</li>
+  <li>See Data Types below for what values you can store.</li>
+</ul>
 
 <h3 id="use-cases">Use cases</h3>
 
@@ -227,16 +228,27 @@
 
 <p>Or start as a service using a package manager for your OS.</p>
 
+<p>Start with a config:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>redis-server /etc/redis/6379.conf
+</code></pre></div></div>
+
 <h3 id="start-cli-client">Start CLI client</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>redis-cli
 </code></pre></div></div>
 
+<p>Test connectivity:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>PING
+<span class="go">PONG
+</span></code></pre></div></div>
+
 <h2 id="redis-cli">Redis CLI</h2>
 
 <p>See <a href="https://redis.io/docs/latest/commands/">Commands</a> on the Redis docs.</p>
 
-<h3 id="get-and-set-scalar-values">Get and set scalar values</h3>
+<h3 id="string-operations">String operations</h3>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>SET key value
 </code></pre></div></div>
@@ -249,6 +261,16 @@
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>SET <span class="s2">"my key"</span> <span class="s2">"my value"</span>
 </code></pre></div></div>
 
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>STRLEN key
+<span class="go">(integer) 123
+</span></code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>APPEND key <span class="s2">" value"</span>
+</code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>GETRANGE key 0 3
+</code></pre></div></div>
+
 <h3 id="working-with-numeric-data">Working with numeric data</h3>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>SET counter 0
@@ -258,18 +280,6 @@
 <span class="gp">&gt;</span><span class="w"> </span>DECR counter
 <span class="gp">&gt;</span><span class="w"> </span>INCRBY counter 4
 <span class="gp">&gt;</span><span class="w"> </span>DECRBY counter 2
-</code></pre></div></div>
-
-<h3 id="strings">Strings</h3>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>STRLEN key
-<span class="go">(integer) 123
-</span></code></pre></div></div>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>APPEND key <span class="s2">" value"</span>
-</code></pre></div></div>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>GETRANGE key 0 3
 </code></pre></div></div>
 
 <h3 id="hashmap">Hashmap</h3>
@@ -604,6 +614,16 @@
 </code></pre></div>    </div>
   </li>
 </ol>
+
+<h2 id="security-tips">Security tips</h2>
+
+<p>Protect unauthorized data access and manipulation.</p>
+
+<ul>
+  <li>Authentication - use strong authentication mechanims so only autherized applications and user have access.</li>
+  <li>Use TLS for data transfer between Redis and client apps.</li>
+  <li>Network security - Apply firewalls to limit IP access and monitor network traffic.</li>
+</ul>
 
         
     </div>
