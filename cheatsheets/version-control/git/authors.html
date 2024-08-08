@@ -192,9 +192,16 @@
 
 <h3 id="edit-one-commit">Edit one commit</h3>
 
-<p>If you just want to change the most recent commit, a rebase is not necessary. Just amend the commit:</p>
+<p>If you just want to change the <strong>most recent</strong> commit, just <strong>amend</strong> the commit. No need to rebase.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit <span class="nt">--amend</span> <span class="nt">--no-edit</span> <span class="nt">--reset-author</span>
+</code></pre></div></div>
+
+<p>Setting <code class="language-plaintext highlighter-rouge">--reset-author</code> is useful if you are changing someone else’s commit and want to appear as commiter. And also if you changed your Git config to another name and email address and you want to this to reflect.</p>
+
+<p>Set a specific author:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit <span class="nt">--amend</span> <span class="nt">--no-edit</span> <span class="nt">--author</span><span class="o">=</span><span class="s2">"John Doe &lt;john@doe.org&gt;"</span>
 </code></pre></div></div>
 
 <h3 id="edit-range-of-commits-by-hand">Edit range of commits by hand</h3>
@@ -218,7 +225,7 @@
   <li>Change <code class="language-plaintext highlighter-rouge">pick</code> to <code class="language-plaintext highlighter-rouge">edit</code> or <code class="language-plaintext highlighter-rouge">e</code> for each commit where you want to change the author. <strong>Warning</strong> - this will replace the author regardless of who it was.</li>
   <li>Save the content in the editor view then exit.</li>
   <li>Now you adjust each commit one at a time with these two commands:
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit <span class="nt">--amend</span> <span class="nt">--author</span><span class="o">=</span><span class="s2">"</span><span class="nv">$AUTHOR</span><span class="s2">"</span> <span class="nt">--no-edit</span>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit <span class="nt">--amend</span> <span class="nt">--no-edit</span> <span class="nt">--author</span><span class="o">=</span><span class="s2">"</span><span class="nv">$AUTHOR</span><span class="s2">"</span>
 <span class="nv">$ </span>git rebase <span class="nt">--continue</span>
 </code></pre></div>    </div>
   </li>
@@ -228,7 +235,7 @@
 
 <p>Replace the author across the history of commits, using a single command.</p>
 
-<p>See <a href="https://github.com/MichaelCurrin/rewrite-git-author">MichaelCurrin/rewrite-git-author</a> repo.</p>
+<p>See my <a href="https://github.com/MichaelCurrin/rewrite-git-author">MichaelCurrin/rewrite-git-author</a> repo.</p>
 
 
         
