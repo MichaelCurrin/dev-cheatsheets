@@ -2,11 +2,12 @@
 
 A in-memory data structure store, known for high performance as a database, cache, and message broker. It can handel complex data types and large volumes at a speed and with reliability.
 
-Homepage: [https://redis.io/](https://redis.io/).
-
 ## Related
 
+- [redis.io](https://redis.io/)
 - [Redis][] cheatsheet in the Python libraries section.
+- [redis-nodejs-starter](https://github.com/redis-developer/redis-nodejs-starter) as a  Node starter project on GitHub.
+
 
 [Redis]: {% link cheatsheets/python/libraries/database/redis/index.md %}
 
@@ -18,14 +19,6 @@ Protect unauthorized data access and manipulation.
 - Authentication - use strong authentication mechanims so only autherized applications and user have access.
 - Use TLS for data transfer between Redis and client apps.
 - Network security - Apply firewalls to limit IP access and monitor network traffic.
-
-## Redis commands
-
-See [Commands](https://redis.io/docs/latest/commands/) on the Redis docs.
-
-Node starter project on GitHub - [redis-nodejs-starter](https://github.com/redis-developer/redis-nodejs-starter).
-
-See [Install](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/) guides. See commands for your OS and then see the OS-specific instructions to start/stop the Redis server and CLI client.
 
 
 ## Basics
@@ -41,6 +34,10 @@ Redis is useful for simple data types and structures where persistance of data i
 - session storage for authenticated users
 - message brokering for realtime applications
 - counter
+
+### Install
+
+See [Install](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/) guides. See commands for your OS and then see the OS-specific instructions to start/stop the Redis server and CLI client.
 
 ### Data types
 
@@ -77,6 +74,8 @@ $ redis-cli
 
 
 ## Redis CLI
+
+See [Commands](https://redis.io/docs/latest/commands/) on the Redis docs.
 
 ### Get and set scalar values
 
