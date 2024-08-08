@@ -27,12 +27,19 @@ Change the author of a commit.
 
 ### Edit one commit
 
-If you just want to change the most recent commit, a rebase is not necessary. Just amend the commit:
+If you just want to change the **most recent** commit, just **amend** the commit. No need to rebase.
 
 ```sh
 $ git commit --amend --no-edit --reset-author
 ```
 
+Setting `--reset-author` is useful if you are changing someone else's commit and want to appear as commiter. And also if you changed your Git config to another name and email address and you want to this to reflect.
+
+Set a specific author:
+
+```sh
+$ git commit --amend --no-edit --author="John Doe <john@doe.org>"
+```
 
 ### Edit range of commits by hand
 
@@ -56,7 +63,7 @@ Note that this convenient for fixing a handful of commits, but is inefficient fo
 1. Save the content in the editor view then exit.
 1. Now you adjust each commit one at a time with these two commands:
    ```sh
-   $ git commit --amend --author="$AUTHOR" --no-edit
+   $ git commit --amend --no-edit --author="$AUTHOR"
    $ git rebase --continue
    ```
 
@@ -64,5 +71,5 @@ Note that this convenient for fixing a handful of commits, but is inefficient fo
 
 Replace the author across the history of commits, using a single command.
 
-See [MichaelCurrin/rewrite-git-author](https://github.com/MichaelCurrin/rewrite-git-author) repo.
+See my [MichaelCurrin/rewrite-git-author](https://github.com/MichaelCurrin/rewrite-git-author) repo.
 
