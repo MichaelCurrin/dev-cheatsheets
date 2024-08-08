@@ -39,7 +39,7 @@ Here we use PHONY where `foo` and `docs` are actual directories as well targets.
 		echo 'Test'
 	```
 
-Please don't add PHONY to every target - since serves no purpose and just clutters the file.
+Some people like to add `.PHONY` to every target, whether in just above each or all at the top of the file. In many cases, this adds no benefit, maybe more useful for C and C++ projects with compile steps where you might have fixed or dynamically generated folders which match commands. However, the often it serves no purpose and just clutters the file. Rather use `.PHONY` where it is needed (like if you do have a folder where yours docs will get generated).
 
 
 ## Comments
