@@ -11,6 +11,7 @@ Using Redis through a Python application means seamless access to rich data stru
 ## Related
 
 - [Redis][] cheatsheet in the NoSQL section, including installing and running Redis.
+- [Python Redis](https://realpython.com/python-redis/) guide on the RealPython website.
 
 [Redis]: {% link cheatsheets/nosql/redis/index.md %}
 
@@ -24,7 +25,7 @@ Using Redis through a Python application means seamless access to rich data stru
 - Use Redis as a cache backend or session store in Django to streamline data access and improve app load times.
 - For async web frameworks like FastAPI or Tornado, use Redis for tasks like backgorund job processing and message queing for responsive apps that can handle concurent requests gracefully.
 
-## Install Python Redis Client
+## Install the Python Redis client
 
 ```sh
 $ pip install redis
@@ -55,7 +56,6 @@ r.set('mykey', 'Hello, Redis!')
 ```python
 # Get a key.
 value = r.get('mykey')
-print(value)  
 # b'Hello, Redis!'
 ```
 
@@ -74,8 +74,53 @@ exists = r.exists('mykey')
 r.setex('mykey', 10, 'This will expire in 10 seconds')
 ```
 
+## Batching with the pipeline method
 
-## Common use cases
+How you can insert a list of 3 items (dictionaries) with random IDs into a Redis database using a batch request in Python. Using `r.pipeline()`, we can queue multiple commands and execute them as a batch, which is more efficient than executing them individually.
+
+```python
+with r.pipeline() as pipe:
+    pipe.set('key1', 'value1')
+    pipe.rpush('list1', 'item1', 'item2')
+    pipe.sadd('set1', 'member1', 'member2')
+
+    pipe.execute()
+```
+
+A more realistic example. When you run this code, it will insert the 3 items into Redis with random IDs and print the inserted items with their respective IDs.
+
+```python
+import redis
+import uuid
+
+r = redis.Redis(host='localhost', port=6379, db=0)
+
+items = [
+    {'name': 'Item 1', 'price': 10.99, 'category': 'Electronics'},
+    {'name': 'Item 2', 'price': 5.75, 'category': 'Books'},
+    {'name': 'Item 3', 'price': 22.50, 'category': 'Clothing'}
+]
+
+# Use a pipeline to execute a batch of commands
+pipe = r.pipeline()
+
+# Insert each item with a random ID
+for item in items:
+    item_id = str(uuid.uuid4())
+    pipe.hmset(f'item:{item_id}', item)
+
+# Execute the batch of commands
+pipe.execute()
+
+# Print the inserted items
+for item in items:
+    item_id = str(uuid.uuid4())
+    inserted_item = r.hgetall(f'item:{item_id}')
+    print(f'Item ID: {item_id}, Item: {inserted_item}')
+```
+
+
+## Code for common use cases
 
 ### Queue
 

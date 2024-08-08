@@ -12,6 +12,21 @@ Start with:
 $ redis-cli
 ```
 
+
+## Overview of common commands
+
+
+| Type | Get Commands | Create/Update Commands | Delete Commands |
+|------|--------------|------------------------|-----------------|
+| String | `GET`, `MGET` | `SET`, `INCR`, `DECR`, `INCRBY`, `DECRBY`, `APPEND` | - |
+| List | `LRANGE`, `LINDEX` | `LPUSH`, `RPUSH`, `LREM` | `LPOP`, `RPOP` |
+| Set | `SMEMBERS`, `SISMEMBER` | `SADD`, `SUNION`, `SINTER` | `SREM`, `SDIFF` |
+| Sorted Set | `ZRANGE`, `ZREVRANGE`, `ZRANGEBYSCORE`, `ZCARD` | `ZADD` | `ZREM`, `ZREMRANGEBYSCORE` |
+| Hash | `HGET`, `HMGET`, `HGETALL`, `HKEYS`, `HVALS` | `HSET`, `HINCRBY` | `HDEL` |
+| Pub/Sub | `SUBSCRIBE`, `PSUBSCRIBE` | `PUBLISH` | `UNSUBSCRIBE`, `PUNSUBSCRIBE` |
+
+
+
 ## String operations
 
 ```console
@@ -241,17 +256,37 @@ Update a member by incrementing their value:
 
 ## Pub/sub feature
 
-Follows the fire and forget principle. Data sent to the bus is sent to all consumers. If not consumed by workers, the data are lost.
+The publish/subscribe feature.
 
-Works for realtime data transport and is lightweight and easy to use. But data is not persisted.
+Works for realtime data transport and is lightweight and easy to use. But data is not persisted. It follows the fire and forget principle. Data sent to the bus is sent to all consumers. If not consumed by workers, the data are lost.
 
-```
-PUBLISH channel message
+### Publish
+
+```console
+> PUBLISH channel message
 ```
 
+### Subscribe
+
+```console
+> SUBSCRIBE channel [channel ...]
 ```
-SUBSCRIBE channel [channel ...]
+
+Pattern subscribe:
+
+```console
+> PSUBSCRIBE pattern [pattern ...]
 ```
+
+e.g. Here the client will subscribe to all channels that start with "news.". If another client publishes a message to the channel "news.politics" or "news.sports"
+
+```console
+> PSUBSCRIBE news.*
+```
+
+See also `UNSUBSCRIBE` and `PUNSUBSCRIBE`.
+
+
 
 ## Streams
 
