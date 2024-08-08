@@ -1,5 +1,5 @@
 ---
-title: Redis Python Cheatsheet for Beginners
+title: Redis
 description: |
   A comprehensive guide for beginners on using Redis with Python, including setup, basic operations, and common use cases.
 ---
