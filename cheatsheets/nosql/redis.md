@@ -6,9 +6,9 @@ Homepage: [https://redis.io/](https://redis.io/).
 
 ## Related
 
-- [redis][] cheatsheet in the Python libraries section.
+- [Redis][] cheatsheet in the Python libraries section.
 
-[redis]: {% link cheatsheets/python/libraries/database/redis/index.md %}
+[Redis]: {% link cheatsheets/python/libraries/database/redis/index.md %}
 
 
 ## Security tips
@@ -78,7 +78,7 @@ $ redis-cli
 
 ## Redis CLI
 
-### Get and set
+### Get and set scalar values
 
 ```console
 > SET key value
