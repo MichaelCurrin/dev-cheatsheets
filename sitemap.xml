@@ -2341,7 +2341,13 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/</loc>
 </url>
 <url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/redis.html</loc>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/redis/basics.html</loc>
+</url>
+<url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/redis/</loc>
+</url>
+<url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/redis/redis-cli.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/other/clean-code.html</loc>
