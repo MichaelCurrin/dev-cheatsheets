@@ -12,7 +12,7 @@ Using Redis through a Python application means seamless access to rich data stru
 
 - [Redis][] cheatsheet in the NoSQL section, including installing and running Redis.
 
-[Redis]: {% link cheatsheets/nosql/redis.md %}
+[Redis]: {% link cheatsheets/nosql/redis/index.md %}
 
 ## Resources
 
