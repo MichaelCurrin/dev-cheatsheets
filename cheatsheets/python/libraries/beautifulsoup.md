@@ -108,58 +108,106 @@ soup = BeautifulSoup(markup, features)
 
 Mark up as a string of file object.
 
-Feature is usually `lxml`. This could be made a global constant if used repeatedly.
-
-From docstring:
+Example from the docs [here](https://beautiful-soup-4.readthedocs.io/en/latest/):
 
 ```
-        :param markup: A string or a file-like object representing
-         markup to be parsed.
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(html_doc, 'html.parser')
+```
 
-        :param features: Desirable features of the parser to be
-         used. This may be the name of a specific parser ("lxml",
-         "lxml-xml", "html.parser", or "html5lib") or it may be the
-         type of markup to be used ("html", "html5", "xml"). It's
-         recommended that you name a specific parser, so that
-         Beautiful Soup gives you the same results across platforms
-         and virtual environments.
+That is with a builtin parser. That parser is slower than `lxml` for large or complex HTML documents. And has limited support for some advanced features like XML namespaces and XML-based HTML. Though `lxml` has to be installed - see [lxml](https://pypi.org/project/lxml/) on PyPI.
 
-        :param builder: A TreeBuilder subclass to instantiate (or
-         instance to use) instead of looking one up based on
-         `features`. You only need to use this if you've implemented a
-         custom TreeBuilder.
+Example with sample HTML:
 
-        :param parse_only: A SoupStrainer. Only parts of the document
-         matching the SoupStrainer will be considered. This is useful
-         when parsing part of a document that would otherwise be too
-         large to fit into memory.
+```python
+from bs4 import BeautifulSoup
 
-        :param from_encoding: A string indicating the encoding of the
-         document to be parsed. Pass this in if Beautiful Soup is
-         guessing wrongly about the document's encoding.
+PARSER = 'html.parser'
 
-        :param exclude_encodings: A list of strings indicating
-         encodings known to be wrong. Pass this in if you don't know
-         the document's encoding but you know Beautiful Soup's guess is
-         wrong.
+# Sample HTML markup
+markup = """
+<html>
+  <head>
+    <title>Example Page</title>
+  </head>
+  <body>
+    <h1>Welcome to my page</h1>
+    <p>This is a paragraph.</p>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </body>
+</html>
+"""
 
-        :param element_classes: A dictionary mapping BeautifulSoup
-         classes like Tag and NavigableString, to other classes you'd
-         like to be instantiated instead as the parse tree is
-         built. This is useful for subclassing Tag or NavigableString
-         to modify default behavior.
+# Parse the HTML markup
+soup = BeautifulSoup(markup, PARSER)
 
-        :param kwargs: For backwards compatibility purposes, the
-         constructor accepts certain keyword arguments used in
-         Beautiful Soup 3. None of these arguments do anything in
-         Beautiful Soup 4; they will result in a warning and then be
-         ignored.
+# Print the HTML title
+print(soup.title.string)  # Output: Example Page
 
-         Apart from this, any keyword arguments passed into the
-         BeautifulSoup constructor are propagated to the TreeBuilder
-         constructor. This makes it possible to configure a
-         TreeBuilder by passing in arguments, not just by saying which
-         one to use.
+# Find all list items
+list_items = soup.find_all('li')
+for item in list_items:
+    print(item.string)
+# Output:
+# Item 1
+# Item 2
+# Item 3
+```
+
+Parameter info, from the docstring:
+
+```
+    :param markup: A string or a file-like object representing
+     markup to be parsed.
+
+    :param features: Desirable features of the parser to be
+     used. This may be the name of a specific parser ("lxml",
+     "lxml-xml", "html.parser", or "html5lib") or it may be the
+     type of markup to be used ("html", "html5", "xml"). It's
+     recommended that you name a specific parser, so that
+     Beautiful Soup gives you the same results across platforms
+     and virtual environments.
+
+    :param builder: A TreeBuilder subclass to instantiate (or
+     instance to use) instead of looking one up based on
+     `features`. You only need to use this if you've implemented a
+     custom TreeBuilder.
+
+    :param parse_only: A SoupStrainer. Only parts of the document
+     matching the SoupStrainer will be considered. This is useful
+     when parsing part of a document that would otherwise be too
+     large to fit into memory.
+
+    :param from_encoding: A string indicating the encoding of the
+     document to be parsed. Pass this in if Beautiful Soup is
+     guessing wrongly about the document's encoding.
+
+    :param exclude_encodings: A list of strings indicating
+     encodings known to be wrong. Pass this in if you don't know
+     the document's encoding but you know Beautiful Soup's guess is
+     wrong.
+
+    :param element_classes: A dictionary mapping BeautifulSoup
+     classes like Tag and NavigableString, to other classes you'd
+     like to be instantiated instead as the parse tree is
+     built. This is useful for subclassing Tag or NavigableString
+     to modify default behavior.
+
+    :param kwargs: For backwards compatibility purposes, the
+     constructor accepts certain keyword arguments used in
+     Beautiful Soup 3. None of these arguments do anything in
+     Beautiful Soup 4; they will result in a warning and then be
+     ignored.
+
+     Apart from this, any keyword arguments passed into the
+     BeautifulSoup constructor are propagated to the TreeBuilder
+     constructor. This makes it possible to configure a
+     TreeBuilder by passing in arguments, not just by saying which
+     one to use.
 ```
 
 ### Read string
