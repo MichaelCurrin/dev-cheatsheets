@@ -11,7 +11,10 @@ print(length)  # 4
 ```python
 # Get range of items (0-based indexing)
 items = r.lrange('fruits', 0, -1)
-print(items)  # [b'date', b'apple', b'banana', b'cherry']
+# [b'date', b'apple', b'banana', b'cherry']
+# OR
+items = [item.decode() for item in items]
+# ['apple', 'banana', 'cherry']
 ```
 
 ## Create/update

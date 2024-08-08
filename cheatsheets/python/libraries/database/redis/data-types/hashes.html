@@ -236,12 +236,29 @@
 
 <h2 id="createupdate">Create/update</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Set hash fields
-</span><span class="n">r</span><span class="p">.</span><span class="nf">hset</span><span class="p">(</span><span class="sh">'</span><span class="s">user:1000</span><span class="sh">'</span><span class="p">,</span> <span class="n">mapping</span><span class="o">=</span><span class="p">{</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">John Doe</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">email</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">john@example.com</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">30</span><span class="sh">'</span><span class="p">})</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Set a field.
+</span><span class="n">r</span><span class="p">.</span><span class="nf">hset</span><span class="p">(</span><span class="sh">'</span><span class="s">user:1000</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">visits</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">10</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># Set a field only if it doesn't exist
 </span><span class="n">r</span><span class="p">.</span><span class="nf">hsetnx</span><span class="p">(</span><span class="sh">'</span><span class="s">user:1000</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">visits</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">10</span><span class="sh">'</span><span class="p">)</span>
-</code></pre></div></div>
+
+<span class="c1"># Set multiple fields as a dict.
+</span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">John Doe</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">email</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">john@example.com</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">30</span><span class="sh">'</span><span class="p">}</span>
+<span class="n">r</span><span class="p">.</span><span class="nf">hset</span><span class="p">(</span><span class="sh">'</span><span class="s">user:1000</span><span class="sh">'</span><span class="p">,</span> <span class="n">mapping</span><span class="o">=</span><span class="n">mapping</span><span class="p">)</span>
+
+<span class="c1"># Set multiple fields as list.
+</span><span class="n">items</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">John Doe</span><span class="sh">'</span><span class="p">],</span>
+    <span class="p">[</span><span class="sh">'</span><span class="s">email</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">john@example.com</span><span class="sh">'</span><span class="p">],</span>
+    <span class="p">[</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">30</span><span class="sh">'</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="n">r</span><span class="p">.</span><span class="nf">hset</span><span class="p">(</span><span class="sh">'</span><span class="s">user:1000</span><span class="sh">'</span><span class="p">,</span> <span class="n">items</span><span class="o">=</span><span class="n">items</span><span class="p">)</span>
+
+<span class="c1"># Mixed is also possible.
+</span><span class="n">r</span><span class="p">.</span><span class="nf">hset</span><span class="p">(</span><span class="sh">'</span><span class="s">user:1000</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">John Doe</span><span class="sh">'</span><span class="p">,</span> <span class="n">mapping</span><span class="o">=</span><span class="p">{</span><span class="sh">'</span><span class="s">email</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">john@example.com</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">30</span><span class="sh">'</span><span class="p">})</span>
+<span class="n">r</span><span class="p">.</span><span class="nf">hgetall</span><span class="p">(</span><span class="sh">'</span><span class="s">user:1000</span><span class="sh">'</span><span class="p">)</span>
+<span class="c1"># =&gt; {b'name': b'John Doe', b'email': b'john@example.com', b'age': b'30'}
+</span></code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Increment the integer value of a field
 </span><span class="n">r</span><span class="p">.</span><span class="nf">hincrby</span><span class="p">(</span><span class="sh">'</span><span class="s">user:1000</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">visits</span><span class="sh">'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>

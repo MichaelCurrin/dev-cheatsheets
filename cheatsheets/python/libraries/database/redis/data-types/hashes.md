@@ -36,11 +36,28 @@ print(exists)  # True
 ## Create/update
 
 ```python
-# Set hash fields
-r.hset('user:1000', mapping={'name': 'John Doe', 'email': 'john@example.com', 'age': '30'})
+# Set a field.
+r.hset('user:1000', 'visits', '10')
 
 # Set a field only if it doesn't exist
 r.hsetnx('user:1000', 'visits', '10')
+
+# Set multiple fields as a dict.
+mapping = {'name': 'John Doe', 'email': 'john@example.com', 'age': '30'}
+r.hset('user:1000', mapping=mapping)
+
+# Set multiple fields as list.
+items = [
+    ['name', 'John Doe'],
+    ['email', 'john@example.com'],
+    ['age', '30']
+]
+r.hset('user:1000', items=items)
+
+# Mixed is also possible.
+r.hset('user:1000', 'name', 'John Doe', mapping={'email': 'john@example.com', 'age': '30'})
+r.hgetall('user:1000')
+# => {b'name': b'John Doe', b'email': b'john@example.com', b'age': b'30'}
 ```
 
 ```python

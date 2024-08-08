@@ -13,9 +13,6 @@ A in-memory data structure store, known for high performance as a database, cach
 [Redis]: {% link cheatsheets/python/libraries/database/redis/index.md %}
 
 
-
-
-
 ## Keyspace notifications
 
 Get notified when data enters or leaves Redis. Also timeout and time-based notifications.

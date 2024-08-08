@@ -1509,6 +1509,7 @@
 
 <ul>
   <li><a href="/dev-cheatsheets/cheatsheets/nosql/redis/">Redis</a> cheatsheet in the NoSQL section, including installing and running Redis.</li>
+  <li><a href="https://realpython.com/python-redis/">Python Redis</a> guide on the RealPython website.</li>
 </ul>
 
 <h2 id="resources">Resources</h2>
@@ -1525,7 +1526,7 @@
   <li>For async web frameworks like FastAPI or Tornado, use Redis for tasks like backgorund job processing and message queing for responsive apps that can handle concurent requests gracefully.</li>
 </ul>
 
-<h2 id="install-python-redis-client">Install Python Redis Client</h2>
+<h2 id="install-the-python-redis-client">Install the Python Redis client</h2>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>redis
 </code></pre></div></div>
@@ -1552,7 +1553,6 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Get a key.
 </span><span class="n">value</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">mykey</span><span class="sh">'</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  
 <span class="c1"># b'Hello, Redis!'
 </span></code></pre></div></div>
 
@@ -1568,7 +1568,50 @@
 </span><span class="n">r</span><span class="p">.</span><span class="nf">setex</span><span class="p">(</span><span class="sh">'</span><span class="s">mykey</span><span class="sh">'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="sh">'</span><span class="s">This will expire in 10 seconds</span><span class="sh">'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="common-use-cases">Common use cases</h2>
+<h2 id="batching-with-the-pipeline-method">Batching with the pipeline method</h2>
+
+<p>How you can insert a list of 3 items (dictionaries) with random IDs into a Redis database using a batch request in Python. Using <code class="language-plaintext highlighter-rouge">r.pipeline()</code>, we can queue multiple commands and execute them as a batch, which is more efficient than executing them individually.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="n">r</span><span class="p">.</span><span class="nf">pipeline</span><span class="p">()</span> <span class="k">as</span> <span class="n">pipe</span><span class="p">:</span>
+    <span class="n">pipe</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="sh">'</span><span class="s">key1</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">value1</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">pipe</span><span class="p">.</span><span class="nf">rpush</span><span class="p">(</span><span class="sh">'</span><span class="s">list1</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">item1</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">item2</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">pipe</span><span class="p">.</span><span class="nf">sadd</span><span class="p">(</span><span class="sh">'</span><span class="s">set1</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">member1</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">member2</span><span class="sh">'</span><span class="p">)</span>
+
+    <span class="n">pipe</span><span class="p">.</span><span class="nf">execute</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>A more realistic example. When you run this code, it will insert the 3 items into Redis with random IDs and print the inserted items with their respective IDs.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">redis</span>
+<span class="kn">import</span> <span class="n">uuid</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">redis</span><span class="p">.</span><span class="nc">Redis</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="sh">'</span><span class="s">localhost</span><span class="sh">'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">6379</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">items</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Item 1</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">price</span><span class="sh">'</span><span class="p">:</span> <span class="mf">10.99</span><span class="p">,</span> <span class="sh">'</span><span class="s">category</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Electronics</span><span class="sh">'</span><span class="p">},</span>
+    <span class="p">{</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Item 2</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">price</span><span class="sh">'</span><span class="p">:</span> <span class="mf">5.75</span><span class="p">,</span> <span class="sh">'</span><span class="s">category</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Books</span><span class="sh">'</span><span class="p">},</span>
+    <span class="p">{</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Item 3</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">price</span><span class="sh">'</span><span class="p">:</span> <span class="mf">22.50</span><span class="p">,</span> <span class="sh">'</span><span class="s">category</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Clothing</span><span class="sh">'</span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="c1"># Use a pipeline to execute a batch of commands
+</span><span class="n">pipe</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="nf">pipeline</span><span class="p">()</span>
+
+<span class="c1"># Insert each item with a random ID
+</span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+    <span class="n">item_id</span> <span class="o">=</span> <span class="nf">str</span><span class="p">(</span><span class="n">uuid</span><span class="p">.</span><span class="nf">uuid4</span><span class="p">())</span>
+    <span class="n">pipe</span><span class="p">.</span><span class="nf">hmset</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">item:</span><span class="si">{</span><span class="n">item_id</span><span class="si">}</span><span class="sh">'</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+
+<span class="c1"># Execute the batch of commands
+</span><span class="n">pipe</span><span class="p">.</span><span class="nf">execute</span><span class="p">()</span>
+
+<span class="c1"># Print the inserted items
+</span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+    <span class="n">item_id</span> <span class="o">=</span> <span class="nf">str</span><span class="p">(</span><span class="n">uuid</span><span class="p">.</span><span class="nf">uuid4</span><span class="p">())</span>
+    <span class="n">inserted_item</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="nf">hgetall</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">item:</span><span class="si">{</span><span class="n">item_id</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">Item ID: </span><span class="si">{</span><span class="n">item_id</span><span class="si">}</span><span class="s">, Item: </span><span class="si">{</span><span class="n">inserted_item</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="code-for-common-use-cases">Code for common use cases</h2>
 
 <h3 id="queue">Queue</h3>
 

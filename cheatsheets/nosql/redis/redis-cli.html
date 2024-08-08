@@ -179,6 +179,57 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>redis-cli
 </code></pre></div></div>
 
+<h2 id="overview-of-common-commands">Overview of common commands</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Get Commands</th>
+      <th>Create/Update Commands</th>
+      <th>Delete Commands</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>String</td>
+      <td><code class="language-plaintext highlighter-rouge">GET</code>, <code class="language-plaintext highlighter-rouge">MGET</code></td>
+      <td><code class="language-plaintext highlighter-rouge">SET</code>, <code class="language-plaintext highlighter-rouge">INCR</code>, <code class="language-plaintext highlighter-rouge">DECR</code>, <code class="language-plaintext highlighter-rouge">INCRBY</code>, <code class="language-plaintext highlighter-rouge">DECRBY</code>, <code class="language-plaintext highlighter-rouge">APPEND</code></td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>List</td>
+      <td><code class="language-plaintext highlighter-rouge">LRANGE</code>, <code class="language-plaintext highlighter-rouge">LINDEX</code></td>
+      <td><code class="language-plaintext highlighter-rouge">LPUSH</code>, <code class="language-plaintext highlighter-rouge">RPUSH</code>, <code class="language-plaintext highlighter-rouge">LREM</code></td>
+      <td><code class="language-plaintext highlighter-rouge">LPOP</code>, <code class="language-plaintext highlighter-rouge">RPOP</code></td>
+    </tr>
+    <tr>
+      <td>Set</td>
+      <td><code class="language-plaintext highlighter-rouge">SMEMBERS</code>, <code class="language-plaintext highlighter-rouge">SISMEMBER</code></td>
+      <td><code class="language-plaintext highlighter-rouge">SADD</code>, <code class="language-plaintext highlighter-rouge">SUNION</code>, <code class="language-plaintext highlighter-rouge">SINTER</code></td>
+      <td><code class="language-plaintext highlighter-rouge">SREM</code>, <code class="language-plaintext highlighter-rouge">SDIFF</code></td>
+    </tr>
+    <tr>
+      <td>Sorted Set</td>
+      <td><code class="language-plaintext highlighter-rouge">ZRANGE</code>, <code class="language-plaintext highlighter-rouge">ZREVRANGE</code>, <code class="language-plaintext highlighter-rouge">ZRANGEBYSCORE</code>, <code class="language-plaintext highlighter-rouge">ZCARD</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ZADD</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ZREM</code>, <code class="language-plaintext highlighter-rouge">ZREMRANGEBYSCORE</code></td>
+    </tr>
+    <tr>
+      <td>Hash</td>
+      <td><code class="language-plaintext highlighter-rouge">HGET</code>, <code class="language-plaintext highlighter-rouge">HMGET</code>, <code class="language-plaintext highlighter-rouge">HGETALL</code>, <code class="language-plaintext highlighter-rouge">HKEYS</code>, <code class="language-plaintext highlighter-rouge">HVALS</code></td>
+      <td><code class="language-plaintext highlighter-rouge">HSET</code>, <code class="language-plaintext highlighter-rouge">HINCRBY</code></td>
+      <td><code class="language-plaintext highlighter-rouge">HDEL</code></td>
+    </tr>
+    <tr>
+      <td>Pub/Sub</td>
+      <td><code class="language-plaintext highlighter-rouge">SUBSCRIBE</code>, <code class="language-plaintext highlighter-rouge">PSUBSCRIBE</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PUBLISH</code></td>
+      <td><code class="language-plaintext highlighter-rouge">UNSUBSCRIBE</code>, <code class="language-plaintext highlighter-rouge">PUNSUBSCRIBE</code></td>
+    </tr>
+  </tbody>
+</table>
+
 <h2 id="string-operations">String operations</h2>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>GET key
@@ -374,15 +425,31 @@
 
 <h2 id="pubsub-feature">Pub/sub feature</h2>
 
-<p>Follows the fire and forget principle. Data sent to the bus is sent to all consumers. If not consumed by workers, the data are lost.</p>
+<p>The publish/subscribe feature.</p>
 
-<p>Works for realtime data transport and is lightweight and easy to use. But data is not persisted.</p>
+<p>Works for realtime data transport and is lightweight and easy to use. But data is not persisted. It follows the fire and forget principle. Data sent to the bus is sent to all consumers. If not consumed by workers, the data are lost.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PUBLISH channel message
+<h3 id="publish">Publish</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>PUBLISH channel message
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SUBSCRIBE channel [channel ...]
+<h3 id="subscribe">Subscribe</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>SUBSCRIBE channel <span class="o">[</span>channel ...]
 </code></pre></div></div>
+
+<p>Pattern subscribe:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>PSUBSCRIBE pattern <span class="o">[</span>pattern ...]
+</code></pre></div></div>
+
+<p>e.g. Here the client will subscribe to all channels that start with “news.”. If another client publishes a message to the channel “news.politics” or “news.sports”</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>PSUBSCRIBE news.<span class="k">*</span>
+</code></pre></div></div>
+
+<p>See also <code class="language-plaintext highlighter-rouge">UNSUBSCRIBE</code> and <code class="language-plaintext highlighter-rouge">PUNSUBSCRIBE</code>.</p>
 
 <h2 id="streams">Streams</h2>
 

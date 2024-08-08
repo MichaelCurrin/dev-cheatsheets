@@ -214,7 +214,10 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Get range of items (0-based indexing)
 </span><span class="n">items</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="nf">lrange</span><span class="p">(</span><span class="sh">'</span><span class="s">fruits</span><span class="sh">'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>  <span class="c1"># [b'date', b'apple', b'banana', b'cherry']
+<span class="c1"># [b'date', b'apple', b'banana', b'cherry']
+# OR
+</span><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="p">.</span><span class="nf">decode</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">]</span>
+<span class="c1"># ['apple', 'banana', 'cherry']
 </span></code></pre></div></div>
 
 <h2 id="createupdate">Create/update</h2>
