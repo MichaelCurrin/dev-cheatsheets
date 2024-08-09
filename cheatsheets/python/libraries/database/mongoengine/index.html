@@ -1545,13 +1545,18 @@
 
 <h2 id="connect-to-mongodb">Connect to MongoDB</h2>
 
-<p>Before you can start using MongoEngine, you need to establish a connection to your MongoDB instance.</p>
+<p>See <a href="https://docs.mongoengine.org/guide/connecting.html">Connecting</a> in the docs.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">mongoengine</span>
 
 
 <span class="n">mongoengine</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="sh">'</span><span class="s">myapp</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">mongoengine</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="sh">'</span><span class="s">myapp</span><span class="sh">'</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="sh">'</span><span class="s">mongodb://localhost:27017</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="c1"># Connection.
+</span><span class="n">mongoengine</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="sh">"</span><span class="s">mongodb://127.0.0.1:27017/myapp</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Keywords.
+</span><span class="n">mongoengine</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="sh">'</span><span class="s">myapp</span><span class="sh">'</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="sh">'</span><span class="s">127.0.0.1</span><span class="sh">'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">27017</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>This connects to a MongoDB instance running on <code class="language-plaintext highlighter-rouge">localhost:27017</code> and creates a database named <code class="language-plaintext highlighter-rouge">myapp</code> if it doesn’t already exist.</p>
