@@ -11,7 +11,7 @@ It provides a rich and Pythonic interface for interacting with MongoDB databases
 ## Related
 
 - [MongoDB][] cheatsheet in the NoSQL section, covering installation, basic operations, and common use cases.
-- [MongoEngine]({% link cheatsheets/python/libraries/mongoengine/index.md %}) cheatsheet for using the MongoEngine Object-Document Mapper.
+- [MongoEngine]({% link cheatsheets/python/libraries/database/mongoengine/index.md %}) cheatsheet for using the MongoEngine Object-Document Mapper.
 
 [MongoDB]: {% link cheatsheets/nosql/mongodb/index.md %}
 
