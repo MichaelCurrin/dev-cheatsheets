@@ -18,7 +18,8 @@ It provides a high-level abstraction layer on top of the [PyMongo][] driver, all
 
 ## Resources
 
-- [MongoEngine Documentation](http://mongoengine.org/)
+- [MongoEngine homepage](http://mongoengine.org/)
+- [MongoEngine docs](https://docs.mongoengine.org/)
 - [MongoEngine Tutorial](https://realpython.com/intropnduction-to-mongodb-and-python/)
 
 ## Installation
@@ -45,7 +46,7 @@ class User(mongoengine.Document):
 
 This defines a `User` model with three fields: `email` (required string), `first_name` (optional string with max length 50), and `last_name` (optional string with max length 50).
 
-## Connecting to MongoDB
+## Connect to MongoDB
 
 Before you can start using MongoEngine, you need to establish a connection to your MongoDB instance.
 
@@ -53,12 +54,13 @@ Before you can start using MongoEngine, you need to establish a connection to yo
 import mongoengine
 
 
+mongoengine.connect('myapp')
 mongoengine.connect('myapp', host='mongodb://localhost:27017')
 ```
 
 This connects to a MongoDB instance running on `localhost:27017` and creates a database named `myapp` if it doesn't already exist.
 
-## Creating and Saving Documents
+## Create and save documents
 
 Once you've defined your models and established a connection, you can create and save documents.
 
@@ -67,7 +69,7 @@ user = User(email='john@example.com', first_name='John', last_name='Doe')
 user.save()  # Saves the document to the 'user' collection
 ```
 
-## Querying Documents
+## Query documents
 
 MongoEngine provides a powerful query API that allows you to filter, sort, and perform various operations on your documents.
 
@@ -85,7 +87,12 @@ users = User.objects(first_name__startswith='J')
 users = User.objects().order_by('last_name')
 ```
 
-## Updating Documents
+```python
+for person in Person.objects:
+    print(person)
+```
+
+## Update documents
 
 You can update existing documents using the `save()` method or the `update()` method.
 
@@ -99,9 +106,7 @@ user.save()
 User.objects(first_name='John').update(set__first_name='Johnny')
 ```
 
-## Deleting Documents
-
-Deleting documents is straightforward with MongoEngine.
+## Deleting documents
 
 ```python
 # Delete a single document
@@ -112,9 +117,7 @@ user.delete()
 User.objects(first_name='John').delete()
 ```
 
-## Embedding and Referencing
-
-MongoEngine supports embedding and referencing documents, which are two different ways of representing relationships between data in MongoDB.
+## Embedding and referencing
 
 ### Embedding
 
@@ -124,6 +127,7 @@ Embedding is the process of nesting one document inside another. This is useful 
 class Address(mongoengine.EmbeddedDocument):
     street = mongoengine.StringField()
     city = mongoengine.StringField()
+
 
 class User(mongoengine.Document):
     email = mongoengine.StringField(required=True)
@@ -168,28 +172,47 @@ Here's a sample code for using Pydantic with MongoEngine for a basic Python appl
 
 ```python
 from pydantic import BaseModel, Field
-from mongoengine import Document, StringField, IntField
+
+from mongoengine import Document, StringField, IntField, connect
 
 
-# Pydantic model
 class PersonModel(BaseModel):
-    name: str = Field(..., description="Person's name")
-    age: int = Field(..., description="Person's age")
+    name: str = Field(description="Person's name", min_length=2)
+    age: int = Field(
+        gt=-1,
+        lt=120,
+        description="Person's age",
+    )
 
 
-# MongoEngine document
 class Person(Document):
     name = StringField(required=True)
-    age = IntField(required=True)
+    age: int = IntField(0, 120, description="Person's age")
 
 
-# Example usage
-person_data = {"name": "John Doe", "age": 35}
+connect("myapp")
 
-# Create and validate Pydantic model instance
+# Pydantic
+person_data = {"name": "Anne", "age": 13}
 person_model = PersonModel(**person_data)
 
-# Create MongoEngine document instance from Pydantic model
-person_doc = Person(**person_model.dict())
+# Mongo
+person_doc = Person(**person_model.model_dump())
 person_doc.save()
 ```
+
+### Why use Pydantic
+
+Pydantic and MongoDB's built-in validation serve different purposes and can be used together to provide a more robust validation solution.
+
+MongoDB's built-in validation is primarily focused on enforcing data integrity within the database itself. It allows you to define validation rules and constraints directly in the database schema, ensuring that any data inserted or updated in the database conforms to these rules. This is particularly useful for maintaining data consistency and preventing invalid or malformed data from being stored in the database.
+
+On the other hand, Pydantic is a Python library for data validation and parsing. It operates at the application level, allowing you to define data models and validate input data before it is sent to the database. Pydantic provides a rich set of features for data validation, including type checking, value constraints, nested data structures, and more.
+
+Using Pydantic in conjunction with MongoDB's built-in validation offers several advantages:
+
+1. **Separation of Concerns**: By using Pydantic, you can separate the validation logic from the database layer, making your code more modular and easier to maintain.
+2. **Client-side Validation**: Pydantic allows you to validate data on the client-side (in your application code) before sending it to the database. This can help catch errors early and prevent unnecessary database operations with invalid data.
+3. **Complex Validation Rules**: While MongoDB's built-in validation is powerful, it may not cover all the validation scenarios you need. Pydantic provides a more flexible and extensible way to define complex validation rules and custom validation logic.
+4. **Data Transformation**: Pydantic can be used to parse and transform data from various sources (e.g., HTTP requests, external APIs) into Python data structures that can then be validated before being stored in the database.
+5. **Consistency across Layers**: By using Pydantic consistently across different layers of your application (e.g., API, services, data access), you can ensure that data is validated consistently throughout the application lifecycle.
