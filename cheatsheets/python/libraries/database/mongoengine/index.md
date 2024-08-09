@@ -21,6 +21,7 @@ It provides a high-level abstraction layer on top of the [PyMongo][] driver, all
 - [MongoEngine homepage](http://mongoengine.org/)
 - [MongoEngine docs](https://docs.mongoengine.org/)
 - [MongoEngine Tutorial](https://realpython.com/intropnduction-to-mongodb-and-python/)
+- [GitHub repo](https://github.com/MongoEngine/mongoengine)
 
 ## Installation
 
