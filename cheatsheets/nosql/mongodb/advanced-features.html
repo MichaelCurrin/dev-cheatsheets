@@ -169,26 +169,7 @@
 
     <div class="post-content">
         
-            <p>MongoDB provides several advanced features, including:</p>
-
-<h2 id="indexing">Indexing</h2>
-
-<p>Indexes can significantly improve query performance by allowing MongoDB to quickly locate relevant documents.</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>db.users.createIndex<span class="o">({</span> name: 1 <span class="o">})</span>
-</code></pre></div></div>
-
-<h2 id="aggregation">Aggregation</h2>
-
-<p>MongoDB’s aggregation framework allows you to perform complex data processing and analysis operations on your data.</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>db.users.aggregate<span class="o">([</span>
-<span class="gp">    { $</span>match: <span class="o">{</span> age: <span class="o">{</span> <span class="nv">$gt</span>: 30 <span class="o">}</span> <span class="o">}</span> <span class="o">}</span>,
-<span class="gp">    { $</span>group: <span class="o">{</span> _id: <span class="s1">'$city'</span>, count: <span class="o">{</span> <span class="nv">$sum</span>: 1 <span class="o">}</span> <span class="o">}</span> <span class="o">}</span>
-<span class="go">])
-</span></code></pre></div></div>
-
-<h2 id="replication">Replication</h2>
+            <h2 id="replication">Replication</h2>
 
 <p>Replication allows you to create redundant copies of your data across multiple servers, providing high availability and fault tolerance.</p>
 
@@ -199,8 +180,6 @@
 <h2 id="transactions">Transactions</h2>
 
 <p>MongoDB supports multi-document transactions, allowing you to perform multiple operations as an all-or-nothing unit of work.</p>
-
-<p>Sure, here’s a short section on how to create related collections in MongoDB, using the example of Users and Posts:</p>
 
         
     </div>

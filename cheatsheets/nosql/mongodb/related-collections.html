@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Related Collections | Dev Cheatsheets</title>
+    <title>Related collections | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Related Collections" />
+    <meta property="og:title" content="Related collections" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Related Collections" />
+    <meta property="twitter:title" content="Related collections" />
 <meta name="generator" content="Jekyll v4.3.3" />
 
 <meta property="og:locale" content="en_US" />
@@ -35,7 +35,7 @@
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/mongodb/related-collections.html",
-    "headline":    "Related Collections",
+    "headline":    "Related collections",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -105,7 +105,7 @@
             
 
 
-            <span>Related Collections</span>
+            <span>Related collections</span>
         </h1>
 
         
@@ -157,7 +157,7 @@
 
         
             <a href="/dev-cheatsheets/cheatsheets/nosql/mongodb/related-collections.html" class="underline">
-                Related Collections
+                Related collections
             </a>
         
      
@@ -175,100 +175,42 @@
 
 <p>Let’s consider an example where we have a <code class="language-plaintext highlighter-rouge">users</code> collection and a <code class="language-plaintext highlighter-rouge">posts</code> collection, representing user profiles and blog posts, respectively.</p>
 
-<h3 id="sample-of-related-data">Sample of related data</h3>
+<h3 id="create">Create</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// users collection</span>
-<span class="p">{</span>
-  <span class="dl">"</span><span class="s2">_id</span><span class="dl">"</span><span class="p">:</span> <span class="nc">ObjectId</span><span class="p">(</span><span class="dl">"</span><span class="s2">6436e9c8d9f6b3c8e7f9d9e3</span><span class="dl">"</span><span class="p">),</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nf">insertOne</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">John Doe</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">john@example.com</span><span class="dl">"</span>
-<span class="p">}</span>
+<span class="p">})</span>
 
-<span class="c1">// posts collection</span>
-<span class="p">{</span>
-  <span class="dl">"</span><span class="s2">_id</span><span class="dl">"</span><span class="p">:</span> <span class="nc">ObjectId</span><span class="p">(</span><span class="dl">"</span><span class="s2">6436e9c8d9f6b3c8e7f9d9e4</span><span class="dl">"</span><span class="p">),</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nf">insertOne</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">My First Post</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">content</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">This is the content of my first blog post.</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">author</span><span class="dl">"</span><span class="p">:</span> <span class="nc">ObjectId</span><span class="p">(</span><span class="dl">"</span><span class="s2">6436e9c8d9f6b3c8e7f9d9e3</span><span class="dl">"</span><span class="p">),</span>
+  <span class="dl">"</span><span class="s2">author</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">comments</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="dl">"</span><span class="s2">author</span><span class="dl">"</span><span class="p">:</span> <span class="nc">ObjectId</span><span class="p">(</span><span class="dl">"</span><span class="s2">6436e9c8d9f6b3c8e7f9d9e5</span><span class="dl">"</span><span class="p">),</span>
       <span class="dl">"</span><span class="s2">content</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Great post!</span><span class="dl">"</span><span class="p">,</span>
       <span class="dl">"</span><span class="s2">timestamp</span><span class="dl">"</span><span class="p">:</span> <span class="nc">ISODate</span><span class="p">(</span><span class="dl">"</span><span class="s2">2023-04-11T10:30:00Z</span><span class="dl">"</span><span class="p">)</span>
     <span class="p">}</span>
   <span class="p">]</span>
-<span class="p">}</span>
+<span class="p">})</span>
 </code></pre></div></div>
 
-<p>In this example, we have separate collections for <code class="language-plaintext highlighter-rouge">users</code> and <code class="language-plaintext highlighter-rouge">posts</code>. The <code class="language-plaintext highlighter-rouge">posts</code> collection contains an <code class="language-plaintext highlighter-rouge">author</code> field that references the <code class="language-plaintext highlighter-rouge">_id</code> of the corresponding user document in the <code class="language-plaintext highlighter-rouge">users</code> collection. Additionally, the <code class="language-plaintext highlighter-rouge">comments</code> field in the <code class="language-plaintext highlighter-rouge">posts</code> collection is an array of embedded documents, where each comment references the <code class="language-plaintext highlighter-rouge">_id</code> of the user who posted the comment.</p>
+<h3 id="find">Find</h3>
 
-<p>This approach allows you to query and update users and posts independently while maintaining the relationship between them. You can use MongoDB’s query operators and aggregation framework to perform complex operations involving related data.</p>
+<p>Get a post for a specific user.</p>
 
-<h3 id="create-collections">Create collections</h3>
-
-<p>To create these related collections, you can use the <code class="language-plaintext highlighter-rouge">db.createCollection()</code> method in the MongoDB shell or the appropriate driver method in your programming language of choice.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create the users collection</span>
-<span class="nx">db</span><span class="p">.</span><span class="nf">createCollection</span><span class="p">(</span><span class="dl">"</span><span class="s2">users</span><span class="dl">"</span><span class="p">)</span>
-
-<span class="c1">// Create the posts collection</span>
-<span class="nx">db</span><span class="p">.</span><span class="nf">createCollection</span><span class="p">(</span><span class="dl">"</span><span class="s2">posts</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nf">find</span><span class="p">({</span> <span class="dl">"</span><span class="s2">author</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
 </code></pre></div></div>
 
-<p>Once the collections are created, you can insert documents and establish relationships between them using references or embedded documents, as shown in the example above.</p>
+<p>Find comments for a specifc user, returning comments data only for a post:</p>
 
-<p>This is just one way to represent relationships in MongoDB. Depending on your data model and requirements, you may choose to use different approaches, such as embedding documents within other documents or using more advanced techniques like application-level joins or data denormalization.</p>
-
-<h3 id="get-all-posts-for-a-user">Get all posts for a user</h3>
-
-<p>To get all posts for a specific user, you can use the <code class="language-plaintext highlighter-rouge">find</code> method and filter the <code class="language-plaintext highlighter-rouge">posts</code> collection based on the <code class="language-plaintext highlighter-rouge">author</code> field, which references the user’s <code class="language-plaintext highlighter-rouge">_id</code>.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get the user's _id</span>
-<span class="kd">var</span> <span class="nx">userId</span> <span class="o">=</span> <span class="nc">ObjectId</span><span class="p">(</span><span class="dl">"</span><span class="s2">6436e9c8d9f6b3c8e7f9d9e3</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="c1">// Find all posts where the author field matches the user's _id</span>
-<span class="nx">db</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nf">find</span><span class="p">({</span> <span class="na">author</span><span class="p">:</span> <span class="nx">userId</span> <span class="p">});</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span>
+  <span class="p">{</span> <span class="dl">"</span><span class="s2">author</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="dl">"</span><span class="s2">comments</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="dl">"</span><span class="s2">_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}</span>
+<span class="p">)</span>
 </code></pre></div></div>
-
-<p>This query will return all documents in the <code class="language-plaintext highlighter-rouge">posts</code> collection where the <code class="language-plaintext highlighter-rouge">author</code> field matches the provided <code class="language-plaintext highlighter-rouge">userId</code>.</p>
-
-<h3 id="get-a-user-given-a-comment">Get a user given a comment</h3>
-
-<p>To get the user who posted a specific comment, you can use the <code class="language-plaintext highlighter-rouge">$unwind</code> operator to deconstruct the <code class="language-plaintext highlighter-rouge">comments</code> array in the <code class="language-plaintext highlighter-rouge">posts</code> collection, and then perform a lookup to the <code class="language-plaintext highlighter-rouge">users</code> collection based on the <code class="language-plaintext highlighter-rouge">author</code> field in the comment document.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get the comment's author _id</span>
-<span class="kd">var</span> <span class="nx">commentAuthorId</span> <span class="o">=</span> <span class="nc">ObjectId</span><span class="p">(</span><span class="dl">"</span><span class="s2">6436e9c8d9f6b3c8e7f9d9e5</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="c1">// Find the user document based on the comment author _id</span>
-<span class="nx">db</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nf">aggregate</span><span class="p">([</span>
-  <span class="p">{</span> <span class="na">$unwind</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$comments</span><span class="dl">"</span> <span class="p">},</span>
-  <span class="p">{</span> <span class="na">$match</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">comments.author</span><span class="dl">"</span><span class="p">:</span> <span class="nx">commentAuthorId</span> <span class="p">}</span> <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="na">$lookup</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">from</span><span class="p">:</span> <span class="dl">"</span><span class="s2">users</span><span class="dl">"</span><span class="p">,</span>
-      <span class="na">localField</span><span class="p">:</span> <span class="dl">"</span><span class="s2">comments.author</span><span class="dl">"</span><span class="p">,</span>
-      <span class="na">foreignField</span><span class="p">:</span> <span class="dl">"</span><span class="s2">_id</span><span class="dl">"</span><span class="p">,</span>
-      <span class="na">as</span><span class="p">:</span> <span class="dl">"</span><span class="s2">commentAuthor</span><span class="dl">"</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="p">{</span> <span class="na">$unwind</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$commentAuthor</span><span class="dl">"</span> <span class="p">},</span>
-  <span class="p">{</span> <span class="na">$project</span><span class="p">:</span> <span class="p">{</span> <span class="na">_id</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">commentAuthor</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span> <span class="p">}</span>
-<span class="p">]);</span>
-</code></pre></div></div>
-
-<p>Here’s what this query does:</p>
-
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">$unwind</code>: Deconstructs the <code class="language-plaintext highlighter-rouge">comments</code> array, creating a separate document for each comment.</li>
-  <li><code class="language-plaintext highlighter-rouge">$match</code>: Filters the documents to only include those where the <code class="language-plaintext highlighter-rouge">author</code> field in the comment matches the provided <code class="language-plaintext highlighter-rouge">commentAuthorId</code>.</li>
-  <li><code class="language-plaintext highlighter-rouge">$lookup</code>: Performs a left outer join with the <code class="language-plaintext highlighter-rouge">users</code> collection, matching the <code class="language-plaintext highlighter-rouge">author</code> field in the comment with the <code class="language-plaintext highlighter-rouge">_id</code> field in the <code class="language-plaintext highlighter-rouge">users</code> collection. The matched user documents are stored in the <code class="language-plaintext highlighter-rouge">commentAuthor</code> field.</li>
-  <li><code class="language-plaintext highlighter-rouge">$unwind</code>: Deconstructs the <code class="language-plaintext highlighter-rouge">commentAuthor</code> array, which should contain at most one document.</li>
-  <li><code class="language-plaintext highlighter-rouge">$project</code>: Excludes the <code class="language-plaintext highlighter-rouge">_id</code> field and includes only the <code class="language-plaintext highlighter-rouge">commentAuthor</code> field, which contains the user document for the comment author.</li>
-</ol>
-
-<p>This query will return the user document for the author of the specified comment.</p>
-
-<p>Note that these queries assume that you have properly set up the relationships between the <code class="language-plaintext highlighter-rouge">users</code> and <code class="language-plaintext highlighter-rouge">posts</code> collections using references or embedded documents, as shown in the previous example.</p>
 
         
     </div>

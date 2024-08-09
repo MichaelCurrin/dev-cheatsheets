@@ -33,3 +33,7 @@ For a cloud deployment, you can use connection string. Example based on the docs
 ```sh
 $ mongosh "mongodb+srv://mycluster.abcd1.mongodb.net/myFirstDatabase" --apiVersion 1 --username <username>
 ```
+
+Then use the `help` command in the interactive shell for commands. See also the [Basic operations][] cheatsheet.
+
+[Basic operations]: {% link cheatsheets/nosql/mongodb/basic-operations.md %}
