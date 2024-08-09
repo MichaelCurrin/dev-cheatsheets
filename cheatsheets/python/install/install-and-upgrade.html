@@ -180,21 +180,21 @@
 
 <p>Using <code class="language-plaintext highlighter-rouge">apt-get</code>.</p>
 
-<h3 id="latest">Latest</h3>
+<h3 id="latest-for-your-os">Latest for your OS</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> python3
 </code></pre></div></div>
 
 <h3 id="target">Target</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> python3.7
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> python3.12
 </code></pre></div></div>
 
 <h3 id="non-standard">Non-standard</h3>
 
-<p>If the APT repositories don’t support the old or new version you’re after.</p>
+<p>If the APT repositories don’t support an old or new version you’re after, add a custom repository as below.</p>
 
-<p>Using <a href="https://launchpad.net/%7Edeadsnakes/+archive/ubuntu/ppa">deadsnakes PPA</a> for Ubuntu.</p>
+<p>Using <a href="https://launchpad.net/%7Edeadsnakes/+archive/ubuntu/ppa">deadsnakes PPA</a> for Ubuntu:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>add-apt-repository ppa:deadsnakes/ppa
 <span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> python3.7
@@ -208,17 +208,30 @@
 
 <h3 id="install">Install</h3>
 
-<p>Using the <a href="https://formulae.brew.sh/formula/python@3.9">python@3.9</a> formula.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>python@3.9
-</code></pre></div></div>
-
-<p>Or for latest:</p>
+<p>Install the latest:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>python
 </code></pre></div></div>
 
-<h3 id="upgrading">Upgrading</h3>
+<p>Install target version e.g. <a href="https://formulae.brew.sh/formula/python@3.9">python@3.9</a> formula.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>python@3.9
+</code></pre></div></div>
+
+<p>See <a href="https://docs.brew.sh/Homebrew-and-Python">Python Homebrew docs</a>.</p>
+
+<h3 id="upgrade">Upgrade</h3>
+
+<p>Upgrade existing:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew upgrade python
+</code></pre></div></div>
+
+<p>Or install a target version and set it as the default using <a href="/dev-cheatsheets/cheatsheets/python/install/change-default-version.html">Change default version</a>.</p>
+
+<p>Or install a target version and uninstall the old versions, breaking any apps and virtual environments that use them.</p>
+
+<h4 id="my-experience">My experience</h4>
 
 <p>I had 3 versions of PY3 installed.</p>
 
@@ -268,10 +281,8 @@ For pkg-config to find python@3.9 you may need to set:
 
 <p>Try this to sort out the linking:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">unlink </span>python <span class="o">&amp;&amp;</span> brew <span class="nb">link </span>python
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Unlinking /usr/local/Cellar/python@3.8/3.8.6... 2 symlinks removed
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>brew <span class="nb">unlink </span>python <span class="o">&amp;&amp;</span> brew <span class="nb">link </span>python
+<span class="go">Unlinking /usr/local/Cellar/python@3.8/3.8.6... 2 symlinks removed
 Linking /usr/local/Cellar/python@3.8/3.8.6...
 Error: Could not symlink bin/pip3
 Target /usr/local/bin/pip3
@@ -283,24 +294,24 @@ To force the link and overwrite all conflicting files:
 
 To list all files that would be deleted:
   brew link --overwrite --dry-run python@3.8
-</code></pre></div></div>
+</span></code></pre></div></div>
 
 <p>Or</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">unlink </span>python
-<span class="nv">$ </span>brew <span class="nb">link </span>python@3.9
-Warning: python@3.9 is keg-only and must be linked with <span class="nt">--force</span>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>brew <span class="nb">unlink </span>python
+<span class="gp">$</span><span class="w"> </span>brew <span class="nb">link </span>python@3.9
+<span class="go">Warning: python@3.9 is keg-only and must be linked with --force
 
-If you need to have this software first <span class="k">in </span>your PATH instead consider running:
-  <span class="nb">echo</span> <span class="s1">'export PATH="/usr/local/opt/python@3.9/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.zshrc
-</code></pre></div></div>
+If you need to have this software first in your PATH instead consider running:
+</span><span class="gp">  echo 'export PATH="/usr/local/opt/python@3.9/bin:$</span>PATH<span class="s2">"' &gt;&gt; ~/.zshrc
+</span></code></pre></div></div>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">link </span>python@3.9 <span class="nt">--force</span>
-Linking /usr/local/Cellar/python@3.9/3.9.0... 21 symlinks created
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>brew <span class="nb">link </span>python@3.9 <span class="nt">--force</span>
+<span class="go">Linking /usr/local/Cellar/python@3.9/3.9.0... 21 symlinks created
 
-If you need to have this software first <span class="k">in </span>your PATH instead consider running:
-  <span class="nb">echo</span> <span class="s1">'export PATH="/usr/local/opt/python@3.9/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.zshrc
-</code></pre></div></div>
+If you need to have this software first in your PATH instead consider running:
+</span><span class="gp">  echo 'export PATH="/usr/local/opt/python@3.9/bin:$</span>PATH<span class="s2">"' &gt;&gt; ~/.zshrc
+</span></code></pre></div></div>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python3 <span class="nt">-V</span>
 Python 3.7.3
 </code></pre></div></div>
@@ -316,12 +327,12 @@ Python 3.7.3
 
 <p>Also I can’t just delete the old one as it is used by other Brew packages.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew uninstall python@3.8
-Error: Refusing to uninstall /usr/local/Cellar/python@3.8/3.8.6
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>brew uninstall python@3.8
+<span class="go">Error: Refusing to uninstall /usr/local/Cellar/python@3.8/3.8.6
 because it is required by ipython, libxml2 and libxmlsec1, which are currently installed.
 You can override this and force removal with:
-  brew uninstall <span class="nt">--ignore-dependencies</span> python@3.8
-</code></pre></div></div>
+  brew uninstall --ignore-dependencies python@3.8
+</span></code></pre></div></div>
 
 <p>Doing an install of Python 3.9 made it the default without having to update my <code class="language-plaintext highlighter-rouge">PATH</code>.</p>
 
