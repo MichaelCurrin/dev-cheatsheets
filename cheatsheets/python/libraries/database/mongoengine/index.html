@@ -1516,7 +1516,8 @@
 <h2 id="resources">Resources</h2>
 
 <ul>
-  <li><a href="http://mongoengine.org/">MongoEngine Documentation</a></li>
+  <li><a href="http://mongoengine.org/">MongoEngine homepage</a></li>
+  <li><a href="https://docs.mongoengine.org/">MongoEngine docs</a></li>
   <li><a href="https://realpython.com/intropnduction-to-mongodb-and-python/">MongoEngine Tutorial</a></li>
 </ul>
 
@@ -1542,19 +1543,20 @@
 
 <p>This defines a <code class="language-plaintext highlighter-rouge">User</code> model with three fields: <code class="language-plaintext highlighter-rouge">email</code> (required string), <code class="language-plaintext highlighter-rouge">first_name</code> (optional string with max length 50), and <code class="language-plaintext highlighter-rouge">last_name</code> (optional string with max length 50).</p>
 
-<h2 id="connecting-to-mongodb">Connecting to MongoDB</h2>
+<h2 id="connect-to-mongodb">Connect to MongoDB</h2>
 
 <p>Before you can start using MongoEngine, you need to establish a connection to your MongoDB instance.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">mongoengine</span>
 
 
+<span class="n">mongoengine</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="sh">'</span><span class="s">myapp</span><span class="sh">'</span><span class="p">)</span>
 <span class="n">mongoengine</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="sh">'</span><span class="s">myapp</span><span class="sh">'</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="sh">'</span><span class="s">mongodb://localhost:27017</span><span class="sh">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>This connects to a MongoDB instance running on <code class="language-plaintext highlighter-rouge">localhost:27017</code> and creates a database named <code class="language-plaintext highlighter-rouge">myapp</code> if it doesn’t already exist.</p>
 
-<h2 id="creating-and-saving-documents">Creating and Saving Documents</h2>
+<h2 id="create-and-save-documents">Create and save documents</h2>
 
 <p>Once you’ve defined your models and established a connection, you can create and save documents.</p>
 
@@ -1562,7 +1564,7 @@
 <span class="n">user</span><span class="p">.</span><span class="nf">save</span><span class="p">()</span>  <span class="c1"># Saves the document to the 'user' collection
 </span></code></pre></div></div>
 
-<h2 id="querying-documents">Querying Documents</h2>
+<h2 id="query-documents">Query documents</h2>
 
 <p>MongoEngine provides a powerful query API that allows you to filter, sort, and perform various operations on your documents.</p>
 
@@ -1579,7 +1581,11 @@
 </span><span class="n">users</span> <span class="o">=</span> <span class="n">User</span><span class="p">.</span><span class="nf">objects</span><span class="p">().</span><span class="nf">order_by</span><span class="p">(</span><span class="sh">'</span><span class="s">last_name</span><span class="sh">'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="updating-documents">Updating Documents</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">Person</span><span class="p">.</span><span class="n">objects</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="update-documents">Update documents</h2>
 
 <p>You can update existing documents using the <code class="language-plaintext highlighter-rouge">save()</code> method or the <code class="language-plaintext highlighter-rouge">update()</code> method.</p>
 
@@ -1592,9 +1598,7 @@
 </span><span class="n">User</span><span class="p">.</span><span class="nf">objects</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="sh">'</span><span class="s">John</span><span class="sh">'</span><span class="p">).</span><span class="nf">update</span><span class="p">(</span><span class="n">set__first_name</span><span class="o">=</span><span class="sh">'</span><span class="s">Johnny</span><span class="sh">'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="deleting-documents">Deleting Documents</h2>
-
-<p>Deleting documents is straightforward with MongoEngine.</p>
+<h2 id="deleting-documents">Deleting documents</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Delete a single document
 </span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">.</span><span class="nf">objects</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="sh">'</span><span class="s">john@example.com</span><span class="sh">'</span><span class="p">).</span><span class="nf">first</span><span class="p">()</span>
@@ -1604,9 +1608,7 @@
 </span><span class="n">User</span><span class="p">.</span><span class="nf">objects</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="sh">'</span><span class="s">John</span><span class="sh">'</span><span class="p">).</span><span class="nf">delete</span><span class="p">()</span>
 </code></pre></div></div>
 
-<h2 id="embedding-and-referencing">Embedding and Referencing</h2>
-
-<p>MongoEngine supports embedding and referencing documents, which are two different ways of representing relationships between data in MongoDB.</p>
+<h2 id="embedding-and-referencing">Embedding and referencing</h2>
 
 <h3 id="embedding">Embedding</h3>
 
@@ -1615,6 +1617,7 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Address</span><span class="p">(</span><span class="n">mongoengine</span><span class="p">.</span><span class="n">EmbeddedDocument</span><span class="p">):</span>
     <span class="n">street</span> <span class="o">=</span> <span class="n">mongoengine</span><span class="p">.</span><span class="nc">StringField</span><span class="p">()</span>
     <span class="n">city</span> <span class="o">=</span> <span class="n">mongoengine</span><span class="p">.</span><span class="nc">StringField</span><span class="p">()</span>
+
 
 <span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">mongoengine</span><span class="p">.</span><span class="n">Document</span><span class="p">):</span>
     <span class="n">email</span> <span class="o">=</span> <span class="n">mongoengine</span><span class="p">.</span><span class="nc">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -1658,31 +1661,52 @@
 <p>Here’s a sample code for using Pydantic with MongoEngine for a basic Python application:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
-<span class="kn">from</span> <span class="n">mongoengine</span> <span class="kn">import</span> <span class="n">Document</span><span class="p">,</span> <span class="n">StringField</span><span class="p">,</span> <span class="n">IntField</span>
+
+<span class="kn">from</span> <span class="n">mongoengine</span> <span class="kn">import</span> <span class="n">Document</span><span class="p">,</span> <span class="n">StringField</span><span class="p">,</span> <span class="n">IntField</span><span class="p">,</span> <span class="n">connect</span>
 
 
-<span class="c1"># Pydantic model
-</span><span class="k">class</span> <span class="nc">PersonModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="nc">Field</span><span class="p">(...,</span> <span class="n">description</span><span class="o">=</span><span class="sh">"</span><span class="s">Person</span><span class="sh">'</span><span class="s">s name</span><span class="sh">"</span><span class="p">)</span>
-    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nc">Field</span><span class="p">(...,</span> <span class="n">description</span><span class="o">=</span><span class="sh">"</span><span class="s">Person</span><span class="sh">'</span><span class="s">s age</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">PersonModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="nc">Field</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="sh">"</span><span class="s">Person</span><span class="sh">'</span><span class="s">s name</span><span class="sh">"</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nc">Field</span><span class="p">(</span>
+        <span class="n">gt</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">lt</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="sh">"</span><span class="s">Person</span><span class="sh">'</span><span class="s">s age</span><span class="sh">"</span><span class="p">,</span>
+    <span class="p">)</span>
 
 
-<span class="c1"># MongoEngine document
-</span><span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="nc">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">age</span> <span class="o">=</span> <span class="nc">IntField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nc">IntField</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="sh">"</span><span class="s">Person</span><span class="sh">'</span><span class="s">s age</span><span class="sh">"</span><span class="p">)</span>
 
 
-<span class="c1"># Example usage
-</span><span class="n">person_data</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">John Doe</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">35</span><span class="p">}</span>
+<span class="nf">connect</span><span class="p">(</span><span class="sh">"</span><span class="s">myapp</span><span class="sh">"</span><span class="p">)</span>
 
-<span class="c1"># Create and validate Pydantic model instance
-</span><span class="n">person_model</span> <span class="o">=</span> <span class="nc">PersonModel</span><span class="p">(</span><span class="o">**</span><span class="n">person_data</span><span class="p">)</span>
+<span class="c1"># Pydantic
+</span><span class="n">person_data</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Anne</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">13</span><span class="p">}</span>
+<span class="n">person_model</span> <span class="o">=</span> <span class="nc">PersonModel</span><span class="p">(</span><span class="o">**</span><span class="n">person_data</span><span class="p">)</span>
 
-<span class="c1"># Create MongoEngine document instance from Pydantic model
-</span><span class="n">person_doc</span> <span class="o">=</span> <span class="nc">Person</span><span class="p">(</span><span class="o">**</span><span class="n">person_model</span><span class="p">.</span><span class="nf">dict</span><span class="p">())</span>
+<span class="c1"># Mongo
+</span><span class="n">person_doc</span> <span class="o">=</span> <span class="nc">Person</span><span class="p">(</span><span class="o">**</span><span class="n">person_model</span><span class="p">.</span><span class="nf">model_dump</span><span class="p">())</span>
 <span class="n">person_doc</span><span class="p">.</span><span class="nf">save</span><span class="p">()</span>
 </code></pre></div></div>
+
+<h3 id="why-use-pydantic">Why use Pydantic</h3>
+
+<p>Pydantic and MongoDB’s built-in validation serve different purposes and can be used together to provide a more robust validation solution.</p>
+
+<p>MongoDB’s built-in validation is primarily focused on enforcing data integrity within the database itself. It allows you to define validation rules and constraints directly in the database schema, ensuring that any data inserted or updated in the database conforms to these rules. This is particularly useful for maintaining data consistency and preventing invalid or malformed data from being stored in the database.</p>
+
+<p>On the other hand, Pydantic is a Python library for data validation and parsing. It operates at the application level, allowing you to define data models and validate input data before it is sent to the database. Pydantic provides a rich set of features for data validation, including type checking, value constraints, nested data structures, and more.</p>
+
+<p>Using Pydantic in conjunction with MongoDB’s built-in validation offers several advantages:</p>
+
+<ol>
+  <li><strong>Separation of Concerns</strong>: By using Pydantic, you can separate the validation logic from the database layer, making your code more modular and easier to maintain.</li>
+  <li><strong>Client-side Validation</strong>: Pydantic allows you to validate data on the client-side (in your application code) before sending it to the database. This can help catch errors early and prevent unnecessary database operations with invalid data.</li>
+  <li><strong>Complex Validation Rules</strong>: While MongoDB’s built-in validation is powerful, it may not cover all the validation scenarios you need. Pydantic provides a more flexible and extensible way to define complex validation rules and custom validation logic.</li>
+  <li><strong>Data Transformation</strong>: Pydantic can be used to parse and transform data from various sources (e.g., HTTP requests, external APIs) into Python data structures that can then be validated before being stored in the database.</li>
+  <li><strong>Consistency across Layers</strong>: By using Pydantic consistently across different layers of your application (e.g., API, services, data access), you can ensure that data is validated consistently throughout the application lifecycle.</li>
+</ol>
     
 
         
