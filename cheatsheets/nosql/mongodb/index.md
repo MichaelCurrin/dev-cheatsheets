@@ -8,8 +8,8 @@ MongoDB is a popular NoSQL document database that stores data in flexible, JSON-
 
 ## Related
 
-- [PyMongo]({% link cheatsheets/python/py-mongo/index.md %}) cheatsheet for using the official Python driver for MongoDB.
-- [MongoEngine]({% link cheatsheets/python/mongo-engine/index.md %}) cheatsheet for using the MongoEngine Object-Document Mapper.
+- [PyMongo]({% link cheatsheets/python/libaries/pymongo/index.md %}) cheatsheet for using the official Python driver for MongoDB.
+- [MongoEngine]({% link cheatsheets/python/libaries/mongoengine/index.md %}) cheatsheet for using the MongoEngine Object-Document Mapper.
 
 ## Resources
 
