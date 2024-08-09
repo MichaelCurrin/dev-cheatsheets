@@ -10,7 +10,7 @@ See more info in these gists:
 
 Using `apt-get`.
 
-### Latest
+### Latest for your OS
 
 ```sh
 $ sudo apt-get install -y python3
@@ -19,14 +19,14 @@ $ sudo apt-get install -y python3
 ### Target
 
 ```sh
-$ sudo apt-get install -y python3.7
+$ sudo apt-get install -y python3.12
 ```
 
 ### Non-standard
 
-If the APT repositories don't support the old or new version you're after.
+If the APT repositories don't support an old or new version you're after, add a custom repository as below.
 
-Using [deadsnakes PPA](https://launchpad.net/%7Edeadsnakes/+archive/ubuntu/ppa) for Ubuntu.
+Using [deadsnakes PPA](https://launchpad.net/%7Edeadsnakes/+archive/ubuntu/ppa) for Ubuntu:
 
 ```sh
 $ sudo add-apt-repository ppa:deadsnakes/ppa
@@ -44,20 +44,35 @@ Note that upgrading Python with Homebrew causes all my virtual envs to break. Us
 
 ### Install
 
-Using the [python@3.9](https://formulae.brew.sh/formula/python@3.9) formula.
-
-```sh
-$ brew install python@3.9
-```
-
-Or for latest:
+Install the latest:
 
 ```sh
 $ brew install python
 ```
 
+Install target version e.g. [python@3.9](https://formulae.brew.sh/formula/python@3.9) formula.
 
-### Upgrading
+```sh
+$ brew install python@3.9
+```
+
+See [Python Homebrew docs](https://docs.brew.sh/Homebrew-and-Python).
+
+### Upgrade
+
+Upgrade existing:
+
+```sh
+$ brew upgrade python
+```
+
+Or install a target version and set it as the default using [Change default version][].
+
+Or install a target version and uninstall the old versions, breaking any apps and virtual environments that use them.
+
+[Change default version]: {% link cheatsheets/python/install/change-default-version.md %}
+
+#### My experience
 
 I had 3 versions of PY3 installed.
 
@@ -78,7 +93,6 @@ python@3.8: stable 3.8.6 (bottled)
 ```
 
 Python 3.9 got installed because `sphinx-doc` has it as a dependency, but it did not replace the existing one. See notes from the output.
-
 
 ```
 ==> python@3.9
@@ -112,11 +126,8 @@ For pkg-config to find python@3.9 you may need to set:
 
 Try this to sort out the linking:
 
-```sh
+```console
 $ brew unlink python && brew link python
-```
-
-```
 Unlinking /usr/local/Cellar/python@3.8/3.8.6... 2 symlinks removed
 Linking /usr/local/Cellar/python@3.8/3.8.6...
 Error: Could not symlink bin/pip3
@@ -133,7 +144,7 @@ To list all files that would be deleted:
 
 Or
 
-```sh
+```console
 $ brew unlink python
 $ brew link python@3.9
 Warning: python@3.9 is keg-only and must be linked with --force
@@ -142,8 +153,7 @@ If you need to have this software first in your PATH instead consider running:
   echo 'export PATH="/usr/local/opt/python@3.9/bin:$PATH"' >> ~/.zshrc
 ```
 
-
-```sh
+```console
 $ brew link python@3.9 --force
 Linking /usr/local/Cellar/python@3.9/3.9.0... 21 symlinks created
 
@@ -167,7 +177,7 @@ Then you can add this to `PATH` - `/usr/local/opt/python@3`.
 
 Also I can't just delete the old one as it is used by other Brew packages.
 
-```sh
+```console
 $ brew uninstall python@3.8
 Error: Refusing to uninstall /usr/local/Cellar/python@3.8/3.8.6
 because it is required by ipython, libxml2 and libxmlsec1, which are currently installed.
