@@ -13,7 +13,7 @@ It provides a high-level abstraction layer on top of the [PyMongo][] driver, all
 - [MongoDB][] cheatsheet in the NoSQL section, covering installation, basic operations, and common use cases.
 - [PyMongo][] cheatsheet in the Python libraries section.
 
-[PyMongo]: {% link cheatsheets/python/libraries/database/pymongo/index.md%}
+[PyMongo]: {% link cheatsheets/python/libraries/database/pymongo/index.md %}
 [MongoDB]: {% link cheatsheets/nosql/mongodb/index.md %}
 
 ## Resources
