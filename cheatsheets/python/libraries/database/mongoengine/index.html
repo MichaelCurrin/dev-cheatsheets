@@ -1483,6 +1483,7 @@
         
         
         
+        
         </div>
 
 <br>
@@ -1653,6 +1654,35 @@
 <h2 id="use-with-pydantic">Use with Pydantic</h2>
 
 <p>Since Mongo is schemaless and does not have validation in the same way that a SQL database does, we can add a schema with MongonEngine and validation with Pydantic.</p>
+
+<p>Here’s a sample code for using Pydantic with MongoEngine for a basic Python application:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
+<span class="kn">from</span> <span class="n">mongoengine</span> <span class="kn">import</span> <span class="n">Document</span><span class="p">,</span> <span class="n">StringField</span><span class="p">,</span> <span class="n">IntField</span>
+
+
+<span class="c1"># Pydantic model
+</span><span class="k">class</span> <span class="nc">PersonModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="nc">Field</span><span class="p">(...,</span> <span class="n">description</span><span class="o">=</span><span class="sh">"</span><span class="s">Person</span><span class="sh">'</span><span class="s">s name</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nc">Field</span><span class="p">(...,</span> <span class="n">description</span><span class="o">=</span><span class="sh">"</span><span class="s">Person</span><span class="sh">'</span><span class="s">s age</span><span class="sh">"</span><span class="p">)</span>
+
+
+<span class="c1"># MongoEngine document
+</span><span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nc">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="nc">IntField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+
+<span class="c1"># Example usage
+</span><span class="n">person_data</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">John Doe</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">35</span><span class="p">}</span>
+
+<span class="c1"># Create and validate Pydantic model instance
+</span><span class="n">person_model</span> <span class="o">=</span> <span class="nc">PersonModel</span><span class="p">(</span><span class="o">**</span><span class="n">person_data</span><span class="p">)</span>
+
+<span class="c1"># Create MongoEngine document instance from Pydantic model
+</span><span class="n">person_doc</span> <span class="o">=</span> <span class="nc">Person</span><span class="p">(</span><span class="o">**</span><span class="n">person_model</span><span class="p">.</span><span class="nf">dict</span><span class="p">())</span>
+<span class="n">person_doc</span><span class="p">.</span><span class="nf">save</span><span class="p">()</span>
+</code></pre></div></div>
     
 
         

@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Basic Operations | Dev Cheatsheets</title>
+    <title>CLI | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Basic Operations" />
+    <meta property="og:title" content="CLI" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Basic Operations" />
+    <meta property="twitter:title" content="CLI" />
 <meta name="generator" content="Jekyll v4.3.3" />
 
 <meta property="og:locale" content="en_US" />
@@ -26,16 +26,16 @@
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/mongodb/basic-operations.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/mongodb/basic-operations.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/mongodb/cli.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/mongodb/cli.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/mongodb/basic-operations.html",
-    "headline":    "Basic Operations",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/mongodb/cli.html",
+    "headline":    "CLI",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -88,7 +88,7 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/nosql/mongodb/basic-operations.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/nosql/mongodb/cli.md">
     📝 <span>Edit page</span>
 </a>
 
@@ -105,7 +105,7 @@
             
 
 
-            <span>Basic Operations</span>
+            <span>CLI</span>
         </h1>
 
         
@@ -156,8 +156,8 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/nosql/mongodb/basic-operations.html" class="underline">
-                Basic Operations
+            <a href="/dev-cheatsheets/cheatsheets/nosql/mongodb/cli.html" class="underline">
+                CLI
             </a>
         
      
@@ -169,52 +169,34 @@
 
     <div class="post-content">
         
-            <h2 id="creating-a-database">Creating a Database</h2>
+            <h2 id="mongo-server">Mongo server</h2>
 
-<p>In MongoDB, databases are created implicitly when you create your first collection or document. You can switch to a specific database using the <code class="language-plaintext highlighter-rouge">use</code> command:</p>
+<p>Start the MongoDB server as a “daemon” background process.</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>use myapp
-<span class="go">switched to db myapp
-</span></code></pre></div></div>
-
-<h2 id="creating-a-collection">Creating a Collection</h2>
-
-<p>Collections are analogous to tables in relational databases. You can create a collection by inserting your first document into it:</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>db.users.insert<span class="o">({</span> name: <span class="s1">'John Doe'</span>, email: <span class="s1">'john@example.com'</span> <span class="o">})</span>
-<span class="go">WriteResult({ "nInserted" : 1 })
-</span></code></pre></div></div>
-
-<p>This command creates a new collection named <code class="language-plaintext highlighter-rouge">users</code> and inserts a document into it.</p>
-
-<h2 id="querying-documents">Querying Documents</h2>
-
-<p>You can query documents using the <code class="language-plaintext highlighter-rouge">find</code> method:</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>db.users.find<span class="o">()</span>
-<span class="go">{ "_id" : ObjectId("6436e9c8d9f6b3c8e7f9d9e3"), "name" : "John Doe", "email" : "john@example.com" }
-</span></code></pre></div></div>
-
-<p>You can also filter documents using query operators:</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>db.users.find<span class="o">({</span> age: <span class="o">{</span> <span class="nv">$gt</span>: 30 <span class="o">}</span> <span class="o">})</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mongod
 </code></pre></div></div>
 
-<h2 id="updating-documents">Updating Documents</h2>
+<p>Or configure it to run as a background service on your machine.</p>
 
-<p>You can update documents using the <code class="language-plaintext highlighter-rouge">update</code> method:</p>
+<p>See the <a href="https://www.mongodb.com/docs/manual/administration/install-community/">Installation</a> instructions on the Mongo docs for your OS for parameters to use.</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>db.users.update<span class="o">({</span> name: <span class="s1">'John Doe'</span> <span class="o">}</span>, <span class="o">{</span> <span class="nv">$set</span>: <span class="o">{</span> email: <span class="s1">'john.doe@example.com'</span> <span class="o">}</span> <span class="o">})</span>
-<span class="go">WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
-</span></code></pre></div></div>
+<p>The manual commands are also specific to OS and chip, so are not covered here.</p>
 
-<h2 id="deleting-documents">Deleting Documents</h2>
+<h2 id="mongodb-shell">MongoDB shell</h2>
 
-<p>You can delete documents using the <code class="language-plaintext highlighter-rouge">remove</code> method:</p>
+<p>See <a href="https://www.mongodb.com/docs/mongodb-shell/">mongosh docs</a>.</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>db.users.remove<span class="o">({</span> name: <span class="s1">'John Doe'</span> <span class="o">})</span>
-<span class="go">WriteResult({ "nRemoved" : 1 })
-</span></code></pre></div></div>
+<p>The MongoDB shell is an interactive JavaScript interface that allows you to interact with MongoDB databases, collections, and documents.</p>
+
+<p>If the server above is running, you can start without parameters:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mongosh
+</code></pre></div></div>
+
+<p>For a cloud deployment, you can use connection string. Example based on the docs:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mongosh <span class="s2">"mongodb+srv://mycluster.abcd1.mongodb.net/myFirstDatabase"</span> <span class="nt">--apiVersion</span> 1 <span class="nt">--username</span> &lt;username&gt;
+</code></pre></div></div>
 
         
     </div>
