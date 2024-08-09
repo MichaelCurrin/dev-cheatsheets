@@ -158,3 +158,9 @@ MongoEngine provides several advanced features, including:
 For more information on these and other advanced features, please refer to the [MongoEngine Documentation](http://mongoengine.org/).
 
 This guide should give you a solid foundation for working with MongoEngine and MongoDB in your Python projects. As you gain more experience, you can explore the advanced features and capabilities of MongoEngine to build more complex and scalable applications.
+
+
+## Use with Pydantic
+
+Since Mongo is schemaless and does not have validation in the same way that a SQL database does, we can add a schema with MongonEngine and validation with Pydantic.
+
