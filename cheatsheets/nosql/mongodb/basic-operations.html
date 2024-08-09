@@ -267,9 +267,12 @@
 
 <h2 id="delete-documents">Delete documents</h2>
 
-<p>You can delete documents using the <code class="language-plaintext highlighter-rouge">remove</code> method:</p>
-
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nf">deleteOne</span><span class="p">({</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John Doe</span><span class="dl">'</span> <span class="p">})</span>
+</code></pre></div></div>
+
+<p>Delete all:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nf">deleteMany</span><span class="p">({})</span>
 </code></pre></div></div>
 
 <h2 id="indexing">Indexing</h2>
