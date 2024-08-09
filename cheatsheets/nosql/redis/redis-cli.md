@@ -1,4 +1,3 @@
-
 ---
 description: How to use the interactive Redis CLI
 ---
