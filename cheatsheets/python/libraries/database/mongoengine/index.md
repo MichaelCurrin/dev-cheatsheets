@@ -164,3 +164,32 @@ This guide should give you a solid foundation for working with MongoEngine and M
 
 Since Mongo is schemaless and does not have validation in the same way that a SQL database does, we can add a schema with MongonEngine and validation with Pydantic.
 
+Here's a sample code for using Pydantic with MongoEngine for a basic Python application:
+
+```python
+from pydantic import BaseModel, Field
+from mongoengine import Document, StringField, IntField
+
+
+# Pydantic model
+class PersonModel(BaseModel):
+    name: str = Field(..., description="Person's name")
+    age: int = Field(..., description="Person's age")
+
+
+# MongoEngine document
+class Person(Document):
+    name = StringField(required=True)
+    age = IntField(required=True)
+
+
+# Example usage
+person_data = {"name": "John Doe", "age": 35}
+
+# Create and validate Pydantic model instance
+person_model = PersonModel(**person_data)
+
+# Create MongoEngine document instance from Pydantic model
+person_doc = Person(**person_model.dict())
+person_doc.save()
+```

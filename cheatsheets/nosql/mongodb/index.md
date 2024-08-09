@@ -34,6 +34,12 @@ This guide should give you a solid foundation for working with MongoDB. As you g
 
 ## Installation
 
-MongoDB can be installed on various platforms, including Windows, macOS, and Linux. You can download the appropriate installation package from the [MongoDB Download Center](https://www.mongodb.com/try/download/community).
+MongoDB can be accessed as a hosted solution on MongoAtlas, on a free tier or paid Enterprise version.
 
-Once installed, you can start the MongoDB server by running the `mongod` command for the "daemon" background process.
+MongoDB can be installed locally or on a selfhosted system, for various operating systems and with Docker. See the [Community Installation docs](https://www.mongodb.com/docs/manual/administration/install-community/).
+
+The installation includes the following binaries:
+
+- The `mongod` server
+- The `mongos` sharded cluster query router
+- The MongoDB Shell, `mongosh`

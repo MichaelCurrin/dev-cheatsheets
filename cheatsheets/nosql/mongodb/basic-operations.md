@@ -1,15 +1,6 @@
 # Basic Operations
 
 
-## MongoDB Shell
-
-The MongoDB shell is an interactive JavaScript interface that allows you to interact with MongoDB databases, collections, and documents. You can launch the shell by running the `mongo` command in your terminal or command prompt.
-
-```sh
-$ mongo
-```
-
-
 ## Creating a Database
 
 In MongoDB, databases are created implicitly when you create your first collection or document. You can switch to a specific database using the `use` command:
