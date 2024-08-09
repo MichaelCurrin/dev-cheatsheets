@@ -48,14 +48,19 @@ This defines a `User` model with three fields: `email` (required string), `first
 
 ## Connect to MongoDB
 
-Before you can start using MongoEngine, you need to establish a connection to your MongoDB instance.
+See [Connecting](https://docs.mongoengine.org/guide/connecting.html) in the docs.
 
 ```python
 import mongoengine
 
 
 mongoengine.connect('myapp')
-mongoengine.connect('myapp', host='mongodb://localhost:27017')
+
+# Connection.
+mongoengine.connect(host="mongodb://127.0.0.1:27017/myapp")
+
+# Keywords.
+mongoengine.connect('myapp', host='127.0.0.1', port=27017)
 ```
 
 This connects to a MongoDB instance running on `localhost:27017` and creates a database named `myapp` if it doesn't already exist.
