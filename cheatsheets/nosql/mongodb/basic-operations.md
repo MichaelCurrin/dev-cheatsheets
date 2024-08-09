@@ -109,12 +109,15 @@ db.users.update(
 
 ## Delete documents
 
-You can delete documents using the `remove` method:
-
 ```javascript
 db.users.deleteOne({ name: 'John Doe' })
 ```
 
+Delete all:
+
+```javascript
+db.users.deleteMany({})
+```
 
 ## Indexing
 
