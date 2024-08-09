@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <meta property="og:site_name" content="Dev Cheatsheets" />
+
+    <title>MongoEngine | Dev Cheatsheets</title>
+
+    <meta property="og:title" content="MongoEngine" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="MongoEngine" />
+<meta name="generator" content="Jekyll v4.3.3" />
+
+<meta property="og:locale" content="en_US" />
+
+
+    <meta name="description" content="A beginner's guide to using MongoEngine, a Python Object-Document Mapper for working with MongoDB.
+" />
+    <meta property="og:description" content="A beginner's guide to using MongoEngine, a Python Object-Document Mapper for working with MongoDB.
+" />
+<meta name="author" content="Michael Currin" />
+
+
+
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/database/mongoengine/" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/database/mongoengine/" />
+
+
+<script type="application/ld+json">
+{
+    "name":        "Dev Cheatsheets",
+    "description": "A beginner's guide to using MongoEngine, a Python Object-Document Mapper for working with MongoDB.
+",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/database/mongoengine/",
+    "headline":    "MongoEngine",
+    "@type":       "WebSite",
+    "@context":    "https://schema.org",
+    "author": {
+        "@type":"Person",
+        "name": "Michael Currin"
+    }
+}
+</script>
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+            <label for="nav-trigger">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 18 15" width="18px" height="15px">
+                        <path
+                            d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                    </svg>
+                </span>
+            </label>
+
+            <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                    Home
+                </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                    Cheatsheets
+                </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                    About
+                </a><a class="ext-link page-link" href="https://michaelcurrin.github.io/code-cookbook/">
+                    <span>Code Cookbook</span>
+                    <img src="/dev-cheatsheets/assets/ext-link.svg" />
+                </a><a class="ext-link page-link" href="https://michaelcurrin.github.io/dev-resources/">
+                    <span>Dev Resources</span>
+                    <img src="/dev-cheatsheets/assets/ext-link.svg" />
+                </a></div>
+        </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/python/libraries/database/mongoengine/index.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/python/libraries/database/mongoengine/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>MongoEngine</span>
+        </h1>
+
+        
+            <blockquote>
+                <p>A beginner's guide to using MongoEngine, a Python Object-Document Mapper for working with MongoDB.</p>
+
+            </blockquote>
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/python/">
+    Python
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/python/libraries/">
+    Libraries
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/python/libraries/database/">
+    Databases
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/python/libraries/database/mongoengine/" class="underline">
+                MongoEngine
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <h2>Topics</h2>
+
+<div class="flex-container">
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </div>
+
+<br>
+
+
+    <h2>Pages</h2>
+
+    
+
+<ul class="page-list">
+    </ul>
+
+    <br>
+
+    
+    
+        <h2>Content</h2>
+
+        <p>MongoEngine is a Python Object-Document Mapper (ODM) that allows you to work with MongoDB in a way similar to Object-Relational Mappers (ORMs) like SQLAlchemy.</p>
+
+<p>It provides a high-level abstraction layer on top of the <a href="/dev-cheatsheets/cheatsheets/python/libraries/database/pymongo/">PyMongo</a> driver, allowing you to define Python classes that map to MongoDB collections and perform database operations using Python objects.</p>
+
+<h2 id="related">Related</h2>
+
+<ul>
+  <li><a href="/dev-cheatsheets/cheatsheets/nosql/mongodb/">MongoDB</a> cheatsheet in the NoSQL section, covering installation, basic operations, and common use cases.</li>
+  <li><a href="/dev-cheatsheets/cheatsheets/python/libraries/database/pymongo/">PyMongo</a> cheatsheet in the Python libraries section.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="http://mongoengine.org/">MongoEngine Documentation</a></li>
+  <li><a href="https://realpython.com/intropnduction-to-mongodb-and-python/">MongoEngine Tutorial</a></li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<p>MongoEngine can be installed using pip:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>mongoengine
+</code></pre></div></div>
+
+<h2 id="defining-models">Defining Models</h2>
+
+<p>In MongoEngine, you define Python classes that map to MongoDB collections. Each class attribute represents a field in the document.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">mongoengine</span>
+
+
+<span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">mongoengine</span><span class="p">.</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">mongoengine</span><span class="p">.</span><span class="nc">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">first_name</span> <span class="o">=</span> <span class="n">mongoengine</span><span class="p">.</span><span class="nc">StringField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">last_name</span> <span class="o">=</span> <span class="n">mongoengine</span><span class="p">.</span><span class="nc">StringField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This defines a <code class="language-plaintext highlighter-rouge">User</code> model with three fields: <code class="language-plaintext highlighter-rouge">email</code> (required string), <code class="language-plaintext highlighter-rouge">first_name</code> (optional string with max length 50), and <code class="language-plaintext highlighter-rouge">last_name</code> (optional string with max length 50).</p>
+
+<h2 id="connecting-to-mongodb">Connecting to MongoDB</h2>
+
+<p>Before you can start using MongoEngine, you need to establish a connection to your MongoDB instance.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">mongoengine</span>
+
+
+<span class="n">mongoengine</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="sh">'</span><span class="s">myapp</span><span class="sh">'</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="sh">'</span><span class="s">mongodb://localhost:27017</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This connects to a MongoDB instance running on <code class="language-plaintext highlighter-rouge">localhost:27017</code> and creates a database named <code class="language-plaintext highlighter-rouge">myapp</code> if it doesn’t already exist.</p>
+
+<h2 id="creating-and-saving-documents">Creating and Saving Documents</h2>
+
+<p>Once you’ve defined your models and established a connection, you can create and save documents.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user</span> <span class="o">=</span> <span class="nc">User</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="sh">'</span><span class="s">john@example.com</span><span class="sh">'</span><span class="p">,</span> <span class="n">first_name</span><span class="o">=</span><span class="sh">'</span><span class="s">John</span><span class="sh">'</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="sh">'</span><span class="s">Doe</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">save</span><span class="p">()</span>  <span class="c1"># Saves the document to the 'user' collection
+</span></code></pre></div></div>
+
+<h2 id="querying-documents">Querying Documents</h2>
+
+<p>MongoEngine provides a powerful query API that allows you to filter, sort, and perform various operations on your documents.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Find all users
+</span><span class="n">users</span> <span class="o">=</span> <span class="n">User</span><span class="p">.</span><span class="nf">objects</span><span class="p">()</span>
+
+<span class="c1"># Find users with a specific email
+</span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">.</span><span class="nf">objects</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="sh">'</span><span class="s">john@example.com</span><span class="sh">'</span><span class="p">).</span><span class="nf">first</span><span class="p">()</span>
+
+<span class="c1"># Filter users by first name
+</span><span class="n">users</span> <span class="o">=</span> <span class="n">User</span><span class="p">.</span><span class="nf">objects</span><span class="p">(</span><span class="n">first_name__startswith</span><span class="o">=</span><span class="sh">'</span><span class="s">J</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="c1"># Sort users by last name
+</span><span class="n">users</span> <span class="o">=</span> <span class="n">User</span><span class="p">.</span><span class="nf">objects</span><span class="p">().</span><span class="nf">order_by</span><span class="p">(</span><span class="sh">'</span><span class="s">last_name</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="updating-documents">Updating Documents</h2>
+
+<p>You can update existing documents using the <code class="language-plaintext highlighter-rouge">save()</code> method or the <code class="language-plaintext highlighter-rouge">update()</code> method.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Update a single document
+</span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">.</span><span class="nf">objects</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="sh">'</span><span class="s">john@example.com</span><span class="sh">'</span><span class="p">).</span><span class="nf">first</span><span class="p">()</span>
+<span class="n">user</span><span class="p">.</span><span class="n">first_name</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Johnny</span><span class="sh">'</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">save</span><span class="p">()</span>
+
+<span class="c1"># Update multiple documents
+</span><span class="n">User</span><span class="p">.</span><span class="nf">objects</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="sh">'</span><span class="s">John</span><span class="sh">'</span><span class="p">).</span><span class="nf">update</span><span class="p">(</span><span class="n">set__first_name</span><span class="o">=</span><span class="sh">'</span><span class="s">Johnny</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="deleting-documents">Deleting Documents</h2>
+
+<p>Deleting documents is straightforward with MongoEngine.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Delete a single document
+</span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">.</span><span class="nf">objects</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="sh">'</span><span class="s">john@example.com</span><span class="sh">'</span><span class="p">).</span><span class="nf">first</span><span class="p">()</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">delete</span><span class="p">()</span>
+
+<span class="c1"># Delete multiple documents
+</span><span class="n">User</span><span class="p">.</span><span class="nf">objects</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="sh">'</span><span class="s">John</span><span class="sh">'</span><span class="p">).</span><span class="nf">delete</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="embedding-and-referencing">Embedding and Referencing</h2>
+
+<p>MongoEngine supports embedding and referencing documents, which are two different ways of representing relationships between data in MongoDB.</p>
+
+<h3 id="embedding">Embedding</h3>
+
+<p>Embedding is the process of nesting one document inside another. This is useful when you have a one-to-one or one-to-many relationship between documents.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Address</span><span class="p">(</span><span class="n">mongoengine</span><span class="p">.</span><span class="n">EmbeddedDocument</span><span class="p">):</span>
+    <span class="n">street</span> <span class="o">=</span> <span class="n">mongoengine</span><span class="p">.</span><span class="nc">StringField</span><span class="p">()</span>
+    <span class="n">city</span> <span class="o">=</span> <span class="n">mongoengine</span><span class="p">.</span><span class="nc">StringField</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">mongoengine</span><span class="p">.</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">mongoengine</span><span class="p">.</span><span class="nc">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">addresses</span> <span class="o">=</span> <span class="n">mongoengine</span><span class="p">.</span><span class="nc">EmbeddedDocumentListField</span><span class="p">(</span><span class="n">Address</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="referencing">Referencing</h3>
+
+<p>Referencing is the process of creating a reference from one document to another. This is useful when you have a many-to-many relationship between documents.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">mongoengine</span><span class="p">.</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">mongoengine</span><span class="p">.</span><span class="nc">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">first_name</span> <span class="o">=</span> <span class="n">mongoengine</span><span class="p">.</span><span class="nc">StringField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">last_name</span> <span class="o">=</span> <span class="n">mongoengine</span><span class="p">.</span><span class="nc">StringField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Book</span><span class="p">(</span><span class="n">mongoengine</span><span class="p">.</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">mongoengine</span><span class="p">.</span><span class="nc">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">authors</span> <span class="o">=</span> <span class="n">mongoengine</span><span class="p">.</span><span class="nc">ListField</span><span class="p">(</span><span class="n">mongoengine</span><span class="p">.</span><span class="nc">ReferenceField</span><span class="p">(</span><span class="n">User</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="advanced-features">Advanced Features</h2>
+
+<p>MongoEngine provides several advanced features, including:</p>
+
+<ul>
+  <li><strong>Signals</strong>: Allows you to define functions that are triggered when certain events occur, such as before or after saving a document.</li>
+  <li><strong>Indexes</strong>: Allows you to define indexes on your collections for improved query performance.</li>
+  <li><strong>Validation</strong>: Allows you to define validation rules for your document fields.</li>
+  <li><strong>Caching</strong>: Allows you to cache query results for improved performance.</li>
+</ul>
+
+<p>For more information on these and other advanced features, please refer to the <a href="http://mongoengine.org/">MongoEngine Documentation</a>.</p>
+
+<p>This guide should give you a solid foundation for working with MongoEngine and MongoDB in your Python projects. As you gain more experience, you can explore the advanced features and capabilities of MongoEngine to build more complex and scalable applications.</p>
+    
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+        <a href="https://github.com/MichaelCurrin"><svg
+                class="svg-icon">
+                <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github">
+                </use>
+            </svg> <span class="username">MichaelCurrin</span></a>
+    </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

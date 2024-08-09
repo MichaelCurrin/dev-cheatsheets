@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <meta property="og:site_name" content="Dev Cheatsheets" />
+
+    <title>PyMongo | Dev Cheatsheets</title>
+
+    <meta property="og:title" content="PyMongo" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="PyMongo" />
+<meta name="generator" content="Jekyll v4.3.3" />
+
+<meta property="og:locale" content="en_US" />
+
+
+    <meta name="description" content="A beginner's guide to using PyMongo, the official Python driver for MongoDB.
+" />
+    <meta property="og:description" content="A beginner's guide to using PyMongo, the official Python driver for MongoDB.
+" />
+<meta name="author" content="Michael Currin" />
+
+
+
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/database/pymongo/" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/database/pymongo/" />
+
+
+<script type="application/ld+json">
+{
+    "name":        "Dev Cheatsheets",
+    "description": "A beginner's guide to using PyMongo, the official Python driver for MongoDB.
+",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/database/pymongo/",
+    "headline":    "PyMongo",
+    "@type":       "WebSite",
+    "@context":    "https://schema.org",
+    "author": {
+        "@type":"Person",
+        "name": "Michael Currin"
+    }
+}
+</script>
+<link rel="stylesheet" href="/dev-cheatsheets/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://michaelcurrin.github.io/dev-cheatsheets/feed.xml" title="Dev Cheatsheets" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-87705880-12"></script>
+    <script>
+        window['ga-disable-UA-87705880-12'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-87705880-12');
+    </script></head>
+<body>
+<header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/dev-cheatsheets/">
+            Dev Cheatsheets
+        </a><nav class="site-nav">
+            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+            <label for="nav-trigger">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 18 15" width="18px" height="15px">
+                        <path
+                            d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                    </svg>
+                </span>
+            </label>
+
+            <div class="trigger"><a class="page-link" href="/dev-cheatsheets/">
+                    Home
+                </a><a class="page-link" href="/dev-cheatsheets/cheatsheets/">
+                    Cheatsheets
+                </a><a class="page-link" href="/dev-cheatsheets/about.html">
+                    About
+                </a><a class="ext-link page-link" href="https://michaelcurrin.github.io/code-cookbook/">
+                    <span>Code Cookbook</span>
+                    <img src="/dev-cheatsheets/assets/ext-link.svg" />
+                </a><a class="ext-link page-link" href="https://michaelcurrin.github.io/dev-resources/">
+                    <span>Dev Resources</span>
+                    <img src="/dev-cheatsheets/assets/ext-link.svg" />
+                </a></div>
+        </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/python/libraries/database/pymongo/index.md">
+    📝 <span>Edit page</span>
+</a>
+
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/python/libraries/database/pymongo/">
+    ➕ <span>Add page</span>
+</a>
+
+
+            
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            
+
+
+            <span>PyMongo</span>
+        </h1>
+
+        
+            <blockquote>
+                <p>A beginner's guide to using PyMongo, the official Python driver for MongoDB.</p>
+
+            </blockquote>
+        
+    </header>
+
+    
+
+
+    <div id="breadcrumbs">
+
+    
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/">
+    Cheatsheets
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/python/">
+    Python
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/python/libraries/">
+    Libraries
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/python/libraries/database/">
+    Databases
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/python/libraries/database/pymongo/" class="underline">
+                PyMongo
+            </a>
+        
+     
+    </div>
+
+
+
+    <br>
+
+    <div class="post-content">
+        
+            <h2>Topics</h2>
+
+<div class="flex-container">
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </div>
+
+<br>
+
+
+    <h2>Pages</h2>
+
+    
+
+<ul class="page-list">
+    </ul>
+
+    <br>
+
+    
+    
+        <h2>Content</h2>
+
+        <p>PyMongo is the official Python driver for MongoDB, a popular NoSQL document database.</p>
+
+<p>It provides a rich and Pythonic interface for interacting with MongoDB databases, allowing you to perform various operations such as creating, reading, updating, and deleting documents.</p>
+
+<h2 id="related">Related</h2>
+
+<ul>
+  <li><a href="/dev-cheatsheets/cheatsheets/nosql/mongodb/">MongoDB</a> cheatsheet in the NoSQL section, covering installation, basic operations, and common use cases.</li>
+  <li><a href="/dev-cheatsheets/cheatsheets/python/libraries/database/mongoengine/">MongoEngine</a> cheatsheet for using the MongoEngine Object-Document Mapper.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://pymongo.readthedocs.io/">PyMongo Documentation</a></li>
+  <li><a href="https://www.mongodb.com/docs/drivers/python/">MongoDB Python Driver Tutorial</a></li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<p>PyMongo can be installed using pip:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>pymongo
+</code></pre></div></div>
+
+<h2 id="connecting-to-mongodb">Connecting to MongoDB</h2>
+
+<p>Before you can start using PyMongo, you need to establish a connection to your MongoDB instance.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pymongo</span>
+
+<span class="c1"># Connect to a running MongoDB instance
+</span><span class="n">client</span> <span class="o">=</span> <span class="n">pymongo</span><span class="p">.</span><span class="nc">MongoClient</span><span class="p">(</span><span class="sh">'</span><span class="s">mongodb://localhost:27017/</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="c1"># Get a reference to a specific database
+</span><span class="n">db</span> <span class="o">=</span> <span class="n">client</span><span class="p">[</span><span class="sh">'</span><span class="s">myapp</span><span class="sh">'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>This connects to a MongoDB instance running on <code class="language-plaintext highlighter-rouge">localhost:27017</code> and creates (or gets a reference to) a database named <code class="language-plaintext highlighter-rouge">myapp</code>.</p>
+
+<h2 id="creating-and-inserting-documents">Creating and Inserting Documents</h2>
+
+<p>In MongoDB, data is stored as documents, which are similar to JSON objects. PyMongo allows you to work with documents using Python dictionaries.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create a new document
+</span><span class="n">document</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">John Doe</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">email</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">john@example.com</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">:</span> <span class="mi">30</span>
+<span class="p">}</span>
+
+<span class="c1"># Insert the document into a collection
+</span><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="sh">'</span><span class="s">users</span><span class="sh">'</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">collection</span><span class="p">.</span><span class="nf">insert_one</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">inserted_id</span><span class="p">)</span>  <span class="c1"># Prints the ID of the inserted document
+</span></code></pre></div></div>
+
+<h2 id="querying-documents">Querying Documents</h2>
+
+<p>PyMongo provides a powerful query API that allows you to filter, sort, and perform various operations on your documents.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Find all documents in a collection
+</span><span class="n">documents</span> <span class="o">=</span> <span class="n">collection</span><span class="p">.</span><span class="nf">find</span><span class="p">()</span>
+
+<span class="c1"># Find documents matching a specific criteria
+</span><span class="n">criteria</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">:</span> <span class="p">{</span><span class="sh">'</span><span class="s">$gt</span><span class="sh">'</span><span class="p">:</span> <span class="mi">25</span><span class="p">}}</span>
+<span class="n">documents</span> <span class="o">=</span> <span class="n">collection</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">criteria</span><span class="p">)</span>
+
+<span class="c1"># Sort documents
+</span><span class="n">documents</span> <span class="o">=</span> <span class="n">collection</span><span class="p">.</span><span class="nf">find</span><span class="p">().</span><span class="nf">sort</span><span class="p">(</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">,</span> <span class="n">pymongo</span><span class="p">.</span><span class="n">ASCENDING</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="updating-documents">Updating Documents</h2>
+
+<p>You can update existing documents using the <code class="language-plaintext highlighter-rouge">update_one()</code> or <code class="language-plaintext highlighter-rouge">update_many()</code> methods.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Update a single document
+</span><span class="nb">filter</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">email</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">john@example.com</span><span class="sh">'</span><span class="p">}</span>
+<span class="n">update</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">$set</span><span class="sh">'</span><span class="p">:</span> <span class="p">{</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">:</span> <span class="mi">31</span><span class="p">}}</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">collection</span><span class="p">.</span><span class="nf">update_one</span><span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">modified_count</span><span class="p">)</span>  <span class="c1"># Prints the number of documents modified
+</span>
+<span class="c1"># Update multiple documents
+</span><span class="nb">filter</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">:</span> <span class="p">{</span><span class="sh">'</span><span class="s">$lt</span><span class="sh">'</span><span class="p">:</span> <span class="mi">30</span><span class="p">}}</span>
+<span class="n">update</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">$inc</span><span class="sh">'</span><span class="p">:</span> <span class="p">{</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">collection</span><span class="p">.</span><span class="nf">update_many</span><span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">modified_count</span><span class="p">)</span>  <span class="c1"># Prints the number of documents modified
+</span></code></pre></div></div>
+
+<h2 id="deleting-documents">Deleting Documents</h2>
+
+<p>Deleting documents is straightforward with PyMongo.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Delete a single document
+</span><span class="nb">filter</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">email</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">john@example.com</span><span class="sh">'</span><span class="p">}</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">collection</span><span class="p">.</span><span class="nf">delete_one</span><span class="p">(</span><span class="nb">filter</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">deleted_count</span><span class="p">)</span>  <span class="c1"># Prints the number of documents deleted
+</span>
+<span class="c1"># Delete multiple documents
+</span><span class="nb">filter</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">:</span> <span class="p">{</span><span class="sh">'</span><span class="s">$lt</span><span class="sh">'</span><span class="p">:</span> <span class="mi">25</span><span class="p">}}</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">collection</span><span class="p">.</span><span class="nf">delete_many</span><span class="p">(</span><span class="nb">filter</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">deleted_count</span><span class="p">)</span>  <span class="c1"># Prints the number of documents deleted
+</span></code></pre></div></div>
+
+<h2 id="advanced-operations">Advanced Operations</h2>
+
+<p>PyMongo provides several advanced features and operations, including:</p>
+
+<h3 id="indexing">Indexing</h3>
+
+<p>Indexes can significantly improve query performance by allowing MongoDB to quickly locate relevant documents.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create an index on the 'name' field
+</span><span class="n">collection</span><span class="p">.</span><span class="nf">create_index</span><span class="p">(</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="c1"># Create a compound index on multiple fields
+</span><span class="n">collection</span><span class="p">.</span><span class="nf">create_index</span><span class="p">([(</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">,</span> <span class="n">pymongo</span><span class="p">.</span><span class="n">ASCENDING</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">,</span> <span class="n">pymongo</span><span class="p">.</span><span class="n">DESCENDING</span><span class="p">)])</span>
+</code></pre></div></div>
+
+<h3 id="aggregation">Aggregation</h3>
+
+<p>MongoDB’s aggregation framework allows you to perform complex data processing and analysis operations on your data.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Count the number of documents grouped by age
+</span><span class="n">pipeline</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="sh">'</span><span class="s">$group</span><span class="sh">'</span><span class="p">:</span> <span class="p">{</span><span class="sh">'</span><span class="s">_id</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">$age</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">count</span><span class="sh">'</span><span class="p">:</span> <span class="p">{</span><span class="sh">'</span><span class="s">$sum</span><span class="sh">'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}}</span>
+<span class="p">]</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">collection</span><span class="p">.</span><span class="nf">aggregate</span><span class="p">(</span><span class="n">pipeline</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Age: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="sh">'</span><span class="s">_id</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="s">, Count: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="sh">'</span><span class="s">count</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="transactions">Transactions</h3>
+
+<p>MongoDB supports multi-document transactions, allowing you to perform multiple operations as an all-or-nothing unit of work.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Start a client session
+</span><span class="n">session</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">start_session</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="n">session</span><span class="p">:</span>
+    <span class="c1"># Start a transaction
+</span>    <span class="n">session</span><span class="p">.</span><span class="nf">start_transaction</span><span class="p">()</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Perform multiple operations within the transaction
+</span>        <span class="n">collection</span><span class="p">.</span><span class="nf">insert_one</span><span class="p">({</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Alice</span><span class="sh">'</span><span class="p">},</span> <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">)</span>
+        <span class="n">collection</span><span class="p">.</span><span class="nf">insert_one</span><span class="p">({</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Bob</span><span class="sh">'</span><span class="p">},</span> <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">)</span>
+
+        <span class="c1"># Commit the transaction
+</span>        <span class="n">session</span><span class="p">.</span><span class="nf">commit_transaction</span><span class="p">()</span>
+    <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="c1"># Abort the transaction on error
+</span>        <span class="n">session</span><span class="p">.</span><span class="nf">abort_transaction</span><span class="p">()</span>
+        <span class="k">raise</span> <span class="n">e</span>
+</code></pre></div></div>
+
+<h2 id="advanced-features">Advanced Features</h2>
+
+<p>PyMongo provides several advanced features, including:</p>
+
+<ul>
+  <li><strong>Change Streams</strong>: Allows you to monitor changes to your data in real-time.</li>
+  <li><strong>GridFS</strong>: Allows you to store and retrieve large files (e.g., images, videos) in MongoDB.</li>
+  <li><strong>Replica Set Support</strong>: Allows you to connect to and work with MongoDB replica sets for high availability and failover.</li>
+  <li><strong>Sharded Cluster Support</strong>: Allows you to connect to and work with sharded MongoDB clusters for horizontal scaling.</li>
+</ul>
+
+<p>For more information on these and other advanced features, please refer to the <a href="https://pymongo.readthedocs.io/">PyMongo Documentation</a>.</p>
+
+<p>This guide should give you a solid foundation for working with PyMongo and MongoDB in your Python projects. As you gain more experience, you can explore the advanced features and capabilities of PyMongo to build more complex and scalable applications.</p>
+    
+
+        
+    </div>
+</article>
+
+        </div>
+    </main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/dev-cheatsheets/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">Dev Cheatsheets</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list"><li class="p-name">
+                            Michael Currin
+                        </li></ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li>
+        <a href="https://github.com/MichaelCurrin"><svg
+                class="svg-icon">
+                <use xlink:href="/dev-cheatsheets/assets/fractal-social-icons.svg#github">
+                </use>
+            </svg> <span class="username">MichaelCurrin</span></a>
+    </li></ul>
+</div>
+
+            <div class="footer-col footer-col-3">
+                <p>A collection of code snippets and CLI guides for quick and easy reference while coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://github.com/MichaelCurrin/dev-cheatsheets"
+    class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>

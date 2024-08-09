@@ -484,6 +484,9 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/web/</loc>
 </url>
 <url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/mongodb/</loc>
+</url>
+<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/graphql/</loc>
 </url>
 <url>
@@ -676,7 +679,13 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/ruby/</loc>
 </url>
 <url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/database/pymongo/</loc>
+</url>
+<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/database/redis/</loc>
+</url>
+<url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/database/mongoengine/</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/database/</loc>
@@ -973,6 +982,9 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/pull.html</loc>
 </url>
 <url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/pydantic.html</loc>
+</url>
+<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/install/pyenv.html</loc>
 </url>
 <url>
@@ -995,6 +1007,9 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/files/redirection.html</loc>
+</url>
+<url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/redis/redis-cli.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/committing/references.html</loc>
@@ -2348,9 +2363,6 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/redis/</loc>
-</url>
-<url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/redis/redis-cli.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/other/clean-code.html</loc>
