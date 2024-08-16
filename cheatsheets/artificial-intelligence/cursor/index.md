@@ -6,22 +6,10 @@
 
 An AI-focused IDE for creating and updating code, tab auto-completion, and for chats with persistent history.
 
-## Functionality
-
-Here is an example of using code editing to apply changes inline:
-
-![image](https://github.com/user-attachments/assets/1e334337-da8d-485c-99b2-9bee7fc71570)
-
-Ask questions in the terminal:
-
-![image](https://github.com/user-attachments/assets/f2471155-592d-4b66-9362-f80075de9438)
-
-![image](https://github.com/user-attachments/assets/4f93f5a0-675e-47c9-9a6d-b9bfdbf0a8ee)
+Read more on the [Features](https://www.cursor.com/features) page of the Cursor website.
 
 
-## Usage tips
-
-### Launch
+## Launch
 
 Open a project from the command-line:
 
@@ -32,7 +20,29 @@ $ # e.g.
 $ cursor my-repo
 ```
 
+## Features
+
+The main actions you can do.
+
+### Code
+
+On macOS, COMMAND+K.
+
+Here is an example of using code editing to apply changes inline:
+
+![image](https://github.com/user-attachments/assets/1e334337-da8d-485c-99b2-9bee7fc71570)
+
+### Tab auto-completion
+
+Press <kbd>tab</kbd> in your code. Get a result for one or multiple lines.
+
+This is called Cursor Tab or Cursor++.
+
+![image](https://github.com/user-attachments/assets/39e0c3a7-f8ca-4cd8-9914-16d2cb6f844b)
+
 ### Chat
+
+On macOS, COMMAND+L.
 
 Applying code changes directly can be limiting without a conversation first and without getting an explanation out. So use the chat pane to ask to have a conversation and then ask for changes, then apply them. 
 
@@ -40,7 +50,40 @@ Applying code changes directly can be limiting without a conversation first and 
 
 ![image](https://github.com/user-attachments/assets/5fac2d4f-7d6f-4fec-a232-6bb4b90cbed6)
 
-Select code and press COMMAND+L to add multiple pieces of code to the chat context
+### Terminal
+
+Ask questions in the terminal. On macOS, COMMAND+K.
+
+
+For Bash:
+
+![image](https://github.com/user-attachments/assets/f2471155-592d-4b66-9362-f80075de9438)
+
+![image](https://github.com/user-attachments/assets/4f93f5a0-675e-47c9-9a6d-b9bfdbf0a8ee)
+
+For Python:
+
+![image](https://github.com/user-attachments/assets/66064f00-ba28-4577-8488-074c85ac1c5e)
+
+![image](https://github.com/user-attachments/assets/8ae8d3f8-44c4-440c-969f-9b949fbbd7d5)
+
+
+For SQLite:
+
+![image](https://github.com/user-attachments/assets/4df4f422-6de4-4fdb-8adf-97e8dfff5040)
+
+![image](https://github.com/user-attachments/assets/99d7c714-2323-4a04-87ff-0a8f93263e57)
+
+
+## Usage tips
+
+How to get the most out of the features above
+
+### Add to chat
+
+Select code and press COMMAND+L or COMMAND+SHIFT+L to add multiple pieces of code to the chat context. If you select code and paste with COMMAND+V then that works too. Or click "Add to chat", which is the message instead of "Chat" if there is already code.
+
+![image](https://github.com/user-attachments/assets/9fbd7469-6c70-40c8-945b-937b213b04e9)
 
 ![image](https://github.com/user-attachments/assets/f103e254-9507-4884-b1ee-2a8e0a96bbdd)
 
@@ -102,3 +145,9 @@ Manage docs under Cursor's settings:
 Go to Cursor settings and set the system prompt so you get code that is consistent with what you expect.
 
 See [LLM](https://michaelcurrin.github.io/code-cookbook/recipes/artificial-intelligence/llm.html) page for some samples.
+
+### Upload images
+
+You cannot upload an image to the prompt like with other genAIs but you can reference a file in your project with GPT-4.
+
+![image](https://github.com/user-attachments/assets/0e04a71c-cad0-4a0e-ba06-6433dd5fd16b)
