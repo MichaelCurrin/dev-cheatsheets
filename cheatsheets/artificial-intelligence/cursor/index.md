@@ -6,12 +6,31 @@
 
 An AI-focused IDE for creating and updating code, tab auto-completion, and for chats with persistent history.
 
+## Functionality
+
 Here is an example of using code editing to apply changes inline:
 
 ![image](https://github.com/user-attachments/assets/1e334337-da8d-485c-99b2-9bee7fc71570)
 
+Ask questions in the terminal:
+
+![image](https://github.com/user-attachments/assets/f2471155-592d-4b66-9362-f80075de9438)
+
+![image](https://github.com/user-attachments/assets/4f93f5a0-675e-47c9-9a6d-b9bfdbf0a8ee)
+
 
 ## Usage tips
+
+### Launch
+
+Open a project from the command-line:
+
+```sh
+$ # e.g.
+$ cursor .
+$ # e.g.
+$ cursor my-repo
+```
 
 ### Chat
 
@@ -21,6 +40,9 @@ Applying code changes directly can be limiting without a conversation first and 
 
 ![image](https://github.com/user-attachments/assets/5fac2d4f-7d6f-4fec-a232-6bb4b90cbed6)
 
+Select code and press COMMAND+L to add multiple pieces of code to the chat context
+
+![image](https://github.com/user-attachments/assets/f103e254-9507-4884-b1ee-2a8e0a96bbdd)
 
 ### @ mentions
 
@@ -29,11 +51,18 @@ Use the "@" symbol either in the code writing/editing or in the chat, so you can
 ![image](https://github.com/user-attachments/assets/a0c7d336-6248-4d5e-8d5a-72bf2e46ed71)
 ![image](https://github.com/user-attachments/assets/b8d275ab-f666-4779-bbac-4f90471f5da1)
 
+Choose existing 3rd-party documentation:
+
+![image](https://github.com/user-attachments/assets/bc3b278f-7b00-4984-a489-e834c1e0234c)
+
+
 ### Codebase reference
 
 In that chat, use the option to reference the whole base rather than the current file (this will be more expensive but can give you a better solution by understanding multiple files and the suggestions can be across files).
 
 ![image](https://github.com/user-attachments/assets/d1d2b340-d77d-444d-b0ca-78f4705b70ef)
+
+This can be done with by clicking the _with codebase_ button or pressing _COMMAND + ENTER_.
 
 ### Scope of changes
 
@@ -47,10 +76,29 @@ You can write code comments for your requirements before you have code or a func
 
 Even if you don't use AI to fill out the comments, you can fill it in yourself manually or come back to it another day or share with someone else. 
 
-### Add to edit
 
-If you start code changes with _Edit_, you can find code in other files and add them to the context with _Add to edit_. 
+### Documentation
 
-![image](https://github.com/user-attachments/assets/941bb1ac-7e07-4efa-b97f-128b81f2183d)
+If Cursor does not understand a library or tool that is out of the training data, then you can give it a URL for a documentation page.
 
-I haven't figured out the use of this yet.
+![image](https://github.com/user-attachments/assets/c2b4e265-98d6-4e10-9e47-a610572618cb)
+
+![image](https://github.com/user-attachments/assets/f2531ff8-d3e0-412c-96ba-47a84b7c5706)
+
+![image](https://github.com/user-attachments/assets/54f511ac-7feb-4788-a2fe-bb4638d0be2e)
+
+![image](https://github.com/user-attachments/assets/e83b85a5-56ff-45d7-ab6b-43e5a2cccf1e)
+
+Or go through "@" mentions and pick _Add new doc_.
+
+![image](https://github.com/user-attachments/assets/bc3b278f-7b00-4984-a489-e834c1e0234c)
+
+Manage docs under Cursor's settings:
+
+![image](https://github.com/user-attachments/assets/4c8cb1fa-79d6-4f0b-b81e-6ded39853775)
+
+### System prompt
+
+Go to Cursor settings and set the system prompt so you get code that is consistent with what you expect.
+
+See [LLM](https://michaelcurrin.github.io/code-cookbook/recipes/artificial-intelligence/llm.html) page for some samples.
