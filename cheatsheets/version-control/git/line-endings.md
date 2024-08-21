@@ -101,7 +101,7 @@ end_of_line = lf
 
 ## Normalize line endings in all files
 
-After setting `core.atuocrlf` or the `text` attribute, set this.
+After setting `core.autocrlf` in Git config or the `text` attribute in `.gitattributes`, set this.
 
 ```sh
 $ git add --renormalize .
