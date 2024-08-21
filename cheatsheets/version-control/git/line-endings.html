@@ -20,8 +20,8 @@
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
-    <meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+    <meta name="description" content="How to configure line endings for your repo and to get them consistent" />
+    <meta property="og:description" content="How to configure line endings for your repo and to get them consistent" />
 <meta name="author" content="Michael Currin" />
 
 
@@ -33,7 +33,7 @@
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
+    "description": "How to configure line endings for your repo and to get them consistent",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/line-endings.html",
     "headline":    "Line endings",
     "@type":       "WebSite",
@@ -109,6 +109,11 @@
         </h1>
 
         
+            <blockquote>
+                <p>How to configure line endings for your repo and to get them consistent</p>
+
+            </blockquote>
+        
     </header>
 
     
@@ -169,36 +174,80 @@
 
     <div class="post-content">
         
-            <p>You can edit files and commit then using one of the following line endings:</p>
+            <p>If you or your team are working on multiple operating systems, this can cause issues. Such as warnings from Git, and files appearing modified even though they look the same aside from whitespace.</p>
 
-<ul>
-  <li>Unix-style: <code class="language-plaintext highlighter-rouge">\n</code> i.e. LF (“line feed”).</li>
-  <li>Windows style: <code class="language-plaintext highlighter-rouge">\r\n</code> i.e. CRLF (“carriage return and line feed”).</li>
-</ul>
+<p>See also this article - <a href="https://www.aleksandrhovhannisyan.com/blog/crlf-vs-lf-normalizing-line-endings-in-git/">CRLF vs. LF: Normalizing Line Endings in Git</a></p>
 
-<h2 id="changing">Changing</h2>
+<h2 id="line-endings">Line endings</h2>
 
-<p>You might get a message from <code class="language-plaintext highlighter-rouge">git status</code> as “LF will be replaced by CRLF”.</p>
+<p>You can edit files and commit then using one of the following line endings:</p>
 
-<p>Then you can change how Git behaves (see next section) or change your IDE’s LF/CRLF setting.</p>
+<table>
+  <thead>
+    <tr>
+      <th>OS</th>
+      <th>Abbreviation</th>
+      <th>Full name</th>
+      <th>Character</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Unix-style</td>
+      <td>LF</td>
+      <td>“line feed”</td>
+      <td><code class="language-plaintext highlighter-rouge">\n</code></td>
+    </tr>
+    <tr>
+      <td>Windows style</td>
+      <td>CRLF</td>
+      <td>“carriage return and line feed”</td>
+      <td><code class="language-plaintext highlighter-rouge">\r\n</code></td>
+    </tr>
+  </tbody>
+</table>
 
-<h2 id="solutions">Solutions</h2>
+<p>You might also see “CR” or carriage return as the old style Windows line ending, but this is not an option in Git.</p>
 
-<p>Based on <a href="https://stackoverflow.com/questions/10418975/how-to-change-line-ending-settings/40821931#40821931">answer</a>.</p>
+<h2 id="vertify-ling-endings">Vertify ling endings</h2>
 
-<h3 id="set-on-linux-and-macos">Set on Linux and macOS</h3>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git ls-files <span class="nt">--eol</span>
+</code></pre></div></div>
+<p>e.g.</p>
 
-<p>This will fix any <code class="language-plaintext highlighter-rouge">CRLF</code> to <code class="language-plaintext highlighter-rouge">LF</code> when you commit.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i/lf    w/lf    attr/text=auto          .editorconfig
+i/lf    w/lf    attr/text=auto          .gitignore
+i/lf    w/lf    attr/text=auto          README.md
+...
+</code></pre></div></div>
+
+<p>You can also pass a path to that.w</p>
+
+<h2 id="how-to-fix-inconsisten-line-endings">How to fix inconsisten line endings</h2>
+
+<p>You might get a message from <code class="language-plaintext highlighter-rouge">git status</code> like this: “LF will be replaced by CRLF”. And if you check your <code class="language-plaintext highlighter-rouge">git diff</code> you might see <code class="language-plaintext highlighter-rouge">^M</code> throughout the file at the end of each line.</p>
+
+<p>To solve this, you can change how Git behaves (see next section). Or hange your IDE’s LF/CRLF setting.</p>
+
+<p>Advice below is based on this <a href="https://stackoverflow.com/questions/10418975/how-to-change-line-ending-settings/40821931#40821931">StackOverflow thread</a>.</p>
+
+<p>See <a href="https://git-scm.com/docs/git-config#Documentation/git-config.txt-coreautocrlf">core.autocrlf</a> in the Git docs for what the settings values mean.</p>
+
+<h3 id="set-input-auto-crlf">Set input Auto-CRLF</h3>
+
+<p>No input conversion is done.</p>
+
+<p>I found this works for Linux and macOS.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git config <span class="nt">--global</span> core.autocrlf input
 </code></pre></div></div>
 
 <h3 id="set-auto-crlf-on-windows">Set Auto-CRLF on Windows</h3>
 
+<p>This will make sure that when you checkout in Windows, all <code class="language-plaintext highlighter-rouge">LF</code> will be converted to <code class="language-plaintext highlighter-rouge">CRLF</code>.</p>
+
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git config <span class="nt">--global</span> core.autocrlf <span class="nb">true</span>
 </code></pre></div></div>
-
-<p>This will make sure that when you checkout in windows, all <code class="language-plaintext highlighter-rouge">LF</code> will be converted to <code class="language-plaintext highlighter-rouge">CRLF</code>.</p>
 
 <p>See more info on <a href="https://stackoverflow.com/questions/2825428/why-should-i-use-core-autocrlf-true-in-git">StackOverflow thread</a>.</p>
 
@@ -211,7 +260,7 @@
   </ul>
 </blockquote>
 
-<h3 id="git-attributes">Git attributes</h3>
+<h3 id="set-git-attributes">Set git attributes</h3>
 
 <p><code class="language-plaintext highlighter-rouge">.gitattributes</code> file</p>
 
@@ -235,6 +284,25 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* text eol=crlf
 * text eol=lf
 </code></pre></div></div>
+
+<p>If you still see on Windows that Git doesn’t change the files correctly, you can set this in <code class="language-plaintext highlighter-rouge">.editorconfig</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root = true
+
+[*]
+end_of_line = lf
+</code></pre></div></div>
+
+<h2 id="normalize-line-endings-in-all-files">Normalize line endings in all files</h2>
+
+<p>After setting <code class="language-plaintext highlighter-rouge">core.atuocrlf</code> or the <code class="language-plaintext highlighter-rouge">text</code> attribute, set this.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git add <span class="nt">--renormalize</span> <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>Based on <a href="https://stackoverflow.com/questions/7156694/git-how-to-renormalize-line-endings-in-all-files-in-all-revisions">StackOverflow thread</a> and <a href="https://www.aleksandrhovhannisyan.com/blog/crlf-vs-lf-normalizing-line-endings-in-git/">article</a>.</p>
+
+<p>See <a href="https://git-scm.com/docs/git-add#Documentation/git-add.txt---renormalize">add –renormalize</a> in the Git docs.</p>
 
         
     </div>
