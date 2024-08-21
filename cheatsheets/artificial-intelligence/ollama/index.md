@@ -55,3 +55,5 @@ $ ollama ps
 See conversation on GitHub [here](https://github.com/ollama/ollama/issues/690). There is no builtin way to stop `ollama`. Use your system manager or use `pkill`.
 
 On macOS, find the icon as running apps and click Quit.
+
+If you started with `ollam serve`, then just stop that process to stop Ollama.
