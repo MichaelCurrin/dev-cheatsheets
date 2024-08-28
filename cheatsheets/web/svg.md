@@ -1,11 +1,10 @@
 # SVG
 
-## Setting color
-
+## Set color
 
 See this [Fills and Strokes](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes) guide on the Mozilla site for how to set colors of an SVG in different ways.
 
-### Fill attribute
+### Use the fill attribute
 
 ```html
 <svg>
@@ -14,7 +13,7 @@ See this [Fills and Strokes](https://developer.mozilla.org/en-US/docs/Web/SVG/Tu
 </svg>
 ```
 
-### Inline style
+### Use inline style
 
 Set color of an element using inline style.
 
@@ -24,7 +23,7 @@ Set color of an element using inline style.
 </svg>
 ```
 
-### CSS
+### Use CSS
 
 ```html
 <svg width="200" height="150" xmlns="https://www.w3.org/2000/svg" version="1.1">
@@ -39,8 +38,7 @@ Set color of an element using inline style.
 </style>
 ```
 
-Note this only works because the SVG is elements are defined directly. See the [Current color](#current-color) section for loading and external image and then setting its color.
-
+Note this only works because the SVG is elements are defined directly. See the section below for loading and external image and then setting its color.
 
 You can set color of the entire SVG using inline style.
 
@@ -50,7 +48,7 @@ You can set color of the entire SVG using inline style.
 </svg>
 ```
 
-### Current color
+### Use current color
 
 #### Current color on element
 
@@ -90,7 +88,6 @@ svg {
 ```
 
 On this site, my SVG is placed inside an anchor tag and so it matches the anchor tag's colors. Which is blue initially and then black when you hover over it.
-
 
 ### Current color in CSS
 
