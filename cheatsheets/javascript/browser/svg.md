@@ -40,7 +40,6 @@ circle {
 }
 ```
 
-
 ### Linked SVG (`object` element with reference)
 
 When you embed an SVG using `<object>`, the SVG is treated as a separate document. The `contentDocument` property allows you to access and manipulate this embedded document's DOM (and is safer and more widely used than `getSVGDocument()`).
