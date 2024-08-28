@@ -173,6 +173,8 @@
 
 <h3 id="inline-svg">Inline SVG</h3>
 
+<p>Change using <code class="language-plaintext highlighter-rouge">onclick</code> to set an attribute or class.</p>
+
 <p><a href="https://stackoverflow.com/questions/9872947/changing-svg-image-color-with-javascript">source</a></p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;svg</span> <span class="na">id=</span><span class="s">"svg1"</span> <span class="na">xmlns=</span><span class="s">"https://www.w3.org/2000/svg"</span>
@@ -180,22 +182,53 @@
     <span class="nt">&lt;circle</span> <span class="na">id=</span><span class="s">"circle1"</span> <span class="na">r=</span><span class="s">"30"</span> <span class="na">cx=</span><span class="s">"34"</span> <span class="na">cy=</span><span class="s">"34"</span>
       <span class="na">style=</span><span class="s">"fill: red; stroke: blue; stroke-width: 2"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/svg&gt;</span>
+</code></pre></div></div>
 
-<span class="c">&lt;!-- CSS should be used here instead of editing style. --&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"circle1.style.fill='yellow';"</span><span class="nt">&gt;</span>Click to change to yellow<span class="nt">&lt;/button&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"circle1.style.fill='yellow';"</span><span class="nt">&gt;</span>
+    Click to change to yellow
+<span class="nt">&lt;/button&gt;</span>
+</code></pre></div></div>
+
+<p>Or better, using a CSS class:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"circle1.classList.toggle('yellow-fill');"</span><span class="nt">&gt;</span>
+    Click to change to yellow
+<span class="nt">&lt;/button&gt;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">circle</span> <span class="p">{</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span> 
+<span class="p">}</span>
+
+<span class="nc">.yellow-fill</span> <span class="p">{</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span> 
+<span class="p">}</span>
 </code></pre></div></div>
 
 <h3 id="linked-svg">Linked SVG</h3>
 
-<p>Note: styling on the object element does not affect the value inside. An iframe can be used too.</p>
+<p>When you embed an SVG using <code class="language-plaintext highlighter-rouge">&lt;object&gt;</code>, the SVG is treated as a separate document. The <code class="language-plaintext highlighter-rouge">contentDocument</code> property allows you to access and manipulate this embedded document’s DOM (and is safer and more widely used than <code class="language-plaintext highlighter-rouge">getSVGDocument()</code>).</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;object</span> <span class="na">id=</span><span class="s">"my-svg"</span> <span class="na">data=</span><span class="s">"image.svg"</span> <span class="na">type=</span><span class="s">"image/svg+xml"</span><span class="nt">&gt;&lt;/object&gt;</span>
+<p>Set this using JS.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;object</span> <span class="na">id=</span><span class="s">"my-svg"</span> <span class="na">data=</span><span class="s">"image.svg"</span> <span class="na">type=</span><span class="s">"image/svg+xml"</span> <span class="na">onclick=</span><span class="s">"changeFillColor"</span><span class="nt">&gt;&lt;/object&gt;</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">object</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">my-svg</span><span class="dl">'</span><span class="p">);</span>
-<span class="nx">svg</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nf">getSVGDocument</span><span class="p">();</span>
-<span class="nx">svg</span><span class="p">.</span><span class="nf">getElementsByTagName</span><span class="p">(</span><span class="dl">'</span><span class="s1">g</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">fill</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#fff</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">changeFillColor</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">object</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">my-svg</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">contentDocument</span><span class="p">;</span> 
+  <span class="kd">const</span> <span class="nx">group</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nf">getElementsByTagName</span><span class="p">(</span><span class="dl">'</span><span class="s1">g</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+  
+  <span class="nx">group</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">toggle</span><span class="p">(</span><span class="dl">'</span><span class="s1">white-fill</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.white-fill</span> <span class="p">{</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Note: changing <code class="language-plaintext highlighter-rouge">styling</code> on the <code class="language-plaintext highlighter-rouge">object</code> element does not affect the value inside it.</p>
 
         
     </div>
