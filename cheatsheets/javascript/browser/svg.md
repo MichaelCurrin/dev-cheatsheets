@@ -2,7 +2,7 @@
 
 ## Change color using JS
 
-### Inline SVG
+### Inline SVG (`svg` element)
 
 Change using `onclick` to set an attribute or class.
 
@@ -41,7 +41,7 @@ circle {
 ```
 
 
-### Linked SVG
+### Linked SVG (`object` element with reference)
 
 When you embed an SVG using `<object>`, the SVG is treated as a separate document. The `contentDocument` property allows you to access and manipulate this embedded document's DOM (and is safer and more widely used than `getSVGDocument()`).
 
