@@ -211,7 +211,7 @@
   <li><strong>Cons</strong>:
     <ul>
       <li>Limited control over styles and animations.</li>
-      <li>Requires an additional HTTP request.</li>
+      <li>Requires an additional HTTP request, which can fail.</li>
     </ul>
   </li>
 </ul>
@@ -231,8 +231,12 @@
   </li>
   <li><strong>Cons</strong>:
     <ul>
-      <li>Limited browser support for some features.</li>
       <li>More complex than using an <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> tag.</li>
+      <li>Requires an additional HTTP request, which can fail.</li>
+      <li><strong>Event Propagation</strong>: Click events may be captured by the <code class="language-plaintext highlighter-rouge">&lt;object&gt;</code>, preventing them from reaching the <code class="language-plaintext highlighter-rouge">&lt;button&gt;</code>.</li>
+      <li><strong>CSS Styles</strong>: Styles like <code class="language-plaintext highlighter-rouge">pointer-events: none;</code> can make the SVG unresponsive to clicks.</li>
+      <li><strong>Browser Compatibility</strong>: Different browsers may handle <code class="language-plaintext highlighter-rouge">&lt;object&gt;</code> elements inconsistently.</li>
+      <li><strong>Accessibility</strong>: <code class="language-plaintext highlighter-rouge">&lt;object&gt;</code> may not be as accessible as other methods for screen readers.</li>
     </ul>
   </li>
 </ul>

@@ -39,7 +39,7 @@ Choose the method that best fits your project needs based on control, complexity
   - Keeps HTML clean and minimal.
 - **Cons**:
   - Limited control over styles and animations.
-  - Requires an additional HTTP request.
+  - Requires an additional HTTP request, which can fail.
 
 ### Object Tag
 
@@ -51,8 +51,12 @@ Choose the method that best fits your project needs based on control, complexity
   - Allows for fallback content if SVG fails to load.
   - Can be styled with CSS.
 - **Cons**:
-  - Limited browser support for some features.
   - More complex than using an `<img>` tag.
+  - Requires an additional HTTP request, which can fail.
+  - **Event Propagation**: Click events may be captured by the `<object>`, preventing them from reaching the `<button>`.
+  - **CSS Styles**: Styles like `pointer-events: none;` can make the SVG unresponsive to clicks.
+  - **Browser Compatibility**: Different browsers may handle `<object>` elements inconsistently.
+  - **Accessibility**: `<object>` may not be as accessible as other methods for screen readers.
 
 ### SVG as a Background Image
 
