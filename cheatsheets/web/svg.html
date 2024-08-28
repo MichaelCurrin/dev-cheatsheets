@@ -157,13 +157,174 @@
 
     <div class="post-content">
         
-            <h2 id="set-color">Set color</h2>
+            <h2 id="create">Create</h2>
+
+<p>How to add an SVG to an HTML Page.</p>
+
+<ul>
+  <li><strong>Inline SVG</strong>: Best for control and interactivity but increases file size.</li>
+  <li><strong>Image Tag</strong>: Simplest method but lacks control.</li>
+  <li><strong>Object Tag</strong>: Offers some flexibility and fallback but can be complex.</li>
+  <li><strong>Background Image</strong>: Clean and simple but limited interactivity.</li>
+  <li><strong>JavaScript Fetch</strong>: Dynamic and powerful but more complex.</li>
+</ul>
+
+<p>Choose the method that best fits your project needs based on control, complexity, and performance considerations.</p>
+
+<h3 id="inline-svg">Inline SVG</h3>
+
+<ul>
+  <li><strong>How to Use</strong>:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;svg</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;circle</span> <span class="na">cx=</span><span class="s">"50"</span> <span class="na">cy=</span><span class="s">"50"</span> <span class="na">r=</span><span class="s">"40"</span> <span class="na">fill=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Pros</strong>:
+    <ul>
+      <li>Full control over styles and scripts.</li>
+      <li>Easy to animate with CSS or JavaScript.</li>
+      <li>No additional HTTP requests.</li>
+    </ul>
+  </li>
+  <li><strong>Cons</strong>:
+    <ul>
+      <li>Increases HTML file size.</li>
+      <li>Can clutter HTML if SVG is complex.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="image-tag">Image Tag</h3>
+
+<ul>
+  <li><strong>How to Use</strong>:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"image.svg"</span> <span class="na">alt=</span><span class="s">"Description of SVG"</span> <span class="nt">/&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Pros</strong>:
+    <ul>
+      <li>Simple to implement.</li>
+      <li>Keeps HTML clean and minimal.</li>
+    </ul>
+  </li>
+  <li><strong>Cons</strong>:
+    <ul>
+      <li>Limited control over styles and animations.</li>
+      <li>Requires an additional HTTP request.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="object-tag">Object Tag</h3>
+
+<ul>
+  <li><strong>How to Use</strong>:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;object</span> <span class="na">type=</span><span class="s">"image/svg+xml"</span> <span class="na">data=</span><span class="s">"image.svg"</span> <span class="na">alt=</span><span class="s">"Description of SVG"</span><span class="nt">&gt;&lt;/object&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Pros</strong>:
+    <ul>
+      <li>Allows for fallback content if SVG fails to load.</li>
+      <li>Can be styled with CSS.</li>
+    </ul>
+  </li>
+  <li><strong>Cons</strong>:
+    <ul>
+      <li>Limited browser support for some features.</li>
+      <li>More complex than using an <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> tag.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="svg-as-a-background-image">SVG as a Background Image</h3>
+
+<ul>
+  <li><strong>How to Use</strong>:
+    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.element</span> <span class="p">{</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('image.svg')</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Pros</strong>:
+    <ul>
+      <li>Easy to implement in CSS.</li>
+      <li>Keeps HTML clean.</li>
+    </ul>
+  </li>
+  <li><strong>Cons</strong>:
+    <ul>
+      <li>Limited control over SVG properties.</li>
+      <li>Cannot be manipulated with scripts.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="using-javascript">Using JavaScript</h3>
+
+<ul>
+  <li><strong>How to Use</strong>:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"svg-container"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">image.svg</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nf">text</span><span class="p">())</span>
+    <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">svg-container</span><span class="dl">'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>    </div>
+    <p>Using async-await:</p>
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">fetchSVG</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+  <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Network response was not ok</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nf">text</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">svgContainer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">svg-container</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">loadSVG</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetchSVG</span><span class="p">(</span><span class="dl">'</span><span class="s1">image.svg</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">svgContainer</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error loading SVG:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nf">loadSVG</span><span class="p">();</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Pros</strong>:
+    <ul>
+      <li>Allows dynamic SVG loading.</li>
+      <li>Can manipulate SVG after loading.</li>
+    </ul>
+  </li>
+  <li><strong>Cons</strong>:
+    <ul>
+      <li>More complex implementation.</li>
+      <li>Requires JavaScript to be enabled.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="set-color">Set color</h2>
+
+<p>How to change the color if and SVG is defined directly in the HTML (not loaded externally).</p>
 
 <p>See this <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes">Fills and Strokes</a> guide on the Mozilla site for how to set colors of an SVG in different ways.</p>
 
 <p>See also the <a href="/dev-cheatsheets/cheatsheets/javascript/browser/svg.html">SVG cheatsheet</a> in the JavaScript section.</p>
 
 <h3 id="use-the-fill-attribute">Use the fill attribute</h3>
+
+<p>e.g. here <code class="language-plaintext highlighter-rouge">fill="purple"</code>.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;svg&gt;</span>
     <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"10"</span> <span class="na">y=</span><span class="s">"10"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="na">stroke=</span><span class="s">"blue"</span> <span class="na">fill=</span><span class="s">"purple"</span>
@@ -173,17 +334,26 @@
 
 <h3 id="use-inline-style">Use inline style</h3>
 
-<p>Set color of an element using inline style.</p>
+<p>Set color of an element using inline <code class="language-plaintext highlighter-rouge">style</code> attribute.</p>
+
+<p>On a shape or path:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;svg&gt;</span>
     <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"10"</span> <span class="na">height=</span><span class="s">"180"</span> <span class="na">y=</span><span class="s">"10"</span> <span class="na">width=</span><span class="s">"180"</span> <span class="na">style=</span><span class="s">"stroke: black; fill: red;"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/svg&gt;</span>
 </code></pre></div></div>
 
-<h3 id="use-css">Use CSS</h3>
+<p>On the outer <code class="language-plaintext highlighter-rouge">svg</code> element:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;svg</span> <span class="na">style=</span><span class="s">"fill:#151513; color:#fff"</span><span class="nt">&gt;</span>
+  <span class="c">&lt;!-- ... --&gt;</span>
+<span class="nt">&lt;/svg&gt;</span>
+</code></pre></div></div>
+
+<h3 id="use-a-css-selector">Use a CSS selector</h3>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;svg</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"150"</span> <span class="na">xmlns=</span><span class="s">"https://www.w3.org/2000/svg"</span> <span class="na">version=</span><span class="s">"1.1"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;rect</span> <span class="na">height=</span><span class="s">"10"</span> <span class="na">width=</span><span class="s">"10"</span> <span class="na">id=</span><span class="s">"MyRect"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;rect</span> <span class="na">id=</span><span class="s">"MyRect"</span> <span class="na">height=</span><span class="s">"10"</span> <span class="na">width=</span><span class="s">"10"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/svg&gt;</span>
 
 <span class="nt">&lt;style&gt;</span>
@@ -192,15 +362,6 @@
   <span class="py">stroke</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nt">&lt;/style&gt;</span>
-</code></pre></div></div>
-
-<p>Note this only works because the SVG is elements are defined directly. See the section below for loading and external image and then setting its color.</p>
-
-<p>You can set color of the entire SVG using inline style.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;svg</span> <span class="na">style=</span><span class="s">"fill:#151513; color:#fff"</span><span class="nt">&gt;</span>
-<span class="c">&lt;!-- ... --&gt;</span>
-<span class="nt">&lt;/svg&gt;</span>
 </code></pre></div></div>
 
 <h3 id="use-current-color">Use current color</h3>
@@ -221,16 +382,16 @@
 <span class="nt">&lt;/svg&gt;</span>
 </code></pre></div></div>
 
-<p>And now loading by URL.</p>
-
-<p>Note loading by ID as defined above as <code class="language-plaintext highlighter-rouge">id</code> - you could put multiple SVG images in one SVG file like this.</p>
-
-<p>Note use of <code class="language-plaintext highlighter-rouge">svg</code> and <code class="language-plaintext highlighter-rouge">use</code> tags, not <code class="language-plaintext highlighter-rouge">img</code>.</p>
+<p>And now loading it by URL:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"logo-small"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"assets/img/ansible.svg#logo-ansible"</span><span class="nt">&gt;&lt;/use&gt;</span>
 <span class="nt">&lt;/svg&gt;</span>
 </code></pre></div></div>
+
+<p>Note loading by ID as defined above as <code class="language-plaintext highlighter-rouge">id</code> - you could put multiple SVG images in one SVG file like this.</p>
+
+<p>Note use of <code class="language-plaintext highlighter-rouge">svg</code> and <code class="language-plaintext highlighter-rouge">use</code> tags, not <code class="language-plaintext highlighter-rouge">img</code>.</p>
 
 <p>Now I can use a CSS rule to target the <code class="language-plaintext highlighter-rouge">svg</code> element. I could use a class or ID or outer <code class="language-plaintext highlighter-rouge">div</code>, but here I just target all <code class="language-plaintext highlighter-rouge">svg</code> tags:</p>
 

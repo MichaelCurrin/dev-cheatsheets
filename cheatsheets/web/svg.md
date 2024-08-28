@@ -1,6 +1,125 @@
 # SVG
 
+## Create
+
+How to add an SVG to an HTML Page.
+
+- **Inline SVG**: Best for control and interactivity but increases file size.
+- **Image Tag**: Simplest method but lacks control.
+- **Object Tag**: Offers some flexibility and fallback but can be complex.
+- **Background Image**: Clean and simple but limited interactivity.
+- **JavaScript Fetch**: Dynamic and powerful but more complex.
+
+Choose the method that best fits your project needs based on control, complexity, and performance considerations.
+
+### Inline SVG
+
+- **How to Use**:
+  ```html
+  <svg width="100" height="100">
+    <circle cx="50" cy="50" r="40" fill="red" />
+  </svg>
+  ```
+- **Pros**:
+  - Full control over styles and scripts.
+  - Easy to animate with CSS or JavaScript.
+  - No additional HTTP requests.
+- **Cons**:
+  - Increases HTML file size.
+  - Can clutter HTML if SVG is complex.
+
+### Image Tag
+
+- **How to Use**:
+  ```html
+  <img src="image.svg" alt="Description of SVG" />
+  ```
+- **Pros**:
+  - Simple to implement.
+  - Keeps HTML clean and minimal.
+- **Cons**:
+  - Limited control over styles and animations.
+  - Requires an additional HTTP request.
+
+### Object Tag
+
+- **How to Use**:
+  ```html
+  <object type="image/svg+xml" data="image.svg" alt="Description of SVG"></object>
+  ```
+- **Pros**:
+  - Allows for fallback content if SVG fails to load.
+  - Can be styled with CSS.
+- **Cons**:
+  - Limited browser support for some features.
+  - More complex than using an `<img>` tag.
+
+### SVG as a Background Image
+
+- **How to Use**:
+  ```css
+  .element {
+    background-image: url('image.svg');
+    width: 100px;
+    height: 100px;
+  }
+  ```
+- **Pros**:
+  - Easy to implement in CSS.
+  - Keeps HTML clean.
+- **Cons**:
+  - Limited control over SVG properties.
+  - Cannot be manipulated with scripts.
+
+### Using JavaScript
+
+- **How to Use**:
+  ```html
+  <div id="svg-container"></div>
+  <script>
+    fetch('image.svg')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('svg-container').innerHTML = data;
+      });
+  </script>
+  ```
+  Using async-await:
+  ```html
+  <script type="module">
+  async function fetchSVG(url) {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.text();
+  }
+
+  const svgContainer = document.getElementById('svg-container');
+
+  async function loadSVG() {
+    try {
+      const data = await fetchSVG('image.svg');
+      svgContainer.innerHTML = data;
+    } catch (error) {
+      console.error('Error loading SVG:', error);
+    }
+  }
+
+  loadSVG();
+  </script>
+  ```
+- **Pros**:
+  - Allows dynamic SVG loading.
+  - Can manipulate SVG after loading.
+- **Cons**:
+  - More complex implementation.
+  - Requires JavaScript to be enabled.
+ 
+  
 ## Set color
+
+How to change the color if and SVG is defined directly in the HTML (not loaded externally).
 
 See this [Fills and Strokes](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes) guide on the Mozilla site for how to set colors of an SVG in different ways.
 
@@ -9,6 +128,8 @@ See also the [SVG cheatsheet][] in the JavaScript section.
 [SVG cheatsheet]: {% link cheatsheets/javascript/browser/svg.md %}
 
 ### Use the fill attribute
+
+e.g. here `fill="purple"`.
 
 ```html
 <svg>
@@ -19,7 +140,9 @@ See also the [SVG cheatsheet][] in the JavaScript section.
 
 ### Use inline style
 
-Set color of an element using inline style.
+Set color of an element using inline `style` attribute.
+
+On a shape or path:
 
 ```html
 <svg>
@@ -27,11 +150,19 @@ Set color of an element using inline style.
 </svg>
 ```
 
-### Use CSS
+On the outer `svg` element:
+
+```html
+<svg style="fill:#151513; color:#fff">
+  <!-- ... -->
+</svg>
+```
+
+### Use a CSS selector
 
 ```html
 <svg width="200" height="150" xmlns="https://www.w3.org/2000/svg" version="1.1">
-  <rect height="10" width="10" id="MyRect"/>
+  <rect id="MyRect" height="10" width="10" />
 </svg>
 
 <style>
@@ -40,16 +171,6 @@ Set color of an element using inline style.
   stroke: black;
 }
 </style>
-```
-
-Note this only works because the SVG is elements are defined directly. See the section below for loading and external image and then setting its color.
-
-You can set color of the entire SVG using inline style.
-
-```html
-<svg style="fill:#151513; color:#fff">
-<!-- ... -->
-</svg>
 ```
 
 ### Use current color
@@ -71,17 +192,17 @@ Here defining an SVG.
 </svg>
 ```
 
-And now loading by URL. 
-
-Note loading by ID as defined above as `id` - you could put multiple SVG images in one SVG file like this. 
-
-Note use of `svg` and `use` tags, not `img`.
+And now loading it by URL:
 
 ```html
 <svg class="logo-small">
     <use xlink:href="assets/img/ansible.svg#logo-ansible"></use>
 </svg>
 ```
+
+Note loading by ID as defined above as `id` - you could put multiple SVG images in one SVG file like this. 
+
+Note use of `svg` and `use` tags, not `img`.
 
 Now I can use a CSS rule to target the `svg` element. I could use a class or ID or outer `div`, but here I just target all `svg` tags:
 
