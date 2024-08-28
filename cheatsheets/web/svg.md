@@ -4,6 +4,10 @@
 
 See this [Fills and Strokes](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes) guide on the Mozilla site for how to set colors of an SVG in different ways.
 
+See also the [SVG cheatsheet][] in the JavaScript section.
+
+[SVG cheatsheet]: {% link cheatsheets/javascript/browser/svg.md %}
+
 ### Use the fill attribute
 
 ```html
