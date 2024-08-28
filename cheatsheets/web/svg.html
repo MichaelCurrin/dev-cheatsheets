@@ -262,58 +262,6 @@
   </li>
 </ul>
 
-<h3 id="using-javascript">Using JavaScript</h3>
-
-<ul>
-  <li><strong>How to Use</strong>:
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"svg-container"</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;script&gt;</span>
-  <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">image.svg</span><span class="dl">'</span><span class="p">)</span>
-    <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nf">text</span><span class="p">())</span>
-    <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">svg-container</span><span class="dl">'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
-    <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span>
-</code></pre></div>    </div>
-    <p>Using async-await:</p>
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
-<span class="k">async</span> <span class="kd">function</span> <span class="nf">fetchSVG</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
-  <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Network response was not ok</span><span class="dl">'</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nf">text</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">svgContainer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">svg-container</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="k">async</span> <span class="kd">function</span> <span class="nf">loadSVG</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetchSVG</span><span class="p">(</span><span class="dl">'</span><span class="s1">image.svg</span><span class="dl">'</span><span class="p">);</span>
-    <span class="nx">svgContainer</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
-  <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error loading SVG:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nf">loadSVG</span><span class="p">();</span>
-<span class="nt">&lt;/script&gt;</span>
-</code></pre></div>    </div>
-  </li>
-  <li><strong>Pros</strong>:
-    <ul>
-      <li>Allows dynamic SVG loading.</li>
-      <li>Can manipulate SVG after loading.</li>
-    </ul>
-  </li>
-  <li><strong>Cons</strong>:
-    <ul>
-      <li>More complex implementation.</li>
-      <li>Requires JavaScript to be enabled.</li>
-    </ul>
-  </li>
-</ul>
-
 <h2 id="set-color">Set color</h2>
 
 <p>How to change the color if and SVG is defined directly in the HTML (not loaded externally).</p>
