@@ -47,6 +47,12 @@ Choose the method that best fits your project needs based on control, complexity
   ```html
   <object type="image/svg+xml" data="image.svg" alt="Description of SVG"></object>
   ```
+  With image fallback:
+  ```html
+  <object type="image/svg+xml" data="image.svg" alt="Description of SVG">
+      <img src="yourfallback.jpg" />
+  </object>
+  ```
 - **Pros**:
   - Allows for fallback content if SVG fails to load.
   - Can be styled with CSS.
@@ -57,6 +63,8 @@ Choose the method that best fits your project needs based on control, complexity
   - **CSS Styles**: Styles like `pointer-events: none;` can make the SVG unresponsive to clicks.
   - **Browser Compatibility**: Different browsers may handle `<object>` elements inconsistently.
   - **Accessibility**: `<object>` may not be as accessible as other methods for screen readers.
+
+For more on fallbacks, see this [article](https://css-tricks.com/svg-fallbacks/) and [SO thread](https://stackoverflow.com/questions/4476526/do-i-use-img-object-or-embed-for-svg-files#4482962).
 
 ### SVG as a Background Image
 
