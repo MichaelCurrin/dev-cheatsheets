@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Web servers | Dev Cheatsheets</title>
+    <title>Basic | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Web servers" />
+    <meta property="og:title" content="Basic" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Web servers" />
+    <meta property="twitter:title" content="Basic" />
 <meta name="generator" content="Jekyll v4.3.3" />
 
 <meta property="og:locale" content="en_US" />
@@ -26,16 +26,16 @@
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/node/web-servers.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/node/web-servers.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/express/basic.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/express/basic.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/node/web-servers.html",
-    "headline":    "Web servers",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/packages/express/basic.html",
+    "headline":    "Basic",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -88,11 +88,11 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/javascript/node/web-servers.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/javascript/packages/express/basic.md">
     📝 <span>Edit page</span>
 </a>
 
-            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/javascript/node/">
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/javascript/packages/express/">
     ➕ <span>Add page</span>
 </a>
 
@@ -105,7 +105,7 @@
             
 
 
-            <span>Web servers</span>
+            <span>Basic</span>
         </h1>
 
         
@@ -145,8 +145,8 @@
 
         
             
-            <a href="/dev-cheatsheets/cheatsheets/javascript/node/">
-    Node
+            <a href="/dev-cheatsheets/cheatsheets/javascript/packages/">
+    Packages
 </a>
 
         
@@ -156,8 +156,20 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/javascript/node/web-servers.html" class="underline">
-                Web servers
+            
+            <a href="/dev-cheatsheets/cheatsheets/javascript/packages/express/">
+    Express
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/javascript/packages/express/basic.html" class="underline">
+                Basic
             </a>
         
      
@@ -169,92 +181,37 @@
 
     <div class="post-content">
         
-            <h2 id="start-a-server">Start a server</h2>
+            <h2 id="basic-greeting">Basic greeting</h2>
 
-<p>The general ways to start a server.</p>
-
-<h3 id="node">Node</h3>
-
-<p>Run as:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>node server.js
-</code></pre></div></div>
-
-<h3 id="npm">NPM</h3>
-
-<p>This will lookup <code class="language-plaintext highlighter-rouge">server.js</code> by default.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm serve
-</code></pre></div></div>
-
-<h2 id="http">HTTP</h2>
-
-<p>Using the Node builtin module.</p>
-
-<p>See <a href="https://nodejs.org/api/http.html">HTTP</a> module docs.</p>
-
-<h3 id="basic">Basic</h3>
-
-<p>Example based on <a href="https://www.youtube.com/watch?v=F3eiqoNTniY&amp;t=41s">Getting started with NodeJS for frontend developers - Part 1</a>.</p>
-
-<p>Set up HTTP server with returns a greeting as plain text.</p>
+<p><a href="https://expressjs.com/en/starter/hello-world.html">Express starter</a></p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">server.js</code>
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">http</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">http</span><span class="dl">'</span><span class="p">)</span>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">);</span>
 
-  <span class="nx">http</span><span class="p">.</span><span class="nf">createServer</span><span class="p">((</span><span class="nx">req</span><span class="p">,</span> <span class="nx">resp</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">resp</span><span class="p">.</span><span class="nf">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span> <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">text/html</span><span class="dl">'</span> <span class="p">});</span>
-    <span class="nx">resp</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s2">`&lt;p&gt;Hello, world! You requested </span><span class="p">${</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">}</span><span class="s2">&lt;/p&gt;`</span><span class="p">);</span>
-    <span class="nx">resp</span><span class="p">.</span><span class="nf">end</span><span class="p">();</span>
-  <span class="p">}).</span><span class="nf">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nf">express</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="mi">3000</span><span class="p">;</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">resp</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">resp</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, world!</span><span class="dl">'</span><span class="p">))</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nf">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Example app listening at http://localhost:</span><span class="p">${</span><span class="nx">port</span><span class="p">}</span><span class="s2">/`</span><span class="p">))</span>
 </code></pre></div>    </div>
   </li>
 </ul>
 
-<p>Start the app. Note you won’t see any output and this is a blocking call.</p>
+<p>Run as:</p>
 
-<p>Then open the browser at:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>node server.js
+Example app listening at http://localhost:3000/
+</code></pre></div></div>
+
+<p>Open browser at:</p>
 
 <ul>
   <li><a href="http://localhost:3000/">localhost:3000/</a></li>
 </ul>
 
-<p>Note that you can use any path and you’ll get the same response.</p>
-
-<h3 id="parse-the-query-string">Parse the query string</h3>
-
-<p>Based on <a href="https://www.w3schools.com/nodejs/nodejs_http.asp">Node.js HTTP Module</a> on W3 Schools.</p>
-
-<p>Use the <code class="language-plaintext highlighter-rouge">url</code> builtin module.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">http</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">url</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="nx">http</span><span class="p">.</span><span class="nf">createServer</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">res</span><span class="p">.</span><span class="nf">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span> <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">text/html</span><span class="dl">'</span> <span class="p">});</span>
-
-  <span class="kd">var</span> <span class="nx">q</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">).</span><span class="nx">query</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">q</span><span class="p">.</span><span class="nx">year</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">q</span><span class="p">.</span><span class="nx">month</span><span class="p">;</span>
-  <span class="nx">res</span><span class="p">.</span><span class="nf">end</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
-<span class="p">}).</span><span class="nf">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>Open in the browser:</p>
-
-<ul>
-  <li><a href="http://localhost:8080/?year=2017&amp;month=July">localhost:8080/?year=2017&amp;month=July</a></li>
-</ul>
-
-<p>Result:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2017 July
-</code></pre></div></div>
-
-<h2 id="3rd-party-packages">3rd-party packages</h2>
-
-<p>See the <a href="/dev-cheatsheets/cheatsheets/javascript/packages/express/static-server.html">Express static server</a> page for using Express.</p>
-
+<p>Note that you’ll get an error on other paths.</p>
 
         
     </div>

@@ -1470,6 +1470,9 @@
         
         
         
+        
+        
+        
         </div>
 
 <br>
@@ -1480,7 +1483,31 @@
     
 
 <ul class="page-list">
-    </ul>
+    
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/javascript/packages/express/api.html">
+                    
+
+
+                    <span>API</span>
+                </a></li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/javascript/packages/express/basic.html">
+                    
+
+
+                    <span>Basic</span>
+                </a></li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/javascript/packages/express/static-server.html">
+                    
+
+
+                    <span>Static server</span>
+                </a></li>
+        </ul>
 
     <br>
 
@@ -1488,39 +1515,22 @@
     
         <h2>Content</h2>
 
-        <h2 id="static-directory">Static directory</h2>
+        <p>Express is a Node web application framwork, which can be used for serving static assets, building APIs and integratng with middlewares.</p>
 
-<p>From <a href="https://expressjs.com/en/starter/static-files.html">Static files</a> in the docs.</p>
+<h3 id="resources">Resources</h3>
 
-<p>Serve a static directory. e.g. serve the <code class="language-plaintext highlighter-rouge">public</code> directory.</p>
+<ul>
+  <li><a href="https://expressjs.com/">expressjs.com</a> homepage.</li>
+  <li><a href="https://www.npmjs.com/package/express">express</a> package on NPM.</li>
+</ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nf">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nf">static</span><span class="p">(</span><span class="dl">'</span><span class="s1">public</span><span class="dl">'</span><span class="p">))</span>
-</code></pre></div></div>
+<p>See also project - <a href="https://github.com/MichaelCurrin/express-js-rest-quickstart">MichaelCurrin/express-js-rest-quickstart</a>. Including the notes in the docs.</p>
 
-<p>To serve on another path e.g. server contents of <code class="language-plaintext highlighter-rouge">public</code> as a <code class="language-plaintext highlighter-rouge">/static</code>.</p>
+<h2 id="install">Install</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nf">use</span><span class="p">(</span><span class="dl">'</span><span class="s1">/static</span><span class="dl">'</span><span class="p">,</span> <span class="nx">express</span><span class="p">.</span><span class="nf">static</span><span class="p">(</span><span class="dl">'</span><span class="s1">public</span><span class="dl">'</span><span class="p">))</span>
-</code></pre></div></div>
+<p>Install Express.</p>
 
-<p>Using an absolute path is safer.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">)</span>
-
-<span class="nx">app</span><span class="p">.</span><span class="nf">use</span><span class="p">(</span><span class="dl">'</span><span class="s1">/static</span><span class="dl">'</span><span class="p">,</span> <span class="nx">express</span><span class="p">.</span><span class="nf">static</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">'</span><span class="s1">public</span><span class="dl">'</span><span class="p">)))</span>
-</code></pre></div></div>
-
-<p>A fuller example:</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">express</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">express</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">PORT</span> <span class="o">=</span> <span class="mi">3000</span>
-
-<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nf">express</span><span class="p">();</span>
-
-<span class="nx">app</span><span class="p">.</span><span class="nf">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nf">static</span><span class="p">(</span><span class="dl">'</span><span class="s1">public</span><span class="dl">'</span><span class="p">));</span>
-<span class="nx">app</span><span class="p">.</span><span class="nf">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nf">static</span><span class="p">(</span><span class="dl">'</span><span class="s1">images</span><span class="dl">'</span><span class="p">));</span>
-
-<span class="nx">app</span><span class="p">.</span><span class="nf">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">);</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install </span>express
 </code></pre></div></div>
     
 

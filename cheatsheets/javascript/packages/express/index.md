@@ -1,41 +1,20 @@
 # Express
 
+Express is a Node web application framwork, which can be used for serving static assets, building APIs and integratng with middlewares.
 
-## Static directory
+### Resources
 
-From [Static files](https://expressjs.com/en/starter/static-files.html) in the docs.
+- [expressjs.com](https://expressjs.com/) homepage.
+- [express](https://www.npmjs.com/package/express) package on NPM.
 
-Serve a static directory. e.g. serve the `public` directory.
+See also project - [MichaelCurrin/express-js-rest-quickstart](https://github.com/MichaelCurrin/express-js-rest-quickstart). Including the notes in the docs.
 
-```javascript
-app.use(express.static('public'))
+
+## Install
+
+Install Express.
+
+```sh
+$ npm install express
 ```
 
-To serve on another path e.g. server contents of `public` as a `/static`.
-
-```javascript
-app.use('/static', express.static('public'))
-```
-
-Using an absolute path is safer.
-
-```javascript
-const path = require('path')
-
-app.use('/static', express.static(path.join(__dirname, 'public')))
-```
-
-A fuller example:
-
-```javascript
-import express from "express";
-
-const PORT = 3000
-
-const app = express();
-
-app.use(express.static('public'));
-app.use(express.static('images'));
-
-app.listen(PORT);
-```
