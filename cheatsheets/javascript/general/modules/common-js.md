@@ -1,7 +1,7 @@
 ---
-title: CommonJS
+title: CommonJS modules
 description: |
-  Import modules using `require('MODULE');` in Node
+  Import modules using `require` syntax in Node
 ---
 
 CommonJS is a way of exporting and import modules.
