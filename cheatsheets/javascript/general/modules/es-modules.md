@@ -38,12 +38,13 @@ For browsers which don't support it, you can use specify your own fallback scrip
 - [Introduction to ES Modules](https://flaviocopes.com/es-modules/) blog post by Flavio Copes.
 - [ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/) blog post.
 
+See [JS CDNs](https://michaelcurrin.github.io/dev-resources/resources/javascript/cdns.html) guide for picking a CDN. e.g. Check the JSPM to see if `some-library` on NPM is available through their CDN and then a URL like `"https://dev.jspm.io/some-library"`.
 
 ## Enable ES Modules
 
 ### Set script tag type
 
-Set the type of script tag to `module`. 
+Set the type of script tag to `module` as below.
 
 This works for an inline script or linking using `src`. 
 
@@ -95,7 +96,7 @@ Use `.mjs` extension in place of `.js`. This is not so common, but it allows you
 
 When loading a JS library from a CDN, make sure you pick a URL which is compatible with ES Modules approach. This might mean a param like `?module` or loook for `.mjs` extension.
 
-See my [JS CDNs](https://michaelcurrin.github.io/dev-resources/resources/javascript/cdns.html) guide.
+You can load compiled JS files directly from a CDN on your frontend without using Node or NPM. Pick a CDN provider from this [JS CDNs](https://michaelcurrin.github.io/dev-resources/resources/javascript/cdns.html) guide.
 
 
 ## Scoping note
