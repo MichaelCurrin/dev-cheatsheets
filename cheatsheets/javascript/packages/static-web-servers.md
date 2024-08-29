@@ -25,6 +25,10 @@ Or use `npx` to run without installing (useful if you want to try out a few and 
 
 You can also add the run commands to `package.json`. e.g. for `start` you can put `serve -p 8080`.
 
+See the [Express static server][] page for using Express.
+
+[Express static server]: {% link cheatsheets/javascript/packages/express/static-server.md %}
+
 In alphabetical order:
 
 - [glance](https://www.npmjs.org/package/glance)
