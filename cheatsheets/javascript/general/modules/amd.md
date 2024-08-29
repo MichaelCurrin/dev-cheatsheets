@@ -1,4 +1,4 @@
-# AMD
+# AMD modules
 
 > AMD: The Asynchronous Module Definition. The primary building block for referencing and defining modular JS code.
 >
