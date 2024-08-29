@@ -224,11 +224,13 @@
   <li><a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">ES modules: A cartoon deep-dive</a> blog post.</li>
 </ul>
 
+<p>See <a href="https://michaelcurrin.github.io/dev-resources/resources/javascript/cdns.html">JS CDNs</a> guide for picking a CDN. e.g. Check the JSPM to see if <code class="language-plaintext highlighter-rouge">some-library</code> on NPM is available through their CDN and then a URL like <code class="language-plaintext highlighter-rouge">"https://dev.jspm.io/some-library"</code>.</p>
+
 <h2 id="enable-es-modules">Enable ES Modules</h2>
 
 <h3 id="set-script-tag-type">Set script tag type</h3>
 
-<p>Set the type of script tag to <code class="language-plaintext highlighter-rouge">module</code>.</p>
+<p>Set the type of script tag to <code class="language-plaintext highlighter-rouge">module</code> as below.</p>
 
 <p>This works for an inline script or linking using <code class="language-plaintext highlighter-rouge">src</code>.</p>
 
@@ -286,7 +288,7 @@
 
 <p>When loading a JS library from a CDN, make sure you pick a URL which is compatible with ES Modules approach. This might mean a param like <code class="language-plaintext highlighter-rouge">?module</code> or loook for <code class="language-plaintext highlighter-rouge">.mjs</code> extension.</p>
 
-<p>See my <a href="https://michaelcurrin.github.io/dev-resources/resources/javascript/cdns.html">JS CDNs</a> guide.</p>
+<p>You can load compiled JS files directly from a CDN on your frontend without using Node or NPM. Pick a CDN provider from this <a href="https://michaelcurrin.github.io/dev-resources/resources/javascript/cdns.html">JS CDNs</a> guide.</p>
 
 <h2 id="scoping-note">Scoping note</h2>
 
