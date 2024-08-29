@@ -1,4 +1,4 @@
-# UMD
+# UMD modules
 
 [![umdjs - umd](https://img.shields.io/static/v1?label=umdjs&message=umd&color=blue&logo=github)](https://github.com/umdjs/umd)
 [![stars - umd](https://img.shields.io/github/stars/umdjs/umd?style=social)](https://github.com/umdjs/umd)
