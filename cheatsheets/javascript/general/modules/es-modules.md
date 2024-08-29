@@ -11,6 +11,16 @@ This approach uses the `export` and `import` keywords, instead of the older Comm
 This page covers more details on the syntax and examples of loading modules in different situations.
 
 
+## Overview
+
+Use this syntax for imports.
+
+```html
+import { bar } from "https://dev.jspm.io/some-library";
+```
+Make sure your project is setup to recognize the code as an ES Module, or you'll get errors. See Enable ES Modules below.
+
+
 ## Support
 
 ### Runtimes
