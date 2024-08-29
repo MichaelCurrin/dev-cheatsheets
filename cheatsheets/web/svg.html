@@ -222,6 +222,11 @@
   <li><strong>How to Use</strong>:
     <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;object</span> <span class="na">type=</span><span class="s">"image/svg+xml"</span> <span class="na">data=</span><span class="s">"image.svg"</span> <span class="na">alt=</span><span class="s">"Description of SVG"</span><span class="nt">&gt;&lt;/object&gt;</span>
 </code></pre></div>    </div>
+    <p>With image fallback:</p>
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;object</span> <span class="na">type=</span><span class="s">"image/svg+xml"</span> <span class="na">data=</span><span class="s">"image.svg"</span> <span class="na">alt=</span><span class="s">"Description of SVG"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"yourfallback.jpg"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/object&gt;</span>
+</code></pre></div>    </div>
   </li>
   <li><strong>Pros</strong>:
     <ul>
@@ -240,6 +245,8 @@
     </ul>
   </li>
 </ul>
+
+<p>For more on fallbacks, see this <a href="https://css-tricks.com/svg-fallbacks/">article</a> and <a href="https://stackoverflow.com/questions/4476526/do-i-use-img-object-or-embed-for-svg-files#4482962">SO thread</a>.</p>
 
 <h3 id="svg-as-a-background-image">SVG as a Background Image</h3>
 
