@@ -13,15 +13,7 @@
 
 ## Overview
 
-- Start an existing container.
-    ```sh
-    $ docker start my-app
-    ```
-- Access the container's system.
-    ```sh
-    $ docker exec -it my-app bash
-    ```
-- Run a container. Use `--rm` to delete it.
+- Run a container for an image then delete it when stopped.
     ```sh
     $ docker run \
         --rm \
@@ -31,8 +23,15 @@
         --init \
         my-node-img
     ```
-
-
+- Start an existing container. Omit the `--rm` flag above if you want to have the option to start a stopped container.
+    ```sh
+    $ docker start my-app
+    ```
+- Access a running container interactively - useful to run commands and explore the file system.
+    ```sh
+    $ docker exec -it my-app bash
+    ```
+    
 ## Run in new container
 
 Run a command in a **new** container. The container will then stop when it is finished, unless it continues to run like for a server.
@@ -42,32 +41,32 @@ $ docker run IMAGE
 $ docker run IMAGE COMMAND
 ```
 
-The container will get a different random name on each run and you'll end up with a lot of containers unless you use `rm` to delete it each time.
+The container will get a different **random** name on each run if you don't specify a name. Warning: you'll end up with a lot of containers unless you use `rm` to delete it each time.
 
 e.g.
 
-This will do nothing and then exit.
+This will do nothing and then exit:
 
 ```sh
 $ docker run python:3.9
 ```
 
-Use default entry-point (in this case Python terminal) and use interactive mode.
+Use default entry-point (in this case, the Python terminal with `python` command) and use interactive mode:
 
 ```sh
 $ docker run -it --rm python:3.9
 ```
 
-Specify shell as entry-point and interactive mode. 
+Specify Bash shell as entry-point with interactive mode:
 
 ```sh
 $ docker run -it --rm python:3.9 bash
 ```
 
-Give the container name if you want. This can be useful if you have long-running container like a server. You'll want to use the `rm` flag otherwise you'll get an error on the 2nd run that the container name already is used.
+Give the container name. This can be useful if you have long-running container like a server. You'll want to use the `rm` flag otherwise you'll get an error on the 2nd run that the container name already is used.
 
 ```sh
-$ docker run -rm --name CONTAINER_NAME IMAGE
+$ docker run --rm --name CONTAINER_NAME IMAGE
 ```
 
 e.g.
@@ -79,7 +78,7 @@ $ docker run --rm \
 ```
 
 
-## Run in existing
+## Run in existing container
 
 Run a command in an **existing** and **running** container, given a tagged name or ID.
 
