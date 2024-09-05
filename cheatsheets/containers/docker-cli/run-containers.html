@@ -192,15 +192,7 @@
 <h2 id="overview">Overview</h2>
 
 <ul>
-  <li>Start an existing container.
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker start my-app
-</code></pre></div>    </div>
-  </li>
-  <li>Access the container’s system.
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker <span class="nb">exec</span> <span class="nt">-it</span> my-app bash
-</code></pre></div>    </div>
-  </li>
-  <li>Run a container. Use <code class="language-plaintext highlighter-rouge">--rm</code> to delete it.
+  <li>Run a container for an image then delete it when stopped.
     <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker run <span class="se">\</span>
       <span class="nt">--rm</span> <span class="se">\</span>
       <span class="nt">--name</span> my-app <span class="se">\</span>
@@ -208,6 +200,14 @@
       <span class="nt">-d</span> <span class="se">\</span>
       <span class="nt">--init</span> <span class="se">\</span>
       my-node-img
+</code></pre></div>    </div>
+  </li>
+  <li>Start an existing container. Omit the <code class="language-plaintext highlighter-rouge">--rm</code> flag above if you want to have the option to start a stopped container.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker start my-app
+</code></pre></div>    </div>
+  </li>
+  <li>Access a running container interactively - useful to run commands and explore the file system.
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker <span class="nb">exec</span> <span class="nt">-it</span> my-app bash
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -220,28 +220,28 @@
 <span class="nv">$ </span>docker run IMAGE COMMAND
 </code></pre></div></div>
 
-<p>The container will get a different random name on each run and you’ll end up with a lot of containers unless you use <code class="language-plaintext highlighter-rouge">rm</code> to delete it each time.</p>
+<p>The container will get a different <strong>random</strong> name on each run if you don’t specify a name. Warning: you’ll end up with a lot of containers unless you use <code class="language-plaintext highlighter-rouge">rm</code> to delete it each time.</p>
 
 <p>e.g.</p>
 
-<p>This will do nothing and then exit.</p>
+<p>This will do nothing and then exit:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run python:3.9
 </code></pre></div></div>
 
-<p>Use default entry-point (in this case Python terminal) and use interactive mode.</p>
+<p>Use default entry-point (in this case, the Python terminal with <code class="language-plaintext highlighter-rouge">python</code> command) and use interactive mode:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">-it</span> <span class="nt">--rm</span> python:3.9
 </code></pre></div></div>
 
-<p>Specify shell as entry-point and interactive mode.</p>
+<p>Specify Bash shell as entry-point with interactive mode:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">-it</span> <span class="nt">--rm</span> python:3.9 bash
 </code></pre></div></div>
 
-<p>Give the container name if you want. This can be useful if you have long-running container like a server. You’ll want to use the <code class="language-plaintext highlighter-rouge">rm</code> flag otherwise you’ll get an error on the 2nd run that the container name already is used.</p>
+<p>Give the container name. This can be useful if you have long-running container like a server. You’ll want to use the <code class="language-plaintext highlighter-rouge">rm</code> flag otherwise you’ll get an error on the 2nd run that the container name already is used.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">-rm</span> <span class="nt">--name</span> CONTAINER_NAME IMAGE
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">--rm</span> <span class="nt">--name</span> CONTAINER_NAME IMAGE
 </code></pre></div></div>
 
 <p>e.g.</p>
@@ -251,7 +251,7 @@
     python:3.9
 </code></pre></div></div>
 
-<h2 id="run-in-existing">Run in existing</h2>
+<h2 id="run-in-existing-container">Run in existing container</h2>
 
 <p>Run a command in an <strong>existing</strong> and <strong>running</strong> container, given a tagged name or ID.</p>
 
