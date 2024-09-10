@@ -1,63 +1,110 @@
 # Includes
 
+Put code into an _includes_ file so you can use it on pages or layouts. This can be called like a function - especially useful for large pieces of code or for making code reusable. 
+
+You can write is a Markdown or HTML file and can include Liquid syntax in it.
+
 {% raw %}
 
-Do you know about includes files in Jekyll?
+## Basic
 
-Rather than determining the layout of a page so its hard to add stuff to it, the includes functionality is like a function or piece of reusable code. Which you can use on pages or layouts.
+- `_includes/foo.md`
+    ```markdown
+    This is an example of using **includes** in Jekyll.
+    ```
+- `page.md`
+    ```markdown
+    ---
+    title: My page
+    ---
+    {% include foo.md %}
+    ```
 
-And it works well with parameters.
+## Parametrize
 
-From the [docs](https://jekyllrb.com/docs/includes/)
+You can pass values to it like a function. This could be a value directyl, or a variable like a string, or a variable as an object with attributes on it.
 
-`_include/image.html`
+Or you can reference other values like on the page or config or data files.
 
-```liquid
-<figure>
-   <a href="{{ include.url }}">
-   <img src="{{ include.file }}" style="max-width: {{ include.max-width }};"
-      alt="{{ include.alt }}"/>
-   </a>
-   <figcaption>{{ include.caption }}</figcaption>
-</figure>
-```
+- `_includes/foo.md`
+    ```markdown
+    This blog is called {{ site.name }} and was written by {{ include.name }}.
+    ```
+- `page.md`
+    ```markdown
+    ---
+    title: My page
+    fizz: Buzz
+    ---
+    {% include foo.md name='Foo bar' %}
 
-Call like
+    {% include foo.md name=page.fizz %}
+    ```
 
-```liquid
----
----
-{% include image.html url="http://jekyllrb.com"
-max-width="200px" file="logo.png" alt="Jekyll logo"
-caption="This is the Jekyll logo." %}
-```
+Here rendering a bullet list.
 
-Or pass variable names instead of values, as defined in frontmatter or data file. Be careful not to override URL on the page with an image url or it can break things.
+- As Markdown `_includes/bullet-list.md`
+    ```markdown
+    {% for item in include.items %}
+    - {{ item }}
+    {% endfor %}
+    ```
+- As HTML `_includes/bullet-list.html`
+    ```html
+    <ul>
+      {% for item in include.items %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    ```
 
-```liquid
----
-my_image:
-  url: '...'
-  alt: '...'
----
-{% include image.html url=page.my_image.url alt=page.my_image.html ... %}
+Sample page:
 
-From _data/gallery.yaml
+- `page.md`
+    ```markdown
+    ---
+    title: My page
+    fruits:
+      - Apple
+      - Banana
+      - Cherry
+      - Data
+    ---
+    
+    <h2>My Favorite Fruits</h2>
+    
+    {% include bullet-list.md items=page.fruits %}
+    ```
 
-{% include image.html url=site.data.gallery.my_image.url 
-... %}
-```
+## Image example
 
-Or pass an object with attributes on it.
+From the [docs](https://jekyllrb.com/docs/includes/).
 
-```liquid
----
-my_image:
-  url: '...'
-  alt: '...'
----
-{% include image.html image_attributes=page.my_image %}
-```
+- `_include/image.html`
+    ```liquid
+    <figure>
+       <a href="{{ include.url }}">
+       <img src="{{ include.file }}" style="max-width: {{ include.max-width }};"
+          alt="{{ include.alt }}"/>
+       </a>
+       <figcaption>{{ include.caption }}</figcaption>
+    </figure>
+    ```
 
+Call it like this:
+
+- `page.md`
+    ```liquid
+    ---
+    title: My page
+    ---
+    {% include image.html
+      url="http://jekyllrb.com"
+      max-width="200px"
+      file="logo.png"
+      alt="Jekyll logo"
+      caption="This is the Jekyll logo."
+    %}
+    ```
 
 {% endraw %}
