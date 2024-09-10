@@ -305,7 +305,7 @@ Jack,Hill,25,Australia
 <p>Notes:</p>
 
 <ul>
-  <li>Here using the <code class="language-plaintext highlighter-rouge">tablerow</code> builtin Liquid method to render a row. No need to add <code class="language-plaintext highlighter-rouge">tbody</code>, <code class="language-plaintext highlighter-rouge">tr</code>, or <code class="language-plaintext highlighter-rouge">td</code> elements for the rows. Note data is unpacked as a tuple of keys and values for each row, so we name this <code class="language-plaintext highlighter-rouge">pair</code> and slice it.</li>
+  <li>Here using the <code class="language-plaintext highlighter-rouge">tablerow</code> builtin Liquid method to render a row. No need to add <code class="language-plaintext highlighter-rouge">tbody</code>, <code class="language-plaintext highlighter-rouge">tr</code>, or <code class="language-plaintext highlighter-rouge">td</code> elements for the rows, with the downside that you can’t add styling or links or fields. Note the data is unpacked as a tuple of keys and values for each row, so we name this <code class="language-plaintext highlighter-rouge">pair</code> and slice it.</li>
   <li>By using a inner <code class="language-plaintext highlighter-rouge">for</code> loops for the header and data rows, this approach is more flexible - it will work for any CSV and render all columns without having to reference them specifically.</li>
 </ul>
 
