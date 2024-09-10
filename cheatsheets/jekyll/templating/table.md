@@ -126,7 +126,7 @@ Given CSV file:
 
 Notes:
 
-- Here using the `tablerow` builtin Liquid method to render a row. No need to add `tbody`, `tr`, or `td` elements for the rows. Note data is unpacked as a tuple of keys and values for each row, so we name this `pair` and slice it. 
+- Here using the `tablerow` builtin Liquid method to render a row. No need to add `tbody`, `tr`, or `td` elements for the rows, with the downside that you can't add styling or links or fields. Note the data is unpacked as a tuple of keys and values for each row, so we name this `pair` and slice it. 
 - By using a inner `for` loops for the header and data rows, this approach is more flexible - it will work for any CSV and render all columns without having to reference them specifically. 
 
 ```liquid
