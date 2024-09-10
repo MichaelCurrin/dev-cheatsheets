@@ -7,6 +7,10 @@ I wrote this article which is on the tutorials section of the Jekyll docs coveri
 
 See the short version below, for more data formats.
 
+See also [Includes][] cheatsheet.
+
+[Includes]: {% link cheatsheets/jekyll/liquid/includes.md %}
+
 {% raw %}
 
 ## Render YAML data
