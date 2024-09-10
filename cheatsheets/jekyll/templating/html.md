@@ -29,7 +29,7 @@ Bad - using empty lines will cause indented lines to become code block.
 </div>
 ```
 
-You can even wrap markdown in HTML, if you don't indent.
+You can even wrap markdown in HTML, if you do not indent.
 
 ```html
 ## Heading
@@ -39,7 +39,7 @@ You can even wrap markdown in HTML, if you don't indent.
 ### Heading
 
 - Markdown bullet
-- Another bullet <button>Text</button
+- Another bullet <button>Text</button>
 
 </div>
 ```
