@@ -289,7 +289,7 @@ Jack,Hill,25,Australia
     <span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">author</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">authors</span><span class="w"> </span><span class="cp">%}</span>
       &lt;tr&gt;
         &lt;td&gt;<span class="cp">{{</span><span class="w"> </span><span class="nv">author</span><span class="p">[</span><span class="s1">'First name'</span><span class="p">]</span><span class="w"> </span><span class="cp">}}</span>&lt;/td&gt;
-        &lt;td&gt;<span class="cp">{{</span><span class="w"> </span><span class="nv">author</span><span class="p">[</span><span class="s1">'First name'</span><span class="p">]</span><span class="w"> </span><span class="cp">}}</span>&lt;/td&gt;
+        &lt;td&gt;<span class="cp">{{</span><span class="w"> </span><span class="nv">author</span><span class="p">[</span><span class="s1">'Last name'</span><span class="p">]</span><span class="w"> </span><span class="cp">}}</span>&lt;/td&gt;
         &lt;td&gt;<span class="cp">{{</span><span class="w"> </span><span class="nv">author</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="w"> </span><span class="cp">}}</span>&lt;/td&gt;
         &lt;td&gt;<span class="cp">{{</span><span class="w"> </span><span class="nv">author</span><span class="p">[</span><span class="s1">'Location'</span><span class="p">]</span><span class="w"> </span><span class="cp">}}</span>&lt;/td&gt;
       &lt;/tr&gt;
@@ -300,9 +300,12 @@ Jack,Hill,25,Australia
 
 <h3 id="dynamic-table">Dynamic table</h3>
 
-<p>This approach is more flexible - it will work for any CSV and render all columns without having to reference them specifically.</p>
+<p>Notes:</p>
 
-<p>Data is unpacked as a tuple of keys and values for each row, so we name this <code class="language-plaintext highlighter-rouge">pair</code> and slice it. Also note use of dynamic header - we read the column names for the first row.</p>
+<ul>
+  <li>Here using the <code class="language-plaintext highlighter-rouge">tablerow</code> builtin Liquid method to render a row. No need to add <code class="language-plaintext highlighter-rouge">tbody</code>, <code class="language-plaintext highlighter-rouge">tr</code>, or <code class="language-plaintext highlighter-rouge">td</code> elements for the rows. Note data is unpacked as a tuple of keys and values for each row, so we name this <code class="language-plaintext highlighter-rouge">pair</code> and slice it.</li>
+  <li>By using a inner <code class="language-plaintext highlighter-rouge">for</code> loops for the header and data rows, this approach is more flexible - it will work for any CSV and render all columns without having to reference them specifically.</li>
+</ul>
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">authors</span><span class="w"> </span><span class="cp">%}</span>
 
@@ -321,6 +324,11 @@ Jack,Hill,25,Australia
     <span class="cp">{%</span><span class="w"> </span><span class="nt">endtablerow</span><span class="w"> </span><span class="cp">%}</span>
   <span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
 &lt;/table&gt;
+</code></pre></div></div>
+
+<p>Since this is dynamic, you can easily move it to an <code class="language-plaintext highlighter-rouge">includes</code> file and then pass data to it and reference as:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">includes</span><span class="p">.</span><span class="nv">authors</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 

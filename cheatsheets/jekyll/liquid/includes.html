@@ -169,59 +169,125 @@
 
     <div class="post-content">
         
-            
-<p>Do you know about includes files in Jekyll?</p>
+            <p>Put code into an <em>includes</em> file so you can use it on pages or layouts. This can be called like a function - especially useful for large pieces of code or for making code reusable.</p>
 
-<p>Rather than determining the layout of a page so its hard to add stuff to it, the includes functionality is like a function or piece of reusable code. Which you can use on pages or layouts.</p>
+<p>You can write is a Markdown or HTML file and can include Liquid syntax in it.</p>
 
-<p>And it works well with parameters.</p>
+<h2 id="basic">Basic</h2>
 
-<p>From the <a href="https://jekyllrb.com/docs/includes/">docs</a></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_includes/foo.md</code>
+    <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  This is an example of using <span class="gs">**includes**</span> in Jekyll.
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">page.md</code>
+    <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">  ---</span>
+  title: My page
+<span class="p">  ---</span>
+  {% include foo.md %}
+</code></pre></div>    </div>
+  </li>
+</ul>
 
-<p><code class="language-plaintext highlighter-rouge">_include/image.html</code></p>
+<h2 id="parametrize">Parametrize</h2>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;figure&gt;
-   &lt;a href="<span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="cp">}}</span>"&gt;
-   &lt;img src="<span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">file</span><span class="w"> </span><span class="cp">}}</span>" style="max-width: <span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">max-width</span><span class="w"> </span><span class="cp">}}</span>;"
-      alt="<span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">alt</span><span class="w"> </span><span class="cp">}}</span>"/&gt;
-   &lt;/a&gt;
-   &lt;figcaption&gt;<span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">caption</span><span class="w"> </span><span class="cp">}}</span>&lt;/figcaption&gt;
-&lt;/figure&gt;
-</code></pre></div></div>
+<p>You can pass values to it like a function. This could be a value directyl, or a variable like a string, or a variable as an object with attributes on it.</p>
 
-<p>Call like</p>
+<p>Or you can reference other values like on the page or config or data files.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
----
-<span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">url</span><span class="o">=</span><span class="s2">"http://jekyllrb.com"</span><span class="w">
-</span><span class="na">max-width</span><span class="o">=</span><span class="s2">"200px"</span><span class="w"> </span><span class="na">file</span><span class="o">=</span><span class="s2">"logo.png"</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s2">"Jekyll logo"</span><span class="w">
-</span><span class="na">caption</span><span class="o">=</span><span class="s2">"This is the Jekyll logo."</span><span class="w"> </span><span class="cp">%}</span>
-</code></pre></div></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_includes/foo.md</code>
+    <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  This blog is called {{ site.name }} and was written by {{ include.name }}.
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">page.md</code>
+    <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">  ---</span>
+  title: My page
+  fizz: Buzz
+<span class="p">  ---</span>
+  {% include foo.md name='Foo bar' %}
 
-<p>Or pass variable names instead of values, as defined in frontmatter or data file. Be careful not to override URL on the page with an image url or it can break things.</p>
+  {% include foo.md name=page.fizz %}
+</code></pre></div>    </div>
+  </li>
+</ul>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
-my_image:
-  url: '...'
-  alt: '...'
----
-<span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">url</span><span class="o">=</span><span class="nv">page</span><span class="p">.</span><span class="nv">my_image</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="nv">page</span><span class="p">.</span><span class="nv">my_image</span><span class="p">.</span><span class="nv">html</span><span class="w"> </span>...<span class="w"> </span><span class="cp">%}</span>
+<p>Here rendering a bullet list.</p>
 
-From _data/gallery.yaml
+<ul>
+  <li>As Markdown <code class="language-plaintext highlighter-rouge">_includes/bullet-list.md</code>
+  ```markdown
+  {% for item in include.items %}
+    <ul>
+      <li>{{ item }}
+  {% endfor %}
+  ```</li>
+    </ul>
+  </li>
+  <li>As HTML <code class="language-plaintext highlighter-rouge">_includes/bullet-list.html</code>
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;ul&gt;</span>
+    {% for item in include.items %}
+      <span class="nt">&lt;li&gt;</span>{{ item }}<span class="nt">&lt;/li&gt;</span>
+    {% endfor %}
+  <span class="nt">&lt;/ul&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
 
-<span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">url</span><span class="o">=</span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">gallery</span><span class="p">.</span><span class="nv">my_image</span><span class="p">.</span><span class="nv">url</span><span class="w"> 
-</span>...<span class="w"> </span><span class="cp">%}</span>
-</code></pre></div></div>
+<p>Sample page:</p>
 
-<p>Or pass an object with attributes on it.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">page.md</code>
+    <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">  ---</span>
+  title: My page
+  fruits:
+<span class="p">    -</span> Apple
+<span class="p">    -</span> Banana
+<span class="p">    -</span> Cherry
+<span class="p">    -</span> Data
+<span class="p">  ---
+    </span>
+  <span class="nt">&lt;h2&gt;</span>My Favorite Fruits<span class="nt">&lt;/h2&gt;</span>
+    
+  {% include bullet-list.md items=page.fruits %}
+</code></pre></div>    </div>
+  </li>
+</ul>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
-my_image:
-  url: '...'
-  alt: '...'
----
-<span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">image_attributes</span><span class="o">=</span><span class="nv">page</span><span class="p">.</span><span class="nv">my_image</span><span class="w"> </span><span class="cp">%}</span>
-</code></pre></div></div>
+<h2 id="image-example">Image example</h2>
+
+<p>From the <a href="https://jekyllrb.com/docs/includes/">docs</a>.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_include/image.html</code>
+    <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;figure&gt;
+     &lt;a href="<span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="cp">}}</span>"&gt;
+     &lt;img src="<span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">file</span><span class="w"> </span><span class="cp">}}</span>" style="max-width: <span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">max-width</span><span class="w"> </span><span class="cp">}}</span>;"
+        alt="<span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">alt</span><span class="w"> </span><span class="cp">}}</span>"/&gt;
+     &lt;/a&gt;
+     &lt;figcaption&gt;<span class="cp">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">caption</span><span class="w"> </span><span class="cp">}}</span>&lt;/figcaption&gt;
+  &lt;/figure&gt;
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Call it like this:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">page.md</code>
+    <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ---
+  title: My page
+  ---
+  <span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w">
+    </span><span class="na">url</span><span class="o">=</span><span class="s2">"http://jekyllrb.com"</span><span class="w">
+    </span><span class="na">max-width</span><span class="o">=</span><span class="s2">"200px"</span><span class="w">
+    </span><span class="na">file</span><span class="o">=</span><span class="s2">"logo.png"</span><span class="w">
+    </span><span class="na">alt</span><span class="o">=</span><span class="s2">"Jekyll logo"</span><span class="w">
+    </span><span class="na">caption</span><span class="o">=</span><span class="s2">"This is the Jekyll logo."</span><span class="w">
+  </span><span class="cp">%}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
 
 
         
