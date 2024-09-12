@@ -26,7 +26,7 @@ Note - if you get irregular behavior after you remove a config file, delete `.my
 Ignore `foobar` imports. This is equivalent to adding `# type: ignore` to every import of `foobar`.
 
 - `setup.cfg` - first heading is to ensure the section below it actually gets evaluated.
-    ```cfg
+    ```ini
     [mypy]
     
     [mypy-foobar.*]
@@ -61,7 +61,7 @@ ignore_missing_imports = True
 Ignore all missing imports across libraries.
 
 - `setup.cfg`
-    ```cfg
+    ```ini
     [mypy]
     ignore_missing_imports = True
     ```
