@@ -60,7 +60,7 @@ ignore_missing_imports = True
 
 Ignore all missing imports across libraries.
 
-- `setup.cfg`
+- `setup.cfg` or `mypy.ini`.
     ```ini
     [mypy]
     ignore_missing_imports = True
