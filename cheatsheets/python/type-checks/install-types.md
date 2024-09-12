@@ -9,8 +9,6 @@ See [typeshed README](https://github.com/python/typeshed/blob/master/README.md) 
 
 ## Install using Mypy
 
-Note you cannot run this as the _first_ command as it will complain there is no Mypy cache, so you need to attempt your checks, install types, then do checks again.
-
 ### Interactive
 
 ```sh
@@ -38,7 +36,9 @@ $ mypy --install-types --non-interactive
 
 ## Install using pip
 
-See [types-requests](https://pypi.org/project/types-requests/) on PyPI.
+If type stubs exist for a particular package, you can install them.
+
+See [types-requests](https://pypi.org/project/types-requests/) on PyPI for this example.
 
 ### Install using CLI
 
