@@ -212,7 +212,7 @@
   </li>
 </ul>
 
-<h2 id="run-in-new-container">Run in new container</h2>
+<h2 id="run-in-a-new-container">Run in a new container</h2>
 
 <p>Run a command in a <strong>new</strong> container. The container will then stop when it is finished, unless it continues to run like for a server.</p>
 
@@ -239,25 +239,33 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">-it</span> <span class="nt">--rm</span> python:3.9 bash
 </code></pre></div></div>
 
-<p>Give the container name. This can be useful if you have long-running container like a server. You’ll want to use the <code class="language-plaintext highlighter-rouge">rm</code> flag otherwise you’ll get an error on the 2nd run that the container name already is used.</p>
+<h3 id="run-with-a-name">Run with a name</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">--rm</span> <span class="nt">--name</span> CONTAINER_NAME IMAGE
+<p>You can give the container a name. This can be useful if you have long-running container like a server that will be referenced by other containers. Or if you want to install files in the container or test it over multiple days without starting over.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">--name</span> CONTAINER_NAME IMAGE
 </code></pre></div></div>
 
 <p>e.g.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">--rm</span> <span class="se">\</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="se">\</span>
     <span class="nt">--name</span> my-app <span class="se">\</span>
     python:3.9
 </code></pre></div></div>
 
-<h2 id="run-in-existing-container">Run in existing container</h2>
+<h3 id="running-with-a-name-and-a-removing-or-persisting">Running with a name and a removing or persisting</h3>
 
-<p>Run a command in an <strong>existing</strong> and <strong>running</strong> container, given a tagged name or ID.</p>
+<p>If you don’t care about state, you can add the <code class="language-plaintext highlighter-rouge">--rm</code> flag to delete it after it exits (whether you stop it or finishes its task). Then you can use the <code class="language-plaintext highlighter-rouge">run</code> command with a set name, repeatedly without getting an error that the container exists.</p>
+
+<p>If you want to reuse the same container each time and not get an error that the container name already exists, use <code class="language-plaintext highlighter-rouge">run</code> without <code class="language-plaintext highlighter-rouge">--rm</code> and then use <code class="language-plaintext highlighter-rouge">start</code> as in the section below.</p>
+
+<h2 id="run-in-an-existing-container">Run in an existing container</h2>
+
+<p>Run a command in an <strong>existing</strong> and <strong>running</strong> container. Give it given a container name or ID.</p>
 
 <ol>
   <li>Create the container:
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>docker run IMAGE <span class="nt">--name</span> CONTAINER_NAME
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>docker run <span class="nt">--name</span> CONTAINER_NAME IMAGE
 </code></pre></div>    </div>
   </li>
   <li>Start it:
