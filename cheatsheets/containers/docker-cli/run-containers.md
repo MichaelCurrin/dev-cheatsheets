@@ -32,7 +32,7 @@
     $ docker exec -it my-app bash
     ```
     
-## Run in new container
+## Run in a new container
 
 Run a command in a **new** container. The container will then stop when it is finished, unless it continues to run like for a server.
 
@@ -63,28 +63,35 @@ Specify Bash shell as entry-point with interactive mode:
 $ docker run -it --rm python:3.9 bash
 ```
 
-Give the container name. This can be useful if you have long-running container like a server. You'll want to use the `rm` flag otherwise you'll get an error on the 2nd run that the container name already is used.
+### Run with a name
+
+You can give the container a name. This can be useful if you have long-running container like a server that will be referenced by other containers. Or if you want to install files in the container or test it over multiple days without starting over.
 
 ```sh
-$ docker run --rm --name CONTAINER_NAME IMAGE
+$ docker run --name CONTAINER_NAME IMAGE
 ```
 
 e.g.
 
 ```sh
-$ docker run --rm \
+$ docker run \
     --name my-app \
     python:3.9
 ```
 
+### Running with a name and a removing or persisting
 
-## Run in existing container
+If you don't care about state, you can add the `--rm` flag to delete it after it exits (whether you stop it or finishes its task). Then you can use the `run` command with a set name, repeatedly without getting an error that the container exists.
 
-Run a command in an **existing** and **running** container, given a tagged name or ID.
+If you want to reuse the same container each time and not get an error that the container name already exists, use `run` without `--rm` and then use `start` as in the section below.
+
+## Run in an existing container
+
+Run a command in an **existing** and **running** container. Give it given a container name or ID.
 
 1. Create the container:
     ```sh
-    $ docker run IMAGE --name CONTAINER_NAME
+    $ docker run --name CONTAINER_NAME IMAGE
     ```
 1. Start it:
     ```sh
