@@ -1617,8 +1617,6 @@
   <li>Run tests (Jasmine, Jest, Mocha …)</li>
 </ul>
 
-<p>Then consider using Deno. It is a modern alternative to Node.js by the same author and it provides all the functionality just mentioned above - without installing dependencies. Deno actually used packages like ESLint and Prettier internally, you just don’t have to care.</p>
-
 <h3 id="tips">Tips</h3>
 
 <p>Packages are managed using URLs in your code. That can be messy for large projects but can be centralized in one file if you prefer.</p>
@@ -1630,6 +1628,21 @@
 <p>Get started with Deno easily by using my template project.</p>
 
 <p><a href="https://github.com/MichaelCurrin/deno-project-template"><img src="https://img.shields.io/static/v1?label=MichaelCurrin&amp;message=deno-project-template&amp;color=blue&amp;logo=github" alt="MichaelCurrin - deno-project-template" /></a></p>
+
+<h3 id="deno-vs-node">Deno vs Node</h3>
+
+<ul>
+  <li>Deno replaces Node as JavaScript runner and bundler.</li>
+  <li>No need for <code class="language-plaintext highlighter-rouge">package.json</code>.</li>
+  <li>Deno handles TypeScript - no external dependency needed.</li>
+  <li>Deno can be used to format and lint code - no external dependencies needed.</li>
+  <li>Deno handles JSX, so you can use React easily.</li>
+  <li>Deno can be used to bundle multiple JS files, without installing Webpack. You may run into complexity with adding support for <code class="language-plaintext highlighter-rouge">.vue</code> files though, as Deno doesn’t support them. Or you need to restructure your components and views as <code class="language-plaintext highlighter-rouge">.js</code> files.</li>
+  <li>Deno doesn’t support minification. But <code class="language-plaintext highlighter-rouge">npx esbuild --minify ...</code> is a great choice that is modern and performant.</li>
+  <li>You can easily use <code class="language-plaintext highlighter-rouge">make</code> and <code class="language-plaintext highlighter-rouge">Makefile</code> for running tasks in place of using <code class="language-plaintext highlighter-rouge">package.json</code> scripts.</li>
+</ul>
+
+<p>Then consider using Deno. It is a modern alternative to Node.js by the same author and it provides all the functionality just mentioned above - without installing dependencies. Deno actually used packages like ESLint and Prettier internally, you just don’t have to care.</p>
     
 
         
