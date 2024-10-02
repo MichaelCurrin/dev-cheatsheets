@@ -38,7 +38,7 @@ Are you tired of choosing and managing separate dependencies which do all these 
 - Transpile TypeScript to plain JS (TypeScript)
 - Run tests (Jasmine, Jest, Mocha ...)
 
-Then consider using Deno. It is a modern alternative to Node.js by the same author and it provides all the functionality just mentioned above - without installing dependencies. Deno actually used packages like ESLint and Prettier internally, you just don't have to care.
+
 
 ### Tips
 
@@ -53,3 +53,17 @@ Get started with Deno easily by using my template project.
 
 [![MichaelCurrin - deno-project-template](https://img.shields.io/static/v1?label=MichaelCurrin&message=deno-project-template&color=blue&logo=github)](https://github.com/MichaelCurrin/deno-project-template)
 
+
+
+### Deno vs Node
+
+- Deno replaces Node as JavaScript runner and bundler.
+- No need for `package.json`.
+- Deno handles TypeScript - no external dependency needed.
+- Deno can be used to format and lint code - no external dependencies needed.
+- Deno handles JSX, so you can use React easily.
+- Deno can be used to bundle multiple JS files, without installing Webpack. You may run into complexity with adding support for `.vue` files though, as Deno doesn't support them. Or you need to restructure your components and views as `.js` files.
+- Deno doesn't support minification. But `npx esbuild --minify ...` is a great choice that is modern and performant.
+- You can easily use `make` and `Makefile` for running tasks in place of using `package.json` scripts.
+
+Then consider using Deno. It is a modern alternative to Node.js by the same author and it provides all the functionality just mentioned above - without installing dependencies. Deno actually used packages like ESLint and Prettier internally, you just don't have to care.
