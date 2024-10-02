@@ -15,7 +15,7 @@
 
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:title" content="Deno" />
-<meta name="generator" content="Jekyll v4.3.3" />
+<meta name="generator" content="Jekyll v4.3.4" />
 
 <meta property="og:locale" content="en_US" />
 
@@ -268,8 +268,6 @@
         
         
         
-        
-        
             <a href="/dev-cheatsheets/cheatsheets/javascript/deno/cli/">
                 <div>
                     
@@ -278,6 +276,8 @@
                     <span>CLI</span>
                 </div>
             </a>
+        
+        
         
         
         
@@ -1574,7 +1574,9 @@
     
         <h2>Content</h2>
 
-        <h3 id="what-is-deno">What is Deno?</h3>
+        <p>See also <a href="https://michaelcurrin.github.io/dev-resources/resources/javascript/deno/">Deno</a> in Dev Resources for links.</p>
+
+<h3 id="what-is-deno">What is Deno?</h3>
 
 <p>Deno is a JavaScript runtime which is a replacement to Node.js and with a few enhancements.</p>
 
@@ -1584,6 +1586,21 @@
       <p>A secure runtime for JavaScript and TypeScript.</p>
     </blockquote>
   </li>
+</ul>
+
+<h3 id="key-points">Key points</h3>
+
+<ul>
+  <li><strong>Built-in TypeScript Support</strong>: Deno supports TypeScript out of the box, without needing external configuration or transpilers.</li>
+  <li><strong>Security by Default</strong>: Deno is secure by default, with no file, network, or environment access unless explicitly granted by the developer via permissions.</li>
+  <li><strong>Simplified Module Management</strong>: It uses ES Modules and URLs for importing packages, removing the need for a centralized package manager like npm.</li>
+  <li><strong>Built-in Utilities</strong>: Deno comes with built-in utilities such as a test runner, a linter, and a formatter, reducing the need for additional tools.</li>
+  <li><strong>Modern Standard Library</strong>: It includes a modern standard library focused on web compatibility, such as fetch, WebSocket, and other web APIs.</li>
+  <li><strong>Compatibility with Web APIs</strong>: Deno is aligned with browser standards, meaning many APIs available in the browser (like <code class="language-plaintext highlighter-rouge">fetch</code>) work similarly in Deno.</li>
+  <li><strong>Single Executable</strong>: Deno is distributed as a single executable, which simplifies the installation process. You can also compile your project code as a single executable for easy distribution.</li>
+  <li><strong>No <code class="language-plaintext highlighter-rouge">node_modules</code> or <code class="language-plaintext highlighter-rouge">package.json</code></strong>: It eliminates the <code class="language-plaintext highlighter-rouge">node_modules</code> folder and <code class="language-plaintext highlighter-rouge">package.json</code> in favor of directly fetching and caching dependencies from URLs.</li>
+  <li><strong>Async/await and Promises</strong>: It uses modern JavaScript features like <code class="language-plaintext highlighter-rouge">async/await</code> and Promises natively.</li>
+  <li><strong>Community-Driven Development</strong>: It has an active and growing community with continuous updates and improvements.</li>
 </ul>
 
 <h3 id="why-deno">Why Deno?</h3>
@@ -1600,17 +1617,32 @@
   <li>Run tests (Jasmine, Jest, Mocha …)</li>
 </ul>
 
-<p>Then consider using Deno. It is a modern alternative to Node.ks by the same author and it provides all the functionality just mentioned above - without installing dependencies. Deno actually used packages like ESLint and Prettier internally, you just know don’t have to care.</p>
+<p>Then consider using Deno. It is a modern alternative to Node.js by the same author and it provides all the functionality just mentioned above - without installing dependencies. Deno actually used packages like ESLint and Prettier internally, you just don’t have to care.</p>
 
-<p>Packages are managed using URLs in your code, which can be centralized in one if you prefer.</p>
+<h3 id="tips">Tips</h3>
 
-<p>Running Deno with the explicit permissions it needs can be cumbersone. Insteading using <code class="language-plaintext highlighter-rouge">npm</code> and <code class="language-plaintext highlighter-rouge">package.json</code> to run commands, I find that <code class="language-plaintext highlighter-rouge">make</code> and <code class="language-plaintext highlighter-rouge">Makefile</code> work well. At least for Linux and macOS where <code class="language-plaintext highlighter-rouge">make</code> is standard.</p>
+<p>Packages are managed using URLs in your code. That can be messy for large projects but can be centralized in one file if you prefer.</p>
+
+<p>Running Deno with the explicit permissions it needs can be cumbersone. Instead of using <code class="language-plaintext highlighter-rouge">npm</code> and <code class="language-plaintext highlighter-rouge">package.json</code> to run commands, I find that <code class="language-plaintext highlighter-rouge">make</code> and <code class="language-plaintext highlighter-rouge">Makefile</code> work well. At least for Linux and macOS where <code class="language-plaintext highlighter-rouge">make</code> is standard.</p>
 
 <h3 id="template-project">Template project</h3>
 
 <p>Get started with Deno easily by using my template project.</p>
 
 <p><a href="https://github.com/MichaelCurrin/deno-project-template"><img src="https://img.shields.io/static/v1?label=MichaelCurrin&amp;message=deno-project-template&amp;color=blue&amp;logo=github" alt="MichaelCurrin - deno-project-template" /></a></p>
+
+<h3 id="migrating-from-node-to-deno">Migrating from Node to Deno</h3>
+
+<ul>
+  <li>Deno replaces Node as JavaScript runner and bundler.</li>
+  <li>No need for <code class="language-plaintext highlighter-rouge">package.json</code>.</li>
+  <li>Deno handles TypeScript - no external dependency needed.</li>
+  <li>Deno can be used to format and lint code - no external dependencies needed.</li>
+  <li>Deno handles JSX, so you can use React easily.</li>
+  <li>Deno can be used to bundle multiple JS files, without installing Webpack. You may run into complexity with adding support for <code class="language-plaintext highlighter-rouge">.vue</code> files though, as Deno doesn’t support them. Or you need to restructure your components and views as <code class="language-plaintext highlighter-rouge">.js</code> files.</li>
+  <li>Deno doesn’t support minification. But <code class="language-plaintext highlighter-rouge">npx esbuild --minify ...</code> is a great choice that is modern and performant.</li>
+  <li>You can easily use <code class="language-plaintext highlighter-rouge">make</code> and <code class="language-plaintext highlighter-rouge">Makefile</code> for running tasks in place of using <code class="language-plaintext highlighter-rouge">package.json</code> scripts.</li>
+</ul>
     
 
         
