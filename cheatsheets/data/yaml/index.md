@@ -91,4 +91,6 @@ Sample content, going through data types:
     - [YAML Lint](http://www.yamllint.com/)
 - Converters
     - [JSON to YAML](https://onlineyamltools.com/convert-yaml-to-json) - useful to check your YAML data got interpreted as expected. The JSON will be verbose but precise/explicit.
+- Comparator
+    - [YAML comparator](https://yamline.com/compare/)
 - [W3](https://www.tutorialspoint.com/yaml/index.htm) - this gives an intro and then builds up the rules of the syntax and examples.
