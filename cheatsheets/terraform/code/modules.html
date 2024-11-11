@@ -214,7 +214,7 @@
     <div class="language-tf highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">module</span> <span class="s2">"bucket"</span> <span class="p">{</span>
     <span class="nx">for_each</span> <span class="o">=</span> <span class="nx">toset</span><span class="p">([</span><span class="s2">"assets"</span><span class="p">,</span> <span class="s2">"media"</span><span class="p">])</span>
     <span class="nx">source</span>   <span class="o">=</span> <span class="s2">"./publish_bucket"</span>
-    <span class="nx">name</span>     <span class="o">=</span> <span class="s2">"</span><span class="k">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">key</span><span class="k">}</span><span class="s2">_bucket"</span>
+    <span class="nx">name</span>     <span class="o">=</span> <span class="s2">"</span><span class="p">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">key</span><span class="p">}</span><span class="s2">_bucket"</span>
   <span class="p">}</span>
 </code></pre></div>    </div>
   </li>

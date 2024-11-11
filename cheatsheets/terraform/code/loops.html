@@ -187,7 +187,7 @@
 
 <p>Iterate of a list, using an optiona index.</p>
 
-<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">v</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">list</span> <span class="o">:</span> <span class="s2">"</span><span class="k">${</span><span class="nx">i</span><span class="k">}</span><span class="s2"> is </span><span class="k">${</span><span class="nx">v</span><span class="k">}</span><span class="s2">"</span><span class="p">]</span>
+<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">v</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">list</span> <span class="o">:</span> <span class="s2">"</span><span class="p">${</span><span class="nx">i</span><span class="p">}</span><span class="s2"> is </span><span class="p">${</span><span class="nx">v</span><span class="p">}</span><span class="s2">"</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>Convert a list into a map:</p>
@@ -259,7 +259,7 @@
 
 <div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="s2">"my_module"</span> <span class="p">{</span>
   <span class="nx">for_each</span> <span class="o">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">subpaths</span>
-  <span class="nx">message</span> <span class="o">=</span> <span class="s2">"Problem reaching page: </span><span class="k">${</span><span class="kd">var</span><span class="p">.</span><span class="nx">subpaths</span><span class="p">[</span><span class="nx">each</span><span class="p">.</span><span class="nx">index</span><span class="p">]</span><span class="k">}</span><span class="s2">"</span>
+  <span class="nx">message</span> <span class="o">=</span> <span class="s2">"Problem reaching page: </span><span class="p">${</span><span class="kd">var</span><span class="p">.</span><span class="nx">subpaths</span><span class="p">[</span><span class="nx">each</span><span class="p">.</span><span class="nx">index</span><span class="p">]}</span><span class="s2">"</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -310,17 +310,17 @@
 <div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="s2">"my_module"</span> <span class="p">{</span>
   <span class="nx">for_each</span>    <span class="o">=</span> <span class="nx">toset</span><span class="p">(</span><span class="kd">var</span><span class="p">.</span><span class="nx">subpaths</span><span class="p">)</span>
   <span class="nx">name</span>        <span class="o">=</span> <span class="kd">local</span><span class="p">.</span><span class="nx">organic_name</span>
-  <span class="nx">message</span>     <span class="o">=</span> <span class="s2">"Problem reaching page: </span><span class="k">${</span><span class="kd">local</span><span class="p">.</span><span class="nx">url_prefix</span><span class="k">}${</span><span class="kd">var</span><span class="p">.</span><span class="nx">main_url</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">key</span><span class="k">}</span><span class="s2">"</span>
-  <span class="nx">url</span>         <span class="o">=</span> <span class="s2">"</span><span class="k">${</span><span class="kd">local</span><span class="p">.</span><span class="nx">url_prefix</span><span class="k">}${</span><span class="kd">var</span><span class="p">.</span><span class="nx">main_url</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">key</span><span class="k">}</span><span class="s2">"</span>
+  <span class="nx">message</span>     <span class="o">=</span> <span class="s2">"Problem reaching page: </span><span class="p">${</span><span class="kd">local</span><span class="p">.</span><span class="nx">url_prefix</span><span class="p">}${</span><span class="kd">var</span><span class="p">.</span><span class="nx">main_url</span><span class="p">}</span><span class="s2">/</span><span class="p">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">key</span><span class="p">}</span><span class="s2">"</span>
+  <span class="nx">url</span>         <span class="o">=</span> <span class="s2">"</span><span class="p">${</span><span class="kd">local</span><span class="p">.</span><span class="nx">url_prefix</span><span class="p">}${</span><span class="kd">var</span><span class="p">.</span><span class="nx">main_url</span><span class="p">}</span><span class="s2">/</span><span class="p">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">key</span><span class="p">}</span><span class="s2">"</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>So, to avoid duplication:</p>
 
 <div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="s2">"my_module"</span> <span class="p">{</span>
-  <span class="nx">for_each</span> <span class="o">=</span> <span class="nx">toset</span><span class="p">([</span><span class="nx">for</span> <span class="nx">subpath</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">subpaths</span> <span class="o">:</span> <span class="s2">"</span><span class="k">${</span><span class="kd">local</span><span class="p">.</span><span class="nx">url_prefix</span><span class="k">}${</span><span class="kd">var</span><span class="p">.</span><span class="nx">main_url</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nx">subpath</span><span class="k">}</span><span class="s2">"</span><span class="p">])</span>
+  <span class="nx">for_each</span> <span class="o">=</span> <span class="nx">toset</span><span class="p">([</span><span class="nx">for</span> <span class="nx">subpath</span> <span class="nx">in</span> <span class="kd">var</span><span class="p">.</span><span class="nx">subpaths</span> <span class="o">:</span> <span class="s2">"</span><span class="p">${</span><span class="kd">local</span><span class="p">.</span><span class="nx">url_prefix</span><span class="p">}${</span><span class="kd">var</span><span class="p">.</span><span class="nx">main_url</span><span class="p">}</span><span class="s2">/</span><span class="p">${</span><span class="nx">subpath</span><span class="p">}</span><span class="s2">"</span><span class="p">])</span>
 
-  <span class="nx">message</span>     <span class="o">=</span> <span class="s2">"Problem reaching page: </span><span class="k">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">value</span><span class="k">}</span><span class="s2">"</span>
+  <span class="nx">message</span>     <span class="o">=</span> <span class="s2">"Problem reaching page: </span><span class="p">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span><span class="s2">"</span>
   <span class="nx">url</span>    <span class="o">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">value</span>
 <span class="p">}</span>
 </code></pre></div></div>
