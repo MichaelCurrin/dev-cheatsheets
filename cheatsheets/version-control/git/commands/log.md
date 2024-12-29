@@ -1,24 +1,59 @@
 # log
 
-
-
 Git docs: [git-log](https://git-scm.com/docs/git-log)
 
-
 ## Flags
+
+Some flags to recommend.
+
+```
+--all
+```
+
+Pretend as if all the refs in refs/ are listed on the command line as
+`<commit>`.
+
+```
+-p --patch
+```
+
+Generate patch i.e. diff for each commit.
 
 ```
 --decorate[=short|full|auto|no]
 ```
+Print out the ref names of any commits that are shown. Defaults to
+short optionm such that the name prefixes refs/heads/, refs/tags/ and
+refs/remotes/ will not be printed.
 
 ```
 --graph
 ```
 
+Draw a text-based graphical representation of the commit history on
+the left hand side of the output.
+
 ```
 --stat
 ```
 
+```
+--pretty=FORAMT
+```
+
+## Pretty foramts
+
+See [Pretty formats](https://git-scm.com/docs/pretty-formats) on Git docs.
+
+Available: 
+- `oneline`
+- `short`
+- `medium`
+- `full`
+- `fuller`
+- `email`
+- `raw`
+- `format:<string>`
 
 ## Examples
 
@@ -50,7 +85,7 @@ e.g.
 
 #### glol alias 
 
-From ZSH alia.
+From ZSH alias.
 
 ```sh
 $ git glol
