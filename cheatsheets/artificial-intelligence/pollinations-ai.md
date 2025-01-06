@@ -8,17 +8,17 @@ Why use it:
 
 - Available as as a browser tool with a GUI for some use cases.
 - Available as an API, accessible in your browser or with a client e.g. Python or JavaScript.
-- Cloud-based (so you can use models without worrying about the specs of your machine or setup like when using a local LLM).
-- It is free.
-- Use without needing any authorization (i.e. no need to create an account, use an API key, or pay for a subscription).
+- Cloud-based (so you can use models without worrying about the specs of your machine or setup hassles like when using a local LLM).
+- It is free (no need for subscription with ChatGPT etc.).
+- Works without needing any authorization (i.e. no need to create an account or configure an API key).
 - Good documentation available, plus this page fills in the gaps.
-- Experiment with various text and image models easily.
+- Experiment with various text and image models easily. 
 
 What to use it for:
 
 - Great for prototyping server-side or frontend apps.
 - For local use (e.g. an app for yourself).
-- For running in the cloud and sharing with other users. 
+- For running an app in the cloud and sharing with other users. 
 
 Scaling limitations:
 
