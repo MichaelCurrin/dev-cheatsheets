@@ -1,49 +1,72 @@
 # Pollinations AI
 
+## About
+
 Free open-source service for AI-generated text and images. Available as an API, without needing authorization.
 
 It runs on their free Google cloud credits. Their docs say they use rate limiting such as 20 requests per minute for the text API, excluding cached responses.
 
-## About
+## Links
 
 - [pollinations.ai](https://pollinations.ai/) - includes image generator and samples (including Python with `pollinations` or `requests` or with a React frontend).
-- [Repo](https://github.com/pollinations/pollinations)
-- [API docs](https://github.com/pollinations/pollinations/blob/master/APIDOCS.md)
-- [React Hooks](https://react-hooks.pollinations.ai/) interactive tool 
+- [Repo on GitHub](https://github.com/pollinations/pollinations)
+- [React Hooks](https://react-hooks.pollinations.ai/) interactive tool for generating images.
 
-## API
 
-See the API docs linked above.
+## API requests
 
-They have an API for text and one for images. The text one includes a path for an API that follows the OpenAI specification, so it can be used easily with the `openai` package or LangChain's OpenAI connector.
+See the [API docs](https://github.com/pollinations/pollinations/blob/master/APIDOCS.md)
 
-- [https://text.pollinations.ai/openai](https://text.pollinations.ai/openai)
+See sections below for tips on using the text and image endpoints.
 
-## Browser-based
+The links below will work fine in the browser as `GET` requests but these are intended to handled in a client e.g. using Python or React for building the URL and displaying the content for a user.
 
-Easy access in the browser without an APi client
+### Options
 
-See this page for parameters/options available:
+See this page for parameters/options available for endpoints:
 
 - [pollinations-react/README.md](https://github.com/pollinations/pollinations/blob/master/pollinations-react/README.md)
 
-### Models
+Find what models are available:
 
 - Text [https://text.pollinations.ai/models](https://text.pollinations.ai/models)
 - Image [https://image.pollinations.ai/models](https://image.pollinations.ai/models)
 
-### Text
+### Text endpoint
 
 e.g.
 
 [https://text.pollinations.ai/A%20beautiful%20bedtime%20story
 ](https://text.pollinations.ai/A%20beautiful%20bedtime%20story)
 
-### Images
+The text endpoint also includes a path for an API that follows the **OpenAI** specification, so it can be used easily with the `openai` Python/JavaScript packages or Python LangChain's OpenAI connector as covered below.
+
+- `https://text.pollinations.ai/openai`
+
+With `openai`:
+
+```python
+from openai import OpenAI
+
+client = OpenAI(base_url="https://text.pollinations.ai/openai", api_key="dummy")
+```
+
+With LangChain's [ChatOpenAI](https://python.langchain.com/docs/integrations/chat/openai/):
+
+```python
+from langchain_openai import ChatOpenAI
+
+client = ChatOpenAI(ChatOpenAI(
+    base_url="https://text.pollinations.ai/openai",
+    openai_api_key="dummy",
+)
+```
+
+### Image endpoint
 
 Use the form on the Pollinations homepage. There is a feed of other users' images and you can edit the prompt or make a new one.
 
-A generated image can be viewed there and the link can be copied for easy.
+A generated image can be viewed there and the link can be copied for ease, rather than building the URL by hand.
 
 e.g.
 
