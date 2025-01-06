@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>ls | Dev Cheatsheets</title>
+    <title>Pollinations AI | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="ls" />
+    <meta property="og:title" content="Pollinations AI" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="ls" />
+    <meta property="twitter:title" content="Pollinations AI" />
 <meta name="generator" content="Jekyll v4.3.4" />
 
 <meta property="og:locale" content="en_US" />
@@ -26,16 +26,16 @@
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/ls.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/ls.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/artificial-intelligence/pollinations-ai.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/artificial-intelligence/pollinations-ai.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/shell/commands/ls.html",
-    "headline":    "ls",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/artificial-intelligence/pollinations-ai.html",
+    "headline":    "Pollinations AI",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -88,11 +88,11 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/shell/commands/ls.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/artificial-intelligence/pollinations-ai.md">
     📝 <span>Edit page</span>
 </a>
 
-            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/shell/commands/">
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/artificial-intelligence/">
     ➕ <span>Add page</span>
 </a>
 
@@ -105,7 +105,7 @@
             
 
 
-            <span>ls</span>
+            <span>Pollinations AI</span>
         </h1>
 
         
@@ -133,8 +133,8 @@
 
         
             
-            <a href="/dev-cheatsheets/cheatsheets/shell/">
-    Shell (Unix)
+            <a href="/dev-cheatsheets/cheatsheets/artificial-intelligence/">
+    Artificial Intelligence
 </a>
 
         
@@ -144,20 +144,8 @@
         
 
         
-            
-            <a href="/dev-cheatsheets/cheatsheets/shell/commands/">
-    Commands
-</a>
-
-        
-     
-        
-            /
-        
-
-        
-            <a href="/dev-cheatsheets/cheatsheets/shell/commands/ls.html" class="underline">
-                ls
+            <a href="/dev-cheatsheets/cheatsheets/artificial-intelligence/pollinations-ai.html" class="underline">
+                Pollinations AI
             </a>
         
      
@@ -169,120 +157,61 @@
 
     <div class="post-content">
         
-            <p>Some useful or frequently-used flags</p>
+            <p>Free open-source service for AI-generated text and images. Available as an API, without needing authorization.</p>
 
-<p>Note that some commands work differntly on macOS and Linux.</p>
+<p>It runs on their free Google cloud credits. Their docs say they use rate limiting such as 20 requests per minute for the text API, excluding cached responses.</p>
 
-<h2 id="short-and-long">Short and long</h2>
+<h2 id="about">About</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Flag</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">--color</code></td>
-      <td>Add color to output. Only valid on Linux. Example: <code class="language-plaintext highlighter-rouge">--color=auto</code>.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">--group-directories-first</code> (Linux)</td>
-      <td>Sort by directories first. For macOS, the recommendation is to use coreutils but I did not get this to work.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">-F --classify</code></td>
-      <td>Add type as one of: <code class="language-plaintext highlighter-rouge">*/=&gt;@|</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">-A --almost-all</code></td>
-      <td>List all files including Hidden files, but not implied <code class="language-plaintext highlighter-rouge">.</code> and <code class="language-plaintext highlighter-rouge">..</code> . Always set for the super-user according to Linux manpage.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">-a</code></td>
-      <td>Include directory entries whose names begin with a dot. (Note using <code class="language-plaintext highlighter-rouge">-A</code> is probably preferred to <code class="language-plaintext highlighter-rouge">-a</code>.)</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">-S</code></td>
-      <td>Largest files first</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">-t</code></td>
-      <td>Newest modified first.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">-d</code></td>
-      <td>Show directories themselves and not their contents.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">-R</code></td>
-      <td>Recursive.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">-r</code></td>
-      <td>Reverse order.</td>
-    </tr>
-  </tbody>
-</table>
+<ul>
+  <li>Homepage https://pollinations.ai/ - includes generate generator and samples (including Python with <code class="language-plaintext highlighter-rouge">pollinations</code> or <code class="language-plaintext highlighter-rouge">requests</code> or React frontend).</li>
+  <li>Repo https://github.com/pollinations/pollinations</li>
+  <li>API docs https://github.com/pollinations/pollinations/blob/master/APIDOCS.md</li>
+  <li>React Hooks interactive tool https://react-hooks.pollinations.ai/</li>
+</ul>
 
-<h3 id="color">Color</h3>
+<h2 id="api">API</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Flag</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">-G</code> (macOS)</td>
-      <td>Enable color output.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">--color=FORMAT</code> (Linux)</td>
-      <td>e.g. <code class="language-plaintext highlighter-rouge">--color=auto</code></td>
-    </tr>
-  </tbody>
-</table>
+<p>See the API docs linked above.</p>
 
-<h2 id="long-listing">Long listing</h2>
+<p>They have an API for text and one for images. The text one includes a path for an API that follows the OpenAI specification, so it can be used easily with the <code class="language-plaintext highlighter-rouge">openai</code> package or LangChain’s OpenAI connector.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Flag</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">-l</code></td>
-      <td>Show long listing</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">-G --no-group</code> (Linux)</td>
-      <td>Remove group column in long listing.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">-h</code></td>
-      <td>Show human-readable size in long listing. <code class="language-plaintext highlighter-rouge">ls -lh</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">-C</code></td>
-      <td>Force multi-column output.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">-1</code></td>
-      <td>Show names only but as single column.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">--full-time</code></td>
-      <td>Show ISO time.</td>
-    </tr>
-  </tbody>
-</table>
+<ul>
+  <li>https://text.pollinations.ai/openai</li>
+</ul>
+
+<h2 id="browser-based">Browser-based</h2>
+
+<p>Easy access in the browser without an APi client</p>
+
+<p>See this page for parameters/options available:</p>
+
+<ul>
+  <li>https://github.com/pollinations/pollinations/blob/master/pollinations-react/README.md</li>
+</ul>
+
+<h3 id="models">Models</h3>
+
+<ul>
+  <li>Text https://text.pollinations.ai/models</li>
+  <li>Image https://image.pollinations.ai/models</li>
+</ul>
+
+<h3 id="text">Text</h3>
+
+<p>e.g.</p>
+
+<p>https://text.pollinations.ai/A%20beautiful%20bedtime%20story</p>
+
+<h3 id="images">Images</h3>
+
+<p>Use the form on the Pollinations homepage.</p>
+
+<p>A generate image can be viewed and the link copied.</p>
+
+<p>e.g.</p>
+
+<p>https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20template%20at%20dawn&amp;nologo=true&amp;model=flux</p>
 
         
     </div>

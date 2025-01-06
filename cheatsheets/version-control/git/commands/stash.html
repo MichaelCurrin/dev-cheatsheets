@@ -241,6 +241,53 @@
 
 <p>Note you cannot stash on a repo with zero commits.</p>
 
+<h3 id="quick-reference">Quick reference</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash
+<span class="nv">$ </span><span class="c"># OR</span>
+<span class="nv">$ </span>git stash push
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash <span class="nt">-m</span> <span class="s1">'My message'</span>
+</code></pre></div></div>
+
+<p>Default behavior is to stash staged and unstaged files, but not untracked. You can change this behavior as below.</p>
+
+<p>Flags:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Flag</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-p</code> or <code class="language-plaintext highlighter-rouge">--patch</code></td>
+      <td>Stash interactively, as with <code class="language-plaintext highlighter-rouge">git add --patch</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-S</code> or <code class="language-plaintext highlighter-rouge">--staged</code></td>
+      <td>Stash staged changes only. Similar to using <code class="language-plaintext highlighter-rouge">git commit</code> except saving to stash instead of a commit.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-k</code> or <code class="language-plaintext highlighter-rouge">--keep-index</code></td>
+      <td>Stash unstaged changes and not staged changes.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-u</code> or <code class="language-plaintext highlighter-rouge">--include-untracked</code></td>
+      <td>Stage untracked changes.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-a</code> or <code class="language-plaintext highlighter-rouge">--all</code></td>
+      <td>Show all changes, including untracked and ignored files.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Note that <code class="language-plaintext highlighter-rouge">git stash save</code> is deprecated according to the docs.</p>
+
 <h3 id="basic">Basic</h3>
 
 <p>Create stash.</p>
@@ -266,24 +313,24 @@
 
 <h4 id="stash-staged">Stash staged</h4>
 
-<p>Stage files to stash.</p>
+<p>Stage files to stash:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add abc.txt def.txt
 </code></pre></div></div>
 
-<p>Then stash them, ignoring unstaged.</p>
+<p>Then stash them, ignoring unstaged:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash <span class="nt">--staged</span>
 </code></pre></div></div>
 
 <h4 id="stage-unstaged">Stage unstaged</h4>
 
-<p>Stage files to ignore.</p>
+<p>Stage files to ignore:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add abc.txt def.txt
 </code></pre></div></div>
 
-<p>Then stash everything that is <em>not</em> staged.</p>
+<p>Then stash everything that is <em>not</em> staged:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash <span class="nt">--keep-index</span>
 </code></pre></div></div>
@@ -301,6 +348,11 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git add <span class="nb">.</span>
 <span class="nv">$ </span>git stash
+</code></pre></div></div>
+
+<p>If you want to stash <em>ignored</em> files, do this:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash <span class="nt">--all</span>
 </code></pre></div></div>
 
 <h3 id="message">Message</h3>

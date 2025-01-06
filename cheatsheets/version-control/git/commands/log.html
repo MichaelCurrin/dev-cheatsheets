@@ -185,14 +185,52 @@
 
 <h2 id="flags">Flags</h2>
 
+<p>Some flags to recommend.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--all
+</code></pre></div></div>
+
+<p>Pretend as if all the refs in refs/ are listed on the command line as
+<code class="language-plaintext highlighter-rouge">&lt;commit&gt;</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-p --patch
+</code></pre></div></div>
+
+<p>Generate patch i.e. diff for each commit.</p>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--decorate[=short|full|auto|no]
 </code></pre></div></div>
+<p>Print out the ref names of any commits that are shown. Defaults to
+short optionm such that the name prefixes refs/heads/, refs/tags/ and
+refs/remotes/ will not be printed.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--graph
 </code></pre></div></div>
 
+<p>Draw a text-based graphical representation of the commit history on
+the left hand side of the output.</p>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--stat
 </code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--pretty=FORAMT
+</code></pre></div></div>
+
+<h2 id="pretty-foramts">Pretty foramts</h2>
+
+<p>See <a href="https://git-scm.com/docs/pretty-formats">Pretty formats</a> on Git docs.</p>
+
+<p>Available:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">oneline</code></li>
+  <li><code class="language-plaintext highlighter-rouge">short</code></li>
+  <li><code class="language-plaintext highlighter-rouge">medium</code></li>
+  <li><code class="language-plaintext highlighter-rouge">full</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fuller</code></li>
+  <li><code class="language-plaintext highlighter-rouge">email</code></li>
+  <li><code class="language-plaintext highlighter-rouge">raw</code></li>
+  <li><code class="language-plaintext highlighter-rouge">format:&lt;string&gt;</code></li>
+</ul>
 
 <h2 id="examples">Examples</h2>
 
@@ -222,7 +260,7 @@
 
 <h4 id="glol-alias">glol alias</h4>
 
-<p>From ZSH alia.</p>
+<p>From ZSH alias.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git glol
 </code></pre></div></div>

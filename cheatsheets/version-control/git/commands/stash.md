@@ -68,6 +68,33 @@ $ git apply 1
 
 Note you cannot stash on a repo with zero commits.
 
+### Quick reference
+
+```sh
+$ git stash
+$ # OR
+$ git stash push
+```
+
+```sh
+$ git stash -m 'My message'
+```
+
+Default behavior is to stash staged and unstaged files, but not untracked. You can change this behavior as below.
+
+Flags:
+
+| Flag                          | Description                                                   |
+|-------------------------------|---------------------------------------------------------------|
+| `-p` or `--patch`            | Stash interactively, as with `git add --patch`                          |
+| `-S` or `--staged`           | Stash staged changes only. Similar to using `git commit` except saving to stash instead of a commit.                 |
+| `-k` or `--keep-index`        | Stash unstaged changes and not staged changes.                     |
+| `-u` or `--include-untracked`| Stage untracked changes.                      |
+| `-a` or `--all`              | Show all changes, including untracked and ignored files.     |
+
+Note that `git stash save` is deprecated according to the docs.
+
+
 ### Basic
 
 Create stash.
@@ -96,13 +123,13 @@ $ git stash push -m welcome_cart abc.txt
 
 #### Stash staged
 
-Stage files to stash.
+Stage files to stash:
 
 ```sh
 git add abc.txt def.txt
 ```
 
-Then stash them, ignoring unstaged.
+Then stash them, ignoring unstaged:
 
 ```sh
 $ git stash --staged
@@ -110,13 +137,13 @@ $ git stash --staged
 
 #### Stage unstaged
 
-Stage files to ignore.
+Stage files to ignore:
 
 ```sh
 git add abc.txt def.txt
 ```
 
-Then stash everything that is _not_ staged.
+Then stash everything that is _not_ staged:
 
 ```sh
 $ git stash --keep-index
@@ -137,6 +164,12 @@ Or use `add` so Git knows about the files (without committing them), then do a p
 ```sh
 $ git add .
 $ git stash
+```
+
+If you want to stash _ignored_ files, do this:
+
+```sh
+$ git stash --all
 ```
 
 ### Message
