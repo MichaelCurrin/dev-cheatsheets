@@ -11,7 +11,8 @@ Why use it:
 - Cloud-based (so you can use models without worrying about the specs of your machine or setup like when using a local LLM).
 - It is free.
 - Use without needing any authorization (i.e. no need to create an account, use an API key, or pay for a subscription).
-- Good documenation available, plus this page fills in the gaps.
+- Good documentation available, plus this page fills in the gaps.
+- Experiment with various text and image models easily.
 
 What to use it for:
 
@@ -83,7 +84,7 @@ A generated image can be viewed there and the link can be copied for ease, rathe
 
 e.g. 
 
-- [https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20template%20at%20dawn&nologo=true&model=flux
+- [https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20template%20at%20dawn&nologo=true&model=flux]
 (https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20template%20at%20dawn&nologo=true&model=flux)
 
 ### Options for endpoints
