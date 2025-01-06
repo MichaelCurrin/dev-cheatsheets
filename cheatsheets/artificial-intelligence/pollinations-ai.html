@@ -184,7 +184,12 @@
 
 <ul>
   <li>They say their service runs on free Google cloud credits.</li>
-  <li>Their docs say they apply rate limiting, such as 20 requests per minute for the text API, excluding cached responses. For simple and light use cases, this might be enough, but otherwise you or your end-users might run into issues and you’re better off using a paid service.</li>
+  <li>Their docs say they apply rate limiting, such as 20 requests per minute for the text API, excluding cached responses.
+    <ul>
+      <li>I find this less restrictive than the HuggingFace website’s free tier.</li>
+      <li>For simple and light use cases, this might be enough, but otherwise you or your end-users might run into issues and you’re better off using a paid service.</li>
+    </ul>
+  </li>
 </ul>
 
 <p>Remember that unlike a local LLM, your data is travelling across the internet. Do not send sensitive or personal data or IP to their service.</p>
