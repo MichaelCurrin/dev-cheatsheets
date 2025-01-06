@@ -36,8 +36,7 @@ Find what models are available:
 
 e.g.
 
-[https://text.pollinations.ai/A%20beautiful%20bedtime%20story
-](https://text.pollinations.ai/A%20beautiful%20bedtime%20story)
+- [https://text.pollinations.ai/A%20beautiful%20bedtime%20story](https://text.pollinations.ai/A%20beautiful%20bedtime%20story)
 
 The text endpoint also includes a path for an API that follows the **OpenAI** specification, so it can be used easily with the `openai` Python/JavaScript packages or Python LangChain's OpenAI connector as covered below.
 
@@ -68,8 +67,7 @@ Use the form on the Pollinations homepage. There is a feed of other users' image
 
 A generated image can be viewed there and the link can be copied for ease, rather than building the URL by hand.
 
-e.g.
+e.g. 
 
-[https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20template%20at%20dawn&nologo=true&model=flux
-](https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20template%20at%20dawn&nologo=true&model=flux
-)
+- [https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20template%20at%20dawn&nologo=true&model=flux
+(https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20template%20at%20dawn&nologo=true&model=flux)
