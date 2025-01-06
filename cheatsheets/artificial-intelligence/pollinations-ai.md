@@ -2,13 +2,33 @@
 
 ## About
 
-Free open-source service for AI-generated text and images. Available as an API, without needing authorization.
+A free open-source service for AI-generated text and images. 
 
-It runs on their free Google cloud credits. Their docs say they use rate limiting such as 20 requests per minute for the text API, excluding cached responses.
+Why use it:
+
+- Available as as a browser tool with a GUI for some use cases.
+- Available as an API, accessible in your browser or with a client e.g. Python or JavaScript.
+- Cloud-based (so you can use models without worrying about the specs of your machine or setup like when using a local LLM).
+- It is free.
+- Use without needing any authorization (i.e. no need to create an account, use an API key, or pay for a subscription).
+- Good documenation available, plus this page fills in the gaps.
+
+What to use it for:
+
+- Great for prototyping server-side or frontend apps.
+- For local use (e.g. an app for yourself).
+- For running in the cloud and sharing with other users. 
+
+Scaling limitations:
+
+- They say their service runs on free Google cloud credits.
+- Their docs say they apply rate limiting, such as 20 requests per minute for the text API, excluding cached responses. For simple and light use cases, this might be enough, but otherwise you or your end-users might run into issues and you're better off using a paid service.
+
+Remember that unlike a local LLM, your data is travelling across the internet. Do not send sensitive or personal data or IP to their service.
 
 ## Links
 
-- [pollinations.ai](https://pollinations.ai/) - includes image generator and samples (including Python with `pollinations` or `requests` or with a React frontend).
+- [pollinations.ai](https://pollinations.ai/) - includes image generator and samples (including Python with `pollinations` or `requests` or with a React frontend). Their website looks unprofessional like they use AI to generate text on the site (including logos with typos half the time and even their Terms and Conditions page is AI-generated).
 - [Repo on GitHub](https://github.com/pollinations/pollinations)
 - [React Hooks](https://react-hooks.pollinations.ai/) interactive tool for generating images.
 

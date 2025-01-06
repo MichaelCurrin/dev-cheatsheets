@@ -159,14 +159,40 @@
         
             <h2 id="about">About</h2>
 
-<p>Free open-source service for AI-generated text and images. Available as an API, without needing authorization.</p>
+<p>A free open-source service for AI-generated text and images.</p>
 
-<p>It runs on their free Google cloud credits. Their docs say they use rate limiting such as 20 requests per minute for the text API, excluding cached responses.</p>
+<p>Why use it:</p>
+
+<ul>
+  <li>Available as as a browser tool with a GUI for some use cases.</li>
+  <li>Available as an API, accessible in your browser or with a client e.g. Python or JavaScript.</li>
+  <li>Cloud-based (so you can use models without worrying about the specs of your machine or setup like when using a local LLM).</li>
+  <li>It is free.</li>
+  <li>Use without needing any authorization (i.e. no need to create an account, use an API key, or pay for a subscription).</li>
+  <li>Good documenation available, plus this page fills in the gaps.</li>
+</ul>
+
+<p>What to use it for:</p>
+
+<ul>
+  <li>Great for prototyping server-side or frontend apps.</li>
+  <li>For local use (e.g. an app for yourself).</li>
+  <li>For running in the cloud and sharing with other users.</li>
+</ul>
+
+<p>Scaling limitations:</p>
+
+<ul>
+  <li>They say their service runs on free Google cloud credits.</li>
+  <li>Their docs say they apply rate limiting, such as 20 requests per minute for the text API, excluding cached responses. For simple and light use cases, this might be enough, but otherwise you or your end-users might run into issues and you’re better off using a paid service.</li>
+</ul>
+
+<p>Remember that unlike a local LLM, your data is travelling across the internet. Do not send sensitive or personal data or IP to their service.</p>
 
 <h2 id="links">Links</h2>
 
 <ul>
-  <li><a href="https://pollinations.ai/">pollinations.ai</a> - includes image generator and samples (including Python with <code class="language-plaintext highlighter-rouge">pollinations</code> or <code class="language-plaintext highlighter-rouge">requests</code> or with a React frontend).</li>
+  <li><a href="https://pollinations.ai/">pollinations.ai</a> - includes image generator and samples (including Python with <code class="language-plaintext highlighter-rouge">pollinations</code> or <code class="language-plaintext highlighter-rouge">requests</code> or with a React frontend). Their website looks unprofessional like they use AI to generate text on the site (including logos with typos half the time and even their Terms and Conditions page is AI-generated).</li>
   <li><a href="https://github.com/pollinations/pollinations">Repo on GitHub</a></li>
   <li><a href="https://react-hooks.pollinations.ai/">React Hooks</a> interactive tool for generating images.</li>
 </ul>
