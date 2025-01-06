@@ -19,18 +19,10 @@ See the [API docs](https://github.com/pollinations/pollinations/blob/master/APID
 
 See sections below for tips on using the text and image endpoints.
 
-The links below will work fine in the browser as `GET` requests but these are intended to handled in a client e.g. using Python or React for building the URL and displaying the content for a user.
+Notes:
 
-### Options
-
-See this page for parameters/options available for endpoints:
-
-- [pollinations-react/README.md](https://github.com/pollinations/pollinations/blob/master/pollinations-react/README.md)
-
-Find what models are available:
-
-- Text [https://text.pollinations.ai/models](https://text.pollinations.ai/models)
-- Image [https://image.pollinations.ai/models](https://image.pollinations.ai/models)
+- The links below will work fine in the browser as `GET` requests but these are intended to handled in a client e.g. using Python or React for building the URL and displaying the content for a user.
+- If you use Firefox rather than CHrome, the percent encoding is rendered as a space, so that's easy to read. Or you can type an underscore for a space to keep it readable.
 
 ### Text endpoint
 
@@ -71,3 +63,14 @@ e.g.
 
 - [https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20template%20at%20dawn&nologo=true&model=flux
 (https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20template%20at%20dawn&nologo=true&model=flux)
+
+### Options for endpoints
+
+See this page for parameters/options available for endpoints:
+
+- [pollinations-react/README.md](https://github.com/pollinations/pollinations/blob/master/pollinations-react/README.md)
+
+For `model`, see what models are available:
+
+- Text [https://text.pollinations.ai/models](https://text.pollinations.ai/models)
+- Image [https://image.pollinations.ai/models](https://image.pollinations.ai/models)
