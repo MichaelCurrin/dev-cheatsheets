@@ -57,7 +57,7 @@ The text endpoint also includes a path for an API that follows the **OpenAI** sp
 
 - `https://text.pollinations.ai/openai`
 
-With `openai`:
+With the [openai](https://pypi.org/project/openai/) package:
 
 ```python
 from openai import OpenAI
@@ -65,15 +65,12 @@ from openai import OpenAI
 client = OpenAI(base_url="https://text.pollinations.ai/openai", api_key="dummy")
 ```
 
-With LangChain's [ChatOpenAI](https://python.langchain.com/docs/integrations/chat/openai/):
+With the [langchain-openai](https://pypi.org/project/langchain-openai/) package and [ChatOpenAI](https://python.langchain.com/docs/integrations/chat/openai/) class:
 
 ```python
 from langchain_openai import ChatOpenAI
 
-client = ChatOpenAI(ChatOpenAI(
-    base_url="https://text.pollinations.ai/openai",
-    openai_api_key="dummy",
-)
+client = ChatOpenAI(base_url="https://text.pollinations.ai/openai", openai_api_key="dummy")
 ```
 
 ### Image endpoint
