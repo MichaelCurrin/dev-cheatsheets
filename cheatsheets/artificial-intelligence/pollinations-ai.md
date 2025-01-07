@@ -8,7 +8,7 @@ Why use it:
 
 - Available as as a browser tool with a GUI for some use cases.
 - Available as an API, accessible in your browser or with a client e.g. Python or JavaScript.
-- Cloud-based (so you can use models without worrying about the specs of your machine or setup hassles like when using a local LLM).
+- Cloud-based (so you can use models without worrying about the specs of your machine, the hassle of setting up a local LLM, or applying for access to a model like Llama which now has a strict approval process by Meta).
 - It is free (no need for subscription with ChatGPT etc.).
 - Works without needing any authorization (i.e. no need to create an account or configure an API key).
 - Good documentation available, plus this page fills in the gaps.
