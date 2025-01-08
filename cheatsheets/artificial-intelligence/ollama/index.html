@@ -1488,53 +1488,6 @@
 <p>See <a href="https://ollama.com/download">Downloads</a> page.</p>
 
 <p>On macOS, install with <code class="language-plaintext highlighter-rouge">brew</code> using the command here - <a href="https://formulae.brew.sh/cask/ollama">formulae.brew.sh/cask/ollama</a>.</p>
-
-<h2 id="usage">Usage</h2>
-
-<h3 id="download-models">Download models</h3>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ollama pull llama3.1
-</code></pre></div></div>
-
-<h3 id="start-interactive-cli">Start interactive CLI</h3>
-
-<p>See <a href="https://github.com/ollama/ollama?tab=readme-ov-file#model-library">Model library</a> in the GitHub docs for models and CLI commands to download.</p>
-
-<p>e.g.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ollama run llama3.1
-</code></pre></div></div>
-
-<h3 id="run-a-single-query">Run a single query</h3>
-
-<p>Pass as an argument e.g.</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>ollama run llama3.1 <span class="s1">'Tell me a joke'</span>
-<span class="go">Here's one:
-
-What do you call a fake noodle?
-
-An impasta.
-
-I hope that made you laugh! Do you want to hear another one?
-</span></code></pre></div></div>
-
-<h3 id="access-via-http">Access via HTTP</h3>
-
-<p>When a model is requested, it will be loaded and used.</p>
-
-<p>Then you can find it under running models here:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ollama ps
-</code></pre></div></div>
-
-<h2 id="stop">Stop</h2>
-
-<p>See conversation on GitHub <a href="https://github.com/ollama/ollama/issues/690">here</a>. There is no builtin way to stop <code class="language-plaintext highlighter-rouge">ollama</code>. Use your system manager or use <code class="language-plaintext highlighter-rouge">pkill</code>.</p>
-
-<p>On macOS, find the icon as running apps and click Quit.</p>
-
-<p>If you started with <code class="language-plaintext highlighter-rouge">ollam serve</code>, then just stop that process to stop Ollama.</p>
     
 
         
