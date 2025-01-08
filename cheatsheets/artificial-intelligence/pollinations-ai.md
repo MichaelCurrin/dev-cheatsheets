@@ -79,9 +79,7 @@ Use the form on the Pollinations homepage. There is a feed of other users' image
 
 A generated image can be viewed there and the link can be copied for ease, rather than building the URL by hand.
 
-e.g. 
-
-[https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20template%20at%20dawn&nologo=true&model=flux](https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20template%20at%20dawn&nologo=true&model=flux)
+e.g. [image.pollinations.ai/prompt/calm%20serene%20forest...&nologo=true&model=flux](https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20template%20at%20dawn&nologo=true&model=flux)
 
 ![Image](https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20template%20at%20dawn&nologo=true&model=flux)
 
