@@ -102,6 +102,17 @@ Symbol | Description | Range
 - [Built-In Scalar SQL Functions](https://sqlite.org/lang_corefunc.html)
 
 
+## Quirks
+
+See [Quirks](https://www.sqlite.org/quirks.html) on the SQLite website.
+
+Here are some features that are commonly found in other databases but are not present in SQLite:
+
+- The default mode is rollback journal, which limits you to either multiple readers or a single writer.
+- Foreign keys are disabled by default and require explicit activation.
+- SQLite is "weakly typed," a concept it refers to as "type affinity." This means you can insert any data type into a column, regardless of the defined type. Strongly typed columns are available only through the use of STRICT tables.
+- Many ALTER commands that you might expect in other databases are not available. For instance, you cannot add a constraint to an existing column, although the ability to rename a column has been recently introduced.
+
 ## CLI help
 
 ### Man page
