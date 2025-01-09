@@ -205,7 +205,7 @@
 
 <h2 id="api-requests">API requests</h2>
 
-<p>See the <a href="https://github.com/pollinations/pollinations/blob/master/APIDOCS.md">API docs</a></p>
+<p>See the <a href="https://github.com/pollinations/pollinations/blob/master/APIDOCS.md">API docs</a>.</p>
 
 <p>See sections below for tips on using the text and image endpoints.</p>
 
@@ -244,6 +244,17 @@
 <span class="n">client</span> <span class="o">=</span> <span class="nc">ChatOpenAI</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="sh">"</span><span class="s">https://text.pollinations.ai/openai</span><span class="sh">"</span><span class="p">,</span> <span class="n">openai_api_key</span><span class="o">=</span><span class="sh">"</span><span class="s">dummy</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
+<h4 id="options">Options</h4>
+
+<ul>
+  <li>GET - <code class="language-plaintext highlighter-rouge">prompt*</code>, <code class="language-plaintext highlighter-rouge">model</code>, <code class="language-plaintext highlighter-rouge">seed</code>, <code class="language-plaintext highlighter-rouge">json</code>, <code class="language-plaintext highlighter-rouge">system</code></li>
+  <li>POST - <code class="language-plaintext highlighter-rouge">messages*</code> (can include system prompt), <code class="language-plaintext highlighter-rouge">model</code>, <code class="language-plaintext highlighter-rouge">seed</code>, <code class="language-plaintext highlighter-rouge">jsonMode</code></li>
+</ul>
+
+<p>See explanations in the <a href="https://github.com/pollinations/pollinations/blob/master/APIDOCS.md#text-generation-api">Text API</a> docs.</p>
+
+<p>See models here: <a href="https://text.pollinations.ai/models">text.pollinations.ai/models</a>.</p>
+
 <h3 id="image-endpoint">Image endpoint</h3>
 
 <p>Use the form on the Pollinations homepage. There is a feed of other users’ images and you can edit the prompt or make a new one.</p>
@@ -254,20 +265,13 @@
 
 <p><img src="https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20temple%20at%20dawn&amp;nologo=true&amp;model=flux" alt="Image" /></p>
 
-<h3 id="options-for-endpoints">Options for endpoints</h3>
+<h4 id="options-1">Options</h4>
 
-<p>See this page for parameters/options available for endpoints:</p>
+<p>See <a href="https://github.com/pollinations/pollinations/blob/master/APIDOCS.md#image-generation-api">Image options</a> in the API docs.</p>
 
-<ul>
-  <li><a href="https://github.com/pollinations/pollinations/blob/master/pollinations-react/README.md">pollinations-react/README.md</a></li>
-</ul>
+<p>See models here: <a href="https://image.pollinations.ai/models">image.pollinations.ai/models</a>.</p>
 
-<p>For <code class="language-plaintext highlighter-rouge">model</code>, see what models are available:</p>
-
-<ul>
-  <li>Text <a href="https://text.pollinations.ai/models">https://text.pollinations.ai/models</a></li>
-  <li>Image <a href="https://image.pollinations.ai/models">https://image.pollinations.ai/models</a></li>
-</ul>
+<p>Based on this page - <a href="https://github.com/pollinations/pollinations/blob/master/pollinations-react/README.md">pollinations-react/README.md</a></p>
 
         
     </div>

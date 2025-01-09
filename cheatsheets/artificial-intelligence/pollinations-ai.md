@@ -38,7 +38,7 @@ Remember that unlike a local LLM, your data is travelling across the internet. D
 
 ## API requests
 
-See the [API docs](https://github.com/pollinations/pollinations/blob/master/APIDOCS.md)
+See the [API docs](https://github.com/pollinations/pollinations/blob/master/APIDOCS.md). 
 
 See sections below for tips on using the text and image endpoints.
 
@@ -73,6 +73,16 @@ from langchain_openai import ChatOpenAI
 client = ChatOpenAI(base_url="https://text.pollinations.ai/openai", openai_api_key="dummy")
 ```
 
+#### Options
+
+- GET - `prompt*`, `model`, `seed`, `json`, `system`
+- POST - `messages*` (can include system prompt), `model`, `seed`, `jsonMode`
+
+See explanations in the [Text API](https://github.com/pollinations/pollinations/blob/master/APIDOCS.md#text-generation-api) docs.
+
+See models here: [text.pollinations.ai/models](https://text.pollinations.ai/models).
+
+
 ### Image endpoint
 
 Use the form on the Pollinations homepage. There is a feed of other users' images and you can edit the prompt or make a new one.
@@ -83,13 +93,10 @@ e.g. [image.pollinations.ai/prompt/calm%20serene%20forest...&nologo=true&model=f
 
 ![Image](https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20temple%20at%20dawn&nologo=true&model=flux)
 
-### Options for endpoints
+#### Options
 
-See this page for parameters/options available for endpoints:
+See [Image options](https://github.com/pollinations/pollinations/blob/master/APIDOCS.md#image-generation-api) in the API docs.
 
-- [pollinations-react/README.md](https://github.com/pollinations/pollinations/blob/master/pollinations-react/README.md)
+See models here: [image.pollinations.ai/models](https://image.pollinations.ai/models).
 
-For `model`, see what models are available:
-
-- Text [https://text.pollinations.ai/models](https://text.pollinations.ai/models)
-- Image [https://image.pollinations.ai/models](https://image.pollinations.ai/models)
+Based on this page - [pollinations-react/README.md](https://github.com/pollinations/pollinations/blob/master/pollinations-react/README.md)
