@@ -220,12 +220,12 @@ value example"</span>
 
 <h3 id="manually">Manually</h3>
 
-<p>Run this in Bash to read the contents of the file and then set each as exported variables with <code class="language-plaintext highlighter-rouge">export</code></p>
+<p>Run this in Bash to read the contents of the file and then set each as exported variables with <code class="language-plaintext highlighter-rouge">export</code>:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export</span> <span class="si">$(</span>&lt; .env<span class="si">)</span>
 </code></pre></div></div>
 
-<p>Or this (does not work with comments in the file).</p>
+<p>Or this (<strong>Warning</strong>: This does <strong>not</strong> work well with comments in a file, it will attempt to evaluate the comment and ignore the <code class="language-plaintext highlighter-rouge">#</code> symbol).</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export</span> <span class="si">$(</span>xargs &lt; .env<span class="si">)</span>
 </code></pre></div></div>
