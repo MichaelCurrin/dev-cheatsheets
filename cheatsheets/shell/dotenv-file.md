@@ -55,13 +55,13 @@ value example"
 
 ### Manually
 
-Run this in Bash to read the contents of the file and then set each as exported variables with `export`
+Run this in Bash to read the contents of the file and then set each as exported variables with `export`:
 
 ```sh
 $ export $(< .env)
 ```
 
-Or this (does not work with comments in the file).
+Or this (**Warning**: This does **not** work well with comments in a file, it will attempt to evaluate the comment and ignore the `#` symbol).
 
 ```sh
 $ export $(xargs < .env)
