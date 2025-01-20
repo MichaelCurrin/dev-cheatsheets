@@ -1,6 +1,6 @@
 # Manage
 
-
+The examples here are based on using a Hugo static website with the `ananke` repo as a submodule, which is the standard approach for using themes in Hugo.
 
 ## Update submodule
 
