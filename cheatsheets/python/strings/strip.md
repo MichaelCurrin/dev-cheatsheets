@@ -92,3 +92,21 @@ Here, we specify `#`, `$`, and `c` will get removed.
 '%ab'
 ```
 
+
+## Remove common leading whitespace from multiline string
+
+```python
+from textwrap import dedent
+
+result = dedent("""
+    ABC
+        DEF
+    XYZ
+"""))
+# '\nABC\n    DEF\nXYZ\n'
+
+print(result)
+# ABC
+#     DEF
+# XYZ
+```
