@@ -251,6 +251,22 @@
 <span class="sh">'</span><span class="s">%ab</span><span class="sh">'</span>
 </code></pre></div></div>
 
+<h2 id="remove-common-leading-whitespace-from-multiline-string">Remove common leading whitespace from multiline string</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">textwrap</span> <span class="kn">import</span> <span class="n">dedent</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="nf">dedent</span><span class="p">(</span><span class="sh">"""</span><span class="s">
+    ABC
+        DEF
+    XYZ
+</span><span class="sh">"""</span><span class="p">))</span>
+<span class="c1"># '\nABC\n    DEF\nXYZ\n'
+</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="c1"># ABC
+#     DEF
+# XYZ
+</span></code></pre></div></div>
 
         
     </div>
