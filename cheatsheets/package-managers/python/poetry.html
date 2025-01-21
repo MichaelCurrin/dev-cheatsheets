@@ -171,55 +171,89 @@
         
             <p><a href="https://python-poetry.org/">Homepage</a></p>
 
-<h2 id="basic-usage">Basic usage</h2>
+<h2 id="project-configuration">Project configuration</h2>
 
 <h3 id="new-project">New project</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry new poetry-demo
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry new my-app
 </code></pre></div></div>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">pyproject.yml</code>
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="pi">[</span><span class="nv">tool.poetry</span><span class="pi">]</span>
-  <span class="s">name = "poetry-demo"</span>
-  <span class="s">version = "0.1.0"</span>
-  <span class="s">description = ""</span>
-  <span class="s">authors = ["Sébastien Eustace &lt;sebastien@eustace.io&gt;"]</span>
-
-  <span class="s">[tool.poetry.dependencies]</span>
-  <span class="s">python = "*"</span>
-
-  <span class="s">[tool.poetry.dev-dependencies]</span>
-  <span class="s">pytest = "^3.4"</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
 
 <h3 id="existing-project">Existing project</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry init
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>my-app
+<span class="nv">$ </span>poetry init
 </code></pre></div></div>
+
+<h2 id="package-mode">Package mode</h2>
+
+<p>Disable package mode, useful for if you intend to run directly and not as an installed package.</p>
+
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[tool.poetry]</span>
+<span class="py">package-mode</span> <span class="p">=</span> <span class="kc">false</span>
+</code></pre></div></div>
+
+<p>Otherwise you have to add this flag in the CLI:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry <span class="nb">install</span> <span class="nt">--no-root</span>
+</code></pre></div></div>
+
+<h2 id="depenencies">Depenencies</h2>
 
 <h3 id="add-dependency">Add dependency</h3>
 
-<p>Add to this section:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">pyproject.yml</code>
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="pi">[</span><span class="nv">tool.poetry.dependencies</span><span class="pi">]</span>
-  <span class="s">pendulum = "^1.4"</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<p>Or run</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry add pendulum
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry add PACKAGE
 </code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry add <span class="nv">PACKAGE</span><span class="o">==</span>VERSION
+</code></pre></div></div>
+
+<p>For extras, make sure to quote the hard brackets:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry add <span class="s1">'lxml[html-clean]'</span>
+</code></pre></div></div>
+
+<p>Result:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lxml = { extras = ["html-clean"], version = "^5.3.0" }
+</code></pre></div></div>
+
+<h3 id="prod-vs-dev-dependencies">Prod vs dev dependencies</h3>
+
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[tool.poetry.dependencies]</span>
+<span class="py">python</span> <span class="p">=</span> <span class="s">"..."</span>
+<span class="py">abc</span> <span class="p">=</span> <span class="s">"..."</span>
+
+<span class="nn">[tool.poetry.group.dev.dependencies]</span>
+<span class="py">def</span> <span class="p">=</span> <span class="s">"..."</span>
+</code></pre></div></div>
+
+<h3 id="locking">Locking</h3>
+
+<h4 id="lock-minor-version">Lock minor version</h4>
+
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[tool.poetry.dependencies]</span>
+<span class="py">python</span> <span class="p">=</span> <span class="s">"^3.10"</span>
+</code></pre></div></div>
+
+<h4 id="lock-patch-version">Lock patch version</h4>
+
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[tool.poetry.dependencies]</span>
+<span class="py">python</span> <span class="p">=</span> <span class="s">"^3.10.1"</span>
+</code></pre></div></div>
+
+<h3 id="lock-a-range">Lock a range</h3>
+
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[tool.poetry.dependencies]</span>
+<span class="py">python</span> <span class="p">=</span> <span class="py">"&gt;</span><span class="p">=</span><span class="mf">3.10</span><span class="p">,</span><span class="err">&lt;</span><span class="mf">3.13</span><span class="s">"</span><span class="err">
+</span></code></pre></div></div>
 
 <h2 id="virtual-environments">Virtual environments</h2>
 
-<p>By default, Poetry creates an environment here:</p>
+<h3 id="location">Location</h3>
+
+<h4 id="default-location">Default location</h4>
+
+<p>By default, Poetry creates an environment here in a central locatiion:</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">{cache-dir}/virtualenvs</code></li>
@@ -232,12 +266,17 @@
   <li>Windows - <code class="language-plaintext highlighter-rouge">C:\Users\&lt;username&gt;\AppData\Roaming\pypoetry</code></li>
 </ul>
 
-<h3 id="run-commands">Run commands</h3>
+<h3 id="in-project">In project</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry run python your_script.py
+<p>You can choose to create virtual environment in the project. This makes it easier for configuring your IDE to recognize it for new terminal sessions and loading dependencies when viewing Python files.</p>
 
-<span class="nv">$ </span>poetry run pytest
-</code></pre></div></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">poetry.toml</code> (not <code class="language-plaintext highlighter-rouge">pyproject.toml</code>)
+    <div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nn">[virtualenvs]</span>
+  <span class="py">in-project</span> <span class="p">=</span> <span class="kc">true</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
 
 <h3 id="activate-environment">Activate environment</h3>
 
@@ -257,6 +296,14 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>deactivate
 </code></pre></div></div>
+
+<h2 id="run-commands-in-environment">Run commands in environment</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry run python your_script.py
+
+<span class="nv">$ </span>poetry run pytest
+</code></pre></div></div>
+
 
         
     </div>
