@@ -5,57 +5,102 @@ title: Poetry
 [Homepage](https://python-poetry.org/)
 
 
-## Basic usage
+## Project configuration
 
 ### New project
 
 ```sh
-$ poetry new poetry-demo
+$ poetry new my-app
 ```
-
-- `pyproject.yml`
-    ```yaml
-    [tool.poetry]
-    name = "poetry-demo"
-    version = "0.1.0"
-    description = ""
-    authors = ["Sébastien Eustace <sebastien@eustace.io>"]
-
-    [tool.poetry.dependencies]
-    python = "*"
-
-    [tool.poetry.dev-dependencies]
-    pytest = "^3.4"
-    ```
-
 
 ### Existing project
 
 ```sh
+$ cd my-app
 $ poetry init
 ```
 
-### Add dependency
+## Package mode
 
-Add to this section:
+Disable package mode, useful for if you intend to run directly and not as an installed package.
 
-- `pyproject.yml`
-    ```yaml
-    [tool.poetry.dependencies]
-    pendulum = "^1.4"
-    ```
+```toml
+[tool.poetry]
+package-mode = false
+```
 
-
-Or run
+Otherwise you have to add this flag in the CLI:
 
 ```sh
-$ poetry add pendulum
+$ poetry install --no-root
+```
+
+## Depenencies
+
+### Add dependency
+
+```sh
+$ poetry add PACKAGE
+```
+
+```sh
+$ poetry add PACKAGE==VERSION
+```
+
+For extras, make sure to quote the hard brackets:
+
+```sh
+$ poetry add 'lxml[html-clean]'
+```
+
+Result:
+
+```
+lxml = { extras = ["html-clean"], version = "^5.3.0" }
+```
+
+### Prod vs dev dependencies
+
+```toml
+[tool.poetry.dependencies]
+python = "..."
+abc = "..."
+
+[tool.poetry.group.dev.dependencies]
+def = "..."
+```
+
+### Locking
+
+#### Lock minor version
+
+```toml
+[tool.poetry.dependencies]
+python = "^3.10"
+```
+
+#### Lock patch version
+
+```toml
+[tool.poetry.dependencies]
+python = "^3.10.1"
+```
+
+### Lock a range
+
+```toml
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
 ```
 
 
 ## Virtual environments
 
-By default, Poetry creates an environment here:
+### Location
+
+#### Default location
+
+By default, Poetry creates an environment here in a central locatiion:
 
 - `{cache-dir}/virtualenvs`
 
@@ -64,13 +109,15 @@ That uses the [Cache directory](https://python-poetry.org/docs/configuration/#ca
 - macOS - `~/Library/Application Support/pypoetry`
 - Windows - `C:\Users\<username>\AppData\Roaming\pypoetry`
 
-### Run commands
+### In project
 
-```sh
-$ poetry run python your_script.py
+You can choose to create virtual environment in the project. This makes it easier for configuring your IDE to recognize it for new terminal sessions and loading dependencies when viewing Python files.
 
-$ poetry run pytest
-```
+- `poetry.toml` (not `pyproject.toml`)
+    ```toml
+    [virtualenvs]
+    in-project = true
+    ```
 
 ### Activate environment
 
@@ -94,3 +141,13 @@ And deactivate with:
 ```sh
 $ deactivate
 ```
+
+
+## Run commands in environment
+
+```sh
+$ poetry run python your_script.py
+
+$ poetry run pytest
+```
+
