@@ -178,6 +178,8 @@
 <span class="nv">$ </span>brew <span class="nb">link</span> <span class="nt">--force</span> python@3.12
 </code></pre></div></div>
 
+<p>Check it:</p>
+
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python3 <span class="nt">-V</span>
 </code></pre></div></div>
 
@@ -185,6 +187,12 @@
 </code></pre></div></div>
 
 <p>If another Python is picked ahead of the Brew versions, check the order of values in <code class="language-plaintext highlighter-rouge">PATH</code> and set in your shell config.</p>
+
+<p>Link with overwrite, from <a href="https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-macos">AZ CLI instructions</a>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew update <span class="o">&amp;&amp;</span> brew <span class="nb">install </span>python@3.10 <span class="o">&amp;&amp;</span> brew upgrade python@3.10
+<span class="nv">$ </span>brew <span class="nb">link</span> <span class="nt">--overwrite</span> python@3.10
+</code></pre></div></div>
 
         
     </div>
