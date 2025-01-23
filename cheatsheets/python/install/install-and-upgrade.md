@@ -72,11 +72,11 @@ Or install a target version and uninstall the old versions, breaking any apps an
 
 [Change default version]: {% link cheatsheets/python/install/change-default-version.md %}
 
-#### My experience
+#### My experience and struggles with upgrading on macoS
 
 I had 3 versions of PY3 installed.
 
-The system default is Python3.7.
+The system default was Python3.7.
 
 ```sh
 $ python3 -V
