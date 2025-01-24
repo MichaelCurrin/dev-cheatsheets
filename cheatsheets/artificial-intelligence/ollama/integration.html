@@ -174,12 +174,16 @@
 
     <div class="post-content">
         
-            <h2 id="use-langchain">Use LangChain</h2>
+            <h2 id="ollama-api">Ollama API</h2>
+
+<p>Using <code class="language-plaintext highlighter-rouge">/api</code>.</p>
+
+<h3 id="use-langchain">Use LangChain</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">langchain_ollama.llms</span> <span class="kn">import</span> <span class="n">OllamaLLM</span>
 </code></pre></div></div>
 
-<h2 id="use-ollama-package">Use Ollama package</h2>
+<h3 id="use-ollama-package">Use Ollama package</h3>
 
 <p>See <a href="https://github.com/ollama/ollama-python">ollama-python</a> on GitHub.</p>
 
@@ -194,7 +198,7 @@
 <span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="sh">'</span><span class="s">message</span><span class="sh">'</span><span class="p">][</span><span class="sh">'</span><span class="s">content</span><span class="sh">'</span><span class="p">])</span>
 </code></pre></div></div>
 
-<h2 id="use-curl">Use cURL</h2>
+<h3 id="use-curl">Use cURL</h3>
 
 <p>Based on the <a href="https://github.com/ollama/ollama?tab=readme-ov-file#rest-api">Ollama docs</a>:</p>
 
@@ -202,6 +206,48 @@
   "model": "llama3.1",
   "prompt":"Why is the sky blue?"
 }'</span>
+</code></pre></div></div>
+
+<h2 id="openai-style">OpenAI style</h2>
+
+<p>Using <code class="language-plaintext highlighter-rouge">/v1</code>.</p>
+
+<p>Connect to Ollama’s OpenAI-compliant API with this URL:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://localhost:11434/v1
+</code></pre></div></div>
+
+<p>From <a href="https://ollama.com/blog/openai-compatibility">OpenAI compatibility</a>.</p>
+
+<p>This means you can use LangChain or the OpenAI package and just configure with that URL.</p>
+
+<h3 id="use-openai-package">Use OpenAI package</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="nc">OpenAI</span><span class="p">(</span>
+    <span class="n">base_url</span> <span class="o">=</span> <span class="sh">'</span><span class="s">http://localhost:11434/v1</span><span class="sh">'</span><span class="p">,</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="sh">'</span><span class="s">dummy</span><span class="sh">'</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="use-curl-1">Use cURL</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http://localhost:11434/v1/chat/completions <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{
+        "model": "llama3.2",
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a helpful assistant."
+            },
+            {
+                "role": "user",
+                "content": "Hello!"
+            }
+        ]
+    }'</span>
 </code></pre></div></div>
 
         
