@@ -9,33 +9,33 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Redis | Dev Cheatsheets</title>
+    <title>Podman | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Redis" />
+    <meta property="og:title" content="Podman" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Redis" />
+    <meta property="twitter:title" content="Podman" />
 <meta name="generator" content="Jekyll v4.3.4" />
 
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
-    <meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+    <meta name="description" content="Docker alternative" />
+    <meta property="og:description" content="Docker alternative" />
 <meta name="author" content="Michael Currin" />
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/redis/" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/redis/" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/podman/" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/podman/" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/nosql/redis/",
-    "headline":    "Redis",
+    "description": "Docker alternative",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/podman/",
+    "headline":    "Podman",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -88,11 +88,11 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/nosql/redis/index.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/containers/podman/index.md">
     📝 <span>Edit page</span>
 </a>
 
-            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/nosql/redis/">
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/containers/podman/">
     ➕ <span>Add page</span>
 </a>
 
@@ -105,9 +105,14 @@
             
 
 
-            <span>Redis</span>
+            <span>Podman</span>
         </h1>
 
+        
+            <blockquote>
+                <p>Docker alternative</p>
+
+            </blockquote>
         
     </header>
 
@@ -133,8 +138,8 @@
 
         
             
-            <a href="/dev-cheatsheets/cheatsheets/nosql/">
-    NoSQL
+            <a href="/dev-cheatsheets/cheatsheets/containers/">
+    Containers
 </a>
 
         
@@ -144,8 +149,8 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/nosql/redis/" class="underline">
-                Redis
+            <a href="/dev-cheatsheets/cheatsheets/containers/podman/" class="underline">
+                Podman
             </a>
         
      
@@ -1466,7 +1471,6 @@
         
         
         
-        
         </div>
 
 <br>
@@ -1477,23 +1481,7 @@
     
 
 <ul class="page-list">
-    
-            <li>
-                <a href="/dev-cheatsheets/cheatsheets/nosql/redis/basics.html">
-                    
-
-
-                    <span>Basics</span>
-                </a></li>
-        
-            <li>
-                <a href="/dev-cheatsheets/cheatsheets/nosql/redis/redis-cli.html">
-                    
-
-
-                    <span>Redis CLI</span>
-                </a></li>
-        </ul>
+    </ul>
 
     <br>
 
@@ -1501,105 +1489,7 @@
     
         <h2>Content</h2>
 
-        <p>A in-memory data structure store, known for high performance as a database, cache, and message broker. It can handel complex data types and large volumes at a speed and with reliability.</p>
-
-<h2 id="related">Related</h2>
-
-<ul>
-  <li><a href="https://redis.io/">redis.io</a></li>
-  <li><a href="/dev-cheatsheets/cheatsheets/python/libraries/database/redis/">Redis</a> cheatsheet in the Python libraries section.</li>
-  <li><a href="https://github.com/redis-developer/redis-nodejs-starter">redis-nodejs-starter</a> as a  Node starter project on GitHub.</li>
-</ul>
-
-<h2 id="keyspace-notifications">Keyspace notifications</h2>
-
-<p>Get notified when data enters or leaves Redis. Also timeout and time-based notifications.</p>
-
-<h3 id="user-login-timeout-example">User login timeout example</h3>
-
-<p>Here we logout a user after a set time and also send a keyspace notification about it which we can subscribe to.</p>
-
-<p>With EX you can set TTL (time to live).</p>
-
-<p>For example, login a user and set expiration of an hour with 3600 seconds (user will remove the key after this). T=T==</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>SET logged_in_user:1234 123456789 EX 3600
-</code></pre></div></div>
-
-<p>Then again with the <code class="language-plaintext highlighter-rouge">XX</code> flag which will update an existing value and return <code class="language-plaintext highlighter-rouge">-1</code> if they key does not yet exist.</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>SET logged_in_user:1234 123456789 EX 3600 XX
-</code></pre></div></div>
-
-<p>Subscribe to expiration events:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>redis-cli <span class="nt">--csv</span> psubscribe <span class="s1">'__key*__:expired'</span>
-</code></pre></div></div>
-
-<h2 id="scaling">Scaling</h2>
-
-<p>Needs:</p>
-
-<ul>
-  <li>Scaling - storage capacity and processing can grow.</li>
-  <li>High availability - always available even if some servers have issues.</li>
-  <li>Partition tolerance - if the network is partioned, and some are disconnected, Redis must still work.</li>
-</ul>
-
-<p>Solutions:</p>
-
-<h3 id="clusters">Clusters</h3>
-
-<ul>
-  <li>To distribute data and load.</li>
-  <li>There is time to sync between clusters, so the queried result for two clusters could be different, but it will always be available.</li>
-</ul>
-
-<p>Features:</p>
-
-<ul>
-  <li>No limit to storage and always available.</li>
-  <li>The storage capacity can grow outside the limits of the memory of a single node.</li>
-  <li>Elastic capacity - can scale up and down with demand.</li>
-  <li>Data sharding (information is distributed based on key and algorithm, info is distributed so one server doesn’t get overloaded) and data replication (highly available, data replicated on other servers). Just needs configuration.</li>
-  <li>Client transparency - client connector works the same with and without a cluster.</li>
-</ul>
-
-<h4 id="example-setup">Example setup</h4>
-
-<p>Start some servers using a config file for each and running on a different port.</p>
-
-<p>Then start the cluster using, where info is replicated from each node to 1 other.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>redis-cli <span class="nt">--cluster</span> create 127.0.0.1:7001 127.0.0.1:7002 127.0.0.1:7003 <span class="nt">--cluster-replicas</span> 1
-</code></pre></div></div>
-
-<h2 id="sentinel">Sentinel</h2>
-
-<p>A pattern of master and replicas. So if master goes down, the replica can be promoted.</p>
-
-<p>Provides monitoring and failover for your Redis instances.</p>
-
-<ol>
-  <li>Start your instances, each with a config.
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>redis-cli ./redis.conf
-</code></pre></div>    </div>
-  </li>
-  <li>Start your sentinels, each with a config.
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>redis-sentinel ./sentinel.conf
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<h2 id="security-tips">Security tips</h2>
-
-<p>Protect unauthorized data access and manipulation.</p>
-
-<ul>
-  <li>Authentication - use strong authentication mechanims so only autherized applications and user have access.</li>
-  <li>Use TLS for data transfer between Redis and client apps.</li>
-  <li>Network security - Apply firewalls to limit IP access and monitor network traffic.</li>
-</ul>
+        <p>Go to <a href="https://podman.io">podman.io</a>.</p>
     
 
         
