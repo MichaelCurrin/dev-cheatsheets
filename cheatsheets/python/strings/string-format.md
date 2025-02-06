@@ -300,3 +300,11 @@ f"{z:6.2f}"
 f"{z:06.2f}"
 # '003.14'
 ```
+
+## Add name and value
+
+```python
+foo = 123
+f"Here is my pair {foo=}"
+# Here is my pair foo=123
+```
