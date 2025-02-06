@@ -62,10 +62,10 @@ Set up VS Code as your diff tool based on [SO](https://stackoverflow.com/questio
 
 ```yaml
 [diff]
-    tool = default-difftool
+	tool = default-difftool
     
 [difftool "default-difftool"]
-    cmd = code --wait --diff $LOCAL $REMOTE
+	cmd = code --wait --diff $LOCAL $REMOTE
 ```
 
 
@@ -83,7 +83,7 @@ $ git config --global commit.template _COMMIT_MESSAGE
 
 ```toml
 [commit]
-        template = "_COMMIT_MESSAGE"
+	template = "_COMMIT_MESSAGE"
 ```
 
 Make sure you have `_COMMIT_MESSAGE` as a text file in your repo. I also recommend making a global ignore file that ignores `_COMMIT_MESSAGE` and have your git config aware of that `~/.gitignore` file.
@@ -149,7 +149,7 @@ Note lack of quotes on `true` and `false`.
 
 ```toml
 [pull]
-    rebase = false
+	rebase = false
 ```
 
 This is the default behavior that we are used to, but now configure explicitly as a strategy in the config.
@@ -162,7 +162,7 @@ So you could set this option explicitly in your config to get the warning to dis
 
 ```toml
 [pull]
-    rebase = true
+	rebase = true
 ```
 
 This means that `git pull` effectively does this:
@@ -179,7 +179,7 @@ The **problem** is that when setting the config as above, the pull will fail if 
 
 ```toml
 [pull]
-    ff = "only"
+	ff = "only"
 ```
 
 This approach will attempt to do a `git pull` to get the branch up to date with the remote and fast-forward if possible. Equivalent to:
