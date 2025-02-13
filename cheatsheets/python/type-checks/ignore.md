@@ -23,7 +23,7 @@ import foo
 
 Note - if you get irregular behavior after you remove a config file, delete `.mypy_cache` and try again.
 
-See [Config file](https://mypy.readthedocs.io/en/stable/config_file.html) notes in the docs for referencing modules.
+See [Config file](https://mypy.readthedocs.io/en/stable/config_file.html) notes in the docs for referencing modules and for what rules you can add.
 
 Ignore `foobar` imports. This is equivalent to adding `# type: ignore` to every import of `foobar`.
 
