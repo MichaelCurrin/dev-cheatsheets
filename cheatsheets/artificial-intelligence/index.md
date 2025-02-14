@@ -2,6 +2,8 @@
 
 See also [Artificial Intelligence](https://michaelcurrin.github.io/code-cookbook/recipes/artificial-intelligence/) under Code Cookbook.
 
+To compare models and stats for each on cost and max tokens, see [Token Translator](https://michaelcurrin.github.io/token-translator/).
+
 ### LLM service quick reference
 
 URLs for local LLM APIs and remote options.
