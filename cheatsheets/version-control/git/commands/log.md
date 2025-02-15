@@ -41,7 +41,7 @@ the left hand side of the output.
 --pretty=FORAMT
 ```
 
-## Pretty foramts
+## Pretty formats
 
 See [Pretty formats](https://git-scm.com/docs/pretty-formats) on Git docs.
 
