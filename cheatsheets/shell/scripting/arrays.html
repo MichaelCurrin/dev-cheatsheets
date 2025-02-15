@@ -173,11 +173,17 @@
 
 <h2 id="overview">Overview</h2>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">MONTHS</span><span class="o">=(</span><span class="s2">"Jan"</span> <span class="s2">"Feb"</span> <span class="s2">"Mar"</span> <span class="s2">"Apr"</span> <span class="s2">"May"</span> <span class="s2">"Jun"</span> <span class="s2">"Jul"</span> 
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ MONTHS</span><span class="o">=(</span><span class="s2">"Jan"</span> <span class="s2">"Feb"</span> <span class="s2">"Mar"</span> <span class="s2">"Apr"</span> <span class="s2">"May"</span> <span class="s2">"Jun"</span> <span class="s2">"Jul"</span> 
   <span class="s2">"Aug"</span> <span class="s2">"Sep"</span> <span class="s2">"Oct"</span> <span class="s2">"Nov"</span> <span class="s2">"Dec"</span><span class="o">)</span>
-<span class="nb">echo</span> <span class="k">${</span><span class="nv">MONTHS</span><span class="p">[1]</span><span class="k">}</span>
-<span class="nb">echo</span> <span class="k">${</span><span class="nv">MONTHS</span><span class="p">[@]</span><span class="k">}</span>
 </code></pre></div></div>
+
+<p>Get elements:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">MONTHS</span><span class="p">[9]</span><span class="k">}</span>
+<span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="nv">MONTHS</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<p>Note that using <code class="language-plaintext highlighter-rouge">echo</code> or piping to another command will usually mean all the contents are shown on one line.</p>
 
 <h2 id="create">Create</h2>
 
@@ -208,27 +214,27 @@ ghi<span class="o">)</span>
 
 <p>In ZSH the index starts at 1.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="k">${</span><span class="nv">MONTHS</span><span class="p">[1]</span><span class="k">}</span>
-<span class="c"># Jan</span>
-<span class="nb">echo</span> <span class="k">${</span><span class="nv">MONTHS</span><span class="p">[4]</span><span class="k">}</span>
-<span class="c"># Apr</span>
-</code></pre></div></div>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">MONTHS</span><span class="p">[1]</span><span class="k">}</span>
+<span class="go">Jan
+</span><span class="gp">&gt;</span><span class="w"> </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">MONTHS</span><span class="p">[4]</span><span class="k">}</span>
+<span class="go">Apr
+</span></code></pre></div></div>
 
 <h3 id="bash">Bash</h3>
 
 <p>In Bash it starts at 0.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="k">${</span><span class="nv">MONTHS</span><span class="p">[0]</span><span class="k">}</span>
-<span class="c"># Jan</span>
-<span class="nb">echo</span> <span class="k">${</span><span class="nv">MONTHS</span><span class="p">[3]</span><span class="k">}</span>
-<span class="c"># Apr</span>
-</code></pre></div></div>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">MONTHS</span><span class="p">[0]</span><span class="k">}</span>
+<span class="go">Jan
+</span><span class="gp">&gt;</span><span class="w"> </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">MONTHS</span><span class="p">[3]</span><span class="k">}</span>
+<span class="go">Apr
+</span></code></pre></div></div>
 
 <h3 id="get-all">Get all</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="nv">$MONTHS</span><span class="o">[</span>@]
-<span class="c"># Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</span>
-</code></pre></div></div>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span><span class="nb">echo</span> <span class="nv">$MONTHS</span><span class="o">[</span>@]
+<span class="go">Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+</span></code></pre></div></div>
 
 <h2 id="iterate">Iterate</h2>
 
