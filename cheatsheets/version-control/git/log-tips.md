@@ -9,28 +9,9 @@ description: tips for using git-log for data manipulation
 List the years where there were commits.
 
 ```sh
-$ git log --date=format:'%Y' --pretty=format:'%ad' | sort -u -r
+$ git log --date=format:'%Y' --pretty=format:'%ad' | uniq
 ```
 
-e.g.
+See this [Data manipulation][] page for how to apply grouping and counting to this.
 
-```
-2022
-2020
-2019
-```
-
-List the year with a count for each.
-
-```sh
-$ git log --date=format:'%Y' --pretty=format:'%ad' | uniq -c | awk '{print $2, $1}'
-```
-
-e.g.
-
-```
-2022 31
-2020 230
-2019 47
-```
-
+[Data manipulation]: {% link cheatsheets/shell/data-manipulation.md %}
