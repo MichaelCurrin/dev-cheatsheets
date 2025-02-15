@@ -6,12 +6,18 @@
 ## Overview
 
 ```sh
-MONTHS=("Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" 
+$ MONTHS=("Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" 
   "Aug" "Sep" "Oct" "Nov" "Dec")
-echo ${MONTHS[1]}
-echo ${MONTHS[@]}
 ```
 
+Get elements:
+
+```console
+$ echo ${MONTHS[9]}
+$ echo "${MONTHS[@]}"
+```
+
+Note that using `echo` or piping to another command will usually mean all the contents are shown on one line.
 
 ## Create
 
@@ -46,30 +52,29 @@ Any invalid index here returns nothing and also a success code.
 
 In ZSH the index starts at 1.
 
-```sh
-echo ${MONTHS[1]}
-# Jan
-echo ${MONTHS[4]}
-# Apr
+```console
+> echo ${MONTHS[1]}
+Jan
+> echo ${MONTHS[4]}
+Apr
 ```
 
 ### Bash
 
 In Bash it starts at 0.
 
-```sh
-echo ${MONTHS[0]}
-# Jan
-echo ${MONTHS[3]}
-# Apr
+```console
+> echo ${MONTHS[0]}
+Jan
+> echo ${MONTHS[3]}
+Apr
 ```
-
 
 ### Get all
 
-```sh
-echo $MONTHS[@]
-# Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+```console
+> echo $MONTHS[@]
+Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
 ```
 
 
