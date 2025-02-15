@@ -178,27 +178,11 @@
 
 <p>List the years where there were commits.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git log <span class="nt">--date</span><span class="o">=</span>format:<span class="s1">'%Y'</span> <span class="nt">--pretty</span><span class="o">=</span>format:<span class="s1">'%ad'</span> | <span class="nb">sort</span> <span class="nt">-u</span> <span class="nt">-r</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git log <span class="nt">--date</span><span class="o">=</span>format:<span class="s1">'%Y'</span> <span class="nt">--pretty</span><span class="o">=</span>format:<span class="s1">'%ad'</span> | <span class="nb">uniq</span>
 </code></pre></div></div>
 
-<p>e.g.</p>
+<p>See this <a href="/dev-cheatsheets/cheatsheets/shell/data-manipulation.html">Data manipulation</a> page for how to apply grouping and counting to this.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2022
-2020
-2019
-</code></pre></div></div>
-
-<p>List the year with a count for each.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git log <span class="nt">--date</span><span class="o">=</span>format:<span class="s1">'%Y'</span> <span class="nt">--pretty</span><span class="o">=</span>format:<span class="s1">'%ad'</span> | <span class="nb">uniq</span> <span class="nt">-c</span> | <span class="nb">awk</span> <span class="s1">'{print $2, $1}'</span>
-</code></pre></div></div>
-
-<p>e.g.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2022 31
-2020 230
-2019 47
-</code></pre></div></div>
 
         
     </div>
