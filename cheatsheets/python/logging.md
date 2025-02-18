@@ -24,7 +24,7 @@ logging.info("Message")
 You can make a logger (as a global variable or class variable) and use it:
 
 ```python
-logger = getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 # Call the instance.
 logger.info("Message")
