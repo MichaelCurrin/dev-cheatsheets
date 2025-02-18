@@ -9,10 +9,44 @@
 
 The default is to log WARNING level to stdout.
 
+### Configure and use the library
 Here is a simple config setup from the docs.
 
 ```python
 logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
+
+# Call the library.
+logging.info("Message")
+```
+
+### Configure and use a global instance.
+
+You can make a logger (as a global variable or class variable) and use it:
+
+```python
+logger = getLogger(__name__)
+
+# Call the instance.
+logger.info("Message")
+```
+
+More details:
+
+```python
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
+file_handler = logging.FileHandler('example.log', encoding='utf-8')
+file_handler.setLevel(logging.DEBUG)
+
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(formatter)
+
+logger.addHandler(file_handler)
+
+logger.info("Message")
 ```
 
 ## Log levels
