@@ -10,6 +10,7 @@
 The default is to log WARNING level to stdout.
 
 ### Configure and use the library
+
 Here is a simple config setup from the docs.
 
 ```python
@@ -19,16 +20,25 @@ logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBU
 logging.info("Message")
 ```
 
-### Configure and use a global instance.
+### Configure and use a logger variable
 
 You can make a logger (as a global variable or class variable) and use it:
 
 ```python
 logger = logging.getLogger(__name__)
+logging.basicConfig(encoding='utf-8', level=logging.DEBUG)
 
 # Call the instance.
-logger.info("Message")
+logger.info("Info message")
+logger.debug("Debug message")
+
+logger.setLevel(logging.INFO)
+logger.info("Info message")
+logger.debug("Debug message")
 ```
+
+NB. Make sure to call `basicConfig` first otherwise calling `setLevel` on the `logger` instance won't help.
+
 
 More details:
 
@@ -36,7 +46,7 @@ More details:
 import logging
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
+logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
 
 file_handler = logging.FileHandler('example.log', encoding='utf-8')
 file_handler.setLevel(logging.DEBUG)
@@ -48,6 +58,8 @@ logger.addHandler(file_handler)
 
 logger.info("Message")
 ```
+
+
 
 ## Log levels
 
