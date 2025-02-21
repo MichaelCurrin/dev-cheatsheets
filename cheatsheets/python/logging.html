@@ -164,57 +164,9 @@
   <li><a href="https://docs.python.org/3/library/logging.html#module-logging">logging</a> Python 3 API</li>
 </ul>
 
-<h2 id="configuration">Configuration</h2>
-
-<p>The default is to log WARNING level to stdout.</p>
-
-<h3 id="configure-and-use-the-library">Configure and use the library</h3>
-
-<p>Here is a simple config setup from the docs.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sh">'</span><span class="s">example.log</span><span class="sh">'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
-
-<span class="c1"># Call the library.
-</span><span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">Message</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="configure-and-use-a-logger-variable">Configure and use a logger variable</h3>
-
-<p>You can make a logger (as a global variable or class variable) and use it:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nf">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
-
-<span class="c1"># Call the instance.
-</span><span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">Info message</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">logger</span><span class="p">.</span><span class="nf">debug</span><span class="p">(</span><span class="sh">"</span><span class="s">Debug message</span><span class="sh">"</span><span class="p">)</span>
-
-<span class="n">logger</span><span class="p">.</span><span class="nf">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
-<span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">Info message</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">logger</span><span class="p">.</span><span class="nf">debug</span><span class="p">(</span><span class="sh">"</span><span class="s">Debug message</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>NB. Make sure to call <code class="language-plaintext highlighter-rouge">basicConfig</code> first otherwise calling <code class="language-plaintext highlighter-rouge">setLevel</code> on the <code class="language-plaintext highlighter-rouge">logger</code> instance won’t help.</p>
-
-<p>More details:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">logging</span>
-
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nf">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sh">'</span><span class="s">example.log</span><span class="sh">'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
-
-<span class="n">file_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nc">FileHandler</span><span class="p">(</span><span class="sh">'</span><span class="s">example.log</span><span class="sh">'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">file_handler</span><span class="p">.</span><span class="nf">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
-
-<span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nc">Formatter</span><span class="p">(</span><span class="sh">'</span><span class="s">%(asctime)s - %(name)s - %(levelname)s - %(message)s</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">file_handler</span><span class="p">.</span><span class="nf">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
-
-<span class="n">logger</span><span class="p">.</span><span class="nf">addHandler</span><span class="p">(</span><span class="n">file_handler</span><span class="p">)</span>
-
-<span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">Message</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
 <h2 id="log-levels">Log levels</h2>
+
+<p>Built in methods for <code class="language-plaintext highlighter-rouge">logging</code> or a <code class="language-plaintext highlighter-rouge">logging.Logger</code> instance:</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">logging.debug</code></li>
@@ -223,6 +175,77 @@
   <li><code class="language-plaintext highlighter-rouge">logging.error</code></li>
   <li><code class="language-plaintext highlighter-rouge">logging.critical</code></li>
 </ul>
+
+<h3 id="note">Note</h3>
+
+<p>Setting log level is <strong>not</strong> enough. You need to make sure to call <code class="language-plaintext highlighter-rouge">basicConfig</code> first or add handlers as on Configuration examples on page, otherwise it won’t work.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">logging</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nf">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="nf">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="c1"># This message will get ignored.
+</span><span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">This is an info message from your application.</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>The default is to log <code class="language-plaintext highlighter-rouge">WARNING</code> level to stdout.</p>
+
+<h3 id="configure-and-use-the-library-directly">Configure and use the library directly</h3>
+
+<p>Here is a simple config setup from the docs. Without using a <code class="language-plaintext highlighter-rouge">logging.Logger</code> instance.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sh">'</span><span class="s">example.log</span><span class="sh">'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+<span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">Message</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="configure-and-use-a-logger-variable">Configure and use a logger variable</h3>
+
+<p>Make a logger (as a global variable or class variable) and use it:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nf">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="c1"># OR
+</span><span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sh">'</span><span class="s">example.log</span><span class="sh">'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="c1"># Call the instance.
+</span><span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">Info message</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="nf">debug</span><span class="p">(</span><span class="sh">"</span><span class="s">Debug message</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Change the log level.
+</span><span class="n">logger</span><span class="p">.</span><span class="nf">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">Info message</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="nf">debug</span><span class="p">(</span><span class="sh">"</span><span class="s">Debug message</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Using handlers, without <code class="language-plaintext highlighter-rouge">basicConfig</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">logging</span>
+
+<span class="c1"># Set up your application's logger.
+</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nf">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="nf">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="c1"># Create a console handler.
+</span><span class="n">console_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nc">StreamHandler</span><span class="p">()</span>
+<span class="n">console_handler</span><span class="p">.</span><span class="nf">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="c1"># Create a formatter.
+</span><span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nc">Formatter</span><span class="p">(</span><span class="sh">"</span><span class="s">%(asctime)s - %(name)s - %(levelname)s - %(message)s</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">console_handler</span><span class="p">.</span><span class="nf">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+
+<span class="n">logger</span><span class="p">.</span><span class="nf">addHandler</span><span class="p">(</span><span class="n">console_handler</span><span class="p">)</span>
+
+<span class="c1"># Prevent external packages from logging noisly at the info level.
+</span><span class="n">logging</span><span class="p">.</span><span class="nf">getLogger</span><span class="p">().</span><span class="nf">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">WARNING</span><span class="p">)</span>
+
+<span class="c1"># Example usage.
+</span><span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">This is an info message from your application.</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="nf">warning</span><span class="p">(</span><span class="sh">"</span><span class="s">This is a warning message from your application.</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h2 id="variable-substitution">Variable substitution</h2>
 
