@@ -189,22 +189,26 @@
             <p>Notes:</p>
 
 <ul>
-  <li>For <code class="language-plaintext highlighter-rouge">COMMIT</code> below, use <code class="language-plaintext highlighter-rouge">HEAD~3</code> for 3 commits back, or use a hash for a particular commit.</li>
+  <li>For <code class="language-plaintext highlighter-rouge">TARGET_COMMIT</code> below, use <code class="language-plaintext highlighter-rouge">HEAD~3</code> for 3 commits back, or use a hash for a particular commit.</li>
   <li>If you’ve already pushed code, you’ll have to force push to overwrite with <code class="language-plaintext highlighter-rouge">git push --force</code>.</li>
+  <li>Tip: Before squashing and changing history, make a temporary branch or push your code so you have a backup. Or make sure you know how to use <code class="language-plaintext highlighter-rouge">git reflog</code>.</li>
 </ul>
 
 <h2 id="reset-approach">Reset approach</h2>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git reset <span class="nt">--soft</span> COMMIT
+<p>For example if you are on a feature branch, you could rewind your history to <code class="language-plaintext highlighter-rouge">main</code> branch and then everything committed between those two points will be in the working tree so you can commit them.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git reset TARGET_COMMIT
+</code></pre></div></div>
+<p>Note the implied default flag used for <code class="language-plaintext highlighter-rouge">git reset</code> is <code class="language-plaintext highlighter-rouge">--soft</code>.</p>
+
+<p>Then make a commit or commits with the files.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git add PATH
 <span class="nv">$ </span>git commit
 </code></pre></div></div>
 
-<p>That will <em>add</em> a commit with all your changes.</p>
-
-<p>Use this if you want to <em>replace</em> that existing commit, including its changes and everything you did after:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit <span class="nt">--amend</span>
-</code></pre></div></div>
+<p>You can also use <code class="language-plaintext highlighter-rouge">git commit --amend</code> if you want to edit that commit instead of adding a new one.</p>
 
 <p>More advanced approach with a script with validation <a href="https://stackoverflow.com/questions/7275508/is-there-a-way-to-squash-a-number-of-commits-non-interactively">here</a> on StackOverflow.</p>
 
