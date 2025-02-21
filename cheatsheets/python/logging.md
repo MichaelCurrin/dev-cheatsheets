@@ -50,9 +50,14 @@ logging.info("Message")
 
 ### Configure and use a logger variable
 
-Make a logger (as a global variable or class variable) and use it:
+Make a logger (as a global variable or class variable) and use it.
+
+Here using `basicConfig` which affects all loggers including those for external packages.
 
 ```python
+import logging
+
+# Set up your application's logger.
 logger = logging.getLogger(__name__)
 logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.INFO)
 
@@ -66,7 +71,7 @@ logger.info("Info message")
 logger.debug("Debug message")
 ```
 
-Using handlers, without `basicConfig`.
+Using handlers for a specific logger, without `basicConfig`.
 
 ```python
 import logging
@@ -93,6 +98,37 @@ logger.info("This is an info message from your application.")
 logger.warning("This is a warning message from your application.")
 ```
 
+Note if you run the above multiple times, you'll log the same message multiple times. So check the handlers:
+
+```python
+def initialize_logger(name: str) -> logging.Logger:
+    logger = logging.getLogger(name)
+    logger.setLevel(logging.INFO)
+
+    if not logger.hasHandlers():
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.INFO)
+
+        formatter = logging.Formatter(
+            "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        )
+        console_handler.setFormatter(formatter)
+
+        logger.addHandler(console_handler)
+
+        # Prevent external packages from logging noisily at the info level.
+        logging.getLogger().setLevel(logging.WARNING)
+
+    return logger
+
+# Use an import like this from another module:
+# from utils import initialize_logger
+
+logger = initialize_logger(__name__)
+
+logger.info("This is an info message from your application.")
+logger.warning("This is a warning message from your application.")
+```
 
 ## Variable substitution
 
