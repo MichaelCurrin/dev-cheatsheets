@@ -33,13 +33,16 @@ logger.info("This is an info message from your application.")
 
 ## Configuration
 
-The default is to log `WARNING` level to stdout.
+The default is to log `WARNING` level to stdout. You can specify a log level a output file as below.
 
 ### Configure and use the library directly
 
 Here is a simple config setup from the docs. Without using a `logging.Logger` instance.
 
 ```python
+import logging
+
+
 logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
 
 logging.info("Message")
@@ -51,8 +54,6 @@ Make a logger (as a global variable or class variable) and use it:
 
 ```python
 logger = logging.getLogger(__name__)
-logging.basicConfig(encoding='utf-8', level=logging.INFO)
-# OR
 logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.INFO)
 
 # Call the instance.
@@ -91,7 +92,6 @@ logging.getLogger().setLevel(logging.WARNING)
 logger.info("This is an info message from your application.")
 logger.warning("This is a warning message from your application.")
 ```
-
 
 
 ## Variable substitution
