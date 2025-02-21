@@ -5,69 +5,93 @@
 - [logging](https://docs.python.org/3/howto/logging.html) in Python 3 docs.
 - [logging](https://docs.python.org/3/library/logging.html#module-logging) Python 3 API
 
-## Configuration
-
-The default is to log WARNING level to stdout.
-
-### Configure and use the library
-
-Here is a simple config setup from the docs.
-
-```python
-logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
-
-# Call the library.
-logging.info("Message")
-```
-
-### Configure and use a logger variable
-
-You can make a logger (as a global variable or class variable) and use it:
-
-```python
-logger = logging.getLogger(__name__)
-logging.basicConfig(encoding='utf-8', level=logging.DEBUG)
-
-# Call the instance.
-logger.info("Info message")
-logger.debug("Debug message")
-
-logger.setLevel(logging.INFO)
-logger.info("Info message")
-logger.debug("Debug message")
-```
-
-NB. Make sure to call `basicConfig` first otherwise calling `setLevel` on the `logger` instance won't help.
-
-
-More details:
-
-```python
-import logging
-
-logger = logging.getLogger(__name__)
-logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
-
-file_handler = logging.FileHandler('example.log', encoding='utf-8')
-file_handler.setLevel(logging.DEBUG)
-
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-file_handler.setFormatter(formatter)
-
-logger.addHandler(file_handler)
-
-logger.info("Message")
-```
-
-
-
 ## Log levels
+
+Built in methods for `logging` or a `logging.Logger` instance:
 
 - `logging.debug`
 - `logging.info`
 - `logging.warning`
 - `logging.error`
 - `logging.critical`
+
+
+### Note
+
+Setting log level is **not** enough. You need to make sure to call `basicConfig` first or add handlers as on Configuration examples on page, otherwise it won't work.
+
+```python
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# This message will get ignored.
+logger.info("This is an info message from your application.")
+```
+
+
+## Configuration
+
+The default is to log `WARNING` level to stdout.
+
+### Configure and use the library directly
+
+Here is a simple config setup from the docs. Without using a `logging.Logger` instance.
+
+```python
+logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
+
+logging.info("Message")
+```
+
+### Configure and use a logger variable
+
+Make a logger (as a global variable or class variable) and use it:
+
+```python
+logger = logging.getLogger(__name__)
+logging.basicConfig(encoding='utf-8', level=logging.INFO)
+# OR
+logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.INFO)
+
+# Call the instance.
+logger.info("Info message")
+logger.debug("Debug message")
+
+# Change the log level.
+logger.setLevel(logging.INFO)
+logger.info("Info message")
+logger.debug("Debug message")
+```
+
+Using handlers, without `basicConfig`.
+
+```python
+import logging
+
+# Set up your application's logger.
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# Create a console handler.
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.INFO)
+
+# Create a formatter.
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+console_handler.setFormatter(formatter)
+
+logger.addHandler(console_handler)
+
+# Prevent external packages from logging noisly at the info level.
+logging.getLogger().setLevel(logging.WARNING)
+
+# Example usage.
+logger.info("This is an info message from your application.")
+logger.warning("This is a warning message from your application.")
+```
+
 
 
 ## Variable substitution
