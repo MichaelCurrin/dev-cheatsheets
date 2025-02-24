@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Rebase | Dev Cheatsheets</title>
+    <title>Rebase approaches | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Rebase" />
+    <meta property="og:title" content="Rebase approaches" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Rebase" />
+    <meta property="twitter:title" content="Rebase approaches" />
 <meta name="generator" content="Jekyll v4.4.1" />
 
 <meta property="og:locale" content="en_US" />
@@ -35,7 +35,7 @@
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/rebase.html",
-    "headline":    "Rebase",
+    "headline":    "Rebase approaches",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -105,7 +105,7 @@
             
 
 
-            <span>Rebase</span>
+            <span>Rebase approaches</span>
         </h1>
 
         
@@ -157,7 +157,7 @@
 
         
             <a href="/dev-cheatsheets/cheatsheets/version-control/git/rebase.html" class="underline">
-                Rebase
+                Rebase approaches
             </a>
         
      
@@ -171,11 +171,11 @@
         
             <h2 id="related-sections">Related sections</h2>
 
-<p>See <a href="/dev-cheatsheets/cheatsheets/version-control/git/commands/rebase.html">rebase</a> page in Git section for more help on handling rebases.</p>
+<p>See <a href="/dev-cheatsheets/cheatsheets/version-control/git/commands/rebase.html">rebase</a> commmand page in Git section for more help on handling rebases.</p>
 
 <h2 id="perform-a-rebase">Perform a rebase</h2>
 
-<h3 id="use-the-pull-subcommand">Use the pull subcommand</h3>
+<h3 id="use-the-pull-subcommand">Use the <code class="language-plaintext highlighter-rouge">pull</code> subcommand</h3>
 
 <p>I find these the most useful, as it is one line and forces pulling in the remote with an implied <code class="language-plaintext highlighter-rouge">git fetch</code>.</p>
 
@@ -193,7 +193,7 @@
 
 <p>Similarly, you can rebase your fork’s feature branch or master branch on the original upstream repo’s master, but changing <code class="language-plaintext highlighter-rouge">origin</code> to <code class="language-plaintext highlighter-rouge">upstream</code> above.</p>
 
-<h3 id="use-the-rebase-subcommand">Use the rebase subcommand</h3>
+<h3 id="use-the-rebase-subcommand">Use the <code class="language-plaintext highlighter-rouge">rebase</code> subcommand</h3>
 
 <p>This gives you more control, as you get to leave out the <code class="language-plaintext highlighter-rouge">git fetch</code> if you want and can be used without an internet connection. However, I find I don’t use this so much because you have to remember to do two steps.</p>
 
@@ -206,6 +206,11 @@
 <p>Rebase on a local branch. Warning - that local branch may not be up to date.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git rebase master
+</code></pre></div></div>
+
+<p>If you want to edit commit messages or content, go into interactive mode:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git rebase master <span class="nt">-i</span>
 </code></pre></div></div>
 
 <h2 id="rebase-a-feature-branch-on-the-main-branch">Rebase a feature branch on the main branch</h2>
@@ -225,7 +230,7 @@ git checkout my-feat
 git rebase master
 </code></pre></div></div>
 
-<h3 id="rebase-on-origin">rebase on origin</h3>
+<h3 id="rebase-on-origin">Rebase on origin</h3>
 
 <p>You can also do it this way, without updating local main or leaving your feature branch.</p>
 
@@ -234,7 +239,7 @@ git fetch
 git rebase origin/main
 </code></pre></div></div>
 
-<h3 id="pull-rebase">pull rebase</h3>
+<h3 id="pull-with-rebase"><code class="language-plaintext highlighter-rouge">pull</code> with rebase</h3>
 
 <p>Or simply this, in even fewer commands:</p>
 
