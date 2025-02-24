@@ -192,12 +192,19 @@
 
 <p>If you want to get file changes from another branch without moving the current commit, you can do this:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout COMMIT PATH
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout COMMIT PATHS
 </code></pre></div></div>
 
 <p>e.g.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout my-branch foo.md
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout my-branch foo.py README.md
+</code></pre></div></div>
+
+<p>Note if you want to switch to another branch and away from the current one, you would omit that path.</p>
+
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout my-branch
 </code></pre></div></div>
 
         

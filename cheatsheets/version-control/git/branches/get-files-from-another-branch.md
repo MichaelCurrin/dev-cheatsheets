@@ -13,11 +13,19 @@ $ git reset COMMIT
 If you want to get file changes from another branch without moving the current commit, you can do this:
 
 ```sh
-$ git checkout COMMIT PATH
+$ git checkout COMMIT PATHS
 ```
 
 e.g.
 
 ```sh
-$ git checkout my-branch foo.md
+$ git checkout my-branch foo.py README.md
+```
+
+Note if you want to switch to another branch and away from the current one, you would omit that path.
+
+e.g.
+
+```sh
+$ git checkout my-branch
 ```
