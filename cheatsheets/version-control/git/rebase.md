@@ -1,16 +1,16 @@
-# Rebase
+# Rebase approaches
 
 
 ## Related sections
 
-See [rebase][] page in Git section for more help on handling rebases.
+See [rebase][] commmand page in Git section for more help on handling rebases.
 
 [rebase]: {% link cheatsheets/version-control/git/commands/rebase.md %}
 
 
 ## Perform a rebase
 
-### Use the pull subcommand
+### Use the `pull` subcommand
 
 I find these the most useful, as it is one line and forces pulling in the remote with an implied `git fetch`.
 
@@ -30,7 +30,7 @@ $ git pull --rebase origin master
 
 Similarly, you can rebase your fork's feature branch or master branch on the original upstream repo's master, but changing `origin` to `upstream` above.
 
-### Use the rebase subcommand
+### Use the `rebase` subcommand
 
 This gives you more control, as you get to leave out the `git fetch` if you want and can be used without an internet connection. However, I find I don't use this so much because you have to remember to do two steps.
 
@@ -45,6 +45,12 @@ Rebase on a local branch. Warning - that local branch may not be up to date.
 
 ```sh
 $ git rebase master
+```
+
+If you want to edit commit messages or content, go into interactive mode:
+
+```sh
+$ git rebase master -i
 ```
 
 ## Rebase a feature branch on the main branch
@@ -65,7 +71,7 @@ git checkout my-feat
 git rebase master
 ```
 
-### rebase on origin
+### Rebase on origin
 
 You can also do it this way, without updating local main or leaving your feature branch.
 
@@ -75,7 +81,7 @@ git fetch
 git rebase origin/main
 ```
 
-### pull rebase
+### `pull` with rebase
 
 Or simply this, in even fewer commands:
 
