@@ -35,6 +35,7 @@ logger.info("This is an info message from your application.")
 
 The default is to log `WARNING` level to stdout. You can specify a log level a output file as below.
 
+
 ### Configure and use the library directly
 
 Here is a simple config setup from the docs. Without using a `logging.Logger` instance.
@@ -52,14 +53,14 @@ logging.info("Message")
 
 Make a logger (as a global variable or class variable) and use it.
 
-Here using `basicConfig` which affects all loggers including those for external packages.
+Here using `basicConfig` which affects all loggers including those for external packages. 
 
 ```python
 import logging
 
 # Set up your application's logger.
 logger = logging.getLogger(__name__)
-logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.INFO)
+logging.basicConfig(filename='example.log', encoding='utf-8')
 
 # Call the instance.
 logger.info("Info message")
@@ -71,7 +72,15 @@ logger.info("Info message")
 logger.debug("Debug message")
 ```
 
-Using handlers for a specific logger, without `basicConfig`.
+Note that you can set `level=logging.INFO` for it but that's not a good idea if you use external packages which log things at that level.
+
+However, you prevent external packages from logging noisily at the info level like this but restoring the default with empty input for `getLogger`.
+
+```python
+logging.getLogger().setLevel(logging.WARNING)
+```
+
+Here using handlers for a specific logger, without `basicConfig`:
 
 ```python
 import logging
@@ -90,15 +99,12 @@ console_handler.setFormatter(formatter)
 
 logger.addHandler(console_handler)
 
-# Prevent external packages from logging noisly at the info level.
-logging.getLogger().setLevel(logging.WARNING)
-
 # Example usage.
 logger.info("This is an info message from your application.")
 logger.warning("This is a warning message from your application.")
 ```
 
-Note if you run the above multiple times, you'll log the same message multiple times. So check the handlers:
+Note if you run the above multiple times, you'll log the same message multiple times. So check the handlers first to avoid duplication:
 
 ```python
 def initialize_logger(name: str) -> logging.Logger:
@@ -116,9 +122,6 @@ def initialize_logger(name: str) -> logging.Logger:
 
         logger.addHandler(console_handler)
 
-        # Prevent external packages from logging noisily at the info level.
-        logging.getLogger().setLevel(logging.WARNING)
-
     return logger
 
 # Use an import like this from another module:
@@ -128,6 +131,22 @@ logger = initialize_logger(__name__)
 
 logger.info("This is an info message from your application.")
 logger.warning("This is a warning message from your application.")
+```
+
+For setting log level, you can not only do on the `logger` object, you also have to add a handler using `logger.addHandler`, or the broader `logging.basicConfig`.
+
+For a minimal configuration approach:
+
+```python
+def initialize_logger(name: str) -> logging.Logger:
+    logging.basicConfig()
+    logger = logging.getLogger(name)
+    logger.setLevel(logging.INFO)
+
+    return logger
+
+
+logger = initialize_logger(__name__)
 ```
 
 ## Variable substitution

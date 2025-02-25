@@ -215,7 +215,7 @@
 
 <span class="c1"># Set up your application's logger.
 </span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nf">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sh">'</span><span class="s">example.log</span><span class="sh">'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sh">'</span><span class="s">example.log</span><span class="sh">'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># Call the instance.
 </span><span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">Info message</span><span class="sh">"</span><span class="p">)</span>
@@ -227,7 +227,14 @@
 <span class="n">logger</span><span class="p">.</span><span class="nf">debug</span><span class="p">(</span><span class="sh">"</span><span class="s">Debug message</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Using handlers for a specific logger, without <code class="language-plaintext highlighter-rouge">basicConfig</code>.</p>
+<p>Note that you can set <code class="language-plaintext highlighter-rouge">level=logging.INFO</code> for it but that’s not a good idea if you use external packages which log things at that level.</p>
+
+<p>However, you prevent external packages from logging noisily at the info level like this but restoring the default with empty input for <code class="language-plaintext highlighter-rouge">getLogger</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logging</span><span class="p">.</span><span class="nf">getLogger</span><span class="p">().</span><span class="nf">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">WARNING</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Here using handlers for a specific logger, without <code class="language-plaintext highlighter-rouge">basicConfig</code>:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">logging</span>
 
@@ -245,15 +252,12 @@
 
 <span class="n">logger</span><span class="p">.</span><span class="nf">addHandler</span><span class="p">(</span><span class="n">console_handler</span><span class="p">)</span>
 
-<span class="c1"># Prevent external packages from logging noisly at the info level.
-</span><span class="n">logging</span><span class="p">.</span><span class="nf">getLogger</span><span class="p">().</span><span class="nf">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">WARNING</span><span class="p">)</span>
-
 <span class="c1"># Example usage.
 </span><span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">This is an info message from your application.</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">logger</span><span class="p">.</span><span class="nf">warning</span><span class="p">(</span><span class="sh">"</span><span class="s">This is a warning message from your application.</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Note if you run the above multiple times, you’ll log the same message multiple times. So check the handlers:</p>
+<p>Note if you run the above multiple times, you’ll log the same message multiple times. So check the handlers first to avoid duplication:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">initialize_logger</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">logging</span><span class="p">.</span><span class="n">Logger</span><span class="p">:</span>
     <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nf">getLogger</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -270,9 +274,6 @@
 
         <span class="n">logger</span><span class="p">.</span><span class="nf">addHandler</span><span class="p">(</span><span class="n">console_handler</span><span class="p">)</span>
 
-        <span class="c1"># Prevent external packages from logging noisily at the info level.
-</span>        <span class="n">logging</span><span class="p">.</span><span class="nf">getLogger</span><span class="p">().</span><span class="nf">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">WARNING</span><span class="p">)</span>
-
     <span class="k">return</span> <span class="n">logger</span>
 
 <span class="c1"># Use an import like this from another module:
@@ -282,6 +283,21 @@
 
 <span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">This is an info message from your application.</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">logger</span><span class="p">.</span><span class="nf">warning</span><span class="p">(</span><span class="sh">"</span><span class="s">This is a warning message from your application.</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>For setting log level, you can not only do on the <code class="language-plaintext highlighter-rouge">logger</code> object, you also have to add a handler using <code class="language-plaintext highlighter-rouge">logger.addHandler</code>, or the broader <code class="language-plaintext highlighter-rouge">logging.basicConfig</code>.</p>
+
+<p>For a minimal configuration approach:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">initialize_logger</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">logging</span><span class="p">.</span><span class="n">Logger</span><span class="p">:</span>
+    <span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">()</span>
+    <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nf">getLogger</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">logger</span><span class="p">.</span><span class="nf">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">logger</span>
+
+
+<span class="n">logger</span> <span class="o">=</span> <span class="nf">initialize_logger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="variable-substitution">Variable substitution</h2>
