@@ -172,217 +172,184 @@
             <h2 id="resources">Resources</h2>
 
 <ul>
-  <li><a href="https://learn.microsoft.com/en-us/sql/sql-server/">SQL Server</a> on the Microsoft learn docs.</li>
-  <li>
-    <h2 id="installation">Installation</h2>
+  <li><a href="https://learn.microsoft.com/en-us/sql/sql-server/">SQL Server Documentation</a> on Microsoft Learn.</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="download-and-install">Download and Install</h3>
+
+<ul>
+  <li>Download SQL Server from the <a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">official Microsoft page</a>.</li>
+  <li>Follow the installation guide for your operating system:
+    <ul>
+      <li><strong>Windows</strong>: Use the SQL Server Installer.</li>
+      <li><strong>Linux (Ubuntu, RHEL, SUSE)</strong>: Add the Microsoft repository first. See <a href="https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu">Install SQL Server on Ubuntu</a>.</li>
+      <li><strong>macOS</strong>: Use Docker (SQL Server is not natively supported).</li>
+    </ul>
   </li>
 </ul>
 
-<p>Choose an option below.</p>
+<h3 id="required-tools">Required Tools</h3>
 
-<ul>
-  <li>Go to <a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">Download</a> page.</li>
-</ul>
+<p>For command-line interaction, install <code class="language-plaintext highlighter-rouge">mssql-tools</code>:</p>
 
-<p>For Ubuntu, you may need to add the Microsoft repository first - see <a href="https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu">Install SQL Server on Ubuntu</a>.</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ubuntu</span>
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>mssql-tools unixodbc-dev
+</code></pre></div></div>
 
 <h2 id="show">Show</h2>
 
-<h3 id="show-databases">Show databases</h3>
+<h3 id="list-databases">List Databases</h3>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="n">sys</span><span class="p">.</span><span class="n">databases</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>In the CLI:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlcmd <span class="nt">-S</span> localhost <span class="nt">-U</span> SA <span class="nt">-P</span> <span class="s1">'YourPassword'</span> <span class="nt">-Q</span> <span class="s2">"SELECT name FROM sys.databases;"</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlcmd <span class="nt">-S</span> localhost <span class="nt">-U</span> SA <span class="nt">-P</span> <span class="s1">'YourPassword'</span> <span class="nt">-Q</span> <span class="s2">"SELECT name FROM sys.databases;"</span>
 </code></pre></div></div>
 
-<p>Recommended - specify a user as the default is <code class="language-plaintext highlighter-rouge">SA</code> for system administrator.</p>
-
-<h3 id="tables">Tables</h3>
-
-<p>Show all tables in the current database:</p>
-
+<h3 id="list-tables-in-the-current-database">List Tables in the Current Database</h3>
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>More info:</p>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">EXEC</span> <span class="n">sp_tables</span><span class="p">;</span>
+<p>More details:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">sys</span><span class="p">.</span><span class="n">tables</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>Add a table name to filter:</p>
-
+<p>Filter by table name:</p>
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span> <span class="k">WHERE</span> <span class="k">table_name</span> <span class="o">=</span> <span class="s1">'table_name'</span><span class="p">;</span>
 </code></pre></div></div>
 
-<h2 id="use-database">Use database</h2>
+<h2 id="select-database">Select Database</h2>
 
-<p>To use a specific database:</p>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">USE</span> <span class="n">DB_NAME</span><span class="p">;</span>
+<p>To switch to a specific database:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">USE</span> <span class="n">my_database</span><span class="p">;</span>
 </code></pre></div></div>
 
 <h2 id="quit">Quit</h2>
 
+<p>Exit SQL Server:</p>
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QUIT</span><span class="p">;</span>
 </code></pre></div></div>
+<p>Or use <kbd>CTRL</kbd>+<kbd>D</kbd> in the CLI.</p>
 
-<p>Or <kbd>CTRL</kbd>+<kbd>d</kbd>.</p>
-
-<h2 id="users">Users</h2>
+<h2 id="user-management">User Management</h2>
 
 <h3 id="login">Login</h3>
 
-<p>Here we use a user named <code class="language-plaintext highlighter-rouge">SA</code>:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlcmd <span class="nt">-S</span> localhost <span class="nt">-U</span> SA <span class="nt">-P</span> <span class="s1">'YourPassword'</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlcmd <span class="nt">-S</span> localhost <span class="nt">-U</span> SA <span class="nt">-P</span> <span class="s1">'YourPassword'</span>
 </code></pre></div></div>
 
-<p>The console will then look like this:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1&gt;
-</code></pre></div></div>
-
-<h3 id="create-user">Create user</h3>
+<h3 id="create-user">Create User</h3>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="n">LOGIN</span> <span class="n">foo</span> <span class="k">WITH</span> <span class="n">PASSWORD</span> <span class="o">=</span> <span class="s1">'bar'</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="k">USER</span> <span class="n">foo</span> <span class="k">FOR</span> <span class="n">LOGIN</span> <span class="n">foo</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>Grant privileges:</p>
-
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="k">DATABASE</span><span class="p">::</span><span class="n">my_db</span> <span class="k">TO</span> <span class="n">foo</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>Or create with the shell:</p>
+<h3 id="create-role">Create Role</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo</span> <span class="nt">-u</span> mssql createuser foo
-</code></pre></div></div>
-
-<h3 id="create-role">Create role</h3>
-
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">CREATE ROLE</code> adds a new role to a SQL Server database.</p>
-
-  <p>A role is an entity that can own database objects and have database privileges.</p>
-</blockquote>
+<p>Roles allow managing multiple users’ permissions efficiently.</p>
 
 <p>Create a role:</p>
-
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">my_role</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>Add a user to the role:</p>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">EXEC</span> <span class="n">sp_addrolemember</span> <span class="s1">'my_role'</span><span class="p">,</span> <span class="s1">'foo'</span><span class="p">;</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">ROLE</span> <span class="n">my_role</span> <span class="k">ADD</span> <span class="n">MEMBER</span> <span class="n">foo</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>Drop:</p>
-
+<p>Remove a role:</p>
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">DROP</span> <span class="k">ROLE</span> <span class="n">my_role</span><span class="p">;</span>
 </code></pre></div></div>
+<p><em>(Ensure the role has no members before dropping.)</em></p>
 
-<h3 id="change-password">Change password</h3>
+<h3 id="change-password">Change Password</h3>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="n">LOGIN</span> <span class="n">my_user</span> <span class="k">WITH</span> <span class="n">PASSWORD</span> <span class="o">=</span> <span class="s1">'my_password'</span><span class="p">;</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="n">LOGIN</span> <span class="n">foo</span> <span class="k">WITH</span> <span class="n">PASSWORD</span> <span class="o">=</span> <span class="s1">'new_password'</span><span class="p">;</span>
 </code></pre></div></div>
 
-<h3 id="list-users">List users</h3>
+<h3 id="list-users">List Users</h3>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="n">sys</span><span class="p">.</span><span class="n">server_principals</span> <span class="k">WHERE</span> <span class="k">type</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">'S'</span><span class="p">,</span> <span class="s1">'U'</span><span class="p">);</span>
 </code></pre></div></div>
 
-<h2 id="connect">Connect</h2>
+<h2 id="connect-to-sql-server">Connect to SQL Server</h2>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlcmd <span class="nt">-S</span> localhost <span class="nt">-U</span> SA <span class="nt">-P</span> <span class="s1">'YourPassword'</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlcmd <span class="nt">-S</span> localhost <span class="nt">-U</span> my_user <span class="nt">-P</span> <span class="s1">'YourPassword'</span> <span class="nt">-d</span> my_db
 </code></pre></div></div>
 
-<p>If you don’t want to use default user of <code class="language-plaintext highlighter-rouge">SA</code>, set the user.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlcmd <span class="nt">-S</span> localhost <span class="nt">-U</span> my_user <span class="nt">-P</span> <span class="s1">'YourPassword'</span> <span class="nt">-d</span> my_db
-</code></pre></div></div>
-
-<h2 id="run-query-using-cli">Run query using CLI</h2>
-
-<p>See <a href="#connect">Connect</a> above for other flags to add.</p>
+<h2 id="run-queries-using-cli">Run Queries Using CLI</h2>
 
 <p>Interactive console:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlcmd
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlcmd
 </code></pre></div></div>
 
-<p>Run query in string:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlcmd <span class="nt">-Q</span> <span class="s1">'SELECT COUNT(*) FROM my_table'</span>
+<p>Run a single query:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlcmd <span class="nt">-Q</span> <span class="s2">"SELECT COUNT(*) FROM my_table"</span>
 </code></pre></div></div>
 
-<p>Or you can pass the name of a <code class="language-plaintext highlighter-rouge">.sql</code> file.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlcmd <span class="nt">-i</span> query.sql
+<p>Run a query from a file:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlcmd <span class="nt">-i</span> query.sql
 </code></pre></div></div>
 
-<h2 id="passwords">Passwords</h2>
+<h2 id="environment-variables-for-passwords">Environment Variables for Passwords</h2>
 
-<p>If your database is password-protected, you can get prompted in the CLI to enter a password.</p>
-
-<h3 id="env-vars">Env vars</h3>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ MSSQL_SA_PASSWORD</span><span class="o">=</span>YourPassword sqlcmd ...
+<p>To avoid entering passwords in the CLI:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">MSSQL_SA_PASSWORD</span><span class="o">=</span>YourPassword
+sqlcmd ...
 </code></pre></div></div>
 
-<h2 id="create-drop-dump-and-restore">Create, drop, dump and restore</h2>
+<h2 id="database-management">Database Management</h2>
 
-<h3 id="overview">Overview</h3>
+<h3 id="backup-and-restore">Backup and Restore</h3>
 
-<h4 id="backup-and-restore">Backup and Restore</h4>
-
-<p>Using SQL Server Management Studio or command line:</p>
-
-<p>Backup:</p>
-
+<p>Backup a database:</p>
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">BACKUP</span> <span class="k">DATABASE</span> <span class="n">my_db</span> <span class="k">TO</span> <span class="n">DISK</span> <span class="o">=</span> <span class="s1">'C:</span><span class="se">\p</span><span class="s1">ath</span><span class="se">\t</span><span class="s1">o</span><span class="se">\b</span><span class="s1">ackup.bak'</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>Restore:</p>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RESTORE</span> <span class="k">DATABASE</span> <span class="n">my_db</span> <span class="k">FROM</span> <span class="n">DISK</span> <span class="o">=</span> <span class="s1">'C:</span><span class="se">\p</span><span class="s1">ath</span><span class="se">\t</span><span class="s1">o</span><span class="se">\b</span><span class="s1">ackup.bak'</span><span class="p">;</span>
+<p>Restore a database (overwriting if needed):</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RESTORE</span> <span class="k">DATABASE</span> <span class="n">my_db</span> <span class="k">FROM</span> <span class="n">DISK</span> <span class="o">=</span> <span class="s1">'C:</span><span class="se">\p</span><span class="s1">ath</span><span class="se">\t</span><span class="s1">o</span><span class="se">\b</span><span class="s1">ackup.bak'</span> <span class="k">WITH</span> <span class="k">REPLACE</span><span class="p">;</span>
 </code></pre></div></div>
 
-<h3 id="create-db">Create DB</h3>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlcmd <span class="nt">-Q</span> <span class="s2">"CREATE DATABASE my_db;"</span>
+<h3 id="create-database">Create Database</h3>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlcmd <span class="nt">-Q</span> <span class="s2">"CREATE DATABASE my_db;"</span>
 </code></pre></div></div>
 
-<h3 id="drop-db">Drop DB</h3>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlcmd <span class="nt">-Q</span> <span class="s2">"DROP DATABASE my_db;"</span>
+<h3 id="drop-database">Drop Database</h3>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlcmd <span class="nt">-Q</span> <span class="s2">"DROP DATABASE my_db;"</span>
 </code></pre></div></div>
 
-<h3 id="dump">Dump</h3>
+<h3 id="dump-database">Dump Database</h3>
 
-<p>Create a dump from a DB:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlcmd <span class="nt">-Q</span> <span class="s2">"BACKUP DATABASE my_db TO DISK = 'C:</span><span class="se">\p</span><span class="s2">ath</span><span class="se">\t</span><span class="s2">o</span><span class="se">\b</span><span class="s2">ackup.bak';"</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlcmd <span class="nt">-Q</span> <span class="s2">"BACKUP DATABASE my_db TO DISK = 'C:</span><span class="se">\p</span><span class="s2">ath</span><span class="se">\t</span><span class="s2">o</span><span class="se">\b</span><span class="s2">ackup.bak';"</span>
 </code></pre></div></div>
 
-<h3 id="restore">Restore</h3>
+<h3 id="restore-database">Restore Database</h3>
 
-<p>Drop the database and recreate it from a backup:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlcmd <span class="nt">-Q</span> <span class="s2">"DROP DATABASE my_db;"</span>
-<span class="nv">$ </span>sqlcmd <span class="nt">-Q</span> <span class="s2">"RESTORE DATABASE my_db FROM DISK = 'C:</span><span class="se">\p</span><span class="s2">ath</span><span class="se">\t</span><span class="s2">o</span><span class="se">\b</span><span class="s2">ackup.bak';"</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlcmd <span class="nt">-Q</span> <span class="s2">"RESTORE DATABASE my_db FROM DISK = 'C:</span><span class="se">\p</span><span class="s2">ath</span><span class="se">\t</span><span class="s2">o</span><span class="se">\b</span><span class="s2">ackup.bak' WITH REPLACE;"</span>
 </code></pre></div></div>
 
-<h2 id="vs-code-extensions">VS Code extensions</h2>
+<h2 id="vs-code-extensions">VS Code Extensions</h2>
 
-<p>Published by Microsoft</p>
+<p>For enhanced SQL development, install the following Microsoft-published extensions:</p>
 
 <ul>
-  <li>SQL Server (mssql)</li>
+  <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql">SQL Server (mssql)</a></li>
   <li>SQL Database Projects</li>
   <li>SQL Bindings</li>
 </ul>
+
+<p>These extensions enable query execution, IntelliSense, and project-based database development.</p>
+
+<hr />
+
+<p>This version improves readability, fixes incorrect commands, standardizes formatting, and ensures best practices for SQL Server usage. Let me know if you need further refinements!</p>
 
         
     </div>
