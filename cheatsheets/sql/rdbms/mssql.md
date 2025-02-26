@@ -1,23 +1,33 @@
 ---
-#logo: mssql
 ---
 # Microsoft SQL Server
 
 ## Resources
 
-- [SQL Server](https://learn.microsoft.com/en-us/sql/sql-server/) on the Microsoft learn docs.
-- 
+- [SQL Server Documentation](https://learn.microsoft.com/en-us/sql/sql-server/) on Microsoft Learn.
+
 ## Installation
 
-Choose an option below.
+### Download and Install
 
-- Go to [Download](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) page.
-  
-For Ubuntu, you may need to add the Microsoft repository first - see [Install SQL Server on Ubuntu](https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu).
+- Download SQL Server from the [official Microsoft page](https://www.microsoft.com/en-us/sql-server/sql-server-downloads).
+- Follow the installation guide for your operating system:
+  - **Windows**: Use the SQL Server Installer.
+  - **Linux (Ubuntu, RHEL, SUSE)**: Add the Microsoft repository first. See [Install SQL Server on Ubuntu](https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu).
+  - **macOS**: Use Docker (SQL Server is not natively supported).
+
+### Required Tools
+
+For command-line interaction, install `mssql-tools`:
+
+```sh
+# Ubuntu
+sudo apt-get install mssql-tools unixodbc-dev
+```
 
 ## Show
 
-### Show databases
+### List Databases
 
 ```sql
 SELECT name FROM sys.databases;
@@ -26,215 +36,169 @@ SELECT name FROM sys.databases;
 In the CLI:
 
 ```sh
-$ sqlcmd -S localhost -U SA -P 'YourPassword' -Q "SELECT name FROM sys.databases;"
+sqlcmd -S localhost -U SA -P 'YourPassword' -Q "SELECT name FROM sys.databases;"
 ```
 
-Recommended - specify a user as the default is `SA` for system administrator.
-
-### Tables
-
-Show all tables in the current database:
-
+### List Tables in the Current Database
 ```sql
 SELECT * FROM information_schema.tables;
 ```
 
-More info:
-
+More details:
 ```sql
-EXEC sp_tables;
+SELECT * FROM sys.tables;
 ```
 
-Add a table name to filter:
-
+Filter by table name:
 ```sql
 SELECT * FROM information_schema.tables WHERE table_name = 'table_name';
 ```
 
-## Use database
+## Select Database
 
-To use a specific database:
-
+To switch to a specific database:
 ```sql
-USE DB_NAME;
+USE my_database;
 ```
 
 ## Quit
 
+Exit SQL Server:
 ```sql
 QUIT;
 ```
+Or use <kbd>CTRL</kbd>+<kbd>D</kbd> in the CLI.
 
-Or <kbd>CTRL</kbd>+<kbd>d</kbd>.
-
-## Users
+## User Management
 
 ### Login
 
-Here we use a user named `SA`:
-
 ```sh
-$ sqlcmd -S localhost -U SA -P 'YourPassword'
+sqlcmd -S localhost -U SA -P 'YourPassword'
 ```
 
-The console will then look like this:
-
-```
-1>
-```
-
-### Create user
+### Create User
 
 ```sql
 CREATE LOGIN foo WITH PASSWORD = 'bar';
+CREATE USER foo FOR LOGIN foo;
 ```
 
 Grant privileges:
-
 ```sql
 GRANT ALL PRIVILEGES ON DATABASE::my_db TO foo;
 ```
 
-Or create with the shell:
+### Create Role
 
-```sh
-$ sudo -u mssql createuser foo
-```
-
-### Create role
-
-> `CREATE ROLE` adds a new role to a SQL Server database.
->
-> A role is an entity that can own database objects and have database privileges.
+Roles allow managing multiple users' permissions efficiently.
 
 Create a role:
-
 ```sql
 CREATE ROLE my_role;
 ```
 
 Add a user to the role:
-
 ```sql
-EXEC sp_addrolemember 'my_role', 'foo';
+ALTER ROLE my_role ADD MEMBER foo;
 ```
 
-Drop:
-
+Remove a role:
 ```sql
 DROP ROLE my_role;
 ```
+*(Ensure the role has no members before dropping.)*
 
-### Change password
+### Change Password
 
 ```sql
-ALTER LOGIN my_user WITH PASSWORD = 'my_password';
+ALTER LOGIN foo WITH PASSWORD = 'new_password';
 ```
 
-### List users
+### List Users
 
 ```sql
 SELECT name FROM sys.server_principals WHERE type IN ('S', 'U');
 ```
 
-## Connect
+## Connect to SQL Server
 
 ```sh
-$ sqlcmd -S localhost -U SA -P 'YourPassword'
+sqlcmd -S localhost -U my_user -P 'YourPassword' -d my_db
 ```
 
-If you don't want to use default user of `SA`, set the user.
-
-```sh
-$ sqlcmd -S localhost -U my_user -P 'YourPassword' -d my_db
-```
-
-## Run query using CLI
-
-See [Connect](#connect) above for other flags to add.
+## Run Queries Using CLI
 
 Interactive console:
-
 ```sh
-$ sqlcmd
+sqlcmd
 ```
 
-Run query in string:
-
+Run a single query:
 ```sh
-$ sqlcmd -Q 'SELECT COUNT(*) FROM my_table'
+sqlcmd -Q "SELECT COUNT(*) FROM my_table"
 ```
 
-Or you can pass the name of a `.sql` file.
-
+Run a query from a file:
 ```sh
-$ sqlcmd -i query.sql
+sqlcmd -i query.sql
 ```
 
-## Passwords
+## Environment Variables for Passwords
 
-If your database is password-protected, you can get prompted in the CLI to enter a password.
-
-### Env vars
-
+To avoid entering passwords in the CLI:
 ```sh
-$ MSSQL_SA_PASSWORD=YourPassword sqlcmd ...
+export MSSQL_SA_PASSWORD=YourPassword
+sqlcmd ...
 ```
 
-## Create, drop, dump and restore
+## Database Management
 
-### Overview
+### Backup and Restore
 
-#### Backup and Restore
-
-Using SQL Server Management Studio or command line:
-
-Backup:
-
+Backup a database:
 ```sql
 BACKUP DATABASE my_db TO DISK = 'C:\path\to\backup.bak';
 ```
 
-Restore:
-
+Restore a database (overwriting if needed):
 ```sql
-RESTORE DATABASE my_db FROM DISK = 'C:\path\to\backup.bak';
+RESTORE DATABASE my_db FROM DISK = 'C:\path\to\backup.bak' WITH REPLACE;
 ```
 
-### Create DB
+### Create Database
+```sh
+sqlcmd -Q "CREATE DATABASE my_db;"
+```
+
+### Drop Database
+```sh
+sqlcmd -Q "DROP DATABASE my_db;"
+```
+
+### Dump Database
 
 ```sh
-$ sqlcmd -Q "CREATE DATABASE my_db;"
+sqlcmd -Q "BACKUP DATABASE my_db TO DISK = 'C:\path\to\backup.bak';"
 ```
 
-### Drop DB
+### Restore Database
 
 ```sh
-$ sqlcmd -Q "DROP DATABASE my_db;"
+sqlcmd -Q "RESTORE DATABASE my_db FROM DISK = 'C:\path\to\backup.bak' WITH REPLACE;"
 ```
 
-### Dump
+## VS Code Extensions
 
-Create a dump from a DB:
+For enhanced SQL development, install the following Microsoft-published extensions:
 
-```sh
-$ sqlcmd -Q "BACKUP DATABASE my_db TO DISK = 'C:\path\to\backup.bak';"
-```
-
-### Restore
-
-Drop the database and recreate it from a backup:
-
-```sh
-$ sqlcmd -Q "DROP DATABASE my_db;"
-$ sqlcmd -Q "RESTORE DATABASE my_db FROM DISK = 'C:\path\to\backup.bak';"
-```
-
-
-## VS Code extensions
-
-Published by Microsoft
-
-- SQL Server (mssql)
+- [SQL Server (mssql)](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql)
 - SQL Database Projects
 - SQL Bindings
+
+These extensions enable query execution, IntelliSense, and project-based database development.
+
+---
+
+This version improves readability, fixes incorrect commands, standardizes formatting, and ensures best practices for SQL Server usage. Let me know if you need further refinements!
+
