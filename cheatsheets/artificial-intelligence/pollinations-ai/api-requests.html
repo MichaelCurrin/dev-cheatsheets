@@ -180,7 +180,11 @@
   <li>If you use Firefox rather than CHrome, the percent encoding is rendered as a space, so that’s easy to read. Or you can type an underscore for a space to keep it readable.</li>
 </ul>
 
-<h2 id="text-endpoint">Text endpoint</h2>
+<h2 id="text-endpoint---basic">Text endpoint - basic</h2>
+
+<p>See models here: <a href="https://text.pollinations.ai/models">text.pollinations.ai/models</a>.</p>
+
+<p>Add your prompt in the URL and get back the result as plain text.</p>
 
 <p>e.g.</p>
 
@@ -188,27 +192,9 @@
   <li><a href="https://text.pollinations.ai/A%20beautiful%20bedtime%20story">https://text.pollinations.ai/A%20beautiful%20bedtime%20story</a></li>
 </ul>
 
-<p>The text endpoint also includes a path for an API that follows the <strong>OpenAI</strong> specification, so it can be used easily with the <code class="language-plaintext highlighter-rouge">openai</code> Python/JavaScript packages or Python LangChain’s OpenAI connector as covered below.</p>
+<h3 id="query-parameters">Query parameters</h3>
 
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">https://text.pollinations.ai/openai</code></li>
-</ul>
-
-<p>With the <a href="https://pypi.org/project/openai/">openai</a> package:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="nc">OpenAI</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="sh">"</span><span class="s">https://text.pollinations.ai/openai</span><span class="sh">"</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="sh">"</span><span class="s">dummy</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>With the <a href="https://pypi.org/project/langchain-openai/">langchain-openai</a> package and <a href="https://python.langchain.com/docs/integrations/chat/openai/">ChatOpenAI</a> class:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">langchain_openai</span> <span class="kn">import</span> <span class="n">ChatOpenAI</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="nc">ChatOpenAI</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="sh">"</span><span class="s">https://text.pollinations.ai/openai</span><span class="sh">"</span><span class="p">,</span> <span class="n">openai_api_key</span><span class="o">=</span><span class="sh">"</span><span class="s">dummy</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="options">Options</h3>
+<p>Optionally add URL params:</p>
 
 <ul>
   <li>GET - <code class="language-plaintext highlighter-rouge">prompt*</code>, <code class="language-plaintext highlighter-rouge">model</code>, <code class="language-plaintext highlighter-rouge">seed</code>, <code class="language-plaintext highlighter-rouge">json</code>, <code class="language-plaintext highlighter-rouge">system</code></li>
@@ -217,7 +203,27 @@
 
 <p>See explanations in the <a href="https://github.com/pollinations/pollinations/blob/master/APIDOCS.md#text-generation-api">Text API</a> docs.</p>
 
-<p>See models here: <a href="https://text.pollinations.ai/models">text.pollinations.ai/models</a>.</p>
+<h2 id="text-endpoint-following-openai-protocol">Text endpoint following OpenAI protocol</h2>
+
+<p>The text endpoint also includes a path for an API that follows the <strong>OpenAI</strong> specification, so it can be used easily with the <code class="language-plaintext highlighter-rouge">openai</code> Python/JavaScript packages or Python LangChain’s OpenAI connector as covered below.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">https://text.pollinations.ai/openai</code></li>
+</ul>
+
+<p>With the <a href="https://pypi.org/project/openai/">openai</a> Python package:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="nc">OpenAI</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="sh">"</span><span class="s">https://text.pollinations.ai/openai</span><span class="sh">"</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="sh">"</span><span class="s">dummy</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>With the <a href="https://pypi.org/project/langchain-openai/">langchain-openai</a> package’s <a href="https://python.langchain.com/docs/integrations/chat/openai/">ChatOpenAI</a> class:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">langchain_openai</span> <span class="kn">import</span> <span class="n">ChatOpenAI</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="nc">ChatOpenAI</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="sh">"</span><span class="s">https://text.pollinations.ai/openai</span><span class="sh">"</span><span class="p">,</span> <span class="n">openai_api_key</span><span class="o">=</span><span class="sh">"</span><span class="s">dummy</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h2 id="image-endpoint">Image endpoint</h2>
 
@@ -229,13 +235,13 @@
 
 <p><img src="https://image.pollinations.ai/prompt/calm%20serene%20forest%20meditation%20session%20in%20an%20eastern%20temple%20at%20dawn&amp;nologo=true&amp;model=flux" alt="Image" /></p>
 
-<h3 id="options-1">Options</h3>
+<h3 id="query-parameters-1">Query parameters</h3>
 
 <p>See <a href="https://github.com/pollinations/pollinations/blob/master/APIDOCS.md#image-generation-api">Image options</a> in the API docs.</p>
 
 <p>See models here: <a href="https://image.pollinations.ai/models">image.pollinations.ai/models</a>.</p>
 
-<p>Based on this page - <a href="https://github.com/pollinations/pollinations/blob/master/pollinations-react/README.md">pollinations-react/README.md</a></p>
+<p>See the <a href="https://github.com/pollinations/pollinations/blob/master/pollinations-react/README.md">pollinations-react/README.md</a> for info on using with React and for explanations of parameters (note the parameters are for the React implementation and not necessarily the URL query params but are still explained well).</p>
 
         
     </div>
