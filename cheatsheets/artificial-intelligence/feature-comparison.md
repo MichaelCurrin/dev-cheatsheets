@@ -10,34 +10,35 @@
 
 ## Features
 
-These are covering free tier features.
-
 Last updated March 2025.
 
 | Functionality                                 | ChatGPT | Copilot | Google Gemini | Claude    |
 | --------------------------------------------- | ------- | ------- | ------------- | --------- |
 | Model                                         | GPT4    | GPT4    | Gemini 2.0    | Claude3.7 |
-| Mobile app                                    | Yes     | Yes     | Yes           | Yes       |
-| Plugins/extensions                            | Yes     | No      | Yes           | No        |
-| File upload                                   | Yes     | Yes     | Yes           | Yes       |
-| Text-to-speech                                | Yes     | Yes     | Yes           | No        |
-| Speech-to-text (dictate via microphone)       | Yes     | Yes     | Yes           | No        |
-| Voice call mode                               | Yes     | Yes     | Yes           | No        |
-| AI image generation                           | Yes     | Yes     | Yes           | No        |
-| Create artifacts (document or code as a file) | Yes     | No      | Yes           | Yes       |
-| Live preview of HTML/CSS/JS                   | No      | No      | No            | Yes       |
-| Create graphs using Python code               | Yes     | No      | Yes           | Yes       |
-| Search the web                                | Yes     | Yes     | Yes           | No        |
-| Google Drive Access                           | No      | No      | Yes           | No        |
-| API available                                 | Yes     | Yes     | Yes           | Yes       |
-| Reason (deep think, think before responding)  | Yes     | No      | Yes           | Yes       |
+| Mobile app                                    | ✅      | ✅      | ✅            | ✅        |
+| Plugins/extensions                            | ✅      | ❌      | ✅            | ❌        |
+| File upload                                   | ✅      | ✅      | ✅            | ✅        |
+| Text-to-speech                                | ✅      | ✅      | ✅            | ❌        |
+| Speech-to-text (dictate via microphone)       | ✅      | ✅      | ✅            | ❌        |
+| Voice call mode                               | ✅      | ✅      | ✅            | ❌        |
+| AI image generation                           | ✅      | ✅      | ✅            | ❌        |
+| Create artifacts (document or code as a file) | ✅      | ❌      | ✅            | ✅        |
+| Live app preview (HTML page in sidepane)      | ❌      | ❌      | ❌            | ✅        |
+| Create graphs using Python code               | ✅      | ❌      | ✅            | ✅        |
+| Search the web                                | ✅      | ✅      | ✅            | ❌        |
+| Google Drive Access                           | ✅      | ❌      | ✅            | ❌        |
+| API available                                 | ✅      | ✅      | ✅            | ✅        |
+| Reason (deep think, think before responding)  | ✅      | ❌      | ✅            | ✅        |
 
-ChatGPT has a [Download](https://openai.com/chatgpt/download/) page for mobile and desktop apps.
+Notes:
 
-To test search the web, you can ask for the weather (realtime info).
+- These are covering free tier features.
+- ChatGPT has a [Download](https://openai.com/chatgpt/download/) page for mobile and desktop apps.
+- ChatGPT can connect ot Google Drive and OneDrive with the "+" plus options. Gemini can pick up Google Drive automatically or you can use the "@" mention for Google Drive.
+- To test search the web, you can ask for the weather (realtime info).
 
 For plugins and extensions:
 
 - ChatGPT allows you to use GPTs published by others and to make your own (on premium).
-- Gemini allows you to interact with Google Drive, YouTube, and flight bookings.
+- Gemini allows you to interact with Google Drive, Google Maps, YouTube, flight bookings, and more.
 - Bing had plugins before like generating music but this seems to be removed.
