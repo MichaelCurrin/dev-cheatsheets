@@ -24,7 +24,7 @@ Last updated March 2025, here is what you can do on each platform on the **free 
 | Google Drive access                           | ✅      | ❌      | ✅            | ❌        |
 | Text-to-speech output                         | ✅      | ✅      | ✅            | ❌        |
 | Speech recognition                            | ✅      | ✅      | ✅            | ❌        |
-| Voice call mode                               | ✅      | ✅      | ❌ web ✅ desktop           | ❌        |
+| Voice call mode                               | ✅      | ✅      | ❌ web and ✅ desktop           | ❌        |
 | Reasoning (deep think, think before responding)  | ✅      | ❌      | ✅            | ✅        |
 | AI image generation                           | ✅      | ✅      | ✅            | ❌        |
 | Create artifacts (document or code as a file) | ✅      | ❌      | ✅            | ✅        |
