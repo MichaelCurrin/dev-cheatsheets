@@ -23,8 +23,8 @@ Last updated March 2025, here is what you can do on each platform on the **free 
 | Plugins and extensions                            | ✅      | ❌      | ✅            | ❌        |
 | Google Drive access                           | ✅      | ❌      | ✅            | ❌        |
 | Text-to-speech output                         | ✅      | ✅      | ✅            | ❌        |
-| Speech recognition                            | ✅      | ✅      | ✅            | ❌        |
-| Voice call mode                               | ✅      | ✅      | ❌ web and ✅ desktop           | ❌        |
+| Speech recognition                            | ✅      | ✅      | ✅            | ❌ web but ✅ mobile        |
+| Voice call mode                               | ✅      | ✅      | ❌ web but ✅ mobile           | ❌        |
 | Reasoning (deep think, think before responding)  | ✅      | ❌      | ✅            | ✅        |
 | AI image generation                           | ✅      | ✅      | ✅            | ❌        |
 | Create artifacts (document or code as a file) | ✅      | ❌      | ✅            | ✅        |
@@ -36,8 +36,8 @@ Notes:
 
 - The model used by Microsoft Copilot is built on GPT-4, according to the [Microsoft Copilot](https://en.wikipedia.org/wiki/Microsoft_Copilot) Wikipedia page.
 - ChatGPT seems to be the only one with a **desktop app**. See [Download](https://openai.com/chatgpt/download/) page.
-- Claude lacks speech recognition for the web app but the mobile app allows you to record a clip of text and send it.
-- Microsoft Copilot should not be confused with Microsoft 365 Copilot or GitHub Copilot or the VS Code Copilot Extension.
+- Claude lacks speech recognition for the web app, but the mobile app allows you to record a clip of text and send it.
+- Microsoft Copilot should not be confused with Microsoft 365 Copilot (formerly office) or GitHub Copilot or the VS Code Copilot Extension.
 
 ## Free tier limitations
 
@@ -47,7 +47,7 @@ Notes:
 
 ## Try out the features
 
-Prompts to get you started.
+How to use some of the features in the table above.
 
 ### Search the web
 
@@ -68,16 +68,12 @@ You can customize what the voice sounds like in the settings. ChatGPT so far is 
 ### AI image generation
 
 ```
-make an image of a sunny day in amsterdam, realistic
+make a cute lego model of Amsterdam at twilight. cinematic. realistic. soft focus bokeh
 ```
 
 ChatGPT result:
 
-<img width="425" alt="image" src="https://github.com/user-attachments/assets/3f1a3c2c-c472-491d-a396-f1546e8c2c82" />
-
-Gemini result:
-
-<img width="481" alt="image" src="https://github.com/user-attachments/assets/b162e089-c1d1-4474-a388-6b7ac7f6ff84" />
+<img width="408" alt="image" src="https://github.com/user-attachments/assets/3b13ed2a-a214-4616-a777-6fad0241966d" />
 
 You can follow up to refine the image. e.g.
 
@@ -85,15 +81,17 @@ You can follow up to refine the image. e.g.
 make it nighttime
 ```
 
-## Plugins and extensions
+### Plugins and extensions
 
 ChatGPT allows you to use GPTs published by others and to make your own (on premium).
 
+<img width="255" alt="image" src="https://github.com/user-attachments/assets/a3fcb3cd-72e2-4783-b0ee-b380b8c718a6" />
+
 Gemini allows you to interact with Google Drive, Google Maps, YouTube, flight bookings, and more.
 
-## Google Drive access
+<img width="228" alt="image" src="https://github.com/user-attachments/assets/40d1e1d8-bed3-4b28-8961-6f65790c4648" />
 
-How to access storage.
+### Google Drive access
 
 ChatGPT can connect to Google Drive and OneDrive with the "+" plus options.
 
@@ -121,11 +119,12 @@ make a graph of compound growth
 
 <img width="840" alt="image" src="https://github.com/user-attachments/assets/a3fab692-3816-46f7-a692-c1b454849ccc" />
 
-
 <img width="838" alt="image" src="https://github.com/user-attachments/assets/38ba0e7b-03c9-4a68-b498-962b33a42287" />
 
 
-## Memory about you
+### Memory about you
+
+_Be careful about sharing **private or sensitive info** in the chats. Chats can be used for training of models and also for human review in the case of Gemini. You can use the "Temporary chat", turn off "Memory", or opt for paid subscription approaches, but there's still a possibility that the companies will store data about you._
 
 Given an instruction like: "Always give me vegetarian or pescatarian recipes.".
 
