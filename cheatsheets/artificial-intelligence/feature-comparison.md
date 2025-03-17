@@ -1,5 +1,6 @@
 # Feature comparison
 
+A comparison of popular LLM tools and what their capabilities are, so you can pick one or more for your needs. Only the generic tools are covered here, not specialized tools like the AI coding assistants.
 
 ## Links
 
