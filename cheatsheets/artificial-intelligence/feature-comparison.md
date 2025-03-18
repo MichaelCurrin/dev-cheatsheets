@@ -1,43 +1,47 @@
 # Feature comparison
 
-A comparison of popular LLM tools and what their capabilities are, so you can pick one or more for your needs. Only the generic tools are covered here, not specialized tools like the AI coding assistants.
+A comparison of popular LLM tools and what their capabilities are, so you can pick one or more tools for your needs. Only the generic tools are covered here, not specialized tools like the AI coding assistants.
 
-## Links
+## Links to services
 
 - [ChatGPT](https://chatgpt.com/) by OpenAI.
-- [Microsoft Copilot](https://copilot.microsoft) or Copilot sidebar in Edge browser or [Azure AI](https://azure.microsoft.com/en-us/solutions/ai/) for API. Previously named _Bing Chat_.
-- [Gemini](http://gemini.google.com/) by Google. Previously named "Google Bard".
+- [Microsoft Copilot](https://copilot.microsoft). Previously named _Bing Chat_. 
+- [Gemini](http://gemini.google.com/) by Google. Previously named _Google Bard_.
 - [Claude](https://claude.ai/) by Anthropic.
+
+MS Copilot should not be confused with Microsoft 365 Copilot (formerly office) or Microsoft's coding AIs such as [GitHub Copilot](https://github.com/features/copilot) or the [VS Code Copilot](https://code.visualstudio.com/docs/copilot/overview) extension. MS Copilot can also be accessed via the Copilot sidebar in [MS Edge](https://www.microsoft.com/en-us/edge/download) browser.
+
 
 ## Features
 
 Last updated March 2025, here is what you can do on each platform on the **free tier**.
 
-| Functionality                                 | ChatGPT | Copilot | Google Gemini | Claude    |
-| --------------------------------------------- | :-----: | :-----: | :-----------: | :-------: |
-| Model used                                    | GPT-4o  | Microsoft Prometheus    | Gemini 2.0    | Claude3.7 |
-| Mobile app available                          | ✅      | ✅      | ✅            | ✅        |
-| API available                                 | ✅      | ✅      | ✅            | ✅        |
-| Search the web                                | ✅      | ✅      | ✅            | ❌        |
-| File upload                                   | ✅      | ✅      | ✅            | ✅        |
-| Plugins and extensions                            | ✅      | ❌      | ✅            | ❌        |
-| Google Drive access                           | ✅      | ❌      | ✅            | ❌        |
-| Text-to-speech output                         | ✅      | ✅      | ✅            | ❌        |
-| Speech recognition                            | ✅      | ✅      | ✅            | ❌ web but ✅ mobile        |
-| Voice call mode                               | ✅      | ✅      | ❌ web but ✅ mobile           | ❌        |
-| Reasoning (deep think, think before responding)  | ✅      | ❌      | ✅            | ✅        |
-| AI image generation                           | ✅      | ✅      | ✅            | ❌        |
-| Create artifacts (document or code as a file) | ✅      | ❌      | ✅            | ✅        |
-| Live app preview (HTML page in sidepanel)     | ❌      | ❌      | ❌            | ✅        |
-| Dataviz (inline graphs using Python code)     | ❌      | ❌      | ✅            | ❌        |
-| Memory about you                              | ✅      | ❌      | ✅            | ❌        |
+| Functionality                                        | ChatGPT |       Copilot        |   Google Gemini   |      Claude       |
+| ---------------------------------------------------- | :-----: | :------------------: | :---------------: | :---------------: |
+| Model used                                           | GPT-4o  | Microsoft Prometheus |    Gemini 2.0     |     Claude3.7     |
+| Mobile app available                                 |   ✅    |          ✅          |        ✅         |        ✅         |
+| API available                                        |   ✅    |          ✅          |        ✅         |        ✅         |
+| Search the web                                       |   ✅    |          ✅          |        ✅         |        ❌         |
+| File upload                                          |   ✅    |          ✅          |        ✅         |        ✅         |
+| Plugins or extensions                                |   ✅    |          ❌          |        ✅         |        ❌         |
+| Google Drive access                                  |   ✅    |          ❌          |        ✅         |        ❌         |
+| Text-to-speech output                                |   ✅    |          ✅          |        ✅         |        ❌         |
+| Speech recognition                                   |   ✅    |          ✅          |        ✅         | ❌ web, ✅ mobile |
+| Voice call mode                                      |   ✅    |          ✅          | ❌ web, ✅ mobile |        ❌         |
+| Reasoning (deep think, think before responding)      |   ✅    |          ❌          |        ✅         |        ✅         |
+| Generate images with AI                              |   ✅    |          ✅          |        ✅         |        ❌         |
+| Create artifacts (output document or code as a file) |   ✅    |          ❌          |        ✅         |        ✅         |
+| Live app preview (HTML page in sidepanel)            |   ❌    |          ❌          |        ❌         |        ✅         |
+| Dataviz (inline graphs using Python code)            |   ❌    |          ❌          |        ✅         |        ❌         |
+| Memory about you                                     |   ✅    |          ❌          |        ✅         |        ❌         |
 
 Notes:
 
-- The model used by Microsoft Copilot is built on GPT-4, according to the [Microsoft Copilot](https://en.wikipedia.org/wiki/Microsoft_Copilot) Wikipedia page.
 - ChatGPT seems to be the only one with a **desktop app**. See [Download](https://openai.com/chatgpt/download/) page.
-- Claude lacks speech recognition for the web app, but the mobile app allows you to record a clip of text and send it.
-- Microsoft Copilot should not be confused with Microsoft 365 Copilot (formerly office) or GitHub Copilot or the VS Code Copilot Extension.
+- Google also has [Google AI Studio](https://aistudio.google.com). That is built on Gemini but has a realtime stream mode so you can share your screen or webcam contiously and use voice mode or text to interact with the AI.
+- Claude has no speech recognition for the web app, but the mobile app allows you to record text from a voice clip and send it.
+- The model used by MS Copilot is built on GPT-4, according to the [Microsoft Copilot](https://en.wikipedia.org/wiki/Microsoft_Copilot) Wikipedia page.
+- Microsoft provides access via API or for an enterprise subscription - see [Azure AI](https://azure.microsoft.com/en-us/solutions/ai/).
 
 ## Free tier limitations
 
@@ -81,7 +85,7 @@ You can follow up to refine the image. e.g.
 make it nighttime
 ```
 
-### Plugins and extensions
+### Plugins or extensions
 
 ChatGPT allows you to use GPTs published by others and to make your own (on premium).
 
@@ -93,7 +97,9 @@ Gemini allows you to interact with Google Drive, Google Maps, YouTube, flight bo
 
 ### Google Drive access
 
-ChatGPT can connect to Google Drive and OneDrive with the "+" plus options.
+Search and ask questions about your Google Drive documents.
+
+ChatGPT can connect to Google Drive like this:
 
 <img width="369" alt="image" src="https://github.com/user-attachments/assets/2f785222-6fbf-42bd-a58d-25f848d1ee78" />
 
@@ -136,4 +142,4 @@ For ChatGPT:
 
 <img width="821" alt="image" src="https://github.com/user-attachments/assets/aa14e6f9-9ab7-4412-8199-95ff0b7736c4" />
 
-For ChatGPT, you can also go into Setitngs and Personalisation to give instructions. That is also where you can clear memories it has about you - sometimes you don't intend for ChatGPT to add something to the memory such as if you are looking for something on behalf of a friend.
+For ChatGPT, you can also go into Settings then Personalisation to write instructions and info about yourself. That is also where you can _clear_ memories it has about you which are not accurate or useful.
