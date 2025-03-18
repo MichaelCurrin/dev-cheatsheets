@@ -49,6 +49,7 @@ Last updated March 2025, here is what you can do on each platform on the **free 
 
 Notes:
 
+- I wrote a [post](https://michaelcurrin.github.io/coding-blog/2023/10/28/ai-tools.html) in 2023 with a table like the above. It's impressive how far these have come, in particular ChatGPT was behind Gemini in a few features and has caught up.
 - ChatGPT seems to be the only one with a **desktop app**. See [Download](https://openai.com/chatgpt/download/) page.
 - Google also has [Google AI Studio](https://aistudio.google.com). That is built on Gemini but has a realtime stream mode so you can share your screen or webcam contiously and use voice mode or text to interact with the AI.
 - Claude has no speech recognition for the web app, but the mobile app allows you to record text from a voice clip and send it.
