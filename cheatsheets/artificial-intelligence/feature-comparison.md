@@ -2,6 +2,18 @@
 
 A comparison of popular GenAI tools and what their capabilities are, so you can pick one or more tools for your needs. Only the generic tools are covered here, not specialized tools like the AI coding assistants.
 
+- [Links to services](#links-to-services)
+- [Features](#features)
+- [Free tier limitations](#free-tier-limitations)
+- [Try out the features](#try-out-the-features)
+    - [Search the web](#search-the-web)
+    - [Voice call mode](#voice-call-mode)
+    - [AI image generation](#ai-image-generation)
+    - [Plugins or extensions](#plugins-or-extensions)
+    - [Google Drive access](#google-drive-access)
+    - [Dataviz](#dataviz)
+    - [Memory about you](#memory-about-you)
+
 ## Links to services
 
 - [ChatGPT](https://chatgpt.com/) by OpenAI.
