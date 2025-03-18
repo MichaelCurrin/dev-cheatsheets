@@ -18,8 +18,10 @@ You can choose between plenty of free generative AI tools for completing tasks. 
 
 ## Links to services
 
+Here are the 4 platforms I'm comparing on this page and links where you access them.
+
 - [ChatGPT](https://chatgpt.com/) by OpenAI. Or [Download](https://openai.com/chatgpt/download/) the desktop app.
-- [Microsoft Copilot](https://copilot.microsoft). Previously named _Bing Chat_. 
+- [Microsoft Copilot](https://copilot.microsoft). Previously named _Bing Chat_. Or [Download for macOS](https://apps.apple.com/ca/app/microsoft-copilot/id6738511300?mt=12) desktop.
 - [Gemini](http://gemini.google.com/) by Google. Previously named _Google Bard_.
 - [Claude](https://claude.ai/) by Anthropic.
 
@@ -48,7 +50,11 @@ Last updated March 2025, here is what you can do on each platform on the **free 
 | Dataviz (inline graphs using Python code)            |   ❌    |          ❌          |        ✅         |        ❌         |
 | Memory about you                                     |   ✅    |          ❌          |        ✅         |        ❌         |
 
-ChatGPT and Gemini both have the most features on this list, so I'd say use one of those. If you voice call mode on the web, ChatGPT is better. If you want inline Python charts, Gemini has the edge there.
+ChatGPT and Gemini have the most complete set of features on this list and have generous free tiers, so I'd say use one of those as a start. But you might find it worthwhile to try out the other platforms either to switch to them or just to use them when you need that feature.
+
+If you specifically want to do voice call mode on your PC, Gemini is not an option so you'll have to use ChatGPT or Copilot. 
+
+If you want to create and see data visualizations using Python and see the code too, Gemini has the edge there.
 
 See [Try out the features](#try-out-the-features) below for more details on what these features do and how to access them.
 
@@ -62,9 +68,11 @@ See [Try out the features](#try-out-the-features) below for more details on what
 
 ### Free tier limitations
 
-- For ChatGPT it will switch to _GTP-4o mini_ after limited _GPT-4o_ interactions.
+- For ChatGPT it will switch to _GTP-4o mini_ after a limited number of _GPT-4o_ interactions.
+- I don't know limits of MS Copilot but here are benefits of subscribing based on their [blog post](https://www.microsoft.com/en-us/microsoft-copilot/blog/2025/02/25/announcing-free-unlimited-access-to-think-deeper-and-voice/?msockid=32f0212a57186508386734be565264d7):
+    > Copilot Pro users will retain preferred access to our latest models during peak usage, early access to experimental AI features (more on that coming soon), and additional use of Copilot in select Microsoft 365 apps like Word, Excel and PowerPoint.
+- Gemini seems to do well on the free tier, I don't know if it switches to another model after so many messages. Gemini lets you upgrade to Gemini Advanced to get more features and models.
 - Claude stops working completely for a few hours after a few messages. And lists "extended thinking" as a pro feature only.
-- Gemini lets you upgrade to get more advanced features and models.
 
 ## Try out the features
 
