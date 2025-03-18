@@ -18,7 +18,7 @@ You can choose between plenty of free generative AI tools for completing tasks. 
 
 ## Links to services
 
-- [ChatGPT](https://chatgpt.com/) by OpenAI. Or [Download](https://openai.com/chatgpt/download/) for desktop app.
+- [ChatGPT](https://chatgpt.com/) by OpenAI. Or [Download](https://openai.com/chatgpt/download/) the desktop app.
 - [Microsoft Copilot](https://copilot.microsoft). Previously named _Bing Chat_. 
 - [Gemini](http://gemini.google.com/) by Google. Previously named _Google Bard_.
 - [Claude](https://claude.ai/) by Anthropic.
@@ -55,7 +55,6 @@ See [Try out the features](#try-out-the-features) below for more details on what
 ### Notes
 
 - I wrote a [post](https://michaelcurrin.github.io/coding-blog/2023/10/28/ai-tools.html) in 2023 with a table like the above. It's impressive how far these have come, in particular ChatGPT was behind Gemini in a few features and has caught up.
-- ChatGPT seems to be the only one with a **desktop app**. See page.
 - Google also has [Google AI Studio](https://aistudio.google.com). That is built on Gemini but has a realtime stream mode so you can share your screen or webcam continuously. You use voice mode or text to interact with the AI (unlike in plain Gemini web app which lacks voice mode).
 - Claude has no speech recognition for the web app, but the mobile app allows you to record text from a voice clip and send it.
 - The model used by MS Copilot is built on GPT-4, according to the [Microsoft Copilot](https://en.wikipedia.org/wiki/Microsoft_Copilot) Wikipedia page.
