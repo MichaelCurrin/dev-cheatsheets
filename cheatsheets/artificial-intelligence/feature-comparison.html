@@ -157,12 +157,16 @@
 
     <div class="post-content">
         
-            <p>A comparison of the top 4 general-purpose GenAI platforms, covering the capabilities of each so can pick one for your needs.</p>
+            <p>You can choose between plenty of free generative AI tools for completing tasks. But which one has the most complete features when it comes to interacting with voice, accessing documents, or doing internet research? Which ones are strong on generating files and graphs as output?</p>
 
 <ul>
   <li><a href="#links-to-services">Links to services</a></li>
-  <li><a href="#features">Features</a></li>
-  <li><a href="#free-tier-limitations">Free tier limitations</a></li>
+  <li><a href="#features">Features</a>
+    <ul>
+      <li><a href="#notes">Notes</a></li>
+      <li><a href="#free-tier-limitations">Free tier limitations</a></li>
+    </ul>
+  </li>
   <li><a href="#try-out-the-features">Try out the features</a>
     <ul>
       <li><a href="#search-the-web">Search the web</a></li>
@@ -174,12 +178,13 @@
       <li><a href="#memory-about-you">Memory about you</a></li>
     </ul>
   </li>
+  <li><a href="#privacy-warning">Privacy warning</a></li>
 </ul>
 
 <h2 id="links-to-services">Links to services</h2>
 
 <ul>
-  <li><a href="https://chatgpt.com/">ChatGPT</a> by OpenAI.</li>
+  <li><a href="https://chatgpt.com/">ChatGPT</a> by OpenAI. Or <a href="https://openai.com/chatgpt/download/">Download</a> for desktop app.</li>
   <li><a href="https://copilot.microsoft">Microsoft Copilot</a>. Previously named <em>Bing Chat</em>.</li>
   <li><a href="http://gemini.google.com/">Gemini</a> by Google. Previously named <em>Google Bard</em>.</li>
   <li><a href="https://claude.ai/">Claude</a> by Anthropic.</li>
@@ -317,18 +322,22 @@
   </tbody>
 </table>
 
-<p>Notes:</p>
+<p>ChatGPT and Gemini both have the most features on this list, so I’d say use one of those. If you voice call mode on the web, ChatGPT is better. If you want inline Python charts, Gemini has the edge there.</p>
+
+<p>See <a href="#try-out-the-features">Try out the features</a> below for more details on what these features do and how to access them.</p>
+
+<h3 id="notes">Notes</h3>
 
 <ul>
   <li>I wrote a <a href="https://michaelcurrin.github.io/coding-blog/2023/10/28/ai-tools.html">post</a> in 2023 with a table like the above. It’s impressive how far these have come, in particular ChatGPT was behind Gemini in a few features and has caught up.</li>
-  <li>ChatGPT seems to be the only one with a <strong>desktop app</strong>. See <a href="https://openai.com/chatgpt/download/">Download</a> page.</li>
-  <li>Google also has <a href="https://aistudio.google.com">Google AI Studio</a>. That is built on Gemini but has a realtime stream mode so you can share your screen or webcam contiously and use voice mode or text to interact with the AI.</li>
+  <li>ChatGPT seems to be the only one with a <strong>desktop app</strong>. See page.</li>
+  <li>Google also has <a href="https://aistudio.google.com">Google AI Studio</a>. That is built on Gemini but has a realtime stream mode so you can share your screen or webcam continuously. You use voice mode or text to interact with the AI (unlike in plain Gemini web app which lacks voice mode).</li>
   <li>Claude has no speech recognition for the web app, but the mobile app allows you to record text from a voice clip and send it.</li>
   <li>The model used by MS Copilot is built on GPT-4, according to the <a href="https://en.wikipedia.org/wiki/Microsoft_Copilot">Microsoft Copilot</a> Wikipedia page.</li>
   <li>Microsoft provides access via API or for an enterprise subscription - see <a href="https://azure.microsoft.com/en-us/solutions/ai/">Azure AI</a>.</li>
 </ul>
 
-<h2 id="free-tier-limitations">Free tier limitations</h2>
+<h3 id="free-tier-limitations">Free tier limitations</h3>
 
 <ul>
   <li>For ChatGPT it will switch to <em>GTP-4o mini</em> after limited <em>GPT-4o</em> interactions.</li>
@@ -353,7 +362,9 @@
 
 <p><img width="150" alt="image" src="https://github.com/user-attachments/assets/fef4c848-80da-4666-93e4-ce57363a47d4" /></p>
 
-<p>You can customize what the voice sounds like in the settings. ChatGPT so far is all American and Gemini all British. They also have multilingual support in voice mode, if you want to try asking for tips on learning a language or just start a conversation in another language.</p>
+<p>You can customize what the voice sounds like in the settings. ChatGPT so far is all American and Gemini is all British. They also have multilingual support in voice mode, if you want to try asking for tips on learning a language or just start a conversation in another language.</p>
+
+<p>I found Copilot worked great on Chrome but gave an error everytime I started voice mode on Firefox.</p>
 
 <h3 id="ai-image-generation">AI image generation</h3>
 
@@ -391,6 +402,8 @@
 
 <p><img width="251" alt="image" src="https://github.com/user-attachments/assets/fabfd595-b510-4f59-8267-18631fc7f977" /></p>
 
+<p>Which one to use? You could use ChatGPT, but your data is going outside of Google for OpenAI to use, so be aware of that risk (such as if OpenAI abuses your data or gets hacked). I consider Gemini safer since it is part of Google already. In both cases, still be careful about discussing any sensitive documents as per <a href="#privacy-warning">Privacy warning</a>.</p>
+
 <h3 id="dataviz">Dataviz</h3>
 
 <p>From Gemini:</p>
@@ -411,8 +424,6 @@
 
 <h3 id="memory-about-you">Memory about you</h3>
 
-<p><em>Be careful about sharing <strong>private or sensitive info</strong> in the chats. Chats can be used for training of models and also for human review in the case of Gemini. You can use the “Temporary chat”, turn off “Memory”, or opt for paid subscription approaches, but there’s still a possibility that the companies will store data about you.</em></p>
-
 <p>Given an instruction like: “Always give me vegetarian or pescatarian recipes.”.</p>
 
 <p>For Gemini:</p>
@@ -424,6 +435,16 @@
 <p><img width="821" alt="image" src="https://github.com/user-attachments/assets/aa14e6f9-9ab7-4412-8199-95ff0b7736c4" /></p>
 
 <p>For ChatGPT, you can also go into Settings then Personalisation to write instructions and info about yourself. That is also where you can <em>clear</em> memories it has about you which are not accurate or useful.</p>
+
+<h2 id="privacy-warning">Privacy warning</h2>
+
+<p>This goes for the memory feature but also general cahts.</p>
+
+<p>Be careful about sharing <strong>private or sensitive info</strong> in the chats.</p>
+
+<p>Chats can be used for training of models and also for <strong>human review</strong> in the case of Gemini.</p>
+
+<p>You can use the “Temporary chat”, turn off “Memory”, or opt for paid subscription approaches, but there’s still a possibility that the companies will store data about you.</p>
 
         
     </div>
