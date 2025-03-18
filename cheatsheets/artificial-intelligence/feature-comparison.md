@@ -1,6 +1,6 @@
 # Feature comparison
 
-A comparison of popular GenAI tools and what their capabilities are, so you can pick one or more tools for your needs. Only the generic tools are covered here, not specialized tools like the AI coding assistants.
+A comparison of the top 4 general-purpose GenAI platforms, covering the capabilities of each so can pick one for your needs.
 
 - [Links to services](#links-to-services)
 - [Features](#features)
