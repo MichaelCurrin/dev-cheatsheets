@@ -45,16 +45,16 @@ Last updated March 2025, here is what you can do on each platform on the **free 
 | Voice call mode                                      |   ✅    |          ✅          | ❌ web, ✅ mobile |        ❌         |
 | Reasoning (deep think, think before responding)      |   ✅    |          ❌          |        ✅         |        ✅         |
 | Generate images with AI                              |   ✅    |          ✅          |        ✅         |        ❌         |
-| Create artifacts (output document or code as a file) |   ✅    |          ❌          |        ✅         |        ✅         |
+| Canvas/artifacts (output document or code as a file) |   ✅    |          ❌          |        ✅         |        ✅         |
 | Live app preview (HTML page in sidepanel)            |   ❌    |          ❌          |        ❌         |        ✅         |
 | Dataviz (inline graphs using Python code)            |   ❌    |          ❌          |        ✅         |        ❌         |
 | Memory about you                                     |   ✅    |          ❌          |        ✅         |        ❌         |
 
 ChatGPT and Gemini have the most complete set of features on this list and have generous free tiers, so I'd say use one of those as a start. But you might find it worthwhile to try out the other platforms either to switch to them or just to use them when you need that feature.
 
-If you specifically want to do voice call mode on your PC, Gemini is not an option so you'll have to use ChatGPT or Copilot. 
+If you want to do voice call mode on specifically your PC, Gemini is not an option so you'll have to use ChatGPT or Copilot. 
 
-If you want to create and see data visualizations using Python and see the code too, Gemini has the edge there.
+If you want to create and see data visualizations using Python, Gemini is the only one to use. This is great if combined with scraping data such as population or inflation figures.
 
 See [Try out the features](#try-out-the-features) below for more details on what these features do and how to access them.
 
