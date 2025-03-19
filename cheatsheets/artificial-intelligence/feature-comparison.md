@@ -47,14 +47,10 @@ Last updated March 2025, here is what you can do on each platform on the **free 
 | Generate images with AI                              |   ✅    |          ✅          |        ✅         |        ❌         |
 | Canvas/artifacts (output document or code as a file) |   ✅    |          ❌          |        ✅         |        ✅         |
 | Live app preview (HTML page in sidepanel)            |   ❌    |          ❌          |        ❌         |        ✅         |
-| Dataviz (inline graphs using Python code)            |   ❌    |          ❌          |        ✅         |        ❌         |
+| Dataviz (inline graphs using Python code)            |   ✅    |          ❌          |        ✅         |        ❌         |
 | Memory about you                                     |   ✅    |          ❌          |        ✅         |        ❌         |
 
 ChatGPT and Gemini have the most complete set of features on this list and have generous free tiers, so I'd say use one of those as a start. But you might find it worthwhile to try out the other platforms either to switch to them or just to use them when you need that feature.
-
-If you want to do voice call mode on specifically your PC, Gemini is not an option so you'll have to use ChatGPT or Copilot. 
-
-If you want to create and see data visualizations using Python, Gemini is the only one to use. This is great if combined with scraping data such as population or inflation figures.
 
 See [Try out the features](#try-out-the-features) below for more details on what these features do and how to access them.
 
@@ -148,6 +144,14 @@ get euro vs dollar exchange rate for 2000 to 2025 and graph it.
 
 <img width="820" alt="image" src="https://github.com/user-attachments/assets/dad1d2fd-bbbe-461e-8edd-97100ad5a28d" />
 
+For ChatGPT, it took a follow-up prompt to get it graphed:
+
+```
+graph this data with python
+```
+
+<img width="787" alt="image" src="https://github.com/user-attachments/assets/79c1d22e-4905-4ef2-8c5e-4da5e4fb15f2" />
+
 Claude can't make Python graphs inline but it can use React to make a graph in the sidepanel.
 
 ```
@@ -155,6 +159,8 @@ make a graph of compound growth
 ```
 
 <img width="840" alt="image" src="https://github.com/user-attachments/assets/a3fab692-3816-46f7-a692-c1b454849ccc" />
+
+The React code:
 
 <img width="838" alt="image" src="https://github.com/user-attachments/assets/38ba0e7b-03c9-4a68-b498-962b33a42287" />
 
