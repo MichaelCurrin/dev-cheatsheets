@@ -2,6 +2,12 @@
 
 You can choose between plenty of free generative AI tools for completing tasks. But which one has the most complete features when it comes to interacting with voice, accessing documents, or doing internet research? Which ones are strong on generating files and graphs as output?
 
+<!-- 
+Related pages
+- https://dev.to/michaelcurrin/feature-comparison-of-popular-genaillm-platforms-2jai 
+- https://github.com/MichaelCurrin/coding-blog/blob/master/_posts/2025-03-18-features-of-popular-geni-platforms-in-2025.md 
+-->
+
 - [Links to services](#links-to-services)
 - [Features](#features)
     - [Notes](#notes)
