@@ -147,7 +147,6 @@ In ChatGPT, after adding a follow-up prompt "add labels for inputs".
 
 Click on the code block to expand it:
 
-
 <img width="798" alt="image" src="https://github.com/user-attachments/assets/3b063fc5-2636-4be7-b3a7-1f6cd62eaa0d" />
 
 Then click Preview.
@@ -177,13 +176,24 @@ get euro vs dollar exchange rate for 2000 to 2025 and graph it.
 
 <img width="820" alt="image" src="https://github.com/user-attachments/assets/dad1d2fd-bbbe-461e-8edd-97100ad5a28d" />
 
-For ChatGPT, it took a follow-up prompt to get it graphed:
+For ChatGPT, it took a follow-up prompt to get the table output as a graph:
 
 ```
 graph this data with python
 ```
 
 <img width="787" alt="image" src="https://github.com/user-attachments/assets/79c1d22e-4905-4ef2-8c5e-4da5e4fb15f2" />
+
+I had to ask for the code directly.
+
+```
+give me the code
+```
+
+Alternativly you can update _Settings_ to always output code.
+
+<img width="491" alt="image" src="https://github.com/user-attachments/assets/e6e00f88-ebfa-41fb-9768-82e24c285216" />
+
 
 ### Memory about you
 
