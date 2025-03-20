@@ -12,6 +12,7 @@ You can choose between plenty of free generative AI tools for completing tasks. 
     - [AI image generation](#ai-image-generation)
     - [Plugins or extensions](#plugins-or-extensions)
     - [Google Drive access](#google-drive-access)
+    - [Live app preview](#live-app-preview)
     - [Dataviz](#dataviz)
     - [Memory about you](#memory-about-you)
 - [Privacy warning](#privacy-warning)
@@ -46,7 +47,7 @@ Last updated March 2025, here is what you can do on each platform on the **free 
 | Reasoning (deep think, think before responding)      |   ✅    |          ❌          |        ✅         |        ✅         |
 | Generate images with AI                              |   ✅    |          ✅          |        ✅         |        ❌         |
 | Canvas/artifacts (output document or code as a file) |   ✅    |          ❌          |        ✅         |        ✅         |
-| Live app preview (HTML page in sidepanel)            |   ❌    |          ❌          |        ❌         |        ✅         |
+| Live app preview (HTML page in sidepanel)            |   ✅    |          ❌          |        ❌         |        ✅         |
 | Dataviz (inline graphs using Python code)            |   ✅    |          ❌          |        ✅         |        ❌         |
 | Memory about you                                     |   ✅    |          ❌          |        ✅         |        ❌         |
 
@@ -134,6 +135,38 @@ Gemini can pick up Google Drive automatically or you can use the "@" mention for
 
 Which one to use? You could use ChatGPT, but your data is going outside of Google for OpenAI to use, so be aware of that risk (such as if OpenAI abuses your data or gets hacked). I consider Gemini safer since it is part of Google already. In both cases, still be careful about discussing any sensitive documents as per [Privacy warning](#privacy-warning).
 
+### Live app preview
+
+Make websites and graphs using React or HTML/CSS/JS.
+
+```
+make a graph of compound growth
+```
+
+In ChatGPT, after adding a follow-up prompt "add labels for inputs".
+
+Click on the code block to expand it:
+
+
+<img width="798" alt="image" src="https://github.com/user-attachments/assets/3b063fc5-2636-4be7-b3a7-1f6cd62eaa0d" />
+
+Then click Preview.
+
+
+<img width="373" alt="image" src="https://github.com/user-attachments/assets/9664d1f6-0e09-4419-b1b7-7a955669b300" />
+
+
+<img width="820" alt="image" src="https://github.com/user-attachments/assets/061f5a49-bc4d-4a1d-a9d6-357c8a390158" />
+
+
+In Claude:
+
+<img width="838" alt="image" src="https://github.com/user-attachments/assets/38ba0e7b-03c9-4a68-b498-962b33a42287" />
+
+<img width="840" alt="image" src="https://github.com/user-attachments/assets/a3fab692-3816-46f7-a692-c1b454849ccc" />
+
+
+
 ### Dataviz
 
 From Gemini:
@@ -151,18 +184,6 @@ graph this data with python
 ```
 
 <img width="787" alt="image" src="https://github.com/user-attachments/assets/79c1d22e-4905-4ef2-8c5e-4da5e4fb15f2" />
-
-Claude can't make Python graphs inline but it can use React to make a graph in the sidepanel.
-
-```
-make a graph of compound growth
-```
-
-<img width="840" alt="image" src="https://github.com/user-attachments/assets/a3fab692-3816-46f7-a692-c1b454849ccc" />
-
-The React code:
-
-<img width="838" alt="image" src="https://github.com/user-attachments/assets/38ba0e7b-03c9-4a68-b498-962b33a42287" />
 
 ### Memory about you
 
