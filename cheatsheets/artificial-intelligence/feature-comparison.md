@@ -50,7 +50,7 @@ Last updated March 2025, here is what you can do on each platform on the **free 
 | Text-to-speech output                                |   ✅    |          ✅          |        ✅         |        ❌         |
 | Speech recognition                                   |   ✅    |          ✅          |        ✅         | ❌ web, ✅ mobile |
 | Voice call mode                                      |   ✅    |          ✅          | ❌ web, ✅ mobile |        ❌         |
-| Reasoning (deep think, think before responding)      |   ✅    |          ❌          |        ✅         |        ✅         |
+| Reasoning (deep think, think before responding)      |   ✅    |          ✅          |        ✅         |        ✅         |
 | Generate images with AI                              |   ✅    |          ✅          |        ✅         |        ❌         |
 | Canvas/artifacts (output document or code as a file) |   ✅    |          ❌          |        ✅         |        ✅         |
 | Live app preview (HTML page in sidepanel)            |   ✅    |          ❌          |        ❌         |        ✅         |
@@ -169,7 +169,6 @@ In Claude:
 <img width="838" alt="image" src="https://github.com/user-attachments/assets/38ba0e7b-03c9-4a68-b498-962b33a42287" />
 
 <img width="840" alt="image" src="https://github.com/user-attachments/assets/a3fab692-3816-46f7-a692-c1b454849ccc" />
-
 
 
 ### Dataviz
