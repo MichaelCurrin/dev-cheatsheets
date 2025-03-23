@@ -28,9 +28,9 @@ Related pages
 Here are the 4 platforms I'm comparing on this page and links where you access them.
 
 - [ChatGPT](https://chatgpt.com/) by OpenAI. Or [Download](https://openai.com/chatgpt/download/) the desktop app.
-- [Microsoft Copilot](https://copilot.microsoft). Previously named _Bing Chat_. Or [Download for macOS](https://apps.apple.com/ca/app/microsoft-copilot/id6738511300?mt=12) desktop.
+- [Microsoft Copilot](https://copilot.microsoft). Previously named _Bing Chat_. Or go to [Download for macOS](https://apps.apple.com/ca/app/microsoft-copilot/id6738511300?mt=12) or [Windows download](https://apps.microsoft.com/detail/9nht9rb2f4hd?hl=en-us&gl=US) for desktop.
 - [Gemini](http://gemini.google.com/) by Google. Previously named _Google Bard_.
-- [Claude](https://claude.ai/) by Anthropic.
+- [Claude](https://claude.ai/) by Anthropic. Or [Download](https://claude.ai/download) the desktop app.
 
 MS Copilot should not be confused with Microsoft 365 Copilot (formerly office) or Microsoft's coding AIs such as [GitHub Copilot](https://github.com/features/copilot) or the [VS Code Copilot](https://code.visualstudio.com/docs/copilot/overview) extension. MS Copilot can also be accessed via the Copilot sidebar in [MS Edge](https://www.microsoft.com/en-us/edge/download) browser.
 
