@@ -57,6 +57,8 @@ Put bold, headings, code, etc. in the blockquote.
 
 Admonition (guidance or warning) icons.
 
+Note these aren't supported in Jekyll at least without plugins, but you can see this page on GitHub [here](https://github.com/MichaelCurrin/dev-cheatsheets/blob/master/cheatsheets/markdown/blockquote.md#icons) to see it rendered with GitHub Flavored Markdown.
+
 ### Tip
 
 ```markdown
