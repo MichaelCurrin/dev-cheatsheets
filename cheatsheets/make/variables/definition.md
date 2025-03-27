@@ -22,15 +22,27 @@ You can define a value referencing another variable, including user input.
 
 ```mk
 FOO = abc
-BAR = $(FOO)
 ```
 
-Evaluating works above without colon unlike next section.
+Note lack of colon here. So expansion is deferred, such that `$(FOO)` is evaluated when `BAR` is used, rather than immediately. It reflects the latest value so can change.
+
+```mk
+BAR = $(FOO)
+```
 
 
 ## Evaluation
 
 Note colon and equals sign here.
+
+### Variable
+
+Simple expanded variable, evaluated immediately and fixed at definition time.
+
+```mk
+BAR := $(FOO)
+```
+
 
 ### shell
 
@@ -131,14 +143,19 @@ foo:
     echo $$ENV
 ```
 
-Using `export` _within_ a target does not work, as variables are not persisted between commands in a target.
+Using `export` _within_ a target does not work, as variables are _not_ persisted between commands in a target. So don't do this:
+
+```mk
+test:
+	export ENV=dev
+	bash -c 'echo $$ENV'
+```
 
 But you can use like this. Here we simulate a command using `ENV` by doing an `echo` inside a subshell.
 
 ```mk
 test:
 	ENV=dev bash -c 'echo $$ENV'
-
-    # More verbose.
-	@export ENV=dev && bash -c 'echo $$ENV'
+	# More verbose alternative.
+	export ENV=dev && bash -c 'echo $$ENV'
 ```

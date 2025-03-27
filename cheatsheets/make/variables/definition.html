@@ -190,14 +190,23 @@ JS_DIR = assets/js
 <p>You can define a value referencing another variable, including user input.</p>
 
 <pre><code class="language-mk">FOO = abc
-BAR = $(FOO)
 </code></pre>
 
-<p>Evaluating works above without colon unlike next section.</p>
+<p>Note lack of colon here. So expansion is deferred, such that <code class="language-plaintext highlighter-rouge">$(FOO)</code> is evaluated when <code class="language-plaintext highlighter-rouge">BAR</code> is used, rather than immediately. It reflects the latest value so can change.</p>
+
+<pre><code class="language-mk">BAR = $(FOO)
+</code></pre>
 
 <h2 id="evaluation">Evaluation</h2>
 
 <p>Note colon and equals sign here.</p>
+
+<h3 id="variable">Variable</h3>
+
+<p>Simple expanded variable, evaluated immediately and fixed at definition time.</p>
+
+<pre><code class="language-mk">BAR := $(FOO)
+</code></pre>
 
 <h3 id="shell">shell</h3>
 
@@ -289,15 +298,19 @@ foo:
     echo $$ENV
 </code></pre>
 
-<p>Using <code class="language-plaintext highlighter-rouge">export</code> <em>within</em> a target does not work, as variables are not persisted between commands in a target.</p>
+<p>Using <code class="language-plaintext highlighter-rouge">export</code> <em>within</em> a target does not work, as variables are <em>not</em> persisted between commands in a target. So don’t do this:</p>
+
+<pre><code class="language-mk">test:
+	export ENV=dev
+	bash -c 'echo $$ENV'
+</code></pre>
 
 <p>But you can use like this. Here we simulate a command using <code class="language-plaintext highlighter-rouge">ENV</code> by doing an <code class="language-plaintext highlighter-rouge">echo</code> inside a subshell.</p>
 
 <pre><code class="language-mk">test:
 	ENV=dev bash -c 'echo $$ENV'
-
-    # More verbose.
-	@export ENV=dev &amp;&amp; bash -c 'echo $$ENV'
+	# More verbose alternative.
+	export ENV=dev &amp;&amp; bash -c 'echo $$ENV'
 </code></pre>
 
         
