@@ -242,6 +242,51 @@
     <span class="n">asyncio</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="nf">main</span><span class="p">())</span>
 </code></pre></div></div>
 
+<h2 id="subcommands">Subcommands</h2>
+
+<p>Create a group called <code class="language-plaintext highlighter-rouge">cli</code> and add commands to using <code class="language-plaintext highlighter-rouge">cli.command()</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">click</span>
+
+
+<span class="nd">@click.group</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">cli</span><span class="p">():</span>
+    <span class="sh">"""</span><span class="s">A simple CLI example with subcommands.</span><span class="sh">"""</span>
+    <span class="k">pass</span>
+
+
+<span class="nd">@cli.command</span><span class="p">()</span>
+<span class="nd">@click.option</span><span class="p">(</span><span class="sh">"</span><span class="s">--name</span><span class="sh">"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="sh">"</span><span class="s">World</span><span class="sh">"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="sh">"</span><span class="s">The person to greet.</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">Greets a person.</span><span class="sh">"""</span>
+    <span class="n">click</span><span class="p">.</span><span class="nf">echo</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">!</span><span class="sh">"</span><span class="p">)</span>
+
+
+<span class="nd">@cli.command</span><span class="p">()</span>
+<span class="nd">@click.argument</span><span class="p">(</span><span class="sh">"</span><span class="s">count</span><span class="sh">"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">Counts up to a specified number.</span><span class="sh">"""</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">click</span><span class="p">.</span><span class="nf">echo</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+    <span class="nf">cli</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span>main.py
+<span class="go">Usage: main.py [OPTIONS] COMMAND [ARGS]...
+
+  A simple CLI example with subcommands.
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  count  Counts up to a specified number.
+  greet  Greets a person.
+</span></code></pre></div></div>
+
         
     </div>
 </article>
