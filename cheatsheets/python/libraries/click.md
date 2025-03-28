@@ -75,3 +75,52 @@ async def main(prompt: str) -> None:
 if __name__ == "__main__":
     asyncio.run(main())
 ```
+
+
+## Subcommands
+
+Create a group called `cli` and add commands to using `cli.command()`.
+
+```python
+import click
+
+
+@click.group()
+def cli():
+    """A simple CLI example with subcommands."""
+    pass
+
+
+@cli.command()
+@click.option("--name", default="World", help="The person to greet.")
+def greet(name):
+    """Greets a person."""
+    click.echo(f"Hello, {name}!")
+
+
+@cli.command()
+@click.argument("count", type=int)
+def count(count):
+    """Counts up to a specified number."""
+    for i in range(1, count + 1):
+        click.echo(i)
+
+
+if __name__ == "__main__":
+    cli()
+```
+
+
+```console
+> main.py
+Usage: main.py [OPTIONS] COMMAND [ARGS]...
+
+  A simple CLI example with subcommands.
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  count  Counts up to a specified number.
+  greet  Greets a person.
+```
