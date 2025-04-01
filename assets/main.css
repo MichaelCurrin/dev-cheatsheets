@@ -118,7 +118,7 @@ a, .page-link.ext-link {
   text-decoration: none;
 }
 a:visited, .page-link.ext-link:visited {
-  color: rgb(11.380239521, 27.0958083832, 79.119760479);
+  color: #93187b;
 }
 a:hover, .page-link.ext-link:hover {
   color: #111;
