@@ -169,16 +169,22 @@
 
 <p>This can be used as a check used in other commands.</p>
 
-<p>Optionally use <code class="language-plaintext highlighter-rouge">@</code> to make it quiet.</p>
+<p>Optionally use <code class="language-plaintext highlighter-rouge">@</code> to make it quiet for Make output.</p>
 
 <div class="language-make highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">foo</span><span class="o">:</span>
 	<span class="p">@</span><span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="p">$(</span>FOO<span class="p">)</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="se">\</span>
-		<span class="nb">echo</span> <span class="s2">"FOO must be set. Use </span><span class="sb">`</span><span class="nb">export </span><span class="nv">FOO</span><span class="o">=</span>&lt;foo&gt;<span class="sb">`</span><span class="s2">"</span><span class="p">;</span> <span class="se">\</span>
+		<span class="nb">echo</span> <span class="s1">'Must set FOO'</span><span class="p">;</span> <span class="se">\</span>
 		<span class="nb">exit </span>1<span class="p">;</span> <span class="se">\</span>
 	<span class="k">fi</span>
 </code></pre></div></div>
 
+<p>Note that this is used <em>within</em> a target while using Make directives like <code class="language-plaintext highlighter-rouge">ifdef</code> are evaluated always even if a target is not triggered.</p>
+
+<p>Note using <code class="language-plaintext highlighter-rouge">$(error ...)</code> does not work within Bash <code class="language-plaintext highlighter-rouge">if</code> statement since it will always execute, so rather keep it all Bash or all Make.</p>
+
 <h2 id="one-line-if">One line if</h2>
+
+<p>Set a value based on whether another variable is set.</p>
 
 <pre><code class="language-mk">BUZZ := $(if $(FOO), 'abc', $(FIZZ))
 </code></pre>
@@ -226,14 +232,19 @@ endif
 
 </code></pre></div></div>
 
-<h2 id="if-value-defined">If value defined</h2>
+<h2 id="if-value-not-defined">If value not defined</h2>
+
+<pre><code class="language-mk">FOO ?= abc
+</code></pre>
+
+<p>This is equivalent to this:</p>
 
 <pre><code class="language-mk">ifndef FOO
 	FOO = abc
 endif
 </code></pre>
 
-<p>Sample from Git’s Makefile.</p>
+<p>Sample from Git’s Makefile using <code class="language-plaintext highlighter-rouge">ifndef</code>, though perhaps using <code class="language-plaintext highlighter-rouge">?=</code> approach is equivalent but lighter to read.</p>
 
 <pre><code class="language-mk">ifndef SHELL_PATH
 	SHELL_PATH = /bin/sh
@@ -251,35 +262,52 @@ export PYTHON_PATH
 TEST_SHELL_PATH = $(SHELL_PATH)
 </code></pre>
 
-<p>Presumably these can be provided optionally by the user in the CLI.</p>
+<h2 id="error-on-values-not-set">Error on values not set</h2>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make <span class="nv">SHELL_PATH</span><span class="o">=</span>/bin/bash <span class="nb">install</span>
-</code></pre></div></div>
+<p>Abort if a value is not defined using <code class="language-plaintext highlighter-rouge">indef</code>.</p>
 
-<h2 id="error-on-value-not-defined">Error on value not defined</h2>
-
-<p>My own code to abort if a value is not defined:</p>
-
-<div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">.check-env</span><span class="o">:</span>
-<span class="k">ifndef</span> <span class="nv">DEPLOYMENT_ENVIRONMENT</span>
-	<span class="nb">echo</span> <span class="s2">"Must set DEPLOYMENT_ENVIRONMENT"</span>
-	<span class="nb">exit </span>1
+<div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ifndef</span> <span class="nv">DEPLOYMENT_ENVIRONMENT</span>
+    <span class="nl">@echo "DEPLOYMENT_ENVIRONMENT is set to</span><span class="o">:</span> <span class="nf">$(DEPLOYMENT_ENVIRONMENT)"</span>
+<span class="k">else</span>
+    <span class="nf">$(</span><span class="nb">error</span> DEPLOYMENT_ENVIRONMENT must be <span class="nb">set</span><span class="p">)</span>
 <span class="k">endif</span>
-	<span class="nb">echo</span> <span class="s2">"DEPLOYMENT_ENVIRONMENT: </span><span class="p">$(</span><span class="s2">DEPLOYMENT_ENVIRONMENT</span><span class="p">)</span><span class="s2">"</span>
 
-<span class="nl">deploy</span><span class="o">:</span> <span class="nf">.check-env</span>
-	<span class="c"># do stuff</span>
+<span class="nl">deploy</span><span class="o">:</span>
+	<span class="nb">echo</span> <span class="s1">'Deploying'</span>
 </code></pre></div></div>
 
-<p>Cause an error:</p>
+<p>Make sure the value is not empty, using <code class="language-plaintext highlighter-rouge">ifneq</code>.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make .check-env
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Make sure it is always defined but default to empty value.
+DEPLOYMENT_ENVIRONMENT ?=
+
+ifneq ($(DEPLOYMENT_ENVIRONMENT),)
+    @echo "DEPLOYMENT_ENVIRONMENT is set to: $(DEPLOYMENT_ENVIRONMENT)"
+else
+    $(error DEPLOYMENT_ENVIRONMENT must be set)
+endif
+
+deploy:
+	echo 'Deploying'
 </code></pre></div></div>
 
-<p>Print environment:</p>
+<p>Test it out:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ DEPLOYMENT_ENVIRONMENT</span><span class="o">=</span>development make .check-env
-</code></pre></div></div>
+<ol>
+  <li>Cause an error:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>make deploy
+</code></pre></div>    </div>
+  </li>
+  <li>Print environment:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ DEPLOYMENT_ENVIRONMENT</span><span class="o">=</span>development make deploy
+</code></pre></div>    </div>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>make deploy <span class="nv">DEPLOYMENT_ENVIRONMENT</span><span class="o">=</span>development 
+</code></pre></div>    </div>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">export </span><span class="nv">DEPLOYMENT_ENVIRONMENT</span><span class="o">=</span>development
+ <span class="nv">$ </span>make deploy
+</code></pre></div>    </div>
+  </li>
+</ol>
 
         
     </div>

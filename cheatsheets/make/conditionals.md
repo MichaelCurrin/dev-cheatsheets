@@ -13,17 +13,23 @@ Using `if`, identical to the Bash `if` except you have add backslash escapes acr
 
 This can be used as a check used in other commands.
 
-Optionally use `@` to make it quiet.
+Optionally use `@` to make it quiet for Make output.
 
 ```make
 foo:
 	@if [ -z $(FOO) ]; then \
-		echo "FOO must be set. Use `export FOO=<foo>`"; \
+		echo 'Must set FOO'; \
 		exit 1; \
 	fi
 ```
 
+Note that this is used _within_ a target while using Make directives like `ifdef` are evaluated always even if a target is not triggered.
+
+Note using `$(error ...)` does not work within Bash `if` statement since it will always execute, so rather keep it all Bash or all Make.
+
 ## One line if
+
+Set a value based on whether another variable is set.
 
 ```mk
 BUZZ := $(if $(FOO), 'abc', $(FIZZ))
@@ -76,8 +82,13 @@ endif
 
 ```
 
+## If value not defined
 
-## If value defined
+```mk
+FOO ?= abc
+```
+
+This is equivalent to this:
 
 ```mk
 ifndef FOO
@@ -85,7 +96,7 @@ ifndef FOO
 endif
 ```
 
-Sample from Git's Makefile.
+Sample from Git's Makefile using `ifndef`, though perhaps using `?=` approach is equivalent but lighter to read.
 
 ```mk
 ifndef SHELL_PATH
@@ -104,37 +115,53 @@ export PYTHON_PATH
 TEST_SHELL_PATH = $(SHELL_PATH)
 ```
 
-Presumably these can be provided optionally by the user in the CLI.
 
-```sh
-$ make SHELL_PATH=/bin/bash install
-```
+## Error on values not set
 
-
-## Error on value not defined
-
-My own code to abort if a value is not defined:
+Abort if a value is not defined using `indef`.
 
 ```makefile
-.check-env:
 ifndef DEPLOYMENT_ENVIRONMENT
-	echo "Must set DEPLOYMENT_ENVIRONMENT"
-	exit 1
+    @echo "DEPLOYMENT_ENVIRONMENT is set to: $(DEPLOYMENT_ENVIRONMENT)"
+else
+    $(error DEPLOYMENT_ENVIRONMENT must be set)
 endif
-	echo "DEPLOYMENT_ENVIRONMENT: $(DEPLOYMENT_ENVIRONMENT)"
 
-deploy: .check-env
-	# do stuff
+deploy:
+	echo 'Deploying'
 ```
 
-Cause an error:
+Make sure the value is not empty, using `ifneq`.
 
-```sh
-$ make .check-env
+```
+# Make sure it is always defined but default to empty value.
+DEPLOYMENT_ENVIRONMENT ?=
+
+ifneq ($(DEPLOYMENT_ENVIRONMENT),)
+    @echo "DEPLOYMENT_ENVIRONMENT is set to: $(DEPLOYMENT_ENVIRONMENT)"
+else
+    $(error DEPLOYMENT_ENVIRONMENT must be set)
+endif
+
+deploy:
+	echo 'Deploying'
 ```
 
-Print environment:
+Test it out:
 
-```sh
-$ DEPLOYMENT_ENVIRONMENT=development make .check-env
-```
+1. Cause an error:
+    ```sh
+    $ make deploy
+    ```
+1. Print environment:
+    ```sh
+    $ DEPLOYMENT_ENVIRONMENT=development make deploy
+    ```
+    ```sh
+    $ make deploy DEPLOYMENT_ENVIRONMENT=development 
+    ```
+    ```sh
+    $ export DEPLOYMENT_ENVIRONMENT=development
+    $ make deploy
+    ```
+
