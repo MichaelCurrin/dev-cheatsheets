@@ -157,7 +157,7 @@
 
     <div class="post-content">
         
-            <p>See ZSH <a href="https://zsh.sourceforge.net/Doc/Release/Options.html">options</a>.</p>
+            <p>See ZSH <a href="https://zsh.sourceforge.net/Doc/Release/Options.html">options</a> in the docs for what config options are available.</p>
 
 <h2 id="navigation">Navigation</h2>
 
@@ -172,6 +172,30 @@
 <span class="c"># Same as:</span>
 <span class="nb">cd</span> ..
 </code></pre></div></div>
+
+<h2 id="config-files">Config files</h2>
+
+<p><strong>Note:</strong> You usually need to create these files if they don’t exist on a new setup.</p>
+
+<h3 id="zshenv--bashrc-and-bash_profile"><code class="language-plaintext highlighter-rouge">.zshenv</code> | <code class="language-plaintext highlighter-rouge">.bashrc</code> and <code class="language-plaintext highlighter-rouge">.bash_profile</code></h3>
+
+<p><strong>Summary:</strong> Loaded first for all shell instances (login, interactive, scripts). Used for global environment variable settings.</p>
+
+<h3 id="zprofile--bash_profile"><code class="language-plaintext highlighter-rouge">.zprofile</code> | <code class="language-plaintext highlighter-rouge">.bash_profile</code></h3>
+
+<p><strong>Summary:</strong> Executed only for login shells, after the initial environment setup and before the interactive configuration. Suitable for one-time login commands.</p>
+
+<h3 id="zshrc--bashrc"><code class="language-plaintext highlighter-rouge">.zshrc</code> | <code class="language-plaintext highlighter-rouge">.bashrc</code></h3>
+
+<p><strong>Summary:</strong> Main configuration for interactive shells, loaded on each new terminal. Used for prompt, aliases, functions, options, and plugin loading.</p>
+
+<h3 id="zlogin--bash_login"><code class="language-plaintext highlighter-rouge">.zlogin</code> | <code class="language-plaintext highlighter-rouge">.bash_login</code></h3>
+
+<p><strong>Summary:</strong> Executed for login shells, after the main interactive configuration. Less common, for actions after the primary login setup.</p>
+
+<h3 id="zlogout--bash_logout"><code class="language-plaintext highlighter-rouge">.zlogout</code> | <code class="language-plaintext highlighter-rouge">.bash_logout</code></h3>
+
+<p><strong>Summary:</strong> Executed when logging out of a login shell. Used for logout cleanup.</p>
 
 <h2 id="git">Git</h2>
 

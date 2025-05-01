@@ -1,6 +1,6 @@
 # ZSH
 
-See ZSH [options](https://zsh.sourceforge.net/Doc/Release/Options.html).
+See ZSH [options](https://zsh.sourceforge.net/Doc/Release/Options.html) in the docs for what config options are available.
 
 
 ## Navigation
@@ -19,6 +19,29 @@ cd DIRNAME
 cd ..
 ```
 
+## Config files
+
+**Note:** You usually need to create these files if they don't exist on a new setup.
+
+### `.zshenv` | `.bashrc` and `.bash_profile`
+
+**Summary:** Loaded first for all shell instances (login, interactive, scripts). Used for global environment variable settings.
+
+### `.zprofile` | `.bash_profile`
+
+**Summary:** Executed only for login shells, after the initial environment setup and before the interactive configuration. Suitable for one-time login commands.
+
+### `.zshrc` | `.bashrc`
+
+**Summary:** Main configuration for interactive shells, loaded on each new terminal. Used for prompt, aliases, functions, options, and plugin loading.
+
+### `.zlogin` | `.bash_login`
+
+**Summary:** Executed for login shells, after the main interactive configuration. Less common, for actions after the primary login setup.
+
+### `.zlogout` | `.bash_logout`
+
+**Summary:** Executed when logging out of a login shell. Used for logout cleanup.
 
 ## Git
 

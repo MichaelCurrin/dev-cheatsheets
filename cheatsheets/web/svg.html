@@ -253,7 +253,7 @@
 <ul>
   <li><strong>How to Use</strong>:
     <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.element</span> <span class="p">{</span>
-  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('image.svg')</span><span class="p">;</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="nf">url</span><span class="p">(</span><span class="s2">'image.svg'</span><span class="p">);</span>
   <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
   <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
 <span class="p">}</span>
@@ -317,8 +317,8 @@
 
 <span class="nt">&lt;style&gt;</span>
 <span class="nf">#MyRect</span> <span class="p">{</span>
-  <span class="py">fill</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
-  <span class="py">stroke</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="nx">red</span><span class="p">;</span>
+  <span class="py">stroke</span><span class="p">:</span> <span class="nx">black</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nt">&lt;/style&gt;</span>
 </code></pre></div></div>
@@ -355,7 +355,7 @@
 <p>Now I can use a CSS rule to target the <code class="language-plaintext highlighter-rouge">svg</code> element. I could use a class or ID or outer <code class="language-plaintext highlighter-rouge">div</code>, but here I just target all <code class="language-plaintext highlighter-rouge">svg</code> tags:</p>
 
 <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">svg</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nx">blue</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -404,17 +404,17 @@
  */</span>
 
 <span class="nc">.orange</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="m">#f66a0a</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nx">#f66a0a</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nc">.grey</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="m">#828282</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nx">#828282</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nc">.svg-icon</span> <span class="p">{</span>
   <span class="nl">width</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
   <span class="nl">height</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">inline-block</span><span class="p">;</span>
 
   <span class="py">fill</span><span class="p">:</span> <span class="n">currentColor</span><span class="p">;</span>
 
