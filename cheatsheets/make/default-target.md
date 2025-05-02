@@ -3,7 +3,9 @@ description: Setting the default command if no args are given to `make`
 ---
 # Default target
 
+See [Goals in Make docs](https://www.gnu.org/software/make/manual/html_node/Goals.html)
 
+## First command
 
 When running `make` without arguments, it will run the _first_ command in the file.
 
@@ -52,7 +54,9 @@ default: install
 all: install build test
 ```
 
-Alternatively use `.DEFAULT_GOAL`
+## Make variable
+
+Alternatively use `.DEFAULT_GOAL` variable.
 
 e.g.
 
