@@ -291,12 +291,12 @@
     </span><span class="nl">"fmt:check"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="nl">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
 
-    </span><span class="s2">"compile: "",
-    "</span><span class="err">build</span><span class="s2">": "",
+    </span><span class="nl">"compile"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
 
-    "</span><span class="err">start</span><span class="s2">": ""
-  }
-}
+    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 <h3 id="private">Private</h3>
@@ -375,9 +375,8 @@
 
 <p>Set a peer dependency.</p>
 
-<div class="language-json5 highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"peerDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="c">// ...</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -407,8 +406,8 @@
 <ul>
   <li>Min <code class="language-plaintext highlighter-rouge">"&gt;=16"</code></li>
   <li>Min <code class="language-plaintext highlighter-rouge">&gt;=0.10.3</code></li>
-  <li>Range <code class="language-plaintext highlighter-rouge">"&gt;=0.10.3 &lt;15"</code></li>
-  <li>Compat <code class="language-plaintext highlighter-rouge">~=0.10.3</code></li>
+  <li>Range <code class="language-plaintext highlighter-rouge">"&gt;=0.10.3 &lt;15"</code> - note the space, while Ruby and Python use a comma.</li>
+  <li>Compat <code class="language-plaintext highlighter-rouge">~=0.10.3</code>, or <code class="language-plaintext highlighter-rouge">~=0.10</code></li>
 </ul>
 
 <h4 id="npm-version">NPM version</h4>
