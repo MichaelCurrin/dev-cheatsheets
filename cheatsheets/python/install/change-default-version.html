@@ -194,6 +194,24 @@
 <span class="nv">$ </span>brew <span class="nb">link</span> <span class="nt">--overwrite</span> python@3.10
 </code></pre></div></div>
 
+<p>The active version of Python will be setup by Brew with a symlink:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span><span class="nb">ls</span> <span class="nt">-l</span> <span class="si">$(</span>which python<span class="si">)</span>
+<span class="gp">... /opt/homebrew/bin/python3 -&gt;</span><span class="w"> </span>../Cellar/python@3.13/3.13.1/bin/python3
+</code></pre></div></div>
+
+<p>You can make <code class="language-plaintext highlighter-rouge">python</code> without the <code class="language-plaintext highlighter-rouge">3</code> available by adding a symlink to one of the bin directories in your <code class="language-plaintext highlighter-rouge">PATH</code>.</p>
+
+<p>e.g.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="c"># For dir owned by root:</span>
+<span class="nv">$ </span><span class="nb">sudo ln</span> <span class="nt">-s</span> /opt/homebrew/bin/python3 /usr/bin/python
+<span class="nv">$ </span><span class="c"># Or for user's directory`:</span>
+<span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> /opt/homebrew/bin/python3 ~/.local/bin/python
+<span class="nv">$ </span><span class="c"># Or use Homebrews' bin:</span>
+<span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> /opt/homebrew/bin/python3 /opt/homebrew/bin/python
+</code></pre></div></div>
+
         
     </div>
 </article>
