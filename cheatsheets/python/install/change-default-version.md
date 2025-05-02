@@ -28,3 +28,23 @@ Link with overwrite, from [AZ CLI instructions](https://learn.microsoft.com/en-u
 $ brew update && brew install python@3.10 && brew upgrade python@3.10
 $ brew link --overwrite python@3.10
 ```
+
+The active version of Python will be setup by Brew with a symlink:
+
+```console
+> ls -l $(which python)
+... /opt/homebrew/bin/python3 -> ../Cellar/python@3.13/3.13.1/bin/python3
+```
+
+You can make `python` without the `3` available by adding a symlink to one of the bin directories in your `PATH`.
+
+e.g.
+
+```sh
+$ # For dir owned by root:
+$ sudo ln -s /opt/homebrew/bin/python3 /usr/bin/python
+$ # Or for user's directory`:
+$ ln -s /opt/homebrew/bin/python3 ~/.local/bin/python
+$ # Or use Homebrews' bin:
+$ ln -s /opt/homebrew/bin/python3 /opt/homebrew/bin/python
+```
