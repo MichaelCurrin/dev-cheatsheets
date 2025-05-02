@@ -1,30 +1,4 @@
----
-description: A commonly-used macOS package manager
----
-# Homebrew
-
-
-## Resources
-
-- [Homebrew Cheatsheet](https://devhints.io/homebrew) on _DevHints_.
-- [Homebrew docs](https://docs.brew.sh/) homepage
-- [Homebrew Tips N' Tricks](https://docs.brew.sh/Tips-N%27-Tricks) in the docs
-
-
-## Install Homebrew
-
-See the [brew.sh](https://brew.sh) homepage.
-
-This will request your password as it needs _root_ permissions.
-
-```sh
-$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-See [install.sh](https://github.com/Homebrew/install/blob/master/install.sh) on GitHub.
-
-If upgrading Homebrew, it is recommended to then [upgrade all packages](#upgrade-all-packages).
-
+# Manage packages
 
 ## Update list
 
@@ -163,56 +137,3 @@ $ brew install gitbatch
 ```
 
 
-## Links
-
-You can run `brew link` directly but it also runs as part of install or upgrade.
-
-If a symlink cannot be created, you will get an error message with instructions, added here as well for convenience.
-
-To force the link and overwrite all conflicting files:
-
-```sh
-brew link --overwrite PACKAGE
-```
-
-To list all files that would be deleted:
-
-```sh
-$ brew link --overwrite --dry-run PACKAGE
-```
-
-Sample of a full message:
-
-```
-==> Pouring six--1.16.0_2.all.bottle.1.tar.gz
-Error: The `brew link` step did not complete successfully
-The formula built, but is not symlinked into /usr/local
-Could not symlink lib/python3.9/site-packages/six.py
-Target /usr/local/lib/python3.9/site-packages/six.py
-already exists. You may want to remove it:
-  rm '/usr/local/lib/python3.9/site-packages/six.py'
-
-To force the link and overwrite all conflicting files:
-  brew link --overwrite six
-
-To list all files that would be deleted:
-  brew link --overwrite --dry-run six
-
-Possible conflicting files are:
-/usr/local/lib/python3.9/site-packages/six.py
-```
-  
-
-## Services
-
-Set up a service to start now and then start up whenever you boot the machine. This uses `launchd`.
-
-### Example 
-
-Sample instructions given when installing `dnsmasq`.
-
-To have `launchd` start `dnsmasq` now and restart at startup:
-
-```sh
-$ sudo brew services start dnsmasq
-```
