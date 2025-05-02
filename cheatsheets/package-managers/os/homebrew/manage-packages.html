@@ -9,33 +9,33 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Homebrew | Dev Cheatsheets</title>
+    <title>Manage packages | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Homebrew" />
+    <meta property="og:title" content="Manage packages" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Homebrew" />
+    <meta property="twitter:title" content="Manage packages" />
 <meta name="generator" content="Jekyll v4.4.1" />
 
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="A commonly-used macOS package manager" />
-    <meta property="og:description" content="A commonly-used macOS package manager" />
+    <meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+    <meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
 <meta name="author" content="Michael Currin" />
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/os/homebrew.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/os/homebrew.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/manage-packages.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/manage-packages.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "A commonly-used macOS package manager",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/os/homebrew.html",
-    "headline":    "Homebrew",
+    "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/manage-packages.html",
+    "headline":    "Manage packages",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -88,11 +88,11 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/package-managers/os/homebrew.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/package-managers/os/homebrew/manage-packages.md">
     📝 <span>Edit page</span>
 </a>
 
-            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/package-managers/os/">
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/package-managers/os/homebrew/">
     ➕ <span>Add page</span>
 </a>
 
@@ -105,14 +105,9 @@
             
 
 
-            <span>Homebrew</span>
+            <span>Manage packages</span>
         </h1>
 
-        
-            <blockquote>
-                <p>A commonly-used macOS package manager</p>
-
-            </blockquote>
         
     </header>
 
@@ -161,8 +156,20 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/package-managers/os/homebrew.html" class="underline">
-                Homebrew
+            
+            <a href="/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/">
+    Homebrew
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/manage-packages.html" class="underline">
+                Manage packages
             </a>
         
      
@@ -174,28 +181,7 @@
 
     <div class="post-content">
         
-            <h2 id="resources">Resources</h2>
-
-<ul>
-  <li><a href="https://devhints.io/homebrew">Homebrew Cheatsheet</a> on <em>DevHints</em>.</li>
-  <li><a href="https://docs.brew.sh/">Homebrew docs</a> homepage</li>
-  <li><a href="https://docs.brew.sh/Tips-N%27-Tricks">Homebrew Tips N’ Tricks</a> in the docs</li>
-</ul>
-
-<h2 id="install-homebrew">Install Homebrew</h2>
-
-<p>See the <a href="https://brew.sh">brew.sh</a> homepage.</p>
-
-<p>This will request your password as it needs <em>root</em> permissions.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>/bin/bash <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="si">)</span><span class="s2">"</span>
-</code></pre></div></div>
-
-<p>See <a href="https://github.com/Homebrew/install/blob/master/install.sh">install.sh</a> on GitHub.</p>
-
-<p>If upgrading Homebrew, it is recommended to then <a href="#upgrade-all-packages">upgrade all packages</a>.</p>
-
-<h2 id="update-list">Update list</h2>
+            <h2 id="update-list">Update list</h2>
 
 <p>Update Homebrew’s local list of packages.</p>
 
@@ -309,55 +295,6 @@ the upgraded formulae or, every 30 days, for all formulae.
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew tap isacikgoz/taps
 <span class="nv">$ </span>brew <span class="nb">install </span>gitbatch
-</code></pre></div></div>
-
-<h2 id="links">Links</h2>
-
-<p>You can run <code class="language-plaintext highlighter-rouge">brew link</code> directly but it also runs as part of install or upgrade.</p>
-
-<p>If a symlink cannot be created, you will get an error message with instructions, added here as well for convenience.</p>
-
-<p>To force the link and overwrite all conflicting files:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">link</span> <span class="nt">--overwrite</span> PACKAGE
-</code></pre></div></div>
-
-<p>To list all files that would be deleted:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">link</span> <span class="nt">--overwrite</span> <span class="nt">--dry-run</span> PACKAGE
-</code></pre></div></div>
-
-<p>Sample of a full message:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>==&gt; Pouring six--1.16.0_2.all.bottle.1.tar.gz
-Error: The `brew link` step did not complete successfully
-The formula built, but is not symlinked into /usr/local
-Could not symlink lib/python3.9/site-packages/six.py
-Target /usr/local/lib/python3.9/site-packages/six.py
-already exists. You may want to remove it:
-  rm '/usr/local/lib/python3.9/site-packages/six.py'
-
-To force the link and overwrite all conflicting files:
-  brew link --overwrite six
-
-To list all files that would be deleted:
-  brew link --overwrite --dry-run six
-
-Possible conflicting files are:
-/usr/local/lib/python3.9/site-packages/six.py
-</code></pre></div></div>
-
-<h2 id="services">Services</h2>
-
-<p>Set up a service to start now and then start up whenever you boot the machine. This uses <code class="language-plaintext highlighter-rouge">launchd</code>.</p>
-
-<h3 id="example">Example</h3>
-
-<p>Sample instructions given when installing <code class="language-plaintext highlighter-rouge">dnsmasq</code>.</p>
-
-<p>To have <code class="language-plaintext highlighter-rouge">launchd</code> start <code class="language-plaintext highlighter-rouge">dnsmasq</code> now and restart at startup:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>brew services start dnsmasq
 </code></pre></div></div>
 
         

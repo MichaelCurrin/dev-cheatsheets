@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Manage multiple versions | Dev Cheatsheets</title>
+    <title>Services | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Manage multiple versions" />
+    <meta property="og:title" content="Services" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Manage multiple versions" />
+    <meta property="twitter:title" content="Services" />
 <meta name="generator" content="Jekyll v4.4.1" />
 
 <meta property="og:locale" content="en_US" />
@@ -26,16 +26,16 @@
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/homebrew/manage-multiple-versions.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/homebrew/manage-multiple-versions.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/services.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/services.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/homebrew/manage-multiple-versions.html",
-    "headline":    "Manage multiple versions",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/services.html",
+    "headline":    "Services",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -88,11 +88,11 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/package-managers/homebrew/manage-multiple-versions.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/package-managers/os/homebrew/services.md">
     📝 <span>Edit page</span>
 </a>
 
-            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/package-managers/homebrew/">
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/package-managers/os/homebrew/">
     ➕ <span>Add page</span>
 </a>
 
@@ -105,7 +105,7 @@
             
 
 
-            <span>Manage multiple versions</span>
+            <span>Services</span>
         </h1>
 
         
@@ -145,7 +145,19 @@
 
         
             
-            <a href="/dev-cheatsheets/cheatsheets/package-managers/homebrew/">
+            <a href="/dev-cheatsheets/cheatsheets/package-managers/os/">
+    OS level
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/">
     Homebrew
 </a>
 
@@ -156,8 +168,8 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/package-managers/homebrew/manage-multiple-versions.html" class="underline">
-                Manage multiple versions
+            <a href="/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/services.html" class="underline">
+                Services
             </a>
         
      
@@ -169,15 +181,15 @@
 
     <div class="post-content">
         
-            <p>For example, you have multiple versions of Python or Node installed and want to pick which one is active.</p>
+            <p>Set up a service to start now and then start up whenever you boot the machine. This uses <code class="language-plaintext highlighter-rouge">launchd</code>.</p>
 
-<p>Recommended - use NVM to manage Node versions instead.</p>
+<h2 id="example">Example</h2>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>node@22
-<span class="nv">$ </span>node <span class="nt">-v</span>  <span class="c"># see 23 for example used</span>
-<span class="nv">$ </span>brew <span class="nb">unlink </span>node
-<span class="nv">$ </span>brew <span class="nb">link </span>node@22  <span class="c"># set 22 to active version</span>
-<span class="nv">$ </span>node <span class="nt">-v</span>  <span class="c"># verify</span>
+<p>Sample instructions given when installing <code class="language-plaintext highlighter-rouge">dnsmasq</code>.</p>
+
+<p>To have <code class="language-plaintext highlighter-rouge">launchd</code> start <code class="language-plaintext highlighter-rouge">dnsmasq</code> now and restart at startup:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>brew services start dnsmasq
 </code></pre></div></div>
 
         

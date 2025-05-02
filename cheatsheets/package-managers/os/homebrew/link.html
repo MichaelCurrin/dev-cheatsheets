@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Command commands | Dev Cheatsheets</title>
+    <title>Link | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Command commands" />
+    <meta property="og:title" content="Link" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Command commands" />
+    <meta property="twitter:title" content="Link" />
 <meta name="generator" content="Jekyll v4.4.1" />
 
 <meta property="og:locale" content="en_US" />
@@ -26,16 +26,16 @@
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/homebrew/common-commands.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/homebrew/common-commands.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/link.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/link.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/homebrew/common-commands.html",
-    "headline":    "Command commands",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/link.html",
+    "headline":    "Link",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -88,11 +88,11 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/package-managers/homebrew/common-commands.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/package-managers/os/homebrew/link.md">
     📝 <span>Edit page</span>
 </a>
 
-            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/package-managers/homebrew/">
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/package-managers/os/homebrew/">
     ➕ <span>Add page</span>
 </a>
 
@@ -105,7 +105,7 @@
             
 
 
-            <span>Command commands</span>
+            <span>Link</span>
         </h1>
 
         
@@ -145,7 +145,19 @@
 
         
             
-            <a href="/dev-cheatsheets/cheatsheets/package-managers/homebrew/">
+            <a href="/dev-cheatsheets/cheatsheets/package-managers/os/">
+    OS level
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            
+            <a href="/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/">
     Homebrew
 </a>
 
@@ -156,8 +168,8 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/package-managers/homebrew/common-commands.html" class="underline">
-                Command commands
+            <a href="/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/link.html" class="underline">
+                Link
             </a>
         
      
@@ -169,33 +181,61 @@
 
     <div class="post-content">
         
-            <h2 id="install">Install</h2>
+            <p>You can run <code class="language-plaintext highlighter-rouge">brew link</code> directly but it also runs as part of install or upgrade.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>PACKAGE
-<span class="nv">$ </span>brew <span class="nb">install </span>python
+<p>If a symlink cannot be created, you will get an error message with instructions, added here as well for convenience.</p>
+
+<h2 id="overwrite">Overwrite</h2>
+
+<p>To force the link and overwrite all conflicting files:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">link</span> <span class="nt">--overwrite</span> PACKAGE
 </code></pre></div></div>
 
-<p>Specific version:</p>
+<p>To list all files that would be deleted:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>PACKAGE@VERSION
-<span class="nv">$ </span><span class="c"># e.g.</span>
-<span class="nv">$ </span>brew <span class="nb">install </span>python@3.9
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">link</span> <span class="nt">--overwrite</span> <span class="nt">--dry-run</span> PACKAGE
 </code></pre></div></div>
 
-<h2 id="uninstall">Uninstall</h2>
+<p>Sample of a full message:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew remove PACKAGE
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>==&gt; Pouring six--1.16.0_2.all.bottle.1.tar.gz
+Error: The `brew link` step did not complete successfully
+The formula built, but is not symlinked into /usr/local
+Could not symlink lib/python3.9/site-packages/six.py
+Target /usr/local/lib/python3.9/site-packages/six.py
+already exists. You may want to remove it:
+  rm '/usr/local/lib/python3.9/site-packages/six.py'
+
+To force the link and overwrite all conflicting files:
+  brew link --overwrite six
+
+To list all files that would be deleted:
+  brew link --overwrite --dry-run six
+
+Possible conflicting files are:
+/usr/local/lib/python3.9/site-packages/six.py
 </code></pre></div></div>
 
-<h2 id="upgrade-all-packages">Upgrade all packages</h2>
+<h2 id="manage-multiple-versions">Manage multiple versions</h2>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew upgrade
+<p>For example, you have multiple versions of Python or Node installed and want to pick which one is active.</p>
+
+<h3 id="node">Node</h3>
+
+<p>Recommended - use NVM to manage Node versions instead.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>node@22
+<span class="nv">$ </span>node <span class="nt">-v</span>  <span class="c"># see 23 for example used</span>
+<span class="nv">$ </span>brew <span class="nb">unlink </span>node
+<span class="nv">$ </span>brew <span class="nb">link </span>node@22  <span class="c"># set 22 to active version</span>
+<span class="nv">$ </span>node <span class="nt">-v</span>  <span class="c"># verify</span>
 </code></pre></div></div>
 
-<h2 id="list-installed-packages">List installed packages</h2>
+<h3 id="python">Python</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew list
-</code></pre></div></div>
+<p>For Python, see <a href="/dev-cheatsheets/cheatsheets/python/install/change-default-version.html">Change Default Version</a>.</p>
+
 
         
     </div>

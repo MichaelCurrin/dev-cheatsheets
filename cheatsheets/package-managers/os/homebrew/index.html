@@ -20,21 +20,21 @@
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
-    <meta property="og:description" content="A collection of code snippets and CLI guides for quick and easy reference while coding" />
+    <meta name="description" content="A commonly-used macOS package manager" />
+    <meta property="og:description" content="A commonly-used macOS package manager" />
 <meta name="author" content="Michael Currin" />
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/homebrew/" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/homebrew/" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/homebrew/",
+    "description": "A commonly-used macOS package manager",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/",
     "headline":    "Homebrew",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
@@ -88,11 +88,11 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/package-managers/homebrew/index.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/package-managers/os/homebrew/index.md">
     📝 <span>Edit page</span>
 </a>
 
-            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/package-managers/homebrew/">
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/package-managers/os/homebrew/">
     ➕ <span>Add page</span>
 </a>
 
@@ -108,6 +108,11 @@
             <span>Homebrew</span>
         </h1>
 
+        
+            <blockquote>
+                <p>A commonly-used macOS package manager</p>
+
+            </blockquote>
         
     </header>
 
@@ -144,7 +149,19 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/package-managers/homebrew/" class="underline">
+            
+            <a href="/dev-cheatsheets/cheatsheets/package-managers/os/">
+    OS level
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/" class="underline">
                 Homebrew
             </a>
         
@@ -1487,6 +1504,7 @@
         
         
         
+        
         </div>
 
 <br>
@@ -1499,20 +1517,59 @@
 <ul class="page-list">
     
             <li>
-                <a href="/dev-cheatsheets/cheatsheets/package-managers/homebrew/common-commands.html">
+                <a href="/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/install-homebrew.html">
                     
 
 
-                    <span>Command commands</span>
-                </a></li>
+                    <span>Install Homebrew</span>
+                </a>
+                    <i>
+</i>
+                </li>
         
             <li>
-                <a href="/dev-cheatsheets/cheatsheets/package-managers/homebrew/manage-multiple-versions.html">
+                <a href="/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/link.html">
                     
 
 
-                    <span>Manage multiple versions</span>
-                </a></li>
+                    <span>Link</span>
+                </a>
+                    <i>
+</i>
+                </li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/manage-packages.html">
+                    
+
+
+                    <span>Manage packages</span>
+                </a>
+                    <i>
+</i>
+                </li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/overview.html">
+                    
+
+
+                    <span>Overview</span>
+                </a>
+                    <i>
+</i>
+                </li>
+        
+            <li>
+                <a href="/dev-cheatsheets/cheatsheets/package-managers/os/homebrew/services.html">
+                    
+
+
+                    <span>Services</span>
+                </a>
+                    <i>
+</i>
+                </li>
         </ul>
 
     <br>
@@ -1521,18 +1578,20 @@
     
         <h2>Content</h2>
 
-        <h3 id="install-devtools">Install Devtools</h3>
+        <h3 id="resources">Resources</h3>
+
+<ul>
+  <li><a href="https://devhints.io/homebrew">Homebrew Cheatsheet</a> on <em>DevHints</em>.</li>
+  <li><a href="https://docs.brew.sh/">Homebrew docs</a> homepage</li>
+  <li><a href="https://docs.brew.sh/Tips-N%27-Tricks">Homebrew Tips N’ Tricks</a> in the docs</li>
+</ul>
+
+<h3 id="install-devtools">Install Devtools</h3>
 
 <p>This is for Xcode but may be needed when installing with Brew.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>xcode-select <span class="nt">--install</span>
 </code></pre></div></div>
-
-<h3 id="related">Related</h3>
-
-<ul>
-  <li><a href="https://devhints.io/homebrew">Homebrew cheatsheet</a> on DevHints.</li>
-</ul>
     
 
         
