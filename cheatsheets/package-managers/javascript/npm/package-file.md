@@ -107,7 +107,7 @@ Some suggested script commands.
     "fmt:check": "",
     "test": "",
 
-    "compile: "",
+    "compile": "",
     "build": "",
 
     "start": ""
@@ -195,10 +195,9 @@ The default is `"commonjs"`.
 
 Set a peer dependency.
 
-```json5
+```json
 {
   "peerDependencies": {
-    // ...
   }
 }
 ```
@@ -225,8 +224,8 @@ Example values:
 
 - Min `">=16"`
 - Min `>=0.10.3`
-- Range `">=0.10.3 <15"`
-- Compat `~=0.10.3`
+- Range `">=0.10.3 <15"` - note the space, while Ruby and Python use a comma.
+- Compat `~=0.10.3`, or `~=0.10`
 
 #### NPM version
 
