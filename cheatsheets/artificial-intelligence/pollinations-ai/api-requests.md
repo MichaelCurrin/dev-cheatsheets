@@ -11,7 +11,7 @@ Notes:
 
 ## Text endpoint - basic
 
-See models here: [text.pollinations.ai/models](https://text.pollinations.ai/models).
+See available text models here: [text.pollinations.ai/models](https://text.pollinations.ai/models).
 
 Add your prompt in the URL and get back the result as plain text.
 
@@ -65,6 +65,6 @@ e.g. [image.pollinations.ai/prompt/calm%20serene%20forest...&nologo=true&model=f
 
 See [Image options](https://github.com/pollinations/pollinations/blob/master/APIDOCS.md#image-generation-api) in the API docs.
 
-See models here: [image.pollinations.ai/models](https://image.pollinations.ai/models).
+See available models here: [image.pollinations.ai/models](https://image.pollinations.ai/models).
 
 See the [pollinations-react/README.md](https://github.com/pollinations/pollinations/blob/master/pollinations-react/README.md) for info on using with React and for explanations of parameters (note the parameters are for the React implementation and not necessarily the URL query params but are still explained well).
