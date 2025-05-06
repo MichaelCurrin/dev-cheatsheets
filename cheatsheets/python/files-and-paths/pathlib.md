@@ -42,13 +42,9 @@ my_dir = Path(__file__).parent
 Navigate up the path tree for any number of levels.
 
 ```python
-my_dir = Path(__file__).resolve().parent.parent.parent
-```
-
-Or
-
-```python
-my_dir = Path(__file__).resolve().parents[3]
+my_dir = Path(file_path).resolve().parent.parent.parent
+# Or simply:
+my_dir = Path(file_path).resolve().parents[3]
 ```
 
 ### Build a path
@@ -111,20 +107,35 @@ Path.home() / 'abc'
 # PosixPath('/Users/mcurrin/abc')
 ```
 
+Expand user directory.
+
+```python
+p = Path("~/abc")
+p
+# PosixPath('~/abc')
+p.expanduser()
+# PosixPath('/Users/my-user/abc')
+```
 
 ## Path properties
 
 ```python
-p = Path("abc/def")  # Or Path("./abc/def")
+p = Path("abc/def.txt")
 
 p
-# PosixPath('abc/def')
+# PosixPath('abc/def.txt')
 
 p.name
 # 'def'
 
 p.parts
 ('abc', 'def')
+
+p.stem
+# 'def'
+
+p.suffix
+# '.txt'
 ```
 
 
@@ -132,10 +143,9 @@ p.parts
 
 ```python
 p.exists()
-# True | False
-
+p.is_file()
 p.is_dir()
-# True | False
+p.is_symlink()
 ```
 
 
@@ -152,7 +162,17 @@ p.resolve()
 # PosixPath('/Users/.../repos/testing/abc/def')
 ```
 
+## Path joining
+
+Combine `Path` objects or `Path` and `str`.
+
+```python
+Path("my_directory") / "another_dir" / "file.txt"
+```
+
 ## Relative to
+
+Computes the relative path from one path to another (i.e., “subtracts” a base path from a full path).
 
 Useful for printing.
 
