@@ -1,6 +1,6 @@
 ---
 ---
-# Libraries
+# Packages
 
 For installing 3rd-party packages in Python, see the [Package managers][] Python cheatsheets.
 
