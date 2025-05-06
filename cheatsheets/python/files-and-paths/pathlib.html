@@ -199,9 +199,21 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_dir</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="directory-of-current-script">Directory of current script</h3>
+<h3 id="parent-path">Parent path</h3>
+
+<p>Directory of current script:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_dir</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="n">__file__</span><span class="p">).</span><span class="n">parent</span>
+</code></pre></div></div>
+
+<p>Navigate up the path tree for any number of levels.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_dir</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="n">__file__</span><span class="p">).</span><span class="nf">resolve</span><span class="p">().</span><span class="n">parent</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">parent</span>
+</code></pre></div></div>
+
+<p>Or</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_dir</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="n">__file__</span><span class="p">).</span><span class="nf">resolve</span><span class="p">().</span><span class="n">parents</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 </code></pre></div></div>
 
 <h3 id="build-a-path">Build a path</h3>
