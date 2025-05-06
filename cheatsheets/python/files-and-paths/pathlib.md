@@ -31,10 +31,24 @@ my_dir = Path('.')
 my_dir = Path(__file__)
 ```
 
-### Directory of current script
+### Parent path
+
+Directory of current script:
 
 ```python
 my_dir = Path(__file__).parent
+```
+
+Navigate up the path tree for any number of levels.
+
+```python
+my_dir = Path(__file__).resolve().parent.parent.parent
+```
+
+Or
+
+```python
+my_dir = Path(__file__).resolve().parents[3]
 ```
 
 ### Build a path
