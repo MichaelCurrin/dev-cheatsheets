@@ -64,19 +64,20 @@ dir_paths = [x for x in p.iterdir() if x.is_dir()]
 ### Glob
 
 ```python
-list(p.glob('**/*.py'))
+p.glob(PATH)
+
+# e.g.
+
+list(p.glob('*/*.py'))
+list(p.glob('*/abc/*.py'))
 ```
 
-### Navigating
+Use recursive globe with `.rglob`.
 
 ```python
-p = Path('/etc')
-
-q = p / 'init.d' / 'reboot'
-# => PosixPath('/etc/init.d/reboot')
-
-q.resolve()
-# => PosixPath('/etc/rc.d/init.d/halt')
+list(p.rglob('*.py'))
+# equivalent to:
+list(p.glob('**/*.py'))
 ```
 
 ### Opening a file
@@ -151,9 +152,13 @@ p.is_symlink()
 
 ## Resolve
 
-Resolve to an absolute path.
+Resolve to an absolute path - it will resolve symlinks and eliminate ".." components.
 
-This adds the current working directory to the path object.
+```python
+p.resolve()
+```
+
+This adds the _current working directory_ to the path object. e.g.
 
 ```python
 p = Path("abc/def")
@@ -170,17 +175,27 @@ Combine `Path` objects or `Path` and `str`.
 Path("my_directory") / "another_dir" / "file.txt"
 ```
 
+```python
+p = Path('/etc')
+
+q = p / 'init.d' / 'reboot'
+# => PosixPath('/etc/init.d/reboot')
+
+q.resolve()
+# => PosixPath('/etc/rc.d/init.d/halt')
+```
+
 ## Relative to
 
 Computes the relative path from one path to another (i.e., “subtracts” a base path from a full path).
 
-Useful for printing.
-
-Printing a path object will just be the file or foldername. And using resolve above will make it very long. So you can use this to specify a path that the object should be relative to.
+Useful for printing, to show only the end part for a few levels, without the base.
 
 ```python
 path.relative_to(base_path)
 ```
+
+Printing a path object will just be the file or foldername. And using resolve above will make it very long. So you can use this to specify a path that the object should be relative to.
 
 ## Directories
 
