@@ -227,19 +227,20 @@
 
 <h3 id="glob">Glob</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">list</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="sh">'</span><span class="s">**/*.py</span><span class="sh">'</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="n">PATH</span><span class="p">)</span>
+
+<span class="c1"># e.g.
+</span>
+<span class="nf">list</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="sh">'</span><span class="s">*/*.py</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">list</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="sh">'</span><span class="s">*/abc/*.py</span><span class="sh">'</span><span class="p">))</span>
 </code></pre></div></div>
 
-<h3 id="navigating">Navigating</h3>
+<p>Use recursive globe with <code class="language-plaintext highlighter-rouge">.rglob</code>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="sh">'</span><span class="s">/etc</span><span class="sh">'</span><span class="p">)</span>
-
-<span class="n">q</span> <span class="o">=</span> <span class="n">p</span> <span class="o">/</span> <span class="sh">'</span><span class="s">init.d</span><span class="sh">'</span> <span class="o">/</span> <span class="sh">'</span><span class="s">reboot</span><span class="sh">'</span>
-<span class="c1"># =&gt; PosixPath('/etc/init.d/reboot')
-</span>
-<span class="n">q</span><span class="p">.</span><span class="nf">resolve</span><span class="p">()</span>
-<span class="c1"># =&gt; PosixPath('/etc/rc.d/init.d/halt')
-</span></code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">list</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">rglob</span><span class="p">(</span><span class="sh">'</span><span class="s">*.py</span><span class="sh">'</span><span class="p">))</span>
+<span class="c1"># equivalent to:
+</span><span class="nf">list</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="sh">'</span><span class="s">**/*.py</span><span class="sh">'</span><span class="p">))</span>
+</code></pre></div></div>
 
 <h3 id="opening-a-file">Opening a file</h3>
 
@@ -303,9 +304,12 @@
 
 <h2 id="resolve">Resolve</h2>
 
-<p>Resolve to an absolute path.</p>
+<p>Resolve to an absolute path - it will resolve symlinks and eliminate “..” components.</p>
 
-<p>This adds the current working directory to the path object.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span><span class="p">.</span><span class="nf">resolve</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>This adds the <em>current working directory</em> to the path object. e.g.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="sh">"</span><span class="s">abc/def</span><span class="sh">"</span><span class="p">)</span>
 
@@ -320,16 +324,25 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Path</span><span class="p">(</span><span class="sh">"</span><span class="s">my_directory</span><span class="sh">"</span><span class="p">)</span> <span class="o">/</span> <span class="sh">"</span><span class="s">another_dir</span><span class="sh">"</span> <span class="o">/</span> <span class="sh">"</span><span class="s">file.txt</span><span class="sh">"</span>
 </code></pre></div></div>
 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="sh">'</span><span class="s">/etc</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">q</span> <span class="o">=</span> <span class="n">p</span> <span class="o">/</span> <span class="sh">'</span><span class="s">init.d</span><span class="sh">'</span> <span class="o">/</span> <span class="sh">'</span><span class="s">reboot</span><span class="sh">'</span>
+<span class="c1"># =&gt; PosixPath('/etc/init.d/reboot')
+</span>
+<span class="n">q</span><span class="p">.</span><span class="nf">resolve</span><span class="p">()</span>
+<span class="c1"># =&gt; PosixPath('/etc/rc.d/init.d/halt')
+</span></code></pre></div></div>
+
 <h2 id="relative-to">Relative to</h2>
 
 <p>Computes the relative path from one path to another (i.e., “subtracts” a base path from a full path).</p>
 
-<p>Useful for printing.</p>
-
-<p>Printing a path object will just be the file or foldername. And using resolve above will make it very long. So you can use this to specify a path that the object should be relative to.</p>
+<p>Useful for printing, to show only the end part for a few levels, without the base.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">path</span><span class="p">.</span><span class="nf">relative_to</span><span class="p">(</span><span class="n">base_path</span><span class="p">)</span>
 </code></pre></div></div>
+
+<p>Printing a path object will just be the file or foldername. And using resolve above will make it very long. So you can use this to specify a path that the object should be relative to.</p>
 
 <h2 id="directories">Directories</h2>
 
