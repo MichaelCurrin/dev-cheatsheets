@@ -208,12 +208,9 @@
 
 <p>Navigate up the path tree for any number of levels.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_dir</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="n">__file__</span><span class="p">).</span><span class="nf">resolve</span><span class="p">().</span><span class="n">parent</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">parent</span>
-</code></pre></div></div>
-
-<p>Or</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_dir</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="n">__file__</span><span class="p">).</span><span class="nf">resolve</span><span class="p">().</span><span class="n">parents</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_dir</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="n">file_path</span><span class="p">).</span><span class="nf">resolve</span><span class="p">().</span><span class="n">parent</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">parent</span>
+<span class="c1"># Or simply:
+</span><span class="n">my_dir</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="n">file_path</span><span class="p">).</span><span class="nf">resolve</span><span class="p">().</span><span class="n">parents</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 </code></pre></div></div>
 
 <h3 id="build-a-path">Build a path</h3>
@@ -267,28 +264,42 @@
 <span class="c1"># PosixPath('/Users/mcurrin/abc')
 </span></code></pre></div></div>
 
+<p>Expand user directory.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="sh">"</span><span class="s">~/abc</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">p</span>
+<span class="c1"># PosixPath('~/abc')
+</span><span class="n">p</span><span class="p">.</span><span class="nf">expanduser</span><span class="p">()</span>
+<span class="c1"># PosixPath('/Users/my-user/abc')
+</span></code></pre></div></div>
+
 <h2 id="path-properties">Path properties</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="sh">"</span><span class="s">abc/def</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># Or Path("./abc/def")
-</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="sh">"</span><span class="s">abc/def.txt</span><span class="sh">"</span><span class="p">)</span>
+
 <span class="n">p</span>
-<span class="c1"># PosixPath('abc/def')
+<span class="c1"># PosixPath('abc/def.txt')
 </span>
 <span class="n">p</span><span class="p">.</span><span class="n">name</span>
 <span class="c1"># 'def'
 </span>
 <span class="n">p</span><span class="p">.</span><span class="n">parts</span>
 <span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">def</span><span class="sh">'</span><span class="p">)</span>
-</code></pre></div></div>
+
+<span class="n">p</span><span class="p">.</span><span class="n">stem</span>
+<span class="c1"># 'def'
+</span>
+<span class="n">p</span><span class="p">.</span><span class="n">suffix</span>
+<span class="c1"># '.txt'
+</span></code></pre></div></div>
 
 <h2 id="check-path-properties">Check path properties</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span><span class="p">.</span><span class="nf">exists</span><span class="p">()</span>
-<span class="c1"># True | False
-</span>
+<span class="n">p</span><span class="p">.</span><span class="nf">is_file</span><span class="p">()</span>
 <span class="n">p</span><span class="p">.</span><span class="nf">is_dir</span><span class="p">()</span>
-<span class="c1"># True | False
-</span></code></pre></div></div>
+<span class="n">p</span><span class="p">.</span><span class="nf">is_symlink</span><span class="p">()</span>
+</code></pre></div></div>
 
 <h2 id="resolve">Resolve</h2>
 
@@ -302,7 +313,16 @@
 <span class="c1"># PosixPath('/Users/.../repos/testing/abc/def')
 </span></code></pre></div></div>
 
+<h2 id="path-joining">Path joining</h2>
+
+<p>Combine <code class="language-plaintext highlighter-rouge">Path</code> objects or <code class="language-plaintext highlighter-rouge">Path</code> and <code class="language-plaintext highlighter-rouge">str</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Path</span><span class="p">(</span><span class="sh">"</span><span class="s">my_directory</span><span class="sh">"</span><span class="p">)</span> <span class="o">/</span> <span class="sh">"</span><span class="s">another_dir</span><span class="sh">"</span> <span class="o">/</span> <span class="sh">"</span><span class="s">file.txt</span><span class="sh">"</span>
+</code></pre></div></div>
+
 <h2 id="relative-to">Relative to</h2>
+
+<p>Computes the relative path from one path to another (i.e., “subtracts” a base path from a full path).</p>
 
 <p>Useful for printing.</p>
 
