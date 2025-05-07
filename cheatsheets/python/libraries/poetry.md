@@ -18,6 +18,28 @@ Delete virtual env:
 poetry env remove --all
 ```
 
+## Environments
+
+```sh
+poetry env use PYTHON_VERSION
+```
+```sh
+poetry env list
+```
+
+Print command for activating.
+
+```sh
+poetry env activate
+```
+
+```sh
+$(poetry env activate)
+```
+
+
+
+
 ## Config pyproject.toml
 
 ### Common
