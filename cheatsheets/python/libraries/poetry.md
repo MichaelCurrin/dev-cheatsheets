@@ -1,6 +1,24 @@
 # Poetry
 
-## Config - `pyproject.toml`
+## CLI
+
+```sh
+$ poetry install
+```
+
+Install from lockfile:
+
+```sh
+$ poetry sync
+```
+
+Delete virtual env:
+
+```sh
+poetry env remove --all
+```
+
+## Config pyproject.toml
 
 ### Common
 
