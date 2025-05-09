@@ -7,7 +7,7 @@ See sections below for tips on using the text and image endpoints.
 Notes:
 
 - The links below will work fine in the browser as `GET` requests but these are intended to handled in a client e.g. using Python or React for building the URL and displaying the content for a user.
-- If you use Firefox rather than CHrome, the percent encoding is rendered as a space, so that's easy to read. Or you can type an underscore for a space to keep it readable.
+- If you use Firefox rather than Chrome, the percent encoding is rendered as a space, so that's easy to read. Or you can type an underscore for a space to keep it readable.
 
 ## Text endpoint - basic
 
