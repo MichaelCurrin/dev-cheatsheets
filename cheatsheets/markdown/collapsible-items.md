@@ -5,7 +5,7 @@ In Markdown, how to create _sections_ which can expand and collapse again, like 
 
 ## General format
 
-Here we use the `details` and `summary` HTML5 tags as HTML in Markdown, which works GitHub. No additional JavaScript or CSS needed.
+Here we use the `details` and `summary` HTML5 tags as HTML in Markdown, which works on GitHub. No additional JavaScript or CSS needed.
 
 **Markdown code:**
 
