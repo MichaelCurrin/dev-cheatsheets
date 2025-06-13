@@ -1,6 +1,8 @@
 ---
 title: Podman
-description: Docker alternative
+description: Drop-in replacement for Docker
 ---
 
-Go to [podman.io](https://podman.io).
+Accessible with commands the same as Docker CLI.
+
+For more info see [podman.io](https://podman.io).
