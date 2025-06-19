@@ -23,4 +23,46 @@ Keys must be immutable so they can be hashed. e.g. `str`, `int`, `tuple`. Not a 
 dict(a=1, b=2)
 ```
 
+## Get
 
+```python
+x['abc']
+```
+
+Implies returning `None` if key does not exist.
+
+```python
+x.get('abc')
+# None
+
+x.get('abc', 0)
+# 0
+```
+
+## Set
+
+```python
+x.update('abc', 1)
+
+x['abc'] = 1
+```
+
+## Delete
+
+```python
+del x['abc']
+```
+
+## Iterate
+
+```python
+x.keys()
+```
+
+```python
+x.values()
+```
+
+```python
+x.items()
+```
