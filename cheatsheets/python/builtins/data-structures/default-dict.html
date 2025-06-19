@@ -330,6 +330,24 @@
 
 <p>Note that we don’t enforce the type of the list items. They might be simply strings or numbers. In this example, each point is a dictionary.</p>
 
+<h2 id="remove-item">Remove item</h2>
+
+<p>Use <code class="language-plaintext highlighter-rouge">.pop(key)</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="nf">defualtdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">x</span><span class="p">[</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">x</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">)</span>
+<span class="c1"># 1
+</span>
+<span class="n">x</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">)</span>
+<span class="c1"># KeyError: 'abc'
+</span>
+<span class="c1"># Give fallback.
+</span><span class="n">x</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+<span class="c1"># None
+</span></code></pre></div></div>
+
         
     </div>
 </article>
