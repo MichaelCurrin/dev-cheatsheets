@@ -150,3 +150,23 @@ d[year][category].append(data_point)
 ```
 
 Note that we don't enforce the type of the list items. They might be simply strings or numbers. In this example, each point is a dictionary.
+
+
+## Remove item
+
+Use `.pop(key)`.
+
+```python
+x = defualtdict(int)
+x['abc'] += 1
+
+x.pop('abc')
+# 1
+
+x.pop('abc')
+# KeyError: 'abc'
+
+# Give fallback.
+x.pop('abc', None)
+# None
+```
