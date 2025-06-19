@@ -35,16 +35,38 @@ Here we set default as `0`.
 
 ```python
 >>> from collections import defaultdict
+
 >>> x = defaultdict(int)
+>>> # Get a key that doesn't get exist. Actually creates the key.
 >>> x['abc']
 0
 >>> x
 defaultdict(<class 'int'>, {'abc': 0})
+
+>>> # Increment a key that does not exist, setting it to 1.
 >>> x['def'] += 1
 >>> x
 defaultdict(<class 'int'>, {'abc': 0, 'def': 1})
+
+>>> # Increment a key that this time exist, setting it to 2.
+>>> x['def'] += 1
+```
+
+
+### Display
+
+```python
+>>> x = defaultdict(int)
+>>> x['abc'] += 1
+
+>>> x
+defaultdict(<class 'int'>, {'abc': 1})
+
 >>> dict(x)
-{'abc': 0, 'def': 1}
+{'abc': 1}
+
+>>> x.items()
+dict_items([('abc', 2)])
 ```
 
 ### Number
