@@ -4,6 +4,9 @@ We use the `map`, `reduce`, and `filter` methods on an array. These are not avai
 
 They will a **new** object after the applying transformation. The old array will not be affected, unless you reassign over the same name.
 
+Related - [Looping][].
+
+[Looping]: {% link cheatsheets/javascript/general/data-structures/looping.md %}
 
 ## Map
 
