@@ -192,12 +192,12 @@
 
 <h2 id="overview">Overview</h2>
 
-<p>Nothing is simple in JavaScript. How do I iterate over an object? Well there are a few days, more than usual in a programming language.</p>
+<p>Nothing is simple in JavaScript. How do I iterate over an object? Well there are a few ways, more than usual in a programming language.</p>
 
 <p>Click a link to jump to that section of this guide.</p>
 
 <ul>
-  <li><a href="#for">for</a>
+  <li><a href="#for">for</a> - the traditional approach.
     <ul>
       <li><a href="#using-index">Using index</a>
         <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">iterableLength</span><span class="p">;</span> <span class="nx">index</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
@@ -217,7 +217,7 @@
       </li>
     </ul>
   </li>
-  <li><a href="#map">map</a>
+  <li><a href="#map">map</a> - the functional approach.
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">iterable</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">expression</span><span class="p">)</span>
 
   <span class="nx">iterable</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
@@ -225,7 +225,7 @@
   <span class="p">})</span>
 </code></pre></div>    </div>
   </li>
-  <li><a href="#forEach">forEach</a>
+  <li><a href="#forEach">forEach</a> - syntax like <code class="language-plaintext highlighter-rouge">map</code> except <code class="language-plaintext highlighter-rouge">forEach</code> does not return anything.
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">iterable</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">expression</span><span class="p">)</span>
 
   <span class="nx">iterable</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
