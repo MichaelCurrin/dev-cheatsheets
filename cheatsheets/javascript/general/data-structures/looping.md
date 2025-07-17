@@ -14,11 +14,11 @@ See the [Unpack][] page for unpacking variables without necessarily using a for 
 
 ## Overview
 
-Nothing is simple in JavaScript. How do I iterate over an object? Well there are a few days, more than usual in a programming language.
+Nothing is simple in JavaScript. How do I iterate over an object? Well there are a few ways, more than usual in a programming language.
 
 Click a link to jump to that section of this guide.
 
-- [for](#for)
+- [for](#for) - the traditional approach.
     - [Using index](#using-index)
         ```javascript
         for (let index = 0; i < iterableLength; index++) { }
@@ -35,7 +35,7 @@ Click a link to jump to that section of this guide.
 
         for (const [key, value] of Object.entries(myAssociativeArray)) { }
         ```
-- [map](#map)
+- [map](#map) - the functional approach.
     ```javascript
     iterable.map(item => expression)
 
@@ -43,7 +43,7 @@ Click a link to jump to that section of this guide.
         expression
     })
     ```
-- [forEach](#forEach)
+- [forEach](#forEach) - syntax like `map` except `forEach` does not return anything.
     ```javascript
     iterable.forEach(item => expression)
 
