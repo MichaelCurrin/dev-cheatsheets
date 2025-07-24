@@ -209,32 +209,32 @@
 
 <p>See <a href="https://docs.python.org/3/whatsnew/3.10.html">post</a>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">match</span> <span class="n">subject</span><span class="p">:</span>
-    <span class="n">case</span> <span class="o">&lt;</span><span class="n">pattern_1</span><span class="o">&gt;</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">match</span> <span class="n">subject</span><span class="p">:</span>
+    <span class="k">case</span> <span class="o">&lt;</span><span class="n">pattern_1</span><span class="o">&gt;</span><span class="p">:</span>
         <span class="o">&lt;</span><span class="n">action_1</span><span class="o">&gt;</span>
-    <span class="n">case</span> <span class="o">&lt;</span><span class="n">pattern_2</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="k">case</span> <span class="o">&lt;</span><span class="n">pattern_2</span><span class="o">&gt;</span><span class="p">:</span>
         <span class="o">&lt;</span><span class="n">action_2</span><span class="o">&gt;</span>
-    <span class="n">case</span> <span class="o">&lt;</span><span class="n">pattern_3</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="k">case</span> <span class="o">&lt;</span><span class="n">pattern_3</span><span class="o">&gt;</span><span class="p">:</span>
         <span class="o">&lt;</span><span class="n">action_3</span><span class="o">&gt;</span>
-    <span class="n">case</span> <span class="n">_</span><span class="p">:</span>
+    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
         <span class="o">&lt;</span><span class="n">action_wildcard</span><span class="o">&gt;</span>
 </code></pre></div></div>
 
 <p>A simple example of literal matching.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">http_error</span><span class="p">(</span><span class="n">status</span><span class="p">):</span>
-    <span class="n">match</span> <span class="n">status</span><span class="p">:</span>
-        <span class="n">case</span> <span class="mi">400</span><span class="p">:</span>
+    <span class="k">match</span> <span class="n">status</span><span class="p">:</span>
+        <span class="k">case</span> <span class="mi">400</span><span class="p">:</span>
             <span class="k">return</span> <span class="sh">"</span><span class="s">Bad request</span><span class="sh">"</span>
-        <span class="n">case</span> <span class="mi">404</span><span class="p">:</span>
+        <span class="k">case</span> <span class="mi">404</span><span class="p">:</span>
             <span class="k">return</span> <span class="sh">"</span><span class="s">Not found</span><span class="sh">"</span>
-        <span class="n">case</span> <span class="mi">418</span><span class="p">:</span>
+        <span class="k">case</span> <span class="mi">418</span><span class="p">:</span>
             <span class="k">return</span> <span class="sh">"</span><span class="s">I</span><span class="sh">'</span><span class="s">m a teapot</span><span class="sh">"</span>
-        <span class="n">case</span> <span class="n">_</span><span class="p">:</span>
+        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
             <span class="k">return</span> <span class="sh">"</span><span class="s">Something</span><span class="sh">'</span><span class="s">s wrong with the internet</span><span class="sh">"</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">case</span> <span class="mi">401</span> <span class="o">|</span> <span class="mi">403</span> <span class="o">|</span> <span class="mi">404</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="mi">401</span> <span class="o">|</span> <span class="mi">403</span> <span class="o">|</span> <span class="mi">404</span><span class="p">:</span>
     <span class="k">return</span> <span class="sh">"</span><span class="s">Not allowed</span><span class="sh">"</span>
 </code></pre></div></div>
 

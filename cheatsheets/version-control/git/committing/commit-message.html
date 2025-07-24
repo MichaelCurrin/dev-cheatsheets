@@ -181,7 +181,9 @@
 
     <div class="post-content">
         
-            <p>Reuse previous message.</p>
+            <h2 id="create-commit">Create commit</h2>
+
+<p>Reuse previous message.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit <span class="nt">-C</span> HEAD
 </code></pre></div></div>
@@ -192,6 +194,21 @@
 </code></pre></div></div>
 
 <p>Add <code class="language-plaintext highlighter-rouge">-e</code> to force edit more for that.</p>
+
+<h2 id="set-default-commit-message">Set default commit message</h2>
+
+<p>Give path to a file such as one in the repo that is ignored (such as in a global Git ignore list) or one in your Documents.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git config commit.message .COMMIT_MESSAGE
+</code></pre></div></div>
+
+<p>Create file <code class="language-plaintext highlighter-rouge">.COMMIT_MESSAGE</code> with your template.</p>
+
+<p>e.g. If working on a feature with ticket number ABC-123:</p>
+
+<p>```
+feat: (#ABC-123)
+``</p>
 
         
     </div>

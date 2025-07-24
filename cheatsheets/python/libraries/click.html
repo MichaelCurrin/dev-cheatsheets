@@ -256,7 +256,7 @@
 
 
 <span class="nd">@cli.command</span><span class="p">()</span>
-<span class="nd">@click.option</span><span class="p">(</span><span class="sh">"</span><span class="s">--name</span><span class="sh">"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="sh">"</span><span class="s">World</span><span class="sh">"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="sh">"</span><span class="s">The person to greet.</span><span class="sh">"</span><span class="p">)</span>
+<span class="nd">@click.option</span><span class="p">(</span><span class="sh">"</span><span class="s">--name</span><span class="sh">"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="sh">"</span><span class="s">World</span><span class="sh">"</span><span class="p">,</span> <span class="nb">help</span><span class="o">=</span><span class="sh">"</span><span class="s">The person to greet.</span><span class="sh">"</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="sh">"""</span><span class="s">Greets a person.</span><span class="sh">"""</span>
     <span class="n">click</span><span class="p">.</span><span class="nf">echo</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">!</span><span class="sh">"</span><span class="p">)</span>
