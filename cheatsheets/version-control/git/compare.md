@@ -30,12 +30,13 @@ For sample output see [Diff command]({% link cheatsheets/version-control/git/com
 When using `git diff` output to pass to another command like a Python app, then here are some tips.
 
 - Check for staged output first, otherwise default to index (staged and unstaged).
+- Add brackets to make sure the expression finishes and pipes to the next part.
 - Turn off pagination with `-P` `--no-pager`, so there is no interactive scrolling and it pipes the text to the next command.
 
 e.g.
 
 ```sh
-$ git diff --cached --exit-code && git -P diff || git -P diff --cached | echo
+$ (git diff --cached --exit-code && git -P diff || git -P diff --cached) | echo
 ```
 
 You can also look at `git diff-index` as that is meant for passing to a machine instead. But it has different flags and does not pick up files that are untracked.
