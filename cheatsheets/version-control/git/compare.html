@@ -197,12 +197,13 @@
 
 <ul>
   <li>Check for staged output first, otherwise default to index (staged and unstaged).</li>
+  <li>Add brackets to make sure the expression finishes and pipes to the next part.</li>
   <li>Turn off pagination with <code class="language-plaintext highlighter-rouge">-P</code> <code class="language-plaintext highlighter-rouge">--no-pager</code>, so there is no interactive scrolling and it pipes the text to the next command.</li>
 </ul>
 
 <p>e.g.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="nt">--cached</span> <span class="nt">--exit-code</span> <span class="o">&amp;&amp;</span> git <span class="nt">-P</span> diff <span class="o">||</span> git <span class="nt">-P</span> diff <span class="nt">--cached</span> | <span class="nb">echo</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="o">(</span>git diff <span class="nt">--cached</span> <span class="nt">--exit-code</span> <span class="o">&amp;&amp;</span> git <span class="nt">-P</span> diff <span class="o">||</span> git <span class="nt">-P</span> diff <span class="nt">--cached</span><span class="o">)</span> | <span class="nb">echo</span>
 </code></pre></div></div>
 
 <p>You can also look at <code class="language-plaintext highlighter-rouge">git diff-index</code> as that is meant for passing to a machine instead. But it has different flags and does not pick up files that are untracked.</p>
