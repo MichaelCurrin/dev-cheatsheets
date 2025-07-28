@@ -194,7 +194,7 @@
 <span class="nv">X</span><span class="o">=(</span>abc def ghi<span class="o">)</span>
 </code></pre></div></div>
 
-<p>Or newlines.</p>
+<p>Or newlines:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">X</span><span class="o">=(</span>abc
 def
@@ -210,7 +210,7 @@ ghi<span class="o">)</span>
 
 <h3 id="get-one-element">Get one element</h3>
 
-<p>Any invalid index here returns nothing and also a success code.</p>
+<p>Any <strong>invalid index</strong> here returns <strong>nothing</strong> and also a success code.</p>
 
 <p>In ZSH the index starts at 1.</p>
 
@@ -240,39 +240,48 @@ ghi<span class="o">)</span>
 
 <p>Given array:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">MY_ARRAY</span><span class="o">=(</span>abc def ghi<span class="o">)</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">MY_ARRAY</span><span class="o">=(</span><span class="s1">'abc def'</span> ghi<span class="o">)</span>
 </code></pre></div></div>
 
 <h3 id="new-syntax">New syntax</h3>
 
 <p>ZSH and Bash 4.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>X <span class="k">in</span> <span class="nv">$MY_ARRAY</span><span class="o">[</span>@]<span class="p">;</span> <span class="k">do
-  </span><span class="nb">echo</span> <span class="nv">$X</span>
+<p>Remember to add quotes at the start otherwise spaces will be split over newlines.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>X <span class="k">in</span> <span class="s2">"</span><span class="nv">$MY_ARRAY</span><span class="s2">[@]"</span><span class="p">;</span> <span class="k">do
+  </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$X</span><span class="s2">"</span>
 <span class="k">done</span>
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abc
-def
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abc def
 ghi
+</code></pre></div></div>
+
+<p>Output all on one line.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>X <span class="k">in</span> <span class="s2">"</span><span class="nv">$MY_ARRAY</span><span class="s2">[*]"</span><span class="p">;</span> <span class="k">do
+  </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$X</span><span class="s2">"</span>
+<span class="k">done</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abc def ghi
 </code></pre></div></div>
 
 <h3 id="old">Old</h3>
 
-<p>For Bash 3 - you need braces. Otherwise you’ll only get the first element.</p>
+<p>For Bash 3 - you <strong>need</strong> curly braces. Otherwise you’ll only get the first element.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>X <span class="k">in</span> <span class="k">${</span><span class="nv">MY_ARRAY</span><span class="p">[@]</span><span class="k">}</span><span class="p">;</span> <span class="k">do
-  </span><span class="nb">echo</span> <span class="nv">$X</span>
+  </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$X</span><span class="s2">"</span>
 <span class="k">done</span>
 </code></pre></div></div>
 
 <p>Or without an array variable:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>X <span class="k">in </span>abc def ghi<span class="p">;</span> <span class="k">do
-  </span><span class="nb">echo</span> <span class="nv">$X</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>X <span class="k">in</span> <span class="s1">'abc def'</span> ghi<span class="p">;</span> <span class="k">do
+  </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$X</span><span class="s2">"</span>
 <span class="k">done</span>
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abc
-def
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abc def
 ghi
 </code></pre></div></div>
 

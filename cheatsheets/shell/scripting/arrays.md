@@ -29,7 +29,7 @@ X=()
 X=(abc def ghi)
 ```
 
-Or newlines.
+Or newlines:
 
 ```sh
 X=(abc
@@ -48,7 +48,7 @@ declare -A X
 
 ### Get one element
 
-Any invalid index here returns nothing and also a success code.
+Any **invalid index** here returns **nothing** and also a success code.
 
 In ZSH the index starts at 1.
 
@@ -77,52 +77,60 @@ Apr
 Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
 ```
 
-
-
-
 ## Iterate
 
 Given array:
 
 ```sh
-MY_ARRAY=(abc def ghi)
+MY_ARRAY=('abc def' ghi)
 ```
 
 ### New syntax
 
 ZSH and Bash 4.
 
+Remember to add quotes at the start otherwise spaces will be split over newlines.
+
 ```sh
-for X in $MY_ARRAY[@]; do
-  echo $X
+for X in "$MY_ARRAY[@]"; do
+  echo "$X"
 done
 ```
 ```
-abc
-def
+abc def
 ghi
+```
+
+Output all on one line.
+
+```sh
+for X in "$MY_ARRAY[*]"; do
+  echo "$X"
+done
+```
+```
+abc def ghi
 ```
 
 ### Old
 
-For Bash 3 - you need braces. Otherwise you'll only get the first element.
+For Bash 3 - you **need** curly braces. Otherwise you'll only get the first element.
 
 ```sh
 for X in ${MY_ARRAY[@]}; do
-  echo $X
+  echo "$X"
 done
 ```
 
 Or without an array variable:
 
 ```sh
-for X in abc def ghi; do
-  echo $X
+for X in 'abc def' ghi; do
+  echo "$X"
 done
 ```
 ```
-abc
-def
+abc def
 ghi
 ```
 
