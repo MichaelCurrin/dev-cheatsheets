@@ -186,49 +186,63 @@
 
     <div class="post-content">
         
-            <p>Notes:</p>
+            <h2 id="notes">Notes</h2>
 
 <ul>
-  <li>For <code class="language-plaintext highlighter-rouge">TARGET_COMMIT</code> below, use <code class="language-plaintext highlighter-rouge">HEAD~3</code> for 3 commits back, or use a hash for a particular commit.</li>
   <li>If you’ve already pushed code, you’ll have to force push to overwrite with <code class="language-plaintext highlighter-rouge">git push --force</code>.</li>
-  <li>Tip: Before squashing and changing history, make a temporary branch or push your code so you have a backup. Or make sure you know how to use <code class="language-plaintext highlighter-rouge">git reflog</code>.</li>
+  <li>Tip: Before squashing and changing history, you could make a temporary branch or push your code so you have a backup. Or make sure you know how to use <code class="language-plaintext highlighter-rouge">git reflog</code>.</li>
 </ul>
 
 <h2 id="reset-approach">Reset approach</h2>
 
-<p>For example if you are on a feature branch, you could rewind your history to <code class="language-plaintext highlighter-rouge">main</code> branch and then everything committed between those two points will be in the working tree so you can commit them.</p>
+<p>For example, if you are on a feature branch, you could rewind your history to <code class="language-plaintext highlighter-rouge">main</code> branch and then everything committed between those two points will be in the working tree so you can commit them. Then make a commit or commits with the files.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git reset TARGET_COMMIT
+<p>Make sure things are up to date first:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout main
+<span class="nv">$ </span>git pull
+<span class="nv">$ </span>git checkout my-feature
 </code></pre></div></div>
-<p>Note the implied default flag used for <code class="language-plaintext highlighter-rouge">git reset</code> is <code class="language-plaintext highlighter-rouge">--soft</code>.</p>
 
-<p>Then make a commit or commits with the files.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git add PATH
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git reset main
+<span class="nv">$ </span>git add PATH
 <span class="nv">$ </span>git commit
 </code></pre></div></div>
 
-<p>You can also use <code class="language-plaintext highlighter-rouge">git commit --amend</code> if you want to edit that commit instead of adding a new one.</p>
+<p>Note the implied default flag used for <code class="language-plaintext highlighter-rouge">git reset</code> is <code class="language-plaintext highlighter-rouge">--soft</code>, so the changes from the commits are kept.</p>
+
+<p>If you want to squash in general and not compare against main, then do <code class="language-plaintext highlighter-rouge">reset</code> with a commit hash or a reference e.g. <code class="language-plaintext highlighter-rouge">HEAD~3</code> for 3 commits back.</p>
 
 <p>More advanced approach with a script with validation <a href="https://stackoverflow.com/questions/7275508/is-there-a-way-to-squash-a-number-of-commits-non-interactively">here</a> on StackOverflow.</p>
 
 <h2 id="rebase-approach">Rebase approach</h2>
 
-<p>This requires more manual work.</p>
+<p>This approach requires more manual work.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git rebase <span class="nt">-i</span> COMMIT
 </code></pre></div></div>
 
 <p>Then mark each commit as <code class="language-plaintext highlighter-rouge">s</code> for squash.</p>
 
-<p>Save and close.</p>
+<p>Then save and close.</p>
 
 <h2 id="merge-a-branch">Merge a branch</h2>
+
+<p>Pull a branch into the current branch with a squash commit instead of as a series of commits.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git merge <span class="nt">--squash</span> BRANCH
 </code></pre></div></div>
 
 <p>See <a href="https://stackoverflow.com/questions/42332906/squash-git-commits-non-interactively-with-git-rebase">SO thread</a> for using this approach in a more advanced way.</p>
+
+<h2 id="amend-approach">Amend approach</h2>
+
+<p>If you have a history of commits to squash, use the approaches above.</p>
+
+<p>If you have a single commit after <code class="language-plaintext highlighter-rouge">main</code> and you have unstaged changes that you want to add in the commit, you can just amend. And then it doesn’t matter how many times you commit, as long as you amend you will have just one commit.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit <span class="nt">--amend</span>
+</code></pre></div></div>
 
         
     </div>
