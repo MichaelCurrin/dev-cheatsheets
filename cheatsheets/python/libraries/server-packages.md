@@ -25,6 +25,7 @@ def home():
 ```python
 # urls.py
 from django.urls import path
+
 from . import views
 
 urlpatterns = [
@@ -69,8 +70,9 @@ def get_item(item_id):
 ```python
 # urls.py
 path("items/<int:item_id>/", views.get_item),
+```
 
-
+```python
 # views.py
 def get_item(request, item_id):
     return JsonResponse({"item_id": item_id})
@@ -105,16 +107,19 @@ def create_item():
 
     if not price or not isinstance(price, (int, float)):
         return "Invalid price", 400
+
     return data
 ```
 
 **Django:**
 
 ```python
-from django.http import JsonResponse
+# views.py
 import json
 
-# views.py
+from django.http import JsonResponse
+
+
 def create_item(request):
     if request.method == "POST":
         data = json.loads(request.body)
@@ -157,6 +162,7 @@ FastAPI's **Dependency Injection** system is a powerful feature for managing reu
 ```python
 from flask import g
 
+
 def get_db():
     if "db" not in g:
         g.db = connect_to_database()
@@ -198,7 +204,7 @@ def get_data(db = Depends(get_db)):
 
 Yes, all three frameworks can do auto-documentation, but they do it in fundamentally different ways. FastAPI has it built-in as a core feature, while Flask and Django rely on extensions and third-party packages to achieve the same result.
 
-**FastAPI**
+**FastAPI:**
 
 FastAPI stands out because **automatic documentation is a first-class feature** of the framework itself. It leverages Python type hints and Pydantic models to automatically generate an **OpenAPI** (formerly Swagger) schema. This schema is the blueprint for your API's documentation. By default, FastAPI serves two interactive documentation UIs:
 - **Swagger UI** at the `/docs` endpoint. This is an interactive, browser-based interface where you can view all your endpoints, their parameters, data models, and even make live requests to test them.
@@ -206,7 +212,7 @@ FastAPI stands out because **automatic documentation is a first-class feature** 
 
 The magic happens because FastAPI can inspect your code and understand the structure of your data and endpoints without any extra effort on your part. 
 
-**Flask**
+**Flask:**
 
 Flask is a minimalist micro-framework, so it does not come with built-in auto-documentation. To get this functionality, you must install and configure an extension. The most popular choice for this is **Flask-RESTX** (a fork of Flask-RESTful), which is designed specifically for building REST APIs.
 - You define your API's models, fields, and endpoints using Flask-RESTX's syntax.
@@ -215,7 +221,7 @@ Flask is a minimalist micro-framework, so it does not come with built-in auto-do
 
 Other options like **Flask-Autodoc** are also available, which generate documentation from docstrings and route information. However, they are less robust and require more manual work to produce comprehensive documentation.
 
-**Django**
+**Django:**
 
 Django, as a "batteries-included" framework, has a documentation generator built into its admin site called `django.contrib.admindocs`. However, this is primarily for documenting the internal components of your application (models, views, template tags) for developers, not for generating public-facing API documentation.
 
