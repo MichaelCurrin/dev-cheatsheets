@@ -176,6 +176,8 @@
         
             <h2 id="basic-routing-and-endpoints">Basic Routing and Endpoints</h2>
 
+<p>Both Flask and Django use decorators to define routes, but FastAPI uses them in a way that is tightly coupled with HTTP methods (GET, POST, PUT, etc.). This makes the purpose of each endpoint immediately clear. FastAPI also embraces <code class="language-plaintext highlighter-rouge">async</code> and <code class="language-plaintext highlighter-rouge">await</code> for improved performance with I/O-bound tasks, a key difference from Flask’s default synchronous model.</p>
+
 <p><strong>Flask:</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
@@ -219,6 +221,8 @@
 
 <h2 id="path-and-query-parameters">Path and Query Parameters</h2>
 
+<p>In Flask and Django, you define path parameters using a specific syntax within the route string. In FastAPI, you declare them as function arguments with Python type hints. This is a core part of the “FastAPI way” as it automatically validates the data type and provides detailed error messages if the wrong type is sent. Query parameters are handled in the same manner.</p>
+
 <p><strong>Flask:</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@app.route</span><span class="p">(</span><span class="sh">"</span><span class="s">/items/&lt;int:item_id&gt;</span><span class="sh">"</span><span class="p">)</span>
@@ -244,9 +248,9 @@
     <span class="k">return</span> <span class="p">{</span><span class="sh">"</span><span class="s">item_id</span><span class="sh">"</span><span class="p">:</span> <span class="n">item_id</span><span class="p">}</span>
 </code></pre></div></div>
 
-<hr />
-
 <h2 id="request-body-and-data-validation">Request Body and Data Validation</h2>
+
+<p>One of the most significant differences is how FastAPI handles the request body for <code class="language-plaintext highlighter-rouge">POST</code>, <code class="language-plaintext highlighter-rouge">PUT</code>, etc. Instead of manually parsing JSON and validating data types, you define a data model using a Pydantic <code class="language-plaintext highlighter-rouge">BaseModel</code>. FastAPI then automatically handles the parsing, validation, and serialization. This is a huge time-saver and eliminates a lot of boilerplate code.</p>
 
 <p><strong>Flask:</strong></p>
 
@@ -305,9 +309,9 @@
     <span class="k">return</span> <span class="n">item</span>
 </code></pre></div></div>
 
-<hr />
-
 <h2 id="dependency-injection">Dependency Injection</h2>
+
+<p>FastAPI’s <strong>Dependency Injection</strong> system is a powerful feature for managing reusable components like database connections, authentication, or common services. It’s a key intermediate concept. You can define a function (a “dependency”) that your path operation functions can “depend” on. FastAPI handles the rest. This is a more elegant and testable approach than Flask or Django’s manual handling of such components.</p>
 
 <p><strong>Flask:</strong></p>
 
@@ -346,6 +350,43 @@
     <span class="c1"># db is now the database session returned by get_db
 </span>    <span class="c1"># use db...
 </span></code></pre></div></div>
+
+<h2 id="automatic-documentation">Automatic Documentation</h2>
+
+<p>Yes, all three frameworks can do auto-documentation, but they do it in fundamentally different ways. FastAPI has it built-in as a core feature, while Flask and Django rely on extensions and third-party packages to achieve the same result.</p>
+
+<p><strong>FastAPI</strong></p>
+
+<p>FastAPI stands out because <strong>automatic documentation is a first-class feature</strong> of the framework itself. It leverages Python type hints and Pydantic models to automatically generate an <strong>OpenAPI</strong> (formerly Swagger) schema. This schema is the blueprint for your API’s documentation. By default, FastAPI serves two interactive documentation UIs:</p>
+<ul>
+  <li><strong>Swagger UI</strong> at the <code class="language-plaintext highlighter-rouge">/docs</code> endpoint. This is an interactive, browser-based interface where you can view all your endpoints, their parameters, data models, and even make live requests to test them.</li>
+  <li><strong>ReDoc</strong> at the <code class="language-plaintext highlighter-rouge">/redoc</code> endpoint. This is a more modern, a-la-carte style documentation UI that is better for simple reading.</li>
+</ul>
+
+<p>The magic happens because FastAPI can inspect your code and understand the structure of your data and endpoints without any extra effort on your part.</p>
+
+<p><strong>Flask</strong></p>
+
+<p>Flask is a minimalist micro-framework, so it does not come with built-in auto-documentation. To get this functionality, you must install and configure an extension. The most popular choice for this is <strong>Flask-RESTX</strong> (a fork of Flask-RESTful), which is designed specifically for building REST APIs.</p>
+<ul>
+  <li>You define your API’s models, fields, and endpoints using Flask-RESTX’s syntax.</li>
+  <li>The extension then uses this information to generate an OpenAPI schema and serve interactive documentation.</li>
+  <li>The process requires a more manual approach compared to FastAPI. You’re not just writing your application logic; you’re also explicitly defining the documentation structure with a separate set of tools and decorators.</li>
+</ul>
+
+<p>Other options like <strong>Flask-Autodoc</strong> are also available, which generate documentation from docstrings and route information. However, they are less robust and require more manual work to produce comprehensive documentation.</p>
+
+<p><strong>Django</strong></p>
+
+<p>Django, as a “batteries-included” framework, has a documentation generator built into its admin site called <code class="language-plaintext highlighter-rouge">django.contrib.admindocs</code>. However, this is primarily for documenting the internal components of your application (models, views, template tags) for developers, not for generating public-facing API documentation.</p>
+
+<p>For API documentation, you would use <strong>Django REST Framework (DRF)</strong>, the most common toolkit for building APIs with Django. DRF, much like FastAPI, can automatically generate a browsable API and an OpenAPI schema.</p>
+<ul>
+  <li>DRF’s <strong>Browsable API</strong> is a built-in feature that lets you view and interact with your endpoints directly in the browser.</li>
+  <li>For more formal documentation like Swagger UI or ReDoc, you need to use a third-party package like <strong>drf-yasg</strong> or <strong>drf-spectacular</strong>. These packages parse your DRF views and serializers to create a full OpenAPI schema, which is then used to serve the interactive documentation pages.</li>
+</ul>
+
+<p>The integration of documentation in Django is a two-step process: you build your API with DRF, then you add a separate package to generate the OpenAPI documentation from your DRF components.</p>
 
         
     </div>
