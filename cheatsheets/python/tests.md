@@ -162,6 +162,22 @@ Run quietly - taken from PyCharm:
 $ pytest --no-header --no-summary -q
 ```
 
+### Parametrized tests
+
+```python
+def add(a, b):
+    return a + b
+
+
+@pytest.mark.parametrize(
+    "a, b, expected_result",
+    [(1, 2, 3), (0, 0, 0), (-1, 1, 0)],
+    ids=["positive_numbers", "zeros", "negative_and_positive"],
+)
+def test_add_function_with_ids(a, b, expected_result):
+    assert add(a, b) == expected_result
+
+```
 
 ## Nose
 
