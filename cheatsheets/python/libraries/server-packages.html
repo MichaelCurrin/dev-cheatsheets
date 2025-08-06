@@ -194,6 +194,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># urls.py
 </span><span class="kn">from</span> <span class="n">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+
 <span class="kn">from</span> <span class="n">.</span> <span class="kn">import</span> <span class="n">views</span>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
@@ -234,9 +235,9 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># urls.py
 </span><span class="nf">path</span><span class="p">(</span><span class="sh">"</span><span class="s">items/&lt;int:item_id&gt;/</span><span class="sh">"</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">get_item</span><span class="p">),</span>
+</code></pre></div></div>
 
-
-<span class="c1"># views.py
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># views.py
 </span><span class="k">def</span> <span class="nf">get_item</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">item_id</span><span class="p">):</span>
     <span class="k">return</span> <span class="nc">JsonResponse</span><span class="p">({</span><span class="sh">"</span><span class="s">item_id</span><span class="sh">"</span><span class="p">:</span> <span class="n">item_id</span><span class="p">})</span>
 </code></pre></div></div>
@@ -268,16 +269,19 @@
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">price</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nf">isinstance</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
         <span class="k">return</span> <span class="sh">"</span><span class="s">Invalid price</span><span class="sh">"</span><span class="p">,</span> <span class="mi">400</span>
+
     <span class="k">return</span> <span class="n">data</span>
 </code></pre></div></div>
 
 <p><strong>Django:</strong></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">django.http</span> <span class="kn">import</span> <span class="n">JsonResponse</span>
-<span class="kn">import</span> <span class="n">json</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># views.py
+</span><span class="kn">import</span> <span class="n">json</span>
 
-<span class="c1"># views.py
-</span><span class="k">def</span> <span class="nf">create_item</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="kn">from</span> <span class="n">django.http</span> <span class="kn">import</span> <span class="n">JsonResponse</span>
+
+
+<span class="k">def</span> <span class="nf">create_item</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="n">method</span> <span class="o">==</span> <span class="sh">"</span><span class="s">POST</span><span class="sh">"</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">loads</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">body</span><span class="p">)</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">)</span>
@@ -317,6 +321,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">flask</span> <span class="kn">import</span> <span class="n">g</span>
 
+
 <span class="k">def</span> <span class="nf">get_db</span><span class="p">():</span>
     <span class="k">if</span> <span class="sh">"</span><span class="s">db</span><span class="sh">"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">g</span><span class="p">:</span>
         <span class="n">g</span><span class="p">.</span><span class="n">db</span> <span class="o">=</span> <span class="nf">connect_to_database</span><span class="p">()</span>
@@ -355,7 +360,7 @@
 
 <p>Yes, all three frameworks can do auto-documentation, but they do it in fundamentally different ways. FastAPI has it built-in as a core feature, while Flask and Django rely on extensions and third-party packages to achieve the same result.</p>
 
-<p><strong>FastAPI</strong></p>
+<p><strong>FastAPI:</strong></p>
 
 <p>FastAPI stands out because <strong>automatic documentation is a first-class feature</strong> of the framework itself. It leverages Python type hints and Pydantic models to automatically generate an <strong>OpenAPI</strong> (formerly Swagger) schema. This schema is the blueprint for your API’s documentation. By default, FastAPI serves two interactive documentation UIs:</p>
 <ul>
@@ -365,7 +370,7 @@
 
 <p>The magic happens because FastAPI can inspect your code and understand the structure of your data and endpoints without any extra effort on your part.</p>
 
-<p><strong>Flask</strong></p>
+<p><strong>Flask:</strong></p>
 
 <p>Flask is a minimalist micro-framework, so it does not come with built-in auto-documentation. To get this functionality, you must install and configure an extension. The most popular choice for this is <strong>Flask-RESTX</strong> (a fork of Flask-RESTful), which is designed specifically for building REST APIs.</p>
 <ul>
@@ -376,7 +381,7 @@
 
 <p>Other options like <strong>Flask-Autodoc</strong> are also available, which generate documentation from docstrings and route information. However, they are less robust and require more manual work to produce comprehensive documentation.</p>
 
-<p><strong>Django</strong></p>
+<p><strong>Django:</strong></p>
 
 <p>Django, as a “batteries-included” framework, has a documentation generator built into its admin site called <code class="language-plaintext highlighter-rouge">django.contrib.admindocs</code>. However, this is primarily for documenting the internal components of your application (models, views, template tags) for developers, not for generating public-facing API documentation.</p>
 
