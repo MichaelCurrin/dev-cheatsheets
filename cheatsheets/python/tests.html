@@ -322,13 +322,18 @@
 
 <h3 id="parametrized-tests">Parametrized tests</h3>
 
+<p>Here we have first case as <code class="language-plaintext highlighter-rouge">a=1</code> <code class="language-plaintext highlighter-rouge">b=2</code> <code class="language-plaintext highlighter-rouge">expected_result=3</code>:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
 
 <span class="nd">@pytest.mark.parametrize</span><span class="p">(</span>
     <span class="sh">"</span><span class="s">a, b, expected_result</span><span class="sh">"</span><span class="p">,</span>
-    <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span>
+    <span class="p">[</span>
+        <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">],</span>
     <span class="n">ids</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">positive_numbers</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">zeros</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">negative_and_positive</span><span class="sh">"</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_add_function_with_ids</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">expected_result</span><span class="p">):</span>
