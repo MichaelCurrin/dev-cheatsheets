@@ -1,23 +1,18 @@
 # CLI
 
-## Install
-
-```sh
-brew install podman
-```
-```sh
-podman machine init
-```
+## Start
 
 ```sh
 podman machine start
 ```
 
+## Stop
+
 ```sh
 podman machine stop
 ```
 
-## Run
+## Run Docker commands
 
 Remember - if you are using Podman as a drop-in replacement for Docker, you can use `docker` commands instead of these.
 
