@@ -169,12 +169,34 @@
 
     <div class="post-content">
         
-            <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>podman
+            <h2 id="install">Install</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>podman
 </code></pre></div></div>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>podman machine init
 </code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>podman machine start
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>podman machine stop
+</code></pre></div></div>
+
+<h2 id="run">Run</h2>
+
+<p>Remember - if you are using Podman as a drop-in replacement for Docker, you can use <code class="language-plaintext highlighter-rouge">docker</code> commands instead of these.</p>
+
+<h3 id="registry">Registry</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>podman login REGISTRY
+</code></pre></div></div>
+
+<h3 id="images">Images</h3>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>podman pull xxx/yyy:latest
 </code></pre></div></div>
+
+<h3 id="containers">Containers</h3>
+
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>podman run <span class="nt">-it</span> <span class="nt">-p</span> 8080:8080
 </code></pre></div></div>
 
