@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>git | Dev Cheatsheets</title>
+    <title>Search stashes | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="git" />
+    <meta property="og:title" content="Search stashes" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="git" />
+    <meta property="twitter:title" content="Search stashes" />
 <meta name="generator" content="Jekyll v4.4.1" />
 
 <meta property="og:locale" content="en_US" />
@@ -26,16 +26,16 @@
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/git.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/git.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/search-stashes.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/search-stashes.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/git.html",
-    "headline":    "git",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/search-stashes.html",
+    "headline":    "Search stashes",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -88,11 +88,11 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/version-control/git/commands/git.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/version-control/git/search-stashes.md">
     📝 <span>Edit page</span>
 </a>
 
-            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/version-control/git/commands/">
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/version-control/git/">
     ➕ <span>Add page</span>
 </a>
 
@@ -105,7 +105,7 @@
             
 
 
-            <span>git</span>
+            <span>Search stashes</span>
         </h1>
 
         
@@ -156,20 +156,8 @@
         
 
         
-            
-            <a href="/dev-cheatsheets/cheatsheets/version-control/git/commands/">
-    Commands
-</a>
-
-        
-     
-        
-            /
-        
-
-        
-            <a href="/dev-cheatsheets/cheatsheets/version-control/git/commands/git.html" class="underline">
-                git
+            <a href="/dev-cheatsheets/cheatsheets/version-control/git/search-stashes.html" class="underline">
+                Search stashes
             </a>
         
      
@@ -181,25 +169,16 @@
 
     <div class="post-content">
         
-            <p>Git CLI <a href="https://git-scm.com/docs/git">docs</a></p>
+            <p>Search Git stashes for a keyword and print the stash ID if one is found.</p>
 
-<h2 id="reset-restore-and-revert">Reset, restore and revert</h2>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">QUERY</span><span class="o">=</span><span class="s1">'my term'</span>
 
-<blockquote>
-  <p>There are three commands with similar names: git reset, git restore and git revert.</p>
-</blockquote>
-
-<blockquote>
-  <p>git-revert[1] is about making a new commit that reverts the changes made by other commits.</p>
-</blockquote>
-
-<blockquote>
-  <p>git-restore[1] is about restoring files in the working tree from either the index or another commit. This command does not update your branch. The command can also be used to restore files in the index from another commit.</p>
-</blockquote>
-
-<blockquote>
-  <p>git-reset[1] is about updating your branch, moving the tip in order to add or remove commits from the branch. This operation changes the commit history.</p>
-</blockquote>
+git stash list | <span class="nb">awk</span> <span class="s1">'{sub(/:$/, "", $1); print $1}'</span> | <span class="k">while </span><span class="nb">read </span>stash<span class="p">;</span> <span class="k">do
+  if </span>git stash show <span class="nt">-p</span> <span class="s2">"</span><span class="nv">$stash</span><span class="s2">"</span> | <span class="nb">grep</span> <span class="nt">-q</span> <span class="s2">"</span><span class="nv">$QUERY</span><span class="s2">"</span><span class="p">;</span> <span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$stash</span><span class="s2">"</span>
+  <span class="k">fi
+done</span>
+</code></pre></div></div>
 
         
     </div>

@@ -1633,17 +1633,6 @@
                 </li>
         
             <li>
-                <a href="/dev-cheatsheets/cheatsheets/version-control/git/commands/git.html">
-                    
-
-
-                    <span>git</span>
-                </a>
-                    <i>
-</i>
-                </li>
-        
-            <li>
                 <a href="/dev-cheatsheets/cheatsheets/version-control/git/commands/git-grep.html">
                     
 
@@ -1826,7 +1815,9 @@
     
         <h2>Content</h2>
 
-        <h3 id="help">Help</h3>
+        <p>See Git CLI <a href="https://git-scm.com/docs/git">docs</a>.</p>
+
+<h3 id="help">Help</h3>
 
 <p>The <code class="language-plaintext highlighter-rouge">log</code> subcommand is used for the examples below.</p>
 
@@ -1844,6 +1835,24 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>man git-log
 </code></pre></div></div>
+
+<h2 id="reset-restore-and-revert">Reset, restore and revert</h2>
+
+<blockquote>
+  <p>There are three commands with similar names: git reset, git restore and git revert.</p>
+</blockquote>
+
+<blockquote>
+  <p>git-revert[1] is about making a new commit that reverts the changes made by other commits.</p>
+</blockquote>
+
+<blockquote>
+  <p>git-restore[1] is about restoring files in the working tree from either the index or another commit. This command does not update your branch. The command can also be used to restore files in the index from another commit.</p>
+</blockquote>
+
+<blockquote>
+  <p>git-reset[1] is about updating your branch, moving the tip in order to add or remove commits from the branch. This operation changes the commit history.</p>
+</blockquote>
     
 
         

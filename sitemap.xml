@@ -3664,9 +3664,6 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/git-grep.html</loc>
 </url>
 <url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/git.html</loc>
-</url>
-<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/commands/init.html</loc>
 </url>
 <url>
@@ -3770,6 +3767,9 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/restore/unstage.html</loc>
+</url>
+<url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/search-stashes.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/version-control/git/submodules/about.html</loc>
