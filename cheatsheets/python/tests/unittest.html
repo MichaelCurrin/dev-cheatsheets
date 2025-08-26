@@ -9,33 +9,33 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Tests | Dev Cheatsheets</title>
+    <title>Unittest | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Tests" />
+    <meta property="og:title" content="Unittest" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Tests" />
+    <meta property="twitter:title" content="Unittest" />
 <meta name="generator" content="Jekyll v4.4.1" />
 
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="Cheatsheet for tests in Python" />
-    <meta property="og:description" content="Cheatsheet for tests in Python" />
+    <meta name="description" content="Python builtin." />
+    <meta property="og:description" content="Python builtin." />
 <meta name="author" content="Michael Currin" />
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/tests.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/tests.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/tests/unittest.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/tests/unittest.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "Cheatsheet for tests in Python",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/tests.html",
-    "headline":    "Tests",
+    "description": "Python builtin.",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/tests/unittest.html",
+    "headline":    "Unittest",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -88,11 +88,11 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/python/tests.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/python/tests/unittest.md">
     📝 <span>Edit page</span>
 </a>
 
-            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/python/">
+            <a id="github-add" href="https://github.com/MichaelCurrin/dev-cheatsheets/new/master/cheatsheets/python/tests/">
     ➕ <span>Add page</span>
 </a>
 
@@ -105,12 +105,12 @@
             
 
 
-            <span>Tests</span>
+            <span>Unittest</span>
         </h1>
 
         
             <blockquote>
-                <p>Cheatsheet for tests in Python</p>
+                <p>Python builtin.</p>
 
             </blockquote>
         
@@ -149,8 +149,20 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/python/tests.html" class="underline">
-                Tests
+            
+            <a href="/dev-cheatsheets/cheatsheets/python/tests/">
+    Tests
+</a>
+
+        
+     
+        
+            /
+        
+
+        
+            <a href="/dev-cheatsheets/cheatsheets/python/tests/unittest.html" class="underline">
+                Unittest
             </a>
         
      
@@ -162,37 +174,11 @@
 
     <div class="post-content">
         
-            <p>See <a href="https://realpython.com/python-testing/">Getting started with testing in Python</a> on RealPython</p>
-
-<ul>
-  <li><a href="#unittest">Unittest</a>
-    <ul>
-      <li>Python builtin.</li>
-    </ul>
-  </li>
-  <li><a href="#pytest">PyTest</a>
-    <ul>
-      <li>Python package.</li>
-      <li>Great for getting into testing. Uses functions.</li>
-      <li>Uses its own form of tests.</li>
-    </ul>
-  </li>
-  <li><a href="#nose">Nose</a>
-    <ul>
-      <li>Python package.</li>
-      <li>Uses unittest-style tests.</li>
-      <li>More advanced than PyTest and it recommends PyTest for starting out.</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="unittest">Unittest</h2>
-
-<ul>
+            <ul>
   <li><a href="https://docs.python.org/3/library/unittest.html">unittest docs</a></li>
 </ul>
 
-<h3 id="syntax">Syntax</h3>
+<h2 id="syntax">Syntax</h2>
 
 <ul>
   <li>Create a class which inherits from <code class="language-plaintext highlighter-rouge">unittest.TestCase</code>.</li>
@@ -200,7 +186,7 @@
   <li>Add a call in the <code class="language-plaintext highlighter-rouge">__main__</code> check which runs <code class="language-plaintext highlighter-rouge">unittest.main()</code>.</li>
 </ul>
 
-<h3 id="sample-tests">Sample tests</h3>
+<h2 id="sample-tests">Sample tests</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># test_string_methods.py
 </span><span class="kn">import</span> <span class="n">unittest</span>
@@ -244,7 +230,7 @@
     <span class="n">unittest</span><span class="p">.</span><span class="nf">main</span><span class="p">()</span>
 </code></pre></div></div>
 
-<h3 id="run">Run</h3>
+<h2 id="run">Run</h2>
 
 <p>Run against a directory (module) with verbose flag.</p>
 
@@ -265,97 +251,82 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> unittest discover <span class="nt">-s</span> tests <span class="nt">-t</span> src
 </code></pre></div></div>
 
-<h2 id="pytest">PyTest</h2>
+<h2 id="mocking-and-patching">Mocking and patching</h2>
 
-<ul>
-  <li><a href="https://docs.pytest.org/en/latest/">pytest docs</a></li>
-</ul>
+<p>Copied from the <a href="https://docs.python.org/3/library/unittest.mock.html">docs</a>.</p>
 
-<h3 id="install">Install</h3>
+<h3 id="mock-return-value">Mock return value</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>pytest
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">unittest.mock</span> <span class="kn">import</span> <span class="n">MagicMock</span>
+
+
+<span class="n">thing</span> <span class="o">=</span> <span class="nc">ProductionClass</span><span class="p">()</span>
+<span class="n">thing</span><span class="p">.</span><span class="n">method</span> <span class="o">=</span> <span class="nc">MagicMock</span><span class="p">(</span><span class="n">return_value</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">thing</span><span class="p">.</span><span class="nf">method</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="sh">'</span><span class="s">value</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">thing</span><span class="p">.</span><span class="n">method</span><span class="p">.</span><span class="nf">assert_called_with</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="sh">'</span><span class="s">value</span><span class="sh">'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="sample-test">Sample test</h3>
+<h3 id="patch-a-class">Patch a class</h3>
 
-<p>Define a function starting with <code class="language-plaintext highlighter-rouge">test_*</code>.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># test_sample.py
-</span><span class="k">def</span> <span class="nf">inc</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 
-<span class="k">def</span> <span class="nf">test_answer</span><span class="p">():</span>
-    <span class="k">assert</span> <span class="nf">inc</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+<span class="nd">@patch</span><span class="p">(</span><span class="sh">'</span><span class="s">module.ClassName2</span><span class="sh">'</span><span class="p">)</span>
+<span class="nd">@patch</span><span class="p">(</span><span class="sh">'</span><span class="s">module.ClassName1</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">MockClass1</span><span class="p">,</span> <span class="n">MockClass2</span><span class="p">):</span>
+    <span class="c1"># pass
+</span></code></pre></div></div>
+
+<h3 id="patch-a-function">Patch a function</h3>
+
+<p>Add <code class="language-plaintext highlighter-rouge">return_value</code> or <code class="language-plaintext highlighter-rouge">side_effect</code> parameters if needed. For async, use <code class="language-plaintext highlighter-rouge">new_callable=AsyncMock</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>
+
+
+<span class="nd">@patch</span><span class="p">(</span><span class="sh">'</span><span class="s">module.function_name</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">mock_function</span><span class="p">):</span>
+    <span class="k">pass</span>
 </code></pre></div></div>
 
-<h3 id="run-tests">Run tests</h3>
+<h3 id="patch-a-method">Patch a method</h3>
 
-<p>Run all test suits:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pytest
+
+<span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">patch</span><span class="p">.</span><span class="nf">object</span><span class="p">(</span><span class="n">MyClass</span><span class="p">,</span> <span class="sh">'</span><span class="s">my_method</span><span class="sh">'</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span> <span class="k">as</span> <span class="n">mock_my_method</span><span class="p">:</span>
+        <span class="n">thing</span> <span class="o">=</span> <span class="nc">MyClass</span><span class="p">()</span>
+        <span class="n">thing</span><span class="p">.</span><span class="nf">my_method</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+    <span class="n">mock_my_method</span><span class="p">.</span><span class="nf">assert_called_once_with</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+
+<span class="c1"># OR
+</span>
+<span class="nd">@patch</span><span class="p">(</span><span class="sh">'</span><span class="s">module.MyClass.method_name</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">mock_method_name</span><span class="p">):</span>
+    <span class="k">pass</span>
 </code></pre></div></div>
 
-<p>Run targets - see <a href="https://docs.pytest.org/en/latest/how-to/usage.html">Usage docs</a>.</p>
+<p>Mock the return value of an object instance on a class instance.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="c"># Module</span>
-<span class="nv">$ </span>pytest test_abc.py
-<span class="nv">$ </span><span class="c"># Directory</span>
-<span class="nv">$ </span>pytest dir_name/
-<span class="nv">$ </span><span class="c"># Keyword. Exclude keywords.</span>
-<span class="nv">$ </span>pytest <span class="nt">-k</span> <span class="s2">"MyClass and not method"</span>
-</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@pytest.fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="sh">"</span><span class="s">function</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">mock_service</span><span class="p">():</span>
+    <span class="k">return</span> <span class="nc">Service</span><span class="p">(</span>
+        <span class="n">abc</span><span class="o">=</span><span class="sh">'</span><span class="s">123
+    )
 
-<p>Run only failed tests:</p>
+async def test_my_method(mock_service):
+    mock_my_function_output = AsyncMock()
+    mock_my_function_output.fizz.buzz = </span><span class="sh">"</span><span class="s">dummy value</span><span class="sh">"</span><span class="s">
+    mock_service.my_object.my_function.return_value = mock_my_function_output
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pytest <span class="nt">--last-failed</span>
-</code></pre></div></div>
+    result = await mock_service.my_method(</span><span class="sh">'</span><span class="n">ABC</span><span class="sh">'</span><span class="s">)
 
-<p>Run in parallel e.g. with 4 processes:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pytest <span class="nt">-n</span> 4
-</code></pre></div></div>
-
-<p>Run quietly - taken from PyCharm:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pytest <span class="nt">--no-header</span> <span class="nt">--no-summary</span> <span class="nt">-q</span>
-</code></pre></div></div>
-
-<h3 id="parametrized-tests">Parametrized tests</h3>
-
-<p>Here we have first case as <code class="language-plaintext highlighter-rouge">a=1</code> <code class="language-plaintext highlighter-rouge">b=2</code> <code class="language-plaintext highlighter-rouge">expected_result=3</code>:</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-
-
-<span class="nd">@pytest.mark.parametrize</span><span class="p">(</span>
-    <span class="sh">"</span><span class="s">a, b, expected_result</span><span class="sh">"</span><span class="p">,</span>
-    <span class="p">[</span>
-        <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
-        <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-        <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="p">],</span>
-    <span class="n">ids</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">positive_numbers</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">zeros</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">negative_and_positive</span><span class="sh">"</span><span class="p">],</span>
-<span class="p">)</span>
-<span class="k">def</span> <span class="nf">test_add_function_with_ids</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">expected_result</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected_result</span>
-
-</code></pre></div></div>
-
-<h2 id="nose">Nose</h2>
-
-<ul>
-  <li><a href="https://nose.readthedocs.io/en/latest/">nose docs</a></li>
-</ul>
-
-<h3 id="install-1">Install</h3>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>nose
-</code></pre></div></div>
-
-<h3 id="run-tests-1">Run tests</h3>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nosetests
-</code></pre></div></div>
+    assert result == </span><span class="sh">"</span><span class="s">dummy value</span><span class="sh">"</span><span class="s">
+</span></code></pre></div></div>
 
         
     </div>

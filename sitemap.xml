@@ -721,6 +721,9 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/libraries/</loc>
 </url>
 <url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/tests/</loc>
+</url>
+<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/type-checks/data-structures/</loc>
 </url>
 <url>
@@ -901,6 +904,9 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/jekyll/liquid/conditionals/non-empty.html</loc>
 </url>
 <url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/tests/nose.html</loc>
+</url>
+<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/javascript/yarn/commands/npm-vs-yarn.html</loc>
 </url>
 <url>
@@ -1004,6 +1010,9 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/install/pyenv.html</loc>
+</url>
+<url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/tests/pytest.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/artificial-intelligence/rag.html</loc>
@@ -1171,9 +1180,6 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/general/tests.html</loc>
 </url>
 <url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/tests.html</loc>
-</url>
-<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/javascript/deno/modules/third-party.html</loc>
 </url>
 <url>
@@ -1214,6 +1220,9 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/ruby/uninstall.html</loc>
+</url>
+<url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/tests/unittest.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/javascript/npm/commands/update.html</loc>
