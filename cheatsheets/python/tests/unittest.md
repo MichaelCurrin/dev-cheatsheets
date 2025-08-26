@@ -81,3 +81,58 @@ Change to the `src/` directory, scan for all `test*.py` files inside the the `te
 ```sh
 python -m unittest discover -s tests -t src
 ```
+
+## Mocking and patching
+
+Copied from the [docs](https://docs.python.org/3/library/unittest.mock.html).
+
+### Mock return value
+
+```python
+from unittest.mock import MagicMock
+
+
+thing = ProductionClass()
+thing.method = MagicMock(return_value=3)
+thing.method(3, 4, 5, key='value')
+
+thing.method.assert_called_with(3, 4, 5, key='value')
+```
+
+
+### Patch a class
+
+```python
+from unittest.mock import patch
+
+
+@patch('module.ClassName2')
+@patch('module.ClassName1')
+def test(MockClass1, MockClass2):
+    # pass
+```
+
+### Patch a function
+
+```python
+from unittest.mock import patch
+
+
+@patch('module.function_name')
+def test(mock_function):
+    pass
+```
+
+### Patch a method
+
+```python
+from unittest.mock import patch
+
+
+def test():
+    with patch.object(ProductionClass, 'method', return_value=None) as mock_method:
+        thing = ProductionClass()
+        thing.method(1, 2, 3)
+
+    mock_method.assert_called_once_with(1, 2, 3)
+```
