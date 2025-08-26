@@ -99,7 +99,6 @@ thing.method(3, 4, 5, key='value')
 thing.method.assert_called_with(3, 4, 5, key='value')
 ```
 
-
 ### Patch a class
 
 ```python
@@ -113,6 +112,8 @@ def test(MockClass1, MockClass2):
 ```
 
 ### Patch a function
+
+Add `return_value` or `side_effect` parameters if needed. For async, use `new_callable=AsyncMock`.
 
 ```python
 from unittest.mock import patch
@@ -130,9 +131,35 @@ from unittest.mock import patch
 
 
 def test():
-    with patch.object(ProductionClass, 'method', return_value=None) as mock_method:
-        thing = ProductionClass()
-        thing.method(1, 2, 3)
+    with patch.object(MyClass, 'my_method', return_value=None) as mock_my_method:
+        thing = MyClass()
+        thing.my_method(1, 2, 3)
 
-    mock_method.assert_called_once_with(1, 2, 3)
+    mock_my_method.assert_called_once_with(1, 2, 3)
+
+
+# OR
+
+@patch('module.MyClass.method_name')
+def test(mock_method_name):
+    pass
+```
+
+Mock the return value of an object instance on a class instance.
+
+```python
+@pytest.fixture(scope="function")
+def mock_service():
+    return Service(
+        abc='123
+    )
+
+async def test_my_method(mock_service):
+    mock_my_function_output = AsyncMock()
+    mock_my_function_output.fizz.buzz = "dummy value"
+    mock_service.my_object.my_function.return_value = mock_my_function_output
+
+    result = await mock_service.my_method('ABC')
+
+    assert result == "dummy value"
 ```
