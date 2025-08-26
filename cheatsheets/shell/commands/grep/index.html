@@ -1610,6 +1610,63 @@
 
     
     
+        <h2>Content</h2>
+
+        <h3 id="usage">Usage</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grep [OPTIONS] PATTERN [FILE...]
+grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]
+</code></pre></div></div>
+
+<h3 id="quick-view">Quick view</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Use Case</th>
+      <th style="text-align: left">Command Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Basic Search</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">grep "PATTERN" FILENAME</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Case-Insensitive Search</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">grep -i "PATTERN" FILENAME</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Count Matches</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">grep -c "PATTERN" FILENAME</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Display Line Numbers</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">grep -n "PATTERN" FILENAME</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Invert Match</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">grep -v "PATTERN" FILENAME</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Recursive Search</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">grep -r "PATTERN" DIRECTORY</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Show Context</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">grep -C NUM "PATTERN" FILENAME</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Extended Regex</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">grep -E "REGEX_PATTERN" FILENAME</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Piping</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">command \| grep "PATTERN"</code></td>
+    </tr>
+  </tbody>
+</table>
+    
 
         
     </div>
