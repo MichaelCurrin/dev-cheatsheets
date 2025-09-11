@@ -88,3 +88,15 @@ x=$([[ -f "$FILE" ]] && 'yes' || 'no')
 [[ FILE1 -ot FILE2 ]] 	2 is more recent than 1
 [[ FILE1 -ef FILE2 ]] 	Same files
 ```
+
+## Read lines in a file
+
+```sh
+FILE=$(<myfile.txt)
+echo "$FILE"
+echo
+
+for LINE in "$FILE"; do
+  echo "$LINE"
+done
+```
