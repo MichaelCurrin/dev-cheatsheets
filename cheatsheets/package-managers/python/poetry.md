@@ -47,6 +47,14 @@ $ poetry add PACKAGE
 $ poetry add PACKAGE==VERSION
 ```
 
+Dev package:
+
+```sh
+$ poetry add -D PACKAGE
+$ poetry add --dev PACKAGE
+$ poetry add -G dev PACKAGE
+```
+
 For extras, make sure to quote the hard brackets:
 
 ```sh
@@ -88,7 +96,7 @@ python = "^3.10.1"
 
 ### Lock a range
 
-```toml
+```
 [tool.poetry.dependencies]
 python = ">=3.10,<3.13"
 ```
@@ -111,7 +119,7 @@ That uses the [Cache directory](https://python-poetry.org/docs/configuration/#ca
 
 ### In project
 
-You can choose to create virtual environment in the project. This makes it easier for configuring your IDE to recognize it for new terminal sessions and loading dependencies when viewing Python files.
+You can choose to create a virtual environment in the project. This makes it easier for configuring your IDE to recognize it for new terminal sessions and loading dependencies when viewing Python files.
 
 - `poetry.toml` (not `pyproject.toml`)
     ```toml
@@ -124,10 +132,12 @@ You can choose to create virtual environment in the project. This makes it easie
 This creates a subshell, so when you exit the subshell no changes are persisted.
 
 ```sh
-$ poetry shell
+$ poetry env activate
 ```
 
-Or
+The old way for Poetry v1 was `poetry shell` and now you need a plugin for this for v2.
+
+Or if you made the virtual env in your project.
 
 ```sh
 $ source {path_to_venv}/bin/activate
@@ -142,12 +152,25 @@ And deactivate with:
 $ deactivate
 ```
 
-
-## Run commands in environment
+### Get path to virtual env
 
 ```sh
-$ poetry run python your_script.py
+$ poetry env info --path
+```
 
+## Run commands in the environment
+
+Interactive console:
+
+```sh
+$ poetry run python
+```
+Run a script:
+```sh
+$ poetry run python your_script.py
+```
+Run a CLI tool from the installed packages:
+```sh
 $ poetry run pytest
 ```
 
