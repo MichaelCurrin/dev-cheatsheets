@@ -246,6 +246,17 @@ diff &lt;<span class="o">(</span><span class="nb">ls </span>dirA<span class="o">
 [[ FILE1 -ef FILE2 ]] 	Same files
 </code></pre></div></div>
 
+<h2 id="read-lines-in-a-file">Read lines in a file</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">FILE</span><span class="o">=</span><span class="si">$(</span>&lt;myfile.txt<span class="si">)</span>
+<span class="nb">echo</span> <span class="s2">"</span><span class="nv">$FILE</span><span class="s2">"</span>
+<span class="nb">echo
+
+</span><span class="k">for </span>LINE <span class="k">in</span> <span class="s2">"</span><span class="nv">$FILE</span><span class="s2">"</span><span class="p">;</span> <span class="k">do
+  </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$LINE</span><span class="s2">"</span>
+<span class="k">done</span>
+</code></pre></div></div>
+
         
     </div>
 </article>
