@@ -35,7 +35,7 @@ Otherwise you have to add this flag in the CLI:
 $ poetry install --no-root
 ```
 
-## Depenencies
+## Dependencies
 
 ### Add dependency
 
