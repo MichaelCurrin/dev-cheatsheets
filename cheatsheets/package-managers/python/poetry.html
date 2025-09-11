@@ -207,6 +207,13 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry add <span class="nv">PACKAGE</span><span class="o">==</span>VERSION
 </code></pre></div></div>
 
+<p>Dev package:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry add <span class="nt">-D</span> PACKAGE
+<span class="nv">$ </span>poetry add <span class="nt">--dev</span> PACKAGE
+<span class="nv">$ </span>poetry add <span class="nt">-G</span> dev PACKAGE
+</code></pre></div></div>
+
 <p>For extras, make sure to quote the hard brackets:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry add <span class="s1">'lxml[html-clean]'</span>
@@ -243,9 +250,9 @@
 
 <h3 id="lock-a-range">Lock a range</h3>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[tool.poetry.dependencies]</span>
-<span class="py">python</span> <span class="p">=</span> <span class="py">"&gt;</span><span class="p">=</span><span class="mf">3.10</span><span class="p">,</span><span class="err">&lt;</span><span class="mf">3.13</span><span class="s">"</span><span class="err">
-</span></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[tool.poetry.dependencies]
+python = "&gt;=3.10,&lt;3.13"
+</code></pre></div></div>
 
 <h2 id="virtual-environments">Virtual environments</h2>
 
@@ -268,7 +275,7 @@
 
 <h3 id="in-project">In project</h3>
 
-<p>You can choose to create virtual environment in the project. This makes it easier for configuring your IDE to recognize it for new terminal sessions and loading dependencies when viewing Python files.</p>
+<p>You can choose to create a virtual environment in the project. This makes it easier for configuring your IDE to recognize it for new terminal sessions and loading dependencies when viewing Python files.</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">poetry.toml</code> (not <code class="language-plaintext highlighter-rouge">pyproject.toml</code>)
@@ -282,10 +289,12 @@
 
 <p>This creates a subshell, so when you exit the subshell no changes are persisted.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry shell
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry <span class="nb">env </span>activate
 </code></pre></div></div>
 
-<p>Or</p>
+<p>The old way for Poetry v1 was <code class="language-plaintext highlighter-rouge">poetry shell</code> and now you need a plugin for this for v2.</p>
+
+<p>Or if you made the virtual env in your project.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">source</span> <span class="o">{</span>path_to_venv<span class="o">}</span>/bin/activate
 </code></pre></div></div>
@@ -297,11 +306,22 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>deactivate
 </code></pre></div></div>
 
-<h2 id="run-commands-in-environment">Run commands in environment</h2>
+<h3 id="get-path-to-virtual-env">Get path to virtual env</h3>
 
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry <span class="nb">env </span>info <span class="nt">--path</span>
+</code></pre></div></div>
+
+<h2 id="run-commands-in-the-environment">Run commands in the environment</h2>
+
+<p>Interactive console:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry run python
+</code></pre></div></div>
+<p>Run a script:</p>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry run python your_script.py
-
-<span class="nv">$ </span>poetry run pytest
+</code></pre></div></div>
+<p>Run a CLI tool from the installed packages:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry run pytest
 </code></pre></div></div>
 
 
