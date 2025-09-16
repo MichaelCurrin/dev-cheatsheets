@@ -1,11 +1,13 @@
 # Rebase approaches
 
 
-## Related sections
+## Related
 
-See [rebase][] commmand page in Git section for more help on handling rebases.
+- See [rebase][] commmand page in Git section for more help on handling rebases.
+- See [rewrite-git-author][] repo if you are interested in updating an email address throughout a repo.
 
 [rebase]: {% link cheatsheets/version-control/git/commands/rebase.md %}
+[rewrite-git-author]: https://github.com/MichaelCurrin/rewrite-git-author/
 
 
 ## Perform a rebase
