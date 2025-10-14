@@ -151,7 +151,7 @@ Mock the return value of an object instance on a class instance.
 @pytest.fixture(scope="function")
 def mock_service():
     return Service(
-        abc='123
+        abc='123'
     )
 
 async def test_my_method(mock_service):
