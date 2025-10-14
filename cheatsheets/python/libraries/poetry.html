@@ -203,49 +203,49 @@
 
 <h3 id="common">Common</h3>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[tool.poetry]</span>
-<span class="py">package-mode</span> <span class="p">=</span> <span class="kc">false</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">tool</span><span class="k">.</span><span class="n">poetry</span><span class="k">]</span>
+<span class="n">package-mode</span> <span class="o">=</span><span class="w"> </span><span class="kc">false</span>
 
-<span class="nn">[tool.poetry.group.dev.dependencies]</span>
-<span class="py">...</span> <span class="p">=</span> <span class="s">"^1.2.3"</span>
+<span class="k">[</span><span class="n">tool</span><span class="k">.</span><span class="n">poetry</span><span class="k">.</span><span class="n">group</span><span class="k">.</span><span class="n">dev</span><span class="k">.</span><span class="n">dependencies</span><span class="k">]</span>
+<span class="p">...</span> <span class="o">=</span><span class="w"> </span><span class="s">"^1.2.3"</span>
 </code></pre></div></div>
 
 <h3 id="poetry-v1">Poetry v1</h3>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[tool.poetry]</span>
-<span class="py">name</span> <span class="p">=</span> <span class="s">"..."</span>
-<span class="py">version</span> <span class="p">=</span> <span class="s">"0.1.0"</span>
-<span class="py">description</span> <span class="p">=</span> <span class="s">""</span>
-<span class="py">authors</span> <span class="p">=</span> <span class="p">[</span><span class="s">"... &lt;...m&gt;"</span><span class="p">]</span>
-<span class="py">readme</span> <span class="p">=</span> <span class="s">"README.md"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">tool</span><span class="k">.</span><span class="n">poetry</span><span class="k">]</span>
+<span class="n">name</span> <span class="o">=</span><span class="w"> </span><span class="s">"..."</span>
+<span class="n">version</span> <span class="o">=</span><span class="w"> </span><span class="s">"0.1.0"</span>
+<span class="n">description</span> <span class="o">=</span><span class="w"> </span><span class="s">""</span>
+<span class="n">authors</span> <span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">"... &lt;...m&gt;"</span><span class="p">]</span>
+<span class="n">readme</span> <span class="o">=</span><span class="w"> </span><span class="s">"README.md"</span>
 
-<span class="nn">[tool.poetry.dependencies]</span>
-<span class="py">python</span> <span class="p">=</span> <span class="s">"^3.13"</span>
+<span class="k">[</span><span class="n">tool</span><span class="k">.</span><span class="n">poetry</span><span class="k">.</span><span class="n">dependencies</span><span class="k">]</span>
+<span class="n">python</span> <span class="o">=</span><span class="w"> </span><span class="s">"^3.13"</span>
 
 
-<span class="nn">[build-system]</span>
-<span class="py">requires</span> <span class="p">=</span> <span class="p">[</span><span class="s">"poetry-core"</span><span class="p">]</span>
-<span class="py">build-backend</span> <span class="p">=</span> <span class="s">"poetry.core.masonry.api"</span>
+<span class="k">[</span><span class="n">build-system</span><span class="k">]</span>
+<span class="n">requires</span> <span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">"poetry-core"</span><span class="p">]</span>
+<span class="n">build-backend</span> <span class="o">=</span><span class="w"> </span><span class="s">"poetry.core.masonry.api"</span>
 </code></pre></div></div>
 
 <h3 id="poetry-v2">Poetry v2</h3>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[project]</span>
-<span class="py">name</span> <span class="p">=</span> <span class="s">"..."</span>
-<span class="py">version</span> <span class="p">=</span> <span class="s">"0.1.0"</span>
-<span class="py">description</span> <span class="p">=</span> <span class="s">""</span>
-<span class="py">authors</span> <span class="p">=</span> <span class="p">[</span>
-    <span class="py">{name</span> <span class="p">=</span> <span class="py">"...",email</span> <span class="p">=</span> <span class="s">"..."</span><span class="err">}</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">project</span><span class="k">]</span>
+<span class="n">name</span> <span class="o">=</span><span class="w"> </span><span class="s">"..."</span>
+<span class="n">version</span> <span class="o">=</span><span class="w"> </span><span class="s">"0.1.0"</span>
+<span class="n">description</span> <span class="o">=</span><span class="w"> </span><span class="s">""</span>
+<span class="n">authors</span> <span class="o">=</span><span class="w"> </span><span class="p">[</span>
+    <span class="p">{</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"..."</span><span class="p">,</span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"..."</span><span class="p">}</span>
 <span class="p">]</span>
-<span class="py">readme</span> <span class="p">=</span> <span class="s">"README.md"</span>
-<span class="py">requires-python</span> <span class="p">=</span> <span class="py">"&gt;</span><span class="p">=</span><span class="mf">3.13</span><span class="s">"</span><span class="err">
-</span><span class="py">dependencies</span> <span class="p">=</span> <span class="p">[</span>
+<span class="n">readme</span> <span class="o">=</span><span class="w"> </span><span class="s">"README.md"</span>
+<span class="n">requires-python</span> <span class="o">=</span><span class="w"> </span><span class="s">"&gt;=3.13"</span>
+<span class="n">dependencies</span> <span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="p">]</span>
 
 
-<span class="nn">[build-system]</span>
-<span class="py">requires</span> <span class="p">=</span> <span class="py">["poetry-core&gt;</span><span class="p">=</span><span class="mf">2.0</span><span class="err">.</span><span class="mi">0</span><span class="p">,</span><span class="err">&lt;</span><span class="mf">3.0</span><span class="err">.</span><span class="mi">0</span><span class="s">"]</span><span class="err">
-</span><span class="py">build-backend</span> <span class="p">=</span> <span class="s">"poetry.core.masonry.api"</span>
+<span class="k">[</span><span class="n">build-system</span><span class="k">]</span>
+<span class="n">requires</span> <span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">"poetry-core&gt;=2.0.0,&lt;3.0.0"</span><span class="p">]</span>
+<span class="n">build-backend</span> <span class="o">=</span><span class="w"> </span><span class="s">"poetry.core.masonry.api"</span>
 </code></pre></div></div>
 
         

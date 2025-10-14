@@ -187,8 +187,8 @@
 
 <p>Set up an alias.</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[alias]</span>
-	<span class="py">lg</span> <span class="p">=</span> <span class="s">"log -p"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">alias</span><span class="k">]</span>
+	<span class="n">lg</span> <span class="o">=</span><span class="w"> </span><span class="s">"log -p"</span>
 </code></pre></div></div>
 
 <p>Call the <code class="language-plaintext highlighter-rouge">lg</code> alias.</p>
@@ -211,18 +211,18 @@
 
 <p>This lets you do ths followign:</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[alias]</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">alias</span><span class="k">]</span>
     <span class="c"># Not using git.</span>
-    <span class="py">greet</span> <span class="p">=</span> <span class="s">"! echo Hello"</span>
+    <span class="n">greet</span> <span class="o">=</span><span class="w"> </span><span class="s">"! echo Hello"</span>
 
     <span class="c"># Run a git command as pass to a shell command.</span>
-    <span class="py">tags</span> <span class="p">=</span> <span class="s">"! git tag -n | sort -V -r"</span>
+    <span class="n">tags</span> <span class="o">=</span><span class="w"> </span><span class="s">"! git tag -n | sort -V -r"</span>
 </code></pre></div></div>
 
 <p>If you want to use double quotes inside, escape them or use a heredoc.</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[alias]</span>
-    <span class="py">foo</span> <span class="p">=</span> <span class="s">"! echo </span><span class="se">\"</span><span class="s">Hello, $1!</span><span class="se">\"</span><span class="s"> #"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">alias</span><span class="k">]</span>
+    <span class="n">foo</span> <span class="o">=</span><span class="w"> </span><span class="s">"! echo </span><span class="se">\"</span><span class="s">Hello, $1!</span><span class="se">\"</span><span class="s"> #"</span>
 </code></pre></div></div>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git foo bar
@@ -231,8 +231,8 @@ Hello, bar!
 
 <p>Note that using single quotes will be literal.</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[alias]</span>
-	<span class="py">foo</span> <span class="p">=</span> <span class="s">"! echo 'Hello, $1!' #"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">alias</span><span class="k">]</span>
+	<span class="n">foo</span> <span class="o">=</span><span class="w"> </span><span class="s">"! echo 'Hello, $1!' #"</span>
 </code></pre></div></div>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git foo bar
@@ -243,16 +243,16 @@ Hello, <span class="nv">$1</span><span class="o">!</span>
 
 <p>An alternative approach is to define and a shell command in one step. Note that in Bash, calling <code class="language-plaintext highlighter-rouge">f</code> will execute the function <code class="language-plaintext highlighter-rouge">f()</code>.</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[alias]</span>
-    <span class="py">foo</span> <span class="p">=</span> <span class="s">"! f() { echo </span><span class="se">\"</span><span class="s">Hello, $1!</span><span class="se">\"</span><span class="s"> } ; f"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">alias</span><span class="k">]</span>
+    <span class="n">foo</span> <span class="o">=</span><span class="w"> </span><span class="s">"! f() { echo </span><span class="se">\"</span><span class="s">Hello, $1!</span><span class="se">\"</span><span class="s"> } ; f"</span>
 </code></pre></div></div>
 
 <h2 id="arguments">Arguments</h2>
 
 <p>You can pass arguments which are available as <code class="language-plaintext highlighter-rouge">$@</code>, <code class="language-plaintext highlighter-rouge">$1</code>, <code class="language-plaintext highlighter-rouge">$2</code>, etc.</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[alias]</span>
-	<span class="py">greet</span> <span class="p">=</span> <span class="s">"! echo $@ #"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">alias</span><span class="k">]</span>
+	<span class="n">greet</span> <span class="o">=</span><span class="w"> </span><span class="s">"! echo $@ #"</span>
 </code></pre></div></div>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git greet I am world
@@ -261,8 +261,8 @@ I am world
 
 <p>First argument.</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[alias]</span>
-	<span class="py">greet</span> <span class="p">=</span> <span class="s">"! echo $1 #"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">alias</span><span class="k">]</span>
+	<span class="n">greet</span> <span class="o">=</span><span class="w"> </span><span class="s">"! echo $1 #"</span>
 </code></pre></div></div>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git greet I
@@ -275,8 +275,8 @@ I
 
 <p>If it is not used:</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[alias]</span>
-	<span class="py">greet</span> <span class="p">=</span> <span class="s">"! echo $@"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">alias</span><span class="k">]</span>
+	<span class="n">greet</span> <span class="o">=</span><span class="w"> </span><span class="s">"! echo $@"</span>
 </code></pre></div></div>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git greet I am world
@@ -289,8 +289,8 @@ I am world I am world
 
 <p>See <a href="/dev-cheatsheets/cheatsheets/data/toml/strings.html">TOML strings</a> cheatsheet for more info.</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[alias]</span>
-	<span class="py">undo</span> <span class="p">=</span> <span class="s">"""! [ -z </span><span class="se">\"</span><span class="s">$(git status --porcelain)</span><span class="se">\"</span><span class="s"> ] </span><span class="se">\
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">alias</span><span class="k">]</span>
+	<span class="n">undo</span> <span class="o">=</span><span class="w"> </span><span class="s">"""! [ -z </span><span class="se">\"</span><span class="s">$(git status --porcelain)</span><span class="se">\"</span><span class="s"> ] </span><span class="se">\
 </span><span class="s">		&amp;&amp; git reset --hard HEAD~ </span><span class="se">\
 </span><span class="s">		|| echo 'Unstaged changes! Stash and try again' </span><span class="se">\
 </span><span class="s">	"""</span>

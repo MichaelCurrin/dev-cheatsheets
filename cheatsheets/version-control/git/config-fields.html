@@ -240,8 +240,8 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git config <span class="nt">--global</span> commit.template _COMMIT_MESSAGE
 </code></pre></div></div>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[commit]</span>
-	<span class="py">template</span> <span class="p">=</span> <span class="s">"_COMMIT_MESSAGE"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">commit</span><span class="k">]</span>
+	<span class="n">template</span> <span class="o">=</span><span class="w"> </span><span class="s">"_COMMIT_MESSAGE"</span>
 </code></pre></div></div>
 
 <p>Make sure you have <code class="language-plaintext highlighter-rouge">_COMMIT_MESSAGE</code> as a text file in your repo. I also recommend making a global ignore file that ignores <code class="language-plaintext highlighter-rouge">_COMMIT_MESSAGE</code> and have your git config aware of that <code class="language-plaintext highlighter-rouge">~/.gitignore</code> file.</p>
@@ -257,8 +257,8 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git config <span class="nt">--global</span> init.defaultBranch main
 </code></pre></div></div>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[init]</span>
-	<span class="py">defaultBranch</span> <span class="p">=</span> <span class="s">"main"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">init</span><span class="k">]</span>
+	<span class="n">defaultBranch</span> <span class="o">=</span><span class="w"> </span><span class="s">"main"</span>
 </code></pre></div></div>
 
 <h2 id="configure-merge-strategy-for-pull">Configure merge strategy for pull</h2>
@@ -301,8 +301,8 @@
 
 <h3 id="merge-approach">Merge approach</h3>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[pull]</span>
-	<span class="py">rebase</span> <span class="p">=</span> <span class="kc">false</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">pull</span><span class="k">]</span>
+	<span class="n">rebase</span> <span class="o">=</span><span class="w"> </span><span class="kc">false</span>
 </code></pre></div></div>
 
 <p>This is the default behavior that we are used to, but now configure explicitly as a strategy in the config.</p>
@@ -313,8 +313,8 @@
 
 <h3 id="rebase-approach">Rebase approach</h3>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[pull]</span>
-	<span class="py">rebase</span> <span class="p">=</span> <span class="kc">true</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">pull</span><span class="k">]</span>
+	<span class="n">rebase</span> <span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 </code></pre></div></div>
 
 <p>This means that <code class="language-plaintext highlighter-rouge">git pull</code> effectively does this:</p>
@@ -328,8 +328,8 @@
 
 <h3 id="fast-forward-approach">Fast-forward approach</h3>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[pull]</span>
-	<span class="py">ff</span> <span class="p">=</span> <span class="s">"only"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">pull</span><span class="k">]</span>
+	<span class="n">ff</span> <span class="o">=</span><span class="w"> </span><span class="s">"only"</span>
 </code></pre></div></div>
 
 <p>This approach will attempt to do a <code class="language-plaintext highlighter-rouge">git pull</code> to get the branch up to date with the remote and fast-forward if possible. Equivalent to:</p>

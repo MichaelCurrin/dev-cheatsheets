@@ -242,8 +242,8 @@
 
 <p>Here, I’ve manually added the <a href="https://crates.io/crates/rand">rand</a> crate, which is currently on top the most-downloaded Crates list.</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[dependencies]</span>
-<span class="py">rand</span> <span class="p">=</span> <span class="s">"0.8.0"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">dependencies</span><span class="k">]</span>
+<span class="n">rand</span> <span class="o">=</span><span class="w"> </span><span class="s">"0.8.0"</span>
 </code></pre></div></div>
 
 <p>If you don’t know the version, just leave as <code class="language-plaintext highlighter-rouge">""</code>. You’ll see the version logged next.</p>
@@ -269,8 +269,8 @@
 
 <p>For example, using:</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[dependencies]</span>
-<span class="py">rand</span> <span class="p">=</span> <span class="s">"0.8.0"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">dependencies</span><span class="k">]</span>
+<span class="n">rand</span> <span class="o">=</span><span class="w"> </span><span class="s">"0.8.0"</span>
 </code></pre></div></div>
 
 <p>This crate and its dependencies will get added to the lockfile. But they will <strong>not</strong> be installed until your run <code class="language-plaintext highlighter-rouge">build</code> or <code class="language-plaintext highlighter-rouge">run</code>.</p>

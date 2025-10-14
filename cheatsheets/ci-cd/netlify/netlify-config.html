@@ -212,19 +212,19 @@
 
 <ul>
   <li>Prod only.
-    <div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nn">[context.production]</span>
-    <span class="py">environment</span> <span class="o">=</span> <span class="p">{</span> <span class="py">FOO</span> <span class="p">=</span> <span class="s">"bar"</span><span class="p">,</span> <span class="py">NODE_VERSION</span> <span class="p">=</span> <span class="s">"14.15.3"</span> <span class="p">}</span>
+    <div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">[</span><span class="n">context</span><span class="k">.</span><span class="n">production</span><span class="k">]</span>
+    <span class="n">environment</span> <span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">FOO</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"bar"</span><span class="p">,</span><span class="w"> </span><span class="n">NODE_VERSION</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"14.15.3"</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>    </div>
   </li>
 </ul>
 
 <p>Here setting in Production and Deploy Preview, since it is <em>not</em> enough to set it in only Production when I tested on a deploy preview.</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[context.production]</span>
-  <span class="py">environment</span> <span class="o">=</span> <span class="p">{</span> <span class="py">RUBY_VERSION</span> <span class="p">=</span> <span class="s">"2.7.0"</span> <span class="p">}</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">context</span><span class="k">.</span><span class="n">production</span><span class="k">]</span>
+  <span class="n">environment</span> <span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">RUBY_VERSION</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"2.7.0"</span><span class="w"> </span><span class="p">}</span>
 
-<span class="nn">[context.deploy-preview]</span>
-  <span class="py">environment</span> <span class="o">=</span> <span class="p">{</span> <span class="py">RUBY_VERSION</span> <span class="p">=</span> <span class="s">"2.7.0"</span> <span class="p">}</span>
+<span class="k">[</span><span class="n">context</span><span class="k">.</span><span class="n">deploy-preview</span><span class="k">]</span>
+  <span class="n">environment</span> <span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">RUBY_VERSION</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"2.7.0"</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div></div>
 
 <p>For sensitive environment variables, you might have to make an environment permission choice under <em>Sensitive variable policy</em> - see <a href="https://docs.netlify.com/configure-builds/environment-variables/">docs</a>.</p>
@@ -237,8 +237,8 @@
 
 <p>Override example using <code class="language-plaintext highlighter-rouge">functions</code> directory at the root instead:</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[build]</span>
-  <span class="py">functions</span> <span class="p">=</span> <span class="s">"functions"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">build</span><span class="k">]</span>
+  <span class="n">functions</span> <span class="o">=</span><span class="w"> </span><span class="s">"functions"</span>
 </code></pre></div></div>
 
 <p>I think the endpoint will be fixed.</p>

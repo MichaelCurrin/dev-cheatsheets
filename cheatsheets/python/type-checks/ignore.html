@@ -195,10 +195,10 @@
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">setup.cfg</code> - first heading is to ensure the section below it actually gets evaluated.
-    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nn">[mypy]</span>
+    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="nn">[mypy]</span><span class="w">
     
-  <span class="nn">[mypy-foobar.*]</span>
-  <span class="py">ignore_missing_imports</span> <span class="p">=</span> <span class="s">True</span>
+  </span><span class="nn">[mypy-foobar.*]</span><span class="w">
+  </span><span class="py">ignore_missing_imports</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">True</span>
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -207,10 +207,10 @@
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">mypy.ini</code> - first heading is to avoid a warning, but doesn’t affect functionality at least in this case.
-    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nn">[mypy]</span>
+    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="nn">[mypy]</span><span class="w">
 
-  <span class="nn">[mypy-foobar.*]</span>
-  <span class="py">ignore_missing_imports</span> <span class="p">=</span> <span class="s">True</span>
+  </span><span class="nn">[mypy-foobar.*]</span><span class="w">
+  </span><span class="py">ignore_missing_imports</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">True</span>
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -219,10 +219,10 @@
 
 <p>So you can do this:</p>
 
-<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[mypy]</span>
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[mypy]</span><span class="w">
 
-<span class="nn">[mypy-flask_restful.*]</span>
-<span class="py">ignore_missing_imports</span> <span class="p">=</span> <span class="s">True</span>
+</span><span class="nn">[mypy-flask_restful.*]</span><span class="w">
+</span><span class="py">ignore_missing_imports</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">True</span>
 </code></pre></div></div>
 
 <h2 id="ignore-imports-globally-in-config">Ignore imports globally in config</h2>
@@ -231,8 +231,8 @@
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">setup.cfg</code> or <code class="language-plaintext highlighter-rouge">mypy.ini</code>.
-    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nn">[mypy]</span>
-  <span class="py">ignore_missing_imports</span> <span class="p">=</span> <span class="s">True</span>
+    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="nn">[mypy]</span><span class="w">
+  </span><span class="py">ignore_missing_imports</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">True</span>
 </code></pre></div>    </div>
   </li>
 </ul>

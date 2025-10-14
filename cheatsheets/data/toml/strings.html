@@ -171,10 +171,10 @@
         
             <h2 id="basic">Basic</h2>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[my_section]</span>
-<span class="py">foo_double</span> <span class="p">=</span> <span class="s">"bar"</span>
-<span class="py">foo_single</span> <span class="p">=</span> <span class="s">'bar'</span>
-<span class="py">escaped</span> <span class="p">=</span> <span class="s">"newline </span><span class="se">\n</span><span class="s"> backslash </span><span class="se">\\</span><span class="s">"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">my_section</span><span class="k">]</span>
+<span class="n">foo_double</span> <span class="o">=</span><span class="w"> </span><span class="s">"bar"</span>
+<span class="n">foo_single</span> <span class="o">=</span><span class="w"> </span><span class="s">'bar'</span>
+<span class="n">escaped</span> <span class="o">=</span><span class="w"> </span><span class="s">"newline </span><span class="se">\n</span><span class="s"> backslash </span><span class="se">\\</span><span class="s">"</span>
 </code></pre></div></div>
 
 <h2 id="heredoc">Heredoc</h2>
@@ -183,14 +183,14 @@
 
 <p>The format uses triple double-quoted strings, as in Python. But, remember to add backslash to end lines or you’ll get an error.</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[my_section]</span>
-<span class="py">fizz</span> <span class="p">=</span> <span class="s">"""buz </span><span class="se">\
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">my_section</span><span class="k">]</span>
+<span class="n">fizz</span> <span class="o">=</span><span class="w"> </span><span class="s">"""buz </span><span class="se">\
 </span><span class="s">  bazz </span><span class="se">\
 </span><span class="s">"""</span>
 </code></pre></div></div>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[alias]</span>
-	<span class="py">resetco</span> <span class="p">=</span> <span class="s">"""! git reset HEAD </span><span class="se">\
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">alias</span><span class="k">]</span>
+	<span class="n">resetco</span> <span class="o">=</span><span class="w"> </span><span class="s">"""! git reset HEAD </span><span class="se">\
 </span><span class="s">		&amp;&amp; git checkout . </span><span class="se">\
 </span><span class="s">		&amp;&amp; git status </span><span class="se">\
 </span><span class="s">	"""</span>
@@ -198,8 +198,8 @@
 
 <p>If you want to use single quotes, remember to escape them with a backslash, or they will disappear. Which is weird compared to other languages but that’s how it works.</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[alias]</span>
-	<span class="py">undo</span> <span class="p">=</span> <span class="s">"""! [ -z </span><span class="se">\"</span><span class="s">$(git status --porcelain)</span><span class="se">\"</span><span class="s"> ] </span><span class="se">\
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">alias</span><span class="k">]</span>
+	<span class="n">undo</span> <span class="o">=</span><span class="w"> </span><span class="s">"""! [ -z </span><span class="se">\"</span><span class="s">$(git status --porcelain)</span><span class="se">\"</span><span class="s"> ] </span><span class="se">\
 </span><span class="s">		&amp;&amp; git reset --hard HEAD~ </span><span class="se">\
 </span><span class="s">		|| echo 'Unstaged changes! Stash and try again' </span><span class="se">\
 </span><span class="s">	"""</span>

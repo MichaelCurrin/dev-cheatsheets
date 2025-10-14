@@ -315,18 +315,18 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@pytest.fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="sh">"</span><span class="s">function</span><span class="sh">"</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">mock_service</span><span class="p">():</span>
     <span class="k">return</span> <span class="nc">Service</span><span class="p">(</span>
-        <span class="n">abc</span><span class="o">=</span><span class="sh">'</span><span class="s">123
-    )
+        <span class="n">abc</span><span class="o">=</span><span class="sh">'</span><span class="s">123</span><span class="sh">'</span>
+    <span class="p">)</span>
 
-async def test_my_method(mock_service):
-    mock_my_function_output = AsyncMock()
-    mock_my_function_output.fizz.buzz = </span><span class="sh">"</span><span class="s">dummy value</span><span class="sh">"</span><span class="s">
-    mock_service.my_object.my_function.return_value = mock_my_function_output
+<span class="k">async</span> <span class="k">def</span> <span class="nf">test_my_method</span><span class="p">(</span><span class="n">mock_service</span><span class="p">):</span>
+    <span class="n">mock_my_function_output</span> <span class="o">=</span> <span class="nc">AsyncMock</span><span class="p">()</span>
+    <span class="n">mock_my_function_output</span><span class="p">.</span><span class="n">fizz</span><span class="p">.</span><span class="n">buzz</span> <span class="o">=</span> <span class="sh">"</span><span class="s">dummy value</span><span class="sh">"</span>
+    <span class="n">mock_service</span><span class="p">.</span><span class="n">my_object</span><span class="p">.</span><span class="n">my_function</span><span class="p">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">mock_my_function_output</span>
 
-    result = await mock_service.my_method(</span><span class="sh">'</span><span class="n">ABC</span><span class="sh">'</span><span class="s">)
+    <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">mock_service</span><span class="p">.</span><span class="nf">my_method</span><span class="p">(</span><span class="sh">'</span><span class="s">ABC</span><span class="sh">'</span><span class="p">)</span>
 
-    assert result == </span><span class="sh">"</span><span class="s">dummy value</span><span class="sh">"</span><span class="s">
-</span></code></pre></div></div>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="sh">"</span><span class="s">dummy value</span><span class="sh">"</span>
+</code></pre></div></div>
 
         
     </div>

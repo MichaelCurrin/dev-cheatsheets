@@ -188,8 +188,8 @@
 
 <p>Disable package mode, useful for if you intend to run directly and not as an installed package.</p>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[tool.poetry]</span>
-<span class="py">package-mode</span> <span class="p">=</span> <span class="kc">false</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">tool</span><span class="k">.</span><span class="n">poetry</span><span class="k">]</span>
+<span class="n">package-mode</span> <span class="o">=</span><span class="w"> </span><span class="kc">false</span>
 </code></pre></div></div>
 
 <p>Otherwise you have to add this flag in the CLI:</p>
@@ -226,26 +226,26 @@
 
 <h3 id="prod-vs-dev-dependencies">Prod vs dev dependencies</h3>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[tool.poetry.dependencies]</span>
-<span class="py">python</span> <span class="p">=</span> <span class="s">"..."</span>
-<span class="py">abc</span> <span class="p">=</span> <span class="s">"..."</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">tool</span><span class="k">.</span><span class="n">poetry</span><span class="k">.</span><span class="n">dependencies</span><span class="k">]</span>
+<span class="n">python</span> <span class="o">=</span><span class="w"> </span><span class="s">"..."</span>
+<span class="n">abc</span> <span class="o">=</span><span class="w"> </span><span class="s">"..."</span>
 
-<span class="nn">[tool.poetry.group.dev.dependencies]</span>
-<span class="py">def</span> <span class="p">=</span> <span class="s">"..."</span>
+<span class="k">[</span><span class="n">tool</span><span class="k">.</span><span class="n">poetry</span><span class="k">.</span><span class="n">group</span><span class="k">.</span><span class="n">dev</span><span class="k">.</span><span class="n">dependencies</span><span class="k">]</span>
+<span class="n">def</span> <span class="o">=</span><span class="w"> </span><span class="s">"..."</span>
 </code></pre></div></div>
 
 <h3 id="locking">Locking</h3>
 
 <h4 id="lock-minor-version">Lock minor version</h4>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[tool.poetry.dependencies]</span>
-<span class="py">python</span> <span class="p">=</span> <span class="s">"^3.10"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">tool</span><span class="k">.</span><span class="n">poetry</span><span class="k">.</span><span class="n">dependencies</span><span class="k">]</span>
+<span class="n">python</span> <span class="o">=</span><span class="w"> </span><span class="s">"^3.10"</span>
 </code></pre></div></div>
 
 <h4 id="lock-patch-version">Lock patch version</h4>
 
-<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[tool.poetry.dependencies]</span>
-<span class="py">python</span> <span class="p">=</span> <span class="s">"^3.10.1"</span>
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">tool</span><span class="k">.</span><span class="n">poetry</span><span class="k">.</span><span class="n">dependencies</span><span class="k">]</span>
+<span class="n">python</span> <span class="o">=</span><span class="w"> </span><span class="s">"^3.10.1"</span>
 </code></pre></div></div>
 
 <h3 id="lock-a-range">Lock a range</h3>
@@ -279,8 +279,8 @@ python = "&gt;=3.10,&lt;3.13"
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">poetry.toml</code> (not <code class="language-plaintext highlighter-rouge">pyproject.toml</code>)
-    <div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nn">[virtualenvs]</span>
-  <span class="py">in-project</span> <span class="p">=</span> <span class="kc">true</span>
+    <div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">[</span><span class="n">virtualenvs</span><span class="k">]</span>
+  <span class="n">in-project</span> <span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 </code></pre></div>    </div>
   </li>
 </ul>

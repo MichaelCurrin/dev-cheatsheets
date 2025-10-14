@@ -203,21 +203,21 @@
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">setup.cfg</code>
-    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nn">[flake8]</span>
-  <span class="py">ignore</span> <span class="p">=</span> <span class="s">E266,E402,E241</span>
+    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="nn">[flake8]</span><span class="w">
+  </span><span class="py">ignore</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">E266,E402,E241</span>
 </code></pre></div>    </div>
   </li>
   <li><code class="language-plaintext highlighter-rouge">setup.cfg</code>
-    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nn">[flake8]</span>
-  <span class="py">ignore</span> <span class="p">=</span> <span class="s">D203</span>
-  <span class="py">exclude</span> <span class="p">=</span>
-    <span class="err">.git,</span>
-    <span class="err">__pycache__,</span>
-    <span class="err">docs/source/conf.py,</span>
-    <span class="err">old,</span>
-    <span class="err">build,</span>
-    <span class="err">dist</span>
-  <span class="py">max-complexity</span> <span class="p">=</span> <span class="s">10</span>
+    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="nn">[flake8]</span><span class="w">
+  </span><span class="py">ignore</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">D203</span>
+<span class="w">  </span><span class="py">exclude</span><span class="w"> </span><span class="p">=</span>
+<span class="w">    </span><span class="na">.git,</span><span class="w">
+    </span><span class="na">__pycache__,</span><span class="w">
+    </span><span class="na">docs/source/conf.py,</span><span class="w">
+    </span><span class="na">old,</span><span class="w">
+    </span><span class="na">build,</span><span class="w">
+    </span><span class="na">dist</span><span class="w">
+  </span><span class="py">max-complexity</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">10</span>
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -318,11 +318,11 @@ W606 	‘async’ and ‘await’ are reserved keywords starting with Python 3.7
 
 <p>Ignore a rule for a file by setting it in the Flake8 config:</p>
 
-<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[flake8]</span>
-<span class="py">per-file-ignores</span> <span class="p">=</span> 
-  <span class="s">file1.py: F401</span>
-  <span class="err">file2.py:</span> <span class="err">E501</span>
-</code></pre></div></div>
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[flake8]</span><span class="w">
+</span><span class="py">per-file-ignores</span><span class="w"> </span><span class="p">=</span><span class="w"> 
+  </span><span class="s">file1.py: F401</span>
+<span class="w">  </span><span class="na">file2.py:</span><span class="w"> </span><span class="na">E501</span><span class="w">
+</span></code></pre></div></div>
 
 <p>I tested this pattern also works with globstart:</p>
 

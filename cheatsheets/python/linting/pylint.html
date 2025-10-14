@@ -325,12 +325,12 @@
 
 <p>Here ignoring <code class="language-plaintext highlighter-rouge">FIXME</code> comments, <code class="language-plaintext highlighter-rouge">except Exception</code> lines, and naming (such as when you do want a single-character variable name).</p>
 
-<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[MESSAGES CONTROL]</span>
-<span class="py">disable</span><span class="p">=</span>
-  <span class="err">fixme,</span>
-  <span class="err">broad-except,</span>
-  <span class="err">invalid-name</span>
-</code></pre></div></div>
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[MESSAGES CONTROL]</span><span class="w">
+</span><span class="py">disable</span><span class="p">=</span>
+<span class="w">  </span><span class="na">fixme,</span><span class="w">
+  </span><span class="na">broad-except,</span><span class="w">
+  </span><span class="na">invalid-name</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Also look at disabling <code class="language-plaintext highlighter-rouge">global-statement</code> to avoid error on use of <code class="language-plaintext highlighter-rouge">global</code>.</p>
 
