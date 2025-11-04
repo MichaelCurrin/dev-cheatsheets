@@ -247,7 +247,7 @@
 
 <h2 id="use-typeddict">Use TypedDict</h2>
 
-<p>This approach is useful if you have specific keys you want to want to include. If you use <code class="language-plaintext highlighter-rouge">dict[str, str]</code> from above you can’t check keys. And you can’t use <code class="language-plaintext highlighter-rouge">x = { 'abc': str }</code> as your type because it won’t work, so we use TypedDict.</p>
+<p>This approach is useful if you have <strong>specific keys</strong> and value types you want to want to include. If you use <code class="language-plaintext highlighter-rouge">dict[str, str]</code> from above you can’t check keys. And it’s not valid to set <code class="language-plaintext highlighter-rouge">x = { 'abc': str }</code>, so we use TypedDict.</p>
 
 <p>Here we define and use the <code class="language-plaintext highlighter-rouge">TypeDict</code> type. Example from <a href="https://mypy.readthedocs.io/en/stable/more_types.html#typeddict">TypedDict</a> section of Mypy docs.</p>
 
@@ -264,6 +264,12 @@
         <span class="sh">'</span><span class="s">my_key</span><span class="sh">'</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
     <span class="p">}</span>
 <span class="p">)</span>
+</code></pre></div></div>
+
+<p>Or lighter syntax as a class:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyType</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+    <span class="n">my_key</span><span class="p">:</span> <span class="nb">str</span>
 </code></pre></div></div>
 
 <h3 id="ways-to-use-the-type">Ways to use the type</h3>

@@ -71,7 +71,7 @@ d: MyType = {}
 
 ## Use TypedDict
 
-This approach is useful if you have specific keys you want to want to include. If you use `dict[str, str]` from above you can't check keys. And you can't use `x = { 'abc': str }` as your type because it won't work, so we use TypedDict.
+This approach is useful if you have **specific keys** and value types you want to want to include. If you use `dict[str, str]` from above you can't check keys. And it's not valid to set `x = { 'abc': str }`, so we use TypedDict.
 
 Here we define and use the `TypeDict` type. Example from [TypedDict](https://mypy.readthedocs.io/en/stable/more_types.html#typeddict) section of Mypy docs.
 
@@ -90,6 +90,13 @@ MyType = TypedDict(
         'my_key': str, 
     }
 )
+```
+
+Or lighter syntax as a class:
+
+```python
+class MyType(TypedDict):
+    my_key: str
 ```
 
 ### Ways to use the type
