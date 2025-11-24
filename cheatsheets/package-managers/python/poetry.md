@@ -37,6 +37,12 @@ $ poetry install --no-root
 
 ## Dependencies
 
+### List dependencies
+
+```sh
+$ poetry show
+```
+
 ### Add dependency
 
 ```sh
@@ -78,7 +84,8 @@ abc = "..."
 def = "..."
 ```
 
-### Locking
+
+### Lock dependencies
 
 #### Lock minor version
 
@@ -94,7 +101,7 @@ python = "^3.10"
 python = "^3.10.1"
 ```
 
-### Lock a range
+#### Lock a range
 
 ```
 [tool.poetry.dependencies]
