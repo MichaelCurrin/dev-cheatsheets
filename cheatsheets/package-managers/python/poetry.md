@@ -139,12 +139,14 @@ You can choose to create a virtual environment in the project. This makes it eas
 This creates a subshell, so when you exit the subshell no changes are persisted.
 
 ```sh
-$ poetry env activate
+$ $(poetry env activate)
 ```
 
-The old way for Poetry v1 was `poetry shell` and now you need a plugin for this for v2.
+Note the command alone only prints, so you need to add level to execute.
 
-Or if you made the virtual env in your project.
+The old way for Poetry v1 was `poetry shell` and now you need a plugin for that for v2.
+
+Or, if you made the virtual env in your project.
 
 ```sh
 $ source {path_to_venv}/bin/activate
