@@ -294,12 +294,14 @@ python = "&gt;=3.10,&lt;3.13"
 
 <p>This creates a subshell, so when you exit the subshell no changes are persisted.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry <span class="nb">env </span>activate
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="si">$(</span>poetry <span class="nb">env </span>activate<span class="si">)</span>
 </code></pre></div></div>
 
-<p>The old way for Poetry v1 was <code class="language-plaintext highlighter-rouge">poetry shell</code> and now you need a plugin for this for v2.</p>
+<p>Note the command alone only prints, so you need to add level to execute.</p>
 
-<p>Or if you made the virtual env in your project.</p>
+<p>The old way for Poetry v1 was <code class="language-plaintext highlighter-rouge">poetry shell</code> and now you need a plugin for that for v2.</p>
+
+<p>Or, if you made the virtual env in your project.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">source</span> <span class="o">{</span>path_to_venv<span class="o">}</span>/bin/activate
 </code></pre></div></div>
