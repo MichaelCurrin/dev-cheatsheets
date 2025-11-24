@@ -199,6 +199,11 @@
 
 <h2 id="dependencies">Dependencies</h2>
 
+<h3 id="list-dependencies">List dependencies</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry show
+</code></pre></div></div>
+
 <h3 id="add-dependency">Add dependency</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry add PACKAGE
@@ -234,7 +239,7 @@
 <span class="n">def</span> <span class="o">=</span><span class="w"> </span><span class="s">"..."</span>
 </code></pre></div></div>
 
-<h3 id="locking">Locking</h3>
+<h3 id="lock-dependencies">Lock dependencies</h3>
 
 <h4 id="lock-minor-version">Lock minor version</h4>
 
@@ -248,7 +253,7 @@
 <span class="n">python</span> <span class="o">=</span><span class="w"> </span><span class="s">"^3.10.1"</span>
 </code></pre></div></div>
 
-<h3 id="lock-a-range">Lock a range</h3>
+<h4 id="lock-a-range">Lock a range</h4>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[tool.poetry.dependencies]
 python = "&gt;=3.10,&lt;3.13"
