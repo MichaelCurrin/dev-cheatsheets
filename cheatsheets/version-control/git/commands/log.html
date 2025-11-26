@@ -185,13 +185,15 @@
 
 <h2 id="flags">Flags</h2>
 
-<p>Some flags to recommend.</p>
+<p>Recommended flags for common usage.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--all
 </code></pre></div></div>
 
-<p>Pretend as if all the refs in refs/ are listed on the command line as
+<blockquote>
+  <p>Pretend as if all the refs in refs/ are listed on the command line as
 <code class="language-plaintext highlighter-rouge">&lt;commit&gt;</code>.</p>
+</blockquote>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-p --patch
 </code></pre></div></div>
@@ -200,21 +202,39 @@
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--decorate[=short|full|auto|no]
 </code></pre></div></div>
-<p>Print out the ref names of any commits that are shown. Defaults to
+<blockquote>
+  <p>Print out the ref names of any commits that are shown. Defaults to
 short optionm such that the name prefixes refs/heads/, refs/tags/ and
 refs/remotes/ will not be printed.</p>
+</blockquote>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--graph
 </code></pre></div></div>
 
-<p>Draw a text-based graphical representation of the commit history on
+<blockquote>
+  <p>Draw a text-based graphical representation of the commit history on
 the left hand side of the output.</p>
+</blockquote>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--stat
 </code></pre></div></div>
 
+<blockquote>
+  <p>Generate a diffstat.</p>
+</blockquote>
+
+<p>See <a href="#stat">Stat</a> below.</p>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--pretty=FORAMT
 </code></pre></div></div>
+
+<p>Filter by text:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-S&lt;string&gt;
+</code></pre></div></div>
+<blockquote>
+  <p>Look for differences that change the number of occurrences of the specified <string> (i.e. addition/deletion) in a file. Intended for the scripter’s use.</string></p>
+</blockquote>
 
 <h2 id="pretty-formats">Pretty formats</h2>
 
@@ -328,26 +348,13 @@ Date:   Sun Dec 1 18:42:48 2019 -0600
     Add function return expression option
 
  .gitignore                     |   4 +
- .vscode/extensions.json        |   7 +
- .vscode/launch.json            |  35 ++++
- .vscode/settings.json          |  11 ++
- .vscode/tasks.json             |  20 +++
- .vscodeignore                  |  10 ++
- CHANGELOG.md                   |  18 ++
- LICENSE                        |  21 +++
+ ...
  README.md                      |  41 +++++
  images/demo.gif                | Bin 0 -&gt; 12980699 bytes
- images/git-prefix-button.gif   | Bin 0 -&gt; 126359 bytes
- images/icon.png                | Bin 0 -&gt; 8167 bytes
+ ...
  images/prefix-commit.svg       |   1 +
  images/prefix-commit_light.svg |   1 +
- package-lock.json              | 927 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- package.json                   |  99 +++++++++++
- src/api/git.d.ts               | 238 +++++++++++++++++++++++++
- src/extension.ts               |  74 ++++++++
- src/test/extension.test.ts     |  22 +++
- src/test/index.ts              |  23 +++
- tsconfig.json                  |  21 +++
+ ...
  tslint.json                    |  15 ++
  vsc-extension-quickstart.md    |  35 ++++
  23 files changed, 1623 insertions(+)

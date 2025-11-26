@@ -4,14 +4,14 @@ Git docs: [git-log](https://git-scm.com/docs/git-log)
 
 ## Flags
 
-Some flags to recommend.
+Recommended flags for common usage.
 
 ```
 --all
 ```
 
-Pretend as if all the refs in refs/ are listed on the command line as
-`<commit>`.
+> Pretend as if all the refs in refs/ are listed on the command line as
+> `<commit>`.
 
 ```
 -p --patch
@@ -22,24 +22,35 @@ Generate patch i.e. diff for each commit.
 ```
 --decorate[=short|full|auto|no]
 ```
-Print out the ref names of any commits that are shown. Defaults to
-short optionm such that the name prefixes refs/heads/, refs/tags/ and
-refs/remotes/ will not be printed.
+> Print out the ref names of any commits that are shown. Defaults to
+> short optionm such that the name prefixes refs/heads/, refs/tags/ and
+> refs/remotes/ will not be printed.
 
 ```
 --graph
 ```
 
-Draw a text-based graphical representation of the commit history on
-the left hand side of the output.
+> Draw a text-based graphical representation of the commit history on
+> the left hand side of the output.
 
 ```
 --stat
 ```
 
+> Generate a diffstat.
+
+See [Stat](#stat) below.
+
 ```
 --pretty=FORAMT
 ```
+
+Filter by text:
+
+```
+-S<string>
+```
+> Look for differences that change the number of occurrences of the specified <string> (i.e. addition/deletion) in a file. Intended for the scripter’s use.
 
 ## Pretty formats
 
@@ -159,26 +170,13 @@ Date:   Sun Dec 1 18:42:48 2019 -0600
     Add function return expression option
 
  .gitignore                     |   4 +
- .vscode/extensions.json        |   7 +
- .vscode/launch.json            |  35 ++++
- .vscode/settings.json          |  11 ++
- .vscode/tasks.json             |  20 +++
- .vscodeignore                  |  10 ++
- CHANGELOG.md                   |  18 ++
- LICENSE                        |  21 +++
+ ...
  README.md                      |  41 +++++
  images/demo.gif                | Bin 0 -> 12980699 bytes
- images/git-prefix-button.gif   | Bin 0 -> 126359 bytes
- images/icon.png                | Bin 0 -> 8167 bytes
+ ...
  images/prefix-commit.svg       |   1 +
  images/prefix-commit_light.svg |   1 +
- package-lock.json              | 927 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- package.json                   |  99 +++++++++++
- src/api/git.d.ts               | 238 +++++++++++++++++++++++++
- src/extension.ts               |  74 ++++++++
- src/test/extension.test.ts     |  22 +++
- src/test/index.ts              |  23 +++
- tsconfig.json                  |  21 +++
+ ...
  tslint.json                    |  15 ++
  vsc-extension-quickstart.md    |  35 ++++
  23 files changed, 1623 insertions(+)
