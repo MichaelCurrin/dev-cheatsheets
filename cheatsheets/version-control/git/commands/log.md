@@ -45,12 +45,28 @@ See [Stat](#stat) below.
 --pretty=FORAMT
 ```
 
+See [Pretty formats](#pretty-formats).
+
+## Filtering
+
 Filter by text:
 
 ```
 -S<string>
 ```
 > Look for differences that change the number of occurrences of the specified <string> (i.e. addition/deletion) in a file. Intended for the scripter’s use.
+
+Limit count with the number e.g.
+
+```
+-1
+```
+
+Filter by author email:
+
+```
+--author='<emailaddress>'
+```
 
 ## Pretty formats
 
