@@ -124,13 +124,15 @@ e.g.
 
 Resulting colors:
 
-- hash - red
-- master - green
-- tag - yellow
-- origin/master - red
-- message - white
-- time - green
-- name - blue
+| Element       | Color |
+|---------------|-------|
+| hash          | red   |
+| master        | green |
+| tag           | yellow|
+| origin/master | red   |
+| message       | white |
+| time          | green |
+| name          | blue  |
 
 #### lold alias
 
