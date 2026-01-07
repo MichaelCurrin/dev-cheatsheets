@@ -142,9 +142,9 @@ This creates a subshell, so when you exit the subshell no changes are persisted.
 $ $(poetry env activate)
 ```
 
-Note the command alone only prints, so you need to add level to execute.
+Note the command alone only prints, so you need to add the outside level to execute.
 
-The old way for Poetry v1 was `poetry shell` and now you need a plugin for that for v2.
+The **old** way for Poetry v1 was `poetry shell` and now you need a plugin for that for v2.
 
 Or, if you made the virtual env in your project.
 
@@ -166,6 +166,7 @@ $ deactivate
 ```sh
 $ poetry env info --path
 ```
+
 
 ## Run commands in the environment
 
