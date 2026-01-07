@@ -163,3 +163,20 @@ async def test_my_method(mock_service):
 
     assert result == "dummy value"
 ```
+
+
+## Patch with a decorator vs inline
+
+Use inline (`with mock.patch` statements) when:
+
+- You only need the patch for part of a test
+- You need to patch multiple things and manage their scope carefully
+- The patched behavior is only relevant to a specific block of test logic
+- You're patching something that might interfere with test setup/teardown
+
+Use decorator (`@mock.patch`) when:
+
+- You need the patch for the entire test method
+- The patch is a dependency throughout the test execution
+- You have a single patch or a few consistent ones
+- You prefer cleaner, simpler method signatures (since the decorator adds a parameter to the test method).
