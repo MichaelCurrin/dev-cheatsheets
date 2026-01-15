@@ -13,3 +13,9 @@ print(certifi.where())
 ```sh
 $ python -m certifi
 ```
+
+Override
+
+```sh
+export REQUESTS_CA_BUNDLE=`python -m certifi`
+```
