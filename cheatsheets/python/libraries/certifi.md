@@ -17,5 +17,5 @@ $ python -m certifi
 Override
 
 ```sh
-export REQUESTS_CA_BUNDLE=`python -m certifi`
+export REQUESTS_CA_BUNDLE=$(python -m certifi)
 ```
