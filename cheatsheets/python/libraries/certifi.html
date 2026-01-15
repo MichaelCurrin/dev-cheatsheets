@@ -181,9 +181,20 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python <span class="nt">-m</span> certifi
 </code></pre></div></div>
 
-<p>Override</p>
+<h2 id="override">Override</h2>
+
+<p>You can set the <code class="language-plaintext highlighter-rouge">REQUESTS_CA_BUNDLE</code> or <code class="language-plaintext highlighter-rouge">SSL_CERT_FILE</code> environment variable to point to a custom bundle that you create containing both certifi’s default certs and your new ones.
+This is often a safer approach than modifying certifi’s installed file directly, especially in shared environments.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">REQUESTS_CA_BUNDLE</span><span class="o">=</span><span class="si">$(</span>python <span class="nt">-m</span> certifi<span class="si">)</span>
+<span class="nb">export </span><span class="nv">SSL_CERT_FILE</span><span class="o">=</span><span class="si">$(</span>python3 <span class="nt">-m</span> certifi<span class="si">)</span>
+</code></pre></div></div>
+
+<p>Or set manually, from <a href="https://stackoverflow.com/q/77442172">SO</a>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">SSL_CERT_DIR</span><span class="o">=</span>/etc/ssl/certs/
+<span class="c"># OR</span>
+<span class="nb">export </span><span class="nv">SSL_CERT_FILE</span><span class="o">=</span>/etc/ssl/certs/your_cert.pem
 </code></pre></div></div>
 
         
