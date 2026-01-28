@@ -217,6 +217,14 @@
 <span class="c1"># '     1,234'
 </span></code></pre></div></div>
 
+<p>Self-documenting:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">123</span>
+
+<span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">x</span><span class="o">=</span><span class="si">}</span><span class="sh">"</span>
+<span class="c1"># 'x=123'
+</span></code></pre></div></div>
+
 <h2 id="modifiers">Modifiers</h2>
 
 <p>The default behavior is to call <code class="language-plaintext highlighter-rouge">.__format__()</code> internally. Here we use <code class="language-plaintext highlighter-rouge">repr</code> and <code class="language-plaintext highlighter-rouge">str</code>.</p>

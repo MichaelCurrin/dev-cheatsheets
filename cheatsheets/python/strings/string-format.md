@@ -50,6 +50,14 @@ f"{x:10,}"
 # '     1,234'
 ```
 
+Self-documenting:
+
+```python
+x = 123
+
+f"{x=}"
+# 'x=123'
+```
 
 ## Modifiers
 
