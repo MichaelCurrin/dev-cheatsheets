@@ -39,14 +39,9 @@ bar
 baz' | xargs git branch -D
 ```
 
+### Delete specified branches
 
-### Delete multiple merged branches
-
-#### One at a time
-
-To delete all your **merged** local branches, aside from the current (started with asterisk like `* BRANCH_NAME`) and special branches (`main`, `master` and `develop`).
-        
-Example branches list:
+Check your branches list:
 
 ```console
 $ git branch
@@ -56,24 +51,40 @@ $ git branch
   xyz
 ```
 
-    
-Equivalent to:
+Then delete by passing one or more branch names:
     
 ```sh
 $ git branch -d abc def xyz
 ```
+
+### Delete multiple merged branches
+
+To delete all your **merged** local branches, aside from the current (started with asterisk like `* BRANCH_NAME`) and special branches (`main`, `master` and `develop`).
 
 Tips for actions to follow before you run the commands:
 
 - Get your Pull Requests merged or closed on GitHub.
 - Run `git fetch` (or `git pull`) to make sure you are up to date with the remote.
 - Push any in-progress work in case you need to recover a branch from the remote. Alteratively, recover a branch using `git reflog`.
-    
-#### All at once using long grep pattern
-    
-Based on the ZSH alias `gbda`. Which probably stands for "git branch delete all".
 
-This will use `xargs` to take each branch name and run the delete branch command against it one at a time.
+#### All at once using a simple `grep` pattern
+    
+Here we get the branch names as a single string, then in two steps we remove the current branch and then special branches. All the branch names are passed at once to delete branch action.
+
+```sh
+$ git branch -d $(git branch --no-color --merged \
+    | grep -v '^*' \
+    | egrep -v 'main|master|develop' \
+    | xargs)
+```
+
+Note `egrep` (or `grep -E`) to handle the pipe pattern specifically.
+  
+#### All at once using a long `grep` pattern
+    
+Based on the ZSH alias `gbda`. Which is "git branch delete all". This is can be harder to read than above as it uses `command` and longer regex pattern but gives the same outcome.
+
+This uses `xargs` to take each branch name and run the delete branch command against it one at a time.
     
 ```sh
 $ git branch --no-color --merged \
@@ -91,21 +102,7 @@ Deleted branch bar (was bd31cf305).
 
 Using `command COMMAND` avoids using any aliases you have setup I guess.
     
-#### All at once using simple grep pattern
-    
-Based on another source I found.
-    
-Here we get the branch names a single string. Then in two steps we remove the current branch and then special branches.
 
-```sh
-$ git branch -d $(git branch --no-color --merged \
-    | grep -v '^*' \
-    | egrep -v 'main|master|develop' \
-    | xargs)
-```
-
-Note `egrep` (or `grep -E`) to handle the pipe pattern specifically.
-   
 #### Aggressively delete branches regardless of merged status
 
 This approach doesn't check whether a branch is deleted or not, it just deletes **all** branches besides the current one and the special branches.
