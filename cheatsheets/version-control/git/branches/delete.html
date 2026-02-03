@@ -215,13 +215,9 @@ bar
 baz'</span> | xargs git branch <span class="nt">-D</span>
 </code></pre></div></div>
 
-<h3 id="delete-multiple-merged-branches">Delete multiple merged branches</h3>
+<h3 id="delete-specified-branches">Delete specified branches</h3>
 
-<h4 id="one-at-a-time">One at a time</h4>
-
-<p>To delete all your <strong>merged</strong> local branches, aside from the current (started with asterisk like <code class="language-plaintext highlighter-rouge">* BRANCH_NAME</code>) and special branches (<code class="language-plaintext highlighter-rouge">main</code>, <code class="language-plaintext highlighter-rouge">master</code> and <code class="language-plaintext highlighter-rouge">develop</code>).</p>
-
-<p>Example branches list:</p>
+<p>Check your branches list:</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git branch
 <span class="go">  abc
@@ -230,10 +226,14 @@ baz'</span> | xargs git branch <span class="nt">-D</span>
   xyz
 </span></code></pre></div></div>
 
-<p>Equivalent to:</p>
+<p>Then delete by passing one or more branch names:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch <span class="nt">-d</span> abc def xyz
 </code></pre></div></div>
+
+<h3 id="delete-multiple-merged-branches">Delete multiple merged branches</h3>
+
+<p>To delete all your <strong>merged</strong> local branches, aside from the current (started with asterisk like <code class="language-plaintext highlighter-rouge">* BRANCH_NAME</code>) and special branches (<code class="language-plaintext highlighter-rouge">main</code>, <code class="language-plaintext highlighter-rouge">master</code> and <code class="language-plaintext highlighter-rouge">develop</code>).</p>
 
 <p>Tips for actions to follow before you run the commands:</p>
 
@@ -243,11 +243,23 @@ baz'</span> | xargs git branch <span class="nt">-D</span>
   <li>Push any in-progress work in case you need to recover a branch from the remote. Alteratively, recover a branch using <code class="language-plaintext highlighter-rouge">git reflog</code>.</li>
 </ul>
 
-<h4 id="all-at-once-using-long-grep-pattern">All at once using long grep pattern</h4>
+<h4 id="all-at-once-using-a-simple-grep-pattern">All at once using a simple <code class="language-plaintext highlighter-rouge">grep</code> pattern</h4>
 
-<p>Based on the ZSH alias <code class="language-plaintext highlighter-rouge">gbda</code>. Which probably stands for “git branch delete all”.</p>
+<p>Here we get the branch names as a single string, then in two steps we remove the current branch and then special branches. All the branch names are passed at once to delete branch action.</p>
 
-<p>This will use <code class="language-plaintext highlighter-rouge">xargs</code> to take each branch name and run the delete branch command against it one at a time.</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch <span class="nt">-d</span> <span class="si">$(</span>git branch <span class="nt">--no-color</span> <span class="nt">--merged</span> <span class="se">\</span>
+    | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s1">'^*'</span> <span class="se">\</span>
+    | egrep <span class="nt">-v</span> <span class="s1">'main|master|develop'</span> <span class="se">\</span>
+    | xargs<span class="si">)</span>
+</code></pre></div></div>
+
+<p>Note <code class="language-plaintext highlighter-rouge">egrep</code> (or <code class="language-plaintext highlighter-rouge">grep -E</code>) to handle the pipe pattern specifically.</p>
+
+<h4 id="all-at-once-using-a-long-grep-pattern">All at once using a long <code class="language-plaintext highlighter-rouge">grep</code> pattern</h4>
+
+<p>Based on the ZSH alias <code class="language-plaintext highlighter-rouge">gbda</code>. Which is “git branch delete all”. This is can be harder to read than above as it uses <code class="language-plaintext highlighter-rouge">command</code> and longer regex pattern but gives the same outcome.</p>
+
+<p>This uses <code class="language-plaintext highlighter-rouge">xargs</code> to take each branch name and run the delete branch command against it one at a time.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch <span class="nt">--no-color</span> <span class="nt">--merged</span> <span class="se">\</span>
     | <span class="nb">command </span>egrep <span class="nt">-v</span> <span class="s2">"^(</span><span class="se">\+</span><span class="s2">|</span><span class="se">\*</span><span class="s2">|</span><span class="se">\s</span><span class="s2">*(main|master|develop)</span><span class="se">\s</span><span class="s2">*</span><span class="nv">$)</span><span class="s2">"</span> <span class="se">\</span>
@@ -262,20 +274,6 @@ Deleted branch bar (was bd31cf305).
 </code></pre></div></div>
 
 <p>Using <code class="language-plaintext highlighter-rouge">command COMMAND</code> avoids using any aliases you have setup I guess.</p>
-
-<h4 id="all-at-once-using-simple-grep-pattern">All at once using simple grep pattern</h4>
-
-<p>Based on another source I found.</p>
-
-<p>Here we get the branch names a single string. Then in two steps we remove the current branch and then special branches.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch <span class="nt">-d</span> <span class="si">$(</span>git branch <span class="nt">--no-color</span> <span class="nt">--merged</span> <span class="se">\</span>
-    | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s1">'^*'</span> <span class="se">\</span>
-    | egrep <span class="nt">-v</span> <span class="s1">'main|master|develop'</span> <span class="se">\</span>
-    | xargs<span class="si">)</span>
-</code></pre></div></div>
-
-<p>Note <code class="language-plaintext highlighter-rouge">egrep</code> (or <code class="language-plaintext highlighter-rouge">grep -E</code>) to handle the pipe pattern specifically.</p>
 
 <h4 id="aggressively-delete-branches-regardless-of-merged-status">Aggressively delete branches regardless of merged status</h4>
 
