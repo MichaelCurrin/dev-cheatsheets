@@ -67,9 +67,36 @@ Tips for actions to follow before you run the commands:
 - Run `git fetch` (or `git pull`) to make sure you are up to date with the remote.
 - Push any in-progress work in case you need to recover a branch from the remote. Alteratively, recover a branch using `git reflog`.
 
-#### All at once using a simple `grep` pattern
+### Delete branches which are deleted on the remote.
+
+Note on approach for deleting branches: When using the `git branch --merged` flow to find merged branches, it won't pick up where the remote branch is deleted (`[gone]` in `git branch -v`). That can happen if a branch was deleted without being merged in or if a PR was merged with a rebase or squash so it looks like the branch is not merged even though it was.
+
+Looking for `[gone]` is the most reliable approach.
+
+```sh
+$ git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -d
+```
+
+Change the `-d` to `-D` to more aggressively delete the branches.
+
+**Here is how that breaks down:**
+
+* `git fetch -p`: The `-p` (prune) flag tells Git to delete any local references to remote branches that no longer exist on the server.
+* `git branch -vv`: Displays branches with extra detail, including the relationship to the remote. If the remote is gone, Git explicitly labels it `: gone]`.
+* `grep ': gone]'`: Filters for only those "ghost" branches.
+* `awk '{print $1}'`: Grabs the name of the branch.
+* `xargs git branch -d`: Deletes them safely.
+
+You can also preview what would be deleted:
+
+```sh
+$ git branch -vv | grep ': gone]' | awk '{print $1}'
+```
+
+#### Delete all merge branches at once using a simple `grep` pattern
     
 Here we get the branch names as a single string, then in two steps we remove the current branch and then special branches. All the branch names are passed at once to delete branch action.
+
 
 ```sh
 $ git branch -d $(git branch --no-color --merged \
@@ -80,7 +107,7 @@ $ git branch -d $(git branch --no-color --merged \
 
 Note `egrep` (or `grep -E`) to handle the pipe pattern specifically.
   
-#### All at once using a long `grep` pattern
+#### Delete all merged branches at once using a long `grep` pattern
     
 Based on the ZSH alias `gbda`. Which is "git branch delete all". This is can be harder to read than above as it uses `command` and longer regex pattern but gives the same outcome.
 
@@ -102,7 +129,6 @@ Deleted branch bar (was bd31cf305).
 
 Using `command COMMAND` avoids using any aliases you have setup I guess.
     
-
 #### Aggressively delete branches regardless of merged status
 
 This approach doesn't check whether a branch is deleted or not, it just deletes **all** branches besides the current one and the special branches.
