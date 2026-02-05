@@ -1,6 +1,6 @@
 ---
 title: Helm
-description: The package manager for Kubernetes
+description: The package manager for Kubernetes and managin charts
 ---
 
 ## Links
@@ -35,3 +35,14 @@ $ sudo apt-get install helm
 ```sh
 $ sudo snap install helm --classic
 ```
+
+
+## Usage
+
+Example of testing:
+
+```sh
+$ helm template --values k8s/values/prod.yaml k8s -s templates/my-template.yaml
+```
+
+Note the template is at path `k8s/templates/my-template.yaml`.
