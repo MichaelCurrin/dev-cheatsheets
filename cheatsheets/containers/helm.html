@@ -20,8 +20,8 @@
 <meta property="og:locale" content="en_US" />
 
 
-    <meta name="description" content="The package manager for Kubernetes" />
-    <meta property="og:description" content="The package manager for Kubernetes" />
+    <meta name="description" content="The package manager for Kubernetes and managin charts" />
+    <meta property="og:description" content="The package manager for Kubernetes and managin charts" />
 <meta name="author" content="Michael Currin" />
 
 
@@ -33,7 +33,7 @@
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
-    "description": "The package manager for Kubernetes",
+    "description": "The package manager for Kubernetes and managin charts",
     "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/helm.html",
     "headline":    "Helm",
     "@type":       "WebSite",
@@ -110,7 +110,7 @@
 
         
             <blockquote>
-                <p>The package manager for Kubernetes</p>
+                <p>The package manager for Kubernetes and managin charts</p>
 
             </blockquote>
         
@@ -191,6 +191,15 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>snap <span class="nb">install </span>helm <span class="nt">--classic</span>
 </code></pre></div></div>
+
+<h2 id="usage">Usage</h2>
+
+<p>Example of testing:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>helm template <span class="nt">--values</span> k8s/values/prod.yaml k8s <span class="nt">-s</span> templates/my-template.yaml
+</code></pre></div></div>
+
+<p>Note the template is at path <code class="language-plaintext highlighter-rouge">k8s/templates/my-template.yaml</code>.</p>
 
         
     </div>
