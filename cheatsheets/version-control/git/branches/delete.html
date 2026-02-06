@@ -243,7 +243,7 @@ baz'</span> | xargs git branch <span class="nt">-D</span>
   <li>Push any in-progress work in case you need to recover a branch from the remote. Alteratively, recover a branch using <code class="language-plaintext highlighter-rouge">git reflog</code>.</li>
 </ul>
 
-<h3 id="delete-branches-which-are-deleted-on-the-remote">Delete branches which are deleted on the remote.</h3>
+<h3 id="delete-branches-which-are-deleted-on-the-remote">Delete branches which are deleted on the remote</h3>
 
 <p>Note on approach for deleting branches: When using the <code class="language-plaintext highlighter-rouge">git branch --merged</code> flow to find merged branches, it won’t pick up where the remote branch is deleted (<code class="language-plaintext highlighter-rouge">[gone]</code> in <code class="language-plaintext highlighter-rouge">git branch -v</code>). That can happen if a branch was deleted without being merged in or if a PR was merged with a rebase or squash so it looks like the branch is not merged even though it was.</p>
 

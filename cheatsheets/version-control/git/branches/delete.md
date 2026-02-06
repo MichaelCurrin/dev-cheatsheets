@@ -67,7 +67,7 @@ Tips for actions to follow before you run the commands:
 - Run `git fetch` (or `git pull`) to make sure you are up to date with the remote.
 - Push any in-progress work in case you need to recover a branch from the remote. Alteratively, recover a branch using `git reflog`.
 
-### Delete branches which are deleted on the remote.
+### Delete branches which are deleted on the remote
 
 Note on approach for deleting branches: When using the `git branch --merged` flow to find merged branches, it won't pick up where the remote branch is deleted (`[gone]` in `git branch -v`). That can happen if a branch was deleted without being merged in or if a PR was merged with a rebase or squash so it looks like the branch is not merged even though it was.
 
