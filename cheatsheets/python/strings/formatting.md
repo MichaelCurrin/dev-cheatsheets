@@ -8,7 +8,7 @@ A guide to comparing the syntax of different formatting styles.
 
 - [W3 Schools Python format reference](https://www.w3schools.com/python/ref_string_format.asp)
 - [pyformat.info](https://pyformat.info/) website - "Using % and .format() for great good!".
-s
+
 
 ## Modern format style
 
