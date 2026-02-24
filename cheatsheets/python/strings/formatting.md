@@ -1,5 +1,5 @@
 
-# Formatting
+# Formatting approaches
 
 A guide to comparing the syntax of different formatting styles.
 
@@ -7,23 +7,15 @@ A guide to comparing the syntax of different formatting styles.
 ## Resources
 
 - [W3 Schools Python format reference](https://www.w3schools.com/python/ref_string_format.asp)
-- [pyformat.info](https://pyformat.info/) website - "Using % and .format() for great good!".
 
 
 ## Modern format style
 
 ```python
-name = "World"
-
-"Hello, {}!" % name
-# 'Hello, World!'
-```
-
-```python
 foo = "abc"
 bar = 123
 
-"{} {}".format(foo, bar)
+f"{foo} {bar}"
 # 'abc - 123'
 ```
 
@@ -54,9 +46,9 @@ bar = 123
 ```
 
 
-## Debugging
+## Log messages
 
-Using the `%s` style is the standard approach still for the built-in `logging` module.
+Using the `%s` style is the standard approach still for the built-in `logging` module as it uses lazy substitution for performance.
 
 ```python
 logging.debug("User name: %s", name)

@@ -252,8 +252,8 @@
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sh">'</span><span class="s">repr</span><span class="sh">'</span>
-        
-        
+
+
 <span class="sh">'</span><span class="s">{0!s} {0!r}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="nc">Data</span><span class="p">())</span>
 <span class="c1"># 'str repr'
 </span></code></pre></div></div>
@@ -264,8 +264,8 @@
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sh">'</span><span class="s">räpr</span><span class="sh">'</span>
-        
-        
+
+
 <span class="c1"># Interactive console.
 </span><span class="sh">'</span><span class="s">{0!r} {0!a}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="nc">Data</span><span class="p">())</span>
 <span class="sh">'</span><span class="s">räpr r</span><span class="se">\\</span><span class="s">xe4pr</span><span class="sh">'</span>
@@ -452,10 +452,17 @@
 
 <h2 id="add-name-and-value">Add name and value</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">foo</span> <span class="o">=</span> <span class="mi">123</span>
-<span class="sa">f</span><span class="sh">"</span><span class="s">Here is my pair </span><span class="si">{</span><span class="n">foo</span><span class="o">=</span><span class="si">}</span><span class="sh">"</span>
-<span class="c1"># Here is my pair foo=123
+<p>Show the variable name and value:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">foo</span><span class="sh">"</span>
+<span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">name</span><span class="o">=</span><span class="si">}</span><span class="sh">"</span>
+<span class="c1"># name='Foo'
 </span></code></pre></div></div>
+
+<p>Old way:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sa">f</span><span class="sh">"</span><span class="s">name=</span><span class="sh">'</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="sh">'"</span>
+</code></pre></div></div>
 
         
     </div>

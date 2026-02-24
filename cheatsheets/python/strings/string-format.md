@@ -89,8 +89,8 @@ class Data:
 
     def __repr__(self):
         return 'repr'
-        
-        
+
+
 '{0!s} {0!r}'.format(Data())
 # 'str repr'
 ```
@@ -102,8 +102,8 @@ class Data:
 
     def __repr__(self):
         return 'räpr'
-        
-        
+
+
 # Interactive console.
 '{0!r} {0!a}'.format(Data())
 'räpr r\\xe4pr'
@@ -111,7 +111,7 @@ class Data:
 # Printing.
 print('{0!r} {0!a}'.format(Data()))
 # räpr r\xe4pr
-```      
+```
 
 With an integer, the value will appear the same.
 
@@ -311,8 +311,16 @@ f"{z:06.2f}"
 
 ## Add name and value
 
+Show the variable name and value:
+
 ```python
-foo = 123
-f"Here is my pair {foo=}"
-# Here is my pair foo=123
+name = "foo"
+f"{name=}"
+# name='Foo'
+```
+
+Old way:
+
+```python
+f"name='{name}'"
 ```
