@@ -62,7 +62,7 @@ invalid_data = {
 try:
     user = User(**invalid_data)
 except ValidationError as e:
-    print(e.json())
+    print(e.errors())
 ```
 
 ## Advanced Features
