@@ -233,7 +233,7 @@
 <span class="k">try</span><span class="p">:</span>
     <span class="n">user</span> <span class="o">=</span> <span class="nc">User</span><span class="p">(</span><span class="o">**</span><span class="n">invalid_data</span><span class="p">)</span>
 <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="nf">json</span><span class="p">())</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="nf">errors</span><span class="p">())</span>
 </code></pre></div></div>
 
 <h2 id="advanced-features">Advanced Features</h2>
