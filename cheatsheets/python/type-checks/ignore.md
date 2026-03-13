@@ -5,7 +5,7 @@ Ways to ignore untyped libraries or when you want to ignore your own modules.
 See also `ignore_errors` option.
 
 
-## Ignore line in file
+## Ignore inline
 
 ```python
 import foo  # type: ignore
@@ -44,11 +44,20 @@ OR
     [mypy-foobar.*]
     ignore_missing_imports = True
     ```
-    
-    
-e.g. There is `types-Flask` for `Flask` but no types for `Flask-RESTful`.
 
-So you can do this:
+OR
+
+- `pyproject.toml`
+    ```toml
+    [tool.mypy]
+    [[tool.mypy.overrides]]
+    module = ["somepackage", "anotherpackage.submodule"]
+    ignore_missing_imports = true
+    ```
+    
+e.g. There is `types-Flask` package for `Flask` but there are no types for `Flask-RESTful`. 
+
+So you can do this for `mypy.ini`:
 
 ```ini
 [mypy]
