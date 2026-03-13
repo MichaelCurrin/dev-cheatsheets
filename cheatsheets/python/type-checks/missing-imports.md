@@ -9,12 +9,13 @@ See [Missing imports](https://mypy.readthedocs.io/en/stable/running_mypy.html#mi
 
 ## Related
 
-- [Install types][] cheatsheet
+- [Install types][] cheatsheet. To install type packages for a package.
+- [Ignore][] cheatsheet.  If you can't find types for a library updating coding or installing packages, you can silence the Mypy errors.
 
 [Install types]: {% link cheatsheets/python/type-checks/install-types.md %}
+[Ignore]: {% link cheatsheets/python/type-checks/ignore.md %}
 
-
-## Refactor imports
+## Refactor imports to be local
 
 ### Good
 
@@ -61,10 +62,3 @@ $ cd my_app
 $ python my_module.py
 ```
 
-
-## Ignore
-
-If you can't find types for a library updating coding or installing packages, you can silence the Mypy errors.
-
-
-[Ignore]: {% link cheatsheets/python/type-checks/ignore.md %}
