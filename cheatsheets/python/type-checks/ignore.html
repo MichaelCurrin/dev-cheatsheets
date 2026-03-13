@@ -173,7 +173,7 @@
 
 <p>See also <code class="language-plaintext highlighter-rouge">ignore_errors</code> option.</p>
 
-<h2 id="ignore-line-in-file">Ignore line in file</h2>
+<h2 id="ignore-inline">Ignore inline</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">foo</span>  <span class="c1"># type: ignore
 </span></code></pre></div></div>
@@ -215,9 +215,21 @@
   </li>
 </ul>
 
-<p>e.g. There is <code class="language-plaintext highlighter-rouge">types-Flask</code> for <code class="language-plaintext highlighter-rouge">Flask</code> but no types for <code class="language-plaintext highlighter-rouge">Flask-RESTful</code>.</p>
+<p>OR</p>
 
-<p>So you can do this:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">pyproject.toml</code>
+    <div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">[</span><span class="n">tool</span><span class="k">.</span><span class="n">mypy</span><span class="k">]</span>
+  <span class="k">[[</span><span class="n">tool</span><span class="k">.</span><span class="n">mypy</span><span class="k">.</span><span class="n">overrides</span><span class="k">]]</span>
+  <span class="n">module</span> <span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">"somepackage"</span><span class="p">,</span> <span class="s">"anotherpackage.submodule"</span><span class="p">]</span>
+  <span class="n">ignore_missing_imports</span> <span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>e.g. There is <code class="language-plaintext highlighter-rouge">types-Flask</code> package for <code class="language-plaintext highlighter-rouge">Flask</code> but there are no types for <code class="language-plaintext highlighter-rouge">Flask-RESTful</code>.</p>
+
+<p>So you can do this for <code class="language-plaintext highlighter-rouge">mypy.ini</code>:</p>
 
 <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[mypy]</span><span class="w">
 
