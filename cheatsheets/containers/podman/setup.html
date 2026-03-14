@@ -173,8 +173,25 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>podman
 </code></pre></div></div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>podman
+</code></pre></div></div>
+
+<h2 id="initialize">Initialize</h2>
+
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>podman machine init
 </code></pre></div></div>
+
+<p>If you get this error:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: exec: "qemu-system-x86_64": executable file not found in $PATH
+</code></pre></div></div>
+
+<p>Run:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>qemu-system-x86
+</code></pre></div></div>
+
+<p>Based on <a href="https://github.com/containers/podman/issues/12775">thread</a>.</p>
 
 <h2 id="use-as-docker-drop-in-replacement">Use as Docker drop-in replacement</h2>
 
