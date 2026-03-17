@@ -11,7 +11,9 @@ e.g.
 ```sh
 Set-Alias -Name kdev -Value "kubectl config set-context atlas-develop"
 ```
-
+```sh
+Set-Alias -Name docker -Value podman
+```
 
 ## Functions
 
