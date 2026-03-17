@@ -176,6 +176,8 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>podman
 </code></pre></div></div>
 
+<p>On Windows you can download the installer from the <a href="https://podman-desktop.io/downloads">Downloads</a> page for Podman Desktop.</p>
+
 <h2 id="initialize">Initialize</h2>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>podman machine init
@@ -193,11 +195,24 @@
 
 <p>Based on <a href="https://github.com/containers/podman/issues/12775">thread</a>.</p>
 
+<h2 id="manage-the-process">Manage the process</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>podman machine start
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>podman machine stop
+</code></pre></div></div>
+
 <h2 id="use-as-docker-drop-in-replacement">Use as Docker drop-in replacement</h2>
 
 <p>Set in your shell config like this based on the CLI output.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">DOCKER_HOST</span><span class="o">=</span><span class="s1">'unix:///var/folders/.../.../.../podman/podman-machine-default-api.sock'</span>
+</code></pre></div></div>
+
+<p>In PowerShell:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Set-Alias <span class="nt">-Name</span> docker <span class="nt">-Value</span> podman
 </code></pre></div></div>
 
         
