@@ -186,45 +186,48 @@
 
 <p>See <a href="https://7-zip.link/download.html">Download</a> page. Or see below.</p>
 
+<p>Note there are variations of 7Zip as <code class="language-plaintext highlighter-rouge">7z</code> and <code class="language-plaintext highlighter-rouge">7zz</code>, because of a fork.</p>
+
+<p>If you have it installed as <code class="language-plaintext highlighter-rouge">7zz</code>, you can add an alias:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">7z</span><span class="o">=</span><span class="s1">'7zz'</span>
+</code></pre></div></div>
+
 <h3 id="macos">macoS</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>sevenzip
 </code></pre></div></div>
-
-<p>Installs as <code class="language-plaintext highlighter-rouge">7zz</code>.</p>
-
-<p>Recommended - make an alias.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">7z</span><span class="o">=</span><span class="s1">'7zz'</span>
-</code></pre></div></div>
+<p>Reco</p>
 
 <h3 id="ubuntudebian">Ubuntu/Debian</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>7zip
 </code></pre></div></div>
 
+<p>Don’t use <code class="language-plaintext highlighter-rouge">p7zip-full</code> as it is not maintained.</p>
+
 <h2 id="cli">CLI</h2>
 
 <h3 id="create-archive">Create archive</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7z <span class="o">[</span>OPTIONS] ZIP_FILE SOURCE
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7zz <span class="o">[</span>OPTIONS] ZIP_FILE SOURCE
 </code></pre></div></div>
 
 <p>e.g.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7z a <span class="nt">-p</span> <span class="nt">-mhe</span><span class="o">=</span>on my_archive.7z my_folder/
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7zz a <span class="nt">-p</span> <span class="nt">-mhe</span><span class="o">=</span>on my_archive.7z my_folder/
 </code></pre></div></div>
 
 <h3 id="extract">Extract</h3>
 
 <p>Note you don’t have to specify the output name and it removes <code class="language-plaintext highlighter-rouge">.7z</code> for you.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7z x ZIP_FILE
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7zz x ZIP_FILE
 </code></pre></div></div>
 
 <p>Or custom:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7z x ZIP_FILE <span class="nt">-o</span> OUTPUT_PATH
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7zz x ZIP_FILE <span class="nt">-o</span> OUTPUT_PATH
 </code></pre></div></div>
 
 
