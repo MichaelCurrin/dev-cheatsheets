@@ -35,7 +35,7 @@ Without using editor config, VS Code already lets you choose the indent level an
 
 When you use an editor config file and an extension in VS Code, then you get to set the indentation for all new and existing files. This takes preference over the VS Code's inference.
 
-For using the Prettier extension, see the VS Code section of the [Prettier]({% link recipes/javascript/format-and-lint/prettier.md %}) page.
+For using the _Prettier_ extension, see the _VS Code_ section of the [Prettier](https://michaelcurrin.github.io/code-cookbook/recipes/javascript/format-and-lint/prettier.html) page.
 
 
 ## File format
