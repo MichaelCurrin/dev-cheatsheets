@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Deprecation warnings as errors | Dev Cheatsheets</title>
+    <title>Warnings | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Deprecation warnings as errors" />
+    <meta property="og:title" content="Warnings" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Deprecation warnings as errors" />
+    <meta property="twitter:title" content="Warnings" />
 <meta name="generator" content="Jekyll v4.4.1" />
 
 <meta property="og:locale" content="en_US" />
@@ -26,16 +26,16 @@
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/deprecation-warnings.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/deprecation-warnings.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/warnings.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/warnings.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/deprecation-warnings.html",
-    "headline":    "Deprecation warnings as errors",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/warnings.html",
+    "headline":    "Warnings",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -88,7 +88,7 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/python/deprecation-warnings.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/python/warnings.md">
     📝 <span>Edit page</span>
 </a>
 
@@ -105,7 +105,7 @@
             
 
 
-            <span>Deprecation warnings as errors</span>
+            <span>Warnings</span>
         </h1>
 
         
@@ -144,8 +144,8 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/python/deprecation-warnings.html" class="underline">
-                Deprecation warnings as errors
+            <a href="/dev-cheatsheets/cheatsheets/python/warnings.html" class="underline">
+                Warnings
             </a>
         
      
@@ -157,7 +157,9 @@
 
     <div class="post-content">
         
-            <p>Read more in <a href="https://docs.python.org/3/library/warnings.html">Warnings</a> in the Python docs.</p>
+            <p>Set warnings as errors.</p>
+
+<p>Read more in <a href="https://docs.python.org/3/library/warnings.html">Warnings</a> in the Python docs.</p>
 
 <h2 id="env-variable-appraoch">Env variable appraoch</h2>
 
@@ -174,6 +176,12 @@
 </code></pre></div></div>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python src/manage.py runserver 0.0.0.0:8000 <span class="nt">-W</span> error::DeprecationWarning
+</code></pre></div></div>
+
+<p>Ignore specific module/function:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-W error::DeprecationWarning \
+-W "ignore:datetime.datetime.utcnow:DeprecationWarning"
 </code></pre></div></div>
 
         

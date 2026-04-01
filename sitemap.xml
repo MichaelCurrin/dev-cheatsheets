@@ -2848,9 +2848,6 @@
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/delete.html</loc>
 </url>
 <url>
-<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/deprecation-warnings.html</loc>
-</url>
-<url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/exceptions.html</loc>
 </url>
 <url>
@@ -3113,6 +3110,9 @@
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/virtual-environments.html</loc>
+</url>
+<url>
+<loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/warnings.html</loc>
 </url>
 <url>
 <loc>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/ruby/classes.html</loc>
