@@ -151,7 +151,7 @@ Or, if you made the virtual env in your project.
 ```sh
 $ source {path_to_venv}/bin/activate
 ```
-```console
+```
 > source {path_to_venv}\Scripts\activate.bat
 ```
 
@@ -183,4 +183,28 @@ Run a CLI tool from the installed packages:
 ```sh
 $ poetry run pytest
 ```
+
+## Version numbers in Poetry
+
+## Caret
+
+More typical for Poetry, perhaps based on NPM versions.
+
+| **^1.2.3** | Up to next Major version | >= 1.2.3 < 2.0.0 |
+| **^1.2** | Up to next Major version | >= 1.2.0 < 2.0.0 |
+| **^1** | Up to next Major version | >= 1.0.0 < 2.0.0 |
+| **^0.2.3** | Up to next Minor (Unstable) | >= 0.2.3 < 0.3.0 |
+| **^0.0.3** | Exact version only (Unstable) | >= 0.0.3 < 0.0.4 |
+
+## Tilde
+
+| Requirement | Meaning | Range Allowed |
+| :--- | :--- | :--- |
+| **~1.2.3** | Match Patch updates only | >= 1.2.3 < 1.3.0 |
+| **~1.2** | Match Patch updates only | >= 1.2.0 < 1.3.0 |
+| **~1** | Match Minor and Patch | >= 1.0.0 < 2.0.0 |
+
+## Poetry vs Pip
+- In Poetry, `~1.2.3` and `~1.2` both restrict you to the 1.2 minor version.
+- In Pip, `~1.2.3` and `~1.2` are different. As `~=1.2` is much looser and allows you to jump all the way up to version 1.9.9.
 
