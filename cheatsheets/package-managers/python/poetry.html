@@ -305,7 +305,7 @@ python = "&gt;=3.10,&lt;3.13"
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">source</span> <span class="o">{</span>path_to_venv<span class="o">}</span>/bin/activate
 </code></pre></div></div>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&gt;</span><span class="w"> </span><span class="nb">source</span> <span class="o">{</span>path_to_venv<span class="o">}</span><span class="se">\S</span>cripts<span class="se">\a</span>ctivate.bat
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; source {path_to_venv}\Scripts\activate.bat
 </code></pre></div></div>
 
 <p>And deactivate with:</p>
@@ -330,6 +330,77 @@ python = "&gt;=3.10,&lt;3.13"
 <p>Run a CLI tool from the installed packages:</p>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>poetry run pytest
 </code></pre></div></div>
+
+<h2 id="version-numbers-in-poetry">Version numbers in Poetry</h2>
+
+<h2 id="caret">Caret</h2>
+
+<p>More typical for Poetry, perhaps based on NPM versions.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>^1.2.3</strong></td>
+      <td>Up to next Major version</td>
+      <td>&gt;= 1.2.3 &lt; 2.0.0</td>
+    </tr>
+    <tr>
+      <td><strong>^1.2</strong></td>
+      <td>Up to next Major version</td>
+      <td>&gt;= 1.2.0 &lt; 2.0.0</td>
+    </tr>
+    <tr>
+      <td><strong>^1</strong></td>
+      <td>Up to next Major version</td>
+      <td>&gt;= 1.0.0 &lt; 2.0.0</td>
+    </tr>
+    <tr>
+      <td><strong>^0.2.3</strong></td>
+      <td>Up to next Minor (Unstable)</td>
+      <td>&gt;= 0.2.3 &lt; 0.3.0</td>
+    </tr>
+    <tr>
+      <td><strong>^0.0.3</strong></td>
+      <td>Exact version only (Unstable)</td>
+      <td>&gt;= 0.0.3 &lt; 0.0.4</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="tilde">Tilde</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Requirement</th>
+      <th style="text-align: left">Meaning</th>
+      <th style="text-align: left">Range Allowed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>~1.2.3</strong></td>
+      <td style="text-align: left">Match Patch updates only</td>
+      <td style="text-align: left">&gt;= 1.2.3 &lt; 1.3.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>~1.2</strong></td>
+      <td style="text-align: left">Match Patch updates only</td>
+      <td style="text-align: left">&gt;= 1.2.0 &lt; 1.3.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>~1</strong></td>
+      <td style="text-align: left">Match Minor and Patch</td>
+      <td style="text-align: left">&gt;= 1.0.0 &lt; 2.0.0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="poetry-vs-pip">Poetry vs Pip</h2>
+<ul>
+  <li>In Poetry, <code class="language-plaintext highlighter-rouge">~1.2.3</code> and <code class="language-plaintext highlighter-rouge">~1.2</code> both restrict you to the 1.2 minor version.</li>
+  <li>In Pip, <code class="language-plaintext highlighter-rouge">~1.2.3</code> and <code class="language-plaintext highlighter-rouge">~1.2</code> are different. As <code class="language-plaintext highlighter-rouge">~=1.2</code> is much looser and allows you to jump all the way up to version 1.9.9.</li>
+</ul>
 
 
         
