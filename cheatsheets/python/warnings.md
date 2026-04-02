@@ -27,7 +27,15 @@ python src/manage.py runserver 0.0.0.0:8000 -W error::DeprecationWarning
 
 Ignore specific module/function:
 
+
 ```
 -W error::DeprecationWarning \
 -W "ignore:datetime.datetime.utcnow:DeprecationWarning"
+-W "ignore::DeprecationWarning:requests.*"
+```
+
+Format:
+
+```
+action:message:category:module:line
 ```
