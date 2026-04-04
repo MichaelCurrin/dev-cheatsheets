@@ -8,7 +8,6 @@ Command | Description
 --- | ---
 `docker ps` | List currently running docker containers.
 `docker ps -a` | List all docker containers (running and stopped)
-`docker stats`  | Show usage stats.
 
 ## Run
 
