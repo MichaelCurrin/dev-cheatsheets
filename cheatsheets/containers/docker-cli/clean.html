@@ -9,12 +9,12 @@
 
     <meta property="og:site_name" content="Dev Cheatsheets" />
 
-    <title>Common commands | Dev Cheatsheets</title>
+    <title>Clean | Dev Cheatsheets</title>
 
-    <meta property="og:title" content="Common commands" />
+    <meta property="og:title" content="Clean" />
 
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Common commands" />
+    <meta property="twitter:title" content="Clean" />
 <meta name="generator" content="Jekyll v4.4.1" />
 
 <meta property="og:locale" content="en_US" />
@@ -26,16 +26,16 @@
 
 
 
-<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/docker-cli/common-commands.html" />
-<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/docker-cli/common-commands.html" />
+<link rel="canonical" href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/docker-cli/clean.html" />
+<meta property="og:url" content="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/docker-cli/clean.html" />
 
 
 <script type="application/ld+json">
 {
     "name":        "Dev Cheatsheets",
     "description": "A collection of code snippets and CLI guides for quick and easy reference while coding",
-    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/docker-cli/common-commands.html",
-    "headline":    "Common commands",
+    "url":         "https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/containers/docker-cli/clean.html",
+    "headline":    "Clean",
     "@type":       "WebSite",
     "@context":    "https://schema.org",
     "author": {
@@ -88,7 +88,7 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/containers/docker-cli/common-commands.md">
+            <a id="github-edit" href="https://github.com/MichaelCurrin/dev-cheatsheets/edit/master/cheatsheets/containers/docker-cli/clean.md">
     📝 <span>Edit page</span>
 </a>
 
@@ -105,7 +105,7 @@
             
 
 
-            <span>Common commands</span>
+            <span>Clean</span>
         </h1>
 
         
@@ -156,8 +156,8 @@
         
 
         
-            <a href="/dev-cheatsheets/cheatsheets/containers/docker-cli/common-commands.html" class="underline">
-                Common commands
+            <a href="/dev-cheatsheets/cheatsheets/containers/docker-cli/clean.html" class="underline">
+                Clean
             </a>
         
      
@@ -169,90 +169,50 @@
 
     <div class="post-content">
         
-            <p>From <a href="https://www.mankier.com/1/docker#Examples_(TL;DR)">source</a>.</p>
+            <p>See <a href="/dev-cheatsheets/cheatsheets/containers/docker-cli/manage-images.html">Manage Images</a> to delete images.</p>
 
-<h2 id="show">Show</h2>
+<p>See <a href="/dev-cheatsheets/cheatsheets/containers/docker-cli/manage-containers.html">Manage Containers</a> to delete containers.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">docker ps</code></td>
-      <td>List currently running docker containers.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">docker ps -a</code></td>
-      <td>List all docker containers (running and stopped)</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">docker stats</code></td>
-      <td>Show usage stats.</td>
-    </tr>
-  </tbody>
-</table>
+<h2 id="contaners">Contaners</h2>
 
-<h2 id="run">Run</h2>
+<h3 id="remove-all-stopped-containers">Remove all stopped containers</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">docker pull IMAGE</code></td>
-      <td>Pull an image from a docker registry</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">docker run --rm IMAGE</code></td>
-      <td>Start a container from an image, with a random name</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">docker run  --rm --name CONTAINER_NAME IMAGE</code></td>
-      <td>Start a container from an image, with a custom name</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">docker run --rm -p 80:8080 IMAGE</code></td>
-      <td>Expose and publish ports of a server</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">docker start|stop CONTAINER_NAME</code></td>
-      <td>Start or stop an existing container</td>
-    </tr>
-  </tbody>
-</table>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">rm</span> <span class="si">$(</span>docker ps <span class="nt">-aq</span><span class="si">)</span>
+</code></pre></div></div>
 
-<h2 id="manage-container">Manage container</h2>
+<h2 id="force-remove-all-containers">Force remove all containers</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">docker exec -it CONTAINER_NAME bash</code></td>
-      <td>Open a shell inside of an already running container</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">docker rm CONTAINER_NAME</code></td>
-      <td>Remove a stopped container:</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">docker logs -f CONTAINER_NAME</code></td>
-      <td>Fetch and follow the logs of a container</td>
-    </tr>
-  </tbody>
-</table>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">rm</span> <span class="nt">-f</span> <span class="si">$(</span>docker ps <span class="nt">-aq</span><span class="si">)</span>
+</code></pre></div></div>
+
+<h2 id="images">Images</h2>
+
+<h2 id="remove-all-dangling-images">Remove all dangling images</h2>
+
+<p>Dangling images are layers no longer tagged or referenced by any container.</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker image prune
+</code></pre></div></div>
+
+<h2 id="remove-all-unused-images">Remove all unused images</h2>
+
+<p>Unused images are simply those not currently associated with a running or stopped container.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker rmi <span class="si">$(</span>docker images <span class="nt">-q</span><span class="si">)</span>
+</code></pre></div></div>
+
+<h2 id="full-system-prune">Full system prune</h2>
+
+<p>Delete volumes and images</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker system prune <span class="nt">-a</span> <span class="nt">--volumes</span>
+</code></pre></div></div>
+
+<h2 id="full-system-prune-1">Full system prune</h2>
+
+<p>Delete volumes and images</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker system prune <span class="nt">-a</span> <span class="nt">--volumes</span>
+</code></pre></div></div>
 
         
     </div>

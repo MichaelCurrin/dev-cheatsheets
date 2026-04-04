@@ -53,7 +53,7 @@ See also the [Run containers][] cheatsheet.
     ```sh
     $ docker rm my-app
     ```
-- Remove all containers.
+- Remove **all** containers.
     ```sh
     $ docker rm -f $(docker ps -a -q)
     ```
@@ -61,4 +61,5 @@ See also the [Run containers][] cheatsheet.
     ```sh
     $ docker ps -q | xargs docker rm
     ```
-    
+
+
