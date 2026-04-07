@@ -5,9 +5,11 @@
 If you just need UTC time, use the builtin from Python 3.2 as `datetime.timezone.utc`.
 
 ```python
-from datetime import datetime, timezone
+import datetime as dt
 
-now = datetime.now(timezone.utc)
+now = dt.datetime.now(datetime.timezone.utc)
+# OR
+now = dt.datetime.now(datetime.UTC)
 ```
 
 ## Use Zoneinfo for other time zones
@@ -23,7 +25,6 @@ import datetime as dt
 from zoneinfo import ZoneInfo
 
 dt.datetime(2020, 10, 31, 12, tzinfo=ZoneInfo("America/Los_Angeles"))
-
 dt.datetime(2025, 10, 31, 12, tzinfo=ZoneInfo("UTC"))
 ```
 
