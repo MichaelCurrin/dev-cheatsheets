@@ -32,3 +32,15 @@ dt.datetime(2025, 10, 31, 12, tzinfo=ZoneInfo("UTC"))
 - Linux / macOS: Usually, you don't need to do anything. These systems come with an IANA database pre-installed. ZoneInfo will just work out of the box.
 - Windows: Windows does not use the IANA database format natively. If you try to use ZoneInfo on a vanilla Windows install, it will raise a ZoneInfoNotFoundError.
 - Containers (Docker): Minimal Docker images (like python:3.11-slim or Alpine) often strip out the timezone database to save space. Your code might work on your Mac but crash the moment it hits the cloud.
+
+The safest is to add `tzdata` to your requirements.
+
+Steps to install and upgrade:
+
+```sh
+pip install tzdata
+```
+
+```sh
+pip install --upgrade tzdata
+```
