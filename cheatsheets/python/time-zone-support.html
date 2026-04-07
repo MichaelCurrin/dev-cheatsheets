@@ -157,19 +157,38 @@
 
     <div class="post-content">
         
-            <p>Since Python 3.9, you don’t need to rely on the 3rd-party package <code class="language-plaintext highlighter-rouge">pytz</code>.</p>
+            <h2 id="utc">UTC</h2>
+
+<p>If you just need UTC time, use the builtin from Python 3.2 as <code class="language-plaintext highlighter-rouge">datetime.timezone.utc</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span>
+
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">(</span><span class="n">timezone</span><span class="p">.</span><span class="n">utc</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="use-zoneinfo-for-other-time-zones">Use Zoneinfo for other time zones</h2>
+
+<p>Since Python 3.9, you don’t need to rely on the 3rd-party package <code class="language-plaintext highlighter-rouge">pytz</code>.</p>
 
 <p>Use the builtin <code class="language-plaintext highlighter-rouge">zoneinfo</code>.</p>
 
-<p><a href="https://docs.python.org/3/library/zoneinfo.html">docs</a></p>
+<p>See <a href="https://docs.python.org/3/library/zoneinfo.html">docs</a></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">zoneinfo</span> <span class="kn">import</span> <span class="n">ZoneInfo</span>
-<span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+<span class="kn">from</span> <span class="n">zoneinfo</span> <span class="kn">import</span> <span class="n">ZoneInfo</span>
 
 <span class="n">dt</span><span class="p">.</span><span class="nf">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="nc">ZoneInfo</span><span class="p">(</span><span class="sh">"</span><span class="s">America/Los_Angeles</span><span class="sh">"</span><span class="p">))</span>
 
 <span class="n">dt</span><span class="p">.</span><span class="nf">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="nc">ZoneInfo</span><span class="p">(</span><span class="sh">"</span><span class="s">UTC</span><span class="sh">"</span><span class="p">))</span>
 </code></pre></div></div>
+
+<h3 id="platform-specific-warning">Platform-specific warning</h3>
+
+<ul>
+  <li>Linux / macOS: Usually, you don’t need to do anything. These systems come with an IANA database pre-installed. ZoneInfo will just work out of the box.</li>
+  <li>Windows: Windows does not use the IANA database format natively. If you try to use ZoneInfo on a vanilla Windows install, it will raise a ZoneInfoNotFoundError.</li>
+  <li>Containers (Docker): Minimal Docker images (like python:3.11-slim or Alpine) often strip out the timezone database to save space. Your code might work on your Mac but crash the moment it hits the cloud.</li>
+</ul>
 
         
     </div>
