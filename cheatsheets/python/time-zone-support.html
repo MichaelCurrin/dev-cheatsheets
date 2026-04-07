@@ -172,9 +172,7 @@
 
 <p>Since Python 3.9, you don’t need to rely on the 3rd-party package <code class="language-plaintext highlighter-rouge">pytz</code>.</p>
 
-<p>Use the builtin <code class="language-plaintext highlighter-rouge">zoneinfo</code>.</p>
-
-<p>See <a href="https://docs.python.org/3/library/zoneinfo.html">docs</a></p>
+<p>Use the builtin <code class="language-plaintext highlighter-rouge">zoneinfo</code>. See <a href="https://docs.python.org/3/library/zoneinfo.html">docs</a></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 <span class="kn">from</span> <span class="n">zoneinfo</span> <span class="kn">import</span> <span class="n">ZoneInfo</span>
@@ -197,6 +195,14 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>tzdata
 </code></pre></div></div>
+
+<h2 id="note-from-django-docs">Note from Django docs</h2>
+
+<p><a href="https://docs.djangoproject.com/en/6.0/topics/i18n/timezones/">Timezones</a></p>
+
+<blockquote>
+  <p>Even if your website is available in only one time zone, it’s still good practice to store data in UTC in your database. The main reason is daylight saving time (DST). Many countries have a system of DST, where clocks are moved forward in spring and backward in autumn. If you’re working in local time, you’re likely to encounter errors twice a year, when the transitions happen. This probably doesn’t matter for your blog, but it’s a problem if you over bill or under bill your customers by one hour, twice a year, every year. The solution to this problem is to use UTC in the code and use local time only when interacting with end users.</p>
+</blockquote>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--upgrade</span> tzdata
 </code></pre></div></div>

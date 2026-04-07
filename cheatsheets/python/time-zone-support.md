@@ -16,9 +16,7 @@ now = dt.datetime.now(datetime.UTC)
 
 Since Python 3.9, you don't need to rely on the 3rd-party package `pytz`.
 
-Use the builtin `zoneinfo`.
-
-See [docs](https://docs.python.org/3/library/zoneinfo.html)
+Use the builtin `zoneinfo`. See [docs](https://docs.python.org/3/library/zoneinfo.html)
 
 ```python
 import datetime as dt
@@ -41,6 +39,14 @@ Steps to install and upgrade:
 ```sh
 pip install tzdata
 ```
+
+## Note from Django docs
+
+[Timezones](https://docs.djangoproject.com/en/6.0/topics/i18n/timezones/)
+
+> Even if your website is available in only one time zone, it’s still good practice to store data in UTC in your database. The main reason is daylight saving time (DST). Many countries have a system of DST, where clocks are moved forward in spring and backward in autumn. If you’re working in local time, you’re likely to encounter errors twice a year, when the transitions happen. This probably doesn’t matter for your blog, but it’s a problem if you over bill or under bill your customers by one hour, twice a year, every year. The solution to this problem is to use UTC in the code and use local time only when interacting with end users.
+
+
 
 ```sh
 pip install --upgrade tzdata
