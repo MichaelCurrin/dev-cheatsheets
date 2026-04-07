@@ -190,6 +190,16 @@
   <li>Containers (Docker): Minimal Docker images (like python:3.11-slim or Alpine) often strip out the timezone database to save space. Your code might work on your Mac but crash the moment it hits the cloud.</li>
 </ul>
 
+<p>The safest is to add <code class="language-plaintext highlighter-rouge">tzdata</code> to your requirements.</p>
+
+<p>Steps to install and upgrade:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>tzdata
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--upgrade</span> tzdata
+</code></pre></div></div>
+
         
     </div>
 </article>
