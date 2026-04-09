@@ -232,6 +232,13 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python manage.py migrate
 </code></pre></div></div>
 
+<p>Preview the SQL of the Python migration file:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python manage.py sqlmigrate APP_LABEL MIGRATION_NAME
+<span class="c"># e.g.</span>
+python manage.py sqlmigrate blog 0001
+</code></pre></div></div>
+
 <p>Collect static files:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python manage.py collectstatic 
