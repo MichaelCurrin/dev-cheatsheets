@@ -80,6 +80,13 @@ Migrate:
 $ python manage.py migrate
 ```
 
+Preview the SQL of the Python migration file:
+
+```sh
+python manage.py sqlmigrate APP_LABEL MIGRATION_NAME
+# e.g.
+python manage.py sqlmigrate blog 0001
+```
 
 Collect static files:
 
