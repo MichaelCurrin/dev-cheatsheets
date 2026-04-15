@@ -1,5 +1,34 @@
 # openssl
 
+## Install
+
+Ubuntu / Debian:
+
+```sh
+$ sudo apt update
+$ sudo apt install openssl
+```
+
+MacOS - [openssl@3](https://formulae.brew.sh/formula/openssl@3)
+
+```sh
+$ brew install openssl
+```
+
+## Generate certificates
+
+Example of self-signed cert:
+
+```sh
+mkdir -p ssl
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+  -keyout ./ssl/key.pem \
+  -out ./ssl/cert.pem \
+  -subj "/C=US/ST=State/L=City/O=Organization/CN=localhost"
+```
+
+## Download certificates
+
 To download a certificate from a remote server using OpenSSL, you typically use the `s_client` command. This connects to the server and retrieves the certificate chain, which you can then save to a file.
 
 ### Download the Primary (Leaf) Certificate
