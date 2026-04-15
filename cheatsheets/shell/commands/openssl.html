@@ -169,7 +169,33 @@
 
     <div class="post-content">
         
-            <p>To download a certificate from a remote server using OpenSSL, you typically use the <code class="language-plaintext highlighter-rouge">s_client</code> command. This connects to the server and retrieves the certificate chain, which you can then save to a file.</p>
+            <h2 id="install">Install</h2>
+
+<p>Ubuntu / Debian:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt update
+<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>openssl
+</code></pre></div></div>
+
+<p>MacOS - <a href="https://formulae.brew.sh/formula/openssl@3">openssl@3</a></p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>openssl
+</code></pre></div></div>
+
+<h2 id="generate-certificates">Generate certificates</h2>
+
+<p>Example of self-signed cert:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ssl
+openssl req <span class="nt">-x509</span> <span class="nt">-nodes</span> <span class="nt">-days</span> 365 <span class="nt">-newkey</span> rsa:2048 <span class="se">\</span>
+  <span class="nt">-keyout</span> ./ssl/key.pem <span class="se">\</span>
+  <span class="nt">-out</span> ./ssl/cert.pem <span class="se">\</span>
+  <span class="nt">-subj</span> <span class="s2">"/C=US/ST=State/L=City/O=Organization/CN=localhost"</span>
+</code></pre></div></div>
+
+<h2 id="download-certificates">Download certificates</h2>
+
+<p>To download a certificate from a remote server using OpenSSL, you typically use the <code class="language-plaintext highlighter-rouge">s_client</code> command. This connects to the server and retrieves the certificate chain, which you can then save to a file.</p>
 
 <h3 id="download-the-primary-leaf-certificate">Download the Primary (Leaf) Certificate</h3>
 
