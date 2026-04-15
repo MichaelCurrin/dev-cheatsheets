@@ -1,6 +1,10 @@
 # openssl
 
+See [OpenSSL homepage](https://www.openssl.org/).
+
 ## Install
+
+See Download page on the site for binaries.
 
 Ubuntu / Debian:
 
