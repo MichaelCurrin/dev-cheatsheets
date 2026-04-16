@@ -28,7 +28,7 @@ services:
       - foo:/root/bar/foo
 
 volumes:
-  - foo
+  foo:
 ```
 
 ### Summary
