@@ -1,42 +1,45 @@
 # Volumes
 
+## Bind mounts vs Named volumes
 
-## Mount
+In Docker Compose, a small change in syntax completely changes where your data is stored.
 
-Here we have directory in the repo at root as `foo`.
-This is mounted in the container as `/root/bar/foo`.
+### Bind Mounts (Local Folders)
+
+Managed in the repo.
 
 ```yaml
 volumes:
-  - "./foo:/root/bar"
+  - ./foo:/root/bar/foo
 ```
 
-### Relative paths
+As `./foo` (not dotslash is needed) or `~/foo` or `/foo`.
 
-Be sure to use dotslash before a directory name.
+###  Named volumes
 
-```
-./foo
-```
+Managed by Docker. Persists if you delete the repo.
 
-Note that setting directory as:
+If you omit the `./`, Docker assumes you are referencing a **Named Volume**.
 
-```
-foo
-```
+```yaml
+services:
+  foo:
+    volumes:
+      - foo:/root/bar/foo
 
-That will be assumed to be a _named volume_.
-
-It will expand to be this path on your host. Which will probably not exist and will give an error.
-
-```
-/root/foo
+volumes:
+  - foo
 ```
 
-### Relative paths
+### Summary
 
-- `~/foo`
-- `/foo`
+| Feature | Named Volume | Bind Mount |
+| :--- | :--- | :--- |
+| **Location** | Managed by Docker | Your project folder (`./data`) |
+| **Performance** | Native speed | Slower (especially on Mac/Win) |
+| **Ease of Use** | Set it and forget it | Can have permission issues |
+| **Best For** | Production, Databases | Config files, Source code |
+
 
 
 ## Examples
@@ -68,8 +71,6 @@ Samples from [compose file](https://docs.docker.com/compose/compose-file/) docs.
 
 - `docker-compose.yml`
     ```yaml
-    version: "3.8"
-
     services:
       web:
         image: nginx:alpine

@@ -169,40 +169,68 @@
 
     <div class="post-content">
         
-            <h2 id="mount">Mount</h2>
+            <h2 id="bind-mounts-vs-named-volumes">Bind mounts vs Named volumes</h2>
 
-<p>Here we have directory in the repo at root as <code class="language-plaintext highlighter-rouge">foo</code>.
-This is mounted in the container as <code class="language-plaintext highlighter-rouge">/root/bar/foo</code>.</p>
+<p>In Docker Compose, a small change in syntax completely changes where your data is stored.</p>
+
+<h3 id="bind-mounts-local-folders">Bind Mounts (Local Folders)</h3>
+
+<p>Managed in the repo.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">volumes</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s2">"</span><span class="s">./foo:/root/bar"</span>
+  <span class="pi">-</span> <span class="s">./foo:/root/bar/foo</span>
 </code></pre></div></div>
 
-<h3 id="relative-paths">Relative paths</h3>
+<p>As <code class="language-plaintext highlighter-rouge">./foo</code> (not dotslash is needed) or <code class="language-plaintext highlighter-rouge">~/foo</code> or <code class="language-plaintext highlighter-rouge">/foo</code>.</p>
 
-<p>Be sure to use dotslash before a directory name.</p>
+<h3 id="named-volumes">Named volumes</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./foo
+<p>Managed by Docker. Persists if you delete the repo.</p>
+
+<p>If you omit the <code class="language-plaintext highlighter-rouge">./</code>, Docker assumes you are referencing a <strong>Named Volume</strong>.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+  <span class="na">foo</span><span class="pi">:</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">foo:/root/bar/foo</span>
+
+<span class="na">volumes</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">foo</span>
 </code></pre></div></div>
 
-<p>Note that setting directory as:</p>
+<h3 id="summary">Summary</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foo
-</code></pre></div></div>
-
-<p>That will be assumed to be a <em>named volume</em>.</p>
-
-<p>It will expand to be this path on your host. Which will probably not exist and will give an error.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/root/foo
-</code></pre></div></div>
-
-<h3 id="relative-paths-1">Relative paths</h3>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">~/foo</code></li>
-  <li><code class="language-plaintext highlighter-rouge">/foo</code></li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Feature</th>
+      <th style="text-align: left">Named Volume</th>
+      <th style="text-align: left">Bind Mount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Location</strong></td>
+      <td style="text-align: left">Managed by Docker</td>
+      <td style="text-align: left">Your project folder (<code class="language-plaintext highlighter-rouge">./data</code>)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Performance</strong></td>
+      <td style="text-align: left">Native speed</td>
+      <td style="text-align: left">Slower (especially on Mac/Win)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Ease of Use</strong></td>
+      <td style="text-align: left">Set it and forget it</td>
+      <td style="text-align: left">Can have permission issues</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Best For</strong></td>
+      <td style="text-align: left">Production, Databases</td>
+      <td style="text-align: left">Config files, Source code</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="examples">Examples</h2>
 
@@ -231,13 +259,11 @@ This is mounted in the container as <code class="language-plaintext highlighter-
   </li>
 </ul>
 
-<h3 id="named-volumes">Named volumes</h3>
+<h3 id="named-volumes-1">Named volumes</h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">docker-compose.yml</code>
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.8"</span>
-
-  <span class="na">services</span><span class="pi">:</span>
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">services</span><span class="pi">:</span>
     <span class="na">web</span><span class="pi">:</span>
       <span class="na">image</span><span class="pi">:</span> <span class="s">nginx:alpine</span>
         
