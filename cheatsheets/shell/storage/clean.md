@@ -1,11 +1,12 @@
 ---
 title: Clean
-description:  Common approaches to clearing space on your machine.
+description:  Common approaches to clearing space on your machine
 ---
 
-- [source](https://www.omgubuntu.co.uk/2016/08/5-ways-free-up-space-on-ubuntu)
-- [source](https://itsfoss.com/free-up-space-ubuntu-linux/)
+Sources:
 
+- [5 ways to free up space on Ubuntu](https://www.omgubuntu.co.uk/2016/08/5-ways-free-up-space-on-ubuntu)
+- [Free up space on Ubuntu](https://itsfoss.com/free-up-space-ubuntu-linux/)
 
 ## Temporary files
 
