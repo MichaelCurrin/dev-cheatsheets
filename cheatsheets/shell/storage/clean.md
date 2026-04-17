@@ -29,7 +29,19 @@ On macOS and Linux:
 $ rm -rf ~/.cache/*
 ```
 
+### Delete logs
+
+Just the zip files.
+
+On macOS:
+
+```sh
+rm -f /private/var/log/*.{bz2,gz}
+```
+
 ### Remove thumbnails
+
+Linux:
 
 ```sh
 $ du -sh ~/.cache/thumbnails
