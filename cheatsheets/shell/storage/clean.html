@@ -198,7 +198,18 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">rm</span> <span class="nt">-rf</span> ~/.cache/<span class="k">*</span>
 </code></pre></div></div>
 
+<h3 id="delete-logs">Delete logs</h3>
+
+<p>Just the zip files.</p>
+
+<p>On macOS:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm</span> <span class="nt">-f</span> /private/var/log/<span class="k">*</span>.<span class="o">{</span>bz2,gz<span class="o">}</span>
+</code></pre></div></div>
+
 <h3 id="remove-thumbnails">Remove thumbnails</h3>
+
+<p>Linux:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">du</span> <span class="nt">-sh</span> ~/.cache/thumbnails
 818M    /home/michael/.cache/thumbnails
