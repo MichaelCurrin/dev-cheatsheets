@@ -181,6 +181,15 @@
   <li><a href="https://itsfoss.com/free-up-space-ubuntu-linux/">Free up space on Ubuntu</a></li>
 </ul>
 
+<h2 id="find-largest-directories">Find largest directories</h2>
+
+<p>Start in your home directory, find the largest, then go deeper into the large ones.</p>
+
+<p>This shows just the top 10.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">du</span> <span class="nt">-sh</span> <span class="k">*</span> | <span class="nb">sort</span> <span class="nt">-hr</span> | <span class="nb">head</span> <span class="nt">-n</span> 10
+</code></pre></div></div>
+
 <h2 id="temporary-files">Temporary files</h2>
 
 <h3 id="clear-tmp-directory">Clear tmp directory</h3>
@@ -189,6 +198,8 @@
 </code></pre></div></div>
 
 <h3 id="delete-cache">Delete cache</h3>
+
+<p>Note this will also delete Poetry-created virtual environments.</p>
 
 <p>On macOS:</p>
 
