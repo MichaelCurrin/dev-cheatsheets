@@ -8,6 +8,16 @@ Sources:
 - [5 ways to free up space on Ubuntu](https://www.omgubuntu.co.uk/2016/08/5-ways-free-up-space-on-ubuntu)
 - [Free up space on Ubuntu](https://itsfoss.com/free-up-space-ubuntu-linux/)
 
+## Find largest directories
+
+Start in your home directory, find the largest, then go deeper into the large ones.
+
+This shows just the top 10.
+
+```sh
+du -sh * | sort -hr | head -n 10
+```
+
 ## Temporary files
 
 ### Clear tmp directory
@@ -17,6 +27,8 @@ $ rm -rf /tmp/*
 ```
 
 ### Delete cache
+
+Note this will also delete Poetry-created virtual environments.
 
 On macOS:
 
