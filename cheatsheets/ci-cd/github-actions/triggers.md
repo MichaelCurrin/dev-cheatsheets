@@ -102,7 +102,7 @@ on:
   pull_request:
 ```
 
-### On push to main or  aPull Request to main
+### On push to main or a Pull Request to main
 
 Runs on a PR again main but won't run on a PR between two branches that both aren't the _main_ branch.
 
@@ -185,7 +185,7 @@ on:
       - "file.txt"
 ```
 
-Or maybe just `dir0name` without the stars?
+Or maybe just `dir-name` without the stars?
 
 ### Include path
 
