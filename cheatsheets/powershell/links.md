@@ -4,7 +4,7 @@
 
 In PowerShell, you primarily use the `New-Item` cmdlet. While `mklink` works in Command Prompt, `New-Item` is the native PowerShell way.
 
-### Basic Syntax
+Basic Syntax
 
 ```powershell
 New-Item -ItemType SymbolicLink -Path "LinkPath" -Value "Target"
@@ -16,11 +16,10 @@ New-Item -ItemType SymbolicLink -Path "LinkPath" -Value "Target"
 New-Item -ItemType SymbolicLink -Path "C:\MyLink.txt" -Value "C:\TargetFile.txt"
 ```
 
-### Directory smlink
+### Directory symlink
 
 ```powershell
 New-Item -ItemType SymbolicLink -Path "C:\MyFolderLink" -Value "C:\TargetFolder"
-
 ```
 
 ### Management Commands

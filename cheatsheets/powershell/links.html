@@ -161,7 +161,7 @@
 
 <p>In PowerShell, you primarily use the <code class="language-plaintext highlighter-rouge">New-Item</code> cmdlet. While <code class="language-plaintext highlighter-rouge">mklink</code> works in Command Prompt, <code class="language-plaintext highlighter-rouge">New-Item</code> is the native PowerShell way.</p>
 
-<h3 id="basic-syntax">Basic Syntax</h3>
+<p>Basic Syntax</p>
 
 <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">New-Item</span><span class="w"> </span><span class="nt">-ItemType</span><span class="w"> </span><span class="nx">SymbolicLink</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="s2">"LinkPath"</span><span class="w"> </span><span class="nt">-Value</span><span class="w"> </span><span class="s2">"Target"</span><span class="w">
 </span></code></pre></div></div>
@@ -171,10 +171,9 @@
 <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">New-Item</span><span class="w"> </span><span class="nt">-ItemType</span><span class="w"> </span><span class="nx">SymbolicLink</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="s2">"C:\MyLink.txt"</span><span class="w"> </span><span class="nt">-Value</span><span class="w"> </span><span class="s2">"C:\TargetFile.txt"</span><span class="w">
 </span></code></pre></div></div>
 
-<h3 id="directory-smlink">Directory smlink</h3>
+<h3 id="directory-symlink">Directory symlink</h3>
 
 <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">New-Item</span><span class="w"> </span><span class="nt">-ItemType</span><span class="w"> </span><span class="nx">SymbolicLink</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="s2">"C:\MyFolderLink"</span><span class="w"> </span><span class="nt">-Value</span><span class="w"> </span><span class="s2">"C:\TargetFolder"</span><span class="w">
-
 </span></code></pre></div></div>
 
 <h3 id="management-commands">Management Commands</h3>
