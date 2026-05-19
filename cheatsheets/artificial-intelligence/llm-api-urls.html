@@ -205,25 +205,33 @@
 
 <h2 id="env-variable-configuration-samples">Env variable configuration samples</h2>
 
+<h3 id="openai-api">OpenAI API</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">OPENAI_MODEL</span><span class="o">=</span>gpt-5.5
+<span class="nv">OPENAI_API_KEY</span><span class="o">=</span>YOUR_ACTUAL_SECRET_KEY_HERE
+</code></pre></div></div>
+
+<p>You can leave <code class="language-plaintext highlighter-rouge">OPENAI_API_URL</code> set as the default value.</p>
+
 <h3 id="pollinations-api">Pollinations API</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">OPENAI_MODEL</span><span class="o">=</span><span class="s1">'openai'</span>
-<span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s1">'dummy'</span>
-<span class="nv">OPENAI_API_URL</span><span class="o">=</span><span class="s1">'https://text.pollinations.ai/openai'</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">OPENAI_MODEL</span><span class="o">=</span>openai
+<span class="nv">OPENAI_API_KEY</span><span class="o">=</span>dummy
+<span class="nv">OPENAI_API_URL</span><span class="o">=</span>https://text.pollinations.ai/openai
 </code></pre></div></div>
 
 <h3 id="lm-studio">LM Studio</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">OPENAI_MODEL</span><span class="o">=</span><span class="s1">''</span>
-<span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s1">'dummy'</span>
-<span class="nv">OPENAI_API_URL</span><span class="o">=</span><span class="s1">'http://localhost:1234/v1'</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">OPENAI_MODEL</span><span class="o">=</span>
+<span class="nv">OPENAI_API_KEY</span><span class="o">=</span>dummy
+<span class="nv">OPENAI_API_URL</span><span class="o">=</span>http://localhost:1234/v1
 </code></pre></div></div>
 
 <h3 id="ollama">Ollama</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">OPENAI_MODEL</span><span class="o">=</span><span class="s1">'llama3.2'</span>
-<span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s1">'dummy'</span>
-<span class="nv">OPENAI_API_URL</span><span class="o">=</span><span class="s1">'http://localhost:11434/v1'</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">OPENAI_MODEL</span><span class="o">=</span>llama3.2
+<span class="nv">OPENAI_API_KEY</span><span class="o">=</span>dummy
+<span class="nv">OPENAI_API_URL</span><span class="o">=</span>http://localhost:11434/v1
 </code></pre></div></div>
 
         

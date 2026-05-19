@@ -15,27 +15,36 @@ URLs for local LLM APIs and remote API options.
 
 ## Env variable configuration samples
 
+### OpenAI API
+
+```sh
+OPENAI_MODEL=gpt-5.5
+OPENAI_API_KEY=YOUR_ACTUAL_SECRET_KEY_HERE
+```
+
+You can leave `OPENAI_API_URL` set as the default value.
+
 ### Pollinations API
 
 ```sh
-OPENAI_MODEL='openai'
-OPENAI_API_KEY='dummy'
-OPENAI_API_URL='https://text.pollinations.ai/openai'
+OPENAI_MODEL=openai
+OPENAI_API_KEY=dummy
+OPENAI_API_URL=https://text.pollinations.ai/openai
 ```
 
 ### LM Studio
 
 ```sh
-OPENAI_MODEL=''
-OPENAI_API_KEY='dummy'
-OPENAI_API_URL='http://localhost:1234/v1'
+OPENAI_MODEL=
+OPENAI_API_KEY=dummy
+OPENAI_API_URL=http://localhost:1234/v1
 ```
 
 ### Ollama
 
 ```sh
-OPENAI_MODEL='llama3.2'
-OPENAI_API_KEY='dummy'
-OPENAI_API_URL='http://localhost:11434/v1'
+OPENAI_MODEL=llama3.2
+OPENAI_API_KEY=dummy
+OPENAI_API_URL=http://localhost:11434/v1
 ```
 
