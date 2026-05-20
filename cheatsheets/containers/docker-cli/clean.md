@@ -7,7 +7,7 @@ See [Manage Containers][] to delete containers.
 [Manage Images]: {% link cheatsheets/containers/docker-cli/manage-images.md %}
 [Manage Containers]: {% link cheatsheets/containers/docker-cli/manage-containers.md %}
 
-## Contaners
+## Containers
 
 ### Remove all stopped containers
 
@@ -15,7 +15,7 @@ See [Manage Containers][] to delete containers.
 docker rm $(docker ps -aq)
 ```
 
-## Force remove all containers
+### Force remove all containers
 
 ```sh
 docker rm -f $(docker ps -aq)

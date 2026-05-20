@@ -173,14 +173,14 @@
 
 <p>See <a href="/dev-cheatsheets/cheatsheets/containers/docker-cli/manage-containers.html">Manage Containers</a> to delete containers.</p>
 
-<h2 id="contaners">Contaners</h2>
+<h2 id="containers">Containers</h2>
 
 <h3 id="remove-all-stopped-containers">Remove all stopped containers</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">rm</span> <span class="si">$(</span>docker ps <span class="nt">-aq</span><span class="si">)</span>
 </code></pre></div></div>
 
-<h2 id="force-remove-all-containers">Force remove all containers</h2>
+<h3 id="force-remove-all-containers">Force remove all containers</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">rm</span> <span class="nt">-f</span> <span class="si">$(</span>docker ps <span class="nt">-aq</span><span class="si">)</span>
 </code></pre></div></div>
