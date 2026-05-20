@@ -40,16 +40,18 @@ docker rmi $(docker images -q)
 
 ## Full system prune
 
-Delete volumes and images
+Deletes stopped containers, unused networks, dangling images (images without a tag), and build caches.
 
 ```sh
 docker system prune -a --volumes
 ```
 
-## Full system prune
+Add `-f` to force.
 
-Delete volumes and images
+## Delete build cache
+
+Deletes all build cache, not just the unused parts, forcing Docker to rebuild every layer from scratch next time.
 
 ```sh
-docker system prune -a --volumes
+docker builder prune -a -f:
 ```
