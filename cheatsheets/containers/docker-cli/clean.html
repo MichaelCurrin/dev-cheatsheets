@@ -202,16 +202,18 @@
 
 <h2 id="full-system-prune">Full system prune</h2>
 
-<p>Delete volumes and images</p>
+<p>Deletes stopped containers, unused networks, dangling images (images without a tag), and build caches.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker system prune <span class="nt">-a</span> <span class="nt">--volumes</span>
 </code></pre></div></div>
 
-<h2 id="full-system-prune-1">Full system prune</h2>
+<p>Add <code class="language-plaintext highlighter-rouge">-f</code> to force.</p>
 
-<p>Delete volumes and images</p>
+<h2 id="delete-build-cache">Delete build cache</h2>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker system prune <span class="nt">-a</span> <span class="nt">--volumes</span>
+<p>Deletes all build cache, not just the unused parts, forcing Docker to rebuild every layer from scratch next time.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker builder prune <span class="nt">-a</span> <span class="nt">-f</span>:
 </code></pre></div></div>
 
         
