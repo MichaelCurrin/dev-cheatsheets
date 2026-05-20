@@ -53,5 +53,5 @@ Add `-f` to force.
 Deletes all build cache, not just the unused parts, forcing Docker to rebuild every layer from scratch next time.
 
 ```sh
-docker builder prune -a -f:
+docker builder prune -a -f
 ```
