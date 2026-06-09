@@ -1,8 +1,9 @@
 # Zip utility
 
 
-Compress and decompress - use the `zip` utility to handle `.zip` files.
+Compress and decompress - use the `zip` utility to handle `.zip` files. With `zip` and `unzip` commands.
 
+Standard on macOS and Linux.
 
 ## Manpage
 
