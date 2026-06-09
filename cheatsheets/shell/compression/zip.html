@@ -195,23 +195,64 @@
 
 <p>The target can be one or more files or directories.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zip <span class="nt">-r</span> ZIPPED_FILE INFILES
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zip ZIPPED_FILE INFILES
 </code></pre></div></div>
 
 <p>e.g.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zip <span class="nt">-r</span> foo.zip foo
-<span class="c"># Equivalent</span>
-zip <span class="nt">-r</span> foo foo
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zip <span class="nt">-r</span> foo.zip foo/
+<span class="c"># Equivalent without .zip explicitly.</span>
+zip <span class="nt">-r</span> foo foo/
 
-zip <span class="nt">-r</span> foo.zip a.txt b.py
+zip foo.zip a.txt b.py
 
-zip <span class="nt">-r</span> bar.zip <span class="k">*</span>.doc
+zip bar.zip <span class="k">*</span>.doc
 </code></pre></div></div>
+
+<p>Common flags:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Flag</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-r</td>
+      <td>Add all files in a folder and its subfolders to the archive.</td>
+    </tr>
+    <tr>
+      <td>-e</td>
+      <td>Prompt for a password to encrypt the files.</td>
+    </tr>
+    <tr>
+      <td>-d</td>
+      <td>Remove a file from a zip archive.</td>
+    </tr>
+    <tr>
+      <td>-u</td>
+      <td>Update an existing archive (adds new files or replaces changed ones).</td>
+    </tr>
+    <tr>
+      <td>-l</td>
+      <td>Translate line endings (LF to CRLF) for text files.</td>
+    </tr>
+    <tr>
+      <td>-q</td>
+      <td>Quite mode.</td>
+    </tr>
+    <tr>
+      <td>-j</td>
+      <td>Junk paths (store files without their directory structure).</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="decompress">Decompress</h2>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zip ZIPPED_FILE <span class="o">[</span>OUTPUT]
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unzip ZIPPED_FILE <span class="o">[</span>OUTPUT]
 </code></pre></div></div>
 
 <p>e.g.</p>

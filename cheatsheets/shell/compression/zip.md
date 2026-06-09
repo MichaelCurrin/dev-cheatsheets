@@ -26,26 +26,37 @@ The zip command will replace any existing `.zip` file, but it will _add_ target 
 The target can be one or more files or directories.
 
 ```sh
-zip -r ZIPPED_FILE INFILES
+zip ZIPPED_FILE INFILES
 ```
 
 e.g.
 
 ```sh
-zip -r foo.zip foo
-# Equivalent
-zip -r foo foo
+zip -r foo.zip foo/
+# Equivalent without .zip explicitly.
+zip -r foo foo/
 
-zip -r foo.zip a.txt b.py
+zip foo.zip a.txt b.py
 
-zip -r bar.zip *.doc
+zip bar.zip *.doc
 ```
 
+Common flags:
+
+| Flag | Description |
+| --- | --- |
+| -r | Add all files in a folder and its subfolders to the archive. |
+| -e | Prompt for a password to encrypt the files. |
+| -d | Remove a file from a zip archive. |
+| -u | Update an existing archive (adds new files or replaces changed ones). |
+| -l | Translate line endings (LF to CRLF) for text files. |
+| -q | Quite mode. |
+| -j | Junk paths (store files without their directory structure). |
 
 ## Decompress
 
 ```sh
-zip ZIPPED_FILE [OUTPUT]
+unzip ZIPPED_FILE [OUTPUT]
 ```
 
 e.g.
