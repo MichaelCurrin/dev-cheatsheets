@@ -399,7 +399,7 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>su postgres
 </code></pre></div></div>
 
-<p>If you don’t want to use default user of <code class="language-plaintext highlighter-rouge">postgres</code>, set the user. You might need to set <code class="language-plaintext highlighter-rouge">-h</code> for the host too.</p>
+<p>Set user, database and host with example below.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="nt">-U</span> my-user <span class="nt">-d</span> my-db <span class="nt">-h</span> abc.eu-central-1.rds.amazonaws.com
 </code></pre></div></div>
@@ -409,6 +409,13 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="s2">"service=myservice sslmode=require"</span>
 <span class="nv">$ </span>psql postgresql://dbmaster:5433/mydb?sslmode<span class="o">=</span>require
 </code></pre></div></div>
+
+<p>Password will be requested interactively. Otherwise use pgpass or set with env variable in shell config as:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">PGPASSWORD</span><span class="o">=</span>my-password
+</code></pre></div></div>
+
+<p>Avoid using this in the terminal directory as it is part of the history.</p>
 
 <h2 id="run-query-using-cli">Run query using CLI</h2>
 
