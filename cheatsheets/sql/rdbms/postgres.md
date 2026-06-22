@@ -249,7 +249,7 @@ You might need to switch users first:
 $ sudo su postgres
 ```
 
-If you don't want to use default user of `postgres`, set the user. You might need to set `-h` for the host too.
+Set user, database and host with example below.
 
 ```sh
 $ psql -U my-user -d my-db -h abc.eu-central-1.rds.amazonaws.com
@@ -262,6 +262,13 @@ $ psql "service=myservice sslmode=require"
 $ psql postgresql://dbmaster:5433/mydb?sslmode=require
 ```
 
+Password will be requested interactively. Otherwise use pgpass or set with env variable in shell config as:
+
+```sh
+PGPASSWORD=my-password
+```
+
+Avoid using this in the terminal directory as it is part of the history.
 
 ## Run query using CLI
 
