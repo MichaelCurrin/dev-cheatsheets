@@ -1,5 +1,10 @@
 # CLI
 
+## Install
+
+```sh
+brew install colima
+```
 
 ## Start
 
