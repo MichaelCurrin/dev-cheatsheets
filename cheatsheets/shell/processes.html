@@ -199,6 +199,64 @@
 
 <p>Always exercise caution when stopping or killing processes, especially system processes, as it may lead to unintended consequences.</p>
 
+<h2 id="summary">Summary</h2>
+
+<p>Some overlap with the rest of this page but concise.</p>
+
+<h3 id="find-processes-by-name">Find processes by name</h3>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Find process by name</span>
+ps aux | <span class="nb">grep </span>process_name
+
+<span class="c"># More detailed info</span>
+pgrep <span class="nt">-af</span> process_name
+</code></pre></div></div>
+
+<h3 id="find-processes-by-port">Find processes by port</h3>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Which process is using a specific port</span>
+lsof <span class="nt">-i</span> :PORT_NUMBER
+<span class="c"># e.g.</span>
+lsof <span class="nt">-i</span> :8000    <span class="c"># Django dev server</span>
+lsof <span class="nt">-i</span> :5432    <span class="c"># Postgres</span>
+lsof <span class="nt">-i</span> :6379    <span class="c"># Redis</span>
+</code></pre></div></div>
+
+<h3 id="check-all-listening-ports">Check all listening ports</h3>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lsof <span class="nt">-i</span> <span class="nt">-P</span> <span class="nt">-n</span> | <span class="nb">grep </span>LISTEN
+</code></pre></div></div>
+
+<h3 id="kill-a-process">Kill a process</h3>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># By PID (process ID)</span>
+<span class="nb">kill </span>PID_NUMBER
+<span class="nb">kill</span> <span class="nt">-9</span> PID_NUMBER    <span class="c"># Force kill</span>
+
+<span class="c"># By name</span>
+pkill process_name
+pkill <span class="nt">-9</span> process_name    <span class="c"># Force kill</span>
+</code></pre></div></div>
+
+<h3 id="monitor-processes">Monitor processes</h3>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Real-time process monitor</span>
+top
+<span class="c"># or</span>
+htop    <span class="c"># More user-friendly (if installed)</span>
+</code></pre></div></div>
+
+<h3 id="for-docker">For Docker</h3>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># List containers</span>
+docker ps
+docker ps <span class="nt">-a</span>    <span class="c"># Include stopped containers</span>
+
+<span class="c"># Check if a container is running</span>
+docker inspect container_name
+
+<span class="c"># View container logs</span>
+docker logs container_name
+docker logs <span class="nt">-f</span> container_name    <span class="c"># Follow logs</span>
+
+<span class="c"># Kill a container</span>
+docker <span class="nb">kill </span>container_name
+</code></pre></div></div>
+
 <h2 id="list-processes">List Processes</h2>
 
 <h3 id="non-interactive">Non-interactive</h3>
