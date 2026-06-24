@@ -42,6 +42,70 @@ Here's an example workflow:
 
 Always exercise caution when stopping or killing processes, especially system processes, as it may lead to unintended consequences.
 
+## Summary
+
+Some overlap with the rest of this page but concise.
+
+### Find processes by name
+```sh
+# Find process by name
+ps aux | grep process_name
+
+# More detailed info
+pgrep -af process_name
+```
+
+### Find processes by port
+```sh
+# Which process is using a specific port
+lsof -i :PORT_NUMBER
+# e.g.
+lsof -i :8000    # Django dev server
+lsof -i :5432    # Postgres
+lsof -i :6379    # Redis
+```
+
+### Check all listening ports
+```sh
+lsof -i -P -n | grep LISTEN
+```
+
+### Kill a process
+```sh
+# By PID (process ID)
+kill PID_NUMBER
+kill -9 PID_NUMBER    # Force kill
+
+# By name
+pkill process_name
+pkill -9 process_name    # Force kill
+```
+
+### Monitor processes
+```sh
+# Real-time process monitor
+top
+# or
+htop    # More user-friendly (if installed)
+```
+
+### For Docker
+```sh
+# List containers
+docker ps
+docker ps -a    # Include stopped containers
+
+# Check if a container is running
+docker inspect container_name
+
+# View container logs
+docker logs container_name
+docker logs -f container_name    # Follow logs
+
+# Kill a container
+docker kill container_name
+```
+
 ## List Processes
 
 ### Non-interactive
@@ -127,3 +191,5 @@ pkill process_name
 ```
 
 Be careful when killing processes, as it may lead to data loss or system instability if critical processes are terminated.
+
+
