@@ -81,3 +81,12 @@ def add(a, b):
 def test_add_function_with_ids(a, b, expected_result):
     assert add(a, b) == expected_result
 ```
+
+## CLI
+
+```sh
+usage: pytest [options] [file_or_dir] [file_or_dir] [...]
+```
+
+You can use the `-s` flag to allow `print` output to show and `pdb` `breakpoint()` to work.
+
