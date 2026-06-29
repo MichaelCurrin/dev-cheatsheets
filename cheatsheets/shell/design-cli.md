@@ -1,4 +1,7 @@
-# Desgin CLI
+---
+title: Design CLI
+description: How to make a CLI tool with interface and usage similar to other Unix-based tools
+---
 
 
 ## Positional arguments vs flags
