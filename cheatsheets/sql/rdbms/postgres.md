@@ -138,7 +138,7 @@ CREATE USER my_user
 Recommended - use the optional `ENCRYPTED` modified.
 
 ```sql
-CREATE USER my_user WITH ENCRYPTED PASSWORD 'abcdef123';
+CREATE USER my_user WITH ENCRYPTED PASSWORD 'my_password';
 ```
 
 See [create user][] docs.
@@ -174,7 +174,7 @@ See [create role][] docs.
 Create a role that can log in, but don't give it a password:
 
 ```sql
-CREATE ROLE my-role LOGIN;
+CREATE ROLE my_role LOGIN;
 ```
 
 Create a role with a password:
@@ -318,7 +318,7 @@ Or enter password using an approach here.
 ### Env vars
 
 ```sh
-$ PGPASSWORD=123 psql ...
+$ PGPASSWORD=my_password psql ...
 ```
 [env vars](http://www.postgresql.org/docs/current/static/libpq-envars.html) manual.
 
