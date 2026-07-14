@@ -302,7 +302,7 @@
 
 <p>Recommended - use the optional <code class="language-plaintext highlighter-rouge">ENCRYPTED</code> modified.</p>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">USER</span> <span class="n">my_user</span> <span class="k">WITH</span> <span class="k">ENCRYPTED</span> <span class="n">PASSWORD</span> <span class="s1">'abcdef123'</span><span class="p">;</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">USER</span> <span class="n">my_user</span> <span class="k">WITH</span> <span class="k">ENCRYPTED</span> <span class="n">PASSWORD</span> <span class="s1">'my_password'</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>See <a href="https://www.postgresql.org/docs/current/app-createuser.html">create user</a> docs.</p>
@@ -334,7 +334,7 @@
 
 <p>Create a role that can log in, but don’t give it a password:</p>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">my</span><span class="o">-</span><span class="k">role</span> <span class="n">LOGIN</span><span class="p">;</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">my_role</span> <span class="n">LOGIN</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>Create a role with a password:</p>
@@ -458,7 +458,7 @@
 
 <h3 id="env-vars">Env vars</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ PGPASSWORD</span><span class="o">=</span>123 psql ...
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ PGPASSWORD</span><span class="o">=</span>my_password psql ...
 </code></pre></div></div>
 <p><a href="http://www.postgresql.org/docs/current/static/libpq-envars.html">env vars</a> manual.</p>
 
