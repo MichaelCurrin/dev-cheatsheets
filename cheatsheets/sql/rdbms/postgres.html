@@ -297,24 +297,29 @@
 
 <h3 id="create-user">Create user</h3>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">USER</span> <span class="n">foo</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">USER</span> <span class="n">my_user</span>
 </code></pre></div></div>
 
 <p>Recommended - use the optional <code class="language-plaintext highlighter-rouge">ENCRYPTED</code> modified.</p>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">USER</span> <span class="n">foo</span> <span class="k">WITH</span> <span class="k">ENCRYPTED</span> <span class="n">PASSWORD</span> <span class="s1">'bar'</span><span class="p">;</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">USER</span> <span class="n">my_user</span> <span class="k">WITH</span> <span class="k">ENCRYPTED</span> <span class="n">PASSWORD</span> <span class="s1">'abcdef123'</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>See <a href="https://www.postgresql.org/docs/current/app-createuser.html">create user</a> docs.</p>
 
 <p>Grant priviledges:</p>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="k">DATABASE</span> <span class="n">my</span><span class="o">-</span><span class="n">db</span> <span class="k">TO</span> <span class="n">foo</span><span class="p">;</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="k">DATABASE</span> <span class="n">my_database</span> <span class="k">TO</span> <span class="n">my_user</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Or</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">GRANT</span> <span class="k">CONNECT</span> <span class="k">ON</span> <span class="k">DATABASE</span> <span class="n">my_database</span> <span class="k">TO</span> <span class="n">my_user</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>Or create with the shell:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo</span> <span class="nt">-u</span> postgres createuser foo
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo</span> <span class="nt">-u</span> postgres createuser my_user
 </code></pre></div></div>
 
 <h3 id="create-role">Create role</h3>
@@ -334,7 +339,7 @@
 
 <p>Create a role with a password:</p>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">USER</span> <span class="n">my</span><span class="o">-</span><span class="k">user</span> <span class="k">WITH</span> <span class="n">PASSWORD</span> <span class="s1">'abce1234'</span><span class="p">;</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">USER</span> <span class="n">my_user</span> <span class="k">WITH</span> <span class="n">PASSWORD</span> <span class="s1">'my_password'</span><span class="p">;</span>
 </code></pre></div></div>
 
 <blockquote>
@@ -343,13 +348,13 @@
 
 <p>Give permissions to the role.</p>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">foo</span> <span class="k">WITH</span> <span class="k">CREATEDB</span><span class="p">;</span>
-<span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">foo</span> <span class="k">WITH</span> <span class="k">CREATEDB</span> <span class="n">CREATEROLE</span><span class="p">;</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">my_user</span> <span class="k">WITH</span> <span class="k">CREATEDB</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">my_user</span> <span class="k">WITH</span> <span class="k">CREATEDB</span> <span class="n">CREATEROLE</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>Drop:</p>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">DROP</span> <span class="k">ROLE</span> <span class="n">foo</span><span class="p">;</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">DROP</span> <span class="k">ROLE</span> <span class="n">my_role</span><span class="p">;</span>
 </code></pre></div></div>
 
 <h3 id="change-password">Change password</h3>
@@ -401,7 +406,7 @@
 
 <p>Set user, database and host with example below.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="nt">-U</span> my-user <span class="nt">-d</span> my-db <span class="nt">-h</span> abc.eu-central-1.rds.amazonaws.com
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>psql <span class="nt">-U</span> my_user <span class="nt">-d</span> my_db <span class="nt">-h</span> abc.eu-central-1.rds.amazonaws.com
 </code></pre></div></div>
 
 <p>From the <a href="https://www.postgresql.org/docs/13/app-psql.html">docs</a>.</p>
@@ -505,14 +510,14 @@ psql <span class="nt">-U</span> postgres DB_NAME &lt; db.sql
 
 <h3 id="create-db">Create DB</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>createdb <span class="nt">-U</span> my-user my-db
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>createdb <span class="nt">-U</span> my-user my_db
 </code></pre></div></div>
 
 <p>See <a href="https://www.postgresql.org/docs/latest/app-createdb.html">createdb</a> docs.</p>
 
 <h3 id="drop-db">Drop DB</h3>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dropdb <span class="nt">-U</span> my-user my-db
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dropdb <span class="nt">-U</span> my-user my_db
 </code></pre></div></div>
 
 <p>See <a href="https://www.postgresql.org/docs/latest/app-dropdb.html">dropdb</a> docs.</p>
