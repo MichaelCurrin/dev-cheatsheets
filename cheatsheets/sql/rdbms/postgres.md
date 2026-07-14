@@ -132,13 +132,13 @@ postgres=#
 ### Create user
 
 ```sql
-CREATE USER foo
+CREATE USER my_user
 ```
 
 Recommended - use the optional `ENCRYPTED` modified.
 
 ```sql
-CREATE USER foo WITH ENCRYPTED PASSWORD 'bar';
+CREATE USER my_user WITH ENCRYPTED PASSWORD 'abcdef123';
 ```
 
 See [create user][] docs.
@@ -148,13 +148,19 @@ See [create user][] docs.
 Grant priviledges:
 
 ```sql
-GRANT ALL PRIVILEGES ON DATABASE my-db TO foo;
+GRANT ALL PRIVILEGES ON DATABASE my_database TO my_user;
+```
+
+Or 
+
+```sql
+GRANT CONNECT ON DATABASE my_database TO my_user;
 ```
 
 Or create with the shell:
 
 ```sh
-$ sudo -u postgres createuser foo
+$ sudo -u postgres createuser my_user
 ```
 
 ### Create role
@@ -174,7 +180,7 @@ CREATE ROLE my-role LOGIN;
 Create a role with a password:
 
 ```sql
-CREATE USER my-user WITH PASSWORD 'abce1234';
+CREATE USER my_user WITH PASSWORD 'my_password';
 ```
 
 > `CREATE USER` is the same as `CREATE ROLE` except that it implies `LOGIN`.
@@ -182,8 +188,8 @@ CREATE USER my-user WITH PASSWORD 'abce1234';
 Give permissions to the role.
 
 ```sql
-CREATE ROLE foo WITH CREATEDB;
-CREATE ROLE foo WITH CREATEDB CREATEROLE;
+CREATE ROLE my_user WITH CREATEDB;
+CREATE ROLE my_user WITH CREATEDB CREATEROLE;
 ```
 
 [create role]: https://www.postgresql.org/docs/current/sql-createrole.html
@@ -191,7 +197,7 @@ CREATE ROLE foo WITH CREATEDB CREATEROLE;
 Drop:
 
 ```sql
-DROP ROLE foo;
+DROP ROLE my_role;
 ```
 
 ### Change password
@@ -252,7 +258,7 @@ $ sudo su postgres
 Set user, database and host with example below.
 
 ```sh
-$ psql -U my-user -d my-db -h abc.eu-central-1.rds.amazonaws.com
+$ psql -U my_user -d my_db -h abc.eu-central-1.rds.amazonaws.com
 ```
 
 From the [docs](https://www.postgresql.org/docs/13/app-psql.html).
@@ -369,7 +375,7 @@ psql -U postgres DB_NAME < db.sql
 ### Create DB
 
 ```sh
-$ createdb -U my-user my-db
+$ createdb -U my-user my_db
 ```
 
 See [createdb][] docs.
@@ -379,7 +385,7 @@ See [createdb][] docs.
 ### Drop DB
 
 ```sh
-$ dropdb -U my-user my-db
+$ dropdb -U my-user my_db
 ```
 
 See [dropdb][] docs.
