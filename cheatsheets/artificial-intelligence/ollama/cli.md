@@ -6,6 +6,17 @@
 $ ollama pull llama3.1
 ```
 
+
+## Update all models
+
+```sh
+ollama list | tail -n +2 | awk '{print $1}' | while read -r model; do
+  echo "Updating $model"
+  ollama pull "$model"
+done
+```
+
+
 ## Start interactive CLI
 
 See [Model library](https://github.com/ollama/ollama?tab=readme-ov-file#model-library) in the GitHub docs for models and CLI commands to download.
@@ -54,3 +65,4 @@ See conversation on GitHub [here](https://github.com/ollama/ollama/issues/690). 
 On macOS, find the icon as running apps and click Quit.
 
 If you started with `ollam serve`, then just stop that process to stop Ollama.
+
